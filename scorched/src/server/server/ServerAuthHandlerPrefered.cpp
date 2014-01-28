@@ -43,8 +43,8 @@ bool ServerAuthHandlerPrefered::authenticateUser(ComsConnectAuthMessage &authMes
 	if (!getUserById(authMessage.getUniqueId()))
 	{
 		message = 
-			"This server is running a prefered player only game.\n"
-			"Your supplied unique id is not in the prefered player list.\n";
+			"This server is running a preferred player only game.\n"
+			"Your supplied unique id is not in the preferred player list.\n";
 		return false;
 	}
 

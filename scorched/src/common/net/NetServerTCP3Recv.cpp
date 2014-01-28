@@ -81,7 +81,7 @@ bool NetServerTCP3Recv::actualRecvFunc()
 	if (len > 15000000 || len == 0)
 	{
 		Logger::log(S3D::formatStringBuffer(
-			"NetServerTCP3Recv: Buffer was too large to recieve.  Size %i.",
+			"NetServerTCP3Recv: Buffer was too large to receive.  Size %i.",
 			len));
 		return false;
 	}

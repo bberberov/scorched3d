@@ -73,7 +73,7 @@ bool ModDirs::loadModFile(const std::string &inputFileName, bool global)
 	{
 		S3D::dialogMessage("ModDirs", S3D::formatStringBuffer(
 			"ERROR: All mod directories must have lower case filenames.\n"
-			"Directory \"%s\" has upper case charaters in it",
+			"Directory \"%s\" has upper case characters in it",
 			newFileName.c_str()));
 		return false;
 	}

@@ -89,7 +89,7 @@ static const char *cameraDescriptions[] =
 	"Tracks the current tanks rotation.",
 	"Shows the finishing position of the last\n"
 	"shot this tank made.",
-	"Automaticaly tracks any action around the\n"
+	"Automatically tracks any action around the\n"
 	"island by moving to view any explosions\n"
 	"and deaths.",
 	"Look at the left of the current tank.\n"

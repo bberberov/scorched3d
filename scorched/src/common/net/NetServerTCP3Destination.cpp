@@ -56,7 +56,7 @@ void NetServerTCP3Destination::printStats()
 		destinationId_));
 	Logger::log(S3D::formatStringBuffer("  %u messages sent, %u bytes out",
 		send_.getMessagesSent(), send_.getBytesOut()));
-	Logger::log(S3D::formatStringBuffer("  %u messages recieved, %u bytes in",
+	Logger::log(S3D::formatStringBuffer("  %u messages received, %u bytes in",
 		recv_.getMessagesRecieved(), recv_.getBytesIn()));
 }
 

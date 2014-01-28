@@ -217,7 +217,7 @@ bool ModFiles::loadModFile(NetBuffer &tmpFileContents,
 	{
 		S3D::dialogMessage("Mod", S3D::formatStringBuffer(
 			"ERROR: All mod files must have lower case filenames.\n"
-			"File \"%s,%s\" has upper case charaters in it",
+			"File \"%s,%s\" has upper case characters in it",
 			oldFileName.c_str(),
 			shortFileName));
 		return false;

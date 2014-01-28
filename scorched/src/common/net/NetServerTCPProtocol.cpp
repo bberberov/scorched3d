@@ -109,14 +109,14 @@ NetMessage *NetServerTCPScorchedProtocol::readBuffer(TCPsocket socket, unsigned 
 	// check if anything is strange, like a zero length buffer
 	if(len == 0)
 	{
-		Logger::log( "Zero length buffer recieved.");
+		Logger::log( "Zero length buffer received.");
 		return 0;
 	}
 
 	// Cannot recieve a message large than .5 MB
 	if (len > 5000000)
 	{
-		Logger::log(S3D::formatStringBuffer("Buffer was too large to recieve.  Size %i.",
+		Logger::log(S3D::formatStringBuffer("Buffer was too large to receive.  Size %i.",
 			len));
 		return 0;
 	}

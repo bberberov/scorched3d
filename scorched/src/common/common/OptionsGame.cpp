@@ -326,7 +326,7 @@ OptionsGame::OptionsGame() :
 	economy_(options_, "Economy", 
 		"Speicifies the name of the economy to use", 0, "EconomyFreeMarket", economyEnum),
 	landscapes_(options_, "Landscapes", 
-		"Colon seperated list of landscape names", 0, ""),
+		"Colon separated list of landscape names", 0, ""),
 	serverPassword_(options_, "ServerPassword", 
 		"The password for this server (empty password is no password)", OptionEntry::DataProtected, ""),
 	allowSameIP_(options_, "AllowSameIP",
@@ -336,7 +336,7 @@ OptionsGame::OptionsGame() :
 	publishServer_(options_, "PublishServer",
 		"Allow other scorched net clients to see this server.  Do not use for LAN games.", 0, false),
 	useUPnP_(options_, "UseUPnP",
-		"Try to automaticaly add external port forwarding rules using UPnP", 0, false),
+		"Try to automatically add external port forwarding rules using UPnP", 0, false),
 	useUPnPLogging_(options_, "UseUPnPLogging",
 		"Turn on packet logging for UPnP", 0, false),
 	publishAddress_(options_, "PublishAddress",
@@ -382,7 +382,7 @@ OptionsGame::OptionsGame() :
 	depricatedAutoBallanceTeams_(options_, "AutoBallanceTeams",
 		"", OptionEntry::DataDepricated, true),
 	depricatedScoreType_(options_, "ScoreType",
-		"How the winnder is choosen", OptionEntry::DataDepricated, 0, scoreEnum)
+		"How the winner is chosen", OptionEntry::DataDepricated, 0, scoreEnum)
 {
 	char buffer[128];
 	for (int i=0; i<24; i++)

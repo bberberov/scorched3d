@@ -140,7 +140,7 @@ bool HeightMapLoader::generateTerrain(
 	else 
 	{
 		S3D::dialogMessage("HeightMapLoader", S3D::formatStringBuffer(
-			"Error: Unkown generate type %i",
+			"Error: Unknown generate type %i",
 			defn->getType()));
 		return false;
 	}
