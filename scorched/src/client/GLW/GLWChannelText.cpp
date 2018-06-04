@@ -620,7 +620,7 @@ void GLWChannelText::buttonDown(unsigned int id)
 	static ToolTip leaveTooltip(ToolTip::ToolTipHelp | ToolTip::ToolTipAlignBottom, 
 		LANG_RESOURCE("LEAVE_CHANNEL", "Leave Channel"), 
 		LANG_RESOURCE("LEAVE_CHANNEL_TOOLTIP", "Leave a current chat channel.\n"
-		"You will stop recieving messages sent on this channel"));
+		"You will stop receiving messages sent on this channel"));
 	static ToolTip selectTooltip(ToolTip::ToolTipHelp | ToolTip::ToolTipAlignBottom, 
 		LANG_RESOURCE("SELECT_CHANNEL", "Select Channel"), 
 		LANG_RESOURCE("SELECT_CHANNEL_TOOLTIP", "Select the current channel.\n"

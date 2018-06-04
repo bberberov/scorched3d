@@ -459,7 +459,7 @@ static void createKeysControls(wxWindow *parent, wxSizer *topsizer)
 	keyboardKeyList.clear();
 	if (!Keyboard::instance()->loadKeyFile())
 	{
-		S3D::dialogExit("Keyboard", "Failed to process keyboad file keys.xml");
+		S3D::dialogExit("Keyboard", "Failed to process keyboard file keys.xml");
 	}
 
 	int lastGroup = 0;

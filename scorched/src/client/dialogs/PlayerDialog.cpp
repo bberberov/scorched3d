@@ -109,7 +109,7 @@ PlayerDialog::PlayerDialog(const std::string &name,
 			LANG_RESOURCE("PLAYER_NAME_TOOLTIP",
 			"The name of this player.\n"
 			"Use the backspace or delete key to remove this name.\n"
-			"Type in a new player name via the keyboad to change."));
+			"Type in a new player name via the keyboard to change."));
 		GLWLabel *nameLabel = (GLWLabel *) 
 			infoPanel->addWidget(new GLWLabel(145, 40, LANG_RESOURCE("NAME_LABEL", "Name:")));
 		nameLabel->setToolTip(nameTip);

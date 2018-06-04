@@ -139,7 +139,7 @@ void ServerRegistrationEntry::actualThreadFunc()
 
 			Logger::log(S3D::formatStringBuffer("Registration to %s %s.", 
 				masterListServer_,
-				(success_?"was successfull":"failed")));
+				(success_ ? "was successful" : "failed")));
 		}
 		else
 		{

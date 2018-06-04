@@ -313,7 +313,7 @@ bool LandscapeDefnTankStartPositional::readXML(XMLNode *node)
 	if (positions.empty())
 	{
 		S3D::dialogMessage("LandscapeDefnTankStartPositional", S3D::formatStringBuffer(
-			"Error: At least one tank starting positon must be specfied"));
+			"Error: At least one tank starting position must be specified"));
 		return false;
 	}
 	

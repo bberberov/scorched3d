@@ -84,7 +84,7 @@ static bool initHardware(ProgressCounter *progressCounter)
 	if (!Keyboard::instance()->init())
 	{
 		S3D::dialogMessage("Scorched3D Keyboard", 
-			"SDL failed to aquire keyboard.\n"
+			"SDL failed to acquire keyboard.\n"
 #ifdef WIN32
 			"Is DirectX 5.0 installed?"
 #endif
@@ -106,7 +106,7 @@ static bool initHardware(ProgressCounter *progressCounter)
 			OptionsDisplay::instance()->getSoundChannels()))
 		{
 			S3D::dialogMessage("Scorched3D Sound", 
-				"Failed to aquire sound.\n"
+				"Failed to acquire sound.\n"
 				"Is anything else currently using the sound card?");
 		}
 		else

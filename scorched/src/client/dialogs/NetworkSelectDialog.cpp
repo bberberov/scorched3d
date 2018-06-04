@@ -315,7 +315,7 @@ void NetworkSelectDialog::drawColumnGames(unsigned int id, int row, int col,
 		if (officialStr == "official")
 		{
 			LANG_RESOURCE_CONST_VAR(
-				OFFICAL_SERVER, "OFFICAL_SERVER", "An offical server.");
+				OFFICAL_SERVER, "OFFICAL_SERVER", "An official server.");
 			drawIcon(tankTex_.getTexture(), x, y, OFFICAL_SERVER);
 		}
 		else if (officialStr == "mod")

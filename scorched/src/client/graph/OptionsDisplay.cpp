@@ -115,7 +115,7 @@ OptionsDisplay::OptionsDisplay() :
 	sideScroll_(options_, "SideScroll",
 		"Allows the user to scroll the viewport moving the mouse to the sides of the screen", RWAccess | NoRestore, true),
 	storePlayerCamera_(options_, "StorePlayerCamera",
-		"Stores the camera position for each player and resets to that position on thier turn", RWAccess | NoRestore, false),
+		"Stores the camera position for each player and resets to that position on their turn", RWAccess | NoRestore, false),
 	restricedCameraMovement_(options_, "RestricedCameraMovement",
 		"Keeps the player camera within the bounds of the landscape", RWAccess | NoRestore, true),
 	drawPlayerNames_(options_, "DrawPlayerNames",

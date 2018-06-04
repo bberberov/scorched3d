@@ -424,7 +424,7 @@ bool ServerWebSettingsHandler::SettingsModHandler::processRequest(
 				return ServerWebServerUtil::getHtmlMessage(
 					request.getSession(), 
 					"Mod Upload", 
-					S3D::formatStringBuffer("Successfuly uploaded and imported mod %s",
+					S3D::formatStringBuffer("Successfully uploaded and imported mod %s",
 					(mod[0]?mod.c_str():"Unknown")), 
 					request.getFields(), text);
 			}

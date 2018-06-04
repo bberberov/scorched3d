@@ -80,7 +80,7 @@
   <!-- DrawSurround: Draw the surround.  Default value : "on" . -->
   <!-- DrawPlayerNames: Draw the names above the tanks.  Default value : "on" . -->
   <!-- DrawPlayerIcons: Draw the icons above the tanks.  Default value : "on" . -->
-  <!-- DrawPlayerSight: Draw the aiming sight infront of the tanks.  Default value : "on" . -->
+  <!-- DrawPlayerSight: Draw the aiming sight in front of the tanks.  Default value : "on" . -->
   <!-- OldSightPosition: Draw the aiming sight aligned with the model and not the shot.  Default value : "off" . -->
   <!-- VisibleSight: Draw the more visible aiming sight.  Default value : "on" . -->
   <!-- DrawPlayerColor: Draw the player color triangle over the tank.  Default value : "on" . -->
@@ -90,7 +90,7 @@
   <!-- NoDepthSorting: Do not depth sort sprites..  Default value : "off" . -->
   <!-- HideFinalScore: Hide the score dialog that is automatically shown after shots.  Default value : "off" . -->
   <!-- HideMenus: Should the menu title bars always be visible.  Default value : "off" . -->
-  <!-- NoVBO: Do not use Vertex Buffer Objects (if avaialable).  Default value : "off" . -->
+  <!-- NoVBO: Do not use Vertex Buffer Objects (if available).  Default value : "off" . -->
   <!-- NoModelLighting: Do not use dynamic lighting calculations for models.  Default value : "off" . -->
   <!-- LandscapeTexture: Texture the landscape.  Default value : "on" . -->
   <!-- WaterTexture: Texture the water.  Default value : "on" . -->
@@ -109,7 +109,7 @@
   <!-- LowTreeDetail: Only use low detail trees.  Faster..  Default value : "off" . -->
   <!-- SoftwareMouse: Use a software mouse pointer.  Useful if mouse clicks are not aligned..  Default value : "off" . -->
   <!-- SideScroll: Allows the user to scroll the viewport moving the mouse to the sides of the screen.  Default value : "on" . -->
-  <!-- StorePlayerCamera: Stores the camera position for each player and resets to that position on thier turn.  Default value : "off" . -->
+  <!-- StorePlayerCamera: Stores the camera position for each player and resets to that position on their turn.  Default value : "off" . -->
   <!-- RestricedCameraMovement: Keeps the player camera within the bounds of the landscape.  Default value : "on" . -->
   <!-- SwapYAxis: Remaps mouse pointer from top of window to the bottom and vice-versa (MAC/OSX).  Default value : "off" . -->
   <!-- ClientLogToFile: Client logs to file.  Default value : "off" . -->
