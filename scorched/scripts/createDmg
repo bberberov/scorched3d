@@ -1,1 +1,1 @@
-hdiutil create -megabytes 200 Scorched3D-40.1d.dmg -layout NONE -fs HFS+ -volname Scorched3D-40.1 -srcfolder /opt/scorched-binary -format UDZO -imagekey zlib-level=4
+hdiutil create -megabytes 200 Scorched3D-40.1d.dmg -layout NONE -fs HFS+ -volname Scorched3D-40.1 -srcfolder /opt/scorched-binary -format UDZO -imagekey zlib-level=4

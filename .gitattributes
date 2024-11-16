@@ -1,0 +1,50 @@
+.editorconfig   text eol=lf
+.gitattributes  text eol=lf
+.gitignore      text eol=lf
+.kateconfig     text eol=lf
+
+*.c             text eol=lf
+*.cpp           text eol=lf
+*.h             text eol=lf
+*.m4            text eol=lf
+*.pl            text eol=lf
+*.py            text eol=lf
+*.sh            text eol=lf
+*.spec          text eol=lf
+*.svg           text eol=lf
+CHANGELOG       text eol=lf
+COPYING         text eol=lf
+Makefile*       text eol=lf
+README          text eol=lf
+configure.ac    text eol=lf
+
+*.cmd           text eol=crlf
+*.nsh           text eol=crlf
+*.nsi           text eol=crlf
+*.rc            text eol=crlf
+*.sln           text eol=crlf
+*.vcxproj           text eol=crlf
+*.vcxproj.filters   text eol=crlf
+
+*.bmp           binary
+*.dll           binary
+*.gif           binary
+*.ico           binary
+*.jpg           binary
+*.ogg           binary
+*.png           binary
+*.ttf           binary
+*.wav           binary
+
+
+/scorched/depcomp               text eol=lf
+/scorched/install-sh            text eol=lf
+/scorched/missing               text eol=lf
+/scorched/mkinstalldirs         text eol=lf
+
+/scorched/Microsoft.VC100.CRT.manifest          text eol=crlf
+
+/scorched/documentation/*.txt   text eol=lf
+
+/scorched/scripts/createDmg     text eol=cr
+/scorched/scripts/framewk.sh    text eol=cr

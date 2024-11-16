@@ -1,0 +1,2 @@
+kate-wildcard(*.vcxproj): syntax XML;
+kate-wildcard(*.vcxproj.filters): syntax XML;
