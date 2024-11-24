@@ -40,7 +40,7 @@ sub checkDir()
 		if (-f $file1)
 		{
 			if (! -f $file2)
-			{			
+			{
 				# New file
 				print "New : $offfile\n";
 				print OUT "File \"/oname=\$INSTDIR\\$offfile\" \"$offfile\" \n";
@@ -60,7 +60,7 @@ sub checkDir()
 			checkDir($dir1, $offset1."\\".$file, $dir2, $offset2."\\".$file);
 		}
 	}
-	
+
 	if (-d $actualdir2)
 	{
 		# Dest dir

@@ -1,4 +1,4 @@
-#!/bin/perl
+#! /usr/bin/perl
 
 use strict;
 
@@ -31,4 +31,3 @@ while (<IN>)
 }
 close (IN);
 print $buffer if ($changed);
-

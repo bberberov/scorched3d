@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(README)
-AC_CANONICAL_TARGET([]) 
+AC_CANONICAL_TARGET([])
 
 dnl Setup for automake
 AM_INIT_AUTOMAKE(scorched3d, 43)
@@ -29,7 +29,7 @@ AC_CHECK_LIB(fridge, beer, echo "Hmm?!",[
 	echo "We highly suggest that you rectify this situation immediately."
 ])
 
-AC_ARG_ENABLE(serveronly, 
+AC_ARG_ENABLE(serveronly,
 	[  --enable-serveronly Enable server only compilation],
 		    , enable_serveronly=no,
 		    enable_serveronly=yes)

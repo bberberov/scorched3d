@@ -55,4 +55,3 @@ if test x"$use_pgsql" = x"yes"; then
 	fi
 fi
 AC_SUBST(PGSQL_LIBS)
-

@@ -55,53 +55,53 @@ dst=""
 dir_arg=""
 
 while [ x"$1" != x ]; do
-    case $1 in
-	-c) instcmd="$cpprog"
-	    shift
-	    continue;;
+	case $1 in
+		-c) instcmd="$cpprog"
+		    shift
+		    continue;;
 
-	-d) dir_arg=true
-	    shift
-	    continue;;
+		-d) dir_arg=true
+		    shift
+		    continue;;
 
-	-m) chmodcmd="$chmodprog $2"
-	    shift
-	    shift
-	    continue;;
+		-m) chmodcmd="$chmodprog $2"
+		    shift
+		    shift
+		    continue;;
 
-	-o) chowncmd="$chownprog $2"
-	    shift
-	    shift
-	    continue;;
+		-o) chowncmd="$chownprog $2"
+		    shift
+		    shift
+		    continue;;
 
-	-g) chgrpcmd="$chgrpprog $2"
-	    shift
-	    shift
-	    continue;;
+		-g) chgrpcmd="$chgrpprog $2"
+		    shift
+		    shift
+		    continue;;
 
-	-s) stripcmd="$stripprog"
-	    shift
-	    continue;;
+		-s) stripcmd="$stripprog"
+		    shift
+		    continue;;
 
-	-t=*) transformarg=`echo $1 | sed 's/-t=//'`
-	    shift
-	    continue;;
+		-t=*) transformarg=`echo $1 | sed 's/-t=//'`
+		    shift
+		    continue;;
 
-	-b=*) transformbasename=`echo $1 | sed 's/-b=//'`
-	    shift
-	    continue;;
+		-b=*) transformbasename=`echo $1 | sed 's/-b=//'`
+		    shift
+		    continue;;
 
-	*)  if [ x"$src" = x ]
-	    then
-		src=$1
-	    else
-		# this colon is to work around a 386BSD /bin/sh bug
-		:
-		dst=$1
-	    fi
-	    shift
-	    continue;;
-    esac
+		*)  if [ x"$src" = x ]
+		    then
+		    	src=$1
+		    else
+		    	# this colon is to work around a 386BSD /bin/sh bug
+		    	:
+		    	dst=$1
+		    fi
+		    shift
+		    continue;;
+	esac
 done
 
 if [ x"$src" = x ]
@@ -115,7 +115,7 @@ fi
 if [ x"$dir_arg" != x ]; then
 	dst=$src
 	src=""
-	
+
 	if [ -d $dst ]; then
 		instcmd=:
 		chmodcmd=""
@@ -180,7 +180,7 @@ while [ $# -ne 0 ] ; do
 	shift
 
 	if [ ! -d "${pathcomp}" ] ;
-        then
+	then
 		$mkdirprog "${pathcomp}"
 	else
 		:

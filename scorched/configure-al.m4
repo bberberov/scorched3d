@@ -3,7 +3,7 @@ AC_ARG_WITH([openal-static],
             AC_HELP_STRING([--with-openal-static],
                            [enable static linking for openal (default no)]),
             [use_static_openal=${withval}],,)
-AC_ARG_ENABLE(openaltest, 
+AC_ARG_ENABLE(openaltest,
 	[  --disable-openaltest    Do not try to compile and run a test OpenAL program],
 		    , enable_openaltest=yes)
 AC_MSG_CHECKING(for OpenAL support)
@@ -25,7 +25,7 @@ if test x$OPENAL_CONFIG = xno; then
 		OPENAL_CONFIG="$PKG_CONFIG openal";
 	fi
 fi
-	
+
 if test x"$use_static_openal" = x"yes"; then
 	AL_LIBS="/usr/local/lib/libopenal.a"
 else
@@ -72,11 +72,11 @@ if test "x$enable_openaltest" = "xyes" ; then
 
 		],[
 		],[
-		have_openal=yes	
+		have_openal=yes
 		],[
 		echo "*** Failed to compile using the OpenAL library."
 		echo "*** CFLAGS = $AL_CFLAGS";
-    		AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
+			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
 	])
 
 	AC_TRY_LINK([
@@ -99,12 +99,12 @@ if test "x$enable_openaltest" = "xyes" ; then
 
 		],[
 		],[
-		have_openal=yes	
+		have_openal=yes
 		],[
 		echo "*** Compiled but failed to link using the OpenAL library."
 		echo "*** LIBS = $AL_LIBS";
 		echo "*** Check the OpenAL library is on the LD_LIBRARY_PATH";
-    		AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
+			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
 	])
 
 	CFLAGS="$ac_save_CFLAGS"
@@ -115,4 +115,3 @@ fi
 
 AC_SUBST(AL_CFLAGS)
 AC_SUBST(AL_LIBS)
-

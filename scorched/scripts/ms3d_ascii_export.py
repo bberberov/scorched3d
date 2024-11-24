@@ -7,7 +7,7 @@ Group: 'Export'
 Tooltip: 'MilkShape3d ASCII format for Scorched3d models v1.5.2'
 """
 
-#Copyright (C) 2004-2007 Paul Vint cbx550f@sourceforge.net
+#  Copyright (C) 2004-2007 Paul Vint cbx550f@sourceforge.net
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -52,28 +52,28 @@ EVENT_CHOOSE_FILENAME = 5
 EVENT_PROGRESS = 6
 
 def stripPath(path):
-        return path.split('/')[-1].split('\\')[-1]
+	return path.split('/')[-1].split('\\')[-1]
 
 def fs_callback(filename):
 	global FILENAME
-        if filename.find('.txt', -4) <= 0: filename += '.txt'
+	if filename.find('.txt', -4) <= 0: filename += '.txt'
 	FILENAME.val = filename
-        #write(filename)
+	#write(filename)
 
 def createS3DPath():
 	global FILENAME
-        filename = Blender.Get('filename')
+	filename = Blender.Get('filename')
 
-        if filename.find('.') != -1:
-                filename = filename.split('.')[0]
-                filename += ".txt"
+	if filename.find('.') != -1:
+		filename = filename.split('.')[0]
+		filename += ".txt"
 
-        #return filename
+	#return filename
 	FILENAME.val = filename
 	return filename
 
 def fileSelect():
-        Blender.Window.FileSelector(fs_callback, "Select", createS3DPath())
+	Blender.Window.FileSelector(fs_callback, "Select", createS3DPath())
 
 FILENAME = Create('filename')
 createS3DPath()
@@ -82,11 +82,11 @@ showProgress = Create(1)
 
 ### Basic GUI functions
 def draw():     # Define the draw function (which draws your GUI).
-        #Blender.BGL.glClear(Blender.BGL.GL_COLOR_BUFFER_BIT) # This clears the window
-        # Add here drawing commands to draw your GUI, for example:
-        #Blender.Draw.Toggle("Clear origin",1,10,20,100,20,0,"Tooltip")
-        # The line abive will draw a toggle button.
-        # Note the first number, '1' means this is button number 1
+                #Blender.BGL.glClear(Blender.BGL.GL_COLOR_BUFFER_BIT) # This clears the window
+                # Add here drawing commands to draw your GUI, for example:
+                #Blender.Draw.Toggle("Clear origin",1,10,20,100,20,0,"Tooltip")
+                # The line abive will draw a toggle button.
+                # Note the first number, '1' means this is button number 1
 	global EVENT_NOEVENT,EVENT_DRAW,EVENT_EXIT,EVENT_EXPORT,EVENT_CHOOSE_FILENAME,FILENAME,EVENT_PROGRESS, showProgress
 
 	ypos = 110
@@ -105,21 +105,20 @@ def draw():     # Define the draw function (which draws your GUI).
 	showProgress = Toggle("Show Progress",EVENT_PROGRESS,10, 30, 80, 18, showProgress.val, "Deselect to disable the progress bar (faster exporting)")
 
 	glRasterPos2d(8, 83)
-        FILENAME = String("Filename: ", EVENT_NOEVENT, 10, 55, 210, 18,
-                            FILENAME.val, 255, ".txt file to export")
-        Button("Browse",EVENT_CHOOSE_FILENAME,220,55,80,18)
+	FILENAME = String("Filename: ", EVENT_NOEVENT, 10, 55, 210, 18,
+	                  FILENAME.val, 255, ".txt file to export")
+	Button("Browse",EVENT_CHOOSE_FILENAME,220,55,80,18)
 
 
-        
 def event(evt,val):  # Define mouse and keyboard press events
-        if (evt == Blender.Draw.ESCKEY): # Example if esc key pressed
-                Blender.Draw.Exit()    # then exit script
-                return                 # return from the function
+	if (evt == Blender.Draw.ESCKEY): # Example if esc key pressed
+		Blender.Draw.Exit()          # then exit script
+		return                       # return from the function
 
 def bevent(evt): #Manage button events
 	global FILENAME,showProgress
 	if (evt == EVENT_EXIT):
-		Blender.Draw.Exit() 
+		Blender.Draw.Exit()
 		return
 	elif (evt == EVENT_CHOOSE_FILENAME):
 		fileSelect()
@@ -140,18 +139,18 @@ def bevent(evt): #Manage button events
 
 dbg = 0   #set to enable debugging
 
-	
+
 def write(filename):
 	global showProgress
 	print showProgress
 	start = time.clock()
-	
+
 	convertToTris = 0;
 	if Blender.sys.exists(filename) and (Blender.Draw.PupMenu("File exists, replace?%t|YES|NO") == 2):
 		fileSelect()
 		return
 
-		
+
 	file = open(filename, "wb")
 
 	# ms3d header
@@ -181,7 +180,7 @@ def write(filename):
 					if (len(mesh.faces[i].uv)):
 						line += str(round(mesh.faces[i].uv[faceVerts-fv-1][0],5)) + ' ' + str(round(1-mesh.faces[i].uv[faceVerts-fv-1][1],5))  + ' -1\n'
 					else:
-						line += '0.0 0.0 -1\n'  
+						line += '0.0 0.0 -1\n'
 
 					if not i%50 and showProgress.val:
 						Blender.Window.DrawProgressBar(float(i)/len(mesh.faces), thismesh + "Verts")
@@ -226,13 +225,12 @@ def write(filename):
 					#if convertToTris==1:
 					#	for f in mesh.faces:
 					#		f.sel = 1
-					#	Blender.Mesh.Mode(3) 
+					#	Blender.Mesh.Mode(3)
 					#	mesh.quadToTriangle(0)
 					#elif convertToTris==2:
 					#	exitmsg = 'MS3D Export Error:|Mesh \"' + objects[obj].data.name + '\" has ' + str(len(mesh.faces[i].v)) + ' verts in a face, needs to be converted to triangles with CTRL-T!'
 					#	Blender.Draw.PupMenu(exitmsg)
 					#	return
-						
 
 				for v in range(len(mesh.faces[i].v)):  #Go through each vertex in face - only need triangles for MS3D, but this would allow for quads too for portability
 					line += str(idx) + " "
@@ -252,20 +250,20 @@ def write(filename):
 			print '*** Error! ', meshname, 'must have a material & texture!'
 			message = 'MS3D Export Error:|Mesh \"' + objects[obj].data.name + '\"needs to have a material!'
 			meshtools.print_boxed(message)
-        		Blender.Window.WaitCursor(0)
-        		Blender.Draw.PupMenu(message)
-        		return
+			Blender.Window.WaitCursor(0)
+			Blender.Draw.PupMenu(message)
+			return
 
 		if mesh.materials[0]:
 			numMats+=1
 	file.write("\nMaterials: " + str(numMats) + "\n")
-	
+
 	for obj in range(len(objects)):
 		meshname = objects[ obj].data.name
 		mesh = Blender.NMesh.GetRaw(meshname)
 
 		for material in mesh.materials:
-			file.write("\"" + material.name + "\"\n") 
+			file.write("\"" + material.name + "\"\n")
 
 			#file.write(str(round(material.ref,5))+ " " + str(round(material.ref,5))+ " " + str(round(material.ref,5)) + " " + str(round(material.alpha,5)) + "\n")
 			#TODO Why are these values the same??? TODO
@@ -274,10 +272,10 @@ def write(filename):
 			#file.write(str(round(material.rgbCol[0],5)) + " " + str(round(material.rgbCol[1],5)) + " " + str(round(material.rgbCol[2],5)) + " " + str(round(material.alpha,5)) + "\n")
 			file.write(str("%5f %5f %5f %5f\n" % (material.rgbCol[0],material.rgbCol[1],material.rgbCol[2],material.alpha)))
 			file.write(str("%5f %5f %5f %5f\n" % (material.spec,material.spec,material.spec,material.alpha)))
-			
+
 			#file.write(str(round(material.spec,5)) + " " + str(round(material.spec,5)) + " " + str(round(material.spec,5)) + " " + str(round(material.alpha,5)))
 			file.write(str("%5f %5f %5f %5f\n" % (material.emit,material.emit,material.emit,material.alpha)))
-			file.write(str(material.ref) + "\n")   
+			file.write(str(material.ref) + "\n")
 			file.write(str(material.alpha) + "\n")
 			# get the current texture image
 			imageName=""
@@ -303,25 +301,20 @@ def write(filename):
 			file.write("\n\"\"\n")  
 
 
-	
-	
 	file.write('\nBones: 0\n') # we don't need no stinking bones for Scorched! ;)
 	file.write('GroupComments: 0\n')
 	file.write('MaterialComments: 0\n')
 	file.write('BoneComments: 0\n')
 	file.write('ModelComment: 0\n')
 	Blender.Window.DrawProgressBar(1.0, '') #clear progressbar
- 	file.close()
+	file.close()
 	end = time.clock()
 	seconds = " in %.2f %s" % (end-start, "seconds")
 	message = "Successfully exported " + os.path.basename(filename) + seconds
 	meshtools.print_boxed(message)
 	Blender.Window.WaitCursor(0)
-        Blender.Draw.PupMenu(message)
+	Blender.Draw.PupMenu(message)
 	return
 
 
 Blender.Draw.Register(draw,event,bevent)
-
-
-

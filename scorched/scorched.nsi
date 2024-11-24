@@ -65,7 +65,7 @@ Section "MainSection" SEC01
   SetOverwrite try
 
   RMDir /r "$INSTDIR\data"
-  
+
   File /r /x ".svn" /x "*.db" "data"
   File /r /x ".svn" /x "*.db" "documentation"
   File "*.dll"
@@ -75,7 +75,7 @@ Section "MainSection" SEC01
   File "Release\scorched.exe"
   File "Release\scorchedc.exe"
   File "Release\scorcheds.exe"
-    
+
   ${registerExtension} "$INSTDIR\scorchedc.exe" ".s3l" "Scorched3D_Launch"
 SectionEnd
 
@@ -83,9 +83,9 @@ Section -AdditionalIcons
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}-docs.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}\wiki"
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}-donate.url" "InternetShortcut" "URL" "${PRODUCT_DONATE_WEB_SITE}"
-  
+
   CreateDirectory "$SMPROGRAMS\${PRODUCT_NAME}"
-  
+
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\Uninstall Scorched3D.lnk" "$INSTDIR\uninst.exe"
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\Scorched3D.lnk" "$INSTDIR\scorched.exe" "" "$INSTDIR\data\images\tank2.ico"
   CreateShortCut "$SMPROGRAMS\${PRODUCT_NAME}\Scorched3D Documentation.lnk" "$INSTDIR\${PRODUCT_NAME}-docs.url" "" "$INSTDIR\data\images\tank2.ico"
@@ -114,7 +114,7 @@ Function un.LeaveUnWelcome
 ${NSD_GetState} $mycheckbox $0
 StrCpy $DEL_USER "FALSE"
 ${If} $0 <> 0
-    StrCpy $DEL_USER "TRUE"
+  StrCpy $DEL_USER "TRUE"
 ${EndIf}
 FunctionEnd
 
@@ -126,7 +126,7 @@ Section Uninstall
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
   SetAutoClose true
-  
+
   ${unregisterExtension} ".s3l" "Scorched3D_Launch"
 
   StrCmp $DEL_USER "FALSE" nodel

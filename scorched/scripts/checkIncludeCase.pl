@@ -23,7 +23,7 @@ my @dirs =
 my @stdinc =
 (
 	"..\\include\\SDL",
- 	"F:\\Microsoft Visual Studio .NET\\Vc7\\include",
+	"F:\\Microsoft Visual Studio .NET\\Vc7\\include",
 	"F:\\Microsoft Visual Studio .NET\\Vc7\\PlatformSDK\\Include"
 );
 
@@ -41,7 +41,7 @@ foreach $dir (@dirs)
 		#print "$dir/$file\n";
 		$allheaderfiles{"$dir/$file"} = 1;
 	}
-}		
+}
 
 foreach $dir (@stdinc)
 {

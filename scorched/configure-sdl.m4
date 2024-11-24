@@ -44,11 +44,11 @@ fi
 
 AC_MSG_RESULT($have_SDLnet)
 if test x$have_SDLnet != xyes; then
-    AC_MSG_ERROR([*** Can't find the SDL_net library Try: http://www.libsdl.org/projects/SDL_net])
+	AC_MSG_ERROR([*** Can't find the SDL_net library Try: http://www.libsdl.org/projects/SDL_net])
 fi
 
 if test `uname` == Darwin; then
-SDL_LIBS="$SDL_LIBS -framework SDL_net"
+	SDL_LIBS="$SDL_LIBS -framework SDL_net"
 else
-SDL_LIBS="$SDL_LIBS -lSDL_net"
+	SDL_LIBS="$SDL_LIBS -lSDL_net"
 fi

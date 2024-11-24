@@ -32,13 +32,13 @@ fi
 # `libtool' can also be set to `yes' or `no'.
 
 if test -z "$depfile"; then
-   base=`echo "$object" | sed -e 's,^.*/,,' -e 's,\.\([^.]*\)$,.P\1,'`
-   dir=`echo "$object" | sed 's,/.*$,/,'`
-   if test "$dir" = "$object"; then
-      dir=
-   fi
-   # FIXME: should be _deps on DOS.
-   depfile="$dir.deps/$base"
+  base=`echo "$object" | sed -e 's,^.*/,,' -e 's,\.\([^.]*\)$,.P\1,'`
+  dir=`echo "$object" | sed 's,/.*$,/,'`
+  if test "$dir" = "$object"; then
+    dir=
+  fi
+  # FIXME: should be _deps on DOS.
+  depfile="$dir.deps/$base"
 fi
 
 tmpdepfile=${tmpdepfile-`echo "$depfile" | sed 's/\.\([^.]*\)$/.T\1/'`}
@@ -56,9 +56,9 @@ if test "$depmode" = hp; then
 fi
 
 if test "$depmode" = dashXmstdout; then
-   # This is just like dashmstdout with a different argument.
-   dashmflag=-xM
-   depmode=dashmstdout
+  # This is just like dashmstdout with a different argument.
+  dashmflag=-xM
+  depmode=dashmstdout
 fi
 
 case "$depmode" in
@@ -207,46 +207,46 @@ aix)
   ;;
 
 tru64)
-   # The Tru64 compiler uses -MD to generate dependencies as a side
-   # effect.  `cc -MD -o foo.o ...' puts the dependencies into `foo.o.d'.
-   # At least on Alpha/Redhat 6.1, Compaq CCC V6.2-504 seems to put
-   # dependencies in `foo.d' instead, so we check for that too.
-   # Subdirectories are respected.
-   dir=`echo "$object" | sed -e 's|/[^/]*$|/|'`
-   test "x$dir" = "x$object" && dir=
-   base=`echo "$object" | sed -e 's|^.*/||' -e 's/\.o$//' -e 's/\.lo$//'`
+  # The Tru64 compiler uses -MD to generate dependencies as a side
+  # effect.  `cc -MD -o foo.o ...' puts the dependencies into `foo.o.d'.
+  # At least on Alpha/Redhat 6.1, Compaq CCC V6.2-504 seems to put
+  # dependencies in `foo.d' instead, so we check for that too.
+  # Subdirectories are respected.
+  dir=`echo "$object" | sed -e 's|/[^/]*$|/|'`
+  test "x$dir" = "x$object" && dir=
+  base=`echo "$object" | sed -e 's|^.*/||' -e 's/\.o$//' -e 's/\.lo$//'`
 
-   if test "$libtool" = yes; then
-      tmpdepfile1="$dir.libs/$base.lo.d"
-      tmpdepfile2="$dir.libs/$base.d"
-      "$@" -Wc,-MD
-   else
-      tmpdepfile1="$dir$base.o.d"
-      tmpdepfile2="$dir$base.d"
-      "$@" -MD
-   fi
+  if test "$libtool" = yes; then
+    tmpdepfile1="$dir.libs/$base.lo.d"
+    tmpdepfile2="$dir.libs/$base.d"
+    "$@" -Wc,-MD
+  else
+    tmpdepfile1="$dir$base.o.d"
+    tmpdepfile2="$dir$base.d"
+    "$@" -MD
+  fi
 
-   stat=$?
-   if test $stat -eq 0; then :
-   else
-      rm -f "$tmpdepfile1" "$tmpdepfile2"
-      exit $stat
-   fi
+  stat=$?
+  if test $stat -eq 0; then :
+  else
+    rm -f "$tmpdepfile1" "$tmpdepfile2"
+    exit $stat
+  fi
 
-   if test -f "$tmpdepfile1"; then
-      tmpdepfile="$tmpdepfile1"
-   else
-      tmpdepfile="$tmpdepfile2"
-   fi
-   if test -f "$tmpdepfile"; then
-      sed -e "s,^.*\.[a-z]*:,$object:," < "$tmpdepfile" > "$depfile"
-      # That's a space and a tab in the [].
-      sed -e 's,^.*\.[a-z]*:[ 	]*,,' -e 's,$,:,' < "$tmpdepfile" >> "$depfile"
-   else
-      echo "#dummy" > "$depfile"
-   fi
-   rm -f "$tmpdepfile"
-   ;;
+  if test -f "$tmpdepfile1"; then
+    tmpdepfile="$tmpdepfile1"
+  else
+    tmpdepfile="$tmpdepfile2"
+  fi
+  if test -f "$tmpdepfile"; then
+    sed -e "s,^.*\.[a-z]*:,$object:," < "$tmpdepfile" > "$depfile"
+    # That's a space and a tab in the [].
+    sed -e 's,^.*\.[a-z]*:[ 	]*,,' -e 's,$,:,' < "$tmpdepfile" >> "$depfile"
+  else
+    echo "#dummy" > "$depfile"
+  fi
+  rm -f "$tmpdepfile"
+  ;;
 
 #nosideeffect)
   # This comment above is used by automake to tell side-effect
@@ -389,15 +389,15 @@ msvisualcpp)
   do
     case "$arg" in
     "-Gm"|"/Gm"|"-Gi"|"/Gi"|"-ZI"|"/ZI")
-	set fnord "$@"
-	shift
-	shift
-	;;
+      set fnord "$@"
+      shift
+      shift
+      ;;
     *)
-	set fnord "$@" "$arg"
-	shift
-	shift
-	;;
+      set fnord "$@" "$arg"
+      shift
+      shift
+      ;;
     esac
   done
   "$@" -E |

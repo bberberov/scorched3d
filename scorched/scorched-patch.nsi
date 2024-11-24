@@ -51,19 +51,19 @@ ShowInstDetails show
 ShowUnInstDetails show
 
 Function .onInit
-	;Language selection dialog
-	Push ""
-	Push ${LANG_ENGLISH}
-	Push English
-	Push ${LANG_RUSSIAN}
-	Push Russian
-	Push A ; A means auto count languages
-	       ; for the auto count to work the first empty push (Push "") must remain
-	LangDLL::LangDialog "Installer Language" "Please select the language of the installer"
+  ;Language selection dialog
+  Push ""
+  Push ${LANG_ENGLISH}
+  Push English
+  Push ${LANG_RUSSIAN}
+  Push Russian
+  Push A ; A means auto count languages
+         ; for the auto count to work the first empty push (Push "") must remain
+  LangDLL::LangDialog "Installer Language" "Please select the language of the installer"
 
-	Pop $LANGUAGE
-	StrCmp $LANGUAGE "cancel" 0 +2
-		Abort
+  Pop $LANGUAGE
+  StrCmp $LANGUAGE "cancel" 0 +2
+    Abort
 
   ReadRegStr $R0 ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString"
   StrCmp $R0 "" 0 done
@@ -77,17 +77,17 @@ Section "MainSection" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite try
 
-File "/oname=$INSTDIR\.\data\globalmods\apoc\data\landscapes\ambientsoundhelicopter.xml" ".\data\globalmods\apoc\data\landscapes\ambientsoundhelicopter.xml" 
-File "/oname=$INSTDIR\.\data\globalmods\apoc\data\modinfo.xml" ".\data\globalmods\apoc\data\modinfo.xml" 
-File "/oname=$INSTDIR\.\data\globalmods\none\data\landscapes\boidsbats.xml" ".\data\globalmods\none\data\landscapes\boidsbats.xml" 
-File "/oname=$INSTDIR\.\data\globalmods\none\data\landscapes.xml" ".\data\globalmods\none\data\landscapes.xml" 
-File "/oname=$INSTDIR\.\data\globalmods\none\data\modinfo.xml" ".\data\globalmods\none\data\modinfo.xml" 
-File "/oname=$INSTDIR\.\data\keys.xml" ".\data\keys.xml" 
-File "/oname=$INSTDIR\.\scorched.exe" ".\scorched.exe" 
-File "/oname=$INSTDIR\.\scorchedc.exe" ".\scorchedc.exe" 
-File "/oname=$INSTDIR\.\scorcheds.exe" ".\scorcheds.exe" 
-File "/oname=$INSTDIR\.\uninst.exe" ".\uninst.exe" 
-    
+File "/oname=$INSTDIR\.\data\globalmods\apoc\data\landscapes\ambientsoundhelicopter.xml" ".\data\globalmods\apoc\data\landscapes\ambientsoundhelicopter.xml"
+File "/oname=$INSTDIR\.\data\globalmods\apoc\data\modinfo.xml" ".\data\globalmods\apoc\data\modinfo.xml"
+File "/oname=$INSTDIR\.\data\globalmods\none\data\landscapes\boidsbats.xml" ".\data\globalmods\none\data\landscapes\boidsbats.xml"
+File "/oname=$INSTDIR\.\data\globalmods\none\data\landscapes.xml" ".\data\globalmods\none\data\landscapes.xml"
+File "/oname=$INSTDIR\.\data\globalmods\none\data\modinfo.xml" ".\data\globalmods\none\data\modinfo.xml"
+File "/oname=$INSTDIR\.\data\keys.xml" ".\data\keys.xml"
+File "/oname=$INSTDIR\.\scorched.exe" ".\scorched.exe"
+File "/oname=$INSTDIR\.\scorchedc.exe" ".\scorchedc.exe"
+File "/oname=$INSTDIR\.\scorcheds.exe" ".\scorcheds.exe"
+File "/oname=$INSTDIR\.\uninst.exe" ".\uninst.exe"
+
   ${registerExtension} "$INSTDIR\scorchedc.exe" ".s3l" "Scorched3D_Launch"
 
   FileOpen $9 "$INSTDIR\data\lang\language.ini" w
@@ -102,9 +102,9 @@ Section -AdditionalIcons
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}-docs.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}\wiki"
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}-donate.url" "InternetShortcut" "URL" "${PRODUCT_DONATE_WEB_SITE}"
-  
+
   CreateDirectory "$SMPROGRAMS\Scorched3D"
-  
+
   CreateShortCut "$SMPROGRAMS\Scorched3D\Uninstall Scorched3D.lnk" "$INSTDIR\uninst.exe"
   CreateShortCut "$SMPROGRAMS\Scorched3D\Scorched3D.lnk" "$INSTDIR\scorched.exe" "" "$INSTDIR\data\images\tank2.ico"
   CreateShortCut "$SMPROGRAMS\Scorched3D\Scorched3D Documentation.lnk" "$INSTDIR\${PRODUCT_NAME}-docs.url" "" "$INSTDIR\data\images\tank2.ico"
@@ -148,7 +148,7 @@ Section Uninstall
   SetAutoClose true
 
   ${unregisterExtension} ".s3l" "Scorched3D_Launch"
-  
+
   StrCmp $DEL_USER "FALSE" nodel
   RMDir /r "$INSTDIR\.scorched3d"
   RMDir /r "$PROFILE\.scorched3d"
