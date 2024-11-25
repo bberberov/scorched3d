@@ -48,3 +48,8 @@ configure.ac    text eol=lf
 
 /scorched/scripts/createDmg     text eol=cr
 /scorched/scripts/framewk.sh    text eol=cr
+
+
+/scorched/*.dll      export-ignore
+/scorched-dep-osx    export-ignore
+/scorched-dep-win32  export-ignore
