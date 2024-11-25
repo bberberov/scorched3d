@@ -1,10 +1,14 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(README)
-AC_CANONICAL_TARGET([])
+AC_INIT(
+	[scorched3d],
+	[44]
+)
+AC_CONFIG_SRCDIR([src/launcher/scorched/main.cpp])
+AC_CANONICAL_TARGET
 
 dnl Setup for automake
-AM_INIT_AUTOMAKE(scorched3d, 43)
+AM_INIT_AUTOMAKE([foreign -Wportability])
 
 dnl Check for tools
 AC_PROG_MAKE_SET
@@ -72,7 +76,7 @@ AC_CHECK_FUNCS(vsnprintf snprintf vasprintf asprintf iconv)
 # Check for extra headers
 AC_CHECK_HEADERS(unistd.h iconv.h)
 
-# FIXEME
+# FIXME
 dnl Checking for Zlib Png Jpeg
 if test `uname` == Darwin; then
 LIBS="$LIBS /usr/local/lib/libexpat.a -lz -framework UnixImageIO"
@@ -102,10 +106,10 @@ CFLAGS="$CFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" 
 CXXFLAGS="$CXXFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" -DS3D_BINDIR=\\\"${bindir}\\\""
 
 # put here at end because of sdl.m4 not defining
-AC_LANG_CPLUSPLUS
+AC_LANG([C++])
 
 # Finally create all the generated files
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 src/Makefile
 src/launcher/Makefile
@@ -115,3 +119,4 @@ src/client/scorchedc/Makefile
 src/server/Makefile
 src/server/scorcheds/Makefile
 ])
+AC_OUTPUT
