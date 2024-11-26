@@ -20,7 +20,8 @@ AC_PROG_RANLIB
 LDFLAGS="$LDFLAGS -L/usr/X11R6/lib -L/usr/X11R6"
 CPPFLAGS="$CPPFLAGS -I/usr/X11R6/include -I/usr/X11R6"
 
-if test `uname` == Darwin; then
+if test `uname` = 'Darwin'
+then
 LDFLAGS="$LDFLAGS -lmx"
 CPPFLAGS="$CPPFLAGS -DFFTW_USE_DOUBLE -D__DARWIN__ -D__MACOSX__"
 else
@@ -39,7 +40,8 @@ AC_ARG_ENABLE(serveronly,
 		    enable_serveronly=yes)
 
 # Include the other configuration files
-if test "x$enable_serveronly" = "xno" ; then
+if test "x$enable_serveronly" = 'xno'
+then
 m4_include([configure-gl.m4])
 m4_include([configure-al.m4])
 m4_include([configure-wx.m4])
@@ -62,7 +64,8 @@ AC_ARG_ENABLE(profiling,
 	[  --enable-profiling    Enable gprof code profiling],
 		    , enable_profiling=no,
 		    enable_profiling=yes)
-if test "x$enable_profiling" = "xyes" ; then
+if test "x$enable_profiling" = 'xyes'
+then
 	LIBS="$LIBS -pg"
 	CFLAGS="$CFLAGS -pg"
 	CPPFLAGS="$CPPFLAGS -pg"
@@ -78,7 +81,8 @@ AC_CHECK_HEADERS(unistd.h iconv.h)
 
 # FIXME
 dnl Checking for Zlib Png Jpeg
-if test `uname` == Darwin; then
+if test `uname` = 'Darwin'
+then
 LIBS="$LIBS /usr/local/lib/libexpat.a -lz -framework UnixImageIO"
 else
 LIBS="$LIBS -lexpat -lz -lpng -ljpeg"
@@ -90,7 +94,8 @@ AC_ARG_WITH(docdir,
 	AC_HELP_STRING([--with-docdir=DIR],
 	[Use DIR to store documentation files (default DATADIR)]),
 	[with_docdir=$withval])
-if test "x$with_docdir" = "x" ; then
+if test "x$with_docdir" = 'x'
+then
 	docdir='${datadir}/documentation'
 else
 	docdir=$with_docdir
@@ -98,7 +103,8 @@ fi
 AC_SUBST(docdir)
 
 AC_PREFIX_DEFAULT(/usr/local/games/scorched3d)
-if test `uname` == Darwin; then
+if test `uname` = 'Darwin'
+then
 prefix=./
 fi
 

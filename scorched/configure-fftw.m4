@@ -8,32 +8,40 @@ AC_ARG_WITH(fftw-libraries,[  --with-fftw-libraries=DIR   Directory where fftw l
 AC_ARG_WITH(fftw-includes,[  --with-fftw-includes=DIR   Directory where fftw header files are installed (optional)], fftw_includes="$withval", fftw_includes="")
 AC_ARG_ENABLE(fftwtest, [  --disable-fftwtest       Do not try to compile and run a test fftw program],, enable_fftwtest=yes)
 
-if test "x$fftw_libraries" != "x" ; then
+if test "x$fftw_libraries" != 'x'
+then
 	FFTW_LIBS="-L$fftw_libraries"
-elif test "x$fftw_prefix" != "x" ; then
+elif test "x$fftw_prefix" != 'x'
+then
 	FFTW_LIBS="-L$fftw_prefix/lib"
-elif test "x$prefix" != "xNONE"; then
+elif test "x$prefix" != 'xNONE'
+then
 	FFTW_LIBS="-L$prefix/lib"
 fi
 
-if test `uname` == Darwin; then
+if test `uname` = 'Darwin'
+then
 	FFTW_LIBS="$FFTW_LIBS -lfftw3"
 else
 	FFTW_LIBS="$FFTW_LIBS -lfftw3f"
 fi
 
-if test "x$fftw_includes" != "x" ; then
+if test "x$fftw_includes" != 'x'
+then
 	FFTW_CFLAGS="-I$fftw_includes"
-elif test "x$fftw_prefix" != "x" ; then
+elif test "x$fftw_prefix" != 'x'
+then
 	FFTW_CFLAGS="-I$fftw_prefix/include"
-elif test "x$prefix" != "xNONE"; then
+elif test "x$prefix" != 'xNONE'
+then
 	FFTW_CFLAGS="-I$prefix/include -I/usr/include"
 fi
 
 AC_MSG_CHECKING(for FFTW)
 no_fftw=""
 
-if test "x$enable_fftwtest" = "xyes" ; then
+if test "x$enable_fftwtest" = 'xyes'
+then
 	ac_save_CFLAGS="$CFLAGS"
 	ac_save_LIBS="$LIBS"
 	CFLAGS="$CFLAGS $FFTW_CFLAGS"
@@ -84,11 +92,13 @@ int main ()
 	LIBS="$ac_save_LIBS"
 fi
 
-if test "x$no_fftw" = "x" ; then
+if test "x$no_fftw" = 'x'
+then
 	AC_MSG_RESULT(yes)
 else
 	AC_MSG_RESULT(no)
-	if test -f conf.fftwtest ; then
+	if test -f conf.fftwtest
+	then
 		:
 	else
 		echo "*** Could not run FFTW test program, checking why..."

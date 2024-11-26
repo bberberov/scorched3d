@@ -1,6 +1,7 @@
 dnl Check for FreeType2
 AC_CHECK_FT2(7.0.1, ftype=1)
-if test "$ftype" != 1; then
+if test "$ftype" != 1
+then
 	AC_MSG_ERROR([
                 FreeType2 must be installed on your system
                 but freetype-config couldn't be found.

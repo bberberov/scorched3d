@@ -12,7 +12,8 @@ AC_TRY_COMPILE([
 ])
 AC_MSG_RESULT($have_fp)
 
-if test x$have_fp != xyes; then
+if test "x$have_fp" != 'xyes'
+then
 	CFLAGS="$CPPFLAGS -DNO_FLOAT_MATH"
 	CPPFLAGS="$CPPFLAGS -DNO_FLOAT_MATH"
 	CXXFLAGS="$CXXFLAGS -DNO_FLOAT_MATH"

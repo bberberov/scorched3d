@@ -9,7 +9,8 @@ AM_PATH_SDL($SDL_VERSION,
 dnl checking for SDL_net
 AC_MSG_CHECKING(for SDL_net lib)
 have_SDLnet=yes
-if test "x$enable_sdltest" = "xyes" ; then
+if test "x$enable_sdltest" = 'xyes'
+then
 
 	ac_save_CFLAGS="$CFLAGS"
 	ac_save_CXXFLAGS="$CXXFLAGS"
@@ -43,11 +44,13 @@ if test "x$enable_sdltest" = "xyes" ; then
 fi
 
 AC_MSG_RESULT($have_SDLnet)
-if test x$have_SDLnet != xyes; then
+if test "x$have_SDLnet" != "xyes"
+then
 	AC_MSG_ERROR([*** Can't find the SDL_net library Try: http://www.libsdl.org/projects/SDL_net])
 fi
 
-if test `uname` == Darwin; then
+if test `uname` = 'Darwin'
+then
 	SDL_LIBS="$SDL_LIBS -framework SDL_net"
 else
 	SDL_LIBS="$SDL_LIBS -lSDL_net"

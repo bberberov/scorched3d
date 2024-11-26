@@ -4,7 +4,8 @@ AC_ARG_ENABLE(opengltest,
 		    , enable_opengltest=yes)
 AC_MSG_CHECKING(for OpenGL support)
 have_opengl=yes
-if test "x$enable_opengltest" = "xyes" ; then
+if test "x$enable_opengltest" = 'xyes'
+then
 	AC_TRY_COMPILE([
 		#include <GL/gl.h>
 		#include <GL/glu.h>
@@ -17,7 +18,8 @@ if test "x$enable_opengltest" = "xyes" ; then
 fi
 
 AC_MSG_RESULT($have_opengl)
-if test x$have_opengl != xyes; then
+if test "x$have_opengl" != 'xyes'
+then
 	AC_MSG_ERROR([*** Can't find the OpenGL library Try: http://www.opengl.org])
 fi
 
@@ -27,7 +29,8 @@ AC_ARG_ENABLE(glewtest,
 		    , enable_glewtest=yes)
 AC_MSG_CHECKING(for GLEW support)
 have_glew=yes
-if test "x$enable_glewtest" = "xyes" ; then
+if test "x$enable_glewtest" = 'xyes'
+then
 	AC_TRY_COMPILE([
 		#include <GL/glew.h>
 		],[
@@ -39,14 +42,17 @@ if test "x$enable_glewtest" = "xyes" ; then
 fi
 
 AC_MSG_RESULT($have_glew)
-if test x$have_glew != xyes; then
+if test "x$have_glew" != 'xyes'
+then
 	AC_MSG_ERROR([*** Can't find the GLEW library])
 fi
 
-if test `uname -s` == FreeBSD; then
+if test `uname -s` = 'FreeBSD'
+then
 	GL_LIBS="-lGL -lGLU -lGLEW"
 else
-	if test `uname -s` == Darwin; then
+	if test `uname -s` = 'Darwin'
+	then
 		GL_LIBS="-framework OpenGL"
 	else
 		GL_LIBS="-lGL -lGLU -lpthread -lGLEW"

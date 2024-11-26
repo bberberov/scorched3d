@@ -8,14 +8,16 @@ AC_ARG_ENABLE(openaltest,
 		    , enable_openaltest=yes)
 AC_MSG_CHECKING(for OpenAL support)
 AC_PATH_PROG(OPENAL_CONFIG, openal-config, no)
-if test x$OPENAL_CONFIG = xno; then
+if test "x$OPENAL_CONFIG" = 'xno'
+then
 	echo "The openal-config script installed by OpenAL could not be found"
 	echo "Make sure openal-config is in your path, or set the OPENAL_CONFIG"
 	echo "environment variable to the full path to openal-config."
 	echo "Trying pkg-config instead."
 
 	AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
-	if test x$PKG_CONFIG = xno; then
+	if test "x$PKG_CONFIG" = 'xno'
+	then
 		echo "The pkg-config script could not be found"
 		echo "Make sure pkg-config is in your path, or set the PKG_CONFIG"
 		echo "environment variable to the full path to pkg-config."
@@ -26,7 +28,8 @@ if test x$OPENAL_CONFIG = xno; then
 	fi
 fi
 
-if test x"$use_static_openal" = x"yes"; then
+if test "x$use_static_openal" = 'xyes'
+then
 	AL_LIBS="/usr/local/lib/libopenal.a"
 else
 	AL_LIBS="`$OPENAL_CONFIG --libs`"
@@ -38,7 +41,8 @@ AC_MSG_RESULT(yes)
 
 AC_MSG_CHECKING(for Freealut support)
 AC_PATH_PROG(FREEALUT_CONFIG, freealut-config, no)
-if test x$FREEALUT_CONFIG = xno; then
+if test "x$FREEALUT_CONFIG" = 'xno'
+then
 	echo "*** Warning: The freealut-config script installed by OpenAL could not be found."
 	echo "*** The alut library is required, however some older OpenAL distribitions may include it."
 	echo "*** If Scorched3D fails to link check alut is in the link line."
@@ -53,7 +57,8 @@ else
 fi
 
 AC_MSG_CHECKING(for OpenAL compilation)
-if test "x$enable_openaltest" = "xyes" ; then
+if test "x$enable_openaltest" = 'xyes'
+then
 
 	ac_save_CFLAGS="$CFLAGS"
 	ac_save_LIBS="$LIBS"

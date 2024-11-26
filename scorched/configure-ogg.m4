@@ -22,7 +22,8 @@ have_OGG=no
 have_OGG=no
 ])
 
-if test x$have_OGG != xyes; then
+if test "x$have_OGG" != 'xyes'
+then
 	AC_MSG_WARN([OGG not found no ogg support compiled into Scorched3D])
 fi
 

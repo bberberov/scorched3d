@@ -6,7 +6,8 @@ AC_ARG_WITH([mysql],
             [use_mysql=${withval}],,)
 AH_TEMPLATE(HAVE_MYSQL,[Define if you have libmysql])
 
-if test x"$use_mysql" = x"yes"; then
+if test "x$use_mysql" = 'xyes'
+then
 	AC_MSG_CHECKING(for MySql support)
 	have_mysql=no
 	AC_TRY_COMPILE([
@@ -17,7 +18,8 @@ if test x"$use_mysql" = x"yes"; then
 	])
 	AC_MSG_RESULT($have_mysql)
 
-	if test x$have_mysql != xyes; then
+	if test "x$have_mysql" != 'xyes'
+	then
 		AC_MSG_ERROR([*** Can't find the MySql library Try: http://www.mysql.com])
 	else
 		MYSQL_CFLAGS=`mysql_config --cflags`
@@ -36,7 +38,8 @@ AC_ARG_WITH([pgsql],
             [use_pgsql=${withval}],,)
 AH_TEMPLATE(HAVE_PGSQL,[Define if you have libpq])
 
-if test x"$use_pgsql" = x"yes"; then
+if test "x$use_pgsql" = 'xyes'
+then
 	AC_MSG_CHECKING(for PGSql support)
 	have_pgsql=no
 	AC_TRY_COMPILE([
@@ -47,7 +50,8 @@ if test x"$use_pgsql" = x"yes"; then
 	])
 	AC_MSG_RESULT($have_pgsql)
 
-	if test x$have_pgsql != xyes; then
+	if test "x$have_pgsql" != 'xyes'
+	then
 		AC_MSG_ERROR([*** Can't find the PGSql library Try: http://www.postgresql.org])
 	else
 		AC_DEFINE(HAVE_PGSQL)

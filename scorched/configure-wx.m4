@@ -7,7 +7,8 @@ AC_ARG_WITH([wx-static],
 dnl Check for wxwindows
 AM_OPTIONS_WXCONFIG
 AM_PATH_WXCONFIG(2.4.0, wxWin=1)
-if test "$wxWin" != 1; then
+if test "$wxWin" != 1
+then
 	AC_MSG_ERROR([
                 wxWindows must be installed on your system
                 but the wx-config script couldn't be found.
@@ -19,6 +20,7 @@ if test "$wxWin" != 1; then
 	])
 fi
 
-if test x"$use_static_wx" = x"yes"; then
+if test "x$use_static_wx" = 'xyes'
+then
 	WX_LIBS="$WX_LIBS_STATIC"
 fi
