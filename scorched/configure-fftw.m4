@@ -70,7 +70,7 @@ then
 fi
 
 AC_MSG_CHECKING(for FFTW)
-no_fftw=""
+no_fftw=''
 
 if test "x$enable_fftwtest" = 'xyes'
 then
@@ -108,15 +108,14 @@ dnl
 
 #define N 10
 			]],[[
-	FFT_COMPLEX_TYPE fft_in[N*(N/2+1)];
-	FFT_REAL_TYPE fft_out[N*N];
-	FFT_PLAN_TYPE plan;
+FFT_COMPLEX_TYPE fft_in[N*(N/2+1)];
+FFT_REAL_TYPE fft_out[N*N];
+FFT_PLAN_TYPE plan;
 
-	plan = FFT_CREATE_PLAN(N, N, fft_in, fft_out, 0);
+plan = FFT_CREATE_PLAN(N, N, fft_in, fft_out, 0);
 
-
-	system("touch conf.fftwtest");
-	return 0;
+system("touch conf.fftwtest");
+return 0;
 			]]
 		)],
 		[],
@@ -136,7 +135,7 @@ else
 	then
 		:
 	else
-		echo "*** Could not run FFTW test program, checking why..."
+		echo '*** Could not run FFTW test program, checking why...'
 		CFLAGS="$CFLAGS $FFTW_CFLAGS"
 		LIBS="$LIBS $FFTW_LIBS"
 		AC_LINK_IFELSE(
@@ -148,23 +147,28 @@ else
 return 0;
 				]]
 			)],
-		[ echo "*** The test program compiled, but did not run. This usually means"
-		echo "*** that the run-time linker is not finding FFTW or finding the wrong"
-		echo "*** version of FFTW. If it is not finding FFTW, you'll need to set your"
-		echo "*** LD_LIBRARY_PATH environment variable, or edit /etc/ld.so.conf to point"
-		echo "*** to the installed location  Also, make sure you have run ldconfig if that"
-		echo "*** is required on your system"
-		echo "***"
-		echo "*** If you have an old version installed, it is best to remove it, although"
-		echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"],
-		[ echo "*** The test program failed to compile or link. See the file config.log for the"
-		echo "*** exact error that occured. This usually means FFTW was incorrectly installed"
-		echo "*** or that you have moved FFTW since it was installed." ])
+			[
+				echo "*** The test program compiled, but did not run. This usually means"
+				echo "*** that the run-time linker is not finding FFTW or finding the wrong"
+				echo "*** version of FFTW. If it is not finding FFTW, you'll need to set your"
+				echo "*** LD_LIBRARY_PATH environment variable, or edit /etc/ld.so.conf to point"
+				echo "*** to the installed location  Also, make sure you have run ldconfig if that"
+				echo "*** is required on your system"
+				echo "***"
+				echo "*** If you have an old version installed, it is best to remove it, although"
+				echo "*** you may also be able to get things to work by modifying LD_LIBRARY_PATH"
+			],
+			[
+				echo "*** The test program failed to compile or link. See the file config.log for the"
+				echo "*** exact error that occured. This usually means FFTW was incorrectly installed"
+				echo "*** or that you have moved FFTW since it was installed."
+			]
+		)
 		CFLAGS="$ac_save_CFLAGS"
 		LIBS="$ac_save_LIBS"
 	fi
-	FFTW_CFLAGS=""
-	FFTW_LIBS=""
+	FFTW_CFLAGS=''
+	FFTW_LIBS=''
 
 	AC_MSG_ERROR([
                 FFTW must be installed on your system but couldn't be found.

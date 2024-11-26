@@ -15,8 +15,8 @@ then
 	AC_COMPILE_IFELSE(
 		[AC_LANG_PROGRAM(
 			[[
-		#include <GL/gl.h>
-		#include <GL/glu.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 			]],[[
 return 0;
 			]]
@@ -49,7 +49,7 @@ then
 	AC_COMPILE_IFELSE(
 		[AC_LANG_PROGRAM(
 			[[
-		#include <GL/glew.h>
+#include <GL/glew.h>
 			]],[[
 return 0;
 			]]
@@ -67,13 +67,13 @@ fi
 
 if test `uname -s` = 'FreeBSD'
 then
-	GL_LIBS="-lGL -lGLU -lGLEW"
+	GL_LIBS='-lGL -lGLU -lGLEW'
 else
 	if test `uname -s` = 'Darwin'
 	then
-		GL_LIBS="-framework OpenGL"
+		GL_LIBS='-framework OpenGL'
 	else
-		GL_LIBS="-lGL -lGLU -lpthread -lGLEW"
+		GL_LIBS='-lGL -lGLU -lpthread -lGLEW'
 	fi
 fi
 

@@ -22,11 +22,11 @@ CPPFLAGS="$CPPFLAGS -I/usr/X11R6/include -I/usr/X11R6"
 
 if test `uname` = 'Darwin'
 then
-LDFLAGS="$LDFLAGS -lmx"
-CPPFLAGS="$CPPFLAGS -DFFTW_USE_DOUBLE -D__DARWIN__ -D__MACOSX__"
+	LDFLAGS="$LDFLAGS -lmx"
+	CPPFLAGS="$CPPFLAGS -DFFTW_USE_DOUBLE -D__DARWIN__ -D__MACOSX__"
 else
-LDFLAGS="$LDFLAGS -L/usr/local/lib"
-CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+	CPPFLAGS="$CPPFLAGS -I/usr/local/include"
 fi
 
 AC_CHECK_LIB(fridge, beer, echo "Hmm?!",[
@@ -47,15 +47,15 @@ AC_ARG_ENABLE(
 # Include the other configuration files
 if test "x$enable_serveronly" = 'xno'
 then
-m4_include([configure-gl.m4])
-m4_include([configure-al.m4])
-m4_include([configure-wx.m4])
-m4_include([configure-ogg.m4])
-m4_include([configure-ft.m4])
-m4_include([configure-fftw.m4])
-S3D_SUBDIRS="launcher client server"
+	m4_include([configure-gl.m4])
+	m4_include([configure-al.m4])
+	m4_include([configure-wx.m4])
+	m4_include([configure-ogg.m4])
+	m4_include([configure-ft.m4])
+	m4_include([configure-fftw.m4])
+	S3D_SUBDIRS='launcher client server'
 else
-S3D_SUBDIRS="server"
+	S3D_SUBDIRS='server'
 fi
 m4_include([configure-sdl.m4])
 m4_include([configure-flt.m4])
@@ -93,9 +93,9 @@ AC_CHECK_HEADERS(unistd.h iconv.h)
 dnl Checking for Zlib Png Jpeg
 if test `uname` = 'Darwin'
 then
-LIBS="$LIBS /usr/local/lib/libexpat.a -lz -framework UnixImageIO"
+	LIBS="$LIBS /usr/local/lib/libexpat.a -lz -framework UnixImageIO"
 else
-LIBS="$LIBS -lexpat -lz -lpng -ljpeg"
+	LIBS="$LIBS -lexpat -lz -lpng -ljpeg"
 fi
 
 # Directory setup stuff
@@ -110,13 +110,13 @@ AC_ARG_WITH(
 )
 if test "x$with_docdir" = 'x'
 then
-	docdir='${datadir}/documentation'
+	docdir="${datadir}/documentation"
 else
-	docdir=$with_docdir
+	docdir="$with_docdir"
 fi
 AC_SUBST(docdir)
 
-AC_PREFIX_DEFAULT(/usr/local/games/scorched3d)
+AC_PREFIX_DEFAULT([/usr/local/games/scorched3d])
 if test `uname` = 'Darwin'
 then
 prefix=./

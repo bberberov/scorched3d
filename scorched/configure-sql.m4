@@ -21,7 +21,7 @@ then
 	AC_COMPILE_IFELSE(
 		[AC_LANG_PROGRAM(
 			[[
-		#include <mysql/mysql.h>
+#include <mysql/mysql.h>
 			]],[[
 return 0;
 			]]
@@ -66,7 +66,7 @@ then
 	AC_COMPILE_IFELSE(
 		[AC_LANG_PROGRAM(
 			[[
-		#include <pgsql/libpq-fe.h>
+#include <pgsql/libpq-fe.h>
 			]],[[
 return 0;
 			]]
@@ -81,7 +81,7 @@ return 0;
 		AC_MSG_ERROR([*** Can't find the PGSql library Try: http://www.postgresql.org])
 	else
 		AC_DEFINE(HAVE_PGSQL)
-		PGSQL_LIBS="-lpq"
+		PGSQL_LIBS='-lpq'
 	fi
 fi
 AC_SUBST(PGSQL_LIBS)

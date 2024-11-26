@@ -11,7 +11,6 @@ AC_MSG_CHECKING(for SDL_net lib)
 have_SDLnet=yes
 if test "x$enable_sdltest" = 'xyes'
 then
-
 	ac_save_CFLAGS="$CFLAGS"
 	ac_save_CXXFLAGS="$CXXFLAGS"
 	ac_save_LIBS="$LIBS"
@@ -22,11 +21,11 @@ then
 	AC_COMPILE_IFELSE(
 		[AC_LANG_PROGRAM(
 			[[
-		#include <SDL/SDL.h>
+#include <SDL/SDL.h>
 #ifdef __DARWIN__
-		#include <SDL_net/SDL_net.h>
+	#include <SDL_net/SDL_net.h>
 #else
-		#include <SDL/SDL_net.h>
+	#include <SDL/SDL_net.h>
 #endif
 			]],[[
 return 0;

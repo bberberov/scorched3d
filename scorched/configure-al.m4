@@ -61,7 +61,6 @@ then
 	echo "*** Alternatively, make sure freealut-config is in your path, or set the FREEALUT_CONFIG"
 	echo "*** environment variable to the full path to openal-config."
 else
-
 	AL_LIBS="$AL_LIBS `$FREEALUT_CONFIG --libs`"
 	AL_CFLAGS="$AL_CFLAGS `$FREEALUT_CONFIG --cflags`"
 
@@ -71,7 +70,6 @@ fi
 AC_MSG_CHECKING(for OpenAL compilation)
 if test "x$enable_openaltest" = 'xyes'
 then
-
 	ac_save_CFLAGS="$CFLAGS"
 	ac_save_LIBS="$LIBS"
 	CFLAGS="$CFLAGS $AL_CFLAGS"
@@ -81,12 +79,12 @@ then
 		[AC_LANG_PROGRAM(
 			[[
 #ifdef __APPLE__
-		#include <OpenAL/al.h>
-		#include <OpenAL/alc.h>
+	#include <OpenAL/al.h>
+	#include <OpenAL/alc.h>
 #else
-		#include <AL/al.h>
-		#include <AL/alut.h>
-		#include <AL/alc.h>
+	#include <AL/al.h>
+	#include <AL/alut.h>
+	#include <AL/alc.h>
 #endif
 			]],[[
 return 0;
@@ -94,9 +92,8 @@ return 0;
 		)],
 		[have_openal=yes],
 		[
-
-		echo "*** Failed to compile using the OpenAL library."
-		echo "*** CFLAGS = $AL_CFLAGS";
+			echo "*** Failed to compile using the OpenAL library."
+			echo "*** CFLAGS = $AL_CFLAGS";
 			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
 		]
 	)
@@ -105,12 +102,12 @@ return 0;
 		[AC_LANG_PROGRAM(
 			[[
 #ifdef __APPLE__
-		#include <OpenAL/al.h>
-		#include <OpenAL/alc.h>
+	#include <OpenAL/al.h>
+	#include <OpenAL/alc.h>
 #else
-		#include <AL/al.h>
-		#include <AL/alut.h>
-		#include <AL/alc.h>
+	#include <AL/al.h>
+	#include <AL/alut.h>
+	#include <AL/alc.h>
 #endif
 			]],[[
 alutInit(argc, argv);
@@ -119,9 +116,9 @@ return 0;
 		)],
 		[have_openal=yes],
 		[
-		echo "*** Compiled but failed to link using the OpenAL library."
-		echo "*** LIBS = $AL_LIBS";
-		echo "*** Check the OpenAL library is on the LD_LIBRARY_PATH";
+			echo "*** Compiled but failed to link using the OpenAL library."
+			echo "*** LIBS = $AL_LIBS";
+			echo "*** Check the OpenAL library is on the LD_LIBRARY_PATH";
 			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
 		]
 	)
