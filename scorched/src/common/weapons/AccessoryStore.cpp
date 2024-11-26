@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -156,7 +156,7 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
 	Accessory *parent, XMLNode *currentNode)
 {
 	XMLNode *typeNode = 0;
-	if (!currentNode->getNamedParameter("type", typeNode)) return false;
+	if (!currentNode->getNamedParameter("type", typeNode)) return NULL;
 
 	AccessoryPart *accessoryPart = 
 		AccessoryMetaRegistration::getNewAccessory(typeNode->getContent(), this);
@@ -165,19 +165,19 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
 		S3D::dialogMessage("AccessoryStore", S3D::formatStringBuffer(
 						"Failed to find accessory part type \"%s\"",
 						typeNode->getContent()));
-		return 0;
+		return NULL;
 	}
 	// Set the parent accessory
 	accessoryPart->setParent(parent);
 	
 	// Tell this accessory instance to initialize its settings from
 	// the current accessory xml definition node
-	if (!accessoryPart->parseXML(context, currentNode)) return 0;
+	if (!accessoryPart->parseXML(context, currentNode)) return NULL;
 
 	// There should not be any children left
 	// Any that are, are children that have not been
 	// handled by the parse routine
-	if (!currentNode->failChildren()) return 0;
+	if (!currentNode->failChildren()) return NULL;
 	DIALOG_ASSERT(accessoryPart->getParent());
 
 	// Add the accessory
@@ -324,14 +324,14 @@ Accessory *AccessoryStore::findByPrimaryAccessoryName(const char *name)
 			return accessory;
 		}
 	}
-	return 0;
+	return NULL;
 }
 
 Accessory *AccessoryStore::findByAccessoryId(unsigned int id)
 {
 	std::map<unsigned int, Accessory *>::iterator itor = 
 		accessoriesById_.find(id);
-	if (itor == accessoriesById_.end()) return 0;
+	if (itor == accessoriesById_.end()) return NULL;
 	return itor->second;
 }
 
@@ -349,7 +349,7 @@ AccessoryPart *AccessoryStore::findAccessoryPartByAccessoryId(unsigned int id, c
 			return accessoryPart;
 		}
 	}
-	return 0;
+	return NULL;
 }
 
 bool AccessoryStore::writeAccessory(NamedNetBuffer &buffer, Accessory *accessory)
