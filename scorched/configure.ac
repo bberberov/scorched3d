@@ -34,10 +34,15 @@ AC_CHECK_LIB(fridge, beer, echo "Hmm?!",[
 	echo "We highly suggest that you rectify this situation immediately."
 ])
 
-AC_ARG_ENABLE(serveronly,
-	[  --enable-serveronly Enable server only compilation],
-		    , enable_serveronly=no,
-		    enable_serveronly=yes)
+AC_ARG_ENABLE(
+	[serveronly],
+	[AS_HELP_STRING(
+		[--enable-serveronly],
+		[Enable server only compilation]
+	)],
+	[],
+	[enable_serveronly=no]
+)
 
 # Include the other configuration files
 if test "x$enable_serveronly" = 'xno'
@@ -60,10 +65,15 @@ AC_SUBST(S3D_SUBDIRS)
 
 dnl Checks for Profiling
 AC_MSG_CHECKING(for profiling enabled)
-AC_ARG_ENABLE(profiling, 
-	[  --enable-profiling    Enable gprof code profiling],
-		    , enable_profiling=no,
-		    enable_profiling=yes)
+AC_ARG_ENABLE(
+	[profiling],
+	[AS_HELP_STRING(
+		[--enable-profiling],
+		[Enable gprof code profiling]
+	)],
+	[],
+	[enable_profiling=no],
+)
 if test "x$enable_profiling" = 'xyes'
 then
 	LIBS="$LIBS -pg"
@@ -90,10 +100,14 @@ fi
 
 # Directory setup stuff
 dnl --with-docdir
-AC_ARG_WITH(docdir,
-	AC_HELP_STRING([--with-docdir=DIR],
-	[Use DIR to store documentation files (default DATADIR)]),
-	[with_docdir=$withval])
+AC_ARG_WITH(
+	[docdir],
+	[AS_HELP_STRING(
+		[--with-docdir=DIR],
+		[Use DIR to store documentation files (default DATADIR)]
+	)],
+	[with_docdir=$withval]
+)
 if test "x$with_docdir" = 'x'
 then
 	docdir='${datadir}/documentation'

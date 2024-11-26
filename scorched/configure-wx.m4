@@ -1,8 +1,13 @@
 dnl Checks for static linking for wx windows
-AC_ARG_WITH([wx-static],
-            AC_HELP_STRING([--with-wx-static],
-                           [enable static linking for wxwindows (default no)]),
-            [use_static_wx=${withval}],,)
+AC_ARG_WITH(
+	[wx-static],
+	[AS_HELP_STRING(
+		[--with-wx-static],
+		[enable static linking for wxwindows (default no)]
+	)],
+	[use_static_wx=${withval}],
+	[use_static_wx=no],
+)
 
 dnl Check for wxwindows
 AM_OPTIONS_WXCONFIG

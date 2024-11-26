@@ -1,10 +1,18 @@
 dnl Checks for mysql
 MYSQL_LIBS=
-AC_ARG_WITH([mysql],
-            AC_HELP_STRING([--with-mysql],
-                           [enable mysql support (default no)]),
-            [use_mysql=${withval}],,)
-AH_TEMPLATE(HAVE_MYSQL,[Define if you have libmysql])
+AC_ARG_WITH(
+	[mysql],
+	[AS_HELP_STRING(
+		[--with-mysql],
+		[enable mysql support (default no)]
+	)],
+	[use_mysql=${withval}],
+	[use_mysql=no],
+)
+AH_TEMPLATE(
+	[HAVE_MYSQL],
+	[Define if you have libmysql]
+)
 
 if test "x$use_mysql" = 'xyes'
 then
@@ -32,11 +40,19 @@ AC_SUBST(MYSQL_CFLAGS)
 
 dnl Checks for pgsql
 PGSQL_LIBS=
-AC_ARG_WITH([pgsql],
-            AC_HELP_STRING([--with-pgsql],
-                           [enable pgsql support (default no)]),
-            [use_pgsql=${withval}],,)
-AH_TEMPLATE(HAVE_PGSQL,[Define if you have libpq])
+AC_ARG_WITH(
+	[pgsql],
+	[AS_HELP_STRING(
+		[--with-pgsql],
+		[enable pgsql support (default no)]
+	)],
+	[use_pgsql=${withval}],
+	[use_pgsql=no],
+)
+AH_TEMPLATE(
+	[HAVE_PGSQL],
+	[Define if you have libpq]
+)
 
 if test "x$use_pgsql" = 'xyes'
 then

@@ -1,7 +1,13 @@
 dnl Checks for OpenGL
-AC_ARG_ENABLE(opengltest,
-	[  --disable-opengltest    Do not try to compile and run a test OpenGL program],
-		    , enable_opengltest=yes)
+AC_ARG_ENABLE(
+	[opengltest],
+	[AS_HELP_STRING(
+		[--disable-opengltest],
+		[Do not try to compile and run a test OpenGL program]
+	)],
+	[],
+	[enable_opengltest=yes]
+)
 AC_MSG_CHECKING(for OpenGL support)
 have_opengl=yes
 if test "x$enable_opengltest" = 'xyes'
@@ -24,9 +30,15 @@ then
 fi
 
 dnl Checks for GLEW
-AC_ARG_ENABLE(glewtest,
-	[  --disable-glewtest    Do not try to compile and run a test GLEW program],
-		    , enable_glewtest=yes)
+AC_ARG_ENABLE(
+	[glewtest],
+	[AS_HELP_STRING(
+		[--disable-glewtest],
+		[Do not try to compile and run a test GLEW program]
+	)],
+	[],
+	[enable_glewtest=yes]
+)
 AC_MSG_CHECKING(for GLEW support)
 have_glew=yes
 if test "x$enable_glewtest" = 'xyes'

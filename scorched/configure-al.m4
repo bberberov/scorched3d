@@ -1,11 +1,23 @@
 dnl Checking for OpenAL
-AC_ARG_WITH([openal-static],
-            AC_HELP_STRING([--with-openal-static],
-                           [enable static linking for openal (default no)]),
-            [use_static_openal=${withval}],,)
-AC_ARG_ENABLE(openaltest,
-	[  --disable-openaltest    Do not try to compile and run a test OpenAL program],
-		    , enable_openaltest=yes)
+AC_ARG_WITH(
+	[openal-static],
+	[AS_HELP_STRING(
+		[--with-openal-static],
+		[enable static linking for openal (default no)]
+	)],
+	[use_static_openal=${withval}],
+	[]
+)
+
+AC_ARG_ENABLE(
+	[openaltest],
+	[AS_HELP_STRING(
+		[--disable-openaltest],
+		[Do not try to compile and run a test OpenAL program]
+	)],
+	[],
+	[enable_openaltest=yes]
+)
 AC_MSG_CHECKING(for OpenAL support)
 AC_PATH_PROG(OPENAL_CONFIG, openal-config, no)
 if test "x$OPENAL_CONFIG" = 'xno'

@@ -3,10 +3,42 @@ dnl Check for FFTW3
 FFTW_CFLAGS=
 FFTW_LIBS=
 
-AC_ARG_WITH(fftw,[  --with-fftw=PFX   Prefix where fftw is installed (optional)], fftw_prefix="$withval", fftw_prefix="")
-AC_ARG_WITH(fftw-libraries,[  --with-fftw-libraries=DIR   Directory where fftw library is installed (optional)], fftw_libraries="$withval", fftw_libraries="")
-AC_ARG_WITH(fftw-includes,[  --with-fftw-includes=DIR   Directory where fftw header files are installed (optional)], fftw_includes="$withval", fftw_includes="")
-AC_ARG_ENABLE(fftwtest, [  --disable-fftwtest       Do not try to compile and run a test fftw program],, enable_fftwtest=yes)
+AC_ARG_WITH(
+	[fftw],
+	[AS_HELP_STRING(
+		[--with-fftw=PFX],
+		[Prefix where fftw is installed (optional)]
+	)],
+	[fftw_prefix=$withval],
+	[fftw_prefix='']
+)
+AC_ARG_WITH(
+	[fftw-libraries],
+	[AS_HELP_STRING(
+		[--with-fftw-libraries=DIR],
+		[Directory where fftw library is installed (optional)]
+	)],
+	[fftw_libraries=$withval],
+	[fftw_libraries='']
+)
+AC_ARG_WITH(
+	[fftw-includes],
+	[AS_HELP_STRING(
+		[--with-fftw-includes=DIR],
+		[Directory where fftw header files are installed (optional)]
+	)],
+	[fftw_includes=$withval],
+	[fftw_includes='']
+)
+AC_ARG_ENABLE(
+	[fftwtest],
+	[AS_HELP_STRING(
+		[--disable-fftwtest],
+		[Do not try to compile and run a test fftw program]
+	)],
+	[],
+	[enable_fftwtest=yes]
+)
 
 if test "x$fftw_libraries" != 'x'
 then
