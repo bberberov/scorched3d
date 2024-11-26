@@ -82,7 +82,9 @@ dnl
 dnl Now check if the installed fftw is sufficiently new.
 dnl
 	rm -f conf.fftwtest
-	AC_TRY_RUN([
+	AC_RUN_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -105,9 +107,7 @@ dnl
 #endif
 
 #define N 10
-
-int main ()
-{
+			]],[[
 	FFT_COMPLEX_TYPE fft_in[N*(N/2+1)];
 	FFT_REAL_TYPE fft_out[N*N];
 	FFT_PLAN_TYPE plan;
@@ -117,9 +117,12 @@ int main ()
 
 	system("touch conf.fftwtest");
 	return 0;
-}
-
-],, no_fftw=yes,[echo $ac_n "cross compiling; assumed OK... $ac_c"])
+			]]
+		)],
+		[],
+		[no_fftw=yes],
+		[echo $ac_n "cross compiling; assumed OK... $ac_c"]
+	)
 	CFLAGS="$ac_save_CFLAGS"
 	LIBS="$ac_save_LIBS"
 fi
@@ -136,10 +139,15 @@ else
 		echo "*** Could not run FFTW test program, checking why..."
 		CFLAGS="$CFLAGS $FFTW_CFLAGS"
 		LIBS="$LIBS $FFTW_LIBS"
-		AC_TRY_LINK([
+		AC_LINK_IFELSE(
+			[AC_LANG_PROGRAM(
+				[[
 #include <stdio.h>
 #include <fftw3.h>
-],     [ return 0; ],
+				]],[[
+return 0;
+				]]
+			)],
 		[ echo "*** The test program compiled, but did not run. This usually means"
 		echo "*** that the run-time linker is not finding FFTW or finding the wrong"
 		echo "*** version of FFTW. If it is not finding FFTW, you'll need to set your"

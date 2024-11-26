@@ -77,7 +77,9 @@ then
 	CFLAGS="$CFLAGS $AL_CFLAGS"
 	LIBS="$AL_LIBS $LIBS"
 
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 #ifdef __APPLE__
 		#include <OpenAL/al.h>
 		#include <OpenAL/alc.h>
@@ -86,17 +88,22 @@ then
 		#include <AL/alut.h>
 		#include <AL/alc.h>
 #endif
+			]],[[
+return 0;
+			]]
+		)],
+		[have_openal=yes],
+		[
 
-		],[
-		],[
-		have_openal=yes
-		],[
 		echo "*** Failed to compile using the OpenAL library."
 		echo "*** CFLAGS = $AL_CFLAGS";
 			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
-	])
+		]
+	)
 
-	AC_TRY_LINK([
+	AC_LINK_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 #ifdef __APPLE__
 		#include <OpenAL/al.h>
 		#include <OpenAL/alc.h>
@@ -105,24 +112,19 @@ then
 		#include <AL/alut.h>
 		#include <AL/alc.h>
 #endif
-
-		int main(int argc, char *argv[])
-		{
-			alutInit(argc, argv);
-			return 0;
-		}
-#undef  main
-#define main K_and_R_C_main
-
-		],[
-		],[
-		have_openal=yes
-		],[
+			]],[[
+alutInit(argc, argv);
+return 0;
+			]]
+		)],
+		[have_openal=yes],
+		[
 		echo "*** Compiled but failed to link using the OpenAL library."
 		echo "*** LIBS = $AL_LIBS";
 		echo "*** Check the OpenAL library is on the LD_LIBRARY_PATH";
 			AC_MSG_ERROR([*** Check the OpenAL library is correctly installed.])
-	])
+		]
+	)
 
 	CFLAGS="$ac_save_CFLAGS"
 	LIBS="$ac_save_LIBS"

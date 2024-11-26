@@ -19,24 +19,22 @@ then
 	CXXFLAGS="$CXXFLAGS $SDL_CFLAGS"
 	LIBS="$SDL_LIBS $LIBS"
 
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 		#include <SDL/SDL.h>
 #ifdef __DARWIN__
 		#include <SDL_net/SDL_net.h>
 #else
 		#include <SDL/SDL_net.h>
 #endif
-
-		int main(int argc, char *argv[])
-		{ return 0; }
-#undef  main
-#define main K_and_R_C_main
-		],[
-		],[
-		have_SDLnet=yes
-		],[
-		have_SDLnet=no
-		])
+			]],[[
+return 0;
+			]]
+		)],
+		[have_SDLnet=yes],
+		[have_SDLnet=no]
+	)
 
 	CFLAGS="$ac_save_CFLAGS"
 	CXXFLAGS="$ac_save_CXXFLAGS"

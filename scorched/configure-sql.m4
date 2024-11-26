@@ -18,12 +18,17 @@ if test "x$use_mysql" = 'xyes'
 then
 	AC_MSG_CHECKING(for MySql support)
 	have_mysql=no
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 		#include <mysql/mysql.h>
-		],[
-		],[
-		have_mysql=yes
-	])
+			]],[[
+return 0;
+			]]
+		)],
+		[],
+		[have_mysql=yes]
+	)
 	AC_MSG_RESULT($have_mysql)
 
 	if test "x$have_mysql" != 'xyes'
@@ -58,12 +63,17 @@ if test "x$use_pgsql" = 'xyes'
 then
 	AC_MSG_CHECKING(for PGSql support)
 	have_pgsql=no
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 		#include <pgsql/libpq-fe.h>
-		],[
-		],[
-		have_pgsql=yes
-	])
+			]],[[
+return 0;
+			]]
+		)],
+		[],
+		[have_pgsql=yes]
+	)
 	AC_MSG_RESULT($have_pgsql)
 
 	if test "x$have_pgsql" != 'xyes'

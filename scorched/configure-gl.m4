@@ -12,15 +12,18 @@ AC_MSG_CHECKING(for OpenGL support)
 have_opengl=yes
 if test "x$enable_opengltest" = 'xyes'
 then
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 		#include <GL/gl.h>
 		#include <GL/glu.h>
-		],[
-		],[
-		have_opengl=yes
-		],[
-		have_opengl=no
-	])
+			]],[[
+return 0;
+			]]
+		)],
+		[have_opengl=yes],
+		[have_opengl=no]
+	)
 fi
 
 AC_MSG_RESULT($have_opengl)
@@ -43,14 +46,17 @@ AC_MSG_CHECKING(for GLEW support)
 have_glew=yes
 if test "x$enable_glewtest" = 'xyes'
 then
-	AC_TRY_COMPILE([
+	AC_COMPILE_IFELSE(
+		[AC_LANG_PROGRAM(
+			[[
 		#include <GL/glew.h>
-		],[
-		],[
-		have_glew=yes
-		],[
-		have_glew=no
-	])
+			]],[[
+return 0;
+			]]
+		)],
+		[have_glew=yes],
+		[have_glew=no]
+	)
 fi
 
 AC_MSG_RESULT($have_glew)
