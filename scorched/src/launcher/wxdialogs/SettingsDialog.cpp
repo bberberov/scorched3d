@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -105,7 +105,7 @@ void SettingsFrame::createMainPanel(bool server)
 	mainPanel_ = new wxPanel(book_, -1);
 	book_->AddPage(mainPanel_, wxT("Main"));
 	wxSizer *mainPanelSizer = new wxBoxSizer(wxVERTICAL);
-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
+	wxSizer *sizer = new wxFlexGridSizer(2, 2, 0);
 	mainPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	setters_.push_back(
@@ -166,7 +166,7 @@ void SettingsFrame::createMoneyPanel()
 {
 	moneyPanel_ = new wxPanel(book_, -1);
 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
+	wxSizer *sizer = new wxFlexGridSizer(2, 2, 0);
 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	setters_.push_back(
@@ -215,7 +215,7 @@ void SettingsFrame::createScorePanel()
 {
 	scorePanel_ = new wxPanel(book_, -1);
 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
+	wxSizer *sizer = new wxFlexGridSizer(2, 2, 0);
 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	setters_.push_back(
@@ -249,7 +249,7 @@ void SettingsFrame::createWeaponsPanel()
 {
 	weaponsPanel_ = new wxPanel(book_, -1);
 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
+	wxSizer *sizer = new wxFlexGridSizer(2, 2, 0);
 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	setters_.push_back(
@@ -286,7 +286,7 @@ void SettingsFrame::createEnvPanel()
 {
 	envPanel_ = new wxPanel(book_, -1);
 	wxSizer *envPanelSizer = new wxBoxSizer(wxVERTICAL);
-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
+	wxSizer *sizer = new wxFlexGridSizer(2, 2, 0);
 	envPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	setters_.push_back(
@@ -337,7 +337,7 @@ void SettingsFrame::createLandPanel()
 	wxScrolledWindow *scrolledWindow = new wxScrolledWindow(landPanel_, -1, 
 		wxDefaultPosition, wxSize(225, 200));
 
-	wxSizer *sizer = new wxFlexGridSizer(3, 3);
+	wxSizer *sizer = new wxFlexGridSizer(3, 3, 0);
 	int i = 0;
 	std::list<LandscapeDefinitionsEntry> &defns =
 		landscapeDefinitions.getAllLandscapes();
@@ -438,7 +438,7 @@ void SettingsFrame::createPlayersPanel()
 		wxT("Players are persistent for game"));
 	playersPanelSizer->Add(IDC_SERVER_RESIDUAL_CTRL, 0, wxALIGN_CENTER | wxTOP, 10);
 		
-	wxSizer *sizer = new wxGridSizer(3, 3);
+	wxSizer *sizer = new wxGridSizer(3, 3, 0);
 	playersPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
 
 	for (int i=0; i<24; i++)

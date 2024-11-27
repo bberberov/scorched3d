@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2003
+//    Scorched3D (c) 2000-2003, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -88,7 +88,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 	// Sound settings
 	wxStaticBox *soundBox = new wxStaticBox(parent, -1, wxT("&Sound"));
 	wxStaticBoxSizer *soundSizerMain = new wxStaticBoxSizer(soundBox, wxVERTICAL);
-	wxFlexGridSizer *soundSizer1 = new wxFlexGridSizer(4, 2);
+	wxFlexGridSizer *soundSizer1 = new wxFlexGridSizer(4, 2, 0);
 	wxStaticText *volumeText = new wxStaticText(parent, -1, wxT("Sound Volume :"));
 	wxStaticText *musicVolumeText = new wxStaticText(parent, -1, wxT("Music Volume :"));
 	wxStaticText *ambientVolumeText = new wxStaticText(parent, -1, wxT("Ambient Volume :"));
@@ -137,7 +137,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 		wxT("Game Detail Options"));
 	wxStaticBoxSizer *speedSizer = new wxStaticBoxSizer(speedBox, wxHORIZONTAL);
 
-	wxGridSizer *loadSizer = new wxFlexGridSizer(2, 2);
+	wxGridSizer *loadSizer = new wxFlexGridSizer(2, 2, 0);
 	IDC_LOADULTRA_CTRL = new wxButton(parent,  ID_LOADULTRA, wxT("&Ultra Detail"), wxDefaultPosition, wxSize(120,-1));
 	IDC_LOADDEFAULTS_CTRL = new wxButton(parent, ID_LOADDEFAULTS, wxT("&Normal Detail"), wxDefaultPosition, wxSize(120,-1));
 	IDC_LOADMEDIUM_CTRL = new wxButton(parent, ID_LOADMEDIUM, wxT("Faster Detail"), wxDefaultPosition, wxSize(120,-1));
@@ -471,7 +471,7 @@ static void createKeysControls(wxWindow *parent, wxSizer *topsizer)
 {
 	wxScrolledWindow *scrolledWindow = new wxScrolledWindow(parent, -1, 
 		wxDefaultPosition, wxSize(480, 250));
-	wxSizer *sizer = new wxFlexGridSizer(5, 1);
+	wxSizer *sizer = new wxFlexGridSizer(5, 1, 0);
 	
 	keyboardKeyList.clear();
 	if (!Keyboard::instance()->loadKeyFile())

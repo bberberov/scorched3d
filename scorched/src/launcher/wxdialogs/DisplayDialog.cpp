@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -449,15 +449,27 @@ void DisplayFrame::refreshScreen()
 	IDC_SLIDER1_CTRL->SetValue(OptionsDisplay::instance()->getBrightness());
 	IDC_SLIDER1_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getBrightnessEntry().getDescription(), wxConvUTF8));
 	IDC_VOLUME_CTRL->SetRange(0, 128);
+#if wxCHECK_VERSION(2, 8, 0)
+	IDC_VOLUME_CTRL->SetTickFreq(4);
+#else
 	IDC_VOLUME_CTRL->SetTickFreq(4, 0);
+#endif
 	IDC_VOLUME_CTRL->SetValue(OptionsDisplay::instance()->getSoundVolume());
 	IDC_VOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getSoundVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_MUSICVOLUME_CTRL->SetRange(0, 128);
+#if wxCHECK_VERSION(2, 8, 0)
+	IDC_MUSICVOLUME_CTRL->SetTickFreq(4);
+#else
 	IDC_MUSICVOLUME_CTRL->SetTickFreq(4, 0);
+#endif
 	IDC_MUSICVOLUME_CTRL->SetValue(OptionsDisplay::instance()->getMusicVolume());
 	IDC_MUSICVOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getMusicVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_AMBIENTVOLUME_CTRL->SetRange(0, 128);
+#if wxCHECK_VERSION(2, 8, 0)
+	IDC_AMBIENTVOLUME_CTRL->SetTickFreq(4);
+#else
 	IDC_AMBIENTVOLUME_CTRL->SetTickFreq(4, 0);
+#endif
 	IDC_AMBIENTVOLUME_CTRL->SetValue(OptionsDisplay::instance()->getAmbientSoundVolume());
 	IDC_AMBIENTVOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getAmbientSoundVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_USERNAME_CTRL->SetValue(wxString(OptionsDisplay::instance()->getOnlineUserName(), wxConvUTF8));
@@ -728,16 +740,18 @@ void DisplayFrame::onExportMod(wxCommandEvent &event)
 	wxString selection = modbox->GetString(selectionNo);
 	if (selection.empty()) return;
 
-	wxString file = ::wxFileSelector(wxT("Please choose the export file to save"),
-		convertString(S3D::getSettingsFile("")), // default path
-		convertString(S3D::formatStringBuffer("%s.s3m", (const char *) (selection.mb_str(wxConvUTF8)))), // default filename
+	wxString file = ::wxFileSelector(
+		wxT("Please choose the export file to save"),
+		convertString( S3D::getSettingsFile("") ), // default path
+		convertString( S3D::formatStringBuffer( "%s.s3m", (const char *)(selection.mb_str(wxConvUTF8)) ) ), // default filename
 		wxT(""), // default extension
 		wxT("*.s3m"),
 #if wxCHECK_VERSION(2, 8, 0)
-		wxFD_SAVE);
+		wxFD_SAVE
 #else
-		wxSAVE);
+		wxSAVE
 #endif
+	);
 	if (file.empty()) return;
 	ModFiles files;
 	if (!files.loadModFiles(std::string(selection.mb_str(wxConvUTF8)), false))
@@ -756,16 +770,18 @@ void DisplayFrame::onExportMod(wxCommandEvent &event)
 
 void DisplayFrame::onImportMod(wxCommandEvent &event)
 {
-	wxString file = ::wxFileSelector(wxT("Please choose the import file to open"),
-		convertString(S3D::getSettingsFile("")), // default path
+	wxString file = ::wxFileSelector(
+		wxT("Please choose the import file to open"),
+		convertString( S3D::getSettingsFile("") ), // default path
 		wxT(""), // default filename
 		wxT(""), // default extension
 		wxT("*.s3m"),
 #if wxCHECK_VERSION(2, 8, 0)
-		wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+		wxFD_OPEN | wxFD_FILE_MUST_EXIST
 #else
-		wxOPEN | wxFILE_MUST_EXIST);
+		wxOPEN | wxFILE_MUST_EXIST
 #endif
+	);
 	if (file.empty()) return;
 	ModFiles files;
 	std::string mod;
