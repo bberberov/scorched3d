@@ -8,7 +8,8 @@ AC_CONFIG_SRCDIR([src/launcher/scorched/main.cpp])
 AC_CANONICAL_TARGET
 
 dnl Setup for automake
-AM_INIT_AUTOMAKE([foreign -Wportability subdir-objects])
+dnl FIXME Scorched3D server fails to build with Automake `subdir-objects` option on OBS
+AM_INIT_AUTOMAKE([foreign -Wportability])
 
 dnl Check for tools
 AC_PROG_MAKE_SET
