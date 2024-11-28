@@ -22,7 +22,7 @@
 #include <math.h>
 
 #ifdef __cplusplus
-extern "C" { 
+extern "C" {
 #endif /* __cplusplus */
 
 #ifdef __DARWIN__
@@ -57,8 +57,8 @@ Image ImageJpgFactory::loadFromFile(const char * filename, bool readalpha)
 	Image result = loadFromBuffer(netBuffer, readalpha, errorMessage);
 	if (!result.getBits())
 	{
-		S3D::dialogExit("Scorched3D", 
-			S3D::formatStringBuffer("Failed to load jpg file %s, %s\n", 
+		S3D::dialogExit("Scorched3D",
+			S3D::formatStringBuffer("Failed to load jpg file %s, %s\n",
 			filename, errorMessage.c_str()));
 	}
 	return result;
@@ -100,13 +100,13 @@ skip_input_data (j_decompress_ptr cinfo, long num_bytes)
 METHODDEF(void)
 term_source (j_decompress_ptr cinfo)
 {
-  /* no work necessary here */
+	/* no work necessary here */
 }
 
 struct my_error_mgr {
-  struct jpeg_error_mgr pub;	/* "public" fields */
+	struct jpeg_error_mgr pub;	/* "public" fields */
 
-  jmp_buf setjmp_buffer;	/* for return to caller */
+	jmp_buf setjmp_buffer;	/* for return to caller */
 };
 
 typedef struct my_error_mgr *my_error_ptr;
@@ -114,15 +114,15 @@ typedef struct my_error_mgr *my_error_ptr;
 METHODDEF(void)
 my_error_exit (j_common_ptr cinfo)
 {
-  /* cinfo->err really points to a my_error_mgr struct, so coerce pointer */
-  my_error_ptr myerr = (my_error_ptr) cinfo->err;
+	/* cinfo->err really points to a my_error_mgr struct, so coerce pointer */
+	my_error_ptr myerr = (my_error_ptr) cinfo->err;
 
-  /* Always display the message. */
-  /* We could postpone this until after returning, if we chose. */
-  (*cinfo->err->output_message) (cinfo);
+	/* Always display the message. */
+	/* We could postpone this until after returning, if we chose. */
+	(*cinfo->err->output_message) (cinfo);
 
-  /* Return control to the setjmp point */
-  longjmp(myerr->setjmp_buffer, 1);
+	/* Return control to the setjmp point */
+	longjmp(myerr->setjmp_buffer, 1);
 }
 
 Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::string &errorMessage)
@@ -132,7 +132,7 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 
 	Image result;
 
-	cinfo.err = jpeg_std_error(&jerr.pub);	
+	cinfo.err = jpeg_std_error(&jerr.pub);
 	jerr.pub.error_exit = my_error_exit;
 	/* Establish the setjmp return context for my_error_exit to use. */
 	if (setjmp(jerr.setjmp_buffer)) {
@@ -159,7 +159,7 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 	src->init_source = init_source;
 	src->fill_input_buffer = fill_input_buffer;
 	src->skip_input_data = skip_input_data;
-	src->resync_to_restart = jpeg_resync_to_restart; /* use default method */
+	src->resync_to_restart = jpeg_resync_to_restart;	/* use default method */
 	src->term_source = term_source;
 
 	// Set up buffer
@@ -177,7 +177,7 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 		result.setLossless(false);
 
 		JSAMPARRAY buffer = (*cinfo.mem->alloc_sarray)
-			((j_common_ptr) &cinfo, JPOOL_IMAGE, 
+			((j_common_ptr) &cinfo, JPOOL_IMAGE,
 				cinfo.output_width * cinfo.output_components, 1);
 		while (cinfo.output_scanline < cinfo.output_height)
 		{
@@ -185,12 +185,12 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 			int lines = jpeg_read_scanlines(&cinfo, buffer, 1);
 			if (lines > 0)
 			{
-				int destPos = cinfo.output_width * cinfo.output_components * 
+				int destPos = cinfo.output_width * cinfo.output_components *
 					(cinfo.output_height - currentLine - 1);
 				JSAMPLE *src = buffer[0];
 				unsigned char *dest = &result.getBits()[destPos];
 
-				for (unsigned int i = 0; i < cinfo.output_width; ++i, 
+				for (unsigned int i = 0; i < cinfo.output_width; ++i,
 					dest+=cinfo.output_components, src+=cinfo.output_components)
 				{
 					dest[0] = src[0];
@@ -206,8 +206,8 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 				}
 			}
 		}
-	} 
-	else 
+	}
+	else
 	{
 		errorMessage = "Image format not supported";
 	}
