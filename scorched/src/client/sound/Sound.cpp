@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <algorithm>
 #include <common/Defines.h>
 #include <graph/OptionsDisplay.h>
 #include <common/Logger.h>
@@ -30,11 +31,10 @@
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
 #else
-#include <AL/al.h>
-#include <AL/alc.h>
-#include <AL/alut.h>
+#include <al.h>
+#include <alc.h>
+#include <alut.h>
 #endif
-#include <algorithm>
 
 Sound *Sound::instance_ = 0;
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -25,8 +25,8 @@
 #ifdef __DARWIN__
 #include <OpenAL/al.h>
 #else
-#include <AL/al.h>
-#include <AL/alut.h>
+#include <al.h>
+#include <alut.h>
 #endif
 
 #ifdef HAVE_OGG

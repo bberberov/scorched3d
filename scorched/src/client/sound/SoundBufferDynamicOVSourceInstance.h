@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -27,7 +27,7 @@
 #ifdef __DARWIN__
 #include <OpenAL/al.h>
 #else
-#include <AL/al.h>
+#include <al.h>
 #endif
 #include <ogg/ogg.h>
 #include <vorbis/codec.h>
