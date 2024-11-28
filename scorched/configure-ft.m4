@@ -11,13 +11,13 @@ m4_ifdef(
             where the freetype libraries are installed (returned by
             'freetype-config --libs' command) is in LD_LIBRARY_PATH or
             equivalent variable and freetype version is 7.0.1 or above
-            Try https://www.freetype.org to download freetype.
+            Try https://freetype.org/ to download freetype.
         ])]
     )],
     [PKG_CHECK_MODULES(
         [FT2],
         [freetype2 >= 7.0.1],
         [],
-        [AC_MSG_ERROR([FreeType2 must be installed on your system])]
+        [AC_MSG_ERROR([FreeType2 must be installed on your system (https://freetype.org/)])]
     )]
 )
