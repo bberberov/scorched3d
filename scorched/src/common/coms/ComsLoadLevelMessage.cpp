@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -108,6 +108,51 @@ bool ComsLoadLevelMessage::loadState(ScorchedContext &context, bool fullState)
 
 bool ComsLoadLevelMessage::loadTanks(ScorchedContext &context)
 {
+	/*
+	 * FIXME
+	 *
+	 * There is a timing bug which shows on really fast machines
+	 * where the client starts talking to the server before the
+	 * server initial setup is done.
+	 * Insofar as I have managed to debug this, the following
+	 * happens on slower machines, aka the GOOD case:
+	 *
+	 * Server TankAddSimAction::invokeAction() new Tank "(Bot) Fred"
+	 * Server TankAddSimAction::invokeAction() new Tank "(Bot) Ted"
+	 * Server TankAddSimAction::invokeAction() new Tank "Player 1"
+	 * Server TankAddSimAction::invokeAction() new Tank "Spectator"
+	 * Client TankAddSimAction::invokeAction() new Tank "(Bot) Fred"
+	 * Client TankAddSimAction::invokeAction() new Tank "(Bot) Ted"
+	 * Client TankAddSimAction::invokeAction() new Tank "Player 1"
+	 * Client TankAddSimAction::invokeAction() new Tank "Spectator"
+	 *
+	 * Note the server internally creates all tanks before the
+	 * client does and thus before the client starts sending
+	 * messages related to these tanks to the server.
+	 *
+	 * On a fast enough system (i7-10610U) the following order
+	 * has been observed instead:
+	 *
+	 * Server TankAddSimAction::invokeAction() new Tank "(Bot) Fred"
+	 * Server TankAddSimAction::invokeAction() new Tank "(Bot) Ted"
+	 * Client TankAddSimAction::invokeAction() new Tank "(Bot) Fred"
+	 * Client TankAddSimAction::invokeAction() new Tank "(Bot) Ted"
+	 * Client TankAddSimAction::invokeAction() new Tank "Player 1"
+	 * Client TankAddSimAction::invokeAction() new Tank "Spectator"
+	 * Server TankAddSimAction::invokeAction() new Tank "Player 1"
+	 * Server TankAddSimAction::invokeAction() new Tank "Spectator"
+	 *
+	 * Note the server creates the "Player 1" and "Spectator"
+	 * tanks after the client, this causes the server to ignore
+	 * some initial messages from the client related to these
+	 * tanks, after which things get stuck, breaking non-networked
+	 * games on fast machines.
+	 *
+	 * The sleep below is an ugly but effective workaround for this
+	 * issue.
+	 */
+	SDL_Delay(100);
+
 	NetBufferReader reader(tanksBuffer_);
 
 	// Add any new tanks
