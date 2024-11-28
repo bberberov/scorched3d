@@ -11,12 +11,6 @@ dnl Setup for automake
 dnl FIXME Scorched3D server fails to build with Automake `subdir-objects` option on OBS
 AM_INIT_AUTOMAKE([foreign -Wportability])
 
-dnl Require pkg-config or pkgconf
-m4_ifdef(
-	[PKG_PREREQ],
-	[m4_fatal([must install pkg-config 0.29 or later before running autoconf/autogen])]
-)
-
 dnl Check for tools
 AC_PROG_MAKE_SET
 AC_PROG_CC

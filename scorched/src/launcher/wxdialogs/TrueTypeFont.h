@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -21,14 +21,14 @@
 #if !defined(__INCLUDE_DialogUtilsh_INCLUDE__)
 #define __INCLUDE_DialogUtilsh_INCLUDE__
 
+#include <string>
 #include <wx/wx.h>
 #include <wx/image.h>
 #include <ft2build.h>
-#include <string>
-#include <freetype/freetype.h>
-#include <freetype/ftglyph.h>
-#include <freetype/ftoutln.h>
-#include <freetype/fttrigon.h>
+#include FT_FREETYPE_H
+#include FT_GLYPH_H
+#include FT_OUTLINE_H
+#include FT_TRIGONOMETRY_H
 
 class TrueTypeFont
 {
