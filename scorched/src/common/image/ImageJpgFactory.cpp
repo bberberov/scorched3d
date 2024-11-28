@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -79,7 +79,7 @@ fill_input_buffer (j_decompress_ptr cinfo)
 	src->next_input_byte = FakeEOI;
 	src->bytes_in_buffer = 2;
 
-	return TRUE;
+	return true;
 }
 
 METHODDEF(void)
@@ -166,7 +166,7 @@ Image ImageJpgFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha, std::st
 	src->bytes_in_buffer = buffer.getBufferUsed();
 	src->next_input_byte = (JOCTET *) buffer.getBuffer();
 
-	jpeg_read_header(&cinfo, TRUE);
+	jpeg_read_header(&cinfo, true);
 	jpeg_start_decompress(&cinfo);
 
 	if ((cinfo.output_components == 3 && !readalpha) ||
