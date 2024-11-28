@@ -26,7 +26,8 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 	// Display settings
 	wxStaticBox *displayBox = new wxStaticBox(parent, -1, wxT("&Display"));
 	wxStaticBoxSizer *displaySizer = new wxStaticBoxSizer(displayBox, wxVERTICAL);
-	wxFlexGridSizer *displaySizer2 = new wxFlexGridSizer(2, 3, 5, 5);
+
+	wxFlexGridSizer *displaySizer2 = new wxFlexGridSizer(3, 3, 5, 5);
 	wxStaticText *resText = new wxStaticText(parent, -1, wxT("&Resolution :"));
 	IDC_DISPLAY_CTRL = 
 		new wxComboBox(parent, -1,
@@ -256,7 +257,8 @@ static void createSpeedControls(wxWindow *parent, wxSizer *sizer)
 		wxStaticBox *waterDetailBox = new wxStaticBox(parent, -1, 
 													  wxT("Graphics Detail"));
 		wxStaticBoxSizer *waterDetailSizer = new wxStaticBoxSizer(waterDetailBox, wxHORIZONTAL);
-		wxGridSizer *waterDetailSizer2 = new wxGridSizer(3, 1, 10, 10);
+
+		wxGridSizer *waterDetailSizer2 = new wxGridSizer(1, 10, 10);
 		
 		IDC_NOWATERREF_CTRL = 
 		new wxCheckBox(parent, -1, wxT("Don't draw water reflections - Large Framerate Improvement"));
