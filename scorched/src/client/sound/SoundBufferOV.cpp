@@ -31,7 +31,7 @@
 
 #ifdef HAVE_OGG
 
-SoundBufferOV::SoundBufferOV(const char *fileName) : 
+SoundBufferOV::SoundBufferOV(const char *fileName) :
 	SoundBuffer(fileName),
 	buffer_(0)
 {
@@ -77,7 +77,7 @@ bool SoundBufferOV::openStream(const char *fileName, OggVorbis_File &oggStream)
 		read_func,
 		seek_func,
 		close_func,
-		tell_func 
+		tell_func
 	};
 
 	// Open file
@@ -93,28 +93,28 @@ bool SoundBufferOV::openStream(const char *fileName, OggVorbis_File &oggStream)
 	// Open stream
 	int result = ov_open_callbacks((void *) oggFile, &oggStream, 0, 0, callbacks);
 	if(result < 0)
-	{        
+	{
 		fclose(oggFile);
 		S3D::dialogMessage("OGG Vorbis",
 			S3D::formatStringBuffer("Could not open ogg stream \"%s\" : %s",
 			fileName, errorString(result)));
-		return false; 
+		return false;
 	}
 
 	return true;
 }
 
 int SoundBufferOV::readData(OggVorbis_File &oggStream, char *buffer, int bufferSize)
-{    
-	int size = 0;    
-	int section;    
+{
+	int size = 0;
+	int section;
 	while(size < bufferSize)
-	{        
-		int result = ov_read(&oggStream, buffer + size, 
-			bufferSize - size, ((SDL_BYTEORDER == SDL_LIL_ENDIAN)?0:1), 2, 1, &section);            
-		if (result > 0) size += result;        
+	{
+		int result = ov_read(&oggStream, buffer + size,
+			bufferSize - size, ((SDL_BYTEORDER == SDL_LIL_ENDIAN)?0:1), 2, 1, &section);
+		if (result > 0) size += result;
 		else if (result < 0) return -1;
-		else break;    
+		else break;
 	}
 	return size;
 }
@@ -122,13 +122,13 @@ int SoundBufferOV::readData(OggVorbis_File &oggStream, char *buffer, int bufferS
 bool SoundBufferOV::addDataToBuffer(vorbis_info *vorbisInfo, int buffer, char *dataBuffer, int size)
 {
 	ALenum format;
-    if(vorbisInfo->channels == 1) format = AL_FORMAT_MONO16;
+	if(vorbisInfo->channels == 1) format = AL_FORMAT_MONO16;
 	else format = AL_FORMAT_STEREO16;
 
 	// Load OV into buffer
 	int error = 0;
 	alGetError();
-	alBufferData(buffer, format, dataBuffer, size, vorbisInfo->rate);  
+	alBufferData(buffer, format, dataBuffer, size, vorbisInfo->rate);
 	if ((error = alGetError()) != AL_NO_ERROR)
 	{
 		return false;
@@ -138,21 +138,21 @@ bool SoundBufferOV::addDataToBuffer(vorbis_info *vorbisInfo, int buffer, char *d
 }
 
 const char *SoundBufferOV::errorString(int code)
-{    
-	switch(code)    
-	{        
-	case OV_EREAD:            
-		return ("Read from media.");        
-	case OV_ENOTVORBIS:            
-		return ("Not Vorbis data.");        
-	case OV_EVERSION:            
-		return ("Vorbis version mismatch.");        
-	case OV_EBADHEADER:            
-		return ("Invalid Vorbis header.");        
-	case OV_EFAULT:            
-		return ("Internal logic fault (bug or heap/stack corruption.");        
-	default:            
-		return ("Unknown Ogg error.");    
+{
+	switch(code)
+	{
+	case OV_EREAD:
+		return ("Read from media.");
+	case OV_ENOTVORBIS:
+		return ("Not Vorbis data.");
+	case OV_EVERSION:
+		return ("Vorbis version mismatch.");
+	case OV_EBADHEADER:
+		return ("Invalid Vorbis header.");
+	case OV_EFAULT:
+		return ("Internal logic fault (bug or heap/stack corruption.");
+	default:
+		return ("Unknown Ogg error.");
 	}
 }
 

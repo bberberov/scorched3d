@@ -42,7 +42,7 @@ void SoundBufferStaticSourceInstance::play(bool repeat)
 	if (!buffer_) return;
 
 	alSourcei(source_, AL_BUFFER, 0);
-    alSourcei(source_, AL_BUFFER, buffer_);
+	alSourcei(source_, AL_BUFFER, buffer_);
 	alSourcei(source_, AL_LOOPING, (repeat?AL_TRUE:AL_FALSE));
 	alSourcePlay(source_);
 }

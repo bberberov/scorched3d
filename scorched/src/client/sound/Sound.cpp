@@ -55,7 +55,7 @@ Sound::Sound() :
 	new ConsoleRuleMethodIAdapter<Sound>(
 		this, &Sound::showSoundBuffers, "SoundBuffers");
 	new ConsoleRuleMethodIAdapterEx<Sound>(
-		this, &Sound::soundPlay, "SoundPlay", 
+		this, &Sound::soundPlay, "SoundPlay",
 		ConsoleUtil::formParams(
 		ConsoleRuleParam("filename", ConsoleRuleTypeString)));
 }
@@ -97,13 +97,13 @@ void Sound::destroy()
 
 		ALCcontext *context = alcGetCurrentContext();
 		ALCdevice *device = alcGetContextsDevice(context);
-        alcDestroyContext(context);
-        alcCloseDevice(device);
+		alcDestroyContext(context);
+		alcCloseDevice(device);
 	}
 	init_ = false;
 }
 
-static char *checkString(char *x) 
+static char *checkString(char *x)
 {
 	return (char *)(x?x:"null");
 }
@@ -131,7 +131,7 @@ bool Sound::init(int channels)
 		return false;
 	}
 
-	alcMakeContextCurrent(soundContext); 
+	alcMakeContextCurrent(soundContext);
 	alDistanceModel(AL_INVERSE_DISTANCE);
 
 	Logger::log(S3D::formatStringBuffer("AL_VENDOR:%s",
@@ -151,7 +151,7 @@ bool Sound::init(int channels)
 		SoundSource *source = new SoundSource;
 		if (!source->create())
 		{
-			S3D::dialogMessage("Scorched3D", 
+			S3D::dialogMessage("Scorched3D",
 				S3D::formatStringBuffer("Failed to create sound channel number %i", i));
 			return false;
 		}
@@ -167,10 +167,8 @@ void Sound::soundPlay(std::vector<ConsoleRuleValue> &values)
 {
 	ConsoleRuleValue &fileName = values[1];
 
-	SoundBuffer *buffer = 
-		fetchOrCreateBuffer(fileName.valueString);
-	VirtualSoundSource *source = 
-		new VirtualSoundSource(10000, false, true);
+	SoundBuffer *buffer = fetchOrCreateBuffer(fileName.valueString);
+	VirtualSoundSource *source = new VirtualSoundSource(10000, false, true);
 	source->setRelative();
 	source->play(buffer);
 }
@@ -191,7 +189,7 @@ void Sound::showSoundBuffers()
 		if (source->getVirtualSource())
 		{
 			Logger::log(S3D::formatStringBuffer("%i - %u,%f - %s%s:%s",
-				i, 
+				i,
 				source->getVirtualSource()->getPriority(),
 				source->getVirtualSource()->getDistance(),
 				(source->getStopped()?"Finished":(source->getVirtualSource()->getPlaying()?"Playing":"Stopped")),
@@ -236,7 +234,7 @@ static inline bool lt_virt(PlayingSoundSource *p2, PlayingSoundSource *p1)
 	unsigned int priority1 = 0;
 	unsigned int priority2 = 0;
 
-    VirtualSoundSource *v1 = p1->getVirtualSource();
+	VirtualSoundSource *v1 = p1->getVirtualSource();
 	VirtualSoundSource *v2 = p2->getVirtualSource();
 
 	if (v1 && !p1->getStopped()) priority1 = v1->getPriority();
@@ -278,7 +276,7 @@ void Sound::updateSources()
 	}
 
 	// Sort the queue by priority and distance
-	std::sort(playingSources_.begin(), playingSources_.end(), lt_virt); 
+	std::sort(playingSources_.begin(), playingSources_.end(), lt_virt);
 
 	// Start and stop the relevant sources
 	int totalSources = (int) totalSources_.size();

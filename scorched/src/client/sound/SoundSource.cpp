@@ -103,7 +103,7 @@ void SoundSource::simulate(bool repeat)
 void SoundSource::stop()
 {
 	if (!source_ || !buffer_) return;
-	if (getPlaying()) 
+	if (getPlaying())
 	{
 		buffer_->stop();
 	}
