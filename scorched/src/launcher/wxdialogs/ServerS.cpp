@@ -22,7 +22,7 @@
 
 static void createControls(wxWindow *parent, wxSizer *sizer)
 {
-	wxStaticBox *servernameBox = new wxStaticBox(parent, -1, wxT("Server Settings"));
+	wxStaticBox      *servernameBox   = new wxStaticBox(parent, -1, wxT("Server Settings"));
 	wxStaticBoxSizer *servernameSizer = new wxStaticBoxSizer(servernameBox, wxVERTICAL);
 
 	wxFlexGridSizer *servernameSizer2 = new wxFlexGridSizer(4, 2, 5, 5);
@@ -64,11 +64,11 @@ static void createControls(wxWindow *parent, wxSizer *sizer)
 	IDC_LOGTOFILE_CTRL   = new wxCheckBox(
 		parent, -1,          wxT("Log to file")
 	);
-	servernameSizer->Add(IDC_PUBLISH_CTRL, 0, wxTOP, 5);
-	servernameSizer->Add(IDC_USEUPNP_CTRL, 0, wxTOP, 5);
-	servernameSizer->Add(IDC_ALLOWSAME_CTRL, 0, wxTOP, 5);
+	servernameSizer->Add(IDC_PUBLISH_CTRL,     0, wxTOP, 5);
+	servernameSizer->Add(IDC_USEUPNP_CTRL,     0, wxTOP, 5);
+	servernameSizer->Add(IDC_ALLOWSAME_CTRL,   0, wxTOP, 5);
 	servernameSizer->Add(IDC_ALLOWSAMEID_CTRL, 0, wxTOP, 5);
-	servernameSizer->Add(IDC_LOGTOFILE_CTRL, 0, wxTOP, 5);
+	servernameSizer->Add(IDC_LOGTOFILE_CTRL,   0, wxTOP, 5);
 
 	sizer->Add(servernameSizer, 0, wxALL, 5);
 	

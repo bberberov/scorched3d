@@ -114,16 +114,16 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 
 	{
 	// Load settings
-	wxStaticBox *speedBox = new wxStaticBox(parent, -1, wxT("Game Detail Options"));
+	wxStaticBox      *speedBox   = new wxStaticBox(parent, -1, wxT("Game Detail Options"));
 	wxStaticBoxSizer *speedSizer = new wxStaticBoxSizer(speedBox, wxVERTICAL);
 
 	wxGridSizer *loadSizer = new wxFlexGridSizer(2, 2, 0);
 
-	IDC_LOADULTRA_CTRL    = new wxButton(parent, ID_LOADULTRA, wxT("&Ultra Detail"), wxDefaultPosition, wxSize(120,-1));
+	IDC_LOADULTRA_CTRL    = new wxButton(parent, ID_LOADULTRA,    wxT("&Ultra Detail"),  wxDefaultPosition, wxSize(120,-1));
 	IDC_LOADDEFAULTS_CTRL = new wxButton(parent, ID_LOADDEFAULTS, wxT("&Normal Detail"), wxDefaultPosition, wxSize(120,-1));
-	IDC_LOADMEDIUM_CTRL   = new wxButton(parent, ID_LOADMEDIUM, wxT("Faster Detail"), wxDefaultPosition, wxSize(120,-1));
-	IDC_LOADFASTEST_CTRL  = new wxButton(parent, ID_LOADFASTEST, wxT("Fastest Detail"), wxDefaultPosition, wxSize(120,-1));
-	IDC_LOADSAFE_CTRL     = new wxButton(parent, ID_LOADSAFE, wxT("Safe Mode"), wxDefaultPosition, wxSize(120,-1));
+	IDC_LOADMEDIUM_CTRL   = new wxButton(parent, ID_LOADMEDIUM,   wxT("Faster Detail"),  wxDefaultPosition, wxSize(120,-1));
+	IDC_LOADFASTEST_CTRL  = new wxButton(parent, ID_LOADFASTEST,  wxT("Fastest Detail"), wxDefaultPosition, wxSize(120,-1));
+	IDC_LOADSAFE_CTRL     = new wxButton(parent, ID_LOADSAFE,     wxT("Safe Mode"),      wxDefaultPosition, wxSize(120,-1));
 	loadSizer->Add(IDC_LOADULTRA_CTRL, 0, wxALL, 2);
 	loadSizer->Add(
 		new wxStaticText(parent, -1,
@@ -354,7 +354,7 @@ static void createIdentControls(wxWindow *parent, wxSizer *sizer)
 {
 	{
 	// User name edit box
-	wxStaticBox *userNameBox = new wxStaticBox(parent, -1, wxT("Online User Name"));
+	wxStaticBox      *userNameBox   = new wxStaticBox(parent, -1, wxT("Online User Name"));
 	wxStaticBoxSizer *userNameSizer = new wxStaticBoxSizer(userNameBox, wxVERTICAL);
 
 	IDC_USERNAME_CTRL = new wxTextCtrl(parent, -1, wxString(), wxDefaultPosition, wxSize(300, -1));
@@ -364,7 +364,7 @@ static void createIdentControls(wxWindow *parent, wxSizer *sizer)
 
 	{
 	// TankModel edit box
-	wxStaticBox *tankModelBox = new wxStaticBox(parent, -1, wxT("Online Tank Model"));
+	wxStaticBox      *tankModelBox   = new wxStaticBox(parent, -1, wxT("Online Tank Model"));
 	wxStaticBoxSizer *tankModelSizer = new wxStaticBoxSizer(tankModelBox, wxVERTICAL);
 
 	IDC_TANKMODEL_CTRL = new wxTextCtrl(parent, -1, wxString(), wxDefaultPosition, wxSize(300, -1));
@@ -374,7 +374,7 @@ static void createIdentControls(wxWindow *parent, wxSizer *sizer)
 
 	{
 	// User id edit box
-	wxStaticBox *userBox = new wxStaticBox(
+	wxStaticBox      *userBox   = new wxStaticBox(
 		parent,
 		-1,
 		wxT("User ID (Uniquely identifies this player for stats, not generated from any user information.)")
