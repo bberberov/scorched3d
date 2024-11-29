@@ -115,7 +115,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 	{
 	// Load settings
 	wxStaticBox *speedBox = new wxStaticBox(parent, -1, wxT("Game Detail Options"));
-	wxStaticBoxSizer *speedSizer = new wxStaticBoxSizer(speedBox, wxHORIZONTAL);
+	wxStaticBoxSizer *speedSizer = new wxStaticBoxSizer(speedBox, wxVERTICAL);
 
 	wxGridSizer *loadSizer = new wxFlexGridSizer(2, 2, 0);
 
@@ -165,7 +165,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 	);
 
 	speedSizer->Add(loadSizer, 0, wxGROW);
-	sizer->Add(speedSizer, 0, wxGROW | wxTOP | wxALIGN_CENTER, 5);
+	sizer->Add(speedSizer, 0, wxGROW | wxALL, 5);
 	}
 }
 
@@ -389,7 +389,7 @@ static void createIdentControls(wxWindow *parent, wxSizer *sizer)
 	IDC_USERID_CTRL->SetColLabelSize(20);
 	IDC_USERID_CTRL->SetRowLabelSize(0);
 	IDC_HOSTDESC_CTRL = new wxTextCtrl(parent, -1, wxString(), wxDefaultPosition, wxSize(300, -1), wxTE_READONLY);
-	userSizer->Add(IDC_USERID_CTRL,   1, wxALIGN_CENTER | wxGROW);
+	userSizer->Add(IDC_USERID_CTRL,   1, wxGROW        );
 	userSizer->Add(IDC_HOSTDESC_CTRL, 0, wxALIGN_CENTER);
 
 	sizer->Add(userSizer, 1, wxGROW | wxLEFT | wxRIGHT | wxTOP, 5);
@@ -500,7 +500,7 @@ static void createKeysControls(wxWindow *parent, wxSizer *topsizer)
 	scrolledWindow->SetSizer(sizer);
 	wxSize minSize = sizer->CalcMin();
 	scrolledWindow->SetScrollbars(10, 10, (minSize.GetWidth() + 10) / 10, (minSize.GetHeight() + 10) / 10);
-	topsizer->Add(scrolledWindow, 1, wxGROW | wxALL | wxALIGN_CENTER, 2);
+	topsizer->Add(scrolledWindow, 1, wxGROW | wxALL, 2);
 
 	// Add the load default keys button
 	IDC_LOADKEYDEFAULTS_CTRL = new wxButton(parent, ID_KEYDEFAULTS, wxT("Load Default Keys"));
