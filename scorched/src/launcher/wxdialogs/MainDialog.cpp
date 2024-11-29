@@ -52,19 +52,15 @@ wxString convertString(const std::string &input)
 	return result;
 }
 
-void addTitleToWindow(
-	wxWindow *parent,
-	wxSizer *sizer,
-	const char *fileName,
-	int buttonId)
+void addTitleToWindow(wxWindow *parent, wxSizer *sizer, const char *fileName, int buttonId)
 {
 	wxBitmap scorchedBitmap;
-	if (scorchedBitmap.LoadFile(wxString(fileName, wxConvUTF8), 
-		wxBITMAP_TYPE_BMP) &&
-		scorchedBitmap.Ok())
+	if (
+		scorchedBitmap.LoadFile(wxString(fileName, wxConvUTF8), wxBITMAP_TYPE_BMP)
+		&& scorchedBitmap.Ok()
+	)
 	{
-		wxBitmapButton *button = new wxBitmapButton(
-			parent, buttonId, scorchedBitmap);
+		wxBitmapButton *button = new wxBitmapButton(parent, buttonId, scorchedBitmap);
 		wxBoxSizer *boxSizer = new wxBoxSizer(wxHORIZONTAL);
 		boxSizer->Add(button, 0, wxALL, 5);
 		sizer->Add(boxSizer, 0, wxALIGN_CENTER | wxALL, 5);
@@ -78,34 +74,33 @@ static int exitCode_ = 0;
 class ScorchedProcess : public wxProcess
 {
 public:
-	ScorchedProcess(bool server) : 
+	ScorchedProcess(bool server)
+		:
 		wxProcess(!server?wxPROCESS_REDIRECT:0),
 		server_(server)
-	{ 
+	{
 		if (server_) serverProcessesRunning_++;
-		else clientProcessesRunning_++;
+		else         clientProcessesRunning_++;
 	}
 	
-	virtual void OnTerminate(int pid, int status) 
+	virtual void OnTerminate(int pid, int status)
 	{
 		if (server_) serverProcessesRunning_--;
-		else clientProcessesRunning_--;
+		else         clientProcessesRunning_--;
 
 		if (status != 0)
 		{
 			SDL_LockMutex(messageMutex_);
 			if (server_) exitCode_ = 64; // So it doesn't say to load failsafe
-			else exitCode_ = status;
+			else         exitCode_ = status;
 
 			if (status != 64)
 			{
-				messageString_ = "The Scorched3d process "
-					"terminated unexpectedly.\n";
+				messageString_ = "The Scorched3d process terminated unexpectedly.\n";
 			}
 			else
 			{
-				messageString_ = "The Scorched3d process "
-					"terminated due to configuration errors.\n";
+				messageString_ = "The Scorched3d process terminated due to configuration errors.\n";
 			}
 			while (IsInputAvailable())
 			{
@@ -141,13 +136,18 @@ unsigned int ScorchedProcess::serverProcessesRunning_(0);
 
 void runScorched3D(const char *text, bool server)
 {
-	if (!server &&
-		ScorchedProcess::getClientProcessesRunning() > 0)
+	if (
+		!server
+		&& ScorchedProcess::getClientProcessesRunning() > 0
+	)
 	{
-		if (::wxMessageBox(
-			wxT("You are already running the game, do you wish to run another copy?"),
-			wxT("Scorched3D"),
-			wxCANCEL | wxOK | wxICON_EXCLAMATION) == wxCANCEL)
+		if (
+			::wxMessageBox(
+				wxT("You are already running the game, do you wish to run another copy?"),
+				wxT("Scorched3D"),
+				wxCANCEL | wxOK | wxICON_EXCLAMATION
+			) == wxCANCEL
+		)
 		{
 			return;
 		}
@@ -160,23 +160,29 @@ void runScorched3D(const char *text, bool server)
 	if (exePart) ((char *)exePart)[0] = '\0';
 
 	char path[1024];
-	snprintf(path, 1024, "\"%s%s%s\" %s -settingsdir %s %s", 
-		exeName.c_str(), 
+	snprintf(
+		path, 1024, "\"%s%s%s\" %s -settingsdir %s %s",
+		exeName.c_str(),
 		(server?"s":"c"),
 		(exePart?".exe":""),
 		(ScorchedParams::instance()->getAllowExceptions()?" -allowexceptions":""),
-		ScorchedParams::instance()->getSettingsDir(), 
-		text);
+		ScorchedParams::instance()->getSettingsDir(),
+		text
+	);
 
 	ScorchedProcess *process = new ScorchedProcess(server);
 	long result = ::wxExecute(wxString(path, wxConvUTF8), wxEXEC_ASYNC, process);
 	if (result == 0)
 	{
 		delete process;
-		S3D::dialogMessage(scorched3dAppName, S3D::formatStringBuffer(
-			"Error: Failed to execute scorched3d using commandline :-\n"
-			"%s",
-			path));
+		S3D::dialogMessage(
+			scorched3dAppName,
+			S3D::formatStringBuffer(
+				"Error: Failed to execute scorched3d using commandline :-\n"
+				"%s",
+				path
+			)
+		);
 	}
 }
 
@@ -186,12 +192,15 @@ wxButton *addButtonToWindow(
 	const char *bitmapName,
 	wxWindow *parent,
 	wxSizer *sizer,
-	wxObjectRefData *data)
+	wxObjectRefData *data
+)
 {
 	wxButton *button = 0;
 	wxBitmap bitmap;
-	if (bitmap.LoadFile(wxString(bitmapName, wxConvUTF8), wxBITMAP_TYPE_BMP) &&
-		bitmap.Ok())
+	if (
+		bitmap.LoadFile(wxString(bitmapName, wxConvUTF8), wxBITMAP_TYPE_BMP)
+		&& bitmap.Ok()
+	)
 	{
 		button = new wxBitmapButton(parent, id, bitmap);
 	}
@@ -201,9 +210,7 @@ wxButton *addButtonToWindow(
 	}
 	if (data) button->SetRefData(data);
 
-	wxStaticText *staticText = new wxStaticText(
-		parent, -1, 
-		wxString(text, wxConvUTF8));
+	wxStaticText *staticText = new wxStaticText(parent, -1, wxString(text, wxConvUTF8));
 
 	sizer->Add(button, 0, wxRIGHT, 5);
 	sizer->Add(staticText, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
@@ -216,9 +223,9 @@ class MainFrame: public wxFrame
 public:
 	MainFrame();
 
-	void onTimer(wxTimerEvent &event);
+	void onTimer(wxTimerEvent& event);
 	void onPaint(wxPaintEvent& event);
-	void onMotion(wxMouseEvent &event);	
+	void onMotion(wxMouseEvent& event);
 	void onEraseBackground(wxEraseEvent &event);
 
 	void onDisplayButton();
@@ -248,23 +255,28 @@ private:
 	long mouseX_, mouseY_;
 	int lastPos_;
 
-	void generateCachedImage(int x, int y, 
-		wxImage &src, wxBitmap &destBitamp, 
-		bool highlight = false);
+	void generateCachedImage(int x, int y, wxImage &src, wxBitmap &destBitamp, bool highlight = false);
 };
 
 BEGIN_EVENT_TABLE(MainFrame, wxFrame)
 	EVT_TIMER(ID_MAIN_TIMER, MainFrame::onTimer)
-	EVT_PAINT(MainFrame::onPaint) 
+	EVT_PAINT(MainFrame::onPaint)
 	EVT_MOUSE_EVENTS(MainFrame::onMotion)
 	EVT_ERASE_BACKGROUND(MainFrame::onEraseBackground)
 END_EVENT_TABLE()
 
-MainFrame::MainFrame() :
-	wxFrame((wxFrame *)NULL, -1, wxString(scorched3dAppName, wxConvUTF8), 
+MainFrame::MainFrame()
+	:
+	wxFrame(
+		(wxFrame *)NULL,
+		-1,
+		wxString(scorched3dAppName, wxConvUTF8),
 		wxDefaultPosition, wxDefaultSize,
-		wxMINIMIZE_BOX | wxCAPTION | wxSYSTEM_MENU),
-	mouseX_(0), mouseY_(0), lastPos_(-1)
+		wxMINIMIZE_BOX | wxCAPTION | wxSYSTEM_MENU
+	),
+	mouseX_(0),
+	mouseY_(0),
+	lastPos_(-1)
 {
 	if (!messageMutex_) messageMutex_ = SDL_CreateMutex();
 
@@ -277,9 +289,12 @@ MainFrame::MainFrame() :
 #endif
 
 	// Load the backdrop bitmaps
-	if (!backdropImage_.LoadFile(
-		convertString(S3D::getDataFile("data/images/backdrop.gif")), 
-		wxBITMAP_TYPE_GIF))
+	if (
+		!backdropImage_.LoadFile(
+			convertString(S3D::getDataFile("data/images/backdrop.gif")),
+			wxBITMAP_TYPE_GIF
+		)
+	)
 	{
 		S3D::dialogMessage("Scorched", "Failed to load backdrop");
 	}
@@ -292,12 +307,12 @@ MainFrame::MainFrame() :
 		const char *description;
 		int x, y;
 	} imageDefinitions[] = {
-		"Play", "- Play a game.", 30, 150,
-		"Start Server", "- Start a LAN or internet server.", 30, 180,
-		"Settings", "- Change the display, sound or other settings.", 30, 210,
-		"Help", "- View the online help.", 30, 260,
-		"Donate", "- Show support for Scorched3D.", 30, 290,
-		"Quit", "- Exit the game.", 30, 340
+		"Play",         "- Play a game.",                                 30, 150,
+		"Start Server", "- Start a LAN or internet server.",              30, 180,
+		"Settings",     "- Change the display, sound or other settings.", 30, 210,
+		"Help",         "- View the online help.",                        30, 260,
+		"Donate",       "- Show support for Scorched3D.",                 30, 290,
+		"Quit",         "- Exit the game.",                               30, 340
 	};
 
 	TrueTypeFont largeImageFont(S3D::getDataFile("data/fonts/dejavusans.ttf"), 14);
@@ -309,11 +324,12 @@ MainFrame::MainFrame() :
 		image->x = imageDefinitions[i].x;
 		image->y = imageDefinitions[i].y;
 
-		if (!largeImageFont.getImageForText(imageDefinitions[i].name, image->loadedImage) ||
-			!smallImageFont.getImageForText(imageDefinitions[i].description, image->descriptionImage))
+		if (
+			   !largeImageFont.getImageForText(imageDefinitions[i].name,        image->loadedImage)
+			|| !smallImageFont.getImageForText(imageDefinitions[i].description, image->descriptionImage)
+		)
 		{
-			S3D::dialogMessage("Scorched", 
-				S3D::formatStringBuffer("Failed to load button %s", imageDefinitions[i].name));
+			S3D::dialogMessage("Scorched", S3D::formatStringBuffer("Failed to load button %s", imageDefinitions[i].name));
 		}
 		else
 		{
@@ -329,7 +345,7 @@ MainFrame::MainFrame() :
 	// Create the positioning sizer
 	wxBoxSizer *topsizer = new wxBoxSizer(wxVERTICAL);
 	topsizer->SetMinSize(533, 400);
-	SetSizer(topsizer); 
+	SetSizer(topsizer);
 	topsizer->SetSizeHints(this); // set size hints to honour minimum size
 
 	CentreOnScreen();
@@ -343,43 +359,45 @@ void MainFrame::onMotion(wxMouseEvent &event)
 	int foundPos = -1;
 	int pos = 0;
 	std::list<ImageData *>::iterator itor;
-	for (itor = images_.begin();
-		itor != images_.end();
-		++itor, pos++)
+	for (itor = images_.begin(); itor != images_.end(); ++itor, pos++)
 	{
 		ImageData *imageData = (*itor);
-		if (mouseX_ > imageData->x &&
-			mouseY_ > imageData->y &&
-			mouseX_ < imageData->x + imageData->cachedBitmap1.GetWidth() &&
-			mouseY_ < imageData->y + imageData->cachedBitmap1.GetHeight())
+		if (
+			   mouseX_ > imageData->x
+			&& mouseY_ > imageData->y
+			&& mouseX_ < imageData->x + imageData->cachedBitmap1.GetWidth()
+			&& mouseY_ < imageData->y + imageData->cachedBitmap1.GetHeight()
+		)
 		{
 			foundPos = pos;
 		}
 	}
 
-	if (event.ButtonDown() &&
-		foundPos != -1)
+	if (
+		event.ButtonDown()
+		&& foundPos != -1
+	)
 	{
 		switch (foundPos)
 		{
-		case 0:
-			onSingleButton();
-			break;
-		case 1:
-			onServerButton();
-			break;
-		case 2:
-			onDisplayButton();
-			break;
-		case 3:
-			onHelpButton();
-			break;
-		case 4:
-			onDonateClick();
-			break;
-		case 5:
-			onQuitButton();
-			break;
+			case 0:
+				onSingleButton();
+				break;
+			case 1:
+				onServerButton();
+				break;
+			case 2:
+				onDisplayButton();
+				break;
+			case 3:
+				onHelpButton();
+				break;
+			case 4:
+				onDonateClick();
+				break;
+			case 5:
+				onQuitButton();
+				break;
 		}
 	}
 
@@ -390,20 +408,14 @@ void MainFrame::onMotion(wxMouseEvent &event)
 	}
 }
 
-void MainFrame::generateCachedImage(int x, int y, 
-	wxImage &src, wxBitmap &destBitamp,
-	bool highlight)
+void MainFrame::generateCachedImage(int x, int y, wxImage &src, wxBitmap &destBitamp, bool highlight)
 {
-	wxImage dest(
-		src.GetWidth(),
-		src.GetHeight());
+	wxImage dest(src.GetWidth(), src.GetHeight());
 
 	unsigned char *backdropdata = backdropImage_.GetData();
-	backdropdata += 
-		3 * x +
-		3 * y * backdropImage_.GetWidth();
+	backdropdata += 3 * x + 3 * y * backdropImage_.GetWidth();
 	
-	unsigned char *srcdata = src.GetData();
+	unsigned char *srcdata  = src.GetData();
 	unsigned char *destdata = dest.GetData();
 	for (int y=0; y<src.GetHeight(); y++)
 	{
@@ -413,7 +425,7 @@ void MainFrame::generateCachedImage(int x, int y,
 			float alpha = srcdata[0] + srcdata[1] + srcdata[2];
 			alpha /= 255.0f + 255.0f + 255.0f;
 
-			float mult = (highlight?1.5f:1.0f);
+			float mult = (highlight ? 1.5f : 1.0f);
 			float src0 = float(srcdata[0]) * mult; if (src0 > 255.0f) src0 = 255.0f;
 			float src1 = float(srcdata[1]) * mult; if (src1 > 255.0f) src1 = 255.0f;
 			float src2 = float(srcdata[2]) * mult; if (src2 > 255.0f) src2 = 255.0f;
@@ -421,12 +433,11 @@ void MainFrame::generateCachedImage(int x, int y,
 			destdata[1] = (unsigned char) ((1.0f - alpha) * float(backdropdata[1]) + alpha * float(src1));
 			destdata[2] = (unsigned char) ((1.0f - alpha) * float(backdropdata[2]) + alpha * float(src2));
 
-			srcdata += 3;
-			destdata += 3;
+			srcdata      += 3;
+			destdata     += 3;
 			backdropdata += 3;
 		}
 		backdropdata = backdropstart + 3 * backdropImage_.GetWidth();
-		
 	}
 
 	destBitamp = wxBitmap(dest, -1);
@@ -440,33 +451,36 @@ void MainFrame::onPaint(wxPaintEvent& event)
 
 	// So its easy to display an alpha blended bitmap in wxWindows then!!!
 	std::list<ImageData *>::iterator itor;
-	for (itor = images_.begin();
-		itor != images_.end();
-		++itor)
+	for (itor = images_.begin(); itor != images_.end(); ++itor)
 	{
 		ImageData *imageData = (*itor);
 
 		if (!imageData->cachedBitmap1.Ok())
 		{
-			generateCachedImage(imageData->x, imageData->y, 
-				imageData->loadedImage, imageData->cachedBitmap1, false);
-			generateCachedImage(imageData->x, imageData->y, 
-				imageData->loadedImage, imageData->cachedBitmap2, true);
-			generateCachedImage(imageData->x + 135, imageData->y + 2, 
-				imageData->descriptionImage, imageData->cachedDescription, true);
+			generateCachedImage(
+				imageData->x,       imageData->y,     imageData->loadedImage,      imageData->cachedBitmap1,     false
+			);
+			generateCachedImage(
+				imageData->x,       imageData->y,     imageData->loadedImage,      imageData->cachedBitmap2,      true
+			);
+			generateCachedImage(
+				imageData->x + 135, imageData->y + 2, imageData->descriptionImage, imageData->cachedDescription,  true
+			);
 		}
 
-		if (mouseX_ > imageData->x &&
-			mouseY_ > imageData->y &&
-			mouseX_ < imageData->x + imageData->cachedBitmap1.GetWidth() &&
-			mouseY_ < imageData->y + imageData->cachedBitmap1.GetHeight())
+		if (
+			   mouseX_ > imageData->x
+			&& mouseY_ > imageData->y
+			&& mouseX_ < imageData->x + imageData->cachedBitmap1.GetWidth()
+			&& mouseY_ < imageData->y + imageData->cachedBitmap1.GetHeight()
+		)
 		{
-			dc.DrawBitmap(imageData->cachedBitmap2, imageData->x, imageData->y, false);
+			dc.DrawBitmap(imageData->cachedBitmap2,     imageData->x,       imageData->y,     false);
 			dc.DrawBitmap(imageData->cachedDescription, imageData->x + 135, imageData->y + 2, false);
 		}
 		else
 		{
-			dc.DrawBitmap(imageData->cachedBitmap1, imageData->x, imageData->y, false);
+			dc.DrawBitmap(imageData->cachedBitmap1,     imageData->x,       imageData->y,     false);
 		}
 	}
 }
@@ -490,20 +504,19 @@ void MainFrame::onTimer(wxTimerEvent &event)
 	{
 		if (exitCode_ != 64)
 		{
-			newString.append("\n"
-				"Would you like to load the failsafe "
-				"scorched3d settings?\n"
-				"This gives the best chance of working but "
-				"at the cost of graphical detail.\n"
-				"You can adjust this later in the Scorched3D "
-				"display settings dialog.\n"
-				"Note: Most problems can be fixed by using "
-				"the very latest drivers\n"
-				"for your graphics card.");
+			newString.append(
+				"\n"
+				"Would you like to load the failsafe scorched3d settings?\n"
+				"This gives the best chance of working but at the cost of graphical detail.\n"
+				"You can adjust this later in the Scorched3D display settings dialog.\n"
+				"Note: Most problems can be fixed by using the very latest drivers\n"
+				"for your graphics card."
+			);
 			int answer = ::wxMessageBox(
 				wxString(newString.c_str(), wxConvUTF8),
 				wxT("Scorched3D Abnormal Termination"),
-				wxYES_NO | wxICON_ERROR);
+				wxYES_NO | wxICON_ERROR
+			);
 			if (answer == wxYES)
 			{
 				OptionsDisplay::instance()->loadSafeValues();
@@ -515,7 +528,8 @@ void MainFrame::onTimer(wxTimerEvent &event)
 			::wxMessageBox(
 				wxString(newString.c_str(), wxConvUTF8),
 				wxT("Scorched3D Termination"),
-				wxICON_ERROR);
+				wxICON_ERROR
+			);
 		}
 	}
 }
@@ -563,13 +577,18 @@ void showMainDialog()
 	if (newVersion)
 	{
 		wxBitmap bitmap;
-		if (bitmap.LoadFile(convertString(S3D::getDataFile("data/images/splash.gif")), 
-			wxBITMAP_TYPE_GIF))
+		if (bitmap.LoadFile(convertString(S3D::getDataFile("data/images/splash.gif")), wxBITMAP_TYPE_GIF))
 		{
-			new wxSplashScreen(bitmap,
+			new wxSplashScreen(
+				bitmap,
 				wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
-				9000, NULL, -1, wxDefaultPosition, wxDefaultSize,
-				wxSIMPLE_BORDER | wxSTAY_ON_TOP);
+				9000,
+				NULL,
+				-1,
+				wxDefaultPosition,
+				wxDefaultSize,
+				wxSIMPLE_BORDER | wxSTAY_ON_TOP
+			);
 		}
 	}
 }

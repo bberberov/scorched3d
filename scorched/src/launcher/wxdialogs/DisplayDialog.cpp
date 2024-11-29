@@ -82,20 +82,21 @@ protected:
 };
 
 BEGIN_EVENT_TABLE(DisplayFrame, wxDialog)
-	EVT_BUTTON(ID_LOADULTRA,  DisplayFrame::onLoadUltraButton)
-    EVT_BUTTON(ID_LOADDEFAULTS,  DisplayFrame::onLoadDefaultsButton)
+	EVT_BUTTON(ID_LOADULTRA,    DisplayFrame::onLoadUltraButton)
+	EVT_BUTTON(ID_LOADDEFAULTS, DisplayFrame::onLoadDefaultsButton)
 	EVT_BUTTON(ID_LOADFASTEST,  DisplayFrame::onLoadFastestButton)
-	EVT_BUTTON(ID_LOADMEDIUM,  DisplayFrame::onLoadMediumButton)
+	EVT_BUTTON(ID_LOADMEDIUM,   DisplayFrame::onLoadMediumButton)
 	EVT_BUTTON(ID_KEYDEFAULTS,  DisplayFrame::onLoadDefaultKeysButton)
-    EVT_BUTTON(ID_LOADSAFE,  DisplayFrame::onLoadSafeButton)
-    EVT_BUTTON(ID_KEY,  DisplayFrame::onKeyButton)
-	EVT_BUTTON(ID_IMPORT,  DisplayFrame::onImportMod)
-	EVT_BUTTON(ID_EXPORT,  DisplayFrame::onExportMod)
-	EVT_CHECKBOX(ID_MORERES, DisplayFrame::onMoreRes) 
+	EVT_BUTTON(ID_LOADSAFE,     DisplayFrame::onLoadSafeButton)
+	EVT_BUTTON(ID_KEY,          DisplayFrame::onKeyButton)
+	EVT_BUTTON(ID_IMPORT,       DisplayFrame::onImportMod)
+	EVT_BUTTON(ID_EXPORT,       DisplayFrame::onExportMod)
+	EVT_CHECKBOX(ID_MORERES,    DisplayFrame::onMoreRes)
 	EVT_NOTEBOOK_PAGE_CHANGED(ID_NOTEBOOK, DisplayFrame::onPageChange)
 END_EVENT_TABLE()
 
-DisplayFrame::DisplayFrame() :
+DisplayFrame::DisplayFrame()
+	:
 	wxDialog(getMainDialog(), -1, wxString(scorched3dAppName, wxConvUTF8))
 {
 #ifdef _WIN32
@@ -123,16 +124,14 @@ DisplayFrame::DisplayFrame() :
 	createMainControls(mainPanel_, mainPanelSizer);
 
 	std::string settingsFileStr = S3D::getSettingsFile("");
-	std::string settingsFileStd = 
-		S3D::formatStringBuffer("Settings Dir : %s", settingsFileStr.c_str());
+	std::string settingsFileStd = S3D::formatStringBuffer("Settings Dir : %s", settingsFileStr.c_str());
 	wxString settingsFile(settingsFileStd.c_str(), wxConvUTF8);
 	settingsFile.Replace(wxT("//"), wxT("/"));
 #ifdef _WIN32
 	settingsFile.Replace(wxT("/"), wxT("\\"));
 #endif
 
-	mainPanelSizer->Add(new wxStaticText(
-		mainPanel_, -1, settingsFile), 0, wxTOP, 10);
+	mainPanelSizer->Add(new wxStaticText(mainPanel_, -1, settingsFile), 0, wxTOP, 10);
 	mainPanel_->SetAutoLayout(TRUE);
 	mainPanel_->SetSizer(mainPanelSizer);
 	
@@ -185,11 +184,11 @@ DisplayFrame::DisplayFrame() :
 
 	// Mods Panel
 	modsPanel_ = new wxPanel(book_, -1);
-    wxSizer *modsPanelSizer = new wxBoxSizer(wxVERTICAL);
-    createModsControls(modsPanel_, modsPanelSizer);
-    book_->AddPage(modsPanel_, wxT("&Mods"));
-    modsPanel_->SetAutoLayout(TRUE);
-    modsPanel_->SetSizer(modsPanelSizer);
+	wxSizer *modsPanelSizer = new wxBoxSizer(wxVERTICAL);
+	createModsControls(modsPanel_, modsPanelSizer);
+	book_->AddPage(modsPanel_, wxT("&Mods"));
+	modsPanel_->SetAutoLayout(TRUE);
+	modsPanel_->SetSizer(modsPanelSizer);
 
 	// Notebook
 	topsizer->Add(nbs, 0, wxALL, 10);
@@ -197,9 +196,9 @@ DisplayFrame::DisplayFrame() :
 	// Ok and cancel boxes
 	wxBoxSizer *buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 	IDCANCEL_CTRL = new wxButton(this, wxID_CANCEL, wxT("&Cancel"));
-	IDOK_CTRL = new wxButton(this, wxID_OK, wxT("&Ok"));
+	IDOK_CTRL     = new wxButton(this, wxID_OK,     wxT("&Ok"));
 	buttonSizer->Add(IDCANCEL_CTRL, 0, wxRIGHT, 5);
-	buttonSizer->Add(IDOK_CTRL, 0, wxLEFT, 5);
+	buttonSizer->Add(IDOK_CTRL,     0, wxLEFT,  5);
 	topsizer->Add(buttonSizer, 0, wxALIGN_RIGHT | wxRIGHT | wxBOTTOM, 10);
 
 	SetSizer(topsizer); // use the sizer for layout
@@ -273,7 +272,7 @@ void DisplayFrame::onKeyButton(wxCommandEvent &event)
 	// Ask the user for a key
 	showKeyDialog(this);
 	
-	// Translate the key code from wx to SDL	
+	// Translate the key code from wx to SDL
 	unsigned int resultKey = getKeyDialogKey();
 	unsigned int wxKey = (unsigned int) resultKey;
 	unsigned int sdlKey = 0;
@@ -290,17 +289,15 @@ void DisplayFrame::onKeyButton(wxCommandEvent &event)
 	if (sdlKey == 0) return;
 
 	unsigned int sdlState = 0;
-	if (getKeyDialogAlt()) sdlState = KMOD_LALT;
+	if      (getKeyDialogAlt())     sdlState = KMOD_LALT;
 	else if (getKeyDialogControl()) sdlState = KMOD_LCTRL;
-	else if (getKeyDialogShift()) sdlState = KMOD_LSHIFT;
+	else if (getKeyDialogShift())   sdlState = KMOD_LSHIFT;
 
-	// Remove any existing occurances of this key 
+	// Remove any existing occurances of this key
 	// (except when it exists on the chosen key)
 	bool found = false;
 	std::list<wxButton *>::iterator itor;
-	for (itor = keyboardKeyList.begin();
-		itor != keyboardKeyList.end();
-		++itor)
+	for (itor = keyboardKeyList.begin(); itor != keyboardKeyList.end(); ++itor)
 	{
 		wxButton *button = (*itor);
 		KeyButtonData *data = (KeyButtonData *) button->GetRefData();
@@ -312,8 +309,7 @@ void DisplayFrame::onKeyButton(wxCommandEvent &event)
 			std::vector<KeyboardKey::KeyEntry> &keyEntries = key->getKeys();
 			if (position < keyEntries.size())
 			{
-				if (keyEntries[position].key == sdlKey &&
-					keyEntries[position].state == sdlState)
+				if (keyEntries[position].key == sdlKey && keyEntries[position].state == sdlState)
 				{
 					if (key == chosenKey) found = true;
 					else key->removeKey(position);
@@ -335,11 +331,13 @@ void DisplayFrame::onKeyButton(wxCommandEvent &event)
 void DisplayFrame::refreshKeysControls()
 {
 	std::list<wxButton *>::iterator buttonitor;
-	for (buttonitor = keyboardKeyList.begin();
+	for (
+		buttonitor  = keyboardKeyList.begin();
 		buttonitor != keyboardKeyList.end();
-		++buttonitor)
+		++buttonitor
+	)
 	{
-		wxButton *button = (*buttonitor);			
+		wxButton *button = (*buttonitor);
 
 		KeyButtonData *data = (KeyButtonData *) button->GetRefData();
 		KeyboardKey *key = Keyboard::instance()->getKey(data->key_.c_str());
@@ -351,7 +349,7 @@ void DisplayFrame::refreshKeysControls()
 		{
 			const char *keyName = "";
 			const char *stateName = "";
-			KeyboardKey::translateKeyNameValue(key->getKeys()[position].key, keyName);
+			KeyboardKey::translateKeyNameValue( key->getKeys()[position].key,     keyName);
 			KeyboardKey::translateKeyStateValue(key->getKeys()[position].state, stateName);
 			if (strcmp(stateName, "NONE") == 0) snprintf(buffer, 256, "%s", keyName);
 			else snprintf(buffer, 256, "<%s> %s", stateName, keyName);
@@ -495,25 +493,21 @@ void DisplayFrame::refreshScreen()
 	IDC_ANTIALIAS_CTRL->Append(wxT("1"));
 	IDC_ANTIALIAS_CTRL->Append(wxT("2"));
 	IDC_ANTIALIAS_CTRL->Append(wxT("4"));
-	IDC_ANTIALIAS_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", 
-		OptionsDisplay::instance()->getAntiAlias())));
+	IDC_ANTIALIAS_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", OptionsDisplay::instance()->getAntiAlias())));
 	IDC_ANTIALIAS_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getAntiAliasEntry().getDescription(), wxConvUTF8));
 
 	IDC_FOCUSPAUSE_CTRL->SetValue(OptionsDisplay::instance()->getFocusPause());
 	IDC_FOCUSPAUSE_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getFocusPauseEntry().getDescription(), wxConvUTF8));
 
-	IDC_FRAMELIMIT_CTRL->SetValue(
-		convertString(S3D::formatStringBuffer("%i", OptionsDisplay::instance()->getFramesPerSecondLimit())));
+	IDC_FRAMELIMIT_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", OptionsDisplay::instance()->getFramesPerSecondLimit())));
 	IDC_FRAMELIMIT_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getFramesPerSecondLimitEntry().getDescription(), wxConvUTF8));
 
 	IDC_SOUNDCHANNELS_CTRL->Clear();
 	for (int i=2; i<=64; i+=2)
 	{
-		IDC_SOUNDCHANNELS_CTRL->Append(
-			convertString(S3D::formatStringBuffer("%i", i)));
+		IDC_SOUNDCHANNELS_CTRL->Append(convertString(S3D::formatStringBuffer("%i", i)));
 	}
-	IDC_SOUNDCHANNELS_CTRL->SetValue(
-		convertString(S3D::formatStringBuffer("%i", OptionsDisplay::instance()->getSoundChannels())));
+	IDC_SOUNDCHANNELS_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", OptionsDisplay::instance()->getSoundChannels())));
 
 	refreshResolutions();
 
@@ -615,9 +609,15 @@ void DisplayFrame::refreshResolutions()
 
 	if (IDC_MORERES_CTRL->GetValue())
 	{
-		const char *extraModes[] = 
-			{ "320 x 200", "320 x 240", "512 x 384", 
-			"640 x 480", "800 x 600", "1024 x 768", "1024 x 384" };
+		const char *extraModes[] = {
+			"320 x 200",
+			"320 x 240",
+			"512 x 384",
+			"640 x 480",
+			"800 x 600",
+			"1024 x 768",
+			"1024 x 384"
+		};
 		for (int i=0; i<int(sizeof(extraModes)/sizeof(const char *)); i++)
 		{
 			std::string newDisplay(extraModes[i]);
@@ -631,7 +631,8 @@ void DisplayFrame::refreshResolutions()
 
 	snprintf(string, 256, "%i x %i", 
 		OptionsDisplay::instance()->getScreenWidth(),
-		OptionsDisplay::instance()->getScreenHeight());
+		OptionsDisplay::instance()->getScreenHeight()
+	);
 	IDC_DISPLAY_CTRL->SetValue(wxString(string, wxConvUTF8));
 }
 
@@ -688,25 +689,21 @@ bool DisplayFrame::TransferDataFromWindow()
 	OptionsDisplay::instance()->getClientLogToFileEntry().setValue(IDC_LOGGING_CTRL->GetValue());
 	OptionsDisplay::instance()->getLandDetailErrorEntry().setValue(IDC_LANDLOD_CTRL->GetValue());
 
-	OptionsDisplay::instance()->getAntiAliasEntry().setValue(
-		atoi(IDC_ANTIALIAS_CTRL->GetValue().mb_str(wxConvUTF8)));
+	OptionsDisplay::instance()->getAntiAliasEntry().setValue(atoi(IDC_ANTIALIAS_CTRL->GetValue().mb_str(wxConvUTF8)));
 	OptionsDisplay::instance()->getFocusPauseEntry().setValue(IDC_FOCUSPAUSE_CTRL->GetValue());
 	OptionsDisplay::instance()->getFramesPerSecondLimitEntry().setValue(atoi(IDC_FRAMELIMIT_CTRL->GetValue().mb_str(wxConvUTF8)));
 	wxString buffer = IDC_DISPLAY_CTRL->GetValue();
 	int windowWidth, windowHeight;
-	if (sscanf(buffer.mb_str(wxConvUTF8), 
-		"%i x %i", 
-		&windowWidth,
-		&windowHeight) == 2)
+	if (sscanf(buffer.mb_str(wxConvUTF8), "%i x %i", &windowWidth, &windowHeight) == 2)
 	{
 		OptionsDisplay::instance()->getScreenWidthEntry().setValue(windowWidth);
 		OptionsDisplay::instance()->getScreenHeightEntry().setValue(windowHeight);
 	}
 
 	int dialogSize = 0;
-	if (IDC_SMALLDIALOGS_CTRL->GetValue()) dialogSize = 1;
+	if (IDC_SMALLDIALOGS_CTRL->GetValue())  dialogSize = 1;
 	if (IDC_MEDIUMDIALOGS_CTRL->GetValue()) dialogSize = 2;
-	if (IDC_LARGEDIALOGS_CTRL->GetValue()) dialogSize = 3;
+	if (IDC_LARGEDIALOGS_CTRL->GetValue())  dialogSize = 3;
 	OptionsDisplay::instance()->getDialogSizeEntry().setValue(dialogSize);
 
 	int texSize = 1;
@@ -715,12 +712,12 @@ bool DisplayFrame::TransferDataFromWindow()
 	OptionsDisplay::instance()->getTexSizeEntry().setValue(texSize);
 
 	int effectsDetail = 1;
-	if (IDC_LOWEFFECTS_CTRL->GetValue()) effectsDetail = 0;
+	if (IDC_LOWEFFECTS_CTRL->GetValue())  effectsDetail = 0;
 	if (IDC_HIGHEFFECTS_CTRL->GetValue()) effectsDetail = 2;
 	OptionsDisplay::instance()->getEffectsDetailEntry().setValue(effectsDetail);
 
 	int tankDetail = 1;
-	if (IDC_LOWTANK_CTRL->GetValue()) tankDetail = 0;
+	if (IDC_LOWTANK_CTRL->GetValue())  tankDetail = 0;
 	if (IDC_HIGHTANK_CTRL->GetValue()) tankDetail = 2;
 	OptionsDisplay::instance()->getTankDetailEntry().setValue(tankDetail);
 
@@ -759,9 +756,12 @@ void DisplayFrame::onExportMod(wxCommandEvent &event)
 		S3D::dialogMessage("Export Mod", "Failed to load mod files");
 		return;
 	}
-	if (!files.exportModFiles(
-		std::string(selection.mb_str(wxConvUTF8)), 
-		std::string(file.mb_str(wxConvUTF8))))
+	if (
+		!files.exportModFiles(
+			std::string(selection.mb_str(wxConvUTF8)),
+			std::string(file.mb_str(wxConvUTF8))
+		)
+	)
 	{
 		S3D::dialogMessage("Export Mod", "Failed to write mod export file");
 		return;

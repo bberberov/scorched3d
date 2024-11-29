@@ -42,8 +42,7 @@ protected:
 class OptionEntrySetterUtil
 {
 public:
-	static OptionEntrySetter createOtherSetter(
-		wxWindow *parent, wxSizer *topsizer, OptionEntry &entry);
+	static OptionEntrySetter createOtherSetter(wxWindow *parent, wxSizer *topsizer, OptionEntry &entry);
 
 	static void updateControls(std::list<OptionEntrySetter> &controls);
 	static void updateEntries(std::list<OptionEntrySetter> &controls);

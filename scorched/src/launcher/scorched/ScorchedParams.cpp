@@ -32,13 +32,12 @@ ScorchedParams *ScorchedParams::instance()
 	return instance_;
 }
 
-ScorchedParams::ScorchedParams() : 
+ScorchedParams::ScorchedParams()
+	:
 	SDLInitVideo_(false)
 {
-
 }
 
 ScorchedParams::~ScorchedParams()
 {
-	
 }

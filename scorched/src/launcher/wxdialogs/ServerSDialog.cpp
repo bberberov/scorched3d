@@ -39,7 +39,7 @@ public:
 	virtual bool TransferDataToWindow();
 	virtual bool TransferDataFromWindow();
 
-	void onSettingsButton(wxCommandEvent &event);
+	void onSettingsButton(   wxCommandEvent &event);
 	void onPublishAutoButton(wxCommandEvent &event);
 
 private:
@@ -49,14 +49,14 @@ private:
 };
 
 BEGIN_EVENT_TABLE(ServerSFrame, wxDialog)
-    EVT_BUTTON(IDC_BUTTON_SETTINGS,  ServerSFrame::onSettingsButton)
-	EVT_BUTTON(IDC_PUBLISHAUTO,  ServerSFrame::onPublishAutoButton)
+	EVT_BUTTON(IDC_BUTTON_SETTINGS,  ServerSFrame::onSettingsButton)
+	EVT_BUTTON(IDC_PUBLISHAUTO,      ServerSFrame::onPublishAutoButton)
 END_EVENT_TABLE()
 
-ServerSFrame::ServerSFrame(OptionsGame &options) :
-	wxDialog(getMainDialog(), -1, wxString(scorched3dAppName, wxConvUTF8),
-			 wxDefaultPosition, wxDefaultSize),
-	 options_(options)
+ServerSFrame::ServerSFrame(OptionsGame &options)
+	:
+	wxDialog(getMainDialog(), -1, wxString(scorched3dAppName, wxConvUTF8), wxDefaultPosition, wxDefaultSize),
+	options_(options)
 {
 #ifdef _WIN32
 	// Set the frame's icon
@@ -72,7 +72,7 @@ ServerSFrame::ServerSFrame(OptionsGame &options) :
 	IDOK_CTRL->SetDefault();
 
 	// use the sizer for layout
-	SetSizer(topsizer); 
+	SetSizer(topsizer);
 	topsizer->SetSizeHints(this); // set size hints to honour minimum size
 
 	CentreOnScreen();
@@ -86,60 +86,44 @@ void ServerSFrame::onPublishAutoButton(wxCommandEvent &event)
 void ServerSFrame::onSettingsButton(wxCommandEvent &event)
 {
 	TransferDataFromWindow();
-	// Don't save until the whole options have been choosen
+	// Don't save until the whole options have been chosen
 	showSettingsDialog(true, options_);
 }
 
 bool ServerSFrame::TransferDataToWindow()
 {
-	IDC_SERVER_PORT_CTRL->SetValue(
-		convertString(S3D::formatStringBuffer("%i", options_.getPortNo())));
-	IDC_SERVER_PORT_CTRL->SetToolTip(
-		convertString(options_.getPortNoEntry().getDescription()));
-	IDC_SERVERMANAGEMENT_PORT_CTRL->SetValue(
-		convertString(S3D::formatStringBuffer("%i", options_.getManagementPortNo())));
-	IDC_SERVERMANAGEMENT_PORT_CTRL->SetToolTip(
-		convertString(options_.getManagementPortNoEntry().getDescription()));
-	IDC_SERVER_NAME_CTRL->SetValue(
-		convertString(options_.getServerName()));
-	IDC_SERVER_NAME_CTRL->SetToolTip(
-		convertString(options_.getServerNameEntry().getDescription()));
+	IDC_SERVER_PORT_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", options_.getPortNo())));
+	IDC_SERVER_PORT_CTRL->SetToolTip(convertString(options_.getPortNoEntry().getDescription()));
+	IDC_SERVERMANAGEMENT_PORT_CTRL->SetValue(convertString(S3D::formatStringBuffer("%i", options_.getManagementPortNo())));
+	IDC_SERVERMANAGEMENT_PORT_CTRL->SetToolTip(convertString(options_.getManagementPortNoEntry().getDescription()));
+	IDC_SERVER_NAME_CTRL->SetValue(convertString(options_.getServerName()));
+	IDC_SERVER_NAME_CTRL->SetToolTip(convertString(options_.getServerNameEntry().getDescription()));
 	IDC_PUBLISH_CTRL->SetValue(options_.getPublishServer());
-	IDC_PUBLISH_CTRL->SetToolTip(
-		convertString(options_.getPublishServerEntry().getDescription()));
+	IDC_PUBLISH_CTRL->SetToolTip(convertString(options_.getPublishServerEntry().getDescription()));
 	IDC_USEUPNP_CTRL->SetValue(options_.getUseUPnP());
-	IDC_USEUPNP_CTRL->SetToolTip(
-		convertString(options_.getUseUPnPEntry().getDescription()));
-	IDC_PUBLISHIP_CTRL->SetValue(
-		convertString(options_.getPublishAddress()));
-	IDC_PUBLISHIP_CTRL->SetToolTip(
-		convertString(options_.getPublishAddressEntry().getDescription()));
+	IDC_USEUPNP_CTRL->SetToolTip(convertString(options_.getUseUPnPEntry().getDescription()));
+	IDC_PUBLISHIP_CTRL->SetValue(convertString(options_.getPublishAddress()));
+	IDC_PUBLISHIP_CTRL->SetToolTip(convertString(options_.getPublishAddressEntry().getDescription()));
 	IDC_ALLOWSAME_CTRL->SetValue(options_.getAllowSameIP());
-	IDC_ALLOWSAME_CTRL->SetToolTip(
-		convertString(options_.getAllowSameIPEntry().getDescription()));
+	IDC_ALLOWSAME_CTRL->SetToolTip(convertString(options_.getAllowSameIPEntry().getDescription()));
 	IDC_ALLOWSAMEID_CTRL->SetValue(options_.getAllowSameUniqueId());
-	IDC_ALLOWSAMEID_CTRL->SetToolTip(
-		convertString(options_.getAllowSameUniqueIdEntry().getDescription()));
+	IDC_ALLOWSAMEID_CTRL->SetToolTip(convertString(options_.getAllowSameUniqueIdEntry().getDescription()));
 	IDC_LOGTOFILE_CTRL->SetValue(0 == strcmp("file", options_.getServerFileLogger()));
-	IDC_LOGTOFILE_CTRL->SetToolTip(
-		convertString(options_.getServerFileLoggerEntry().getDescription()));
+	IDC_LOGTOFILE_CTRL->SetToolTip(convertString(options_.getServerFileLoggerEntry().getDescription()));
 
 	ModDirs modDirs;
 	if (!modDirs.loadModDirs()) S3D::dialogExit("ModFiles", "Failed to load mod files");
 	std::list<ModInfo>::iterator itor;
-	for (itor = modDirs.getDirs().begin();
-		itor != modDirs.getDirs().end();
-		++itor)
+	for (itor = modDirs.getDirs().begin(); itor != modDirs.getDirs().end(); ++itor)
 	{
 		ModInfo &info = *itor;
 		IDC_SERVER_MOD_CTRL->Append(convertString(info.getName()));
 	}
 	if (IDC_SERVER_MOD_CTRL->FindString(convertString(options_.getMod())) != -1)
 		IDC_SERVER_MOD_CTRL->SetValue(convertString(options_.getMod()));
-	else 
+	else
 		IDC_SERVER_MOD_CTRL->SetValue(wxT("none"));
-	IDC_SERVER_MOD_CTRL->SetToolTip(
-		convertString("The Scorched3D mod to use for this game."));
+	IDC_SERVER_MOD_CTRL->SetToolTip(convertString("The Scorched3D mod to use for this game."));
 
 	return true;
 }
@@ -162,7 +146,7 @@ bool ServerSFrame::TransferDataFromWindow()
 bool showServerSDialog()
 {
 	OptionsGame tmpOptions;
-	std::string serverFileSrc = S3D::getDataFile("data/server.xml");
+	std::string serverFileSrc  = S3D::getDataFile("data/server.xml");
 	std::string serverFileDest = S3D::getSettingsFile("server.xml");
 	if (S3D::fileExists(serverFileDest.c_str()))
 	{
@@ -176,12 +160,10 @@ bool showServerSDialog()
 	ServerSFrame frame(tmpOptions);
 	if (frame.ShowModal() == wxID_OK)
 	{
-		tmpOptions.writeOptionsToFile((char *) serverFileDest.c_str(), 
-			ScorchedParams::instance()->getWriteFullOptions());
+		tmpOptions.writeOptionsToFile((char *) serverFileDest.c_str(), ScorchedParams::instance()->getWriteFullOptions());
 		std::string fileName = S3D::formatStringBuffer("-startserver \"%s\"", serverFileDest.c_str());
 		runScorched3D(fileName.c_str(), true);
 		return true;
 	}
 	return false;
 }
-

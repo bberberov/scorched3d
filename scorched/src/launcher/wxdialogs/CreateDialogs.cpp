@@ -27,16 +27,14 @@
 bool wxWindowInit = false;
 class ScorchedApp: public wxApp
 {
-    bool OnInit();
-};     
+	bool OnInit();
+};
 
 bool ScorchedApp::OnInit()
 {
 	if (setlocale(LC_ALL, "C") == 0)
 	{
-		S3D::dialogMessage(
-			"ScorchedApp",
-			"Warning: Failed to set wx locale");
+		S3D::dialogMessage( "ScorchedApp", "Warning: Failed to set wx locale");
 	}
 
 	wxImage::AddHandler(new wxICOHandler);

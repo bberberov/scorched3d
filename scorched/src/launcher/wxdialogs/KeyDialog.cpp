@@ -35,32 +35,31 @@ class KeyFrame;
 class TextWindow : public wxWindow
 {
 public:
-    TextWindow(wxDialog *parent)
-        : wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize,
-                   wxRAISED_BORDER),
-		   frame_((KeyFrame *) parent)
-    {
+	TextWindow(wxDialog *parent)
+		:
+		wxWindow(parent, -1, wxDefaultPosition, wxDefaultSize, wxRAISED_BORDER),
+		frame_((KeyFrame *) parent)
+	{
 		wxBoxSizer *topsizer = new wxBoxSizer(wxVERTICAL);
 
-		wxStaticText *text = 
-			new wxStaticText(this, -1, wxT("Press a key to bind to this function"));
+		wxStaticText *text = new wxStaticText(this, -1, wxT("Press a key to bind to this function"));
 		topsizer->Add(text, 0, wxALIGN_CENTER | wxALL, 5);
 
 		SetSizer(topsizer); // use the sizer for layout
 		topsizer->SetSizeHints(this); // set size hints to honour minimum size
-    }
+	}
 
 protected:
 	KeyFrame *frame_;
 
-    void OnKeyDown(wxKeyEvent& event);
+	void OnKeyDown(wxKeyEvent& event);
 
 private:
-    DECLARE_EVENT_TABLE()
+	DECLARE_EVENT_TABLE()
 };
 
 BEGIN_EVENT_TABLE(TextWindow, wxWindow)
-    EVT_KEY_DOWN(TextWindow::OnKeyDown)
+	EVT_KEY_DOWN(TextWindow::OnKeyDown)
 END_EVENT_TABLE()
 
 class KeyFrame : public wxDialog
@@ -105,9 +104,9 @@ void TextWindow::OnKeyDown(wxKeyEvent& event)
 		break;
 	default:
 		keyDialogControlDown = event.ControlDown();
-		keyDialogShiftDown = event.ShiftDown();
-		keyDialogAltDown = event.AltDown();
-		keyDialogKeyCode = event.GetKeyCode();
+		keyDialogShiftDown   = event.ShiftDown();
+		keyDialogAltDown     = event.AltDown();
+		keyDialogKeyCode     = event.GetKeyCode();
 		frame_->EndModal(0);
 	}
 }
@@ -115,9 +114,9 @@ void TextWindow::OnKeyDown(wxKeyEvent& event)
 BEGIN_EVENT_TABLE(KeyFrame, wxDialog)
 END_EVENT_TABLE()
 
-KeyFrame::KeyFrame(wxDialog *dialog) :
-	wxDialog(dialog, -1, wxString(scorched3dAppName, wxConvUTF8), 
-		wxDefaultPosition, wxSize(190, 50), wxSIMPLE_BORDER )
+KeyFrame::KeyFrame(wxDialog *dialog)
+	:
+	wxDialog(dialog, -1, wxString(scorched3dAppName, wxConvUTF8), wxDefaultPosition, wxSize(190, 50), wxSIMPLE_BORDER )
 {
 #ifdef _WIN32
 	// Set the frame's icon

@@ -25,7 +25,7 @@
 TrueTypeFont::TrueTypeFont(const std::string &typeFace, unsigned int h)
 {
 	// Create And Initilize A FreeType Font Library.
-	if (FT_Init_FreeType(&library)) 
+	if (FT_Init_FreeType(&library))
 	{
 		return;
 	}
@@ -33,7 +33,7 @@ TrueTypeFont::TrueTypeFont(const std::string &typeFace, unsigned int h)
 	// This Is Where We Load In The Font Information From The File.
 	// Of All The Places Where The Code Might Die, This Is The Most Likely,
 	// As FT_New_Face Will Fail If The Font File Does Not Exist Or Is Somehow Broken.
-	if (FT_New_Face(library, typeFace.c_str(), 0, &face)) 
+	if (FT_New_Face(library, typeFace.c_str(), 0, &face))
 	{
 		return;
 	}
@@ -45,7 +45,7 @@ TrueTypeFont::TrueTypeFont(const std::string &typeFace, unsigned int h)
 	FT_Set_Char_Size(face, h << 6, h << 6, 96, 96);
 
 	// This Is Where We Actually Create Each Of The Fonts Characters
-	for(unsigned char i=0;i<128;i++)
+	for (unsigned char i=0;i<128;i++)
 	{
 		createCharacter(face, i);
 	}
@@ -67,15 +67,15 @@ bool TrueTypeFont::createCharacter(FT_Face face, unsigned char ch)
 	// Into A Bitmap.  This Actually Requires A Couple Of FreeType Commands:
 
 	// Load The Glyph For Our Character.
-	if(FT_Load_Glyph( face, FT_Get_Char_Index( face, ch ), FT_LOAD_DEFAULT )) 
-	{ 
-		return false; 
+	if(FT_Load_Glyph( face, FT_Get_Char_Index( face, ch ), FT_LOAD_DEFAULT ))
+	{
+		return false;
 	}
 
 	// Move The Face's Glyph Into A Glyph Object.
 	if(FT_Get_Glyph( face->glyph, &glyphs[ch] ))
-	{ 
-		return false; 
+	{
+		return false;
 	}
 
 	// Convert The Glyph To A Bitmap.
@@ -95,16 +95,15 @@ bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 	int topheight = 0;
 
 	// Find out the total image height and width
-	FT_GlyphSlot  slot = face->glyph; 
+	FT_GlyphSlot slot = face->glyph;
 	for (const char *c=text.c_str(); *c; c++)
 	{
 		FT_Load_Char(face, *c, FT_LOAD_RENDER);
 		FT_Bitmap &bitmap = slot->bitmap;
 
 		width += slot->advance.x >> 6;
-		if (bitmap.rows > height) height = bitmap.rows;
-		if (bitmap.rows - slot->bitmap_top > topheight) 
-			topheight = bitmap.rows - slot->bitmap_top;
+		if (bitmap.rows                    > height   ) height    = bitmap.rows;
+		if (bitmap.rows - slot->bitmap_top > topheight) topheight = bitmap.rows - slot->bitmap_top;
 	}
 
 	// Create the image
@@ -128,15 +127,13 @@ bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 				int rx = (i + posx + x);
 				int ry = (j + posy + y);
 
-				if (rx >= image.GetWidth() || rx < 0) continue;
+				if (rx >= image.GetWidth()  || rx < 0) continue;
 				if (ry >= image.GetHeight() || ry < 0) continue;
 
-				unsigned char *dest =
-					image.GetData() + ((ry * image.GetWidth()) + rx) * 3;
+				unsigned char *dest = image.GetData() + ((ry * image.GetWidth()) + rx) * 3;
 				unsigned char src = bitmap.buffer[i + bitmap.width * j];
 
 				src = (unsigned int) (float(src) * 0.9f);
-
 
 				dest[0] = dest[1] = dest[2] = src;
 			}

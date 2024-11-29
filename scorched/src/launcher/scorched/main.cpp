@@ -79,7 +79,8 @@ int main(int argc, char *argv[])
 			scorched3dAppName,
 			"Warning: This game uses the SDL library to provide graphics.\n"
 			"The graphics section of this library failed to initialize.\n"
-			"You will only be able to run a server for this game.");
+			"You will only be able to run a server for this game."
+		);
 	}
 	else
 	{
@@ -87,8 +88,12 @@ int main(int argc, char *argv[])
 	}
 
 #ifdef _WIN32
-		wxEntry((WXHINSTANCE) (HINSTANCE) GetModuleHandle(NULL),
-			(WXHINSTANCE) NULL, "", SW_SHOWNORMAL);
+		wxEntry(
+			(WXHINSTANCE) (HINSTANCE) GetModuleHandle(NULL),
+			(WXHINSTANCE) NULL,
+			"",
+			SW_SHOWNORMAL
+		);
 #else
 		wxEntry(argc, argv);
 #endif
