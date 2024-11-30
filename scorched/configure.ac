@@ -54,6 +54,7 @@ AC_ARG_ENABLE(
 # Include the other configuration files
 if test "x$enable_serveronly" = 'xno'
 then
+	m4_include([configure-browser.m4])
 	m4_include([configure-gl.m4])
 	m4_include([configure-al.m4])
 	m4_include([configure-wx.m4])

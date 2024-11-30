@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -62,8 +62,10 @@ void S3D::showURL(const std::string &url)
 	std::string buffer = S3D::formatStringBuffer("open %s", url.c_str());
 	system(buffer.c_str());
 #else
-	std::string buffer = S3D::formatStringBuffer("firefox %s", url.c_str());
+#ifdef USE_BROWSER
+	std::string buffer = S3D::formatStringBuffer("USE_BROWSER %s", url.c_str());
 	system(buffer.c_str());
+#endif // USE_BROWSER
 #endif // __DARWIN__
 #endif // _WIN32
 	Logger::log(url);
