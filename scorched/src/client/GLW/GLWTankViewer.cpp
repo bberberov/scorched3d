@@ -55,8 +55,8 @@ GLWTankViewer::GLWTankViewer(float x, float y, int numH, int numV) :
 	catagoryChoice_.setHandler(this);
 
 	catagoryChoice_.setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("MODEL_CATAGORY", "Model Category"),
-		LANG_RESOURCE("MODEL_CATAGORY_TOOLTIP", 
+		LANG_RESOURCE("MODEL_CATEGORY", "Model Category"),
+		LANG_RESOURCE("MODEL_CATEGORY_TOOLTIP",
 		"Displays the currently selected model category.\n"
 		"To make models easier to locate\n"
 		"tank models are grouped by category.")));
