@@ -62,10 +62,10 @@ void S3D::showURL(const std::string &url)
 	std::string buffer = S3D::formatStringBuffer("open %s", url.c_str());
 	system(buffer.c_str());
 #else
-#ifdef USE_BROWSER
-	std::string buffer = S3D::formatStringBuffer("USE_BROWSER %s", url.c_str());
+#ifdef S3D_BROWSER
+	std::string buffer = S3D::formatStringBuffer("S3D_BROWSER %s", url.c_str());
 	system(buffer.c_str());
-#endif // USE_BROWSER
+#endif // S3D_BROWSER
 #endif // __DARWIN__
 #endif // _WIN32
 	Logger::log(url);
