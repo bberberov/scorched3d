@@ -26,10 +26,10 @@ lang*.resource
 *.meta
 *.obj
 *.o
-*.deps
+.deps/
 *.exe
 Makefile.in
-autom4te.cache
+autom4te.cache/
 *.pch
 *.pdb
 *.pgc
@@ -48,6 +48,25 @@ autom4te.cache
 *.pidb
 *.log
 *.scc
+/scorched/Makefile
+/scorched/Makefile.am
+/scorched/aclocal.m4
+/scorched/compile
+/scorched/config.status
+/scorched/configure
+/scorched/src/Makefile
+/scorched/src/client/Makefile
+/scorched/src/client/scorchedc/Makefile
+/scorched/src/client/scorchedc/Makefile.am
+/scorched/src/client/scorchedc/scorched3dc
+/scorched/src/launcher/Makefile
+/scorched/src/launcher/scorched/Makefile
+/scorched/src/launcher/scorched/Makefile.am
+/scorched/src/launcher/scorched/scorched3d
+/scorched/src/server/Makefile
+/scorched/src/server/scorcheds/Makefile
+/scorched/src/server/scorcheds/Makefile.am
+/scorched/src/server/scorcheds/scorched3ds
 
 # Visual C++ cache files
 ipch/
