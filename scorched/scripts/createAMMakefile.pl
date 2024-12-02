@@ -91,20 +91,63 @@ createBinaryMakefile(
 	"../src/launcher/scorched/scorched.vcxproj",
 	"../src/launcher/scorched/Makefile.am",
 	"scorched3d",
-	'-I../../client -I../../server -I../../launcher -DS3D_BROWSER=\'"@USE_BROWSER@"\' @WX_CFLAGS@ @FT2_CFLAGS@ @SDL_CFLAGS@',
-	'@WX_LIBS@ @FT2_LIBS@ @SDL_LIBS@'
+	(
+		join
+		' -I../../client',
+		' -I../../server',
+		' -I../../launcher',
+		' -DS3D_BROWSER=\'"@USE_BROWSER@"\'',
+		' @WX_CFLAGS@',
+		' @FT2_CFLAGS@',
+		' @SDL_CFLAGS@'
+	),
+	(
+		join
+		' @WX_LIBS@',
+		' @FT2_LIBS@',
+		' @SDL_LIBS@'
+	)
 );
 createBinaryMakefile(
 	"../src/client/scorchedc/scorchedc.vcxproj",
 	"../src/client/scorchedc/Makefile.am",
 	"scorched3dc",
-	'-I../../client -I../../server -DS3D_BROWSER=\'"@USE_BROWSER@"\' @OPENAL_CFLAGS@ @FREEALUT_CFLAGS@ @FFTW_CFLAGS@ @FT2_CFLAGS@ @OGG_CFLAGS@ @SDL_CFLAGS@',
-	'@OPENAL_LIBS@ @FREEALUT_LIBS@ @FFTW_LIBS@ @FT2_LIBS@ @GL_LIBS@ @OGG_LIBS@ @SDL_LIBS@'
+	(
+		join
+		' -I../../client',
+		' -I../../server',
+		' -DS3D_BROWSER=\'"@USE_BROWSER@"\'',
+		' @OPENAL_CFLAGS@ @FREEALUT_CFLAGS@',
+		' @FFTW_CFLAGS@',
+		' @FT2_CFLAGS@',
+		' @OGG_CFLAGS@',
+		' @SDL_CFLAGS@',
+	),
+	(
+		join
+		' @OPENAL_LIBS@ @FREEALUT_LIBS@',
+		' @FFTW_LIBS@',
+		' @FT2_LIBS@',
+		' @GL_LIBS@',
+		' @OGG_LIBS@',
+		' @SDL_LIBS@'
+	)
+
 );
 createBinaryMakefile(
 	"../src/server/scorcheds/scorcheds.vcxproj",
 	"../src/server/scorcheds/Makefile.am",
 	"scorched3ds",
-	'-I../../server -DS3D_SERVER=1 @SDL_CFLAGS@ @MYSQL_CFLAGS@',
-	'@SDL_LIBS@ @MYSQL_LIBS@'
+	(
+		join
+		' -I../../server',
+		' -DS3D_SERVER=1',
+		' @SDL_CFLAGS@',
+		' @MYSQL_CFLAGS@',
+	),
+	(
+		join
+		' @SDL_LIBS@',
+		' @MYSQL_LIBS@',
+	)
 );
