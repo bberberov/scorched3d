@@ -120,7 +120,7 @@ createBinaryMakefile(
 		. ' @OPENAL_CFLAGS@ @FREEALUT_CFLAGS@'
 		. ' @FFTW_CFLAGS@'
 		. ' @FT2_CFLAGS@'
-		. ' @OGG_CFLAGS@'
+		. ' @OGG_CFLAGS@ @VORBIS_CFLAGS@'
 		. ' @SDL_CFLAGS@'
 	),
 	(
@@ -129,7 +129,7 @@ createBinaryMakefile(
 		. ' @FFTW_LIBS@'
 		. ' @FT2_LIBS@'
 		. ' @GL_LIBS@'
-		. ' @OGG_LIBS@'
+		. ' @OGG_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@'
 		. ' @SDL_LIBS@'
 	)
 
