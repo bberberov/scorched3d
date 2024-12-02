@@ -1,80 +1,50 @@
 dnl Checks for OpenGL
-AC_ARG_ENABLE(
-	[opengltest],
-	[AS_HELP_STRING(
-		[--disable-opengltest],
-		[Do not try to compile and run a test OpenGL program]
-	)],
-	[],
-	[enable_opengltest=yes]
+
+AC_CHECK_HEADERS(
+	[GL/gl.h],
+	[
+		AC_CHECK_LIB(
+			[GL],
+			[glEnd],
+			[],
+			[AC_MSG_ERROR([*** Can't find the OpenGL library Try: https://www.opengl.org])]
+		)
+	],
+	[AC_MSG_ERROR([*** Can't find the OpenGL library Try: https://www.opengl.org])]
 )
-AC_MSG_CHECKING(for OpenGL support)
-have_opengl=yes
-if test "x$enable_opengltest" = 'xyes'
-then
-	AC_COMPILE_IFELSE(
-		[AC_LANG_PROGRAM(
-			[[
-#include <GL/gl.h>
-#include <GL/glu.h>
-			]],[[
-return 0;
-			]]
-		)],
-		[have_opengl=yes],
-		[have_opengl=no]
-	)
-fi
 
-AC_MSG_RESULT($have_opengl)
-if test "x$have_opengl" != 'xyes'
-then
-	AC_MSG_ERROR([*** Can't find the OpenGL library Try: http://www.opengl.org])
-fi
-
-dnl Checks for GLEW
-AC_ARG_ENABLE(
-	[glewtest],
-	[AS_HELP_STRING(
-		[--disable-glewtest],
-		[Do not try to compile and run a test GLEW program]
-	)],
-	[],
-	[enable_glewtest=yes]
+AC_CHECK_HEADERS(
+	[GL/glu.h],
+	[
+		AC_CHECK_LIB(
+			[GLU],
+			[gluNewTess],
+			[],
+			[AC_MSG_ERROR([*** Can't find the OpenGL library Try: https://www.opengl.org])]
+		)
+	],
+	[AC_MSG_ERROR([*** Can't find the OpenGL library Try: https://www.opengl.org])]
 )
-AC_MSG_CHECKING(for GLEW support)
-have_glew=yes
-if test "x$enable_glewtest" = 'xyes'
-then
-	AC_COMPILE_IFELSE(
-		[AC_LANG_PROGRAM(
-			[[
-#include <GL/glew.h>
-			]],[[
-return 0;
-			]]
-		)],
-		[have_glew=yes],
-		[have_glew=no]
-	)
-fi
 
-AC_MSG_RESULT($have_glew)
-if test "x$have_glew" != 'xyes'
+if test `uname -s` = 'Darwin'
 then
-	AC_MSG_ERROR([*** Can't find the GLEW library])
-fi
-
-if test `uname -s` = 'FreeBSD'
-then
-	GL_LIBS='-lGL -lGLU -lGLEW'
+	GL_LIBS='-framework OpenGL'
 else
-	if test `uname -s` = 'Darwin'
-	then
-		GL_LIBS='-framework OpenGL'
-	else
-		GL_LIBS='-lGL -lGLU -lpthread -lGLEW'
-	fi
+	GL_LIBS='-lGL -lGLU'
 fi
 
+AC_CHECK_HEADERS(
+	[GL/glew.h],
+	[
+		AC_CHECK_LIB(
+			[GLEW],
+			[glewInit],
+			[],
+			[AC_MSG_ERROR([*** Can't find the GLEW library])]
+		)
+	],
+	[AC_MSG_ERROR([*** Can't find the GLEW library])]
+)
+
+GL_LIBS="$GL_LIBS -lGLEW"
 AC_SUBST(GL_LIBS)
