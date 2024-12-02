@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -118,14 +118,13 @@ void run_main(int argc, char *argv[], OptionsParameters &params)
 	}
 	else fclose(checkfile);
 
-	// Check that the mods are uptodate with the current scorched3d
-	// version
+	// Check that the mods are up to date with the current scorched3d version
 	ModDirs dirs;
 	dirs.loadModDirs();
 
 #ifndef _WIN32
-	// Tells Linux not to issue a sig pipe when writting to a closed socket
-	// Why does it have to be dificult!
+	// Tells Linux not to issue a sig pipe when writing to a closed socket
+	// Why does it have to be difficult!
 	signal(SIGPIPE, SIG_IGN);
 	signal(SIGFPE, SIG_IGN);
 #endif
