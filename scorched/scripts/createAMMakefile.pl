@@ -99,13 +99,13 @@ createBinaryMakefile(
 		. ' -DS3D_BROWSER=\'"@USE_BROWSER@"\''
 		. ' @WX_CFLAGS@'
 		. ' @FT2_CFLAGS@'
-		. ' @SDL_CFLAGS@'
+		. ' @SDL_CFLAGS@ @SDL_NET_CFLAGS@'
 	),
 	(
 		''
 		. ' @WX_LIBS@'
 		. ' @FT2_LIBS@'
-		. ' @SDL_LIBS@'
+		. ' @SDL_LIBS@ @SDL_NET_LIBS@'
 	)
 );
 createBinaryMakefile(
@@ -121,7 +121,7 @@ createBinaryMakefile(
 		. ' @FFTW_CFLAGS@'
 		. ' @FT2_CFLAGS@'
 		. ' @OGG_CFLAGS@ @VORBIS_CFLAGS@'
-		. ' @SDL_CFLAGS@'
+		. ' @SDL_CFLAGS@ @SDL_NET_CFLAGS@'
 	),
 	(
 		''
@@ -130,7 +130,7 @@ createBinaryMakefile(
 		. ' @FT2_LIBS@'
 		. ' @GL_LIBS@'
 		. ' @OGG_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@'
-		. ' @SDL_LIBS@'
+		. ' @SDL_LIBS@ @SDL_NET_LIBS@'
 	)
 
 );
@@ -142,12 +142,12 @@ createBinaryMakefile(
 		''
 		. ' -I../../server'
 		. ' -DS3D_SERVER=1'
-		. ' @SDL_CFLAGS@'
+		. ' @SDL_CFLAGS@ @SDL_NET_CFLAGS@'
 		. ' @MYSQL_CFLAGS@'
 	),
 	(
 		''
-		. ' @SDL_LIBS@'
+		. ' @SDL_LIBS@ @SDL_NET_LIBS@'
 		. ' @MYSQL_LIBS@'
 	)
 );
