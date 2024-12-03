@@ -9,6 +9,7 @@ then
 		[],
 		[AC_MSG_ERROR([FFTW3 must be installed on your system (https://www.fftw.org/)])]
 	)
+	AC_DEFINE(FFTW_USE_DOUBLE)
 else
 	PKG_CHECK_MODULES(
 		[FFTW],

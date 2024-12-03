@@ -24,15 +24,6 @@ PKG_PROG_PKG_CONFIG(
 	[AC_MSG_ERROR([must install pkg-config 0.29 or later])]
 )
 
-if test `uname` = 'Darwin'
-then
-	LDFLAGS="$LDFLAGS -lmx"
-	CPPFLAGS="$CPPFLAGS -DFFTW_USE_DOUBLE -D__DARWIN__ -D__MACOSX__"
-else
-	LDFLAGS="$LDFLAGS -L/usr/local/lib"
-	CPPFLAGS="$CPPFLAGS -I/usr/local/include"
-fi
-
 AC_CHECK_LIB(fridge, beer, echo "Hmm?!",[
 	echo "Warning: No beer found in fridge!";
 	echo "We highly suggest that you rectify this situation immediately."
@@ -98,7 +89,10 @@ AC_CHECK_HEADERS(unistd.h iconv.h)
 dnl Checking for Zlib Png Jpeg
 if test `uname` = 'Darwin'
 then
-	LIBS="$LIBS /usr/local/lib/libexpat.a -lz -framework UnixImageIO"
+	AC_DEFINE([__DARWIN__])
+	AC_DEFINE([__MACOSX__])
+	prefix=./
+	LIBS="$LIBS -lexpat -lz -framework UnixImageIO -lmx"
 else
 	LIBS="$LIBS -lexpat -lz -lpng -ljpeg"
 fi
@@ -122,10 +116,6 @@ fi
 AC_SUBST(docdir)
 
 AC_PREFIX_DEFAULT([/usr/local/games/scorched3d])
-if test `uname` = 'Darwin'
-then
-prefix=./
-fi
 
 CFLAGS="$CFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" -DS3D_BINDIR=\\\"${bindir}\\\""
 CXXFLAGS="$CXXFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" -DS3D_BINDIR=\\\"${bindir}\\\""
