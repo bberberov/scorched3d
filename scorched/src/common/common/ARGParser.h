@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -59,35 +59,37 @@ public:
 
 	bool parse(const char *lpCmdLine);
 	bool parse(int argc,char *argv[]);
-	void addEntry(char *cmd, char **destStr, char *help = "");
-	void addEntry(char *cmd, int *destI, char *help = "");
-	void addEntry(char *cmd, bool *destB, char *help = "");
+	void addEntry(char *cmd, char **destStr, const char *help = "");
+	void addEntry(char *cmd, int   *destI,   const char *help = "");
+	void addEntry(char *cmd, bool  *destB,   const char *help = "");
 
-	void addEntry(char *cmd, ARGParserBoolI *destBool, char *help = "");
-	void addEntry(char *cmd, ARGParserIntI *destInt, char *help = "");
-	void addEntry(char *cmd, ARGParserStringI *destString, char *help = "");
+	void addEntry(char *cmd, ARGParserBoolI   *destBool,   const char *help = "");
+	void addEntry(char *cmd, ARGParserIntI    *destInt,    const char *help = "");
+	void addEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
 
-	void addNonParamEntry(char *cmd, ARGParserStringI *destString, char *help = "");
+	void addNonParamEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
 
 	void showArgs(const char *topString = NULL);
 
 protected:
 	struct Entry
 	{
-		Entry(ARGParserBoolI *destBoolArg = 0,
-			  ARGParserIntI *destIntArg = 0,
-			  ARGParserStringI *destStringArg = 0,
-			  char **destCArg = 0,
-			  int *destIArg = 0,
-			  bool *destBArg = 0,
-			  char *helpArg = "");
+		Entry(
+			ARGParserBoolI   *destBoolArg   = 0,
+			ARGParserIntI    *destIntArg    = 0,
+			ARGParserStringI *destStringArg = 0,
+			char **destCArg = 0,
+			int   *destIArg = 0,
+			bool  *destBArg = 0,
+			const char *helpArg = ""
+		);
 
-		ARGParserBoolI *destBool;
-		ARGParserIntI *destInt;
+		ARGParserBoolI   *destBool;
+		ARGParserIntI    *destInt;
 		ARGParserStringI *destString;
 		char **destC;
-		int *destI;
-		bool *destB;
+		int   *destI;
+		bool  *destB;
 		std::string help;
 	};
 
