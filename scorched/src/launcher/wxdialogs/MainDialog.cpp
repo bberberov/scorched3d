@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -309,12 +309,12 @@ MainFrame::MainFrame()
 		const char *description;
 		int x, y;
 	} imageDefinitions[] = {
-		"Play",         "- Play a game.",                                 30, 150,
-		"Start Server", "- Start a LAN or internet server.",              30, 180,
-		"Settings",     "- Change the display, sound or other settings.", 30, 210,
-		"Help",         "- View the online help.",                        30, 260,
-		"Donate",       "- Show support for Scorched3D.",                 30, 290,
-		"Quit",         "- Exit the game.",                               30, 340
+		"Play",         "- Play a game",                                 30, 150,
+		"Start Server", "- Start a LAN or internet server",              30, 180,
+		"Settings",     "- Change the display, sound or other settings", 30, 210,
+		"Help",         "- View the online help",                        30, 260,
+		"Donate",       "- Show support for Scorched3D",                 30, 290,
+		"Quit",         "- Exit the game",                               30, 340
 	};
 
 	TrueTypeFont largeImageFont(S3D::getDataFile("data/fonts/dejavusans.ttf"), 14);
@@ -447,6 +447,9 @@ void MainFrame::generateCachedImage(int x, int y, wxImage &src, wxBitmap &destBi
 
 void MainFrame::onPaint(wxPaintEvent& event)
 {
+	const int xoff = 135;
+	const int yoff = 2;
+
 	wxBufferedPaintDC dc(this);
 
 	dc.DrawBitmap(backdropBitmap_, 0, 0, false);
@@ -460,13 +463,13 @@ void MainFrame::onPaint(wxPaintEvent& event)
 		if (!imageData->cachedBitmap1.Ok())
 		{
 			generateCachedImage(
-				imageData->x,       imageData->y,     imageData->loadedImage,      imageData->cachedBitmap1,     false
+				imageData->x,        imageData->y,        imageData->loadedImage,      imageData->cachedBitmap1,     false
 			);
 			generateCachedImage(
-				imageData->x,       imageData->y,     imageData->loadedImage,      imageData->cachedBitmap2,      true
+				imageData->x,        imageData->y,        imageData->loadedImage,      imageData->cachedBitmap2,      true
 			);
 			generateCachedImage(
-				imageData->x + 135, imageData->y + 2, imageData->descriptionImage, imageData->cachedDescription,  true
+				imageData->x + xoff, imageData->y + yoff, imageData->descriptionImage, imageData->cachedDescription,  true
 			);
 		}
 
@@ -477,8 +480,8 @@ void MainFrame::onPaint(wxPaintEvent& event)
 			&& mouseY_ < imageData->y + imageData->cachedBitmap1.GetHeight()
 		)
 		{
-			dc.DrawBitmap(imageData->cachedBitmap2,     imageData->x,       imageData->y,     false);
-			dc.DrawBitmap(imageData->cachedDescription, imageData->x + 135, imageData->y + 2, false);
+			dc.DrawBitmap(imageData->cachedBitmap2,     imageData->x,        imageData->y,        false);
+			dc.DrawBitmap(imageData->cachedDescription, imageData->x + xoff, imageData->y + yoff, false);
 		}
 		else
 		{

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2024
 //
 //    This file is part of Scorched3D.
 //
@@ -90,34 +90,38 @@ bool TrueTypeFont::createCharacter(FT_Face face, unsigned char ch)
 
 bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 {
-	int width = 0;
-	int height = 0;
-	int topheight = 0;
+	int width  = 0;
+	int height = face->size->metrics.height >> 6;
+	int maxtail  = 0;
+	int chartail = 0;
+	FT_GlyphSlot slot = face->glyph;
 
 	// Find out the total image height and width
-	FT_GlyphSlot slot = face->glyph;
 	for (const char *c=text.c_str(); *c; c++)
 	{
 		FT_Load_Char(face, *c, FT_LOAD_RENDER);
-		FT_Bitmap &bitmap = slot->bitmap;
 
+		// Calculate total width
 		width += slot->advance.x >> 6;
-		if (bitmap.rows                    > height   ) height    = bitmap.rows;
-		if (bitmap.rows - slot->bitmap_top > topheight) topheight = bitmap.rows - slot->bitmap_top;
+
+		// Calculate maxtail
+		chartail = (slot->metrics.height - slot->metrics.horiBearingY) >> 6;
+		if (maxtail < chartail) maxtail = chartail;
 	}
 
 	// Create the image
-	image.Create(width, height + topheight);
+	image.Create(width, height + maxtail);
 
 	// For each char
 	int posx = 0;
 	int posy = 0;
 	for (const char *c=text.c_str(); *c; c++)
 	{
-		FT_Load_Char( face, *c, FT_LOAD_RENDER);
+		FT_Load_Char(face, *c, FT_LOAD_RENDER);
 		FT_Bitmap &bitmap = slot->bitmap;
 
-		int x = slot->bitmap_left;
+		// Horizontal and vertical on-screen character offsets
+		int x =          slot->bitmap_left;
 		int y = height - slot->bitmap_top;
 
 		for (int j=0; j<bitmap.rows; j++)
@@ -133,7 +137,7 @@ bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 				unsigned char *dest = image.GetData() + ((ry * image.GetWidth()) + rx) * 3;
 				unsigned char src = bitmap.buffer[i + bitmap.width * j];
 
-				src = (unsigned int) (float(src) * 0.9f);
+				src = (unsigned char) (float(src) * 0.9f);
 
 				dest[0] = dest[1] = dest[2] = src;
 			}
