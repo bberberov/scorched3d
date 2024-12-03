@@ -40,26 +40,23 @@ ARGParser::Entry::Entry(
 	destB(destBArg),
 	help(helpArg)
 {
-
 }
 
 ARGParser::ARGParser()
 {
-
 }
 
 ARGParser::~ARGParser()
 {
-
 }
 
 bool ARGParser::parse(int argc,char *argv[])
 {
- 	int i;
+	int i;
 	std::string	cmd, space=(" "), quote=("\"");
 
-    for (i=1; i<argc;i++)
- 	        cmd += space + quote + argv[i] + quote;
+	for (i=1; i<argc;i++)
+		cmd += space + quote + argv[i] + quote;
 
 	return parse(cmd.c_str());
 }
@@ -244,9 +241,7 @@ void ARGParser::showArgs(const char *topString)
 	strcat(buffer, "Usage : \n");
 
 	std::map<std::string, Entry>::iterator itor;
-	for (itor = argMap_.begin();
-		itor != argMap_.end();
-		++itor)
+	for (itor = argMap_.begin(); itor != argMap_.end(); ++itor)
 	{
 		const char *type = "unknown";
 		if (itor->second.destC || itor->second.destString) type = "<string>";
@@ -264,9 +259,7 @@ void ARGParser::showArgs(const char *topString)
 
 		strcat(buffer, buffer2);
 	}
-	for (itor = nonParamMap_.begin();
-		itor != nonParamMap_.end();
-		++itor)
+	for (itor = nonParamMap_.begin(); itor != nonParamMap_.end(); ++itor)
 	{
 		char buffer2[255];
 		buffer2[0] = '\0';

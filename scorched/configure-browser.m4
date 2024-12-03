@@ -1,3 +1,4 @@
+dnl Options for selecting an external browser
 AC_ARG_WITH(
 	[browser],
 	[AS_HELP_STRING(
@@ -11,7 +12,6 @@ AC_ARG_WITH(
 	)],
 	[with_browser=xdg-open]
 )
-
 
 AS_IF(
 	[test "x$with_browser" != 'xno'],

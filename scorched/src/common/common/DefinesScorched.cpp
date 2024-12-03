@@ -147,19 +147,22 @@ std::string S3D::getModFile(const std::string &filename)
 	std::string buffer;
 
 	buffer = S3D::getSettingsModFile(
-		S3D::formatStringBuffer("%s/%s", currentMod.c_str(), filename.c_str()));
+		S3D::formatStringBuffer("%s/%s", currentMod.c_str(), filename.c_str())
+	);
 	S3D::fileDos2Unix(buffer);
 	if (S3D::fileExists(buffer)) return buffer;
 
 	buffer = S3D::getGlobalModFile(
-		S3D::formatStringBuffer("%s/%s", currentMod.c_str(), filename.c_str()));
+		S3D::formatStringBuffer("%s/%s", currentMod.c_str(), filename.c_str())
+	);
 	S3D::fileDos2Unix(buffer);
 	if (S3D::fileExists(buffer)) return buffer;
 
 	if (currentMod != "none")
 	{
 		buffer = S3D::getGlobalModFile(
-			S3D::formatStringBuffer("%s/%s", "none", filename.c_str()));
+			S3D::formatStringBuffer("%s/%s", "none", filename.c_str())
+		);
 		S3D::fileDos2Unix(buffer);
 		if (S3D::fileExists(buffer)) return buffer;
 	}
@@ -169,7 +172,9 @@ std::string S3D::getModFile(const std::string &filename)
 
 std::string S3D::getDataFile(const std::string &filename)
 {
-	std::string buffer = S3D::formatStringBuffer("%s/%s", GET_DIR(S3D_DATADIR), filename.c_str());
+	std::string buffer = S3D::formatStringBuffer(
+		"%s/%s", GET_DIR(S3D_DATADIR), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 
 	return buffer;
@@ -182,9 +187,13 @@ extern bool S3D::checkDataFile(const std::string &filename)
 	{
 		if (0 == strstr(filename.c_str(), "none"))
 		{
-			S3D::dialogMessage("Scorched3D", S3D::formatStringBuffer(
-				"The file \"%s\" does not exist",
-				dataFileName.c_str()));
+			S3D::dialogMessage(
+				"Scorched3D",
+				S3D::formatStringBuffer(
+					"The file \"%s\" does not exist",
+					dataFileName.c_str()
+				)
+			);
 			return false;
 		}
 	}
@@ -193,8 +202,9 @@ extern bool S3D::checkDataFile(const std::string &filename)
 
 std::string S3D::getDocFile(const std::string &filename)
 {
-	std::string buffer =
-		S3D::formatStringBuffer("%s/%s", GET_DIR(S3D_DOCDIR), filename.c_str());
+	std::string buffer = S3D::formatStringBuffer(
+		"%s/%s", GET_DIR(S3D_DOCDIR), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -212,7 +222,8 @@ std::string S3D::getHomeFile(const std::string &filename)
 	}
 
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/%s", homeDir.c_str(), filename.c_str());
+		"%s/%s", homeDir.c_str(), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -225,7 +236,8 @@ std::string S3D::getSettingsFile(const std::string &filename)
 		DIALOG_ASSERT(settingsDir.c_str() && settingsDir.c_str()[0]);
 
 		std::string homeDirStr = S3D::getHomeFile(
-			S3D::formatStringBuffer("/%s", settingsDir.c_str()));
+			S3D::formatStringBuffer("/%s", settingsDir.c_str())
+		);
 		if (!S3D::dirExists(homeDirStr))
 		{
 			if (!S3D::dirMake(homeDirStr))
@@ -237,7 +249,8 @@ std::string S3D::getSettingsFile(const std::string &filename)
 	}
 
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/%s", homeDir.c_str(), filename.c_str());
+		"%s/%s", homeDir.c_str(), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -246,11 +259,12 @@ std::string S3D::getLogFile(const std::string &filename)
 {
 	std::string homeDirStr = S3D::getSettingsFile("");
 	std::string newDir(std::string(homeDirStr) + std::string("/logs"));
-	if (S3D::dirExists(newDir)) homeDirStr = newDir;
-	else if (S3D::dirMake(newDir)) homeDirStr = newDir;
+	if      (S3D::dirExists(newDir)) homeDirStr = newDir;
+	else if (S3D::dirMake(newDir)  ) homeDirStr = newDir;
 
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/%s", homeDirStr.c_str(), filename.c_str());
+		"%s/%s", homeDirStr.c_str(), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -259,11 +273,12 @@ std::string S3D::getSaveFile(const std::string &filename)
 {
 	std::string homeDirStr = S3D::getSettingsFile("");
 	std::string newDir(std::string(homeDirStr) + std::string("/saves"));
-	if (S3D::dirExists(newDir)) homeDirStr = newDir;
-	else if (S3D::dirMake(newDir)) homeDirStr = newDir;
+	if      (S3D::dirExists(newDir)) homeDirStr = newDir;
+	else if (S3D::dirMake(newDir)  ) homeDirStr = newDir;
 
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/%s", homeDirStr.c_str(), filename.c_str());
+		"%s/%s", homeDirStr.c_str(), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -275,14 +290,15 @@ std::string S3D::getSettingsModFile(const std::string &filename)
 	{
 		std::string homeDirStr = S3D::getSettingsFile("");
 		std::string newDir(std::string(homeDirStr) + std::string("/mods"));
-		if (S3D::dirExists(newDir)) homeDirStr = newDir;
-		else if (S3D::dirMake(newDir)) homeDirStr = newDir;
+		if      (S3D::dirExists(newDir)) homeDirStr = newDir;
+		else if (S3D::dirMake(newDir)  ) homeDirStr = newDir;
 
 		modDir = homeDirStr;
 	}
-	         
+
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/%s", modDir.c_str(), filename.c_str());
+		"%s/%s", modDir.c_str(), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
@@ -290,8 +306,8 @@ std::string S3D::getSettingsModFile(const std::string &filename)
 std::string S3D::getGlobalModFile(const std::string &filename)
 {
 	std::string buffer = S3D::formatStringBuffer(
-		"%s/data/globalmods/%s", GET_DIR(S3D_DATADIR), filename.c_str());
+		"%s/data/globalmods/%s", GET_DIR(S3D_DATADIR), filename.c_str()
+	);
 	S3D::fileDos2Unix(buffer);
 	return buffer;
 }
-

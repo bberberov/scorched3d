@@ -51,7 +51,7 @@ public:
 	virtual bool setStringArgument(const char *value) = 0;
 };
 
-class ARGParser  
+class ARGParser
 {
 public:
 	ARGParser();

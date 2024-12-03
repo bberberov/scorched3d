@@ -287,10 +287,10 @@ void SettingsFrame::createLandPanel()
 
 	book_->AddPage(landPanel_, wxT("Land"));
 	landPanel_->SetAutoLayout(TRUE);
-#if wxCHECK_VERSION(2,6,0)
+#if wxCHECK_VERSION(2, 6, 0)
 	landPanel_->SetSizer(landPanelSizer);
 #else
-#if wxCHECK_VERSION(2,5,0)
+#if wxCHECK_VERSION(2, 5, 0)
 #else
 	landPanel_->SetSizer(landPanelSizer);
 #endif
@@ -397,7 +397,7 @@ SettingsFrame::SettingsFrame(bool server, OptionsGame &context)
 
 	// Create all the display controls
 	book_ = new wxNotebook(this, -1);
-#if wxCHECK_VERSION(2,6,0)
+#if wxCHECK_VERSION(2, 6, 0)
 	wxBoxSizer *nbs = new wxBoxSizer(wxVERTICAL);
 	nbs->Add(book_);
 #else
