@@ -37,6 +37,8 @@ void addTitleToWindow(
 	const char *fileName,
 	int buttonId = -1
 );
+
+// NOTE: Inactive/unused function?
 wxButton *addButtonToWindow(
 	int id,
 	const char *text,

@@ -186,6 +186,7 @@ void runScorched3D(const char *text, bool server)
 	}
 }
 
+// NOTE: Inactive/unused function?
 wxButton *addButtonToWindow(
 	int id,
 	const char *text,
