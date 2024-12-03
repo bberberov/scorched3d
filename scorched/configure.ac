@@ -24,10 +24,10 @@ PKG_PROG_PKG_CONFIG(
 	[AC_MSG_ERROR([must install pkg-config 0.29 or later])]
 )
 
-AC_CHECK_LIB(fridge, beer, echo "Hmm?!",[
-	echo "Warning: No beer found in fridge!";
-	echo "We highly suggest that you rectify this situation immediately."
-])
+AC_MSG_CHECKING([beer in fridge])
+AC_MSG_RESULT([Hmm?!])
+AC_MSG_WARN([No beer found in fridge!
+	We highly suggest that you rectify this situation immediately.])
 
 AC_ARG_ENABLE(
 	[serveronly],
