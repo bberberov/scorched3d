@@ -94,6 +94,7 @@ then
 	prefix=./
 	LIBS="$LIBS -lexpat -lz -framework UnixImageIO -lmx"
 else
+	AC_PREFIX_DEFAULT([/usr/local/games/scorched3d])
 	LIBS="$LIBS -lexpat -lz -lpng -ljpeg"
 fi
 
@@ -105,20 +106,14 @@ AC_ARG_WITH(
 		[--with-docdir=DIR],
 		[Use DIR to store documentation files (default DATADIR)]
 	)],
-	[with_docdir=$withval]
+	[docdir=${with_docdir}],
+	[docdir=${datadir}/documentation]
 )
-if test "x$with_docdir" = 'x'
-then
-	docdir="${datadir}/documentation"
-else
-	docdir="$with_docdir"
-fi
 AC_SUBST(docdir)
 
-AC_PREFIX_DEFAULT([/usr/local/games/scorched3d])
-
-CFLAGS="$CFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" -DS3D_BINDIR=\\\"${bindir}\\\""
-CXXFLAGS="$CXXFLAGS -DS3D_DOCDIR=\\\"${docdir}\\\" -DS3D_DATADIR=\\\"${datadir}\\\" -DS3D_BINDIR=\\\"${bindir}\\\""
+AC_DEFINE_UNQUOTED([S3D_BINDIR], ["${bindir}"])
+AC_DEFINE_UNQUOTED([S3D_DATADIR],["${datadir}"])
+AC_DEFINE_UNQUOTED([S3D_DOCDIR], ["${docdir}"])
 
 # put here at end because of sdl.m4 not defining
 AC_LANG([C++])
