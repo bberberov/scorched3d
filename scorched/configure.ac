@@ -24,9 +24,6 @@ PKG_PROG_PKG_CONFIG(
 	[AC_MSG_ERROR([must install pkg-config 0.29 or later])]
 )
 
-LDFLAGS="$LDFLAGS -L/usr/X11R6/lib -L/usr/X11R6"
-CPPFLAGS="$CPPFLAGS -I/usr/X11R6/include -I/usr/X11R6"
-
 if test `uname` = 'Darwin'
 then
 	LDFLAGS="$LDFLAGS -lmx"
