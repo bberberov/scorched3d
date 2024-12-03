@@ -35,6 +35,51 @@ You can play with up to twenty-four other players at a time, mixing computer pla
 
 Scorched3D is available for Microsoft Windows, Linux and Mac operating systems.
 
+## Requirements
+
+### Build
+
+- [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/) >= 0.29 or [pkgconf](http://pkgconf.org/)
+- [OpenAL](https://www.openal-soft.org/) >= 1.22.0
+- [Freealut](https://github.com/vancegroup/freealut)
+- [FFTW3](https://www.fftw.org/)
+- [Freetype](https://freetype.org/)
+- OpenGL, GLEW
+- [OGG](https://www.xiph.org/ogg/) and [Vorbis](https://xiph.org/vorbis/)
+- SDL 1.2.x series, SDL_net
+- [wxWidgets](https://www.wxwidgets.org/)
+- [expat](https://libexpat.github.io/)
+- [zlib](http://zlib.net/)
+- [libpng](http://www.libpng.org/)
+
+### Optional
+
+- `xdg-utils` for opening web links
+- MySQL or PostgreSQL
+
+## Building
+
+### Linux
+
+- Run `createAMMakefile.pl` from its directory to create the necesary `Makefile.am` from the Visual Studio project files
+  ```
+  cd scripts
+  perl createAMMakefile.pl
+  cd ..
+  ```
+- Reconfigure with `autoreconf -fiv`
+- Configure with `./configure ...`
+- Build with `make ...`
+- Install with `make install ...`
+
+### Windows
+
+TODO
+
+### macOS
+
+TODO
+
 ## License
 
 License under the terms of the [GNU General Public License v2.0 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
