@@ -23,8 +23,8 @@ IDI_ICON1          ICON           "../../../data/images/tank2.ico"
 //
 LANGUAGE 9, SUBLANG_DEFAULT
 1 VERSIONINFO
-    FILEVERSION     44,0,0,0
-    PRODUCTVERSION  44,0,0,0
+    FILEVERSION     44,1,0,0
+    PRODUCTVERSION  44,1,0,0
     FILEOS          VOS__WINDOWS32
     FILETYPE        VFT_APP
     FILESUBTYPE     VFT2_UNKNOWN
@@ -37,12 +37,12 @@ LANGUAGE 9, SUBLANG_DEFAULT
         {
             VALUE "CompanyName", "Scorched3D"
             VALUE "FileDescription", "Game"
-            VALUE "FileVersion", "44"
+            VALUE "FileVersion", "44.1"
             VALUE "InternalName", "scorched3d"
             VALUE "OriginalFilename", ""
             VALUE "ProductName", "Scorched3D"
-            VALUE "ProductVersion", "44"
-            VALUE "LegalCopyright", "Copyright © 2014"
+            VALUE "ProductVersion", "44.1"
+            VALUE "LegalCopyright", "Copyright © 2014, 2024"
         }
     }
     BLOCK "VarFileInfo"

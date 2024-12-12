@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(
 	[scorched3d],
-	[44]
+	[44.1]
 )
 AC_CONFIG_SRCDIR([src/launcher/scorched/main.cpp])
 AC_CANONICAL_TARGET
