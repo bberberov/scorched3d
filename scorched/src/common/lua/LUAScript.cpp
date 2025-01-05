@@ -29,8 +29,8 @@ LUAScript::LUAScript(ScorchedContext *context) :
 	L_(0),
 	weapon_(0)
 {
-	L_ = lua_open();
-	
+	L_ = luaL_newstate();
+
 	// Load the available libraries
 	luaopen_base(L_); 
 	luaopen_table(L_); 
