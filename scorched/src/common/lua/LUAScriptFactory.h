@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,7 +22,7 @@
 #define __INCLUDE_LUAScriptFactory_INCLUDE__
 
 #include <engine/ScorchedContext.h>
-#include <lua/LUAScript.h>
+#include "LUAScript.h"
 
 class LUAScriptFactory
 {

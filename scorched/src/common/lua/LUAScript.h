@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,7 +24,7 @@
 #include <string>
 #include <common/FixedVector.h>
 
-#include "lua.h"
+#include <lua.hpp>
 
 class Weapon;
 class ScorchedContext;

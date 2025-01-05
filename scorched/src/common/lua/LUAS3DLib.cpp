@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lua/LUAS3DLib.h>
-#include <lua/LUAScript.h>
-#include <lua/LUAUtil.h>
+#include "LUAS3DLib.h"
+#include "LUAScript.h"
+#include "LUAUtil.h"
 #include <common/OptionEntry.h>
 #include <common/OptionsScorched.h>
 #include <common/OptionsTransient.h>
@@ -35,11 +35,6 @@
 #include <landscapemap/LandscapeMaps.h>
 
 #define LUA_LIB
-
-#include "lua.h"
-
-#include "lauxlib.h"
-#include "lualib.h"
 
 static LUAScript *getScript(lua_State *L)
 {
@@ -346,7 +341,9 @@ static const luaL_Reg s3dlib[] = {
 	{NULL, NULL}
 };
 
+extern "C" {
 LUALIB_API int luaopen_s3d (lua_State *L) {
 	luaL_register(L, LUA_S3DLIBNAME, s3dlib);
 	return 1;
+}
 }
