@@ -343,7 +343,14 @@ static const luaL_Reg s3dlib[] = {
 
 extern "C" {
 LUALIB_API int luaopen_s3d (lua_State *L) {
+#if 501 < LUA_VERSION_NUM
+	lua_newtable(L);
+	luaL_setfuncs(L, s3dlib, 0);
+	lua_pushvalue(L, -1);
+	lua_setglobal(L, LUA_S3DLIBNAME);
+#else
 	luaL_register(L, LUA_S3DLIBNAME, s3dlib);
+#endif
 	return 1;
 }
 }

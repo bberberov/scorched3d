@@ -150,7 +150,14 @@ static const luaL_Reg s3dweaponlib[] = {
 
 extern "C" {
 LUALIB_API int luaopen_s3dweapon (lua_State *L) {
+#if 501 < LUA_VERSION_NUM
+	lua_newtable(L);
+	luaL_setfuncs(L, s3dweaponlib, 0);
+	lua_pushvalue(L, -1);
+	lua_setglobal(L, LUA_S3DWEAPONLIBNAME);
+#else
 	luaL_register(L, LUA_S3DWEAPONLIBNAME, s3dweaponlib);
+#endif
 	return 1;
 }
 }
