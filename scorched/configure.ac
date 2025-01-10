@@ -56,6 +56,7 @@ fi
 m4_include([configure-sdl.m4])
 m4_include([configure-flt.m4])
 m4_include([configure-sql.m4])
+m4_include([configure-lua.m4])
 
 AC_SUBST(S3D_SUBDIRS)
 

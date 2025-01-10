@@ -7,7 +7,7 @@ sub getFiles
 	my ($vcfile) = @_;
 
 	open (IN, $vcfile) || die $vcfile;
-	my @files = grep { /\.cpp\"/ or /\.c\"/ or /\.h\"/ } <IN>;
+	my @files = grep { /^[[:space:]]+<Cl/ and ( /\.cpp\"/ or /\.c\"/ or /\.h\"/ ) } <IN>;
 	close (IN);
 
 	for (my $i=0; $i<=$#files; $i++)
@@ -122,6 +122,7 @@ createBinaryMakefile(
 		. ' @FT2_CFLAGS@'
 		. ' @OGG_CFLAGS@ @VORBIS_CFLAGS@'
 		. ' @SDL_CFLAGS@ @SDL_NET_CFLAGS@'
+		. ' @LUA_CFLAGS@'
 	),
 	(
 		''
@@ -131,6 +132,7 @@ createBinaryMakefile(
 		. ' @GL_LIBS@'
 		. ' @OGG_LIBS@ @VORBIS_LIBS@ @VORBISFILE_LIBS@'
 		. ' @SDL_LIBS@ @SDL_NET_LIBS@'
+		. ' @LUA_LIBS@'
 	)
 
 );
@@ -144,10 +146,12 @@ createBinaryMakefile(
 		. ' -DS3D_SERVER=1'
 		. ' @SDL_CFLAGS@ @SDL_NET_CFLAGS@'
 		. ' @MYSQL_CFLAGS@'
+		. ' @LUA_CFLAGS@'
 	),
 	(
 		''
 		. ' @SDL_LIBS@ @SDL_NET_LIBS@'
 		. ' @MYSQL_LIBS@'
+		. ' @LUA_LIBS@'
 	)
 );

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,22 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lua/LUAScript.h>
-#include <lua/LUAUtil.h>
-#include <lua/LUAS3DLib.h>
-#include <lua/LUAS3DWeaponLib.h>
+#include "LUAScript.h"
+#include "LUAUtil.h"
+#include "LUAS3DLib.h"
+#include "LUAS3DWeaponLib.h"
 #include <common/Logger.h>
-
-#include "lauxlib.h"
-#include "lualib.h"
 
 LUAScript::LUAScript(ScorchedContext *context) :
 	context_(context),
 	L_(0),
 	weapon_(0)
 {
-	L_ = lua_open();
-	
+	L_ = luaL_newstate();
+
 	// Load the available libraries
 	luaopen_base(L_); 
 	luaopen_table(L_); 

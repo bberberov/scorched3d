@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,9 +21,11 @@
 #if !defined(__INCLUDE_LUAS3DLib_INCLUDE__)
 #define __INCLUDE_LUAS3DLib_INCLUDE__
 
-#include "lua.h"
+#include <lua.hpp>
 
 #define LUA_S3DLIBNAME	"s3d"
+extern "C" {
 LUALIB_API int (luaopen_s3d) (lua_State *L);
+}
 
 #endif // __INCLUDE_LUAS3DLib_INCLUDE__

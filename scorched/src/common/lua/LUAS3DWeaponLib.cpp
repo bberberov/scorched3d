@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lua/LUAS3DWeaponLib.h>
-#include <lua/LUAScript.h>
-#include <lua/LUAUtil.h>
+#include "LUAS3DWeaponLib.h"
+#include "LUAScript.h"
+#include "LUAUtil.h"
 #include <weapons/AccessoryStore.h>
 #include <actions/Explosion.h>
 #include <actions/ExplosionParams.h>
@@ -31,11 +31,6 @@
 #include <common/Logger.h>
 
 #define LUA_LIB
-
-#include "lua.h"
-
-#include "lauxlib.h"
-#include "lualib.h"
 
 static LUAScript *getScript(lua_State *L)
 {
@@ -153,7 +148,16 @@ static const luaL_Reg s3dweaponlib[] = {
 	{NULL, NULL}
 };
 
+extern "C" {
 LUALIB_API int luaopen_s3dweapon (lua_State *L) {
+#if 501 < LUA_VERSION_NUM
+	lua_newtable(L);
+	luaL_setfuncs(L, s3dweaponlib, 0);
+	lua_pushvalue(L, -1);
+	lua_setglobal(L, LUA_S3DWEAPONLIBNAME);
+#else
 	luaL_register(L, LUA_S3DWEAPONLIBNAME, s3dweaponlib);
+#endif
 	return 1;
+}
 }
