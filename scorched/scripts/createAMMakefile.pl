@@ -69,6 +69,7 @@ sub createBinaryMakefile
 	print CLIENT $binary."_SOURCES = \\\n";
 	print CLIENT @clientfiles;
 	print CLIENT "\n";
+	print CLIENT "AM_CXXFLAGS = -std=c++11\n";
 	print CLIENT "AM_CPPFLAGS = -I../../common/porting -I../../common ${flags}\n";
 	print CLIENT "LDADD = ${libs}\n";
 	print CLIENT "\n";
