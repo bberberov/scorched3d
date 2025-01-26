@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/InventoryDialog.h>
+#include "InventoryDialog.h"
 #include <GLW/GLWTextButton.h>
 #include <GLW/GLWIcon.h>
 #include <GLW/GLWFlag.h>
@@ -54,7 +54,7 @@ InventoryDialog::InventoryDialog() :
 		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX))->getId();
 
 	sellTab_ = (GLWTab *)
-		addWidget(new GLWTab("Inv", LANG_RESOURCE("INVENTORY_TAB", "Inv"), 10, 40, 420, 160));
+		addWidget(new GLWTab("Inventory", LANG_RESOURCE("INVENTORY_TAB", "Inventory"), 10, 40, 420, 160));
 	topPanel_ = (GLWPanel *)
 		addWidget(new GLWPanel(10, 265, 420, 50));
 

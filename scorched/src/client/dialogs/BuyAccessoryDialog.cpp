@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/BuyAccessoryDialog.h>
+#include "BuyAccessoryDialog.h"
 #include <dialogs/GiftMoneyDialog.h>
 #include <GLW/GLWWindowManager.h>
 #include <GLW/GLWTextButton.h>
@@ -151,25 +151,44 @@ void BuyAccessoryDialog::addTabs()
 	if (sellTab_) return;
 
 	std::set<std::string> &groupNames =
-		ScorchedClient::instance()->
-			getAccessoryStore().getTabGroupNames();
+		ScorchedClient::instance()->getAccessoryStore().getTabGroupNames();
 	std::set<std::string>::reverse_iterator itor;
-	for (itor = groupNames.rbegin();
-		itor != groupNames.rend();
-		++itor)
+
+	for (itor = groupNames.rbegin(); itor != groupNames.rend(); ++itor)
 	{
+		GLWTab* tab;
+
 		std::string name = (*itor);
-		GLWTab *tab = (GLWTab *)
-			addWidget(new GLWTab(name, LANG_RESOURCE(name, name), 10, 40, 450, 160));
+
+		if ( "weapon" == name )
+		{
+			tab = (GLWTab*) addWidget(
+				new GLWTab(name, LANG_RESOURCE(name, "Weapons"), 10, 40, 450, 160)
+			);
+		}
+		else if ( "defense" == name )
+		{
+			tab = (GLWTab*) addWidget(
+				new GLWTab(name, LANG_RESOURCE(name, "Defense"), 10, 40, 450, 160)
+			);
+		}
+		else
+		{
+			tab = (GLWTab*) addWidget(
+				new GLWTab(name, LANG_RESOURCE(name, name), 10, 40, 450, 160)
+			);
+		}
 		buyTabs_[name] = tab;
 		tab->setHandler(this);
 	}
-	sellTab_ = (GLWTab *)
-		addWidget(new GLWTab("Inv", LANG_RESOURCE("INVENTORY_TAB", "Inv"), 10, 40, 450, 160));
+	sellTab_ = (GLWTab *) addWidget(
+		new GLWTab("Inventory", LANG_RESOURCE("INVENTORY_TAB", "Inventory"), 10, 40, 450, 160)
+	);
 	sellTab_->setHandler(this);
 
-	favouritesTab_ = (GLWTab *)
-		addWidget(new GLWTab("Fav", LANG_RESOURCE("FAVOURITES_TAB", "Fav"), 10, 40, 450, 160));
+	favouritesTab_ = (GLWTab *) addWidget(
+		new GLWTab("Favourites", LANG_RESOURCE("FAVOURITES_TAB", "Favourites"), 10, 40, 450, 160)
+	);
 	favouritesTab_->setHandler(this);
 }
 
