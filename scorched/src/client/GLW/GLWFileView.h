@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,7 +29,7 @@ class GLWFileView :
 	public GLWidget
 {
 public:
-	GLWFileView(char *fileName = "", 
+	GLWFileView(char *fileName = nullptr,
 		float x = 0.0f, float y = 0.0f, 
 		float w = 0.0f, float h = 0.0f);
 	virtual ~GLWFileView();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,7 @@ GLWFileView::GLWFileView(char *fileName, float x, float y, float w, float h) :
 	GLWidget(x, y, w, h), 
 	scroll_(x + w - 17, y, h, 0, 1)
 {
-	if (fileName[0])
+	if (fileName != nullptr)
 	{
 		lines_.readFile(fileName);
 		scroll_.setMax((int) lines_.getLines().size());

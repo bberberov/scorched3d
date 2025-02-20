@@ -468,7 +468,8 @@ void ScoreDialog::draw()
 			getTargetContainer().getTankById(playerId);
 		if (current && !current->getState().getTankPlaying()) 
 		{
-			addLine(currentTank, current, y, " ", false, buying);
+			char strrank[] = " ";
+			addLine(currentTank, current, y, strrank, false, buying);
 			y+= lineSpacer;
 		}
 	}	

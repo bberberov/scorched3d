@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,15 +40,15 @@ public:
 
 	bool addMenu(
 		const LangString &menuName,
-		char *menuNameInternal, 
+		const char *menuNameInternal,
 		const LangString &menuDescription,
 		float width, 
 		unsigned int state,
 		GLMenuI *callback,
 		Image *icon = 0,
 		unsigned int flags = 0);
-	bool addMenuItem(char *menuName, const GLMenuItem item);
-	GLMenuEntry *getMenu(char *menuItem);
+	bool addMenuItem(const char *menuName, const GLMenuItem item);
+	GLMenuEntry *getMenu(const char *menuItem);
 
 	virtual void draw();
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);

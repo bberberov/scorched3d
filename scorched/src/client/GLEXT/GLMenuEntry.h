@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,7 +31,7 @@ class GLMenuEntry : public GLWSelectorI, public ToolTipI
 public:
 	GLMenuEntry(
 		const LangString &menuName,
-		char *menuNameInternal, 
+		const char *menuNameInternal,
 		const LangString &menuDescription,
 		float width, 
 		unsigned int state,
