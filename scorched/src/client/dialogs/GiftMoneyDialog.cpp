@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -101,7 +101,7 @@ void GiftMoneyDialog::display()
 
 	// Add available amounts of money
 	int amounts [] = { 1000, 2500, 500, 10000, 15000, 20000, 25000, 50000, 100000 };
-	for (int i=0; i<sizeof(amounts)/sizeof(int); i++)
+	for (size_t i = 0; i < sizeof(amounts) / sizeof(int); i++)
 	{
 		int amount = amounts[i];
 		if (tankInfo_.tankMoney >= amount)

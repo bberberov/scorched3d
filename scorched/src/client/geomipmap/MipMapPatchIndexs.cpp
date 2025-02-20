@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -83,14 +83,14 @@ void MipMapPatchIndexs::generate(int size, int totalsize, unsigned int totallods
 		}
 	}
 
-	int totalBufferSizeBytes = totalVerts * sizeof(unsigned short);
+	unsigned int totalBufferSizeBytes = totalVerts * sizeof(unsigned short);
 	Logger::log(S3D::formatStringBuffer(
 		"Index Memory Size : %u bytes", totalBufferSizeBytes));
 
 	// Store this array in a vertex buffer (if available)
 	if (GLStateExtension::hasVBO())
 	{
-		if (!bufferObject_ || bufferObject_->get_map_size() != totalBufferSizeBytes) 
+		if (!bufferObject_ || bufferObject_->get_map_size() != totalBufferSizeBytes)
 		{
 			delete bufferObject_;
 			bufferObject_ = new GLVertexBufferObject(true);

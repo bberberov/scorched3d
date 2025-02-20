@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,7 @@
 #include <GLEXT/GLStateExtension.h>
 #include <GLEXT/GLVertexBufferObject.h>
 
-GraphicalLandscapeMap::GraphicalLandscapeMap() : 
+GraphicalLandscapeMap::GraphicalLandscapeMap() :
 	heightData_(0), bufferObject_(0), 
 	width_(0), height_(0), bufferSizeBytes_(0)
 {
@@ -49,7 +49,7 @@ void GraphicalLandscapeMap::create(const int width, const int height)
 
 	if (GLStateExtension::hasVBO())
 	{
-		if (!bufferObject_ || bufferObject_->get_map_size() != bufferSizeBytes_) 
+		if (!bufferObject_ || bufferObject_->get_map_size() != bufferSizeBytes_)
 		{
 			delete bufferObject_;
 			bufferObject_ = new GLVertexBufferObject();

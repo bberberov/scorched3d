@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,6 +25,7 @@
 #include <GLEXT/GLState.h>
 #include <GLEXT/GLStateExtension.h>
 #include <GLEXT/GLInfo.h>
+#include <limits>
 
 Water2Patch::Water2Patch() : 
 	data_(0), dataSize_(0), size_(0), bufferOffSet_(-1)
@@ -49,7 +50,7 @@ static Vector getPosition(Water2Points &heights,
 	int position = currentXNormalized + currentYNormalized * totalSize;
 	DIALOG_ASSERT(position >= 0 && position < totalSize * totalSize);
 
-	Vector &height = heights.getPoint(currentXNormalized, currentYNormalized);
+	Vector &height = heights.getPoint( (unsigned int)currentXNormalized, (unsigned int)currentYNormalized);
 
 	Vector result(
 		height[0] + float(x) * 2.0f,
@@ -136,7 +137,7 @@ void Water2Patch::draw(MipMapPatchIndex &index)
 	{
 		// Map indices to draw
 		unsigned short *indices = 0;
-		if (index.getBufferOffSet() != -1)
+		if (index.getBufferOffSet() != std::numeric_limits<unsigned int>::max())
 		{
 			indices = (unsigned short *) NULL + (index.getBufferOffSet() / sizeof(unsigned short));
 		}

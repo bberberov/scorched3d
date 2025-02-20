@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -124,7 +124,7 @@ void GLWTextBox::keyDown(char *buffer, unsigned int keyState,
 		}
 		else if (unicodeKey >= ' ' && (unicodeKey <= 127 || allowUnicode_))
 		{
-			if ((maxTextLen_==0) || ((int) text_.size() < maxTextLen_))
+			if ( (maxTextLen_ == 0) || ( text_.size() < maxTextLen_) )
 			{
 				text_ += unicodeKey;
 				if (handler_) handler_->textChanged(id_, text_);

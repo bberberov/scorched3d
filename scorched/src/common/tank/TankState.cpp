@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -93,11 +93,14 @@ void TankState::clientNewGame()
 
 void TankState::setState(State s)
 {
-	for (int i=0; i<sizeof(allowedStateTransitions) / 
-			sizeof(AllowedStateTransitions); i++)
+	for (
+		size_t i=0;
+		i < sizeof(allowedStateTransitions) / sizeof(AllowedStateTransitions);
+		i++
+	)
 	{
-		if (state_ == allowedStateTransitions[i].from &&
-			s == allowedStateTransitions[i].to)
+		if (state_ == allowedStateTransitions[i].from
+			&& s == allowedStateTransitions[i].to)
 		{
 			state_ = s;
 			stateChangeCount_++;
@@ -105,7 +108,7 @@ void TankState::setState(State s)
 		}
 	}
 
- 	if (state_ != sNormal && state_ != sBuying)
+	if (state_ != sNormal && state_ != sBuying)
 	{
 		// Make sure the target and shield physics
 		// are disabled

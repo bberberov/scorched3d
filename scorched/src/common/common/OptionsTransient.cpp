@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -47,7 +47,7 @@ unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 {
 	// Reset all the counts
 	std::map<unsigned int, unsigned int> counts;
-	for (int i=1; i<=optionsGame_.getTeams(); i++)
+	for (unsigned int i = 1; i <= optionsGame_.getTeams(); i++)
 	{
 		counts[i] = 0;
 	}
@@ -71,7 +71,7 @@ unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 	// Find the least counted team
 	unsigned int team = 1;
 	unsigned int count = counts[1];
-	for (int i=2; i<=optionsGame_.getTeams(); i++)
+	for (unsigned int i = 2; i <= optionsGame_.getTeams(); i++)
 	{
 		if (counts[i] < count)
 		{

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,13 +29,14 @@
 	else return mainOptions_.get##x(); \
 	};
 
-#define OPTIONSTRING_GETTER(x) const char *get##x() GENERIC_GETTER(x)
-#define OPTIONINT_GETTER(x) int get##x() GENERIC_GETTER(x)
-#define OPTIONENUM_GETTER(x) OptionEntryEnum get##x() GENERIC_GETTER(x)
-#define OPTIONSTRINGENUM_GETTER(x) const char *get##x() GENERIC_GETTER(x)
-#define OPTIONBOOL_GETTER(x) bool get##x() GENERIC_GETTER(x)
-#define OPTIONFLOAT_GETTER(x) bool get##x() GENERIC_GETTER(x)
-#define OPTIONVECTOR_GETTER(x) bool get##x() GENERIC_GETTER(x)
+#define OPTIONSTRING_GETTER(x)     const char *    get##x() GENERIC_GETTER(x)
+#define OPTIONINT_GETTER(x)        int             get##x() GENERIC_GETTER(x)
+#define OPTIONUINT_GETTER(x)       unsigned int    get##x() GENERIC_GETTER(x)
+#define OPTIONENUM_GETTER(x)       OptionEntryEnum get##x() GENERIC_GETTER(x)
+#define OPTIONSTRINGENUM_GETTER(x) const char *    get##x() GENERIC_GETTER(x)
+#define OPTIONBOOL_GETTER(x)       bool            get##x() GENERIC_GETTER(x)
+#define OPTIONFLOAT_GETTER(x)      bool            get##x() GENERIC_GETTER(x)
+#define OPTIONVECTOR_GETTER(x)     bool            get##x() GENERIC_GETTER(x)
 
 class ScorchedContext;
 class LandscapeDefinition;
@@ -50,7 +51,7 @@ public:
 	OPTIONINT_GETTER(ManagementPortNo);
 
 	OPTIONSTRING_GETTER(Tutorial);
-	OPTIONINT_GETTER(Teams);
+	OPTIONUINT_GETTER(Teams);
 	OPTIONINT_GETTER(MinimumLandHeight);
 	OPTIONINT_GETTER(WeaponSpeed);
 	OPTIONINT_GETTER(StartArmsLevel);

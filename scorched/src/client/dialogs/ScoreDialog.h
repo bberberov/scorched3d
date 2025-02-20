@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,7 +41,7 @@ protected:
 	std::list<unsigned int> sortedTanks_;
 	int lastScoreValue_;
 	int lastMoneyValue_;
-	int lastNoPlayers_;
+	unsigned int lastNoPlayers_;
 
 	void calculateScores();
 	void addLine(Tank *currentPlayer, Tank *linePlayer, float y, char *rank, bool finished, bool buying);

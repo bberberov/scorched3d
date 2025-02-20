@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -402,7 +402,7 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 				if (roof) currentPatch = &landAndTargetCurrentPatch->getRoofVisibilityPatch();
 				else currentPatch = &landAndTargetCurrentPatch->getLandVisibilityPatch();
 
-				unsigned int index = currentPatch->getVisibilityIndex();
+				int index = currentPatch->getVisibilityIndex();
 				if (index == -1) index = shadowLOD;
 
 				int leftIndex = PATCH_INDEX_SHADOW(currentPatch->getLeftPatch(), shadowLOD);
@@ -425,7 +425,7 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 		while (currentPatchPtr = patchItor.getNext())
 		{
 			HeightMapVisibilityPatch *currentPatch = (HeightMapVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = PATCH_INDEX_NORMAL(currentPatch->getLeftPatch());
@@ -482,7 +482,7 @@ void VisibilityPatchGrid::drawLandLODLevels()
 		while (currentPatchPtr = patchItor.getNext())
 		{
 			LandVisibilityPatch *currentPatch = (LandVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = currentPatch->getLeftPatch()?
@@ -568,7 +568,7 @@ void VisibilityPatchGrid::drawWater(Water2Patches &patches,
 		while (currentPatchPtr = patchItor.getNext())
 		{
 			WaterVisibilityPatch *currentPatch = (WaterVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = currentPatch->getLeftPatch()?

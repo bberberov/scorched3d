@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -261,7 +261,7 @@ void PlayerDialog::initialize()
 	{
 		// Create team entries
 		teamDropDown_->clear();
-		for (int i=1; i<=ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
+		for (unsigned int i = 1; i <= ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
 		{
 			const char *name = TankColorGenerator::getTeamName(i);
 			GLWSelectorEntry entry(LANG_RESOURCE(name, name), 0, false, &colorTexture_, 0);

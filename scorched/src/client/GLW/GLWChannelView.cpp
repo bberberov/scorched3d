@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,6 +31,7 @@
 #include <client/ClientChannelManager.h>
 #include <client/ScorchedClient.h>
 #include <sound/SoundUtils.h>
+#include <string>
 #include <target/TargetContainer.h>
 #include <lang/LangResource.h>
 #include <lang/LangParam.h>
@@ -60,9 +61,8 @@ GLWChannelView::CurrentChannelEntry *GLWChannelView::getChannel(const std::strin
 		itor != currentChannels_.end();
 		++itor)
 	{
-		CurrentChannelEntry &current = *itor;
-		if (channelName == current.channel) return &current;
-		if (current.id == atoi(channelName.c_str())) return &current;
+		if ( itor->channel == channelName                 ) return &(*itor);
+		if ( itor->id == std::atol( channelName.c_str() ) ) return &(*itor);
 	}
 	return 0;
 }

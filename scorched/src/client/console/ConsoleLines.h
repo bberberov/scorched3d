@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -56,7 +56,7 @@ protected:
 class ConsoleLines  
 {
 public:
-	ConsoleLines(int maxLines);
+	ConsoleLines(unsigned int maxLines);
 	virtual ~ConsoleLines();
 
 	void addLine(const std::string &line, bool showPointer);
@@ -71,8 +71,8 @@ public:
 
 protected:
 	std::deque<ConsoleLine *> lines_;
-	int maxLines_;
-	int currentLine_;
+	unsigned int maxLines_;
+	unsigned int currentLine_;
 
 	void addSmallLine(int section, const LangString &line, bool showPointer);
 

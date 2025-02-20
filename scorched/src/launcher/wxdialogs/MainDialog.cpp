@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -321,7 +321,7 @@ MainFrame::MainFrame()
 	TrueTypeFont largeImageFont(S3D::getDataFile("data/fonts/dejavusans.ttf"), 14);
 	TrueTypeFont smallImageFont(S3D::getDataFile("data/fonts/dejavusans.ttf"), 12);
 
-	for (int i=0; i<sizeof(imageDefinitions) / sizeof(ImageDefinition); i++)
+	for (size_t i = 0; i < sizeof(imageDefinitions) / sizeof(ImageDefinition); i++)
 	{
 		ImageData *image = new ImageData();
 		image->x = imageDefinitions[i].x;

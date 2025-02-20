@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -124,9 +124,9 @@ bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 		int x =          slot->bitmap_left;
 		int y = height - slot->bitmap_top;
 
-		for (int j=0; j<bitmap.rows; j++)
+		for (unsigned int j = 0; j < bitmap.rows; j++)
 		{
-			for (int i=0; i<bitmap.width; i++)
+			for (unsigned int i = 0; i < bitmap.width; i++)
 			{
 				int rx = (i + posx + x);
 				int ry = (j + posy + y);
@@ -134,7 +134,7 @@ bool TrueTypeFont::getImageForText(const std::string &text, wxImage &image)
 				if (rx >= image.GetWidth()  || rx < 0) continue;
 				if (ry >= image.GetHeight() || ry < 0) continue;
 
-				unsigned char *dest = image.GetData() + ((ry * image.GetWidth()) + rx) * 3;
+				unsigned char *dest = image.GetData() + ( ( ry * image.GetWidth() ) + rx ) * 3;
 				unsigned char src = bitmap.buffer[i + bitmap.width * j];
 
 				src = (unsigned char) (float(src) * 0.9f);

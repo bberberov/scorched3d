@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -380,7 +380,7 @@ void ShowScoreSimAction::scoreOverallWinner(ScorchedContext &context)
 	}
 	else
 	{
-		int winningTeam = TankSort::getWinningTeam(context);
+		unsigned int winningTeam = TankSort::getWinningTeam(context);
 		if (winningTeam == 0)
 		{
 			ChannelText text("banner", 

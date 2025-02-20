@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -74,7 +74,7 @@ void ConsoleLine::drawLine(float x, float y, GLFont2d *font)
 	}
 }
 
-ConsoleLines::ConsoleLines(int maxLines) :
+ConsoleLines::ConsoleLines(unsigned int maxLines) :
 	maxLines_(maxLines), currentLine_(0)
 {
 }
@@ -96,10 +96,14 @@ void ConsoleLines::clear()
 
 void ConsoleLines::scroll(int lines)
 {
-	currentLine_ -= lines;
-	if (currentLine_ < 0) currentLine_ = 0;
-	else if (currentLine_ >= (int) lines_.size()) 
-		currentLine_ = (int) lines_.size();
+	int scrollLine = (int)currentLine_ - lines;
+
+	if (scrollLine < 0)
+		currentLine_ = 0;
+	else if ( lines_.size() <= (unsigned int)scrollLine )
+		currentLine_ = lines_.size();
+	else
+		currentLine_ = (unsigned int)scrollLine;
 }
 
 void ConsoleLines::addLine(const std::string &originalText, bool showPointer)
@@ -154,8 +158,8 @@ void ConsoleLines::addSmallLine(int sectionNo, const LangString &text, bool show
 	if (currentLine_ != 0)
 	{
 		currentLine_ ++;
-		if (currentLine_ > (int) lines_.size()) 
-			currentLine_ = (int) lines_.size();
+		if (lines_.size() < currentLine_)
+			currentLine_ = lines_.size();
 	}
 }
 
@@ -182,7 +186,7 @@ void ConsoleLines::drawLines(GLFont2d *font, float startHeight, float totalHeigh
 		GLState currentState(GLState::TEXTURE_ON | GLState::BLEND_ON);
 
 		float position = startHeight + 20.0f;
-		for (int i=currentLine_; i<(int) lines_.size(); i++)
+		for (unsigned int i = currentLine_; i < lines_.size(); i++)
 		{
 			ConsoleLine *line = lines_[i];
 			line->drawLine(20.0f, position, font);

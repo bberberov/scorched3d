@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -49,7 +49,7 @@ void Water2Patches::generate(Water2Points &heights,
 	if (!patches_) patches_ = new Water2Patch[size_ * size_];
 
 	// Generate all of the patches
-	int i=0;
+	unsigned int i = 0;
 	for (int y=0; y<size_; y++)
 	{
 		for (int x=0; x<size_; x++, i++)
@@ -63,7 +63,7 @@ void Water2Patches::generate(Water2Points &heights,
 	{
 		int patchVolume = (patchSize + 1) * (patchSize + 1);
 		int bufferSizeBytes = patchVolume * sizeof(Water2Patch::Data);
-		int allBuffersSizeBytes = bufferSizeBytes * i;
+		unsigned int allBuffersSizeBytes = bufferSizeBytes * i;
 
 		if (!bufferObject_ || bufferObject_->get_map_size() != allBuffersSizeBytes) 
 		{

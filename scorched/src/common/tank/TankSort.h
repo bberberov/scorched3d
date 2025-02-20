@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,7 +38,7 @@ namespace TankSort
 		const LangString &nameX, TankScore &scoreX,
 		const LangString &nameY, TankScore &scoreY);
 
-	int getWinningTeam(ScorchedContext &context);
+	unsigned int getWinningTeam(ScorchedContext &context);
 	void getSortedTanks(std::list<Tank *> &list, ScorchedContext &context);
 	void getSortedTanksIds(ScorchedContext &context, std::list<unsigned int> &list);
 };

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -67,7 +67,7 @@ void igd::sendInitialRequest(int portNumber)
 		"urn:schemas-upnp-org:device:InternetGatewayDevice:1",
 		"urn:schemas-upnp-org:service:WANIPConnection:1",
 		"urn:schemas-upnp-org:service:WANPPPConnection:1" };
-	for (int i=0; i<sizeof(services)/sizeof(const char*);i++) {
+	for (size_t i = 0; i < sizeof(services) / sizeof(const char*); i++) {
 		sendInitialRequest(udpsock, services[i]);
 	}
 	recvInitialRequest(udpsock, locations);
@@ -166,7 +166,7 @@ static bool parseUrl(const char *data, std::string &host, int &port, std::string
 void igd::recvInitialRequest(UDPsocket udpsock, std::list<Location> &locations)
 {
 	Packet packet;
-	for (int i=0; i<30; i++)
+	for (unsigned int i = 0; i < 30; i++)
 	{
 		SDL_Delay(100);
 		if (SDLNet_UDP_Recv(udpsock, packet.packet) == 1)
@@ -237,7 +237,7 @@ bool igd::sendTCPRequest(Location &location, const std::string &request, std::st
 		Logger::log(S3D::formatStringBuffer("igd::sent TCP packet %s", request.c_str()));
 	}
 
-	if (SDLNet_TCP_Send(tcpsock, request.c_str(), request.size()) != request.size())
+	if ( ( (size_t) SDLNet_TCP_Send( tcpsock, request.c_str(), request.size() ) ) != request.size() )
 	{
 		Logger::log(S3D::formatStringBuffer("igd::Failed to send request to host and port, %s:%i", 
 			location.host.c_str(), location.port));
@@ -260,7 +260,7 @@ bool igd::sendTCPRequest(Location &location, const std::string &request, std::st
 	}
 
 	bool code = false;
-	if (result.find("200 OK") != -1)
+	if (result.find("200 OK") != result.npos)
 	{
 		const char *data = strstr(result.c_str(), "\r\n\r\n");
 		if (data) 

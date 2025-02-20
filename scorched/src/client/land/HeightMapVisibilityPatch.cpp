@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,6 +28,7 @@
 #include <GLEXT/GLStateExtension.h>
 #include <GLEXT/GLInfo.h>
 #include <GLW/GLWFont.h>
+#include <limits>
 
 HeightMapVisibilityPatch::HeightMapVisibilityPatch(HeightMap *heightMap) : 
 	heightMap_(heightMap),
@@ -286,7 +287,7 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 
 		// Map indices to draw
 		unsigned short *indices = 0;
-		if (index.getBufferOffSet() != -1)
+		if (index.getBufferOffSet() != std::numeric_limits<unsigned int>::max())
 		{
 			indices = (unsigned short *) NULL + (index.getBufferOffSet() / sizeof(unsigned short));
 		}

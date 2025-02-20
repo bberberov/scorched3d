@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,9 +45,9 @@ static const float VIRTUAL_PLANE_HEIGHT = 25.0f;
 class Water2Points
 {
 public:
-	Vector &getPoint(int x, int y)
+	Vector &getPoint(unsigned int x, unsigned int y)
 	{
-		DIALOG_ASSERT(x>=0 && y>=0 && x<wave_resolution && y<wave_resolution);
+		DIALOG_ASSERT(0 <= x && 0 <= y && x < wave_resolution && y < wave_resolution);
 		return points[x][y];
 	};
 

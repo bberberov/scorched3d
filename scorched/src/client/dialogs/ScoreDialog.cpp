@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -392,10 +392,11 @@ void ScoreDialog::draw()
 	int tmpLastMoneyValue = 0;
 	if (ScorchedClient::instance()->getOptionsGame().getTeams() > 1)
 	{
-		int winningTeam = TankSort::getWinningTeam(
-			ScorchedClient::instance()->getContext());
+		unsigned int winningTeam = TankSort::getWinningTeam(
+			ScorchedClient::instance()->getContext()
+		);
 
-		for (int i=0; i<ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
+		for (unsigned int i = 0; i < ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
 		{
 			bool someTeam = false;
 			std::list<unsigned int>::iterator itor;
@@ -408,7 +409,14 @@ void ScoreDialog::draw()
 				if (current && current->getTeam() == (i + 1) && current->getState().getTankPlaying()) 
 				{
 					someTeam = true;
-					addLine(currentTank, current, y, (char *)((winningTeam==(i+1))?"1":"2"), finished, buying);
+					addLine(
+						currentTank,
+						current,
+						y,
+						(char *)( ( winningTeam == ( i + 1 ) ) ? "1" : "2" ),
+						finished,
+						buying
+					);
 					
 					tmpLastScoreValue += current->getScore().getScore();
 					tmpLastMoneyValue += current->getScore().getMoney();

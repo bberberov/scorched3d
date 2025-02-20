@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,8 +22,8 @@
 #include <engine/ModFiles.h>
 #include <engine/ModFileEntryLoader.h>
 
-ServerDestinationMod::ServerDestinationMod() : 
-	readyToReceive_(true), init_(false), totalLeft_(0)
+ServerDestinationMod::ServerDestinationMod()
+	: readyToReceive_(true), init_(false), totalLeft_(0)
 {
 	files_ = new std::list<ModIdentifierEntry>();
 }
@@ -102,11 +102,16 @@ ServerDestination::~ServerDestination()
 
 void ServerDestination::setState(State s)
 {
-	for (int i=0; i<sizeof(allowedStateTransitions) / 
-			sizeof(AllowedStateTransitions); i++)
+	for (
+		size_t i = 0;
+		i < sizeof(allowedStateTransitions) / sizeof(AllowedStateTransitions);
+		i++
+	)
 	{
-		if (state_ == allowedStateTransitions[i].from &&
-			s == allowedStateTransitions[i].to)
+		if (
+			state_ == allowedStateTransitions[i].from
+			&& s == allowedStateTransitions[i].to
+		)
 		{
 			state_ = s;
 			break;
