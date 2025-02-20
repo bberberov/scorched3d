@@ -79,7 +79,7 @@ fixed::fixed(const char *nVal)
 	Sint64 fpa = atol(f);
 
 	m_nVal = ipa * FIXED_RESOLUTION + fpa;
-	if (neg) m_nVal =- m_nVal;
+	if (neg) m_nVal = -m_nVal;
 }
 
 const char *fixed::asString()
