@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -97,7 +97,7 @@ bool ServerBanned::load(bool force)
 		time_t bantime = 0;
 		if (currentNode->getNamedParameter("time", timeNode, false))
 		{
-			sscanf(timeNode->getContent(), "%u", &bantime);
+			sscanf(timeNode->getContent(), "%ld", &bantime);
 		}
 
 		// Type

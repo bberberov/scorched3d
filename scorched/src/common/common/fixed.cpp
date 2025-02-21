@@ -90,12 +90,12 @@ const char *fixed::asString()
 	char buffer[20];
 	if (m_nVal < 0) 
 	{
-		snprintf(buffer, 15, "%lli", -m_nVal);
+		snprintf( buffer, 15, "%lli", (long long int)(-m_nVal) );
 		result[r++] = '-';
 	}
 	else 
 	{
-		snprintf(buffer, 15, "%lli", m_nVal);
+		snprintf( buffer, 15, "%lli", (long long int)(m_nVal) );
 	}
 	int len = (int) strlen(buffer);
 
@@ -137,7 +137,7 @@ const char *fixed::asQuickString()
 	static char buffer[5][25];
 
 	char *result = buffer[++i % 5];
-	snprintf(result, 25, "%lli", m_nVal);
+	snprintf( result, 25, "%lli",  (long long int)(m_nVal) );
 	return result;
 }
 

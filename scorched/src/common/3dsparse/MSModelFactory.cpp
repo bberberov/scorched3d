@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -295,7 +295,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 		fixed transparency;
 		if (!getNextLine(buffer, in)) 
 			returnError(fileName, "No material transparency");
-		if (sscanf(buffer, "%s", &fixed1) != 1)
+		if (sscanf(buffer, "%s", fixed1) != 1)
 			returnError(fileName, "Incorrect material transparency format");
 		transparency = fixed(fixed1);
 

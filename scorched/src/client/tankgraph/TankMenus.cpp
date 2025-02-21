@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -240,7 +240,7 @@ void TankMenus::showTargetDetails()
 		snprintf(buffer, 1024, "\"%s\" - %u", resultItor->first.c_str(), resultItor->second);
 		Console::instance()->addLine(false, buffer);
 	}
-	snprintf(buffer, 1024, "TOTAL - %u", targets.size());
+	snprintf(buffer, 1024, "TOTAL - %zu", targets.size() );
 	Console::instance()->addLine(false, buffer);
 	Console::instance()->addLine(false,
 		"----------------------------------------------------");

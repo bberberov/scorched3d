@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -57,7 +57,7 @@ const char *XMLParser::getParseError()
 
 	static char message[1024];
 	snprintf(message, 1024,
-		"Parse Error, File %s: Line:%i Col:%i Error:%s",
+		"Parse Error, File %s: Line:%lu Col:%lu Error:%s",
 		source_.c_str(),
 		XML_GetCurrentLineNumber(p_),
 		XML_GetCurrentColumnNumber(p_),
