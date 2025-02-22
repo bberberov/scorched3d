@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -44,10 +44,10 @@ Image ImageJpgFactory::loadFromFile(const char * filename, bool readalpha)
 	FILE *file = fopen(filename, "rb");
 	if (!file) return Image();
 
-	int read = 0;
+	size_t read = 0;
 	char buffer[256];
 	NetBuffer netBuffer;
-	while (read = (int) fread(buffer, 1, 256, file))
+	while ( ( read = fread(buffer, 1, 256, file) ) )
 	{
 		netBuffer.addDataToBuffer(buffer, read);
 	}

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -114,19 +114,28 @@ void NetLoopBack::sendMessageServer(NetBuffer &buffer,
 	sendMessageDest(buffer, ServerLoopBackID, flags);
 }
 
-void NetLoopBack::sendMessageDest(NetBuffer &buffer, 
-	unsigned int destination, unsigned int flags)
+void NetLoopBack::sendMessageDest(
+	NetBuffer &buffer,
+	unsigned int destination,
+	unsigned int flags
+)
 {
 	DIALOG_ASSERT(
-		getLoopback() &&
-		(server_ && destination == ClientLoopBackID) || 
-		(!server_ && destination == ServerLoopBackID));
+		(
+			getLoopback() &&
+			( server_ && destination == ClientLoopBackID )
+		)
+		|| ( ! server_ && destination == ServerLoopBackID )
+	);
 
 	unsigned int recvTime = (unsigned int) SDL_GetTicks();
-	NetMessage *message = NetMessagePool::instance()->
-		getFromPool(NetMessage::BufferMessage, 
-			server_?ServerLoopBackID:ClientLoopBackID, 
-			0, flags, recvTime);
+	NetMessage *message = NetMessagePool::instance()->getFromPool(
+		NetMessage::BufferMessage,
+		server_ ? ServerLoopBackID:ClientLoopBackID,
+		0,
+		flags,
+		recvTime
+	);
 	message->getBuffer().reset();
 	message->getBuffer().addDataToBuffer(buffer.getBuffer(), buffer.getBufferUsed());
 	getLoopback()->messageHandler_.addMessage(message);

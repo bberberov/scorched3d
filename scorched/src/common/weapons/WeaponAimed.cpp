@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -130,15 +130,16 @@ void WeaponAimed::fireAimedWeapon(ScorchedContext &context,
 	else
 	{
 		ObjectGroup *objectGroup = weaponContext.getInternalContext().getLocalGroups().getGroup(groupName_.c_str());
-		if (!objectGroup) objectGroup = context.getObjectGroups().getGroup(groupName_.c_str());
-		if (objectGroup) 
+		if (objectGroup == nullptr)
+			objectGroup = context.getObjectGroups().getGroup(groupName_.c_str());
+		if (objectGroup != nullptr)
 		{
 			ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup);
 			ObjectGroupEntry *entry;
-			while (entry = iterator.getNext())
+			while ( ( entry = iterator.getNext() ) != nullptr )
 			{
 				positions.push_back(&entry->getPosition());
-			}			
+			}
 		}
 	}
 

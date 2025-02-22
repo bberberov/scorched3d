@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,20 +28,21 @@
 
 bool ServerWebAppletHandler::AppletFileHandler::processRequest(
 	ServerWebServerIRequest &request,
-	std::string &text)
+	std::string &text
+)
 {
 	// Get file
-	std::string file = 
-		S3D::getDataFile(
-			S3D::formatStringBuffer("data/html/server/binary/%s", request.getUrl()));
+	std::string file = S3D::getDataFile(
+		S3D::formatStringBuffer( "data/html/server/binary/%s", request.getUrl() )
+	);
 
 	// Read file contents
 	std::string contents;
 	FILE *in = fopen(file.c_str(), "rb");
 	if (!in) return false;
-	int read = 0;
+	size_t read = 0;
 	char buffer[256];
-	while (read = fread(buffer, 1, 256, in))
+	while ( ( read = fread(buffer, 1, 256, in) ) )
 	{
 		contents.append(buffer, read);
 	}

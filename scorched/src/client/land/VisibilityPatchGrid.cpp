@@ -418,11 +418,11 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 	}
 	else
 	{
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor;
 		if (roof) patchItor.init(patchInfo_.getRoofVisibility());
 		else patchItor.init(patchInfo_.getLandVisibility());
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			HeightMapVisibilityPatch *currentPatch = (HeightMapVisibilityPatch *) currentPatchPtr;
 			int index = currentPatch->getVisibilityIndex();
@@ -477,9 +477,9 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 void VisibilityPatchGrid::drawLandLODLevels()
 {
 	{
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo_.getLandVisibility());
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			LandVisibilityPatch *currentPatch = (LandVisibilityPatch *) currentPatchPtr;
 			int index = currentPatch->getVisibilityIndex();
@@ -563,9 +563,9 @@ void VisibilityPatchGrid::drawWater(Water2Patches &patches,
 		glGetFloatv(GL_MODELVIEW_MATRIX, startmodel);
 
 		// Draw all patches
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo_.getWaterVisibility(w));
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			WaterVisibilityPatch *currentPatch = (WaterVisibilityPatch *) currentPatchPtr;
 			int index = currentPatch->getVisibilityIndex();

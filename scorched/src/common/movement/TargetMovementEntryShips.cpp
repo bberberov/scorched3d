@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -96,25 +96,31 @@ void TargetMovementEntryShips::generate(ScorchedContext &context,
 	// Generate the list of offsets for all of the targets in the group
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		if (entry->getType() != ObjectGroupEntry::TypeTarget)
 		{
-			S3D::dialogExit("TargetMovementEntryShips",
-				"Movement can be assigned to level targets only (no particles)");
+			S3D::dialogExit(
+				"TargetMovementEntryShips",
+				"Movement can be assigned to level targets only (no particles)"
+			);
 		}
 
 		Target *target = (Target *) entry->getObject();
 		if (target->getType() == Target::TypeTank ||
 			target->getPlayerId() >= TargetID::MIN_TARGET_TRANSIENT_ID)
 		{
-			S3D::dialogExit("TargetMovementEntryShips",
-				"Movement can be assigned to level targets only (no tanks)");
+			S3D::dialogExit(
+				"TargetMovementEntryShips",
+				"Movement can be assigned to level targets only (no tanks)"
+			);
 		}
 		if (target->getTargetState().getMovement())
 		{
-			S3D::dialogExit("TargetMovementEntryBoids",
-				"Only one movement can be assigned to each target");
+			S3D::dialogExit(
+				"TargetMovementEntryBoids",
+				"Only one movement can be assigned to each target"
+			);
 		}
 
 		// Generate the offsets for each target
@@ -143,12 +149,14 @@ void TargetMovementEntryShips::simulate(ScorchedContext &context, fixed frameTim
 	// For each target set position and rotation based on its offset
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		if (entry->getType() != ObjectGroupEntry::TypeTarget)
 		{
-			S3D::dialogExit("TargetMovementEntryShips",
-				"Movement can be assigned to level targets only (no particles)");
+			S3D::dialogExit(
+				"TargetMovementEntryShips",
+				"Movement can be assigned to level targets only (no particles)"
+			);
 		}
 
 		Target *target = (Target *) entry->getObject();

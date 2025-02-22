@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -90,7 +90,7 @@ void TargetMovementEntrySpline::generate(ScorchedContext &context,
 	// Generate the list of offsets for all of the targets in the group
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		makeObject(entry);
 	}
@@ -142,7 +142,7 @@ void TargetMovementEntrySpline::simulate(ScorchedContext &context, fixed frameTi
 	// For each target set position and rotation based on its offset
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		if (entry->getType() != ObjectGroupEntry::TypeTarget)
 		{
@@ -151,14 +151,14 @@ void TargetMovementEntrySpline::simulate(ScorchedContext &context, fixed frameTi
 		}
 		
 		Target *target = (Target *) entry->getObject();
-		if (!target->getTargetState().getMovement()) makeObject(entry);
+		if ( ! target->getTargetState().getMovement() )
+			makeObject(entry);
 
 		fixed angle = atan2x(direction[1], direction[0]);
 		fixed angleDegs = (angle / fixed::XPI) * 180 - 90;
 
 		// Update target
-		target->getLife().setTargetPositionAndRotation(
-			position, angleDegs);
+		target->getLife().setTargetPositionAndRotation( position, angleDegs);
 		target->getLife().setVelocity(direction);
 	}
 }
