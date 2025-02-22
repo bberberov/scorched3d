@@ -38,7 +38,7 @@
 #include <common/Defines.h>
 
 extern char scorched3dAppName[128];
-static wxFrame *mainDialog = 0;
+static wxFrame *mainDialog = nullptr;
 bool wxWindowExit = false;
 
 enum
@@ -67,7 +67,7 @@ void addTitleToWindow(wxWindow *parent, wxSizer *sizer, const char *fileName, in
 	}
 }
 
-static SDL_mutex *messageMutex_ = 0;
+static SDL_mutex *messageMutex_ = nullptr;
 static std::string messageString_;
 static int exitCode_ = 0;
 
@@ -248,6 +248,8 @@ private:
 		wxBitmap cachedBitmap2;
 		wxBitmap cachedDescription;
 	};
+	const static int xoff = 135;
+	const static int yoff = 2;
 
 	wxTimer timer_;
 	wxBitmap backdropBitmap_;
@@ -269,10 +271,11 @@ END_EVENT_TABLE()
 MainFrame::MainFrame()
 	:
 	wxFrame(
-		(wxFrame *)NULL,
+		(wxFrame *)nullptr,
 		-1,
 		wxString(scorched3dAppName, wxConvUTF8),
-		wxDefaultPosition, wxDefaultSize,
+		wxDefaultPosition,
+		wxDefaultSize,
 		wxMINIMIZE_BOX | wxCAPTION | wxSYSTEM_MENU
 	),
 	mouseX_(0),
@@ -293,8 +296,8 @@ MainFrame::MainFrame()
 
 	// Load the backdrop bitmaps
 	if (
-		!backdropImage_.LoadFile(
-			convertString(S3D::getDataFile("data/images/backdrop.gif")),
+		! backdropImage_.LoadFile(
+			convertString( S3D::getDataFile("data/images/backdrop.gif") ),
 			wxBITMAP_TYPE_GIF
 		)
 	)
@@ -332,10 +335,23 @@ MainFrame::MainFrame()
 			|| !smallImageFont.getImageForText(imageDefinitions[i].description, image->descriptionImage)
 		)
 		{
-			S3D::dialogMessage("Scorched", S3D::formatStringBuffer("Failed to load button %s", imageDefinitions[i].name));
+			S3D::dialogMessage(
+				"Scorched",
+				S3D::formatStringBuffer("Failed to load button %s", imageDefinitions[i].name)
+			);
 		}
 		else
 		{
+			generateCachedImage(
+				image->x,        image->y,        image->loadedImage,      image->cachedBitmap1,     false
+			);
+			generateCachedImage(
+				image->x,        image->y,        image->loadedImage,      image->cachedBitmap2,      true
+			);
+			generateCachedImage(
+				image->x + xoff, image->y + yoff, image->descriptionImage, image->cachedDescription,  true
+			);
+
 			images_.push_back(image);
 		}
 	}
@@ -448,9 +464,6 @@ void MainFrame::generateCachedImage(int x, int y, wxImage &src, wxBitmap &destBi
 
 void MainFrame::onPaint(wxPaintEvent& event)
 {
-	const int xoff = 135;
-	const int yoff = 2;
-
 	wxBufferedPaintDC dc(this);
 
 	dc.DrawBitmap(backdropBitmap_, 0, 0, false);
@@ -460,19 +473,6 @@ void MainFrame::onPaint(wxPaintEvent& event)
 	for (itor = images_.begin(); itor != images_.end(); ++itor)
 	{
 		ImageData *imageData = (*itor);
-
-		if (!imageData->cachedBitmap1.Ok())
-		{
-			generateCachedImage(
-				imageData->x,        imageData->y,        imageData->loadedImage,      imageData->cachedBitmap1,     false
-			);
-			generateCachedImage(
-				imageData->x,        imageData->y,        imageData->loadedImage,      imageData->cachedBitmap2,      true
-			);
-			generateCachedImage(
-				imageData->x + xoff, imageData->y + yoff, imageData->descriptionImage, imageData->cachedDescription,  true
-			);
-		}
 
 		if (
 			   mouseX_ > imageData->x
