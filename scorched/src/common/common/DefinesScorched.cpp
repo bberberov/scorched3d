@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,10 +27,16 @@
 #include <common/DefinesString.h>
 #include <common/DefinesAssert.h>
 #include <common/Logger.h>
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <cstring>
 
-#pragma warning(disable : 4996)
+#ifdef _WIN32
+	#define WIN32_LEAN_AND_MEAN
+	#include <windows.h>
+
+	// WARNING
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
+	#pragma warning(disable : 4996)
+#endif
 
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
