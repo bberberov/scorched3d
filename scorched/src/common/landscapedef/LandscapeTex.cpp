@@ -53,6 +53,11 @@ static LandscapeTexType *fetchPrecipitationTexType(const char *type)
 	return 0;
 }
 
+// LandscapeTexType
+LandscapeTexType::~LandscapeTexType()
+{}
+
+//LandscapeTexTypeNone
 bool LandscapeTexTypeNone::readXML(XMLNode *node)
 {
 	return node->failChildren();
@@ -65,7 +70,7 @@ bool LandscapeTexPrecipitation::readXML(XMLNode *node)
 	return node->failChildren();
 }
 
-// LandscapeTexBorderWater 
+// LandscapeTexBorderWater
 bool LandscapeTexBorderWater::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("reflection", reflection)) return false;
@@ -123,8 +128,7 @@ bool LandscapeTexTextureFile::readXML(XMLNode *node)
 // LandscapeTex
 LandscapeTex::LandscapeTex() :
 	border(0), texture(0), precipitation(0)
-{
-}
+{}
 
 LandscapeTex::~LandscapeTex()
 {

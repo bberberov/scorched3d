@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,20 +22,27 @@
 #include <GLEXT/GLState.h>
 #include <common/DefinesString.h>
 
+GLWIconListItem::~GLWIconListItem()
+{}
+
 GLWIconList::GLWIconList(
-	float x, float y, float w, float h,
+	float x,
+	float y,
+	float w,
+	float h,
 	float squaresHeight,
-	unsigned int flags) :
+	unsigned int flags
+) :
 	GLWidget(x, y, w, h),
 	squaresHeight_(squaresHeight),
 	scrollBar_(x + w_ - 17.0f, y + 2.0f, h_ - 4.0f, 0, 0, int(h / squaresHeight)),
-	selected_(-1), handler_(0), flags_(flags)
-{
-}
+	selected_(-1),
+	handler_(0),
+	flags_(flags)
+{}
 
 GLWIconList::~GLWIconList()
-{
-}
+{}
 
 void GLWIconList::addItem(GLWIconListItem *item)
 {

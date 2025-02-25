@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,48 +23,64 @@
 #include <common/DefinesString.h>
 
 ResourceBundleEntryImpl::ResourceBundleEntryImpl(const std::string &key) :
-	key_(key), parameterizedString_(LangString())
-{
+	key_(key),
+	parameterizedString_( LangString() )
+{}
 
-}
-
-ResourceBundleEntryImpl::ResourceBundleEntryImpl(const std::string &key, 
-	const LangString &value) :
-	key_(key), parameterizedString_(value)
-{
-}
+ResourceBundleEntryImpl::ResourceBundleEntryImpl(
+	const std::string &key,
+	const LangString &value
+) :
+	key_(key),
+	parameterizedString_(value)
+{}
 
 LangString ResourceBundleEntryImpl::getString()
 {
 	return parameterizedString_.getParameterizedString();
 }
 
-LangString ResourceBundleEntryImpl::getString(const LangStringConverter &param1)
+LangString ResourceBundleEntryImpl::getString(
+	const LangStringConverter &param1
+)
 {
 	return parameterizedString_.getParameterizedString(param1);
 }
 
-LangString ResourceBundleEntryImpl::getString(const LangStringConverter &param1, const LangStringConverter &param2)
+LangString ResourceBundleEntryImpl::getString(
+	const LangStringConverter &param1,
+	const LangStringConverter &param2
+)
 {
 	return parameterizedString_.getParameterizedString(param1, param2);
 }
 
-LangString ResourceBundleEntryImpl::getString(const LangStringConverter &param1, 
-	const LangStringConverter &param2, const LangStringConverter &param3)
+LangString ResourceBundleEntryImpl::getString(
+	const LangStringConverter &param1,
+	const LangStringConverter &param2,
+	const LangStringConverter &param3
+)
 {
 	return parameterizedString_.getParameterizedString(param1, param2, param3);
 }
 
-LangString ResourceBundleEntryImpl::getString(const LangStringConverter &param1, 
-	const LangStringConverter &param2, const LangStringConverter &param3, 
-	const LangStringConverter &param4)
+LangString ResourceBundleEntryImpl::getString(
+	const LangStringConverter &param1,
+	const LangStringConverter &param2,
+	const LangStringConverter &param3,
+	const LangStringConverter &param4
+)
 {
 	return parameterizedString_.getParameterizedString(param1, param2, param3, param4);
 }
 
-LangString ResourceBundleEntryImpl::getString(const LangStringConverter &param1, 
-	const LangStringConverter &param2, const LangStringConverter &param3, 
-	const LangStringConverter &param4, const LangStringConverter &param5)
+LangString ResourceBundleEntryImpl::getString(
+	const LangStringConverter &param1,
+	const LangStringConverter &param2,
+	const LangStringConverter &param3,
+	const LangStringConverter &param4,
+	const LangStringConverter &param5
+)
 {
 	return parameterizedString_.getParameterizedString(param1, param2, param3, param4, param5);
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,9 +31,13 @@ class LandscapeMovementType;
 class TargetMovementEntry
 {
 public:
-	virtual void generate(ScorchedContext &context, 
-		RandomGenerator &random, 
-		LandscapeMovementType *movementType) = 0;
+	virtual ~TargetMovementEntry();
+
+	virtual void generate(
+		ScorchedContext &context,
+		RandomGenerator &random,
+		LandscapeMovementType *movementType
+	) = 0;
 	virtual void simulate(ScorchedContext &context, fixed frameTime) = 0;
 	virtual void draw() = 0;
 	virtual void reset() = 0;

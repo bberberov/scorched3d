@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,6 +28,8 @@
 class LandscapeSoundTiming
 {
 public:
+	virtual ~LandscapeSoundTiming();
+
 	virtual bool readXML(XMLNode *node) = 0;
 	virtual float getNextEventTime() = 0;
 };
@@ -49,26 +51,36 @@ protected:
 	float min, max;
 };
 
-class LandscapeSoundItem 
+class LandscapeSoundItem
 {
 public:
-	LandscapeSoundItem()
-	{
-	}
-	virtual ~LandscapeSoundItem()
-	{
-	}
+	virtual ~LandscapeSoundItem();
+};
+
+class ObjectGroupEntryReference;
+class LandscapeSoundPositionSetItem : public LandscapeSoundItem
+{
+public:
+	LandscapeSoundPositionSetItem(ObjectGroupEntryReference *reference);
+	virtual ~LandscapeSoundPositionSetItem();
+
+	ObjectGroupEntryReference *getReference();
+
+private:
+	ObjectGroupEntryReference *reference_;
 };
 
 class VirtualSoundSource;
 class LandscapeSoundPosition
 {
 public:
+	virtual ~LandscapeSoundPosition();
+
 	virtual bool readXML(XMLNode *node) = 0;
 	virtual bool setPosition(VirtualSoundSource *source, LandscapeSoundItem *data) = 0;
 
-	virtual int getInitCount() { return 1; }
-	virtual LandscapeSoundItem *getInitData(int count) { return 0; }
+	virtual int getInitCount();
+	virtual LandscapeSoundItem *getInitData(int count);
 };
 
 class LandscapeSoundPositionAmbient : public LandscapeSoundPosition
@@ -109,19 +121,6 @@ protected:
 	float falloff;
 };
 
-class ObjectGroupEntryReference;
-class LandscapeSoundPositionSetItem : public LandscapeSoundItem
-{
-public:
-	LandscapeSoundPositionSetItem(ObjectGroupEntryReference *reference);
-	virtual ~LandscapeSoundPositionSetItem();
-
-	ObjectGroupEntryReference *getReference() { return reference_; }
-
-private:
-	ObjectGroupEntryReference *reference_;
-};
-
 class LandscapeSoundPositionSet : public LandscapeSoundPosition
 {
 public:
@@ -136,9 +135,11 @@ protected:
 	int maxsounds;
 };
 
-class LandscapeSoundSound 
+class LandscapeSoundSound
 {
 public:
+	virtual ~LandscapeSoundSound();
+
 	virtual bool readXML(XMLNode *node) = 0;
 	virtual bool play(VirtualSoundSource *source, float ambientGain) = 0;
 	virtual float getGain() = 0;
@@ -149,7 +150,7 @@ class LandscapeSoundSoundFile : public LandscapeSoundSound
 public:
 	virtual bool readXML(XMLNode *node);
 	virtual bool play(VirtualSoundSource *source, float ambientGain);
-	virtual float getGain() { return gain; }
+	virtual float getGain();
 
 protected:
 	std::vector<std::string> files;

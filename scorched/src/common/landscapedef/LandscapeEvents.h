@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,10 @@ class ScorchedContext;
 class LandscapeCondition
 {
 public:
-	virtual fixed getNextEventTime(ScorchedContext &context, 
-		int eventNumber) = 0;
-	virtual bool fireEvent(ScorchedContext &context, 
-		fixed timeLeft, int eventNumber) = 0;
+	virtual ~LandscapeCondition();
+
+	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber) = 0;
+	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber) = 0;
 	virtual bool readXML(XMLNode *node) = 0;
 
 	static LandscapeCondition *create(const char *name);
@@ -43,11 +43,9 @@ public:
 	int groupsize;
 	std::string groupname;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, 
-		int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, 
-		fixed timeLeft, int eventNumber);
-	virtual bool readXML(XMLNode *node);	
+	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
+	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
+	virtual bool readXML(XMLNode *node);
 };
 
 class LandscapeConditionTime : public LandscapeCondition
@@ -57,10 +55,8 @@ public:
 	fixed maxtime;
 	bool singletimeonly;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, 
-		int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, 
-		fixed timeLeft, int eventNumber);
+	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
+	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
 	virtual bool readXML(XMLNode *node);
 };
 
@@ -70,16 +66,16 @@ public:
 	fixed randomchance;
 	fixed randomdelay;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, 
-		int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, 
-		fixed timeLeft, int eventNumber);
+	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
+	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
 	virtual bool readXML(XMLNode *node);
 };
 
 class LandscapeAction
 {
 public:
+	virtual ~LandscapeAction();
+
 	virtual bool readXML(XMLNode *node) = 0;
 	virtual void fireAction(ScorchedContext &context) = 0;
 

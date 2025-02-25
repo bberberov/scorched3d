@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,11 +26,17 @@
 #include <stdlib.h>
 #include <time.h>
 
+LandscapeDefnType::~LandscapeDefnType()
+{}
+
 static LandscapeDefnType *fetchHeightMapDefnType(const char *type)
 {
 	if (0 == strcmp(type, "generate")) return new LandscapeDefnHeightMapGenerate;
 	if (0 == strcmp(type, "file")) return new LandscapeDefnHeightMapFile;
-	S3D::dialogMessage("LandscapeDefnType", S3D::formatStringBuffer("Unknown heightmap type %s", type));
+	S3D::dialogMessage(
+		"LandscapeDefnType",
+		S3D::formatStringBuffer("Unknown heightmap type %s", type)
+	);
 	return 0;
 }
 
@@ -38,7 +44,10 @@ static LandscapeDefnType *fetchRoofMapDefnType(const char *type)
 {
 	if (0 == strcmp(type, "sky")) return new LandscapeDefnTypeNone;
 	if (0 == strcmp(type, "cavern")) return new LandscapeDefnRoofCavern;
-	S3D::dialogMessage("LandscapeDefnType", S3D::formatStringBuffer("Unknown roof type %s", type));
+	S3D::dialogMessage(
+		"LandscapeDefnType",
+		S3D::formatStringBuffer("Unknown roof type %s", type)
+	);
 	return 0;
 }
 
@@ -47,27 +56,28 @@ static LandscapeDefnType *fetchDeformType(const char *type)
 	if (0 == strcmp(type, "solid")) return new LandscapeDefnDeformSolid;
 	if (0 == strcmp(type, "deform")) return new LandscapeDefnDeformDeform;
 	if (0 == strcmp(type, "file")) return new LandscapeDefnDeformFile;
-	S3D::dialogMessage("LandscapeDefnType", S3D::formatStringBuffer("Unknown deform type %s", type));
+	S3D::dialogMessage(
+		"LandscapeDefnType",
+		S3D::formatStringBuffer("Unknown deform type %s", type)
+	);
 	return 0;
 }
 
-static bool parseMinMax(XMLNode *parent, const char *name, 
-	fixed &min, fixed &max)
+static bool parseMinMax( XMLNode *parent, const char *name, fixed &min, fixed &max )
 {
 	XMLNode *node = 0;
-	if (!parent->getNamedChild(name, node)) return false;
-	if (!node->getNamedChild("max", max)) return false;
-	if (!node->getNamedChild("min", min)) return false;
+	if ( ! parent->getNamedChild(name, node) ) return false;
+	if ( ! node->getNamedChild("max", max)   ) return false;
+	if ( ! node->getNamedChild("min", min)   ) return false;
 	return node->failChildren();
 }
 
-static bool parseMinMaxInt(XMLNode *parent, const char *name, 
-	int &min, int &max)
+static bool parseMinMaxInt( XMLNode *parent, const char *name, int &min, int &max)
 {
 	XMLNode *node = 0;
-	if (!parent->getNamedChild(name, node)) return false;
-	if (!node->getNamedChild("max", max)) return false;
-	if (!node->getNamedChild("min", min)) return false;
+	if ( ! parent->getNamedChild(name, node) ) return false;
+	if ( ! node->getNamedChild("max", max)   ) return false;
+	if ( ! node->getNamedChild("min", min)   ) return false;
 	return node->failChildren();
 }
 
@@ -76,10 +86,10 @@ bool LandscapeDefnTypeNone::readXML(XMLNode *node)
 	return node->failChildren();
 }
 
-LandscapeDefnRoofCavern::LandscapeDefnRoofCavern() : 
-	heightmap(0), deform(0)
-{
-}
+LandscapeDefnRoofCavern::LandscapeDefnRoofCavern() :
+	heightmap(0),
+	deform(0)
+{}
 
 LandscapeDefnRoofCavern::~LandscapeDefnRoofCavern()
 {
@@ -185,9 +195,11 @@ bool LandscapeDefnHeightMapGenerate::readXML(XMLNode *node)
 }
 
 LandscapeDefn::LandscapeDefn() :
-	heightmap(0), tankstart(0), roof(0), deform(0)
-{
-}
+	heightmap(0),
+	tankstart(0),
+	roof(0),
+	deform(0)
+{}
 
 LandscapeDefn::~LandscapeDefn()
 {

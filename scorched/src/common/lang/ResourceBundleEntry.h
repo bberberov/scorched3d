@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,21 +26,37 @@
 class ResourceBundleEntry
 {
 public:
+	virtual ~ResourceBundleEntry();
+
 	virtual const char *getKey() = 0;
 	virtual LangString getValue() = 0;
 
 	virtual LangString getString() = 0;
-	virtual LangString getString(const LangStringConverter &param1) = 0;
-	virtual LangString getString(const LangStringConverter &param1, 
-		const LangStringConverter &param2) = 0;
-	virtual LangString getString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3) = 0;
-	virtual LangString getString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3, 
-		const LangStringConverter &param4) = 0;
-	virtual LangString getString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3, 
-		const LangStringConverter &param4, const LangStringConverter &param5) = 0;
+	virtual LangString getString(
+		const LangStringConverter &param1
+	) = 0;
+	virtual LangString getString(
+		const LangStringConverter &param1,
+		const LangStringConverter &param2
+	) = 0;
+	virtual LangString getString(
+		const LangStringConverter &param1,
+		const LangStringConverter &param2,
+		const LangStringConverter &param3
+	) = 0;
+	virtual LangString getString(
+		const LangStringConverter &param1,
+		const LangStringConverter &param2,
+		const LangStringConverter &param3,
+		const LangStringConverter &param4
+	) = 0;
+	virtual LangString getString(
+		const LangStringConverter &param1,
+		const LangStringConverter &param2,
+		const LangStringConverter &param3,
+		const LangStringConverter &param4,
+		const LangStringConverter &param5
+	) = 0;
 };
 
 #endif // __INCLUDE_ResourceBundleEntry_INCLUDE__
