@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,17 +29,18 @@
 #include <common/ToolTip.h>
 
 GLWOptionEntry::GLWOptionEntry(GLWidget *control, OptionEntry *entry) :
-	control_(control), entry_(entry)
-{
-}
+	control_(control),
+	entry_(entry)
+{}
 
 GLWOptionEntry::~GLWOptionEntry()
-{
-}
+{}
 
 void GLWOptionEntry::createEntry(
-	std::list<GLWOptionEntry> &controls, 
-	GLWPanel *parent, OptionEntry &entry)
+	std::list<GLWOptionEntry> &controls,
+	GLWPanel *parent,
+	OptionEntry &entry
+)
 {
 	std::string descriptionName;
 	descriptionName.append(entry.getName()).append("_description");
@@ -122,9 +123,14 @@ void GLWOptionEntry::createEntry(
 		}
 		break;
 	default:
-		S3D::dialogExit("GLWOptionEntry::createEntry",
-			S3D::formatStringBuffer("Unhandled OptionEntry type %s:%i",
-			entry.getName(), entry.getEntryType()));
+		S3D::dialogExit(
+			"GLWOptionEntry::createEntry",
+			S3D::formatStringBuffer(
+				"Unhandled OptionEntry type %s:%i",
+				entry.getName(),
+				entry.getEntryType()
+			)
+		);
 	}
 
 	control->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
@@ -182,12 +188,20 @@ void GLWOptionEntry::updateControls(
 				control->setState(boolEntry->getValue());
 			}
 			break;
+		default:
+			S3D::dialogExit(
+				"GLWOptionEntry::updateControls",
+				S3D::formatStringBuffer(
+					"Unhandled OptionEntry type %s:%i",
+					entrySetter.getEntry()->getName(),
+					entrySetter.getEntry()->getEntryType()
+				)
+			);
 		}
 	}
 }
 
-void GLWOptionEntry::updateEntries(
-	std::list<GLWOptionEntry> &controls)
+void GLWOptionEntry::updateEntries( std::list<GLWOptionEntry> &controls)
 {
 	std::list<GLWOptionEntry>::iterator itor;
 	for (itor = controls.begin();
@@ -225,6 +239,15 @@ void GLWOptionEntry::updateEntries(
 				boolEntry->setValue(control->getState());
 			}
 			break;
+		default:
+			S3D::dialogExit(
+				"GLWOptionEntry::updateEntries",
+				S3D::formatStringBuffer(
+					"Unhandled OptionEntry type %s:%i",
+					entrySetter.getEntry()->getName(),
+					entrySetter.getEntry()->getEntryType()
+				)
+			);
 		}
 	}
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,12 +45,10 @@
 REGISTER_CLASS_SOURCE(GLWHudCondition);
 
 GLWHudCondition::GLWHudCondition()
-{
-}
+{}
 
 GLWHudCondition::~GLWHudCondition()
-{
-}
+{}
 
 bool GLWHudCondition::getResult(GLWidget *widget)
 {
@@ -59,16 +57,14 @@ bool GLWHudCondition::getResult(GLWidget *widget)
 
 REGISTER_CLASS_SOURCE(GLWScorchedInfo);
 
-GLWScorchedInfo::GLWScorchedInfo(float x, float y, float w, float h) : 
-	GLWidget(x, y, w, h), infoType_(eNone), noCenter_(false)
-{
-
-}
+GLWScorchedInfo::GLWScorchedInfo(float x, float y, float w, float h) :
+	GLWidget(x, y, w, h),
+	infoType_(eNone),
+	noCenter_(false)
+{}
 
 GLWScorchedInfo::~GLWScorchedInfo()
-{
-
-}
+{}
 
 void GLWScorchedInfo::draw()
 {
@@ -129,6 +125,8 @@ void GLWScorchedInfo::draw()
 				windSpeed.cachedString);
 		}
 		break;
+		default:
+		break;
 	}
 	
 	// Get the current tank and model
@@ -186,6 +184,7 @@ void GLWScorchedInfo::draw()
 		}
 		break;
 		case ePlayerRank:
+		{
 			setToolTip(&renderer->getTips()->rankTip);
 			if (current->getScore().getRank() > -1)
 			{
@@ -194,15 +193,19 @@ void GLWScorchedInfo::draw()
 					x_, y_, 0.0f,
 					S3D::formatStringBuffer("%i", current->getScore().getRank()));
 			}
+		}
 		break;
 		case eAutoDefenseCount:
+		{
 			setToolTip(&renderer->getTips()->autodTip);
 			GLWFont::instance()->getGameFont()->draw(
 				*fontColor, fontSize_,
 				x_, y_, 0.0f,
 				(current->getAccessories().getAutoDefense().haveDefense()?ON:OFF));
+		}
 		break;
 		case eParachuteCount:
+		{
 			setToolTip(&renderer->getTips()->paraTip);
 			if (!current->getParachute().getCurrentParachute())
 			{
@@ -227,6 +230,7 @@ void GLWScorchedInfo::draw()
 					x_, y_, 0.0f,
 					paraCount.cachedString);
 			}
+		}
 		break;
 		case eHealthCount:
 			{
@@ -245,6 +249,7 @@ void GLWScorchedInfo::draw()
 			}
 		break;
 		case eShieldCount:
+		{
 			setToolTip(&renderer->getTips()->shieldTip);
 			if (!current->getShield().getCurrentShield())
 			{
@@ -266,6 +271,7 @@ void GLWScorchedInfo::draw()
 					x_, y_, 0.0f,
 					shieldPower.cachedString);
 			}
+		}
 		break;
 		case eBatteryCount:
 			{
@@ -470,6 +476,8 @@ void GLWScorchedInfo::draw()
 					powerValue.cachedString);
 			}
 		break;
+		default:
+		break;
 	}
 }
 
@@ -493,12 +501,6 @@ void GLWScorchedInfo::mouseDown(int button, float x, float y, bool &skipRest)
 
 		switch (infoType_)
 		{
-			case ePlayerName:
-			break;
-			case ePlayerIcon:
-			break;
-			case ePlayerRank:
-			break;
 			case eAutoDefenseCount:
 				tankTips->autodTip.showItems(GLWTranslate::getPosX() + x, 
 					GLWTranslate::getPosY() + y);
@@ -506,8 +508,6 @@ void GLWScorchedInfo::mouseDown(int button, float x, float y, bool &skipRest)
 			case eParachuteCount:
 				tankTips->paraTip.showItems(GLWTranslate::getPosX() + x, 
 					GLWTranslate::getPosY() + y);
-			break;
-			case eHealthCount:
 			break;
 			case eShieldCount:
 				tankTips->shieldTip.showItems(GLWTranslate::getPosX() + x, 
@@ -545,6 +545,8 @@ void GLWScorchedInfo::mouseDown(int button, float x, float y, bool &skipRest)
 				tankTips->undoMenu.showItems(GLWTranslate::getPosX() + x, 
 					GLWTranslate::getPosY() + y);
 			break;
+			default:
+			break;
 		}
 	}
 	else
@@ -559,26 +561,26 @@ bool GLWScorchedInfo::initFromXML(XMLNode *node)
 
 	// Type node
 	XMLNode *typeNode = 0;
-	if (!node->getNamedChild("type", typeNode)) return false;
-	if (0 == strcmp(typeNode->getContent(), "wind")) infoType_ = eWind;
-	else if (0 == strcmp(typeNode->getContent(), "playername")) infoType_ = ePlayerName;
-	else if (0 == strcmp(typeNode->getContent(), "playericon")) infoType_ = ePlayerIcon;
-	else if (0 == strcmp(typeNode->getContent(), "playerrank")) infoType_ = ePlayerRank;
-	else if (0 == strcmp(typeNode->getContent(), "autodefensecount")) infoType_ = eAutoDefenseCount;
-	else if (0 == strcmp(typeNode->getContent(), "parachutecount")) infoType_ = eParachuteCount;
-	else if (0 == strcmp(typeNode->getContent(), "shieldcount")) infoType_ = eShieldCount;
-	else if (0 == strcmp(typeNode->getContent(), "healthcount")) infoType_ = eHealthCount;
-	else if (0 == strcmp(typeNode->getContent(), "fuelcount")) infoType_ = eFuelCount;
-	else if (0 == strcmp(typeNode->getContent(), "batterycount")) infoType_ = eBatteryCount;
-	else if (0 == strcmp(typeNode->getContent(), "weaponname")) infoType_ = eWeaponName;
-	else if (0 == strcmp(typeNode->getContent(), "weaponcount")) infoType_ = eWeaponCount;
-	else if (0 == strcmp(typeNode->getContent(), "weaponicon")) infoType_ = eWeaponIcon;
-	else if (0 == strcmp(typeNode->getContent(), "rotation")) infoType_ = eRotation;
-	else if (0 == strcmp(typeNode->getContent(), "elevation")) infoType_ = eElevation;
-	else if (0 == strcmp(typeNode->getContent(), "power")) infoType_ = ePower;
-	else if (0 == strcmp(typeNode->getContent(), "rotationdiff")) infoType_ = eRotationDiff;
-	else if (0 == strcmp(typeNode->getContent(), "elevationdiff")) infoType_ = eElevationDiff;
-	else if (0 == strcmp(typeNode->getContent(), "powerdiff")) infoType_ = ePowerDiff;
+	if ( ! node->getNamedChild("type", typeNode) ) return false;
+	if      (0 == strcmp(typeNode->getContent(), "wind")             ) infoType_ = eWind;
+	else if (0 == strcmp(typeNode->getContent(), "playername")       ) infoType_ = ePlayerName;
+	else if (0 == strcmp(typeNode->getContent(), "playericon")       ) infoType_ = ePlayerIcon;
+	else if (0 == strcmp(typeNode->getContent(), "playerrank")       ) infoType_ = ePlayerRank;
+	else if (0 == strcmp(typeNode->getContent(), "autodefensecount") ) infoType_ = eAutoDefenseCount;
+	else if (0 == strcmp(typeNode->getContent(), "parachutecount")   ) infoType_ = eParachuteCount;
+	else if (0 == strcmp(typeNode->getContent(), "shieldcount")      ) infoType_ = eShieldCount;
+	else if (0 == strcmp(typeNode->getContent(), "healthcount")      ) infoType_ = eHealthCount;
+	else if (0 == strcmp(typeNode->getContent(), "fuelcount")        ) infoType_ = eFuelCount;
+	else if (0 == strcmp(typeNode->getContent(), "batterycount")     ) infoType_ = eBatteryCount;
+	else if (0 == strcmp(typeNode->getContent(), "weaponname")       ) infoType_ = eWeaponName;
+	else if (0 == strcmp(typeNode->getContent(), "weaponcount")      ) infoType_ = eWeaponCount;
+	else if (0 == strcmp(typeNode->getContent(), "weaponicon")       ) infoType_ = eWeaponIcon;
+	else if (0 == strcmp(typeNode->getContent(), "rotation")         ) infoType_ = eRotation;
+	else if (0 == strcmp(typeNode->getContent(), "elevation")        ) infoType_ = eElevation;
+	else if (0 == strcmp(typeNode->getContent(), "power")            ) infoType_ = ePower;
+	else if (0 == strcmp(typeNode->getContent(), "rotationdiff")     ) infoType_ = eRotationDiff;
+	else if (0 == strcmp(typeNode->getContent(), "elevationdiff")    ) infoType_ = eElevationDiff;
+	else if (0 == strcmp(typeNode->getContent(), "powerdiff")        ) infoType_ = ePowerDiff;
 	else
 	{
 		S3D::dialogMessage("GLWScorchedInfo", S3D::formatStringBuffer(

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "common/OptionsTransient.h"
 #include <GLW/GLWWindView.h>
 #include <client/ScorchedClient.h>
 #include <graph/MainCamera.h>
@@ -37,28 +38,29 @@
 REGISTER_CLASS_SOURCE(GLWWindView);
 
 WindDialogToolTip::WindDialogToolTip()
-{
-}
+{}
 
 WindDialogToolTip::~WindDialogToolTip()
-{
-}
+{}
 
 void WindDialogToolTip::populate()
 {
-	LangString wallTypeStr = LANG_RESOURCE("WALLS_NONE", "Currently no walls");
+	LangString wallTypeStr;
 	OptionsTransient::WallType wallType =
 		ScorchedClient::instance()->getOptionsTransient().getWallType();
 	switch (wallType)
 	{
-	case OptionsTransient::wallBouncy:
-		wallTypeStr = LANG_RESOURCE("WALLS_BOUNCY", "Current Wall Type : Bouncy");
-		break;
 	case OptionsTransient::wallConcrete:
 		wallTypeStr = LANG_RESOURCE("WALLS_CONCRETE", "Current Wall Type : Concrete");
 		break;
+	case OptionsTransient::wallBouncy:
+		wallTypeStr = LANG_RESOURCE("WALLS_BOUNCY", "Current Wall Type : Bouncy");
+		break;
 	case OptionsTransient::wallWrapAround:
 		wallTypeStr = LANG_RESOURCE("WALL_WRAP", "Current Wall Type : Wrap Around");
+		break;
+	case OptionsTransient::wallNone:
+		wallTypeStr = LANG_RESOURCE("WALLS_NONE", "Currently no walls");
 		break;
 	}
 

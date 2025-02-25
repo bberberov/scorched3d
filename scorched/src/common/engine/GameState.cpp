@@ -1,5 +1,5 @@
 
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -209,6 +209,11 @@ void GameState::mouseDown(MouseButton button, int x, int y)
 			break;
 		case MouseButtonRight:
 			mouseUpDown(MouseButtonRightDoubleClick, true, x, y);
+			break;
+		default:
+			// MouseButtonLeftDoubleClick
+			// MouseButtonMiddleDoubleClick
+			// MouseButtonRightDoubleClick
 			break;
 		}
 	}

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,17 +40,23 @@
 #include <common/Defines.h>
 #include <common/Logger.h>
 
-PhysicsParticleObject::PhysicsParticleObject() : 
-	handler_(0), context_(0), optionUnderGroundCollision_(false), iterations_(0),
-	info_(ParticleTypeNone, 0, 0), optionRotateOnCollision_(false), optionWallCollision_(true),
-	optionStickyShields_(false), optionShieldCollision_(true), optionLandscapeCollision_(true),
-	optionTankCollision_(true), optionTargetCollision_(true)
-{
-}
+PhysicsParticleObject::PhysicsParticleObject() :
+	handler_(0),
+	context_(0),
+	optionUnderGroundCollision_(false),
+	iterations_(0),
+	info_(ParticleTypeNone, 0, 0),
+	optionRotateOnCollision_(false),
+	optionWallCollision_(true),
+	optionStickyShields_(false),
+	optionShieldCollision_(true),
+	optionLandscapeCollision_(true),
+	optionTankCollision_(true),
+	optionTargetCollision_(true)
+{}
 
 PhysicsParticleObject::~PhysicsParticleObject()
-{
-}
+{}
 
 void PhysicsParticleObject::applyForce(FixedVector &force)
 {
@@ -65,7 +71,8 @@ void PhysicsParticleObject::applyOffset(FixedVector &offset)
 void PhysicsParticleObject::setPhysics(
 	PhysicsParticleInfo info,
 	ScorchedContext &context,
-	FixedVector &position, FixedVector &velocity)
+	FixedVector &position, FixedVector &velocity
+)
 {
 	info_ = info;
 	context_ = &context;
@@ -78,8 +85,7 @@ void PhysicsParticleObject::setPhysics(
 	setForces(1, 1);
 }
 
-void PhysicsParticleObject::setForces(
-	fixed windFactor, fixed gravityFactor) 
+void PhysicsParticleObject::setForces( fixed windFactor, fixed gravityFactor )
 {
 	windFactor_ = 
 		context_->getSimulator().getWind().getWindDirection() * 
@@ -174,7 +180,9 @@ void PhysicsParticleObject::checkCollision()
 			action = checkFallingCollision(collision, target);
 		}
 		break;
-	}	
+	case ParticleTypeNone:
+		break;
+	}
 
 	// Perform the result of the collision (if any)
 	switch (action)
@@ -219,15 +227,17 @@ void PhysicsParticleObject::checkCollision()
 			}
 		}
 		break;
+	case CollisionActionNone:
+		break;
 	}
 }
 
 PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkShotCollision(
 	CollisionInfo &collision, Target *target)
 {
-	int arenaX = context_->getLandscapeMaps().getGroundMaps().getArenaX();
-	int arenaY = context_->getLandscapeMaps().getGroundMaps().getArenaY();
-	int arenaWidth = context_->getLandscapeMaps().getGroundMaps().getArenaWidth();
+	int arenaX      = context_->getLandscapeMaps().getGroundMaps().getArenaX();
+	int arenaY      = context_->getLandscapeMaps().getGroundMaps().getArenaY();
+	int arenaWidth  = context_->getLandscapeMaps().getGroundMaps().getArenaWidth();
 	int arenaHeight = context_->getLandscapeMaps().getGroundMaps().getArenaHeight();
 
 	switch(collision.collisionId)
@@ -283,6 +293,8 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkShotCollision
 		case CollisionIdWallBottom:
 			position_[1] = arenaY + arenaHeight - 1;
 			break;
+		default:
+			break;
 		}
 
 		shotWallHit(collision);
@@ -309,13 +321,20 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkShotCollision
 			case CollisionIdWallBottom:
 				position_[1] = arenaX + 10;
 				break;
+			default:
+				break;
 			}
 			return CollisionActionNone;
 		case OptionsTransient::wallConcrete:
 			return CollisionActionCollision;
+		case OptionsTransient::wallNone:
+			return CollisionActionNone;
 		}
 		break;
+	case CollisionIdNone:
+		return CollisionActionNone;
 	}
+
 	return CollisionActionNone;
 }
 
@@ -331,7 +350,6 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkBounceCollisi
 	{
 	case CollisionIdRoof:
 		return CollisionActionNone;
-		break;
 	case CollisionIdLandscape:
 		return CollisionActionBounce;
 	case CollisionIdWallLeft:
@@ -356,6 +374,8 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkBounceCollisi
 			case CollisionIdWallBottom:
 				position_[1] = arenaY + arenaHeight - 1;
 				break;
+			default:
+				break;
 			}
 		}
 
@@ -367,16 +387,18 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkBounceCollisi
 			return CollisionActionNone;
 		case OptionsTransient::wallConcrete:
 			return CollisionActionCollision;
+		case OptionsTransient::wallNone:
+			return CollisionActionNone;
 		}
-		break;
 	case CollisionIdShield:
 		bounceShieldHit(target);
 		return CollisionActionBounce;
-		break;
 	case CollisionIdTarget:
 		return CollisionActionCollision;
-		break;
+	case CollisionIdNone:
+		return CollisionActionNone;
 	}
+
 	return CollisionActionNone;
 }
 
@@ -393,7 +415,6 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkFallingCollis
 	case CollisionIdTarget:
 	case CollisionIdShield:
 		return CollisionActionNone;
-		break;
 	case CollisionIdRoof:
 	case CollisionIdWallLeft:
 	case CollisionIdWallRight:
@@ -413,14 +434,17 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkFallingCollis
 		case CollisionIdWallBottom:
 			position_[1] = arenaY + arenaHeight - 1;
 			break;
+		default:
+			break;
 		}
 
 		return CollisionActionBounce;
-		break;
 	case CollisionIdLandscape:
 		return CollisionActionCollision;
-		break;
+	case CollisionIdNone:
+		return CollisionActionNone;
 	}
+
 	return CollisionActionNone;
 }
 
@@ -692,24 +716,19 @@ bool PhysicsParticleObject::getTargetBounceCollision(CollisionInfo &collision, T
 }
 
 void PhysicsParticleObject::shotShieldHit(Target *target)
-{
-}
+{}
 
 void PhysicsParticleObject::bounceShieldHit(Target *target)
-{
-}
+{}
 
 void PhysicsParticleObject::shotWallHit(CollisionInfo &collision)
-{
-}
+{}
 
 PhysicsParticleActionObject::PhysicsParticleActionObject()
-{
-}
+{}
 
 PhysicsParticleActionObject::~PhysicsParticleActionObject()
-{
-}
+{}
 
 void PhysicsParticleActionObject::shotShieldHit(Target *target)
 {
@@ -791,6 +810,8 @@ static void addWallCollisionParticle(Vector &position, ScorchedCollisionId colli
 		emitter.emitWallHit(position,
 			ScorchedClient::instance()->getParticleEngine(),
 			OptionsTransient::BotSide);
+		break;
+	default:
 		break;
 	}
 }

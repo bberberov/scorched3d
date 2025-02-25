@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,11 +24,9 @@
 #include <stdio.h>
 
 ConsoleRuleFnI::~ConsoleRuleFnI()
-{
-}
+{}
 
-static std::vector<ConsoleRuleParam> generateFnParams(
-	ConsoleRuleType type, bool write)
+static std::vector<ConsoleRuleParam> generateFnParams( ConsoleRuleType type, bool write )
 {
 	std::vector<ConsoleRuleParam> params;
 	if (!write)
@@ -49,26 +47,25 @@ static std::vector<ConsoleRuleParam> generateFnParams(
 	return params;
 }
 
-ConsoleRuleFn::ConsoleRuleFn(const char *name, 
-	ConsoleRuleFnI *user, 
-	ConsoleRuleType type, 
-	bool write) :
-	ConsoleRule(name, generateFnParams(type, write)), 
-	user_(user), 
+ConsoleRuleFn::ConsoleRuleFn(
+	const char *name,
+	ConsoleRuleFnI *user,
+	ConsoleRuleType type,
+	bool write
+) :
+	ConsoleRule( name, generateFnParams(type, write) ),
+	user_(user),
 	type_(type)
-{
-
-}
+{}
 
 ConsoleRuleFn::~ConsoleRuleFn()
-{
-
-}
+{}
 
 void ConsoleRuleFn::runRule(
 	Console *console,
 	const char *wholeLine,
-	std::vector<ConsoleRuleValue> &values)
+	std::vector<ConsoleRuleValue> &values
+)
 {
 	if (values.size() == 2)
 	{
@@ -90,6 +87,9 @@ void ConsoleRuleFn::setValue(ConsoleRuleValue &split)
 		break;
 	case ConsoleRuleTypeString:
 		user_->setStringParam(name_.c_str(), split.valueString.c_str());
+		break;
+	case ConsoleRuleTypeNone:
+		break;
 	}
 }
 
