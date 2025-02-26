@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,9 +30,9 @@ public:
 
 	enum DataType
 	{
-		NoAccess = 0,
-		RWAccess = 1,
-		RAccess = 2,
+		NoAccess  = 0,
+		RWAccess  = 1,
+		RAccess   = 2,
 		NoRestore = 4,
 		DebugOnly = 8
 	};

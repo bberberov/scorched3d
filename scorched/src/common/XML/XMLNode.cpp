@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,16 +27,16 @@
 void XMLNode::removeSpecialChars(const std::string &content, std::string &result)
 {
 	result = "";
-	for (char *c=(char *) content.c_str(); *c; c++)
+	for (char *c = (char *)content.c_str(); *c; c++)
 	{
-		if (*c == '\n') result += "&#10;";
+		if      (*c == '\n') result += "&#10;";
 		else if (*c < 32 || *c > 126) result += " ";
-		else if (*c == '>') result += "&gt;";
-		else if (*c == '<') result += "&lt;";
+		else if (*c == '>' ) result += "&gt;";
+		else if (*c == '<' ) result += "&lt;";
 		else if (*c == '\'') result += "&apos;";
-		else if (*c == '"') result += "&quot;";
-		else if (*c == '&') result += "&amp;";
-		else if (*c == '%') result += "&#37;";
+		else if (*c == '"' ) result += "&quot;";
+		else if (*c == '&' ) result += "&amp;";
+		else if (*c == '%' ) result += "&#37;";
 		else result += *c;
 	}
 }
@@ -44,16 +44,16 @@ void XMLNode::removeSpecialChars(const std::string &content, std::string &result
 void XMLNode::addSpecialChars(const std::string &content, std::string &result)
 {
 	result = "";
-	for (char *c=(char *) content.c_str(); *c; c++)
+	for (char *c = (char *)content.c_str(); *c; c++)
 	{
 		if (*c == '&')
 		{
-			if (strstr(c, "&gt;") == c) { result += '>'; c+=3; }
-			else if (strstr(c, "&lt;") == c) { result += '<'; c+=3; }
+			if      (strstr(c, "&gt;")   == c) { result += '>' ; c+=3; }
+			else if (strstr(c, "&lt;")   == c) { result += '<' ; c+=3; }
 			else if (strstr(c, "&apos;") == c) { result += '\''; c+=5; }
-			else if (strstr(c, "&quot;") == c) { result += '"'; c+=5; }
-			else if (strstr(c, "&amp;") == c) { result += '&'; c+=4; }
-			else if (strstr(c, "&#") == c)
+			else if (strstr(c, "&quot;") == c) { result += '"' ; c+=5; }
+			else if (strstr(c, "&amp;")  == c) { result += '&' ; c+=4; }
+			else if (strstr(c, "&#")     == c)
 			{
 				char *pos = strchr(c, ';');
 				if (pos <= c + 3)
@@ -67,7 +67,7 @@ void XMLNode::addSpecialChars(const std::string &content, std::string &result)
 			else result += *c;
 		}
 		else result += *c;
-	}	
+	}
 }
 
 const char *XMLNode::getSpacer(int space)
@@ -75,35 +75,44 @@ const char *XMLNode::getSpacer(int space)
 	static std::string spacestr;
 	spacestr = "";
 
-	for (int i=0; i<space; i++) spacestr+="\t";
+	for (int i = 0; i < space; i++) spacestr+="\t";
 	return spacestr.c_str();
 }
 
-XMLNode::XMLNode(const char *name, const char *content, NodeType type) : 
-	name_(name), parent_(0), type_(type),
+XMLNode::XMLNode(const char *name, const char *content, NodeType type) :
+	name_(name),
+	parent_(0),
+	type_(type),
 	useContentNodes_(false)
 {
-	addContent(content, (int) strlen(content));
+	addContent( content, (int) strlen(content) );
 }
 
-XMLNode::XMLNode(const char *name, const std::string &content, NodeType type) : 
-	name_(name), parent_(0), type_(type),
+XMLNode::XMLNode(const char *name, const std::string &content, NodeType type) :
+	name_(name),
+	parent_(0),
+	type_(type),
 	useContentNodes_(false)
 {
 	addContent(content.c_str(), (int) content.size());
 }
 
-XMLNode::XMLNode(const char *name, const LangString &langStringContent, NodeType type) : 
-	name_(name), parent_(0), type_(type),
+XMLNode::XMLNode(const char *name, const LangString &langStringContent, NodeType type) :
+	name_(name),
+	parent_(0),
+	type_(type),
 	useContentNodes_(false)
 {
 	std::string content;
 	content = LangStringUtil::convertFromLang(langStringContent);
-	addContent(content.c_str(), (int) content.size());
+	addContent( content.c_str(), (int) content.size() );
 }
 
 XMLNode::XMLNode(const char *name, float content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	char buffer[20];
 	snprintf(buffer, 20, "%.2f", content);
@@ -111,7 +120,10 @@ XMLNode::XMLNode(const char *name, float content, NodeType type) :
 }
 
 XMLNode::XMLNode(const char *name, int content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	char buffer[20];
 	snprintf(buffer, 20, "%i", content);
@@ -119,7 +131,10 @@ XMLNode::XMLNode(const char *name, int content, NodeType type) :
 }
 
 XMLNode::XMLNode(const char *name, unsigned int content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	char buffer[20];
 	snprintf(buffer, 20, "%u", content);
@@ -127,21 +142,30 @@ XMLNode::XMLNode(const char *name, unsigned int content, NodeType type) :
 }
 
 XMLNode::XMLNode(const char *name, bool content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	const char *buffer = content?"true":"false";
 	addContent(buffer, (int) strlen(buffer));
 }
 
 XMLNode::XMLNode(const char *name, fixed content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	const char *buffer = content.asString();
 	addContent(buffer, (int) strlen(buffer));
 }
 
 XMLNode::XMLNode(const char *name, FixedVector &content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	XMLNode *nodeA = new XMLNode("a");
 	addChild(nodeA);
@@ -161,7 +185,10 @@ XMLNode::XMLNode(const char *name, FixedVector &content, NodeType type) :
 }
 
 XMLNode::XMLNode(const char *name, FixedVector4 &content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	XMLNode *nodeA = new XMLNode("a");
 	addChild(nodeA);
@@ -186,7 +213,10 @@ XMLNode::XMLNode(const char *name, FixedVector4 &content, NodeType type) :
 }
 
 XMLNode::XMLNode(const char *name, Vector &content, NodeType type) :
-	name_(name), parent_(0), type_(type), useContentNodes_(false)
+	name_(name),
+	parent_(0),
+	type_(type),
+	useContentNodes_(false)
 {
 	XMLNode *nodeA = new XMLNode("a");
 	addChild(nodeA);
@@ -342,8 +372,7 @@ bool XMLNode::failContent()
 			*c != '\t' &&
 			*c != ' ')
 		{
-			returnError(S3D::formatStringBuffer("Unexpected context : %s", 
-					getContent()));
+			returnError(S3D::formatStringBuffer("Unexpected context : %s", getContent()));
 			return false;
 		}
 	}
@@ -368,8 +397,7 @@ void XMLNode::resurrectRemovedChildren()
 	}
 }
 
-bool XMLNode::getNamedChild(const char *name, XMLNode *&value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, XMLNode *&value, bool failOnError, bool remove)
 {
 	std::list<XMLNode *>::iterator itor;
 	for (itor = children_.begin();
@@ -377,7 +405,7 @@ bool XMLNode::getNamedChild(const char *name, XMLNode *&value,
 		++itor)
 	{
 		XMLNode *node = (*itor);
-		if (strcmp(name, node->getName()) == 0) 
+		if (strcmp(name, node->getName()) == 0)
 		{
 			if (remove)
 			{
@@ -396,8 +424,7 @@ bool XMLNode::getNamedChild(const char *name, XMLNode *&value,
 	return false;
 }
 
-bool XMLNode::getNamedParameter(const char *name, XMLNode *&value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedParameter(const char *name, XMLNode *&value, bool failOnError, bool remove)
 {
 	std::list<XMLNode *>::iterator itor;
 	for (itor = parameters_.begin();
@@ -424,8 +451,7 @@ bool XMLNode::getNamedParameter(const char *name, XMLNode *&value,
 	return false;
 }
 
-bool XMLNode::getNamedParameter(const char *name, std::string &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedParameter(const char *name, std::string &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedParameter(name, node, failOnError, remove)) return false;
@@ -433,8 +459,7 @@ bool XMLNode::getNamedParameter(const char *name, std::string &value,
 	return true;
 }
 
-bool XMLNode::getNamedParameter(const char *name, LangString &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedParameter(const char *name, LangString &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedParameter(name, node, failOnError, remove)) return false;
@@ -442,8 +467,7 @@ bool XMLNode::getNamedParameter(const char *name, LangString &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, LangString &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, LangString &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -451,8 +475,7 @@ bool XMLNode::getNamedChild(const char *name, LangString &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, std::string &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, std::string &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -460,24 +483,21 @@ bool XMLNode::getNamedChild(const char *name, std::string &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, bool &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, bool &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
 
 	if (0 == strcmp(node->getContent(), "true")) value = true;
 	else if (0 == strcmp(node->getContent(), "false")) value = false;
-	else 
+	else
 	{
-		return node->returnError(
-			"Failed to parse boolean value (should be true or false)");
+		return node->returnError( "Failed to parse boolean value (should be true or false)");
 	}
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, NumberParser &value,
-        bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, NumberParser &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -488,8 +508,7 @@ bool XMLNode::getNamedChild(const char *name, NumberParser &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, float &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, float &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -499,8 +518,7 @@ bool XMLNode::getNamedChild(const char *name, float &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, int &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, int &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -510,8 +528,7 @@ bool XMLNode::getNamedChild(const char *name, int &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, unsigned int &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, unsigned int &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -521,8 +538,7 @@ bool XMLNode::getNamedChild(const char *name, unsigned int &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, fixed &value,
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, fixed &value, bool failOnError, bool remove)
 {
 	std::string v;
 	if (!getNamedChild(name, v, failOnError, remove)) return false;
@@ -530,8 +546,7 @@ bool XMLNode::getNamedChild(const char *name, fixed &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, FixedVector &value, 
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, FixedVector &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -563,8 +578,7 @@ bool XMLNode::getNamedChild(const char *name, FixedVector &value,
 	return true;
 }
 
-bool XMLNode::getNamedChild(const char *name, Vector &value, 
-	bool failOnError, bool remove)
+bool XMLNode::getNamedChild(const char *name, Vector &value, bool failOnError, bool remove)
 {
 	XMLNode *node;
 	if (!getNamedChild(name, node, failOnError, remove)) return false;
@@ -596,8 +610,7 @@ bool XMLNode::getNamedChild(const char *name, Vector &value,
 
 const char *XMLNode::getContent()
 {
-	if (useContentNodes_ &&
-		getType() == XMLNodeType)
+	if (useContentNodes_ && getType() == XMLNodeType)
 	{
 		static std::string result;
 
@@ -622,8 +635,8 @@ const char *XMLNode::getContent()
 }
 
 void XMLNode::setSource(const char *source)
-{ 
-	source_ = source; 
+{
+	source_ = source;
 }
 
 void XMLNode::setLine(int line, int col)
@@ -632,19 +645,19 @@ void XMLNode::setLine(int line, int col)
 	col_ = col;
 }
 
-void XMLNode::addChild(XMLNode *node) 
-{ 
-	children_.push_back(node); 
+void XMLNode::addChild(XMLNode *node)
+{
+	children_.push_back(node);
 	node->setUseContentNodes(useContentNodes_);
-	node->parent_ = this; 
-	node->source_ = source_; 
+	node->parent_ = this;
+	node->source_ = source_;
 }
 
-void XMLNode::addParameter(XMLNode *node) 
-{ 
-	parameters_.push_back(node); 
-	node->parent_ = this; 
-	node->source_ = source_; 
+void XMLNode::addParameter(XMLNode *node)
+{
+	parameters_.push_back(node);
+	node->parent_ = this;
+	node->source_ = source_;
 }
 
 void XMLNode::addContent(const char *data, int len)
@@ -655,22 +668,29 @@ void XMLNode::addContent(const char *data, int len)
 
 	if (useContentNodes_)
 	{
-		XMLNode *newNode = 
-			new XMLNode("__TEXT__", "", XMLNode::XMLContentType);
+		XMLNode *newNode = new XMLNode("__TEXT__", "", XMLNode::XMLContentType);
 		newNode->setLine(line_, col_);
 		newNode->content_.append(newContent);
 		addChild(newNode);
 	}
 	else
 	{
-		content_.append(newContent); 
+		content_.append(newContent);
 	}
 }
 
 bool XMLNode::returnError(const std::string &error)
 {
-	S3D::dialogMessage("XMLNode",
-		S3D::formatStringBuffer("Parse Error, File:%s Line:%i Col:%i Node:%s Error:%s",
-		source_.c_str(), line_, col_, getName(), error.c_str()));
+	S3D::dialogMessage(
+		"XMLNode",
+		S3D::formatStringBuffer(
+			"Parse Error, File:%s Line:%i Col:%i Node:%s Error:%s",
+			source_.c_str(),
+			line_,
+			col_,
+			getName(),
+			error.c_str()
+		)
+	);
 	return false;
 }

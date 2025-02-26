@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,10 +25,12 @@
 #include <stdio.h>
 #include <map>
 
-OptionEntry::OptionEntry(std::list<OptionEntry *> &group,
-						 const char *name,
-						 const char *description,
-						 unsigned int data) :
+OptionEntry::OptionEntry(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data
+) :
 	name_(name),
 	description_(description),
 	data_(data),
@@ -38,12 +40,12 @@ OptionEntry::OptionEntry(std::list<OptionEntry *> &group,
 }
 
 OptionEntry::~OptionEntry()
-{
+{}
 
-}
-
-bool OptionEntryHelper::addToArgParser(std::list<OptionEntry *> &options,
-									   ARGParser &parser)
+bool OptionEntryHelper::addToArgParser(
+	std::list<OptionEntry *> &options,
+	ARGParser &parser
+)
 {
 	std::list<OptionEntry *>::iterator itor;
 	for (itor = options.begin();
@@ -56,9 +58,11 @@ bool OptionEntryHelper::addToArgParser(std::list<OptionEntry *> &options,
 	return true;
 }
 
-bool OptionEntryHelper::writeToBuffer(std::list<OptionEntry *> &options,
-									  NetBuffer &buffer,
-									  bool useprotected)
+bool OptionEntryHelper::writeToBuffer(
+	std::list<OptionEntry *> &options,
+	NetBuffer &buffer,
+	bool useprotected
+)
 {
 	// Write out all of the options
 	// We do this as strings this make the message larger than it needs to be but
@@ -86,9 +90,11 @@ bool OptionEntryHelper::writeToBuffer(std::list<OptionEntry *> &options,
 	return true;
 }
 
-bool OptionEntryHelper::readFromBuffer(std::list<OptionEntry *> &options,
-									   NetBufferReader &reader,
-									   bool useprotected)
+bool OptionEntryHelper::readFromBuffer(
+	std::list<OptionEntry *> &options,
+	NetBufferReader &reader,
+	bool useprotected
+)
 {
 	// Create a map from string name to existing options
 	// So we can find the named option when reading the buffer
@@ -121,25 +127,31 @@ bool OptionEntryHelper::readFromBuffer(std::list<OptionEntry *> &options,
 		if (strcmp(name.c_str(), "-") == 0) break; // The end symbol
 		if (!reader.getFromBuffer(value)) return false;
 		
-		std::map<std::string, OptionEntry *>::iterator finditor =
-			entryMap.find(name);
+		std::map<std::string, OptionEntry *>::iterator finditor = entryMap.find(name);
 		if (finditor == entryMap.end())
 		{
-			Logger::log(S3D::formatStringBuffer("Warning:Does not support server option \"%s\"",
-				name.c_str()));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Warning:Does not support server option \"%s\"",
+					name.c_str()
+				)
+			);
 		}
 		else
 		{
 			OptionEntry *entry = (*finditor).second;
-			if (!entry->setComsBufferValue(value.c_str())) return false;
+			if ( ! entry->setComsBufferValue(value.c_str() ) ) return false;
 		}
 	}
 
 	return true;
 }
 
-bool OptionEntryHelper::writeToXML(std::list<OptionEntry *> &options,
-	XMLNode *node, bool allOptions)
+bool OptionEntryHelper::writeToXML(
+	std::list<OptionEntry *> &options,
+	XMLNode *node,
+	bool allOptions
+)
 {
 	std::list<OptionEntry *>::iterator itor;
 	for (itor = options.begin();
@@ -152,34 +164,41 @@ bool OptionEntryHelper::writeToXML(std::list<OptionEntry *> &options,
 		{
 
 			// Add the comments for this node
-			node->addChild(new XMLNode("", 
-				S3D::formatStringBuffer("%s: %s.  Default value : \"%s\" %s.", 
-				entry->getName(), entry->getDescription(), 
-				entry->getDefaultValueAsString(), entry->getRangeDescription()?entry->getRangeDescription():""), 
-				XMLNode::XMLCommentType));
+			node->addChild(
+				new XMLNode(
+					"",
+					S3D::formatStringBuffer(
+						"%s: %s.  Default value : \"%s\" %s.",
+						entry->getName(),
+						entry->getDescription(),
+						entry->getDefaultValueAsString(),
+						entry->getRangeDescription() ? entry->getRangeDescription() : ""
+					),
+					XMLNode::XMLCommentType
+				)
+			);
 			
 			if (!entry->isDefaultValue() || allOptions)
 			{
 				// Add the name and value
 				XMLNode *optionNode = new XMLNode("option");
 				node->addChild(optionNode);
-				optionNode->addChild(
-					new XMLNode("name", entry->getName()));
-				optionNode->addChild(
-					new XMLNode("value",entry->getValueAsString()));
+				optionNode->addChild( new XMLNode("name", entry->getName() ) );
+				optionNode->addChild( new XMLNode("value",entry->getValueAsString() ) );
 			}
 		}
 	}
 	return true;
 }
 
-bool OptionEntryHelper::writeToFile(std::list<OptionEntry *> &options,
-									const std::string &filePath, 
-									bool allOptions)
+bool OptionEntryHelper::writeToFile(
+	std::list<OptionEntry *> &options,
+	const std::string &filePath,
+	bool allOptions
+)
 {
 	XMLNode optionsNode("options");
-	optionsNode.addParameter(
-		new XMLNode("source", "Scorched3D", XMLNode::XMLParameterType));
+	optionsNode.addParameter( new XMLNode("source", "Scorched3D", XMLNode::XMLParameterType) );
 	writeToXML(options, &optionsNode, allOptions);
 
 	if (!optionsNode.writeToFile(filePath.c_str())) return false;
@@ -187,8 +206,10 @@ bool OptionEntryHelper::writeToFile(std::list<OptionEntry *> &options,
 	return true;
 }
 
-bool OptionEntryHelper::readFromXML(std::list<OptionEntry *> &options,
-									 XMLNode *rootnode)
+bool OptionEntryHelper::readFromXML(
+	std::list<OptionEntry *> &options,
+	XMLNode *rootnode
+)
 {
 	// Create a map from string name to existing options
 	// So we can find the named option when parsing the file
@@ -217,41 +238,56 @@ bool OptionEntryHelper::readFromXML(std::list<OptionEntry *> &options,
 		std::string value = valueNode->getContent();
 		_strlwr((char *) name.c_str());
 
-		std::map<std::string, OptionEntry *>::iterator finditor =
-			entryMap.find(name);
+		std::map<std::string, OptionEntry *>::iterator finditor = entryMap.find(name);
 		if (finditor == entryMap.end())
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"ERROR: Failed to parse file \"%s\". Cannot find option \"%s\"",
-				currentNode->getSource(), name.c_str()));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"ERROR: Failed to parse file \"%s\". Cannot find option \"%s\"",
+					currentNode->getSource(),
+					name.c_str()
+				)
+			);
 		}
 		else
 		{
 			if (!(*finditor).second->setValueFromString(value))
 			{
-				S3D::dialogMessage("Scorched3D Options", S3D::formatStringBuffer(
-					"ERROR: Failed to parse file \"%s\"\n"
-					"Failed to set option \"%s\" with \"%s\"",
-					currentNode->getSource(), name.c_str(), value.c_str()));
-				return false;		
-			}	
+				S3D::dialogMessage(
+					"Scorched3D Options",
+					S3D::formatStringBuffer(
+						"ERROR: Failed to parse file \"%s\"\n"
+						"Failed to set option \"%s\" with \"%s\"",
+						currentNode->getSource(),
+						name.c_str(),
+						value.c_str()
+					)
+				);
+				return false;
+			}
 		}
 	}
 	return true;
-}								 
+}
 
-bool OptionEntryHelper::readFromFile(std::list<OptionEntry *> &options,
-									 const std::string &filePath)
+bool OptionEntryHelper::readFromFile(
+	std::list<OptionEntry *> &options,
+	const std::string &filePath
+)
 {
 	// Parse the XML file
 	XMLFile file;
 	if (!file.readFile(filePath.c_str()))
 	{
-		S3D::dialogMessage("Scorched3D Options", S3D::formatStringBuffer(
-			"ERROR: Failed to parse file \"%s\"\n"
-			"%s",
-			filePath.c_str(),
-			file.getParserError()));
+		S3D::dialogMessage(
+			"Scorched3D Options",
+			S3D::formatStringBuffer(
+				"ERROR: Failed to parse file \"%s\"\n"
+				"%s",
+				filePath.c_str(),
+				file.getParserError()
+			)
+		);
 		return false;
 	}
 
@@ -265,7 +301,9 @@ bool OptionEntryHelper::readFromFile(std::list<OptionEntry *> &options,
 }
 
 OptionEntry *OptionEntryHelper::getEntry(
-	std::list<OptionEntry *> &options, const char *name)
+	std::list<OptionEntry *> &options,
+	const char *name
+)
 {
 	std::list<OptionEntry *>::iterator itor;
 	for (itor = options.begin();
@@ -278,21 +316,20 @@ OptionEntry *OptionEntryHelper::getEntry(
 	return 0;
 }
 
-OptionEntryInt::OptionEntryInt(std::list<OptionEntry *> &group,
-							   const char *name,
-							   const char *description,
-							   unsigned int data,
-							   int value) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value)
-{
-	
-}
+OptionEntryInt::OptionEntryInt(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	int value
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value)
+{}
 
 OptionEntryInt::~OptionEntryInt()
-{
-
-}
+{}
 
 const char *OptionEntryInt::getValueAsString()
 {
@@ -315,7 +352,7 @@ bool OptionEntryInt::setValueFromString(const std::string &string)
 	return setValue(val);
 }
 
-int OptionEntryInt::getValue() 
+int OptionEntryInt::getValue()
 {
 	return value_;
 }
@@ -336,28 +373,34 @@ bool OptionEntryInt::addToArgParser(ARGParser &parser)
 {
 	char name[256], description[1024];
 	snprintf(name, 256, "-%s", getName());
-	snprintf(description, 1024, "%s (Default : %s)",
-			(char *) getDescription(), 
-			(char *) getDefaultValueAsString());
+	snprintf(
+		description,
+		1024,
+		"%s (Default : %s)",
+		(char *) getDescription(),
+		(char *) getDefaultValueAsString()
+	);
 
 	parser.addEntry(name , this, description);
 	return true;
 }
 
-OptionEntryBoundedInt::OptionEntryBoundedInt(std::list<OptionEntry *> &group,
-											 const char *name,
-											 const char *description,
-											 unsigned int data,
-											 int value,
-											 int minValue, int maxValue, int stepValue) :
-	OptionEntryInt(group, name, description, data, value), 
-	minValue_(minValue), maxValue_(maxValue), stepValue_(stepValue)
-{
-}
+OptionEntryBoundedInt::OptionEntryBoundedInt(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	int value,
+	int minValue, int maxValue, int stepValue
+) :
+	OptionEntryInt(group, name, description, data, value),
+	minValue_(minValue),
+	maxValue_(maxValue),
+	stepValue_(stepValue)
+{}
 
 OptionEntryBoundedInt::~OptionEntryBoundedInt()
-{
-}
+{}
 
 const char *OptionEntryBoundedInt::getRangeDescription()
 {
@@ -372,20 +415,20 @@ bool OptionEntryBoundedInt::setValue(int value)
 	return OptionEntryInt::setValue(value);
 }
 
-OptionEntryEnum::OptionEntryEnum(std::list<OptionEntry *> &group,
-											 const char *name,
-											 const char *description,
-											 unsigned int data,
-											 int value,
-											 OptionEntryEnum::EnumEntry enums[]) :
-	OptionEntryInt(group, name, description, data, value), 
+OptionEntryEnum::OptionEntryEnum(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	int value,
+	OptionEntryEnum::EnumEntry enums[]
+) :
+	OptionEntryInt(group, name, description, data, value),
 	enums_(enums)
-{	
-}
+{}
 
 OptionEntryEnum::~OptionEntryEnum()
-{
-}
+{}
 
 const char *OptionEntryEnum::getRangeDescription()
 {
@@ -393,8 +436,7 @@ const char *OptionEntryEnum::getRangeDescription()
 	result = "possible values = [";
 	for (EnumEntry *current = enums_; current->description[0]; current++)
 	{
-		result += S3D::formatStringBuffer(" \"%s\" ",
-			current->description, current->value);
+		result += S3D::formatStringBuffer(" \"%s\" ", current->description, current->value);
 	}
 	result += "]";
 	return result.c_str();
@@ -455,30 +497,29 @@ bool OptionEntryEnum::setValueFromString(const std::string &string)
 	return setValue(val);
 }
 
-OptionEntryBool::OptionEntryBool(std::list<OptionEntry *> &group,
-								 const char *name, 
-								 const char *description, 
-								 unsigned int data,
-								 bool value) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value)
-{
-	
-}
+OptionEntryBool::OptionEntryBool(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	bool value
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value)
+{}
 
 OptionEntryBool::~OptionEntryBool()
-{
-	
-}
+{}
 
 const char *OptionEntryBool::getDefaultValueAsString()
 {
-	return (defaultValue_?"on":"off");
+	return (defaultValue_ ? "on" : "off");
 }
 
 const char *OptionEntryBool::getValueAsString()
 {
-	return (value_?"on":"off");
+	return (value_ ? "on" : "off");
 }
 
 bool OptionEntryBool::setValueFromString(const std::string &string)
@@ -517,30 +558,34 @@ bool OptionEntryBool::addToArgParser(ARGParser &parser)
 {
 	char name[256], description[1024];
 	snprintf(name, 256, "-%s", getName());
-	snprintf(description, 1024, "%s (Default : %s)",
-			(char *) getDescription(), 
-			(char *) getDefaultValueAsString());
+	snprintf(
+		description,
+		1024,
+		"%s (Default : %s)",
+		(char *) getDescription(),
+		(char *) getDefaultValueAsString()
+	);
 
 	parser.addEntry(name , this, description);
 	return true;
 }
 
-OptionEntryString::OptionEntryString(std::list<OptionEntry *> &group,
-									 const char *name, 
-									 const char *description, 
-									 unsigned int data,
-									 const char *value,
-									 bool multiline) :
+OptionEntryString::OptionEntryString(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	const char *value,
+	bool multiline
+) :
 	OptionEntry(group, name, description, data),
-	value_(value), defaultValue_(value), multiline_(multiline)
-{
-	
-}
+	value_(value),
+	defaultValue_(value),
+	multiline_(multiline)
+{}
 
 OptionEntryString::~OptionEntryString()
-{
-
-}
+{}
 
 const char *OptionEntryString::getValueAsString()
 {
@@ -557,7 +602,7 @@ bool OptionEntryString::setValueFromString(const std::string &string)
 	return setValue(string);
 }
 
-const char *OptionEntryString::getValue() 
+const char *OptionEntryString::getValue()
 {
 	return value_.c_str();
 }
@@ -578,28 +623,32 @@ bool OptionEntryString::addToArgParser(ARGParser &parser)
 {
 	char name[256], description[1024];
 	snprintf(name, 256, "-%s", getName());
-	snprintf(description, 1024, "%s (Default : %s)",
-			(char *) getDescription(), 
-			(char *) getDefaultValueAsString());
+	snprintf(
+		description,
+		1024,
+		"%s (Default : %s)",
+		(char *) getDescription(),
+		(char *) getDefaultValueAsString()
+	);
 
 	parser.addEntry(name , this, description);
 	return true;
 }
 
-OptionEntryStringEnum::OptionEntryStringEnum(std::list<OptionEntry *> &group,
-											 const char *name,
-											 const char *description,
-											 unsigned int data,
-											 const char *value,
-											 OptionEntryStringEnum::EnumEntry enums[]) :
-	OptionEntryString(group, name, description, data, value), 
+OptionEntryStringEnum::OptionEntryStringEnum(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	const char *value,
+	OptionEntryStringEnum::EnumEntry enums[]
+) :
+	OptionEntryString(group, name, description, data, value),
 	enums_(enums)
-{	
-}
+{}
 
 OptionEntryStringEnum::~OptionEntryStringEnum()
-{
-}
+{}
 
 const char *OptionEntryStringEnum::getRangeDescription()
 {
@@ -607,8 +656,7 @@ const char *OptionEntryStringEnum::getRangeDescription()
 	result = "possible values = [";
 	for (EnumEntry *current = enums_; current->value[0]; current++)
 	{
-		result += S3D::formatStringBuffer(" \"%s\" ",
-			current->value);
+		result += S3D::formatStringBuffer(" \"%s\" ", current->value);
 	}
 	result += "]";
 	return result.c_str();
@@ -631,22 +679,22 @@ bool OptionEntryStringEnum::setValueFromString(const std::string &string)
 	return setValue(string);
 }
 
-OptionEntryFloat::OptionEntryFloat(std::list<OptionEntry *> &group,
-							   const char *name,
-							   const char *description,
-							   unsigned int data,
-							   float value,
-							   bool truncate) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value), truncate_(truncate)
-{
-	
-}
+OptionEntryFloat::OptionEntryFloat(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	float value,
+	bool truncate
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value),
+	truncate_(truncate)
+{}
 
 OptionEntryFloat::~OptionEntryFloat()
-{
-
-}
+{}
 
 const char *OptionEntryFloat::getValueAsString()
 {
@@ -671,7 +719,7 @@ bool OptionEntryFloat::setValueFromString(const std::string &string)
 	return setValue(val);
 }
 
-float OptionEntryFloat::getValue() 
+float OptionEntryFloat::getValue()
 {
 	return value_;
 }
@@ -689,35 +737,33 @@ bool OptionEntryFloat::addToArgParser(ARGParser &parser)
 	return false;
 }
 
-OptionEntryVector::OptionEntryVector(std::list<OptionEntry *> &group,
-							   const char *name,
-							   const char *description,
-							   unsigned int data,
-							   Vector value,
-							   bool truncate) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value), truncate_(truncate)
-{
-	
-}
+OptionEntryVector::OptionEntryVector(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	Vector value,
+	bool truncate
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value),
+	truncate_(truncate)
+{}
 
 OptionEntryVector::~OptionEntryVector()
-{
-
-}
+{}
 
 const char *OptionEntryVector::getValueAsString()
 {
 	static char value[256];
 	if (truncate_)
 	{
-		snprintf(value, 256, "%.2f %.2f %.2f", 
-			value_[0], value_[1], value_[2]);
+		snprintf(value, 256, "%.2f %.2f %.2f", value_[0], value_[1], value_[2]);
 	}
 	else
 	{
-		snprintf(value, 256, "%.8f %.8f %.8f", 
-			value_[0], value_[1], value_[2]);
+		snprintf(value, 256, "%.8f %.8f %.8f", value_[0], value_[1], value_[2]);
 	}
 	return value;
 }
@@ -727,13 +773,11 @@ const char *OptionEntryVector::getDefaultValueAsString()
 	static char value[256];
 	if (truncate_)
 	{
-		snprintf(value, 256, "%.2f %.2f %.2f", 
-			defaultValue_[0], defaultValue_[1], defaultValue_[2]);
+		snprintf(value, 256, "%.2f %.2f %.2f", defaultValue_[0], defaultValue_[1], defaultValue_[2]);
 	}
 	else
 	{
-		snprintf(value, 256, "%.8f %.8f %.8f", 
-			defaultValue_[0], defaultValue_[1], defaultValue_[2]);
+		snprintf(value, 256, "%.8f %.8f %.8f", defaultValue_[0], defaultValue_[1], defaultValue_[2]);
 	}
 	return value;
 }
@@ -741,12 +785,11 @@ const char *OptionEntryVector::getDefaultValueAsString()
 bool OptionEntryVector::setValueFromString(const std::string &string)
 {
 	Vector vec;
-	if (sscanf(string.c_str(), "%f %f %f", 
-		&vec[0], &vec[1], &vec[2]) != 3) return false;
+	if (sscanf(string.c_str(), "%f %f %f", &vec[0], &vec[1], &vec[2]) != 3) return false;
 	return setValue(vec);
 }
 
-Vector &OptionEntryVector::getValue() 
+Vector &OptionEntryVector::getValue()
 {
 	return value_;
 }
@@ -764,21 +807,20 @@ bool OptionEntryVector::addToArgParser(ARGParser &parser)
 	return false;
 }
 
-OptionEntryFixed::OptionEntryFixed(std::list<OptionEntry *> &group,
-							   const char *name,
-							   const char *description,
-							   unsigned int data,
-							   fixed value) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value)
-{
-	
-}
+OptionEntryFixed::OptionEntryFixed(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	fixed value
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value)
+{}
 
 OptionEntryFixed::~OptionEntryFixed()
-{
-
-}
+{}
 
 const char *OptionEntryFixed::getValueAsString()
 {
@@ -795,7 +837,7 @@ bool OptionEntryFixed::setValueFromString(const std::string &string)
 	return setValue(fixed(string.c_str()));
 }
 
-fixed OptionEntryFixed::getValue() 
+fixed OptionEntryFixed::getValue()
 {
 	return value_;
 }
@@ -813,21 +855,20 @@ bool OptionEntryFixed::addToArgParser(ARGParser &parser)
 	return false;
 }
 
-OptionEntryFixedVector::OptionEntryFixedVector(std::list<OptionEntry *> &group,
-							   const char *name,
-							   const char *description,
-							   unsigned int data,
-							   FixedVector value) :
-	OptionEntry(group, name, description, data), 
-	value_(value), defaultValue_(value)
-{
-	
-}
+OptionEntryFixedVector::OptionEntryFixedVector(
+	std::list<OptionEntry *> &group,
+	const char *name,
+	const char *description,
+	unsigned int data,
+	FixedVector value
+) :
+	OptionEntry(group, name, description, data),
+	value_(value),
+	defaultValue_(value)
+{}
 
 OptionEntryFixedVector::~OptionEntryFixedVector()
-{
-
-}
+{}
 
 const char *OptionEntryFixedVector::getValueAsString()
 {
@@ -836,8 +877,7 @@ const char *OptionEntryFixedVector::getValueAsString()
 	std::string c = value_[2].asString();
 
 	static char value[256];
-	snprintf(value, 256, "%s %s %s", 
-		a.c_str(), b.c_str(), c.c_str());
+	snprintf(value, 256, "%s %s %s", a.c_str(), b.c_str(), c.c_str());
 	return value;
 }
 
@@ -848,8 +888,7 @@ const char *OptionEntryFixedVector::getDefaultValueAsString()
 	std::string c = defaultValue_[2].asString();
 
 	static char value[256];
-	snprintf(value, 256, "%s %s %s", 
-		a.c_str(), b.c_str(), c.c_str());
+	snprintf(value, 256, "%s %s %s", a.c_str(), b.c_str(), c.c_str());
 	return value;
 }
 
@@ -861,14 +900,14 @@ bool OptionEntryFixedVector::setValueFromString(const std::string &string)
 	char *token = strtok((char *) string.c_str(), " ");
 	while(token != 0)
 	{
-		value[i++] = fixed(token);		
+		value[i++] = fixed(token);
 		token = strtok(0, " ");
 	}
 
 	return setValue(value);
 }
 
-FixedVector &OptionEntryFixedVector::getValue() 
+FixedVector &OptionEntryFixedVector::getValue()
 {
 	return value_;
 }

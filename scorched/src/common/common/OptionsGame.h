@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,74 +31,74 @@ public:
 
 	enum ScoreType
 	{
-		ScoreWins = 0,
+		ScoreWins  = 0,
 		ScoreKills = 1,
 		ScoreMoney = 2
 	};
 	enum TurnType
 	{
-		TurnSimultaneous = 0,
+		TurnSimultaneous         = 0,
 		TurnSequentialLoserFirst = 1,
-		TurnSequentialRandom = 2,
-		TurnSimultaneousNoWait = 3,
-		TurnFree = 4,
-		TurnFreeTimed = 5
+		TurnSequentialRandom     = 2,
+		TurnSimultaneousNoWait   = 3,
+		TurnFree                 = 4,
+		TurnFreeTimed            = 5
 	};
 	enum WindForce
 	{
 		WindRandom = 0,
-		WindNone = 1,
-		Wind1 = 2,
-		Wind2 = 3,
-		Wind3 = 4,
-		Wind4 = 5,
-		Wind5 = 6,
+		WindNone   = 1,
+		Wind1      = 2,
+		Wind2      = 3,
+		Wind3      = 4,
+		Wind4      = 5,
+		Wind5      = 6,
 		WindBreezy = 7,
-		WindGale = 8
+		WindGale   = 8
 	};
 	enum WindType
 	{
-		WindChangeNever = 0,
-		WindChangeSomeTimes = 1,
+		WindChangeNever      = 0,
+		WindChangeSomeTimes  = 1,
 		WindChangeFrequently = 2,
 		WindChangeConstantly = 3,
-		WindChangeAlways = 4
+		WindChangeAlways     = 4
 	};
 	enum WallType
 	{
-		WallRandom = 0,
-		WallConcrete = 1,
-		WallBouncy = 2,
+		WallRandom     = 0,
+		WallConcrete   = 1,
+		WallBouncy     = 2,
 		WallWrapAround = 3,
-		WallNone = 4,
-		WallActive = 5,
-		WallInactive = 6
+		WallNone       = 4,
+		WallActive     = 5,
+		WallInactive   = 6
 	};
 	enum WeapScale
 	{
-		ScaleSmall = 0,
+		ScaleSmall  = 0,
 		ScaleMedium = 1,
-		ScaleLarge = 2
+		ScaleLarge  = 2
 	};
 	enum ResignType
 	{
 		ResignStart = 0,
 		ResignTimed = 1,
-		ResignNone = 2
+		ResignNone  = 2
 	};
 	enum MovementRestrictionType
 	{
-		MovementRestrictionNone = 0,
-		MovementRestrictionLand = 1,
+		MovementRestrictionNone        = 0,
+		MovementRestrictionLand        = 1,
 		MovementRestrictionLandOrAbove = 2
 	};
 	enum TeamBallanceType
 	{
-		TeamBallanceNone = 0,
-		TeamBallanceAuto = 1,
-		TeamBallanceBotsVs = 2,
+		TeamBallanceNone        = 0,
+		TeamBallanceAuto        = 1,
+		TeamBallanceBotsVs      = 2,
 		TeamBallanceAutoByScore = 3,
-		TeamBallanceAutoByBots = 4
+		TeamBallanceAutoByBots  = 4
 	};
 	
 	const char *getTutorial() { return tutorial_; }
@@ -426,7 +426,7 @@ public:
 
 	// Fns used to save or restore the state of the options
 	std::list<OptionEntry *> &getOptions();
-	std::list<OptionEntry *> &getPlayerTypeOptions(); 
+	std::list<OptionEntry *> &getPlayerTypeOptions();
 	virtual bool writeOptionsToFile(const std::string &filePath, bool allOptions);
 	virtual bool readOptionsFromFile(const std::string &filePath);
 	virtual bool writeToBuffer(NetBuffer &buffer, bool useProtected, bool usePlayerTypes);
