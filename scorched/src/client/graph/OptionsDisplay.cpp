@@ -44,62 +44,42 @@ OptionsDisplay *OptionsDisplay::instance()
 }
 
 OptionsDisplay::OptionsDisplay() :
-	detailTexture_(
-		options_,
-		"DetailTexture",
-		"Use detail textures on the landscape."
-			"Adds the texture seen when very close to the landscape."
-		"Requires multi-texturing",
-		RWAccess, true
-	),
-	hideFinalScore_(
-		options_,
-		"HideFinalScore",
-		"Hide the score dialog that is automatically shown after shots",
-		RWAccess | NoRestore, false
-	),
-	depricatedUniqueUserId_(
-		options_,
-		"UniqueUserId",
-		"The unique string given by this client to any servers to uniquely identify itself."
-			"Used for server stats and logging (confidentially)",
-		RAccess | OptionEntry::DataDepricated | NoRestore, ""
-	),
+	// BEGIN online
 	hostDescription_(
 		options_,
 		"HostDescription",
 		"The description of this host given to any servers for stats.",
 		RAccess | NoRestore, ""
 	),
+	lastVersionPlayed_(
+		options_,
+		"LastVersionPlayed",
+		"What was the last version of scorched3d played",
+		RWAccess | NoRestore, ""
+	),
+	clientLogToFile_(
+		options_,
+		"ClientLogToFile",
+		"Client logs to file",
+		RAccess, false
+	),
+	clientLogState_(
+		options_,
+		"ClientLogState",
+		"Client logs state (0 is off)",
+		RAccess, 0
+	),
+	validateServerIp_(
+		options_,
+		"ValidateServerIp",
+		"Checks if the server ip address matches the published address",
+		RAccess, true
+	),
 	onlineUserIcon_(
 		options_,
 		"OnlineUserIcon",
 		"The players icon, must be PNG 32x32 and less than 5000 bytes by default.",
 		RAccess | NoRestore, ""
-	),
-	buyTab_(
-		options_,
-		"BuyTab",
-		"The default buy tab",
-		RWAccess | NoRestore, ""
-	),
-	depricatedRoamVarianceStart_(
-		options_,
-		"RoamVarianceStart",
-		"The minimum variance to allow",
-		RWAccess | OptionEntry::DataDepricated, 2
-	),
-	depricatedRoamVarianceRamp_(
-		options_,
-		"RoamVarianceRamp",
-		"The variance ramping for each distance unit",
-		RWAccess | OptionEntry::DataDepricated, 10
-	),
-	depricatedRoamVarianceTank_(
-		options_,
-		"RoamVarianceTank",
-		"The variance difference for ROAM areas with tanks on them",
-		RWAccess | OptionEntry::DataDepricated, 50
 	),
 	onlineUserName_(
 		options_,
@@ -119,17 +99,20 @@ OptionsDisplay::OptionsDisplay() :
 		"The tank color that will be used for all online (non-team) games.",
 		RAccess | NoRestore, Vector::getNullVector(), true
 	),
-	explosionParts_(
+	// END   online
+
+	// BEGIN UI
+	hideFinalScore_(
 		options_,
-		"ExplosionParts",
-		"How many explosion clouds are drawn",
-		RAccess, 8, 0, 10, 1
+		"HideFinalScore",
+		"Hide the score dialog that is automatically shown after shots",
+		RWAccess | NoRestore, false
 	),
-	explosionSubParts_(
+	buyTab_(
 		options_,
-		"ExplosionSubParts",
-		"How many explosion sub clouds are drawn",
-		RAccess, 4, 0, 5, 1
+		"BuyTab",
+		"The default buy tab",
+		RWAccess | NoRestore, ""
 	),
 	dialogSize_(
 		options_,
@@ -143,36 +126,6 @@ OptionsDisplay::OptionsDisplay() :
 		"The percentage size of the tank models",
 		RWAccess, 100
 	),
-	depricatedMaxModelTriPercentage_(
-		options_,
-		"MaxModelTriPercentage",
-		"",
-		RAccess | OptionEntry::DataDepricated, 100, 50, 100, 1
-	),
-	explosionParticleMult_(
-		options_,
-		"ExplosionParticleMult",
-		"The number of particles that each explosion will create (relative to explosion size)",
-		RAccess, 20, 0, 100, 10
-	),
-	depricatedDayTime_(
-		options_,
-		"DayTime",
-		"",
-		RWAccess | OptionEntry::DataDepricated, 2
-	),
-	depricatedSunXYAng_(
-		options_,
-		"SunXYAng",
-		"",
-		RAccess | OptionEntry::DataDepricated, 110
-	),
-	depricatedSunYZAng_(
-		options_,
-		"SunYZAng",
-		"",
-		RAccess | OptionEntry::DataDepricated, 25
-	),
 	toolTipTime_(
 		options_,
 		"ToolTipTime",
@@ -185,12 +138,63 @@ OptionsDisplay::OptionsDisplay() :
 		"The speed at which a tool tip will fade in.",
 		RWAccess, 6
 	),
-	framesPerSecondLimit_(
+	smoothLines_(
 		options_,
-		"FramesPerSecondLimit",
-		"The maximum frame rate that the game will run at",
-		RWAccess, 250
+		"SmoothLines",
+		"Smooth/AA the dialog lines",
+		RWAccess, true
 	),
+	hideMenus_(
+		options_,
+		"HideMenus",
+		"Should the menu title bars always be visible",
+		RWAccess, false
+	),
+	saveWindowPositions_(
+		options_,
+		"SaveWindowPositions",
+		"Save the positions of all the onscreen windows.",
+		RWAccess | NoRestore, true
+	),
+	storePlayerCamera_(
+		options_,
+		"StorePlayerCamera",
+		"Stores the camera position for each player and resets to that position on their turn",
+		RWAccess | NoRestore, false
+	),
+	restricedCameraMovement_(
+		options_,
+		"RestricedCameraMovement",
+		"Keeps the player camera within the bounds of the landscape",
+		RWAccess | NoRestore, true
+	),
+	noPlanDraw_(
+		options_,
+		"NoPlanDraw",
+		"Do not show any drawings from other players on the plan window.",
+		RWAccess, false
+	),
+	noProgressBackdrop_(
+		options_,
+		"NoProgressBackdrop",
+		"Do capture a screen shot and use it as the progress backdrop",
+		RWAccess, false
+	),
+	showContextHelp_(
+		options_,
+		"ShowContextHelp",
+		"Show in game help tooltips for items that have it",
+		RWAccess, true
+	),
+	showContextInfo_(
+		options_,
+		"ShowContextInfo",
+		"Show in game information tooltips for items that have it",
+		RWAccess, true
+	),
+	// END   UI
+
+	// BEGIN window
 	brightness_(
 		options_,
 		"Brightness",
@@ -209,12 +213,33 @@ OptionsDisplay::OptionsDisplay() :
 		"Show more screen resolutions in the drop down.  By default only hardware supported modes are shown.",
 		RAccess, false
 	),
-	depricatedFullClear_(
+	colorComponentSize_(
 		options_,
-		"FullClear",
-		"Completely clear the screen before drawing each frame",
-		RWAccess | OptionEntry::DataDepricated, true
+		"ColorComponentSize",
+		"The number of bits to use for each of the RGBA components (0 = use default)",
+		RAccess, 0
 	),
+	bitsPerPixel_(
+		options_,
+		"BitsPerPixel",
+		"The number of bits per pixel to use for the display (0 = current display bbp)",
+		RAccess, 0
+	),
+	screenWidth_(
+		options_,
+		"ScreenWidth",
+		"The window width to use (in pixels)",
+		RAccess, 1024
+	),
+	screenHeight_(
+		options_,
+		"ScreenHeight",
+		"The window height to use (in pixels)",
+		RAccess, 768
+	),
+	// END   window
+
+	// BEGIN controls
 	invertElevation_(
 		options_,
 		"InvertUpDownKeys",
@@ -226,12 +251,6 @@ OptionsDisplay::OptionsDisplay() :
 		"InvertMouse",
 		"Invert/reverse the mouses y-axis when rotating camera.",
 		RWAccess | NoRestore, false
-	),
-	saveWindowPositions_(
-		options_,
-		"SaveWindowPositions",
-		"Save the positions of all the onscreen windows.",
-		RWAccess | NoRestore, true
 	),
 	swapYAxis_(
 		options_,
@@ -245,107 +264,40 @@ OptionsDisplay::OptionsDisplay() :
 		"Allows the user to scroll the viewport moving the mouse to the sides of the screen",
 		RWAccess | NoRestore, true
 	),
-	storePlayerCamera_(
+	softwareMouse_(
 		options_,
-		"StorePlayerCamera",
-		"Stores the camera position for each player and resets to that position on their turn",
-		RWAccess | NoRestore, false
-	),
-	restricedCameraMovement_(
-		options_,
-		"RestricedCameraMovement",
-		"Keeps the player camera within the bounds of the landscape",
-		RWAccess | NoRestore, true
-	),
-	drawPlayerNames_(
-		options_,
-		"DrawPlayerNames",
-		"Draw the names above the tanks",
-		RWAccess, true
-	),
-	drawPlayerIcons_(
-		options_,
-		"DrawPlayerIcons",
-		"Draw the icons above the tanks",
-		RWAccess, true
-	),
-	smoothLines_(
-		options_,
-		"SmoothLines",
-		"Smooth/AA the dialog lines",
-		RWAccess, true
-	),
-	drawPlayerSight_(
-		options_,
-		"DrawPlayerSight",
-		"Draw the aiming sight infront of the tanks",
-		RWAccess, true
-	),
-	depricatedDrawDistance_(
-		options_,
-		"DrawDistance",
-		"The distance at which objects will be culled",
-		OptionEntry::DataDepricated, 160.0f
-	),
-	depricatedDrawDistanceFade_(
-		options_,
-		"DrawDistanceFade",
-		"The distance before the draw distance at which objects will be faded",
-		OptionEntry::DataDepricated, 100.0f
-	),
-	drawCullingDistance_(
-		options_,
-		"DrawCullingDistance",
-		"The distance at which objects will be culled",
-		RWAccess, 200.0f
-	),
-	drawFadeStartDistance_(
-		options_,
-		"DrawFadeStartDistance",
-		"The distance before the draw distance at which objects will be faded",
-		RWAccess, 180.0f
-	),
-	oldSightPosition_(
-		options_,
-		"OldSightPosition",
-		"Draw the aiming sight aligned with the model and not the shot",
+		"SoftwareMouse",
+		"Use a software mouse pointer.  Useful if mouse clicks are not aligned.",
 		RWAccess, false
 	),
-	largeSight_(
+	accessorySortKey_(
 		options_,
-		"VisibleSight",
-		"Draw the more visible aiming sight",
-		RWAccess, true
+		"AccessorySortKey",
+		"The key to sort accessories by before displaying",
+		RWAccess, 0, accessorySortKeyEnum
 	),
-	drawPlayerColor_(
+	// END   controls
+
+	// BEGIN OpenGL
+	framesPerSecondLimit_(
 		options_,
-		"DrawPlayerColor",
-		"Draw the player color triangle over the tank",
-		RWAccess, true
+		"FramesPerSecondLimit",
+		"The maximum frame rate that the game will run at",
+		RWAccess, 250
 	),
-	drawPlayerHealth_(
+	noFog_(
 		options_,
-		"DrawPlayerHealth",
-		"Draw the health bars above the tank",
-		RWAccess, true
-	),
-	depricatedFirstTimePlayed_(
-		options_,
-		"FirstTimePlayed",
-		"Is this the first time the user has played Scorched3D",
-		OptionEntry::DataDepricated, true
-	),
-	lastVersionPlayed_(
-		options_,
-		"LastVersionPlayed",
-		"What was the last version of scorched3d played",
-		RWAccess | NoRestore, ""
-	),
-	hideMenus_(
-		options_,
-		"HideMenus",
-		"Should the menu title bars always be visible",
+		"NoFog",
+		"Do not use any fog extensions.",
 		RWAccess, false
+	),
+	detailTexture_(
+		options_,
+		"DetailTexture",
+		"Use detail textures on the landscape."
+			"Adds the texture seen when very close to the landscape."
+		"Requires multi-texturing",
+		RWAccess, true
 	),
 	noGLTexSubImage_(
 		options_,
@@ -365,18 +317,6 @@ OptionsDisplay::OptionsDisplay() :
 		"Use simple shaders for the water.",
 		RAccess, false
 	),
-	noPlanDraw_(
-		options_,
-		"NoPlanDraw",
-		"Do not show any drawings from other players on the plan window.",
-		RWAccess, false
-	),
-	noFog_(
-		options_,
-		"NoFog",
-		"Do not use any fog extensions.",
-		RWAccess, false
-	),
 	noGLExt_(
 		options_,
 		"NoGLExt",
@@ -388,12 +328,6 @@ OptionsDisplay::OptionsDisplay() :
 		"NoGLMultiTex",
 		"Only use one texture for all models and the landscape.",
 		RAccess, false
-	),
-	depricatedNoGLCompiledArrays_(
-		options_,
-		"NoGLCompiledArrays",
-		"Do not compile vertex arrays.",
-		OptionEntry::DataDepricated, false
 	),
 	noThreadedDraw_(
 		options_,
@@ -431,6 +365,51 @@ OptionsDisplay::OptionsDisplay() :
 		"Generate texture LOD in software only.",
 		RAccess, false
 	),
+	depthBufferBits_(
+		options_,
+		"DepthBufferBits",
+		"The number of bits requested for the depth buffer",
+		RAccess, 24
+	),
+	doubleBuffer_(
+		options_,
+		"DoubleBuffer",
+		"Use double buffering",
+		RAccess, true
+	),
+	landShadowsLOD_(
+		options_,
+		"LandShadowsLOD",
+		"The level of detail to use for landscape shadows",
+		RWAccess, 0
+	),
+	landDetialError_(
+		options_,
+		"LandDetialError",
+		"The amount of error allowed for each land patch as it gains in distance (in pixels, more is more error)",
+		RWAccess, 6
+	),
+	waterDetailLevelRamp_(
+		options_,
+		"WaterDetailLevelRamp",
+		"The amount of error allowed for each water patch as it gains in distance (more is less error)",
+		RWAccess, 128
+	),
+	noVBO_(
+		options_,
+		"NoVBO",
+		"Do not use Vertex Buffer Objects (if avaialable)",
+		RWAccess, false
+	),
+	depricatedMoWaterBuffers_(
+		options_,
+		"NoWaterBuffers",
+		"Do not use Vertex Buffers for water (if avaialable)",
+		OptionEntry::DataDepricated, false
+	),
+	// END   OpenGL
+
+	// BEGIN sound
 	soundChannels_(
 		options_,
 		"SoundChannels",
@@ -461,35 +440,43 @@ OptionsDisplay::OptionsDisplay() :
 		"Do not play any music.",
 		RWAccess, false
 	),
-	noProgressBackdrop_(
+	soundVolume_(
 		options_,
-		"NoProgressBackdrop",
-		"Do capture a screen shot and use it as the progress backdrop",
-		RWAccess, false
+		"SoundVolume",
+		"The master volume. Max = 128, Min = 0",
+		RAccess | NoRestore, 128, 0, 128, 1
 	),
-	depricatedNoArenaMoveVisibility_(
+	ambientSoundVolume_(
 		options_,
-		"NoArenaMoveVisibility",
-		"Do not show the arena area when moving the viewport",
-		OptionEntry::DataDepricated, false
+		"AmbientSoundVolume",
+		"The ambient sound effect volume. Max = 128, Min = 0",
+		RAccess | NoRestore, 64, 0, 128, 1
 	),
-	depricatedNoAmbientSound_(
+	musicVolume_(
 		options_,
-		"NoAmbientSound",
-		"Do not play any ambient sounds.",
-		OptionEntry::DataDepricated, false
+		"MusicVolume",
+		"The music effect volume. Max = 128, Min = 0",
+		RAccess | NoRestore, 128, 0, 128, 1
 	),
-	depricatedNoBoidSound_(
-		options_,
-		"NoBoidSound",
-		"Do not play any sounds from boids.",
-		OptionEntry::DataDepricated, false
-	),
+	// END   sound
+
 	noShadows_(
 		options_,
 		"NoShadows",
 		"Do not draw real-time shadows.",
 		RWAccess, false
+	),
+	noGLShadows_(
+		options_,
+		"NoGLShadows",
+		"Do not draw GL shadow map shadows.",
+		RAccess, false
+	),
+	noGLObjectShadows_(
+		options_,
+		"NoGLObjectShadows",
+		"Do not draw GL shadow map shadows for objects (trees/tanks).",
+		RWAccess, true
 	),
 	noObjectReflections_(
 		options_,
@@ -503,17 +490,6 @@ OptionsDisplay::OptionsDisplay() :
 		"Do not draw the reflections of particles.",
 		RWAccess, true
 	),
-	noGLShadows_(
-		options_,
-		"NoGLShadows",
-		"Do not draw GL shadow map shadows.",
-		RAccess, false
-	),
-	noGLObjectShadows_(
-		options_,
-		"NoGLObjectShadows",
-		"Do not draw GL shadow map shadows for objects (trees/tanks).",
-		RWAccess, true),
 	noSimulateParticles_(
 		options_,
 		"NoParticleSimulate",
@@ -544,35 +520,31 @@ OptionsDisplay::OptionsDisplay() :
 		"Only use low detail trees.  Faster.",
 		RWAccess, false
 	),
-	depricatedNoWaves_(
-		options_,
-		"NoWaves",
-		"Do not draw the moving shore waves.",
-		OptionEntry::DataDepricated, false
-	),
 	noDepthSorting_(
 		options_,
 		"NoDepthSorting",
 		"Do not depth sort sprites.",
 		RWAccess, false
 	),
-	clientLogToFile_(
+
+	// BEGIN draw
+	explosionParts_(
 		options_,
-		"ClientLogToFile",
-		"Client logs to file",
-		RAccess, false
+		"ExplosionParts",
+		"How many explosion clouds are drawn",
+		RAccess, 8, 0, 10, 1
 	),
-	clientLogState_(
+	explosionSubParts_(
 		options_,
-		"ClientLogState",
-		"Client logs state (0 is off)",
-		RAccess, 0
+		"ExplosionSubParts",
+		"How many explosion sub clouds are drawn",
+		RAccess, 4, 0, 5, 1
 	),
-	validateServerIp_(
+	explosionParticleMult_(
 		options_,
-		"ValidateServerIp",
-		"Checks if the server ip address matches the published address",
-		RAccess, true
+		"ExplosionParticleMult",
+		"The number of particles that each explosion will create (relative to explosion size)",
+		RAccess, 20, 0, 100, 10
 	),
 	drawLines_(
 		options_,
@@ -604,6 +576,18 @@ OptionsDisplay::OptionsDisplay() :
 		"Shows the reflection map used for water reflections",
 		RWAccess, false
 	),
+	drawCullingDistance_(
+		options_,
+		"DrawCullingDistance",
+		"The distance at which objects will be culled",
+		RWAccess, 200.0f
+	),
+	drawFadeStartDistance_(
+		options_,
+		"DrawFadeStartDistance",
+		"The distance before the draw distance at which objects will be faded",
+		RWAccess, 180.0f
+	),
 	drawCollisionGeoms_(
 		options_,
 		"DrawCollisionGeoms",
@@ -622,23 +606,23 @@ OptionsDisplay::OptionsDisplay() :
 		"Show landscape bounding spheres on the landscape",
 		DebugOnly | RWAccess, false
 	),
-	depricatedDrawShipPaths_(
+	noLenseFlare_(
 		options_,
-		"DrawShipPaths",
-		"Show paths for the ships",
-		OptionEntry::DataDepricated, false
-	),
-	frameTimer_(
-		options_,
-		"FrameTimer",
-		"Show the current number of frames per second (FPS)",
-		RWAccess | NoRestore, false
+		"NoLenseFlare",
+		"Do not show the full lense flare effect",
+		RWAccess, true
 	),
 	noSkins_(
 		options_,
 		"NoTankSkins",
 		"Do not texture the tank models.",
 		RAccess, false
+	),
+	frameTimer_(
+		options_,
+		"FrameTimer",
+		"Show the current number of frames per second (FPS)",
+		RWAccess | NoRestore, false
 	),
 	drawWater_(
 		options_,
@@ -706,54 +690,56 @@ OptionsDisplay::OptionsDisplay() :
 		"Do not animate the sky",
 		RWAccess, false
 	),
-	depricatedNoROAM_(
-		options_,
-		"NoROAM",
-		"Do not use ROAM algorithm",
-		RWAccess | OptionEntry::DataDepricated, false
-	),
-	depricatedNoBOIDS_(
-		options_,
-		"NoBOIDS",
-		"Do not use BOIDS",
-		OptionEntry::DataDepricated, false
-	),
-	depricatedNoShips_(
-		options_,
-		"NoShips",
-		"Do not use ships",
-		OptionEntry::DataDepricated, false
-	),
 	noPrecipitation_(
 		options_,
 		"NoPrecipitation",
 		"Do not draw precipitation",
 		RWAccess, false
 	),
-	depricatedNoTessalation_(
+	drawPlayerNames_(
 		options_,
-		"NoTessalation",
-		"Do not use ROAM tessalation algorithm",
-		OptionEntry::DataDepricated, false
+		"DrawPlayerNames",
+		"Draw the names above the tanks",
+		RWAccess, true
 	),
-	noVBO_(
+	drawPlayerIcons_(
 		options_,
-		"NoVBO",
-		"Do not use Vertex Buffer Objects (if avaialable)",
+		"DrawPlayerIcons",
+		"Draw the icons above the tanks",
+		RWAccess, true
+	),
+	drawPlayerSight_(
+		options_,
+		"DrawPlayerSight",
+		"Draw the aiming sight infront of the tanks",
+		RWAccess, true
+	),
+	oldSightPosition_(
+		options_,
+		"OldSightPosition",
+		"Draw the aiming sight aligned with the model and not the shot",
 		RWAccess, false
 	),
-	depricatedMoWaterBuffers_(
+	largeSight_(
 		options_,
-		"NoWaterBuffers",
-		"Do not use Vertex Buffers for water (if avaialable)",
-		OptionEntry::DataDepricated, false
+		"VisibleSight",
+		"Draw the more visible aiming sight",
+		RWAccess, true
 	),
-	depricatedNoCg_(
+	drawPlayerColor_(
 		options_,
-		"NoCg",
-		"Do not use vertex or pixel shaders (if avaialable)",
-		OptionEntry::DataDepricated, true
+		"DrawPlayerColor",
+		"Draw the player color triangle over the tank",
+		RWAccess, true
 	),
+	drawPlayerHealth_(
+		options_,
+		"DrawPlayerHealth",
+		"Draw the health bars above the tank",
+		RWAccess, true
+	),
+	// END   draw
+
 	depricatedNoModelLOD_(
 		options_,
 		"NoModelLOD",
@@ -778,42 +764,6 @@ OptionsDisplay::OptionsDisplay() :
 		"Texture the water",
 		RWAccess, true
 	),
-	noLenseFlare_(
-		options_,
-		"NoLenseFlare",
-		"Do not show the full lense flare effect",
-		RWAccess, true
-	),
-	softwareMouse_(
-		options_,
-		"SoftwareMouse",
-		"Use a software mouse pointer.  Useful if mouse clicks are not aligned.",
-		RWAccess, false
-	),
-	depricatedUseHex_(
-		options_,
-		"UseHexidecimal",
-		"Show the tank angles and amounts in hex",
-		RWAccess | OptionEntry::DataDepricated, false
-	),
-	soundVolume_(
-		options_,
-		"SoundVolume",
-		"The master volume. Max = 128, Min = 0",
-		RAccess | NoRestore, 128, 0, 128, 1
-	),
-	ambientSoundVolume_(
-		options_,
-		"AmbientSoundVolume",
-		"The ambient sound effect volume. Max = 128, Min = 0",
-		RAccess | NoRestore, 64, 0, 128, 1
-	),
-	musicVolume_(
-		options_,
-		"MusicVolume",
-		"The music effect volume. Max = 128, Min = 0",
-		RAccess | NoRestore, 128, 0, 128, 1
-	),
 	antiAlias_(
 		options_,
 		"AntiAlias",
@@ -825,12 +775,6 @@ OptionsDisplay::OptionsDisplay() :
 		"TexureSize",
 		"The texture details setting.  Lower is faster.",
 		RAccess, 1, 0, 2, 1
-	),
-	bannerRowsDepricated_(
-		options_,
-		"BannerRows",
-		"",
-		RAccess | OptionEntry::DataDepricated, 6
 	),
 	tankDetail_(
 		options_,
@@ -850,89 +794,18 @@ OptionsDisplay::OptionsDisplay() :
 		"How long before the landscape and water deformations are recalculated (in ms)",
 		RWAccess, 500, 0, 5000, 250
 	),
-	screenWidth_(
+
+	depricatedNoArenaMoveVisibility_(
 		options_,
-		"ScreenWidth",
-		"The window width to use (in pixels)",
-		RAccess, 1024
-	),
-	screenHeight_(
-		options_,
-		"ScreenHeight",
-		"The window height to use (in pixels)",
-		RAccess, 768
-	),
-	depthBufferBits_(
-		options_,
-		"DepthBufferBits",
-		"The number of bits requested for the depth buffer",
-		RAccess, 24
-	),
-	doubleBuffer_(
-		options_,
-		"DoubleBuffer",
-		"Use double buffering",
-		RAccess, true
-	),
-	colorComponentSize_(
-		options_,
-		"ColorComponentSize",
-		"The number of bits to use for each of the RGBA components (0 = use default)",
-		RAccess, 0
-	),
-	bitsPerPixel_(
-		options_,
-		"BitsPerPixel",
-		"The number of bits per pixel to use for the display (0 = current display bbp)",
-		RAccess, 0
-	),
-	depricatedLandDetailLevelRamp_(
-		options_,
-		"LandDetailLevelRamp",
-		"The amount of error allowed for each land patch as it gains in distance (more is less error)",
-		RWAccess | OptionEntry::DataDepricated, 128
-	),
-	landShadowsLOD_(
-		options_,
-		"LandShadowsLOD",
-		"The level of detail to use for landscape shadows",
-		RWAccess, 0
-	),
-	landDetialError_(
-		options_,
-		"LandDetialError",
-		"The amount of error allowed for each land patch as it gains in distance (in pixels, more is more error)",
-		RWAccess, 6
-	),
-	waterDetailLevelRamp_(
-		options_,
-		"WaterDetailLevelRamp",
-		"The amount of error allowed for each water patch as it gains in distance (more is less error)",
-		RWAccess, 128
-	),
-	showContextHelp_(
-		options_,
-		"ShowContextHelp",
-		"Show in game help tooltips for items that have it",
-		RWAccess, true
-	),
-	showContextInfo_(
-		options_,
-		"ShowContextInfo",
-		"Show in game information tooltips for items that have it",
-		RWAccess, true
+		"NoArenaMoveVisibility",
+		"Do not show the arena area when moving the viewport",
+		OptionEntry::DataDepricated, false
 	),
 	deprecatedSortAccessories_(
 		options_,
 		"SortAccessories",
 		"Sort accessories alphabetically by name before displaying",
 		RWAccess | OptionEntry::DataDepricated, false
-	),
-	accessorySortKey_(
-		options_,
-		"AccessorySortKey",
-		"The key to sort accessories by before displaying",
-		RWAccess, 0, accessorySortKeyEnum
 	),
 	focusPause_(
 		options_,
@@ -945,7 +818,161 @@ OptionsDisplay::OptionsDisplay() :
 		"OpenGLWarnings",
 		"Display any OpenGL warnings when the game starts",
 		RWAccess, true
+	),
+
+	// BEGIN Deprecated options
+	depricatedNoBoidSound_(
+		options_,
+		"NoBoidSound",
+		"Do not play any sounds from boids.",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedNoBOIDS_(
+		options_,
+		"NoBOIDS",
+		"Do not use BOIDS",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedMaxModelTriPercentage_(
+		options_,
+		"MaxModelTriPercentage",
+		"",
+		RAccess | OptionEntry::DataDepricated, 100, 50, 100, 1
+	),
+	depricatedUseHex_(
+		options_,
+		"UseHexidecimal",
+		"Show the tank angles and amounts in hex",
+		RWAccess | OptionEntry::DataDepricated, false
+	),
+	depricatedDayTime_(
+		options_,
+		"DayTime",
+		"",
+		RWAccess | OptionEntry::DataDepricated, 2
+	),
+	depricatedSunYZAng_(
+		options_,
+		"SunYZAng",
+		"",
+		RAccess | OptionEntry::DataDepricated, 25
+	),
+	depricatedSunXYAng_(
+		options_,
+		"SunXYAng",
+		"",
+		RAccess | OptionEntry::DataDepricated, 110
+	),
+	bannerRowsDepricated_(
+		options_,
+		"BannerRows",
+		"",
+		RAccess | OptionEntry::DataDepricated, 6
+	),
+	depricatedUniqueUserId_(
+		options_,
+		"UniqueUserId",
+		"The unique string given by this client to any servers to uniquely identify itself."
+			"Used for server stats and logging (confidentially)",
+		RAccess | OptionEntry::DataDepricated | NoRestore, ""
+	),
+	depricatedNoShips_(
+		options_,
+		"NoShips",
+		"Do not use ships",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedDrawShipPaths_(
+		options_,
+		"DrawShipPaths",
+		"Show paths for the ships",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedFirstTimePlayed_(
+		options_,
+		"FirstTimePlayed",
+		"Is this the first time the user has played Scorched3D",
+		OptionEntry::DataDepricated, true
+	),
+	depricatedNoWaves_(
+		options_,
+		"NoWaves",
+		"Do not draw the moving shore waves.",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedNoCg_(
+		options_,
+		"NoCg",
+		"Do not use vertex or pixel shaders (if avaialable)",
+		OptionEntry::DataDepricated, true
+	),
+	depricatedNoAmbientSound_(
+		options_,
+		"NoAmbientSound",
+		"Do not play any ambient sounds.",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedFullClear_(
+		options_,
+		"FullClear",
+		"Completely clear the screen before drawing each frame",
+		RWAccess | OptionEntry::DataDepricated, true
+	),
+	depricatedRoamVarianceStart_(
+		options_,
+		"RoamVarianceStart",
+		"The minimum variance to allow",
+		RWAccess | OptionEntry::DataDepricated, 2
+	),
+	depricatedRoamVarianceRamp_(
+		options_,
+		"RoamVarianceRamp",
+		"The variance ramping for each distance unit",
+		RWAccess | OptionEntry::DataDepricated, 10
+	),
+	depricatedRoamVarianceTank_(
+		options_,
+		"RoamVarianceTank",
+		"The variance difference for ROAM areas with tanks on them",
+		RWAccess | OptionEntry::DataDepricated, 50
+	),
+	depricatedNoROAM_(
+		options_,
+		"NoROAM",
+		"Do not use ROAM algorithm",
+		RWAccess | OptionEntry::DataDepricated, false
+	),
+	depricatedNoTessalation_(
+		options_,
+		"NoTessalation",
+		"Do not use ROAM tessalation algorithm",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedNoGLCompiledArrays_(
+		options_,
+		"NoGLCompiledArrays",
+		"Do not compile vertex arrays.",
+		OptionEntry::DataDepricated, false
+	),
+	depricatedDrawDistance_(
+		options_,
+		"DrawDistance",
+		"The distance at which objects will be culled",
+		OptionEntry::DataDepricated, 160.0f
+	),
+	depricatedDrawDistanceFade_(
+		options_,
+		"DrawDistanceFade",
+		"The distance before the draw distance at which objects will be faded",
+		OptionEntry::DataDepricated, 100.0f
+	),
+	depricatedLandDetailLevelRamp_(
+		options_,
+		"LandDetailLevelRamp",
+		"The amount of error allowed for each land patch as it gains in distance (more is less error)",
+		RWAccess | OptionEntry::DataDepricated, 128
 	)
+	// END   Deprecated options
 {}
 
 OptionsDisplay::~OptionsDisplay()
