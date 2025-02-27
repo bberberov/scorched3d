@@ -77,10 +77,10 @@ public:
 	virtual bool setComsBufferValue(const char *string) { return setValueFromString(string); }
 
 protected:
-	bool changedValue_;
-	unsigned int data_;
 	std::string name_;
 	std::string description_;
+	unsigned int data_;
+	bool changedValue_;
 };
 
 class OptionEntryHelper
@@ -156,7 +156,8 @@ public:
 	int getStepValue() { return stepValue_; }
 
 protected:
-	int minValue_, maxValue_;
+	int minValue_;
+	int maxValue_;
 	int stepValue_;
 
 };
@@ -175,7 +176,7 @@ public:
 		const char *name,
 		const char *description,
 		unsigned int data,
-		int value,
+		int defaultValue,
 		OptionEntryEnum::EnumEntry enums[]
 	);
 	virtual ~OptionEntryEnum();
@@ -257,8 +258,8 @@ public:
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
 protected:
-	std::string value_;
 	std::string defaultValue_;
+	std::string value_;
 	bool multiline_;
 
 };
@@ -276,7 +277,7 @@ public:
 		const char *name,
 		const char *description,
 		unsigned int data,
-		const char *value,
+		const char *defaultValue,
 		OptionEntryStringEnum::EnumEntry enums[]
 	);
 	virtual ~OptionEntryStringEnum();
@@ -321,9 +322,9 @@ public:
 	operator float () { return value_; }
 
 protected:
-	bool truncate_;
 	float defaultValue_;
 	float value_;
+	bool truncate_;
 
 };
 
@@ -354,9 +355,9 @@ public:
 	operator Vector() { return value_; }
 
 protected:
-	bool truncate_;
 	Vector defaultValue_;
 	Vector value_;
+	bool truncate_;
 
 };
 

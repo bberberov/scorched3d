@@ -64,8 +64,8 @@ public:
 	);
 
 private:
-	LangParam parameterizedString_;
 	std::string key_;
+	LangParam parameterizedString_;
 };
 
 #endif // __INCLUDE_ResourceBundleEntryImpl_INCLUDE__

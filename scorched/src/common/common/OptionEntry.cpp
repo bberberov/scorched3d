@@ -321,11 +321,11 @@ OptionEntryInt::OptionEntryInt(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	int value
+	int defaultValue
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value)
+	defaultValue_(defaultValue),
+	value_(defaultValue)
 {}
 
 OptionEntryInt::~OptionEntryInt()
@@ -390,10 +390,12 @@ OptionEntryBoundedInt::OptionEntryBoundedInt(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	int value,
-	int minValue, int maxValue, int stepValue
+	int defaultValue,
+	int minValue,
+	int maxValue,
+	int stepValue
 ) :
-	OptionEntryInt(group, name, description, data, value),
+	OptionEntryInt(group, name, description, data, defaultValue),
 	minValue_(minValue),
 	maxValue_(maxValue),
 	stepValue_(stepValue)
@@ -420,10 +422,10 @@ OptionEntryEnum::OptionEntryEnum(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	int value,
+	int defaultValue,
 	OptionEntryEnum::EnumEntry enums[]
 ) :
-	OptionEntryInt(group, name, description, data, value),
+	OptionEntryInt(group, name, description, data, defaultValue),
 	enums_(enums)
 {}
 
@@ -502,11 +504,11 @@ OptionEntryBool::OptionEntryBool(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	bool value
+	bool defaultValue
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value)
+	defaultValue_(defaultValue),
+	value_(defaultValue)
 {}
 
 OptionEntryBool::~OptionEntryBool()
@@ -575,12 +577,12 @@ OptionEntryString::OptionEntryString(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	const char *value,
+	const char *defaultValue,
 	bool multiline
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value),
+	defaultValue_(defaultValue),
+	value_(defaultValue),
 	multiline_(multiline)
 {}
 
@@ -640,10 +642,10 @@ OptionEntryStringEnum::OptionEntryStringEnum(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	const char *value,
+	const char *defaultValue,
 	OptionEntryStringEnum::EnumEntry enums[]
 ) :
-	OptionEntryString(group, name, description, data, value),
+	OptionEntryString(group, name, description, data, defaultValue),
 	enums_(enums)
 {}
 
@@ -684,12 +686,12 @@ OptionEntryFloat::OptionEntryFloat(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	float value,
+	float defaultValue,
 	bool truncate
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value),
+	defaultValue_(defaultValue),
+	value_(defaultValue),
 	truncate_(truncate)
 {}
 
@@ -742,12 +744,12 @@ OptionEntryVector::OptionEntryVector(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	Vector value,
+	Vector defaultValue,
 	bool truncate
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value),
+	defaultValue_(defaultValue),
+	value_(defaultValue),
 	truncate_(truncate)
 {}
 
@@ -812,11 +814,11 @@ OptionEntryFixed::OptionEntryFixed(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	fixed value
+	fixed defaultValue
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value)
+	defaultValue_(defaultValue),
+	value_(defaultValue)
 {}
 
 OptionEntryFixed::~OptionEntryFixed()
@@ -860,11 +862,11 @@ OptionEntryFixedVector::OptionEntryFixedVector(
 	const char *name,
 	const char *description,
 	unsigned int data,
-	FixedVector value
+	FixedVector defaultValue
 ) :
 	OptionEntry(group, name, description, data),
-	value_(value),
-	defaultValue_(value)
+	defaultValue_(defaultValue),
+	value_(defaultValue)
 {}
 
 OptionEntryFixedVector::~OptionEntryFixedVector()

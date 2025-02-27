@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -48,8 +48,8 @@ public:
 		unsigned int destination, unsigned int flags = 0);
 
 protected:
-	bool started_;
 	bool server_;
+	bool started_;
 	NetMessageHandler messageHandler_;
 	
 	NetLoopBack *getLoopback();

@@ -21,7 +21,7 @@
 #if !defined(AFX_COUNTER_H__6265A8BD_0FB0_4CB0_BDDC_6C706B2A2A07__INCLUDED_)
 #define AFX_COUNTER_H__6265A8BD_0FB0_4CB0_BDDC_6C706B2A2A07__INCLUDED_
 
-class Counter 
+class Counter
 {
 public:
 	Counter(float minTime, float timeDiff);

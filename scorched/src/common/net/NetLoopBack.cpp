@@ -29,8 +29,9 @@ static unsigned int ServerLoopBackID = 200002;
 NetLoopBack *NetLoopBack::serverLoopback_(0);
 NetLoopBack *NetLoopBack::clientLoopback_(0);
 
-NetLoopBack::NetLoopBack(bool server) 
-	: server_(server), started_(true)
+NetLoopBack::NetLoopBack(bool server) :
+	server_(server),
+	started_(true)
 {
 	if (server_) serverLoopback_ = this;
 	else clientLoopback_ = this;

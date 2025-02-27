@@ -31,6 +31,16 @@ OptionEntrySetter::OptionEntrySetter(wxControl *control, OptionEntry &entry)
 OptionEntrySetter::~OptionEntrySetter()
 {}
 
+wxControl* OptionEntrySetter::getControl()
+{
+	return control_;
+}
+
+OptionEntry& OptionEntrySetter::getEntry()
+{
+	return entry_;
+}
+
 OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxSizer *sizer, OptionEntry &entry)
 {
 	wxStaticText *staticText = nullptr;

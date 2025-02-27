@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,31 +34,31 @@ public:
 		unsigned int state;
 	};
 
-	KeyboardKey(const char *name, 
+	KeyboardKey(
+		const char *name,
 		const char *title,
 		const char *description,
 		int group,
-		bool command);
+		bool command
+	);
 	virtual ~KeyboardKey();
 
 	bool keyDown(char *buffer, unsigned int keyState, bool repeat = true);
 	bool keyMatch(unsigned key);
 	
-	bool addKeys(std::list<std::string> &keyNames,
-		std::list<std::string> &keyStates);
-	void addKey(unsigned int position,
-		unsigned int key, unsigned int state);
+	bool addKeys(std::list<std::string> &keyNames, std::list<std::string> &keyStates);
+	void addKey(unsigned int position, unsigned int key, unsigned int state);
 	void removeKey(unsigned int position);
 	int keyIndex(unsigned int key, unsigned int state);
 
-	std::vector<KeyEntry> &getKeys() { return keys_; }
-	const char *getName() { return name_.c_str(); }
-	const char *getTitle() { return title_.c_str(); }
-	const char *getDescription() { return description_.c_str(); }
-	int getGroup() { return group_; }
-	bool getNameIsCommand() { return command_; }
-	bool getChanged() { return changed_; }
-	void setChanged(bool changed) { changed_ = changed; }
+	std::vector<KeyEntry> &getKeys();
+	const char *getName();
+	const char *getTitle();
+	const char *getDescription();
+	int getGroup();
+	bool getNameIsCommand();
+	bool getChanged();
+	void setChanged(bool changed);
 
 	static bool translateKeyName(const char *name, unsigned int &key);
 	static bool translateKeyState(const char *name, unsigned int &state);
@@ -71,15 +71,13 @@ protected:
 	std::string description_;
 	std::vector<KeyEntry> keys_;
 	int group_;
-	bool keyToogle_;
 	bool command_;
+	bool keyToogle_;
 	bool changed_;
 
 private:
 	KeyboardKey(const KeyboardKey &);
 	const KeyboardKey & operator=(const KeyboardKey &);
-
 };
 
 #endif // __keyboardKey_h__
-

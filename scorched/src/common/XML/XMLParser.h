@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,26 +37,19 @@ public:
 	XMLNode *getRoot() { return root_; }
 
 protected:
+	bool useContentNodes_;
 	XMLNode *root_;
 	XMLNode *current_;
-	XML_Parser p_;
 	std::string source_;
-	bool useContentNodes_;
+	XML_Parser p_;
 
-	void startElementHandler(const XML_Char *name,
-                           const XML_Char **atts);
+	void startElementHandler(const XML_Char *name, const XML_Char **atts);
 	void endElementHandler(const XML_Char *name);
-	void characterDataHandler(const XML_Char *s,
-                            int len);
+	void characterDataHandler(const XML_Char *s, int len);
 
-	static void startElementStaticHandler(void *userData,
-                           const XML_Char *name,
-                           const XML_Char **atts);
-	static void endElementStaticHandler(void *userData,
-                         const XML_Char *name);
-	static void characterDataStaticHandler(void *userData,
-                            const XML_Char *s,
-                            int len);
+	static void startElementStaticHandler(void *userData, const XML_Char *name, const XML_Char **atts);
+	static void endElementStaticHandler(void *userData, const XML_Char *name);
+	static void characterDataStaticHandler(void *userData, const XML_Char *s, int len);
 };
 
 #endif // __INCLUDE_XMLParserh_INCLUDE__

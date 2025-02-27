@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -59,13 +59,19 @@ protected:
 	class SimActionContainer
 	{
 	public:
-		SimActionContainer(SimAction *action, fixed fireTime, SimulatorI *callback = 0)  :
-			action_(action), fireTime_(fireTime), callback_(callback) {}
-		~SimActionContainer() { delete action_; }
+		SimActionContainer(SimAction *action, fixed fireTime, SimulatorI *callback = 0) :
+			action_(action),
+			fireTime_(fireTime),
+			callback_(callback)
+		{}
+		~SimActionContainer()
+		{
+			delete action_;
+		}
 
-		SimulatorI *callback_;
 		SimAction *action_;
 		fixed fireTime_;
+		SimulatorI *callback_;
 	};
 
 	unsigned int lastTickTime_;

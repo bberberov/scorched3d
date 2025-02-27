@@ -102,14 +102,14 @@ public:
 	static const char *getSpacer(int space);
 
 protected:
-	bool useContentNodes_;
-	NodeType type_;
+	std::string name_;
 	XMLNode *parent_;
+	NodeType type_;
+	bool useContentNodes_;
 	std::list<XMLNode *> children_;
 	std::list<XMLNode *> removedChildren_; // So they are tidied up as well
 	std::list<XMLNode *> parameters_;
 	std::list<XMLNode *> removedParameters_; // Tidied
-	std::string name_;
 	std::string content_;
 	std::string source_;
 	int line_, col_;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,15 +22,15 @@
 #include <common/Defines.h>
 #include <time.h>
 
-FileLogger::FileLogger(const std::string &fileName) : 
-	size_(0), logFile_(0), fileName_(fileName), fileCount_(0)
-{
-
-}
+FileLogger::FileLogger(const std::string &fileName) :
+	fileName_(fileName),
+	fileCount_(0),
+	logFile_(nullptr),
+	size_(0)
+{}
 
 FileLogger::~FileLogger()
-{
-}
+{}
 
 void FileLogger::logMessage(LoggerInfo &info)
 {
