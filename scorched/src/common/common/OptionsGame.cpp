@@ -130,12 +130,7 @@ static OptionEntryStringEnum::EnumEntry authHandlerEnum[] = {
 };
 
 OptionsGame::OptionsGame() :
-	tutorial_(
-		options_,
-		"Tutorial",
-		"The tutorial to load for this game",
-		0, ""
-	),
+	// BEGIN score
 	scorePerMoney_(
 		options_,
 		"ScorePerMoney",
@@ -178,6 +173,9 @@ OptionsGame::OptionsGame() :
 		"The amount of score awarded for lives left",
 		0, 0, 0, 500, 10
 	),
+	// END   score
+
+	// BEGIN skill
 	skillForRound_(
 		options_,
 		"SkillForRound",
@@ -220,18 +218,9 @@ OptionsGame::OptionsGame() :
 		"The amount of skill you lose for killing a team memeber",
 		0, -25, -50, 0, 5
 	),
-	teams_(
-		options_,
-		"Teams",
-		"The number of teams (1 is no teams)",
-		0, 1, 1, 4, 1
-	),
-	minimumLandHeight_(
-		options_,
-		"MinimumLandHeight",
-		"The minimum height the ground can reach",
-		0, 0
-	),
+	// END   skill
+
+	// BEGIN weapons
 	startArmsLevel_(
 		options_,
 		"StartArmsLevel",
@@ -256,18 +245,15 @@ OptionsGame::OptionsGame() :
 		"The speed of projectiles and rollers",
 		0, 15000, 2500, 40000, 2500
 	),
-	maxLandscapeSize_(
+	weapScale_(
 		options_,
-		"MaxLandscapeSize",
-		"The largest landscape (in bytes) that will be sent to the clients",
-		0, 200000
+		"WeaponScale",
+		"The scale of the weapons used",
+		0, int(ScaleMedium), weapScaleEnum
 	),
-	startTime_(
-		options_,
-		"StartTime",
-		"The amount of time before a new game starts",
-		0, 0, 0, 90, 5
-	),
+	// END   weapons
+
+	// BEGIN Time
 	shotTime_(
 		options_,
 		"ShotTime",
@@ -292,29 +278,11 @@ OptionsGame::OptionsGame() :
 		"The amount of time each player has before being removed when disconected",
 		0, 10, 0, 25, 1
 	),
-	allowedMissedMoves_(
+	startTime_(
 		options_,
-		"AllowedMissedMoves",
-		"The number of moves a player is allowed to miss (due to the shot timer)",
-		0, 0, 0, 10, 1
-	),
-	roundScoreTime_(
-		options_,
-		"RoundScoreTime",
-		"The amount of time to show the end of each round for",
-		0, 5, 0, 30, 1
-	),
-	idleCycleTime_(
-		options_,
-		"IdleCycleTime",
-		"The time before a new map is loaded when no one is playing",
-		0, 900, 45, 1800, 45
-	),
-	scoreTime_(
-		options_,
-		"ScoreTime",
-		"The amount of time to show the end of match scores for",
-		0, 15, 0, 90, 5
+		"StartTime",
+		"The amount of time before a new game starts",
+		0, 0, 0, 90, 5
 	),
 	roundTime_(
 		options_,
@@ -322,29 +290,56 @@ OptionsGame::OptionsGame() :
 		"The amount of time for each round",
 		0, 0, 0, 900, 30
 	),
-	depricatedKeepAliveTime_(
+	roundScoreTime_(
 		options_,
-		"KeepAliveTime",
-		"The amount of time between each client keep alive message",
-		OptionEntry::DataDepricated, 2, 0, 30, 1
+		"RoundScoreTime",
+		"The amount of time to show the end of each round for",
+		0, 5, 0, 30, 1
 	),
-	depricatedKeepAliveTimeoutTime_(
+	scoreTime_(
 		options_,
-		"KeepAliveTimeoutTIme",
-		"The amount of time the server will allow without receiving a keep alive message",
-		OptionEntry::DataDepricated, 0, 0, 90, 5
+		"ScoreTime",
+		"The amount of time to show the end of match scores for",
+		0, 15, 0, 90, 5
 	),
-	depricatedIdleKickTime_(
+	idleCycleTime_(
 		options_,
-		"IdleKickTime",
-		"The amount of time to give clients to respond after level loading before kicking them",
-		OptionEntry::DataDepricated, 60, 0, 90, 5
+		"IdleCycleTime",
+		"The time before a new map is loaded when no one is playing",
+		0, 900, 45, 1800, 45
 	),
-	depricatedIdleShotKickTime_(
+	// END   Time
+
+	// BEGIN landscape
+	landscapes_(
 		options_,
-		"IdleShotKickTime",
-		"The amount of time to give clients to respond after shots before kicking them",
-		OptionEntry::DataDepricated, 45, 0, 90, 5
+		"Landscapes",
+		"Colon separated list of landscape names",
+		0, ""
+	),
+	cycleMaps_(
+		options_,
+		"CycleMaps",
+		"Cycle through the maps instead of choosing them using a random probablity",
+		0, false
+	),
+	maxLandscapeSize_(
+		options_,
+		"MaxLandscapeSize",
+		"The largest landscape (in bytes) that will be sent to the clients",
+		0, 200000
+	),
+	minimumLandHeight_(
+		options_,
+		"MinimumLandHeight",
+		"The minimum height the ground can reach",
+		0, 0
+	),
+	gravity_(
+		options_,
+		"Gravity",
+		"The gravity used by the physics engine",
+		0, -10, -25, 0, 1
 	),
 	minFallingDistance_(
 		options_,
@@ -364,17 +359,44 @@ OptionsGame::OptionsGame() :
 		"The maximum distance that a tank can climb per movement square (divided by 10)",
 		0, 8, 0, 20, 1
 	),
-	playerLives_(
+	windForce_(
 		options_,
-		"PlayerLives",
-		"The number of lives that each player tank has",
-		0, 1, 0, 10, 1
+		"WindForce",
+		"The force of the wind",
+		0, int(WindRandom), windForceEnum
 	),
-	gravity_(
+	windType_(
 		options_,
-		"Gravity",
-		"The gravity used by the physics engine",
-		0, -10, -25, 0, 1
+		"WindType",
+		"When the wind changes",
+		0, int(WindChangeNever), windTypeEnum
+	),
+	wallType_(
+		options_,
+		"WallType",
+		"The type of walls allowed",
+		0, int(WallRandom), wallEnum
+	),
+	// END   landscape
+
+	// BEGIN gameplay
+	tutorial_(
+		options_,
+		"Tutorial",
+		"The tutorial to load for this game",
+		0, ""
+	),
+	allowedMissedMoves_(
+		options_,
+		"AllowedMissedMoves",
+		"The number of moves a player is allowed to miss (due to the shot timer)",
+		0, 0, 0, 10, 1
+	),
+	numberOfRounds_(
+		options_,
+		"NumberOfRounds",
+		"The number of rounds to play in each game",
+		0, 5, 1, 50, 1
 	),
 	maxRoundTurns_(
 		options_,
@@ -382,11 +404,17 @@ OptionsGame::OptionsGame() :
 		"The maximum number of turns all players are allowed in each round (0 is infinite)",
 		0, 15, 0, 50, 1
 	),
-	numberOfRounds_(
+	playerLives_(
 		options_,
-		"NumberOfRounds",
-		"The number of rounds to play in each game",
-		0, 5, 1, 50, 1
+		"PlayerLives",
+		"The number of lives that each player tank has",
+		0, 1, 0, 10, 1
+	),
+	teams_(
+		options_,
+		"Teams",
+		"The number of teams (1 is no teams)",
+		0, 1, 1, 4, 1
 	),
 	numberOfPlayers_(
 		options_,
@@ -406,84 +434,6 @@ OptionsGame::OptionsGame() :
 		"The number of players to allow before remvoing bots",
 		0, 0, 0, 24, 1
 	),
-	limitPowerByHealth_(
-		options_,
-		"LimitPowerByHealth",
-		"Show power is limited by the amount of health a player has",
-		0, true
-	),
-	residualPlayers_(
-		options_,
-		"ResidualPlayers",
-		"Players that leave will have the same state when reconnecting",
-		0, true
-	),
-	delayedDefenseActivation_(
-		options_,
-		"DelayedDefenseActivation",
-		"Changes to shields are only seen after the aiming phase.",
-		0, false
-	),
-	autoSendSyncCheck_(
-		options_,
-		"AutoSendSyncCheck",
-		"Automatically send a sync check at the end of each shot",
-		0, false
-	),
-	actionSyncCheck_(
-		options_,
-		"ActionSyncCheck",
-		"Gather enhanced action syncchecking",
-		0, false
-	),
-	actionMovementSyncCheck_(
-		options_,
-		"ActionMovementSyncCheck",
-		"Gather enhanced action syncchecking for target movements",
-		0, false
-	),
-	actionRandomSyncCheck_(
-		options_,
-		"ActionRandomSyncCheck",
-		"Gather enhanced action syncchecking for random number generation",
-		0, false
-	),
-	actionCollisionSyncCheck_(
-		options_,
-		"ActionCollisionSyncCheck",
-		"Gather enhanced action syncchecking for particle collisions",
-		0, false
-	),
-	targetPlacementSyncCheck_(
-		options_,
-		"TargetPlacementSyncCheck",
-		"Gather enhanced action syncchecking for initial target placements",
-		0, false
-	),
-	weaponSyncCheck_(
-		options_,
-		"WeaponSyncCheck",
-		"Gather enhanced action syncchecking for weapon invocations",
-		0, false
-	),
-	accessoryNameSyncCheck_(
-		options_,
-		"AccessoryNameSyncCheck",
-		"Also send the accessory names when sending the tank sync check",
-		0, false
-	),
-	resignMode_(
-		options_,
-		"ResignMode",
-		"When does a players resign take place",
-		0, int(ResignTimed), resignEnum
-	),
-	movementRestriction_(
-		options_,
-		"MovementRestriction",
-		"Where a tank is allowed to move to",
-		0, int(MovementRestrictionNone), movementRestrictionEnum
-	),
 	teamBallance_(
 		options_,
 		"TeamBallance",
@@ -496,6 +446,21 @@ OptionsGame::OptionsGame() :
 		"The player turn mode",
 		0, int(TurnSequentialLoserFirst), turnEnum
 	), // Data, default, min, max
+	resignMode_(
+		options_,
+		"ResignMode",
+		"When does a players resign take place",
+		0, int(ResignTimed), resignEnum
+	),
+	// END   gameplay
+
+	// BEGIN money
+	economy_(
+		options_,
+		"Economy",
+		"Speicifies the name of the economy to use",
+		0, "EconomyFreeMarket", economyEnum
+	),
 	moneyBuyOnRound_(
 		options_,
 		"MoneyBuyOnRound",
@@ -580,59 +545,31 @@ OptionsGame::OptionsGame() :
 		"Allows the purchases bots (ais) make to be tracked by the free market",
 		0, false
 	),
-	windForce_(
+	// END   money
+
+	limitPowerByHealth_(
 		options_,
-		"WindForce",
-		"The force of the wind",
-		0, int(WindRandom), windForceEnum
+		"LimitPowerByHealth",
+		"Show power is limited by the amount of health a player has",
+		0, true
 	),
-	windType_(
+	movementRestriction_(
 		options_,
-		"WindType",
-		"When the wind changes",
-		0, int(WindChangeNever), windTypeEnum
+		"MovementRestriction",
+		"Where a tank is allowed to move to",
+		0, int(MovementRestrictionNone), movementRestrictionEnum
 	),
-	wallType_(
+	modDownloadSpeed_(
 		options_,
-		"WallType",
-		"The type of walls allowed",
-		0, int(WallRandom), wallEnum
+		"ModDownloadSpeed",
+		"Max download speed of mods in bytes per second (0 is no mod download)",
+		0, 0, 0, 500000, 5000
 	),
-	weapScale_(
+	maxAvatarSize_(
 		options_,
-		"WeaponScale",
-		"The scale of the weapons used",
-		0, int(ScaleMedium), weapScaleEnum
-	),
-	statsLogger_(
-		options_,
-		"StatsLogger",
-		"The type of player stats to be logged",
-		0, "none", statsLoggerEnum
-	),
-	serverFileLogger_(
-		options_,
-		"ServerLogger",
-		"The type of server events to be logged to file",
-		0, "none", serverFileLoggerEnum
-	),
-	portNo_(
-		options_,
-		"PortNo",
-		"The port to start the server on",
-		0, S3D::ScorchedPort
-	),
-	managementPortNo_(
-		options_,
-		"ManagementPortNo",
-		"The port to start the managament web server on (0 is management off)",
-		0, 0
-	),
-	serverName_(
-		options_,
-		"ServerName",
-		"The name of the server to start",
-		0, "No Name"
+		"MaxAvatarSize",
+		"Max size allowed for avatars in bytes (0 is no avatars)",
+		0, 5000
 	),
 	mod_(
 		options_,
@@ -650,77 +587,109 @@ OptionsGame::OptionsGame() :
 		"http://www.scorched3d.co.uk",
 		true
 	),
-	modDownloadSpeed_(
+	computersDeathTalk_(
 		options_,
-		"ModDownloadSpeed",
-		"Max download speed of mods in bytes per second (0 is no mod download)",
-		0, 0, 0, 500000, 5000
+		"ComputersDeathTalk",
+		"The percentage chance the computers will say something when killed",
+		0, 100, 0, 100, 10
 	),
-	maxAvatarSize_(
+	computersAttackTalk_(
 		options_,
-		"MaxAvatarSize",
-		"Max size allowed for avatars in bytes (0 is no avatars)",
-		0, 5000
+		"ComputersAttackTalk",
+		"The percentage chance the computers will say something when shooting",
+		0, 25, 0, 100, 10
 	),
-	economy_(
+	statsLogger_(
 		options_,
-		"Economy",
-		"Speicifies the name of the economy to use",
-		0, "EconomyFreeMarket", economyEnum
+		"StatsLogger",
+		"The type of player stats to be logged",
+		0, "none", statsLoggerEnum
 	),
-	landscapes_(
+	serverFileLogger_(
 		options_,
-		"Landscapes",
-		"Colon separated list of landscape names",
-		0, ""
+		"ServerLogger",
+		"The type of server events to be logged to file",
+		0, "none", serverFileLoggerEnum
 	),
-	serverPassword_(
+	waitForShotsBeforeShowingScore_(
 		options_,
-		"ServerPassword",
-		"The password for this server (empty password is no password)",
-		OptionEntry::DataProtected, ""
-	),
-	allowSameIP_(
-		options_,
-		"AllowSameIP",
-		"Allow scorched clients from same machine/NAT router to connect.",
+		"WaitForShotsBeforeShowingScore",
+		"Wait for all shots to be played out before showing the score dialog",
 		0, true
 	),
-	allowSameUniqueId_(
-		options_,
-		"AllowSameUniqueId",
-		"Allow scorched clients with same unique id to connect.",
-		0, true
-	),
-	publishServer_(
-		options_,
-		"PublishServer",
-		"Allow other scorched net clients to see this server.  Do not use for LAN games.",
-		0, false
-	),
-	useUPnP_(
-		options_,
-		"UseUPnP",
-		"Try to automatically add external port forwarding rules using UPnP",
-		0, false
-	),
-	useUPnPLogging_(
-		options_,
-		"UseUPnPLogging",
-		"Turn on packet logging for UPnP",
-		0, false
-	),
-	publishAddress_(
-		options_,
-		"PublishAddress",
-		"IP address to publish to scorched net clients (auto-detected if not given).",
-		0, "AutoDetect"
-	),
+
+	// BEGIN Server-only options
 	botNamePrefix_(
 		options_,
 		"BotNamePrefix",
 		"Prepend and bot name with the specified text",
 		0, "(Bot) "
+	),
+	autoSendSyncCheck_(
+		options_,
+		"AutoSendSyncCheck",
+		"Automatically send a sync check at the end of each shot",
+		0, false
+	),
+	actionMovementSyncCheck_(
+		options_,
+		"ActionMovementSyncCheck",
+		"Gather enhanced action syncchecking for target movements",
+		0, false
+	),
+	actionRandomSyncCheck_(
+		options_,
+		"ActionRandomSyncCheck",
+		"Gather enhanced action syncchecking for random number generation",
+		0, false
+	),
+	actionCollisionSyncCheck_(
+		options_,
+		"ActionCollisionSyncCheck",
+		"Gather enhanced action syncchecking for particle collisions",
+		0, false
+	),
+	targetPlacementSyncCheck_(
+		options_,
+		"TargetPlacementSyncCheck",
+		"Gather enhanced action syncchecking for initial target placements",
+		0, false
+	),
+	weaponSyncCheck_(
+		options_,
+		"WeaponSyncCheck",
+		"Gather enhanced action syncchecking for weapon invocations",
+		0, false
+	),
+	accessoryNameSyncCheck_(
+		options_,
+		"AccessoryNameSyncCheck",
+		"Also send the accessory names when sending the tank sync check",
+		0, false
+	),
+	actionSyncCheck_(
+		options_,
+		"ActionSyncCheck",
+		"Gather enhanced action syncchecking",
+		0, false
+	),
+	residualPlayers_(
+		options_,
+		"ResidualPlayers",
+		"Players that leave will have the same state when reconnecting",
+		0, true
+	),
+	delayedDefenseActivation_(
+		options_,
+		"DelayedDefenseActivation",
+		"Changes to shields are only seen after the aiming phase.",
+		0, false
+	),
+	randomizeBotNames_(
+		options_,
+		"RandomizeBotNames",
+		"Choose random bot names instread of sequential names",
+		0, false
 	),
 	giveAllWeapons_(
 		options_,
@@ -764,29 +733,65 @@ OptionsGame::OptionsGame() :
 		"Second parameter for the authentication handler",
 		0, ""
 	),
-	cycleMaps_(
+	serverName_(
 		options_,
-		"CycleMaps",
-		"Cycle through the maps instead of choosing them using a random probablity",
+		"ServerName",
+		"The name of the server to start",
+		0, "No Name"
+	),
+	serverPassword_(
+		options_,
+		"ServerPassword",
+		"The password for this server (empty password is no password)",
+		OptionEntry::DataProtected, ""
+	),
+	portNo_(
+		options_,
+		"PortNo",
+		"The port to start the server on",
+		0, S3D::ScorchedPort
+	),
+	managementPortNo_(
+		options_,
+		"ManagementPortNo",
+		"The port to start the managament web server on (0 is management off)",
+		0, 0
+	),
+	publishAddress_(
+		options_,
+		"PublishAddress",
+		"IP address to publish to scorched net clients (auto-detected if not given).",
+		0, "AutoDetect"
+	),
+	publishServer_(
+		options_,
+		"PublishServer",
+		"Allow other scorched net clients to see this server.  Do not use for LAN games.",
 		0, false
 	),
-	randomizeBotNames_(
+	useUPnP_(
 		options_,
-		"RandomizeBotNames",
-		"Choose random bot names instread of sequential names",
+		"UseUPnP",
+		"Try to automatically add external port forwarding rules using UPnP",
 		0, false
 	),
-	computersDeathTalk_(
+	useUPnPLogging_(
 		options_,
-		"ComputersDeathTalk",
-		"The percentage chance the computers will say something when killed",
-		0, 100, 0, 100, 10
+		"UseUPnPLogging",
+		"Turn on packet logging for UPnP",
+		0, false
 	),
-	computersAttackTalk_(
+	allowSameIP_(
 		options_,
-		"ComputersAttackTalk",
-		"The percentage chance the computers will say something when shooting",
-		0, 25, 0, 100, 10
+		"AllowSameIP",
+		"Allow scorched clients from same machine/NAT router to connect.",
+		0, true
+	),
+	allowSameUniqueId_(
+		options_,
+		"AllowSameUniqueId",
+		"Allow scorched clients with same unique id to connect.",
+		0, true
 	),
 	debugFeatures_(
 		options_,
@@ -794,14 +799,9 @@ OptionsGame::OptionsGame() :
 		"Set to \"true\" to enable debugging features such as InfoGrid",
 		0, false
 	),
-	waitForShotsBeforeShowingScore_(
-		options_,
-		"WaitForShotsBeforeShowingScore",
-		"Wait for all shots to be played out before showing the score dialog",
-		0, true
-	),
+	// END   Server-only options
 
-	// Deprecated options
+	// BEGIN Deprecated options (old)
 	depricatedMasterListServer_(
 		options_,
 		"MasterListServer",
@@ -837,7 +837,32 @@ OptionsGame::OptionsGame() :
 		"ScoreType",
 		"How the winner is chosen",
 		OptionEntry::DataDepricated, 0, scoreEnum
+	),
+	depricatedIdleKickTime_(
+		options_,
+		"IdleKickTime",
+		"The amount of time to give clients to respond after level loading before kicking them",
+		OptionEntry::DataDepricated, 60, 0, 90, 5
+	),
+	depricatedIdleShotKickTime_(
+		options_,
+		"IdleShotKickTime",
+		"The amount of time to give clients to respond after shots before kicking them",
+		OptionEntry::DataDepricated, 45, 0, 90, 5
+	),
+	depricatedKeepAliveTime_(
+		options_,
+		"KeepAliveTime",
+		"The amount of time between each client keep alive message",
+		OptionEntry::DataDepricated, 2, 0, 30, 1
+	),
+	depricatedKeepAliveTimeoutTime_(
+		options_,
+		"KeepAliveTimeoutTIme",
+		"The amount of time the server will allow without receiving a keep alive message",
+		OptionEntry::DataDepricated, 0, 0, 90, 5
 	)
+	// END   Deprecated options (old)
 {
 	char buffer[128];
 	for (int i=0; i<24; i++)
