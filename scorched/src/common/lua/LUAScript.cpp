@@ -26,8 +26,8 @@
 
 LUAScript::LUAScript(ScorchedContext *context) :
 	context_(context),
-	L_(0),
-	weapon_(0)
+	L_(nullptr),
+	weapon_(nullptr)
 {
 	L_ = luaL_newstate();
 
@@ -45,10 +45,10 @@ LUAScript::LUAScript(ScorchedContext *context) :
 
 LUAScript::~LUAScript()
 {
-	if (L_) 
+	if (L_)
 	{
 		lua_close(L_);
-		L_ = 0;
+		L_ = nullptr;
 	}
 }
 

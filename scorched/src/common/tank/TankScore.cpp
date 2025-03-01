@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,19 +30,22 @@
 // Range limited to 0 -> maxMoney
 static const int maxMoney = 999999;
 
-TankScore::TankScore(ScorchedContext &context) : 
-	context_(context), 
-	totalMoneyEarned_(0), totalScoreEarned_(0),
-	rank_(-1), tank_(0), skill_(1000), startSkill_(1000), ping_(-1)
+TankScore::TankScore(ScorchedContext &context) :
+	context_(context),
+	tank_(nullptr),
+	rank_(-1),
+	skill_(1000),
+	startSkill_(1000),
+	ping_(-1),
+	totalMoneyEarned_(0),
+	totalScoreEarned_(0)
 {
 	startTime_ = lastStatTime_ = time(0);
 	newMatch();
 }
 
 TankScore::~TankScore()
-{
-
-}
+{}
 
 void TankScore::setSkill(int skill)
 {

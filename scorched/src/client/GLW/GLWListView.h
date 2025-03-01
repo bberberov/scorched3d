@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,10 +41,15 @@ class GLWListView :
 	public GLWidget
 {
 public:
-	GLWListView(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
-		int maxLen = -1, float textSize = 10.0f,
-		float scrollSpeed = 0.0f);
+	GLWListView(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
+		int maxLen = -1,
+		float textSize = 10.0f,
+		float scrollSpeed = 0.0f
+	);
 	virtual ~GLWListView();
 
 	void setHandler(GLWListViewI *handler) { handler_ = handler; }
@@ -73,16 +78,19 @@ public:
 protected:
 	struct WordEntry
 	{
-		WordEntry(const char *word, Vector &color) : 
-			word_(word), color_(color), wordRef_(0) { }
+		WordEntry(const char *word, Vector &color) :
+			word_(word),
+			color_(color),
+			wordRef_(0)
+		{ }
 
-		unsigned wordRef_;
-		static unsigned wordRefCount_;
-
-		Vector color_;
 		std::string href_;
 		std::string word_;
 		std::map<std::string, std::string> event_;
+		Vector color_;
+
+		unsigned wordRef_;
+		static unsigned wordRefCount_;
 	};
 	struct LineEntry
 	{
@@ -96,12 +104,12 @@ protected:
 	};
 
 	GLWListViewI *handler_;
-	float currentPosition_;
-	float scrollSpeed_;
-	float textSize_;
-	int maxLen_;
-	Vector color_;
 	GLWScrollW scroll_;
+	int maxLen_;
+	float textSize_;
+	float scrollSpeed_;
+	float currentPosition_;
+	Vector color_;
 	std::vector<LineEntry> lines_;
 	std::vector<UrlEntry> urls_;
 

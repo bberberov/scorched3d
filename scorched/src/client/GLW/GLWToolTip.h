@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,11 +30,22 @@ class GLWToolTip : public GameStateI
 public:
 	static GLWToolTip *instance();
 
-	bool addToolTip(ToolTip::ToolTipType type, 
-		const LangString &title, const LangString &text,
-		float x, float y, float w, float h);
-	bool addToolTip(ToolTip *tip, 
-		float x, float y, float w, float h);
+	bool addToolTip(
+		ToolTip::ToolTipType type,
+		const LangString &title,
+		const LangString &text,
+		float x,
+		float y,
+		float w,
+		float h
+	);
+	bool addToolTip(
+		ToolTip *tip,
+		float x,
+		float y,
+		float w,
+		float h
+	);
 	void clearToolTip(float x, float y, float w, float h);
 
 	// Inherited from GameStateI
@@ -45,7 +56,8 @@ protected:
 	static GLWToolTip *instance_;
 	ToolTip *currentTip_;
 	ToolTip *lastTip_;
-	float timeDrawn_, timeSeen_;
+	float timeDrawn_;
+	float timeSeen_;
 	float refreshTime_;
 
 	// ToolTip properties
@@ -56,7 +68,8 @@ protected:
 	float tipOffX_, tipOffY_;
 	float tipTextWidth_;
 	float tipTextHeight_;
-	LangString tipTitle_, tipText_;
+	LangString tipTitle_;
+	LangString tipText_;
 	std::list<LangString> tipTexts_;
 
 	void setupTip(ToolTip *tip);

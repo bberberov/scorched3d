@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,19 +23,18 @@
 
 REGISTER_CLASS_SOURCE(GLWLabel);
 
-GLWLabel::GLWLabel(float x, float y, const LangString &labelText, 
-	float size, unsigned int flags) : 
-	GLWidget(x, y, 0.0f, 20.0f), size_(size),
-	color_(GLWFont::widgetFontColor), flags_(flags)
+GLWLabel::GLWLabel(float x, float y, const LangString &labelText, float size, unsigned int flags) :
+	GLWidget(x, y, 0.0f, 20.0f),
+	size_(size),
+	flags_(flags),
+	color_(GLWFont::widgetFontColor)
 {
 	setText(labelText);
 	tooltipTransparent_ = true;
 }
 
 GLWLabel::~GLWLabel()
-{
-
-}
+{}
 
 void GLWLabel::setColor(const Vector &color)
 {
@@ -49,8 +48,8 @@ void GLWLabel::setSize(float size)
 }
 
 void GLWLabel::setText(const LangString &text)
-{ 
-	labelText_ = text.c_str(); 
+{
+	labelText_ = text.c_str();
 	if (flags_ & eMultiLine)
 	{
 		labelTexts_.clear();
@@ -73,10 +72,10 @@ void GLWLabel::setText(const LangString &text)
 	w_ = 0.0f;
 }
 
-std::string &GLWLabel::getText() 
+std::string &GLWLabel::getText()
 {
-	static std::string result; 
-	result = LangStringUtil::convertFromLang(labelText_); 
+	static std::string result;
+	result = LangStringUtil::convertFromLang(labelText_);
 	return result;
 }
 

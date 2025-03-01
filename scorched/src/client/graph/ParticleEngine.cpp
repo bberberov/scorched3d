@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,13 +28,15 @@
 
 float ParticleEngine::speed_ = 1.0f;
 
-ParticleEngine::ParticleEngine(GLCamera *camera, 
-	unsigned int maxParticles) :
+ParticleEngine::ParticleEngine(GLCamera *camera, unsigned int maxParticles) :
 	GameStateI("ParticleEngine"),
 	camera_(camera),
-	particlesOnScreen_(0), particles_(0), 
-	freeParticles_(0), usedParticles_(0),
-	totalTime_(0.0f), allowSorting_(true)
+	particles_(nullptr),
+	usedParticles_(nullptr),
+	freeParticles_(nullptr),
+	totalTime_(0.0f),
+	particlesOnScreen_(0),
+	allowSorting_(true)
 {
 	setMaxParticles(maxParticles);
 }
@@ -44,9 +46,9 @@ ParticleEngine::~ParticleEngine()
 	delete [] particles_;
 	delete [] freeParticles_;
 	delete [] usedParticles_;
-	particles_ = 0;
-	freeParticles_ = 0;
-	usedParticles_ = 0;
+	particles_ = nullptr;
+	freeParticles_ = nullptr;
+	usedParticles_ = nullptr;
 }
 
 void ParticleEngine::setMaxParticles(unsigned int maxParticles)

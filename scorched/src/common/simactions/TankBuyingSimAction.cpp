@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,8 +33,7 @@ REGISTER_CLASS_SOURCE(TankBuyingSimAction);
 TankBuyingSimAction::TankBuyingSimAction() :
 	playerId_(0),
 	server_(false)
-{
-}
+{}
 
 TankBuyingSimAction::TankBuyingSimAction(unsigned int playerId) :
 	playerId_(playerId),

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -57,8 +57,10 @@ public:
 	GLTexture &getReflectionTexture();
 
 protected:
+	float height_;
+	float transparency_;
+	float maxTransparency_;
 	bool waterOn_;
-	float height_, transparency_, maxTransparency_;
 	Water2 *wMap_;
 	Water2Renderer *wTex_;
 	WaterMapPoints *wMapPoints_;

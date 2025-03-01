@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -68,7 +68,7 @@ protected:
 		std::set<std::string> channels_; // Subscribed channels
 		std::set<std::string> availableChannels_; // Available channeld
 	};
-	class DestinationEntry 
+	class DestinationEntry
 	{
 	public:
 		DestinationEntry(unsigned int destinationId);
@@ -93,9 +93,9 @@ protected:
 		std::map<unsigned int, DestinationLocalEntry> &getLocalEntries() { return localEntries_; }
 
 	protected:
-		time_t muteTime_;
-		unsigned int messageCount_;
 		unsigned int destinationId_;
+		unsigned int messageCount_;
+		time_t muteTime_;
 		std::set<std::string> channels_; // Subscribed channeld for all localids
 		std::map<unsigned int, DestinationLocalEntry> localEntries_;
 
@@ -104,9 +104,11 @@ protected:
 	class ChannelEntry
 	{
 	public:
-		ChannelEntry(ChannelDefinition def,
+		ChannelEntry(
+			ChannelDefinition def,
 			ServerChannelFilter *filter = 0,
-			ServerChannelAuth *auth = 0);
+			ServerChannelAuth *auth = 0
+		);
 		virtual ~ChannelEntry();
 
 		const char *getName() { return channelDef_.getChannel(); }
@@ -120,8 +122,8 @@ protected:
 		ServerChannelAuth *auth_;
 	};
 
-	unsigned int lastMessageId_;
 	fixed totalTime_;
+	unsigned int lastMessageId_;
 	std::map<unsigned int, DestinationEntry *> destinationEntries_;
 	std::list<ChannelEntry *> channelEntries_;
 	std::list<MessageEntry> lastMessages_;
@@ -130,14 +132,24 @@ protected:
 	ChannelEntry *getChannelEntryByName(const std::string &name);
 	DestinationEntry *getDestinationEntryById(unsigned int destinationId);
 
-	void registerClient(unsigned int destinationId, unsigned int localId,
-		std::list<ChannelDefinition> &startChannels);
+	void registerClient(
+		unsigned int destinationId,
+		unsigned int localId,
+		std::list<ChannelDefinition> &startChannels
+	);
 	void deregisterClient(unsigned int destinationId, unsigned int localId);
-	void joinClient(unsigned int destinationId, unsigned int localId,
-		std::list<ChannelDefinition> &startChannels);
-	void actualSend(const ChannelText &constText,
-		std::map<unsigned int, DestinationEntry *> &destinations, 
-		bool serverLog, bool filter);
+	void joinClient(
+		unsigned int destinationId,
+		unsigned int localId,
+		std::list<ChannelDefinition> &startChannels
+	);
+	void actualSend(
+		const ChannelText &constText,
+		std::map<unsigned int,
+		DestinationEntry *> &destinations,
+		bool serverLog,
+		bool filter
+	);
 
 	bool processChannelMessage(NetMessage &message, NetBufferReader &reader);
 	bool processChannelTextMessage(NetMessage &message, NetBufferReader &reader);

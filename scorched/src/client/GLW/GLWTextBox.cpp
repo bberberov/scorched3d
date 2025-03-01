@@ -27,20 +27,27 @@
 
 REGISTER_CLASS_SOURCE(GLWTextBox);
 
-GLWTextBox::GLWTextBox(float x, float y, float w, 
-	const LangString &startText, unsigned int flags) :
-	GLWidget(x, y, w, 25.0f), ctime_(0.0f),
-	flags_(flags),
-	cursor_(false), maxTextLen_(0), handler_(0),
-	current_(true), allowUnicode_(true)
+GLWTextBox::GLWTextBox(
+	float x,
+	float y,
+	float w,
+	const LangString &startText,
+	unsigned int flags
+) :
+	GLWidget(x, y, w, 25.0f),
+	handler_(nullptr),
+	ctime_(0.0f),
+	cursor_(false),
+	current_(true),
+	allowUnicode_(true),
+	maxTextLen_(0),
+	flags_(flags)
 {
 	setText(startText);
 }
 
 GLWTextBox::~GLWTextBox()
-{
-
-}
+{}
 
 void GLWTextBox::simulate(float frameTime)
 {
@@ -74,9 +81,13 @@ void GLWTextBox::draw()
 		(cursor_&&current_)?text + LANG_STRING("_"):text);
 }
 
-void GLWTextBox::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void GLWTextBox::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	if (!current_) return;
 
@@ -137,10 +148,10 @@ void GLWTextBox::keyDown(char *buffer, unsigned int keyState,
 	}
 }
 
-std::string &GLWTextBox::getText() 
+std::string &GLWTextBox::getText()
 {
-	static std::string result; 
-	result = LangStringUtil::convertFromLang(text_); 
+	static std::string result;
+	result = LangStringUtil::convertFromLang(text_);
 	return result;
 }
 
@@ -154,7 +165,7 @@ void GLWTextBox::mouseDown(int button, float x, float y, bool &skipRest)
 }
 
 void GLWTextBox::setText(const LangString &text)
-{ 
+{
 	text_ = text; 
 	if (!allowUnicode_)
 	{

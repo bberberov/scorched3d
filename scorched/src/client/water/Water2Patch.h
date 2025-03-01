@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -50,9 +50,10 @@ public:
 	Data *getInternalData() { return data_; }
 
 protected:
-	int size_, dataSize_;
+	Data *data_;
+	int dataSize_;
+	int size_;
 	int bufferOffSet_;
-	Data *data_;	
 };
 
 #endif // __INCLUDE_Water2Patchh_INCLUDE__

@@ -24,22 +24,24 @@
 #include <GLEXT/GLVertexBufferObject.h>
 
 GraphicalLandscapeMap::GraphicalLandscapeMap() :
-	heightData_(0), bufferObject_(0), 
-	width_(0), height_(0), bufferSizeBytes_(0)
-{
-}
+	heightData_(nullptr),
+	bufferObject_(nullptr),
+	width_(0),
+	height_(0),
+	bufferSizeBytes_(0)
+{}
 
 GraphicalLandscapeMap::~GraphicalLandscapeMap()
 {
 	delete [] heightData_;
-	heightData_ = 0;
+	heightData_ = nullptr;
 	delete bufferObject_;
-	bufferObject_ = 0;
+	bufferObject_ = nullptr;
 }
 
 void GraphicalLandscapeMap::create(const int width, const int height)
 {
-	width_ = width; 
+	width_ = width;
 	height_ = height;
 
 	delete [] heightData_;

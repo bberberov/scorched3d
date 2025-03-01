@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,9 +31,10 @@
 #include <common/Logger.h>
 
 TargetSpace::TargetSpace() :
+	context_(nullptr),
 	spaceX_(-128), spaceY_(-128),
 	spaceW_(1024), spaceH_(1024),
-	spaceSq_(4), context_(0)
+	spaceSq_(4)
 {
 	spaceWSq_ = (spaceW_ / spaceSq_);
 	spaceHSq_ = (spaceH_ / spaceSq_);
@@ -230,9 +231,12 @@ Target *TargetSpace::getCollision(FixedVector &position)
 	return result;
 }
 
-void TargetSpace::getCollisionSet(FixedVector &position, fixed radius, 
-	std::map<unsigned int, Target *> &collisionTargets, 
-	bool ignoreHeight)
+void TargetSpace::getCollisionSet(
+	FixedVector &position,
+	fixed radius,
+	std::map<unsigned int, Target *> &collisionTargets,
+	bool ignoreHeight
+)
 {
 	int x = position[0].asInt();
 	int y = position[1].asInt();

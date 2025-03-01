@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,18 +35,22 @@ class GLTextureSet;
 class Napalm : public Action
 {
 public:
-	struct NapalmEntry 
+	struct NapalmEntry
 	{
-		NapalmEntry(int x, int y, int o, int p) : 
-			offset(o), posX(x), posY(y), pset(p) {}
+		NapalmEntry(int x, int y, int o, int p) :
+			posX(x),
+			posY(y),
+			offset(o),
+			pset(p)
+		{}
 
-		int pset;
+		int posX;
+		int posY;
 		int offset;
-		int posX, posY;
+		int pset;
 	};
 
-	Napalm(int x, int y, Weapon *weapon, NapalmParams *params, 
-		WeaponFireContext &weaponContext);
+	Napalm(int x, int y, Weapon *weapon, NapalmParams *params, WeaponFireContext &weaponContext);
 	virtual ~Napalm();
 
 	virtual void init();
@@ -59,16 +63,18 @@ public:
 
 protected:
 	TankViewPointProvider *vPoint_;
-	WeaponFireContext weaponContext_;
-	NapalmParams *params_;
 	Weapon *weapon_;
+	NapalmParams *params_;
+	WeaponFireContext weaponContext_;
 	Counter counter_;
 	GLTextureSet *set_;
 
 	// Not sent by wire
 	int particleSet_;
-	int startX_, startY_;
-	fixed totalTime_, hurtTime_;
+	int startX_;
+	int startY_;
+	fixed totalTime_;
+	fixed hurtTime_;
 	fixed napalmTime_;
 	std::set<unsigned int> burnedTargets_;
 	std::set<unsigned int> edgePoints_;

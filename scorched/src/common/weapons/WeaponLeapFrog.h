@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,20 +29,23 @@ public:
 	WeaponLeapFrog();
 	virtual ~WeaponLeapFrog();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	Weapon *getCollisionAction() { return collisionAction_; }
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponLeapFrog, AccessoryPart::AccessoryWeapon);
 
 protected:
-	NumberParser bounce_;
 	Weapon *collisionAction_;
+	NumberParser bounce_;
 
 };
 

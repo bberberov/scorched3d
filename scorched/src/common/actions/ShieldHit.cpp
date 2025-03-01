@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,24 +32,20 @@
 	#include <GLEXT/GLLenseFlare.h>
 #endif
 
-ShieldHit::ShieldHit(unsigned int playerId,
-	FixedVector &position,
-	fixed hitPercentage) :
+ShieldHit::ShieldHit(unsigned int playerId, FixedVector &position, fixed hitPercentage) :
 	Action(false),
-	totalTime_(0),
-	firstTime_(true), playerId_(playerId),
+	playerId_(playerId),
+	position_(position),
 	hitPercentage_(hitPercentage),
-	position_(position)
-{
-}
+	totalTime_(0),
+	firstTime_(true)
+{}
 
 ShieldHit::~ShieldHit()
-{
-}
+{}
 
 void ShieldHit::init()
-{
-}
+{}
 
 void ShieldHit::simulate(fixed frameTime, bool &remove)
 {
@@ -57,23 +53,25 @@ void ShieldHit::simulate(fixed frameTime, bool &remove)
 	{
 		firstTime_ = false;
 
-		Target *target = 
-			context_->getTargetContainer().getTargetById(playerId_);
+		Target *target = context_->getTargetContainer().getTargetById(playerId_);
 		if (target)
 		{
-			Accessory *accessory = 
-				target->getShield().getCurrentShield();
+			Accessory *accessory = target->getShield().getCurrentShield();
 			if (accessory)
 			{
 				Shield *shield = (Shield *) accessory->getAction();
 #ifndef S3D_SERVER
-				if (!context_->getServerMode()) 
+				if (!context_->getServerMode())
 				{
-					SoundBuffer *shieldSound = 
-						Sound::instance()->fetchOrCreateBuffer(
-							S3D::getModFile(S3D::formatStringBuffer("data/wav/%s", shield->getCollisionSound())));
-					SoundUtils::playAbsoluteSound(VirtualSoundPriority::eAction,
-						shieldSound, position_.asVector());
+					SoundBuffer *shieldSound = Sound::instance()->fetchOrCreateBuffer(
+						S3D::getModFile(
+							S3D::formatStringBuffer( "data/wav/%s", shield->getCollisionSound() )
+						)
+					);
+					SoundUtils::playAbsoluteSound(
+						VirtualSoundPriority::eAction,
+						shieldSound, position_.asVector()
+					);
 
 					TargetRenderer *renderer = target->getRenderer();
 					if (renderer)
@@ -84,8 +82,8 @@ void ShieldHit::simulate(fixed frameTime, bool &remove)
 #endif // #ifndef S3D_SERVER
 
 				target->getShield().setShieldPower(
-					target->getShield().getShieldPower() -
-					shield->getHitRemovePower() * hitPercentage_);
+					target->getShield().getShieldPower() - shield->getHitRemovePower() * hitPercentage_
+				);
 			}
 		}
 	}
@@ -100,8 +98,7 @@ void ShieldHit::draw()
 #ifndef S3D_SERVER
 	if (!context_->getServerMode())
 	{
-		GLLenseFlare::instance()->draw(position_.asVector(), false, 0, 
-			1.0f, 1.0f);
+		GLLenseFlare::instance()->draw(position_.asVector(), false, 0, 1.0f, 1.0f);
 	}
 #endif // #ifndef S3D_SERVER
 }

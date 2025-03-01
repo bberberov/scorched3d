@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -129,8 +129,10 @@ protected:
 	GLTexture colorDepthMap_;
 
 	// Variables used to set when the water is refreshed
-	bool resetLandscape_, resetRoof_;
-	float resetLandscapeTimer_, resetRoofTimer_;
+	bool resetLandscape_;
+	bool resetRoof_;
+	float resetLandscapeTimer_;
+	float resetRoofTimer_;
 	unsigned int changeCount_;
 
 	void savePlan();

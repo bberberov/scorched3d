@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -53,28 +53,41 @@ static const float maxAnimationTime = 2.0f;
 
 GLWPlanView::GLWPlanView(float x, float y, float w, float h) :
 	GLWidget(x, y, w, h),
-	animationTime_(0.0f), flashTime_(0.0f), totalTime_(0.0f), pointTime_(0.0f),
-	flash_(true), dragging_(false), firstTime_(true),
+	animationTime_(0.0f),
+	flashTime_(0.0f),
+	totalTime_(0.0f),
+	pointTime_(0.0f),
 	planColor_(1.0f),
-	arrowTex_(ImageID(S3D::eModLocation, 
-		"", "data/windows/arrow_s.png")),
-	tankTex_(ImageID(S3D::eModLocation,	
-		"data/textures/circle.bmp",	"data/textures/circlem.bmp", true)),
-	circleTex_(ImageID(S3D::eModLocation, 
-		"data/textures/circlew.bmp", "data/textures/circlem.bmp", true))
+	flash_(true),
+	firstTime_(true),
+	dragging_(false),
+	arrowTex_(
+		ImageID( S3D::eModLocation, "", "data/windows/arrow_s.png")
+	),
+	tankTex_(
+		ImageID(S3D::eModLocation,	"data/textures/circle.bmp",	"data/textures/circlem.bmp", true)
+	),
+	circleTex_(
+		ImageID(S3D::eModLocation, "data/textures/circlew.bmp", "data/textures/circlem.bmp", true)
+	)
 {
-	setToolTip(new ToolTipResource(ToolTip::ToolTipHelp,
-		"PLAN_VIEW", "Plan View",
-		"PLAN_VIEW_TOOLTIP", "Shows the position of the the tanks\n"
-		"on a overhead map of the island.\n"
-		"Flashing tanks are still to make a move.\n"
-		"Clicking on the plan will move the camera\n"
-		"to look at that point."));
+	setToolTip(
+		new ToolTipResource(
+			ToolTip::ToolTipHelp,
+			"PLAN_VIEW",
+			"Plan View",
+			"PLAN_VIEW_TOOLTIP",
+			"Shows the position of the the tanks\n"
+			"on a overhead map of the island.\n"
+			"Flashing tanks are still to make a move.\n"
+			"Clicking on the plan will move the camera\n"
+			"to look at that point."
+		)
+	);
 }
 
 GLWPlanView::~GLWPlanView()
-{
-}
+{}
 
 void GLWPlanView::simulate(float frameTime)
 {
@@ -384,6 +397,7 @@ void GLWPlanView::drawBuoys()
 	}
 	glEnd();
 }
+
 void GLWPlanView::drawTanks()
 {
 	float maxWidth = MAX(arenaWidth_, arenaHeight_);

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,23 +30,31 @@
 
 REGISTER_CLASS_SOURCE(ExplosionLaserBeamRenderer);
 
-GLTextureReference ExplosionLaserBeamRenderer::_texture(ImageID(S3D::eModLocation,
-			"data/textures/waves.bmp",
-			"data/textures/waves.bmp",
-			false));
+GLTextureReference ExplosionLaserBeamRenderer::_texture(
+	ImageID(
+		S3D::eModLocation,
+		"data/textures/waves.bmp",
+		"data/textures/waves.bmp",
+		false
+	)
+);
 
 ExplosionLaserBeamRenderer::~ExplosionLaserBeamRenderer()
-{
-}
+{}
 
-ExplosionLaserBeamRenderer::ExplosionLaserBeamRenderer():
-	totalTime_(0), time_(0), size_(12.0f), angle_(0)
-{
+ExplosionLaserBeamRenderer::ExplosionLaserBeamRenderer() :
+	totalTime_(0),
+	time_(0),
+	size_(12.0f),
+	angle_(0)
+{}
 
-}
-
-void ExplosionLaserBeamRenderer::init(unsigned int playerId,
-	Vector &position, Vector &velocity, const char *data)
+void ExplosionLaserBeamRenderer::init(
+	unsigned int playerId,
+	Vector &position,
+	Vector &velocity,
+	const char *data
+)
 {
 	if (0 != strcmp("none", data))
 	{

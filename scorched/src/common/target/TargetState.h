@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -82,9 +82,9 @@ protected:
 	TargetFalling *falling_;
 	TanketMovement *moving_;
 	TargetStateMovement *movement_;
-	bool displayHardwareShadow_;
-	bool displayShadow_;
 	bool displayDamage_;
+	bool displayShadow_;
+	bool displayHardwareShadow_;
 	bool noDamageBurn_;
 	bool noCollision_;
 	bool noFalling_;

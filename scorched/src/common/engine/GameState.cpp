@@ -1,4 +1,4 @@
-
+////////////////////////////////////////////////////////////////////////////////
 //    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
@@ -29,14 +29,14 @@
 #include <limits.h>
 #include <SDL/SDL.h>
 
-GameStatePerfCounter::GameStatePerfCounter(const char *name) : 
-	name_(name), total_(0), used_(false)
-{
-}
+GameStatePerfCounter::GameStatePerfCounter(const char *name) :
+	name_(name),
+	total_(0),
+	used_(false)
+{}
 
 GameStatePerfCounter::~GameStatePerfCounter()
-{
-}
+{}
 
 void GameStatePerfCounter::start()
 {
@@ -52,35 +52,34 @@ void GameStatePerfCounter::end()
 }
 
 unsigned int GameStatePerfCounter::getTotal()
-{ 
+{
 	unsigned int lastTotal = total_;
 	total_ = 0;
 	used_ = false;
-	return lastTotal; 
+	return lastTotal;
 }
 
 GameState::GameState(MainLoop *mainLoop, const char *name) :
+	mainLoop_(mainLoop),
 	name_(name),
-	fakeMiddleButton_(true),
-	currentMouseState_(0),
-	currentState_(UINT_MAX),
-	currentEntry_(0),
 	stateCount_(0),
-	currentStateI_(0),
-	currentMouseX_(0), currentMouseY_(0),
-	mouseDoubleX_(0), mouseDoubleY_(0),
-	stateLogging_(false), 
-	stateTimeLogging_(false), 
-	frameTime_(0.0f), frameCount_(0),
-	mainLoop_(mainLoop)
+	currentState_(UINT_MAX),
+	currentStateI_(nullptr),
+	currentEntry_(nullptr),
+	fakeMiddleButton_(true),
+	stateLogging_(false),
+	stateTimeLogging_(false),
+	frameTime_(0.0f),
+	frameCount_(0),
+	currentMouseState_(0),
+	mouseDoubleX_(0),  mouseDoubleY_(0),
+	currentMouseX_(0), currentMouseY_(0)
 {
 	clearTimers();
 }
 
 GameState::~GameState()
-{
-
-}
+{}
 
 void GameState::clear()
 {
@@ -172,10 +171,15 @@ void GameState::mouseMove(int x, int y)
 	}
 }
 
-void GameState::mouseMoveCall(const unsigned state, MouseButton button, 
-							  StateIList &currentList, 
-							  int mx, int my,
-							  int dx, int dy)
+void GameState::mouseMoveCall(
+	const unsigned state,
+	MouseButton button,
+	StateIList &currentList,
+	int mx,
+	int my,
+	int dx,
+	int dy
+)
 {
 	if (!currentList.empty())
 	{
@@ -541,8 +545,7 @@ GameState::GameStateEntry* GameState::getEntry(const unsigned state)
 	return foundEntry;
 }
 
-GameState::GameStateSubEntry* GameState::getSubEntry(const unsigned state, 
-													 GameStateI *entry)
+GameState::GameStateSubEntry* GameState::getSubEntry(const unsigned state, GameStateI *entry)
 {
 	GameStateEntry *foundEntry = getEntry(state);
 
@@ -570,8 +573,7 @@ GameState::GameStateSubEntry* GameState::getSubEntry(const unsigned state,
 	return foundSubEntry;
 }
 
-void GameState::addStateLoop(const unsigned state, GameStateI *entry, 
-							 GameStateI *subEntry)
+void GameState::addStateLoop(const unsigned state, GameStateI *entry, GameStateI *subEntry)
 {
 	getSubEntry(state, entry)->subLoopList.push_back(subEntry);
 }
@@ -586,9 +588,7 @@ void GameState::addStateKeyEntry(const unsigned state, GameStateI *subEntry)
 	getEntry(state)->subKeyList.push_back(subEntry);
 }
 
-void GameState::addStateMouseDownEntry(const unsigned state, 
-									   const unsigned buttons, 
-									   GameStateI *subEntry)
+void GameState::addStateMouseDownEntry(const unsigned state, const unsigned buttons, GameStateI *subEntry)
 {
 	if (buttons & MouseButtonLeft)
 	{
@@ -604,9 +604,7 @@ void GameState::addStateMouseDownEntry(const unsigned state,
 	}
 }
 
-void GameState::addStateMouseUpEntry(const unsigned state, 
-									 const unsigned buttons, 
-									 GameStateI *subEntry)
+void GameState::addStateMouseUpEntry(const unsigned state, const unsigned buttons, GameStateI *subEntry)
 {
 	if (buttons & MouseButtonLeft)
 	{
@@ -622,9 +620,7 @@ void GameState::addStateMouseUpEntry(const unsigned state,
 	}
 }
 
-void GameState::addStateMouseDragEntry(const unsigned state, 
-									   const unsigned buttons, 
-									   GameStateI *subEntry)
+void GameState::addStateMouseDragEntry(const unsigned state, const unsigned buttons, GameStateI *subEntry)
 {
 	if (buttons & MouseButtonLeft)
 	{
@@ -640,15 +636,12 @@ void GameState::addStateMouseDragEntry(const unsigned state,
 	}
 }
 
-void GameState::addStateMouseWheelEntry(const unsigned state, 
-										GameStateI *subEntry)
+void GameState::addStateMouseWheelEntry(const unsigned state, GameStateI *subEntry)
 {
 	getEntry(state)->subMouseWheelList.push_back(subEntry);
 }
 
-void GameState::addStateStimulus(const unsigned state, 
-								 const unsigned stim, 
-								 const unsigned nexts)
+void GameState::addStateStimulus(const unsigned state, const unsigned stim, const unsigned nexts)
 {
 	GameState::GameStateEntry *entry = getEntry(state);
 	std::map<unsigned, unsigned>::iterator itor = entry->stimList.find(stim);
@@ -662,9 +655,7 @@ void GameState::addStateStimulus(const unsigned state,
 	}
 }
 
-void GameState::addStateStimulus(const unsigned state, 
-								 GameStateStimulusI *check, 
-								 const unsigned nexts)
+void GameState::addStateStimulus(const unsigned state, GameStateStimulusI *check, const unsigned nexts)
 {
 	GameState::GameStateEntry *entry = getEntry(state);
 	SimulusIPair pair(check, nexts);

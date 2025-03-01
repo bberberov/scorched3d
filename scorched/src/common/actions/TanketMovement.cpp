@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -53,18 +53,24 @@
 
 static const int NoMovementTransitions = 4;
 
-TanketMovement::TanketMovement(WeaponFireContext &weaponContext,
+TanketMovement::TanketMovement(
+	WeaponFireContext &weaponContext,
 	WeaponMoveTank *weapon,
-	int positionX, int positionY) : 
-	Action(weaponContext.getInternalContext().getReferenced()),
-	weaponContext_(weaponContext), 
+	int positionX,
+	int positionY
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
+	weaponContext_(weaponContext),
+	weapon_(weapon),
+	timePassed_(0),
+	vPoint_(0),
+	moveSoundSource_(0),
+	smokeCounter_(0.1f, 0.1f),
 	positionX_(positionX), positionY_(positionY),
-	timePassed_(0), weapon_(weapon),
-	remove_(false), moving_(true), moveSoundSource_(0),
-	smokeCounter_(0.1f, 0.1f), stepCount_(0),
-	vPoint_(0)
-{
-}
+	stepCount_(0),
+	remove_(false),
+	moving_(true)
+{}
 
 TanketMovement::~TanketMovement()
 {
@@ -81,7 +87,7 @@ TanketMovement::~TanketMovement()
 void TanketMovement::init()
 {
 	Tanket *tanket = context_->getTargetContainer().getTanketById(weaponContext_.getPlayerId());
-	if (!tanket) return;	
+	if (!tanket) return;
 
 	tanket->getTargetState().setMoving(this);
 
@@ -89,8 +95,7 @@ void TanketMovement::init()
 
 	// Start the tank movement sound
 #ifndef S3D_SERVER
-	if (!context_->getServerMode() &&
-		tanket->getType() == Target::TypeTank) 
+	if (!context_->getServerMode() && tanket->getType() == Target::TypeTank)
 	{
 		vPoint_ = new TankViewPointProvider();
 		vPoint_->setValues(startPosition_);
@@ -100,13 +105,14 @@ void TanketMovement::init()
 			weaponContext_.getPlayerId(),
 			vPoint_,
 			5,
-			10, 
-			false);
+			10,
+			false
+		);
 		context_->getActionController().addAction(positionAction);
 
-		SoundBuffer *moveSound = 
-			Sound::instance()->fetchOrCreateBuffer(
-				S3D::getModFile("data/wav/movement/tankmove.wav"));
+		SoundBuffer *moveSound = Sound::instance()->fetchOrCreateBuffer(
+			S3D::getModFile("data/wav/movement/tankmove.wav")
+		);
 		moveSoundSource_ = new VirtualSoundSource(VirtualSoundPriority::eAction, true, false);
 		moveSoundSource_->setPosition(tanket->getLife().getTargetPosition().asVector());
 		moveSoundSource_->play(moveSound);
@@ -119,14 +125,11 @@ void TanketMovement::init()
 	// Lower 32 bits = y position
 	// Upper 32 bits = x positions
 	std::list<unsigned int> positions;
-	MovementMap mmap(
-		tanket, 
-		*context_);
+	MovementMap mmap( tanket, *context_);
 	FixedVector pos(positionX_, positionY_, 0);
 	mmap.calculatePosition(pos, mmap.getFuel(weapon_));
 	
-	MovementMap::MovementMapEntry entry =
-		mmap.getEntry(positionX_, positionY_);
+	MovementMap::MovementMapEntry entry = mmap.getEntry(positionX_, positionY_);
 	if (entry.type == MovementMap::eMovement)
 	{
 		// Add the end (destination) point to the list of points for the tank
@@ -173,10 +176,13 @@ void TanketMovement::init()
 				fixed currentY = fixed(firsty) + fixed(diffY)/fixed(NoMovementTransitions)*fixed(i+1);
 				expandedPositions_.push_back(
 					PositionEntry(
-						firstx, firsty, 
+						firstx, firsty,
 						secx, secy,
-						currentX, currentY, 
-						ang, (i==(NoMovementTransitions-1))));
+						currentX, currentY,
+						ang,
+						(i==(NoMovementTransitions-1))
+					)
+				);
 			}
 		}
 	}
@@ -190,9 +196,13 @@ void TanketMovement::init()
 
 std::string TanketMovement::getActionDetails()
 {
-	return S3D::formatStringBuffer("%u %i,%i %s",
-		weaponContext_.getPlayerId(), positionX_, positionY_, 
-		weapon_->getParent()->getName());
+	return S3D::formatStringBuffer(
+		"%u %i,%i %s",
+		weaponContext_.getPlayerId(),
+		positionX_,
+		positionY_,
+		weapon_->getParent()->getName()
+	);
 }
 
 void TanketMovement::simulate(fixed frameTime, bool &remove)
@@ -221,8 +231,7 @@ void TanketMovement::simulate(fixed frameTime, bool &remove)
 
 void TanketMovement::simulationMove(fixed frameTime)
 {
-	Tanket *tanket = 
-		context_->getTargetContainer().getTanketById(weaponContext_.getPlayerId());
+	Tanket *tanket = context_->getTargetContainer().getTanketById(weaponContext_.getPlayerId());
 	if (tanket)
 	{
 		// Stop moving if the tank is dead
@@ -281,7 +290,7 @@ void TanketMovement::simulationMove(fixed frameTime)
 	{
 		if (tanket)
 		{
-			if (tanket->getTargetState().getMoving() == this) 
+			if (tanket->getTargetState().getMoving() == this)
 			{
 				tanket->getTargetState().setMoving(0);
 			}

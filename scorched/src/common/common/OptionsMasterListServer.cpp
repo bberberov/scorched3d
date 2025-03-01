@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,28 +28,56 @@ OptionsMasterListServer *OptionsMasterListServer::instance()
 	return instance_;
 }
 
+// FIXME: hardcoded URLs of servers
 OptionsMasterListServer::OptionsMasterListServer() :
-	masterListServer_(options_, "MasterListServer",
-		"The master list server for scorched3d", 0, "scorched3d.sourceforge.net"),
-	masterListServerURI_(options_, "MasterListServerURI",
-		"The URI on the master list server for scorched3d", 0, "/scorched"),
-	masterListBackupServer_(options_, "MasterListBackupServer",
-		"The backup master list server for scorched3d", 0, "www.scorched3d.co.uk"),
-	masterListBackupServerURI_(options_, "MasterListBackupServerURI",
-		"The URI on the backup master list server for scorched3d", 0, "/scorched"),
-	masterListServerTimeout_(options_, "MasterListServerTimeout",
-		"The amount of time to allow for list communications", 0, 10),
-	chatServer_(options_, "ChatServer",
-		"The chat server for scorched3d", 0, "www.scorched3d.co.uk"),
-	chatServerURI_(options_, "ChatServerURI",
-		"The URI on the chat server for scorched3d", 0, "/phpBB3/chatmessages.php")
+	masterListServer_(
+		options_,
+		"MasterListServer",
+		"The master list server for scorched3d",
+		0, "scorched3d.sourceforge.net"
+	),
+	masterListServerURI_(
+		options_,
+		"MasterListServerURI",
+		"The URI on the master list server for scorched3d",
+		0, "/scorched"
+	),
+	masterListBackupServer_(
+		options_,
+		"MasterListBackupServer",
+		"The backup master list server for scorched3d",
+		0, "www.scorched3d.co.uk"
+	),
+	masterListBackupServerURI_(
+		options_,
+		"MasterListBackupServerURI",
+		"The URI on the backup master list server for scorched3d",
+		0, "/scorched"
+	),
+	chatServer_(
+		options_,
+		"ChatServer",
+		"The chat server for scorched3d",
+		0, "www.scorched3d.co.uk"
+	),
+	chatServerURI_(
+		options_,
+		"ChatServerURI",
+		"The URI on the chat server for scorched3d",
+		0, "/phpBB3/chatmessages.php"
+	),
+	masterListServerTimeout_(
+		options_,
+		"MasterListServerTimeout",
+		"The amount of time to allow for list communications",
+		0, 10
+	)
 {
 	readOptionsFromFile();
 }
 
 OptionsMasterListServer::~OptionsMasterListServer()
-{
-}
+{}
 
 bool OptionsMasterListServer::writeOptionsToFile()
 {

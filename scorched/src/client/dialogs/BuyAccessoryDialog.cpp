@@ -46,12 +46,21 @@ BuyAccessoryDialog *BuyAccessoryDialog::instance()
 	return instance_;
 }
 
-BuyAccessoryDialog::BuyAccessoryDialog() : 
-	GLWWindow("Buy", 10.0f, 10.0f, 465.0f, 300.0f, eHideName,
+BuyAccessoryDialog::BuyAccessoryDialog() :
+	GLWWindow(
+		"Buy",
+		10.0f,
+		10.0f,
+		465.0f,
+		300.0f,
+		eHideName,
 		"Allows the current player to buy and sell\n"
-		"weapons and other accessories."),
-	firstDrawTime_(true), sellTab_(0), flag_(0),
-	tankInfo_(*BuyAccessoryDialogTankInfo::instance())
+		"weapons and other accessories."
+	),
+	tankInfo_( *BuyAccessoryDialogTankInfo::instance() ),
+	firstDrawTime_(true),
+	sellTab_(nullptr),
+	flag_(nullptr)
 {
 	okId_ = addWidget(new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 400, 10, 55, this, 
 		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX))->getId();
@@ -84,8 +93,7 @@ BuyAccessoryDialog::BuyAccessoryDialog() :
 }
 
 BuyAccessoryDialog::~BuyAccessoryDialog()
-{
-}
+{}
 
 void BuyAccessoryDialog::draw()
 {
@@ -318,8 +326,7 @@ void BuyAccessoryDialog::addPlayerWeaponsSell()
 	}
 }
 
-bool BuyAccessoryDialog::addAccessory(
-	GLWTab *tab, float height, Accessory *current)
+bool BuyAccessoryDialog::addAccessory( GLWTab *tab, float height, Accessory *current)
 {
 	if (!tankInfo_.tankAccessories.accessoryAllowed(current, 0)) return false;
 	if (current->getNoBuy()) return false;

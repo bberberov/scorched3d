@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,17 +25,26 @@
 #include <common/Logger.h>
 #include <common/Defines.h>
 
-NetServerTCPRead::NetServerTCPRead(unsigned int id,
-							 TCPsocket socket,
-							 NetServerTCPProtocol *protocol,
-							 NetMessageHandler *messageHandler,
-							 bool *checkDeleted) : 
+NetServerTCPRead::NetServerTCPRead(
+	unsigned int id,
+	TCPsocket socket,
+	NetServerTCPProtocol *protocol,
+	NetMessageHandler *messageHandler,
+	bool *checkDeleted
+) :
 	id_(id),
-	socket_(socket), sockSet_(0), protocol_(protocol), 
-	outgoingMessagesMutex_(0), checkDeleted_(checkDeleted),
-	disconnect_(false), messageHandler_(messageHandler),
-	sentDisconnect_(false), startCount_(0),
-	ctrlThread_(0), recvThread_(0), sendThread_(0)
+	socket_(socket),
+	sockSet_(0),
+	protocol_(protocol),
+	outgoingMessagesMutex_(0),
+	messageHandler_(messageHandler),
+	checkDeleted_(checkDeleted),
+	disconnect_(false),
+	sentDisconnect_(false),
+	startCount_(0),
+	ctrlThread_(0),
+	recvThread_(0),
+	sendThread_(0)
 {
 	sockSet_ = SDLNet_AllocSocketSet(1);
 	SDLNet_TCP_AddSocket(sockSet_, socket);

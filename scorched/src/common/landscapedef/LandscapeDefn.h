@@ -145,9 +145,9 @@ public:
 	int getArenaY() { return arenay; }
 
 	LandscapeDefnType *roof;
-	LandscapeDefnTypeTankStart *tankstart;
 	LandscapeDefnType *heightmap;
 	LandscapeDefnType *deform;
+	LandscapeDefnTypeTankStart *tankstart;
 	LandscapeTexDefn texDefn;
 
 	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,23 +23,29 @@
 #include <XML/XMLNode.h>
 
 ExplosionParams::ExplosionParams() :
-	size_(1), deformSize_(1),
-	multiColored_(false), hurtAmount_(0),
-	deform_(DeformDown), explosionType_(ExplosionNormal),
-	createDebris_(true), createMushroomAmount_(0),
-	createSplash_(true), windAffected_(true),
-	luminance_(true), animate_(true),
-	onlyHurtShield_(false), explodeUnderGround_(true),
+	size_(1),
+	deformSize_(1),
+	hurtAmount_(0),
+	shake_(0),
+	minLife_(true, 5000), maxLife_(1),
+	createMushroomAmount_(0),
+	luminance_(true),
+	windAffected_(true),
+	multiColored_(false),
+	createDebris_(true),
+	createSplash_(true),
+	explodeUnderGround_(true),
+	onlyHurtShield_(false),
+	animate_(true),
 	noCameraTrack_(false),
-	minLife_(true, 5000), maxLife_(1), shake_(0),
 	explosionTexture_("exp00"),
-	mushroomTexture_("smoke")
-{
-}
+	mushroomTexture_("smoke"),
+	deform_(DeformDown),
+	explosionType_(ExplosionNormal)
+{}
 
 ExplosionParams::~ExplosionParams()
-{
-}
+{}
 
 const char *ExplosionParams::getExplosionTexture()
 {
@@ -62,32 +68,32 @@ FixedVector &ExplosionParams::getExplosionColor()
 	static FixedVector white(1, 1, 1);
 	if (!multiColored_) return white;
 
-    static FixedVector red(1, 0, 0);
-    static FixedVector green(0, 1, 0);
-    static FixedVector blue(0, 0, 1);
-    static FixedVector yellow(1, 1, 0);
+	static FixedVector red(1, 0, 0);
+	static FixedVector green(0, 1, 0);
+	static FixedVector blue(0, 0, 1);
+	static FixedVector yellow(1, 1, 0);
 
-    int color = int(RAND * 4.0f);
-    switch (color)
-    {
-    case 0:
-        return red;
-    case 1:
-        return green;
-    case 2:
-        return blue;
-    case 3:
-        return yellow;
-    }
-    return white;
+	int color = int(RAND * 4.0f);
+	switch (color)
+	{
+	case 0:
+		return red;
+	case 1:
+		return green;
+	case 2:
+		return blue;
+	case 3:
+		return yellow;
+	}
+	return white;
 }
 
 bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 {
     // Get the accessory colored
-    XMLNode *colorNode = 0;
+	XMLNode *colorNode = 0;
 	accessoryNode->getNamedChild("multicolor", colorNode, false);
-    if (colorNode) multiColored_ = true;
+	if (colorNode) multiColored_ = true;
 
 	// Get the hurt shield node
 	accessoryNode->getNamedChild("onlyhurtshield", onlyHurtShield_, false);
@@ -147,8 +153,11 @@ bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 	else if (0 == strcmp(deformNode->getContent(), "up")) deform_ = DeformUp;
 	else if (0 == strcmp(deformNode->getContent(), "none")) deform_ = DeformNone;
 	else return deformNode->returnError(
-		S3D::formatStringBuffer("Unknown deform type \"%s\" should be up, down or none",
-		deformNode->getContent()));
+		S3D::formatStringBuffer(
+			"Unknown deform type \"%s\" should be up, down or none",
+			deformNode->getContent()
+		)
+	);
 
 	std::string explosionType = "normal";
 	if (accessoryNode->getNamedChild("explosiontype", explosionType, false))
@@ -156,11 +165,14 @@ bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 		if (explosionType == "normal") explosionType_ = ExplosionNormal;
 		else if (explosionType == "ring") explosionType_ = ExplosionRing;
 		else if (explosionType == "directionalring") explosionType_ = ExplosionRingDirectional;
-		else 
-		{	
+		else
+		{
 			return accessoryNode->returnError(
-				S3D::formatStringBuffer("Unknown explosion type \"%s\" should be normal, ring or directionalring",
-				explosionType.c_str()));
+				S3D::formatStringBuffer(
+					"Unknown explosion type \"%s\" should be normal, ring or directionalring",
+					explosionType.c_str()
+				)
+			);
 		}
 	}
 

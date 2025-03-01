@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,13 +23,19 @@
 #include <common/DefinesString.h>
 
 GLWIconTable::GLWIconTable(
-	float x, float y, float w, float h,
+	float x,
+	float y,
+	float w,
+	float h,
 	std::list<Column> *columns,
-	float rowHeight) :
+	float rowHeight
+) :
 	GLWidget(x, y, w, h),
-	rowHeight_(rowHeight),
 	scrollBar_(x + w_ - 17.0f, y + 2.0f, h_ - 4.0f, 0, 0, int((h - 25.0f) / rowHeight)),
-	selected_(-1), handler_(0), itemCount_(0)
+	handler_(nullptr),
+	rowHeight_(rowHeight),
+	selected_(-1),
+	itemCount_(0)
 {
 	if (columns)
 	{
@@ -40,12 +46,12 @@ GLWIconTable::GLWIconTable(
 			++itor)
 		{
 			Column &col = *itor;
-			GLWTextButton *button = new
-				GLWTextButton(
-				col.name, 
-				colx, y_ + h_ - 20.0f, 
-				col.width, this, 
-				GLWButton::ButtonFlagCenterX, 10);
+			GLWTextButton *button = new GLWTextButton(
+				col.name,
+				colx, y_ + h_ - 20.0f,
+				col.width, this,
+				GLWButton::ButtonFlagCenterX, 10
+			);
 			columns_.push_back(button);
 
 			colx += col.width + 2.0f;
@@ -54,16 +60,15 @@ GLWIconTable::GLWIconTable(
 }
 
 GLWIconTable::~GLWIconTable()
-{
-}
+{}
 
 void GLWIconTable::setItemCount(int items)
-{ 
+{
 	if (selected_ > items) selected_ = -1;
 
 	scrollBar_.setMax(items);
 	scrollBar_.setCurrent(0);
-	itemCount_ = items; 
+	itemCount_ = items;
 }
 
 void GLWIconTable::simulate(float frameTime)
@@ -119,7 +124,7 @@ void GLWIconTable::draw()
 				GLWTextButton *column = columns_[j];
 				glVertex2f(column->getX(), y);
 				glVertex2f(column->getX(), y + rowHeight_);
-			}				
+			}
 			glVertex2f(x_, y);
 			glVertex2f(x_ + w_ - 18.0f, y);
 			if (i == min || selected_ == i)
@@ -135,9 +140,8 @@ void GLWIconTable::draw()
 		for (int j=0; j<(int) columns_.size(); j++)
 		{
 			GLWTextButton *column = columns_[j];
-			if (handler_) handler_->drawColumn(id_, i, j, 
-				column->getX(), y, column->getW());
-		}	
+			if (handler_) handler_->drawColumn(id_, i, j, column->getX(), y, column->getW());
+		}
 	}
 }
 

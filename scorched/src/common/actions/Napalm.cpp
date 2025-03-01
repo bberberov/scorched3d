@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -54,18 +54,27 @@ static bool deformCreated = false;
 #define UINT_TO_X(pt) ((int)(pt >> 16))
 #define UINT_TO_Y(pt) ((int)(pt & 0xffff))
 
-Napalm::Napalm(int x, int y, Weapon *weapon, 
+Napalm::Napalm(
+	int x,
+	int y,
+	Weapon *weapon,
 	NapalmParams *params,
-	WeaponFireContext &weaponContext) :
-	Action(weaponContext.getInternalContext().getReferenced()),
-	startX_(x), startY_(y), napalmTime_(0), 
-	weapon_(weapon), params_(params),
-	weaponContext_(weaponContext), 
-	totalTime_(0), hurtTime_(0),
-	counter_(0.1f, 0.1f), set_(0),
-	particleSet_(0), vPoint_(0)
-{
-}
+	WeaponFireContext &weaponContext
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
+	vPoint_(nullptr),
+	weapon_(weapon),
+	params_(params),
+	weaponContext_(weaponContext),
+	counter_(0.1f, 0.1f),
+	set_(nullptr),
+	particleSet_(0),
+	startX_(x),
+	startY_(y),
+	totalTime_(0),
+	hurtTime_(0),
+	napalmTime_(0)
+{}
 
 Napalm::~Napalm()
 {

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -43,22 +43,19 @@ public:
 
 	virtual void disconnectAllClients();
 	virtual void disconnectClient(unsigned int client);
-	virtual void disconnectClient(NetBuffer &buffer, 
-		unsigned int client);
-	virtual void sendMessageServer(NetBuffer &buffer, 
-		unsigned int flags = 0);
-	virtual void sendMessageDest(NetBuffer &buffer, 
-		unsigned int destination, unsigned int flags = 0);
+	virtual void disconnectClient(NetBuffer &buffer, unsigned int client);
+	virtual void sendMessageServer(NetBuffer &buffer, unsigned int flags = 0);
+	virtual void sendMessageDest(NetBuffer &buffer, unsigned int destination, unsigned int flags = 0);
 
 protected:
-	NetServerTCPProtocol *protocol_;
-	TCPsocket server_;
-	unsigned int lastId_;
-	unsigned int firstDestination_;
 	SDLNet_SocketSet sockSet_;
+	TCPsocket server_;
+	NetServerTCPProtocol *protocol_;
+	NetMessageHandler messageHandler_;
+	unsigned int firstDestination_;
+	unsigned int lastId_;
 	std::map<unsigned int, NetServerTCPRead *> connections_;
 	SDL_mutex *setMutex_;
-	NetMessageHandler messageHandler_;
 	bool checkDeleted_;
 
 	static int threadFunc(void *);
@@ -70,7 +67,6 @@ protected:
 	unsigned int getIpAddress(unsigned int destination);
 
 private:
-
 	NetServerTCP(const NetServerTCP &);
 	const NetServerTCP & operator=(const NetServerTCP &);
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,9 +27,7 @@
 class ShieldHit : public Action
 {
 public:
-	ShieldHit(unsigned int playerId,
-		FixedVector &position,
-		fixed hitPercentage);
+	ShieldHit(unsigned int playerId, FixedVector &position, fixed hitPercentage);
 	virtual ~ShieldHit();
 
 	virtual void draw();
@@ -38,13 +36,12 @@ public:
 	virtual std::string getActionType() { return "ShieldHit"; }
 
 protected:
-	bool firstTime_;
-	fixed totalTime_;
 	unsigned int playerId_;
-	fixed hitPercentage_;
 	FixedVector position_;
+	fixed hitPercentage_;
+	fixed totalTime_;
+	bool firstTime_;
 
 };
-
 
 #endif

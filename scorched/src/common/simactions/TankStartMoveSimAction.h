@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,8 +27,13 @@ class TankStartMoveSimAction : public SimAction
 {
 public:
 	TankStartMoveSimAction();
-	TankStartMoveSimAction(unsigned int playerId, unsigned int moveId, 
-		fixed timeout, bool buying, fixed ping);
+	TankStartMoveSimAction(
+		unsigned int playerId,
+		unsigned int moveId,
+		fixed timeout,
+		bool buying,
+		fixed ping
+	);
 	virtual ~TankStartMoveSimAction();
 
 	unsigned int getPlayerId() { return playerId_; }
@@ -44,8 +49,9 @@ REGISTER_CLASS_HEADER(TankStartMoveSimAction);
 protected:
 	unsigned int playerId_;
 	unsigned int moveId_;
-	fixed timeout_, ping_;
+	fixed timeout_;
 	bool buying_;
+	fixed ping_;
 };
 
 #endif // !defined(AFX_TankStartMoveSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)

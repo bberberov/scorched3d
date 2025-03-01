@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,11 +29,12 @@ class LandscapeDefinition
 public:
 	LandscapeDefinition();
 	LandscapeDefinition(
-		const std::string &tex, 
+		const std::string &tex,
 		const std::string &defn,
 		unsigned int seed,
 		const std::string &name,
-		unsigned int definitionNumber);
+		unsigned int definitionNumber
+	);
 
 	const char *getTex() { return tex_.c_str(); }
 	const char *getDefn() { return defn_.c_str(); }
@@ -45,11 +46,11 @@ public:
 	bool readMessage(NetBufferReader &reader);
 
 protected:
-	unsigned int definitionNumber_;
 	std::string tex_;
 	std::string defn_;
 	std::string name_;
 	unsigned int seed_;
+	unsigned int definitionNumber_;
 };
 
 #endif

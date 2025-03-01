@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,9 +34,16 @@ MessageDialog *MessageDialog::instance()
 }
 
 MessageDialog::MessageDialog() :
-	showTime_(0.0f), GLWWindow("Message", 10.0f, 10.0f, 447.0f, 310.0f, 
+	GLWWindow(
+		"Message",
+		10.0f,
+		10.0f,
+		447.0f,
+		310.0f,
 		eTransparent | eNoTitle | eHideName,
-		"")
+		""
+	),
+	showTime_(0.0f)
 {
 	disabled_ = true;
 	windowLevel_ = 90000;
@@ -59,9 +66,9 @@ void MessageDialog::channelText(ChannelText &text)
 
 void MessageDialog::registeredForChannels(
 	std::list<ChannelDefinition> &registeredChannels,
-	std::list<ChannelDefinition> &availableChannels)
-{
-}
+	std::list<ChannelDefinition> &availableChannels
+)
+{}
 
 void MessageDialog::simulate(float simTime)
 {
@@ -79,7 +86,7 @@ void MessageDialog::simulate(float simTime)
 
 void MessageDialog::clear()
 {
-	texts_.clear(); 
+	texts_.clear();
 	showTime_ = 0.0f;
 }
 

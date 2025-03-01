@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,11 +31,13 @@
 #include <common/Defines.h>
 
 GLWIconListSubModItem::GLWIconListSubModItem(ModInfo::MenuEntry &modInfoEntry) :
-	modInfoEntry_(modInfoEntry), 
-	tip_(ToolTip::ToolTipHelp, 
-		LANG_STRING(modInfoEntry.shortdescription), 
-		LANG_STRING(modInfoEntry.description)),
-	icon_(0.0f, 0.0f, 40.0f, 40.0f)
+	modInfoEntry_(modInfoEntry),
+	icon_(0.0f, 0.0f, 40.0f, 40.0f),
+	tip_(
+		ToolTip::ToolTipHelp,
+		LANG_STRING(modInfoEntry.shortdescription),
+		LANG_STRING(modInfoEntry.description)
+	)
 {
 	if (S3D::fileExists(modInfoEntry_.icon.c_str()))
 	{
@@ -44,8 +46,7 @@ GLWIconListSubModItem::GLWIconListSubModItem(ModInfo::MenuEntry &modInfoEntry) :
 }
 
 GLWIconListSubModItem::~GLWIconListSubModItem()
-{
-}
+{}
 
 void GLWIconListSubModItem::draw(float x, float y, float w)
 {
@@ -75,7 +76,7 @@ ModSubSelectDialog *ModSubSelectDialog::instance()
 	return instance_;
 }
 
-ModSubSelectDialog::ModSubSelectDialog() : 
+ModSubSelectDialog::ModSubSelectDialog() :
 	GLWWindow("Mod Sub Select", 300.0f, 410.0f, eHideName, ""),
 	modInfo_("None")
 {
@@ -91,9 +92,7 @@ ModSubSelectDialog::ModSubSelectDialog() :
 }
 
 ModSubSelectDialog::~ModSubSelectDialog()
-{
-
-}
+{}
 
 void ModSubSelectDialog::setModInfo(ModInfo &modInfo)
 {
@@ -116,8 +115,7 @@ void ModSubSelectDialog::display()
 }
 
 void ModSubSelectDialog::selected(unsigned int id, int position)
-{
-}
+{}
 
 void ModSubSelectDialog::chosen(unsigned int id, int position)
 {

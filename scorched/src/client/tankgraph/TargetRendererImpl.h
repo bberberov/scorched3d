@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -52,13 +52,16 @@ public:
 	void createParticle();
 
 protected:
-	static HighlightType highlightType_;
-	bool tree_, matrixCached_;
-	Matrix16 cachedMatrix_;
 	Target *target_;
+	static HighlightType highlightType_;
+	bool particleMade_;
+	bool tree_;
+	bool matrixCached_;
+	Matrix16 cachedMatrix_;
 	TargetVisibilityPatch *currentVisibilityPatch_;
 	int patchEpoc_;
-	bool particleMade_;
+
+	double posX_, posY_, posZ_;
 
 	void drawShield(float shieldHit, float totalTime);
 	void drawParachute();
@@ -71,7 +74,6 @@ protected:
 
 	void setMovedPatch(TargetVisibilityPatch *newPatch);
 
-	double posX_, posY_, posZ_;
 };
 
 #endif // __INCLUDE_TargetRendererImplh_INCLUDE__

@@ -55,23 +55,25 @@ Image ImagePngFactory::loadFromFile(const char *filename, bool readalpha)
 
 struct user_read_struct
 {
-	user_read_struct(NetBuffer &b) : buffer(b), position(0) {}
+	user_read_struct(NetBuffer &b) :
+		buffer(b),
+		position(0)
+	{}
 
-	int position;
 	NetBuffer &buffer;
+	int position;
 };
 
-static void user_png_error(png_structp png_ptr, png_const_charp msg) 
+static void user_png_error(png_structp png_ptr, png_const_charp msg)
 {
 	longjmp(png_jmpbuf(png_ptr),1);
 }
 
-static void user_png_warning(png_structp png_ptr, png_const_charp msg) 
+static void user_png_warning(png_structp png_ptr, png_const_charp msg)
 {
 }
 
-static void user_read_fn(png_structp png_ptr,
-        png_bytep data, png_size_t length)
+static void user_read_fn(png_structp png_ptr, png_bytep data, png_size_t length)
 {
 	user_read_struct *read_io_ptr = (user_read_struct *) png_get_io_ptr(png_ptr);
 
@@ -196,8 +198,7 @@ struct user_write_struct
 	NetBuffer &buffer;
 };
 
-static void user_write_fn(png_structp png_ptr,
-        png_bytep data, png_size_t length)
+static void user_write_fn(png_structp png_ptr, png_bytep data, png_size_t length)
 {
 	user_write_struct *write_io_ptr = (user_write_struct *) png_get_io_ptr(png_ptr);
 

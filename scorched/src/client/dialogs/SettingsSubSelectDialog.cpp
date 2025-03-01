@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,12 +33,15 @@
 #include <client/ClientMain.h>
 
 SettingsSubSelectDialogListItem::SettingsSubSelectDialogListItem(
-	const char *icon, const char *name, const char *description,
-	bool selected) :
-	name_(name), 
-	selected_(0.0f, 0.0f, selected), 
-	tip_(ToolTip::ToolTipHelp, LANG_STRING(name), LANG_STRING(description)),
-	icon_(0.0f, 0.0f, 40.0f, 40.0f)
+	const char *icon,
+	const char *name,
+	const char *description,
+	bool selected
+) :
+	icon_(0.0f, 0.0f, 40.0f, 40.0f),
+	name_(name),
+	selected_(0.0f, 0.0f, selected),
+	tip_( ToolTip::ToolTipHelp, LANG_STRING(name), LANG_STRING(description) )
 {
 	if (S3D::fileExists(icon))
 	{
@@ -47,8 +50,7 @@ SettingsSubSelectDialogListItem::SettingsSubSelectDialogListItem(
 }
 
 SettingsSubSelectDialogListItem::~SettingsSubSelectDialogListItem()
-{
-}
+{}
 
 void SettingsSubSelectDialogListItem::draw(float x, float y, float w)
 {
@@ -82,7 +84,7 @@ SettingsSubSelectDialog *SettingsSubSelectDialog::instance()
 	return instance_;
 }
 
-SettingsSubSelectDialog::SettingsSubSelectDialog() : 
+SettingsSubSelectDialog::SettingsSubSelectDialog() :
 	GLWWindow("SettingsSubSelect", 700.0f, 540.0f, eHideName, "")
 {
 	// All the tabs are auto-layed out using a layout manager
@@ -263,8 +265,7 @@ SettingsSubSelectDialog::SettingsSubSelectDialog() :
 }
 
 SettingsSubSelectDialog::~SettingsSubSelectDialog()
-{
-}
+{}
 
 void SettingsSubSelectDialog::selected(unsigned int id, int position)
 {

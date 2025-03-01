@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,8 +32,14 @@ public:
 class GLWSlider : public GLWidget
 {
 public:
-	GLWSlider(float x = 0.0f, float y = 0.0f, float w = 0.0f, 
-		float min = 0.0f, float max = 100.0f, int marks = 10);
+	GLWSlider(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float min = 0.0f,
+		float max = 100.0f,
+		int marks = 10
+	);
 	virtual ~GLWSlider();
 
 	void setHandler(GLWSliderI *handler) { handler_ = handler; }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,19 +28,20 @@
 #include <GLW/GLWToolTip.h>
 #include <limits.h>
 
-ConsoleImpl::ConsoleImpl() : 
+ConsoleImpl::ConsoleImpl() :
 	GameStateI("Console"),
-	height_(0.0f), opening_(false), 
-	lines_(1000), historyPosition_(-1), font_(0),
-	showCursor_(true)
+	height_(0.0f),
+	opening_(false),
+	showCursor_(true),
+	font_(nullptr),
+	lines_(1000),
+	historyPosition_(-1)
 {
 	Logger::addLogger(this);
 }
 
 ConsoleImpl::~ConsoleImpl()
-{
-
-}
+{}
 
 void ConsoleImpl::init()
 {
@@ -52,10 +53,15 @@ void ConsoleImpl::logMessage(LoggerInfo &info)
 	addLine(false, info.getMessage());
 }
 
-void ConsoleImpl::keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest)
+void ConsoleImpl::keyboardCheck(
+	const unsigned state,
+	float frameTime,
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	// Use the history to ensure that no keystrokes are missed
 	// regardless of the framerate.

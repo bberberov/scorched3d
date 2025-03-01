@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,10 +41,10 @@ protected:
 	static ServerParams *instance_;
 
 	OptionEntryString server_;
-	OptionEntryInt exitTime_;
 	OptionEntryBool hideWindow_;
 	OptionEntryBool startCustom_;
 	OptionEntryBool exitOnSyncFailure_;
+	OptionEntryInt exitTime_;
 
 private:
 	ServerParams();

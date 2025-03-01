@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,53 +24,51 @@ ComsMessageType ComsTankChangeMessage::ComsTankChangeMessageType("ComsTankChange
 
 ComsTankChangeMessage::ComsTankChangeMessage() :
 	ComsMessage(ComsTankChangeMessageType)
-{
-}
+{}
 
 ComsTankChangeMessage::ComsTankChangeMessage(ComsTankChangeMessage &other) :
 	ComsMessage(ComsTankChangeMessageType),
 	playerId_(other.playerId_),
 	playerName_(other.playerName_),
-	playerType_(other.playerType_),
 	playerColor_(other.playerColor_),
+	tankType_(other.tankType_),
 	modelName_(other.modelName_),
 	destinationId_(other.destinationId_),
 	playerTeam_(other.playerTeam_),
+	playerType_(other.playerType_),
 	playerIconName_(other.playerIconName_),
-	spectate_(other.spectate_),
-	tankType_(other.tankType_)
+	spectate_(other.spectate_)
 {
 	playerIcon_.reset();
-	playerIcon_.addDataToBuffer(other.playerIcon_.getBuffer(), 
-		other.playerIcon_.getBufferUsed());
+	playerIcon_.addDataToBuffer(other.playerIcon_.getBuffer(), other.playerIcon_.getBufferUsed());
 }
 
+// FIXME: Check if playerIconName_ should not be initialized
 ComsTankChangeMessage::ComsTankChangeMessage(
-		unsigned int playerId,
-		const LangString &playerName,
-		Vector playerColor,
-		const char *tankType,
-		const char *modelName,
-		unsigned int destinationId,
-		unsigned int playerTeam,
-		const char *playerType,
-		bool spectate) :
+	unsigned int playerId,
+	const LangString &playerName,
+	Vector playerColor,
+	const char *tankType,
+	const char *modelName,
+	unsigned int destinationId,
+	unsigned int playerTeam,
+	const char *playerType,
+	bool spectate
+) :
 	ComsMessage(ComsTankChangeMessageType),
 	playerId_(playerId),
 	playerName_(playerName),
-	playerType_(playerType),
 	playerColor_(playerColor),
 	tankType_(tankType),
 	modelName_(modelName),
 	destinationId_(destinationId),
 	playerTeam_(playerTeam),
+	playerType_(playerType),
 	spectate_(spectate)
-{
-}
+{}
 
 ComsTankChangeMessage::~ComsTankChangeMessage()
-{
-}
+{}
 
 bool ComsTankChangeMessage::writeMessage(NetBuffer &buffer)
 {
@@ -87,8 +85,7 @@ bool ComsTankChangeMessage::writeMessage(NetBuffer &buffer)
 	if (playerIcon_.getBufferUsed() > 0)
 	{
 		buffer.addToBuffer(playerIconName_);
-		buffer.addDataToBuffer(playerIcon_.getBuffer(), 
-			playerIcon_.getBufferUsed());
+		buffer.addDataToBuffer(playerIcon_.getBuffer(), playerIcon_.getBufferUsed());
 	}
 	return true;
 }

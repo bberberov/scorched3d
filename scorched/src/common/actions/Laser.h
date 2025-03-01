@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,9 +28,13 @@
 class Laser : public Action
 {
 public:
-	Laser(Weapon *weapon, LaserParams *params,
-		FixedVector &position, FixedVector &direction,
-		WeaponFireContext &weaponContext);
+	Laser(
+		Weapon *weapon,
+		LaserParams *params,
+		FixedVector &position,
+		FixedVector &direction,
+		WeaponFireContext &weaponContext
+	);
 	virtual ~Laser();
 
 	virtual void init();
@@ -40,18 +44,22 @@ public:
 	virtual std::string getActionType() { return "Laser"; }
 
 protected:
+	Weapon *weapon_;
+	WeaponFireContext weaponContext_;
 	LaserParams *params_;
+	FixedVector position_;
+	FixedVector direction_;
 	fixed totalTime_;
 	fixed drawLength_;
 	fixed directionMagnitude_;
-	WeaponFireContext weaponContext_;
-	Weapon *weapon_;
-	FixedVector position_, direction_;
 
+	fixed laserTime_;
+	fixed hurtRadius_;
+	float angXY_;
+	float angYZ_;
+	fixed length_;
+	fixed damage_;
 	bool firstTime_;
-	fixed laserTime_, hurtRadius_;
-	float angXY_, angYZ_;
-	fixed length_, damage_;
 };
 
 #endif // __INCLUDE_Laserh_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,44 +41,66 @@ static const float shadowWidth = 10.0f;
 GLTextureReference GLWWindow::moveTexture_(ImageID(S3D::eModLocation,"", "data/windows/move.bmp"));
 GLTextureReference GLWWindow::resizeTexture_(ImageID(S3D::eModLocation, "", "data/windows/resize.bmp"));
 
-GLWWindow::GLWWindow(const std::string &name, float x, float y, 
-					 float w, float h,
-					 unsigned int states,
-					 const std::string &description) : 
-	GLWPanel(x, y, w, h), dragging_(NoDrag), 
-	needCentered_(false), showTitle_(false), 
-	disabled_(false), windowState_(states), maxWindowSize_(0.0f),
-	description_(description), toolTip_(ToolTip::ToolTipHelp, 
-	LANG_RESOURCE(name, name), LANG_RESOURCE(name + "_window", description)),
-	initPosition_(false), windowLevel_(100000)
+GLWWindow::GLWWindow(
+	const std::string &name,
+	float x,
+	float y,
+	float w,
+	float h,
+	unsigned int states,
+	const std::string &description
+) :
+	GLWPanel(x, y, w, h),
+	dragging_(NoDrag),
+	showTitle_(false),
+	needCentered_(false),
+	disabled_(false),
+	initPosition_(false),
+	windowState_(states),
+	windowLevel_(100000),
+	description_(description),
+	maxWindowSize_(0.0f),
+	toolTip_(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE(name, name),
+		LANG_RESOURCE(name + "_window", description)
+	)
 {
 	setName(name);
 	getDrawPanel() = false;
 }
 
-GLWWindow::GLWWindow(const std::string &name, float w, float h,
-					 unsigned int states,
-					 const std::string &description) :
-	GLWPanel(0.0f, 0.0f, w, h), dragging_(NoDrag), 
-	needCentered_(true), showTitle_(false), 
-	disabled_(false), windowState_(states),
-	description_(description), toolTip_(ToolTip::ToolTipHelp, 
-	LANG_RESOURCE(name, name), LANG_RESOURCE(name + "_window", description)),
-	initPosition_(false), windowLevel_(100000)
+GLWWindow::GLWWindow(
+	const std::string &name,
+	float w,
+	float h,
+	unsigned int states,
+	const std::string &description
+) :
+	GLWPanel(0.0f, 0.0f, w, h),
+	dragging_(NoDrag),
+	showTitle_(false),
+	needCentered_(true),
+	disabled_(false),
+	initPosition_(false),
+	windowState_(states),
+	windowLevel_(100000),
+	description_(description),
+	toolTip_(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE(name, name),
+		LANG_RESOURCE(name + "_window", description)
+	)
 {
 	setName(name);
 	getDrawPanel() = false;
 }
 
 GLWWindow::~GLWWindow()
-{
-
-}
+{}
 
 void GLWWindow::windowInit(const unsigned state)
-{
-
-}
+{}
 
 void GLWWindow::drawOutlinePoints(float x, float y, float w, float h)
 {
@@ -480,9 +502,13 @@ void GLWWindow::mouseWheel(float x, float y, float z, bool &skipRest)
 	GLWPanel::mouseWheel(x, y, z, skipRest);
 }
 
-void GLWWindow::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void GLWWindow::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	if (disabled_) return;
 

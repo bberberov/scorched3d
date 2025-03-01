@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,12 +29,10 @@
 #include <tankgraph/ModelRendererTank.h>
 #include <vector>
 
-class GLWTankViewer : public GLWidget,
-					  public GLWDropDownI
+class GLWTankViewer : public GLWidget, public GLWDropDownI
 {
 public:
-	GLWTankViewer(float x = 0.0f, float y = 0.0f, 
-		int numH = 0, int numV = 0);
+	GLWTankViewer(float x = 0.0f, float y = 0.0f, int numH = 0, int numV = 0);
 	virtual ~GLWTankViewer();
 
 	void init();
@@ -52,8 +50,7 @@ public:
 	virtual void simulate(float frameTime);
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, 
-						   bool &skipRest);
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool &skipRest );
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 
 	REGISTER_CLASS_HEADER(GLWTankViewer);
@@ -64,7 +61,6 @@ protected:
 		ModelRendererTank *mesh;
 	};
 
-	GLWDropDownText catagoryChoice_;
 	GLWScrollW scrollBar_;
 	GLWPanel infoWindow_;
 	ToolTip toolTip_;
@@ -77,6 +73,7 @@ protected:
 	int selected_;
 	int team_;
 	std::string tankType_;
+	GLWDropDownText catagoryChoice_;
 
 	void refreshAvailableModels();
 	void setTankModels(std::vector<ModelEntry> &models);

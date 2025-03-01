@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,11 +25,10 @@
 
 GLTextureReferenceData::GLTextureReferenceData(const ImageID &imageId, unsigned texState) :
 	imageId_(imageId),
+	texture_(nullptr),
 	texState_(texState),
-	texture_(0),
 	referenceCount_(0)
-{
-}
+{}
 
 GLTextureReferenceData::~GLTextureReferenceData()
 {
@@ -39,7 +38,7 @@ GLTextureReferenceData::~GLTextureReferenceData()
 void GLTextureReferenceData::reset()
 {
 	delete texture_;
-	texture_ = 0;
+	texture_ = nullptr;
 }
 
 GLTexture *GLTextureReferenceData::getTexture()

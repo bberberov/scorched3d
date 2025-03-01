@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,19 +31,28 @@ public:
 	VisibilityPatchQuad();
 	~VisibilityPatchQuad();
 
-	void setLocation(VisibilityPatchGrid *patchGrid, int x, int y, int size, 
-		int mapwidth, int mapheight, int roofBaseHeight);
+	void setLocation(
+		VisibilityPatchGrid *patchGrid,
+		int x,
+		int y,
+		int size,
+		int mapwidth,
+		int mapheight,
+		int roofBaseHeight
+	);
 	void calculateGroundVisibility(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
 	void calculateRoofVisibility(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
 
 protected:
-	int x_, y_;
+	int x_;
+	int y_;
 	int size_;
-	Vector position_, roofPosition_;
+	Vector position_;
+	Vector roofPosition_;
 
-	WaterVisibilityPatch *waterVisibilityPatch_;
 	LandVisibilityPatch *landVisibilityPatch_;
 	RoofVisibilityPatch *roofVisibilityPatch_;
+	WaterVisibilityPatch *waterVisibilityPatch_;
 	TargetVisibilityPatch *targetVisibilityPatch_;
 	VisibilityPatchQuad *topLeft_, *topRight_;
 	VisibilityPatchQuad *botLeft_, *botRight_;

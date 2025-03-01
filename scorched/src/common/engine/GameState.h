@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -48,10 +48,10 @@ public:
 	bool getUsed() { return used_; }
 
 protected:
-	bool used_;
 	std::string name_;
 	unsigned int start_;
 	unsigned int total_;
+	bool used_;
 };
 
 class MainLoop;
@@ -60,12 +60,12 @@ class GameState : public MainLoopI
 public:
 	enum MouseButton
 	{
-		MouseButtonLeft = 0x1,
-		MouseButtonMiddle = 0x2,
-		MouseButtonRight = 0x4,
-		MouseButtonLeftDoubleClick = 0x8,
+		MouseButtonLeft              = 0x1,
+		MouseButtonMiddle            = 0x2,
+		MouseButtonRight             = 0x4,
+		MouseButtonLeftDoubleClick   = 0x8,
 		MouseButtonMiddleDoubleClick = 0x16,
-		MouseButtonRightDoubleClick = 0x32
+		MouseButtonRightDoubleClick  = 0x32
 	};
 
 	GameState(MainLoop *mainLoop, const char *name);
@@ -141,32 +141,32 @@ protected:
 		StateIList subLoopList;
 	};
 
-	struct GameStateEntry 
+	struct GameStateEntry
 	{
 		// Classes called for every loop
-		std::list<GameStateSubEntry> loopList; 
+		std::list<GameStateSubEntry> loopList;
 
 		 // Possible stimuli in this state
 		std::map<unsigned, unsigned> stimList;
 		// Stimili checked every loop
-		StiulusIList condStimList; 
+		StiulusIList condStimList;
 
 		// Classes called on key events
-		StateIList subKeyList; 
+		StateIList subKeyList;
 		// Classes called on mouse down L
-		StateIList subMouseDownLeftList; 
+		StateIList subMouseDownLeftList;
 		// Classes called on mouse down M
-		StateIList subMouseDownMiddleList; 
+		StateIList subMouseDownMiddleList;
 		// Classes called on mouse down R
 		StateIList subMouseDownRightList;
 		// Classes called on mouse up L
 		StateIList subMouseUpLeftList;
 		// Classes called on mouse up M
-		StateIList subMouseUpMiddleList; 
+		StateIList subMouseUpMiddleList;
 		// Classes called on mouse up R
 		StateIList subMouseUpRightList;
 		// Classes called on mouse drag L
-		StateIList subMouseDragLeftList; 
+		StateIList subMouseDragLeftList;
 		// Classes called on mouse drag M
 		StateIList subMouseDragMiddleList;
 		// Classes called on mouse drag R
@@ -177,12 +177,13 @@ protected:
 		StateIList enterStateList;
 	};
 
-	unsigned stateCount_;
-	unsigned currentState_; 
-	GameStateI *currentStateI_;
-	GameStateEntry *currentEntry_; 
-	std::map<unsigned, GameStateEntry> stateList_;
+	MainLoop *mainLoop_;
 	std::string name_;
+	std::map<unsigned, GameStateEntry> stateList_;
+	unsigned stateCount_;
+	unsigned currentState_;
+	GameStateI *currentStateI_;
+	GameStateEntry *currentEntry_;
 	bool fakeMiddleButton_;
 	bool stateLogging_;
 	bool stateTimeLogging_;
@@ -192,26 +193,26 @@ protected:
 	Clock overallTimerClock_;
 	Clock doubleClickClock_;
 	TimerInfo timers_[50];
-	MainLoop *mainLoop_;
 
 	// Dragging stuff
 	// Up or down for each button (bit field)
-	unsigned currentMouseState_; 
+	unsigned currentMouseState_;
 	int mouseLDragX_, mouseLDragY_;
 	int mouseMDragX_, mouseMDragY_;
 	int mouseRDragX_, mouseRDragY_;
 	int mouseDoubleX_, mouseDoubleY_;
 	int currentMouseX_, currentMouseY_;
 
-	void mouseMoveCall(const unsigned state, MouseButton button, 
-		StateIList &currentList, 
+	void mouseMoveCall(
+		const unsigned state,
+		MouseButton button,
+		StateIList &currentList,
 		int mx, int my,
-		int dx, int dy);
+		int dx, int dy
+	);
 	void mouseUpDown(MouseButton button, bool down, int x, int y);
-	GameState::GameStateEntry* 
-		getEntry(const unsigned state);
-	GameState::GameStateSubEntry* 
-		getSubEntry(const unsigned state, GameStateI *entry);
+	GameState::GameStateEntry* getEntry(const unsigned state);
+	GameState::GameStateSubEntry* getSubEntry(const unsigned state, GameStateI *entry);
 	void clearTimers(bool printTimers = false);
 
 };

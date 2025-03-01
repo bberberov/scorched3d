@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,16 +33,16 @@ class GLWPanel : public GLWidget
 public:
 	enum LayoutFlags
 	{
-		SpaceRight = 1,
-		SpaceLeft = 2,
-		SpaceTop = 4,
-		SpaceBottom = 8,
-		SpaceAll = 16,
-		AlignLeft = 32,
-		AlignRight = 64,
+		SpaceRight           = 1,
+		SpaceLeft            = 2,
+		SpaceTop             = 4,
+		SpaceBottom          = 8,
+		SpaceAll             = 16,
+		AlignLeft            = 32,
+		AlignRight           = 64,
 		AlignCenterLeftRight = 128,
-		AlignTop = 256,
-		AlignBottom = 512,
+		AlignTop             = 256,
+		AlignBottom          = 512,
 		AlignCenterTopBottom = 1024
 	};
 	enum LayoutType
@@ -55,23 +55,26 @@ public:
 
 	struct GLWPanelEntry
 	{
-		GLWPanelEntry(GLWidget *widget, GLWCondition *con,
-			unsigned int flags, float width); 
+		GLWPanelEntry(GLWidget *widget, GLWCondition *con, unsigned int flags, float width);
 
 		GLWidget *widget;
 		GLWCondition *condition;
+		unsigned flags;
 		float leftSpace;
 		float rightSpace;
 		float topSpace;
 		float bottomSpace;
-		unsigned flags;
 	};
 
-	GLWPanel(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
+	GLWPanel(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
 		bool depressed = false,
 		bool visible = true,
-		bool ridge = false);
+		bool ridge = false
+	);
 	virtual ~GLWPanel();
 
 	virtual void simulate(float frameTime);
@@ -79,9 +82,13 @@ public:
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 	virtual void display();
 	virtual void hide();
@@ -97,9 +104,12 @@ public:
 	virtual void setGridWidth(unsigned int grid);
 	virtual unsigned int getGridWidth();
 
-	GLWidget *addWidget(GLWidget *widget, GLWCondition *condition = 0, 
-		unsigned int flags = 0, 
-		float width = 0.0f);
+	GLWidget *addWidget(
+		GLWidget *widget,
+		GLWCondition *condition = 0,
+		unsigned int flags = 0,
+		float width = 0.0f
+	);
 	std::list<GLWPanelEntry> &getWidgets() { return widgets_; }
 	GLWidget *getWidgetByName(const char *name);
 

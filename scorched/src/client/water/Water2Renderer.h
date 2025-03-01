@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -55,8 +55,10 @@ protected:
 	GLTextureBase *noShaderWaterTexture_;
 	GLFrameBufferObject reflectionBuffer_;
 	Vector landscapeSize_;
-	Vector windDir1_, windDir2_;
-	float windSpeed1_, windSpeed2_;
+	Vector windDir1_;
+	Vector windDir2_;
+	float windSpeed1_;
+	float windSpeed2_;
 
 	Water2Patches *currentPatch_;
 	GLSLShaderSetup *waterShader_;

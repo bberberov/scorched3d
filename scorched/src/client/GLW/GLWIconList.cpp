@@ -34,10 +34,10 @@ GLWIconList::GLWIconList(
 	unsigned int flags
 ) :
 	GLWidget(x, y, w, h),
-	squaresHeight_(squaresHeight),
 	scrollBar_(x + w_ - 17.0f, y + 2.0f, h_ - 4.0f, 0, 0, int(h / squaresHeight)),
+	handler_(nullptr),
+	squaresHeight_(squaresHeight),
 	selected_(-1),
-	handler_(0),
 	flags_(flags)
 {}
 
@@ -91,7 +91,7 @@ void GLWIconList::draw()
 	int min = MIN((int) items_.size(), scrollBar_.getCurrent());
 	int max = MIN((int) items_.size(), scrollBar_.getCurrent() + scrollBar_.getSee());
 
-	float x = x_ + 5.0f; 
+	float x = x_ + 5.0f;
 	float y = y_ + h_;
 	for (int i=min; i<max; i++)
 	{

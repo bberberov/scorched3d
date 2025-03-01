@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,8 +31,7 @@
 #include <sound/SoundSource.h>
 #include <console/ConsoleRule.h>
 
-#define CACHE_SOUND(var, filename) 										\
-		static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer(filename);
+#define CACHE_SOUND(var, filename) static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer(filename);
 
 class PlayingSoundSource;
 class Sound : public GameStateI

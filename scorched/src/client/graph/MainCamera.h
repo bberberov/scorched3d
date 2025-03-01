@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,36 +39,44 @@ public:
 	bool getShowArena() { return showArena_; }
 
 	// Inherited from GameStateI
-	virtual void simulate(const unsigned state, 
-		float frameTime);
+	virtual void simulate(const unsigned state, float frameTime);
 	virtual void draw(const unsigned state);
-	virtual void mouseWheel(const unsigned state, 
-		int x, int y, int z, bool &skipRest);
-	virtual void mouseDown(const unsigned state, 
-		GameState::MouseButton button, int x, int y, bool &skipRest);
-	virtual void mouseUp(const unsigned state, 
-		GameState::MouseButton button, int x, int y, bool &skipRest);
-	virtual void mouseDrag(const unsigned state, 
+	virtual void mouseWheel(const unsigned state, int x, int y, int z, bool &skipRest);
+	virtual void mouseDown(const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest);
+	virtual void mouseUp(const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest);
+	virtual void mouseDrag(
+		const unsigned state,
 		GameState::MouseButton button,
-		int mx, int my, int x, int y, bool &skipRest);
+		int mx,
+		int my,
+		int x,
+		int y,
+		bool &skipRest
+	);
 	virtual void keyboardCheck(
-		const unsigned state, float frameTime, 
-		char *buffer, unsigned int keyState,
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+		const unsigned state,
+		float frameTime,
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 	// Inherited from GLMenuI
 	virtual bool getEnabled(const char* menuName);
-	virtual void menuSelection(const char* menuName, 
-		const int position, GLMenuItem &item);
-	virtual bool getMenuItems(const char* menuName, 
-		std::list<GLMenuItem> &result);
+	virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
+	virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
 
 	// Class to save the screen shots
 	class SaveScreen : public GameStateI
 	{
 	public:
-		SaveScreen() : GameStateI("SaveScreen"), saveScreen_(false), saveScreenTest_(false) {}
+		SaveScreen() :
+			GameStateI("SaveScreen"),
+			saveScreen_(false),
+			saveScreenTest_(false)
+		{}
 		virtual void draw(const unsigned state);
 
 		bool saveScreen_;
@@ -78,14 +86,19 @@ public:
 	class Precipitation : public GameStateI
 	{
 	public:
-		Precipitation() : GameStateI("Precipitation") {}
+		Precipitation() :
+			GameStateI("Precipitation")
+		{}
 		virtual void draw(const unsigned state);
 	} precipitation_;
 
 protected:
 	static MainCamera *instance_;
 	float waterTransparency_;
-	bool mouseDown_, keyDown_, scrolling_, showArena_;
+	bool mouseDown_;
+	bool keyDown_;
+	bool scrolling_;
+	bool showArena_;
 	TargetCamera targetCam_;
 	// Quick key settings
 	std::map<int, std::pair<Vector, Vector> > quickKeys_;

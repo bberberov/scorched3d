@@ -26,22 +26,28 @@
 #include <graph/OptionsDisplay.h>
 #include <image/ImageFactory.h>
 
-Water2Patches::Water2Patches() : patches_(0), 
-	size_(0), totalSize_(0), patchSize_(0), bufferObject_(0)
-{
-}
+Water2Patches::Water2Patches() :
+	size_(0),
+	totalSize_(0),
+	patchSize_(0),
+	bufferObject_(nullptr),
+	patches_(nullptr)
+{}
 
 Water2Patches::~Water2Patches()
 {
 	delete [] patches_;
-	patches_ = 0;
+	patches_ = nullptr;
 	delete bufferObject_;
-	bufferObject_ = 0;
+	bufferObject_ = nullptr;
 }
 
-void Water2Patches::generate(Water2Points &heights, 
-	unsigned int totalSize, unsigned int patchSize,
-	float waterHeight)
+void Water2Patches::generate(
+	Water2Points &heights,
+	unsigned int totalSize,
+	unsigned int patchSize,
+	float waterHeight
+)
 {
 	size_ = totalSize / patchSize;
 	totalSize_= totalSize;

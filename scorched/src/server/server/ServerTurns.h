@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,7 @@
 class Tanket;
 class ComsPlayedMoveMessage;
 class fixed;
-class ServerTurns 
+class ServerTurns
 {
 public:
 	ServerTurns(bool waitForShots);
@@ -56,23 +56,20 @@ protected:
 	};
 	struct PlayingPlayer
 	{
-		PlayingPlayer(
-			unsigned int moveId,
-			fixed moveTime) :
+		PlayingPlayer( unsigned int moveId, fixed moveTime ) :
 			startedMove_(false),
 			moveId_(moveId),
 			moveTime_(moveTime)
-		{
-		}
+		{}
 
-		unsigned int moveId_;
 		bool startedMove_;
+		unsigned int moveId_;
 		fixed moveTime_;
 	};
 
-	unsigned int nextNonNormalMoveId_;
-	bool waitForShots_;
 	ShotsState shotsState_;
+	bool waitForShots_;
+	unsigned int nextNonNormalMoveId_;
 	SimulatorIAdapter<ServerTurns> *shotsStarted_, *moveStarted_;
 	std::map<unsigned int, PlayingPlayer*> playingPlayers_;
 	std::map<unsigned int, fixed> timedPlayers_;

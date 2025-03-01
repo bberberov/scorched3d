@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,10 +38,13 @@ public:
 		eFlagPassword = 1
 	};
 
-	GLWTextBox(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, 
+	GLWTextBox(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
 		const LangString &startText = LangString(),
-		unsigned int flags = 0);
+		unsigned int flags = 0
+	);
 	virtual ~GLWTextBox();
 
 	void setHandler(GLWTextBoxI *handler) { handler_ = handler; }
@@ -49,9 +52,13 @@ public:
 	virtual void setParent(GLWPanel *parent);
 	virtual void draw();
 	virtual void simulate(float frameTime);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 
 	void setCurrent();
@@ -65,12 +72,14 @@ public:
 	REGISTER_CLASS_HEADER(GLWTextBox);
 
 protected:
-	float ctime_;
-	bool cursor_, current_;
-	bool allowUnicode_;
-	unsigned int maxTextLen_, flags_;
-	LangString text_;
 	GLWTextBoxI *handler_;
+	float ctime_;
+	bool cursor_;
+	bool current_;
+	bool allowUnicode_;
+	unsigned int maxTextLen_;
+	unsigned int flags_;
+	LangString text_;
 
 };
 

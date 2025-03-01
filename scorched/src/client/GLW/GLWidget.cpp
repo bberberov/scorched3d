@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,15 +30,18 @@
 unsigned int GLWidget::nextId_ = 0;
 static GLuint listNo = 0;
 
-GLWidget::GLWidget(float x, float y, float w, float h) : 
-	id_(++nextId_), parent_(0), userData_(0), visible_(true),
-	x_(x), y_(y), w_(w), h_(h), tooltip_(0), tooltipTransparent_(false)
-{
-}
+GLWidget::GLWidget(float x, float y, float w, float h) :
+	id_(++nextId_),
+	x_(x), y_(y), w_(w), h_(h),
+	tooltip_(nullptr),
+	tooltipTransparent_(false),
+	visible_(true),
+	parent_(nullptr),
+	userData_(nullptr)
+{}
 
 GLWidget::~GLWidget()
-{
-}
+{}
 
 void GLWidget::draw()
 {
@@ -74,14 +77,10 @@ void GLWidget::draw()
 }
 
 void GLWidget::layout()
-{
-
-}
+{}
 
 void GLWidget::simulate(float frameTime)
-{
-
-}
+{}
 
 void GLWidget::setParent(GLWPanel *parent)
 {
@@ -89,41 +88,31 @@ void GLWidget::setParent(GLWPanel *parent)
 }
 
 void GLWidget::mouseDown(int button, float x, float y, bool &skipRest)
-{
-
-}
+{}
 
 void GLWidget::mouseUp(int button, float x, float y, bool &skipRest)
-{
-
-}
+{}
 
 void GLWidget::mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest)
-{
+{}
 
-}
-
-void GLWidget::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
-{
-
-}
+void GLWidget::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+	)
+{}
 
 void GLWidget::mouseWheel(float x, float y, float z, bool &skipRest)
-{
-
-}
+{}
 
 void GLWidget::display()
-{
-
-}
+{}
 
 void GLWidget::hide()
-{
-
-}
+{}
 
 bool GLWidget::initFromXML(XMLNode *node)
 {
@@ -145,12 +134,10 @@ bool GLWidget::initFromXML(XMLNode *node)
 }
 
 void GLWidget::saveSettings(XMLNode *node)
-{
-}
+{}
 
 void GLWidget::loadSettings(XMLNode *node, bool resetPositions)
-{
-}
+{}
 
 void GLWidget::drawWholeCircle(bool cap)
 {
@@ -253,15 +240,12 @@ bool GLWidget::inBox(float posX, float posY, float x, float y, float w, float h)
 }
 
 GLWCondition::GLWCondition()
-{
-}
+{}
 
 GLWCondition::~GLWCondition()
-{
-}
+{}
 
 bool GLWCondition::initFromXML(XMLNode *node)
 {
 	return true;
 }
-

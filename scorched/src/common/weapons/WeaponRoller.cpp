@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,26 +34,31 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponRoller);
 
-WeaponRoller::WeaponRoller() : 
-	shieldHurtFactorExp_("WeaponRoller::shieldHurtFactorExp", 0), 
-	windFactorExp_("WeaponRoller::windFactorExp", 1), 
+WeaponRoller::WeaponRoller() :
+	collisionAction_(nullptr),
+	shieldHurtFactorExp_("WeaponRoller::shieldHurtFactorExp", 0),
+	windFactorExp_("WeaponRoller::windFactorExp", 1),
 	gravityFactorExp_("WeaponRoller::gravityFactorExp", 1),
-	maintainVelocity_(false), roll_(true),
-	dampenVelocityExp_("WeaponRoller::dampenVelocityExp", 1), stepSize_(true, 100),
-	timeout_("WeaponRoller::timeout", 0), 
-	collisionAction_(0), stickyShields_(false),
-	landscapeCollision_(true), shieldCollision_(true), tankCollision_(true), targetCollision_(true),
-	noCameraTrack_(false), scale_("WeaponRoller::scale", 1),
+	dampenVelocityExp_("WeaponRoller::dampenVelocityExp", 1),
+	timeout_("WeaponRoller::timeout", 0),
+	scale_("WeaponRoller::scale", 1),
 	timeExp_("WeaponRoller::timeExp"),
-	numberRollers_("WeaponRoller::numberRollers")
-{
-
-}
+	numberRollers_("WeaponRoller::numberRollers"),
+	stepSize_(true, 100),
+	maintainVelocity_(false),
+	roll_(true),
+	stickyShields_(false),
+	landscapeCollision_(true),
+	shieldCollision_(true),
+	tankCollision_(true),
+	targetCollision_(true),
+	noCameraTrack_(false)
+{}
 
 WeaponRoller::~WeaponRoller()
 {
 	delete collisionAction_;
-	collisionAction_ = 0;
+	collisionAction_ = nullptr;
 }
 
 bool WeaponRoller::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -103,8 +108,7 @@ bool WeaponRoller::parseXML(AccessoryCreateContext &context, XMLNode *accessoryN
 	XMLNode *subNode = 0;
 	if (!accessoryNode->getNamedChild("collisionaction", subNode)) return false;
 
-	AccessoryPart *accessory = context.getAccessoryStore().
-		createAccessoryPart(context, parent_, subNode);
+	AccessoryPart *accessory = context.getAccessoryStore().createAccessoryPart(context, parent_, subNode);
 	if (!accessory || accessory->getType() != AccessoryPart::AccessoryWeapon)
 	{
 		return subNode->returnError("Failed to find sub weapon, not a weapon");
@@ -119,11 +123,16 @@ bool WeaponRoller::parseXML(AccessoryCreateContext &context, XMLNode *accessoryN
 	return true;
 }
 
-void WeaponRoller::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &oldposition, FixedVector &velocity)
+void WeaponRoller::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &oldposition,
+	FixedVector &velocity
+)
 {
 	fixed minHeight = context.getLandscapeMaps().getGroundMaps().getInterpHeight(
-		oldposition[0], oldposition[1]);
+		oldposition[0], oldposition[1]
+	);
 
 	// Make sure position is not underground
 	if (oldposition[2] < minHeight)
@@ -144,14 +153,12 @@ void WeaponRoller::fireWeapon(ScorchedContext &context,
 		// Make a slightly different starting position
 		position[0] += random.getRandFixed("WeaponRoller") * 2 - 1;
 		position[1] += random.getRandFixed("WeaponRoller") * 2 - 1;
-		fixed minHeight = context.getLandscapeMaps().getGroundMaps().getInterpHeight(
-			position[0], position[1]) + 1;
+		fixed minHeight = context.getLandscapeMaps().getGroundMaps().getInterpHeight(position[0], position[1]) + 1;
 		if (position[2] < minHeight) position[2] = minHeight;
 				
 		// Check if we have hit the roof (quite litteraly)
 		{
-			fixed maxHeight = context.getLandscapeMaps().getRoofMaps().getInterpRoofHeight(
-				position[0], position[1]);
+			fixed maxHeight = context.getLandscapeMaps().getRoofMaps().getInterpRoofHeight(position[0], position[1]);
 			if (position[2] > maxHeight - 1)
 			{
 				position[2] = maxHeight - 1;
@@ -192,9 +199,12 @@ void WeaponRoller::fireWeapon(ScorchedContext &context,
 	}
 }
 
-void WeaponRoller::addRoller(ScorchedContext &context,
+void WeaponRoller::addRoller(
+	ScorchedContext &context,
 	WeaponFireContext &weaponContext,
-	FixedVector &position, FixedVector &velocity)
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	RandomGenerator &random = context.getSimulator().getRandomGenerator();
 
@@ -211,5 +221,6 @@ void WeaponRoller::addRoller(ScorchedContext &context,
 	}
 	
 	context.getActionController().addAction(
-		new ShotBounce(this, position, newVelocity, weaponContext));
+		new ShotBounce(this, position, newVelocity, weaponContext)
+	);
 }

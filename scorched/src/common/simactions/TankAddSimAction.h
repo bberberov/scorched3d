@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,15 @@ class TankAddSimAction : public SimAction
 public:
 	TankAddSimAction();
 	TankAddSimAction(
-		unsigned int playerId, unsigned int destinationId,
-		const std::string &uniqueId, const std::string &sUID, const std::string &hostDesc,
-		unsigned int ipAddress, 
-		const LangString &playerName, const std::string &aiName);
+		unsigned int playerId,
+		unsigned int destinationId,
+		const std::string &uniqueId,
+		const std::string &sUID,
+		const std::string &hostDesc,
+		unsigned int ipAddress,
+		const LangString &playerName,
+		const std::string &aiName
+	);
 	virtual ~TankAddSimAction();
 
 	virtual bool invokeAction(ScorchedContext &context);
@@ -45,11 +50,15 @@ public:
 
 REGISTER_CLASS_HEADER(TankAddSimAction);
 protected:
-	unsigned int playerId_, destinationId_;
-	std::string uniqueId_, sUID_, hostDesc_, aiName_;
-	LangString playerName_;
-	NetBuffer scoreNetBuffer_;
+	unsigned int playerId_;
+	unsigned int destinationId_;
+	std::string uniqueId_;
+	std::string sUID_;
+	std::string hostDesc_;
 	unsigned int ipAddress_;
+	LangString playerName_;
+	std::string aiName_;
+	NetBuffer scoreNetBuffer_;
 };
 
 #endif // !defined(AFX_TankAddSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)

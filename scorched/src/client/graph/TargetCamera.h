@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,7 @@
 #include <common/Keyboard.h>
 
 class Tank;
-class TargetCamera 
+class TargetCamera
 {
 public:
 	enum CamType
@@ -62,17 +62,17 @@ public:
 	void draw();
 	void drawPrecipitation();
 	void mouseWheel(int x, int y, int z, bool &skipRest);
-	void mouseDown(GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	void mouseUp(GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	void mouseDrag(GameState::MouseButton button,
-		int mx, int my, int x, int y, bool &skipRest);
+	void mouseDown(GameState::MouseButton button, int x, int y, bool &skipRest);
+	void mouseUp(GameState::MouseButton button, int x, int y, bool &skipRest);
+	void mouseDrag(GameState::MouseButton button, int mx, int my, int x, int y, bool &skipRest);
 	bool keyboardCheck(
-		float frameTime, 
-		char *buffer, unsigned int keyState,
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+		float frameTime,
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 	static const char **getCameraNames();
 	static ToolTip *getCameraToolTips();
@@ -86,9 +86,11 @@ protected:
 	static TargetCamera *currentTargetCamera_;
 	GLCamera mainCam_;
 	CamType cameraPos_;
-	ParticleEmitter rainEmitter_, snowEmitter_;
+	ParticleEmitter rainEmitter_;
+	ParticleEmitter snowEmitter_;
 	ParticleEngine particleEngine_;
-	float totalTime_, objectTime_;
+	float totalTime_;
+	float objectTime_;
 	int viewObject_;
 	int dragXStart_, dragYStart_;
 	bool dragging_;
@@ -102,4 +104,3 @@ protected:
 };
 
 #endif // !defined(AFX_TARGETCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_)
-

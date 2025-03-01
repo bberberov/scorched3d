@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,28 +31,32 @@
 #include <GLW/GLWTankViewer.h>
 
 class Tank;
-class PlayerDialog : public GLWWindow,
-	public GLWButtonI, public GLWDropDownI
+class PlayerDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
 	void initialize();
 
 	// Inherited from GLWWindow
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 	// Inherited from GLWButtonI
 	virtual void buttonDown(unsigned int id);
 
 	// GLWDropDownI
-	virtual void select(unsigned int id, const int pos, 
-		GLWSelectorEntry value);
+	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
 
 protected:
-	PlayerDialog(const std::string &name, 
-		unsigned int states, 
-		const std::string &description);
+	PlayerDialog(
+		const std::string &name,
+		unsigned int states,
+		const std::string &description
+	);
 	virtual ~PlayerDialog();
 
 	GLWDropDownText *aiTypeDropDown_;

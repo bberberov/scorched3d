@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,8 +33,8 @@ public:
 
 protected:
 	std::string name_;
-	unsigned int achievementId_;
 	EventHandlerDataBase *database_;
+	unsigned int achievementId_;
 
 	unsigned int getRank(unsigned int playerId);
 	void awardAchievement(unsigned int playerId, unsigned int rank);

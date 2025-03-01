@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,9 +29,9 @@ public:
 
 	enum Borders
 	{
-		BorderLeft =   0x00000007,
-		BorderRight =  0x00000038,
-		BorderTop =    0x000001C0,
+		BorderLeft   = 0x00000007,
+		BorderRight  = 0x00000038,
+		BorderTop    = 0x000001C0,
 		BorderBottom = 0x00000E00
 	};
 
@@ -45,7 +45,8 @@ public:
 	int getMaxIndex() { return maxIndex_; }
 
 protected:
-	int size_, minIndex_, maxIndex_;
+	int size_;
+	int minIndex_, maxIndex_;
 	unsigned short *indices_;
 	unsigned int bufferOffSet_;
 };

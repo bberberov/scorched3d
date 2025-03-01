@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,20 +28,25 @@
 #include <common/OptionsScorched.h>
 
 TanketShotInfo::TanketShotInfo(ScorchedContext &context) :
-	turretRotXY_(0), turretRotYZ_(0),
-	power_(1000), maxPower_(1000),
-	tanket_(0), context_(context),
-	selectPositionX_(0), selectPositionY_(0),
-	moveId_(0), missedMoves_(0), skippedShots_(0),
-	useNormalMoves_(true)
+	context_(context),
+	tanket_(nullptr),
+	useNormalMoves_(true),
+	moveId_(0),
+	missedMoves_(0),
+	skippedShots_(0),
+	turretRotXY_(0),
+	turretRotYZ_(0),
+	power_(1000),
+	maxPower_(1000),
+	selectPositionX_(0),
+	selectPositionY_(0)
 {
 	turretRotXY_ = 0;
 	turretRotYZ_ = 45;
 }
 
 TanketShotInfo::~TanketShotInfo()
-{
-}
+{}
 
 void TanketShotInfo::newGame()
 {

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,10 +35,13 @@ class GLTextureBase;
 class GLMenuItem
 {
 public:
-	GLMenuItem(const LangString &text, 
-		ToolTip *tooltip = 0, bool selected = false, 
+	GLMenuItem(
+		const LangString &text,
+		ToolTip *tooltip = 0,
+		bool selected = false,
 		GLTextureBase *texture = 0,
-		void *userData = 0);
+		void *userData = 0
+	);
 
 	const LangString &getText() { return menuText_; }
 	ToolTip *getToolTip() { return tip_; }
@@ -51,12 +54,13 @@ public:
 protected:
 	LangString menuText_;
 	ToolTip *tip_;
+	bool selected_;
+	bool seperator_;
 	GLTextureBase *texture_;
-	bool selected_, seperator_;
 	void *userData_;
 };
 
-class GLMenuI  
+class GLMenuI
 {
 public:
 	virtual ~GLMenuI();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,21 +31,32 @@
 #include <graph/OptionsDisplay.h>
 #include <float.h>
 
-TargetRendererImplTarget::TargetRendererImplTarget(Target *target,
-	ModelID model, ModelID burntModel, 
-	float scale, float color, bool billboard) :
+TargetRendererImplTarget::TargetRendererImplTarget(
+	Target *target,
+	ModelID model,
+	ModelID burntModel,
+	float scale,
+	float color,
+	bool billboard
+) :
 	TargetRendererImpl(target),
-	modelId_(model), burntModelId_(burntModel),
+	modelId_(model),
+	burntModelId_(burntModel),
 	target_(target),
 	burnt_(false),
-	shieldHit_(0.0f), totalTime_(0.0f),
-	targetTips_(target),
-	scale_(scale), color_(color), billboard_(billboard)
+	billboard_(billboard),
+	shieldHit_(0.0f),
+	totalTime_(0.0f),
+	scale_(scale),
+	color_(color),
+	targetTips_(target)
 {
 	modelRenderer_ = new ModelRendererSimulator(
-		ModelRendererStore::instance()->loadModel(model));
+		ModelRendererStore::instance()->loadModel(model)
+	);
 	burntModelRenderer_ = new ModelRendererSimulator(
-		ModelRendererStore::instance()->loadModel(burntModel));
+		ModelRendererStore::instance()->loadModel(burntModel)
+	);
 
 	if (burntModelId_.getType()[0] == 'T' ||
 		modelId_.getType()[0] == 'T')
@@ -199,8 +210,7 @@ void TargetRendererImplTarget::shieldHit()
 }
 
 void TargetRendererImplTarget::fired()
-{
-}
+{}
 
 void TargetRendererImplTarget::targetBurnt()
 {

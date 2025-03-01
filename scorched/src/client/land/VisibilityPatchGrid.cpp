@@ -40,16 +40,15 @@ VisibilityPatchGrid *VisibilityPatchGrid::instance()
 	return &instance;
 }
 
-VisibilityPatchGrid::VisibilityPatchGrid() : 
-	landPatches_(0), 
-	waterPatches_(0), visibilityPatches_(0),
-	epoc_(0)
-{
-}
+VisibilityPatchGrid::VisibilityPatchGrid() :
+	epoc_(0),
+	landPatches_(nullptr),
+	waterPatches_(nullptr),
+	visibilityPatches_(nullptr)
+{}
 
 VisibilityPatchGrid::~VisibilityPatchGrid()
-{
-}
+{}
 
 void VisibilityPatchGrid::clear()
 {
@@ -354,7 +353,13 @@ void VisibilityPatchGrid::drawRoof(int addIndex, bool verticesOnly, bool allPatc
 	glFrontFace(GL_CCW);
 }
 
-void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int addIndex, bool verticesOnly, bool allPatches, bool roof) 
+void VisibilityPatchGrid::drawHeightMap(
+	GraphicalLandscapeMap *landscapeMap,
+	int addIndex,
+	bool verticesOnly,
+	bool allPatches,
+	bool roof
+)
 {
 	if (!OptionsDisplay::instance()->getNoGLDrawElements() &&
 		GLStateExtension::hasDrawRangeElements())
@@ -507,10 +512,13 @@ void VisibilityPatchGrid::drawSurround()
 		getGroundMaps().getHeightMap(), true, true);
 }
 
-void VisibilityPatchGrid::drawWater(Water2Patches &patches, 
-		MipMapPatchIndexs &indexes, Vector &cameraPosition, 
-		Vector landscapeSize,
-		GLSLShaderSetup *waterShader)
+void VisibilityPatchGrid::drawWater(
+	Water2Patches &patches,
+	MipMapPatchIndexs &indexes,
+	Vector &cameraPosition,
+	Vector landscapeSize,
+	GLSLShaderSetup *waterShader
+)
 {
 	GAMESTATE_PERF_COUNTER_START(ScorchedClient::instance()->getGameState(), "WATER_DRAW");
 

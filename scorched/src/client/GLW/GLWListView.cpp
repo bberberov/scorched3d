@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,23 +32,31 @@ REGISTER_CLASS_SOURCE(GLWListView);
 
 unsigned GLWListView::WordEntry::wordRefCount_ = 1;
 
-GLWListView::GLWListView(float x, float y, float w, float h, 
-	int maxLen, float textSize, float scrollSpeed) :
-	GLWidget(x, y, w, h), 
-	scroll_(x + w - 17, y, h - 1, 0, 1), 
-	maxLen_(maxLen), textSize_(textSize),
+GLWListView::GLWListView(
+	float x,
+	float y,
+	float w,
+	float h,
+	int maxLen,
+	float textSize,
+	float scrollSpeed
+) :
+	GLWidget(x, y, w, h),
+	handler_(nullptr),
+	scroll_(x + w - 17, y, h - 1, 0, 1),
+	maxLen_(maxLen),
+	textSize_(textSize),
 	scrollSpeed_(scrollSpeed),
-	handler_(0), currentPosition_(0.0f)
+	currentPosition_(0.0f)
 {
 	color_ = GLWFont::widgetFontColor;
-	scroll_.setMax((int) lines_.size());
-	scroll_.setSee((int) (h_ / 12.0f));
-	scroll_.setCurrent(scroll_.getMax());
+	scroll_.setMax( (int) lines_.size() );
+	scroll_.setSee( (int) (h_ / 12.0f) );
+	scroll_.setCurrent( scroll_.getMax() );
 }
 
 GLWListView::~GLWListView()
-{
-}
+{}
 
 void GLWListView::draw()
 {

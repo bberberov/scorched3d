@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,23 +29,26 @@ public:
 	WeaponTeleport();
 	virtual ~WeaponTeleport();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	const char *getSound() { return sound_.c_str(); }
 	bool getGroundOnly() { return groundOnly_; }
 	fixed getDelay(ScorchedContext &context);
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponTeleport, AccessoryPart::AccessoryWeapon);
 
 protected:
+	bool groundOnly_;
 	NumberParser delay_;
 	std::string sound_;
-	bool groundOnly_;
 
 };
 

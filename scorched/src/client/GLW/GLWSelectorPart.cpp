@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,26 +26,28 @@
 #include <client/ScorchedClient.h>
 #include <common/Defines.h>
 
-GLWSelectorPart::GLWSelectorPart(GLWSelectorI *user,
+GLWSelectorPart::GLWSelectorPart(
+	GLWSelectorI *user,
 	int basePosition,
 	float x, float y,
 	std::list<GLWSelectorEntry> &entries,
 	bool transparent,
 	GLWSelectorPart *parent,
-	int parentPosition) :
+	int parentPosition
+) :
 	user_(user),
+	basePosition_(basePosition),
 	entries_(entries),
 	transparent_(transparent),
-	basePosition_(basePosition),
-	parent_(parent), parentPosition_(parentPosition),
-	child_(0)
+	parent_(parent),
+	child_(nullptr),
+	parentPosition_(parentPosition)
 {
 	calculateDimensions(x, y);
 }
 
 GLWSelectorPart::~GLWSelectorPart()
-{
-}
+{}
 
 void GLWSelectorPart::calculateDimensions(float drawX, float drawY)
 {

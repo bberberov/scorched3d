@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,21 +25,28 @@
 
 REGISTER_CLASS_SOURCE(GLWSpinBox);
 
-GLWSpinBox::GLWSpinBox(float x, float y, float w, int start, 
-					   int minRange, int maxRange, int step) :
-	GLWidget(x, y, w, 25.0f), value_(start), minRange_(minRange), maxRange_(maxRange),
-	top_(x + w - 12.0f, y + 13.0f, 10.0f, 10.0f),
-	bottom_(x + w - 12.0f, y + 2.0f, 10.0f, 10.0f),
-	dragging_(false), step_(step)
+GLWSpinBox::GLWSpinBox(
+	float x,
+	float y,
+	float w,
+	int start,
+	int minRange, int maxRange,
+	int step
+) :
+	GLWidget(x, y, w, 25.0f),
+	value_(start),
+	minRange_(minRange), maxRange_(maxRange),
+	step_(step),
+	top_(    x + w - 12.0f, y + 13.0f, 10.0f, 10.0f),
+	bottom_( x + w - 12.0f, y +  2.0f, 10.0f, 10.0f),
+	dragging_(false)
 {
 	top_.setHandler(this);
 	bottom_.setHandler(this);
 }
 
 GLWSpinBox::~GLWSpinBox()
-{
-
-}
+{}
 
 void GLWSpinBox::draw()
 {
@@ -116,9 +123,13 @@ void GLWSpinBox::mouseDrag(int button, float mx, float my, float x, float y, boo
 	if (skipRest) return;
 }
 
-void GLWSpinBox::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void GLWSpinBox::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	for (int i=0; i<hisCount; i++)
 	{

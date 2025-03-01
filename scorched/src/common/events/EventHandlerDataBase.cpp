@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -88,15 +88,15 @@ EventHandlerDataBase *EventHandlerDataBase::createInstance()
 
 enum EventType
 {
-	EventKill = 1,
-	EventTeamKill = 2,
-	EventSelfKill = 3,
-	EventResigned = 4,
-	EventWon = 5,
+	EventKill          = 1,
+	EventTeamKill      = 2,
+	EventSelfKill      = 3,
+	EventResigned      = 4,
+	EventWon           = 5,
 	EventOverallWinner = 6,
-	EventConnected = 7,
-	EventDisconnected = 8,
-	EventJoined = 9
+	EventConnected     = 7,
+	EventDisconnected  = 8,
+	EventJoined        = 9
 };
 
 const char *EventHandlerDataBase::RowResult::getValue(const char *name)
@@ -108,15 +108,15 @@ const char *EventHandlerDataBase::RowResult::getValue(const char *name)
 	return columns[pos].c_str();
 }
 
-EventHandlerDataBase::EventHandlerDataBase() : 
-	serverid_(0), seriesid_(0), prefixid_(0),
+EventHandlerDataBase::EventHandlerDataBase() :
+	serverid_(0),
+	seriesid_(0),
+	prefixid_(0),
 	updateTime_(0)
-{
-}
+{}
 
 EventHandlerDataBase::~EventHandlerDataBase()
-{
-}
+{}
 
 bool EventHandlerDataBase::connect()
 {
@@ -361,7 +361,10 @@ unsigned int EventHandlerDataBase::getAchievementId(const std::string &name)
 	return achievementId;
 }
 
-unsigned int EventHandlerDataBase::getAchievementRank(unsigned int achievementId, unsigned int playerId)
+unsigned int EventHandlerDataBase::getAchievementRank(
+	unsigned int achievementId,
+	unsigned int playerId
+)
 {
 	unsigned int result = 0;
 	std::list<EventHandlerDataBase::RowResult> achievementRows =
@@ -375,7 +378,11 @@ unsigned int EventHandlerDataBase::getAchievementRank(unsigned int achievementId
 	return result;
 }
 
-void EventHandlerDataBase::assignAchievementRank(unsigned int playerId, unsigned int achievementId, unsigned int rank)
+void EventHandlerDataBase::assignAchievementRank(
+	unsigned int playerId,
+	unsigned int achievementId,
+	unsigned int rank
+)
 {
 	std::list<EventHandlerDataBase::RowResult> achievementRows =
 		runSelectQuery("SELECT achievementrank FROM scorched3d_achievements "
@@ -397,8 +404,11 @@ void EventHandlerDataBase::assignAchievementRank(unsigned int playerId, unsigned
 	}
 }
 
-void EventHandlerDataBase::addIpAliases(int playerId, 
-	std::set<int> &currentPlayers, std::list<std::string> &results)
+void EventHandlerDataBase::addIpAliases(
+	int playerId,
+	std::set<int> &currentPlayers,
+	std::list<std::string> &results
+)
 {
 	currentPlayers.insert(playerId);
 	addAliases(playerId, results);
@@ -635,8 +645,7 @@ std::list<std::string> EventHandlerDataBase::getIpAliases(const char *unqiueId)
 	return results;
 }
 
-static bool findInList(std::list<std::string> &results, 
-	const char *name)
+static bool findInList(std::list<std::string> &results, const char *name)
 {
 	std::list<std::string>::iterator itor;
 	for (itor = results.begin();
@@ -648,8 +657,7 @@ static bool findInList(std::list<std::string> &results,
 	return false;
 }
 
-void EventHandlerDataBase::addAliases(int playerId, 
-	std::list<std::string> &results)
+void EventHandlerDataBase::addAliases(int playerId, std::list<std::string> &results)
 {
 	// Make sure the last used name is in the list and
 	// it is always first
@@ -934,13 +942,14 @@ unsigned int EventHandlerDataBase::getStatsId(const char *uniqueId)
 	return id;
 }
 
-std::string EventHandlerDataBase::allocateId() 
-{ 
+std::string EventHandlerDataBase::allocateId()
+{
 	const char possibleChars [] = {
 		'1', '2', '3', '4', '5', '6', '7', '8', '9',
 		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 		'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S',
-		'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+		'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+	};
 	char buffer[128];
 
 	do

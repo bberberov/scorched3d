@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,9 +30,13 @@
 class WeaponFireContextInternal
 {
 public:
-	WeaponFireContextInternal(unsigned int selectPositionX, unsigned int selectPositionY,
+	WeaponFireContextInternal(
+		unsigned int selectPositionX,
+		unsigned int selectPositionY,
 		const FixedVector &velocityVectory,
-		bool referenced, bool updateStats);
+		bool referenced,
+		bool updateStats
+	);
 	virtual ~WeaponFireContextInternal();
 
 	int getKillCount() { return killCount_; }
@@ -53,14 +57,15 @@ public:
 	void decrementReference();
 
 protected:
-	int killCount_;
-	bool referenced_, updateStats_;
-	unsigned int referenceCount_;
-	ObjectGroups localGroups_;
 	unsigned int selectPositionX_;
 	unsigned int selectPositionY_;
 	FixedVector velocityVector_;
+	bool referenced_;
+	bool updateStats_;
+	int killCount_;
+	unsigned int referenceCount_;
 	std::map<unsigned int, int> *labelCount_;
+	ObjectGroups localGroups_;
 
 private:
 	WeaponFireContextInternal(WeaponFireContextInternal &other);
@@ -70,10 +75,14 @@ private:
 class WeaponFireContext
 {
 public:
-	WeaponFireContext(unsigned int playerId, 
-		unsigned int selectPositionX, unsigned int selectPositionY,
+	WeaponFireContext(
+		unsigned int playerId,
+		unsigned int selectPositionX,
+		unsigned int selectPositionY,
 		const FixedVector &velocityVector,
-		bool referenced, bool updateStats);
+		bool referenced,
+		bool updateStats
+	);
 	WeaponFireContext(WeaponFireContext &other);
 	virtual ~WeaponFireContext();
 
@@ -98,24 +107,32 @@ public:
 	Weapon();
 	virtual ~Weapon();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 	
-	virtual void fire(ScorchedContext &context,
+	virtual void fire(
+		ScorchedContext &context,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity);
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	int getArmsLevel();
 
 protected:
 	int armsLevel_;
 
-	virtual void addWeaponSyncCheck(ScorchedContext &context,
+	virtual void addWeaponSyncCheck(
+		ScorchedContext &context,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity);
-	virtual void fireWeapon(ScorchedContext &context,
+		FixedVector &position,
+		FixedVector &velocity
+	);
+	virtual void fireWeapon(
+		ScorchedContext &context,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity) = 0;
+		FixedVector &position,
+		FixedVector &velocity
+	) = 0;
 };
 
 #endif // !defined(AFX_WEAPON_H__65439E20_84A6_406A_8FD0_045A3E7555D3__INCLUDED_)

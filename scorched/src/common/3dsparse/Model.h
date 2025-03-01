@@ -48,15 +48,15 @@ public:
 	void setTotalFrames(int frames) { totalFrames_ = frames; }
 
 protected:
-	bool texturesUsed_;
 	std::vector<Mesh *> meshes_;
 	std::vector<Bone *> bones_;
 	std::vector<BoneType *> baseBoneTypes_;
 	FixedVector min_, max_;
 
-	int noTriangles_;
 	int startFrame_;
 	int totalFrames_;
+	int noTriangles_;
+	bool texturesUsed_;
 
 	void centre();
 	void countTextures();

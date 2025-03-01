@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,8 +27,11 @@
 class NetServerTCP3Destination
 {
 public:
-	NetServerTCP3Destination(NetMessageHandler *recieveMessageHandler,
-		TCPsocket socket, unsigned int destinationId);
+	NetServerTCP3Destination(
+		NetMessageHandler *recieveMessageHandler,
+		TCPsocket socket,
+		unsigned int destinationId
+	);
 	virtual ~NetServerTCP3Destination();
 
 	void sendMessage(NetMessage *message);
@@ -41,10 +44,11 @@ public:
 	unsigned int getIpAddress() { return ipAddress_; }
 
 protected:
+	TCPsocket socket_;
+	unsigned int destinationId_;
+	unsigned int ipAddress_;
 	NetServerTCP3Send send_;
 	NetServerTCP3Recv recv_;
-	unsigned int destinationId_, ipAddress_;
-	TCPsocket socket_;
 	bool running_;
 
 	static unsigned int getIpAddressFromSocket(TCPsocket socket);

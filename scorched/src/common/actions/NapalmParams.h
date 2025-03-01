@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,7 +26,7 @@
 
 struct lua_State;
 class XMLNode;
-class NapalmParams 
+class NapalmParams
 {
 public:
 	NapalmParams();
@@ -61,20 +61,20 @@ public:
 	const char *getDeformTexture() { return deformTexture_.c_str(); }
 
 protected:
-	fixed napalmTime_;   // The time to generate napalm
-	fixed napalmHeight_; // The height of a napalm point
-	fixed stepTime_;     // Add/rm napalm every StepTime secs
-	fixed hurtStepTime_; // Calculate damage every HurtStepTime secs
-	fixed hurtPerSecond_;// Damage per second
-	fixed groundScorchPer_; // The percentage chance the ground will be scorched
-	fixed landscapeErosion_; // How much height will be removed for the erosion
-	int effectRadius_;   // How close do tanks take damage
-	int numberParticles_;// How many napalm particles can be created
-	bool noSmoke_;       // Turns off smoke emitted by napalm
-	bool noObjectDamage_;// Turns off burning damage to landscape objects
-	bool allowUnderWater_;// Turns on/off napalm working under water
-	bool singleFlow_;    // Use a single flow of napalm or cover the whole downward area
-	bool luminance_;     // The texutre luminance
+	fixed napalmTime_;        // The time to generate napalm
+	fixed napalmHeight_;      // The height of a napalm point
+	fixed stepTime_;          // Add/rm napalm every StepTime secs
+	fixed hurtStepTime_;      // Calculate damage every HurtStepTime secs
+	fixed hurtPerSecond_;     // Damage per second
+	fixed groundScorchPer_;   // The percentage chance the ground will be scorched
+	fixed landscapeErosion_;  // How much height will be removed for the erosion
+	int effectRadius_;        // How close do tanks take damage
+	int numberParticles_;     // How many napalm particles can be created
+	bool noSmoke_;            // Turns off smoke emitted by napalm
+	bool noObjectDamage_;     // Turns off burning damage to landscape objects
+	bool allowUnderWater_;    // Turns on/off napalm working under water
+	bool singleFlow_;         // Use a single flow of napalm or cover the whole downward area
+	bool luminance_;          // The texutre luminance
 	bool noCameraTrack_;
 	std::string napalmTexture_;
 	std::string deformTexture_;

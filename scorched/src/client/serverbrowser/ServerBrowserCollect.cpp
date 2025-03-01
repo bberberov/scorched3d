@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,8 +29,8 @@
 
 ServerBrowserCollect::ServerBrowserCollect(ServerBrowserServerList &list) :
 	list_(list),
-	netServer_(new NetServerHTTPProtocolSend), 
-	complete_(false), 
+	netServer_(new NetServerHTTPProtocolSend),
+	complete_(false),
 	cancel_(false)
 {
 	// All messages will come to this class
@@ -42,12 +42,12 @@ ServerBrowserCollect::ServerBrowserCollect(ServerBrowserServerList &list) :
 }
 
 ServerBrowserCollect::~ServerBrowserCollect()
-{
-}
+{}
 
 bool ServerBrowserCollect::fetchServerList(
 	const char *masterListServer,
-	const char *masterListServerURI)
+	const char *masterListServerURI
+)
 {
 	// Create the message that will be sent to the master server
 	std::string buffer = S3D::formatStringBuffer(
@@ -294,4 +294,3 @@ void ServerBrowserCollect::setFavourites(std::set<std::string> &favs)
 	std::string filePath = S3D::getSettingsFile("netfavourites.xml");
 	favouritesNode.writeToFile(filePath);
 }
-

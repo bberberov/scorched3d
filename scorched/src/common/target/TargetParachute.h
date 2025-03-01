@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,8 +40,8 @@ public:
     bool readMessage(NetBufferReader &reader);
 
 protected:
-	Accessory *currentParachute_;
 	ScorchedContext &context_;
+	Accessory *currentParachute_;
 
 };
 

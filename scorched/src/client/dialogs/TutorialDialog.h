@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,7 +26,7 @@
 #include <GLEXT/GLTexture.h>
 #include <graph/TutorialFile.h>
 
-class TutorialDialog : 
+class TutorialDialog :
 	public GLWWindow,
 	public GLWListViewI
 {
@@ -46,7 +46,8 @@ public:
 	void drawHighlight(float x, float y, float w, float h);
 protected:
 	static TutorialDialog *instance_;
-	float triangleDist_, triangleDir_;
+	float triangleDist_;
+	float triangleDir_;
 	float speed_;
 	GLWListView *listView_;
 	GLTexture triangleTex_;

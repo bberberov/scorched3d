@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,10 +46,7 @@ protected:
 };
 
 
-class ModSelectDialog : 
-	public GLWWindow,
-	public GLWButtonI, 
-	public GLWIconListI
+class ModSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
 	static ModSelectDialog *instance();
@@ -67,7 +64,8 @@ public:
 protected:
 	static ModSelectDialog *instance_;
 
-	unsigned int okId_, cancelId_;
+	unsigned int okId_;
+	unsigned int cancelId_;
 	GLWIconList *iconList_;
 
 private:

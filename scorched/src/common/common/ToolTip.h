@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,14 +45,15 @@ public:
 	};
 
 	friend class GLWToolTip;
-	ToolTip(unsigned int type = ToolTipNone, 
-		const LangString &title = LangString(), 
-		const LangString &text = LangString());
+	ToolTip(
+		unsigned int type = ToolTipNone,
+		const LangString &title = LangString(),
+		const LangString &text = LangString()
+	);
 	virtual ~ToolTip();
 
 	// Used to set the title and text of the tooltip
-	void setText(unsigned int type, 
-		const LangString &title, const LangString &text);
+	void setText(unsigned int type, const LangString &title, const LangString &text);
 
 	// Called just before the tooltip is shown
 	// can be used to dynamically populate the title and text fields
@@ -66,12 +67,12 @@ public:
 	unsigned int getType() { return type_; }
 
 protected:
-	unsigned int type_;
 	ToolTipI *handler_;
 	unsigned int id_;
 	static unsigned int nextId_;
-	LangString text_;
+	unsigned int type_;
 	LangString title_;
+	LangString text_;
 
 };
 #endif // __INCLUDE_ToolTiph_INCLUDE__

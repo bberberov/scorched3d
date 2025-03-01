@@ -54,10 +54,11 @@ public:
 	GLVertexBufferObject *getBufferObject() { return bufferObject_; }
 
 protected:
-	int width_, height_;
-	unsigned int bufferSizeBytes_;
 	HeightData *heightData_;
 	GLVertexBufferObject *bufferObject_;
+	int width_;
+	int height_;
+	unsigned int bufferSizeBytes_;
 };
 
 #endif // !defined(AFX_GraphicalLandscapeMap_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_)

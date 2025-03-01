@@ -53,7 +53,7 @@ protected:
 
 };
 
-class ConsoleLines  
+class ConsoleLines
 {
 public:
 	ConsoleLines(unsigned int maxLines);

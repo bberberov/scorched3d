@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,12 +40,10 @@
 
 TankUndoMenu::TankUndoMenu(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankUndoMenu::~TankUndoMenu()
-{
-}
+{}
 
 void TankUndoMenu::showItems(float x, float y)
 {
@@ -79,14 +77,12 @@ void TankUndoMenu::itemSelected(GLWSelectorEntry *entry, int position)
 	tank_->getShotHistory().revertSettings((unsigned long) entry->getUserData());
 }
 
-TankFuelTip::TankFuelTip(Tank *tank) : 
+TankFuelTip::TankFuelTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankFuelTip::~TankFuelTip()
-{
-}
+{}
 
 void TankFuelTip::populate()
 {
@@ -162,14 +158,12 @@ void TankFuelTip::itemSelected(GLWSelectorEntry *entry, int position)
 	}
 }
 
-TankBatteryTip::TankBatteryTip(Tank *tank) : 
+TankBatteryTip::TankBatteryTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankBatteryTip::~TankBatteryTip()
-{
-}
+{}
 
 void TankBatteryTip::populate()
 {
@@ -237,14 +231,12 @@ void TankBatteryTip::itemSelected(GLWSelectorEntry *entry, int position)
 	}
 }
 
-TankShieldTip::TankShieldTip(Tank *tank) : 
+TankShieldTip::TankShieldTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankShieldTip::~TankShieldTip()
-{
-}
+{}
 
 void TankShieldTip::showItems(float x, float y)
 {
@@ -321,35 +313,16 @@ void TankShieldTip::itemSelected(GLWSelectorEntry *entry, int position)
 			((Accessory *)entry->getUserData())->getAccessoryId());
 }
 
-TankRankTip::TankRankTip(Tank *tank) : 
+TankHealthTip::TankHealthTip(Tank *tank) :
 	tank_(tank)
-{
-}
-
-TankRankTip::~TankRankTip()
-{
-}
-
-void TankRankTip::populate()
-{
-	setText(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("RANK", "Rank"),
-		LANG_RESOURCE("RANK_TOOLTIP",
-		"The current online ranking of this player"));
-}
-
-TankHealthTip::TankHealthTip(Tank *tank) : 
-	tank_(tank)
-{
-}
+{}
 
 TankHealthTip::~TankHealthTip()
-{
-}
+{}
 
 void TankHealthTip::populate()
 {
-	setText(ToolTip::ToolTipHelp, 
+	setText(ToolTip::ToolTipHelp,
 		LANG_RESOURCE("LIFE", "Life"),
 		LANG_RESOURCE_2("LIFE_TOOLTIP",
 		"The amount of life this player has.\n"
@@ -360,14 +333,27 @@ void TankHealthTip::populate()
 		S3D::formatStringBuffer("%.0f", tank_->getLife().getMaxLife().asFloat())));
 }
 
-TankParachutesTip::TankParachutesTip(Tank *tank) : 
+TankRankTip::TankRankTip(Tank *tank) :
 	tank_(tank)
+{}
+
+TankRankTip::~TankRankTip()
+{}
+
+void TankRankTip::populate()
 {
+	setText(ToolTip::ToolTipHelp, 
+		LANG_RESOURCE("RANK", "Rank"),
+		LANG_RESOURCE("RANK_TOOLTIP",
+		"The current online ranking of this player"));
 }
 
+TankParachutesTip::TankParachutesTip(Tank *tank) :
+	tank_(tank)
+{}
+
 TankParachutesTip::~TankParachutesTip()
-{
-}
+{}
 
 void TankParachutesTip::populate()
 {
@@ -435,14 +421,12 @@ void TankParachutesTip::itemSelected(GLWSelectorEntry *entry, int position)
 		((Accessory *)entry->getUserData())->getAccessoryId());
 }
 
-TankAutoDefenseTip::TankAutoDefenseTip(Tank *tank) : 
+TankAutoDefenseTip::TankAutoDefenseTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankAutoDefenseTip::~TankAutoDefenseTip()
-{
-}
+{}
 
 void TankAutoDefenseTip::populate()
 {
@@ -479,14 +463,12 @@ void TankAutoDefenseTip::showItems(float x, float y)
 		ClientState::StatePlaying);
 }
 
-TankWeaponTip::TankWeaponTip(Tank *tank) : 
+TankWeaponTip::TankWeaponTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankWeaponTip::~TankWeaponTip()
-{
-}
+{}
 
 void TankWeaponTip::populate()
 {
@@ -543,14 +525,12 @@ void TankWeaponTip::itemSelected(GLWSelectorEntry *entry, int position)
 	tank_->getAccessories().getWeapons().setWeapon((Accessory *) entry->getUserData());
 }
 
-TankPowerTip::TankPowerTip(Tank *tank) : 
+TankPowerTip::TankPowerTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankPowerTip::~TankPowerTip()
-{
-}
+{}
 
 void TankPowerTip::populate()
 {
@@ -565,14 +545,12 @@ void TankPowerTip::populate()
 	}
 }
 
-TankRotationTip::TankRotationTip(Tank *tank) : 
+TankRotationTip::TankRotationTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankRotationTip::~TankRotationTip()
-{
-}
+{}
 
 void TankRotationTip::populate()
 {
@@ -585,14 +563,12 @@ void TankRotationTip::populate()
 		tank_->getShotHistory().getRotationString()));
 }
 
-TankElevationTip::TankElevationTip(Tank *tank) : 
+TankElevationTip::TankElevationTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankElevationTip::~TankElevationTip()
-{
-}
+{}
 
 void TankElevationTip::populate()
 {
@@ -640,14 +616,12 @@ static void generateTargetTip(LangString &tip, Target *target)
 	}
 }
 
-TankTip::TankTip(Tank *tank) : 
+TankTip::TankTip(Tank *tank) :
 	tank_(tank)
-{
-}
+{}
 
 TankTip::~TankTip()
-{
-}
+{}
 
 void TankTip::populate()
 {
@@ -670,14 +644,12 @@ void TankTip::populate()
 	setText(ToolTip::ToolTipInfo, tank_->getTargetName(), tip.c_str());
 }
 
-TargetTip::TargetTip(Target *target) : 
+TargetTip::TargetTip(Target *target) :
 	target_(target)
-{
-}
+{}
 
 TargetTip::~TargetTip()
-{
-}
+{}
 
 void TargetTip::populate()
 {
@@ -686,38 +658,37 @@ void TargetTip::populate()
 	setText(ToolTip::ToolTipInfo, target_->getTargetName(), tip);
 }
 
-GLWTargetTips::GLWTargetTips(Target *target) : 
+GLWTargetTips::GLWTargetTips(Target *target) :
 	targetTip(target)
-{
-}
+{}
 
 GLWTargetTips::~GLWTargetTips()
-{
-}
+{}
 
-GLWTankTips::GLWTankTips(Tank *tank) : 
-	tankTip(tank),
+GLWTankTips::GLWTankTips(Tank *tank) :
 	undoMenu(tank),
+	fuelTip(tank),
+	batteryTip(tank),
+	shieldTip(tank),
+	healthTip(tank),
+	rankTip(tank),
+	paraTip(tank),
+	autodTip(tank),
+	weaponTip(tank),
+	powerTip(tank),
 	rotationTip(tank),
 	elevationTip(tank),
-	powerTip(tank),
-	weaponTip(tank),
-	autodTip(tank),
-	paraTip(tank),
-	healthTip(tank),
-	shieldTip(tank),
-	batteryTip(tank),
-	fuelTip(tank),
-	rankTip(tank),
-	nameTip(ToolTip::ToolTipHelp, 
+	tankTip(tank),
+	nameTip(
+		ToolTip::ToolTipHelp,
 		LANG_RESOURCE("PLAYER_NAME", "Player Name"),
-		LANG_RESOURCE("PLAYER_CURRENTLY_PLAYING", 
-		"Shows the name of the player currently\n"
-		"making their move."))
-{
-}
+		LANG_RESOURCE(
+			"PLAYER_CURRENTLY_PLAYING",
+			"Shows the name of the player currently\n"
+			"making their move."
+		)
+	)
+{}
 
 GLWTankTips::~GLWTankTips()
-{
-}
-
+{}

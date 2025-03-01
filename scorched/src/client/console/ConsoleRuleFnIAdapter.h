@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,8 +25,7 @@
 #include <console/ConsoleRuleFn.h>
 #include <string>
 
-class ConsoleRuleFnIBooleanAdapter : 
-	public ConsoleRuleFnI
+class ConsoleRuleFnIBooleanAdapter : public ConsoleRuleFnI
 {
 public:
 	ConsoleRuleFnIBooleanAdapter(const char *name, bool &param);
@@ -37,14 +36,14 @@ public:
 	virtual void setBoolParam(const char *name, bool value);
 
 protected:
-	ConsoleRuleFn *readRule_, *writeRule_;
 	std::string name_;
 	bool &param_;
+	ConsoleRuleFn *readRule_;
+	ConsoleRuleFn *writeRule_;
 
 };
 
-class ConsoleRuleFnINumberAdapter : 
-	public ConsoleRuleFnI
+class ConsoleRuleFnINumberAdapter : public ConsoleRuleFnI
 {
 public:
 	ConsoleRuleFnINumberAdapter(const char *name, float &param);
@@ -55,14 +54,14 @@ public:
 	virtual void  setNumberParam(const char *name, float value);
 
 protected:
-	ConsoleRuleFn *readRule_, *writeRule_;
 	std::string name_;
 	float &param_;
+	ConsoleRuleFn *readRule_;
+	ConsoleRuleFn *writeRule_;
 
 };
 
-class ConsoleRuleFnIOptionsAdapter :
-	public ConsoleRuleFnI
+class ConsoleRuleFnIOptionsAdapter : public ConsoleRuleFnI
 {
 public:
 	ConsoleRuleFnIOptionsAdapter(OptionEntry &entry, bool write = false);
@@ -78,7 +77,8 @@ public:
 
 protected:
 	OptionEntry &entry_;
-	ConsoleRuleFn *readRule_, *writeRule_;
+	ConsoleRuleFn *readRule_;
+	ConsoleRuleFn *writeRule_;
 };
 
 #endif // !defined(AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,14 +31,17 @@ public:
 	WeaponProjectile();
 	virtual ~WeaponProjectile();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	Weapon *getCollisionAction() { return collisionAction_; }
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponProjectile, AccessoryPart::AccessoryWeapon);
 
@@ -91,42 +94,52 @@ public:
 	ObjectGroupEntryDefinition &getGlobalGroups() { return globalGroups_; }
 
 protected:
+	Weapon *collisionAction_;
+	bool apexCollision_;
+	bool waterCollision_;
+	bool wallCollision_;
+	bool landscapeCollision_;
+	bool shieldCollision_;
+	bool tankCollision_;
+	bool targetCollision_;
 	bool under_;
 	bool showShotPath_;
 	bool showEndPoint_;
-	bool apexCollision_;
-	bool waterCollision_, wallCollision_;
-	bool landscapeCollision_;
-	bool shieldCollision_;
-	bool tankCollision_, targetCollision_;
-	bool apexNoDud_, timedDud_;
+	bool createSmoke_;
+	bool createFlame_;
+	bool apexNoDud_;
+	bool timedDud_;
 	bool noCameraTrack_;
 	NumberParser spinSpeed_;
 	Vector spinAxis_;
 
-	bool createSmoke_, createFlame_;
 	float flameLife_, smokeLife_;
 	float flameStartSize_, flameEndSize_;
 	float smokeStartSize_, smokeEndSize_;
-	ObjectGroupEntryDefinition localGroups_, globalGroups_;
-	NumberParser thrustTime_, thrustAmount_;
-	NumberParser timedCollision_, timeout_;
-	NumberParser shieldHurtFactor_;
+	Vector flameStartColor1_, flameStartColor2_;
+	Vector flameEndColor1_, flameEndColor2_;
 	NumberParser scale_;
+	NumberParser timedCollision_;
+	NumberParser heightCollision_;
+	NumberParser timeout_;
+	NumberParser shieldHurtFactor_;
 	NumberParser windFactor_;
 	NumberParser gravityFactor_;
+	NumberParser thrustAmount_;
+	NumberParser thrustTime_;
 	NumberParser drag_;
-	NumberParser heightCollision_;
 	NumberParser wobbleSpin_;
 	NumberParser wobbleAmount_;
 	fixed stepSize_;
-	Vector flameStartColor1_, flameStartColor2_;
-	Vector flameEndColor1_, flameEndColor2_;
-	std::string engineSound_, flameTexture_, smokeTexture_;
-	bool animateFlameTexture_, animateSmokeTexture_;
-	Weapon *collisionAction_;
-	ModelID modelId_;
+	std::string engineSound_;
+	std::string flameTexture_;
+	std::string smokeTexture_;
+	bool animateFlameTexture_;
+	bool animateSmokeTexture_;
 	int flareType_;
+
+	ObjectGroupEntryDefinition localGroups_, globalGroups_;
+	ModelID modelId_;
 
 };
 

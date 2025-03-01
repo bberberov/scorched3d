@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,12 +32,9 @@ public:
 
 	void start(int port);
 	void processMessages();
-	void addRequestHandler(const char *url,
-		ServerWebServerI *handler);
-	void addThrededRequestHandler(const char *url,
-		ServerWebServerI *handler);
-	void addAsyncRequestHandler(const char *url,
-		ServerWebServerI *handler);
+	void addRequestHandler(const char *url, ServerWebServerI *handler);
+	void addThrededRequestHandler(const char *url, ServerWebServerI *handler);
+	void addAsyncRequestHandler(const char *url, ServerWebServerI *handler);
 
 protected:
 	static ServerWebServer *instance_;
@@ -46,7 +43,7 @@ protected:
 	{
 		enum Flags
 		{
-			eAsync = 1,
+			eAsync    = 1,
 			eThreaded = 2
 		};
 
@@ -71,16 +68,19 @@ protected:
 		const char *ip,
 		const char *url,
 		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts);
+		std::map<std::string, NetMessage *> &parts
+	);
 	bool validateUser(
 		const char *ip,
 		const char *url,
 		std::map<std::string, std::string> &fields,
-		bool &delayed);
+		bool &delayed
+	);
 	unsigned int validateSession(
 		const char *ip,
 		const char *url,
-		std::map<std::string, std::string> &fields);
+		std::map<std::string, std::string> &fields
+	);
 
 	static int sendThreadFunc(void *);
 	bool processQueue(ServerWebServerQueue &queue, bool keepEntries);

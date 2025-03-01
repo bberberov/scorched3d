@@ -38,16 +38,17 @@
 #include <tank/Tank.h>
 
 GLWChannelViewI::~GLWChannelViewI()
-{
-}
+{}
 
 REGISTER_CLASS_SOURCE(GLWChannelView);
 
-GLWChannelView::GLWChannelView() : lastChannelId_(1), lastWhisperSrc_(0),
-	showChannelName_(true), showChannelNumber_(true),
-	handler_(0)
-{
-}
+GLWChannelView::GLWChannelView() :
+	handler_(nullptr),
+	lastChannelId_(1),
+	lastWhisperSrc_(0),
+	showChannelName_(true),
+	showChannelNumber_(true)
+{}
 
 GLWChannelView::~GLWChannelView()
 {
@@ -69,9 +70,10 @@ GLWChannelView::CurrentChannelEntry *GLWChannelView::getChannel(const std::strin
 
 void GLWChannelView::registeredForChannels(
 	std::list<ChannelDefinition> &registeredChannels,
-	std::list<ChannelDefinition> &availableChannels)
+	std::list<ChannelDefinition> &availableChannels
+)
 {
-	// Some not efficient stuff....
+	// FIXME: Some not efficient stuff ...
 	std::list<CurrentChannelEntry> oldCurrentChannels = currentChannels_;
 	std::list<BaseChannelEntry> oldAvailableChannels = availableChannels_;
 	currentChannels_.clear();
@@ -119,7 +121,7 @@ void GLWChannelView::registeredForChannels(
 				}
 
 				currentChannels_.push_back(newEntry);
-			}	
+			}
 		}
 	}
 
@@ -169,15 +171,14 @@ void GLWChannelView::channelText(ChannelText &channelText)
 			!textSound_.empty())
 		{
 			CACHE_SOUND(sound, S3D::getModFile(textSound_.c_str()));
-			SoundUtils::playRelativeSound(VirtualSoundPriority::eText, sound);	
+			SoundUtils::playRelativeSound(VirtualSoundPriority::eText, sound);
 		}
 	}
 
 	CurrentChannelEntry *channel = getChannel(channelText.getChannel());
 	if (!channel) return;
 
-	Tank *tank = ScorchedClient::instance()->getTargetContainer().
-		getTankById(channelText.getSrcPlayerId());
+	Tank *tank = ScorchedClient::instance()->getTargetContainer().getTankById(channelText.getSrcPlayerId());
 	if (tank)
 	{
 		if (channel->type & ChannelDefinition::eWhisperChannel)

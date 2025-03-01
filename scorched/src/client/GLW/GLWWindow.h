@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,27 +31,35 @@ class GLWWindow : public GLWPanel
 public:
 	enum PossibleStates
 	{
-		eNoTitle = 1,
-		eSmallTitle = 2,
-		eTransparent = 4,
-		eResizeable = 8,
-		eCircle = 16,
-		eNoDraw = 32,
-		eSavePosition = 64,
-		eSemiTransparent = 128,
-		eNoMove = 256,
+		eNoTitle          = 1,
+		eSmallTitle       = 2,
+		eTransparent      = 4,
+		eResizeable       = 8,
+		eCircle           = 16,
+		eNoDraw           = 32,
+		eSavePosition     = 64,
+		eSemiTransparent  = 128,
+		eNoMove           = 256,
 		eClickTransparent = 512,
-		eHideName = 1024
+		eHideName         = 1024
 	};
 
-	GLWWindow(const std::string &name = "None", 
-		float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f,
-		unsigned int states = 0, 
-		const std::string &description = "None");
-	GLWWindow(const std::string &name, float w, float h,
+	GLWWindow(
+		const std::string &name = "None",
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
+		unsigned int states = 0,
+		const std::string &description = "None"
+	);
+	GLWWindow(
+		const std::string &name,
+		float w,
+		float h,
 		unsigned int states,
-		const std::string &description);
+		const std::string &description
+	);
 	virtual ~GLWWindow();
 
 	virtual bool initFromXML(XMLNode *node);
@@ -86,16 +94,17 @@ protected:
 		SizeDrag
 	} dragging_;
 
-	ToolTip toolTip_;
-	static GLTextureReference moveTexture_, resizeTexture_;
+	static GLTextureReference moveTexture_;
+	static GLTextureReference resizeTexture_;
 	bool showTitle_;
 	bool needCentered_;
 	bool disabled_;
 	bool initPosition_;
 	unsigned int windowState_;
 	unsigned int windowLevel_;
-	float maxWindowSize_;
 	std::string description_;
+	float maxWindowSize_;
+	ToolTip toolTip_;
 
 	virtual void drawWindowCircle(float x, float y, float w, float h);
 	virtual void drawOutlinePoints(float x, float y, float w, float h);

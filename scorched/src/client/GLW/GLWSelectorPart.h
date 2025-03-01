@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,15 @@
 class GLWSelectorPart
 {
 public:
-	GLWSelectorPart(GLWSelectorI *user,
+	GLWSelectorPart(
+		GLWSelectorI *user,
 		int basePosition,
 		float x, float y,
 		std::list<GLWSelectorEntry> &entries,
 		bool transparent,
 		GLWSelectorPart *parent,
-		int parentPosition);
+		int parentPosition
+	);
 	virtual ~GLWSelectorPart();
 
 	void draw();
@@ -48,13 +50,14 @@ public:
 
 protected:
 	GLWSelectorI *user_;
+	int basePosition_;
 	std::list<GLWSelectorEntry> entries_;
 	float selectedHeight_, selectedWidth_;
 	float selectedX_, selectedY_;
 	float selectedIndent_;
-	int basePosition_;
 	bool transparent_;
-	bool hasSelectedEntry_, hasPopupEntry_;
+	bool hasSelectedEntry_;
+	bool hasPopupEntry_;
 	GLWSelectorPart *parent_; // If this is popup it will have a parent
 	GLWSelectorPart *child_; // If this has a popup it may have a child
 	int parentPosition_;

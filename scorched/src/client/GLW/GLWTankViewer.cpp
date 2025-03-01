@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,44 +35,64 @@ static const float TankPadding = 20.0f;
 static const float TankInfo = 320.0f;
 
 GLWTankViewer::GLWTankViewer(float x, float y, int numH, int numV) :
-	GLWidget(x, y, 
-					 TankSquareSize * numH + TankPadding, 
-					 TankSquareSize * numV + TankPadding),
+	GLWidget(
+		x,
+		y,
+		TankSquareSize * numH + TankPadding,
+		TankSquareSize * numV + TankPadding
+	),
 	scrollBar_(w_ - 12.0f, y + 2.0f, h_ - 4.0f, 0, 0, numV),
-	infoWindow_(x + TankSquareSize * numH + TankPadding + 10.0f, 
-				y + TankSquareSize * numV + TankPadding - TankInfo + 30.0f, 
-				TankInfo, TankInfo, true),
+	infoWindow_(
+		x + TankSquareSize * numH + TankPadding + 10.0f,
+		y + TankSquareSize * numV + TankPadding - TankInfo + 30.0f,
+		TankInfo,
+		TankInfo,
+		true
+	),
 	numH_(numH), numV_(numV),
-	rot_(0.0f), selected_(0),
-	rotXY_(0.0f), rotYZ_(0.0f), 
+	rot_(0.0f),
+	rotXY_(0.0f), rotYZ_(0.0f),
 	rotXYD_(1.0f), rotYZD_(1.0f),
 	totalTime_(0.0f),
+	selected_(0),
 	team_(0),
-	catagoryChoice_(x, 
-					y + TankSquareSize * numV + TankPadding + 5.0f,
-					+ TankSquareSize * numH + TankPadding)
+	catagoryChoice_(
+		x,
+		y + TankSquareSize * numV + TankPadding + 5.0f,
+		+ TankSquareSize * numH + TankPadding
+	)
 {
 	catagoryChoice_.setHandler(this);
 
-	catagoryChoice_.setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("MODEL_CATEGORY", "Model Category"),
-		LANG_RESOURCE("MODEL_CATEGORY_TOOLTIP",
-		"Displays the currently selected model category.\n"
-		"To make models easier to locate\n"
-		"tank models are grouped by category.")));
-	infoWindow_.setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("CURRENT_MODEL", "Current Model"),
-		LANG_RESOURCE("CURRENT_MODEL_TOOLTIP", 
-		"Displays the currently selected tank model.\n"
-		"This is the model this player will use in game.\n"
-		"Choose a new model from the selection on the\n"
-		"left.")));
+	catagoryChoice_.setToolTip(
+		new ToolTip(
+			ToolTip::ToolTipHelp,
+			LANG_RESOURCE("MODEL_CATEGORY", "Model Category"),
+			LANG_RESOURCE(
+				"MODEL_CATEGORY_TOOLTIP",
+				"Displays the currently selected model category.\n"
+				"To make models easier to locate\n"
+				"tank models are grouped by category."
+			)
+		)
+	);
+	infoWindow_.setToolTip(
+		new ToolTip(
+			ToolTip::ToolTipHelp,
+			LANG_RESOURCE("CURRENT_MODEL", "Current Model"),
+			LANG_RESOURCE(
+				"CURRENT_MODEL_TOOLTIP",
+				"Displays the currently selected tank model.\n"
+				"This is the model this player will use in game.\n"
+				"Choose a new model from the selection on the\n"
+				"left."
+			)
+		)
+	);
 }
 
 GLWTankViewer::~GLWTankViewer()
-{
-
-}
+{}
 
 void GLWTankViewer::init()
 {
@@ -102,9 +122,7 @@ void GLWTankViewer::setTankType(const std::string &tankType)
 	refreshAvailableModels();
 }
 
-void GLWTankViewer::select(unsigned int id, 
-						   const int pos, 
-						   GLWSelectorEntry value)
+void GLWTankViewer::select(unsigned int id, const int pos, GLWSelectorEntry value)
 {
 	refreshAvailableModels();
 }
@@ -413,13 +431,11 @@ void GLWTankViewer::drawItem(int pos, bool selected)
 	Vector tankPos;
 	if (selected)
 	{
-		mesh->draw(totalTime_ * 20.0f, 
-			matrix, tankPos, 0.0f, rotXY_, rotYZ_);
+		mesh->draw(totalTime_ * 20.0f, matrix, tankPos, 0.0f, rotXY_, rotYZ_);
 	}
 	else
 	{
-		mesh->draw(totalTime_ * 20.0f, 
-			matrix, tankPos, 0.0f, 45.0f, 45.0f);
+		mesh->draw(totalTime_ * 20.0f, matrix, tankPos, 0.0f, 45.0f, 45.0f);
 	}
 
 	// Ground
@@ -433,6 +449,7 @@ void GLWTankViewer::drawItem(int pos, bool selected)
 	glEnd();
 
 	//Shadow
+	// FIXME Review
 	/*{
 		glDepthMask(GL_FALSE);
 		glPushMatrix();

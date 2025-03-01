@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,16 +27,13 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponTeleport);
 
-WeaponTeleport::WeaponTeleport() : 
-	groundOnly_(true), delay_("WeaponTeleport::delay")
-{
-
-}
+WeaponTeleport::WeaponTeleport() :
+	groundOnly_(true),
+	delay_("WeaponTeleport::delay")
+{}
 
 WeaponTeleport::~WeaponTeleport()
-{
-
-}
+{}
 
 bool WeaponTeleport::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 {
@@ -55,8 +52,12 @@ fixed WeaponTeleport::getDelay(ScorchedContext &context)
 	return delay_.getValue(context);
 }
 
-void WeaponTeleport::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponTeleport::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	// Mininum height
 	fixed allowedHeight = 0;

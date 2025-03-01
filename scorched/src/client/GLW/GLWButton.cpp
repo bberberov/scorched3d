@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,27 +23,23 @@
 #include <GLW/GLWButton.h>
 
 GLWButtonI::~GLWButtonI()
-{
-
-}
+{}
 
 REGISTER_CLASS_SOURCE(GLWButton);
 
-GLWButton::GLWButton(float x, float y, float w, float h, GLWButtonI *handler,
-					 unsigned flags) : 
-	handler_(handler),
+GLWButton::GLWButton(float x, float y, float w, float h, GLWButtonI *handler, unsigned flags) :
 	GLWidget(x, y, w, h),
-	flags_(flags), pressed_(false), startdrag_(false),
-	repeatMode_(false), repeatTime_(0.0f),
-	enabled_(true)
-{
-
-}
+	handler_(handler),
+	flags_(flags),
+	startdrag_(false),
+	pressed_(false),
+	repeatMode_(false),
+	enabled_(true),
+	repeatTime_(0.0f)
+{}
 
 GLWButton::~GLWButton()
-{
-
-}
+{}
 
 void GLWButton::setEnabled(bool enabled)
 {
@@ -52,7 +48,7 @@ void GLWButton::setEnabled(bool enabled)
 
 void GLWButton::setHandler(GLWButtonI *handler)
 { 
-	handler_ = handler; 
+	handler_ = handler;
 }
 
 void GLWButton::draw()
@@ -131,7 +127,7 @@ void GLWButton::mouseUp(int button, float x, float y, bool &skipRest)
 	startdrag_ = false;
 	if (pressed_)
 	{
-		pressed_ = false;	
+		pressed_ = false;
 		skipRest = true;
 
 		if (!repeatMode_)
@@ -141,12 +137,14 @@ void GLWButton::mouseUp(int button, float x, float y, bool &skipRest)
 	}
 }
 
-void GLWButton::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void GLWButton::keyDown(
+	char *buffer, unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
-	if (enabled_ && handler_ && 
-		((flags_&ButtonFlagOk) || (flags_&ButtonFlagCancel)))
+	if (enabled_ && handler_ && ((flags_&ButtonFlagOk) || (flags_&ButtonFlagCancel)))
 	{
 		for (int i=0; i<hisCount; i++)
 		{
@@ -155,19 +153,19 @@ void GLWButton::keyDown(char *buffer, unsigned int keyState,
 			{
 				case SDLK_KP_ENTER:
 				case SDLK_RETURN:
-					if ((flags_&ButtonFlagOk)) 
-					{ 
-						handler_->buttonDown(getId()); 
-						skipRest = true; 
+					if ((flags_&ButtonFlagOk))
+					{
+						handler_->buttonDown(getId());
+						skipRest = true;
 					}
 					break;
 				case SDLK_ESCAPE:
-					if ((flags_&ButtonFlagCancel)) 
-					{ 
-						handler_->buttonDown(getId()); 
-						skipRest = true; 
+					if ((flags_&ButtonFlagCancel))
+					{
+						handler_->buttonDown(getId());
+						skipRest = true;
 					}
-					break;	
+					break;
 			}
 		}
 	}

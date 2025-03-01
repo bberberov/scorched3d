@@ -34,40 +34,39 @@ static struct AllowedStateTransitions
 {
 	TankState::State from, to;
 }
-allowedStateTransitions[] =
-{
-	{ TankState::sLoading, TankState::sSpectator },
-	{ TankState::sLoading, TankState::sDead },
-	{ TankState::sSpectator, TankState::sNormal },
-	{ TankState::sSpectator, TankState::sDead },
-	{ TankState::sDead, TankState::sNormal },
-	{ TankState::sDead, TankState::sBuying },
-	{ TankState::sDead, TankState::sLoading },
-	{ TankState::sDead, TankState::sSpectator },
-	{ TankState::sNormal, TankState::sDead },
-	{ TankState::sNormal, TankState::sLoading },
-	{ TankState::sNormal, TankState::sSpectator },
-	{ TankState::sSpectator, TankState::sLoading },
-	{ TankState::sBuying, TankState::sSpectator },
-	{ TankState::sBuying, TankState::sLoading },
-	{ TankState::sBuying, TankState::sNormal }
+allowedStateTransitions[] = {
+	{ TankState::sLoading,   TankState::sSpectator },
+	{ TankState::sLoading,   TankState::sDead      },
+	{ TankState::sSpectator, TankState::sNormal    },
+	{ TankState::sSpectator, TankState::sDead      },
+	{ TankState::sDead,      TankState::sNormal    },
+	{ TankState::sDead,      TankState::sBuying    },
+	{ TankState::sDead,      TankState::sLoading   },
+	{ TankState::sDead,      TankState::sSpectator },
+	{ TankState::sNormal,    TankState::sDead      },
+	{ TankState::sNormal,    TankState::sLoading   },
+	{ TankState::sNormal,    TankState::sSpectator },
+	{ TankState::sSpectator, TankState::sLoading   },
+	{ TankState::sBuying,    TankState::sSpectator },
+	{ TankState::sBuying,    TankState::sLoading   },
+	{ TankState::sBuying,    TankState::sNormal    }
 };
 
-TankState::TankState(ScorchedContext &context, unsigned int playerId) : 
-	state_(sLoading), tank_(0),
-	context_(context), 
+TankState::TankState(ScorchedContext &context, unsigned int playerId) :
+	context_(context),
+	tank_(nullptr),
+	state_(sLoading),
+	lives_(0),
+	maxLives_(1),
+	stateChangeCount_(0),
 	muted_(false),
 	skipshots_(false),
-	lives_(0), maxLives_(1),
 	notSpectator_(false),
-	newlyJoined_(true),
-	stateChangeCount_(0)
-{
-}
+	newlyJoined_(true)
+{}
 
 TankState::~TankState()
-{
-}
+{}
 
 void TankState::newMatch()
 {

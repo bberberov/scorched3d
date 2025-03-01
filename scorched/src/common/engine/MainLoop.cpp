@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,17 +27,15 @@
 #include <SDL/SDL.h>
 #endif
 
-MainLoop::MainLoop() : 
-	exitLoop_(false), 
-	drawTime_(0.0f), clearTime_(0.0f), totalTime_(0.0f)
-{
-
-}
+MainLoop::MainLoop() :
+	drawTime_(0.0f),
+	clearTime_(0.0f),
+	totalTime_(0.0f),
+	exitLoop_(false)
+{}
 
 MainLoop::~MainLoop()
-{
-
-}
+{}
 
 void MainLoop::clear()
 {

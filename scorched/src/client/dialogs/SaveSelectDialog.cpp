@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,20 +30,21 @@
 #include <common/Defines.h>
 #include <common/FileList.h>
 
-GLWIconListSaveItem::GLWIconListSaveItem(
-	const char *file, const char *time) :
-	tip_(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("SAVE", "Save"), 
-		LANG_RESOURCE("SAVE_TOOLTIP", "Load a previously saved game.")),
+GLWIconListSaveItem::GLWIconListSaveItem( const char *file, const char *time) :
 	icon_(0.0f, 0.0f, 40.0f, 40.0f),
-	file_(file), time_(time)
+	tip_(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE("SAVE", "Save"),
+		LANG_RESOURCE("SAVE_TOOLTIP", "Load a previously saved game.")
+	),
+	file_(file),
+	time_(time)
 {
 	icon_.setTextureImage(ImageID(S3D::eDataLocation, "data/images/save.bmp"));
 }
 
 GLWIconListSaveItem::~GLWIconListSaveItem()
-{
-}
+{}
 
 void GLWIconListSaveItem::draw(float x, float y, float w)
 {
@@ -78,7 +79,7 @@ SaveSelectDialog *SaveSelectDialog::instance()
 	return instance_;
 }
 
-SaveSelectDialog::SaveSelectDialog() : 
+SaveSelectDialog::SaveSelectDialog() :
 	GLWWindow("Save", 300.0f, 410.0f, eHideName, "")
 {
 	iconList_ = new GLWIconList(10.0f, 40.0f, 280.0f, 360.0f, 50.0f);
@@ -92,9 +93,7 @@ SaveSelectDialog::SaveSelectDialog() :
 }
 
 SaveSelectDialog::~SaveSelectDialog()
-{
-
-}
+{}
 
 void SaveSelectDialog::display()
 {

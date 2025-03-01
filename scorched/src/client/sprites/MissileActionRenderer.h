@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,7 +33,12 @@ class VirtualSoundSource;
 class MissileActionRenderer : public ActionRenderer
 {
 public:
-	MissileActionRenderer(int flareType, float scale, float spinspeed, const Vector &rotationAxis);
+	MissileActionRenderer(
+		int flareType,
+		float scale,
+		float spinspeed,
+		const Vector &rotationAxis
+	);
 	virtual ~MissileActionRenderer();
 
 	virtual void simulate(Action *action, float timepassed, bool &remove);
@@ -41,18 +46,18 @@ public:
 
 protected:
 	int flareType_;
-	VirtualSoundSource *sound_;
+	float scale_;
+	float spinSpeed_;
+	float rotation_;
+	float frame_;
 	Counter counter_;
+	VirtualSoundSource *sound_;
 	ParticleEmitter *flameemitter_;
 	ParticleEmitter *smokeemitter_;
 	GLTextureSet *flameTextureSet_;
 	GLTextureSet *smokeTextureSet_;
 	MissileMesh *mesh_;
 	Vector rotationAxis_;
-	float rotation_;
-	float scale_;
-	float frame_;
-	float spinSpeed_;
 };
 
 #endif

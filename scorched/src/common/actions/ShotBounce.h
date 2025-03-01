@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,16 +32,17 @@ class ShotBounce : public PhysicsParticle
 {
 public:
 	ShotBounce(
-		WeaponRoller *weapon, 
-		FixedVector &startPosition, FixedVector &velocity,
-		WeaponFireContext &weaponContext);
+		WeaponRoller *weapon,
+		FixedVector &startPosition,
+		FixedVector &velocity,
+		WeaponFireContext &weaponContext
+	);
 	virtual ~ShotBounce();
 
 	virtual void simulate(fixed frameTime, bool &remove);
 	virtual void init();
 	virtual void draw();
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId);
+	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId);
 	virtual std::string getActionDetails();
 	virtual std::string getActionType() { return "ShotBounce"; }
 
@@ -50,16 +51,20 @@ public:
 
 protected:
 	ParticleGroup *groups_;
-	TankViewPointProvider *vPoint_;
-	FixedVector startPosition_, velocity_;
-	FixedVector lookFrom_;
+	FixedVector startPosition_;
+	FixedVector velocity_;
 	WeaponRoller *weapon_;
 	WeaponFireContext weaponContext_;
-	fixed totalTime_, simulateTime_, stepSize_, timeout_;
-	fixed weaponTime_;
+	TankViewPointProvider *vPoint_;
+	FixedVector lookFrom_;
 	ModelRendererSimulator *model_;
-	float scale_;
 	bool collided_;
+	fixed totalTime_;
+	fixed simulateTime_;
+	fixed timeout_;
+	fixed stepSize_;
+	fixed weaponTime_;
+	float scale_;
 
 	void doCollision();
 

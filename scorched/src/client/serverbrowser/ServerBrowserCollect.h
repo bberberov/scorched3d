@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,7 +34,8 @@ public:
 	// Fetch the new list from the server
 	bool fetchServerList(
 		const char *masterListServer,
-		const char *masterListServerURI);
+		const char *masterListServerURI
+	);
 	bool fetchLANList();
 	bool fetchFavoritesList();
 
@@ -48,11 +49,11 @@ public:
 
 protected:
 	ServerBrowserServerList &list_;
-	bool cancel_;
+	NetServerTCP netServer_;
 	bool complete_;
+	bool cancel_;
 	UDPpacket *sendPacket_;
 	UDPpacket *recvPacket_;
-	NetServerTCP netServer_;
 	NetBuffer sendNetBuffer_;
 };
 

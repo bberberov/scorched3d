@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -42,14 +42,17 @@ public:
 	virtual void processMessage(NetMessage &message);
 
 protected:
-	unsigned int destinationId_, ipAddress_;
 	TCPsocket socket_;
+	unsigned int destinationId_;
+	unsigned int ipAddress_;
 	SDL_Thread *sendThread_;
 	NetMessageHandler sendMessageHandler_;
 	NetMessageHandler *recieveMessageHandler_;
 	std::list<NetMessage *> outgoingMessages_;
-	unsigned int messagesSent_, bytesOut_;
-	bool stopped_, running_;
+	unsigned int messagesSent_;
+	unsigned int bytesOut_;
+	bool stopped_;
+	bool running_;
 
 	static int sendThreadFunc(void *c);
 	bool actualSendFunc();

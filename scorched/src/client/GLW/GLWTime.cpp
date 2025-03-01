@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,17 +24,16 @@
 
 REGISTER_CLASS_SOURCE(GLWTime);
 
-GLWTime::GLWTime(float x, float y, float size) : 
-	GLWidget(x, y, 0.0f, 20.0f), size_(size),
-	color_(GLWFont::widgetFontColor)
+GLWTime::GLWTime(float x, float y, float size) :
+	GLWidget(x, y, 0.0f, 20.0f),
+	color_(GLWFont::widgetFontColor),
+	size_(size)
 {
 	tooltipTransparent_ = true;
 }
 
 GLWTime::~GLWTime()
-{
-
-}
+{}
 
 void GLWTime::calcWidth()
 {

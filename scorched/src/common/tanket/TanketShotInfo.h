@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -82,9 +82,12 @@ protected:
 	int skippedShots_;
 
 	// Turret angles
-	fixed turretRotXY_, turretRotYZ_, power_;
+	fixed turretRotXY_;
+	fixed turretRotYZ_;
+	fixed power_;
 	fixed maxPower_;
-	int selectPositionX_, selectPositionY_;
+	int selectPositionX_;
+	int selectPositionY_;
 };
 
 #endif

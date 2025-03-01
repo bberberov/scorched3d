@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -49,10 +49,10 @@ public:
 	virtual void simulate(const unsigned int state, float simTime);
 
 protected:
+	GLCamera *camera_;
 	Particle *particles_;
 	Particle **usedParticles_;
 	Particle **freeParticles_;
-	GLCamera *camera_;
 
 	float totalTime_;
 	unsigned int maxParticles_;

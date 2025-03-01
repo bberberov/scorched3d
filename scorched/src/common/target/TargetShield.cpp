@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,21 +28,18 @@
 #include <engine/ActionController.h>
 #include <common/OptionsScorched.h>
 
-TargetShield::TargetShield(ScorchedContext &context,
-	unsigned int playerId) :
+TargetShield::TargetShield(ScorchedContext &context, unsigned int playerId) :
 	context_(context),
-	currentShield_(0),
-	power_(0), 
-	target_(0),
+	currentShield_(nullptr),
+	target_(nullptr),
+	power_(0),
 	boundingSize_(0),
 	graphicalCurrentShield_(0),
 	graphicalShieldPower_(0)
-{
-}
+{}
 
 TargetShield::~TargetShield()
-{
-}
+{}
 
 void TargetShield::loaded()
 {

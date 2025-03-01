@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,8 +32,12 @@ class Parachute;
 class TargetFalling : public PhysicsParticle
 {
 public:
-	TargetFalling(Weapon *weapon, unsigned int fallingPlayerId,
-			WeaponFireContext &weaponContext, Parachute *parachute);
+	TargetFalling(
+		Weapon *weapon,
+		unsigned int fallingPlayerId,
+		WeaponFireContext &weaponContext,
+		Parachute *parachute
+	);
 	virtual ~TargetFalling();
 
 	virtual void init();
@@ -41,16 +45,15 @@ public:
 	virtual std::string getActionDetails();
 	virtual std::string getActionType() { return "TargetFalling"; }
 
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId);
+	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId);
 
 	Parachute *getParachute() { return parachute_; }
 
 protected:
 	Weapon *weapon_;
-	Parachute *parachute_;
 	unsigned int fallingPlayerId_;
 	WeaponFireContext weaponContext_;
+	Parachute *parachute_;
 	unsigned int data_;
 	FixedVector tankStartPosition_;
 

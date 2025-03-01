@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,9 +32,12 @@ public:
 	Water2Patches();
 	~Water2Patches();
 
-	void generate(Water2Points &heights, 
-		unsigned int totalSize, unsigned int patchSize,
-		float waterHeight);
+	void generate(
+		Water2Points &heights,
+		unsigned int totalSize,
+		unsigned int patchSize,
+		float waterHeight
+	);
 
 	Water2Patch *getPatch(int index);
 	Water2Patch *getPatch(int x, int y);
@@ -46,7 +49,8 @@ public:
 
 protected:
 	int size_;
-	int totalSize_, patchSize_;
+	int totalSize_;
+	int patchSize_;
 	Image normalMap_;
 	GLTexture aof_;
 	GLVertexBufferObject *bufferObject_;

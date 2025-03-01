@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,20 +38,23 @@
 #include <math.h>
 #include <set>
 
-Laser::Laser(Weapon *weapon, LaserParams *params,
-		FixedVector &position, FixedVector &direction,
-		WeaponFireContext &weaponContext) :
-	Action(weaponContext.getInternalContext().getReferenced()),
+Laser::Laser(
+	Weapon *weapon,
+	LaserParams *params,
+	FixedVector &position,
+	FixedVector &direction,
+	WeaponFireContext &weaponContext
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
+	weapon_(weapon),
+	weaponContext_(weaponContext),
 	params_(params),
+	position_(position),
+	direction_(direction),
 	totalTime_(0),
 	drawLength_(0),
-	firstTime_(true),
-	weaponContext_(weaponContext), 
-	weapon_(weapon),
-	position_(position), 
-	direction_(direction)
-{
-}
+	firstTime_(true)
+{}
 
 Laser::~Laser()
 {
@@ -79,10 +82,12 @@ void Laser::init()
 
 std::string Laser::getActionDetails()
 {
-	return S3D::formatStringBuffer("%s %s %s",
+	return S3D::formatStringBuffer(
+		"%s %s %s",
 		position_.asQuickString(),
 		direction_.asQuickString(),
-		weapon_->getParent()->getName());
+		weapon_->getParent()->getName()
+	);
 }
 
 void Laser::simulate(fixed frameTime, bool &remove)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,7 @@
 
 #include <GLEXT/GLTexture.h>
 
-class ShadowMap  
+class ShadowMap
 {
 public:
 	ShadowMap();
@@ -41,7 +41,8 @@ protected:
 	unsigned int shadowCount_;
 	GLTexture shadowTexture_;
 	GLubyte *shadowBytes_;
-	GLint size_, sizeSq_;
+	GLint size_;
+	GLint sizeSq_;
 
 	void addShadow(float sx, float sy, float sw, float opacity, bool circle);
 

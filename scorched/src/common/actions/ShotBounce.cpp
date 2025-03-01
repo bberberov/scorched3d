@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,16 +35,24 @@
 #include <3dsparse/Model.h>
 #include <string.h>
 
-ShotBounce::ShotBounce(WeaponRoller *weapon, 
-		FixedVector &startPosition, FixedVector &velocity,
-		WeaponFireContext &weaponContext) : 
-	PhysicsParticle(weaponContext.getInternalContext().getReferenced()),
+ShotBounce::ShotBounce(
+	WeaponRoller *weapon,
+	FixedVector &startPosition,
+	FixedVector &velocity,
+	WeaponFireContext &weaponContext
+) :
+	PhysicsParticle( weaponContext.getInternalContext().getReferenced() ),
+	groups_(nullptr),
 	startPosition_(startPosition),
-	velocity_(velocity), weapon_(weapon), weaponContext_(weaponContext),
-	totalTime_(0), simulateTime_(0),
-	model_(0), vPoint_(0), groups_(0), collided_(false)
-{
-}
+	velocity_(velocity),
+	weapon_(weapon),
+	weaponContext_(weaponContext),
+	vPoint_(nullptr),
+	model_(nullptr),
+	collided_(false),
+	totalTime_(0),
+	simulateTime_(0)
+{}
 
 void ShotBounce::init()
 {
@@ -58,8 +66,7 @@ void ShotBounce::init()
 	getPhysics().setOptionTankCollision(getWeapon()->getTankCollision());
 	getPhysics().setOptionTargetCollision(getWeapon()->getTargetCollision());
 
-	stepSize_ = weapon_->getStepSize() * 
-		fixed(true, context_->getOptionsGame().getWeaponSpeed());
+	stepSize_ = weapon_->getStepSize() * fixed(true, context_->getOptionsGame().getWeaponSpeed());
 	weaponTime_ = weapon_->getTime(*context_);
 	timeout_ = weapon_->getTimeout(*context_);
 	scale_ = weapon_->getScale(*context_).asFloat();
@@ -97,14 +104,15 @@ ShotBounce::~ShotBounce()
 
 std::string ShotBounce::getActionDetails()
 {
-	return S3D::formatStringBuffer("%s %s %s",
+	return S3D::formatStringBuffer(
+		"%s %s %s",
 		startPosition_.asQuickString(),
 		velocity_.asQuickString(),
-		weapon_->getParent()->getName());
+		weapon_->getParent()->getName()
+	);
 }
 
-void ShotBounce::collision(PhysicsParticleObject &position, 
-	ScorchedCollisionId collisionId)
+void ShotBounce::collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId)
 {
 	if (!collision_)
 	{
@@ -138,7 +146,7 @@ void ShotBounce::simulate(fixed frameTime, bool &remove)
 void ShotBounce::draw()
 {
 #ifndef S3D_SERVER
-	if (!context_->getServerMode()) 
+	if (!context_->getServerMode())
 	{
 		static float rotMatrix[16];
 		getPhysics().getRotationQuat().getOpenGLRotationMatrix(rotMatrix);
@@ -147,7 +155,8 @@ void ShotBounce::draw()
 		{
 			ModelID &id = ((WeaponRoller *) weapon_)->getRollerModelID();
 			model_ = new ModelRendererSimulator(
-				ModelRendererStore::instance()->loadModel(id));
+				ModelRendererStore::instance()->loadModel(id)
+			);
 		}
 
 		if (vPoint_)
@@ -158,10 +167,11 @@ void ShotBounce::draw()
 		GLState state(GLState::TEXTURE_OFF);
 		glPushMatrix();
 			glTranslatef(
-				getPhysics().getPosition()[0].asFloat(), 
-				getPhysics().getPosition()[1].asFloat(), 
+				getPhysics().getPosition()[0].asFloat(),
+				getPhysics().getPosition()[1].asFloat(),
 				getPhysics().getPosition()[2].asFloat() -
-				model_->getRenderer()->getModel()->getMin()[2].asFloat() * 0.08f);
+				model_->getRenderer()->getModel()->getMin()[2].asFloat() * 0.08f
+			);
 
 			glMultMatrixf(rotMatrix);
 			glScalef(0.08f * scale_, 0.08f * scale_, 0.08f * scale_);
@@ -178,7 +188,8 @@ void ShotBounce::doCollision()
 
 	WeaponRoller *proj = (WeaponRoller *) weapon_;
 	proj->getCollisionAction()->fire(
-		*context_, weaponContext_, 
-		getPhysics().getPosition(), 
-		getPhysics().getVelocity());
+		*context_, weaponContext_,
+		getPhysics().getPosition(),
+		getPhysics().getVelocity()
+	);
 }

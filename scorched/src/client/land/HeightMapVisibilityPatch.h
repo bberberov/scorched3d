@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,11 +32,14 @@ public:
 	HeightMapVisibilityPatch(HeightMap *heightMap);
 	virtual ~HeightMapVisibilityPatch();
 
-	void setLocation(int x, int y,
-		HeightMapVisibilityPatch *leftPatch, 
-		HeightMapVisibilityPatch *rightPatch, 
-		HeightMapVisibilityPatch *topPatch, 
-		HeightMapVisibilityPatch *bottomPatch);
+	void setLocation(
+		int x,
+		int y,
+		HeightMapVisibilityPatch *leftPatch,
+		HeightMapVisibilityPatch *rightPatch,
+		HeightMapVisibilityPatch *topPatch,
+		HeightMapVisibilityPatch *bottomPatch
+	);
 	bool setVisible(float distance, float C);
 	void setNotVisible();
 	void setRecalculateErrors() { recalculateErrors_ = true; }
@@ -54,26 +57,43 @@ public:
 	void drawLODLevel(MipMapPatchIndex &index);
 
 protected:
-	int x_, y_;
+	int x_;
+	int y_;
 	int dataOffSet_;
-	float maxHeight_, minHeight_, boundingSize_;
+	float maxHeight_;
+	float minHeight_;
+	float boundingSize_;
 	int dataSize_;
 	int visibilityIndex_;
-	bool visible_, recalculateErrors_;
+	bool visible_;
+	bool recalculateErrors_;
 	float indexErrors_[5];
 	Vector position_;
 	HeightMap *heightMap_;
 	HeightMapVisibilityPatch *leftPatch_;
-	HeightMapVisibilityPatch *rightPatch_; 
+	HeightMapVisibilityPatch *rightPatch_;
 	HeightMapVisibilityPatch *topPatch_;
 	HeightMapVisibilityPatch *bottomPatch_;
 
 	virtual void calculateErrors();
 	float getHeight(int x, int y);
-	float calculateError(int x1, int x2, int y1, int y2,
-		float x1y1, float x2y2, float x1y2, float x2y1);
-	float calculateError2(int x, int y, int width, 
-		float &minHeight, float &maxHeight);
+	float calculateError(
+		int x1,
+		int x2,
+		int y1,
+		int y2,
+		float x1y1,
+		float x2y2,
+		float x1y2,
+		float x2y1
+	);
+	float calculateError2(
+		int x,
+		int y,
+		int width,
+		float &minHeight,
+		float &maxHeight
+	);
 };
 
 #endif // __INCLUDE_HeightMapVisibilityPatchh_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,7 +36,7 @@
 
 class Tank;
 class MissileMesh;
-class Accessory  
+class Accessory
 {
 public:
 	Accessory();
@@ -100,16 +100,13 @@ public:
 protected:
 	static unsigned int nextAccessoryId_;
 	unsigned int accessoryId_;
-	bool aiOnly_;
-	bool botOnly_;
-	bool noBuy_;
 	AccessoryPart *accessoryAction_;
 	PositionSelectType positionSelect_;
 	ToolTip toolTip_;
-	ModelID modelId_;
 	LangString stringName_;
 	std::string iconName_;
-	std::string groupName_, tabGroupName_;
+	std::string groupName_;
+	std::string tabGroupName_;
 	std::string name_;
 	std::string description_;
 	std::string activationSound_;
@@ -126,6 +123,11 @@ protected:
 	int startingNumber_;
 	fixed modelScale_;
 	bool muzzleFlash_;
+	bool aiOnly_;
+	bool botOnly_;
+	bool noBuy_;
+
+	ModelID modelId_;
 };
 
 #endif // !defined(AFX_ACCESSORY_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_)

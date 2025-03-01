@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,10 +39,10 @@ public:
 	unsigned int getTexState() { return texState_; }
 	GLTexture *getTexture();
 protected:
-	int referenceCount_;
-	GLTexture *texture_;
 	ImageID imageId_;
+	GLTexture *texture_;
 	unsigned texState_;
+	int referenceCount_;
 private:
 	GLTextureReferenceData(const GLTextureReferenceData &other);
 	GLTextureReferenceData &operator=(const GLTextureReferenceData &other);

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,10 +27,10 @@
 #include <GLEXT/GLTextureReference.h>
 #include <string>
 
-class GLWChannelText : 
-	public GLWidget, 
-	public GLWButtonI, 
-	public GLWSelectorI, 
+class GLWChannelText :
+	public GLWidget,
+	public GLWButtonI,
+	public GLWSelectorI,
 	public GLWChannelViewI
 {
 public:
@@ -53,9 +53,13 @@ public:
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	virtual void setParent(GLWPanel *parent);
 	virtual void setX(float x);
 	virtual void setY(float y);
@@ -72,11 +76,16 @@ protected:
 	GLWChannelView view_;
 	std::map<KeyboardKey *, std::string> keys_;
 	LangString text_;
-	float fontSize_, outlineFontSize_;
+	float fontSize_;
+	float outlineFontSize_;
 	float ctime_;
-	bool cursor_, visible_;
+	bool cursor_;
+	bool visible_;
 	bool createdTexture_;
-	int maxTextLen_, cursorPosition_, historyPosition_;
+	int maxTextLen_;
+	int cursorPosition_;
+	int historyPosition_;
+
 	unsigned int whisperDest_;
 	LangString whisperDestStr_;
 

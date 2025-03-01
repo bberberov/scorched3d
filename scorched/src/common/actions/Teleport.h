@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,7 @@
 class Teleport : public Action
 {
 public:
-	Teleport(
-		FixedVector position,
-		WeaponFireContext &weaponContext,
-		WeaponTeleport *weapon);
+	Teleport( FixedVector position, WeaponFireContext &weaponContext, WeaponTeleport *weapon);
 	virtual ~Teleport();
 
 	virtual void init();
@@ -40,11 +37,11 @@ public:
 	virtual std::string getActionType() { return "Teleport"; }
 
 protected:
-	bool firstTime_;
 	FixedVector position_;
 	WeaponFireContext weaponContext_;
 	WeaponTeleport *weapon_;
 	fixed totalTime_;
+	bool firstTime_;
 
 };
 

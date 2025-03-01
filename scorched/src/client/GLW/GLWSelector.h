@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,12 +35,14 @@ Defines the contents of one row of the selection dialog.
 class GLWSelectorEntry
 {
 public:
-	GLWSelectorEntry(const LangString &text = LangString(), 
-		ToolTip *tooltip = 0, 
+	GLWSelectorEntry(
+		const LangString &text = LangString(),
+		ToolTip *tooltip = 0,
 		bool selected = false,
 		GLTextureBase *icon = 0,
 		void *userData = 0,
-		const std::string &dataText = "");
+		const std::string &dataText = ""
+	);
 	
 	LangString &getText() { return text_; }
 	const char *getDataText() { return dataText_.c_str(); }
@@ -57,13 +59,14 @@ public:
 	
 protected:
 	LangString text_;
-	std::string dataText_;
-	GLTextureBase *icon_;
-	int textureWidth_;
 	ToolTip *tip_;
-	Vector color_;
-	bool selected_, seperator_;
+	bool selected_;
+	GLTextureBase *icon_;
 	void *userData_;
+	std::string dataText_;
+	int textureWidth_;
+	Vector color_;
+	bool seperator_;
 	std::list<GLWSelectorEntry> popups_;
 };
 
@@ -95,7 +98,8 @@ public:
 		float x, float y,
 		std::list<GLWSelectorEntry> &entries,
 		unsigned int showState = 0,
-		bool transparent = true);
+		bool transparent = true
+	);
 	// Hide the selector
 	void hideSelector();
 
@@ -109,9 +113,13 @@ public:
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 protected:
 	static GLWSelector *instance_;

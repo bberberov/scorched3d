@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,11 +40,11 @@ public:
 	Vector &getRotation() { return rotation_; }
 
 protected:
+	Vector startPosition_;
+	Vector rotation_;
 	float size_;
 	float totalTime_;
 	float cloudRotation_;
-	Vector rotation_;
-	Vector startPosition_;
 };
 
 class ExplosionNukeRenderer : public ActionRenderer
@@ -58,13 +58,13 @@ public:
 
 	static Vector *positions_;
 protected:
-	GLTextureSet *set_;
-	bool animate_;
 	Vector position_;
 	float size_;
 	float time_;
 	float totalTime_;
+	GLTextureSet *set_;
 	ParticleEmitter emitter_;
+	bool animate_;
 };
 
 #endif

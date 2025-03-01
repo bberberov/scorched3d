@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,9 +39,12 @@ public:
 	void setContext(ScorchedContext *context) { context_ = context; }
 
 	Target *getCollision(FixedVector &position);
-	void getCollisionSet(FixedVector &position, fixed radius, 
-		std::map<unsigned int, Target *> &collisionTargets, 
-		bool ignoreHeight = false);
+	void getCollisionSet(
+		FixedVector &position,
+		fixed radius, std::map<unsigned int,
+		Target *> &collisionTargets,
+		bool ignoreHeight = false
+	);
 
 	void draw();
 

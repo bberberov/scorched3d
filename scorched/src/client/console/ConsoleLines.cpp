@@ -25,15 +25,12 @@
 unsigned ConsoleLine::nextLineNumber_ = 0;
 
 ConsoleLine::ConsoleLine() :
-	lineType_(eNone), lineNumber_(0)
-{
-
-}
+	lineNumber_(0),
+	lineType_(eNone)
+{}
 
 ConsoleLine::~ConsoleLine()
-{
-
-}
+{}
 
 void ConsoleLine::set(const LangString &line, LineType type)
 {
@@ -75,13 +72,12 @@ void ConsoleLine::drawLine(float x, float y, GLFont2d *font)
 }
 
 ConsoleLines::ConsoleLines(unsigned int maxLines) :
-	maxLines_(maxLines), currentLine_(0)
-{
-}
+	maxLines_(maxLines),
+	currentLine_(0)
+{}
 
 ConsoleLines::~ConsoleLines()
-{
-}
+{}
 
 void ConsoleLines::clear()
 {
@@ -111,8 +107,8 @@ void ConsoleLines::addLine(const std::string &originalText, bool showPointer)
 	LangString langStringText(LANG_STRING(originalText)), buffer;
 
 	int section = 0;
-	for (const unsigned int *a=langStringText.c_str(); 
-		*a; 
+	for (const unsigned int *a=langStringText.c_str();
+		*a;
 		a++)
 	{
 		if (*a != '\n') buffer.push_back(*a);
@@ -122,7 +118,7 @@ void ConsoleLines::addLine(const std::string &originalText, bool showPointer)
 			buffer.clear();
 		}
 	}
-	if (!buffer.empty()) 
+	if (!buffer.empty())
 	{
 		addSmallLine(section++, buffer, showPointer);
 	}

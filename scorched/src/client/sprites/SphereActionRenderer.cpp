@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,14 +22,14 @@
 #include <GLEXT/GLCameraFrustum.h>
 #include <GLEXT/GLState.h>
 
-SphereActionRenderer::SphereActionRenderer(Vector &position, float size) : 
-	frameTime_(0.0f), position_(position), size_(size)
-{
-}
+SphereActionRenderer::SphereActionRenderer(Vector &position, float size) :
+	position_(position),
+	size_(size),
+	frameTime_(0.0f)
+{}
 
 SphereActionRenderer::~SphereActionRenderer()
-{
-}
+{}
 
 void SphereActionRenderer::draw(Action *action)
 {

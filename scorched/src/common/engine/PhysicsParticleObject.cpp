@@ -41,18 +41,18 @@
 #include <common/Logger.h>
 
 PhysicsParticleObject::PhysicsParticleObject() :
-	handler_(0),
-	context_(0),
-	optionUnderGroundCollision_(false),
-	iterations_(0),
 	info_(ParticleTypeNone, 0, 0),
+	context_(nullptr),
+	handler_(nullptr),
+	optionUnderGroundCollision_(false),
 	optionRotateOnCollision_(false),
 	optionWallCollision_(true),
 	optionStickyShields_(false),
 	optionShieldCollision_(true),
 	optionLandscapeCollision_(true),
 	optionTankCollision_(true),
-	optionTargetCollision_(true)
+	optionTargetCollision_(true),
+	iterations_(0)
 {}
 
 PhysicsParticleObject::~PhysicsParticleObject()

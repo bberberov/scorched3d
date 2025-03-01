@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,13 @@
 GLCamera *GLCamera::currentCamera_ = 0;
 
 GLCamera::GLCamera(GLsizei windowWidth, GLsizei windowHeight) :
-	rotationXY_(0.0f), rotationYZ_(PI / 4), zoom_(150.0f),
-	useHeightFunc_(false), minHeightFunc_(0), maxHeightFunc_(0), 
-	totalTime_(0.0f), 
-	shake_(0.0f), minHeightData_(0), maxHeightData_(0)
+	rotationXY_(0.0f), rotationYZ_(PI / 4),
+	zoom_(150.0f),
+	shake_(0.0f),
+	totalTime_(0.0f),
+	useHeightFunc_(false),
+	minHeightFunc_(0), maxHeightFunc_(0),
+	minHeightData_(0), maxHeightData_(0)
 {
 	currentCamera_ = this;
 	setWindowOffset(0, 0);
@@ -41,9 +44,7 @@ GLCamera::GLCamera(GLsizei windowWidth, GLsizei windowHeight) :
 }
 
 GLCamera::~GLCamera()
-{
-
-}
+{}
 
 void GLCamera::setUseHeightFunc(bool toggle)
 {
@@ -233,8 +234,7 @@ bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
 	glGetIntegerv(GL_VIEWPORT, viewport);
 
 	float realX = winX / GLViewPort::getWidthMult();
-	float realY = GLViewPort::getActualHeight() - 
-		((GLViewPort::getHeight() - winY) / GLViewPort::getHeightMult());
+	float realY = GLViewPort::getActualHeight() - ((GLViewPort::getHeight() - winY) / GLViewPort::getHeightMult());
 
 	GLdouble x,y,z;
 	gluUnProject(
@@ -246,7 +246,8 @@ bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
 		viewport,
 		&x,
 		&y,
-		&z);
+		&z
+	);
 	Vector pos1((float) x, (float) y, (float) z);
 
 	gluUnProject(
@@ -258,7 +259,8 @@ bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
 		viewport,
 		&x,
 		&y,
-		&z);
+		&z
+	);
 
 	Vector pos2((float) x, (float) y, (float) z);
 
@@ -278,10 +280,12 @@ bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
 	return true;
 }
 
-void GLCamera::scroll(ScrollDir direction, 
+void GLCamera::scroll(
+	ScrollDir direction,
 	float minWidth, float minHeight,
-	float maxWidth, float maxHeight, 
-	float amount)
+	float maxWidth, float maxHeight,
+	float amount
+)
 {
 	float x = 0.0f, y = 0.0f;
 	switch (direction)
@@ -302,9 +306,11 @@ void GLCamera::scroll(ScrollDir direction,
 	scroll(x, y, minWidth, minHeight, maxWidth, maxHeight);
 }
 
-void GLCamera::scroll(float x, float y,
+void GLCamera::scroll(
+	float x, float y,
 	float minWidth, float minHeight,
-	float maxWidth, float maxHeight)
+	float maxWidth, float maxHeight
+)
 {
 	static Vector zvec(0.0f, 0.0f, 1.0f);
 	Vector dir = lookAt_ - currentPosition_;

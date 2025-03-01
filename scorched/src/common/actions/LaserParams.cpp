@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,21 +22,19 @@
 #include <lua/LUAUtil.h>
 #include <XML/XMLNode.h>
 
-LaserParams::LaserParams() : 
+LaserParams::LaserParams() :
 	hurtFirer_(false),
 	color_(1.0f, 0.0f, 0.0f),
-	totalTime_(1),
+	ringTexture_("ring"),
+	ringRadius_(0.0f),
 	minimumDistance_(10), maximumDistance_(200),
 	minimumHurt_(34), maximumHurt_(40),
 	hurtRadius_(2),
-	ringTexture_("ring"),
-	ringRadius_(0.0f)
-{
-}
+	totalTime_(1)
+{}
 
 LaserParams::~LaserParams()
-{
-}
+{}
 
 bool LaserParams::parseXML(XMLNode *accessoryNode)
 {

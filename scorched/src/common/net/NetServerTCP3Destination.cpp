@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,22 +22,21 @@
 #include <common/Logger.h>
 
 NetServerTCP3Destination::NetServerTCP3Destination(
-	NetMessageHandler *recieveMessageHandler, 
+	NetMessageHandler *recieveMessageHandler,
 	TCPsocket socket,
-	unsigned int destinationId) :
-	socket_(socket), destinationId_(destinationId),
-	send_(socket, destinationId, 
-		getIpAddressFromSocket(socket), recieveMessageHandler),
-	recv_(socket, destinationId, 
-		getIpAddressFromSocket(socket), recieveMessageHandler),
+	unsigned int destinationId
+) :
+	socket_(socket),
+	destinationId_(destinationId),
+	send_(socket, destinationId, getIpAddressFromSocket(socket), recieveMessageHandler),
+	recv_(socket, destinationId, getIpAddressFromSocket(socket), recieveMessageHandler),
 	running_(true)
 {
 	ipAddress_ = getIpAddressFromSocket(socket_);
 }
 
 NetServerTCP3Destination::~NetServerTCP3Destination()
-{
-}
+{}
 
 unsigned int NetServerTCP3Destination::getIpAddressFromSocket(TCPsocket socket)
 {
@@ -60,7 +59,7 @@ void NetServerTCP3Destination::printStats()
 		recv_.getMessagesRecieved(), recv_.getBytesIn()));
 }
 
-void NetServerTCP3Destination::sendMessage(NetMessage *message) 
+void NetServerTCP3Destination::sendMessage(NetMessage *message)
 {
 	send_.sendMessage(message);
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,8 +29,7 @@ public:
 	WeaponAimed();
 	virtual ~WeaponAimed();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 protected:
 	int warHeads_;
@@ -38,19 +37,31 @@ protected:
 	NumberParser maxAimedDistance_;
 	NumberParser percentageMissChance_;
 	NumberParser maxInacuracy_;
+	bool randomWhenNoTargets_;
 	bool noSelfHoming_;
 	std::string groupName_;
-	bool randomWhenNoTargets_;
 
-	void fireAimedWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, bool invert);
-	virtual void addWeaponSyncCheck(ScorchedContext &context,
+	void fireAimedWeapon(
+		ScorchedContext &context,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity);
-	virtual void aimShot(ScorchedContext &context,
+		FixedVector &position,
+		bool invert
+	);
+	virtual void addWeaponSyncCheck(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
+	virtual void aimShot(
+		ScorchedContext &context,
 		RandomGenerator &random,
-		FixedVector &position, FixedVector &shootAt,
-		fixed &angleXYDegs, fixed &angleYZDegs, fixed &power) = 0;
+		FixedVector &position,
+		FixedVector &shootAt,
+		fixed &angleXYDegs,
+		fixed &angleYZDegs,
+		fixed &power
+	) = 0;
 };
 
 #endif // !defined(AFX_WeaponAimed_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)

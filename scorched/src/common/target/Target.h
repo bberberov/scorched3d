@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,7 +45,7 @@ class TargetGroup;
 class TargetParachute;
 class TargetRenderer;
 class Accessory;
-class Target  
+class Target
 {
 public:
 	enum TargetType
@@ -55,9 +55,7 @@ public:
 		TypeTanket = 3
 	};
 
-	Target(unsigned int playerId, 
-		const LangString &name, 
-		ScorchedContext &context);
+	Target(unsigned int playerId, const LangString &name, ScorchedContext &context);
 	virtual ~Target();
 
 	virtual void loaded();
@@ -104,15 +102,15 @@ public:
 
 protected:
 	unsigned int playerId_;
-	fixed border_;
+	LangString name_;
 	ScorchedContext &context_;
+	fixed border_;
 	TargetLife *life_;
 	TargetShield *shield_;
 	TargetParachute *parachute_;
 	TargetRenderer *renderer_;
 	TargetState *targetState_;
 	TargetGroup *group_;
-	LangString name_;
 	std::string cStrName_;
 	Accessory *deathAction_, *burnAction_, *collisionAction_;
 

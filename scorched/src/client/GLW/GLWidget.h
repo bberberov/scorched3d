@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,8 +35,7 @@ Defines the interface.
 class GLWidget : public MetaClass
 {
 public:
-	GLWidget(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
+	GLWidget(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
 	virtual ~GLWidget();
 
 	// The widgets implementation
@@ -45,9 +44,13 @@ public:
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 	virtual void display();
 	virtual void hide();

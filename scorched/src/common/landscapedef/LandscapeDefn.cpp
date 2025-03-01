@@ -195,10 +195,10 @@ bool LandscapeDefnHeightMapGenerate::readXML(XMLNode *node)
 }
 
 LandscapeDefn::LandscapeDefn() :
-	heightmap(0),
-	tankstart(0),
 	roof(0),
-	deform(0)
+	heightmap(0),
+	deform(0),
+	tankstart(0)
 {}
 
 LandscapeDefn::~LandscapeDefn()

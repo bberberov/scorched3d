@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,17 +46,22 @@
 #endif
 #include <math.h>
 
-Explosion::Explosion(FixedVector &position,
+Explosion::Explosion(
+	FixedVector &position,
 	FixedVector &velocity,
 	ExplosionParams *params,
-	Weapon *weapon, WeaponFireContext &weaponContext) :
-	Action(weaponContext.getInternalContext().getReferenced()),
+	Weapon *weapon,
+	WeaponFireContext &weaponContext
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
+	position_(position),
+	velocity_(velocity),
 	params_(params),
-	firstTime_(true), totalTime_(0),
-	weapon_(weapon), weaponContext_(weaponContext), 
-	position_(position), velocity_(velocity)
-{
-}
+	weapon_(weapon),
+	weaponContext_(weaponContext),
+	totalTime_(0),
+	firstTime_(true)
+{}
 
 Explosion::~Explosion()
 {
@@ -65,26 +70,28 @@ Explosion::~Explosion()
 
 void Explosion::init()
 {
-	fixed multiplier = fixed(((int) context_->getOptionsGame().getWeapScale()) - 
-							 OptionsGame::ScaleMedium);
+	fixed multiplier = fixed(
+		((int) context_->getOptionsGame().getWeapScale()) - OptionsGame::ScaleMedium
+	);
 	multiplier *= fixed(true, 5000);
 	multiplier += 1;
-	fixed explosionSize = params_->getSize() * multiplier;	
+	fixed explosionSize = params_->getSize() * multiplier;
 
 #ifndef S3D_SERVER
-	if (!context_->getServerMode()) 
+	if (!context_->getServerMode())
 	{
 		float height = context_->getLandscapeMaps().getGroundMaps().getInterpHeight(
-			position_[0], position_[1]).asFloat();
+			position_[0], position_[1]
+		).asFloat();
 		float aboveGround = position_[2].asFloat() - height;
 
 		// If there is a weapon play a splash sound when in water
 		bool waterSplash = false;
 		if (params_->getCreateSplash())
 		{
-			waterSplash = 
-				Landscape::instance()->getWater().explosion(
-					position_.asVector(), params_->getSize().asFloat());
+			waterSplash = Landscape::instance()->getWater().explosion(
+				position_.asVector(), params_->getSize().asFloat()
+			);
 		}
 
 		// Create particles from the center of the explosion

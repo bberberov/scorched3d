@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,27 +26,26 @@ ServerWebServerQueueEntry::ServerWebServerQueueEntry(
 	const char *url,
 	ServerWebServerI *handler,
 	std::map<std::string, std::string> &fields,
-	std::map<std::string, NetMessage *> &parts) :
+	std::map<std::string, NetMessage *> &parts
+) :
 	destinationId_(destinationId),
-	sid_(sid), 
+	sid_(sid),
 	request_(url, fields, parts),
 	handler_(handler)
-{
-}
+{}
 
 ServerWebServerQueueEntry::~ServerWebServerQueueEntry()
 {
 	delete handler_;
 }
 
-ServerWebServerQueue::ServerWebServerQueue() 
+ServerWebServerQueue::ServerWebServerQueue()
 {
 	queueMutex_ = SDL_CreateMutex();
 }
 
 ServerWebServerQueue::~ServerWebServerQueue()
-{
-}
+{}
 
 void ServerWebServerQueue::addEntry(ServerWebServerQueueEntry *entry)
 {

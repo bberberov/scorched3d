@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,16 +25,15 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponLeapFrog);
 
-WeaponLeapFrog::WeaponLeapFrog():  
-	collisionAction_(0), bounce_("WeaponLeapFrog::bounce", fixed(true, 6000))
-{
-
-}
+WeaponLeapFrog::WeaponLeapFrog() :
+	collisionAction_(nullptr),
+	bounce_( "WeaponLeapFrog::bounce", fixed(true, 6000) )
+{}
 
 WeaponLeapFrog::~WeaponLeapFrog()
 {
 	delete collisionAction_;
-	collisionAction_ = 0;
+	collisionAction_ = nullptr;
 }
 
 bool WeaponLeapFrog::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -60,8 +59,12 @@ bool WeaponLeapFrog::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	return true;
 }
 
-void WeaponLeapFrog::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponLeapFrog::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	FixedVector newVelocity = velocity * bounce_.getValue(context);
 	if (newVelocity[2] < 0) newVelocity[2] *= -1;

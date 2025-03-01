@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,9 +46,10 @@ ServerWebServer *ServerWebServer::instance()
 	return instance_;
 }
 
-ServerWebServer::ServerWebServer() : 
+ServerWebServer::ServerWebServer() :
+	asyncTimer_(0),
 	netServer_(new NetServerHTTPProtocolRecv),
-	logger_(0), asyncTimer_(0)
+	logger_(nullptr)
 {
 	sendThread_ = SDL_CreateThread(ServerWebServer::sendThreadFunc, 0);
 	if (sendThread_ == 0)
@@ -79,8 +80,7 @@ ServerWebServer::ServerWebServer() :
 }
 
 ServerWebServer::~ServerWebServer()
-{
-}
+{}
 
 int ServerWebServer::sendThreadFunc(void *)
 {
@@ -109,22 +109,19 @@ void ServerWebServer::start(int port)
 	}
 }
 
-void ServerWebServer::addRequestHandler(const char *url,
-	ServerWebServerI *handler)
+void ServerWebServer::addRequestHandler(const char *url, ServerWebServerI *handler)
 {
 	HandlerEntry entry = { handler, 0 };
 	handlers_[url] = entry;
 }
 
-void ServerWebServer::addThrededRequestHandler(const char *url,
-	ServerWebServerI *handler)
+void ServerWebServer::addThrededRequestHandler(const char *url, ServerWebServerI *handler)
 {
 	HandlerEntry entry = { handler, HandlerEntry::eThreaded };
 	handlers_[url] = entry;
 }
 
-void ServerWebServer::addAsyncRequestHandler(const char *url,
-	ServerWebServerI *handler)
+void ServerWebServer::addAsyncRequestHandler(const char *url, ServerWebServerI *handler)
 {
 	HandlerEntry entry = { handler, HandlerEntry::eAsync };
 	handlers_[url] = entry;
@@ -336,7 +333,8 @@ bool ServerWebServer::processRequest(
 	const char *ip,
 	const char *url,
 	std::map<std::string, std::string> &fields,
-	std::map<std::string, NetMessage *> &parts)
+	std::map<std::string, NetMessage *> &parts
+)
 {
 	bool delayed = false; // Set delayed on authentication failure
 	std::string text;
@@ -441,7 +439,8 @@ bool ServerWebServer::processRequest(
 unsigned int ServerWebServer::validateSession(
 	const char *ip,
 	const char *url,
-	std::map<std::string, std::string> &fields)
+	std::map<std::string, std::string> &fields
+)
 {
 	// Hack for silly java 6.0 applets
 	if (strcmp(url, "/Applet.jar") == 0)
@@ -470,7 +469,8 @@ bool ServerWebServer::validateUser(
 	const char *ip,
 	const char *url,
 	std::map<std::string, std::string> &fields,
-	bool &delayed)
+	bool &delayed
+)
 {
 	// Create a session for the user
 	unsigned int sid = ScorchedServer::instance()->getServerAdminSessions().login(

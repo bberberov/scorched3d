@@ -55,9 +55,9 @@ public:
 	Weapon *getWeapon() { return weapon_; }
 
 protected:
-	Weapon *weapon_;
 	ScorchedContext *context_;
 	lua_State *L_;
+	Weapon *weapon_;
 };
 
 #endif // __INCLUDE_LUAScript_INCLUDE__

@@ -27,10 +27,12 @@
 #include <GLEXT/GLInfo.h>
 #include <limits>
 
-Water2Patch::Water2Patch() : 
-	data_(0), dataSize_(0), size_(0), bufferOffSet_(-1)
-{
-}
+Water2Patch::Water2Patch() :
+	data_(nullptr),
+	dataSize_(0),
+	size_(0),
+	bufferOffSet_(-1)
+{}
 
 Water2Patch::~Water2Patch()
 {
@@ -68,7 +70,7 @@ void Water2Patch::generate(Water2Points &heights,
 	dataSize_ = (size + 1) * (size + 1);
 	if (!data_) data_ = new Data[dataSize_];
 
-	int startX = posX * size;  
+	int startX = posX * size;
 	int startY = posY * size;
 
 	{

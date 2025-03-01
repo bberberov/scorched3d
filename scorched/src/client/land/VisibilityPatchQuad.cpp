@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,14 +23,13 @@
 #include <GLEXT/GLCameraFrustum.h>
 
 VisibilityPatchQuad::VisibilityPatchQuad() :
-	topLeft_(0), topRight_(0),
-	botLeft_(0), botRight_(0),
-	landVisibilityPatch_(0),
-	roofVisibilityPatch_(0),
-	waterVisibilityPatch_(0),
-	targetVisibilityPatch_(0)
-{
-}
+	landVisibilityPatch_(nullptr),
+	roofVisibilityPatch_(nullptr),
+	waterVisibilityPatch_(nullptr),
+	targetVisibilityPatch_(nullptr),
+	topLeft_(nullptr), topRight_(nullptr),
+	botLeft_(nullptr), botRight_(nullptr)
+{}
 
 VisibilityPatchQuad::~VisibilityPatchQuad()
 {
@@ -38,17 +37,24 @@ VisibilityPatchQuad::~VisibilityPatchQuad()
 	delete botLeft_; delete botRight_;
 }
 
-void VisibilityPatchQuad::setLocation(VisibilityPatchGrid *patchGrid, int x, int y, int size,
-	int mapwidth, int mapheight, int roofBaseHeight)
+void VisibilityPatchQuad::setLocation(
+	VisibilityPatchGrid *patchGrid,
+	int x,
+	int y,
+	int size,
+	int mapwidth,
+	int mapheight,
+	int roofBaseHeight
+)
 {
 	x_ = x; y_ = y; size_ = size;
 	position_ = Vector(x_ + size_ / 2, y_ + size_ / 2);
 	roofPosition_ = Vector(x_ + size_ / 2, y_ + size_ / 2, roofBaseHeight);
 
 	int endSize = 512;
-	if ((x + size_) > 0 && 
+	if ((x + size_) > 0 &&
 		(y + size_) > 0 &&
-		x < mapwidth && y < mapheight) 
+		x < mapwidth && y < mapheight)
 	{
 		endSize = 32;
 		if (size == 32)
@@ -176,7 +182,6 @@ void VisibilityPatchQuad::calculateGroundVisibility(VisibilityPatchInfo &patchIn
 		setGroundVisible(patchInfo, cameraPos, C);
 	}
 }
-
 
 void VisibilityPatchQuad::setRoofNotVisible(VisibilityPatchInfo &patchInfo, Vector &cameraPos)
 {

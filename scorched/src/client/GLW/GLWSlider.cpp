@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,20 +29,23 @@
 
 REGISTER_CLASS_SOURCE(GLWSlider);
 
-GLWSlider::GLWSlider(float x, float y, float w, 
-	float min, float max, int marks) :
-	GLWidget(x, y, w, 20.0f), 
+GLWSlider::GLWSlider(
+	float x,
+	float y,
+	float w,
+	float min, float max,
+	int marks
+) :
+	GLWidget(x, y, w, 20.0f),
+	handler_(nullptr),
 	min_(min), max_(max),
-	marks_(marks),
-	handler_(0)
+	marks_(marks)
 {
 	setCurrent(min_);
 }
 
 GLWSlider::~GLWSlider()
-{
-
-}
+{}
 
 void GLWSlider::draw()
 {
@@ -77,8 +80,8 @@ void GLWSlider::draw()
 }
 
 void GLWSlider::setCurrent(float current)
-{ 
-	current_ = current; 
+{
+	current_ = current;
 	if (handler_) handler_->currentChanged(getId(), current_);
 }
 
@@ -97,8 +100,7 @@ void GLWSlider::mouseDown(int button, float x, float y, bool &skipRest)
 }
 
 void GLWSlider::mouseUp(int button, float x, float y, bool &skipRest)
-{
-}
+{}
 
 void GLWSlider::mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest)
 {

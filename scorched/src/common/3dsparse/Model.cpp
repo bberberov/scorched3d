@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,12 +22,12 @@
 #include <3dsparse/ModelMaths.h>
 #include <common/Defines.h>
 
-Model::Model() : 
-	startFrame_(0), totalFrames_(0), 
+Model::Model() :
+	startFrame_(0),
+	totalFrames_(0),
 	noTriangles_(0),
 	texturesUsed_(false)
-{
-}
+{}
 
 Model::~Model()
 {

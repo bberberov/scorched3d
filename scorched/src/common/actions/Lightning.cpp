@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,29 +35,29 @@
 #include <weapons/AccessoryStore.h>
 #include <math.h>
 
-Lightning::Lightning(WeaponLightning *weapon,
-		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity) :
-	Action(weaponContext.getInternalContext().getReferenced()),
-	totalTime_(0),
+Lightning::Lightning(
+	WeaponLightning *weapon,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
 	weapon_(weapon),
 	weaponContext_(weaponContext),
-	position_(position), velocity_(velocity)
-{
-}
+	position_(position),
+	velocity_(velocity),
+	totalTime_(0)
+{}
 
 Lightning::~Lightning()
-{
-}
+{}
 
 void Lightning::init()
 {
 	FixedVector direction = velocity_.Normalize();
 	std::map<unsigned int, fixed> hurtMap;
 
-	generateLightning(0, 1, weapon_->getSize(), 
-		position_, direction, position_, direction,
-		hurtMap);
+	generateLightning(0, 1, weapon_->getSize(), position_, direction, position_, direction, hurtMap);
 
 	std::map<unsigned int, fixed>::iterator hurtItor;
 	for (hurtItor = hurtMap.begin();
@@ -68,45 +68,57 @@ void Lightning::init()
 		fixed damage = (*hurtItor).second;
 
 		TargetDamageCalc::damageTarget(
-			*context_, playerId, weapon_, weaponContext_, 
-			damage, true, false, false);
+			*context_,
+			playerId,
+			weapon_,
+			weaponContext_,
+			damage,
+			true,
+			false,
+			false
+		);
 	}
 
 #ifndef S3D_SERVER
 	texture_.setImageID(
-		ImageID(S3D::eModLocation, 
-		weapon_->getTexture(), 
-		weapon_->getTexture(), 
-		false));
+		ImageID(S3D::eModLocation,
+		weapon_->getTexture(),
+		weapon_->getTexture(),
+		false)
+	);
 #endif
 }
 
 std::string Lightning::getActionDetails()
 {
-	return S3D::formatStringBuffer("%s %s %s",
+	return S3D::formatStringBuffer(
+		"%s %s %s",
 		position_.asQuickString(),
 		velocity_.asQuickString(),
-		weapon_->getParent()->getName());
+		weapon_->getParent()->getName()
+	);
 }
 
 void Lightning::simulate(fixed frameTime, bool &remove)
 {
 #ifndef S3D_SERVER
 	if (!context_->getServerMode())
-	{   
+	{
 		if (firstTime_)
-		{ 
+		{
 			firstTime_ = false;
-			if (weapon_->getSound() &&
-				0 != strcmp("none", weapon_->getSound()))
+			if (weapon_->getSound() && 0 != strcmp("none", weapon_->getSound()))
 			{
-				SoundBuffer *expSound =
-					Sound::instance()->fetchOrCreateBuffer(
-						S3D::getModFile(weapon_->getSound()));
-				SoundUtils::playAbsoluteSound(VirtualSoundPriority::eAction,
-					expSound, position_.asVector());
+				SoundBuffer *expSound = Sound::instance()->fetchOrCreateBuffer(
+					S3D::getModFile( weapon_->getSound() )
+				);
+				SoundUtils::playAbsoluteSound(
+					VirtualSoundPriority::eAction,
+					expSound,
+					position_.asVector()
+				);
 			}
-		} 
+		}
 	}
 #endif // #ifndef S3D_SERVER
 
@@ -120,14 +132,12 @@ void Lightning::draw()
 #ifndef S3D_SERVER
 	if (!context_->getServerMode())
 	{
-		Vector &cameraPos = 
-			GLCamera::getCurrentCamera()->getCurrentPos();
+		Vector &cameraPos = GLCamera::getCurrentCamera()->getCurrentPos();
 
 		GLState state(GLState::TEXTURE_ON | GLState::BLEND_ON);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 		glDepthMask(GL_FALSE);
-		glColor4f(1.0f, 1.0f, 1.0f, 
-			1.0f - totalTime_.asFloat() / weapon_->getTotalTime().asFloat());
+		glColor4f(1.0f, 1.0f, 1.0f, 1.0f - totalTime_.asFloat() / weapon_->getTotalTime().asFloat());
 		texture_.draw();
 		
 		Vector offset(0.0f, 0.0f, 0.5f);
@@ -174,8 +184,11 @@ void Lightning::draw()
 #endif // #ifndef S3D_SERVER
 }
 
-void Lightning::dispaceDirection(FixedVector &direction, 
-	FixedVector &originalDirection, fixed angle)
+void Lightning::dispaceDirection(
+	FixedVector &direction,
+	FixedVector &originalDirection,
+	fixed angle
+)
 {
 	RandomGenerator &generator = context_->getSimulator().getRandomGenerator();
 
@@ -205,16 +218,21 @@ void Lightning::dispaceDirection(FixedVector &direction,
 	}	
 }
 
-void Lightning::generateLightning(int id, int depth, fixed size, 
-	FixedVector &originalPosition, FixedVector &originalDirection,
-	FixedVector &start, FixedVector &direction,
-	std::map<unsigned int, fixed> &hurtMap)
+void Lightning::generateLightning(
+	int id,
+	int depth,
+	fixed size,
+	FixedVector &originalPosition,
+	FixedVector &originalDirection,
+	FixedVector &start,
+	FixedVector &direction,
+	std::map<unsigned int, fixed> &hurtMap
+)
 {
 	if (id > 100) return;
 
 	RandomGenerator &generator = context_->getSimulator().getRandomGenerator();
-	fixed length = weapon_->getSegLength() + 
-		weapon_->getSegVar() * generator.getRandFixed("Lighting");
+	fixed length = weapon_->getSegLength() + weapon_->getSegVar() * generator.getRandFixed("Lighting");
 	FixedVector end = start + direction * length;
 
 	// Add the new lightning segment
@@ -232,16 +250,14 @@ void Lightning::generateLightning(int id, int depth, fixed size,
 	damageTargets(segment.end, hurtMap);
 
 	// Rand posibility that we stop
-	if (depth > 1 && generator.getRandFixed("Lighting") < 
-		weapon_->getDeathProb())
+	if (depth > 1 && generator.getRandFixed("Lighting") < weapon_->getDeathProb())
 	{
 		segment.endsegment = true;
 		return;
 	}
 
 	// Check if we have gone too far
-	if ((originalPosition - end).Magnitude() > 
-		weapon_->getConeLength()) 
+	if ( (originalPosition - end).Magnitude() > weapon_->getConeLength() )
 	{
 		segment.endsegment = true;
 		return;
@@ -250,16 +266,21 @@ void Lightning::generateLightning(int id, int depth, fixed size,
 	// Continue this lightning strand
 	{
 		FixedVector newdirection = end - start;
-		dispaceDirection(newdirection, originalDirection, 
-			weapon_->getAngleVar() * fixed(true, 2500));
-		generateLightning(id + 1, depth, size, 
-			originalPosition, originalDirection, 
-			end, newdirection,
-			hurtMap);	
+		dispaceDirection(newdirection, originalDirection, weapon_->getAngleVar() * fixed(true, 2500));
+		generateLightning(
+			id + 1,
+			depth,
+			size,
+			originalPosition,
+			originalDirection,
+			end,
+			newdirection,
+			hurtMap
+		);
 	}
 
 	// Make a new strand
-	if (generator.getRandFixed("Lighting") <= 
+	if (generator.getRandFixed("Lighting") <=
 		weapon_->getSplitProb() - fixed(depth - 1) * weapon_->getSplitVar())
     {
 		fixed newsize = size + weapon_->getSizeVar();
@@ -267,23 +288,30 @@ void Lightning::generateLightning(int id, int depth, fixed size,
 			newsize = weapon_->getMinSize();
 
 		FixedVector newdirection = end - start;
-		dispaceDirection(newdirection, originalDirection, 
-			weapon_->getAngleVar());
-		generateLightning(id + 1, depth + 1, newsize, 
-			originalPosition, originalDirection, 
-			end, newdirection,
-			hurtMap);	
+		dispaceDirection(newdirection, originalDirection, weapon_->getAngleVar());
+		generateLightning(
+			id + 1,
+			depth + 1,
+			newsize,
+			originalPosition,
+			originalDirection,
+			end,
+			newdirection,
+			hurtMap
+		);
 	}
 }
 
-void Lightning::damageTargets(FixedVector &position, 
-		std::map<unsigned int, fixed> &hurtMap)
+void Lightning::damageTargets(FixedVector &position, std::map<unsigned int, fixed> &hurtMap)
 {
 	if (weapon_->getSegHurt() <= 0) return;
 
 	std::map<unsigned int, Target *> collisionTargets;
-	context_->getTargetSpace().getCollisionSet(position, 
-		weapon_->getSegHurtRadius() * fixed(true, 15000), collisionTargets);
+	context_->getTargetSpace().getCollisionSet(
+		position,
+		weapon_->getSegHurtRadius() * fixed(true, 15000),
+		collisionTargets
+	);
 	std::map<unsigned int, Target *>::iterator itor;
 	for (itor = collisionTargets.begin();
 		itor != collisionTargets.end();
@@ -293,13 +321,11 @@ void Lightning::damageTargets(FixedVector &position,
 		if (target->getAlive() &&
 			target->getPlayerId() != weaponContext_.getPlayerId())
 		{
-			fixed distance = (target->getLife().getTargetPosition() -
-				position).Magnitude();
+			fixed distance = (target->getLife().getTargetPosition() - position).Magnitude();
 			if (distance < weapon_->getSegHurtRadius() + 
 				MAX(target->getLife().getSize()[0], target->getLife().getSize()[1]))
 			{
-				std::map<unsigned int, fixed>::iterator findItor = 
-					hurtMap.find(target->getPlayerId());
+				std::map<unsigned int, fixed>::iterator findItor = hurtMap.find(target->getPlayerId());
 				if (findItor == hurtMap.end())
 				{
 					hurtMap[target->getPlayerId()] = weapon_->getSegHurt();

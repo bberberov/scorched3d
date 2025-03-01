@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,12 +32,12 @@
 
 GLTexture WallActionRenderer::texture_ = GLTexture();
 
-WallActionRenderer::WallActionRenderer(
-	Vector &position, OptionsTransient::WallSide type) :
-	position_(position), type_(type), fade_(1.0f), init_(false)
-{
-
-}
+WallActionRenderer::WallActionRenderer( Vector &position, OptionsTransient::WallSide type) :
+	position_(position),
+	type_(type),
+	fade_(1.0f),
+	init_(false)
+{}
 
 WallActionRenderer::~WallActionRenderer()
 {

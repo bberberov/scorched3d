@@ -23,11 +23,12 @@
 #include <limits.h>
 #include <vector>
 
-MipMapPatchIndex::MipMapPatchIndex() : 
-	indices_(0), size_(0), bufferOffSet_(-1),
-	minIndex_(INT_MAX), maxIndex_(0)
-{
-}
+MipMapPatchIndex::MipMapPatchIndex() :
+	size_(0),
+	minIndex_(INT_MAX), maxIndex_(0),
+	indices_(nullptr),
+	bufferOffSet_(-1)
+{}
 
 MipMapPatchIndex::~MipMapPatchIndex()
 {
@@ -37,10 +38,10 @@ MipMapPatchIndex::~MipMapPatchIndex()
 void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int border, unsigned int totallods)
 {
 	// Calculate the border (if any)
-	unsigned int borderLeft  = (border & BorderLeft)  >> 0;
-	unsigned int borderRight = (border & BorderRight) >> 3;
-	unsigned int borderTop   = (border & BorderTop)   >> 6;
-	unsigned int borderBottom= (border & BorderBottom)>> 9;
+	unsigned int borderLeft   = (border & BorderLeft)   >> 0;
+	unsigned int borderRight  = (border & BorderRight)  >> 3;
+	unsigned int borderTop    = (border & BorderTop)    >> 6;
+	unsigned int borderBottom = (border & BorderBottom) >> 9;
 
 	if (borderLeft > totallods ||
 		borderRight > totallods ||
@@ -52,9 +53,9 @@ void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int 
 		return;
 	}
 
-	int borderLeftSkip = skip * (1 << borderLeft);
-	int borderRightSkip = skip * (1 << borderRight);
-	int borderTopSkip = skip * (1 << borderTop);
+	int borderLeftSkip   = skip * (1 << borderLeft);
+	int borderRightSkip  = skip * (1 << borderRight);
+	int borderTopSkip    = skip * (1 << borderTop);
 	int borderBottomSkip = skip * (1 << borderBottom);
 
 	if (border != 0 &&

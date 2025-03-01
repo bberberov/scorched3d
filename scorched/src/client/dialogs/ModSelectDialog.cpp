@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,11 +30,13 @@
 #include <common/Defines.h>
 
 GLWIconListModItem::GLWIconListModItem(ModInfo &modInfo) :
-	modInfo_(modInfo), 
-	tip_(ToolTip::ToolTipHelp, 
-		LANG_STRING(modInfo.getShortDescription()), 
-		LANG_STRING(modInfo.getDescription())),
-	icon_(0.0f, 0.0f, 40.0f, 40.0f)
+	modInfo_(modInfo),
+	icon_(0.0f, 0.0f, 40.0f, 40.0f),
+	tip_(
+		ToolTip::ToolTipHelp,
+		LANG_STRING( modInfo.getShortDescription() ),
+		LANG_STRING( modInfo.getDescription() )
+	)
 {
 	if (S3D::fileExists(modInfo_.getIcon()))
 	{
@@ -43,8 +45,7 @@ GLWIconListModItem::GLWIconListModItem(ModInfo &modInfo) :
 }
 
 GLWIconListModItem::~GLWIconListModItem()
-{
-}
+{}
 
 void GLWIconListModItem::draw(float x, float y, float w)
 {
@@ -89,9 +90,7 @@ ModSelectDialog::ModSelectDialog() :
 }
 
 ModSelectDialog::~ModSelectDialog()
-{
-
-}
+{}
 
 void ModSelectDialog::display()
 {
@@ -126,8 +125,7 @@ void ModSelectDialog::display()
 }
 
 void ModSelectDialog::selected(unsigned int id, int position)
-{
-}
+{}
 
 void ModSelectDialog::chosen(unsigned int id, int position)
 {

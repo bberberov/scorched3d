@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,12 @@
 unsigned int GLTexture::textureSpace_ = 0;
 unsigned int GLTexture::textureSets_ = 0;
 
-GLTexture::GLTexture() : 
-	texNum_(0), texType_(GL_TEXTURE_2D), 
+GLTexture::GLTexture() :
 	usedSpace_(0),
-	width_(0), height_(0)
-{
-
-}
+	width_(0), height_(0),
+	texNum_(0),
+	texType_(GL_TEXTURE_2D)
+{}
 
 GLTexture::~GLTexture()
 {
@@ -100,13 +99,15 @@ bool GLTexture::create(Image &bitmap, bool mipMap)
 		(bitmap.getComponents() == 2)?GL_LUMINANCE_ALPHA:
 		((bitmap.getComponents() == 3)?GL_RGB:GL_RGBA);
 	
-	bool success = create(bitmap.getBits(),
-			bitmap.getWidth(), 
-			bitmap.getHeight(), 
-			bitmap.getComponents(), 
-			bitmap.getAlignment(),
-			format,
-			mipMap);
+	bool success = create(
+		bitmap.getBits(),
+		bitmap.getWidth(),
+		bitmap.getHeight(),
+		bitmap.getComponents(),
+		bitmap.getAlignment(),
+		format,
+		mipMap
+	);
 
 	return success;
 }
@@ -124,13 +125,15 @@ bool GLTexture::createObject()
 	return true;
 }
 
-bool GLTexture::create(const void * data, 
-					   GLint width, 
-					   GLint height, 
-					   GLint components, 
-					   GLint alignment,
-					   GLenum format, 
-					   bool mipMap)
+bool GLTexture::create(
+	const void * data,
+	GLint width,
+	GLint height,
+	GLint components,
+	GLint alignment,
+	GLenum format,
+	bool mipMap
+)
 {
 	bool success = false;
 	if (data)
@@ -140,9 +143,14 @@ bool GLTexture::create(const void * data,
 
 		if (!validateSize(width) ||	!validateSize(height))
 		{
-			S3D::dialogExit("Scorched3D",
-				S3D::formatStringBuffer("Invalid OpenGL texture size %ix%i specified",
-				width, height));
+			S3D::dialogExit(
+				"Scorched3D",
+				S3D::formatStringBuffer(
+					"Invalid OpenGL texture size %ix%i specified",
+					width,
+					height
+				)
+			);
 		}
 
 		if (!createObject()) return false;
@@ -154,13 +162,15 @@ bool GLTexture::create(const void * data,
 	return success;
 }
 
-bool GLTexture::createTexture(const void * data, 
-							  GLint width, 
-							  GLint height, 
-							  GLint components, 
-							  GLint alignment,
-							  GLenum format, 
-							  bool mipMap)
+bool GLTexture::createTexture(
+	const void * data,
+	GLint width,
+	GLint height,
+	GLint components,
+	GLint alignment,
+	GLenum format,
+	bool mipMap
+)
 {
 	textureSpace_ -= usedSpace_;
 	usedSpace_ = width * height * components;
@@ -179,8 +189,7 @@ bool GLTexture::createTexture(const void * data,
 		glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-		gluBuild1DMipmaps(GL_TEXTURE_1D, components, width, 
-				format, GL_UNSIGNED_BYTE, data);
+		gluBuild1DMipmaps(GL_TEXTURE_1D, components, width, format, GL_UNSIGNED_BYTE, data);
 	}
 	else if (width == 1)
 	{
@@ -189,16 +198,14 @@ bool GLTexture::createTexture(const void * data,
 			glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-			gluBuild1DMipmaps(GL_TEXTURE_1D, components, height, 
-					format, GL_UNSIGNED_BYTE, data);
+			gluBuild1DMipmaps(GL_TEXTURE_1D, components, height, format, GL_UNSIGNED_BYTE, data);
 		}
 		else
 		{
 			glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_1D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-			glTexImage1D(GL_TEXTURE_1D, 0, components, height, 
-				0, format, GL_UNSIGNED_BYTE, data);
+			glTexImage1D(GL_TEXTURE_1D, 0, components, height, 0, format, GL_UNSIGNED_BYTE, data);
 		}
 	}
 	else
@@ -212,13 +219,11 @@ bool GLTexture::createTexture(const void * data,
 			{
 				glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP_SGIS, GL_TRUE);
 
-				glTexImage2D(GL_TEXTURE_2D, 0, components, width, 
-					height, 0, format, GL_UNSIGNED_BYTE, data);
+				glTexImage2D(GL_TEXTURE_2D, 0, components, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 			}
 			else
 			{
-				gluBuild2DMipmaps(GL_TEXTURE_2D, components, width, 
-					height, format, GL_UNSIGNED_BYTE, data);
+				gluBuild2DMipmaps(GL_TEXTURE_2D, components, width, height, format, GL_UNSIGNED_BYTE, data);
 			}
 		}
 		else
@@ -226,8 +231,7 @@ bool GLTexture::createTexture(const void * data,
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
 
-			glTexImage2D(GL_TEXTURE_2D, 0, components, width, 
-				height, 0, format, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_2D, 0, components, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 		}
 	};
 
@@ -252,8 +256,7 @@ bool GLTexture::create(GLint width, GLint height, GLenum format)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0,
-		GL_RGBA, GL_UNSIGNED_BYTE,NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE,NULL);
 
 	return true;
 }
@@ -279,8 +282,7 @@ bool GLTexture::createBufferTexture(GLint width, GLint height, bool depthTex)
 	{
 		texFormat_ = GL_RGB;
 
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0,
-			GL_RGB, GL_UNSIGNED_BYTE, NULL);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
 	}
 	else
 	{
@@ -296,8 +298,7 @@ bool GLTexture::createBufferTexture(GLint width, GLint height, bool depthTex)
 		if(depth_bits == 16)  depth_format = GL_DEPTH_COMPONENT16_ARB;
 		else                  depth_format = GL_DEPTH_COMPONENT24_ARB;
 
-		glTexImage2D(GL_TEXTURE_2D, 0, depth_format, width, height, 0, 
-			GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);		
+		glTexImage2D(GL_TEXTURE_2D, 0, depth_format, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);
 	}
 
 	return true;

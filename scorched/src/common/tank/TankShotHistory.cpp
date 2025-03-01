@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,14 +29,15 @@
 #include <common/OptionsScorched.h>
 
 TankShotHistory::TankShotHistory(ScorchedContext &context) :
-	oldTurretRotXY_(0), oldTurretRotYZ_(0), oldPower_(1000),
-	tank_(0), context_(context)
-{
-}
+	context_(context),
+	tank_(0),
+	oldTurretRotXY_(0),
+	oldTurretRotYZ_(0),
+	oldPower_(1000)
+{}
 
 TankShotHistory::~TankShotHistory()
-{
-}
+{}
 
 std::vector<TankShotHistory::ShotEntry> &TankShotHistory::getOldShots()
 {

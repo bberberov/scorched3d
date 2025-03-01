@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -54,8 +54,7 @@
 
 TargetCamera *TargetCamera::currentTargetCamera_ = 0;
 
-static const char *cameraNames[] = 
-{
+static const char *cameraNames[] = {
 	"Top",
 	"AboveTank",
 	"Tank",
@@ -74,8 +73,7 @@ static const char *cameraNames[] =
 static const int noCameraNames = sizeof(cameraNames) / sizeof(char *);
 
 static ToolTip *cameraToolTips = 0;
-static const char *cameraDescriptions[] = 
-{
+static const char *cameraDescriptions[] = {
 	"Look directly down on the current tank.\n"
 	"Tracks the current tanks rotation.",
 	"Look from above and behind the current tank.\n"
@@ -107,14 +105,15 @@ static const char *cameraDescriptions[] =
 };
 static const int noCameraDescriptions = sizeof(cameraDescriptions) / sizeof(char *);
 
-TargetCamera::TargetCamera() : 
-	mainCam_(300, 300), 
-	cameraPos_(CamSpectator), 
-	totalTime_(0.0f), objectTime_(0.0f),
+TargetCamera::TargetCamera() :
+	mainCam_(300, 300),
+	cameraPos_(CamSpectator),
 	particleEngine_(&mainCam_, 6000),
+	totalTime_(0.0f),
+	objectTime_(0.0f),
+	viewObject_(0),
 	dragging_(false),
-	lastLandIntersectValid_(false),
-	viewObject_(0)
+	lastLandIntersectValid_(false)
 {
 	resetCam();
 
@@ -564,8 +563,7 @@ bool TargetCamera::getLandIntersect(int x, int y, Vector &intersect)
 	return true;
 }
 
-void TargetCamera::mouseDrag(GameState::MouseButton button, 
-	int mx, int my, int x, int y, bool &skipRest)
+void TargetCamera::mouseDrag(GameState::MouseButton button, int mx, int my, int x, int y, bool &skipRest)
 {
 	cameraPos_ = CamFree;
 	if (button == GameState::MouseButtonRight)
@@ -620,8 +618,7 @@ void TargetCamera::mouseWheel(int x, int y, int z, bool &skipRest)
 			((GLfloat) z) / 10.0f);
 }
 
-void TargetCamera::mouseDown(GameState::MouseButton button, 
-	int x, int y, bool &skipRest)
+void TargetCamera::mouseDown(GameState::MouseButton button, int x, int y, bool &skipRest)
 {
 	dragXStart_ = x;
 	dragYStart_ = y;
@@ -630,8 +627,7 @@ void TargetCamera::mouseDown(GameState::MouseButton button,
 		getLandIntersect(x, y, lastLandIntersect_);
 }
 
-void TargetCamera::mouseUp(GameState::MouseButton button, 
-	int x, int y, bool &skipRest)
+void TargetCamera::mouseUp(GameState::MouseButton button, int x, int y, bool &skipRest)
 {
 	// Check if we were dragging with the left mouse button
 	// If we were then we ignore the request as the user will have already
@@ -742,11 +738,14 @@ void TargetCamera::mouseUp(GameState::MouseButton button,
 	}
 }
 
-bool TargetCamera::keyboardCheck(float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, 
-							   int hisCount, 
-							   bool &skipRest)
+bool TargetCamera::keyboardCheck(
+	float frameTime,
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	bool keyDown = false;
 

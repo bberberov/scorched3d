@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,7 +45,7 @@ protected:
 	ToolTip tip_;
 };
 
-class ModSubSelectDialog : 
+class ModSubSelectDialog :
 	public GLWWindow,
 	public GLWButtonI,
 	public GLWIconListI
@@ -68,7 +68,8 @@ public:
 protected:
 	static ModSubSelectDialog *instance_;
 
-	unsigned int okId_, cancelId_;
+	unsigned int okId_;
+	unsigned int cancelId_;
 	GLWIconList *iconList_;
 	ModInfo modInfo_;
 

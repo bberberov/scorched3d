@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,16 +28,15 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponTankPosition);
 
-WeaponTankPosition::WeaponTankPosition() : 
-	sightPos_(false), aimedWeapon_(0)
-{
-
-}
+WeaponTankPosition::WeaponTankPosition() :
+	sightPos_(false),
+	aimedWeapon_(0)
+{}
 
 WeaponTankPosition::~WeaponTankPosition()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponTankPosition::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -62,8 +61,12 @@ bool WeaponTankPosition::parseXML(AccessoryCreateContext &context, XMLNode *acce
 	return true;
 }
 
-void WeaponTankPosition::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponTankPosition::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	// This weapon re-centers the current shot on the firing tank.
 	// This can be used for firing from a moving tank

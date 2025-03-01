@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,15 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponRepeat);
 
-WeaponRepeat::WeaponRepeat() : 
-	delay_("WeaponRepeat::delay", 0), repeatWeapon_(0)
-{
-
-}
+WeaponRepeat::WeaponRepeat() :
+	delay_("WeaponRepeat::delay", 0),
+	repeatWeapon_(nullptr)
+{}
 
 WeaponRepeat::~WeaponRepeat()
 {
 	delete repeatWeapon_;
-	repeatWeapon_ = 0;
+	repeatWeapon_ = nullptr;
 }
 
 bool WeaponRepeat::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -60,8 +59,12 @@ bool WeaponRepeat::parseXML(AccessoryCreateContext &context, XMLNode *accessoryN
 	return true;
 }
 
-void WeaponRepeat::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponRepeat::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	if (delay_.getValue(context) == 0)
 	{
@@ -78,15 +81,26 @@ void WeaponRepeat::fireWeapon(ScorchedContext &context,
 
 void WeaponRepeat::weaponCallback(
 	ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-	unsigned int userData)
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity,
+	unsigned int userData
+)
 {
 	repeatWeapon_->fire(context, weaponContext, position, velocity);
 
 	if (userData > 1)
 	{
 		context.getActionController().addAction(
-			new CallbackWeapon("WeaponRepeat", this, delay_.getValue(context), userData - 1, 
-				weaponContext, position, velocity));
+			new CallbackWeapon(
+				"WeaponRepeat",
+				this,
+				delay_.getValue(context),
+				userData - 1,
+				weaponContext,
+				position,
+				velocity
+			)
+		);
 	}
 }

@@ -37,20 +37,18 @@
 
 WeaponAimed::WeaponAimed() :
 	warHeads_(0),
-	aimedWeapon_(0),
-	randomWhenNoTargets_(true),
-	noSelfHoming_(false),
+	aimedWeapon_(nullptr),
 	maxAimedDistance_("WeaponAimed::maxAimedDistance"),
 	percentageMissChance_("WeaponAimed::percentageMissChance"),
-	maxInacuracy_("WeaponAimed::maxInacuracy")
-{
-
-}
+	maxInacuracy_("WeaponAimed::maxInacuracy"),
+	randomWhenNoTargets_(true),
+	noSelfHoming_(false)
+{}
 
 WeaponAimed::~WeaponAimed()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponAimed::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -98,15 +96,26 @@ void WeaponAimed::addWeaponSyncCheck(ScorchedContext &context,
 	WeaponFireContext &weaponContext,
 	FixedVector &position, FixedVector &velocity)
 {
-	context.getSimulator().addSyncCheck(S3D::formatStringBuffer("WeaponFire %s-%u-%s %u %s %s \"%s\"",
-		getParent()->getName(), getParent()->getAccessoryId(), getAccessoryTypeName(),
-		weaponContext.getPlayerId(),
-		position.asQuickString(), velocity.asQuickString(),
-		groupName_.c_str()));
+	context.getSimulator().addSyncCheck(
+		S3D::formatStringBuffer(
+			"WeaponFire %s-%u-%s %u %s %s \"%s\"",
+			getParent()->getName(),
+			getParent()->getAccessoryId(),
+			getAccessoryTypeName(),
+			weaponContext.getPlayerId(),
+			position.asQuickString(),
+			velocity.asQuickString(),
+			groupName_.c_str()
+		)
+	);
 }
 
-void WeaponAimed::fireAimedWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, bool invert)
+void WeaponAimed::fireAimedWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	bool invert
+)
 {
 	// Get a list of possible destinations
 	std::list<FixedVector *> positions;

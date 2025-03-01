@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -45,10 +45,7 @@ protected:
 	std::string time_;
 };
 
-class SaveSelectDialog : 
-	public GLWWindow,
-	public GLWButtonI, 
-	public GLWIconListI
+class SaveSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
 	static SaveSelectDialog *instance();

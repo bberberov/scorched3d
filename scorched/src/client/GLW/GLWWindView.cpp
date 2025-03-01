@@ -90,7 +90,9 @@ void WindDialogToolTip::populate()
 
 GLWWindView::GLWWindView(float x, float y, float w, float h) :
 	GLWidget(x, y, w, h),
-	listNo_(0), changeCount_(0), windModel_(0)
+	listNo_(0),
+	changeCount_(0),
+	windModel_(nullptr)
 {
 	setToolTip(new WindDialogToolTip());
 }
@@ -108,7 +110,8 @@ void GLWWindView::draw()
 		ModelID id;
 		id.initFromString("ase", "data/meshes/wind.ase", "none");
 		windModel_ = new ModelRendererSimulator(
-			ModelRendererStore::instance()->loadModel(id));
+			ModelRendererStore::instance()->loadModel(id)
+		);
 	}
 
 	if (changeCount_ != Landscape::instance()->getChangeCount())
@@ -273,8 +276,7 @@ void GLWWindView::mouseDown(int button, float x, float y, bool &skipRest)
 	{
 		skipRest = true;
 
-		unsigned int type =
-			MainCamera::instance()->getTarget().getCameraType();
+		unsigned int type = MainCamera::instance()->getTarget().getCameraType();
 		type++;
 		if (type >= TargetCamera::CamFree) type = 0;
 

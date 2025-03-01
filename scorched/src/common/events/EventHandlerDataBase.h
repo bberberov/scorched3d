@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,10 +33,16 @@ class EventHandlerDataBase : public EventHandler
 public:
 	struct TankRank
 	{
-		TankRank(unsigned int playerId) : 
-			playerId_(playerId), rank_(-1), skill_(-1) {}
-		TankRank(unsigned int playerId, int rank, int skill) : 
-			playerId_(playerId), rank_(rank), skill_(skill) {}
+		TankRank(unsigned int playerId) :
+			playerId_(playerId),
+			rank_(-1),
+			skill_(-1)
+		{}
+		TankRank(unsigned int playerId, int rank, int skill) :
+			playerId_(playerId),
+			rank_(rank),
+			skill_(skill)
+		{}
 
 		int getRank() { return rank_; }
 		int getSkill() { return skill_; }
@@ -104,18 +110,22 @@ protected:
 	// Overridden by new implementations
 	virtual bool runQuery(const char *, ...) = 0;
 	virtual std::list<RowResult> runSelectQuery(const char *, ...) = 0;
-	virtual bool connectDatabase(const char *host, const char *port,
-		const char *user, const char *passwd, 
-		const char *db) = 0;
+	virtual bool connectDatabase(
+		const char *host,
+		const char *port,
+		const char *user,
+		const char *passwd,
+		const char *db
+	) = 0;
 
 	virtual int getLastInsertId() = 0;
 	virtual void escapeString(char *to, const char *from, unsigned long length) = 0;
 
 	// Default stuff
-	time_t updateTime_;
 	int serverid_;
 	int seriesid_;
 	int prefixid_;
+	time_t updateTime_;
 	bool displayStats_;
 
 	std::map<std::string, int> playerId_;
@@ -125,10 +135,8 @@ protected:
 	int getPlayerId(const char *uniqueId);
 
 	void addInfo(Tank *tank);
-	void addAliases(int playerId, 
-		std::list<std::string> &results);
-	void addIpAliases(int playerId, 
-		std::set<int> &currentPlayers, std::list<std::string> &result);
+	void addAliases(int playerId, std::list<std::string> &results);
+	void addIpAliases(int playerId, std::set<int> &currentPlayers, std::list<std::string> &result);
 };
 
 #endif

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -77,10 +77,11 @@ public:
 	bool readMessage(NetBufferReader &reader);
 
 protected:
-	Tank *tank_;
 	ScorchedContext &context_;
+	Tank *tank_;
 	State state_;
-	int lives_, maxLives_;
+	int lives_;
+	int maxLives_;
 	unsigned int stateChangeCount_;
 	bool muted_;
 	bool skipshots_;

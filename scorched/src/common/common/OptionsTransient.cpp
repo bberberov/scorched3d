@@ -28,20 +28,30 @@
 #include <math.h>
 
 OptionsTransient::OptionsTransient(OptionsScorched &optionsGame) :
-	optionsGame_(optionsGame), newGame_(false),
-	currentRoundNo_(options_, "CurrentRoundNo", 
-		"The current number of rounds played in this game", 0, 0),
-	currentTurnNo_(options_, "CurrentTurnNo", 
-		"The current number of turns played in this round", 0, 1),
-	wallType_(options_, "WallType",
-		"The current wall type", 0, 0)
-{
-	
-}
+	newGame_(false),
+	optionsGame_(optionsGame),
+	currentRoundNo_(
+		options_,
+		"CurrentRoundNo",
+		"The current number of rounds played in this game",
+		0, 0
+	),
+	currentTurnNo_(
+		options_,
+		"CurrentTurnNo",
+		"The current number of turns played in this round",
+		0, 1
+	),
+	wallType_(
+		options_,
+		"WallType",
+		"The current wall type",
+		0, 0
+	)
+{}
 
 OptionsTransient::~OptionsTransient()
-{
-}
+{}
 
 unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 {
@@ -54,15 +64,13 @@ unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 
 	// Add all the tanks to the counts
 	std::map<unsigned int, Tank *>::iterator itor;
-	std::map<unsigned int, Tank *> &tanks = 
-		container.getTanks();
+	std::map<unsigned int, Tank *> &tanks = container.getTanks();
 	for (itor = tanks.begin();
 		itor != tanks.end();
 		++itor)
 	{
 		Tank *tank = (*itor).second;
-		if (tank->getTeam() > 0 &&
-			tank->getState().getTankPlaying())
+		if (tank->getTeam() > 0 && tank->getState().getTankPlaying())
 		{
 			counts[tank->getTeam()] ++;
 		}

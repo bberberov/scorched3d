@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,20 +29,19 @@
 #include <XML/XMLFile.h>
 #include <time.h>
 
-ServerTimedMessage::ServerTimedMessage() : 
-	lastReadTime_(0), lastCheckTime_(0)
-{
-}
+ServerTimedMessage::ServerTimedMessage() :
+	lastCheckTime_(0),
+	lastReadTime_(0)
+{}
 
 ServerTimedMessage::~ServerTimedMessage()
-{
-}
+{}
 
 void ServerTimedMessage::simulate()
 {
 #ifndef S3D_SERVER
 	return;
-#endif
+#else
 
 	//if (ScorchedServer::instance()->getGameState().getState() ==
 	//	ServerState::ServerStateTooFewPlayers) return;
@@ -55,6 +54,7 @@ void ServerTimedMessage::simulate()
 		load();
 		checkEntries(currentTime);
 	}
+#endif
 }
 
 void ServerTimedMessage::checkEntries(time_t currentTime)
@@ -76,15 +76,16 @@ void ServerTimedMessage::checkEntries(time_t currentTime)
 			entry.messages.push_back(message);
 		}
 	}
-
-
 }
 
 bool ServerTimedMessage::load()
 {
-	std::string filename = 
-		S3D::getSettingsFile(S3D::formatStringBuffer("messages-%i.xml", 
-			ScorchedServer::instance()->getOptionsGame().getPortNo()));
+	std::string filename = S3D::getSettingsFile(
+		S3D::formatStringBuffer(
+			"messages-%i.xml",
+			ScorchedServer::instance()->getOptionsGame().getPortNo()
+		)
+	);
 	if (!S3D::fileExists(filename)) return true;
 
 	time_t fileTime = S3D::fileModTime(filename);
@@ -93,12 +94,17 @@ bool ServerTimedMessage::load()
 	XMLFile file;
 	if (!file.readFile(filename))
 	{
-		Logger::log(S3D::formatStringBuffer("Failed to parse user file \"%s\"\n%s", 
-			filename.c_str(), file.getParserError()));
+		Logger::log(
+			S3D::formatStringBuffer(
+				"Failed to parse user file \"%s\"\n%s",
+				filename.c_str(),
+				file.getParserError()
+			)
+		);
 		return false;
 	}
 
-	Logger::log(S3D::formatStringBuffer("Refreshing message list %s", filename.c_str()));
+	Logger::log( S3D::formatStringBuffer( "Refreshing message list %s", filename.c_str() ) );
 	lastReadTime_ = fileTime;
 	entries_.clear();
 	if (!file.getRootNode()) return true; // Empty File

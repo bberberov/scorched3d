@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,10 +36,10 @@ public:
 
 	enum WallType
 	{
-		wallConcrete = 0,
-		wallBouncy = 1,
+		wallConcrete   = 0,
+		wallBouncy     = 1,
 		wallWrapAround = 2,
-		wallNone = 3
+		wallNone       = 3
 	};
 	enum WallSide
 	{
@@ -75,12 +75,14 @@ public:
 	std::list<OptionEntry *> &getOptions() { return options_; }
 
 protected:
+	bool newGame_;
+
 	std::list<OptionEntry *> options_;
 	OptionsScorched &optionsGame_;
-	OptionEntryInt currentRoundNo_, currentTurnNo_;
+	OptionEntryInt currentRoundNo_;
+	OptionEntryInt currentTurnNo_;
 	OptionEntryInt wallType_;
 
-	bool newGame_;
 	void newGameWall();
 
 };

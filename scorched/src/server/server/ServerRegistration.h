@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,16 +26,15 @@
 class ServerRegistrationEntry : public NetMessageHandlerI
 {
 public:
-	ServerRegistrationEntry(const char *masterListServer, 
-		const char *masterListServerURI);
+	ServerRegistrationEntry(const char *masterListServer, const char *masterListServerURI);
 	virtual ~ServerRegistrationEntry();
 
 	void start();
 
 protected:
+	NetServerTCP netServer_;
 	const char *masterListServer_;
 	bool finished_, success_;
-	NetServerTCP netServer_;
 	NetBuffer sendNetBuffer_;
 	static int threadFunc(void *);
 	void actualThreadFunc();

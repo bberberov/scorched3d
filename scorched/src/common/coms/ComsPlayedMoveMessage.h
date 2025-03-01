@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,17 +40,16 @@ public:
 
 	ComsPlayedMoveMessage();
 	ComsPlayedMoveMessage(const ComsPlayedMoveMessage &other);
-	ComsPlayedMoveMessage(unsigned int playerId,
-		unsigned int moveId,
-		MoveType type);
+	ComsPlayedMoveMessage(unsigned int playerId, unsigned int moveId, MoveType type);
 	virtual ~ComsPlayedMoveMessage();
 
 	void setShot(unsigned int weaponId,
 		fixed rotationXY,
 		fixed rotationYZ,
 		fixed power,
-		int positionX, 
-		int positionY);
+		int positionX,
+		int positionY
+	);
 
 	unsigned int getPlayerId() { return playerId_; }
 	unsigned int getMoveId() { return moveId_; }

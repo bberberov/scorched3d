@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,10 +36,14 @@ public:
 class GLWTab : public GLWScrollPanel
 {
 public:
-	GLWTab(const std::string &tabName = "", 
+	GLWTab(
+		const std::string &tabName = "",
 		const LangString &tabLabel = LangString(),
-		float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h =  0.0f);
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f
+	);
 	virtual ~GLWTab();
 
 	virtual void setParent(GLWPanel *parent);
@@ -59,9 +63,9 @@ public:
 
 protected:
 	std::string name_;
-	bool depressed_;
 	GLWLabel label_;
 	GLWTabI *handler_;
+	bool depressed_;
 	float index_;
 
 	void drawSurround();

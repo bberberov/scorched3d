@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,17 +29,14 @@
 REGISTER_CLASS_SOURCE(GLWDragger);
 
 GLWDragger::GLWDragger(float x, float y, float w,  float range) :
-	GLWidget(x, y, w, 20.0f), 
-	range_(range),
-	dragging_(false), handler_(0)
-{
-
-}
+	GLWidget(x, y, w, 20.0f),
+	handler_(nullptr),
+	dragging_(false),
+	range_(range)
+{}
 
 GLWDragger::~GLWDragger()
-{
-
-}
+{}
 
 void GLWDragger::mouseDown(int button, float x, float y, bool &skipRest)
 {

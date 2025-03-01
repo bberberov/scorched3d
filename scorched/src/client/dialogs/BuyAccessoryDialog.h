@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,11 +33,12 @@
 #include <GLW/GLWCheckBoxText.h>
 #include <GLW/GLWDropDownText.h>
 
-class BuyAccessoryDialog : public GLWWindow,
-						public GLWButtonI,
-						public GLWCheckBoxI,
-						public GLWDropDownI,
-						public GLWTabI
+class BuyAccessoryDialog :
+	public GLWWindow,
+	public GLWButtonI,
+	public GLWCheckBoxI,
+	public GLWDropDownI,
+	public GLWTabI
 {
 public:
 	static BuyAccessoryDialog *instance();
@@ -61,7 +62,8 @@ public:
 protected:
 	static BuyAccessoryDialog *instance_;
 	BuyAccessoryDialogTankInfo &tankInfo_;
-	unsigned int okId_, giftId_;
+	unsigned int okId_;
+	unsigned int giftId_;
 	bool firstDrawTime_;
 	std::map<std::string, GLWTab *> buyTabs_;
 	GLWTab *sellTab_;
