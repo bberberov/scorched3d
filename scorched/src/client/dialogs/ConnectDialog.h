@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -55,8 +55,8 @@ protected:
 	static ConnectDialog *instance_;
 	SDL_Thread *remoteConnectionThread_;
 	UniqueIdStore *idStore_;
-	int tryCount_;
 	ConnectState connectionState_;
+	int tryCount_;
 	time_t lastTime_;
 
 	void tryConnection();

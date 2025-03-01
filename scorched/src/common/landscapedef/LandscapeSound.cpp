@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,16 +37,46 @@
 #include <common/Defines.h>
 #include <math.h>
 
+// LandscapeSoundTiming
+LandscapeSoundTiming::~LandscapeSoundTiming()
+{}
+
+// LandscapeSoundItem
+LandscapeSoundItem::~LandscapeSoundItem()
+{}
+
+// LandscapeSoundPositionSetItem
 LandscapeSoundPositionSetItem::LandscapeSoundPositionSetItem(
-	ObjectGroupEntryReference *reference) : reference_(reference)
-{
-}
+	ObjectGroupEntryReference *reference
+) :
+	reference_(reference)
+{}
 
 LandscapeSoundPositionSetItem::~LandscapeSoundPositionSetItem()
 {
 	delete reference_;
 }
 
+ObjectGroupEntryReference *LandscapeSoundPositionSetItem::getReference()
+{
+	return reference_;
+}
+
+// LandscapeSoundPosition
+LandscapeSoundPosition::~LandscapeSoundPosition()
+{}
+
+int LandscapeSoundPosition::getInitCount()
+{
+	return 1;
+}
+
+LandscapeSoundItem *LandscapeSoundPosition::getInitData(int count)
+{
+	return nullptr;
+}
+
+// LandscapeSoundPositionSet
 bool LandscapeSoundPositionSet::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("name", name)) return false;
@@ -103,6 +133,7 @@ LandscapeSoundItem *LandscapeSoundPositionSet::getInitData(int count)
 	return 0;
 }
 
+// LandscapeSoundPositionGroup
 bool LandscapeSoundPositionGroup::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("falloff", falloff)) return false;
@@ -152,6 +183,7 @@ bool LandscapeSoundPositionGroup::setPosition(VirtualSoundSource *source, Landsc
 	return true;
 }
 
+// LandscapeSoundPositionWater
 bool LandscapeSoundPositionWater::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("falloff", falloff)) return false;
@@ -177,6 +209,7 @@ bool LandscapeSoundPositionWater::setPosition(VirtualSoundSource *source, Landsc
 	return true;
 }
 
+// LandscapeSoundPositionAmbient
 bool LandscapeSoundPositionAmbient::readXML(XMLNode *node)
 {
 	return node->failChildren();
@@ -192,6 +225,7 @@ bool LandscapeSoundPositionAmbient::setPosition(VirtualSoundSource *source, Land
 	return true;
 }
 
+// LandscapeSoundPositionAbsoulte
 bool LandscapeSoundPositionAbsoulte::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("position", position)) return false;
@@ -206,6 +240,7 @@ bool LandscapeSoundPositionAbsoulte::setPosition(VirtualSoundSource *source, Lan
 	return true;
 }
 
+// LandscapeSoundTimingLooped
 bool LandscapeSoundTimingLooped::readXML(XMLNode *node)
 {
 	return node->failChildren();
@@ -216,6 +251,7 @@ float LandscapeSoundTimingLooped::getNextEventTime()
 	return -1.0f;
 }
 
+// LandscapeSoundTimingRepeat
 bool LandscapeSoundTimingRepeat::readXML(XMLNode *node)
 {
 	if (!node->getNamedChild("min", min)) return false;
@@ -228,6 +264,11 @@ float LandscapeSoundTimingRepeat::getNextEventTime()
 	return min + max * RAND;
 }
 
+// LandscapeSoundSound
+LandscapeSoundSound::~LandscapeSoundSound()
+{}
+
+// LandscapeSoundSoundFile
 bool LandscapeSoundSoundFile::readXML(XMLNode *node)
 {
 	std::string file;
@@ -265,10 +306,17 @@ bool LandscapeSoundSoundFile::play(VirtualSoundSource *source, float ambientGain
 	return true;
 }
 
-LandscapeSoundType::LandscapeSoundType() : 
-	position(0), timing(0), sound(0)
+float LandscapeSoundSoundFile::getGain()
 {
+	return gain;
 }
+
+// LandscapeSoundType
+LandscapeSoundType::LandscapeSoundType() :
+	position(0),
+	timing(0),
+	sound(0)
+{}
 
 LandscapeSoundType::~LandscapeSoundType()
 {

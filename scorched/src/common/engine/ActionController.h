@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -53,7 +53,9 @@ protected:
 	class ActionList
 	{
 	public:
-		ActionList(int startingSize) : actionCount(0), maxActions(startingSize)
+		ActionList(int startingSize) :
+			actionCount(0),
+			maxActions(startingSize)
 		{
 			actions = new Action*[maxActions];
 		}
@@ -78,7 +80,7 @@ protected:
 		{
 			actionCount = 0;
 		}
-		bool empty() 
+		bool empty()
 		{
 			return (actionCount == 0);
 		}

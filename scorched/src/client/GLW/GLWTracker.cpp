@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,17 +35,15 @@
 REGISTER_CLASS_SOURCE(GLWTracker);
 
 GLWTracker::GLWTracker(float x, float y, float w, float range) :
-	GLWidget(x, y, w, w), 
-	range_(range),
-	dragging_(false), handler_(0), currentX_(0.0f), currentY_(0.0f)
-{
-
-}
+	GLWidget(x, y, w, w),
+	handler_(nullptr),
+	dragging_(false),
+	currentX_(0.0f), currentY_(0.0f),
+	range_(range)
+{}
 
 GLWTracker::~GLWTracker()
-{
-
-}
+{}
 
 void GLWTracker::mouseDown(int button, float x, float y, bool &skipRest)
 {
@@ -64,7 +62,7 @@ void GLWTracker::mouseUp(int button, float x, float y, bool &skipRest)
 void GLWTracker::mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest)
 {
 	if (dragging_)
-	{            
+	{
 		float rangeMult = 1.0f;
 		unsigned int keyState = 
 			Keyboard::instance()->getKeyboardState();
@@ -84,7 +82,7 @@ void GLWTracker::mouseDrag(int button, float mx, float my, float x, float y, boo
 
 REGISTER_CLASS_SOURCE(GLWTankTracker);
 
-GLWTankTracker::GLWTankTracker() : 
+GLWTankTracker::GLWTankTracker() :
 	GLWTracker(0.0f, 0.0f, 0.0f, 100.0f)
 {
 	setHandler(this);
@@ -99,13 +97,11 @@ GLWTankTracker::GLWTankTracker() :
 }
 
 GLWTankTracker::~GLWTankTracker()
-{
-}
+{}
 
 void GLWTankTracker::draw()
 {
-	Tank *currentTank =
-		ScorchedClient::instance()->getTargetContainer().getCurrentTank();
+	Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 	if (currentTank)
 	{
 		if (currentTank->getState().getState() == TankState::sNormal)
@@ -119,8 +115,7 @@ void GLWTankTracker::draw()
 
 void GLWTankTracker::currentChanged(unsigned int id, float valueX, float valueY)
 {
-	Tank *currentTank =
-		ScorchedClient::instance()->getTargetContainer().getCurrentTank();
+	Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 	if (currentTank)
 	{
 		if (currentTank->getState().getState() == TankState::sNormal)
@@ -131,5 +126,5 @@ void GLWTankTracker::currentChanged(unsigned int id, float valueX, float valueY)
 				currentTank->getShotInfo().rotateGunYZ(fixed::fromFloat(valueY), false);
 			}
 		}
-	}	
+	}
 }

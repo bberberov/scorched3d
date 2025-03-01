@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,15 +32,16 @@ ServerBrowser *ServerBrowser::instance()
 	return instance_;
 }
 
-ServerBrowser::ServerBrowser() : 
-	refreshing_(false), serverList_(), 
-	serverRefresh_(serverList_),
-	serverCollector_(serverList_)
+ServerBrowser::ServerBrowser() :
+	refreshing_(false),
+	serverList_(),
+	serverCollector_(serverList_),
+	serverRefresh_(serverList_)
 {
 	refreshingMutex_ = SDL_CreateMutex();
 }
 
-ServerBrowser::~ServerBrowser()	
+ServerBrowser::~ServerBrowser()
 {
 	SDL_DestroyMutex(refreshingMutex_);
 }

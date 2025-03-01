@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -44,14 +44,15 @@
 TargetRendererImpl::HighlightType TargetRendererImpl::highlightType_ = 
 	TargetRendererImpl::eNoHighlight;
 
-TargetRendererImpl::TargetRendererImpl(Target *target) : 
+TargetRendererImpl::TargetRendererImpl(Target *target) :
 	target_(target),
-	particleMade_(false), tree_(false), matrixCached_(false),
-	posX_(0.0f), posY_(0.0f), posZ_(0.0f),
-	currentVisibilityPatch_(0), patchEpoc_(-1)
-{
-
-}
+	particleMade_(false),
+	tree_(false),
+	matrixCached_(false),
+	currentVisibilityPatch_(nullptr),
+	patchEpoc_(-1),
+	posX_(0.0f), posY_(0.0f), posZ_(0.0f)
+{}
 
 TargetRendererImpl::~TargetRendererImpl()
 {
@@ -96,10 +97,10 @@ void TargetRendererImpl::setMovedPatch(TargetVisibilityPatch *newPatch)
 			if (!tree_)
 			{
 				currentVisibilityPatch_->removeTarget(target_);
-				if (!target_->getTargetName().empty()) 
+				if (!target_->getTargetName().empty())
 					currentVisibilityPatch_->removeTooltip(target_);
 			}
-			else 
+			else
 			{
 				currentVisibilityPatch_->removeTree(target_);
 			}
@@ -109,7 +110,7 @@ void TargetRendererImpl::setMovedPatch(TargetVisibilityPatch *newPatch)
 			if (!tree_)
 			{
 				newPatch->addTarget(target_);
-				if (!target_->getTargetName().empty()) 
+				if (!target_->getTargetName().empty())
 					newPatch->addTooltip(target_);
 			}
 			else 
@@ -135,23 +136,27 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 	static GLTextureReference shieldtexture(ImageID(
 		S3D::eModLocation,
 		"data/textures/shield.bmp",
-		"data/textures/shielda.bmp", 
-		false));
+		"data/textures/shielda.bmp",
+		false)
+	);
 	static GLTextureReference texture(ImageID(
-		S3D::eModLocation, 
+		S3D::eModLocation,
 		"data/textures/bordershield/grid2.bmp",
 		"data/textures/bordershield/grid2.bmp",
-		false));
+		false)
+	);
 	static GLTextureReference texture2(ImageID(
 		S3D::eModLocation,
 		"data/textures/bordershield/grid22.bmp",
 		"data/textures/bordershield/grid22.bmp",
-		false));
+		false)
+	);
 	static GLTextureReference magtexture(ImageID(
 		S3D::eModLocation,
 		"data/textures/shield2.bmp",
 		"data/textures/shield2.bmp", 
-		false));
+		false)
+	);
 	static GLUquadric *obj = 0;
 	if (!obj)
 	{
@@ -251,7 +256,7 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 	if (!accessory) return;
 	Shield *shield = (Shield *) accessory->getAction();
 
-	GLState state(GLState::BLEND_ON | GLState::TEXTURE_ON); 
+	GLState state(GLState::BLEND_ON | GLState::TEXTURE_ON);
 	Vector &position = target_->getLife().getFloatPosition();
 	Vector &color = shield->getColor();
 
@@ -287,9 +292,10 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 				glColor4f(color[0], color[1], color[2], 0.5f + shieldHit);
 				glTranslatef(position[0], position[1], position[2]);
 				glScalef(
-					round->getActualRadius().asFloat(), 
-					round->getActualRadius().asFloat(), 
-					round->getActualRadius().asFloat());
+					round->getActualRadius().asFloat(),
+					round->getActualRadius().asFloat(),
+					round->getActualRadius().asFloat()
+				);
 				glCallList(smallHalfListNo);
 			glPopMatrix();
 		}
@@ -300,9 +306,10 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 				glColor4f(color[0], color[1], color[2], 0.5f + shieldHit);
 				glTranslatef(position[0], position[1], position[2]);
 				glScalef(
-					round->getActualRadius().asFloat(), 
-					round->getActualRadius().asFloat(), 
-					round->getActualRadius().asFloat());
+					round->getActualRadius().asFloat(),
+					round->getActualRadius().asFloat(),
+					round->getActualRadius().asFloat()
+				);
 				glCallList(smallListNo);
 			glPopMatrix();
 
@@ -313,10 +320,11 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 					position,
 					color,
 					1.0f - shieldHit,
-					round->getActualRadius().asFloat() * 0.95f, 
+					round->getActualRadius().asFloat() * 0.95f,
 					round->getActualRadius().asFloat() * 0.95f,
 					true, // Additive
-					0); // texcoord
+					0
+				); // texcoord
 			}
 		}
 	}
@@ -359,7 +367,7 @@ void TargetRendererImpl::drawParachute()
 				for (a=3.14f*2.0f; a> 0.0f; a-=3.14f / 4.0f)
 				{
 					glVertex3f(sinf(a) * 2.0f, cosf(a) * 2.0f, 2.0f);
-				}				
+				}
 			glEnd();
 		glEndList();
 	}

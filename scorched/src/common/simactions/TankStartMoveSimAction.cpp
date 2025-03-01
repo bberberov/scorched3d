@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,20 +38,24 @@
 REGISTER_CLASS_SOURCE(TankStartMoveSimAction);
 
 TankStartMoveSimAction::TankStartMoveSimAction()
-{
-}
+{}
 
 TankStartMoveSimAction::TankStartMoveSimAction(
-	unsigned int playerId, unsigned int moveId,
-	fixed timeout, bool buying, fixed ping) :
-	playerId_(playerId), moveId_(moveId),
-	timeout_(timeout), buying_(buying), ping_(ping)
-{
-}
+	unsigned int playerId,
+	unsigned int moveId,
+	fixed timeout,
+	bool buying,
+	fixed ping
+) :
+	playerId_(playerId),
+	moveId_(moveId),
+	timeout_(timeout),
+	buying_(buying),
+	ping_(ping)
+{}
 
 TankStartMoveSimAction::~TankStartMoveSimAction()
-{
-}
+{}
 
 bool TankStartMoveSimAction::invokeAction(ScorchedContext &context)
 {

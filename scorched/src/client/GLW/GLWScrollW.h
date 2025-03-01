@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,16 +31,20 @@ public:
 	virtual void positionChange(unsigned int id, int current, int movement) = 0;
 };
 
-class GLWScrollW  : 
-	public GLWidget, 
+class GLWScrollW  :
+	public GLWidget,
 	public GLWButtonI,
 	public GLWScrollButtonI
 {
 public:
-	GLWScrollW(float x = 0.0f, float y = 0.0f, 
-		float h = 0.0f, 
-		int min = 0, int max = 0, int see = 1, 
-		GLWScrollWI *handler = 0);
+	GLWScrollW(
+		float x = 0.0f,
+		float y = 0.0f,
+		float h = 0.0f,
+		int min = 0, int max = 0,
+		int see = 1,
+		GLWScrollWI *handler = 0
+	);
 	virtual ~GLWScrollW();
 
 	virtual void setHandler(GLWScrollWI *handler = 0) { handler_ = handler; }
@@ -72,17 +76,17 @@ public:
 
 	REGISTER_CLASS_HEADER(GLWScrollW);
 protected:
+	int min_, max_;
+	int see_;
+	int current_;
+	int dragCurrent_;
 	GLWScrollWI *handler_;
 	GLWButton topButton_;
 	GLWButton bottomButton_;
 	GLWButton backButtonTop_; // Hidden
 	GLWButton backButtonBot_; // Hidden
 	GLWScrollButton middleButton_;
-	int min_, max_, see_;
-	int current_;
-	int dragCurrent_;
 
 };
-
 
 #endif // !defined(AFX_GLWSCROLLW_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)

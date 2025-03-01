@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,24 +24,21 @@
 #include <client/ScorchedClient.h>
 
 GLWDropDownI::~GLWDropDownI()
-{
-
-}
+{}
 
 REGISTER_CLASS_SOURCE(GLWDropDown);
 
 GLWDropDown::GLWDropDown(float x, float y, float w) :
-	GLWidget(x, y, w, 25.0f), 
-	button_(x + w - 22.0f, y + 2.0f, 20.0f, 21.0f),
-	handler_(0), current_(0)
+	GLWidget(x, y, w, 25.0f),
+	handler_(nullptr),
+	current_(nullptr),
+	button_(x + w - 22.0f, y + 2.0f, 20.0f, 21.0f)
 {
 	button_.setHandler(this);
 }
 
 GLWDropDown::~GLWDropDown()
-{
-
-}
+{}
 
 void GLWDropDown::setHandler(GLWDropDownI *handler)
 {
@@ -140,8 +137,7 @@ void GLWDropDown::buttonDown(unsigned int id)
 }
 
 void GLWDropDown::buttonUp(unsigned int id)
-{
-}
+{}
 
 void GLWDropDown::mouseDown(int button, float x, float y, bool &skipRest)
 {
@@ -166,7 +162,7 @@ void GLWDropDown::setX(float x)
 void GLWDropDown::setY(float y)
 {
 	GLWidget::setY(y);
-	button_.setY(y + 2.0f); 
+	button_.setY(y + 2.0f);
 }
 
 void GLWDropDown::itemSelected(GLWSelectorEntry *entry, int pos)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,8 +30,7 @@
 class GLWPlanView : public GLWidget
 {
 public:
-	GLWPlanView(float x = 0.0f, float y = 0.0f,
-		float w = 0.0f, float h = 0.0f);
+	GLWPlanView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
 	virtual ~GLWPlanView();
 
 	virtual void simulate(float frameTime);
@@ -52,20 +51,25 @@ protected:
 		std::list<Vector> recievepoints;
 	};
 
-	GLTextureReference arrowTex_, tankTex_, circleTex_;
-	float arenaX_, arenaY_, arenaWidth_, arenaHeight_;
+	float arenaX_, arenaY_;
+	float arenaWidth_, arenaHeight_;
 	float landscapeWidth_, landscapeHeight_;
+
 	float animationTime_;
 	float flashTime_;
 	float totalTime_;
 	float pointTime_;
 	float planColor_;
-	bool flash_, firstTime_;
+	bool flash_;
+	bool firstTime_;
 	bool dragging_;
 	float dragLastX_, dragLastY_;
 	PlayerDrawnInfo localPoints_;
 	std::list<PlayerDrawnInfo> dragPoints_;
 	std::list<Vector> sendPoints;
+	GLTextureReference arrowTex_;
+	GLTextureReference tankTex_;
+	GLTextureReference circleTex_;
 
 	void drawMap();
 	void drawTexture();

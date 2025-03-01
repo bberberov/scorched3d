@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,10 +34,12 @@ public:
 	virtual bool parseConfig(XMLNode *node);
 
 	void clear();
-	void playMove(Tanket *tanket, 
+	void playMove(
+		Tanket *tanket,
 		TankAIWeaponSets::WeaponSet *weapons,
 		bool useBatteries,
-		unsigned int moveId);
+		unsigned int moveId
+	);
 
 	TankAICurrentTarget &getTargets() { return targets_; }
 
@@ -57,49 +59,79 @@ protected:
 
 	std::map<Tanket *, ShotRecord> shotRecords_;
 	TankAICurrentTarget targets_;
+	bool useResign_;
+	bool useFuel_;
 	float totalDamageBeforeMove_;
-	bool useResign_, useFuel_;
-	float movementDamage_, movementDamageChance_, movementLife_;
-	float movementRandom_, movementCloseness_;
-	float groupShotChance_, groupTargetDistance_;
+	float movementDamage_;
+	float movementDamageChance_;
+	float movementLife_;
+	float movementRandom_;
+	float movementCloseness_;
 	int groupShotSize_;
+	float groupShotChance_;
+	float groupTargetDistance_;
 	float resignLife_;
 	float largeWeaponUseDistance_;
 	float sniperUseDistance_;
 	float sniperStartDistance_, sniperEndDistance_;
-	float sniperMinDecrement_, sniperMaxDecrement_;
+	float sniperMinDecrement_,  sniperMaxDecrement_;
 	float sniperMovementFactor_;
 	float projectileStartDistance_, projectileEndDistance_;
-	float projectileMinDecrement_, projectileMaxDecrement_;
+	float projectileMinDecrement_,  projectileMaxDecrement_;
 	float projectileMovementFactor_;
 	float projectileMinDistance_;
 
-	void playMoveInternal(Tanket *tanket, 
+	void playMoveInternal(
+		Tanket *tanket,
 		TankAIWeaponSets::WeaponSet *weapons,
 		bool useBatteries,
-		MoveData &moveData);
-	bool shootAtTank(Tanket *tanket, Tanket *targetTanket, 
-		TankAICurrentMoveWeapons &weapons, MoveData &moveData);
-	bool makeProjectileShot(Tanket *tanket, Tanket *targetTanket,
-		TankAICurrentMoveWeapons &weapons, MoveData &moveData);
-	bool makeSniperShot(Tanket *tanket, Tanket *targetTanket,
-		TankAICurrentMoveWeapons &weapons, MoveData &moveData);
-	bool makeLaserSniperShot(Tanket *tank, Tanket *targetTanket, 
-		TankAICurrentMoveWeapons &weapons, MoveData &moveData);
-	bool makeBurriedShot(Tanket *tanket, Tanket *targetTanket, 
-		TankAICurrentMoveWeapons &weapons, MoveData &moveData);
-	bool makeMoveShot(Tanket *tanket, 
+		MoveData &moveData
+	);
+	bool shootAtTank(
+		Tanket *tanket,
+		Tanket *targetTanket,
+		TankAICurrentMoveWeapons &weapons,
+		MoveData &moveData
+	);
+	bool makeProjectileShot(
+		Tanket *tanket,
+		Tanket *targetTanket,
+		TankAICurrentMoveWeapons &weapons,
+		MoveData &moveData
+	);
+	bool makeSniperShot(
+		Tanket *tanket,
+		Tanket *targetTanket,
+		TankAICurrentMoveWeapons &weapons,
+		MoveData &moveData
+	);
+	bool makeLaserSniperShot(
+		Tanket *tank,
+		Tanket *targetTanket,
+		TankAICurrentMoveWeapons &weapons,
+		MoveData &moveData
+	);
+	bool makeBurriedShot(
+		Tanket *tanket,
+		Tanket *targetTanket,
+		TankAICurrentMoveWeapons &weapons,
+		MoveData &moveData
+	);
+	bool makeMoveShot(
+		Tanket *tanket,
 		TankAIWeaponSets::WeaponSet *weapons,
 		std::list<Tanket *> &sortedTankets,
-		MoveData &moveData);
-	bool makeGroupShot(Tanket *tanket, 
+		MoveData &moveData
+	);
+	bool makeGroupShot(
+		Tanket *tanket,
 		TankAIWeaponSets::WeaponSet *weapons,
 		std::list<Tanket *> &sortedTankets,
-		MoveData &moveData);
+		MoveData &moveData
+	);
 
 	bool inHole(Vector &position);
-	Vector lowestHighest(TankAICurrentMoveWeapons &weapons,
-		Vector &position, bool highest);
+	Vector lowestHighest(TankAICurrentMoveWeapons &weapons, Vector &position, bool highest);
 
 	float getShotDistance(Tanket *tanket, bool projectile);
 	void shotAtTank(Tanket *tanket, bool projectile, float newDistance);

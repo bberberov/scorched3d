@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,11 +25,14 @@
 #include <GLW/GLWPanel.h>
 #include <GLW/GLWTab.h>
 
-GLWPanel::GLWPanelEntry::GLWPanelEntry(GLWidget *w, GLWCondition *c,
-	unsigned int f, float wi) :
-	widget(w), condition(c), flags(f),
-	leftSpace(0.0f), rightSpace(0.0f),
-	topSpace(0.0f), bottomSpace(0.0f)
+GLWPanel::GLWPanelEntry::GLWPanelEntry(GLWidget *w, GLWCondition *c, unsigned int f, float wi) :
+	widget(w),
+	condition(c),
+	flags(f),
+	leftSpace(0.0f),
+	rightSpace(0.0f),
+	topSpace(0.0f),
+	bottomSpace(0.0f)
 {
 	if (! (f & GLWPanel::AlignLeft) &&
 		! (f & GLWPanel::AlignRight) &&
@@ -47,22 +50,21 @@ GLWPanel::GLWPanelEntry::GLWPanelEntry(GLWidget *w, GLWCondition *c,
 
 REGISTER_CLASS_SOURCE(GLWPanel);
 
-GLWPanel::GLWPanel(float x, float y, float w, float h, 
-	bool depressed, bool visible, bool ridge) : 
-	GLWidget(x, y, w, h), depressed_(depressed), 
-	drawPanel_(visible), layout_(LayoutNone),
-	gridWidth_(0), ridge_(ridge)
-{
-
-}
+GLWPanel::GLWPanel(float x, float y, float w, float h, bool depressed, bool visible, bool ridge) :
+	GLWidget(x, y, w, h),
+	depressed_(depressed),
+	drawPanel_(visible),
+	ridge_(ridge),
+	layout_(LayoutNone),
+	gridWidth_(0)
+{}
 
 GLWPanel::~GLWPanel()
 {
 	clear();
 }
 
-GLWidget *GLWPanel::addWidget(GLWidget *widget, GLWCondition *condition, 
-	unsigned int flags, float width)
+GLWidget *GLWPanel::addWidget(GLWidget *widget, GLWCondition *condition, unsigned int flags, float width)
 {
 	std::list<GLWPanelEntry>::iterator itor;
 	for (itor = widgets_.begin();
@@ -285,9 +287,13 @@ void GLWPanel::mouseDrag(int button, float mx, float my, float x, float y, bool 
 	skipRest = true;
 }
 
-void GLWPanel::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void GLWPanel::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	std::list<GLWPanelEntry>::reverse_iterator itor;
 	for (itor = widgets_.rbegin();
@@ -350,7 +356,7 @@ bool GLWPanel::initFromXML(XMLNode *node)
 
 	// Itterate all of the items in the file
 	std::list<XMLNode *>::iterator childrenItor;
-		std::list<XMLNode *> &children = itemsNode->getChildren();
+	std::list<XMLNode *> &children = itemsNode->getChildren();
 	for (childrenItor = children.begin();
 		childrenItor != children.end();
 		++childrenItor)
@@ -364,21 +370,30 @@ bool GLWPanel::initFromXML(XMLNode *node)
 		if (!widgetNode->getNamedParameter("type", widgetTypeNode)) return false;
 
 		// Create new type
-		GLWidget *widget = (GLWidget *)
-			MetaClassRegistration::getNewClass(widgetTypeNode->getContent());
-		if (!widget) 
+		GLWidget *widget = (GLWidget *) MetaClassRegistration::getNewClass(
+			widgetTypeNode->getContent()
+		);
+		if (!widget)
 		{
-			S3D::dialogMessage("GLWPanel", S3D::formatStringBuffer(
-				"Unknown widget type \"%s\"",
-				widgetTypeNode->getContent()));
+			S3D::dialogMessage(
+				"GLWPanel",
+				S3D::formatStringBuffer(
+					"Unknown widget type \"%s\"",
+					widgetTypeNode->getContent()
+				)
+			);
 			return false;
 		}
 		if (!widget->initFromXML(widgetNode))
 		{
-			S3D::dialogMessage("GLWPanel", S3D::formatStringBuffer(
-				"Failed to parse \"%s\" widget type",
-				widgetTypeNode->getContent()));
-			return false;			
+			S3D::dialogMessage(
+				"GLWPanel",
+				S3D::formatStringBuffer(
+					"Failed to parse \"%s\" widget type",
+					widgetTypeNode->getContent()
+				)
+			);
+			return false;
 		}
 		if (!widgetNode->failChildren()) return false;
 
@@ -392,20 +407,29 @@ bool GLWPanel::initFromXML(XMLNode *node)
 			if (!conditionNode->getNamedParameter("type", conditionTypeNode)) return false;
 
 			// Create type
-			condition = (GLWCondition *)
-				MetaClassRegistration::getNewClass(conditionTypeNode->getContent());
+			condition = (GLWCondition *) MetaClassRegistration::getNewClass(
+				conditionTypeNode->getContent()
+			);
 			if (!condition)
 			{
-				S3D::dialogMessage("GLWPanel", S3D::formatStringBuffer(
-					"Unknown condition type \"%s\"",
-					conditionTypeNode->getContent()));
+				S3D::dialogMessage(
+					"GLWPanel",
+					S3D::formatStringBuffer(
+						"Unknown condition type \"%s\"",
+						conditionTypeNode->getContent()
+					)
+				);
 				return false;
 			}
 			if (!condition->initFromXML(conditionNode))
 			{
-				S3D::dialogMessage("GLWPanel", S3D::formatStringBuffer(
-					"Failed to parse \"%s\" condition type",
-					conditionTypeNode->getContent()));
+				S3D::dialogMessage(
+					"GLWPanel",
+					S3D::formatStringBuffer(
+						"Failed to parse \"%s\" condition type",
+						conditionTypeNode->getContent()
+					)
+				);
 				return false;
 			}
 		}
@@ -464,10 +488,8 @@ void GLWPanel::layout()
 		entry.widget->layout();
 		
 		// Get the size
-		float width = entry.widget->getW() +
-			entry.leftSpace + entry.rightSpace;
-		float height = entry.widget->getH() +
-			entry.topSpace + entry.bottomSpace;		
+		float width  = entry.widget->getW() + entry.leftSpace + entry.rightSpace;
+		float height = entry.widget->getH() + entry.topSpace  + entry.bottomSpace;
 		if (layout_ == LayoutHorizontal)
 		{
 			w += width;
@@ -521,13 +543,11 @@ void GLWPanel::layout()
 			}
 			else if (entry.flags & AlignCenterTopBottom)
 			{
-				entry.widget->setY(prevh / 2 - 
-					entry.widget->getH() / 2);
+				entry.widget->setY(prevh / 2 - entry.widget->getH() / 2);
 			}
 			else if (entry.flags & AlignTop)
 			{
-				entry.widget->setY(prevh - entry.topSpace -
-					entry.widget->getH());
+				entry.widget->setY(prevh - entry.topSpace - entry.widget->getH());
 			}
 			else DIALOG_ASSERT(0);
 			
@@ -552,13 +572,11 @@ void GLWPanel::layout()
 			}
 			else if (entry.flags & AlignCenterLeftRight)
 			{
-				entry.widget->setX(prevw / 2 - 
-					entry.widget->getW() / 2);
+				entry.widget->setX(prevw / 2 - entry.widget->getW() / 2);
 			}
 			else if (entry.flags & AlignRight)
 			{
-				entry.widget->setX(prevw - entry.rightSpace -
-					entry.widget->getW());
+				entry.widget->setX(prevw - entry.rightSpace - entry.widget->getW());
 			}
 			else DIALOG_ASSERT(0);
 			
@@ -585,13 +603,11 @@ void GLWPanel::layout()
 			}
 			else if (entry.flags & AlignCenterLeftRight)
 			{
-				entry.widget->setX(width + prevw / 2 - 
-					entry.widget->getW() / 2);
+				entry.widget->setX(width + prevw / 2 - entry.widget->getW() / 2);
 			}
 			else if (entry.flags & AlignRight)
 			{
-				entry.widget->setX(width + prevw - entry.rightSpace -
-					entry.widget->getW());
+				entry.widget->setX(width + prevw - entry.rightSpace - entry.widget->getW());
 			}
 			else DIALOG_ASSERT(0);
 			
@@ -601,19 +617,17 @@ void GLWPanel::layout()
 			}
 			else if (entry.flags & AlignCenterTopBottom)
 			{
-				entry.widget->setY(height - prevh / 2 - 
-					entry.widget->getH() / 2);
+				entry.widget->setY(height - prevh / 2 - entry.widget->getH() / 2);
 			}
 			else if (entry.flags & AlignTop)
 			{
-				entry.widget->setY(height - entry.topSpace -
-					entry.widget->getH());
+				entry.widget->setY(height - entry.topSpace - entry.widget->getH());
 			}
-			else DIALOG_ASSERT(0);	
+			else DIALOG_ASSERT(0);
 		
 			if (++cell >= gridWidth_)
 			{
-				cell = 0;	
+				cell = 0;
 				width = 0.0f;
 				height -= prevh;
 			}
@@ -621,7 +635,7 @@ void GLWPanel::layout()
 			{
 				width += prevw;
 			}
-		}		
+		}
 	}
 	else DIALOG_ASSERT(0);
 	
@@ -647,4 +661,3 @@ unsigned int GLWPanel::getGridWidth()
 {
 	return gridWidth_;
 }
-

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,11 +31,10 @@ public:
 	enum ChannelDefinitionTypes
 	{
 		eReadOnlyChannel = 1,
-		eWhisperChannel = 2
+		eWhisperChannel  = 2
 	};
 
-	ChannelDefinition(const char *channel = "", 
-		unsigned int type = 0);
+	ChannelDefinition(const char *channel = "", unsigned int type = 0);
 
 	const char *getChannel() { return channel_.c_str(); }
 	void setChannel(const char *c) { channel_ = c; }
@@ -53,44 +52,49 @@ class ChannelText
 public:
 	enum Flags
 	{
-		eNoLog = 1,
+		eNoLog   = 1,
 		eNoSound = 2
 	};
 
 	ChannelText();
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const LangString &message);
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const std::string &key,
-		const std::string &value);
+		const std::string &value
+	);
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const std::string &key,
 		const std::string &value,
-		const LangStringConverter &param1);
+		const LangStringConverter &param1
+	);
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const std::string &key,
 		const std::string &value,
 		const LangStringConverter &param1,
-		const LangStringConverter &param2);
+		const LangStringConverter &param2
+	);
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const std::string &key,
 		const std::string &value,
 		const LangStringConverter &param1,
 		const LangStringConverter &param2,
-		const LangStringConverter &param3);
+		const LangStringConverter &param3
+	);
 	ChannelText(
-		const std::string &channel, 
+		const std::string &channel,
 		const std::string &key,
 		const std::string &value,
 		const LangStringConverter &param1,
 		const LangStringConverter &param2,
 		const LangStringConverter &param3,
-		const LangStringConverter &param4);
+		const LangStringConverter &param4
+	);
 
 	void setChannel(const std::string &channel) { channel_ = channel; }
 	void setMessage(const LangString &message) { message_ = message; }
@@ -120,10 +124,10 @@ protected:
 	unsigned int srcPlayerId_;
 	unsigned int destPlayerId_;
 	unsigned int flags_;
+	std::string channel_;
+	std::string messageValue_;
 	std::string messageKey_;
 	std::vector<LangString> messageParams_;
-	std::string messageValue_;
-	std::string channel_;
 	LangString message_;
 	LangString srcPlayerName_;
 	std::string admin_;

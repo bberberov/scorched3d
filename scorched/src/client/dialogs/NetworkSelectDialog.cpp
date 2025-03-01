@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,8 +41,7 @@ struct ColumnInfo
 };
 static ColumnInfo *getGamesCols()
 {
-	static ColumnInfo gamescols[] = 
-	{
+	static ColumnInfo gamescols[] = {
 		GLWIconTable::Column(LANG_STRING(""), 60), "",
 		GLWIconTable::Column(LANG_RESOURCE("SERVER_NAME", "Server Name"), 255), "servername",
 		GLWIconTable::Column(LANG_RESOURCE("PLYRS", "Plyrs"), 60), "noplayers",
@@ -54,10 +53,9 @@ static ColumnInfo *getGamesCols()
 	return gamescols;
 }
 
-static ColumnInfo *getPlayerCols() 
+static ColumnInfo *getPlayerCols()
 {
-	static ColumnInfo playerscols[] =
-	{
+	static ColumnInfo playerscols[] = {
 		GLWIconTable::Column(LANG_RESOURCE("PLAYER", "Player"), 270), "pn",
 		GLWIconTable::Column(LANG_RESOURCE("SCORE", "Score"), 260), "ps",
 		GLWIconTable::Column(LANG_RESOURCE("TIME", "Time"), 140), "pt",
@@ -78,35 +76,34 @@ NetworkSelectDialog *NetworkSelectDialog::instance()
 	return instance_;
 }
 
-NetworkSelectDialog::NetworkSelectDialog() : 
+NetworkSelectDialog::NetworkSelectDialog() :
 	GLWWindow("Network", 780.0f, 560.0f, eHideName, ""),
-	totalTime_(0.0f), invalidateId_(0),
-	okTex_(ImageID(S3D::eDataLocation,
-		"data/images/ok.bmp",
-		"data/images/mask.bmp")),
-	questionTex_(ImageID(S3D::eDataLocation,
-		"data/images/question.bmp",
-		"data/images/mask.bmp")),
-	warningTex_(ImageID(S3D::eDataLocation,
-		"data/images/warn.bmp",
-		"data/images/mask.bmp")),
-	noentryTex_(ImageID(S3D::eDataLocation,
-		"data/images/noentry.bmp",
-		"data/images/mask.bmp")),
-	exclaimTex_(ImageID(S3D::eDataLocation,
-		"data/images/exclaim.bmp",
-		"data/images/mask.bmp")),
-	keyTex_(ImageID(S3D::eDataLocation,
-		"data/images/key.bmp",
-		"data/images/keya.bmp",
-		true)),
-	cogTex_(ImageID(S3D::eDataLocation,
-		"data/images/cog.bmp",
-		"data/images/coga.bmp",
-		true)),
-	tankTex_(ImageID(S3D::eDataLocation,
-		"",
-		"data/images/tank2.png"))
+	totalTime_(0.0f),
+	okTex_(
+		ImageID(S3D::eDataLocation, "data/images/ok.bmp", "data/images/mask.bmp")
+	),
+	questionTex_(
+		ImageID(S3D::eDataLocation, "data/images/question.bmp", "data/images/mask.bmp")
+	),
+	warningTex_(
+		ImageID(S3D::eDataLocation, "data/images/warn.bmp", "data/images/mask.bmp")
+	),
+	noentryTex_(
+		ImageID(S3D::eDataLocation, "data/images/noentry.bmp", "data/images/mask.bmp")
+	),
+	exclaimTex_(
+		ImageID(S3D::eDataLocation, "data/images/exclaim.bmp", "data/images/mask.bmp")
+	),
+	keyTex_(
+		ImageID(S3D::eDataLocation, "data/images/key.bmp", "data/images/keya.bmp", true)
+	),
+	cogTex_(
+		ImageID(S3D::eDataLocation, "data/images/cog.bmp", "data/images/coga.bmp", true)
+	),
+	tankTex_(
+		ImageID(S3D::eDataLocation, "", "data/images/tank2.png")
+	),
+	invalidateId_(0)
 {
 	std::list<GLWIconTable::Column> gamescolumns, playerscolumns;
 	for (int i=0;; i++)
@@ -130,26 +127,33 @@ NetworkSelectDialog::NetworkSelectDialog() :
 
 	ok_ = (GLWTextButton *) addWidget(
 		new GLWTextButton(LANG_RESOURCE("JOIN_GAME", "Join Game"), 640, 10, 130, this, 
-		GLWButton::ButtonFlagCenterX));
+		GLWButton::ButtonFlagCenterX)
+	);
 	cancelId_ = addWidget(
 		new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 530, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX))->getId();
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX)
+	)->getId();
 	refresh_ = (GLWTextButton *) addWidget(
 		new GLWTextButton(LANG_RESOURCE("REFRESH_LIST", "Refresh List"), 175, 10, 150, this, 
-		GLWButton::ButtonFlagCenterX));
+		GLWButton::ButtonFlagCenterX)
+	);
 	favourites_ = (GLWTextButton *) addWidget(
 		new GLWTextButton(LANG_RESOURCE("ADD_FAVOURITE", "Add Favourite"), 10, 10, 155, this, 
-		GLWButton::ButtonFlagCenterX));
+		GLWButton::ButtonFlagCenterX)
+	);
 
 	addWidget(new GLWPanel(220.0f, 525.0f, 300.0f, 25.0f, true));
 	ipaddress_ = (GLWLabel *) addWidget(
-		new GLWLabel(225.0f, 525.0f));
+		new GLWLabel(225.0f, 525.0f)
+	);
 	connectTo_ = (GLWTextButton *) addWidget(
 		new GLWTextButton(LANG_RESOURCE("CONNECT_TO_LABEL", "Connect To :"), 75.0f, 527.0f, 135, this,
-		GLWButton::ButtonFlagCenterX));
+		GLWButton::ButtonFlagCenterX)
+	);
 
 	refreshType_ = (GLWDropDownText *) addWidget(
-		new GLWDropDownText(530.0f, 525.0f, 150.0f));
+		new GLWDropDownText(530.0f, 525.0f, 150.0f)
+	);
 	refreshType_->addText(LANG_RESOURCE("INTERNET", "Internet"), "Internet");
 	refreshType_->addText(LANG_RESOURCE("LAN", "LAN"), "LAN");
 	refreshType_->addText(LANG_RESOURCE("FAVOURITES", "Favourites"), "Favourites");
@@ -158,9 +162,7 @@ NetworkSelectDialog::NetworkSelectDialog() :
 }
 
 NetworkSelectDialog::~NetworkSelectDialog()
-{
-
-}
+{}
 
 void NetworkSelectDialog::draw()
 {
@@ -273,15 +275,13 @@ GLTexture *NetworkSelectDialog::getTexture(int row, LangString *&message)
 	return questionTex_.getTexture();
 }
 
-void NetworkSelectDialog::drawColumn(unsigned int id, int row, int col,
-	float x, float y, float w)
+void NetworkSelectDialog::drawColumn(unsigned int id, int row, int col, float x, float y, float w)
 {
 	if (id == gamesIconTable_->getId()) drawColumnGames(id, row, col, x, y, w);
 	else if (id == playersIconTable_->getId()) drawColumnPlayers(id, row, col, x, y, w);
 }
 
-void NetworkSelectDialog::drawColumnGames(unsigned int id, int row, int col, 
-	float x, float y, float w)
+void NetworkSelectDialog::drawColumnGames(unsigned int id, int row, int col, float x, float y, float w)
 {
 	if (row < 0 || row >= ServerBrowser::instance()->getServerList().getNoEntries())
 	{
@@ -397,8 +397,7 @@ void NetworkSelectDialog::drawColumnGames(unsigned int id, int row, int col,
 	}
 }
 
-void NetworkSelectDialog::drawColumnPlayers(unsigned int id, int row, int col, 
-	float x, float y, float w)
+void NetworkSelectDialog::drawColumnPlayers(unsigned int id, int row, int col, float x, float y, float w)
 {
 	int gamesrow = gamesIconTable_->getSelected();
 	if (gamesrow < 0 || gamesrow >= ServerBrowser::instance()->getServerList().getNoEntries())

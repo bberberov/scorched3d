@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,11 +21,11 @@
 #include <GLEXT/GLShadowFrameBuffer.h>
 #include <GLEXT/GLStateExtension.h>
 
-GLShadowFrameBuffer::GLShadowFrameBuffer() : 
-	frameBufferObject_(0), depthTextureObject_(0),
+GLShadowFrameBuffer::GLShadowFrameBuffer() :
+	frameBufferObject_(0),
+	depthTextureObject_(0),
 	width_(0), height_(0)
-{
-}
+{}
 
 GLShadowFrameBuffer::~GLShadowFrameBuffer()
 {
@@ -48,10 +48,9 @@ bool GLShadowFrameBuffer::create(int width, int height)
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE_ARB, GL_COMPARE_R_TO_TEXTURE_ARB);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC_ARB, GL_LEQUAL);
-	glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE_ARB, GL_INTENSITY); 
+	glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE_ARB, GL_INTENSITY);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, width, height, 0, 
-		GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);	
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);
 
 	// Create framebuffer
 	glGenFramebuffersEXT(1, &frameBufferObject_);
@@ -60,13 +59,22 @@ bool GLShadowFrameBuffer::create(int width, int height)
 	glReadBuffer(GL_NONE);
 	glDrawBuffer(GL_NONE);
 
-	glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT, 
-		GL_DEPTH_ATTACHMENT_EXT, GL_TEXTURE_2D, depthTextureObject_, 0);
-	glFramebufferRenderbufferEXT(GL_FRAMEBUFFER_EXT, 
-		GL_DEPTH_ATTACHMENT_EXT, GL_RENDERBUFFER_EXT, depthTextureObject_);
+	glFramebufferTexture2DEXT(
+		GL_FRAMEBUFFER_EXT,
+		GL_DEPTH_ATTACHMENT_EXT,
+		GL_TEXTURE_2D,
+		depthTextureObject_,
+		0
+	);
+	glFramebufferRenderbufferEXT(
+		GL_FRAMEBUFFER_EXT,
+		GL_DEPTH_ATTACHMENT_EXT,
+		GL_RENDERBUFFER_EXT,
+		depthTextureObject_
+	);
 
-	GLenum status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);  
-	if (status != GL_FRAMEBUFFER_COMPLETE_EXT) 
+	GLenum status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);
+	if (status != GL_FRAMEBUFFER_COMPLETE_EXT)
 	{
 		return false;
 	}
@@ -92,14 +100,16 @@ void GLShadowFrameBuffer::destroy()
 	glFramebufferTexture2DEXT(
 		GL_FRAMEBUFFER_EXT,
 		GL_DEPTH_ATTACHMENT_EXT,
-		GL_TEXTURE_2D, 
+		GL_TEXTURE_2D,
 		0,
-		0);
+		0
+	);
 	glFramebufferRenderbufferEXT(
-		GL_FRAMEBUFFER_EXT, 
-		GL_DEPTH_ATTACHMENT_EXT, 
-		GL_RENDERBUFFER_EXT, 
-		0);
+		GL_FRAMEBUFFER_EXT,
+		GL_DEPTH_ATTACHMENT_EXT,
+		GL_RENDERBUFFER_EXT,
+		0
+	);
 
 	//DeActivate the frame buffer objcet
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);

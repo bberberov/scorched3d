@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -54,8 +54,8 @@ protected:
 
 	OptionEntryString connect_;
 	OptionEntryString client_;
-	OptionEntryString password_;
 	OptionEntryString username_;
+	OptionEntryString password_;
 	OptionEntryString save_;
 	OptionEntryString nonParam_;
 	OptionEntryBool startcustom_;

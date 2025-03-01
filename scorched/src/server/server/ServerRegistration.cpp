@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,16 +40,16 @@ ServerRegistration *ServerRegistration::instance()
 ServerRegistration::ServerRegistration() :
 	mainServer_(
 		OptionsMasterListServer::instance()->getMasterListServer(),
-		OptionsMasterListServer::instance()->getMasterListServerURI()),
+		OptionsMasterListServer::instance()->getMasterListServerURI()
+	),
 	backupServer_(
 		OptionsMasterListServer::instance()->getMasterListBackupServer(),
-		OptionsMasterListServer::instance()->getMasterListBackupServerURI())
-{
-}
+		OptionsMasterListServer::instance()->getMasterListBackupServerURI()
+	)
+{}
 
 ServerRegistration::~ServerRegistration()
-{
-}
+{}
 
 void ServerRegistration::start()
 {
@@ -58,8 +58,9 @@ void ServerRegistration::start()
 }
 
 ServerRegistrationEntry::ServerRegistrationEntry(
-	const char *masterListServer, 
-	const char *masterListServerURI) : 
+	const char *masterListServer,
+	const char *masterListServerURI
+) :
 	netServer_(new NetServerHTTPProtocolSend),
 	masterListServer_(masterListServer)
 {
@@ -75,15 +76,15 @@ ServerRegistrationEntry::ServerRegistrationEntry(
 		masterListServerURI,
 		ScorchedServer::instance()->getOptionsGame().getPublishAddress(),
 		ScorchedServer::instance()->getOptionsGame().getPortNo(),
-		masterListServer);
+		masterListServer
+	);
 	sendNetBuffer_.addDataToBuffer(buffer.c_str(), (int) buffer.size()); // Note no null
 
 	netServer_.setMessageHandler(this);
 }
 
 ServerRegistrationEntry::~ServerRegistrationEntry()
-{
-}
+{}
 
 void ServerRegistrationEntry::start()
 {
@@ -92,8 +93,7 @@ void ServerRegistrationEntry::start()
 
 int ServerRegistrationEntry::threadFunc(void *param)
 {
-	ServerRegistrationEntry *entry = 
-		(ServerRegistrationEntry *) param;
+	ServerRegistrationEntry *entry = (ServerRegistrationEntry *) param;
 
 	entry->actualThreadFunc();
 	return 0;
@@ -113,8 +113,12 @@ void ServerRegistrationEntry::actualThreadFunc()
 		success_ = false;
 		finished_ = false;
 
-		Logger::log(S3D::formatStringBuffer(
-			"Connecting to registration server %s...", masterListServer_));
+		Logger::log(
+			S3D::formatStringBuffer(
+				"Connecting to registration server %s...",
+				masterListServer_
+			)
+		);
 		if (registerGame())
 		{
 			time_t lastTime = time(0);
@@ -128,8 +132,7 @@ void ServerRegistrationEntry::actualThreadFunc()
 				if (finished_) break;
 
 				// Check for timeout
-				int timeOut = 
-					OptionsMasterListServer::instance()->getMasterListServerTimeout();
+				int timeOut = OptionsMasterListServer::instance()->getMasterListServerTimeout();
 				time_t currentTime = time(0);
 				if (currentTime - lastTime > timeOut)
 				{
@@ -137,19 +140,28 @@ void ServerRegistrationEntry::actualThreadFunc()
 				}
 			}
 
-			Logger::log(S3D::formatStringBuffer("Registration to %s %s.", 
-				masterListServer_,
-				(success_ ? "was successful" : "failed")));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Registration to %s %s.",
+					masterListServer_,
+					(success_ ? "was successful" : "failed"
+					)
+				)
+			);
 		}
 		else
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"Failed to connect to registration server %s", masterListServer_));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Failed to connect to registration server %s",
+					masterListServer_
+				)
+			);
 		}
 
 		// Wait for TimeBetweenRegistrations seconds before registering again
 		// unless we have had an error, in which case try again in 30 seconds
-		int waitTime = (success_?TimeBetweenRegistrations:30);
+		int waitTime = ( success_ ? TimeBetweenRegistrations : 30 );
 		SDL_Delay(1000 * waitTime);
 	}
 }
@@ -177,4 +189,3 @@ void ServerRegistrationEntry::processMessage(NetMessage &message)
 		finished_ = true;
 	}
 }
-

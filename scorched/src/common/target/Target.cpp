@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,14 +34,14 @@
 #include <common/Logger.h>
 #include <common/OptionsScorched.h>
 
-Target::Target(unsigned int playerId, 
-	const LangString &name,
-	ScorchedContext &context) :
+Target::Target(unsigned int playerId, const LangString &name, ScorchedContext &context) :
 	playerId_(playerId),
 	context_(context),
-	deathAction_(0), burnAction_(0), collisionAction_(0),
-	renderer_(0), 
-	border_(0)
+	border_(0),
+	renderer_(nullptr),
+	deathAction_(nullptr),
+	burnAction_(nullptr),
+	collisionAction_(nullptr)
 {
 	setName(name);
 
@@ -62,12 +62,12 @@ Target::~Target()
 {
 	life_->setLife(0);
 
-	delete renderer_; renderer_ = 0;
-	delete life_; life_ = 0;
-	delete shield_; shield_ = 0;
-	delete group_; group_ = 0;
-	delete parachute_; parachute_ = 0;
-	delete targetState_; targetState_ = 0;
+	delete renderer_; renderer_ = nullptr;
+	delete life_; life_ = nullptr;
+	delete shield_; shield_ = nullptr;
+	delete group_; group_ = nullptr;
+	delete parachute_; parachute_ = nullptr;
+	delete targetState_; targetState_ = nullptr;
 	playerId_ = 0;
 }
 

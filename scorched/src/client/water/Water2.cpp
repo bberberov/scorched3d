@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -55,13 +55,13 @@ Water2Patches &Water2::getPatch(float time)
 }
 
 static float calculateError(Water2Points &displacement,
-	int x1, int x2, int y1, int y2,
+	unsigned int x1, unsigned int x2, unsigned int y1, unsigned int y2,
 	float x1y1, float x2y2, float x1y2, float x2y1)
 {
 	if (x2 - x1 <= 1) return 0.0f;
 
-	int midx = (x1 + x2) / 2;
-	int midy = (y1 + y2) / 2;
+	unsigned int midx = (x1 + x2) / 2;
+	unsigned int midy = (y1 + y2) / 2;
 	float actualheight = displacement.getPoint(midx, midy)[2];
 
 	float approxheight1 = (x1y1 + x2y2) / 2.0f;
@@ -133,9 +133,9 @@ void Water2::generate(LandscapeTexBorderWater *water, ProgressCounter *counter)
 		owg.compute_displacements(-2.0f, displacements[i]);
 
 		// Form a vector with the correct X,Y,Zs
-		for (int y=0; y<wave_resolution; y++)
+		for (unsigned int y = 0; y < wave_resolution; y++)
 		{
-			for (int x=0; x<wave_resolution; x++)	
+			for (unsigned int x = 0; x < wave_resolution; x++)
 			{
 				Vector &point = displacements[i].getPoint(x, y);
 				point[2] += water->height.asFloat();
@@ -151,18 +151,18 @@ void Water2::generate(LandscapeTexBorderWater *water, ProgressCounter *counter)
 		// Do this for 1 64x64 patch as they should all be roughly similar
 		if (i == 0)
 		{
-			for (int j=0; j<=6; j++)
+			for (unsigned int j = 0; j <= 6; j++)
 			{
 				float error = 0.0f;
-				if (j>0)
+				if ( 0 < j )
 				{
-					int skip = 1 << j;
-					for (int y1=0; y1<wave_patch_width; y1+=skip)
+					unsigned int skip = 1 << j;
+					for (unsigned int y1 = 0; y1 < wave_patch_width; y1 += skip)
 					{
-						for (int x1=0; x1<wave_patch_width; x1+=skip)
+						for (unsigned int x1 = 0; x1 < wave_patch_width; x1 += skip)
 						{
-							int x2 = x1 + skip;
-							int y2 = y1 + skip;
+							unsigned int x2 = x1 + skip;
+							unsigned int y2 = y1 + skip;
 
 							float x1y1 = displacements[i].getPoint(x1, y1)[2];
 							float x2y2 = displacements[i].getPoint(x2, y2)[2];

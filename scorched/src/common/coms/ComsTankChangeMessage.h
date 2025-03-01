@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,7 +40,8 @@ public:
 		unsigned int destinationId,
 		unsigned int playerTeam,
 		const char *playerType,
-		bool spectate);
+		bool spectate
+	);
 	virtual ~ComsTankChangeMessage();
 
 	const LangString &getPlayerName() { return playerName_; }
@@ -65,16 +66,16 @@ public:
 
 protected:
 	unsigned int playerId_;
+	LangString playerName_;
+	Vector playerColor_;
+	std::string tankType_;
+	std::string modelName_;
 	unsigned int destinationId_;
 	unsigned int playerTeam_;
-	LangString playerName_;
-	std::string tankType_;
 	std::string playerType_;
-	std::string modelName_;
 	std::string playerIconName_;
-	Vector playerColor_;
-	bool spectate_;
 	NetBuffer playerIcon_;
+	bool spectate_;
 
 private:
 	const ComsTankChangeMessage & operator=(const ComsTankChangeMessage &);

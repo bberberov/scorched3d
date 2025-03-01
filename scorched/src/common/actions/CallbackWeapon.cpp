@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,35 +24,34 @@
 CallbackWeapon::CallbackWeapon(
 	const char *name,
 	WeaponCallback *callback,
-	fixed delay, unsigned int callbackData,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity) :
-	Action(weaponContext.getInternalContext().getReferenced()),
+	fixed delay,
+	unsigned int callbackData,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
 	callback_(callback),
 	delay_(delay),
 	callbackData_(callbackData),
+	weaponContext_(weaponContext),
 	position_(position),
 	velocity_(velocity),
-	weaponContext_(weaponContext),
 	totalTime_(0)
-{
-
-}
+{}
 
 CallbackWeapon::~CallbackWeapon()
-{
-}
+{}
 
 void CallbackWeapon::init()
-{
-}
+{}
 
 void CallbackWeapon::simulate(fixed frameTime, bool &remove)
 {
 	totalTime_ += frameTime;
 	if (totalTime_ > delay_)
 	{
-		callback_->weaponCallback(
-			*context_, weaponContext_, position_, velocity_, callbackData_);
+		callback_->weaponCallback( *context_, weaponContext_, position_, velocity_, callbackData_);
 		remove = true;
 	}
 

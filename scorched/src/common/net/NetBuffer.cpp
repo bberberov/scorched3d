@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,7 +27,8 @@
 static const unsigned startSize = 1024 * 10;
 
 NamedNetBufferSection::NamedNetBufferSection(NamedNetBuffer &buffer, const char *name) :
-	buffer_(buffer), name_(name)
+	buffer_(buffer),
+	name_(name)
 {
 	buffer_.startSection(name_);
 }
@@ -37,23 +38,26 @@ NamedNetBufferSection::~NamedNetBufferSection()
 	buffer_.stopSection(name_);
 }
 
-NetBuffer::NetBuffer() : 
-	buffer_(0),
+NetBuffer::NetBuffer() :
+	buffer_(nullptr),
 	usedSize_(0),
 	bufferSize_(0)
 {
 }
 
 NetBuffer::NetBuffer(const NetBuffer &other) :
-	buffer_(0),
+	buffer_(nullptr),
 	usedSize_(0),
-	bufferSize_(0)	
+	bufferSize_(0)
 {
 	allocate(((NetBuffer &) other).getBufferUsed());
 	addToBuffer(((NetBuffer &)other).getBuffer());
 }
 
-NetBuffer::NetBuffer(unsigned startSize, void *startBuffer)
+NetBuffer::NetBuffer(unsigned startSize, void *startBuffer) :
+	buffer_(nullptr),
+	usedSize_(0),
+	bufferSize_(0)
 {
 	allocate(startSize);
 	if (startBuffer)
@@ -65,7 +69,7 @@ NetBuffer::NetBuffer(unsigned startSize, void *startBuffer)
 NetBuffer::~NetBuffer()
 {
 	delete [] buffer_;
-	buffer_ = 0;
+	buffer_ = nullptr;
 }
 
 void NetBuffer::allocate(unsigned size)
@@ -73,7 +77,7 @@ void NetBuffer::allocate(unsigned size)
 	if (bufferSize_<size)
 	{
 		delete [] buffer_;
-		buffer_ = 0;
+		buffer_ = nullptr;
 		buffer_ = new char[size];
 		bufferSize_ = size;
 	}
@@ -89,8 +93,8 @@ void NetBuffer::reset()
 void NetBuffer::clear()
 {
 	delete [] buffer_;
+	buffer_ = nullptr;
 	usedSize_ = 0;
-	buffer_ = 0;
 	bufferSize_ = 0;
 }
 
@@ -172,7 +176,7 @@ void NetBuffer::resize(unsigned newBufferSize)
 {
 	if (newBufferSize < startSize) newBufferSize = startSize;
 	char *newBuffer = new char[newBufferSize];
-	if (buffer_)
+	if ( buffer_ != nullptr)
 	{
 		memcpy(newBuffer, buffer_, usedSize_);
 		delete [] buffer_;
@@ -184,7 +188,7 @@ void NetBuffer::resize(unsigned newBufferSize)
 void NetBuffer::addDataToBuffer(const void *add, unsigned len)
 {
 	unsigned bufferLeft = bufferSize_ - usedSize_;
-	if (!buffer_ || (bufferLeft < len))
+	if ( (buffer_ == nullptr) || (bufferLeft < len) )
 	{
 		unsigned sizeNeeded = len + usedSize_;
 		unsigned newBufferSize = sizeNeeded * 2;

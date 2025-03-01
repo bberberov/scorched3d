@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,7 +34,8 @@ public:
 		const char *url,
 		ServerWebServerI *handler,
 		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts);
+		std::map<std::string, NetMessage *> &parts
+	);
 	~ServerWebServerQueueEntry();
 
 	unsigned int getDestinationId() { return destinationId_; }
@@ -43,10 +44,10 @@ public:
 	ServerWebServerIRequest &getRequest() { return request_; }
 
 protected:
-	ServerWebServerI *handler_;
 	unsigned int destinationId_;
 	unsigned int sid_;
 	ServerWebServerIRequest request_;
+	ServerWebServerI *handler_;
 };
 
 class ServerWebServerQueue

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,8 +35,8 @@ public:
 
 protected:
 	Vector position_;
-	float frameTime_;
 	float size_;
+	float frameTime_;
 
 };
 

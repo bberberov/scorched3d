@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,16 +35,22 @@ class ShotProjectile : public PhysicsParticle
 {
 public:
 	ShotProjectile(
-		FixedVector &startPosition, FixedVector &velocity,
-		WeaponProjectile *weapon, WeaponFireContext &weaponContext,
-		unsigned int flareType, 
-		fixed spinSpeed, const Vector &spinAxis);
+		FixedVector &startPosition,
+		FixedVector &velocity,
+		WeaponProjectile *weapon,
+		WeaponFireContext &weaponContext,
+		unsigned int flareType,
+		fixed spinSpeed,
+		const Vector &spinAxis
+	);
 	virtual ~ShotProjectile();
 
 	virtual void simulate(fixed frameTime, bool &remove);
 	virtual void init();
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId);
+	virtual void collision(
+		PhysicsParticleObject &position,
+		ScorchedCollisionId collisionId
+	);
 	virtual std::string getActionDetails();
 	virtual std::string getActionType() { return "ShotProjectile"; }
 
@@ -56,19 +62,26 @@ public:
 
 protected:
 	ParticleGroup *groups_;
-	FixedVector startPosition_, velocity_;
+	FixedVector startPosition_;
+	FixedVector velocity_;
 	WeaponProjectile *weapon_;
-	TankViewPointProvider *vPoint_;
 	WeaponFireContext weaponContext_;
+	TankViewPointProvider *vPoint_;
 	unsigned int flareType_;
-	bool up_, collided_;
+	bool up_;
+	bool collided_;
 	fixed snapTime_;
-	fixed totalTime_, simulateTime_, timeout_;
+	fixed totalTime_;
+	fixed simulateTime_;
+	fixed timeout_;
 	fixed thrustTime_;
 	fixed thrustAmount_;
-	fixed wobbleSpin_, wobbleAmount_;
-	fixed drag_, stepSize_;
-	fixed timedCollision_, heightCollision_;
+	fixed wobbleSpin_;
+	fixed wobbleAmount_;
+	fixed drag_;
+	fixed stepSize_;
+	fixed timedCollision_;
+	fixed heightCollision_;
 	fixed spinSpeed_;
 	fixed physicsSpin_;
 	Vector spinAxis_;

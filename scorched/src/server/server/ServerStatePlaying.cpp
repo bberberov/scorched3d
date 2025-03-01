@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,11 +32,14 @@
 #include <tank/TankState.h>
 #include <tank/TankScore.h>
 
-ServerStatePlaying::ServerStatePlaying() : 
-	turns_(0), nextRoundId_(0), roundState_(eNone),
-	turnsSimultaneous_(true), turnsSimultaneousNoWait_(false)
+ServerStatePlaying::ServerStatePlaying() :
+	roundState_(eNone),
+	nextRoundId_(0),
+	turns_(nullptr),
+	turnsSimultaneous_(true),
+	turnsSimultaneousNoWait_(false)
 {
-	roundStarted_ = new SimulatorIAdapter<ServerStatePlaying>(this,  &ServerStatePlaying::roundStarted);
+	roundStarted_ = new SimulatorIAdapter<ServerStatePlaying>(this, &ServerStatePlaying::roundStarted);
 }
 
 ServerStatePlaying::~ServerStatePlaying()
@@ -53,17 +56,15 @@ void ServerStatePlaying::enterState()
 {
 	// Start the round
 	roundState_ = eNone;
-	roundTime_ = ScorchedServer::instance()->
-		getOptionsGame().getRoundTime();
-	RoundStartSimAction *roundStart =
-		new RoundStartSimAction(++nextRoundId_, roundTime_);
-	ScorchedServer::instance()->getServerSimulator().
-		addSimulatorAction(roundStart, roundTime_>0?roundStarted_:0);
+	roundTime_ = ScorchedServer::instance()->getOptionsGame().getRoundTime();
+	RoundStartSimAction *roundStart = new RoundStartSimAction( ++nextRoundId_, roundTime_);
+	ScorchedServer::instance()->getServerSimulator().addSimulatorAction(
+		roundStart, roundTime_ > 0 ? roundStarted_ : 0
+	);
 
 	// Inform the stats logger
 	std::list<Tank *> playingTanks;
-	std::map<unsigned int, Tank *> &tanks = 
-		ScorchedServer::instance()->getTargetContainer().getTanks();
+	std::map<unsigned int, Tank *> &tanks = ScorchedServer::instance()->getTargetContainer().getTanks();
 	std::map<unsigned int, Tank *>::iterator mainitor;
 	for (mainitor = tanks.begin();
 		mainitor != tanks.end();
@@ -78,10 +79,8 @@ void ServerStatePlaying::enterState()
 	ScorchedServer::instance()->getEventController().roundStart(playingTanks);
 
 	// Ballance any teams needing ballanced
-	TankTeamBallanceSimAction *teamBallance =
-		new TankTeamBallanceSimAction();
-	ScorchedServer::instance()->getServerSimulator().
-		addSimulatorAction(teamBallance);
+	TankTeamBallanceSimAction *teamBallance = new TankTeamBallanceSimAction();
+	ScorchedServer::instance()->getServerSimulator().addSimulatorAction(teamBallance);
 
 	// Reset the auto-sync check timer
 	ScorchedServer::instance()->getServerSyncCheck().enterState();
@@ -123,9 +122,7 @@ void ServerStatePlaying::simulate(fixed frameTime)
 		roundTime_ -= frameTime;
 		if (roundTime_ < 0) 
 		{
-			ChannelText text("info",
-				"ROUND_FINISHED_TIME",
-				"Round finished due to round time out");
+			ChannelText text("info", "ROUND_FINISHED_TIME", "Round finished due to round time out" );
 			ScorchedServer::instance()->getServerChannelManager().sendText(text, true);
 
 			roundState_ = eFinished;

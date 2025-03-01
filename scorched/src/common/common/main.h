@@ -30,13 +30,18 @@
 static ARGParser aParser;
 char scorched3dAppName[128];
 
-// Compilers from Borland report floating-point exceptions in a manner 
+#if defined(__BORLANDC__) || defined (__TURBOC__)
+// NOTE: possibly aldo  defined(__BCPLUSPLUS__) || defined(__TCPLUSPLUS__)
+// NOTE: https://digitalmars.com/ctg/fromBorland.html
+
+// Compilers from Borland report floating-point exceptions in a manner
 // that is incompatible with Microsoft Direct3D.
 int _matherr(struct _exception  *e)
 {
     e;               // Dummy reference to catch the warning.
     return 1;        // Error has been handled.
 }
+#endif
 
 void _no_storage()
 {

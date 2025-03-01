@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,14 +27,13 @@
 #include <XML/XMLParser.h>
 #include <image/ImageFactory.h>
 
-PlacementTypeTree::PlacementTypeTree() : 
-	mincloseness(0), maxobjects(2000)
-{
-}
+PlacementTypeTree::PlacementTypeTree() :
+	maxobjects(2000),
+	mincloseness(0)
+{}
 
 PlacementTypeTree::~PlacementTypeTree()
-{
-}
+{}
 
 bool PlacementTypeTree::readXML(XMLNode *node)
 {
@@ -48,10 +47,12 @@ bool PlacementTypeTree::readXML(XMLNode *node)
 	return PlacementType::readXML(node);
 }
 
-void PlacementTypeTree::getPositions(ScorchedContext &context,
+void PlacementTypeTree::getPositions(
+	ScorchedContext &context,
 	RandomGenerator &generator,
 	std::list<Position> &returnPositions,
-	ProgressCounter *counter)
+	ProgressCounter *counter
+)
 {
 	Image bmap(256, 256);
 	Image map = bmap;

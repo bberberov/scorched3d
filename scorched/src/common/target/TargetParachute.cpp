@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,15 +22,13 @@
 #include <engine/ScorchedContext.h>
 #include <weapons/AccessoryStore.h>
 
-TargetParachute::TargetParachute(ScorchedContext &context) : 
+TargetParachute::TargetParachute(ScorchedContext &context) :
 	context_(context),
 	currentParachute_(0)
-{
-}
+{}
 
 TargetParachute::~TargetParachute()
-{
-}
+{}
 
 void TargetParachute::loaded()
 {

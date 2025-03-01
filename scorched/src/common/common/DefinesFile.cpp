@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,10 +26,12 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#pragma warning(disable : 4996)
+#ifdef _WIN32
+	// WARNING
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
+	#pragma warning(disable : 4996)
 
-#ifdef WIN32
-#include <direct.h>
+	#include <direct.h>
 #endif
 
 #ifdef HAVE_UNISTD_H

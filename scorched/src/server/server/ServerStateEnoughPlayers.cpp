@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -89,7 +89,7 @@ ServerStateEnoughPlayers::Result ServerStateEnoughPlayers::enoughPlayers()
 				
 		// Check there is at least one player in each team
 		int teamCount[4];
-		for (int i=0; i<ScorchedServer::instance()->getOptionsGame().getTeams();i++)
+		for (unsigned int i = 0; i < ScorchedServer::instance()->getOptionsGame().getTeams(); i++)
 		{
 			teamCount[i] = 0;
 		}
@@ -107,7 +107,7 @@ ServerStateEnoughPlayers::Result ServerStateEnoughPlayers::enoughPlayers()
 				teamCount[current->getTeam() - 1]++;
 			}
 		}
-		for (int i=0; i<ScorchedServer::instance()->getOptionsGame().getTeams();i++)
+		for (unsigned int i = 0; i < ScorchedServer::instance()->getOptionsGame().getTeams(); i++)
 		{
 			if (teamCount[i] == 0)
 			{

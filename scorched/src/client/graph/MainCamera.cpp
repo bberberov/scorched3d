@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -57,28 +57,34 @@ MainCamera *MainCamera::instance()
 	return instance_;
 }
 
-MainCamera::MainCamera() : 
+MainCamera::MainCamera() :
 	GameStateI("MainCamera"),
-	mouseDown_(false), keyDown_(false), scrolling_(false), showArena_(false),
-	waterTransparency_(1.0f)
+	waterTransparency_(1.0f),
+	mouseDown_(false),
+	keyDown_(false),
+	scrolling_(false),
+	showArena_(false)
 {
 	Image *map = new Image(ImageFactory::loadImage(
 		S3D::eDataLocation,
 		"data/images/camera.bmp",
 		"data/images/cameraa.bmp",
-		false));
+		false)
+	);
 	DIALOG_ASSERT(map->getBits());
 	MainMenuDialog::instance()->addMenu(
 		LANG_RESOURCE("CAMERA", "Camera"),
-		"Camera", 
+		"Camera",
 		LANG_RESOURCE("CAMERA_MENU", "Change the current camera view."),
-		32, 0, this, map);
+		32,
+		0,
+		this,
+		map
+	);
 }
 
 MainCamera::~MainCamera()
-{
-
-}
+{}
 
 bool MainCamera::getEnabled(const char* menuName)
 {
@@ -86,8 +92,7 @@ bool MainCamera::getEnabled(const char* menuName)
 	return (state >= ClientState::StateWait);
 }
 
-bool MainCamera::getMenuItems(const char* menuName, 
-	std::list<GLMenuItem> &result)
+bool MainCamera::getMenuItems(const char* menuName, std::list<GLMenuItem> &result)
 {
 	for (int i=0; i<TargetCamera::getNoCameraNames(); i++)
 	{
@@ -100,8 +105,7 @@ bool MainCamera::getMenuItems(const char* menuName,
 	return true;
 }
 
-void MainCamera::menuSelection(const char* menuName, 
-	const int position, GLMenuItem &item)
+void MainCamera::menuSelection(const char* menuName, const int position, GLMenuItem &item)
 {
 	targetCam_.setCameraType((TargetCamera::CamType) position);
 }
@@ -260,9 +264,15 @@ void MainCamera::draw(const unsigned state)
 	targetCam_.draw();
 }
 
-void MainCamera::mouseDrag(const unsigned state, 
-	GameState::MouseButton button, 
-	int mx, int my, int x, int y, bool &skipRest)
+void MainCamera::mouseDrag(
+	const unsigned state,
+	GameState::MouseButton button,
+	int mx,
+	int my,
+	int x,
+	int y,
+	bool &skipRest
+)
 {
 	targetCam_.mouseDrag(button, mx, my, x, y, skipRest);
 }
@@ -272,8 +282,7 @@ void MainCamera::mouseWheel(const unsigned state, int x, int y, int z, bool &ski
 	targetCam_.mouseWheel(x, y, z, skipRest);
 }
 
-void MainCamera::mouseDown(const unsigned state, GameState::MouseButton button, 
-	int x, int y, bool &skipRest)
+void MainCamera::mouseDown(const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest)
 {
 	mouseDown_ = true;
 	if (button == GameState::MouseButtonLeft) 
@@ -282,8 +291,7 @@ void MainCamera::mouseDown(const unsigned state, GameState::MouseButton button,
 	}
 }
 
-void MainCamera::mouseUp(const unsigned state, GameState::MouseButton button,
-	int x, int y, bool &skipRest)
+void MainCamera::mouseUp(const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest)
 {
 	mouseDown_ = false;
 	if (button == GameState::MouseButtonLeft) 
@@ -292,11 +300,15 @@ void MainCamera::mouseUp(const unsigned state, GameState::MouseButton button,
 	}
 }
 
-void MainCamera::keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, 
-							   int hisCount, 
-							   bool &skipRest)
+void MainCamera::keyboardCheck(
+	const unsigned state,
+	float frameTime,
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	keyDown_ = targetCam_.keyboardCheck(frameTime, buffer,
 		keyState, history, hisCount, skipRest);

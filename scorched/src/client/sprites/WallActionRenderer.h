@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,9 +40,9 @@ protected:
 	static GLTexture texture_;
 	Vector position_;
 	OptionsTransient::WallSide type_;
-	bool init_;
 	float fade_;
 	float xOff_, yOff_;
+	bool init_;
 	Vector color_;
 	Vector cornerA_, cornerB_;
 	Vector cornerC_, cornerD_;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,17 +41,14 @@ public:
 protected:
 	struct BuyingPlayer
 	{
-		BuyingPlayer(
-			unsigned int moveId,
-			fixed moveTime) :
+		BuyingPlayer( unsigned int moveId, fixed moveTime ) :
 			startedMove_(false),
 			moveId_(moveId),
 			moveTime_(moveTime)
-		{
-		}
+		{}
 
-		unsigned int moveId_;
 		bool startedMove_;
+		unsigned int moveId_;
 		fixed moveTime_;
 	};
 

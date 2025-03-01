@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,9 +35,11 @@ class SettingsSubSelectDialogListItem : public GLWIconListItem
 {
 public:
 	SettingsSubSelectDialogListItem(
-		const char *icon, 
-		const char *name, const char *description,
-		bool selected);
+		const char *icon,
+		const char *name,
+		const char *description,
+		bool selected
+	);
 	virtual ~SettingsSubSelectDialogListItem();
 
 	const char *getName() { return name_.c_str(); }
@@ -48,13 +50,13 @@ public:
 	virtual void draw(float x, float y, float w);
 
 protected:
-	std::string name_;
 	GLWIcon icon_;
+	std::string name_;
 	GLWCheckBox selected_;
 	ToolTip tip_;
 };
 
-class SettingsSubSelectDialog : 
+class SettingsSubSelectDialog :
 	public GLWWindow,
 	public GLWButtonI,
 	public GLWIconListI
@@ -75,12 +77,19 @@ public:
 protected:
 	static SettingsSubSelectDialog *instance_;
 
-	GLWTab *mainTab_, *moneyTab_, *weaponsTab_;
-	GLWTab *scoreTab_, *envTab_, *landTab_;
+	GLWTab *mainTab_;
+	GLWTab *moneyTab_;
+	GLWTab *weaponsTab_;
+	GLWTab *scoreTab_;
+	GLWTab *envTab_;
+	GLWTab *landTab_;
 	GLWIconList *landList_;
 	std::list<GLWOptionEntry> controls_;
-	unsigned int cancelId_, okId_, advancedId_;
-	unsigned int selectAllId_, selectNoneId_;
+	unsigned int cancelId_;
+	unsigned int okId_;
+	unsigned int advancedId_;
+	unsigned int selectAllId_;
+	unsigned int selectNoneId_;
 
 	void displayLand();
 

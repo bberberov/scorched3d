@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,7 +35,7 @@ GLMenu::~GLMenu()
 {
 }
 
-GLMenuEntry *GLMenu::getMenu(char *menuItem)
+GLMenuEntry *GLMenu::getMenu(const char *menuItem)
 {
 	std::string menu(menuItem);
 	std::map<std::string, GLMenuEntry *>::iterator itor = menuList_.find(menu);
@@ -49,7 +49,7 @@ GLMenuEntry *GLMenu::getMenu(char *menuItem)
 
 bool GLMenu::addMenu(
 	const LangString &menuName,
-	char *menuNameInternal, 
+	const char *menuNameInternal,
 	const LangString &menuDescription,
 	float width, 
 	unsigned int state,
@@ -67,7 +67,7 @@ bool GLMenu::addMenu(
 	return true;
 }
 
-bool GLMenu::addMenuItem(char *menuName, const GLMenuItem item)
+bool GLMenu::addMenuItem(const char *menuName, const GLMenuItem item)
 {
 	GLMenuEntry *entry = getMenu(menuName);
 	if (!entry) return false;

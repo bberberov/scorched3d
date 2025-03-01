@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,7 +27,7 @@
 
 struct lua_State;
 class XMLNode;
-class LaserParams 
+class LaserParams
 {
 public:
 	LaserParams();
@@ -56,14 +56,14 @@ public:
 	std::string &getRingTexture() { return ringTexture_; }
 
 protected:
-	std::string ringTexture_;
-	fixed minimumHurt_, maximumHurt_;
-	fixed minimumDistance_, maximumDistance_;
-	fixed hurtRadius_;
-	fixed totalTime_;
 	bool hurtFirer_;
 	Vector color_;
+	std::string ringTexture_;
 	float ringRadius_;
+	fixed minimumDistance_, maximumDistance_;
+	fixed minimumHurt_, maximumHurt_;
+	fixed hurtRadius_;
+	fixed totalTime_;
 };
 
 #endif // __INCLUDE_LaserParamsh_INCLUDE__

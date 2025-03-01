@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,9 +23,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-XMLParser::XMLParser(bool useContentNodes) : 
-	root_(0), current_(0), 
+XMLParser::XMLParser(bool useContentNodes) :
 	useContentNodes_(useContentNodes),
+	root_(0),
+	current_(0),
 	source_("Not Specified")
 {
 	// Init the XML parser
@@ -56,17 +57,19 @@ const char *XMLParser::getParseError()
 	XML_Error errorCode = XML_GetErrorCode(p_);
 
 	static char message[1024];
-	snprintf(message, 1024,
-		"Parse Error, File %s: Line:%i Col:%i Error:%s",
+	snprintf(
+		message,
+		1024,
+		"Parse Error, File %s: Line:%lu Col:%lu Error:%s",
 		source_.c_str(),
 		XML_GetCurrentLineNumber(p_),
 		XML_GetCurrentColumnNumber(p_),
-		XML_ErrorString(errorCode));
+		XML_ErrorString(errorCode)
+	);
 	return message;
 }
 
-void XMLParser::startElementHandler(const XML_Char *name,
-                           const XML_Char **atts)
+void XMLParser::startElementHandler(const XML_Char *name, const XML_Char **atts)
 {
 	if (!root_)
 	{
@@ -74,8 +77,7 @@ void XMLParser::startElementHandler(const XML_Char *name,
 		root_ = current_ = new XMLNode(name);
 		root_->setUseContentNodes(useContentNodes_);
 		root_->setSource(source_.c_str());
-		root_->setLine(XML_GetCurrentLineNumber(p_),
-			XML_GetCurrentColumnNumber(p_));
+		root_->setLine(XML_GetCurrentLineNumber(p_), XML_GetCurrentColumnNumber(p_));
 	}
 	else
 	{
@@ -86,8 +88,7 @@ void XMLParser::startElementHandler(const XML_Char *name,
 		current_->setUseContentNodes(useContentNodes_);
 		current_->addChild(newNode);
 		current_ = newNode;
-		current_->setLine(XML_GetCurrentLineNumber(p_),
-			XML_GetCurrentColumnNumber(p_));
+		current_->setLine(XML_GetCurrentLineNumber(p_), XML_GetCurrentColumnNumber(p_));
 	}
 
 	if (atts)
@@ -100,9 +101,8 @@ void XMLParser::startElementHandler(const XML_Char *name,
 			atts++;
 
 			XMLNode *param = new XMLNode(name, "", XMLNode::XMLParameterType);
-			param->addContent(value, (int) strlen(value));
-			param->setLine(XML_GetCurrentLineNumber(p_),
-				XML_GetCurrentColumnNumber(p_));
+			param->addContent( value, (int)strlen(value) );
+			param->setLine( XML_GetCurrentLineNumber(p_), XML_GetCurrentColumnNumber(p_) );
 			current_->addParameter(param);
 		}
 	}
@@ -116,30 +116,24 @@ void XMLParser::endElementHandler(const XML_Char *name)
 	current_ = (XMLNode *) current_->getParent();
 }
 
-void XMLParser::characterDataHandler(const XML_Char *s,
-                            int len)
+void XMLParser::characterDataHandler(const XML_Char *s, int len)
 {
 	current_->addContent(s, len);
 }
 
-void XMLParser::startElementStaticHandler(void *userData,
-                           const XML_Char *name,
-                           const XML_Char **atts)
+void XMLParser::startElementStaticHandler(void *userData, const XML_Char *name, const XML_Char **atts)
 {
 	XMLParser *parser = (XMLParser *) userData;
 	parser->startElementHandler(name, atts);
 }
 
-void XMLParser::endElementStaticHandler(void *userData,
-                         const XML_Char *name)
+void XMLParser::endElementStaticHandler(void *userData, const XML_Char *name)
 {
 	XMLParser *parser = (XMLParser *) userData;
 	parser->endElementHandler(name);
 }
 
-void XMLParser::characterDataStaticHandler(void *userData,
-                            const XML_Char *s,
-                            int len)
+void XMLParser::characterDataStaticHandler(void *userData, const XML_Char *s, int len)
 {
 	XMLParser *parser = (XMLParser *) userData;
 	parser->characterDataHandler(s, len);

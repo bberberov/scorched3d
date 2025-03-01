@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,8 +30,7 @@ class ScorchedContext;
 class TargetShield
 {
 public:
-	TargetShield(ScorchedContext &context,
-		unsigned int playerId);
+	TargetShield(ScorchedContext &context, unsigned int playerId);
 	virtual ~TargetShield();
 
 	virtual void loaded();
@@ -53,10 +52,11 @@ public:
     bool readMessage(NetBufferReader &reader);
 
 protected:
-	Target *target_;
 	ScorchedContext &context_;
 	Accessory *currentShield_;
-	fixed power_, boundingSize_;
+	Target *target_;
+	fixed power_;
+	fixed boundingSize_;
 	Accessory *graphicalCurrentShield_;
 	fixed graphicalShieldPower_;
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,9 +35,11 @@ class Tanket;
 class TanketMovement : public Action
 {
 public:
-	TanketMovement(WeaponFireContext &weaponContext,
+	TanketMovement(
+		WeaponFireContext &weaponContext,
 		WeaponMoveTank *weapon_,
-		int positionX, int positionY);
+		int positionX, int positionY
+	);
 	virtual ~TanketMovement();
 
 	virtual void init();
@@ -52,20 +54,23 @@ protected:
 		PositionEntry(
 			int fX, int fY,
 			int sX, int sY,
-			fixed newx, fixed newy, fixed newa, bool useF) :
-		firstX(fX), firstY(fY),
-		secondX(sX), secondY(sY),
-		x(newx), y(newy), ang(newa), 
-		useFuel(useF)
+			fixed newx, fixed newy, fixed newa,
+			bool useF
+		) :
+			firstX(fX), firstY(fY),
+			secondX(sX), secondY(sY),
+			x(newx), y(newy), ang(newa),
+			useFuel(useF)
 		{}
 
 		int firstX, firstY;
 		int secondX, secondY;
-
-		fixed x, y;
-		fixed ang;
+		fixed x, y, ang;
 		bool useFuel;
 	};
+
+	WeaponFireContext weaponContext_;
+
 	WeaponMoveTank *weapon_;
 	std::list<PositionEntry> expandedPositions_;
 	fixed timePassed_;
@@ -73,11 +78,11 @@ protected:
 	VirtualSoundSource *moveSoundSource_;
 	Counter smokeCounter_;
 
-	WeaponFireContext weaponContext_;
 	FixedVector startPosition_;
 	int positionX_, positionY_;
 	unsigned int stepCount_;
-	bool remove_, moving_;
+	bool remove_;
+	bool moving_;
 
 	void moveTanket(Tanket *tanket);
 	void simulationMove(fixed frameTime);

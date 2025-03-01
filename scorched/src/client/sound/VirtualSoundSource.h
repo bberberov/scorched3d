@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,8 +29,7 @@ class PlayingSoundSource;
 class VirtualSoundSource
 {
 public:
-	VirtualSoundSource(
-		unsigned int priority, bool looping, bool managed);
+	VirtualSoundSource( unsigned int priority, bool looping, bool managed);
 	virtual ~VirtualSoundSource();
 
 	void play(SoundBuffer *buffer);
@@ -63,9 +62,12 @@ protected:
 	unsigned int priority_;
 	PlayingSoundSource *playingSource_;
 	SoundBuffer *buffer_;
-	Vector position_, velocity_;
+	Vector position_;
+	Vector velocity_;
 	float distance_;
-	float gain_, refDist_, rolloff_;
+	float gain_;
+	float refDist_;
+	float rolloff_;
 	bool relative_;
 	bool looping_;
 	bool managed_;

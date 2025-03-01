@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,12 +29,10 @@
 #include <weapons/AccessoryStore.h>
 
 GLWChannelViewTextRenderer::GLWChannelViewTextRenderer()
-{
-}
+{}
 
 GLWChannelViewTextRenderer::~GLWChannelViewTextRenderer()
-{
-}
+{}
 
 bool GLWChannelViewTextRenderer::drawCharacter(
 	unsigned int character,
@@ -104,6 +102,8 @@ bool GLWChannelViewTextRenderer::drawCharacter(
 			toolTip_.setText(ToolTip::ToolTipHelp, 
 				LANG_RESOURCE("ADMIN", "Admin"),
 				textEntry->part);	
+			break;
+		case eTipEntry:
 			break;
 		}
 	}

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -88,15 +88,18 @@ public:
 	bool readMessage(NetBufferReader &reader);
 
 protected:
+	ScorchedContext &context_;
 	Tank *tank_;
 	std::set<unsigned int> hurtBy_;
-	ScorchedContext &context_;
-	int rank_, skill_, startSkill_;
+	int rank_;
+	int skill_;
+	int startSkill_;
 	int kills_;
 	int ping_;
 	int assists_;
 	int money_;
-	int totalMoneyEarned_, totalScoreEarned_;
+	int totalMoneyEarned_;
+	int totalScoreEarned_;
 	int wins_;
 	int score_;
 	bool wonGame_;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,6 +21,7 @@
 #include <common/Defines.h>
 #include <engine/ModFileEntryLoader.h>
 #include <engine/ModFiles.h>
+#include <cstring>
 
 bool ModFileEntryLoader::writeModFile(NetBuffer &buffer, 
 	const std::string &fileName, const std::string &modName)
@@ -30,31 +31,35 @@ bool ModFileEntryLoader::writeModFile(NetBuffer &buffer,
 
 	// Create any needed directories
 	char *dir = (char *) fileName.c_str();
-	while (dir = strchr(dir, '/'))
+	while ( ( dir = std::strchr(dir, '/') ) != nullptr )
 	{
 		*dir = '\0';
-		std::string needdir = S3D::getSettingsModFile(S3D::formatStringBuffer("%s/%s", 
-			modName.c_str(), fileName.c_str()));
-		if (!S3D::dirExists(needdir)) S3D::dirMake(needdir);
+
+		std::string needdir = S3D::getSettingsModFile(
+			S3D::formatStringBuffer( "%s/%s", modName.c_str(), fileName.c_str() )
+		);
+		if ( ! S3D::dirExists(needdir) )
+			S3D::dirMake(needdir);
+
 		*dir = '/';
-		dir++;
+
+		++dir;
 	}
 
 	// Write the file 
-	std::string needfile = S3D::getSettingsModFile(S3D::formatStringBuffer("%s/%s", 
-		modName.c_str(), fileName.c_str()));
+	std::string needfile = S3D::getSettingsModFile(
+		S3D::formatStringBuffer( "%s/%s", modName.c_str(), fileName.c_str() )
+	);
 	FILE *file = fopen(needfile.c_str(), "wb");
 	if (!file)
 	{
-		S3D::dialogMessage("WriteModFile",
-			"Create file error");
+		S3D::dialogMessage("WriteModFile", "Create file error");
 		return false;
 	}
 	if (fwrite(buffer.getBuffer(), sizeof(unsigned char), 
 		buffer.getBufferUsed(), file) != buffer.getBufferUsed())
 	{
-		S3D::dialogMessage("WriteModFile",
-			"Write file error");
+		S3D::dialogMessage("WriteModFile", "Write file error");
 		fclose(file);
 		return false;
 	}

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,15 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#define WIN32_LEAN_AND_MEAN
 #include <stdlib.h>
 #include <stdarg.h>
 #include <common/Defines.h>
 #include <common/Logger.h>
-#include <windows.h>
 #include <string>
 
-#pragma warning(disable : 4996)
+#ifdef _WIN32
+	#define WIN32_LEAN_AND_MEAN
+	#include <windows.h>
+
+	// WARNING
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
+	#pragma warning(disable : 4996)
+#endif
 
 extern bool wxWindowInit;
 

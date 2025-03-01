@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,23 +23,22 @@
 
 ImageData::ImageData() :
 	referenceCount_(0),
+	bits_(nullptr),
+	width_(0),
+	height_(0),
+	alignment_(0),
+	components_(0),
+	lossless_(true)
+{}
+
+ImageData::ImageData(int width, int height, int components, unsigned char fill) :
+	referenceCount_(0),
 	bits_(0),
 	width_(0),
 	height_(0),
 	alignment_(0),
 	components_(0),
 	lossless_(true)
-{
-}
-
-ImageData::ImageData(int width, int height, int components, unsigned char fill) :
-	lossless_(true),
-	referenceCount_(0),
-	bits_(0),
-	width_(0),
-	height_(0),
-	alignment_(0),
-	components_(0)
 {
 	createBlankInternal(width, height, components, fill);
 }
@@ -63,7 +62,7 @@ void ImageData::dereference()
 void ImageData::clear()
 {
 	delete [] bits_;
-	bits_ = 0;
+	bits_ = nullptr;
 	width_ = 0;
 	height_ = 0;
 	alignment_ = 0;

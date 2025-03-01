@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -49,10 +49,15 @@ public:
 	// Inherited from GameStateI
 	virtual void simulate(const unsigned state, float frameTime);
 	virtual void draw(const unsigned state);
-	virtual void keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest);
+	virtual void keyboardCheck(
+		const unsigned state,
+		float frameTime,
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 	// Inherited from LoggerI
 	virtual void logMessage(LoggerInfo &info);

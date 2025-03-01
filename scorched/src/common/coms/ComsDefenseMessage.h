@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,9 +40,7 @@ public:
 	};
 
 	ComsDefenseMessage();
-	ComsDefenseMessage(unsigned int playerId,
-		DefenseChange change,
-		unsigned int infoId);
+	ComsDefenseMessage(unsigned int playerId, DefenseChange change, unsigned int infoId);
 	ComsDefenseMessage(ComsDefenseMessage &other);
 	virtual ~ComsDefenseMessage();
 
@@ -53,13 +51,13 @@ public:
 	unsigned int getInfoId() { return infoId_; }
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage(NetBuffer &buffer);
+	virtual bool readMessage(NetBufferReader &reader);
 
 protected:
 	unsigned int playerId_;
-	unsigned int infoId_;
 	DefenseChange change_;
+	unsigned int infoId_;
 
 private:
 	const ComsDefenseMessage & operator=(const ComsDefenseMessage &);

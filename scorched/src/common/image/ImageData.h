@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,7 @@
 
 #include <string>
 
-class ImageData  
+class ImageData
 {
 public:
 	ImageData();
@@ -50,13 +50,13 @@ public:
 	void dereference();
 
 protected:
-	bool lossless_;
 	int referenceCount_;
 	unsigned char *bits_;
 	int width_;
 	int height_;
 	int alignment_;
 	int components_;
+	bool lossless_;
 
 	void createBlankInternal(int width, int height, int components, unsigned char fill);
 

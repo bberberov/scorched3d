@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,6 +36,7 @@
 #include <GLW/GLWTranslate.h>
 #include <GLW/GLWWindowManager.h>
 #include <lang/LangResource.h>
+#include <limits>
 
 StartDialog *StartDialog::instance_ = 0;
 
@@ -62,7 +63,7 @@ StartDialog::StartDialog() :
 		LANG_RESOURCE("DONATE", "Donate"), "- Show support for Scorched3D.", 50.0f, 290.0f, 0.0f,
 		LANG_RESOURCE("QUIT", "Quit"), "- Exit the game.", 50.0f, 360.0f, 0.0f
 	};
-	for (int i=0; i<sizeof(defs) / sizeof(OptionDefinition); i++)
+	for (size_t i = 0; i < sizeof(defs) / sizeof(OptionDefinition); i++)
 	{
 		definitions_.push_back(defs[i]);
 	}
@@ -79,11 +80,11 @@ void StartDialog::draw()
 	
 	GLState state(GLState::DEPTH_OFF);
 
-	selected_ = -1;
+	selected_ = std::numeric_limits<size_t>::max();
 	float size = 18.0f;
 	float smallSize = 14.0f;
 	Vector white(0.8f, 0.8f, 0.8f);
-	for (int i=0; i<(int) definitions_.size(); i++)
+	for (size_t i = 0; i < definitions_.size(); i++)
 	{
 		OptionDefinition &definition = definitions_[i];
 
@@ -132,7 +133,7 @@ void StartDialog::draw()
 
 void StartDialog::mouseDown(int button, float x, float y, bool &skipRest)
 {
-	if (selected_ != -1)
+	if (selected_ != std::numeric_limits<size_t>::max())
 	{
 		skipRest = true;
 

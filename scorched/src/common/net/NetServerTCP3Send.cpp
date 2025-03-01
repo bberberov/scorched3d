@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,14 +24,19 @@
 #include <common/Logger.h>
 
 NetServerTCP3Send::NetServerTCP3Send(
-	TCPsocket socket, 
-	unsigned int destinationId, unsigned int ipAddress,
-	NetMessageHandler *recieveMessageHandler) :
-	socket_(socket), 
-	destinationId_(destinationId), ipAddress_(ipAddress),
+	TCPsocket socket,
+	unsigned int destinationId,
+	unsigned int ipAddress,
+	NetMessageHandler *recieveMessageHandler
+) :
+	socket_(socket),
+	destinationId_(destinationId),
+	ipAddress_(ipAddress),
 	recieveMessageHandler_(recieveMessageHandler),
-	messagesSent_(0), bytesOut_(0),
-	stopped_(false), running_(true)
+	messagesSent_(0),
+	bytesOut_(0),
+	stopped_(false),
+	running_(true)
 {
 	sendMessageHandler_.setMessageHandler(this);
 	sendThread_ = SDL_CreateThread(
@@ -75,7 +80,7 @@ bool NetServerTCP3Send::actualSendFunc()
 {
 	// Get any new messages
 	sendMessageHandler_.processMessages();
-	if (outgoingMessages_.empty()) 
+	if (outgoingMessages_.empty())
 	{
 		if (!running_) return false;
 

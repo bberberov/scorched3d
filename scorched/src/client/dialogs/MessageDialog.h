@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,9 +26,7 @@
 #include <string>
 #include <list>
 
-class MessageDialog : 
-	public GLWWindow,
-	public ClientChannelManagerI
+class MessageDialog : public GLWWindow, public ClientChannelManagerI
 {
 public:
 	static MessageDialog *instance();
@@ -43,7 +41,8 @@ public:
 	virtual void channelText(ChannelText &text);
 	virtual void registeredForChannels(
 		std::list<ChannelDefinition> &registeredChannels,
-		std::list<ChannelDefinition> &availableChannels);
+		std::list<ChannelDefinition> &availableChannels
+	);
 
 protected:
 	static MessageDialog *instance_;

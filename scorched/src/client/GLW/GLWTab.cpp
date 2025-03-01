@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,24 +28,26 @@ static const float tabSpacing = 10.0f;
 REGISTER_CLASS_SOURCE(GLWTab);
 
 GLWTabI::~GLWTabI()
-{
+{}
 
-}
-
-GLWTab::GLWTab(const std::string &tabName, 
+GLWTab::GLWTab(
+	const std::string &tabName,
 	const LangString &tabLabel,
-	float x, float y, float w, float h) :
-	GLWScrollPanel(x, y, w, h), index_(-1.0f),
-	label_(x + 5.0f + -1.0f, y + h - 3.0f, tabLabel),
+	float x, float y,
+	float w, float h
+) :
+	GLWScrollPanel(x, y, w, h),
 	name_(tabName),
-	handler_(0), depressed_(true)
+	label_(x + 5.0f + -1.0f, y + h - 3.0f, tabLabel),
+	handler_(nullptr),
+	depressed_(true),
+	index_(-1.0f)
 {
 	label_.setSize(12.0f);
 }
 
 GLWTab::~GLWTab()
-{
-}
+{}
 
 void GLWTab::setH(float h)
 {

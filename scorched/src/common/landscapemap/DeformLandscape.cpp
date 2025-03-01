@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -112,23 +112,33 @@ static DeformLandscapeCache deformCache;
 
 void DeformLandscape::deformLandscape(
 	ScorchedContext &context,
-	FixedVector &pos, fixed radius, bool down, fixed depthScale,
-	const char *deformTexture)
+	FixedVector &pos,
+	fixed radius,
+	bool down,
+	fixed depthScale,
+	const char *deformTexture
+)
 {
-	if (context.getOptionsGame().getActionSyncCheck())
+	if ( context.getOptionsGame().getActionSyncCheck() )
 	{
 		context.getSimulator().addSyncCheck(
-			S3D::formatStringBuffer("Deform : %s %s %s", 
-				pos.asQuickString(), 
-				radius.asQuickString(), (down?"Down":"Up")));
+			S3D::formatStringBuffer(
+				"Deform : %s %s %s",
+				pos.asQuickString(),
+				radius.asQuickString(),
+				( down ? "Down" : "Up" )
+			)
+		);
 	}
 
 	static DeformPoints deformMap;
-	if (down && context.getLandscapeMaps().getRoofMaps().getRoofOn())
+	if ( down && context.getLandscapeMaps().getRoofMaps().getRoofOn() )
 	{
+#ifdef S3D_SERVER
+		deformRoofInternal(context, pos, radius, depthScale, true);
+#else
 		bool hits = deformRoofInternal(context, pos, radius, depthScale, true);
-#ifndef S3D_SERVER
-		if (hits && !context.getServerMode())
+		if ( hits && !context.getServerMode() )
 		{
 			Landscape::instance()->recalculateRoof();
 			VisibilityPatchGrid::instance()->recalculateRoofErrors(pos, radius);
@@ -136,18 +146,21 @@ void DeformLandscape::deformLandscape(
 #endif
 	}
 
+#ifdef S3D_SERVER
+	deformLandscapeInternal(context, pos, radius, down, deformMap, true, depthScale);
+#else
 	bool hits = deformLandscapeInternal(context, pos, radius, down, deformMap, true, depthScale);
-#ifndef S3D_SERVER
-	if (hits && !context.getServerMode() && deformTexture)
+	if ( hits && !context.getServerMode() && deformTexture )
 	{
 		Landscape::instance()->recalculateLandscape();
 		VisibilityPatchGrid::instance()->recalculateLandscapeErrors(pos, radius);
 
 		DeformTextures::deformLandscape(
-			pos.asVector(), 
-			radius.asFloat(),  
+			pos.asVector(),
+			radius.asFloat(),
 			ExplosionTextures::instance()->getScorchBitmap(deformTexture),
-			deformMap);
+			deformMap
+		);
 	}
 #endif
 }

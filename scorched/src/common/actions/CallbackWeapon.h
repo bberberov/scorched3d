@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,10 +36,15 @@ public:
 class CallbackWeapon : public Action
 {
 public:
-	CallbackWeapon(const char *name,
+	CallbackWeapon(
+		const char *name,
 		WeaponCallback *callback,
-		fixed delay, unsigned int callbackData,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+		fixed delay,
+		unsigned int callbackData,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 	virtual ~CallbackWeapon();
 
 	virtual void init();
@@ -48,14 +53,14 @@ public:
 	virtual std::string getActionType() { return "CallbackWeapon"; }
 
 protected:
-	fixed totalTime_;
-
-	FixedVector position_;
-	FixedVector velocity_;
-	WeaponFireContext weaponContext_;
+	WeaponCallback *callback_;
 	fixed delay_;
 	unsigned int callbackData_;
-	WeaponCallback *callback_;
+	WeaponFireContext weaponContext_;
+	FixedVector position_;
+	FixedVector velocity_;
+
+	fixed totalTime_;
 
 };
 

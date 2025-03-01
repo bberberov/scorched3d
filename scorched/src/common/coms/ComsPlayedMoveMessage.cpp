@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,48 +24,52 @@ ComsMessageType ComsPlayedMoveMessage::ComsPlayedMoveMessageType("ComsPlayedMove
 
 ComsPlayedMoveMessage::ComsPlayedMoveMessage() :
 	ComsMessage(ComsPlayedMoveMessageType),
-	moveType_(eNone),
-	weaponId_(0),
+	playerId_(0),
 	moveId_(0),
-	rotationXY_(0), rotationYZ_(0), power_(0), playerId_(0),
+	weaponId_(0),
+	moveType_(eNone),
+	rotationXY_(0), rotationYZ_(0),
+	power_(0),
 	selectPositionX_(0), selectPositionY_(0)
-{
-}
+{}
 
 ComsPlayedMoveMessage::ComsPlayedMoveMessage(const ComsPlayedMoveMessage &other) :
 	ComsMessage(ComsPlayedMoveMessageType),
-	moveType_(other.moveType_),
-	weaponId_(other.weaponId_),
+	playerId_(other.playerId_),
 	moveId_(other.moveId_),
-	rotationXY_(other.rotationXY_), rotationYZ_(other.rotationYZ_), 
-	power_(other.power_), playerId_(other.playerId_),
+	weaponId_(other.weaponId_),
+	moveType_(other.moveType_),
+	rotationXY_(other.rotationXY_), rotationYZ_(other.rotationYZ_),
+	power_(other.power_),
 	selectPositionX_(other.selectPositionX_), selectPositionY_(other.selectPositionY_)
-{
-}
+{}
 
-ComsPlayedMoveMessage::ComsPlayedMoveMessage(unsigned int playerId,
+ComsPlayedMoveMessage::ComsPlayedMoveMessage(
+	unsigned int playerId,
 	unsigned int moveId,
-	MoveType type) :
+	MoveType type
+) :
 	ComsMessage(ComsPlayedMoveMessageType),
-	moveType_(type),
-	weaponId_(0),
+	playerId_(playerId),
 	moveId_(moveId),
-	rotationXY_(0), rotationYZ_(0), power_(0), playerId_(playerId),
+	weaponId_(0),
+	moveType_(type),
+	rotationXY_(0), rotationYZ_(0),
+	power_(0),
 	selectPositionX_(0), selectPositionY_(0)
-{
-
-}
+{}
 
 ComsPlayedMoveMessage::~ComsPlayedMoveMessage()
-{
-}
+{}
 
-void ComsPlayedMoveMessage::setShot(unsigned int weaponId,
+void ComsPlayedMoveMessage::setShot(
+	unsigned int weaponId,
 	fixed rotationXY,
 	fixed rotationYZ,
 	fixed power,
-	int selectPositionX, 
-	int selectPositionY)
+	int selectPositionX,
+	int selectPositionY
+)
 {
 	weaponId_ = weaponId;
 	rotationXY_ = rotationXY;
@@ -110,4 +114,3 @@ bool ComsPlayedMoveMessage::readMessage(NetBufferReader &reader)
 	}
 	return true;
 }
-

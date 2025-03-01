@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,27 +46,32 @@
 #include <weapons/WeaponMoveTank.h>
 #include <XML/XMLNode.h>
 
-TankAICurrentMove::TankAICurrentMove() : 
-	useResign_(true), useFuel_(true), 
+TankAICurrentMove::TankAICurrentMove() :
+	useResign_(true),
+	useFuel_(true),
 	totalDamageBeforeMove_(0.0f),
-	movementDamage_(300.0f), movementDamageChance_(0.3f), movementLife_(75.0f),
-	movementRandom_(10.0f), movementCloseness_(15.0f),
-	groupShotSize_(2), groupShotChance_(0.7f), groupTargetDistance_(25.0f),
+	movementDamage_(300.0f),
+	movementDamageChance_(0.3f),
+	movementLife_(75.0f),
+	movementRandom_(10.0f),
+	movementCloseness_(15.0f),
+	groupShotSize_(2),
+	groupShotChance_(0.7f),
+	groupTargetDistance_(25.0f),
 	resignLife_(10.0f), // Min life before resigning
 	largeWeaponUseDistance_(10.0f), // The distance under which large weapons will be used
 	sniperUseDistance_(80.0f), // The max distance to allow sniper shots
 	sniperStartDistance_(10.0f), sniperEndDistance_(0.0f),
-	sniperMinDecrement_(2.0f), sniperMaxDecrement_(5.0f),
+	sniperMinDecrement_(2.0f),   sniperMaxDecrement_(5.0f),
 	sniperMovementFactor_(4.0f),
 	projectileStartDistance_(10.0f), projectileEndDistance_(5.0f),
-	projectileMinDecrement_(1.0f), projectileMaxDecrement_(4.0f),
-	projectileMovementFactor_(10.0f), projectileMinDistance_(10.0f)
-{
-}
+	projectileMinDecrement_(1.0f),   projectileMaxDecrement_(4.0f),
+	projectileMovementFactor_(10.0f),
+	projectileMinDistance_(10.0f)
+{}
 
 TankAICurrentMove::~TankAICurrentMove()
-{
-}
+{}
 
 bool TankAICurrentMove::parseConfig(XMLNode *node)
 {
@@ -134,9 +139,12 @@ void TankAICurrentMove::clear()
 	shotRecords_.clear();
 }
 
-void TankAICurrentMove::playMove(Tanket *tanket, 
-	TankAIWeaponSets::WeaponSet *weapons, bool useBatteries,
-	unsigned int moveId)
+void TankAICurrentMove::playMove(
+	Tanket *tanket,
+	TankAIWeaponSets::WeaponSet *weapons,
+	bool useBatteries,
+	unsigned int moveId
+)
 {
 	MoveData moveData;
 	moveData.moveId = moveId;
@@ -160,9 +168,12 @@ void TankAICurrentMove::playMove(Tanket *tanket,
 	}
 }
 
-void TankAICurrentMove::playMoveInternal(Tanket *tanket, 
-	TankAIWeaponSets::WeaponSet *weapons, bool useBatteries,
-	MoveData &moveData)
+void TankAICurrentMove::playMoveInternal(
+	Tanket *tanket,
+	TankAIWeaponSets::WeaponSet *weapons,
+	bool useBatteries,
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -265,8 +276,12 @@ void TankAICurrentMove::playMoveInternal(Tanket *tanket,
 	skipMove(tanket, moveData);
 }
 
-bool TankAICurrentMove::shootAtTank(Tanket *tanket, Tanket *targetTanket, 
-	TankAICurrentMoveWeapons &weapons, MoveData &moveData)
+bool TankAICurrentMove::shootAtTank(
+	Tanket *tanket,
+	Tanket *targetTanket,
+	TankAICurrentMoveWeapons &weapons,
+	MoveData &moveData
+)
 {
 	// Try to make a sniper shot
 	if (makeSniperShot(tanket, targetTanket, weapons, moveData)) return true;
@@ -283,8 +298,12 @@ bool TankAICurrentMove::shootAtTank(Tanket *tanket, Tanket *targetTanket,
 	return false;
 }
 
-bool TankAICurrentMove::makeProjectileShot(Tanket *tanket, Tanket *targetTanket, 
-	TankAICurrentMoveWeapons &weapons, MoveData &moveData)
+bool TankAICurrentMove::makeProjectileShot(
+	Tanket *tanket,
+	Tanket *targetTanket,
+	TankAICurrentMoveWeapons &weapons,
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -465,8 +484,12 @@ bool TankAICurrentMove::makeProjectileShot(Tanket *tanket, Tanket *targetTanket,
 	return false;
 }
 
-bool TankAICurrentMove::makeSniperShot(Tanket *tanket, Tanket *targetTanket, 
-	TankAICurrentMoveWeapons &weapons, MoveData &moveData)
+bool TankAICurrentMove::makeSniperShot(
+	Tanket *tanket,
+	Tanket *targetTanket,
+	TankAICurrentMoveWeapons &weapons,
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -556,8 +579,12 @@ bool TankAICurrentMove::makeSniperShot(Tanket *tanket, Tanket *targetTanket,
 	return false;
 }
 
-bool TankAICurrentMove::makeLaserSniperShot(Tanket *tanket, Tanket *targetTanket, 
-	TankAICurrentMoveWeapons &weapons, MoveData &moveData)
+bool TankAICurrentMove::makeLaserSniperShot(
+	Tanket *tanket,
+	Tanket *targetTanket,
+	TankAICurrentMoveWeapons &weapons,
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -598,8 +625,12 @@ bool TankAICurrentMove::makeLaserSniperShot(Tanket *tanket, Tanket *targetTanket
 	return false;
 }
 
-bool TankAICurrentMove::makeBurriedShot(Tanket *tanket, Tanket *targetTanket, 
-	TankAICurrentMoveWeapons &weapons, MoveData &moveData)
+bool TankAICurrentMove::makeBurriedShot(
+	Tanket *tanket,
+	Tanket *targetTanket,
+	TankAICurrentMoveWeapons &weapons,
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -721,10 +752,12 @@ bool TankAICurrentMove::inHole(Vector &position)
 	return true;
 }
 
-bool TankAICurrentMove::makeMoveShot(Tanket *tanket, 
+bool TankAICurrentMove::makeMoveShot(
+	Tanket *tanket,
 	TankAIWeaponSets::WeaponSet *weapons,
 	std::list<Tanket *> &sortedTankets,
-	MoveData &moveData)
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -806,10 +839,12 @@ struct GroupingEntry
 	float totalDistance;
 };
 
-bool TankAICurrentMove::makeGroupShot(Tanket *tanket, 
+bool TankAICurrentMove::makeGroupShot(
+	Tanket *tanket,
 	TankAIWeaponSets::WeaponSet *weapons,
 	std::list<Tanket *> &sortedTankets,
-	MoveData &moveData)
+	MoveData &moveData
+)
 {
 	if (TankAI::getTankAILogging())
 	{
@@ -942,8 +977,11 @@ bool TankAICurrentMove::useAvailableBatteries(Tanket *tanket, MoveData &moveData
 	return true;
 }
 
-Vector TankAICurrentMove::lowestHighest(TankAICurrentMoveWeapons &weapons, 
-	Vector &directTarget, bool highest)
+Vector TankAICurrentMove::lowestHighest(
+	TankAICurrentMoveWeapons &weapons,
+	Vector &directTarget,
+	bool highest
+)
 {
 	float radius = weapons.shield->getBoundingSize().asFloat() + 2.0f;
 	Vector bestPos = directTarget;
@@ -1128,8 +1166,7 @@ void TankAICurrentMove::fireShot(Tanket *tanket, MoveData &moveData)
 	}
 }
 
-void TankAICurrentMove::useBattery(Tanket *tanket, unsigned int batteryId, 
-	MoveData &moveData)
+void TankAICurrentMove::useBattery(Tanket *tanket, unsigned int batteryId, MoveData &moveData)
 {
 	if (TankAI::getTankAILogging())
 	{

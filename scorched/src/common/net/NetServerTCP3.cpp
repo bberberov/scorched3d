@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,10 +24,12 @@
 #include <common/Clock.h>
 #include <limits.h>
 
-NetServerTCP3::NetServerTCP3() : 
-	serverDestinationId_(UINT_MAX), nextDestinationId_(1),
+NetServerTCP3::NetServerTCP3() :
+	serverDestinationId_(UINT_MAX),
+	nextDestinationId_(1),
 	sendRecvThread_(0),
-	serverSock_(0), serverSockSet_(0),
+	serverSockSet_(0),
+	serverSock_(0),
 	stopped_(false)
 {
 	serverSockSet_ = SDLNet_AllocSocketSet(1);
@@ -328,21 +330,18 @@ void NetServerTCP3::disconnectClient(unsigned int destination)
 	disconnectClient(buffer, destination);
 }
 
-void NetServerTCP3::disconnectClient(NetBuffer &buffer, 
-	unsigned int destination)
+void NetServerTCP3::disconnectClient(NetBuffer &buffer, unsigned int destination)
 {
 	sendMessageTypeDest(buffer, destination, 0, NetMessage::DisconnectMessage);
 }
 
-void NetServerTCP3::sendMessageServer(NetBuffer &buffer, 
-	unsigned int flags)
+void NetServerTCP3::sendMessageServer( NetBuffer &buffer, unsigned int flags)
 {
 	// Send a message to the server
 	sendMessageDest(buffer, serverDestinationId_, flags);
 }
 
-void NetServerTCP3::sendMessageDest(NetBuffer &buffer, 
-	unsigned int destination, unsigned int flags)
+void NetServerTCP3::sendMessageDest( NetBuffer &buffer, unsigned int destination, unsigned int flags)
 {
 	// Send a message to the client
 	sendMessageTypeDest(buffer, destination, flags, NetMessage::BufferMessage);
@@ -360,9 +359,12 @@ void NetServerTCP3::setMessageHandler(NetMessageHandlerI *handler)
 	incomingMessageHandler_.setMessageHandler(handler);
 }
 
-void NetServerTCP3::sendMessageTypeDest(NetBuffer &buffer, 
-	unsigned int destination, unsigned int flags, 
-	NetMessage::MessageType type)
+void NetServerTCP3::sendMessageTypeDest(
+	NetBuffer &buffer,
+	unsigned int destination,
+	unsigned int flags,
+	NetMessage::MessageType type
+)
 {
 	// Get a new buffer from the pool
 	NetMessage *message = NetMessagePool::instance()->
@@ -379,9 +381,11 @@ void NetServerTCP3::sendMessageTypeDest(NetBuffer &buffer,
 	outgoingMessageHandler_.addMessage(message);
 }
 
-void NetServerTCP3::destroyDestination(NetBuffer &disconectMessage,
+void NetServerTCP3::destroyDestination(
+	NetBuffer &disconectMessage,
 	unsigned int destinationId,
-	NetMessage::DisconnectFlags type)
+	NetMessage::DisconnectFlags type
+)
 {
 	// Destroy this destination
 	std::map<unsigned int, NetServerTCP3Destination *>::iterator itor =

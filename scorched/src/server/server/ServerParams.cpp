@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,22 +33,37 @@ ServerParams *ServerParams::instance()
 }
 
 ServerParams::ServerParams() :
-	server_(options_, "startserver",
-		"Starts a scorched 3d server, requires the name of the server settings file e.g. data/server.xml", 0, ""),
-	hideWindow_(options_, "hidewindow",
-		"Hides the scorched3d console window (windows)", 0, false),
-	startCustom_(options_, "startcustom",
-		"Starts a scorched 3d server, uses the last server made", 0, false),
-	exitOnSyncFailure_(options_, "exitonsyncfailure",
-		"Exits the server if a sync failure is found", 0, false),
-	exitTime_(options_, "exittime",
-		"Exits the server after a given time period (in seconds)", 0, 0)
-
-{
-
-}
+	server_(
+		options_,
+		"startserver",
+		"Starts a scorched 3d server, requires the name of the server settings file e.g. data/server.xml",
+		0, ""
+	),
+	hideWindow_(
+		options_,
+		"hidewindow",
+		"Hides the scorched3d console window (windows)",
+		0, false
+	),
+	startCustom_(
+		options_,
+		"startcustom",
+		"Starts a scorched 3d server, uses the last server made",
+		0, false
+	),
+	exitOnSyncFailure_(
+		options_,
+		"exitonsyncfailure",
+		"Exits the server if a sync failure is found",
+		0, false
+	),
+	exitTime_(
+		options_,
+		"exittime",
+		"Exits the server after a given time period (in seconds)",
+		0, 0
+	)
+{}
 
 ServerParams::~ServerParams()
-{
-	
-}
+{}

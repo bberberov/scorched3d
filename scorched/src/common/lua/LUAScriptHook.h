@@ -40,25 +40,33 @@ public:
 		};
 
 		Param(fixed innumber) :
-			number(innumber), type(eNumber) {};
+			type(eNumber),
+			number(innumber)
+		{};
 		Param(const char *instr) :
-			str(instr), type(eString) {};
+			type(eString),
+			str(instr)
+		{};
 		Param(const std::string &instr) :
-			str(instr), type(eString) {};
+			type(eString),
+			str(instr)
+		{};
 		Param(const LangString &instr) :
-			str(LangStringUtil::convertFromLang(instr)), type(eString) {};
+			type(eString),
+			str( LangStringUtil::convertFromLang(instr) )
+		{};
 		Param(bool b) :
-			boolean(b), type(eBoolean) {};
+			type(eBoolean),
+			boolean(b)
+		{};
 
 		Type type;
-		fixed number;
 		bool boolean;
+		fixed number;
 		std::string str;
 	};
 
-	LUAScriptHook(LUAScriptFactory *factory, 
-		const std::string &hooksName,
-		const std::string &directoryName);
+	LUAScriptHook(LUAScriptFactory *factory, const std::string &hooksName, const std::string &directoryName);
 	~LUAScriptHook();
 
 	void addHookProvider(const std::string &hookName);
@@ -79,8 +87,9 @@ protected:
 		std::string entryPoint;
 	};
 
-	std::string directoryName_, hooksName_;
 	LUAScriptFactory *factory_;
+	std::string hooksName_;
+	std::string directoryName_;
 	std::map<std::string, std::vector<HookEntry> > hookNames_;
 	bool loadHook(const std::string &directoryName, const std::string &fileName);
 	void reloadHooks() { loadHooks(); }

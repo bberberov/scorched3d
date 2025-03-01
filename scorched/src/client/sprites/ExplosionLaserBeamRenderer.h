@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,9 +34,12 @@ public:
 	ExplosionLaserBeamRenderer();
 	virtual ~ExplosionLaserBeamRenderer();
 
-	virtual void init(unsigned int playerId,
-		Vector &position, Vector &velocity,
-		const char *data);
+	virtual void init(
+		unsigned int playerId,
+		Vector &position,
+		Vector &velocity,
+		const char *data
+	);
 
 	virtual void draw(Action *action);
 	virtual void simulate(Action *action, float frameTime, bool &remove);
@@ -45,11 +48,11 @@ public:
 private:
 
 	Vector position_;
-	float size_;
-	float time_;
 	float totalTime_;
-	Vector points[layers][sides];
+	float time_;
+	float size_;
 	float angle_;
+	Vector points[layers][sides];
 	static GLTextureReference _texture;
 
 };

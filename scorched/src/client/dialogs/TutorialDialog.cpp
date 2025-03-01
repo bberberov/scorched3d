@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -48,12 +48,20 @@ TutorialDialog *TutorialDialog::instance()
 	return instance_;
 }
 
-TutorialDialog::TutorialDialog() : 
-	GLWWindow("Tutorial", 155.0f, -125.0f, 
-		470.0f, 120.0f, eSemiTransparent | eNoTitle | eHideName,
-		"The ingame tutorial."),
-	triangleDir_(30.0f), triangleDist_(0.0f),
-	current_(0), speed_(1.0f)
+TutorialDialog::TutorialDialog() :
+	GLWWindow(
+		"Tutorial",
+		155.0f,
+		-125.0f,
+		470.0f,
+		120.0f,
+		eSemiTransparent | eNoTitle | eHideName,
+		"The ingame tutorial."
+	),
+	triangleDist_(0.0f),
+	triangleDir_(30.0f),
+	speed_(1.0f),
+	current_(nullptr)
 {
 	windowLevel_ = 75000;
 
@@ -66,17 +74,14 @@ TutorialDialog::TutorialDialog() :
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();
 
-	if (file_.parseFile(S3D::getDataFile(
-		ScorchedClient::instance()->getOptionsGame().getTutorial())))
+	if (file_.parseFile(S3D::getDataFile( ScorchedClient::instance()->getOptionsGame().getTutorial() )))
 	{
 		showPage(file_.getStartEntry());
 	}
 }
 
 TutorialDialog::~TutorialDialog()
-{
-
-}
+{}
 
 void TutorialDialog::showPage(TutorialFileEntry *entry)
 {
@@ -112,8 +117,7 @@ void TutorialDialog::draw()
 	processEvents();
 }
 
-static const char *getValue(const char *name,
-	std::map<std::string, std::string> &event)
+static const char *getValue(const char *name, std::map<std::string, std::string> &event)
 {
 	std::map<std::string, std::string>::iterator itor =
 		event.find(name);
@@ -133,7 +137,7 @@ void TutorialDialog::processEvents(bool log)
 		S3D::dialogExit("TutorialDialog", "No action in event");
 	}
 
-	if (0 == strcmp(action, "highlight")) 
+	if (0 == strcmp(action, "highlight"))
 	{
 		processHighlight(log);
 	}
@@ -151,9 +155,10 @@ void TutorialDialog::processEvents(bool log)
 	}
 	else
 	{
-		S3D::dialogExit("TutorialDialog",
-			S3D::formatStringBuffer("Unknown tutorial event type \"%s\"",
-			action));
+		S3D::dialogExit(
+			"TutorialDialog",
+			S3D::formatStringBuffer("Unknown tutorial event type \"%s\"", action)
+		);
 	}
 }
 
@@ -165,13 +170,15 @@ void TutorialDialog::processMenu(bool log)
 		S3D::dialogExit("TutorialDialog", "No menu in event");
 	}
 
-	GLMenuEntry *entry = MainMenuDialog::instance()->
-		getMenu((char*) menuName);
+	GLMenuEntry *entry = MainMenuDialog::instance()->getMenu((char*) menuName);
 	if (!entry) return;
 
 	drawHighlight(
-		entry->getX(), entry->getY() - entry->getH(), 
-		entry->getW(), entry->getH());
+		entry->getX(),
+		entry->getY() - entry->getH(),
+		entry->getW(),
+		entry->getH()
+	);
 }
 
 void TutorialDialog::processHighlight(bool log)
@@ -256,8 +263,7 @@ void TutorialDialog::url(const char *url)
 	}
 	else
 	{
-		S3D::dialogExit("TutorialDialog", 
-			S3D::formatStringBuffer("Unknown url \"%s\"", url));
+		S3D::dialogExit("TutorialDialog", S3D::formatStringBuffer("Unknown url \"%s\"", url));
 	}
 }
 
@@ -288,32 +294,32 @@ void TutorialDialog::drawHighlight(float x, float y, float w, float h)
 void TutorialDialog::drawTriangle(float x, float y, float size, int tex)
 {
 	glBegin(GL_QUADS);
-		switch (tex) 
-		{ 
+		switch (tex)
+		{
 			case 0: glTexCoord2f(0.0f, 0.0f); break;
 			case 1: glTexCoord2f(1.0f, 0.0f); break;
 			case 2: glTexCoord2f(1.0f, 1.0f); break;
 			case 3: glTexCoord2f(0.0f, 1.0f); break;
 		}
 		glVertex2f(x, y);
-		switch (tex) 
-		{ 
+		switch (tex)
+		{
 			case 0: glTexCoord2f(1.0f, 0.0f); break;
 			case 1: glTexCoord2f(1.0f, 1.0f); break;
 			case 2: glTexCoord2f(0.0f, 1.0f); break;
 			case 3: glTexCoord2f(0.0f, 0.0f); break;
 		}
 		glVertex2f(x + size, y);
-		switch (tex) 
-		{ 
+		switch (tex)
+		{
 			case 0: glTexCoord2f(1.0f, 1.0f); break;
 			case 1: glTexCoord2f(0.0f, 1.0f); break;
 			case 2: glTexCoord2f(0.0f, 0.0f); break;
 			case 3: glTexCoord2f(1.0f, 0.0f); break;
 		}
 		glVertex2f(x + size, y + size);
-		switch (tex) 
-		{ 
+		switch (tex)
+		{
 			case 0: glTexCoord2f(0.0f, 1.0f); break;
 			case 1: glTexCoord2f(0.0f, 0.0f); break;
 			case 2: glTexCoord2f(1.0f, 0.0f); break;
@@ -327,4 +333,3 @@ void TutorialDialog::event(std::map<std::string, std::string> &event)
 {
 	currentEvents_ = event;
 }
-

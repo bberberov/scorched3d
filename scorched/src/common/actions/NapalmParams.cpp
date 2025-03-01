@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,30 +22,28 @@
 #include <lua/LUAUtil.h>
 #include <XML/XMLNode.h>
 
-NapalmParams::NapalmParams() : 
+NapalmParams::NapalmParams() :
 	napalmTime_(8),
 	napalmHeight_(2),
-	stepTime_(fixed(true, 1000)),
+	stepTime_( fixed( true, 1000) ),
 	hurtStepTime_(2),
 	hurtPerSecond_(1),
-	groundScorchPer_(fixed(true, 2000)),
+	groundScorchPer_( fixed(true, 2000) ),
+	landscapeErosion_(0),
 	effectRadius_(5),
+	numberParticles_(100),
 	noSmoke_(false),
 	noObjectDamage_(false),
 	allowUnderWater_(false),
-	luminance_(true),
 	singleFlow_(true),
+	luminance_(true),
 	noCameraTrack_(false),
 	napalmTexture_("flames"),
-	deformTexture_(""),
-	numberParticles_(100),
-	landscapeErosion_(0)
-{
-}
+	deformTexture_("")
+{}
 
 NapalmParams::~NapalmParams()
-{
-}
+{}
 
 bool NapalmParams::parseXML(XMLNode *accessoryNode)
 {

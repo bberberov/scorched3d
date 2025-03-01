@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,10 +26,13 @@
 #include <common/Logger.h>
 #include <common/Clock.h>
 
-NetServerTCP::NetServerTCP(NetServerTCPProtocol *protocol) : 
-	sockSet_(0), firstDestination_(0),
-	server_(0), protocol_(protocol), checkDeleted_(false),
-	lastId_(0)
+NetServerTCP::NetServerTCP(NetServerTCPProtocol *protocol) :
+	sockSet_(0),
+	server_(0),
+	protocol_(protocol),
+	firstDestination_(0),
+	lastId_(0),
+	checkDeleted_(false)
 {
 	sockSet_ = SDLNet_AllocSocketSet(1);
 	setMutex_ = SDL_CreateMutex();
@@ -38,19 +41,19 @@ NetServerTCP::NetServerTCP(NetServerTCPProtocol *protocol) :
 
 NetServerTCP::~NetServerTCP()
 {
-	SDL_DestroyMutex(setMutex_); 
+	SDL_DestroyMutex(setMutex_);
 	setMutex_ = 0;
 	SDLNet_FreeSocketSet(sockSet_);
 	sockSet_ = 0;
 }
 
-void NetServerTCP::setMessageHandler(NetMessageHandlerI *handler) 
-{ 
+void NetServerTCP::setMessageHandler(NetMessageHandlerI *handler)
+{
 	messageHandler_.setMessageHandler(handler); 
 }
 
 int NetServerTCP::processMessages()
-{ 
+{
 	return messageHandler_.processMessages(); 
 }
 
@@ -250,15 +253,12 @@ void NetServerTCP::disconnectClient(unsigned int dest)
 	sendMessage(dest, message);
 }
 
-void NetServerTCP::sendMessageServer(NetBuffer &buffer, 
-	unsigned int flags)
+void NetServerTCP::sendMessageServer(NetBuffer &buffer, unsigned int flags)
 {
 	sendMessageDest(buffer, firstDestination_, flags);
 }
 
-void NetServerTCP::sendMessageDest(NetBuffer &buffer, 
-	unsigned int destination, unsigned int flags)
-							
+void NetServerTCP::sendMessageDest(NetBuffer &buffer, unsigned int destination, unsigned int flags)
 {
 	// Get a new buffer from the pool
 	NetMessage *message = NetMessagePool::instance()->

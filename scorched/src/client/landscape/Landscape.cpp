@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -66,12 +66,14 @@ Landscape *Landscape::instance()
 	return instance_;
 }
 
-Landscape::Landscape() : 
-	resetLandscape_(false), resetLandscapeTimer_(0.0f), 
-	resetRoof_(false), resetRoofTimer_(0.0f),
+Landscape::Landscape() :
 	textureType_(eDefault),
-	changeCount_(1),
-	landShader_(0)
+	landShader_(nullptr),
+	resetLandscape_(false),
+	resetRoof_(false),
+	resetLandscapeTimer_(0.0f),
+	resetRoofTimer_(0.0f),
+	changeCount_(1)
 {
 	water_ = new Water();
 	points_ = new LandscapePoints();

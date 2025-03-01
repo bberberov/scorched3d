@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,13 +35,12 @@
 
 ServerTurnsSequential::ServerTurnsSequential() :
 	ServerTurns(true),
-	playingPlayer_(0), nextMoveId_(0)
-{
-}
+	nextMoveId_(0),
+	playingPlayer_(0)
+{}
 
 ServerTurnsSequential::~ServerTurnsSequential()
-{
-}
+{}
 
 void ServerTurnsSequential::internalEnterState()
 {

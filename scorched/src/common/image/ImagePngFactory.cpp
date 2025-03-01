@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,10 +34,10 @@ Image ImagePngFactory::loadFromFile(const char *filename, bool readalpha)
 	FILE *file = fopen(filename, "rb");
 	if (!file) return Image();
 
-	int read = 0;
+	size_t read = 0;
 	char buffer[256];
 	NetBuffer netBuffer;
-	while (read = (int) fread(buffer, 1, 256, file))
+	while ( ( read = fread(buffer, 1, 256, file) ) )
 	{
 		netBuffer.addDataToBuffer(buffer, read);
 	}
@@ -47,30 +47,33 @@ Image ImagePngFactory::loadFromFile(const char *filename, bool readalpha)
 	if (!result.getBits())
 	{
 		Logger::log(
-			S3D::formatStringBuffer("Failed to load PNG file \"%s\"", filename));
+			S3D::formatStringBuffer("Failed to load PNG file \"%s\"", filename)
+		);
 	}
 	return result;
 }
 
 struct user_read_struct
 {
-	user_read_struct(NetBuffer &b) : buffer(b), position(0) {}
+	user_read_struct(NetBuffer &b) :
+		buffer(b),
+		position(0)
+	{}
 
-	int position;
 	NetBuffer &buffer;
+	int position;
 };
 
-static void user_png_error(png_structp png_ptr, png_const_charp msg) 
+static void user_png_error(png_structp png_ptr, png_const_charp msg)
 {
 	longjmp(png_jmpbuf(png_ptr),1);
 }
 
-static void user_png_warning(png_structp png_ptr, png_const_charp msg) 
+static void user_png_warning(png_structp png_ptr, png_const_charp msg)
 {
 }
 
-static void user_read_fn(png_structp png_ptr,
-        png_bytep data, png_size_t length)
+static void user_read_fn(png_structp png_ptr, png_bytep data, png_size_t length)
 {
 	user_read_struct *read_io_ptr = (user_read_struct *) png_get_io_ptr(png_ptr);
 
@@ -195,8 +198,7 @@ struct user_write_struct
 	NetBuffer &buffer;
 };
 
-static void user_write_fn(png_structp png_ptr,
-        png_bytep data, png_size_t length)
+static void user_write_fn(png_structp png_ptr, png_bytep data, png_size_t length)
 {
 	user_write_struct *write_io_ptr = (user_write_struct *) png_get_io_ptr(png_ptr);
 

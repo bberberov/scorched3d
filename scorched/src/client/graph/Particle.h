@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,8 @@
 class ParticleUserData
 {
 public:
-	virtual ~ParticleUserData() {}
+	virtual ~ParticleUserData()
+	{}
 };
 
 class ParticleEngine;
@@ -39,25 +40,36 @@ public:
 	virtual ~Particle();
 
 	void setParticle(
-		float life, float mass, float friction,
-		Vector &velocity, Vector &gravity,
-		Vector &color, Vector &colorCounter,
-		Vector &size, Vector &sizeCounter,
-		float alpha, float alphaCounter,
+		float life,
+		float mass,
+		float friction,
+		Vector &velocity,
+		Vector &gravity,
+		Vector &color,
+		Vector &colorCounter,
+		Vector &size,
+		Vector &sizeCounter,
+		float alpha,
+		float alphaCounter,
 		bool additiveTexture,
-		bool windAffect);
+		bool windAffect
+	);
 	void unsetParticle();
 
 	float life_;
 	float mass_;
 	float friction_;
-	float percent_, percentCounter_;
+	float percent_;
+	float percentCounter_;
 	Vector position_;
 	Vector velocity_;
 	Vector gravity_;
-	Vector color_, colorCounter_;
-	Vector size_, sizeCounter_;
-	float alpha_, alphaCounter_;
+	Vector color_;
+	Vector colorCounter_;
+	Vector size_;
+	Vector sizeCounter_;
+	float alpha_;
+	float alphaCounter_;
 	bool windAffect_;
 	ParticleEngine *engine_;
 	unsigned int type_;

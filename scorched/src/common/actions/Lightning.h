@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,9 +33,12 @@ class Target;
 class Lightning : public Action
 {
 public:
-	Lightning(WeaponLightning *weapon,
+	Lightning(
+		WeaponLightning *weapon,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity);
+		FixedVector &position,
+		FixedVector &velocity
+	);
 	virtual ~Lightning();
 
 	virtual void draw();
@@ -53,26 +56,35 @@ protected:
 		bool endsegment;
 		fixed size;
 	};
-	bool firstTime_;
-	fixed totalTime_;
+
 	std::list<Segment> segments_;
 
 #ifndef S3D_SERVER
 	GLTextureReference texture_;
 #endif
 	WeaponLightning *weapon_;
+	WeaponFireContext weaponContext_;
 	FixedVector position_;
 	FixedVector velocity_;
-	WeaponFireContext weaponContext_;
+	fixed totalTime_;
+	bool firstTime_;
 
-	void damageTargets(FixedVector &position, 
-		std::map<unsigned int, fixed> &hurtMap);
-	void dispaceDirection(FixedVector &direction, 
-		FixedVector &originalDirection, fixed angle);
-	void generateLightning(int id, int depth, fixed size, 
-		FixedVector &originalPosition, FixedVector &originalDirection,
-		FixedVector &position, FixedVector &direction,
-		std::map<unsigned int, fixed> &hurtMap);
+	void damageTargets(FixedVector &position, std::map<unsigned int, fixed> &hurtMap);
+	void dispaceDirection(
+		FixedVector &direction,
+		FixedVector &originalDirection,
+		fixed angle
+	);
+	void generateLightning(
+		int id,
+		int depth,
+		fixed size,
+		FixedVector &originalPosition,
+		FixedVector &originalDirection,
+		FixedVector &position,
+		FixedVector &direction,
+		std::map<unsigned int, fixed> &hurtMap
+	);
 };
 
 #endif // __INCLUDE_Lightningh_INCLUDE__

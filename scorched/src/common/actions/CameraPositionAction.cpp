@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,11 +29,14 @@ CameraPositionAction::CameraPositionAction(
 	TankViewPointProvider *provider,
 	fixed showTime,
 	unsigned int priority,
-	bool explosion) : 
+	bool explosion
+) :
 	Action(false),
 	playerId_(playerId),
-	totalTime_(0), showTime_(showTime),
-	provider_(provider), showPriority_(priority),
+	provider_(provider),
+	totalTime_(0),
+	showTime_(showTime),
+	showPriority_(priority),
 	explosion_(explosion)
 {
 	provider_->incrementReference();
@@ -48,7 +51,7 @@ CameraPositionAction::~CameraPositionAction()
 			CameraPositionActionRegistry::rmCameraPositionAction(this);
 		}
 		Tank *tank = context_->getTargetContainer().getTankById(playerId_);
-		if (tank) 
+		if (tank)
 		{
 			// Remove projectile
 			tank->getViewPoints().getProjectileViewPoints().removeViewPoint(provider_);
@@ -61,7 +64,7 @@ CameraPositionAction::~CameraPositionAction()
 		}
 
 		// Tidy any tank references
-		if (!tank || !tank->getViewPoints().getProjectileViewPoints().hasViewPoints()) 
+		if (!tank || !tank->getViewPoints().getProjectileViewPoints().hasViewPoints())
 		{
 			TankViewPointsCollection::TankViewPointsTanks.erase(playerId_);
 		}
@@ -78,7 +81,7 @@ void CameraPositionAction::init()
 			CameraPositionActionRegistry::addCameraPositionAction(this);
 		}
 		Tank *tank = context_->getTargetContainer().getTankById(playerId_);
-		if (tank) 
+		if (tank)
 		{
 			// Add projectile
 			if (!tank->getViewPoints().getProjectileViewPoints().hasViewPoints())
@@ -161,8 +164,7 @@ CameraPositionAction *CameraPositionActionRegistry::getCurrentBest()
 			CameraPositionAction *action = (*itor);
 			
 			// Check that this action is near the beginning
-			fixed currentTime = action->getScorchedContext()->
-				getSimulator().getCurrentTime();
+			fixed currentTime = action->getScorchedContext()-> getSimulator().getCurrentTime();
 			fixed actionTime = action->getActionStartTime();
 			if (currentTime - actionTime < 1)
 			{
@@ -182,4 +184,3 @@ CameraPositionAction *CameraPositionActionRegistry::getCurrentBest()
 	}
 	return currentBest;
 }
-

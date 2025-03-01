@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,6 +21,9 @@
 #include <landscapedef/LandscapeMovement.h>
 #include <XML/XMLNode.h>
 #include <common/Defines.h>
+
+LandscapeMovementType::~LandscapeMovementType()
+{}
 
 LandscapeMovementType *LandscapeMovementType::create(const char *type)
 {

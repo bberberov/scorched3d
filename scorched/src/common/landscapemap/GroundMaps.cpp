@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,17 +34,15 @@
 #include <lang/LangResource.h>
 
 GroundMaps::GroundMaps(LandscapeDefinitionCache &defnCache) :
-	defnCache_(defnCache), 
+	defnCache_(defnCache),
 	arenaX_(-1),
 	arenaY_(-1),
-	arenaWidth_(-1), 
+	arenaWidth_(-1),
 	arenaHeight_(-1)
-{
-}
+{}
 
 GroundMaps::~GroundMaps()
-{
-}
+{}
 
 void GroundMaps::generateMaps(
 	ScorchedContext &context,

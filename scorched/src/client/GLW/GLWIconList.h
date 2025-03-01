@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,6 +35,8 @@ public:
 class GLWIconListItem
 {
 public:
+	virtual ~GLWIconListItem();
+
 	virtual void draw(float x, float y, float w) = 0;
 };
 
@@ -46,10 +48,14 @@ public:
 		eNoDrawSelected = 1
 	};
 
-	GLWIconList(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f,
+	GLWIconList(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
 		float squaresHeight = 40.0f,
-		unsigned int flags = 0);
+		unsigned int flags = 0
+	);
 	virtual ~GLWIconList();
 
 	void addItem(GLWIconListItem *item);
@@ -66,18 +72,17 @@ public:
 	virtual void simulate(float frameTime);
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, 
-						   bool &skipRest);
+	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 
 	REGISTER_CLASS_HEADER(GLWIconList);
 protected:
+	std::vector<GLWIconListItem *> items_;
 	GLWScrollWBackwards scrollBar_;
 	GLWIconListI *handler_;
-	unsigned int flags_;
 	float squaresHeight_;
 	int selected_;
-	std::vector<GLWIconListItem *> items_;
+	unsigned int flags_;
 
 private:
 	GLWIconList(const GLWIconList &);

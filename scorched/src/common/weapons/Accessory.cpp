@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,26 +41,30 @@ unsigned int Accessory::nextAccessoryId_ = 0;
 
 Accessory::Accessory() :
 	accessoryId_(++nextAccessoryId_),
-	name_("NONAME"), description_("NODESC"), 
-	accessoryAction_(0),
-	toolTip_(ToolTip::ToolTipHelp, LangString(), LangString()),
-	price_(0), bundle_(1), armsLevel_(9), freemarketLimits_(150),
-	modelScale_(1),
-	positionSelect_(ePositionSelectNone), positionSelectLimit_(10),
+	accessoryAction_(nullptr),
+	positionSelect_(ePositionSelectNone),
+	toolTip_( ToolTip::ToolTipHelp, LangString(), LangString() ),
+	name_("NONAME"),
+	description_("NODESC"),
+	positionSelectLimit_(10),
+	price_(0),
+	bundle_(1),
+	armsLevel_(9),
+	freemarketLimits_(150),
 	maximumNumber_(0),
-	startingNumber_(0),
 	useNumber_(1),
+	startingNumber_(0),
+	modelScale_(1),
 	muzzleFlash_(true),
 	aiOnly_(false),
 	botOnly_(false),
 	noBuy_(false)
-{
-}
+{}
 
 Accessory::~Accessory()
 {
 	delete accessoryAction_;
-	accessoryAction_ = 0;
+	accessoryAction_ = nullptr;
 }
 
 bool Accessory::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,19 +36,27 @@
 
 REGISTER_CLASS_SOURCE(GLWChatView);
 
-GLWChatView::GLWChatView(float x, float y, float w, float h) : 
+GLWChatView::GLWChatView(float x, float y, float w, float h) :
 	GLWidget(x, y, w, h),
-	init_(false), 
-	visibleLines_(5), totalLines_(50),
-	displayTime_(10.0f),
-	fontSize_(12.0f), outlineFontSize_(14.0f), lineDepth_(18),
-	currentVisible_(0), 
-	alignTop_(false), parentSized_(false), splitLargeLines_(false),
-	scrollPosition_(-1), allowScroll_(false), 
-	upButton_(x_ + 2.0f, y_ + 1.0f, 12.0f, 12.0f),
-	downButton_(x_ + 2.0f, y_ + 1.0f, 12.0f, 12.0f),
+	init_(false),
+	scrollUpKey_(nullptr),
+	scrollDownKey_(nullptr),
+	scrollResetKey_(nullptr),
+	upButton_(   x_ + 2.0f, y_ + 1.0f, 12.0f, 12.0f),
+	downButton_( x_ + 2.0f, y_ + 1.0f, 12.0f, 12.0f),
 	resetButton_(x_ + 2.0f, y_ + 1.0f, 14.0f, 14.0f),
-	scrollUpKey_(0), scrollDownKey_(0), scrollResetKey_(0)
+	alignTop_(false),
+	parentSized_(false),
+	splitLargeLines_(false),
+	allowScroll_(false),
+	lineDepth_(18),
+	scrollPosition_(-1),
+	visibleLines_(5),
+	totalLines_(50),
+	currentVisible_(0),
+	displayTime_(10.0f),
+	fontSize_(12.0f),
+	outlineFontSize_(14.0f)
 {
 	setX(x_);
 	setY(y_);
@@ -57,23 +65,32 @@ GLWChatView::GLWChatView(float x, float y, float w, float h) :
 	downButton_.setHandler(this);
 	resetButton_.setHandler(this);
 
-	upButton_.setToolTip(new ToolTipResource(
-		ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp, 
-		"CHAT_PREVIOUS", "Chat Previous", 
-		"CHAT_PREVIOUS_TOOLTIP", "Show previous chat entry"));
-	downButton_.setToolTip(new ToolTipResource(
-		ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp, 
-		"CHAT_NEXT", "Chat Next", 
-		"CHAT_NEXT_TOOLTIP", "Show next chat entry"));
-	resetButton_.setToolTip(new ToolTipResource(
-		ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp, 
-		"CHAT_LAST", "Chat Last", 
-		"CHAT_LAST_TOOLTIP", "View end of the chat log, \n"
-		"hide all elapsed entries"));
+	upButton_.setToolTip(
+		new ToolTipResource(
+			ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp,
+			"CHAT_PREVIOUS", "Chat Previous",
+			"CHAT_PREVIOUS_TOOLTIP", "Show previous chat entry"
+		)
+	);
+	downButton_.setToolTip(
+		new ToolTipResource(
+			ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp,
+			"CHAT_NEXT", "Chat Next",
+			"CHAT_NEXT_TOOLTIP", "Show next chat entry"
+		)
+	);
+	resetButton_.setToolTip(
+		new ToolTipResource(
+			ToolTip::ToolTipAlignLeft | ToolTip::ToolTipHelp,
+			"CHAT_LAST", "Chat Last",
+			"CHAT_LAST_TOOLTIP", "View end of the chat log, \n"
+			"hide all elapsed entries"
+		)
+	);
 
-	upButton_.setTextureImage(ImageID(S3D::eModLocation,"", "data/windows/arrow_u.png"));
-	downButton_.setTextureImage(ImageID(S3D::eModLocation,"", "data/windows/arrow_d.png"));
-	resetButton_.setTextureImage(ImageID(S3D::eModLocation,"", "data/windows/arrow_s.png"));
+	upButton_.setTextureImage(    ImageID(S3D::eModLocation,"", "data/windows/arrow_u.png") );
+	downButton_.setTextureImage(  ImageID(S3D::eModLocation,"", "data/windows/arrow_d.png") );
+	resetButton_.setTextureImage( ImageID(S3D::eModLocation,"", "data/windows/arrow_s.png") );
 }
 
 GLWChatView::~GLWChatView()
@@ -121,14 +138,13 @@ int GLWChatView::splitLine(const LangString &message)
 		float width = 0.0f;
 		if (splitLargeLines_)
 		{
-			width = GLWFont::instance()->getGameFont()->
-				getWidth(outlineFontSize_, message, len);
+			width = GLWFont::instance()->getGameFont()-> getWidth(outlineFontSize_, message, len);
 		}
 
 		if (width > w_)
 		{
 			// If there is a space within the last 15 characters split to it
-			if (lastSpace && (len - lastSpace < 15)) 
+			if (lastSpace && (len - lastSpace < 15))
 			{
 				return lastSpace;
 			}
@@ -247,8 +263,7 @@ void GLWChatView::draw()
 	if (textLines_.empty()) return;
 
 	// Find the start of the area to draw to
-	GLState currentStateBlend(GLState::TEXTURE_ON | 
-		GLState::BLEND_ON | GLState::DEPTH_OFF);
+	GLState currentStateBlend(GLState::TEXTURE_ON | GLState::BLEND_ON | GLState::DEPTH_OFF);
 	float start = y_ + 8.0f; //lineDepth_;
 	if (alignTop_)
 	{
@@ -289,10 +304,9 @@ void GLWChatView::draw()
 			float x = x_ + 20.0f;
 			float y = start + count * lineDepth_;
 
-			GLWFont::instance()->getGameShadowFont()->
-				drawA(GLWColors::black, alpha, fontSize_,
-					x - 1.0f, y + 1.0f, 0.0f, 
-					entry.text);
+			GLWFont::instance()->getGameShadowFont()->drawA(
+				GLWColors::black, alpha, fontSize_, x - 1.0f, y + 1.0f, 0.0f, entry.text
+			);
 		}
 	}
 	// Draw the actual text
@@ -317,17 +331,15 @@ void GLWChatView::draw()
 
 			if (entry.renderer)
 			{
-				GLWFont::instance()->getGameFont()->
-					drawA(entry.renderer, entry.color, alpha, fontSize_,
-						x, y, 0.0f, 
-						entry.text);
+				GLWFont::instance()->getGameFont()->drawA(
+					entry.renderer, entry.color, alpha, fontSize_, x, y, 0.0f, entry.text
+				);
 			} 
 			else
 			{
-				GLWFont::instance()->getGameFont()->
-					drawA(entry.color, alpha, fontSize_,
-						x, y, 0.0f, 
-						entry.text);
+				GLWFont::instance()->getGameFont()->drawA(
+					entry.color, alpha, fontSize_, x, y, 0.0f, entry.text
+				);
 			}
 		}
 	}
@@ -357,9 +369,13 @@ void GLWChatView::mouseDrag(int button, float mx, float my, float x, float y, bo
 	resetButton_.mouseDrag(button, mx, my, x, y, skipRest);
 }
 
-void GLWChatView::keyDown(char *buffer, unsigned int keyState, 
-	KeyboardHistory::HistoryElement *history, int hisCount, 
-	bool &skipRest)
+void GLWChatView::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	if (scrollUpKey_ && scrollUpKey_->keyDown(buffer, keyState, false))
 	{
@@ -383,7 +399,7 @@ bool GLWChatView::initFromXML(XMLNode *node)
 	if (!GLWidget::initFromXML(node)) return false;
 
 	if (!initFromXMLInternal(node)) return false;
-		
+
 	return true;
 }
 

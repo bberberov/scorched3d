@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,9 +27,12 @@
 class NetServerTCP3Recv
 {
 public:
-	NetServerTCP3Recv(TCPsocket socket, 
-		unsigned int destinationId, unsigned int ipAddress,
-		NetMessageHandler *recieveMessageHandler);
+	NetServerTCP3Recv(
+		TCPsocket socket,
+		unsigned int destinationId,
+		unsigned int ipAddress,
+		NetMessageHandler *recieveMessageHandler
+	);
 	virtual ~NetServerTCP3Recv();
 
 	bool getStopped() { return stopped_; }
@@ -40,13 +43,16 @@ public:
 	unsigned int getBytesIn() { return bytesIn_; }
 
 protected:
-	bool stopped_, running_;
-	unsigned int destinationId_, ipAddress_;
 	TCPsocket socket_;
+	unsigned int destinationId_;
+	unsigned int ipAddress_;
 	SDLNet_SocketSet socketSet_;
 	SDL_Thread *recvThread_;
 	NetMessageHandler *recieveMessageHandler_;
-	unsigned int messagesRecieved_, bytesIn_;
+	unsigned int messagesRecieved_;
+	unsigned int bytesIn_;
+	bool stopped_;
+	bool running_;
 
 	static int recvThreadFunc(void *c);
 	bool actualRecvFunc();

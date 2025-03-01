@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,26 +36,28 @@ public:
 	virtual void rowChosen(unsigned int id, int row) = 0;
 };
 
-class GLWIconTable : 
-	public GLWidget,
-	public GLWButtonI
+class GLWIconTable : public GLWidget, public GLWButtonI
 {
 public:
 	struct Column
 	{
 		Column(const LangString &name_ = LangString(), float width_ = 0.0f) :
-			name(name_), width(width_)
-			{
-			}
+			name(name_),
+			width(width_)
+		{}
 
 		LangString name;
 		float width;
 	};
 
-	GLWIconTable(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f,
+	GLWIconTable(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
 		std::list<Column> *columns = 0,
-		float rowHeight = 20.0f);
+		float rowHeight = 20.0f
+	);
 	virtual ~GLWIconTable();
 
 	void setItemCount(int items);
@@ -69,8 +71,7 @@ public:
 	virtual void simulate(float frameTime);
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, 
-						   bool &skipRest);
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool &skipRest );
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 
 	// GLWButtonI

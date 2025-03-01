@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,6 +20,7 @@
 
 #include <3dsparse/MSModelFactory.h>
 #include <common/Defines.h>
+#include <cstring>
 
 MSModelFactory::MSModelFactory() : lineNo_(0)
 {
@@ -36,9 +37,10 @@ Model *MSModelFactory::createModel(const char *fileName)
 	FILE *in = fopen(fileName, "r");
 	if (!in)
 	{
-		S3D::dialogExit("MSModelFactory", S3D::formatStringBuffer(
-			"Failed to open MS model \"%s\"",
-			fileName));
+		S3D::dialogExit(
+			"MSModelFactory",
+			S3D::formatStringBuffer("Failed to open MS model \"%s\"", fileName)
+		);
 	}
 	loadFile(in, fileName, model);
 	model->setup();
@@ -49,11 +51,11 @@ Model *MSModelFactory::createModel(const char *fileName)
 
 bool MSModelFactory::getNextLine(char *line, FILE *in)
 {
-	char * wincr; 
+	char * wincr;
 	while (fgets(line, 256, in) != 0)
 	{
 		lineNo_++;
-		if ((wincr=strchr(line,'\r'))) 
+		if ( ( wincr = std::strchr(line,'\r') ) != nullptr )
 		{ 
 			*wincr='\n'; 
 			*(wincr + 1) = '\0'; 
@@ -74,8 +76,10 @@ bool MSModelFactory::getNextLine(char *line, FILE *in)
 
 void MSModelFactory::returnError(const char *fileName, const std::string &error)
 {
-	S3D::dialogExit("MSModelFactory", S3D::formatStringBuffer("%s in file %i:%s", 
-		error.c_str(), lineNo_, fileName));
+	S3D::dialogExit(
+		"MSModelFactory",
+		S3D::formatStringBuffer("%s in file %i:%s", error.c_str(), lineNo_, fileName)
+	);
 }
 
 void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
@@ -86,9 +90,9 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 	char fixed4[20], fixed5[20], fixed6[20];
 
 	char *sep;
-	while ((sep=strchr(filePath, '\\'))) *sep = '/';
-	sep = strrchr(filePath, '/');
-	if (sep) *sep = '\0';
+	while ( ( sep = std::strchr(filePath, '\\') ) != nullptr ) *sep = '/';
+	sep = std::strrchr(filePath, '/');
+	if ( sep != nullptr ) *sep = '\0';
 
 	char buffer[256];
 	int frames = 0;
@@ -295,7 +299,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 		fixed transparency;
 		if (!getNextLine(buffer, in)) 
 			returnError(fileName, "No material transparency");
-		if (sscanf(buffer, "%s", &fixed1) != 1)
+		if (sscanf(buffer, "%s", fixed1) != 1)
 			returnError(fileName, "Incorrect material transparency format");
 		transparency = fixed(fixed1);
 
@@ -308,7 +312,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 			returnError(fileName, "No material texture format");
 		textureName[strlen(textureName)-1] = '\0';
 		snprintf(fullTextureName, 256, "%s/%s", filePath, &textureName[1]);
-		while (sep=strchr(fullTextureName, '\\')) *sep = '/';
+		while ( ( sep = std::strchr(fullTextureName, '\\') ) != nullptr ) *sep = '/';
 
 		// alphamap
 		char textureNameAlpha[256];
@@ -319,7 +323,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 			returnError(fileName, "No material alpha texture format");
 		textureNameAlpha[strlen(textureNameAlpha)-1] = '\0';
 		snprintf(fullTextureAlphaName, 256, "%s/%s", filePath, &textureNameAlpha[1]);
-		while (sep=strchr(fullTextureAlphaName, '\\')) *sep = '/';
+		while ( ( sep = std::strchr(fullTextureAlphaName, '\\') ) != nullptr ) *sep = '/';
 
 		// Assign this material to the appropriate meshes
 		int modelIndex = 0;

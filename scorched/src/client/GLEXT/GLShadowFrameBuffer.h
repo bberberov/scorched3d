@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,9 +41,9 @@ public:
 	int getHeight() { return height_; }
 
 protected:
-	int width_, height_;
-	GLuint depthTextureObject_;
 	GLuint frameBufferObject_;
+	GLuint depthTextureObject_;
+	int width_, height_;
 };
 
 #endif // __INCLUDE_GLShadowFrameBufferh_INCLUDE__

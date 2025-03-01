@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,7 +34,7 @@ EventHandlerAchievement::EventHandlerAchievement(const std::string &name, EventH
 	if (database_)
 	{
 		achievementId_ = database_->getAchievementId(name);
-	} 
+	}
 	else
 	{
 		achievementId_ = 1;
@@ -42,8 +42,7 @@ EventHandlerAchievement::EventHandlerAchievement(const std::string &name, EventH
 }
 
 EventHandlerAchievement::~EventHandlerAchievement()
-{
-}
+{}
 
 unsigned int EventHandlerAchievement::getRank(unsigned int playerId)
 {
@@ -55,7 +54,6 @@ void EventHandlerAchievement::awardAchievement(unsigned int playerId, unsigned i
 {
 	if (database_) database_->assignAchievementRank(playerId, achievementId_, rank);
 
-	TankAchievementSimAction *action = new TankAchievementSimAction(
-		playerId, name_, rank);
+	TankAchievementSimAction *action = new TankAchievementSimAction( playerId, name_, rank );
 	ScorchedServer::instance()->getServerSimulator().addSimulatorAction(action);
 }

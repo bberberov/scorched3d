@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -97,7 +97,7 @@ ObjectGroupEntry *ObjectGroup::getObjectByPos(int position)
 	int pos = position % int(objects_.size());
 	ObjectGroupEntryHolderIterator iterator(this);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		if (pos-- <= 0) return entry;
 	}

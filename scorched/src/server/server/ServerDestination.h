@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -53,7 +53,7 @@ protected:
 	unsigned int totalLeft_;
 	NetBuffer sendBuffer_;
 	std::string lastFile_;
-	std::list<ModIdentifierEntry> *files_; // Ptr so we dont include ModFiles.h
+	std::list<ModIdentifierEntry> *files_; // Pointer so we don't include ModFiles.h
 
 };
 
@@ -94,12 +94,13 @@ public:
 
 protected:
 	ServerDestinationMod mod_;
-	RollingAverage ping_;
 	State state_;
-	unsigned int destinationId_, ipAddress_;
+	unsigned int destinationId_;
+	unsigned int ipAddress_;
 	unsigned int levelNumber_;
-	int adminTries_;
 	bool admin_;
+	int adminTries_;
+	RollingAverage ping_;
 	fixed lastSentPingTime_;
 };
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -205,7 +205,7 @@ void NetworkChatDialog::sendMessage()
 		"\r\n"
 		"\r\n",
 		charServerURI, lastMessageId_, chatServer);
-	if (SDLNet_TCP_Send(tcpsock, request.c_str(), request.size()) != request.size())
+	if ( ( (size_t) SDLNet_TCP_Send( tcpsock, request.c_str(), request.size() ) ) != request.size() )
 	{
 		SDLNet_TCP_Close(tcpsock);
 		return;	
@@ -220,7 +220,7 @@ void NetworkChatDialog::sendMessage()
 		result.append(std::string(buffer, bytesRead));
 	}
 
-	if (result.find("200 OK") != -1)
+	if (result.find("200 OK") != result.npos)
 	{
 		const char *data = strstr(result.c_str(), "\r\n\r\n");
 		if (data) 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -82,7 +82,8 @@ public:
 	const char *getDeformTexture() { return deformTexture_.c_str(); }
 
 protected:
-	fixed size_, deformSize_;
+	fixed size_;
+	fixed deformSize_;
 	fixed hurtAmount_;
 	fixed shake_;
 	fixed minLife_, maxLife_;
@@ -96,14 +97,14 @@ protected:
 	bool onlyHurtShield_;
 	bool animate_;
 	bool noCameraTrack_;
-	
+
 	std::string deformTexture_;
 	std::string explosionTexture_;
 	std::string explosionSound_;
 	std::string mushroomTexture_;
 	DeformType deform_;
 	ExplosionType explosionType_;
-	
+
 };
 
 #endif

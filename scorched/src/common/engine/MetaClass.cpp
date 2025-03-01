@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,20 +24,16 @@
 unsigned int MetaClass::nextMetaClassId_ = 0;
 
 MetaClass::MetaClass()
-{
-}
+{}
 
 MetaClass::~MetaClass()
-{
-}
+{}
 
 MetaClassFactory::MetaClassFactory()
-{
-}
+{}
 
 MetaClassFactory::~MetaClassFactory()
-{
-}
+{}
 
 std::map<std::string, MetaClassFactory *> *MetaClassRegistration::classMap = 0;
 

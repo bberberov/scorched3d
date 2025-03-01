@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -204,26 +204,27 @@ private:
 	const GLWTargetTips & operator=(const GLWTargetTips &);
 };
 
-class GLWTankTips 
+class GLWTankTips
 {
 public:
 	GLWTankTips(Tank *tank);
 	virtual ~GLWTankTips();
 
-	TankTip tankTip;
-	ToolTip nameTip;
 	TankUndoMenu undoMenu;
+	TankFuelTip fuelTip;
+	TankBatteryTip batteryTip;
+	TankShieldTip shieldTip;
+	TankHealthTip healthTip;
+	TankRankTip rankTip;
+	TankParachutesTip paraTip;
+	TankAutoDefenseTip autodTip;
 	TankWeaponTip weaponTip;
 	TankPowerTip powerTip;
 	TankRotationTip rotationTip;
 	TankElevationTip elevationTip;
-	TankAutoDefenseTip autodTip;
-	TankParachutesTip paraTip;
-	TankHealthTip healthTip;
-	TankShieldTip shieldTip;
-	TankBatteryTip batteryTip;
-	TankFuelTip fuelTip;
-	TankRankTip rankTip;
+	TankTip tankTip;
+
+	ToolTip nameTip;
 
 private:
 	GLWTankTips(const GLWTankTips &);

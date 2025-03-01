@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,22 +39,17 @@
 	#include <sprites/TeleportRenderer.h>
 #endif
 
-Teleport::Teleport(FixedVector position,
-		WeaponFireContext &weaponContext,
-		WeaponTeleport *weapon) :
-	Action(weaponContext.getInternalContext().getReferenced()),
-	position_(position), 
+Teleport::Teleport(FixedVector position, WeaponFireContext &weaponContext, WeaponTeleport *weapon) :
+	Action( weaponContext.getInternalContext().getReferenced() ),
+	position_(position),
 	weaponContext_(weaponContext),
 	weapon_(weapon),
 	totalTime_(0),
 	firstTime_(true)
-{
-
-}
+{}
 
 Teleport::~Teleport()
-{
-}
+{}
 
 void Teleport::init()
 {
@@ -67,7 +62,8 @@ void Teleport::init()
 			Vector white(1.0f, 1.0f, 1.0f);
 			TeleportRenderer *teleport = new TeleportRenderer(
 				tank->getLife().getTargetPosition().asVector(),
-				white);
+				white
+			);
 			context_->getActionController().addAction(new SpriteAction(teleport));
 		}
 
@@ -75,7 +71,11 @@ void Teleport::init()
 		vPoint->setValues(position_);
 		CameraPositionAction *pos = new CameraPositionAction(
 			weaponContext_.getPlayerId(),
-			vPoint, 5, 5, false);
+			vPoint,
+			5,
+			5,
+			false
+		);
 		context_->getActionController().addAction(pos);
 	}
 #endif
@@ -93,11 +93,14 @@ void Teleport::simulate(fixed frameTime, bool &remove)
 			Tank *tank = context_->getTargetContainer().getTankById(weaponContext_.getPlayerId());
 			if (tank && tank->getState().getState() == TankState::sNormal)
 			{
-				SoundBuffer *activateSound = 
-					Sound::instance()->fetchOrCreateBuffer(
-						S3D::getModFile(weapon_->getSound()));
-				SoundUtils::playAbsoluteSound(VirtualSoundPriority::eAction,
-					activateSound, tank->getLife().getTargetPosition().asVector());
+				SoundBuffer *activateSound = Sound::instance()->fetchOrCreateBuffer(
+					S3D::getModFile( weapon_->getSound() )
+				);
+				SoundUtils::playAbsoluteSound(
+					VirtualSoundPriority::eAction,
+					activateSound,
+					tank->getLife().getTargetPosition().asVector()
+				);
 			}
 		}
 #endif // #ifndef S3D_SERVER
@@ -110,7 +113,8 @@ void Teleport::simulate(fixed frameTime, bool &remove)
 		if (tank && tank->getState().getState() == TankState::sNormal)
 		{
 			fixed height = context_->getLandscapeMaps().getGroundMaps().getInterpHeight(
-				position_[0], position_[1]);
+				position_[0], position_[1]
+			);
 			if (weapon_->getGroundOnly() || height >= position_[2])
 			{
 				// Set the position on the ground
@@ -119,9 +123,12 @@ void Teleport::simulate(fixed frameTime, bool &remove)
 				if (context_->getOptionsGame().getActionSyncCheck())
 				{
 					context_->getSimulator().addSyncCheck(
-						S3D::formatStringBuffer("Telport: %u %s", 
+						S3D::formatStringBuffer(
+							"Telport: %u %s",
 							tank->getPlayerId(),
-							position_.asQuickString()));
+							position_.asQuickString()
+						)
+					);
 				}
 
 				// Set this position and flatten the landscape
@@ -133,18 +140,28 @@ void Teleport::simulate(fixed frameTime, bool &remove)
 				if (context_->getOptionsGame().getActionSyncCheck())
 				{
 					context_->getSimulator().addSyncCheck(
-						S3D::formatStringBuffer("Telport: %u %s", 
+						S3D::formatStringBuffer(
+							"Telport: %u %s",
 							tank->getPlayerId(),
-							position_.asQuickString()));
+							position_.asQuickString()
+						)
+					);
 				}
 
 				// Set the position, what ever this is
 				tank->getLife().setTargetPosition(position_);
 
 				// Check if this tank can fall, this will result in flattening the area
-				TargetDamageCalc::damageTarget(*context_, 
-					weaponContext_.getPlayerId(), weapon_, 
-					weaponContext_, 0, false, true, false);
+				TargetDamageCalc::damageTarget(
+					*context_,
+					weaponContext_.getPlayerId(),
+					weapon_,
+					weaponContext_,
+					0,
+					false,
+					true,
+					false
+				);
 			}
 		}
 
@@ -156,8 +173,10 @@ void Teleport::simulate(fixed frameTime, bool &remove)
 
 std::string Teleport::getActionDetails()
 {
-	return S3D::formatStringBuffer("%u %s %s", 
-		weaponContext_.getPlayerId(), 
+	return S3D::formatStringBuffer(
+		"%u %s %s",
+		weaponContext_.getPlayerId(),
 		position_.asQuickString(),
-		weapon_->getParent()->getName());
+		weapon_->getParent()->getName()
+	);
 }

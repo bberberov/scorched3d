@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,26 +36,34 @@ class GLWButton : public GLWidget
 public:
 	enum
 	{
-		ButtonFlagOk = 1,
-		ButtonFlagCancel = 2,
+		ButtonFlagOk      = 1,
+		ButtonFlagCancel  = 2,
 		ButtonFlagCenterX = 4,
-		ButtonSquare = 8
+		ButtonSquare      = 8
 	};
 
-	GLWButton(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
+	GLWButton(
+		float x = 0.0f,
+		float y = 0.0f,
+		float w = 0.0f,
+		float h = 0.0f,
 		GLWButtonI *handler = 0,
-		unsigned flags = 0);
+		unsigned flags = 0
+	);
 	virtual ~GLWButton();
 
-	virtual void draw();	
+	virtual void draw();
 	virtual void simulate(float frameTime);
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	bool &getPressed() { return pressed_; }
 
 	bool getEnabled() { return enabled_; }
@@ -72,7 +80,8 @@ public:
 protected:
 	GLWButtonI *handler_;
 	unsigned flags_;
-	bool startdrag_, pressed_;
+	bool startdrag_;
+	bool pressed_;
 	bool repeatMode_;
 	bool enabled_;
 	float repeatTime_;

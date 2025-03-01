@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,21 +27,23 @@
 #include <time.h>
 
 LandscapeDefinition::LandscapeDefinition() :
-	definitionNumber_(0),
-	seed_(0)
-{
-}
+	seed_(0),
+	definitionNumber_(0)
+{}
 
 LandscapeDefinition::LandscapeDefinition(
 	const std::string &tex,
 	const std::string &defn,
 	unsigned int seed,
 	const std::string &name,
-	unsigned int definitionNumber) :
-	tex_(tex), defn_(defn), seed_(seed), name_(name),
+	unsigned int definitionNumber
+) :
+	tex_(tex),
+	defn_(defn),
+	name_(name),
+	seed_(seed),
 	definitionNumber_(definitionNumber)
-{
-}
+{}
 
 bool LandscapeDefinition::writeMessage(NetBuffer &buffer)
 {

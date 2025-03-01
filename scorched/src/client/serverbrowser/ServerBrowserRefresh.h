@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,11 +32,11 @@ struct ServerBrowserRefreshEntry
 	ServerBrowserRefreshEntry();
 	ServerBrowserRefreshEntry(const char *address, int position);
 
+	std::string address_;
+	int position_;
 	int retries_;
 	int sentTime_;
 	int recieved_;
-	std::string address_;
-	int position_;
 };
 
 class ServerBrowserRefresh
@@ -50,13 +50,13 @@ public:
 	void setCancel(bool cancel) { cancel_ = cancel; }
 
 protected:
-	bool cancel_;
 	ServerBrowserServerList &list_;
 	std::list<ServerBrowserRefreshEntry> refreshEntries_;
 	std::map<UDPsocket, ServerBrowserRefreshEntry> entryMap_;
 	UDPpacket *sendPacketStatus_;
 	UDPpacket *sendPacketPlayers_;
 	UDPpacket *recvPacket_;
+	bool cancel_;
 
 	void sendNextEntry(ServerBrowserRefreshEntry &entry, time_t theTime);
 	void processMessages(time_t theTime);

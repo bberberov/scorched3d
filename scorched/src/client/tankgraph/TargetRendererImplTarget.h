@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,17 @@
 #include <common/ModelID.h>
 #include <GLW/GLWTankTip.h>
 
-class TargetRendererImplTarget : 
-	public TargetRendererImpl
+class TargetRendererImplTarget : public TargetRendererImpl
 {
 public:
-	TargetRendererImplTarget(Target *target, 
-		ModelID model, ModelID burntModel,
-		float scale, float color, bool billboard);
+	TargetRendererImplTarget(
+		Target *target,
+		ModelID model,
+		ModelID burntModel,
+		float scale,
+		float color,
+		bool billboard
+	);
 	virtual ~TargetRendererImplTarget();
 
 	// TargetRendererImpl
@@ -53,13 +57,17 @@ public:
 	ModelID &getModelId() { return modelId_; }
 
 protected:
-	ModelID modelId_, burntModelId_;
+	ModelID modelId_;
+	ModelID burntModelId_;
 	Target *target_;
 	ModelRendererSimulator *modelRenderer_;
 	ModelRendererSimulator *burntModelRenderer_;
-	bool burnt_, billboard_;
-	float shieldHit_, totalTime_;
-	float scale_, color_;
+	bool burnt_;
+	bool billboard_;
+	float shieldHit_;
+	float totalTime_;
+	float scale_;
+	float color_;
 	GLWTargetTips targetTips_;
 
 	void cacheMatrix();

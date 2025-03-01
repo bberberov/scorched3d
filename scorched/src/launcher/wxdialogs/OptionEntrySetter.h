@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,12 +31,12 @@ public:
 	OptionEntrySetter(wxControl *control, OptionEntry &entry);
 	virtual ~OptionEntrySetter();
 
-	OptionEntry &getEntry() { return entry_; }
-	wxControl *getControl() { return control_; }
+	wxControl *getControl();
+	OptionEntry &getEntry();
 
 protected:
-	OptionEntry &entry_;
 	wxControl *control_;
+	OptionEntry &entry_;
 };
 
 class OptionEntrySetterUtil

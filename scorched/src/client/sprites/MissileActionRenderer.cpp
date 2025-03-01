@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,12 +35,22 @@
 #include <sound/Sound.h>
 #include <tank/Tank.h>
 
-MissileActionRenderer::MissileActionRenderer(int flareType, float scale, float spinSpeed, const Vector &rotationAxis) : 
-	flareType_(flareType), counter_(0.05f, 0.05f), 
-	mesh_(0), scale_(scale), rotation_(180.0f),
-	flameemitter_(0), smokeemitter_(0), sound_(0),
-	rotationAxis_(rotationAxis),
-	spinSpeed_(spinSpeed)
+MissileActionRenderer::MissileActionRenderer(
+	int flareType,
+	float scale,
+	float spinSpeed,
+	const Vector &rotationAxis
+) :
+	flareType_(flareType),
+	scale_(scale),
+	spinSpeed_(spinSpeed),
+	rotation_(180.0f),
+	counter_(0.05f, 0.05f),
+	sound_(nullptr),
+	flameemitter_(nullptr),
+	smokeemitter_(nullptr),
+	mesh_(nullptr),
+	rotationAxis_(rotationAxis)
 {
 	frame_ = (float) rand();
 }

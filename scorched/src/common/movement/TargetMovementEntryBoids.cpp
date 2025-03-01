@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -75,7 +75,7 @@ void TargetMovementEntryBoids::makeBoids(ScorchedContext &context,
 	// Generate the list of offsets for all of the targets in the group
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		makeBoid(context, entry);
 	}
@@ -116,12 +116,14 @@ void TargetMovementEntryBoids::simulate(ScorchedContext &context, fixed frameTim
 	// For each target set position and rotation based on its offset
 	ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup_);
 	ObjectGroupEntry *entry;
-	while (entry = iterator.getNext())
+	while ( ( entry = iterator.getNext() ) != nullptr )
 	{
 		if (entry->getType() != ObjectGroupEntry::TypeTarget)
 		{
-			S3D::dialogExit("TargetMovementEntryBoids",
-				"Movement can be assigned to level targets only (no particles)");
+			S3D::dialogExit(
+				"TargetMovementEntryBoids",
+				"Movement can be assigned to level targets only (no particles)"
+			);
 		}
 		Target *target = (Target *) entry->getObject();
 

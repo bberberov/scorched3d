@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,19 +36,19 @@
 ServerChannelManager::ChannelEntry::ChannelEntry(
 	ChannelDefinition def,
 	ServerChannelFilter *filter,
-	ServerChannelAuth *auth) :
+	ServerChannelAuth *auth
+) :
 	channelDef_(def),
 	filter_(filter),
 	auth_(auth)
-{
-}
+{}
 
 ServerChannelManager::ChannelEntry::~ChannelEntry()
 {
 	delete filter_;
-	filter_ = 0;
+	filter_ = nullptr;
 	delete auth_;
-	auth_ = 0;
+	auth_ = nullptr;
 }
 
 ServerChannelManager::DestinationLocalEntry::DestinationLocalEntry(
@@ -57,16 +57,15 @@ ServerChannelManager::DestinationLocalEntry::DestinationLocalEntry(
 {
 }
 
-ServerChannelManager::DestinationEntry::DestinationEntry(
-	unsigned int destinationId) :
+ServerChannelManager::DestinationEntry::DestinationEntry(unsigned int destinationId) :
 	destinationId_(destinationId),
-	messageCount_(0), muteTime_(0)
-{
-}
+	messageCount_(0),
+	muteTime_(0)
+{}
 
-bool ServerChannelManager::DestinationEntry::hasChannel(const std::string &channel) 
-{ 
-	return (channels_.find(channel) != channels_.end()); 
+bool ServerChannelManager::DestinationEntry::hasChannel(const std::string &channel)
+{
+	return (channels_.find(channel) != channels_.end());
 }
 
 void ServerChannelManager::DestinationEntry::addChannel(const std::string &channel, unsigned int localId, bool current)
@@ -143,40 +142,70 @@ void ServerChannelManager::DestinationEntry::updateChannels()
 }
 
 ServerChannelManager::ServerChannelManager(ComsMessageHandler &comsMessageHandler) :
-	totalTime_(0), lastMessageId_(0)
+	totalTime_(0),
+	lastMessageId_(0)
 {
 	// Register to recieve comms messages
 	handler1_ = new ComsMessageHandlerIAdapter<ServerChannelManager>(
 		this, &ServerChannelManager::processChannelMessage,
 		ComsChannelMessage::ComsChannelMessageType,
-		comsMessageHandler);
+		comsMessageHandler
+	);
 	handler2_ = new ComsMessageHandlerIAdapter<ServerChannelManager>(
 		this, &ServerChannelManager::processChannelTextMessage,
 		ComsChannelTextMessage::ComsChannelTextMessageType,
-		comsMessageHandler);
+		comsMessageHandler
+	);
 
 	// Create some default channels
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("announce", ChannelDefinition::eReadOnlyChannel)));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("info", ChannelDefinition::eReadOnlyChannel)));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("general")));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("team"), 
-		new ServerChannelFilterTeams()));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("spam")));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("combat", ChannelDefinition::eReadOnlyChannel)));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("banner", ChannelDefinition::eReadOnlyChannel)));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("admin"),
-		0, 
-		new ServerChannelAuthAdmin()));
-	channelEntries_.push_back(new ChannelEntry(
-		ChannelDefinition("whisper", ChannelDefinition::eWhisperChannel)));
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("announce", ChannelDefinition::eReadOnlyChannel)
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("info", ChannelDefinition::eReadOnlyChannel)
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("general")
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("team"),
+			new ServerChannelFilterTeams()
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("spam")
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("combat", ChannelDefinition::eReadOnlyChannel)
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("banner", ChannelDefinition::eReadOnlyChannel)
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("admin"),
+			0,
+			new ServerChannelAuthAdmin()
+		)
+	);
+	channelEntries_.push_back(
+		new ChannelEntry(
+			ChannelDefinition("whisper", ChannelDefinition::eWhisperChannel)
+		)
+	);
 }
 
 ServerChannelManager::~ServerChannelManager()
@@ -619,6 +648,8 @@ bool ServerChannelManager::processChannelMessage(
 		case ComsChannelMessage::eJoinRequest:
 			joinClient(netNessage.getDestinationId(), channelMessage.getId(),
 				channelMessage.getChannels());
+			break;
+		case ComsChannelMessage::eNoRequest:
 			break;
 		}
 

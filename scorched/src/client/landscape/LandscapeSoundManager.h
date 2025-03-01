@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -43,8 +43,12 @@ protected:
 
 	struct LandscapeSoundManagerEntry
 	{
-		LandscapeSoundManagerEntry() : 
-			soundSource(0), initData(0), soundType(0), removed(false) {}
+		LandscapeSoundManagerEntry() :
+			soundSource(nullptr),
+			soundType(nullptr),
+			initData(nullptr),
+			removed(false)
+		{}
 
 		VirtualSoundSource *soundSource;
 		LandscapeSoundType *soundType;

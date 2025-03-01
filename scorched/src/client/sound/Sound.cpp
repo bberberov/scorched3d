@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -48,22 +48,29 @@ Sound *Sound::instance()
 	return instance_;
 }
 
-Sound::Sound() : 
-	init_(false), totalTime_(0.0f), playSounds_(true),
-	GameStateI("Sound")
+Sound::Sound() :
+	GameStateI("Sound"),
+	totalTime_(0.0f),
+	init_(false),
+	playSounds_(true)
 {
 	new ConsoleRuleMethodIAdapter<Sound>(
-		this, &Sound::showSoundBuffers, "SoundBuffers");
+		this,
+		&Sound::showSoundBuffers,
+		"SoundBuffers"
+	);
 	new ConsoleRuleMethodIAdapterEx<Sound>(
-		this, &Sound::soundPlay, "SoundPlay",
+		this,
+		&Sound::soundPlay,
+		"SoundPlay",
 		ConsoleUtil::formParams(
-		ConsoleRuleParam("filename", ConsoleRuleTypeString)));
+			ConsoleRuleParam("filename", ConsoleRuleTypeString)
+		)
+	);
 }
 
 Sound::~Sound()
-{
-
-}
+{}
 
 void Sound::destroy()
 {
@@ -135,15 +142,20 @@ bool Sound::init(int channels)
 	alDistanceModel(AL_INVERSE_DISTANCE);
 
 	Logger::log(S3D::formatStringBuffer("AL_VENDOR:%s",
-		checkString((char *) alGetString(AL_VENDOR))));
+		checkString((char *) alGetString(AL_VENDOR)))
+	);
 	Logger::log(S3D::formatStringBuffer("AL_VERSION:%s",
-		checkString((char *) alGetString(AL_VERSION))));
+		checkString((char *) alGetString(AL_VERSION)))
+	);
 	Logger::log(S3D::formatStringBuffer("AL_RENDERER:%s",
-		checkString((char *) alGetString(AL_RENDERER))));
+		checkString((char *) alGetString(AL_RENDERER)))
+	);
 	Logger::log(S3D::formatStringBuffer("AL_EXTENSIONS:%s",
-		checkString((char *) alGetString(AL_EXTENSIONS))));
+		checkString((char *) alGetString(AL_EXTENSIONS)))
+	);
 	Logger::log(S3D::formatStringBuffer("ALC_DEVICE_SPECIFIER:%s",
-		checkString((char *) alcGetString(soundDevice, ALC_DEVICE_SPECIFIER))));
+		checkString((char *) alcGetString(soundDevice, ALC_DEVICE_SPECIFIER)))
+	);
 
 	// Create all sound channels
 	for (int i=1; i<=OptionsDisplay::instance()->getSoundChannels(); i++)
@@ -151,8 +163,10 @@ bool Sound::init(int channels)
 		SoundSource *source = new SoundSource;
 		if (!source->create())
 		{
-			S3D::dialogMessage("Scorched3D",
-				S3D::formatStringBuffer("Failed to create sound channel number %i", i));
+			S3D::dialogMessage(
+				"Scorched3D",
+				S3D::formatStringBuffer("Failed to create sound channel number %i", i)
+			);
 			return false;
 		}
 		totalSources_.push_back(source);
@@ -177,9 +191,13 @@ void Sound::showSoundBuffers()
 {
 	// Show some debug of the current playing sounds
 	int i = 1;
-	Logger::log(S3D::formatStringBuffer("%i sounds playing, %i sources free",
-		getPlayingChannels(),
-		getAvailableChannels()));
+	Logger::log(
+		S3D::formatStringBuffer(
+			"%i sounds playing, %i sources free",
+			getPlayingChannels(),
+			getAvailableChannels()
+		)
+	);
 	PlayingSourceList::iterator itor;
 	for (itor = playingSources_.begin();
 		itor != playingSources_.end();
@@ -242,8 +260,7 @@ static inline bool lt_virt(PlayingSoundSource *p2, PlayingSoundSource *p1)
 	if (v1) dist1 = v1->getDistance();
 	if (v2) dist2 = v2->getDistance();
 
-	return (priority1 < priority2 ||
-		(priority1 == priority2 && dist1 > dist2));
+	return (priority1 < priority2 || (priority1 == priority2 && dist1 > dist2));
 }
 
 void Sound::addPlaying(VirtualSoundSource *virt)
@@ -430,8 +447,7 @@ SoundBuffer *Sound::createBuffer(char *fileName)
 		(const char *) fileName);
 	if (!buffer)
 	{
-		S3D::dialogExit("Failed to load sound",
-			S3D::formatStringBuffer("\"%s\"", fileName));
+		S3D::dialogExit("Failed to load sound", S3D::formatStringBuffer("\"%s\"", fileName));
 
 		delete buffer;
 		return 0;

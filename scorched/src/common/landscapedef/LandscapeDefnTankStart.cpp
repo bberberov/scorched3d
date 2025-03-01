@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,6 +36,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+
+LandscapeDefnTypeTankStart::~LandscapeDefnTypeTankStart()
+{}
 
 static bool parseMinMax(XMLNode *parent, const char *name, 
 	fixed &min, fixed &max)

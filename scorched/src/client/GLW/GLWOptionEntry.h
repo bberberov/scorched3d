@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,9 +31,7 @@ public:
 	GLWOptionEntry(GLWidget *control, OptionEntry *entry);
 	virtual ~GLWOptionEntry();
 
-	static void createEntry(
-		std::list<GLWOptionEntry> &controls, 
-		GLWPanel *parent, OptionEntry &entry);
+	static void createEntry( std::list<GLWOptionEntry> &controls, GLWPanel *parent, OptionEntry &entry);
 
 	static void updateControls(std::list<GLWOptionEntry> &controls);
 	static void updateEntries(std::list<GLWOptionEntry> &controls);
@@ -42,8 +40,8 @@ public:
 	GLWidget *getControl() { return control_; }
 
 protected:
-	OptionEntry *entry_;
 	GLWidget *control_;
+	OptionEntry *entry_;
 };
 
 #endif // __INCLUDE_GLWOptionEntryh_INCLUDE__

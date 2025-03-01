@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,8 +39,8 @@ public:
 
 REGISTER_CLASS_HEADER(TankRemoveSimAction);
 protected:
-	fixed removalTime_;
 	unsigned int playerId_;
+	fixed removalTime_;
 };
 
 #endif // !defined(AFX_TankRemoveSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)

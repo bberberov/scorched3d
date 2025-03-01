@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -43,8 +43,7 @@ struct PhysicsParticleInfo
 		type_(type),
 		playerId_(playerId),
 		data_(data)
-	{
-	}
+	{}
 
 	PhysicsParticleType type_;
 	unsigned int playerId_;
@@ -55,10 +54,9 @@ class PhysicsParticleObject;
 class PhysicsParticleObjectHandler
 {
 public:
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId) = 0;
-	virtual void wallCollision(PhysicsParticleObject &position,
-		ScorchedCollisionId collisionId) {}
+	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId) = 0;
+	virtual void wallCollision(PhysicsParticleObject &position, ScorchedCollisionId collisionId)
+	{}
 };
 
 class Target;
@@ -71,26 +69,26 @@ public:
 
 	void setPhysics(
 		PhysicsParticleInfo info,
-		ScorchedContext &context, 
-		FixedVector &position, FixedVector &velocity);
-	void setForces(
-		fixed windFactor, fixed gravityFactor);
+		ScorchedContext &context,
+		FixedVector &position, FixedVector &velocity
+	);
+	void setForces( fixed windFactor, fixed gravityFactor);
 
-	void setOptionUnderGroundCollision(bool underGroundCollision) 
+	void setOptionUnderGroundCollision(bool underGroundCollision)
 		{ optionUnderGroundCollision_ = underGroundCollision; }
-	void setOptionRotateOnCollision(bool rotateOnCollision) 
+	void setOptionRotateOnCollision(bool rotateOnCollision)
 		{ optionRotateOnCollision_ = rotateOnCollision; }
-	void setOptionWallCollision(bool wallCollision) 
+	void setOptionWallCollision(bool wallCollision)
 		{ optionWallCollision_ = wallCollision; }
-	void setOptionStickyShields(bool stickyShields) 
+	void setOptionStickyShields(bool stickyShields)
 		{ optionStickyShields_ = stickyShields; }
-	void setOptionShieldCollision(bool shieldCollision) 
+	void setOptionShieldCollision(bool shieldCollision)
 		{ optionShieldCollision_ = shieldCollision; }
 	void setOptionLandscapeCollision(bool landscapeCollision)
 		{ optionLandscapeCollision_ = landscapeCollision; }
-	void setOptionTankCollision(bool tankCollision) 
+	void setOptionTankCollision(bool tankCollision)
 		{ optionTankCollision_ = tankCollision; }
-	void setOptionTargetCollision(bool targetCollision) 
+	void setOptionTargetCollision(bool targetCollision)
 		{ optionTargetCollision_ = targetCollision; }
 
 	void applyForce(FixedVector &force);

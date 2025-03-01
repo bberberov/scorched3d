@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,12 +32,16 @@ public:
 	WaterVisibilityPatch();
 	~WaterVisibilityPatch();
 
-	void setLocation(int x, int y,
-		int patchX, int patchY,
-		WaterVisibilityPatch *leftPatch, 
-		WaterVisibilityPatch *rightPatch, 
-		WaterVisibilityPatch *topPatch, 
-		WaterVisibilityPatch *bottomPatch);
+	void setLocation(
+		int x,
+		int y,
+		int patchX,
+		int patchY,
+		WaterVisibilityPatch *leftPatch,
+		WaterVisibilityPatch *rightPatch,
+		WaterVisibilityPatch *topPatch,
+		WaterVisibilityPatch *bottomPatch
+	);
 	bool setVisible(Vector &cameraPos);
 	void setNotVisible();
 
@@ -54,13 +58,17 @@ public:
 	WaterVisibilityPatch *getBottomPatch() { return bottomPatch_; }
 
 protected:
-	int x_, y_;
-	int patchX_, patchY_, patchIndex_;
+	int x_;
+	int y_;
+	int patchX_;
+	int patchY_;
+	int patchIndex_;
 	int visibilityIndex_;
 	bool visible_;
-	Vector offset_, position_;
+	Vector offset_;
+	Vector position_;
 	WaterVisibilityPatch *leftPatch_;
-	WaterVisibilityPatch *rightPatch_; 
+	WaterVisibilityPatch *rightPatch_;
 	WaterVisibilityPatch *topPatch_;
 	WaterVisibilityPatch *bottomPatch_;
 };

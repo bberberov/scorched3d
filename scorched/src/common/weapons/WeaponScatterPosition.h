@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,18 +29,22 @@ public:
 	WeaponScatterPosition();
 	virtual ~WeaponScatterPosition();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponScatterPosition, AccessoryPart::AccessoryWeapon);
 
 protected:
 	NumberParser scatterpercentage_;
-	bool landonly_, landheight_;
+	bool landonly_;
+	bool landheight_;
 	Weapon *aimedWeapon_;
 
 };

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,18 +40,25 @@ ConnectDialog *ConnectDialog::instance()
 	return instance_;
 }
 
-ConnectDialog::ConnectDialog() : 
-	GLWWindow("Connect", -100.0f, 10.0f, 20.0f, 20.0f, eNoDraw | eNoTitle,
-		"Connection dialog"),
+ConnectDialog::ConnectDialog() :
+	GLWWindow(
+		"Connect",
+		-100.0f,
+		10.0f,
+		20.0f,
+		20.0f,
+		eNoDraw | eNoTitle,
+		"Connection dialog"
+	),
+	remoteConnectionThread_(nullptr),
+	idStore_(nullptr),
 	connectionState_(eWaiting),
-	tryCount_(0), lastTime_(0), idStore_(0),
-	remoteConnectionThread_(0)
-{
-}
+	tryCount_(0),
+	lastTime_(0)
+{}
 
 ConnectDialog::~ConnectDialog()
-{
-}
+{}
 
 UniqueIdStore &ConnectDialog::getIdStore()
 {
@@ -68,8 +75,7 @@ UniqueIdStore &ConnectDialog::getIdStore()
 }
 
 void ConnectDialog::windowInit(const unsigned state)
-{
-}
+{}
 
 void ConnectDialog::start()
 {

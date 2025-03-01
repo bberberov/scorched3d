@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,6 +40,8 @@ public:
 		eDeformSolid,
 		eDeformFile
 	};
+
+	virtual ~LandscapeDefnType();
 
 	virtual bool readXML(XMLNode *node) = 0;
 	virtual DefnType getType() = 0;
@@ -143,9 +145,9 @@ public:
 	int getArenaY() { return arenay; }
 
 	LandscapeDefnType *roof;
-	LandscapeDefnTypeTankStart *tankstart;
 	LandscapeDefnType *heightmap;
 	LandscapeDefnType *deform;
+	LandscapeDefnTypeTankStart *tankstart;
 	LandscapeTexDefn texDefn;
 
 	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);

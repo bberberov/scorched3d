@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,23 +23,29 @@
 #include <common/KeyStateTranslate.h>
 #include <common/Defines.h>
 
-KeyboardKey::KeyboardKey(const char *name,
+KeyboardKey::KeyboardKey(
+	const char *name,
 	const char *title,
 	const char *description,
 	int group,
-	bool command) :
-	name_(name), title_(title), description_(description), 
-	keyToogle_(false), command_(command), group_(group),
+	bool command
+) :
+	name_(name),
+	title_(title),
+	description_(description),
+	group_(group),
+	command_(command),
+	keyToogle_(false),
 	changed_(false)
-{
-}
+{}
 
 KeyboardKey::~KeyboardKey()
-{
-}
+{}
 
-bool KeyboardKey::addKeys(std::list<std::string> &keyNames,
-						  std::list<std::string> &keyStates)
+bool KeyboardKey::addKeys(
+	std::list<std::string> &keyNames,
+	std::list<std::string> &keyStates
+)
 {
 	DIALOG_ASSERT(keyNames.size() == keyStates.size());
 	keys_.clear();
@@ -129,6 +135,46 @@ void KeyboardKey::removeKey(unsigned int position)
 		}
 	}
 	changed_ = true;
+}
+
+std::vector<KeyboardKey::KeyEntry> &KeyboardKey::getKeys()
+{
+	return keys_;
+}
+
+const char *KeyboardKey::getName()
+{
+	return name_.c_str();
+}
+
+const char *KeyboardKey::getTitle()
+{
+	return title_.c_str();
+}
+
+const char *KeyboardKey::getDescription()
+{
+	return description_.c_str();
+}
+
+int KeyboardKey::getGroup()
+{
+	return group_;
+}
+
+bool KeyboardKey::getNameIsCommand()
+{
+	return command_;
+}
+
+bool KeyboardKey::getChanged()
+{
+	return changed_;
+}
+
+void KeyboardKey::setChanged(bool changed)
+{
+	changed_ = changed;
 }
 
 bool KeyboardKey::translateKeyName(const char *name, unsigned int &key)

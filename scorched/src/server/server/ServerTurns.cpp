@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,7 +37,7 @@
 #include <simactions/NextTurnSimAction.h>
 #include <coms/ComsPlayedMoveMessage.h>
 
-ServerTurns::ServerTurns(bool waitForShots) : 
+ServerTurns::ServerTurns(bool waitForShots) :
 	shotsState_(eShotsNone),
 	waitForShots_(waitForShots),
 	nextNonNormalMoveId_(0)
@@ -90,8 +90,7 @@ void ServerTurns::enterState()
 }
 
 void ServerTurns::internalShotsFinished()
-{
-}
+{}
 
 void ServerTurns::simulate(fixed frameTime)
 {

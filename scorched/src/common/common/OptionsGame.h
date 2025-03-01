@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,74 +31,74 @@ public:
 
 	enum ScoreType
 	{
-		ScoreWins = 0,
+		ScoreWins  = 0,
 		ScoreKills = 1,
 		ScoreMoney = 2
 	};
 	enum TurnType
 	{
-		TurnSimultaneous = 0,
+		TurnSimultaneous         = 0,
 		TurnSequentialLoserFirst = 1,
-		TurnSequentialRandom = 2,
-		TurnSimultaneousNoWait = 3,
-		TurnFree = 4,
-		TurnFreeTimed = 5
+		TurnSequentialRandom     = 2,
+		TurnSimultaneousNoWait   = 3,
+		TurnFree                 = 4,
+		TurnFreeTimed            = 5
 	};
 	enum WindForce
 	{
 		WindRandom = 0,
-		WindNone = 1,
-		Wind1 = 2,
-		Wind2 = 3,
-		Wind3 = 4,
-		Wind4 = 5,
-		Wind5 = 6,
+		WindNone   = 1,
+		Wind1      = 2,
+		Wind2      = 3,
+		Wind3      = 4,
+		Wind4      = 5,
+		Wind5      = 6,
 		WindBreezy = 7,
-		WindGale = 8
+		WindGale   = 8
 	};
 	enum WindType
 	{
-		WindChangeNever = 0,
-		WindChangeSomeTimes = 1,
+		WindChangeNever      = 0,
+		WindChangeSomeTimes  = 1,
 		WindChangeFrequently = 2,
 		WindChangeConstantly = 3,
-		WindChangeAlways = 4
+		WindChangeAlways     = 4
 	};
 	enum WallType
 	{
-		WallRandom = 0,
-		WallConcrete = 1,
-		WallBouncy = 2,
+		WallRandom     = 0,
+		WallConcrete   = 1,
+		WallBouncy     = 2,
 		WallWrapAround = 3,
-		WallNone = 4,
-		WallActive = 5,
-		WallInactive = 6
+		WallNone       = 4,
+		WallActive     = 5,
+		WallInactive   = 6
 	};
 	enum WeapScale
 	{
-		ScaleSmall = 0,
+		ScaleSmall  = 0,
 		ScaleMedium = 1,
-		ScaleLarge = 2
+		ScaleLarge  = 2
 	};
 	enum ResignType
 	{
 		ResignStart = 0,
 		ResignTimed = 1,
-		ResignNone = 2
+		ResignNone  = 2
 	};
 	enum MovementRestrictionType
 	{
-		MovementRestrictionNone = 0,
-		MovementRestrictionLand = 1,
+		MovementRestrictionNone        = 0,
+		MovementRestrictionLand        = 1,
 		MovementRestrictionLandOrAbove = 2
 	};
 	enum TeamBallanceType
 	{
-		TeamBallanceNone = 0,
-		TeamBallanceAuto = 1,
-		TeamBallanceBotsVs = 2,
+		TeamBallanceNone        = 0,
+		TeamBallanceAuto        = 1,
+		TeamBallanceBotsVs      = 2,
 		TeamBallanceAutoByScore = 3,
-		TeamBallanceAutoByBots = 4
+		TeamBallanceAutoByBots  = 4
 	};
 	
 	const char *getTutorial() { return tutorial_; }
@@ -426,7 +426,7 @@ public:
 
 	// Fns used to save or restore the state of the options
 	std::list<OptionEntry *> &getOptions();
-	std::list<OptionEntry *> &getPlayerTypeOptions(); 
+	std::list<OptionEntry *> &getPlayerTypeOptions();
 	virtual bool writeOptionsToFile(const std::string &filePath, bool allOptions);
 	virtual bool readOptionsFromFile(const std::string &filePath);
 	virtual bool writeToBuffer(NetBuffer &buffer, bool useProtected, bool usePlayerTypes);
@@ -436,33 +436,77 @@ protected:
 	std::list<OptionEntry *> options_;
 	std::list<OptionEntry *> playerTypeOptions_;
 
-	OptionEntryBoundedInt weaponSpeed_;
+	// BEGIN score
+	OptionEntryBoundedInt scorePerMoney_;
+	OptionEntryBoundedInt scorePerAssist_;
+	OptionEntryBoundedInt scorePerKill_;
+	OptionEntryBoundedInt scorePerResign_;
+	OptionEntryBoundedInt scorePerSpectate_;
+	OptionEntryBoundedInt scoreWonForRound_;
+	OptionEntryBoundedInt scoreWonForLives_;
+	// END   score
+
+	// BEGIN skill
+	OptionEntryBoundedInt skillForRound_;
+	OptionEntryBoundedInt skillForMatch_;
+	OptionEntryBoundedInt skillForResign_;
+	OptionEntryBoundedInt maxSkillLost_;
+	OptionEntryBoundedInt maxSkillGained_;
+	OptionEntryBoundedInt skillForSelfKill_;
+	OptionEntryBoundedInt skillForTeamKill_;
+	// END   skill
+
+	// BEGIN weapons
 	OptionEntryBoundedInt startArmsLevel_;
 	OptionEntryBoundedInt endArmsLevel_;
+	OptionEntryBoundedInt maxNumberWeapons_;
+	OptionEntryBoundedInt weaponSpeed_;
+	OptionEntryEnum weapScale_;
+	// END   weapons
+
+	// BEGIN Time
 	OptionEntryBoundedInt shotTime_;
 	OptionEntryBoundedInt aiShotTime_;
-	OptionEntryBoundedInt startTime_;
 	OptionEntryBoundedInt buyingTime_;
 	OptionEntryBoundedInt removeTime_;
+	OptionEntryBoundedInt startTime_;
 	OptionEntryBoundedInt roundTime_;
 	OptionEntryBoundedInt roundScoreTime_;
 	OptionEntryBoundedInt scoreTime_;
 	OptionEntryBoundedInt idleCycleTime_;
-	OptionEntryBoundedInt allowedMissedMoves_;
-	OptionEntryBoundedInt numberOfRounds_;
-	OptionEntryBoundedInt maxRoundTurns_;
-	OptionEntryBoundedInt maxNumberWeapons_;
+	// END   Time
+
+	// BEGIN landscape
+	OptionEntryString landscapes_;
+	OptionEntryBool cycleMaps_;
+	OptionEntryInt maxLandscapeSize_;
+	OptionEntryInt minimumLandHeight_;
 	OptionEntryBoundedInt gravity_;
 	OptionEntryBoundedInt minFallingDistance_;
 	OptionEntryBool tankFallingDamage_;
 	OptionEntryBoundedInt maxClimbingDistance_;
+	OptionEntryEnum windForce_;
+	OptionEntryEnum windType_;
+	OptionEntryEnum wallType_;
+	// END   landscape
+
+	// BEGIN gameplay
+	OptionEntryString tutorial_;
+	OptionEntryBoundedInt allowedMissedMoves_;
+	OptionEntryBoundedInt numberOfRounds_;
+	OptionEntryBoundedInt maxRoundTurns_;
 	OptionEntryBoundedInt playerLives_;
 	OptionEntryBoundedInt teams_;
 	OptionEntryBoundedInt numberOfPlayers_;
 	OptionEntryBoundedInt numberOfMinPlayers_;
 	OptionEntryBoundedInt removeBotsAtPlayers_;
-	OptionEntryBoundedInt computersDeathTalk_;
-	OptionEntryBoundedInt computersAttackTalk_;
+	OptionEntryEnum teamBallance_;
+	OptionEntryEnum turnType_;
+	OptionEntryEnum resignMode_;
+	// END   gameplay
+
+	// BEGIN money
+	OptionEntryStringEnum economy_;
 	OptionEntryBoundedInt moneyBuyOnRound_;
 	OptionEntryBoundedInt moneyWonForRound_;
 	OptionEntryBoundedInt moneyWonForLives_;
@@ -472,58 +516,35 @@ protected:
 	OptionEntryBoundedInt moneyPerHitPoint_;
 	OptionEntryBoundedInt moneyPerRound_;
 	OptionEntryBool moneyPerHealthPoint_;
-	OptionEntryBoundedInt scorePerMoney_;
-	OptionEntryBoundedInt scorePerAssist_;
-	OptionEntryBoundedInt scorePerKill_;
-	OptionEntryBoundedInt scorePerResign_;
-	OptionEntryBoundedInt scorePerSpectate_;
-	OptionEntryBoundedInt scoreWonForRound_;
-	OptionEntryBoundedInt scoreWonForLives_;
-	OptionEntryInt maxLandscapeSize_;
+	OptionEntryBoundedInt moneyStarting_;
+	OptionEntryBoundedInt moneyInterest_;
 	OptionEntryInt freeMarketAdjustment_;
 	OptionEntryInt freeMarketLimits_;
 	OptionEntryBool freeMarketTracksBotPurchases_;
-	OptionEntryInt minimumLandHeight_;
-	OptionEntryBoundedInt skillForRound_;
-	OptionEntryBoundedInt skillForMatch_;
-	OptionEntryBoundedInt skillForResign_;
-	OptionEntryBoundedInt maxSkillLost_;
-	OptionEntryBoundedInt maxSkillGained_;
-	OptionEntryBoundedInt skillForSelfKill_;
-	OptionEntryBoundedInt skillForTeamKill_;
-	OptionEntryBoundedInt moneyStarting_;
-	OptionEntryEnum teamBallance_;
-	OptionEntryBoundedInt moneyInterest_;
+	// END   money
+
 	OptionEntryBool limitPowerByHealth_;
-	OptionEntryString tutorial_;
-	OptionEntryBool cycleMaps_;
-	OptionEntryEnum resignMode_;
 	OptionEntryEnum movementRestriction_;
-	OptionEntryEnum turnType_;
-	OptionEntryEnum windForce_;
-	OptionEntryEnum windType_;
-	OptionEntryEnum wallType_;
-	OptionEntryEnum weapScale_;
 	OptionEntryBoundedInt modDownloadSpeed_;
 	OptionEntryInt maxAvatarSize_;
 	OptionEntryString mod_;
 	OptionEntryString motd_;
-	OptionEntryStringEnum economy_;
-	OptionEntryString landscapes_;
+	OptionEntryBoundedInt computersDeathTalk_;
+	OptionEntryBoundedInt computersAttackTalk_;
 	OptionEntryStringEnum statsLogger_;
 	OptionEntryStringEnum serverFileLogger_;
 	OptionEntryBool waitForShotsBeforeShowingScore_;
 
-	// Server only options
+	// BEGIN Server-only options
 	OptionEntryString botNamePrefix_;
-	OptionEntryBool actionSyncCheck_;
+	OptionEntryBool autoSendSyncCheck_;
 	OptionEntryBool actionMovementSyncCheck_;
 	OptionEntryBool actionRandomSyncCheck_;
 	OptionEntryBool actionCollisionSyncCheck_;
 	OptionEntryBool targetPlacementSyncCheck_;
 	OptionEntryBool weaponSyncCheck_;
 	OptionEntryBool accessoryNameSyncCheck_;
-	OptionEntryBool autoSendSyncCheck_;
+	OptionEntryBool actionSyncCheck_;
 	OptionEntryBool residualPlayers_;
 	OptionEntryBool delayedDefenseActivation_;
 	OptionEntryBool randomizeBotNames_;
@@ -535,7 +556,6 @@ protected:
 	OptionEntryString authHandlerParam1_;
 	OptionEntryString authHandlerParam2_;
 	OptionEntryString serverName_;
-	OptionEntryString *playerType_[24];
 	OptionEntryString serverPassword_;
 	OptionEntryInt portNo_;
 	OptionEntryInt managementPortNo_;
@@ -547,17 +567,21 @@ protected:
 	OptionEntryBool allowSameUniqueId_;
 	OptionEntryBool debugFeatures_;
 
-	// Depricated (old) 
+	OptionEntryString *playerType_[24];
+	// END   Server-only options
+
+	// BEGIN Deprecated options (old)
+	OptionEntryString depricatedMasterListServer_;
+	OptionEntryString depricatedMasterListServerURI_;
+	OptionEntryString depricatedServerAdminPassword_;
+	OptionEntryBoundedInt depricatedMaxArmsLevel_;
+	OptionEntryBool depricatedAutoBallanceTeams_;
+	OptionEntryEnum depricatedScoreType_;
 	OptionEntryBoundedInt depricatedIdleKickTime_;
 	OptionEntryBoundedInt depricatedIdleShotKickTime_;
 	OptionEntryBoundedInt depricatedKeepAliveTime_;
 	OptionEntryBoundedInt depricatedKeepAliveTimeoutTime_;
-	OptionEntryEnum depricatedScoreType_;
-	OptionEntryBool depricatedAutoBallanceTeams_;
-	OptionEntryBoundedInt depricatedMaxArmsLevel_;
-	OptionEntryString depricatedServerAdminPassword_;
-	OptionEntryString depricatedMasterListServer_;
-	OptionEntryString depricatedMasterListServerURI_;
+	// END   Deprecated options (old)
 
 };
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,7 +39,9 @@
 #include <GLEXT/GLImageModifier.h>
 
 Water::Water() :
-	height_(25.0f), transparency_(1.0f), maxTransparency_(1.0f),
+	height_(25.0f),
+	transparency_(1.0f),
+	maxTransparency_(1.0f),
 	waterOn_(false)
 {
 	wTex_ = new Water2Renderer();
@@ -50,8 +52,7 @@ Water::Water() :
 }
 
 Water::~Water()
-{
-}
+{}
 
 void Water::setTransparency(float transparency)
 {
@@ -60,16 +61,14 @@ void Water::setTransparency(float transparency)
 
 void Water::draw()
 {
-	if (!waterOn_ ||
-		!OptionsDisplay::instance()->getDrawWater()) return;
+	if (!waterOn_ || !OptionsDisplay::instance()->getDrawWater()) return;
 
 	wTex_->draw(*wMap_, *wMapPoints_, *waves_, transparency_);
 }
 
 void Water::simulate(float frameTime)
 {
-	if (!waterOn_ ||
-		!OptionsDisplay::instance()->getDrawWater()) return;
+	if (!waterOn_ || !OptionsDisplay::instance()->getDrawWater()) return;
 
 	wTex_->simulate(frameTime);
 	waves_->simulate(frameTime);
@@ -77,10 +76,8 @@ void Water::simulate(float frameTime)
 
 void Water::generate(ProgressCounter *counter)
 {
-	LandscapeTex &tex = *ScorchedClient::instance()->getLandscapeMaps().
-		getDefinitions().getTex();
-	LandscapeDefn &defn = *ScorchedClient::instance()->getLandscapeMaps().
-		getDefinitions().getDefn();
+	LandscapeTex &tex = *ScorchedClient::instance()->getLandscapeMaps().getDefinitions().getTex();
+	LandscapeDefn &defn = *ScorchedClient::instance()->getLandscapeMaps().getDefinitions().getDefn();
 	if (tex.border->getType() == LandscapeTexType::eNone)
 	{
 		height_ = 0.0f;
@@ -119,23 +116,26 @@ void Water::generate(ProgressCounter *counter)
 		ImageFactory::loadImage(
 			S3D::eModLocation,
 			"data/textures/smoke01.bmp",
-			"data/textures/smoke01.bmp", 
-			false);
+			"data/textures/smoke01.bmp",
+			false
+		);
 	Image loadedBitmapWater = 
 		ImageFactory::loadImage(
-			S3D::eModLocation, 
-			water->reflection);
+			S3D::eModLocation,
+			water->reflection
+		);
 	bitmapWater_ = ImageFactory::loadImage(
-		S3D::eModLocation, 
-		water->reflection);
+		S3D::eModLocation,
+		water->reflection
+	);
 
 	{
 		Image bitmapWater = loadedBitmapWater.createResize(
-			sprayMaskBitmap.getWidth(), sprayMaskBitmap.getHeight());
-		Image textureWaterNew(
-			sprayMaskBitmap.getWidth(), sprayMaskBitmap.getHeight(), true);
-		ImageModifier::makeBitmapTransparent(textureWaterNew, 
-			bitmapWater, sprayMaskBitmap);
+			sprayMaskBitmap.getWidth(),
+			sprayMaskBitmap.getHeight()
+		);
+		Image textureWaterNew( sprayMaskBitmap.getWidth(), sprayMaskBitmap.getHeight(), true );
+		ImageModifier::makeBitmapTransparent( textureWaterNew, bitmapWater, sprayMaskBitmap );
 		landTexWater_.replace(textureWaterNew);
 	}
 
@@ -164,8 +164,7 @@ GLTexture &Water::getReflectionTexture()
 
 bool Water::explosion(Vector position, float size)
 {
-	if (!waterOn_ ||
-		!OptionsDisplay::instance()->getDrawWater()) return false;
+	if (!waterOn_ || !OptionsDisplay::instance()->getDrawWater()) return false;
 
 	if (position[2] < height_)
 	{
@@ -204,6 +203,6 @@ float Water::getWaveDistance(int x, int y)
 }
 
 float *Water::getIndexErrors()
-{ 
-	return wMap_->getIndexErrors(); 
+{
+	return wMap_->getIndexErrors();
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,30 +29,24 @@ ComsDefenseMessage::ComsDefenseMessage() :
 	playerId_(0),
 	change_(eNoChange),
 	infoId_(0)
-{
-}
+{}
 
-ComsDefenseMessage::ComsDefenseMessage(unsigned int playerId,
-									   DefenseChange change,
-									   unsigned int infoId) :
+ComsDefenseMessage::ComsDefenseMessage(unsigned int playerId, DefenseChange change, unsigned int infoId) :
 	ComsMessage(ComsDefenseMessageType),
 	playerId_(playerId),
-	change_(change), 
+	change_(change),
 	infoId_(infoId)
-{
-}
+{}
 
 ComsDefenseMessage::ComsDefenseMessage(ComsDefenseMessage &other) :
 	ComsMessage(ComsDefenseMessageType),
 	playerId_(other.playerId_),
-	change_(other.change_), 
+	change_(other.change_),
 	infoId_(other.infoId_)
-{
-}
+{}
 
 ComsDefenseMessage::~ComsDefenseMessage()
-{
-}
+{}
 
 bool ComsDefenseMessage::writeMessage(NetBuffer &buffer)
 {

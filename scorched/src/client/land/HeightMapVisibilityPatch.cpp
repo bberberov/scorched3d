@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,26 +28,29 @@
 #include <GLEXT/GLStateExtension.h>
 #include <GLEXT/GLInfo.h>
 #include <GLW/GLWFont.h>
+#include <limits>
 
-HeightMapVisibilityPatch::HeightMapVisibilityPatch(HeightMap *heightMap) : 
-	heightMap_(heightMap),
-	visible_(false), recalculateErrors_(false),
-	leftPatch_(0), rightPatch_(0),
-	topPatch_(0), bottomPatch_(0),
+HeightMapVisibilityPatch::HeightMapVisibilityPatch(HeightMap *heightMap) :
+	dataSize_(0),
 	visibilityIndex_(-1),
-	dataSize_(0)
-{
-}
+	visible_(false),
+	recalculateErrors_(false),
+	heightMap_(heightMap),
+	leftPatch_(nullptr), rightPatch_(nullptr),
+	topPatch_(nullptr), bottomPatch_(nullptr)
+{}
 
 HeightMapVisibilityPatch::~HeightMapVisibilityPatch()
-{
-}
+{}
 
-void HeightMapVisibilityPatch::setLocation(int x, int y,
-	HeightMapVisibilityPatch *leftPatch, 
-	HeightMapVisibilityPatch *rightPatch, 
-	HeightMapVisibilityPatch *topPatch, 
-	HeightMapVisibilityPatch *bottomPatch)
+void HeightMapVisibilityPatch::setLocation(
+	int x,
+	int y,
+	HeightMapVisibilityPatch *leftPatch,
+	HeightMapVisibilityPatch *rightPatch,
+	HeightMapVisibilityPatch *topPatch,
+	HeightMapVisibilityPatch *bottomPatch
+)
 {
 	int mapWidth = heightMap_->getMapWidth();
 	int mapHeight = heightMap_->getMapHeight();
@@ -88,8 +91,16 @@ float HeightMapVisibilityPatch::getHeight(int x, int y)
  The * values are passed in.  
  The ~ values are calculated from the * values.
 */
-float HeightMapVisibilityPatch::calculateError(int x1, int x2, int y1, int y2,
-	float x1y1, float x2y2, float x1y2, float x2y1)
+float HeightMapVisibilityPatch::calculateError(
+	int x1,
+	int x2,
+	int y1,
+	int y2,
+	float x1y1,
+	float x2y2,
+	float x1y2,
+	float x2y1
+)
 {
 	int xm = (x1 + x2) / 2;
 	int ym = (y1 + y2) / 2;
@@ -137,7 +148,13 @@ float HeightMapVisibilityPatch::calculateError(int x1, int x2, int y1, int y2,
 	return totalError;
 }
 
-float HeightMapVisibilityPatch::calculateError2(int x, int y, int width, float &minHeight, float &maxHeight)
+float HeightMapVisibilityPatch::calculateError2(
+	int x,
+	int y,
+	int width,
+	float &minHeight,
+	float &maxHeight
+)
 {
 	static float left[33], right[33];
 
@@ -196,13 +213,13 @@ void HeightMapVisibilityPatch::calculateErrors()
 }
 
 bool HeightMapVisibilityPatch::setVisible(float distance, float C)
-{ 
+{
 	visible_ = true;
 
 	visibilityIndex_ = 0;
 	if (!OptionsDisplay::instance()->getNoLandLOD())
 	{
-		if (recalculateErrors_) 
+		if (recalculateErrors_)
 		{
 			calculateErrors();
 			recalculateErrors_ = false;
@@ -213,19 +230,19 @@ bool HeightMapVisibilityPatch::setVisible(float distance, float C)
 		{
 			visibilityIndex_ = 5;
 		}
-		else if (errorDistance >= indexErrors_[3]) 
+		else if (errorDistance >= indexErrors_[3])
 		{
 			visibilityIndex_ = 4;
 		}
-		else if (errorDistance >= indexErrors_[2]) 
+		else if (errorDistance >= indexErrors_[2])
 		{
 			visibilityIndex_ = 3;
 		}
-		else if (errorDistance >= indexErrors_[1]) 
+		else if (errorDistance >= indexErrors_[1])
 		{
 			visibilityIndex_ = 2;
 		}
-		else if (errorDistance >= indexErrors_[0]) 
+		else if (errorDistance >= indexErrors_[0])
 		{
 			visibilityIndex_ = 1;
 		}
@@ -286,7 +303,7 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 
 		// Map indices to draw
 		unsigned short *indices = 0;
-		if (index.getBufferOffSet() != -1)
+		if (index.getBufferOffSet() != std::numeric_limits<unsigned int>::max())
 		{
 			indices = (unsigned short *) NULL + (index.getBufferOffSet() / sizeof(unsigned short));
 		}

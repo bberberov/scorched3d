@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,8 +32,7 @@ public:
 	WeaponRoller();
 	virtual ~WeaponRoller();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	Weapon *getCollisionAction() { return collisionAction_; }
 	ModelID &getRollerModelID() { return rollerModelId_; }
@@ -45,7 +44,7 @@ public:
 	bool getTankCollision() { return tankCollision_; }
 	bool getTargetCollision() { return targetCollision_; }
 	fixed getShieldHurtFactor(ScorchedContext &context) { return shieldHurtFactorExp_.getValue(context); }
-	fixed getTime(ScorchedContext &context) { return timeExp_.getValue(context); } 
+	fixed getTime(ScorchedContext &context) { return timeExp_.getValue(context); }
 	fixed getWindFactor(ScorchedContext &context) { return windFactorExp_.getValue(context); }
 	fixed getGravityFactor(ScorchedContext &context) { return gravityFactorExp_.getValue(context); }
 	fixed getStepSize() { return stepSize_; }
@@ -56,36 +55,44 @@ public:
 	ObjectGroupEntryDefinition &getGlobalGroups() { return globalGroups_; }
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponRoller, AccessoryPart::AccessoryWeapon);
 
 protected:
-	NumberParser numberRollers_;
 	Weapon *collisionAction_;
 	ModelID rollerModelId_;
-	ObjectGroupEntryDefinition localGroups_, globalGroups_;
-	NumberParser dampenVelocityExp_;
+	ObjectGroupEntryDefinition localGroups_;
+	ObjectGroupEntryDefinition globalGroups_;
 	NumberParser shieldHurtFactorExp_;
-	NumberParser gravityFactorExp_;
 	NumberParser windFactorExp_;
-	NumberParser timeExp_;
-	NumberParser scale_;
+	NumberParser gravityFactorExp_;
+	NumberParser dampenVelocityExp_;
 	NumberParser timeout_;
+	NumberParser scale_;
+	NumberParser timeExp_;
+	NumberParser numberRollers_;
 	fixed stepSize_;
+	bool maintainVelocity_;
 	bool roll_;
 	bool stickyShields_;
 	bool landscapeCollision_;
 	bool shieldCollision_;
 	bool tankCollision_;
 	bool targetCollision_;
-	bool maintainVelocity_;
 	bool noCameraTrack_;
 	
-	void addRoller(ScorchedContext &context, 
+	void addRoller(
+		ScorchedContext &context,
 		WeaponFireContext &weaponContext,
-		FixedVector &position, FixedVector &velocity);
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 };
 

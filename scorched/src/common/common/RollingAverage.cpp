@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,7 +46,8 @@ void RollingAverage::reset(fixed value)
 
 void RollingAverage::addValue(fixed value)
 {
-	index_ = (++index_ % numberAverages_);
+	++index_;
+	index_ %= numberAverages_;
 
 	total_ -= averages_[index_];
 	averages_[index_] = value;

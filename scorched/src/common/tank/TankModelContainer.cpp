@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,16 +30,15 @@
 
 TankModelContainer::TankModelContainer(ScorchedContext &context) :
 	context_(context),
-	tankModel_(0), tank_(0)
-{
-}
+	tank_(0),
+	tankModel_(0)
+{}
 
 TankModelContainer::~TankModelContainer()
-{
-}
+{}
 
-TankModel *TankModelContainer::getTankModel() 
-{ 
+TankModel *TankModelContainer::getTankModel()
+{
 	if (!tankModel_)
 	{
 		tankModel_ = context_.getTankModels().getModelByName(modelName_.c_str());

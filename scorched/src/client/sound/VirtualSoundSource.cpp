@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,15 +23,16 @@
 #include <sound/SoundSource.h>
 #include <sound/Sound.h>
 
-VirtualSoundSource::VirtualSoundSource(
-	unsigned int priority, bool looping, bool managed) : 
-	playingSource_(0),
+VirtualSoundSource::VirtualSoundSource( unsigned int priority, bool looping, bool managed) :
 	priority_(priority),
-	gain_(1.0f), refDist_(75.0f), rolloff_(1.0f),
-	buffer_(0),
-	relative_(false), 
-	managed_(managed),
-	looping_(looping)
+	playingSource_(nullptr),
+	buffer_(nullptr),
+	gain_(1.0f),
+	refDist_(75.0f),
+	rolloff_(1.0f),
+	relative_(false),
+	looping_(looping),
+	managed_(managed)
 {
 	if (managed_) Sound::instance()->addManaged(this);
 }
@@ -39,7 +40,7 @@ VirtualSoundSource::VirtualSoundSource(
 VirtualSoundSource::~VirtualSoundSource()
 {
 	stop();
-	playingSource_ = 0;
+	playingSource_ = nullptr;
 }
 
 void VirtualSoundSource::play(SoundBuffer *buffer)
@@ -70,8 +71,8 @@ void VirtualSoundSource::stop()
 }
 
 void VirtualSoundSource::setPlayingSource(PlayingSoundSource *s)
-{ 
-	playingSource_ = s; 
+{
+	playingSource_ = s;
 }
 
 bool VirtualSoundSource::getPlaying()

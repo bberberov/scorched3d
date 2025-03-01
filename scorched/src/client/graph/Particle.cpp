@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,34 +20,55 @@
 
 #include <graph/Particle.h>
 
-Particle::Particle() : 
-	life_(-1.0f), renderer_(0), userData_(0),
-	distance_(0.0f), texture_(0), shadow_(false),
-	textureCoord_(0), simulated_(false),
-	windAffect_(true), textureSet_(0),
-	engine_(0), type_(0)
-{
-}
+Particle::Particle() :
+	life_(-1.0f),
+	windAffect_(true),
+	engine_(nullptr),
+	type_(0),
+	texture_(nullptr),
+	textureSet_(nullptr),
+	textureCoord_(0),
+	shadow_(false),
+	simulated_(false),
+	distance_(0.0f),
+	userData_(nullptr),
+	renderer_(nullptr)
+{}
 
 Particle::~Particle()
-{
-}
+{}
 
 void Particle::setParticle(
-	float life, float mass, float friction,
-	Vector &velocity, Vector &gravity,
-	Vector &color, Vector &colorCounter,
-	Vector &size, Vector &sizeCounter,
-	float alpha, float alphaCounter,
+	float life,
+	float mass,
+	float friction,
+	Vector &velocity,
+	Vector &gravity,
+	Vector &color,
+	Vector &colorCounter,
+	Vector &size,
+	Vector &sizeCounter,
+	float alpha,
+	float alphaCounter,
 	bool additiveTexture,
-	bool windAffect)
+	bool windAffect
+)
 {
-	life_ = life; mass_ = mass; friction_ = friction;
-	percent_ = 0.0f; percentCounter_ = 1.0f / life_;
-	velocity_ = velocity; gravity_ = gravity;
-	color_ = color; colorCounter_ = colorCounter;
-	size_ = size; sizeCounter_ = sizeCounter;
-	alpha_ = alpha; alphaCounter_ = alphaCounter;
+	life_ = life;
+	mass_ = mass;
+	friction_ = friction;
+
+	percent_ = 0.0f;
+	percentCounter_ = 1.0f / life_;
+
+	velocity_ = velocity;
+	gravity_ = gravity;
+	color_ = color;
+	colorCounter_ = colorCounter;
+	size_ = size;
+	sizeCounter_ = sizeCounter;
+	alpha_ = alpha;
+	alphaCounter_ = alphaCounter;
 	additiveTexture_ = additiveTexture;
 	windAffect_ = windAffect;
 }
@@ -55,12 +76,11 @@ void Particle::setParticle(
 void Particle::unsetParticle()
 {
 	delete userData_;
-	userData_ = 0;
-	texture_ = 0;
-	textureSet_ = 0;
-	renderer_ = 0;
+	userData_ = nullptr;
+	texture_ = nullptr;
+	textureSet_ = nullptr;
+	renderer_ = nullptr;
 	type_ = 0;
 	shadow_ = false;
 	simulated_ = false;
 }
-

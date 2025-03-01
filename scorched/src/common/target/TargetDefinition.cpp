@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,22 +40,33 @@
 #include <common/Defines.h>
 #include <XML/XMLNode.h>
 
-TargetDefinition::TargetDefinition() : 
-	life_(1), boundingsphere_(true),
-	size_(0, 0, 0), 
-	modelscale_(fixed(true, 500)), modelscalediff_(0),
-	modelrotation_(0), modelrotationsnap_(-1),
-	driveovertodestroy_(false), flattendestroy_(false), border_(0), 
-	displaydamage_(true), displayshadow_(true), displayhardwareshadow_(true),
-	nodamageburn_(false), nocollision_(false), nofalling_(false),
-	nofallingdamage_(false), billboard_(false), team_(0), useNormalMoves_(true)
+TargetDefinition::TargetDefinition() :
+	life_(1),
+	boundingsphere_(true),
+	driveovertodestroy_(false),
+	flattendestroy_(false),
+	nocollision_(false),
+	nodamageburn_(false),
+	nofalling_(false),
+	nofallingdamage_(false),
+	displaydamage_(true),
+	displayshadow_(true),
+	displayhardwareshadow_(true),
+	useNormalMoves_(true),
+	billboard_(false),
+	team_(0),
+	size_(0, 0, 0),
+	modelscale_( fixed(true, 500) ),
+	modelscalediff_(0),
+	modelrotation_(0),
+	modelrotationsnap_(-1),
+	border_(0)
 {
 	shadow_.setDrawShadow(false);
 }
 
 TargetDefinition::~TargetDefinition()
-{
-}
+{}
 
 bool TargetDefinition::readXML(XMLNode *node)
 {
@@ -110,7 +121,8 @@ bool TargetDefinition::readXML(XMLNode *node)
 	return node->failChildren();
 }
 
-Target *TargetDefinition::createTarget(unsigned int playerId,
+Target *TargetDefinition::createTarget(
+	unsigned int playerId,
 	FixedVector &position,
 	FixedVector &velocity,
 	ScorchedContext &context,

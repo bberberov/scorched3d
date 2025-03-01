@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,15 +28,13 @@
 REGISTER_ACCESSORY_SOURCE(WeaponMoveTank);
 
 WeaponMoveTank::WeaponMoveTank() :
-	stepTime_(fixed(true, 500)), useFuel_(-1), maximumRange_(100)
-{
-
-}
+	stepTime_( fixed(true, 500) ),
+	useFuel_(-1),
+	maximumRange_(100)
+{}
 
 WeaponMoveTank::~WeaponMoveTank()
-{
-
-}
+{}
 
 bool WeaponMoveTank::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 {
@@ -55,8 +53,12 @@ bool WeaponMoveTank::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	return true;
 }
 
-void WeaponMoveTank::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponMoveTank::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	int arenaX = context.getLandscapeMaps().getDefinitions().getDefn()->getArenaX();
 	int arenaY = context.getLandscapeMaps().getDefinitions().getDefn()->getArenaY();

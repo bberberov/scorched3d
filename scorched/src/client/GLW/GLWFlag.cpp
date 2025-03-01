@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,14 @@
 
 REGISTER_CLASS_SOURCE(GLWFlag);
 
-GLWFlag::GLWFlag(Vector &color, float x, float y, float w) : 
-	color_(color), GLWidget(x, y, w, 20.0f), offset_(0.0f)
-{
-
-}
+GLWFlag::GLWFlag(Vector &color, float x, float y, float w) :
+	GLWidget(x, y, w, 20.0f),
+	color_(color),
+	offset_(0.0f)
+{}
 
 GLWFlag::~GLWFlag()
-{
-
-}
+{}
 
 void GLWFlag::simulate(float frameTime)
 {

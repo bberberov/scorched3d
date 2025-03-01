@@ -39,7 +39,6 @@ protected:
 	unsigned int size_;
 
 	void openFile(const char *fileName);
-
 };
 
 #endif // __INCLUDE_FileLoggerh_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,20 +37,18 @@
 
 WeaponAimed::WeaponAimed() :
 	warHeads_(0),
-	aimedWeapon_(0),
-	randomWhenNoTargets_(true),
-	noSelfHoming_(false),
+	aimedWeapon_(nullptr),
 	maxAimedDistance_("WeaponAimed::maxAimedDistance"),
 	percentageMissChance_("WeaponAimed::percentageMissChance"),
-	maxInacuracy_("WeaponAimed::maxInacuracy")
-{
-
-}
+	maxInacuracy_("WeaponAimed::maxInacuracy"),
+	randomWhenNoTargets_(true),
+	noSelfHoming_(false)
+{}
 
 WeaponAimed::~WeaponAimed()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponAimed::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -98,15 +96,26 @@ void WeaponAimed::addWeaponSyncCheck(ScorchedContext &context,
 	WeaponFireContext &weaponContext,
 	FixedVector &position, FixedVector &velocity)
 {
-	context.getSimulator().addSyncCheck(S3D::formatStringBuffer("WeaponFire %s-%u-%s %u %s %s \"%s\"",
-		getParent()->getName(), getParent()->getAccessoryId(), getAccessoryTypeName(),
-		weaponContext.getPlayerId(),
-		position.asQuickString(), velocity.asQuickString(),
-		groupName_.c_str()));
+	context.getSimulator().addSyncCheck(
+		S3D::formatStringBuffer(
+			"WeaponFire %s-%u-%s %u %s %s \"%s\"",
+			getParent()->getName(),
+			getParent()->getAccessoryId(),
+			getAccessoryTypeName(),
+			weaponContext.getPlayerId(),
+			position.asQuickString(),
+			velocity.asQuickString(),
+			groupName_.c_str()
+		)
+	);
 }
 
-void WeaponAimed::fireAimedWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, bool invert)
+void WeaponAimed::fireAimedWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	bool invert
+)
 {
 	// Get a list of possible destinations
 	std::list<FixedVector *> positions;
@@ -130,15 +139,16 @@ void WeaponAimed::fireAimedWeapon(ScorchedContext &context,
 	else
 	{
 		ObjectGroup *objectGroup = weaponContext.getInternalContext().getLocalGroups().getGroup(groupName_.c_str());
-		if (!objectGroup) objectGroup = context.getObjectGroups().getGroup(groupName_.c_str());
-		if (objectGroup) 
+		if (objectGroup == nullptr)
+			objectGroup = context.getObjectGroups().getGroup(groupName_.c_str());
+		if (objectGroup != nullptr)
 		{
 			ObjectGroup::ObjectGroupEntryHolderIterator iterator(objectGroup);
 			ObjectGroupEntry *entry;
-			while (entry = iterator.getNext())
+			while ( ( entry = iterator.getNext() ) != nullptr )
 			{
 				positions.push_back(&entry->getPosition());
-			}			
+			}
 		}
 	}
 

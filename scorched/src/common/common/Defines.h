@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,11 +22,19 @@
 #define __DEFINES__
 
 #ifndef _WIN32
-#include "porting.h"
+	#include "porting.h"
 #else
-#pragma warning(disable : 4996)
-#pragma warning(disable : 4100) // unreferenced formal parameter
-#pragma warning(disable : 4512) // assignment operator could not be generated
+	// WARNING: a function, class member, variable, or typedef is marked deprecated
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
+	#pragma warning(disable : 4996)
+
+	// WARNING: 'identifier' : unreferenced formal parameter
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4100?view=msvc-140
+	#pragma warning(disable : 4100)
+
+	// WARNING: 'class' : assignment operator could not be generated
+	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4512?view=msvc-140
+	#pragma warning(disable : 4512)
 #endif
 
 #include <common/DefinesString.h>

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,7 +27,7 @@
 #include <common/Vector.h>
 #include <lang/LangResource.h>
 
-class GLWLabel : public GLWidget  
+class GLWLabel : public GLWidget
 {
 public:
 	enum LabelFlags
@@ -35,10 +35,13 @@ public:
 		eMultiLine = 1
 	};
 
-	GLWLabel(float x = 0.0f, float y = 0.0f, 
+	GLWLabel(
+		float x = 0.0f,
+		float y = 0.0f,
 		const LangString &labelText = LangString(),
 		float size = 14.0f,
-		unsigned int flags = 0);
+		unsigned int flags = 0
+	);
 	virtual ~GLWLabel();
 
 	virtual float getW() { calcWidth(); return GLWidget::getW(); }
@@ -58,11 +61,11 @@ public:
 	REGISTER_CLASS_HEADER(GLWLabel);
 
 protected:
+	float size_;
 	unsigned int flags_;
+	Vector color_;
 	LangString labelText_;
 	std::vector<LangString> labelTexts_;
-	Vector color_;
-	float size_;
 
 };
 

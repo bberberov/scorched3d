@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,21 +20,23 @@
 
 #include <GLEXT/GLMenuI.h>
 
-GLMenuItem::GLMenuItem(const LangString &text, 
-	ToolTip *tooltip, 
+GLMenuItem::GLMenuItem(
+	const LangString &text,
+	ToolTip *tooltip,
 	bool selected,
 	GLTextureBase *texture,
-	void *userData) : 
-	menuText_(text), tip_(tooltip), 
-	selected_(selected), texture_(texture),
-	userData_(userData), seperator_(false)
-{
-}
+	void *userData
+) :
+	menuText_(text),
+	tip_(tooltip),
+	selected_(selected),
+	seperator_(false),
+	texture_(texture),
+	userData_(userData)
+{}
 
 GLMenuI::~GLMenuI()
-{
-
-}
+{}
 
 LangString *GLMenuI::getMenuText(const char* menuName)
 {
@@ -52,9 +54,7 @@ bool GLMenuI::getEnabled(const char* menuName)
 }
 
 void GLMenuI::menuSelection(const char* menuName, const int position, GLMenuItem &item)
-{
-
-}
+{}
 
 bool GLMenuI::menuOpened(const char* menuName)
 {

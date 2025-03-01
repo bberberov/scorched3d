@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,15 +36,18 @@
 #include <common/OptionsScorched.h>
 #include <landscapemap/DeformLandscape.h>
 
-TargetFalling::TargetFalling(Weapon *weapon, unsigned int fallingPlayerId,
-				   WeaponFireContext &weaponContext,
-				   Parachute *parachute) :
-	PhysicsParticle(weaponContext.getInternalContext().getReferenced()),
+TargetFalling::TargetFalling(
+	Weapon *weapon,
+	unsigned int fallingPlayerId,
+	WeaponFireContext &weaponContext,
+	Parachute *parachute
+) :
+	PhysicsParticle( weaponContext.getInternalContext().getReferenced() ),
 	weapon_(weapon),
 	fallingPlayerId_(fallingPlayerId),
-	weaponContext_(weaponContext), parachute_(parachute)
-{
-}
+	weaponContext_(weaponContext),
+	parachute_(parachute)
+{}
 
 TargetFalling::~TargetFalling()
 {
@@ -63,8 +66,7 @@ TargetFalling::~TargetFalling()
 
 void TargetFalling::init()
 {
-	Target *current = 
-		context_->getTargetContainer().getTargetById(fallingPlayerId_);
+	Target *current = context_->getTargetContainer().getTargetById(fallingPlayerId_);
 	if (current && 
 		!current->getTargetState().getFalling() && 
 		!current->getTargetState().getNoFalling())
@@ -87,8 +89,7 @@ void TargetFalling::init()
 
 std::string TargetFalling::getActionDetails()
 {
-	return S3D::formatStringBuffer("%u %s",
-		fallingPlayerId_, weapon_->getParent()->getName());
+	return S3D::formatStringBuffer("%u %s", fallingPlayerId_, weapon_->getParent()->getName());
 }
 
 void TargetFalling::simulate(fixed frameTime, bool &remove)
@@ -114,8 +115,10 @@ void TargetFalling::simulate(fixed frameTime, bool &remove)
 	PhysicsParticle::simulate(frameTime, remove);
 }
 
-void TargetFalling::collision(PhysicsParticleObject &position, 
-	ScorchedCollisionId collisionId)
+void TargetFalling::collision(
+	PhysicsParticleObject &position,
+	ScorchedCollisionId collisionId
+)
 {
 	Target *current = context_->getTargetContainer().getTargetById(fallingPlayerId_);
 	if (current && current->getAlive())
@@ -125,14 +128,13 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 		fixed damage = dist * 20;
 
 		// Check we need to cancel the damage
-		fixed minDist = fixed(context_->getOptionsGame().
-			getMinFallingDistance()) / 10;
+		fixed minDist = fixed(context_->getOptionsGame().getMinFallingDistance()) / 10;
 		if (dist < minDist)
 		{
 			// No damage (or parachutes used for tiny falls)
 			damage = 0;
 		}
-		else if (!context_->getOptionsGame().getTankFallingDamage() && current->getType() != Target::TypeTarget) 
+		else if (!context_->getOptionsGame().getTankFallingDamage() && current->getType() != Target::TypeTarget)
 		{
 			damage = 0;
 		}
@@ -152,8 +154,10 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 				if (current->getType() != Target::TypeTarget)
 				{
 					Tanket *currentTanket = (Tanket *) current;
-					currentTanket->getAccessories().rm(parachute_->getParent(),
-						parachute_->getParent()->getUseNumber());
+					currentTanket->getAccessories().rm(
+						parachute_->getParent(),
+						parachute_->getParent()->getUseNumber()
+					);
 					if (!currentTanket->getAccessories().canUse(parachute_->getParent()))
 					{
 						currentTanket->getParachute().setCurrentParachute(0);
@@ -165,9 +169,12 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 		if (context_->getOptionsGame().getActionSyncCheck())
 		{
 			context_->getSimulator().addSyncCheck(
-				S3D::formatStringBuffer("TargetFalling: %u %s", 
+				S3D::formatStringBuffer(
+					"TargetFalling: %u %s",
 					current->getPlayerId(),
-					position.getPosition().asQuickString()));
+					position.getPosition().asQuickString()
+				)
+			);
 		}
 
 		// Move the tank to the final position
@@ -182,7 +189,11 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 		// Check if we have collected/given any items
 		std::map<unsigned int, Target *> collisionTargets;
 		context_->getTargetSpace().getCollisionSet(
-			current->getLife().getTargetPosition(), 3, collisionTargets, false);
+			current->getLife().getTargetPosition(),
+			3,
+			collisionTargets,
+			false
+		);
 		std::map<unsigned int, Target *>::iterator itor;
 		for (itor = collisionTargets.begin();
 			itor != collisionTargets.end();
@@ -198,10 +209,16 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 				WeaponFireContext weaponContext(weaponContext_);
 				weaponContext.setPlayerId(collisionTarget->getPlayerId());
 
-				TargetDamage::damageTarget(*context_,
-					weapon_, fallingPlayerId_, weaponContext, 
+				TargetDamage::damageTarget(
+					*context_,
+					weapon_,
+					fallingPlayerId_,
+					weaponContext,
 					current->getLife().getLife(),
-					false, false, false);
+					false,
+					false,
+					false
+				);
 
 				// This removes the target so no point continuing
 				break;
@@ -214,10 +231,16 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 				WeaponFireContext weaponContext(weaponContext_);
 				weaponContext.setPlayerId(current->getPlayerId());
 
-				TargetDamage::damageTarget(*context_, weapon_, 
-					collisionTarget->getPlayerId(), weaponContext_, 
+				TargetDamage::damageTarget(
+					*context_,
+					weapon_,
+					collisionTarget->getPlayerId(),
+					weaponContext_,
 					collisionTarget->getLife().getLife(),
-					false, false, false);
+					false,
+					false,
+					false
+				);
 			}
 		}
 
@@ -225,9 +248,14 @@ void TargetFalling::collision(PhysicsParticleObject &position,
 		// Note: This may remove the target so do this last
 		TargetDamageCalc::damageTarget(
 			*context_,
-			fallingPlayerId_, weapon_, 
-			weaponContext_, damage, 
-			false, false, false);
+			fallingPlayerId_,
+			weapon_,
+			weaponContext_,
+			damage,
+			false,
+			false,
+			false
+		);
 	}
 
 	PhysicsParticle::collision(position, collisionId);

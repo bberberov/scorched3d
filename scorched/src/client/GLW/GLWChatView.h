@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,9 +30,7 @@
 #include <lang/LangString.h>
 #include <list>
 
-class GLWChatView : 
-	public GLWidget,
-	public GLWButtonI
+class GLWChatView : public GLWidget, public GLWButtonI
 {
 public:
 	GLWChatView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
@@ -59,9 +57,13 @@ public:
 	virtual void mouseDown(int button, float x, float y, bool &skipRest);
 	virtual void mouseUp(int button, float x, float y, bool &skipRest);
 	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void keyDown(
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 	virtual void setX(float x);
 	virtual void setY(float y);
 
@@ -78,14 +80,13 @@ private:
 	class GLWChatViewEntry
 	{
 	public:
-		GLWChatViewEntry(const Vector &color, const LangString &text, 
-			float timeRemaining, GLFont2dI *renderer) 
-		{
-			this->color = color;
-			this->text = text;
-			this->timeRemaining = timeRemaining;
-			this->renderer = renderer;
-		}
+		GLWChatViewEntry(const Vector &color, const LangString &text, float timeRemaining, GLFont2dI *renderer) :
+			color(color),
+			text(text),
+			timeRemaining(timeRemaining),
+			renderer(renderer)
+		{}
+
 		virtual ~GLWChatViewEntry()
 		{
 			delete renderer;
@@ -97,22 +98,26 @@ private:
 		GLFont2dI *renderer;
 	};
 
+	KeyboardKey *scrollUpKey_;
+	KeyboardKey *scrollDownKey_;
+	KeyboardKey *scrollResetKey_;
 	GLWIconButton upButton_;
 	GLWIconButton downButton_;
 	GLWIconButton resetButton_;
 
-	bool alignTop_, parentSized_;
-	bool splitLargeLines_, allowScroll_;
+	bool alignTop_;
+	bool parentSized_;
+	bool splitLargeLines_;
+	bool allowScroll_;
 	int lineDepth_;
 	int scrollPosition_;
-	float displayTime_;
-	float fontSize_, outlineFontSize_;
-	int visibleLines_, totalLines_;
+	int visibleLines_;
+	int totalLines_;
 	int currentVisible_;
+	float displayTime_;
+	float fontSize_;
+	float outlineFontSize_;
 	std::list<GLWChatViewEntry *> textLines_;
-	KeyboardKey *scrollUpKey_;
-	KeyboardKey *scrollDownKey_;
-	KeyboardKey *scrollResetKey_;
 };
 
 #endif // __INCLUDE_GLWChatViewh_INCLUDE__

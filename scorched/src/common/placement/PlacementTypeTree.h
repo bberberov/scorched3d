@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,16 +31,19 @@ public:
 
 	virtual PlacementType::Type getType() { return PlacementType::eTree; }
 	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
+	virtual void getPositions(
+		ScorchedContext &context,
 		RandomGenerator &generator,
 		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0);
+		ProgressCounter *counter = 0
+	);
 
 protected:
 	int maxobjects;
 	int numobjects;
 	int numclusters;
-	fixed minheight, maxheight;
+	fixed minheight;
+	fixed maxheight;
 	fixed mincloseness;
 	std::string mask;
 };

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,14 +24,19 @@
 #include <common/Logger.h>
 
 NetServerTCP3Recv::NetServerTCP3Recv(
-	TCPsocket socket, 
-	unsigned int destinationId, unsigned int ipAddress,
-	NetMessageHandler *recieveMessageHandler) :
-	socket_(socket), 
-	destinationId_(destinationId), ipAddress_(ipAddress),
+	TCPsocket socket,
+	unsigned int destinationId,
+	unsigned int ipAddress,
+	NetMessageHandler *recieveMessageHandler
+) :
+	socket_(socket),
+	destinationId_(destinationId),
+	ipAddress_(ipAddress),
 	recieveMessageHandler_(recieveMessageHandler),
-	messagesRecieved_(0), bytesIn_(0),
-	stopped_(false), running_(true)
+	messagesRecieved_(0),
+	bytesIn_(0),
+	stopped_(false),
+	running_(true)
 {
 	socketSet_ = SDLNet_AllocSocketSet(1);
 	SDLNet_TCP_AddSocket(socketSet_, socket_);

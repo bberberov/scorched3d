@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,23 +29,26 @@ public:
 	WeaponMoveTank();
 	virtual ~WeaponMoveTank();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	int getMaximumRange() { return maximumRange_; }
 	fixed getStepTime() { return stepTime_; }
 	int getUseFuel() { return useFuel_; }
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponMoveTank, AccessoryPart::AccessoryWeapon);
 
 protected:
-	int maximumRange_;
 	fixed stepTime_;
 	int useFuel_;
+	int maximumRange_;
 
 };
 

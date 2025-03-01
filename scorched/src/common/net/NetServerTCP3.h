@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -58,14 +58,14 @@ protected:
 
 	NetMessageHandler outgoingMessageHandler_;
 	NetMessageHandler incomingMessageHandler_;
-	TCPsocket serverSock_;
-	SDLNet_SocketSet serverSockSet_;
+	unsigned int serverDestinationId_;
+	unsigned int nextDestinationId_;
 	SDL_Thread *sendRecvThread_;
+	SDLNet_SocketSet serverSockSet_;
+	TCPsocket serverSock_;
 	bool stopped_;
 	std::map<unsigned int, NetServerTCP3Destination *> destinations_;
 	std::list<NetServerTCP3Destination *> finishedDestinations_;
-	unsigned int serverDestinationId_;
-	unsigned int nextDestinationId_;
 
 	void checkNewConnections();
 	void checkClients();
@@ -74,12 +74,17 @@ protected:
 	void actualSendRecvFunc();
 	static int sendRecvThreadFunc(void *);
 
-	void sendMessageTypeDest(NetBuffer &buffer, 
-		unsigned int destination, unsigned int flags, 
-		NetMessage::MessageType type);
-	void destroyDestination(NetBuffer &disconectMessage,
-		unsigned int destinationId, 
-		NetMessage::DisconnectFlags type);
+	void sendMessageTypeDest(
+		NetBuffer &buffer,
+		unsigned int destination,
+		unsigned int flags,
+		NetMessage::MessageType type
+	);
+	void destroyDestination(
+		NetBuffer &disconectMessage,
+		unsigned int destinationId,
+		NetMessage::DisconnectFlags type
+	);
 	unsigned int addDestination(TCPsocket &socket);
 };
 

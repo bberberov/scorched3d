@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -46,13 +46,13 @@ REGISTER_CLASS_SOURCE(PlayMovesSimAction);
 
 PlayMovesSimAction::PlayMovesSimAction() :
 	moveId_(0)
-{
-}
+{}
 
 PlayMovesSimAction::PlayMovesSimAction(unsigned int moveId, bool timeoutPlayers, bool referenced) :
-	moveId_(moveId), timeoutPlayers_(timeoutPlayers), referenced_(referenced)
-{
-}
+	moveId_(moveId),
+	timeoutPlayers_(timeoutPlayers),
+	referenced_(referenced)
+{}
 
 PlayMovesSimAction::~PlayMovesSimAction()
 {
@@ -79,6 +79,7 @@ bool PlayMovesSimAction::invokeAction(ScorchedContext &context)
 		Tanket *tanket = context.getTargetContainer().getTanketById(message->getPlayerId());
 		if (tanket && tanket->getAlive())
 		{
+			// FIXME: Review and simplify control statements
 			switch (message->getType())
 			{
 			case ComsPlayedMoveMessage::eShot:
@@ -86,6 +87,16 @@ bool PlayMovesSimAction::invokeAction(ScorchedContext &context)
 				break;
 			case ComsPlayedMoveMessage::eResign:
 				tankResigned(context, tanket, *message);
+				break;
+			case ComsPlayedMoveMessage::eTimeout:
+				break;
+			case ComsPlayedMoveMessage::eSkip:
+				break;
+			case ComsPlayedMoveMessage::eFinishedBuy:
+				// Ignore
+				break;
+			case ComsPlayedMoveMessage::eNone:
+				// Ignore
 				break;
 			}
 
@@ -119,12 +130,12 @@ void PlayMovesSimAction::tankTimedOut(ScorchedContext &context, Tanket *tanket)
 
 	int allowedMissed = 
 		context.getOptionsGame().getAllowedMissedMoves();
-	if (allowedMissed > 0)
+	if (0 < allowedMissed)
 	{
 		tanket->getShotInfo().setMissedMoves(
 			tanket->getShotInfo().getMissedMoves() + 1);
 
-		if (tanket->getShotInfo().getMissedMoves() >= allowedMissed)
+		if ( allowedMissed <= tanket->getShotInfo().getMissedMoves() )
 		{
 			if (tanket->getType() == Target::TypeTank)
 			{

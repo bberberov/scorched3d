@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,31 +38,46 @@
 #include <weapons/AccessoryStore.h>
 #include <math.h>
 
-ShotProjectile::ShotProjectile(FixedVector &startPosition, FixedVector &velocity,
-							   WeaponProjectile *weapon, WeaponFireContext &weaponContext,
-							   unsigned int flareType,
-							   fixed spinSpeed, const Vector &spinAxis) :
-	PhysicsParticle(weaponContext.getInternalContext().getReferenced()),
-	startPosition_(startPosition), velocity_(velocity), 
-	weapon_(weapon), weaponContext_(weaponContext), 
-	flareType_(flareType), vPoint_(0),
-	snapTime_(fixed(true, 2000)), up_(false), collided_(false),
-	totalTime_(0), simulateTime_(0), 
-	spinSpeed_(spinSpeed), spinAxis_(spinAxis),
-	groups_(0), physicsSpin_(0)
-{
-}
+ShotProjectile::ShotProjectile(
+	FixedVector &startPosition,
+	FixedVector &velocity,
+	WeaponProjectile *weapon,
+	WeaponFireContext &weaponContext,
+	unsigned int flareType,
+	fixed spinSpeed,
+	const Vector &spinAxis
+) :
+	PhysicsParticle( weaponContext.getInternalContext().getReferenced() ),
+	groups_(nullptr),
+	startPosition_(startPosition),
+	velocity_(velocity),
+	weapon_(weapon),
+	weaponContext_(weaponContext),
+	vPoint_(nullptr),
+	flareType_(flareType),
+	up_(false),
+	collided_(false),
+	snapTime_(fixed(true, 2000)),
+	totalTime_(0),
+	simulateTime_(0),
+	spinSpeed_(spinSpeed),
+	physicsSpin_(0),
+	spinAxis_(spinAxis)
+{}
 
 void ShotProjectile::init()
 {
 	fixed weaponScale = weapon_->getScale(*context_);
 #ifndef S3D_SERVER
-	if (!context_->getServerMode()) 
+	if (!context_->getServerMode())
 	{
-		setActionRender(new MissileActionRenderer(flareType_, 
+		setActionRender(
+			new MissileActionRenderer(flareType_,
 				weaponScale.asFloat(),
 				spinSpeed_.asFloat(),
-				spinAxis_));
+				spinAxis_
+			)
+		);
 
 		if (!weapon_->getNoCameraTrack())
 		{
@@ -77,7 +92,8 @@ void ShotProjectile::init()
 				vPoint_,
 				5,
 				10,
-				false);
+				false
+			);
 			context_->getActionController().addAction(positionAction);
 		}
 	}
@@ -114,10 +130,12 @@ void ShotProjectile::init()
 
 std::string ShotProjectile::getActionDetails()
 {
-	return S3D::formatStringBuffer("%s %s %s",
+	return S3D::formatStringBuffer(
+		"%s %s %s",
 		startPosition_.asQuickString(),
 		velocity_.asQuickString(),
-		weapon_->getParent()->getName());
+		weapon_->getParent()->getName()
+	);
 }
 
 ShotProjectile::~ShotProjectile()
@@ -126,14 +144,15 @@ ShotProjectile::~ShotProjectile()
 	delete groups_;
 }
 
-void ShotProjectile::collision(PhysicsParticleObject &position, 
-	ScorchedCollisionId collisionId)
+void ShotProjectile::collision(
+	PhysicsParticleObject &position,
+	ScorchedCollisionId collisionId
+)
 {
 	if (!collision_)
 	{
 		// Tell all AIs about this collision
-		std::map<unsigned int, Tanket *> &tanks = 
-			context_->getTargetContainer().getTankets();
+		std::map<unsigned int, Tanket *> &tanks = context_->getTargetContainer().getTankets();
 		std::map<unsigned int, Tanket *>::iterator itor;
 		for (itor = tanks.begin();
 			itor != tanks.end();
@@ -145,9 +164,12 @@ void ShotProjectile::collision(PhysicsParticleObject &position,
 			{		
 				if (tanket->getAlive())
 				{
-					ai->shotLanded(collisionId, 
-						getWeapon(), getPlayerId(), 
-						getPhysics().getPosition().asVector());
+					ai->shotLanded(
+						collisionId,
+						getWeapon(),
+						getPlayerId(),
+						getPhysics().getPosition().asVector()
+					);
 				}
 			}
 		}
@@ -236,7 +258,7 @@ void ShotProjectile::simulate(fixed frameTime, bool &remove)
 	{
 		FixedVector up(0, 0, 1);
 		FixedVector velocityPerp = (velocity_.Normalize() * up).Normalize();
-		if (velocityPerp == FixedVector::getNullVector()) 
+		if (velocityPerp == FixedVector::getNullVector())
 		{
 			velocityPerp = FixedVector(1, 0, 0);
 		}
@@ -323,21 +345,28 @@ void ShotProjectile::doCollision(FixedVector &position)
 	{
 		if (getWeapon()->getShowShotPath())
 		{
-			RenderTracer::instance()->
-				addSmokeTracer(weaponContext_.getPlayerId(), 
-					position.asVector(), positions_);
+			RenderTracer::instance()->addSmokeTracer(
+				weaponContext_.getPlayerId(),
+				position.asVector(),
+				positions_
+			);
 		}
 		else if (getWeapon()->getShowEndPoint())
 		{
-			RenderTracer::instance()->
-				addTracer(weaponContext_.getPlayerId(), position.asVector());
+			RenderTracer::instance()->addTracer(
+				weaponContext_.getPlayerId(),
+				position.asVector()
+			);
 		}
 	}
 #endif // #ifndef S3D_SERVER
 
 	FixedVector velocity;
 	getWeapon()->getCollisionAction()->fire(
-		*context_, weaponContext_, position, 
-		getPhysics().getVelocity());
+		*context_,
+		weaponContext_,
+		position,
+		getPhysics().getVelocity()
+	);
 }
 

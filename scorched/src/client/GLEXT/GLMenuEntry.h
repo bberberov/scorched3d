@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,13 +31,14 @@ class GLMenuEntry : public GLWSelectorI, public ToolTipI
 public:
 	GLMenuEntry(
 		const LangString &menuName,
-		char *menuNameInternal, 
+		const char *menuNameInternal,
 		const LangString &menuDescription,
-		float width, 
+		float width,
 		unsigned int state,
 		GLMenuI *callback,
 		Image *icon,
-		unsigned int flags);
+		unsigned int flags
+	);
 	virtual ~GLMenuEntry();
 
 	bool click(float currentTop, int x, int y);
@@ -63,18 +64,22 @@ public:
 	virtual void populateCalled(unsigned int id);
 
 protected:
+	LangString menuName_;
+	std::string menuNameInternal_;
+	LangString menuDescription_;
+
 	bool selected_;
-	float left_, top_;
-	float width_, height_;
+	float left_;
+	float top_;
+	float width_;
+	float height_;
 	unsigned int state_;
 	unsigned int flags_;
 	GLMenuI *callback_;
 	GLTexture *texture_;
-	ToolTip toolTip_;
 	Image *icon_;
+	ToolTip toolTip_;
 	std::list<GLMenuItem> menuItems_;
-	LangString menuName_, menuDescription_;
-	std::string menuNameInternal_;
 
 	void drawText();
 	void drawIcon();

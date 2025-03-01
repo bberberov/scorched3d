@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,15 +29,14 @@
 REGISTER_ACCESSORY_SOURCE(WeaponScatterPosition);
 
 WeaponScatterPosition::WeaponScatterPosition() :
-	aimedWeapon_(0), scatterpercentage_("WeaponScatterPosition::scatterpercentage")
-{
-
-}
+	scatterpercentage_("WeaponScatterPosition::scatterpercentage"),
+	aimedWeapon_(0)
+{}
 
 WeaponScatterPosition::~WeaponScatterPosition()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponScatterPosition::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -64,8 +63,12 @@ bool WeaponScatterPosition::parseXML(AccessoryCreateContext &context, XMLNode *a
 	return true;
 }
 
-void WeaponScatterPosition::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &p, FixedVector &velocity)
+void WeaponScatterPosition::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &p,
+	FixedVector &velocity
+)
 {
 	// Mininum height, if we are grounding
 	fixed allowedHeight = 0;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,27 +23,26 @@
 unsigned int ToolTip::nextId_ = 0;
 
 ToolTipI::~ToolTipI()
-{
+{}
 
-}
-
-ToolTip::ToolTip(unsigned int type, const LangString &tit, const LangString &tex) 
-	: id_(++nextId_), handler_(0)
+ToolTip::ToolTip(unsigned int type, const LangString &tit, const LangString &tex) :
+	handler_(nullptr),
+	id_(++nextId_)
 {
 	setText(type, tit, tex);
 }
 
 ToolTip::~ToolTip()
-{
-}
+{}
 
 void ToolTip::populate()
 {
 	if (handler_) handler_->populateCalled(id_);
 }
 
-void ToolTip::setText(unsigned int type, 
-	const LangString &title, const LangString &text)
+void ToolTip::setText(unsigned int type, const LangString &title, const LangString &text)
 {
-	type_ = type; title_ = title; text_ = text;
+	type_ = type;
+	title_ = title;
+	text_ = text;
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -49,7 +49,9 @@ bool ServerHaveModFilesHandler::processMessage(
 	ComsHaveModFilesMessage message;
 	if (!message.readMessage(reader)) return false;
 
+#ifdef S3D_SERVER
 	unsigned int destinationId = netMessage.getDestinationId();
+#endif
 
 	std::list<ModIdentifierEntry> neededEntries;
 	unsigned int neededLength = 0;

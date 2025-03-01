@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,11 +31,15 @@
 #include <common/Logger.h>
 
 TargetLife::TargetLife(bool serverMode, TargetSpace &targetSpace, unsigned int playerId) :
-	targetSpace_(targetSpace), serverMode_(serverMode), sphereGeom_(true),
-	life_(0), maxLife_(1), target_(0),
-	size_(2, 2, 2), floatBoundingSize_(0.0f)
-{
-}
+	serverMode_(serverMode),
+	targetSpace_(targetSpace),
+	target_(nullptr),
+	size_(2, 2, 2),
+	floatBoundingSize_(0.0f),
+	life_(0),
+	maxLife_(1),
+	sphereGeom_(true)
+{}
 
 TargetLife::~TargetLife()
 {

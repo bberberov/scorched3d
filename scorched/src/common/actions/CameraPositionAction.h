@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,7 +32,8 @@ public:
 		TankViewPointProvider *provider,
 		fixed showTime,
 		unsigned int priority,
-		bool explosion);
+		bool explosion
+	);
 	virtual ~CameraPositionAction();
 
 	virtual void init();
@@ -45,10 +46,10 @@ public:
 	unsigned int &getShowPriority() { return showPriority_; }
 
 protected:
+	unsigned int playerId_;
+	TankViewPointProvider *provider_;
 	fixed totalTime_;
 	fixed showTime_;
-	TankViewPointProvider *provider_;
-	unsigned int playerId_;
 	unsigned int showPriority_;
 	bool explosion_;
 };

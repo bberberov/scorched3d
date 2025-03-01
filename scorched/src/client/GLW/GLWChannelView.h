@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,9 +33,7 @@ public:
 	virtual void channelsChanged(unsigned int id) = 0;
 };
 
-class GLWChannelView : 
-	public GLWChatView,
-	public ClientChannelManagerI
+class GLWChannelView : public GLWChatView, public ClientChannelManagerI
 {
 public:
 	class BaseChannelEntry
@@ -44,6 +42,7 @@ public:
 		std::string channel;
 		unsigned int type;
 	};
+
 	class CurrentChannelEntry : public BaseChannelEntry
 	{
 	public:
@@ -74,7 +73,8 @@ public:
 	virtual void channelText(ChannelText &text);
 	virtual void registeredForChannels(
 		std::list<ChannelDefinition> &registeredChannels,
-		std::list<ChannelDefinition> &availableChannels);
+		std::list<ChannelDefinition> &availableChannels
+	);
 
 	REGISTER_CLASS_HEADER(GLWChannelView);
 
@@ -84,7 +84,8 @@ protected:
 	std::string textSound_;
 	unsigned int lastChannelId_;
 	unsigned int lastWhisperSrc_;
-	bool showChannelName_, showChannelNumber_;
+	bool showChannelName_;
+	bool showChannelNumber_;
 	std::map<std::string, Vector> channelColors_;
 	std::list<std::string> startupChannels_;
 	std::list<CurrentChannelEntry> currentChannels_;

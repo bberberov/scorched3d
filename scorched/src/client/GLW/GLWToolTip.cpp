@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -42,24 +42,30 @@ GLWToolTip *GLWToolTip::instance()
 	return instance_;
 }
 
-GLWToolTip::GLWToolTip() : 
+GLWToolTip::GLWToolTip() :
 	GameStateI("GLWToolTip"),
-	lastTip_(0), currentTip_(0),
-	timeDrawn_(0.0f), timeSeen_(0.0),
+	currentTip_(nullptr),
+	lastTip_(nullptr),
+	timeDrawn_(0.0f),
+	timeSeen_(0.0f),
 	refreshTime_(100.0f),
 	tipX_(0.0f), tipY_(0.0f),
 	tipW_(0.0f), tipH_(0.0f),
 	tipOffX_(0.0f), tipOffY_(0.0f)
-{
-}
+{}
 
 GLWToolTip::~GLWToolTip()
-{
-}
+{}
 
-bool GLWToolTip::addToolTip(ToolTip::ToolTipType type, 
-	const LangString &title, const LangString &text,
-	float x, float y, float w, float h)
+bool GLWToolTip::addToolTip(
+	ToolTip::ToolTipType type,
+	const LangString &title,
+	const LangString &text,
+	float x,
+	float y,
+	float w,
+	float h
+)
 {
 	if (!OptionsDisplay::instance()->getShowContextInfo() &&
 		(type & ToolTip::ToolTipInfo)) return false;
@@ -87,7 +93,13 @@ bool GLWToolTip::addToolTip(ToolTip::ToolTipType type,
 	return result;
 }
 
-bool GLWToolTip::addToolTip(ToolTip *tip, float x, float y, float w, float h)
+bool GLWToolTip::addToolTip(
+	ToolTip *tip,
+	float x,
+	float y,
+	float w,
+	float h
+)
 {
 	if (!OptionsDisplay::instance()->getShowContextInfo() &&
 		(tip->getType() & ToolTip::ToolTipInfo)) return false;

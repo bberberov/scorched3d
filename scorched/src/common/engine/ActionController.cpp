@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,15 +25,13 @@
 #include <common/OptionsScorched.h>
 #include <list>
 
-ActionController::ActionController() : 
-	referenceCount_(0),
-	context_(0),
-	actionProfiling_(false),
+ActionController::ActionController() :
+	context_(nullptr),
 	newActions_(10),
-	actions_(1000)
-{
-
-}
+	actions_(1000),
+	referenceCount_(0),
+	actionProfiling_(false)
+{}
 
 ActionController::~ActionController()
 {
@@ -48,8 +46,12 @@ void ActionController::clear(bool warn)
 		Action *act = newActions_.actions[a];
 		if (warn)
 		{
-			Logger::log(S3D::formatStringBuffer("Warning: removing added timed out action %s",
-				act->getActionType().c_str()));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Warning: removing added timed out action %s",
+					act->getActionType().c_str()
+				)
+			);
 		}
 		delete act;
 	}
@@ -61,8 +63,12 @@ void ActionController::clear(bool warn)
 		Action *act = actions_.actions[a];
 		if (warn)
 		{
-			Logger::log(S3D::formatStringBuffer("Warning: removing added timed out action %s",
-				act->getActionType().c_str()));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Warning: removing added timed out action %s",
+					act->getActionType().c_str()
+				)
+			);
 		}
 		delete act;
 	}
@@ -74,9 +80,13 @@ void ActionController::clear(bool warn)
 
 void ActionController::logActions()
 {
-	Logger::log(S3D::formatStringBuffer("ActionLog : New %i, Ref %i",
-		newActions_.actionCount,
-		referenceCount_));
+	Logger::log(
+		S3D::formatStringBuffer(
+			"ActionLog : New %i, Ref %i",
+			newActions_.actionCount,
+			referenceCount_
+		)
+	);
 	for (int a=0; a<actions_.actionCount; a++)
 	{
 		Action *act = actions_.actions[a];
@@ -109,9 +119,7 @@ void ActionController::stopActionProfiling()
 
 bool ActionController::noReferencedActions()
 {
-	bool finished = 
-		newActions_.empty() && 
-		(referenceCount_ == 0);
+	bool finished = newActions_.empty() && (referenceCount_ == 0);
 	return finished;
 }
 
@@ -150,16 +158,18 @@ void ActionController::addNewActions(fixed time)
 				std::string actionType = action->getActionType();
 				std::string actionDetails = action->getActionDetails();
 				context_->getSimulator().addSyncCheck(
-					S3D::formatStringBuffer("Added Action : %i %s:%s", 
+					S3D::formatStringBuffer(
+						"Added Action : %i %s:%s",
 						syncActionCount,
-						actionType.c_str(), 
-						actionDetails.c_str()));
+						actionType.c_str(),
+						actionDetails.c_str()
+					)
+				);
 			}
 		}
 		if (actionProfiling_)
 		{
-			std::map<std::string, int>::iterator findItor =
-				actionProfile_.find(action->getActionType());
+			std::map<std::string, int>::iterator findItor = actionProfile_.find(action->getActionType());
 			if (findItor == actionProfile_.end())
 			{
 				actionProfile_[action->getActionType()] = 1;
@@ -167,7 +177,7 @@ void ActionController::addNewActions(fixed time)
 			else
 			{
 				(*findItor).second++;
-			}	
+			}
 		}
 
 		if (action->getReferenced()) referenceCount_ ++;
@@ -203,9 +213,12 @@ void ActionController::simulate(fixed frameTime, fixed time)
 		{
 			if ((time - act->getActionStartTime() > 30))
 			{
-				Logger::log(S3D::formatStringBuffer(
-					"Warning: removing timed out action %s",
-					act->getActionType().c_str()));
+				Logger::log(
+					S3D::formatStringBuffer(
+						"Warning: removing timed out action %s",
+						act->getActionType().c_str()
+					)
+				);
 				remove = true;
 			}
 		}
@@ -225,9 +238,12 @@ void ActionController::simulate(fixed frameTime, fixed time)
 					std::string actionType = act->getActionType();
 					std::string actionDetails = act->getActionDetails();
 					context_->getSimulator().addSyncCheck(
-						S3D::formatStringBuffer("Rm Action : %s:%s", 
-							actionType.c_str(), 
-							actionDetails.c_str()));
+						S3D::formatStringBuffer(
+							"Rm Action : %s:%s",
+							actionType.c_str(),
+							actionDetails.c_str()
+						)
+					);
 				}
 			}
 
@@ -241,4 +257,3 @@ void ActionController::simulate(fixed frameTime, fixed time)
 	}
 	actions_.actionCount = keepcount;
 }
-

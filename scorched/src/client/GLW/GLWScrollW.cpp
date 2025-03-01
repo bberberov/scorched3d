@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,19 +24,20 @@
 REGISTER_CLASS_SOURCE(GLWScrollW);
 
 GLWScrollWI::~GLWScrollWI()
-{
-
-}
+{}
 
 GLWScrollW::GLWScrollW(float x, float y, float h, int min, int max, int see, GLWScrollWI *handler) :
 	GLWidget(x, y, 15.0f, h),
-	min_(min), max_(max), see_(see), current_(min),
-	handler_(handler), dragCurrent_(0),
-	bottomButton_(x_ + 2.0f, y_ + 2.0f, w_ - 4.0f, w_ - 4.0f),
+	min_(min), max_(max),
+	see_(see),
+	current_(min),
+	dragCurrent_(0),
+	handler_(handler),
 	topButton_(x_ + 2.0f, y_ + h_ - w_ + 2.0f, w_ - 4.0f, w_ - 4.0f),
-	middleButton_(x_ + 2.0f, 0.0f, w_ - 4.0f, 0.0f),
+	bottomButton_( x_ + 2.0f, y_ + 2.0f, w_ - 4.0f, w_ - 4.0f),
 	backButtonTop_(x_ + 2.0f, y_ + 2.0f, w_ - 4.0f, h_ - 4.0f),
-	backButtonBot_(x_ + 2.0f, y_ + 2.0f, w_ - 4.0f, h_ - 4.0f)
+	backButtonBot_(x_ + 2.0f, y_ + 2.0f, w_ - 4.0f, h_ - 4.0f),
+	middleButton_(x_ + 2.0f, 0.0f, w_ - 4.0f, 0.0f)
 {
 	bottomButton_.setHandler(this);
 	topButton_.setHandler(this);
@@ -48,9 +49,7 @@ GLWScrollW::GLWScrollW(float x, float y, float h, int min, int max, int see, GLW
 }
 
 GLWScrollW::~GLWScrollW()
-{
-
-}
+{}
 
 void GLWScrollW::setX(float x)
 {

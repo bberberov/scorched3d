@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,17 +29,33 @@ public:
 	ModelRendererTank(Model *tank);
 	virtual ~ModelRendererTank();
 
-	virtual void draw(float currentFrame, 
-		float distance, float fade, bool setState);
-	virtual void drawBottomAligned(float currentFrame, 
-		float distance, float fade, bool setState);
+	virtual void draw(
+		float currentFrame,
+		float distance,
+		float fade,
+		bool setState
+	);
+	virtual void drawBottomAligned(
+		float currentFrame,
+		float distance,
+		float fade,
+		bool setState
+	);
 
 	virtual Model *getModel() { return model_; }
 
-	void draw(float frame, float *rotMatrix, Vector &position, 
-		float fireOffSet, float rotXY, float rotXZ,
-		bool absCenter = false, float scale = 1.0f, float fade = 1.0f, 
-		bool setState = true);
+	void draw(
+		float frame,
+		float *rotMatrix,
+		Vector &position,
+		float fireOffSet,
+		float rotXY,
+		float rotXZ,
+		bool absCenter = false,
+		float scale = 1.0f,
+		float fade = 1.0f,
+		bool setState = true
+	);
 	int getNoTris();
 
 	FixedVector &getGunOffSet() { return gunOffset_; }
@@ -57,9 +73,11 @@ protected:
 	void setupModelRendererTank();
 
 	std::vector<Mesh *> normalMeshes_;
-	std::vector<Mesh *> turretMeshes_, gunMeshes_;
+	std::vector<Mesh *> turretMeshes_;
+	std::vector<Mesh *> gunMeshes_;
 	ModelRendererMesh normalRenderer_;
-	ModelRendererMesh turretRenderer_, gunRenderer_;
+	ModelRendererMesh turretRenderer_;
+	ModelRendererMesh gunRenderer_;
 };
 
 #endif // !defined(AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)

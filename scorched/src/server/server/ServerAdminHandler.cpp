@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -298,7 +298,7 @@ bool ServerAdminHandler::processMessage(
 					false);
 			}
 		}
-		break;	
+		break;
 	case ComsAdminMessage::AdminKick:
 		{
 			if (!ServerAdminCommon::kickPlayer(
@@ -383,7 +383,7 @@ bool ServerAdminHandler::processMessage(
 		break;
 	case ComsAdminMessage::AdminNewGame:
 		ServerAdminCommon::newGame(adminSession->credentials);
-		break;	
+		break;
 	case ComsAdminMessage::AdminSlap:
 		{
 			if (!ServerAdminCommon::slapPlayer(
@@ -426,6 +426,12 @@ bool ServerAdminHandler::processMessage(
 					destinationId, false);
 			}	
 		}
+		break;
+	default:
+		// ComsAdminMessage::AdminNone
+		// ComsAdminMessage::AdminLogin
+		// ComsAdminMessage::AdminLoginLocal
+		// ComsAdminMessage::AdminKill
 		break;
 	}
 

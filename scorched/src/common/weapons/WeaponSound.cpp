@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,17 +26,15 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponSound);
 
-WeaponSound::WeaponSound() : 
-	gain_(1), relative_(false),
-	rolloff_(1), referenceDistance_(75)
-{
-
-}
+WeaponSound::WeaponSound() :
+	gain_(1),
+	relative_(false),
+	rolloff_(1),
+	referenceDistance_(75)
+{}
 
 WeaponSound::~WeaponSound()
-{
-
-}
+{}
 
 const char *WeaponSound::getSound()
 {
@@ -61,9 +59,12 @@ bool WeaponSound::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNo
 	return true;
 }
 
-void WeaponSound::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponSound::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
-	context.getActionController().addAction(
-		new SoundAction(position, this));
+	context.getActionController().addAction( new SoundAction(position, this) );
 }

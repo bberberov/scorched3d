@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,8 +37,7 @@ class ModelRendererSimulator;
 class GLWWindView : public GLWidget
 {
 public:
-	GLWWindView(float x = 0.0f, float y = 0.0f,
-		float w = 0.0f, float h = 0.0f);
+	GLWWindView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
 	virtual ~GLWWindView();
 
 	virtual void draw();
@@ -47,9 +46,9 @@ public:
 	REGISTER_CLASS_HEADER(GLWWindView);
 
 protected:
+	unsigned int listNo_;
 	unsigned int changeCount_;
 	ModelRendererSimulator *windModel_;
-	unsigned int listNo_;
 
 	void drawArrow();
 	void drawScene();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,14 +24,22 @@
 #include <engine/Simulator.h>
 #include <common/OptionsScorched.h>
 
-WeaponFireContextInternal::WeaponFireContextInternal(unsigned int selectPositionX, unsigned int selectPositionY,
-		const FixedVector &velocityVector, bool referenced, bool updateStats) :
-	referenced_(referenced), updateStats_(updateStats),
-	killCount_(0), referenceCount_(0), labelCount_(0),
+WeaponFireContextInternal::WeaponFireContextInternal(
+	unsigned int selectPositionX,
+	unsigned int selectPositionY,
+	const FixedVector &velocityVector,
+	bool referenced,
+	bool updateStats
+) :
+	selectPositionX_(selectPositionX),
+	selectPositionY_(selectPositionY),
 	velocityVector_(velocityVector),
-	selectPositionX_(selectPositionX), selectPositionY_(selectPositionY)
-{
-}
+	referenced_(referenced),
+	updateStats_(updateStats),
+	killCount_(0),
+	referenceCount_(0),
+	labelCount_(0)
+{}
 
 WeaponFireContextInternal::~WeaponFireContextInternal()
 {
@@ -60,10 +68,14 @@ int WeaponFireContextInternal::getIncLabelCount(unsigned int label)
 	return ++(*labelCount_)[label];
 }
 
-WeaponFireContext::WeaponFireContext(unsigned int playerId, 
-	unsigned int selectPositionX, unsigned int selectPositionY,
+WeaponFireContext::WeaponFireContext(
+	unsigned int playerId,
+	unsigned int selectPositionX,
+	unsigned int selectPositionY,
 	const FixedVector &velocityVector,
-	bool referenced, bool updateStats) :
+	bool referenced,
+	bool updateStats
+) :
 	playerId_(playerId)
 {
 	internalContext_ = new WeaponFireContextInternal(selectPositionX, selectPositionY,
@@ -84,16 +96,12 @@ WeaponFireContext::~WeaponFireContext()
 	internalContext_->decrementReference();
 }
 
-Weapon::Weapon() : 
+Weapon::Weapon() :
 	armsLevel_(-1)
-{
-
-}
+{}
 
 Weapon::~Weapon()
-{
-
-}
+{}
 
 bool Weapon::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 {
@@ -109,9 +117,12 @@ int Weapon::getArmsLevel()
 	return armsLevel_;
 }
 
-void Weapon::fire(ScorchedContext &context,
+void Weapon::fire(
+	ScorchedContext &context,
 	WeaponFireContext &weaponContext,
-	FixedVector &position, FixedVector &velocity)
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	if (context.getOptionsGame().getWeaponSyncCheck())
 	{
@@ -121,9 +132,12 @@ void Weapon::fire(ScorchedContext &context,
 	fireWeapon(context, weaponContext, position, velocity);
 }
 
-void Weapon::addWeaponSyncCheck(ScorchedContext &context,
+void Weapon::addWeaponSyncCheck(
+	ScorchedContext &context,
 	WeaponFireContext &weaponContext,
-	FixedVector &position, FixedVector &velocity)
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	context.getSimulator().addSyncCheck(S3D::formatStringBuffer("WeaponFire %s-%u-%s %u %s %s",
 		getParent()->getName(), getParent()->getAccessoryId(), getAccessoryTypeName(),

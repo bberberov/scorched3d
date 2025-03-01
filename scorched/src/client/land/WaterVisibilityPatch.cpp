@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,24 +25,28 @@
 #include <geomipmap/MipMapPatchIndexs.h>
 #include <graph/OptionsDisplay.h>
 
-WaterVisibilityPatch::WaterVisibilityPatch() : 
+WaterVisibilityPatch::WaterVisibilityPatch() :
+	visibilityIndex_(4),
 	visible_(false),
-	leftPatch_(0), rightPatch_(0),
-	topPatch_(0), bottomPatch_(0),
-	visibilityIndex_(4)
-{
-}
+	leftPatch_(nullptr),
+	rightPatch_(nullptr),
+	topPatch_(nullptr),
+	bottomPatch_(nullptr)
+{}
 
 WaterVisibilityPatch::~WaterVisibilityPatch()
-{
-}
+{}
 
-void WaterVisibilityPatch::setLocation(int x, int y,
-	int patchX, int patchY,
-	WaterVisibilityPatch *leftPatch, 
-	WaterVisibilityPatch *rightPatch, 
-	WaterVisibilityPatch *topPatch, 
-	WaterVisibilityPatch *bottomPatch)
+void WaterVisibilityPatch::setLocation(
+	int x,
+	int y,
+	int patchX,
+	int patchY,
+	WaterVisibilityPatch *leftPatch,
+	WaterVisibilityPatch *rightPatch,
+	WaterVisibilityPatch *topPatch,
+	WaterVisibilityPatch *bottomPatch
+)
 {
 	x_ = x; y_ = y;
 	leftPatch_ = leftPatch;

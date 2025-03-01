@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -43,7 +43,7 @@ protected:
 		float width;
 	};
 	std::vector<OptionDefinition> definitions_;
-	int selected_;
+	size_t selected_;
 
 private:
 	StartDialog();

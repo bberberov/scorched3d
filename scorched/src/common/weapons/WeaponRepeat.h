@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,23 +29,29 @@ public:
 	WeaponRepeat();
 	virtual ~WeaponRepeat();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponRepeat, AccessoryPart::AccessoryWeapon);
 
 	virtual void weaponCallback(
 		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity,
+		unsigned int userData
+	);
 
 protected:
-	Weapon *repeatWeapon_;
 	NumberParser delay_;
+	Weapon *repeatWeapon_;
 	int repeat_;
 
 };

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,7 @@
 
 class Line;
 class GraphicalHeightMap;
-class HeightMap  
+class HeightMap
 {
 public:
 	HeightMap();
@@ -42,10 +42,12 @@ public:
 	int getMapHeight() { return height_; }
 
 	// Get height fns (z values)
-	inline fixed getHeight(int w, int h) { 
-		if (w >= 0 && h >= 0 && w<=width_ && h<=height_) 
-			return heightData_[(width_+1) * h + w].position[2]; 
-		return fixed(0); }
+	inline fixed getHeight(int w, int h)
+	{
+		if (0 <= w && w <= width_ && 0 <= h && h <= height_)
+			return heightData_[ (width_+1) * h + w ].position[2];
+		return fixed(0);
+	}
 	fixed getInterpHeight(fixed w, fixed h);
 
 	// Get normal functions
@@ -67,10 +69,11 @@ protected:
 		FixedVector normal;
 	};
 
-	bool invertedNormals_;
-	int width_, height_;
+	int width_;
+	int height_;
 	HeightData *heightData_;
 	GraphicalHeightMap *graphicalMap_;
+	bool invertedNormals_;
 
 	bool getVector(FixedVector &vec, int x, int y);
 	void getVectorPos(int pos, int &x, int &y, int dist=1);

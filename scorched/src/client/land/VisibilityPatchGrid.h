@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -48,10 +48,13 @@ public:
 	void drawRoof(int addIndex, bool verticesOnly, bool allPatches);
 	void drawLandLODLevels();
 	void drawSurround();
-	void drawWater(Water2Patches &patches, 
-		MipMapPatchIndexs &indexes, Vector &cameraPosition, 
+	void drawWater(
+		Water2Patches &patches,
+		MipMapPatchIndexs &indexes,
+		Vector &cameraPosition,
 		Vector landscapeSize,
-		GLSLShaderSetup *waterShader);
+		GLSLShaderSetup *waterShader
+	);
 
 	int getEpocNumber() { return epoc_; }
 	int getVisibleLandPatchesCount() { 
@@ -89,7 +92,13 @@ protected:
 	int visibilityWidth_, visibilityHeight_;
 
 	void clear();
-	void drawHeightMap(GraphicalLandscapeMap *landscapeMap, int addIndex, bool verticesOnly, bool allPatches, bool roof);
+	void drawHeightMap(
+		GraphicalLandscapeMap *landscapeMap,
+		int addIndex,
+		bool verticesOnly,
+		bool allPatches,
+		bool roof
+	);
 	void recalculateErrors(FixedVector &position, fixed size, bool roof);
 
 private:

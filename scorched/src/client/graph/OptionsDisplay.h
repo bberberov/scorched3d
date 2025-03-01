@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,9 +30,9 @@ public:
 
 	enum DataType
 	{
-		NoAccess = 0,
-		RWAccess = 1,
-		RAccess = 2,
+		NoAccess  = 0,
+		RWAccess  = 1,
+		RAccess   = 2,
 		NoRestore = 4,
 		DebugOnly = 8
 	};
@@ -414,6 +414,156 @@ protected:
 	static OptionsDisplay *instance_;
 	std::list<OptionEntry *> options_;
 
+	// BEGIN online
+	OptionEntryString hostDescription_;
+	OptionEntryString lastVersionPlayed_;
+	OptionEntryBool clientLogToFile_;
+	OptionEntryInt clientLogState_;
+	OptionEntryBool validateServerIp_;
+	OptionEntryString onlineUserIcon_;
+	OptionEntryString onlineUserName_;
+	OptionEntryString onlineTankModel_;
+	OptionEntryVector onlineColor_;
+	// END   online
+
+	// BEGIN UI
+	OptionEntryBool hideFinalScore_;
+	OptionEntryString buyTab_;
+	OptionEntryBoundedInt dialogSize_;
+	OptionEntryInt tankModelSize_;
+	OptionEntryInt toolTipTime_;
+	OptionEntryInt toolTipSpeed_;
+	OptionEntryBool smoothLines_;
+	OptionEntryBool hideMenus_;
+	OptionEntryBool saveWindowPositions_;
+	OptionEntryBool storePlayerCamera_;
+	OptionEntryBool restricedCameraMovement_;
+	OptionEntryBool noPlanDraw_;
+	OptionEntryBool noProgressBackdrop_;
+	OptionEntryBool showContextHelp_;
+	OptionEntryBool showContextInfo_;
+	// END   UI
+
+	// BEGIN window
+	OptionEntryBoundedInt brightness_;
+	OptionEntryBool fullScreen_;
+	OptionEntryBool moreRes_;
+	OptionEntryInt colorComponentSize_;
+	OptionEntryInt bitsPerPixel_;
+	OptionEntryInt screenWidth_;
+	OptionEntryInt screenHeight_;
+	// END   window
+
+	// BEGIN controls
+	OptionEntryBool invertElevation_;
+	OptionEntryBool invertMouse_;
+	OptionEntryBool swapYAxis_;
+	OptionEntryBool sideScroll_;
+	OptionEntryBool softwareMouse_;
+	OptionEntryEnum accessorySortKey_;
+	// END   controls
+
+	// BEGIN OpenGL
+	OptionEntryInt framesPerSecondLimit_;
+	OptionEntryBool noFog_;
+	OptionEntryBool detailTexture_;
+	OptionEntryBool noGLTexSubImage_;
+	OptionEntryBool noGLShaders_;
+	OptionEntryBool simpleWaterShaders_;
+	OptionEntryBool noGLExt_;
+	OptionEntryBool noGLMultiTex_;
+	OptionEntryBool noThreadedDraw_;
+	OptionEntryBool noGLEnvCombine_;
+	OptionEntryBool noGLCubeMap_;
+	OptionEntryBool noGLSphereMap_;
+	OptionEntryBool noGLDrawElements_;
+	OptionEntryBool noGLHardwareMipmaps_;
+	OptionEntryInt depthBufferBits_;
+	OptionEntryBool doubleBuffer_;
+	OptionEntryInt landShadowsLOD_;
+	OptionEntryInt landDetialError_;
+	OptionEntryInt waterDetailLevelRamp_;
+	OptionEntryBool noVBO_;
+	OptionEntryBool depricatedMoWaterBuffers_;
+	// END   OpenGL
+
+	// BEGIN sound
+	OptionEntryInt soundChannels_;
+	OptionEntryBool noCountDownSound_;
+	OptionEntryBool noChannelTextSound_;
+	OptionEntryBool noSound_;
+	OptionEntryBool noMusic_;
+	OptionEntryBoundedInt soundVolume_;
+	OptionEntryBoundedInt ambientSoundVolume_;
+	OptionEntryBoundedInt musicVolume_;
+	// END   sound
+
+	OptionEntryBool noShadows_;
+	OptionEntryBool noGLShadows_;
+	OptionEntryBool noGLObjectShadows_;
+	OptionEntryBool noObjectReflections_;
+	OptionEntryBool noParticleReflections_;
+	OptionEntryBool noSimulateParticles_;
+	OptionEntryBool noDrawParticles_;
+	OptionEntryBool noTrees_;
+	OptionEntryBool noTargets_;
+	OptionEntryBool lowTreeDetail_;
+	OptionEntryBool noDepthSorting_;
+
+	// BEGIN draw
+	OptionEntryBoundedInt explosionParts_;
+	OptionEntryBoundedInt explosionSubParts_;
+	OptionEntryBoundedInt explosionParticleMult_;
+	OptionEntryBool drawLines_;
+	OptionEntryBool drawLandLOD_;
+	OptionEntryBool drawNormals_;
+	OptionEntryBool drawGraphicalShadowMap_;
+	OptionEntryBool drawGraphicalReflectionMap_;
+	OptionEntryFloat drawCullingDistance_;
+	OptionEntryFloat drawFadeStartDistance_;
+	OptionEntryBool drawCollisionGeoms_;
+	OptionEntryBool drawCollisionSpace_;
+	OptionEntryBool drawBoundingSpheres_;
+	OptionEntryBool noLenseFlare_;
+	OptionEntryBool noSkins_;
+	OptionEntryBool frameTimer_;
+	OptionEntryBool drawWater_;
+	OptionEntryBool drawLandscape_;
+	OptionEntryBool drawSurround_;
+	OptionEntryBool drawMovement_;
+	OptionEntryBool noWaterMovement_;
+	OptionEntryBool noWaterReflections_;
+	OptionEntryBool noWaterWaves_;
+	OptionEntryBool noWaterLOD_;
+	OptionEntryBool noLandLOD_;
+	OptionEntryBool noSkyLayers_;
+	OptionEntryBool noSkyMovement_;
+	OptionEntryBool noPrecipitation_;
+	OptionEntryBool drawPlayerNames_;
+	OptionEntryBool drawPlayerIcons_;
+	OptionEntryBool drawPlayerSight_;
+	OptionEntryBool oldSightPosition_;
+	OptionEntryBool largeSight_;
+	OptionEntryBool drawPlayerColor_;
+	OptionEntryBool drawPlayerHealth_;
+	// END   draw
+
+	OptionEntryBool depricatedNoModelLOD_;
+	OptionEntryBool noModelLighting_;
+	OptionEntryBool useLandscapeTexture_;
+	OptionEntryBool useWaterTexture_;
+	OptionEntryBoundedInt antiAlias_;
+	OptionEntryBoundedInt texSize_;
+	OptionEntryBoundedInt tankDetail_;
+	OptionEntryBoundedInt effectsDetail_;
+	OptionEntryBoundedInt deformRecalculationTime_;
+
+	OptionEntryBool depricatedNoArenaMoveVisibility_;
+	OptionEntryBool deprecatedSortAccessories_;
+	OptionEntryBool focusPause_;
+	OptionEntryBool openGLWarnings_;
+
+	// BEGIN Deprecated options
 	OptionEntryBool depricatedNoBoidSound_;
 	OptionEntryBool depricatedNoBOIDS_;
 	OptionEntryBoundedInt depricatedMaxModelTriPercentage_;
@@ -439,132 +589,7 @@ protected:
 	OptionEntryFloat depricatedDrawDistance_;
 	OptionEntryFloat depricatedDrawDistanceFade_;
 	OptionEntryInt depricatedLandDetailLevelRamp_;
-
-	OptionEntryBoundedInt brightness_;
-	OptionEntryBoundedInt explosionParts_;
-	OptionEntryBoundedInt explosionSubParts_;
-	OptionEntryBoundedInt explosionParticleMult_;
-	OptionEntryBool drawMovement_;
-	OptionEntryInt colorComponentSize_;
-	OptionEntryInt soundChannels_;
-	OptionEntryInt bitsPerPixel_;
-	OptionEntryInt depthBufferBits_;
-	OptionEntryInt tankModelSize_;
-	OptionEntryInt toolTipTime_;
-	OptionEntryInt toolTipSpeed_;
-	OptionEntryInt framesPerSecondLimit_;
-	OptionEntryInt landDetialError_;
-	OptionEntryInt waterDetailLevelRamp_;
-	OptionEntryInt landShadowsLOD_;
-	OptionEntryBool noFog_;
-	OptionEntryBool detailTexture_;
-	OptionEntryBool saveWindowPositions_;
-	OptionEntryBool doubleBuffer_;
-	OptionEntryBool smoothLines_;
-	OptionEntryBool moreRes_;
-	OptionEntryBool fullScreen_;
-	OptionEntryBool noGLTexSubImage_;
-	OptionEntryBool noGLCubeMap_;
-	OptionEntryBool noGLSphereMap_;
-	OptionEntryBool noGLExt_;
-	OptionEntryBool noGLMultiTex_;
-	OptionEntryBool noGLEnvCombine_;
-	OptionEntryBool noGLHardwareMipmaps_;
-	OptionEntryBool noGLDrawElements_;
-	OptionEntryBool noGLShaders_;
-	OptionEntryBool simpleWaterShaders_;
-	OptionEntryBool noThreadedDraw_;
-	OptionEntryBool invertElevation_;
-	OptionEntryBool invertMouse_;
-	OptionEntryBool noSound_;
-	OptionEntryBool noCountDownSound_;
-	OptionEntryBool noChannelTextSound_;
-	OptionEntryBool noMusic_;
-	OptionEntryBool noShadows_;
-	OptionEntryBool noGLShadows_;
-	OptionEntryBool noGLObjectShadows_;
-	OptionEntryBool noObjectReflections_;
-	OptionEntryBool noParticleReflections_;
-	OptionEntryBool noDrawParticles_;
-	OptionEntryBool noSimulateParticles_;
-	OptionEntryBool drawNormals_;
-	OptionEntryBool drawGraphicalShadowMap_;
-	OptionEntryBool drawGraphicalReflectionMap_;
-	OptionEntryBool drawLines_;
-	OptionEntryBool drawLandLOD_;
-	OptionEntryFloat drawCullingDistance_;
-	OptionEntryFloat drawFadeStartDistance_;
-	OptionEntryBool drawCollisionGeoms_;
-	OptionEntryBool drawCollisionSpace_;
-	OptionEntryBool drawBoundingSpheres_;
-	OptionEntryBool noLenseFlare_;
-	OptionEntryBool noSkins_;
-	OptionEntryBool depricatedNoArenaMoveVisibility_;
-	OptionEntryBool deprecatedSortAccessories_;
-	OptionEntryEnum accessorySortKey_;
-	OptionEntryBool drawWater_;
-	OptionEntryBool drawLandscape_;
-	OptionEntryBool drawSurround_;
-	OptionEntryBool drawPlayerNames_;
-	OptionEntryBool drawPlayerIcons_;
-	OptionEntryBool drawPlayerSight_;
-	OptionEntryBool oldSightPosition_;
-	OptionEntryBool largeSight_;
-	OptionEntryBool drawPlayerColor_;
-	OptionEntryBool drawPlayerHealth_;
-	OptionEntryBool noTrees_;
-	OptionEntryBool noTargets_;
-	OptionEntryBool noDepthSorting_;
-	OptionEntryBool hideFinalScore_;
-	OptionEntryBool hideMenus_;
-	OptionEntryBool noVBO_;
-	OptionEntryBool depricatedNoModelLOD_;
-	OptionEntryBool noModelLighting_;
-	OptionEntryBool useLandscapeTexture_;
-	OptionEntryBool useWaterTexture_;
-	OptionEntryBool noSkyLayers_;
-	OptionEntryBool noSkyMovement_;
-	OptionEntryBool noPrecipitation_;
-	OptionEntryBool frameTimer_;
-	OptionEntryBool depricatedMoWaterBuffers_;
-	OptionEntryBool noWaterMovement_;
-	OptionEntryBool noWaterWaves_;
-	OptionEntryBool noWaterLOD_;
-	OptionEntryBool noLandLOD_;
-	OptionEntryBool noWaterReflections_;
-	OptionEntryBool noProgressBackdrop_;
-	OptionEntryBool showContextHelp_;
-	OptionEntryBool showContextInfo_;
-	OptionEntryBool lowTreeDetail_;
-	OptionEntryBool softwareMouse_;
-	OptionEntryBool sideScroll_;
-	OptionEntryBool storePlayerCamera_;
-	OptionEntryBool restricedCameraMovement_;
-	OptionEntryBool swapYAxis_;
-	OptionEntryBool clientLogToFile_;
-	OptionEntryInt clientLogState_;
-	OptionEntryBool validateServerIp_;
-	OptionEntryBool noPlanDraw_;
-	OptionEntryBoundedInt antiAlias_;
-	OptionEntryBoundedInt dialogSize_;
-	OptionEntryBoundedInt texSize_;
-	OptionEntryBoundedInt tankDetail_;
-	OptionEntryBoundedInt effectsDetail_;
-	OptionEntryBoundedInt deformRecalculationTime_;
-	OptionEntryBoundedInt soundVolume_;
-	OptionEntryBoundedInt ambientSoundVolume_;
-	OptionEntryBoundedInt musicVolume_;
-	OptionEntryInt screenWidth_;
-	OptionEntryInt screenHeight_;
-	OptionEntryString hostDescription_;
-	OptionEntryString onlineUserName_;
-	OptionEntryString onlineTankModel_;
-	OptionEntryString onlineUserIcon_;
-	OptionEntryVector onlineColor_;
-	OptionEntryString buyTab_;
-	OptionEntryString lastVersionPlayed_;
-	OptionEntryBool focusPause_;
-	OptionEntryBool openGLWarnings_;
+	// END   Deprecated options
 
 private:
 	OptionsDisplay();

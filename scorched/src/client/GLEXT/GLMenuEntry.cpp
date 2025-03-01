@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,19 +33,26 @@ static const float menuItemHeight = 20.0f;
 
 GLMenuEntry::GLMenuEntry(
 	const LangString &menuName,
-	char *menuNameInternal, 
+	const char *menuNameInternal,
 	const LangString &menuDescription,
-	float width, 
+	float width,
 	unsigned int state,
 	GLMenuI *callback,
 	Image *icon,
-	unsigned int flags) :
-	left_(0.0f), width_(width), height_(0.0f),
-	callback_(callback),
-	menuName_(menuName), menuNameInternal_(menuNameInternal), 
+	unsigned int flags
+) :
+	menuName_(menuName),
+	menuNameInternal_(menuNameInternal),
 	menuDescription_(menuDescription),
-	state_(state), selected_(false),
-	texture_(0), icon_(icon), flags_(flags),
+	selected_(false),
+	left_(0.0f),
+	width_(width),
+	height_(0.0f),
+	state_(state),
+	flags_(flags),
+	callback_(callback),
+	texture_(nullptr),
+	icon_(icon),
 	toolTip_(ToolTip::ToolTipHelp, menuName, menuDescription)
 {
 	toolTip_.setHandler(this);
@@ -109,16 +116,14 @@ void GLMenuEntry::drawText()
 		glBegin(GL_TRIANGLE_FAN);
 			glVertex2f(left_ + 10.0f, top_ - 10.0f);
 			glVertex2f(left_ + 10.0f, top_ - menuItemHeight);
-			GLWidget::drawRoundBox(left_, top_ - menuItemHeight, 
-				width_, menuItemHeight, 10.0f);
+			GLWidget::drawRoundBox(left_, top_ - menuItemHeight, width_, menuItemHeight, 10.0f);
 			glVertex2f(left_ + 10.0f, top_ - menuItemHeight);
 		glEnd();
 
 		glColor4f(0.0f, 0.0f, 0.0f, 0.8f);
 		glLineWidth(2.0f);
 		glBegin(GL_LINE_LOOP);
-			GLWidget::drawRoundBox(left_, top_ - menuItemHeight, 
-				width_, menuItemHeight, 10.0f);
+			GLWidget::drawRoundBox(left_, top_ - menuItemHeight, width_, menuItemHeight, 10.0f);
 		glEnd();
 		glLineWidth(1.0f);
 	}
@@ -132,16 +137,14 @@ void GLMenuEntry::drawText()
 	}
 
 	GLWFont::instance()->getGameFont()->
-		draw((selected_?color:itemcolor), 12, left_ + 5.0f, 
-			top_ - 15.0f, 0.0f, *menuTitle);
+		draw((selected_?color:itemcolor), 12, left_ + 5.0f, top_ - 15.0f, 0.0f, *menuTitle);
 }
 
 bool GLMenuEntry::inMenu(float currentTop, int x, int y)
 {
 	float height = menuItemHeight;
 	if (icon_) height = 32.0f;
-	if (y > currentTop - height &&
-		x>left_ && x<left_ + width_) 
+	if (y > currentTop - height && x>left_ && x<left_ + width_)
 	{
 		return true;
 	}
@@ -153,8 +156,7 @@ bool GLMenuEntry::click(float currentTop, int x, int y)
 	float height = menuItemHeight;
 	if (icon_) height = 32.0f;
 
-	if (y > currentTop - height &&
-		x>left_ && x<left_ + width_) 
+	if (y > currentTop - height && x>left_ && x<left_ + width_)
 	{
 		if (callback_->menuOpened(menuNameInternal_.c_str()))
 		{
@@ -182,15 +184,17 @@ bool GLMenuEntry::click(float currentTop, int x, int y)
 						item.getSelected(),
 						item.getTexture(),
 						item.getUserData()
-						)
-					);
+					)
+				);
 				if (item.getSeperator()) entries.back().setSeperator();
 			}
 			GLWSelector::instance()->showSelector(
-				this, 
-				left_, currentTop - (height + 10.0f), 
+				this,
+				left_,
+				currentTop - (height + 10.0f),
 				entries,
-				state_);
+				state_
+			);
 		}
 		return true;
 	}

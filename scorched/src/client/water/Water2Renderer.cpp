@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -41,12 +41,12 @@
 
 #include <water/Water2Constants.h>
 
-Water2Renderer::Water2Renderer() : 
-	waterShader_(0),
-	currentPatch_(0), totalTime_(0.0f),
-	noShaderWaterTexture_(0)
-{
-}
+Water2Renderer::Water2Renderer() :
+	totalTime_(0.0f),
+	noShaderWaterTexture_(nullptr),
+	currentPatch_(nullptr),
+	waterShader_(nullptr)
+{}
 
 Water2Renderer::~Water2Renderer()
 {
@@ -58,8 +58,7 @@ void Water2Renderer::simulate(float frameTime)
 	totalTime_ += frameTime * 24.0f;
 }
 
-void Water2Renderer::draw(Water2 &water2, WaterMapPoints &points, 
-	WaterWaves &waves, float transparency)
+void Water2Renderer::draw( Water2 &water2, WaterMapPoints &points, WaterWaves &waves, float transparency )
 {
 	GAMESTATE_PERF_COUNTER_START(ScorchedClient::instance()->getGameState(), "WATER_PATCHSETUP");
 	// Choose correct water frame

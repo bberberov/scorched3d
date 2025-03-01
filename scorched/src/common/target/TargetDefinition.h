@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,11 +35,13 @@ public:
 	virtual ~TargetDefinition();
 
 	virtual bool readXML(XMLNode *node);
-	Target *createTarget(unsigned int playerId,
+	Target *createTarget(
+		unsigned int playerId,
 		FixedVector &position,
 		FixedVector &velocity,
 		ScorchedContext &context,
-		RandomGenerator &generator);
+		RandomGenerator &generator
+	);
 
 	PlacementShadowDefinition &getShadow() { return shadow_; }
 	ObjectGroupEntryDefinition &getGroups() { return groups_; }
@@ -48,10 +50,13 @@ protected:
 	fixed life_;
 	bool boundingsphere_;
 	bool driveovertodestroy_, flattendestroy_;
-	bool nocollision_, nodamageburn_, nofalling_;
-	bool displaydamage_, displayshadow_;
-	bool displayhardwareshadow_;
+	bool nocollision_;
+	bool nodamageburn_;
+	bool nofalling_;
 	bool nofallingdamage_;
+	bool displaydamage_;
+	bool displayshadow_;
+	bool displayhardwareshadow_;
 	bool useNormalMoves_;
 	bool billboard_;
 	LangString name_;

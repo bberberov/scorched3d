@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,16 @@
 #include <serverbrowser/ServerBrowserRefresh.h>
 #include <serverbrowser/ServerBrowserCollect.h>
 
-class ServerBrowser 
+class ServerBrowser
 {
 public:
 	static ServerBrowser *instance();
 
 	enum RefreshType
 	{
-		RefreshNone = 0,
-		RefreshLan = 1,
-		RefreshNet = 2,
+		RefreshNone       = 0,
+		RefreshLan        = 1,
+		RefreshNet        = 2,
 		RefreshFavourites = 3
 	};
 

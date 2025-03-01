@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,16 +40,15 @@ VisibilityPatchGrid *VisibilityPatchGrid::instance()
 	return &instance;
 }
 
-VisibilityPatchGrid::VisibilityPatchGrid() : 
-	landPatches_(0), 
-	waterPatches_(0), visibilityPatches_(0),
-	epoc_(0)
-{
-}
+VisibilityPatchGrid::VisibilityPatchGrid() :
+	epoc_(0),
+	landPatches_(nullptr),
+	waterPatches_(nullptr),
+	visibilityPatches_(nullptr)
+{}
 
 VisibilityPatchGrid::~VisibilityPatchGrid()
-{
-}
+{}
 
 void VisibilityPatchGrid::clear()
 {
@@ -354,7 +353,13 @@ void VisibilityPatchGrid::drawRoof(int addIndex, bool verticesOnly, bool allPatc
 	glFrontFace(GL_CCW);
 }
 
-void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int addIndex, bool verticesOnly, bool allPatches, bool roof) 
+void VisibilityPatchGrid::drawHeightMap(
+	GraphicalLandscapeMap *landscapeMap,
+	int addIndex,
+	bool verticesOnly,
+	bool allPatches,
+	bool roof
+)
 {
 	if (!OptionsDisplay::instance()->getNoGLDrawElements() &&
 		GLStateExtension::hasDrawRangeElements())
@@ -402,7 +407,7 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 				if (roof) currentPatch = &landAndTargetCurrentPatch->getRoofVisibilityPatch();
 				else currentPatch = &landAndTargetCurrentPatch->getLandVisibilityPatch();
 
-				unsigned int index = currentPatch->getVisibilityIndex();
+				int index = currentPatch->getVisibilityIndex();
 				if (index == -1) index = shadowLOD;
 
 				int leftIndex = PATCH_INDEX_SHADOW(currentPatch->getLeftPatch(), shadowLOD);
@@ -418,14 +423,14 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 	}
 	else
 	{
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor;
 		if (roof) patchItor.init(patchInfo_.getRoofVisibility());
 		else patchItor.init(patchInfo_.getLandVisibility());
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			HeightMapVisibilityPatch *currentPatch = (HeightMapVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = PATCH_INDEX_NORMAL(currentPatch->getLeftPatch());
@@ -477,12 +482,12 @@ void VisibilityPatchGrid::drawHeightMap(GraphicalLandscapeMap *landscapeMap, int
 void VisibilityPatchGrid::drawLandLODLevels()
 {
 	{
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo_.getLandVisibility());
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			LandVisibilityPatch *currentPatch = (LandVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = currentPatch->getLeftPatch()?
@@ -507,10 +512,13 @@ void VisibilityPatchGrid::drawSurround()
 		getGroundMaps().getHeightMap(), true, true);
 }
 
-void VisibilityPatchGrid::drawWater(Water2Patches &patches, 
-		MipMapPatchIndexs &indexes, Vector &cameraPosition, 
-		Vector landscapeSize,
-		GLSLShaderSetup *waterShader)
+void VisibilityPatchGrid::drawWater(
+	Water2Patches &patches,
+	MipMapPatchIndexs &indexes,
+	Vector &cameraPosition,
+	Vector landscapeSize,
+	GLSLShaderSetup *waterShader
+)
 {
 	GAMESTATE_PERF_COUNTER_START(ScorchedClient::instance()->getGameState(), "WATER_DRAW");
 
@@ -563,12 +571,12 @@ void VisibilityPatchGrid::drawWater(Water2Patches &patches,
 		glGetFloatv(GL_MODELVIEW_MATRIX, startmodel);
 
 		// Draw all patches
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo_.getWaterVisibility(w));
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			WaterVisibilityPatch *currentPatch = (WaterVisibilityPatch *) currentPatchPtr;
-			unsigned int index = currentPatch->getVisibilityIndex();
+			int index = currentPatch->getVisibilityIndex();
 			if (index == -1) continue;
 
 			int leftIndex = currentPatch->getLeftPatch()?

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,11 +23,12 @@
 #include <limits.h>
 #include <vector>
 
-MipMapPatchIndex::MipMapPatchIndex() : 
-	indices_(0), size_(0), bufferOffSet_(-1),
-	minIndex_(INT_MAX), maxIndex_(0)
-{
-}
+MipMapPatchIndex::MipMapPatchIndex() :
+	size_(0),
+	minIndex_(INT_MAX), maxIndex_(0),
+	indices_(nullptr),
+	bufferOffSet_(-1)
+{}
 
 MipMapPatchIndex::~MipMapPatchIndex()
 {
@@ -37,10 +38,10 @@ MipMapPatchIndex::~MipMapPatchIndex()
 void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int border, unsigned int totallods)
 {
 	// Calculate the border (if any)
-	unsigned int borderLeft  = (border & BorderLeft)  >> 0;
-	unsigned int borderRight = (border & BorderRight) >> 3;
-	unsigned int borderTop   = (border & BorderTop)   >> 6;
-	unsigned int borderBottom= (border & BorderBottom)>> 9;
+	unsigned int borderLeft   = (border & BorderLeft)   >> 0;
+	unsigned int borderRight  = (border & BorderRight)  >> 3;
+	unsigned int borderTop    = (border & BorderTop)    >> 6;
+	unsigned int borderBottom = (border & BorderBottom) >> 9;
 
 	if (borderLeft > totallods ||
 		borderRight > totallods ||
@@ -52,9 +53,9 @@ void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int 
 		return;
 	}
 
-	int borderLeftSkip = skip * (1 << borderLeft);
-	int borderRightSkip = skip * (1 << borderRight);
-	int borderTopSkip = skip * (1 << borderTop);
+	int borderLeftSkip   = skip * (1 << borderLeft);
+	int borderRightSkip  = skip * (1 << borderRight);
+	int borderTopSkip    = skip * (1 << borderTop);
 	int borderBottomSkip = skip * (1 << borderBottom);
 
 	if (border != 0 &&
@@ -107,7 +108,7 @@ void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int 
 	unsigned short *mappingIndices = new unsigned short[(size + 1) * (size + 1)];
 	unsigned short *currentMappingIndex = mappingIndices;
 	unsigned short currentMappingCount = 0;
-	unsigned short lastGoodXTop, lastGoodXBottom, lastGoodYLeft, lastGoodYRight;
+	unsigned short lastGoodXTop = 0, lastGoodXBottom = 0, lastGoodYLeft = 0, lastGoodYRight = 0;
 	for (int y=0; y<=size; y+=1)
 	{
 		// Record last possible y border index
@@ -126,19 +127,19 @@ void MipMapPatchIndex::generate(int size, int totalsize, int skip, unsigned int 
 
 			// Move indices if we are on a border case
 			// and not only drawing one triangle
-			if (((border & BorderLeft) > 0) && x == 0)
+			if ( ( 0 < (border & BorderLeft)   ) && x == 0 )
 			{
 				*currentMappingIndex = lastGoodYLeft;
 			}
-			if (((border & BorderRight) > 0) && x == size)
+			if ( ( 0 < (border & BorderRight)  ) && x == size )
 			{
 				*currentMappingIndex = lastGoodYRight + size;
 			}
-			if (((border & BorderBottom) > 0) && y == 0)
+			if ( ( 0 < (border & BorderBottom) ) && y == 0 )
 			{
 				*currentMappingIndex = lastGoodXBottom;
 			}
-			if (((border & BorderTop) > 0) && y == size)
+			if ( ( 0 < (border & BorderTop)    ) && y == size )
 			{
 				*currentMappingIndex = lastGoodXTop;
 			}

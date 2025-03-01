@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,32 +26,50 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponProjectile);
 
-WeaponProjectile::WeaponProjectile() : 
-	under_(false), collisionAction_(0), 
-	apexCollision_(false), waterCollision_(false), wallCollision_(true),
-	showShotPath_(false), showEndPoint_(false), 
-	landscapeCollision_(true), shieldCollision_(true), tankCollision_(true), targetCollision_(true),
-	createSmoke_(true),	createFlame_(true), noCameraTrack_(false),
-	spinSpeed_("WeaponProjectile::spinSpeed", 1), spinAxis_(0.0f, 0.0f, 1.0f), apexNoDud_(false), timedDud_(false),
-	timedCollision_("WeaponProjectile::timedCollision", 0), heightCollision_("WeaponProjectile::heightCollision", 0),
-	timeout_("WeaponProjectile::timeout", 0),
-	wobbleSpin_("WeaponProjectile::wobbleSpin", 0), wobbleAmount_("WeaponProjectile::wobbleAmount", 2),
-	shieldHurtFactor_("WeaponProjectile::shieldHurtFactor", 1), windFactor_("WeaponProjectile::windFactor", 1), 
-	gravityFactor_("WeaponProjectile::gravityFactor", 1),
+WeaponProjectile::WeaponProjectile() :
+	collisionAction_(nullptr),
+	apexCollision_(false),
+	waterCollision_(false),
+	wallCollision_(true),
+	landscapeCollision_(true),
+	shieldCollision_(true),
+	tankCollision_(true),
+	targetCollision_(true),
+	under_(false),
+	showShotPath_(false),
+	showEndPoint_(false),
+	createSmoke_(true),
+	createFlame_(true),
+	apexNoDud_(false),
+	timedDud_(false),
+	noCameraTrack_(false),
+	spinSpeed_("WeaponProjectile::spinSpeed", 1),
+	spinAxis_(0.0f, 0.0f, 1.0f),
 	flameLife_(1.0f), smokeLife_(4.0f),
-	flameStartColor1_(0.9f, 0.0f, 0.0f), flameStartColor2_(1.0f, 0.2f, 0.2f),
-	flameEndColor1_(0.95f, 0.9f, 0.2f), flameEndColor2_(1.0f, 1.0f, 0.3f),
 	flameStartSize_(0.5f), flameEndSize_(3.0f),
 	smokeStartSize_(0.5f), smokeEndSize_(4.0f),
-	thrustAmount_("WeaponProjectile::thrustAmount", 0), thrustTime_("WeaponProjectile::thrustTime", 0),
-	drag_("WeaponProjectile::drag", 0), stepSize_(true, 75),
+	flameStartColor1_(0.9f, 0.0f, 0.0f), flameStartColor2_(1.0f, 0.2f, 0.2f),
+	flameEndColor1_(0.95f, 0.9f, 0.2f), flameEndColor2_(1.0f, 1.0f, 0.3f),
+	scale_("WeaponProjectile::scale", 1),
+	timedCollision_("WeaponProjectile::timedCollision", 0),
+	heightCollision_("WeaponProjectile::heightCollision", 0),
+	timeout_("WeaponProjectile::timeout", 0),
+	shieldHurtFactor_("WeaponProjectile::shieldHurtFactor", 1),
+	windFactor_("WeaponProjectile::windFactor", 1),
+	gravityFactor_("WeaponProjectile::gravityFactor", 1),
+	thrustAmount_("WeaponProjectile::thrustAmount", 0),
+	thrustTime_("WeaponProjectile::thrustTime", 0),
+	drag_("WeaponProjectile::drag", 0),
+	wobbleSpin_("WeaponProjectile::wobbleSpin", 0),
+	wobbleAmount_("WeaponProjectile::wobbleAmount", 2),
+	stepSize_(true, 75),
 	engineSound_("data/wav/misc/rocket.wav"),
-	flameTexture_("particle"), smokeTexture_("particle"),
-	animateFlameTexture_(false), animateSmokeTexture_(false),
-	scale_("WeaponProjectile::scale", 1), flareType_(0)
-{
-
-}
+	flameTexture_("particle"),
+	smokeTexture_("particle"),
+	animateFlameTexture_(false),
+	animateSmokeTexture_(false),
+	flareType_(0)
+{}
 
 WeaponProjectile::~WeaponProjectile()
 {
@@ -220,16 +238,21 @@ fixed WeaponProjectile::getShieldHurtFactor(ScorchedContext &context)
 	return shieldHurtFactor_.getValue(context);
 }
 
-void WeaponProjectile::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponProjectile::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	Action *action = new ShotProjectile(
-		position, 
+		position,
 		velocity,
-		this, 
+		this,
 		weaponContext,
 		flareType_, // FlareType
 		spinSpeed_.getValue(context),
-		spinAxis_); 
-	context.getActionController().addAction(action);	
+		spinAxis_
+	);
+	context.getActionController().addAction(action);
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,7 +27,10 @@
 #include <common/Defines.h>
 #include <graph/OptionsDisplay.h>
 
-ShadowMap::ShadowMap() : size_(256), sizeSq_(256 *256), shadowCount_(0)
+ShadowMap::ShadowMap() :
+	shadowCount_(0),
+	size_(256),
+	sizeSq_(size_ * size_)
 {
 	shadowBytes_ = new GLubyte[sizeSq_];
 	memset(shadowBytes_, 255, sizeSq_);

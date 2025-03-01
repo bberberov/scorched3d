@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,21 +25,21 @@
 #include <time.h>
 
 ServerBrowserRefreshEntry::ServerBrowserRefreshEntry() :
-	retries_(0), sentTime_(0), recieved_(0)
-{
-}
+	retries_(0),
+	sentTime_(0),
+	recieved_(0)
+{}
 
-ServerBrowserRefreshEntry::ServerBrowserRefreshEntry(
-	const char *address,
-	int position) : 
+ServerBrowserRefreshEntry::ServerBrowserRefreshEntry( const char *address, int position) :
 	address_(address),
 	position_(position),
-	retries_(0), sentTime_(0), recieved_(0)
-{
-}
+	retries_(0),
+	sentTime_(0),
+	recieved_(0)
+{}
 
 ServerBrowserRefresh::ServerBrowserRefresh(ServerBrowserServerList &list) :
-	list_(list), 
+	list_(list),
 	cancel_(false)
 {
 	recvPacket_ = SDLNet_AllocPacket(10000);
@@ -52,8 +52,7 @@ ServerBrowserRefresh::ServerBrowserRefresh(ServerBrowserServerList &list) :
 }
 
 ServerBrowserRefresh::~ServerBrowserRefresh()
-{
-}
+{}
 
 void ServerBrowserRefresh::refreshList()
 {
@@ -98,8 +97,7 @@ void ServerBrowserRefresh::refreshList()
 	entryMap_.clear();
 }
 
-void ServerBrowserRefresh::sendNextEntry(
-	ServerBrowserRefreshEntry &entry, time_t theTime)
+void ServerBrowserRefresh::sendNextEntry( ServerBrowserRefreshEntry &entry, time_t theTime)
 {
 	char buffer[256];
 	snprintf(buffer, sizeof(buffer), "%s", entry.address_.c_str());

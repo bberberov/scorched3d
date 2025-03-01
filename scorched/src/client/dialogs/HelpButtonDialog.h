@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -34,10 +34,8 @@ public:
 		HelpMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, 
-			const int position, GLMenuItem &item);
-		virtual bool getMenuItems(const char* menuName, 
-			std::list<GLMenuItem> &result);
+		virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
+		virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
 
 	protected:
 		GLTexture helpTexture_;
@@ -59,10 +57,8 @@ public:
 		PerformanceMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, 
-			const int position, GLMenuItem &item);
-		virtual bool getMenuItems(const char* menuName, 
-			std::list<GLMenuItem> &result);
+		virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
+		virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
 		virtual LangStringStorage *getMenuToolTip(const char* menuName);
 
 	protected:

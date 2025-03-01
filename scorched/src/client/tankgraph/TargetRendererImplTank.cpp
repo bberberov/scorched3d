@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -68,25 +68,28 @@ ModelRendererSimulator *TargetRendererImplTankAIM::getAutoAimModel()
 		ModelID id;
 		id.initFromString("ase", "data/meshes/autoaim.ase", "none");
 		modelRenderer = new ModelRendererSimulator(
-			ModelRendererStore::instance()->loadModel(id));
+			ModelRendererStore::instance()->loadModel(id)
+		);
 	}
 	return modelRenderer;
 }
 
 TargetRendererImplTank::TargetRendererImplTank(Tank *tank) :
 	TargetRendererImpl(tank),
-	tank_(tank), tankTips_(tank),
-	mesh_(0), 
-	smokeTime_(0.0f), smokeWaitForTime_(0.0f),
-	fireOffSet_(0.0f), shieldHit_(0.0f),
+	tank_(tank),
+	mesh_(nullptr),
+	tankTips_(tank),
+	fireOffSet_(0.0f),
+	shieldHit_(0.0f),
+	smokeTime_(0.0f),
+	smokeWaitForTime_(0.0f),
 	totalTime_(0.0f)
 {
 	frame_ = (float) rand();
 }
 
 TargetRendererImplTank::~TargetRendererImplTank()
-{
-}
+{}
 
 ModelRendererTank *TargetRendererImplTank::getMesh()
 {
@@ -700,8 +703,7 @@ void TargetRendererImplTank::drawLife()
 	}
 }
 
-void TargetRendererImplTank::drawLifeBar(Vector &bilX, float value, 
-									float height, float barheight)
+void TargetRendererImplTank::drawLifeBar(Vector &bilX, float value, float height, float barheight)
 {
 	Vector &position = tank_->getLife().getTargetPosition().asVector();
 	glBegin(GL_QUADS);

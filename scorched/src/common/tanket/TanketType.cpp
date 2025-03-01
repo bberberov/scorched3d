@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,13 +25,13 @@
 #include <engine/ScorchedContext.h>
 #include <weapons/AccessoryStore.h>
 
-TanketType::TanketType() : tooltip_(0), default_(false)
-{
-}
+TanketType::TanketType() :
+	default_(false),
+	tooltip_(nullptr)
+{}
 
 TanketType::~TanketType()
-{
-}
+{}
 
 bool TanketType::initFromXML(ScorchedContext &context, XMLNode *node)
 {

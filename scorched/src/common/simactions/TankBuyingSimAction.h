@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -40,9 +40,9 @@ public:
 
 REGISTER_CLASS_HEADER(TankBuyingSimAction);
 protected:
-	static std::set<unsigned int> runningPlayerIds_;
-	bool server_;
 	unsigned int playerId_;
+	bool server_;
+	static std::set<unsigned int> runningPlayerIds_;
 };
 
 #endif // !defined(AFX_TankBuyingSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)

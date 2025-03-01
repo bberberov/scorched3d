@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -38,7 +38,7 @@ public:
 	void simulate(float frameTime);
 
 protected:
-	struct WaterWaveEntry 
+	struct WaterWaveEntry
 	{
 		Vector perp;
 		Vector ptA;
@@ -66,17 +66,22 @@ protected:
 	std::vector<WaterWaveEntry> paths2_;
 	float totalTime_;
 
-	void findPoints(WaterWaveContext *context,
-		float waterHeight, ProgressCounter *counter);
-	bool findNextPath(WaterWaveContext *context,
-		float waterHeight, ProgressCounter *counter);
-	void findPath(WaterWaveContext *context,
-		std::vector<Vector> &points, int x, int y, ProgressCounter *counter);
-	void constructLines(WaterWaveContext *context,
-		float waterHeight, std::vector<Vector> &points);
-	void drawBoxes(Water2Patches &currentPatch,
-		float totalTime, Vector &windDir, 
-		std::vector<WaterWaveEntry> &paths);
+	void findPoints(WaterWaveContext *context, float waterHeight, ProgressCounter *counter);
+	bool findNextPath(WaterWaveContext *context, float waterHeight, ProgressCounter *counter);
+	void findPath(
+		WaterWaveContext *context,
+		std::vector<Vector> &points,
+		int x,
+		int y,
+		ProgressCounter *counter
+	);
+	void constructLines(WaterWaveContext *context, float waterHeight, std::vector<Vector> &points);
+	void drawBoxes(
+		Water2Patches &currentPatch,
+		float totalTime,
+		Vector &windDir,
+		std::vector<WaterWaveEntry> &paths
+	);
 
 };
 

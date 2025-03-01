@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,16 +26,24 @@ OptionEntrySetter::OptionEntrySetter(wxControl *control, OptionEntry &entry)
 	:
 	control_(control),
 	entry_(entry)
-{
-}
+{}
 
 OptionEntrySetter::~OptionEntrySetter()
+{}
+
+wxControl* OptionEntrySetter::getControl()
 {
+	return control_;
+}
+
+OptionEntry& OptionEntrySetter::getEntry()
+{
+	return entry_;
 }
 
 OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxSizer *sizer, OptionEntry &entry)
 {
-	wxStaticText *staticText = 0;
+	wxStaticText *staticText = nullptr;
 	sizer->Add(
 		staticText = new wxStaticText(parent, -1, wxString(entry.getName(), wxConvUTF8)),
 		0,
@@ -44,7 +52,7 @@ OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxS
 	);
 	staticText->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
 
-	wxControl *control = 0;
+	wxControl *control = nullptr;
 	switch (entry.getEntryType())
 	{
 	case OptionEntry::OptionEntryStringType:
@@ -130,15 +138,18 @@ OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxS
 	default:
 		S3D::dialogExit(
 			"createOtherSetter",
-			S3D::formatStringBuffer("Unhandled OptionEntry type %s:%i", entry.getName(), entry.getEntryType())
+			S3D::formatStringBuffer(
+				"Unhandled OptionEntry type %s:%i",
+				entry.getName(),
+				entry.getEntryType()
+			)
 		);
 	}
 
 	return OptionEntrySetter(control, entry);
 }
 
-void OptionEntrySetterUtil::updateControls(
-	std::list<OptionEntrySetter> &controls)
+void OptionEntrySetterUtil::updateControls( std::list<OptionEntrySetter> &controls )
 {
 	std::list<OptionEntrySetter>::iterator itor;
 	for (itor = controls.begin(); itor != controls.end(); ++itor)
@@ -167,12 +178,20 @@ void OptionEntrySetterUtil::updateControls(
 				control->SetValue(boolEntry.getValue());
 			}
 			break;
+		default:
+			S3D::dialogExit(
+				"updateControls",
+				S3D::formatStringBuffer(
+					"Unhandled OptionEntry type %s:%i",
+					entrySetter.getEntry().getName(),
+					entrySetter.getEntry().getEntryType()
+				)
+			);
 		}
 	}
 }
 
-void OptionEntrySetterUtil::updateEntries(
-	std::list<OptionEntrySetter> &controls)
+void OptionEntrySetterUtil::updateEntries( std::list<OptionEntrySetter> &controls )
 {
 	std::list<OptionEntrySetter>::iterator itor;
 	for (itor = controls.begin(); itor != controls.end(); ++itor)
@@ -201,6 +220,15 @@ void OptionEntrySetterUtil::updateEntries(
 				boolEntry.setValue(control->GetValue());
 			}
 			break;
+		default:
+			S3D::dialogExit(
+				"updateEntries",
+				S3D::formatStringBuffer(
+					"Unhandled OptionEntry type %s:%i",
+					entrySetter.getEntry().getName(),
+					entrySetter.getEntry().getEntryType()
+				)
+			);
 		}
 	}
 }

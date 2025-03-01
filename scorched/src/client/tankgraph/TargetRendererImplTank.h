@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -95,7 +95,8 @@ protected:
 	GLWTankTips tankTips_;
 	float fireOffSet_;
 	float shieldHit_;
-	float smokeTime_, smokeWaitForTime_;
+	float smokeTime_;
+	float smokeWaitForTime_;
 	float totalTime_;
 	float frame_;
 

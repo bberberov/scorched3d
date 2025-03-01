@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,23 +33,19 @@ public:
 
 	virtual void draw(bool force = false);
 
-	bool create(Image &bitmap, 
-				bool mipMap = true);
-	bool create(const void * data, 
-				GLint width, 
-				GLint height, 
-				GLint components, 
-				GLint alignment = 4,
-				GLenum format = GL_RGB, 
-				bool mipMap = true);
-	bool create(GLint width, 
-				GLint height, 
-				GLenum format = GL_RGB);
-	bool createBufferTexture(GLint width, 
-				GLint height,
-				bool depthTex);
-	bool replace(Image &bitmap,
-						bool mipMap = true);
+	bool create(Image &bitmap, bool mipMap = true);
+	bool create(
+		const void * data,
+		GLint width,
+		GLint height,
+		GLint components,
+		GLint alignment = 4,
+		GLenum format = GL_RGB,
+		bool mipMap = true
+	);
+	bool create(GLint width, GLint height, GLenum format = GL_RGB);
+	bool createBufferTexture(GLint width, GLint height, bool depthTex);
+	bool replace(Image &bitmap, bool mipMap = true);
 
 	bool textureValid();
 	GLenum getTexType() { return texType_; }
@@ -72,13 +68,15 @@ protected:
 	GLenum texType_;
 	GLenum texFormat_;
 
-	bool createTexture(const void * data, 
-						GLint width, 
-						GLint height, 
-						GLint components, 
-						GLint alignment,
-						GLenum format, 
-						bool mipMap);
+	bool createTexture(
+		const void * data,
+		GLint width,
+		GLint height,
+		GLint components,
+		GLint alignment,
+		GLenum format,
+		bool mipMap
+	);
 	bool createObject();
 };
 

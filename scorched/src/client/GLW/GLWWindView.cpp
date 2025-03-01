@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "common/OptionsTransient.h"
 #include <GLW/GLWWindView.h>
 #include <client/ScorchedClient.h>
 #include <graph/MainCamera.h>
@@ -37,28 +38,29 @@
 REGISTER_CLASS_SOURCE(GLWWindView);
 
 WindDialogToolTip::WindDialogToolTip()
-{
-}
+{}
 
 WindDialogToolTip::~WindDialogToolTip()
-{
-}
+{}
 
 void WindDialogToolTip::populate()
 {
-	LangString wallTypeStr = LANG_RESOURCE("WALLS_NONE", "Currently no walls");
+	LangString wallTypeStr;
 	OptionsTransient::WallType wallType =
 		ScorchedClient::instance()->getOptionsTransient().getWallType();
 	switch (wallType)
 	{
-	case OptionsTransient::wallBouncy:
-		wallTypeStr = LANG_RESOURCE("WALLS_BOUNCY", "Current Wall Type : Bouncy");
-		break;
 	case OptionsTransient::wallConcrete:
 		wallTypeStr = LANG_RESOURCE("WALLS_CONCRETE", "Current Wall Type : Concrete");
 		break;
+	case OptionsTransient::wallBouncy:
+		wallTypeStr = LANG_RESOURCE("WALLS_BOUNCY", "Current Wall Type : Bouncy");
+		break;
 	case OptionsTransient::wallWrapAround:
 		wallTypeStr = LANG_RESOURCE("WALL_WRAP", "Current Wall Type : Wrap Around");
+		break;
+	case OptionsTransient::wallNone:
+		wallTypeStr = LANG_RESOURCE("WALLS_NONE", "Currently no walls");
 		break;
 	}
 
@@ -88,7 +90,9 @@ void WindDialogToolTip::populate()
 
 GLWWindView::GLWWindView(float x, float y, float w, float h) :
 	GLWidget(x, y, w, h),
-	listNo_(0), changeCount_(0), windModel_(0)
+	listNo_(0),
+	changeCount_(0),
+	windModel_(nullptr)
 {
 	setToolTip(new WindDialogToolTip());
 }
@@ -106,7 +110,8 @@ void GLWWindView::draw()
 		ModelID id;
 		id.initFromString("ase", "data/meshes/wind.ase", "none");
 		windModel_ = new ModelRendererSimulator(
-			ModelRendererStore::instance()->loadModel(id));
+			ModelRendererStore::instance()->loadModel(id)
+		);
 	}
 
 	if (changeCount_ != Landscape::instance()->getChangeCount())
@@ -271,8 +276,7 @@ void GLWWindView::mouseDown(int button, float x, float y, bool &skipRest)
 	{
 		skipRest = true;
 
-		unsigned int type =
-			MainCamera::instance()->getTarget().getCameraType();
+		unsigned int type = MainCamera::instance()->getTarget().getCameraType();
 		type++;
 		if (type >= TargetCamera::CamFree) type = 0;
 

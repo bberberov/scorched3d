@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,24 +25,24 @@
 #include <common/Defines.h>
 #include <graph/OptionsDisplay.h>
 
-GLWSelectorEntry::GLWSelectorEntry(const LangString &text, 
-	ToolTip *tooltip, 
+GLWSelectorEntry::GLWSelectorEntry(
+	const LangString &text,
+	ToolTip *tooltip,
 	bool selected,
 	GLTextureBase *icon,
 	void *userData,
-	const std::string &dataText) : 
+	const std::string &dataText
+) :
 	text_(text),
 	tip_(tooltip),
 	selected_(selected),
 	icon_(icon),
 	userData_(userData),
 	dataText_(dataText),
-	color_(1.0f, 1.0f, 1.0f),
 	textureWidth_(0),
+	color_(1.0f, 1.0f, 1.0f),
 	seperator_(false)
-{
-
-}
+{}
 
 GLWSelector *GLWSelector::instance_ = 0;
 
@@ -64,22 +64,22 @@ GLWSelector::GLWSelector() :
 }
 
 GLWSelector::~GLWSelector()
-{
-}
+{}
 
-void GLWSelector::showSelector(GLWSelectorI *user,
+void GLWSelector::showSelector(
+	GLWSelectorI *user,
 	float x, float y,
 	std::list<GLWSelectorEntry> &entries,
 	unsigned int showState,
-	bool transparent)
-
+	bool transparent
+)
 {
 	hideSelector();
 
 	showState_ = showState;
 	visible_ = true;
 	w_ = 100000.0f;
-	h_ = 100000.0f;	
+	h_ = 100000.0f;
 	user_ = user;
 	
 	int basePosition = 0;

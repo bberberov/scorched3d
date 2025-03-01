@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,18 +28,18 @@
 #include <graph/ModelRendererSimulator.h>
 #include <common/Defines.h>
 
-ModelRendererTank::ModelRendererTank(Model *model) : 
+ModelRendererTank::ModelRendererTank(Model *model) :
 	model_(model),
+	scale_(1.0f),
 	normalRenderer_(model),
-	gunRenderer_(model), turretRenderer_(model),
-	scale_(1.0f)
+	turretRenderer_(model),
+	gunRenderer_(model)
 {
 	setupModelRendererTank();
 }
 
 ModelRendererTank::~ModelRendererTank()
-{
-}
+{}
 
 int ModelRendererTank::getNoTris()
 {
@@ -127,9 +127,18 @@ void ModelRendererTank::setupModelRendererTank()
 	gunRenderer_.setVertexTranslation(vertexTranslation);
 }
 
-void ModelRendererTank::draw(float frame, float *rotMatrix, Vector &position, 
-					float fireOffset, float rotXY, float rotXZ,
-					bool absCenter, float scale, float fade, bool setState)
+void ModelRendererTank::draw(
+	float frame,
+	float *rotMatrix,
+	Vector &position,
+	float fireOffset,
+	float rotXY,
+	float rotXZ,
+	bool absCenter,
+	float scale,
+	float fade,
+	bool setState
+)
 {
 	rotXY_ = rotXY;
 	rotXZ_ = rotXZ;
@@ -145,8 +154,12 @@ void ModelRendererTank::draw(float frame, float *rotMatrix, Vector &position,
 	glPopMatrix();
 }
 
-void ModelRendererTank::drawBottomAligned(float currentFrame, 
-	float distance, float fade, bool setState)
+void ModelRendererTank::drawBottomAligned(
+	float currentFrame,
+	float distance,
+	float fade,
+	bool setState
+)
 {
 	glPushMatrix();
 		glTranslatef(0.0f, 0.0f, -model_->getMin()[2].asFloat());
@@ -154,8 +167,12 @@ void ModelRendererTank::drawBottomAligned(float currentFrame,
 	glPopMatrix();
 }
 
-void ModelRendererTank::draw(float currentFrame, 
-	float distance, float fade, bool setState)
+void ModelRendererTank::draw(
+	float currentFrame,
+	float distance,
+	float fade,
+	bool setState
+)
 {
 	Mesh *lastMesh = 0;
 	lastMesh = normalRenderer_.drawModel(currentFrame, distance, fade, setState, normalMeshes_, lastMesh);

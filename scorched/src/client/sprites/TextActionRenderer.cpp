@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,17 +26,16 @@
 TextActionRenderer::TextActionRenderer(
 		Vector &position,
 		Vector &color,
-		const std::string &text) :
+		const std::string &text
+) :
 	position_(position),
 	color_(color),
 	text_(text),
 	frameTime_(0.0f)
-{
-}
+{}
 
 TextActionRenderer::~TextActionRenderer()
-{
-}
+{}
 
 void TextActionRenderer::simulate(Action *action, float timepassed, bool &remove)
 {

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,11 +29,13 @@ class ExplosionParams;
 class Explosion : public Action
 {
 public:
-	Explosion(FixedVector &position, 
+	Explosion(
+		FixedVector &position,
 		FixedVector &velocity,
 		ExplosionParams *params,
-		Weapon *weapon, 
-		WeaponFireContext &weaponContext);
+		Weapon *weapon,
+		WeaponFireContext &weaponContext
+	);
 	virtual ~Explosion();
 
 	FixedVector &getPosition() { return position_; }
@@ -43,13 +45,14 @@ public:
 	virtual std::string getActionDetails();
 	virtual std::string getActionType() { return "Explosion"; }
 protected:
+	FixedVector position_;
+	FixedVector velocity_;
 	ExplosionParams *params_;
-	bool firstTime_;
-	FixedVector position_, velocity_;
-	fixed totalTime_;
 	Weapon *weapon_;
 	WeaponFireContext weaponContext_;
-	
+	fixed totalTime_;
+	bool firstTime_;
+
 };
 
 #endif

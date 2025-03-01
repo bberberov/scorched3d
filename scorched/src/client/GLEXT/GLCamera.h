@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -168,10 +168,17 @@ public:
 		eScrollUp,
 		eScrollDown
 	};
-	void scroll(ScrollDir direction, float minWidth, float minHeight, 
-		float maxWidth, float maxHeight, float amount);
-	void scroll(float x, float y, float minWidth, float minHeight, 
-		float maxWidth, float maxHeight);
+	void scroll(
+		ScrollDir direction,
+		float minWidth, float minHeight,
+		float maxWidth, float maxHeight,
+		float amount
+	);
+	void scroll(
+		float x, float y,
+		float minWidth, float minHeight,
+		float maxWidth, float maxHeight
+	);
 
 	static GLCamera *getCurrentCamera() { return currentCamera_; }
 
@@ -180,7 +187,8 @@ protected:
 	GLsizei windowW_, windowH_;
 	GLsizei windowL_, windowT_;
 	GLfloat windowAspect_;
-	GLfloat rotationXY_, rotationYZ_, zoom_;
+	GLfloat rotationXY_, rotationYZ_;
+	GLfloat zoom_;
 	float shake_;
 	float totalTime_;
 	Vector shakeV_;

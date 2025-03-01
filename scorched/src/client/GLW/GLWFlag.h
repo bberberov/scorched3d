@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,8 +28,7 @@
 class GLWFlag : public GLWidget
 {
 public:
-	GLWFlag(Vector &color = GLWFont::widgetFontColor, 
-		float x = 0.0f, float y = 0.0f, float w = 0.0f);
+	GLWFlag(Vector &color = GLWFont::widgetFontColor, float x = 0.0f, float y = 0.0f, float w = 0.0f);
 	virtual ~GLWFlag();
 
 	virtual void simulate(float frameTime);

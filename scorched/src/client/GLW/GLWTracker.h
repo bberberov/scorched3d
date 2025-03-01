@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,8 +32,7 @@ public:
 class GLWTracker : public GLWidget
 {
 public:
-	GLWTracker(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float range = 0.0f);
+	GLWTracker(float x = 0.0f, float y = 0.0f, float w = 0.0f, float range = 0.0f);
 	virtual ~GLWTracker();
 
 	void setHandler(GLWTrackerI *handler) { handler_ = handler; }

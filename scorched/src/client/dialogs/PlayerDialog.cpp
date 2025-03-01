@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -43,13 +43,23 @@
 #include <image/ImageFactory.h>
 #include <stdio.h>
 
-PlayerDialog::PlayerDialog(const std::string &name, 
-		unsigned int states, 
-		const std::string &description) : 
-	GLWWindow(name, 10.0f, 10.0f, 740.0f, 480.0f, 
+PlayerDialog::PlayerDialog(
+	const std::string &name,
+	unsigned int states,
+	const std::string &description
+) :
+	GLWWindow(
+		name,
+		10.0f,
+		10.0f,
+		740.0f,
+		480.0f,
 		states,
-		description),
-	cancelButton_(0), viewer_(0), spectateButton_(0)
+		description
+	),
+	viewer_(nullptr),
+	cancelButton_(nullptr),
+	spectateButton_(nullptr)
 {
 	needCentered_ = true;
 
@@ -203,19 +213,21 @@ PlayerDialog::PlayerDialog(const std::string &name,
 }
 
 PlayerDialog::~PlayerDialog()
-{
-}
+{}
 
-void PlayerDialog::keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest)
+void PlayerDialog::keyDown(
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	GLWWindow::keyDown(buffer, keyState, history, hisCount, skipRest);
 	skipRest = true;
 }
 
-void PlayerDialog::select(unsigned int id, const int pos, 
-	GLWSelectorEntry value)
+void PlayerDialog::select(unsigned int id, const int pos, GLWSelectorEntry value)
 {
 	if (id == teamDropDown_->getId())
 	{
@@ -261,7 +273,7 @@ void PlayerDialog::initialize()
 	{
 		// Create team entries
 		teamDropDown_->clear();
-		for (int i=1; i<=ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
+		for (unsigned int i = 1; i <= ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
 		{
 			const char *name = TankColorGenerator::getTeamName(i);
 			GLWSelectorEntry entry(LANG_RESOURCE(name, name), 0, false, &colorTexture_, 0);

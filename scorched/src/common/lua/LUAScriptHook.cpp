@@ -26,9 +26,11 @@
 #include <console/ConsoleRuleMethodIAdapter.h>
 #endif
 
-LUAScriptHook::LUAScriptHook(LUAScriptFactory *factory, 
+LUAScriptHook::LUAScriptHook(
+	LUAScriptFactory *factory,
 	const std::string &hooksName,
-	const std::string &directoryName) :
+	const std::string &directoryName
+) :
 	factory_(factory),
 	hooksName_(hooksName),
 	directoryName_(directoryName)

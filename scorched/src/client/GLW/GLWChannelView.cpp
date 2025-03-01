@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,22 +31,24 @@
 #include <client/ClientChannelManager.h>
 #include <client/ScorchedClient.h>
 #include <sound/SoundUtils.h>
+#include <string>
 #include <target/TargetContainer.h>
 #include <lang/LangResource.h>
 #include <lang/LangParam.h>
 #include <tank/Tank.h>
 
 GLWChannelViewI::~GLWChannelViewI()
-{
-}
+{}
 
 REGISTER_CLASS_SOURCE(GLWChannelView);
 
-GLWChannelView::GLWChannelView() : lastChannelId_(1), lastWhisperSrc_(0),
-	showChannelName_(true), showChannelNumber_(true),
-	handler_(0)
-{
-}
+GLWChannelView::GLWChannelView() :
+	handler_(nullptr),
+	lastChannelId_(1),
+	lastWhisperSrc_(0),
+	showChannelName_(true),
+	showChannelNumber_(true)
+{}
 
 GLWChannelView::~GLWChannelView()
 {
@@ -60,18 +62,18 @@ GLWChannelView::CurrentChannelEntry *GLWChannelView::getChannel(const std::strin
 		itor != currentChannels_.end();
 		++itor)
 	{
-		CurrentChannelEntry &current = *itor;
-		if (channelName == current.channel) return &current;
-		if (current.id == atoi(channelName.c_str())) return &current;
+		if ( itor->channel == channelName                 ) return &(*itor);
+		if ( itor->id == std::atol( channelName.c_str() ) ) return &(*itor);
 	}
 	return 0;
 }
 
 void GLWChannelView::registeredForChannels(
 	std::list<ChannelDefinition> &registeredChannels,
-	std::list<ChannelDefinition> &availableChannels)
+	std::list<ChannelDefinition> &availableChannels
+)
 {
-	// Some not efficient stuff....
+	// FIXME: Some not efficient stuff ...
 	std::list<CurrentChannelEntry> oldCurrentChannels = currentChannels_;
 	std::list<BaseChannelEntry> oldAvailableChannels = availableChannels_;
 	currentChannels_.clear();
@@ -119,7 +121,7 @@ void GLWChannelView::registeredForChannels(
 				}
 
 				currentChannels_.push_back(newEntry);
-			}	
+			}
 		}
 	}
 
@@ -169,15 +171,14 @@ void GLWChannelView::channelText(ChannelText &channelText)
 			!textSound_.empty())
 		{
 			CACHE_SOUND(sound, S3D::getModFile(textSound_.c_str()));
-			SoundUtils::playRelativeSound(VirtualSoundPriority::eText, sound);	
+			SoundUtils::playRelativeSound(VirtualSoundPriority::eText, sound);
 		}
 	}
 
 	CurrentChannelEntry *channel = getChannel(channelText.getChannel());
 	if (!channel) return;
 
-	Tank *tank = ScorchedClient::instance()->getTargetContainer().
-		getTankById(channelText.getSrcPlayerId());
+	Tank *tank = ScorchedClient::instance()->getTargetContainer().getTankById(channelText.getSrcPlayerId());
 	if (tank)
 	{
 		if (channel->type & ChannelDefinition::eWhisperChannel)

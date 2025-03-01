@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,58 +21,64 @@
 #include <common/ChannelText.h>
 #include <lang/Lang.h>
 
-ChannelText::ChannelText() : 
-	srcPlayerId_(0), destPlayerId_(0),
+ChannelText::ChannelText() :
+	srcPlayerId_(0),
+	destPlayerId_(0),
 	flags_(0)
-{
-}
+{}
 
 ChannelText::ChannelText(
-	const std::string &channel, 
-	const LangString &message) : 
-	srcPlayerId_(0), destPlayerId_(0),
+	const std::string &channel,
+	const LangString &message
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
-	message_(message),
-	flags_(0)
-{
-}
+	message_(message)
+{}
 
 ChannelText::ChannelText(
-	const std::string &channel, 
+	const std::string &channel,
 	const std::string &key,
-	const std::string &value) :
-	srcPlayerId_(0), destPlayerId_(0),
+	const std::string &value
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
 	messageValue_(value),
-	flags_(0),
 	messageKey_(key)
-{
-}
+{}
 
 ChannelText::ChannelText(
-	const std::string &channel, 
+	const std::string &channel,
 	const std::string &key,
 	const std::string &value,
-	const LangStringConverter &param1) :
-	srcPlayerId_(0), destPlayerId_(0),
+	const LangStringConverter &param1
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
 	messageValue_(value),
-	flags_(0),
 	messageKey_(key)
 {
 	messageParams_.push_back(param1.getValue());
 }
 
 ChannelText::ChannelText(
-	const std::string &channel, 
+	const std::string &channel,
 	const std::string &key,
 	const std::string &value,
 	const LangStringConverter &param1,
-	const LangStringConverter &param2) :
-	srcPlayerId_(0), destPlayerId_(0),
+	const LangStringConverter &param2
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
 	messageValue_(value),
-	flags_(0),
 	messageKey_(key)
 {
 	messageParams_.push_back(param1.getValue());
@@ -80,16 +86,18 @@ ChannelText::ChannelText(
 }
 
 ChannelText::ChannelText(
-	const std::string &channel, 
+	const std::string &channel,
 	const std::string &key,
 	const std::string &value,
 	const LangStringConverter &param1,
 	const LangStringConverter &param2,
-	const LangStringConverter &param3) :
-	srcPlayerId_(0), destPlayerId_(0),
+	const LangStringConverter &param3
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
 	messageValue_(value),
-	flags_(0),
 	messageKey_(key)
 {
 	messageParams_.push_back(param1.getValue());
@@ -98,17 +106,19 @@ ChannelText::ChannelText(
 }
 
 ChannelText::ChannelText(
-	const std::string &channel, 
+	const std::string &channel,
 	const std::string &key,
 	const std::string &value,
 	const LangStringConverter &param1,
 	const LangStringConverter &param2,
 	const LangStringConverter &param3,
-	const LangStringConverter &param4) :
-	srcPlayerId_(0), destPlayerId_(0),
+	const LangStringConverter &param4
+) :
+	srcPlayerId_(0),
+	destPlayerId_(0),
+	flags_(0),
 	channel_(channel),
 	messageValue_(value),
-	flags_(0),
 	messageKey_(key)
 {
 	messageParams_.push_back(param1.getValue());
@@ -117,8 +127,8 @@ ChannelText::ChannelText(
 	messageParams_.push_back(param4.getValue());
 }
 
-const LangString &ChannelText::getMessage() 
-{ 
+const LangString &ChannelText::getMessage()
+{
 	if (message_.empty() && !messageKey_.empty())
 	{
 		ResourceBundleEntry *entry = 
@@ -126,19 +136,30 @@ const LangString &ChannelText::getMessage()
 		switch (messageParams_.size())
 		{
 		case 1:
-			message_ = entry->getString(messageParams_[0]);
+			message_ = entry->getString(
+				messageParams_[0]
+			);
 			break;
 		case 2:
-			message_ = entry->getString(messageParams_[0], 
-				messageParams_[1]);
+			message_ = entry->getString(
+				messageParams_[0],
+				messageParams_[1]
+			);
 			break;
 		case 3:
-			message_ = entry->getString(messageParams_[0], 
-				messageParams_[1], messageParams_[2]);
+			message_ = entry->getString(
+				messageParams_[0],
+				messageParams_[1],
+				messageParams_[2]
+			);
 			break;
 		case 4:
-			message_ = entry->getString(messageParams_[0], 
-				messageParams_[1], messageParams_[2], messageParams_[3]);
+			message_ = entry->getString(
+				messageParams_[0],
+				messageParams_[1],
+				messageParams_[2],
+				messageParams_[3]
+			);
 			break;
 		default:
 			message_ = entry->getString();
@@ -146,7 +167,7 @@ const LangString &ChannelText::getMessage()
 		}
 	}
 
-	return message_; 
+	return message_;
 }
 
 bool ChannelText::writeMessage(NetBuffer &buffer)
@@ -202,6 +223,6 @@ bool ChannelText::readMessage(NetBufferReader &reader)
 }
 
 ChannelDefinition::ChannelDefinition(const char *c, unsigned int t) :
-	channel_(c), type_(t)
-{
-}
+	channel_(c),
+	type_(t)
+{}

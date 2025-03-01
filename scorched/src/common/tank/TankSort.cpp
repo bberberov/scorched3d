@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -67,19 +67,19 @@ bool TankSort::SortOnScore::operator()(const Tank *x, const Tank *y, ScorchedCon
 	return (compareResult > 0);
 }
 
-int TankSort::getWinningTeam(ScorchedContext &context)
+unsigned int TankSort::getWinningTeam(ScorchedContext &context)
 {
-	for (int i=1; i<=context.getOptionsGame().getTeams(); i++)
+	for (unsigned int i = 1; i <= context.getOptionsGame().getTeams(); i++)
 	{
 		int scorei = context.getTankTeamScore().getScore(i);
 
 		bool top = true;
-		for (int j=1; j<=context.getOptionsGame().getTeams(); j++)
+		for (unsigned int j = 1; j <= context.getOptionsGame().getTeams(); j++)
 		{
 			if (i == j) continue;
 
 			int scorej = context.getTankTeamScore().getScore(j);
-			if (scorej >= scorei)
+			if (scorei <= scorej)
 			{
 				top = false;
 				break;

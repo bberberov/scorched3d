@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,30 +29,29 @@
 
 static const int AlphaSteps = int(ExplosionNukeRenderer_STEPS * 0.9f);
 
-ExplosionNukeRendererEntry::ExplosionNukeRendererEntry(
-	Vector &position, float size) :
-	totalTime_(0.0f), size_(size),
-	startPosition_(position), cloudRotation_(0.0f)
+ExplosionNukeRendererEntry::ExplosionNukeRendererEntry( Vector &position, float size) :
+	startPosition_(position),
+	size_(size),
+	totalTime_(0.0f),
+	cloudRotation_(0.0f)
 {
 	float rot = RAND * 3.14f * 2.0f;
 	float width = RAND * 0.5f + 1.0f;
-    
+
 	cloudRotation_ = RAND * 360.0f;
 	rotation_[0] = getFastSin(rot) * width;
 	rotation_[1] = getFastCos(rot) * width;
 }
 
 ExplosionNukeRendererEntry::~ExplosionNukeRendererEntry()
-{
-}
+{}
 
 void ExplosionNukeRendererEntry::simulate(Particle *particle, float time)
 {
 	totalTime_ += time;
 	cloudRotation_ += time * 5.0f;
 
-	int position = int((totalTime_ / (16.0f / 3.0f)) * 
-		float(ExplosionNukeRenderer_STEPS));
+	int position = int((totalTime_ / (16.0f / 3.0f)) * float(ExplosionNukeRenderer_STEPS));
 	if (position >= ExplosionNukeRenderer_STEPS)
 		position = ExplosionNukeRenderer_STEPS - 1;
 
@@ -65,10 +64,13 @@ void ExplosionNukeRendererEntry::simulate(Particle *particle, float time)
 
 Vector *ExplosionNukeRenderer::positions_ = 0;
 
-ExplosionNukeRenderer::ExplosionNukeRenderer(Vector &position, float size,
-	GLTextureSet *set,
-	bool animate) 
-	: set_(set), animate_(animate), totalTime_(0.0f), time_(0.0f), position_(position), size_(size)
+ExplosionNukeRenderer::ExplosionNukeRenderer(Vector &position, float size, GLTextureSet *set, bool animate) :
+	position_(position),
+	size_(size),
+	time_(0.0f),
+	totalTime_(0.0f),
+	set_(set),
+	animate_(animate)
 {
 	position_[2] -= size_;
 	float height = ScorchedClient::instance()->getLandscapeMaps().
@@ -118,12 +120,10 @@ ExplosionNukeRenderer::ExplosionNukeRenderer(Vector &position, float size,
 }
 
 ExplosionNukeRenderer::~ExplosionNukeRenderer()
-{
-}
+{}
 
 void ExplosionNukeRenderer::draw(Action *action)
-{
-}
+{}
 
 void ExplosionNukeRenderer::simulate(Action *action, float frameTime, bool &remove)
 {

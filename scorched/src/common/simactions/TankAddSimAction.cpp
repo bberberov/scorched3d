@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -59,13 +59,23 @@ TankAddSimAction::TankAddSimAction()
 }
 
 TankAddSimAction::TankAddSimAction(
-	unsigned int playerId, unsigned int destinationId,
-	const std::string &uniqueId, const std::string &sUID, const std::string &hostDesc,
-	unsigned int ipAddress, 
-	const LangString &playerName, const std::string &aiName) :
-	playerId_(playerId), destinationId_(destinationId),
-	uniqueId_(uniqueId), sUID_(sUID), hostDesc_(hostDesc),
-	ipAddress_(ipAddress), aiName_(aiName), playerName_(playerName)
+	unsigned int playerId,
+	unsigned int destinationId,
+	const std::string &uniqueId,
+	const std::string &sUID,
+	const std::string &hostDesc,
+	unsigned int ipAddress,
+	const LangString &playerName,
+	const std::string &aiName
+) :
+	playerId_(playerId),
+	destinationId_(destinationId),
+	uniqueId_(uniqueId),
+	sUID_(sUID),
+	hostDesc_(hostDesc),
+	ipAddress_(ipAddress),
+	playerName_(playerName),
+	aiName_(aiName)
 {
 	TankAddSimActionCount++;
 }

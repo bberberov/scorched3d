@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,6 +30,9 @@
 #include <weapons/AccessoryStore.h>
 #include <common/Logger.h>
 #include <XML/XMLNode.h>
+
+LandscapeCondition::~LandscapeCondition()
+{}
 
 // LandscapeEvent
 LandscapeEvent::LandscapeEvent() :
@@ -158,6 +161,10 @@ bool LandscapeConditionRandom::readXML(XMLNode *node)
 	if (!node->getNamedChild("randomdelay", randomdelay)) return false;
 	return node->failChildren();
 }
+
+// LandscapeAction
+LandscapeAction::~LandscapeAction()
+{}
 
 LandscapeAction *LandscapeAction::create(const char *type)
 {

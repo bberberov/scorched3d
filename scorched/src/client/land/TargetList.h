@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,7 +26,8 @@
 class TargetList
 {
 public:
-	TargetList() : objects_(0)
+	TargetList() :
+		objects_(nullptr)
 	{
 		clear();
 	}
@@ -38,18 +39,18 @@ public:
 	void clear()
 	{
 		delete [] objects_;
-		objects_ = 0;
-		lastObject_ = 0;
+		objects_ = nullptr;
+		lastObject_ = nullptr;
 		capacity_ = 0;
 		count_ = 0;
 	}
 
-	bool empty() 
+	bool empty()
 	{
 		return (count_ == 0);
 	}
 
-	void reset() 
+	void reset()
 	{
 		count_ = 0;
 		lastObject_ = objects_;
@@ -99,11 +100,11 @@ private:
 class TargetListIterator
 {
 public:
-	TargetListIterator(): 
-	  list_(0), i_(0), current_(0)
-	{
-
-	}
+	TargetListIterator() :
+		i_(0),
+		list_(nullptr),
+		current_(nullptr)
+	{}
 
 	TargetListIterator(TargetList &list)
 	{
@@ -128,8 +129,8 @@ public:
 
 private:
 	int i_;
-	void **current_;
 	TargetList *list_;
+	void **current_;
 };
 
 #endif // __INCLUDE_TargetListh_INCLUDE__

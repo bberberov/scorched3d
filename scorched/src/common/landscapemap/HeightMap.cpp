@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,26 +26,27 @@
 static const int minMapShift = 3;
 static FixedVector nvec(fixed(0), fixed(0), fixed(1));
 
-HeightMap::HeightMap() : 
-	width_(0), height_(0),
-	heightData_(0), graphicalMap_(0),
+HeightMap::HeightMap() :
+	width_(0),
+	height_(0),
+	heightData_(nullptr),
+	graphicalMap_(nullptr),
 	invertedNormals_(false)
-{
-}
+{}
 
 HeightMap::~HeightMap()
 {
 	delete [] heightData_;
-	heightData_ = 0;
+	heightData_ = nullptr;
 	if (graphicalMap_) delete graphicalMap_;
-	graphicalMap_ = 0;
+	graphicalMap_ = nullptr;
 }
 
 void HeightMap::create(const int width, const int height, bool invertedNormals)
 {
-	invertedNormals_ = invertedNormals;
-	width_ = width; 
+	width_ = width;
 	height_ = height;
+	invertedNormals_ = invertedNormals;
 
 	delete [] heightData_;
 	heightData_ = new HeightData[(width_ + 1) * (height_ + 1)];

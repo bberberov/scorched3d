@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,8 +22,10 @@
 #include <engine/ModFiles.h>
 #include <engine/ModFileEntryLoader.h>
 
-ServerDestinationMod::ServerDestinationMod() : 
-	readyToReceive_(true), init_(false), totalLeft_(0)
+ServerDestinationMod::ServerDestinationMod() :
+	readyToReceive_(true),
+	init_(false),
+	totalLeft_(0)
 {
 	files_ = new std::list<ModIdentifierEntry>();
 }
@@ -77,36 +79,41 @@ static struct AllowedStateTransitions
 {
 	ServerDestination::State from, to;
 }
-allowedStateTransitions[] =
-{
-	ServerDestination::sDownloadingMod, ServerDestination::sInitializingMod,
+allowedStateTransitions[] = {
+	ServerDestination::sDownloadingMod,  ServerDestination::sInitializingMod,
 	ServerDestination::sInitializingMod, ServerDestination::sLoadingLevel,
-	ServerDestination::sLoadingLevel, ServerDestination::sFinished,
-	ServerDestination::sFinished, ServerDestination::sLoadingLevel
+	ServerDestination::sLoadingLevel,    ServerDestination::sFinished,
+	ServerDestination::sFinished,        ServerDestination::sLoadingLevel
 };
 
-ServerDestination::ServerDestination(unsigned int destinationId, 
-									 unsigned int ipAddress) :
+ServerDestination::ServerDestination(
+	unsigned int destinationId,
+	unsigned int ipAddress
+) :
 	state_(sDownloadingMod),
-	adminTries_(0), 
-	admin_(false), levelNumber_(0),
 	destinationId_(destinationId),
 	ipAddress_(ipAddress),
-	ping_(25, fixed(true, fixed::FIXED_RESOLUTION / Sint64(25)))
-{
-}
+	levelNumber_(0),
+	admin_(false),
+	adminTries_(0),
+	ping_( 25, fixed( true, fixed::FIXED_RESOLUTION / Sint64(25) ) )
+{}
 
 ServerDestination::~ServerDestination()
-{
-}
+{}
 
 void ServerDestination::setState(State s)
 {
-	for (int i=0; i<sizeof(allowedStateTransitions) / 
-			sizeof(AllowedStateTransitions); i++)
+	for (
+		size_t i = 0;
+		i < sizeof(allowedStateTransitions) / sizeof(AllowedStateTransitions);
+		i++
+	)
 	{
-		if (state_ == allowedStateTransitions[i].from &&
-			s == allowedStateTransitions[i].to)
+		if (
+			state_ == allowedStateTransitions[i].from
+			&& s == allowedStateTransitions[i].to
+		)
 		{
 			state_ = s;
 			break;

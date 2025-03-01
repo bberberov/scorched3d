@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,41 +28,49 @@
 #include <math.h>
 
 OptionsTransient::OptionsTransient(OptionsScorched &optionsGame) :
-	optionsGame_(optionsGame), newGame_(false),
-	currentRoundNo_(options_, "CurrentRoundNo", 
-		"The current number of rounds played in this game", 0, 0),
-	currentTurnNo_(options_, "CurrentTurnNo", 
-		"The current number of turns played in this round", 0, 1),
-	wallType_(options_, "WallType",
-		"The current wall type", 0, 0)
-{
-	
-}
+	newGame_(false),
+	optionsGame_(optionsGame),
+	currentRoundNo_(
+		options_,
+		"CurrentRoundNo",
+		"The current number of rounds played in this game",
+		0, 0
+	),
+	currentTurnNo_(
+		options_,
+		"CurrentTurnNo",
+		"The current number of turns played in this round",
+		0, 1
+	),
+	wallType_(
+		options_,
+		"WallType",
+		"The current wall type",
+		0, 0
+	)
+{}
 
 OptionsTransient::~OptionsTransient()
-{
-}
+{}
 
 unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 {
 	// Reset all the counts
 	std::map<unsigned int, unsigned int> counts;
-	for (int i=1; i<=optionsGame_.getTeams(); i++)
+	for (unsigned int i = 1; i <= optionsGame_.getTeams(); i++)
 	{
 		counts[i] = 0;
 	}
 
 	// Add all the tanks to the counts
 	std::map<unsigned int, Tank *>::iterator itor;
-	std::map<unsigned int, Tank *> &tanks = 
-		container.getTanks();
+	std::map<unsigned int, Tank *> &tanks = container.getTanks();
 	for (itor = tanks.begin();
 		itor != tanks.end();
 		++itor)
 	{
 		Tank *tank = (*itor).second;
-		if (tank->getTeam() > 0 &&
-			tank->getState().getTankPlaying())
+		if (tank->getTeam() > 0 && tank->getState().getTankPlaying())
 		{
 			counts[tank->getTeam()] ++;
 		}
@@ -71,7 +79,7 @@ unsigned int OptionsTransient::getLeastUsedTeam(TargetContainer &container)
 	// Find the least counted team
 	unsigned int team = 1;
 	unsigned int count = counts[1];
-	for (int i=2; i<=optionsGame_.getTeams(); i++)
+	for (unsigned int i = 2; i <= optionsGame_.getTeams(); i++)
 	{
 		if (counts[i] < count)
 		{

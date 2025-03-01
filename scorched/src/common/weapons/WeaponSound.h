@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,8 +30,7 @@ public:
 	WeaponSound();
 	virtual ~WeaponSound();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
 
 	const char *getSound();
 	fixed getGain() { return gain_; }
@@ -40,16 +39,20 @@ public:
 	bool getRelative() { return relative_; }
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext &context,
+		WeaponFireContext &weaponContext,
+		FixedVector &position,
+		FixedVector &velocity
+	);
 
 	REGISTER_ACCESSORY_HEADER(WeaponSound, AccessoryPart::AccessoryWeapon);
 protected:
 	std::vector<std::string> sounds_;
 	fixed gain_;
+	bool relative_;
 	fixed rolloff_;
 	fixed referenceDistance_;
-	bool relative_;
 };
 
 #endif // __INCLUDE_WeaponSoundh_INCLUDE__

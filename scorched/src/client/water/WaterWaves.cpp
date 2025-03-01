@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,16 +32,13 @@
 #include <image/ImageFactory.h>
 #include <math.h>
 
-WaterWaves::WaterWaves() : 
-	totalTime_(0.0f), 
-	wavesColor_(1.0f, 1.0f, 1.0f)
-{
-
-}
+WaterWaves::WaterWaves() :
+	wavesColor_(1.0f, 1.0f, 1.0f),
+	totalTime_(0.0f)
+{}
 
 WaterWaves::~WaterWaves()
-{
-}
+{}
 
 void WaterWaves::generateWaves(float waterHeight, ProgressCounter *counter)
 {
@@ -51,10 +48,8 @@ void WaterWaves::generateWaves(float waterHeight, ProgressCounter *counter)
 	//if (OptionsDisplay::instance()->getNoWaves()) return;
 	if (!OptionsDisplay::instance()->getDrawWater()) return;
 
-	int mapWidth = ScorchedClient::instance()->getLandscapeMaps().
-		getGroundMaps().getLandscapeWidth();
-	int mapHeight = ScorchedClient::instance()->getLandscapeMaps().
-		getGroundMaps().getLandscapeHeight();
+	int mapWidth = ScorchedClient::instance()->getLandscapeMaps().getGroundMaps().getLandscapeWidth();
+	int mapHeight = ScorchedClient::instance()->getLandscapeMaps().getGroundMaps().getLandscapeHeight();
 
 	// Wave points
 	WaterWaveContext context;
@@ -66,8 +61,7 @@ void WaterWaves::generateWaves(float waterHeight, ProgressCounter *counter)
 	context.pointsWidth = mapWidth / context.pointsMult;
 	context.pointsHeight = mapHeight / context.pointsMult;
 	context.wavePoints = new bool[context.pointsWidth * context.pointsHeight];
-	memset(context.wavePoints, 0, 
-		context.pointsWidth * context.pointsHeight * sizeof(bool));
+	memset(context.wavePoints, 0, context.pointsWidth * context.pointsHeight * sizeof(bool));
 
 	// Find all of the points that are equal to a certain height (the water height)
 	if (counter) counter->setNewOp(LANG_RESOURCE("CREATING_BREAKERS_1", "Creating Breakers 1"));
@@ -77,27 +71,24 @@ void WaterWaves::generateWaves(float waterHeight, ProgressCounter *counter)
 	if (counter) counter->setNewOp(LANG_RESOURCE("CREATING_BREAKERS_2", "Creating Breakers 2"));
 	while (findNextPath(&context, waterHeight, counter)) {}
 
-	Image waves1 = ImageFactory::loadAlphaImage(
-		S3D::eModLocation, "data/textures/waves.bmp");
-	Image waves2 = ImageFactory::loadAlphaImage(
-		S3D::eModLocation, "data/textures/waves2.bmp");
+	Image waves1 = ImageFactory::loadAlphaImage( S3D::eModLocation, "data/textures/waves.bmp" );
+	Image waves2 = ImageFactory::loadAlphaImage( S3D::eModLocation, "data/textures/waves2.bmp" );
 	wavesTexture1_.create(waves1);
 	wavesTexture2_.create(waves2);
 
 	delete [] context.wavePoints;
 }
 
-void WaterWaves::findPoints(WaterWaveContext *context,
-	float waterHeight, ProgressCounter *counter)
+void WaterWaves::findPoints(WaterWaveContext *context, float waterHeight, ProgressCounter *counter)
 {
-	for (int y=context->pointsMult; 
-		y<context->mapHeight - context->pointsMult; 
+	for (int y=context->pointsMult;
+		y<context->mapHeight - context->pointsMult;
 		y+=context->pointsMult)
 	{
 		if (counter) counter->setNewPercentage(float(y)/
 			float(context->pointsHeight)*100.0f);
-		for (int x=context->pointsMult; 
-			x<context->mapWidth - context->pointsMult; 
+		for (int x=context->pointsMult;
+			x<context->mapWidth - context->pointsMult;
 			x+=context->pointsMult)
 		{
 			float height =
@@ -138,8 +129,7 @@ void WaterWaves::findPoints(WaterWaveContext *context,
 	}
 }
 
-bool WaterWaves::findNextPath(WaterWaveContext *context,
-	float waterHeight, ProgressCounter *counter)
+bool WaterWaves::findNextPath(WaterWaveContext *context, float waterHeight, ProgressCounter *counter)
 {
 	std::vector<Vector> points;
 
@@ -147,11 +137,11 @@ bool WaterWaves::findNextPath(WaterWaveContext *context,
 	{
 		for (int x=1; x<context->pointsWidth; x++)
 		{
-			if (context->wavePoints[x + y * context->pointsWidth]) 
+			if (context->wavePoints[x + y * context->pointsWidth])
 			{
 				findPath(context, points, x, y, counter);
 				constructLines(context, waterHeight, points);
-				return true;			
+				return true;
 			}
 		}
 	}
@@ -159,9 +149,13 @@ bool WaterWaves::findNextPath(WaterWaveContext *context,
 	return false;
 }
 
-void WaterWaves::findPath(WaterWaveContext *context,
-	std::vector<Vector> &points, 
-	int x, int y, ProgressCounter *counter)
+void WaterWaves::findPath(
+	WaterWaveContext *context,
+	std::vector<Vector> &points,
+	int x,
+	int y,
+	ProgressCounter *counter
+)
 {
 	if (x < 0 || x >= context->pointsWidth ||
 		y < 0 || y >= context->pointsHeight)
@@ -172,11 +166,11 @@ void WaterWaves::findPath(WaterWaveContext *context,
 	context->removedCount ++;
 	points.push_back(
 		Vector(
-			float(x * context->pointsMult), 
-			float(y * context->pointsMult), 
+			float(x * context->pointsMult),
+			float(y * context->pointsMult),
 			0.0f));
 	
-	if (counter && context->removedCount % 50 == 0) 
+	if (counter && context->removedCount % 50 == 0)
 		counter->setNewPercentage(
 			float(context->removedCount)/float(context->pointCount)*100.0f);
 
@@ -199,8 +193,7 @@ void WaterWaves::findPath(WaterWaveContext *context,
 		findPath(context, points, x+1, y-1, counter);
 }
 
-void WaterWaves::constructLines(WaterWaveContext *context,
-	float waterHeight, std::vector<Vector> &points)
+void WaterWaves::constructLines(WaterWaveContext *context, float waterHeight, std::vector<Vector> &points)
 {
 	Vector ptA;
 	Vector ptB;
@@ -293,9 +286,12 @@ void WaterWaves::draw(Water2Patches &currentPatch)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void WaterWaves::drawBoxes(Water2Patches &currentPatch,
-						   float totalTime, Vector &windDirPerp, 
-						   std::vector<WaterWaveEntry> &paths)
+void WaterWaves::drawBoxes(
+	Water2Patches &currentPatch,
+	float totalTime,
+	Vector &windDirPerp,
+	std::vector<WaterWaveEntry> &paths
+)
 {
 	float newTime = totalTime;
 	if (newTime > 6.0f) newTime -= 6.0f;

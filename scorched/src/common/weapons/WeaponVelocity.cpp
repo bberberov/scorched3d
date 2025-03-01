@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,15 @@
 REGISTER_ACCESSORY_SOURCE(WeaponVelocity);
 
 WeaponVelocity::WeaponVelocity() :
-	velocityChange_("WeaponVelocity::velocityChange", 0), abs_(false),
+	velocityChange_("WeaponVelocity::velocityChange", 0),
+	abs_(false),
 	aimedWeapon_(0)
-{
-
-}
+{}
 
 WeaponVelocity::~WeaponVelocity()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponVelocity::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -45,8 +44,7 @@ bool WeaponVelocity::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
-	AccessoryPart *accessory = context.getAccessoryStore().
-		createAccessoryPart(context, parent_, subNode);
+	AccessoryPart *accessory = context.getAccessoryStore().createAccessoryPart(context, parent_, subNode);
 	if (!accessory || accessory->getType() != AccessoryPart::AccessoryWeapon)
 	{
 		return subNode->returnError("Failed to find sub weapon, not a weapon");
@@ -60,15 +58,19 @@ bool WeaponVelocity::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	return true;
 }
 
-void WeaponVelocity::fireWeapon(ScorchedContext &context,
-	WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity)
+void WeaponVelocity::fireWeapon(
+	ScorchedContext &context,
+	WeaponFireContext &weaponContext,
+	FixedVector &position,
+	FixedVector &velocity
+)
 {
 	// Add a shot that will fall where the original was aimed
 	// but with altered velocity
 	FixedVector newVelocity;
 	if (abs_)
 	{
-		newVelocity = velocity.Normalize() * 50 * velocityChange_.getValue(context); 
+		newVelocity = velocity.Normalize() * 50 * velocityChange_.getValue(context);
 		aimedWeapon_->fire(context, weaponContext, position, newVelocity);
 	}
 	else
@@ -77,4 +79,3 @@ void WeaponVelocity::fireWeapon(ScorchedContext &context,
 		aimedWeapon_->fire(context, weaponContext, position, newVelocity);
 	}
 }
-

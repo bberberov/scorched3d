@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -54,10 +54,11 @@ public:
 	GLVertexBufferObject *getBufferObject() { return bufferObject_; }
 
 protected:
-	int width_, height_;
-	int bufferSizeBytes_;
 	HeightData *heightData_;
 	GLVertexBufferObject *bufferObject_;
+	int width_;
+	int height_;
+	unsigned int bufferSizeBytes_;
 };
 
 #endif // !defined(AFX_GraphicalLandscapeMap_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_)

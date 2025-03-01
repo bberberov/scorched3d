@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,11 +27,13 @@
 class NetServerTCPRead
 {
 public:
-	NetServerTCPRead(unsigned int id,
+	NetServerTCPRead(
+		unsigned int id,
 		TCPsocket socket,
 		NetServerTCPProtocol *protocol,
 		NetMessageHandler *messageHandler,
-		bool *checkDeleted);
+		bool *checkDeleted
+	);
 	virtual ~NetServerTCPRead();
 
 	void start();
@@ -43,18 +45,19 @@ public:
 
 protected:
 	unsigned int id_;
-	bool *checkDeleted_;
-	bool disconnect_, sentDisconnect_;
 	TCPsocket socket_;
 	SDLNet_SocketSet sockSet_;
 	NetServerTCPProtocol *protocol_;
-	NetMessageHandler *messageHandler_;
 	SDL_mutex *outgoingMessagesMutex_;
-	SDL_Thread *sendThread_;
-	SDL_Thread *recvThread_;
-	SDL_Thread *ctrlThread_;
-	std::list<NetMessage *> newMessages_;
+	NetMessageHandler *messageHandler_;
+	bool *checkDeleted_;
+	bool disconnect_;
+	bool sentDisconnect_;
 	unsigned int startCount_;
+	SDL_Thread *ctrlThread_;
+	SDL_Thread *recvThread_;
+	SDL_Thread *sendThread_;
+	std::list<NetMessage *> newMessages_;
 
 	void actualCtrlThreadFunc();
 	void actualSendRecvThreadFunc(bool send);

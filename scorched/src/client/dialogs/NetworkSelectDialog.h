@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,7 +28,7 @@
 #include <dialogs/TextBoxDialog.h>
 #include <common/ToolTip.h>
 
-class NetworkSelectDialog : 
+class NetworkSelectDialog :
 	public GLWWindow,
 	public GLWButtonI,
 	public GLWIconTableI,
@@ -64,17 +64,25 @@ protected:
 	static NetworkSelectDialog *instance_;
 
 	float totalTime_;
-	GLTextureReference okTex_, questionTex_;
-	GLTextureReference warningTex_, noentryTex_;
-	GLTextureReference tankTex_, exclaimTex_;
-	GLTextureReference keyTex_, cogTex_;
+	GLTextureReference okTex_;
+	GLTextureReference questionTex_;
+	GLTextureReference warningTex_;
+	GLTextureReference noentryTex_;
+	GLTextureReference exclaimTex_;
+	GLTextureReference keyTex_;
+	GLTextureReference cogTex_;
+	GLTextureReference tankTex_;
 	GLWIconTable *gamesIconTable_;
 	GLWIconTable *playersIconTable_;
-	GLWTextButton *ok_, *refresh_, *favourites_, *connectTo_;
+	GLWTextButton *ok_;
+	GLWTextButton *refresh_;
+	GLWTextButton *favourites_;
+	GLWTextButton *connectTo_;
 	GLWLabel *ipaddress_;
 	GLWDropDownText *refreshType_;
 	unsigned int invalidateId_;
-	unsigned int cancelId_, addFavouriteId_;
+	unsigned int cancelId_;
+	unsigned int addFavouriteId_;
 	ToolTip colToolTip_;
 
 	void updateTable();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -88,15 +88,15 @@ void RenderTargets::Renderer3D::simulate(const unsigned state, float simTime)
 	{
 		float time = stepTime * ScorchedClient::instance()->getSimulator().getFast().asFloat();
 
-		void *currentPatchPtr = 0, *currentObject = 0;
+		void *currentPatchPtr = nullptr, *currentObject = nullptr;
 		TargetListIterator patchItor(patchInfo.getTargetVisibility());
 		TargetVisibilityIterator itor;
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
 			itor.init(currentPatch->getTargets());
-			while (currentObject = itor.getNext())
+			while ( ( currentObject = itor.getNext() ) != nullptr )
 			{
 				Target *target = (Target *) currentObject;
 				TargetRendererImpl *renderImpl = (TargetRendererImpl *) target->getRenderer();
@@ -105,7 +105,7 @@ void RenderTargets::Renderer3D::simulate(const unsigned state, float simTime)
 		}
 
 		itor.init(TargetVisibilityPatch::getLargeTargets());
-		while (currentObject = itor.getNext())
+		while ( ( currentObject = itor.getNext() ) != nullptr )
 		{
 			Target *target = (Target *) currentObject;
 			TargetRendererImpl *renderImpl = (TargetRendererImpl *) target->getRenderer();
@@ -123,8 +123,8 @@ void RenderTargets::Renderer3D::enterState(const unsigned state)
 
 static void drawTargetShadows(TargetVisibilityIterator &itor, float distance) 
 {
-	void *currentObject = 0;
-	while (currentObject = itor.getNext())
+	void *currentObject = nullptr;
+	while ( ( currentObject = itor.getNext() ) != nullptr )
 	{
 		Target *target = (Target *) currentObject;
 		if (target->getTargetState().getDisplayHardwareShadow())
@@ -158,10 +158,10 @@ void RenderTargets::shadowDraw()
 			ModelRendererTree::setSkipPre(true);
 			ModelRendererTree::drawInternalPre(false);
 
-			void *currentPatchPtr = 0;
+			void *currentPatchPtr = nullptr;
 			TargetListIterator patchItor(patchInfo.getTreeVisibility());
 			TargetVisibilityIterator itor;
-			while (currentPatchPtr = patchItor.getNext())
+			while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 			{
 				TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
@@ -173,10 +173,10 @@ void RenderTargets::shadowDraw()
 		}
 		{
 			GLGlobalState globalState(0);
-			void *currentPatchPtr = 0;
+			void *currentPatchPtr = nullptr;
 			TargetListIterator patchItor(patchInfo.getTargetVisibility());
 			TargetVisibilityIterator itor;
-			while (currentPatchPtr = patchItor.getNext())
+			while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 			{
 				TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
@@ -198,8 +198,8 @@ void RenderTargets::shadowDraw()
 
 static void drawTargets(TargetVisibilityIterator &itor, float distance, bool reflection, fixed waterHeight)
 {
-	void *currentObject = 0;
-	while (currentObject = itor.getNext())
+	void *currentObject = nullptr;
+	while ( ( currentObject = itor.getNext() ) != nullptr )
 	{
 		Target *target = (Target *) currentObject;
 		if (reflection)
@@ -242,9 +242,12 @@ void RenderTargets::draw(bool reflection)
 	}
 
 	// Don't put fully transparent areas into the depth buffer
-	unsigned int wantedstate = GLState::BLEND_ON | 
-		GLState::ALPHATEST_ON | GLState::TEXTURE_ON | 
-		GLState::NORMALIZE_ON | GLState::LIGHTING_ON | 
+	unsigned int wantedstate =
+		GLState::BLEND_ON |
+		GLState::ALPHATEST_ON |
+		GLState::TEXTURE_ON |
+		GLState::NORMALIZE_ON |
+		GLState::LIGHTING_ON |
 		GLState::LIGHT1_ON;
 	GLState glstate(wantedstate);
 	Landscape::instance()->getSky().getSun().setLightPosition(false);
@@ -264,10 +267,10 @@ void RenderTargets::draw(bool reflection)
 		ModelRendererTree::setSkipPre(true);
 		ModelRendererTree::drawInternalPre(true);
 
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo.getTreeVisibility());
 		TargetVisibilityIterator itor;
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
@@ -296,10 +299,10 @@ void RenderTargets::draw(bool reflection)
 
 		GLGlobalState globalState(0);
 
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo.getTargetVisibility());
 		TargetVisibilityIterator itor;
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
@@ -325,8 +328,8 @@ void RenderTargets::draw(bool reflection)
 
 static void drawTargets2D(TargetVisibilityIterator &itor, float distance)
 {
-	void *currentObject = 0;
-	while (currentObject = itor.getNext())
+	void *currentObject = nullptr;
+	while ( ( currentObject = itor.getNext() ) != nullptr )
 	{
 		Target *target = (Target *) currentObject;
 		if (target->getType() != Target::TypeTank)
@@ -350,10 +353,10 @@ void RenderTargets::draw2d()
 
 	// 2D
 	{
-		void *currentPatchPtr = 0;
+		void *currentPatchPtr = nullptr;
 		TargetListIterator patchItor(patchInfo.getTargetVisibility());
 		TargetVisibilityIterator itor;
-		while (currentPatchPtr = patchItor.getNext())
+		while ( ( currentPatchPtr = patchItor.getNext() ) != nullptr )
 		{
 			TargetVisibilityPatch *currentPatch = (TargetVisibilityPatch *) currentPatchPtr;
 
