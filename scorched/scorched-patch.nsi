@@ -1,6 +1,6 @@
 ; Helper defines
 !define PRODUCT_NAME "Scorched3D"
-!define PRODUCT_VERSION "44.1"
+!define PRODUCT_VERSION "44.2"
 !define PRODUCT_PUBLISHER "Scorched"
 !define PRODUCT_WEB_SITE "http://www.scorched3d.co.uk"
 !define PRODUCT_DONATE_WEB_SITE "https://www.paypal.com/xclick/business=donations%40scorched3d.co.uk&item_name=Scorched3D&no_note=1&tax=0&currency_code=GBP"
