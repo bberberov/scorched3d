@@ -28,7 +28,7 @@ gl_dep          = dependency('gl',      required : target_machine.system() != 'd
 glew_dep        = dependency('glew')
 glu_dep         = dependency('glu',     required : target_machine.system() != 'darwin')
 jpeg_dep        = dependency('libjpeg', required : target_machine.system() != 'darwin')
-lua_dep         = dependency('lua', version : [ '>= 5.1', '< 5.2' ])
+lua_dep         = dependency('lua-5.1', 'lua5.1', version : [ '>= 5.1', '< 5.2' ])
 ogg_dep         = dependency('ogg')
 openal_dep      = dependency('openal', version : ['>= 1.17.2'])
 png_dep         = dependency('libpng',  required : target_machine.system() != 'darwin')
