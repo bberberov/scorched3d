@@ -1,0 +1,8 @@
+[wrap-file]
+directory = freealut-freealut_1_1_0
+source_url = https://github.com/vancegroup/freealut/archive/refs/tags/freealut_1_1_0.tar.gz
+source_filename = freealut-freealut_1_1_0.tar.gz
+source_hash = c3880d7dbb90c7db54e1d6b88aa0a34dd9e2d828fd389be0d2cbb2632b0885dd
+
+[provide]
+freealut = freealut_dep

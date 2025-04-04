@@ -1,0 +1,17 @@
+name: Linux Build
+
+on:
+  push
+
+jobs:
+  linux-build:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Prepare
+      run: .ci/prepare-ubuntu.bash
+    - name: Meson Setup
+      run: meson setup --buildtype debugoptimized builddir scorched
+    - name: Meson Compile
+      run: meson compile -C builddir

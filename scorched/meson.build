@@ -20,24 +20,67 @@ else
 	fftw3_variant = 'fftw3f'
 endif
 
-expat_dep       = dependency('expat')
+expat_dep       = dependency(
+	'expat',
+	fallback : ['expat', 'expat_dep']
+)
 fftw_dep        = dependency(fftw3_variant)
 freealut_dep    = dependency('freealut')
-ft2_dep         = dependency('freetype2', version : ['>= 2.5.1'])
-gl_dep          = dependency('gl',      required : target_machine.system() != 'darwin')
-glew_dep        = dependency('glew')
-glu_dep         = dependency('glu',     required : target_machine.system() != 'darwin')
-jpeg_dep        = dependency('libjpeg', required : target_machine.system() != 'darwin')
-lua_dep         = dependency('lua-5.1', 'lua5.1', version : [ '>= 5.1', '< 5.2' ])
-ogg_dep         = dependency('ogg')
-openal_dep      = dependency('openal', version : ['>= 1.17.2'])
-png_dep         = dependency('libpng',  required : target_machine.system() != 'darwin')
+ft2_dep         = dependency(
+	'freetype2',
+	fallback : ['freetype2', 'ft2_dep'],
+	version : ['>= 2.5.1']
+)
+gl_dep          = dependency(
+	'gl',
+	required : target_machine.system() != 'darwin'
+)
+glew_dep        = dependency(
+	'glew',
+	fallback : ['glew', 'glew_dep']
+)
+glu_dep         = dependency('glu',
+	required : target_machine.system() != 'darwin'
+)
+jpeg_dep        = dependency(
+	'libjpeg',
+	fallback : ['libjpeg', 'jpeg_dep'],
+	required : target_machine.system() != 'darwin'
+)
+lua_dep         = dependency(
+	'lua-5.1', 'lua5.1',
+	version : [ '>= 5.1', '< 5.2' ]
+)
+ogg_dep         = dependency('ogg',
+	fallback : ['ogg', 'ogg_dep']
+)
+openal_dep      = dependency(
+	'openal',
+	version : ['>= 1.17.2']
+)
+png_dep         = dependency(
+	'libpng',
+	fallback : ['libpng', 'png_dep'],
+	required : target_machine.system() != 'darwin'
+)
 sdl_dep         = dependency('sdl')
 sdl_net_dep     = dependency('SDL_net')
-vorbis_dep      = dependency('vorbis')
-vorbisfile_dep  = dependency('vorbisfile')
-wxwidgets_dep   = dependency('wxwidgets', version : ['>= 2.4.0'])
-zlib_dep        = dependency('zlib')
+vorbis_dep      = dependency(
+	'vorbis',
+	fallback : ['vorbis', 'vorbis_dep']
+)
+vorbisfile_dep  = dependency(
+	'vorbisfile',
+	fallback : ['vorbisfile', 'vorbisfile_dep']
+)
+wxwidgets_dep   = dependency(
+	'wxwidgets',
+	version : ['>= 2.4.0']
+)
+zlib_dep        = dependency(
+	'zlib',
+	fallback : ['zlib', 'zlib_dep']
+)
 # END   Dependencies
 
 # BEGIN Defines and compile options
