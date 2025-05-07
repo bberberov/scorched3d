@@ -14,72 +14,129 @@ cc  = meson.get_compiler('c')
 cxx = meson.get_compiler('cpp')
 
 # BEGIN Dependencies
-if target_machine.system() == 'darwin'
-	fftw3_variant = 'fftw3'
-else
-	fftw3_variant = 'fftw3f'
-endif
-
 expat_dep       = dependency(
 	'expat',
-	fallback : ['expat', 'expat_dep']
+	fallback : ['expat', 'expat_dep'],
 )
-fftw_dep        = dependency(fftw3_variant)
-freealut_dep    = dependency('freealut')
+
+if   target_machine.system() == 'darwin'
+fftw_dep        = dependency('fftw3')
+elif target_machine.system() == 'windows'
+fftw_dep        = cc.find_library(
+	'fftw3',
+	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/fftw3'],
+)
+else
+fftw_dep        = dependency('fftw3f')
+endif
+
+if   target_machine.system() == 'windows'
+freealut_dep    = cc.find_library(
+	'Alut',
+	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/al'],
+)
+else
+freealut_dep    = dependency(
+	'freealut',
+	required : target_machine.system() != 'darwin',
+)
+endif
+
 ft2_dep         = dependency(
 	'freetype2',
 	fallback : ['freetype2', 'ft2_dep'],
-	version : ['>= 2.5.1']
+	version : ['>= 2.5.1'],
 )
+
 gl_dep          = dependency(
 	'gl',
-	required : target_machine.system() != 'darwin'
+	required : target_machine.system() != 'darwin',
 )
+
 glew_dep        = dependency(
 	'glew',
-	fallback : ['glew', 'glew_dep']
+	fallback : ['glew', 'glew_dep'],
 )
-glu_dep         = dependency('glu',
-	required : target_machine.system() != 'darwin'
+
+glu_dep         = dependency(
+	'glu',
+	required : target_machine.system() == 'linux',
 )
+
 jpeg_dep        = dependency(
-	'libjpeg',
-	fallback : ['libjpeg', 'jpeg_dep'],
-	required : target_machine.system() != 'darwin'
+	'libjpeg', 'libjpeg-turbo',
+	fallback : ['libjpeg-turbo', 'jpeg_dep'],
+	required : target_machine.system() != 'darwin',
 )
+
 lua_dep         = dependency(
 	'lua-5.1', 'lua5.1',
-	version : [ '>= 5.1', '< 5.2' ]
+	version : [ '>= 5.1' ],
+	fallback : ['lua', 'lua_dep'],
 )
-ogg_dep         = dependency('ogg',
-	fallback : ['ogg', 'ogg_dep']
+
+ogg_dep         = dependency(
+	'ogg',
+	fallback : ['ogg', 'ogg_dep'],
 )
+
 openal_dep      = dependency(
 	'openal',
-	version : ['>= 1.17.2']
+	version : ['>= 1.17.2'],
+	required : target_machine.system() != 'darwin',
 )
+
 png_dep         = dependency(
 	'libpng',
 	fallback : ['libpng', 'png_dep'],
-	required : target_machine.system() != 'darwin'
+	required : target_machine.system() != 'darwin',
 )
+
+if   target_machine.system() == 'windows'
+sdl_dep         = cc.find_library(
+	'SDL',
+	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/SDL'],
+)
+else
 sdl_dep         = dependency('sdl')
+endif
+
+if   target_machine.system() == 'windows'
+sdl_net_dep     = cc.find_library(
+	'SDL_net',
+	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/SDL'],
+)
+elif target_machine.system() == 'darwin'
+sdl_net_dep     = dependency('SDL2_net')
+else
 sdl_net_dep     = dependency('SDL_net')
+endif
+
 vorbis_dep      = dependency(
 	'vorbis',
-	fallback : ['vorbis', 'vorbis_dep']
+	fallback : ['vorbis', 'vorbis_dep'],
 )
+
 vorbisfile_dep  = dependency(
 	'vorbisfile',
-	fallback : ['vorbisfile', 'vorbisfile_dep']
+	fallback : ['vorbisfile', 'vorbisfile_dep'],
 )
+
+if   target_machine.system() == 'windows'
+wxwidgets_dep   = cc.find_library(
+	'wxmsw',
+	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/wx'],
+)
+else
 wxwidgets_dep   = dependency(
 	'wxwidgets',
-	version : ['>= 2.4.0']
+	version : ['>= 2.4.0'],
 )
+endif
+
 zlib_dep        = dependency(
 	'zlib',
-	fallback : ['zlib', 'zlib_dep']
+	fallback : ['zlib', 'zlib_dep'],
 )
 # END   Dependencies
 
