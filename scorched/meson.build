@@ -6,7 +6,7 @@ project(
 		'c_std=c11',
 		'cpp_std=c++11'
 	],
-	meson_version: '>=1.1',
+	meson_version: '>=0.60.0',
 )
 
 # Compilers
