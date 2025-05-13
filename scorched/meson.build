@@ -1098,4 +1098,19 @@ executable(
 # END   Binaries
 
 # Data
-install_subdir('data', install_dir: get_option('datadir'))
+install_subdir('data',          install_dir: get_option('datadir'))
+install_data(
+	'documentation/README-apoc.txt' ,
+	'documentation/README-EXPAT.txt' ,
+	'documentation/README-ft2.txt' ,
+	'documentation/README-libjpg.txt' ,
+	'documentation/README-ODE.txt' ,
+	'documentation/README-ogg.txt' ,
+	'documentation/README-png.txt' ,
+	'documentation/README-SDLMIXER.txt' ,
+	'documentation/README-SDLNET.txt' ,
+	'documentation/README-SDL.txt' ,
+	'documentation/README-wxwindows.txt' ,
+	'documentation/README-zlib.txt' ,
+	install_dir: get_option('docdir'),
+)
