@@ -24,7 +24,7 @@ fftw_dep        = dependency('fftw3')
 elif target_machine.system() == 'windows'
 fftw_dep        = cc.find_library(
 	'fftw3',
-	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/fftw3'],
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/fftw3'],
 )
 else
 fftw_dep        = dependency('fftw3f')
@@ -33,7 +33,7 @@ endif
 if   target_machine.system() == 'windows'
 freealut_dep    = cc.find_library(
 	'Alut',
-	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/al'],
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/al'],
 )
 else
 freealut_dep    = dependency(
@@ -95,7 +95,7 @@ png_dep         = dependency(
 if   target_machine.system() == 'windows'
 sdl_dep         = cc.find_library(
 	'SDL',
-	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/SDL'],
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/SDL'],
 )
 else
 sdl_dep         = dependency('sdl')
@@ -104,7 +104,7 @@ endif
 if   target_machine.system() == 'windows'
 sdl_net_dep     = cc.find_library(
 	'SDL_net',
-	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/SDL'],
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/SDL'],
 )
 elif target_machine.system() == 'darwin'
 sdl_net_dep     = dependency('SDL2_net')
@@ -125,7 +125,7 @@ vorbisfile_dep  = dependency(
 if   target_machine.system() == 'windows'
 wxwidgets_dep   = cc.find_library(
 	'wxmsw',
-	dirs : [meson.global_source_root() + '/../scorched-dep-win32/lib/wx'],
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/wx'],
 )
 else
 wxwidgets_dep   = dependency(
@@ -143,9 +143,9 @@ zlib_dep        = dependency(
 # BEGIN Defines and compile options
 c_defines = []
 cpp_defines = [
-	'-DS3D_BINDIR="'  + get_option('bindir')  + '"',
-	'-DS3D_DATADIR="' + get_option('datadir') + '"',
-	'-DS3D_DOCDIR="'  + get_option('docdir')  + '"',
+	'-DS3D_BINDIR="'  + get_option('prefix') / get_option('bindir')  + '"',
+	'-DS3D_DATADIR="' + get_option('prefix') / get_option('datadir') + '"',
+	'-DS3D_DOCDIR="'  + get_option('prefix') / get_option('docdir')  + '"',
 ]
 
 # Functions
