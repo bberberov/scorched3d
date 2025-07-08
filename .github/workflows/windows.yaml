@@ -5,13 +5,13 @@ on:
 
 jobs:
   windows-build:
-    runs-on: windows-2019
+    runs-on: windows-2022
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Prepare
       run: .ci/prepare-windows.bat
     - name: Meson Setup
-      run: meson setup --backend vs2019 --buildtype debugoptimized builddir scorched
+      run: meson setup --backend vs2022 --buildtype debugoptimized builddir scorched
     - name: Meson Compile
       run: meson compile -C builddir
