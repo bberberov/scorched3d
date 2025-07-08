@@ -16,7 +16,7 @@ cxx = meson.get_compiler('cpp')
 # BEGIN Dependencies
 expat_dep       = dependency(
 	'expat',
-	fallback : ['expat', 'expat_dep'],
+	fallback : 'expat',
 )
 
 if   target_machine.system() == 'darwin'
@@ -44,7 +44,7 @@ endif
 
 ft2_dep         = dependency(
 	'freetype2',
-	fallback : ['freetype2', 'ft2_dep'],
+	fallback : 'freetype2',
 	version : ['>= 2.5.1'],
 )
 
@@ -55,7 +55,7 @@ gl_dep          = dependency(
 
 glew_dep        = dependency(
 	'glew',
-	fallback : ['glew', 'glew_dep'],
+	fallback : 'glew',
 )
 
 glu_dep         = dependency(
@@ -65,19 +65,19 @@ glu_dep         = dependency(
 
 jpeg_dep        = dependency(
 	'libjpeg', 'libjpeg-turbo',
-	fallback : ['libjpeg-turbo', 'jpeg_dep'],
+	fallback : 'libjpeg-turbo',
 	required : target_machine.system() != 'darwin',
 )
 
 lua_dep         = dependency(
 	'lua-5.1', 'lua5.1',
 	version : [ '>= 5.1' ],
-	fallback : ['lua', 'lua_dep'],
+	fallback : 'lua',
 )
 
 ogg_dep         = dependency(
 	'ogg',
-	fallback : ['ogg', 'ogg_dep'],
+	fallback : 'ogg',
 )
 
 openal_dep      = dependency(
@@ -88,7 +88,7 @@ openal_dep      = dependency(
 
 png_dep         = dependency(
 	'libpng',
-	fallback : ['libpng', 'png_dep'],
+	fallback : 'libpng',
 	required : target_machine.system() != 'darwin',
 )
 
@@ -114,12 +114,12 @@ endif
 
 vorbis_dep      = dependency(
 	'vorbis',
-	fallback : ['vorbis', 'vorbis_dep'],
+	fallback : 'vorbis',
 )
 
 vorbisfile_dep  = dependency(
 	'vorbisfile',
-	fallback : ['vorbisfile', 'vorbisfile_dep'],
+	fallback : 'vorbisfile',
 )
 
 if   target_machine.system() == 'windows'
@@ -136,7 +136,7 @@ endif
 
 zlib_dep        = dependency(
 	'zlib',
-	fallback : ['zlib', 'zlib_dep'],
+	fallback : 'zlib',
 )
 # END   Dependencies
 

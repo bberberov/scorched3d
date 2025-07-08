@@ -14,12 +14,13 @@ brew install \
 	jpeg-turbo \
 	\
 	libogg \
-	openal-soft \
+	\
 	libpng \
 	sdl12-compat \
 	sdl2_net \
 	libvorbis \
 	wxwidgets \
-	zlib
+	\
 
+cd scorched
 meson wrap install lua
