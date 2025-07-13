@@ -81,7 +81,7 @@ ogg_dep         = dependency(
 )
 
 if   target_machine.system() == 'windows'
-freealut_dep    = cc.find_library(
+openal_dep    = cc.find_library(
 	'OpenAl32',
 	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/al'],
 )
@@ -117,15 +117,29 @@ else
 sdl_net_dep     = dependency('SDL_net')
 endif
 
+if   target_machine.system() == 'windows'
+vorbis_dep    = cc.find_library(
+	'vorbis',
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/ogg'],
+)
+else
 vorbis_dep      = dependency(
 	'vorbis',
 	fallback : 'vorbis',
 )
+endif
 
+if   target_machine.system() == 'windows'
+vorbisfile_dep    = cc.find_library(
+	'vorbisfile',
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/ogg'],
+)
+else
 vorbisfile_dep  = dependency(
 	'vorbisfile',
 	fallback : 'vorbisfile',
 )
+endif
 
 if   target_machine.system() == 'windows'
 wxwidgets_dep   = cc.find_library(
