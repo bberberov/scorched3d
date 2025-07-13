@@ -13,5 +13,7 @@ jobs:
       run: .ci/prepare-windows.bat
     - name: Meson Setup
       run: meson setup --backend vs2022 --buildtype debugoptimized builddir scorched
+    - name: MSBuild Setup for Meson
+      uses: microsoft/setup-msbuild@v2
     - name: Meson Compile
       run: meson compile -C builddir
