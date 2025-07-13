@@ -80,11 +80,18 @@ ogg_dep         = dependency(
 	fallback : 'ogg',
 )
 
+if   target_machine.system() == 'windows'
+freealut_dep    = cc.find_library(
+	'OpenAl32',
+	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/al'],
+)
+else
 openal_dep      = dependency(
 	'openal',
 	version : ['>= 1.17.2'],
 	required : target_machine.system() != 'darwin',
 )
+endif
 
 png_dep         = dependency(
 	'libpng',
@@ -106,8 +113,6 @@ sdl_net_dep     = cc.find_library(
 	'SDL_net',
 	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/SDL'],
 )
-elif target_machine.system() == 'darwin'
-sdl_net_dep     = dependency('SDL2_net')
 else
 sdl_net_dep     = dependency('SDL_net')
 endif
