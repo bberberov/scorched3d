@@ -70,7 +70,7 @@ jpeg_dep        = dependency(
 )
 
 lua_dep         = dependency(
-	'lua-5.1', 'lua5.1',
+	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4',
 	version : [ '>= 5.1' ],
 	fallback : 'lua',
 )
