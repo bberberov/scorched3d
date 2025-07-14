@@ -197,18 +197,26 @@ endif
 
 # Build Type
 if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugoptimized'
-	# Known Warnings
-	cpp_options = [
-		'-Wno-class-memaccess',
-		'-Wno-deprecated-declarations',
-		'-Wno-format-truncation',
-		'-Wno-int-to-pointer-cast',
-		'-Wno-unused-but-set-variable',
-		'-Wno-unused-function',
-		'-Wno-unused-variable',
-	]
+	if   cxx.get_id() == 'msvc'
+		cpp_options = []
+	else
+		# Known Warnings
+		cpp_options = [
+			'-Wno-class-memaccess',
+			'-Wno-deprecated-declarations',
+			'-Wno-format-truncation',
+			'-Wno-int-to-pointer-cast',
+			'-Wno-unused-but-set-variable',
+			'-Wno-unused-function',
+			'-Wno-unused-variable',
+		]
+	endif
 else
-	cpp_options = []
+	if   cxx.get_id() == 'msvc'
+		cpp_options = []
+	else
+		cpp_options = []
+	endif
 endif
 
 # Binaries
