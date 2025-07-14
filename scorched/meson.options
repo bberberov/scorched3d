@@ -1,0 +1,20 @@
+option(
+	'docdir',
+	description : 'Location of the documentation',
+	type : 'string',
+	value : '/usr/share/doc/packages/scorched3d'
+)
+
+option(
+	'browser',
+	description : 'Browser binary to use to open links',
+	type : 'string',
+	value : 'xdg-open'
+)
+
+option(
+	'serveronly',
+	description : 'Enable server only compilation',
+	type : 'boolean',
+	value : false
+)

@@ -1,0 +1,17 @@
+name: macOS Build
+
+on:
+  push
+
+jobs:
+  macos-build:
+    runs-on: macos-13
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Prepare
+      run: .ci/prepare-macos.bash
+    - name: Meson Setup
+      run: meson setup --buildtype debugoptimized builddir scorched
+    - name: Meson Compile
+      run: meson compile -C builddir

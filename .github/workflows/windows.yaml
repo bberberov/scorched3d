@@ -1,0 +1,19 @@
+name: Windows Build
+
+on:
+  push
+
+jobs:
+  windows-build:
+    runs-on: windows-2022
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Prepare
+      run: .ci/prepare-windows.bat
+    - name: Meson Setup
+      run: meson setup --backend vs2022 --buildtype debugoptimized builddir scorched
+    - name: MSBuild Setup for Meson
+      uses: microsoft/setup-msbuild@v2
+    - name: Meson Compile
+      run: meson compile -C builddir
