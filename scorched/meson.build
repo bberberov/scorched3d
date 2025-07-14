@@ -11,9 +11,14 @@ project(
 
 # Compilers
 cc  = meson.get_compiler('c')
-cxx = meson.get_compiler('cpp')
+cpp = meson.get_compiler('cpp')
+
+# Directories
+srcdir =  meson.global_source_root()
 
 # BEGIN Dependencies
+include_dirs = []
+
 expat_dep       = dependency(
 	'expat',
 	fallback : 'expat',
@@ -24,8 +29,9 @@ fftw_dep        = dependency('fftw3')
 elif target_machine.system() == 'windows'
 fftw_dep        = cc.find_library(
 	'fftw3',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/fftw3'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/fftw3'],
 )
+include_dirs += include_directories('../scorched-dep-win32/include/fftw3')
 else
 fftw_dep        = dependency('fftw3f')
 endif
@@ -33,8 +39,9 @@ endif
 if   target_machine.system() == 'windows'
 freealut_dep    = cc.find_library(
 	'Alut',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/al'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/al'],
 )
+include_dirs += include_directories('../scorched-dep-win32/include/al')
 else
 freealut_dep    = dependency(
 	'freealut',
@@ -83,8 +90,9 @@ ogg_dep         = dependency(
 if   target_machine.system() == 'windows'
 openal_dep    = cc.find_library(
 	'OpenAl32',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/al'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/al'],
 )
+include_dirs += include_directories('../scorched-dep-win32/include/al')
 else
 openal_dep      = dependency(
 	'openal',
@@ -102,39 +110,33 @@ png_dep         = dependency(
 if   target_machine.system() == 'windows'
 sdl_dep         = cc.find_library(
 	'SDL',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/SDL'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/SDL'],
 )
-else
-sdl_dep         = dependency('sdl')
-endif
-
-if   target_machine.system() == 'windows'
 sdl_net_dep     = cc.find_library(
 	'SDL_net',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/SDL'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/SDL'],
 )
+include_dirs += include_directories('../scorched-dep-win32/include/SDL')
 else
+sdl_dep         = dependency('sdl')
 sdl_net_dep     = dependency('SDL_net')
 endif
 
 if   target_machine.system() == 'windows'
 vorbis_dep    = cc.find_library(
 	'vorbis',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/ogg'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/ogg'],
 )
+vorbisfile_dep    = cc.find_library(
+	'vorbisfile',
+	dirs : [srcdir / '../scorched-dep-win32/lib/ogg'],
+)
+include_dirs += include_directories('../scorched-dep-win32/include/ogg')
 else
 vorbis_dep      = dependency(
 	'vorbis',
 	fallback : 'vorbis',
 )
-endif
-
-if   target_machine.system() == 'windows'
-vorbisfile_dep    = cc.find_library(
-	'vorbisfile',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/ogg'],
-)
-else
 vorbisfile_dep  = dependency(
 	'vorbisfile',
 	fallback : 'vorbisfile',
@@ -144,8 +146,9 @@ endif
 if   target_machine.system() == 'windows'
 wxwidgets_dep   = cc.find_library(
 	'wxmsw',
-	dirs : [meson.global_source_root() / '../scorched-dep-win32/lib/wx'],
+	dirs : [srcdir / '../scorched-dep-win32/lib/wx'],
 )
+include_dirs += include_directories('../scorched-dep-win32/include/wx')
 else
 wxwidgets_dep   = dependency(
 	'wxwidgets',
@@ -186,7 +189,7 @@ if cc.has_function('vasprintf')
 endif
 
 # Headers
-if cxx.check_header('unistd.h')
+if cpp.check_header('unistd.h')
 	cpp_defines += '-DHAVE_UNISTD_H'
 endif
 
@@ -197,7 +200,7 @@ endif
 
 # Build Type
 if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugoptimized'
-	if   cxx.get_id() == 'msvc'
+	if   cpp.get_id() == 'msvc'
 		cpp_options = []
 	else
 		# Known Warnings
@@ -212,7 +215,7 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 		]
 	endif
 else
-	if   cxx.get_id() == 'msvc'
+	if   cpp.get_id() == 'msvc'
 		cpp_options = []
 	else
 		cpp_options = []
@@ -1049,13 +1052,16 @@ if not get_option('serveronly')
 		c_args:   launcher_c_args,
 		cpp_args: launcher_cpp_args,
 		sources:  scorched3d_src,
-		include_directories : include_directories(
-			'src/common/porting',
-			'src/common',
-			'src/client',
-			'src/server',
-			'src/launcher',
-		),
+		include_directories: [
+			include_directories(
+				'src/common/porting',
+				'src/common',
+				'src/client',
+				'src/server',
+				'src/launcher',
+			),
+			include_dirs,
+		],
 		dependencies: [
 			expat_dep,
 			ft2_dep,
@@ -1072,12 +1078,15 @@ if not get_option('serveronly')
 		c_args:   client_c_args,
 		cpp_args: client_cpp_args,
 		sources:  scorched3dc_src,
-		include_directories : include_directories(
-			'src/common/porting',
-			'src/common',
-			'src/client',
-			'src/server',
-		),
+		include_directories: [
+			include_directories(
+				'src/common/porting',
+				'src/common',
+				'src/client',
+				'src/server',
+			),
+			include_dirs,
+		],
 		dependencies: [
 			expat_dep,
 			fftw_dep,
@@ -1106,11 +1115,14 @@ executable(
 	c_args:   server_c_args,
 	cpp_args: server_cpp_args,
 	sources:  scorched3ds_src,
-	include_directories : include_directories(
-		'src/common/porting',
-		'src/common',
-		'src/server',
-	),
+	include_directories: [
+		include_directories(
+			'src/common/porting',
+			'src/common',
+			'src/server',
+		),
+		include_dirs,
+	],
 	dependencies: [
 		expat_dep,
 		jpeg_dep,
