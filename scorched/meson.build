@@ -29,9 +29,9 @@ fftw_dep        = dependency('fftw3')
 elif target_machine.system() == 'windows'
 fftw_dep        = cc.find_library(
 	'fftw3',
-	dirs : [srcdir / '../scorched-dep-win32/lib/fftw3'],
+	dirs : [srcdir / 'deps/windows/lib/fftw3'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/fftw3')
+include_dirs += include_directories('deps/windows/include/fftw3')
 else
 fftw_dep        = dependency('fftw3f')
 endif
@@ -39,9 +39,9 @@ endif
 if   target_machine.system() == 'windows'
 freealut_dep    = cc.find_library(
 	'Alut',
-	dirs : [srcdir / '../scorched-dep-win32/lib/al'],
+	dirs : [srcdir / 'deps/windows/lib/al'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/al')
+include_dirs += include_directories('deps/windows/include/al')
 else
 freealut_dep    = dependency(
 	'freealut',
@@ -90,9 +90,9 @@ ogg_dep         = dependency(
 if   target_machine.system() == 'windows'
 openal_dep    = cc.find_library(
 	'OpenAl32',
-	dirs : [srcdir / '../scorched-dep-win32/lib/al'],
+	dirs : [srcdir / 'deps/windows/lib/al'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/al')
+include_dirs += include_directories('deps/windows/include/al')
 else
 openal_dep      = dependency(
 	'openal',
@@ -110,13 +110,13 @@ png_dep         = dependency(
 if   target_machine.system() == 'windows'
 sdl_dep         = cc.find_library(
 	'SDL',
-	dirs : [srcdir / '../scorched-dep-win32/lib/SDL'],
+	dirs : [srcdir / 'deps/windows/lib/SDL'],
 )
 sdl_net_dep     = cc.find_library(
 	'SDL_net',
-	dirs : [srcdir / '../scorched-dep-win32/lib/SDL'],
+	dirs : [srcdir / 'deps/windows/lib/SDL'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/SDL')
+include_dirs += include_directories('deps/windows/include/SDL')
 else
 sdl_dep         = dependency('sdl')
 sdl_net_dep     = dependency('SDL_net')
@@ -125,13 +125,13 @@ endif
 if   target_machine.system() == 'windows'
 vorbis_dep    = cc.find_library(
 	'vorbis',
-	dirs : [srcdir / '../scorched-dep-win32/lib/ogg'],
+	dirs : [srcdir / 'deps/windows/lib/ogg'],
 )
 vorbisfile_dep    = cc.find_library(
 	'vorbisfile',
-	dirs : [srcdir / '../scorched-dep-win32/lib/ogg'],
+	dirs : [srcdir / 'deps/windows/lib/ogg'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/ogg')
+include_dirs += include_directories('deps/windows/include/ogg')
 else
 vorbis_dep      = dependency(
 	'vorbis',
@@ -146,9 +146,9 @@ endif
 if   target_machine.system() == 'windows'
 wxwidgets_dep   = cc.find_library(
 	'wxmsw',
-	dirs : [srcdir / '../scorched-dep-win32/lib/wx'],
+	dirs : [srcdir / 'deps/windows/lib/wx'],
 )
-include_dirs += include_directories('../scorched-dep-win32/include/wx')
+include_dirs += include_directories('deps/windows/include/wx')
 else
 wxwidgets_dep   = dependency(
 	'wxwidgets',

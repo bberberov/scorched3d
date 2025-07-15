@@ -47,7 +47,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/launcher;$(SolutionDir)/src/common;$(SolutionDir)/../scorched-dep-win32/include/zlib/zlib;$(SolutionDir)/../scorched-dep-win32/include/SDL;$(SolutionDir)/../scorched-dep-win32/include/expat/expat;$(SolutionDir)/../scorched-dep-win32/include/wx;$(SolutionDir)/../scorched-dep-win32/include/freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/launcher;$(SolutionDir)/src/common;$(SolutionDir)/deps/windows/include/zlib/zlib;$(SolutionDir)/deps/windows/include/SDL;$(SolutionDir)/deps/windows/include/expat/expat;$(SolutionDir)/deps/windows/include/wx;$(SolutionDir)/deps/windows/include/freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;COMPILED_FROM_DSP;XML_STATIC;WINVER=0x400;_MT;wxUSE_GUI=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -59,7 +59,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;comctl32.lib;Rpcrt4.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL_net.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDLmain.lib;$(SolutionDir)/../scorched-dep-win32/lib/zlib/zlib1.lib;$(SolutionDir)/../scorched-dep-win32/lib/expat/libexpat.lib;$(SolutionDir)/../scorched-dep-win32/lib/wx/wxmswd.lib;$(SolutionDir)/../scorched-dep-win32/lib/truetype/libfreetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Ws2_32.lib;comctl32.lib;Rpcrt4.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL_net.lib;$(SolutionDir)/deps/windows/lib/SDL/SDLmain.lib;$(SolutionDir)/deps/windows/lib/zlib/zlib1.lib;$(SolutionDir)/deps/windows/lib/expat/libexpat.lib;$(SolutionDir)/deps/windows/lib/wx/wxmswd.lib;$(SolutionDir)/deps/windows/lib/truetype/libfreetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -70,7 +70,7 @@
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/launcher;$(SolutionDir)/src/common;$(SolutionDir)/../scorched-dep-win32/include/zlib/zlib;$(SolutionDir)/../scorched-dep-win32/include/SDL;$(SolutionDir)/../scorched-dep-win32/include/expat/expat;$(SolutionDir)/../scorched-dep-win32/include/wx;$(SolutionDir)/../scorched-dep-win32/include/freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/launcher;$(SolutionDir)/src/common;$(SolutionDir)/deps/windows/include/zlib/zlib;$(SolutionDir)/deps/windows/include/SDL;$(SolutionDir)/deps/windows/include/expat/expat;$(SolutionDir)/deps/windows/include/wx;$(SolutionDir)/deps/windows/include/freetype;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;COMPILED_FROM_DSP;XML_STATIC;WINVER=0x400;_MT;wxUSE_GUI=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -84,7 +84,7 @@
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;comctl32.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL_net.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDLmain.lib;$(SolutionDir)/../scorched-dep-win32/lib/zlib/zlib1.lib;$(SolutionDir)/../scorched-dep-win32/lib/expat/libexpat.lib;$(SolutionDir)/../scorched-dep-win32/lib/wx/wxmsw.lib;$(SolutionDir)/../scorched-dep-win32/lib/truetype/libfreetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Ws2_32.lib;comctl32.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL_net.lib;$(SolutionDir)/deps/windows/lib/SDL/SDLmain.lib;$(SolutionDir)/deps/windows/lib/zlib/zlib1.lib;$(SolutionDir)/deps/windows/lib/expat/libexpat.lib;$(SolutionDir)/deps/windows/lib/wx/wxmsw.lib;$(SolutionDir)/deps/windows/lib/truetype/libfreetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -240,8 +240,8 @@
   <ItemGroup>
     <ResourceCompile Include="..\..\common\common\include.rc" />
     <ResourceCompile Include="..\wxdialogs\wxinclude.rc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)/../scorched-dep-win32/include/wx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)/../scorched-dep-win32/include/wx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)/deps/windows/include/wx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)/deps/windows/include/wx;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
