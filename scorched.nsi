@@ -31,7 +31,7 @@ SetCompressor lzma
 !define MUI_FINISHPAGE_TEXT "Thank you for installing Scorched3D.  If you like Scorched3D please visit our website."
 !define MUI_FINISHPAGE_LINK "www.scorched3d.co.uk"
 !define MUI_FINISHPAGE_LINK_LOCATION "http://www.scorched3d.co.uk"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "..\scorched-dep-win32\installer\wizard.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "deps\windows\installer\wizard.bmp"
 !define MUI_HEADERIMAGE 
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\orange.bmp"
 

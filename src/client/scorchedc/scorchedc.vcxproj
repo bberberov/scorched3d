@@ -47,7 +47,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/common;$(SolutionDir)/../scorched-dep-win32/include/zlib/zlib;$(SolutionDir)/../scorched-dep-win32/include/jpg;$(SolutionDir)/../scorched-dep-win32/include/SDL;$(SolutionDir)/../scorched-dep-win32/include/expat/expat;$(SolutionDir)/../scorched-dep-win32/include/png/png;$(SolutionDir)/../scorched-dep-win32/include/al;$(SolutionDir)/../scorched-dep-win32/include/fftw3;$(SolutionDir)/../scorched-dep-win32/include/vorbis;$(SolutionDir)/../scorched-dep-win32/include/ogg;$(SolutionDir)/../scorched-dep-win32/include/freetype;$(SolutionDir)/../scorched-dep-win32/include/glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/common;$(SolutionDir)/deps/windows/include/zlib/zlib;$(SolutionDir)/deps/windows/include/jpg;$(SolutionDir)/deps/windows/include/SDL;$(SolutionDir)/deps/windows/include/expat/expat;$(SolutionDir)/deps/windows/include/png/png;$(SolutionDir)/deps/windows/include/al;$(SolutionDir)/deps/windows/include/fftw3;$(SolutionDir)/deps/windows/include/vorbis;$(SolutionDir)/deps/windows/include/ogg;$(SolutionDir)/deps/windows/include/freetype;$(SolutionDir)/deps/windows/include/glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;HAVE_OGG;PNG_DLL;PNG_NO_STDIO;PNG_NO_GLOBAL_ARRAYS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -59,7 +59,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;Opengl32.lib;Glu32.lib;$(SolutionDir)/../scorched-dep-win32/lib/jpg/jpeg.lib;$(SolutionDir)/../scorched-dep-win32/lib/png/libpng.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL_net.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDLmain.lib;$(SolutionDir)/../scorched-dep-win32/lib/zlib/zlib1.lib;$(SolutionDir)/../scorched-dep-win32/lib/expat/libexpat.lib;$(SolutionDir)/../scorched-dep-win32/lib/al/ALut.lib;$(SolutionDir)/../scorched-dep-win32/lib/al/OpenAL32.lib;$(SolutionDir)/../scorched-dep-win32/lib/fftw3/fftw3.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/ogg.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/vorbis.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/vorbisfile.lib;$(SolutionDir)/../scorched-dep-win32/lib/truetype/libfreetype.lib;$(SolutionDir)/../scorched-dep-win32/lib/glew/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Ws2_32.lib;Opengl32.lib;Glu32.lib;$(SolutionDir)/deps/windows/lib/jpg/jpeg.lib;$(SolutionDir)/deps/windows/lib/png/libpng.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL_net.lib;$(SolutionDir)/deps/windows/lib/SDL/SDLmain.lib;$(SolutionDir)/deps/windows/lib/zlib/zlib1.lib;$(SolutionDir)/deps/windows/lib/expat/libexpat.lib;$(SolutionDir)/deps/windows/lib/al/ALut.lib;$(SolutionDir)/deps/windows/lib/al/OpenAL32.lib;$(SolutionDir)/deps/windows/lib/fftw3/fftw3.lib;$(SolutionDir)/deps/windows/lib/ogg/ogg.lib;$(SolutionDir)/deps/windows/lib/ogg/vorbis.lib;$(SolutionDir)/deps/windows/lib/ogg/vorbisfile.lib;$(SolutionDir)/deps/windows/lib/truetype/libfreetype.lib;$(SolutionDir)/deps/windows/lib/glew/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -70,7 +70,7 @@
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/common;$(SolutionDir)/../scorched-dep-win32/include/zlib/zlib;$(SolutionDir)/../scorched-dep-win32/include/jpg;$(SolutionDir)/../scorched-dep-win32/include/SDL;$(SolutionDir)/../scorched-dep-win32/include/expat/expat;$(SolutionDir)/../scorched-dep-win32/include/png/png;$(SolutionDir)/../scorched-dep-win32/include/al;$(SolutionDir)/../scorched-dep-win32/include/fftw3;$(SolutionDir)/../scorched-dep-win32/include/vorbis;$(SolutionDir)/../scorched-dep-win32/include/ogg;$(SolutionDir)/../scorched-dep-win32/include/freetype;$(SolutionDir)/../scorched-dep-win32/include/glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/src/client;$(SolutionDir)/src/server;$(SolutionDir)/src/common;$(SolutionDir)/deps/windows/include/zlib/zlib;$(SolutionDir)/deps/windows/include/jpg;$(SolutionDir)/deps/windows/include/SDL;$(SolutionDir)/deps/windows/include/expat/expat;$(SolutionDir)/deps/windows/include/png/png;$(SolutionDir)/deps/windows/include/al;$(SolutionDir)/deps/windows/include/fftw3;$(SolutionDir)/deps/windows/include/vorbis;$(SolutionDir)/deps/windows/include/ogg;$(SolutionDir)/deps/windows/include/freetype;$(SolutionDir)/deps/windows/include/glew;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;HAVE_OGG;PNG_DLL;PNG_NO_STDIO;PNG_NO_GLOBAL_ARRAYS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -84,7 +84,7 @@
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;Opengl32.lib;Glu32.lib;$(SolutionDir)/../scorched-dep-win32/lib/jpg/jpeg.lib;$(SolutionDir)/../scorched-dep-win32/lib/png/libpng.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDL_net.lib;$(SolutionDir)/../scorched-dep-win32/lib/SDL/SDLmain.lib;$(SolutionDir)/../scorched-dep-win32/lib/zlib/zlib1.lib;$(SolutionDir)/../scorched-dep-win32/lib/expat/libexpat.lib;$(SolutionDir)/../scorched-dep-win32/lib/al/ALut.lib;$(SolutionDir)/../scorched-dep-win32/lib/al/OpenAL32.lib;$(SolutionDir)/../scorched-dep-win32/lib/fftw3/fftw3.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/ogg.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/vorbis.lib;$(SolutionDir)/../scorched-dep-win32/lib/ogg/vorbisfile.lib;$(SolutionDir)/../scorched-dep-win32/lib/truetype/libfreetype.lib;$(SolutionDir)/../scorched-dep-win32/lib/glew/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Ws2_32.lib;Opengl32.lib;Glu32.lib;$(SolutionDir)/deps/windows/lib/jpg/jpeg.lib;$(SolutionDir)/deps/windows/lib/png/libpng.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL.lib;$(SolutionDir)/deps/windows/lib/SDL/SDL_net.lib;$(SolutionDir)/deps/windows/lib/SDL/SDLmain.lib;$(SolutionDir)/deps/windows/lib/zlib/zlib1.lib;$(SolutionDir)/deps/windows/lib/expat/libexpat.lib;$(SolutionDir)/deps/windows/lib/al/ALut.lib;$(SolutionDir)/deps/windows/lib/al/OpenAL32.lib;$(SolutionDir)/deps/windows/lib/fftw3/fftw3.lib;$(SolutionDir)/deps/windows/lib/ogg/ogg.lib;$(SolutionDir)/deps/windows/lib/ogg/vorbis.lib;$(SolutionDir)/deps/windows/lib/ogg/vorbisfile.lib;$(SolutionDir)/deps/windows/lib/truetype/libfreetype.lib;$(SolutionDir)/deps/windows/lib/glew/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -275,42 +275,42 @@
     <ClCompile Include="..\..\common\landscapemap\MovementMap.cpp" />
     <ClCompile Include="..\..\common\landscapemap\NapalmMap.cpp" />
     <ClCompile Include="..\..\common\landscapemap\RoofMaps.cpp" />
-<!--     <ClCompile Include="..\..\common\lua\lapi.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lauxlib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lbaselib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lcode.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ldblib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ldebug.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ldo.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ldump.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lfixed.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lfunc.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lgc.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\linit.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\liolib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\llex.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lmathlib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lmem.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\loadlib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lobject.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lopcodes.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\loslib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lparser.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lstate.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lstring.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lstrlib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ltable.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ltablib.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\ltm.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lapi.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lauxlib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lbaselib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lcode.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ldblib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ldebug.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ldo.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ldump.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lfixed.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lfunc.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lgc.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\linit.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\liolib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\llex.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lmathlib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lmem.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\loadlib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lobject.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lopcodes.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\loslib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lparser.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lstate.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lstring.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lstrlib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ltable.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ltablib.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\ltm.cpp" /> -->
     <ClCompile Include="..\..\common\lua\LUAS3DLib.cpp" />
     <ClCompile Include="..\..\common\lua\LUAS3DWeaponLib.cpp" />
     <ClCompile Include="..\..\common\lua\LUAScript.cpp" />
     <ClCompile Include="..\..\common\lua\LUAScriptFactory.cpp" />
     <ClCompile Include="..\..\common\lua\LUAScriptHook.cpp" />
     <ClCompile Include="..\..\common\lua\LUAUtil.cpp" />
-<!--     <ClCompile Include="..\..\common\lua\lundump.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lvm.cpp" /> -->
-<!--     <ClCompile Include="..\..\common\lua\lzio.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lundump.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lvm.cpp" /> -->
+<!--     <ClCompile Include="..\..\..\deps\lua51\lzio.cpp" /> -->
     <ClCompile Include="..\..\common\movement\Boid2.cpp" />
     <ClCompile Include="..\..\common\movement\TargetMovement.cpp" />
     <ClCompile Include="..\..\common\movement\TargetMovementEntry.cpp" />
@@ -1032,35 +1032,35 @@
     <ClInclude Include="..\..\common\landscapemap\MovementMap.h" />
     <ClInclude Include="..\..\common\landscapemap\NapalmMap.h" />
     <ClInclude Include="..\..\common\landscapemap\RoofMaps.h" />
-<!--     <ClInclude Include="..\..\common\lua\lapi.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lauxlib.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lcode.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\ldebug.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\ldo.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lfixed.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lfunc.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lgc.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\llex.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\llimits.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lmem.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lobject.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lopcodes.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lparser.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lstate.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lstring.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\ltable.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\ltm.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\luaconf.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lualib.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lapi.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lauxlib.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lcode.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\ldebug.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\ldo.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lfixed.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lfunc.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lgc.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\llex.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\llimits.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lmem.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lobject.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lopcodes.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lparser.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lstate.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lstring.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\ltable.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\ltm.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\luaconf.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lualib.h" /> -->
     <ClInclude Include="..\..\common\lua\LUAS3DLib.h" />
     <ClInclude Include="..\..\common\lua\LUAS3DWeaponLib.h" />
     <ClInclude Include="..\..\common\lua\LUAScript.h" />
     <ClInclude Include="..\..\common\lua\LUAScriptFactory.h" />
     <ClInclude Include="..\..\common\lua\LUAScriptHook.h" />
     <ClInclude Include="..\..\common\lua\LUAUtil.h" />
-<!--     <ClInclude Include="..\..\common\lua\lundump.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lvm.h" /> -->
-<!--     <ClInclude Include="..\..\common\lua\lzio.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lundump.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lvm.h" /> -->
+<!--     <ClInclude Include="..\..\..\deps\lua51\lzio.h" /> -->
     <ClInclude Include="..\..\common\movement\Boid2.h" />
     <ClInclude Include="..\..\common\movement\TargetMovement.h" />
     <ClInclude Include="..\..\common\movement\TargetMovementEntry.h" />

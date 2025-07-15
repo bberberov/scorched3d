@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scorcheds", "src\server\scorcheds\scorcheds.vcxproj", "{9F2FE0ED-9FAE-427F-8295-133AB18E0D24}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scorchedc", "src\client\scorchedc\scorchedc.vcxproj", "{07160315-4F8E-4106-9523-ADBB24BAC24B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scorched", "src\launcher\scorched\scorched.vcxproj", "{05CAB8E9-A7DE-4065-89DF-26D4A0B244B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F2FE0ED-9FAE-427F-8295-133AB18E0D24}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F2FE0ED-9FAE-427F-8295-133AB18E0D24}.Debug|Win32.Build.0 = Debug|Win32
+		{9F2FE0ED-9FAE-427F-8295-133AB18E0D24}.Release|Win32.ActiveCfg = Release|Win32
+		{9F2FE0ED-9FAE-427F-8295-133AB18E0D24}.Release|Win32.Build.0 = Release|Win32
+		{07160315-4F8E-4106-9523-ADBB24BAC24B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{07160315-4F8E-4106-9523-ADBB24BAC24B}.Debug|Win32.Build.0 = Debug|Win32
+		{07160315-4F8E-4106-9523-ADBB24BAC24B}.Release|Win32.ActiveCfg = Release|Win32
+		{07160315-4F8E-4106-9523-ADBB24BAC24B}.Release|Win32.Build.0 = Release|Win32
+		{05CAB8E9-A7DE-4065-89DF-26D4A0B244B7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{05CAB8E9-A7DE-4065-89DF-26D4A0B244B7}.Debug|Win32.Build.0 = Debug|Win32
+		{05CAB8E9-A7DE-4065-89DF-26D4A0B244B7}.Release|Win32.ActiveCfg = Release|Win32
+		{05CAB8E9-A7DE-4065-89DF-26D4A0B244B7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

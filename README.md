@@ -106,7 +106,7 @@ Scorched3D uses an [Autoconf](https://www.gnu.org/software/autoconf/autoconf.htm
 -	Build with `make ...`
 -	Install with `make install ...`
 
-[![Linux Build](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml/badge.svg)](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml) A new [Meson](https://mesonbuild.com/) build process has been added.  It's under development, but it is able to build the Linux release.  Look in [.github/workflows/](../.github/workflows/) to see examples of how to use it.
+[![Linux Build](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml/badge.svg)](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml) A new [Meson](https://mesonbuild.com/) build process has been added.  It's under development, but it is able to build the Linux release.  Look in [.github/workflows/](.github/workflows/) to see examples of how to use it.
 
 #### macOS :construction:
 

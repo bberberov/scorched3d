@@ -39,13 +39,13 @@ while test $# -gt 0; do
       echo 1.2.9
       ;;
     --cflags)
-      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/../scorched-dep-osx/lib
+      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/deps/macos/lib
       ;;
     --libs)
-      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/../scorched-dep-osx/lib -framework Cocoa -framework SDL `pwd`/../scorched-dep-osx/lib/SDLMain.m
+      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/deps/macos/lib -framework Cocoa -framework SDL `pwd`/deps/macos/lib/SDLMain.m
       ;;
     --static-libs)
-      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/../scorched-dep-osx/lib -framework Cocoa -framework SDL `pwd`/../scorched-dep-osx/lib/SDLMain.m
+      echo -I/System/Library/Frameworks/SDL.framework/Headers -I`pwd`/deps/macos/lib -framework Cocoa -framework SDL `pwd`/deps/macos/lib/SDLMain.m
       ;;
     *)
       echo "${usage}" 1>&2

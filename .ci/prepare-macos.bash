@@ -22,5 +22,4 @@ brew install \
 	wxwidgets \
 	\
 
-cd scorched
 meson wrap install lua

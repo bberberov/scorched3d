@@ -957,85 +957,85 @@
     <ClCompile Include="..\..\common\landscapemap\RoofMaps.cpp">
       <Filter>landscapemap</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lapi.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lapi.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lauxlib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lauxlib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lbaselib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lbaselib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lcode.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lcode.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ldblib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ldblib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ldebug.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ldebug.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ldo.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ldo.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ldump.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ldump.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lfixed.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lfixed.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lfunc.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lfunc.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lgc.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lgc.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\linit.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\linit.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\liolib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\liolib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\llex.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\llex.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lmathlib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lmathlib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lmem.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lmem.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\loadlib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\loadlib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lobject.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lobject.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lopcodes.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lopcodes.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\loslib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\loslib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lparser.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lparser.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lstate.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lstate.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lstring.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lstring.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lstrlib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lstrlib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ltable.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ltable.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ltablib.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ltablib.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\ltm.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\ltm.cpp">
       <Filter>lua</Filter>
     </ClCompile>
     <ClCompile Include="..\..\common\lua\LUAS3DLib.cpp">
@@ -1056,13 +1056,13 @@
     <ClCompile Include="..\..\common\lua\LUAUtil.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lundump.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lundump.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lvm.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lvm.cpp">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\lua\lzio.cpp">
+    <ClCompile Include="..\..\..\deps\lua51\lzio.cpp">
       <Filter>lua</Filter>
     </ClCompile>
     <ClCompile Include="..\..\common\movement\Boid2.cpp">
@@ -2396,64 +2396,64 @@
     <ClInclude Include="..\..\common\landscapemap\RoofMaps.h">
       <Filter>landscapemap</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lapi.h">
+    <ClInclude Include="..\..\..\deps\lua51\lapi.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lauxlib.h">
+    <ClInclude Include="..\..\..\deps\lua51\lauxlib.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lcode.h">
+    <ClInclude Include="..\..\..\deps\lua51\lcode.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\ldebug.h">
+    <ClInclude Include="..\..\..\deps\lua51\ldebug.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\ldo.h">
+    <ClInclude Include="..\..\..\deps\lua51\ldo.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lfixed.h">
+    <ClInclude Include="..\..\..\deps\lua51\lfixed.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lfunc.h">
+    <ClInclude Include="..\..\..\deps\lua51\lfunc.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lgc.h">
+    <ClInclude Include="..\..\..\deps\lua51\lgc.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\llex.h">
+    <ClInclude Include="..\..\..\deps\lua51\llex.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\llimits.h">
+    <ClInclude Include="..\..\..\deps\lua51\llimits.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lmem.h">
+    <ClInclude Include="..\..\..\deps\lua51\lmem.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lobject.h">
+    <ClInclude Include="..\..\..\deps\lua51\lobject.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lopcodes.h">
+    <ClInclude Include="..\..\..\deps\lua51\lopcodes.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lparser.h">
+    <ClInclude Include="..\..\..\deps\lua51\lparser.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lstate.h">
+    <ClInclude Include="..\..\..\deps\lua51\lstate.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lstring.h">
+    <ClInclude Include="..\..\..\deps\lua51\lstring.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\ltable.h">
+    <ClInclude Include="..\..\..\deps\lua51\ltable.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\ltm.h">
+    <ClInclude Include="..\..\..\deps\lua51\ltm.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\luaconf.h">
+    <ClInclude Include="..\..\..\deps\lua51\luaconf.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lualib.h">
+    <ClInclude Include="..\..\..\deps\lua51\lualib.h">
       <Filter>lua</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\lua\LUAS3DLib.h">
@@ -2474,13 +2474,13 @@
     <ClInclude Include="..\..\common\lua\LUAUtil.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lundump.h">
+    <ClInclude Include="..\..\..\deps\lua51\lundump.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lvm.h">
+    <ClInclude Include="..\..\..\deps\lua51\lvm.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\common\lua\lzio.h">
+    <ClInclude Include="..\..\..\deps\lua51\lzio.h">
       <Filter>lua</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\movement\Boid2.h">

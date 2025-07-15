@@ -1,7 +1,5 @@
 python -m pip install meson
 
-cd scorched
-
 meson wrap install expat
 rem  fftw3
 rem  freealut
