@@ -2,6 +2,13 @@
 
 Scorched3D incorporates lively, fully destructible 3D landscapes that include animated jets, naval vessels, water and even birds, with detailed tanks and projectiles and stunning visual effects.
 
+<div align="center">
+<a href='.images/Screenshot_20250303_44.2.jpeg'>
+<img src='.images/Screenshot_20250303_44.2.jpeg' alt='Gameplay from version 44.2' width=640 height=400 />
+</a>
+</div>
+
+<div align="center">
 <a href='.images/6700.jpg'>
 <img src='.images/6700.jpg' alt='Trees from version 36'            width=160 height=120 />
 </a>
@@ -14,6 +21,7 @@ Scorched3D incorporates lively, fully destructible 3D landscapes that include an
 <a href='.images/8943.jpg'>
 <img src='.images/8943.jpg' alt='Lightning from version 38'        width=160 height=120 />
 </a>
+</div>
 
 A simple turn-based artillery game and also a real-time strategy game in which players can counter each others' weapons with other creative accessories, shields and tactics. Test your skill in timing, aiming and judgement of distance, move around on the landscape, or outsmart your opponent economically.
 
@@ -37,19 +45,21 @@ You can play with up to twenty-four other players at a time, mixing computer pla
 
 Scorched3D is currently available for several Linux distribution from [Open Build Service (OBS)](https://build.opensuse.org/)
 
-Develop: [![build result](https://build.opensuse.org/projects/home:bberberov:develop:Multi/packages/scorched3d/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:bberberov:develop:Multi/scorched3d)  
-Testing: [![build result](https://build.opensuse.org/projects/home:bberberov:testing:Multi/packages/scorched3d/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:bberberov:testing:Multi/scorched3d)  
-Release: :construction:
+Develop: [![build result](https://build.opensuse.org/projects/home:bberberov:develop:Multi/packages/scorched3d/badge.svg?type=percent)](https://software.opensuse.org//download.html?project=home%3Abberberov%3Adevelop%3AMulti&package=scorched3d)  
+Testing: [![build result](https://build.opensuse.org/projects/home:bberberov:testing:Multi/packages/scorched3d/badge.svg?type=percent)](https://software.opensuse.org//download.html?project=home%3Abberberov%3Atesting%3AMulti&package=scorched3d)  
+Release: [![build result](https://build.opensuse.org/projects/home:bberberov:release:Multi/packages/scorched3d/badge.svg?type=percent)](https://software.opensuse.org//download.html?project=home%3Abberberov%3Arelease%3AMulti&package=scorched3d)
+
+> [!NOTE]
+> The percentage indicates the number of **successful builds** across all possible distributions, not the progress or quality of a specific build
 
 :construction: Installers/Apps for Microsoft Windows and macOS operating systems may be available in the future
 
-
 ### From OBS
--	**Click** on one of the _Build Service_ badges above, to go to the package page for the build quality you would like to install.  
-	The _Build Results_ table on the right shows the available distributions.
--	**Click** on your distribution in the _Build Results_ table, to go to the _Repository State_ page
--	**Click** on the _Go to download repository_ link at the top, to go to the _Repository_ page
--	**Use** the URL to add the repository to your distribution
+
+1.	**Click** on one of the _Build Service_ badges above, to go to the download page for the build quality you would like to install
+2.	**Click** on your distribution under _Select Your Operating System_
+3.	**Click** on _Add repository and install manually_ to see the instructions
+4.	**Use** the instructions to add the repository to your distribution and install the package
 
 ## Building
 
@@ -59,14 +69,20 @@ Release: :construction:
 -	[OpenAL](https://www.openal-soft.org/) >= 1.17.2
 -	[Freealut](https://github.com/vancegroup/freealut)
 -	[FFTW3](https://www.fftw.org/)
--	[Freetype](https://freetype.org/)
--	OpenGL, GLEW
--	[OGG](https://www.xiph.org/ogg/) and [Vorbis](https://xiph.org/vorbis/)
--	SDL 1.2.x series, SDL_net
+-	[Freetype](https://freetype.org/) >= 2.1.5
+-	OpenGL
+-	GLU
+-	GLEW
+-	[OGG](https://www.xiph.org/ogg/)
+-	[Vorbis](https://xiph.org/vorbis/)
+-	SDL = 1.2.x
+-	SDL_net = 1.2.x
 -	[wxWidgets](https://www.wxwidgets.org/)
 -	[expat](https://libexpat.github.io/)
 -	[zlib](http://zlib.net/)
 -	[libpng](http://www.libpng.org/)
+-	[libjpeg](https://www.ijg.org/) or [libjpeg-turbo](https://www.libjpeg-turbo.org/) >= 8
+-	Lua = 5.1.x, >= 5.1.2
 
 ### Optional Dependencies
 
@@ -90,13 +106,17 @@ Scorched3D uses an [Autoconf](https://www.gnu.org/software/autoconf/autoconf.htm
 -	Build with `make ...`
 -	Install with `make install ...`
 
-#### Windows
+[![Linux Build](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml/badge.svg)](https://github.com/bberberov/scorched3d/actions/workflows/linux.yaml) A new [Meson](https://mesonbuild.com/) build process has been added.  It's under development, but it is able to build the Linux release.  Look in [.github/workflows/](../.github/workflows/) to see examples of how to use it.
 
-:construction: The included Visual Studio project files have not been tested
+#### macOS :construction:
 
-#### macOS
+[![macOS Build](https://github.com/bberberov/scorched3d/actions/workflows/macos.yaml/badge.svg)](https://github.com/bberberov/scorched3d/actions/workflows/macos.yaml) The current plan is to try to build a macOS release using Meson.  See [#2](https://github.com/bberberov/scorched3d/issues/2).
 
-:construction:
+#### Windows :construction:
+
+The included Visual Studio project files have not been tested.
+
+[![Windows Build](https://github.com/bberberov/scorched3d/actions/workflows/windows.yaml/badge.svg)](https://github.com/bberberov/scorched3d/actions/workflows/windows.yaml) The current plan is to try to build a Windows release using Meson.  See [#2](https://github.com/bberberov/scorched3d/issues/2).
 
 ## License
 
