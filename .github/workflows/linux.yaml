@@ -12,6 +12,6 @@ jobs:
     - name: Prepare
       run: .ci/prepare-ubuntu.bash
     - name: Meson Setup
-      run: meson setup --buildtype debugoptimized builddir scorched
+      run: meson setup --buildtype debugoptimized builddir
     - name: Meson Compile
       run: meson compile -C builddir
