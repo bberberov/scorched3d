@@ -68,6 +68,10 @@ autom4te.cache/
 /scorched/src/server/scorcheds/Makefile.am
 /scorched/src/server/scorcheds/scorched3ds
 
+# clangd LSP (https://clangd.llvm.org/)
+compile_commands.json
+compile_flags.txt
+
 # Visual C++ cache files
 ipch/
 *.aps

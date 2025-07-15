@@ -1,3 +1,5 @@
 kate-wildcard(*.vcxproj): syntax XML;
 kate-wildcard(*.vcxproj.filters): syntax XML;
 kate-wildcard(*.wrap): syntax INI Files;
+kate-wildcard(.clang-format): syntax YAML;
+kate-wildcard(.clang-uml): syntax YAML;

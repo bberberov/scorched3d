@@ -1,9 +1,15 @@
 [*]
 charset=utf-8
 
-[.{editorconfig,gitattributes,gitignore,kateconfig}]
+[.{editorconfig,gitattributes,gitignore,kateconfig,kateproject}]
 end_of_line=lf
 indent_style=tab
+insert_final_newline=true
+
+[.{clang-format,clang-uml}]
+end_of_line=lf
+indent_style=space
+indent_size=2
 insert_final_newline=true
 
 [{CHANGELOG,COPYING,README,configure.ac}]
@@ -69,7 +75,7 @@ indent_style=space
 indent_size=3
 insert_final_newline=true
 
-[/scorched/documentation/*.txt]
+[scorched/documentation/*.txt]
 end_of_line=lf
 indent_style=tab
 insert_final_newline=true
