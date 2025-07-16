@@ -4,7 +4,7 @@ AC_ARG_WITH(
 	[mysql],
 	[AS_HELP_STRING(
 		[--with-mysql],
-		[enable mysql support (default no)]
+		[enable mysql support (default: no)]
 	)],
 	[use_mysql=${withval}],
 	[use_mysql=no],
@@ -49,7 +49,7 @@ AC_ARG_WITH(
 	[pgsql],
 	[AS_HELP_STRING(
 		[--with-pgsql],
-		[enable pgsql support (default no)]
+		[enable pgsql support (default: no)]
 	)],
 	[use_pgsql=${withval}],
 	[use_pgsql=no],

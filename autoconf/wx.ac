@@ -13,7 +13,7 @@ m4_ifdef(
 			[wx-static],
 			[AS_HELP_STRING(
 				[--with-wx-static],
-				[enable static linking for wxwindows (default no)]
+				[enable static linking for wxwindows (default: no)]
 			)],
 			[use_static_wx=${withval}],
 			[use_static_wx=no],

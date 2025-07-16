@@ -42,21 +42,21 @@ AC_ARG_ENABLE(
 # Include the other configuration files
 if test "x$enable_serveronly" = 'xno'
 then
-	m4_include([configure-browser.m4])
-	m4_include([configure-gl.m4])
-	m4_include([configure-al.m4])
-	m4_include([configure-wx.m4])
-	m4_include([configure-ogg.m4])
-	m4_include([configure-ft.m4])
-	m4_include([configure-fftw.m4])
+	m4_include([autoconf/browser.ac])
+	m4_include([autoconf/gl.ac])
+	m4_include([autoconf/al.ac])
+	m4_include([autoconf/wx.ac])
+	m4_include([autoconf/ogg.ac])
+	m4_include([autoconf/freetype.ac])
+	m4_include([autoconf/fftw.ac])
 	S3D_SUBDIRS='launcher client server'
 else
 	S3D_SUBDIRS='server'
 fi
-m4_include([configure-sdl.m4])
-m4_include([configure-flt.m4])
-m4_include([configure-sql.m4])
-m4_include([configure-lua.m4])
+m4_include([autoconf/sdl.ac])
+m4_include([autoconf/float.ac])
+m4_include([autoconf/sql.ac])
+m4_include([autoconf/lua.ac])
 
 AC_SUBST(S3D_SUBDIRS)
 
