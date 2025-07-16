@@ -1,0 +1,23 @@
+# 2025-07-15  Cleaned up some whitespace
+c2c94a67d4b6a5db9b08e2412ca9ae08653b7e2f
+
+# 2025-07-15  Cleaned up some whitespace in `scorched.sln`
+47fe09889245dce3b61311aa3784ca815e88355e
+
+# 2025-02-26  Reformatted whitespace in declarations, initializes, function calls, etc.
+3e1798356d73589ccf228d58d62ce2468150b41c
+
+# 2024-11-28  Cleaned up some whitespace in `ImageJpgFactory.cpp`
+e3c061ad74bae1c17369c39f4ad2d162cd6b42cb
+
+# 2024-11-27  Cleaned up some whitespace
+190b319fee557f39be3e5f85dbbec5211d002809
+
+# 2024-11-24  Added whitespace before converting `README` to Markdown
+99c9ea042cd54765f3c8a4bfd274d1146bac9dd4
+
+# 2024-11-24  Cleaned up some whitespace
+b81370685477790448fbbc0c762520d079c5a7c3
+
+# 2024-11-16  Introduced end-of-line and indent standardization ...
+f2a14e7b00262d38d9e73be1582aaffb5099bdc3
