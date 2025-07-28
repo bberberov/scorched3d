@@ -239,28 +239,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ScorchedParams.h">
+    <ClInclude Include="ScorchedParams.hpp">
       <Filter>scorched</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\DisplayDialog.h">
+    <ClInclude Include="..\wxdialogs\DisplayDialog.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\KeyDialog.h">
+    <ClInclude Include="..\wxdialogs\KeyDialog.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\MainDialog.h">
+    <ClInclude Include="..\wxdialogs\MainDialog.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\OptionEntrySetter.h">
+    <ClInclude Include="..\wxdialogs\OptionEntrySetter.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\ServerSDialog.h">
+    <ClInclude Include="..\wxdialogs\ServerSDialog.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\SettingsDialog.h">
+    <ClInclude Include="..\wxdialogs\SettingsDialog.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\wxdialogs\TrueTypeFont.h">
+    <ClInclude Include="..\wxdialogs\TrueTypeFont.hpp">
       <Filter>wxdialogs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\common\ARGParser.h">

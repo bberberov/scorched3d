@@ -167,14 +167,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\engine\ModFileEntryLoader.h" />
-    <ClInclude Include="ScorchedParams.h" />
-    <ClInclude Include="..\wxdialogs\DisplayDialog.h" />
-    <ClInclude Include="..\wxdialogs\KeyDialog.h" />
-    <ClInclude Include="..\wxdialogs\MainDialog.h" />
-    <ClInclude Include="..\wxdialogs\OptionEntrySetter.h" />
-    <ClInclude Include="..\wxdialogs\ServerSDialog.h" />
-    <ClInclude Include="..\wxdialogs\SettingsDialog.h" />
-    <ClInclude Include="..\wxdialogs\TrueTypeFont.h" />
+    <ClInclude Include="ScorchedParams.hpp" />
+    <ClInclude Include="..\wxdialogs\DisplayDialog.hpp" />
+    <ClInclude Include="..\wxdialogs\KeyDialog.hpp" />
+    <ClInclude Include="..\wxdialogs\MainDialog.hpp" />
+    <ClInclude Include="..\wxdialogs\OptionEntrySetter.hpp" />
+    <ClInclude Include="..\wxdialogs\ServerSDialog.hpp" />
+    <ClInclude Include="..\wxdialogs\SettingsDialog.hpp" />
+    <ClInclude Include="..\wxdialogs\TrueTypeFont.hpp" />
     <ClInclude Include="..\..\common\common\ARGParser.h" />
     <ClInclude Include="..\..\common\common\Clock.h" />
     <ClInclude Include="..\..\common\common\Counter.h" />

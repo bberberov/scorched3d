@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/MainDialog.h>
-#include <wxdialogs/SettingsDialog.h>
-#include <scorched/ScorchedParams.h>
+#include <wxdialogs/MainDialog.hpp>
+#include <wxdialogs/SettingsDialog.hpp>
+#include <scorched/ScorchedParams.hpp>
 #include <common/Defines.h>
 #include <common/OptionsGame.h>
 #include <engine/ModDirs.h>

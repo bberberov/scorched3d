@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/KeyDialog.h>
-#include <wxdialogs/MainDialog.h>
+#include <wxdialogs/KeyDialog.hpp>
+#include <wxdialogs/MainDialog.hpp>
 #include <common/Defines.h>
 #include <common/Keyboard.h>
 #include <wx/wx.h>

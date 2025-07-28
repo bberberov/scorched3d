@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/DisplayDialog.h>
-#include <wxdialogs/MainDialog.h>
-#include <wxdialogs/OptionEntrySetter.h>
+#include <wxdialogs/DisplayDialog.hpp>
+#include <wxdialogs/MainDialog.hpp>
+#include <wxdialogs/OptionEntrySetter.hpp>
 #include <landscapedef/LandscapeDefinitionsBase.h>
 #include <tankai/TankAINames.h>
 #include <common/OptionsGame.h>
