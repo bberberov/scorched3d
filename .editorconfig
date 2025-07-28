@@ -1,10 +1,7 @@
 [*]
 charset=utf-8
 
-[.{editorconfig,gitattributes,gitignore,kateconfig,kateproject}]
-end_of_line=lf
-indent_style=tab
-insert_final_newline=true
+# Project support
 
 [.{clang-format,clang-uml}]
 end_of_line=lf
@@ -12,28 +9,50 @@ indent_style=space
 indent_size=2
 insert_final_newline=true
 
-[{CHANGELOG,COPYING,README,configure.ac}]
+[.{editorconfig,git-blame-ignore-revs,gitattributes,gitignore,kateconfig,kateproject}]
 end_of_line=lf
 indent_style=tab
 insert_final_newline=true
 
-[Makefile*]
+# Sources
+
+[*.{ac,bash,c,cpp,h,hpp,pl,py,sh,spec,svg,wrap}]
 end_of_line=lf
 indent_style=tab
 insert_final_newline=true
 
-[*.{bash,c,cpp,h,m4,pl,py,sh,spec,svg,wrap}]
+[{CHANGELOG,COPYING,README}]
 end_of_line=lf
 indent_style=tab
 insert_final_newline=true
+
+[{Makefile,meson.}*]
+end_of_line=lf
+indent_style=tab
+insert_final_newline=true
+
+[*.yaml]
+end_of_line=lf
+indent_style=space
+indent_size=2
+insert_final_newline=true
+
+# macOS-specific
+
+[/scripts/{createDmg,framewk.sh}]
+end_of_line=cr
+indent_style=tab
+insert_final_newline=true
+
+# Windows-specific
 
 [*.{bat,cmd,sln}]
 end_of_line=crlf
 indent_style=tab
 insert_final_newline=true
 
-[*.yaml]
-end_of_line=lf
+[*.{nsh,nsi,vcxproj,vcxproj.filters}]
+end_of_line=crlf
 indent_style=space
 indent_size=2
 insert_final_newline=true
@@ -44,43 +63,34 @@ indent_style=space
 indent_size=4
 insert_final_newline=true
 
-[*.{nsh,nsi,vcxproj,vcxproj.filters}]
-end_of_line=crlf
-indent_style=space
-indent_size=2
-insert_final_newline=true
-
-# Specific files
-
-[scorched/{depcomp,missing}]
-end_of_line=lf
-indent_style=space
-indent_size=2
-insert_final_newline=true
-
-[scorched/install-sh]
-end_of_line=lf
-indent_style=tab
-insert_final_newline=true
-
-[scorched/mkinstalldirs]
-end_of_line=lf
-indent_style=space
-indent_size=3
-insert_final_newline=true
-
-[scorched/Microsoft.VC100.CRT.manifest]
+[/Microsoft.VC100.CRT.manifest]
 end_of_line=crlf
 indent_style=space
 indent_size=3
 insert_final_newline=true
 
-[scorched/documentation/*.txt]
+# Autotools
+
+[/{depcomp,missing}]
+end_of_line=lf
+indent_style=space
+indent_size=2
+insert_final_newline=true
+
+[/install-sh]
 end_of_line=lf
 indent_style=tab
 insert_final_newline=true
 
-[scorched/scripts/{createDmg,framewk.sh}]
-end_of_line=cr
+[/mkinstalldirs]
+end_of_line=lf
+indent_style=space
+indent_size=3
+insert_final_newline=true
+
+# Licenses
+
+[/documentation/*.txt]
+end_of_line=lf
 indent_style=tab
 insert_final_newline=true

@@ -1,30 +1,43 @@
+# git archive ignore
+/deps/macos     export-ignore
+/deps/windows   export-ignore
+
+# Project support
 .clang-format   text eol=lf
 .clang-uml      text eol=lf
 .editorconfig   text eol=lf
+.git-blame-ignore-revs  text eol=lf
 .gitattributes  text eol=lf
 .gitignore      text eol=lf
 .kateconfig     text eol=lf
 .kateproject    text eol=lf
 
+# Sources
+*.ac            text eol=lf
 *.bash          text eol=lf
 *.c             text eol=lf
 *.cpp           text eol=lf
 *.h             text eol=lf
 *.hpp           text eol=lf
-*.m4            text eol=lf
 *.pl            text eol=lf
 *.py            text eol=lf
 *.sh            text eol=lf
 *.spec          text eol=lf
 *.svg           text eol=lf
-*.yaml          text eol=lf
 *.wrap          text eol=lf
+*.yaml          text eol=lf
 CHANGELOG       text eol=lf
 COPYING         text eol=lf
 Makefile*       text eol=lf
 README          text eol=lf
-configure.ac    text eol=lf
+meson.*         text eol=lf
+meson_options.txt   text eol=lf
 
+# macOS-specific
+/scripts/createDmg      text eol=cr
+/scripts/framewk.sh     text eol=cr
+
+# Windows-specific
 *.bat           text eol=crlf
 *.cmd           text eol=crlf
 *.nsh           text eol=crlf
@@ -33,7 +46,9 @@ configure.ac    text eol=lf
 *.sln           text eol=crlf
 *.vcxproj           text eol=crlf
 *.vcxproj.filters   text eol=crlf
+/Microsoft.VC100.CRT.manifest   text eol=crlf
 
+# Binaries
 *.bmp           binary
 *.dll           binary
 *.gif           binary
@@ -45,19 +60,11 @@ configure.ac    text eol=lf
 *.ttf           binary
 *.wav           binary
 
-/scorched/depcomp               text eol=lf
-/scorched/install-sh            text eol=lf
-/scorched/missing               text eol=lf
-/scorched/mkinstalldirs         text eol=lf
+# Autotools
+/depcomp        text eol=lf
+/install-sh     text eol=lf
+/missing        text eol=lf
+/mkinstalldirs  text eol=lf
 
-/scorched/Microsoft.VC100.CRT.manifest          text eol=crlf
-
-/scorched/documentation/*.txt   text eol=lf
-
-/scorched/scripts/createDmg     text eol=cr
-/scorched/scripts/framewk.sh    text eol=cr
-
-
-/scorched/*.dll      export-ignore
-/scorched-dep-osx    export-ignore
-/scorched-dep-win32  export-ignore
+# Licenses
+/documentation/*.txt    text eol=lf
