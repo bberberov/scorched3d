@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <vector>
-#include <server/ServerTextFilter.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerTextFilter.hpp>
+#include <server/ScorchedServer.hpp>
 #include <common/OptionsScorched.h>
 #include <common/Defines.h>
 

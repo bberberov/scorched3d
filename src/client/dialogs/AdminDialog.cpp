@@ -25,7 +25,7 @@
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankColorGenerator.h>
-#include <tankai/TankAINames.h>
+#include <tankai/TankAINames.hpp>
 #include <client/ScorchedClient.h>
 #include <client/ClientAdminResultHandler.h>
 #include <coms/ComsAdminMessage.h>

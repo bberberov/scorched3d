@@ -23,8 +23,8 @@
 #include <client/ScorchedClient.h>
 #include <common/OptionsTransient.h>
 #include <target/TargetContainer.h>
-#include <server/ServerSimulator.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerSimulator.hpp>
+#include <server/ScorchedServer.hpp>
 #include <simactions/AdminSimAction.h>
 
 TutorialFileEntry *TutorialConditionWindowWait::checkCondition()

@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerTurnsSequential.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ServerTurnsSequential.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 #include <common/OptionsGame.h>
 #include <common/OptionsScorched.h>
 #include <common/OptionsTransient.h>

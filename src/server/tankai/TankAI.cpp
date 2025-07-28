@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <lang/LangResource.h>
 #include <XML/XMLNode.h>
 

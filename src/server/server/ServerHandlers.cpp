@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerHandlers.h>
+#include <server/ServerHandlers.hpp>
 
 ServerHandlers::ServerHandlers(ComsMessageHandler &comsMessageHandler) :
 	serverTankChangeHandler_(comsMessageHandler),

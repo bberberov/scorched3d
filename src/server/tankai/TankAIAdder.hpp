@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TankAIAdderh_INCLUDE__)
 #define __INCLUDE_TankAIAdderh_INCLUDE__
 
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <set>
 
 namespace TankAIAdder

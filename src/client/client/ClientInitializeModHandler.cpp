@@ -23,7 +23,7 @@
 #include <client/ClientState.h>
 #include <client/ClientWindowSetup.h>
 #include <sprites/ExplosionTextures.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <weapons/AccessoryStore.h>
 #include <landscapedef/LandscapeDefinitions.h>
 #include <common/Logger.h>
@@ -38,7 +38,7 @@
 #include <GLW/GLWWindowSkinManager.h>
 #include <GLEXT/GLLenseFlare.h>
 #include <lang/LangResource.h>
-#include <tankai/TankAIStrings.h>
+#include <tankai/TankAIStrings.hpp>
 #include <tank/TankModelStore.h>
 #include <tanket/TanketTypes.h>
 

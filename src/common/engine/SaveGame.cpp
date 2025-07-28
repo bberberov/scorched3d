@@ -21,8 +21,8 @@
 #include <engine/SaveGame.h>
 #include <common/Logger.h>
 #include <common/OptionsTransient.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankState.h>

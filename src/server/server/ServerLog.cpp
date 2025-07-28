@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerLog.h>
+#include <server/ServerLog.hpp>
 #include <common/Logger.h>
 
 ServerLog *ServerLog::instance_ = 0;

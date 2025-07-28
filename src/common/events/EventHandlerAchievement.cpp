@@ -22,8 +22,8 @@
 #include <events/EventHandlerAchievementNumberRankKills.h>
 #include <common/Logger.h>
 #include <common/DefinesString.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 #include <simactions/TankAchievementSimAction.h>
 
 EventHandlerAchievement::EventHandlerAchievement(const std::string &name, EventHandlerDataBase *database) :

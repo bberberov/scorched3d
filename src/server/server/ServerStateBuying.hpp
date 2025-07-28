@@ -24,7 +24,7 @@
 #include <engine/SimulatorI.h>
 #include <set>
 #include <map>
-#include <server/ServerTurnsSimultaneous.h>
+#include <server/ServerTurnsSimultaneous.hpp>
 #include <coms/ComsPlayedMoveMessage.h>
 
 class ServerStateBuying

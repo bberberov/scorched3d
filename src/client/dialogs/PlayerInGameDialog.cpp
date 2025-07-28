@@ -26,7 +26,7 @@
 #include <tank/TankModelContainer.h>
 #include <tank/TankModelStore.h>
 #include <tank/TankColorGenerator.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <client/ScorchedClient.h>
 #include <client/ClientParams.h>
 #include <graph/OptionsDisplay.h>

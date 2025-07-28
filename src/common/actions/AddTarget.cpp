@@ -25,7 +25,7 @@
 #include <target/Target.h>
 #include <target/TargetContainer.h>
 #include <target/TargetDamageCalc.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIAdder.hpp>
 #include <weapons/AccessoryStore.h>
 #include <weapons/WeaponAddTarget.h>
 #include <weapons/Shield.h>

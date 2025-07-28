@@ -28,7 +28,7 @@
 #include <tank/TankAvatar.h>
 #include <tanket/TanketShotInfo.h>
 #include <tankgraph/TargetRendererImplTank.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <GLW/GLWFont.h>
 #include <GLW/GLWWindowManager.h>
 #include <GLW/GLWColors.h>
@@ -42,7 +42,7 @@
 #include <client/ClientState.h>
 #include <client/ScorchedClient.h>
 #include <actions/ShowScoreAction.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <lang/LangResource.h>
 #include <stdio.h>
 

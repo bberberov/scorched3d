@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerMain.h>
+#include <server/ServerMain.hpp>
 #include <client/ClientMain.h>
 #include <client/ClientDialog.h>
 #include <client/ScorchedClient.h>
@@ -52,7 +52,7 @@
 #include <dialogs/AnimatedBackdropDialog.h>
 #include <dialogs/BackdropDialog.h>
 #include <dialogs/ConnectDialog.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <console/ConsoleFileReader.h>
 #include <console/Console.h>
 #include <GLW/GLWWindowManager.h>

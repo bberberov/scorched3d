@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerAuthHandlerMinKills.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerAuthHandlerMinKills.hpp>
+#include <server/ScorchedServer.hpp>
 #include <events/EventHandlerDataBase.h>
 #include <common/Logger.h>
 #include <common/OptionsScorched.h>

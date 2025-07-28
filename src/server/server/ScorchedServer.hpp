@@ -22,7 +22,7 @@
 #define __INCLUDE_ScorchedServerh_INCLUDE__
 
 #include <engine/ScorchedContext.h>
-#include <server/ScorchedServerSettings.h>
+#include <server/ScorchedServerSettings.hpp>
 #include <string>
 
 class ProgressCounter;

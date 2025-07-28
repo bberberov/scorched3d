@@ -30,8 +30,8 @@
 #include <tank/TankAvatar.h>
 #include <tank/TankCamera.h>
 #include <tank/TankWeaponSwitcher.h>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIStore.hpp>
 #include <weapons/AccessoryStore.h>
 #include <target/TargetLife.h>
 #include <engine/ScorchedContext.h>

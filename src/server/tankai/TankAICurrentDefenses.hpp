@@ -21,7 +21,7 @@
 #if !defined(AFX_TankAICurrentDefenses_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_TankAICurrentDefenses_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <tankai/TankAIWeaponSets.h>
+#include <tankai/TankAIWeaponSets.hpp>
 
 class TankAICurrentDefenses
 {

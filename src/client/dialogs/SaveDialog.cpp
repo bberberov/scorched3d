@@ -25,9 +25,9 @@
 #include <GLW/GLWWindowManager.h>
 #include <lang/LangResource.h>
 #include <client/ScorchedClient.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
 #include <engine/SaveGame.h>
 #include <common/ChannelManager.h>
 #include <common/Defines.h>

@@ -23,7 +23,7 @@
 
 #include <common/DefinesString.h>
 #include <common/ChannelText.h>
-#include <server/ServerAdminSessions.h>
+#include <server/ServerAdminSessions.hpp>
 
 namespace ServerAdminCommon
 {

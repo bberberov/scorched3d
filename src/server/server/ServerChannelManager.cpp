@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerTextFilter.h>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerTextFilter.hpp>
 #include <lua/LUAScriptHook.h>
 #include <coms/ComsMessageSender.h>
 #include <coms/ComsChannelMessage.h>

@@ -33,8 +33,8 @@
 #include <target/TargetParachute.h>
 #include <target/TargetState.h>
 #include <target/TargetContainer.h>
-#include <tankai/TankAIStore.h>
-#include <server/ScorchedServer.h>
+#include <tankai/TankAIStore.hpp>
+#include <server/ScorchedServer.hpp>
 #include <3dsparse/ModelStore.h>
 #include <3dsparse/Model.h>
 #include <common/Defines.h>

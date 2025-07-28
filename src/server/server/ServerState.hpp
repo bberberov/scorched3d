@@ -21,14 +21,14 @@
 #if !defined(__INCLUDE_ServerStateh_INCLUDE__)
 #define __INCLUDE_ServerStateh_INCLUDE__
 
-#include <server/ServerStateEnoughPlayers.h>
-#include <server/ServerStateNewGame.h>
-#include <server/ServerStateTankNewGame.h>
-#include <server/ServerStateStartingMatch.h>
-#include <server/ServerStateBuying.h>
-#include <server/ServerStatePlaying.h>
-#include <server/ServerStateScore.h>
-#include <server/ServerStateFinishWait.h>
+#include <server/ServerStateEnoughPlayers.hpp>
+#include <server/ServerStateNewGame.hpp>
+#include <server/ServerStateTankNewGame.hpp>
+#include <server/ServerStateStartingMatch.hpp>
+#include <server/ServerStateBuying.hpp>
+#include <server/ServerStatePlaying.hpp>
+#include <server/ServerStateScore.hpp>
+#include <server/ServerStateFinishWait.hpp>
 
 class ServerState
 {

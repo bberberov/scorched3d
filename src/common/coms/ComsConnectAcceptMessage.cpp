@@ -21,7 +21,7 @@
 #ifndef S3D_SERVER
 	#include <client/ScorchedClient.h>
 #endif
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <coms/ComsConnectAcceptMessage.h>
 #include <weapons/AccessoryStore.h>
 #include <common/OptionsScorched.h>

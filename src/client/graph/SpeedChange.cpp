@@ -21,7 +21,7 @@
 #include <graph/SpeedChange.h>
 #include <client/ScorchedClient.h>
 #include <client/ClientParams.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <common/Keyboard.h>
 #include <common/Defines.h>
 #include <client/ClientParams.h>

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerWebAppletHandlerh_INCLUDE__)
 #define __INCLUDE_ServerWebAppletHandlerh_INCLUDE__
 
-#include <webserver/ServerWebServer.h>
+#include <webserver/ServerWebServer.hpp>
 
 class OptionEntry;
 namespace ServerWebAppletHandler

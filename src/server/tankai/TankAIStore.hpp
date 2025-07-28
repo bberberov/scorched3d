@@ -22,8 +22,8 @@
 #define __INCLUDE_TankAIStoreh_INCLUDE__
 
 #include <list>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIWeaponSets.h>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIWeaponSets.hpp>
 
 class TankAIStore
 {

@@ -28,13 +28,13 @@
 #include <engine/ObjectGroupEntry.h>
 #include <client/ClientState.h>
 #include <client/ScorchedClient.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <target/TargetContainer.h>
 #include <tanket/TanketAccessories.h>
 #include <tank/TankState.h>
 #include <tank/TankModel.h>
 #include <tank/TankModelContainer.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <target/TargetParachute.h>
 #include <target/TargetShield.h>
 #include <target/TargetLife.h>

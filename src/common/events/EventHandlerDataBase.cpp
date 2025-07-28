@@ -24,7 +24,7 @@
 #include <common/OptionsGame.h>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <weapons/AccessoryStore.h>
 #include <weapons/Weapon.h>
 #include <net/NetInterface.h>

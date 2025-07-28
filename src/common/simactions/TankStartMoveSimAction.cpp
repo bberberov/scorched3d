@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <simactions/TankStartMoveSimAction.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <tank/Tank.h>
 #include <tank/TankAvatar.h>
 #include <tank/TankState.h>
 #include <tank/TankScore.h>
 #include <target/TargetContainer.h>
 #include <tanket/TanketShotInfo.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <engine/ActionController.h>
 #include <common/OptionsScorched.h>
 #ifndef S3D_SERVER

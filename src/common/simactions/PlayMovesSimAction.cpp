@@ -30,14 +30,14 @@
 #include <tank/TankShotHistory.h>
 #include <tank/TankState.h>
 #include <target/TargetRenderer.h>
-#include <tankai/TankAIStrings.h>
+#include <tankai/TankAIStrings.hpp>
 #include <actions/TankSay.h>
 #include <actions/TanketResign.h>
 #include <events/EventController.h>
 #include <common/OptionsScorched.h>
-#include <server/ServerCommon.h>
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerCommon.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
 #ifndef S3D_SERVER
 	#include <sound/SoundUtils.h>
 #endif

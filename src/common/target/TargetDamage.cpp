@@ -40,7 +40,7 @@
 #include <tank/TankTeamScore.h>
 #include <tank/TankScore.h>
 #include <tank/TankState.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <tanket/TanketShotInfo.h>
 #include <tanket/TanketAccessories.h>
 #include <target/TargetDamage.h>
@@ -48,7 +48,7 @@
 #include <target/TargetLife.h>
 #include <target/TargetParachute.h>
 #include <target/TargetState.h>
-#include <tankai/TankAIStrings.h>
+#include <tankai/TankAIStrings.hpp>
 #include <lang/LangResource.h>
 
 void TargetDamage::damageTarget(ScorchedContext &context,

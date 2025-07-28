@@ -29,8 +29,8 @@
 #ifndef S3D_SERVER
 #include <client/ScorchedClient.h>
 #endif
-#include <server/ScorchedServer.h>
-#include <server/ServerDestinations.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerDestinations.hpp>
 #include <set>
 #include <zlib.h>
 

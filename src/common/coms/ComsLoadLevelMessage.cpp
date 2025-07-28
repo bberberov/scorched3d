@@ -27,9 +27,9 @@
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankTeamScore.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIStore.hpp>
 #include <weapons/AccessoryStore.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <set>
 #ifndef S3D_SERVER
 #include <tankgraph/TargetRendererImplTank.h>

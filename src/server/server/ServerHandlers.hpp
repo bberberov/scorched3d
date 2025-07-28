@@ -21,19 +21,19 @@
 #if !defined(__INCLUDE_ServerHandlersh_INCLUDE__)
 #define __INCLUDE_ServerHandlersh_INCLUDE__
 
-#include <server/ServerTankChangeHandler.h>
-#include <server/ServerAdminHandler.h>
-#include <server/ServerBuyAccessoryHandler.h>
-#include <server/ServerConnectAuthHandler.h>
-#include <server/ServerConnectHandler.h>
-#include <server/ServerDefenseHandler.h>
-#include <server/ServerFileAkHandler.h>
-#include <server/ServerGiftMoneyHandler.h>
-#include <server/ServerHaveModFilesHandler.h>
-#include <server/ServerInitializeModHandler.h>
-#include <server/ServerLinesHandler.h>
-#include <server/ServerPlayedMoveHandler.h>
-#include <server/ServerOperationResultHandler.h>
+#include <server/ServerTankChangeHandler.hpp>
+#include <server/ServerAdminHandler.hpp>
+#include <server/ServerBuyAccessoryHandler.hpp>
+#include <server/ServerConnectAuthHandler.hpp>
+#include <server/ServerConnectHandler.hpp>
+#include <server/ServerDefenseHandler.hpp>
+#include <server/ServerFileAkHandler.hpp>
+#include <server/ServerGiftMoneyHandler.hpp>
+#include <server/ServerHaveModFilesHandler.hpp>
+#include <server/ServerInitializeModHandler.hpp>
+#include <server/ServerLinesHandler.hpp>
+#include <server/ServerPlayedMoveHandler.hpp>
+#include <server/ServerOperationResultHandler.hpp>
 
 class ComsMessageHandler;
 class ServerHandlers

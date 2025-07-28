@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerTankChangeHandler.h>
-#include <server/ServerConnectHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <server/ServerTextFilter.h>
-#include <server/ServerAuthHandler.h>
+#include <server/ServerTankChangeHandler.hpp>
+#include <server/ServerConnectHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerTextFilter.hpp>
+#include <server/ServerAuthHandler.hpp>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
 #include <common/Defines.h>
 #include <coms/ComsTankChangeMessage.h>
 #include <simactions/TankChangeSimAction.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIStore.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankState.h>

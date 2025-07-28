@@ -25,7 +25,7 @@
 #include <tank/TankScore.h>
 #include <weapons/AccessoryStore.h>
 #include <weapons/EconomyStore.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 
 REGISTER_CLASS_SOURCE(TankAccessorySimAction);
 

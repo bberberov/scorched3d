@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrentDefenses.h>
+#include <tankai/TankAICurrentDefenses.hpp>
 #include <tank/Tank.h>
 #include <tanket/TanketAccessories.h>
 #include <weapons/Accessory.h>
@@ -27,8 +27,8 @@
 #include <target/TargetParachute.h>
 #include <coms/ComsDefenseMessage.h>
 #include <simactions/TankDefenseSimAction.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 #include <XML/XMLNode.h>
 #include <stdlib.h>
 

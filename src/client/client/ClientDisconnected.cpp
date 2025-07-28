@@ -24,7 +24,7 @@
 #include <client/ScorchedClient.h>
 #include <client/ClientSimulator.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <engine/GameState.h>
 #include <dialogs/AnimatedBackdropDialog.h>
 

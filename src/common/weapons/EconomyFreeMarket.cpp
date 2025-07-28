@@ -20,7 +20,7 @@
 
 #include <weapons/EconomyFreeMarket.h>
 #include <weapons/AccessoryStore.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <common/Defines.h>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>

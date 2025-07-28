@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerAuthHandlerStore.h>
-#include <server/ServerTimedMessage.h>
-#include <server/ServerBanned.h>
-#include <server/ServerTextFilter.h>
-#include <server/ServerHandlers.h>
-#include <server/ServerLoadLevel.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerAdminSessions.h>
-#include <server/ServerSyncCheck.h>
-#include <server/ServerMessageHandler.h>
-#include <server/ServerFileServer.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerAuthHandlerStore.hpp>
+#include <server/ServerTimedMessage.hpp>
+#include <server/ServerBanned.hpp>
+#include <server/ServerTextFilter.hpp>
+#include <server/ServerHandlers.hpp>
+#include <server/ServerLoadLevel.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerAdminSessions.hpp>
+#include <server/ServerSyncCheck.hpp>
+#include <server/ServerMessageHandler.hpp>
+#include <server/ServerFileServer.hpp>
 #include <common/OptionsScorched.h>
 #include <common/OptionsTransient.h>
 #include <common/Logger.h>
@@ -46,10 +46,10 @@
 #include <target/TargetContainer.h>
 #include <tank/TankModelStore.h>
 #include <tanket/TanketTypes.h>
-#include <tankai/TankAIStrings.h>
-#include <tankai/TankAIStore.h>
-#include <tankai/TankAIWeaponSets.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIStrings.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <tankai/TankAIWeaponSets.hpp>
+#include <tankai/TankAIAdder.hpp>
 #include <target/TargetSpace.h>
 #include <landscapedef/LandscapeDefinitions.h>
 #include <coms/ComsSimulateResultMessage.h>

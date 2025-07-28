@@ -28,7 +28,7 @@
 #include <landscapedef/LandscapeTex.h>
 #include <tank/TankViewPoints.h>
 #include <target/TargetContainer.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <tanket/Tanket.h>
 #include <common/Defines.h>
 #include <common/OptionsScorched.h>

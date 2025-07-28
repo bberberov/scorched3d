@@ -26,7 +26,7 @@
 #if defined(_WIN32)
 #include <Winsock2.h>
 #endif
-#include <server/ServerAuthHandler.h>
+#include <server/ServerAuthHandler.hpp>
 #include <mysql/mysql.h>
 
 class ServerAuthHandlerForumLogin : public ServerAuthHandler

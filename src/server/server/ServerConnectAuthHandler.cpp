@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerConnectAuthHandler.h>
-#include <server/ServerConnectHandler.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerBanned.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerAuthHandler.h>
-#include <server/ServerState.h>
+#include <server/ServerConnectAuthHandler.hpp>
+#include <server/ServerConnectHandler.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerBanned.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerAuthHandler.hpp>
+#include <server/ServerState.hpp>
 #include <engine/SaveGame.h>
 #include <tank/TankModelStore.h>
 #include <tank/TankColorGenerator.h>
@@ -36,9 +36,9 @@
 #include <tank/TankAvatar.h>
 #include <tank/TankState.h>
 #include <tank/TankScore.h>
-#include <tankai/TankAIAdder.h>
-#include <tankai/TankAIStrings.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIAdder.hpp>
+#include <tankai/TankAIStrings.hpp>
+#include <tankai/TankAIStore.hpp>
 #include <common/Defines.h>
 #include <common/FileLines.h>
 #include <common/OptionsScorched.h>

@@ -33,8 +33,8 @@
 #include <tank/TankState.h>
 #include <tank/TankSort.h>
 #include <tanket/TanketShotInfo.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 
 REGISTER_CLASS_SOURCE(ShowScoreSimAction);
 

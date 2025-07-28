@@ -23,7 +23,7 @@
 #include <tank/TankScore.h>
 #include <tanket/TanketAccessories.h>
 #include <net/NetBuffer.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
 

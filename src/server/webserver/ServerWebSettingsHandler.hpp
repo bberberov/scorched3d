@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerWebSettingsHandlerh_INCLUDE__)
 #define __INCLUDE_ServerWebSettingsHandlerh_INCLUDE__
 
-#include <webserver/ServerWebServer.h>
+#include <webserver/ServerWebServer.hpp>
 
 class OptionEntry;
 namespace ServerWebSettingsHandler

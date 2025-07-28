@@ -21,7 +21,7 @@
 #if !defined(AFX_TankAIRandom_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_TankAIRandom_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <vector>
 
 class TankAIRandom : public TankAI

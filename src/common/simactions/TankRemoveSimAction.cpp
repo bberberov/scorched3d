@@ -23,7 +23,7 @@
 #include <engine/ScorchedContext.h>
 #include <tank/Tank.h>
 #include <target/TargetContainer.h>
-#include <tankai/TankAINone.h>
+#include <tankai/TankAINone.hpp>
 #include <actions/TankRemove.h>
 
 unsigned int TankRemoveSimAction::TankRemoveSimActionCount = 0;

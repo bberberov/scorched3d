@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerAuthHandlerPreferedh_INCLUDE__)
 #define __INCLUDE_ServerAuthHandlerPreferedh_INCLUDE__
 
-#include <server/ServerAuthHandler.h>
+#include <server/ServerAuthHandler.hpp>
 #include <list>
 
 class ServerAuthHandlerPrefered : public ServerAuthHandler

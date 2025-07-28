@@ -24,7 +24,7 @@
 #include <client/ClientState.h>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <dialogs/ConnectDialog.h>
 #include <dialogs/MsgBoxDialog.h>
 #include <dialogs/ProgressDialog.h>

@@ -23,7 +23,7 @@
 
 #include <net/NetMessage.h>
 #include <map>
-#include <server/ServerAdminSessions.h>
+#include <server/ServerAdminSessions.hpp>
 
 class ServerWebServerIRequest
 {

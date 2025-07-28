@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <time.h>
-#include <server/ServerRegistration.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerRegistration.hpp>
+#include <server/ScorchedServer.hpp>
 #include <common/Logger.h>
 #include <common/OptionsMasterListServer.h>
 #include <common/OptionsScorched.h>

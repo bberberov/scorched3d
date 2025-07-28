@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_ServerStatePlayingh_INCLUDE__)
 #define __INCLUDE_ServerStatePlayingh_INCLUDE__
 
-#include <server/ServerTurnsSequential.h>
-#include <server/ServerTurnsSimultaneous.h>
-#include <server/ServerTurnsFree.h>
+#include <server/ServerTurnsSequential.hpp>
+#include <server/ServerTurnsSimultaneous.hpp>
+#include <server/ServerTurnsFree.hpp>
 #include <coms/ComsPlayedMoveMessage.h>
 #include <engine/SimulatorI.h>
 

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerCommon.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerMessageHandler.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerDestinations.h>
+#include <server/ServerCommon.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerMessageHandler.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerDestinations.hpp>
 #include <target/TargetContainer.h>
 #include <target/TargetLife.h>
 #include <tank/Tank.h>

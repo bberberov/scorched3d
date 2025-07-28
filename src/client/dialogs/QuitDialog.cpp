@@ -25,8 +25,8 @@
 #include <client/ClientState.h>
 #include <engine/MainLoop.h>
 #include <net/NetInterface.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 #include <simactions/AdminSimAction.h>
 
 QuitDialog *QuitDialog::instance_ = 0;

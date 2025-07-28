@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAINone.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
+#include <tankai/TankAINone.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
 
 TankAINone::TankAINone(unsigned int playerId) :
 	playerId_(playerId)

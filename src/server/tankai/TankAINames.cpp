@@ -20,7 +20,7 @@
 
 #include <XML/XMLFile.h>
 #include <common/Defines.h>
-#include <tankai/TankAINames.h>
+#include <tankai/TankAINames.hpp>
 #include <stdlib.h>
 
 TankAINames::TankAINames()

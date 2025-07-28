@@ -23,7 +23,7 @@
 
 #include <net/NetServerTCP.h>
 #include <common/FileLogger.h>
-#include <webserver/ServerWebServerQueue.h>
+#include <webserver/ServerWebServerQueue.hpp>
 
 class ServerWebServer : public NetMessageHandlerI
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerAuthHandlerStoreh_INCLUDE__)
 #define __INCLUDE_ServerAuthHandlerStoreh_INCLUDE__
 
-#include <server/ServerAuthHandler.h>
+#include <server/ServerAuthHandler.hpp>
 
 class ServerAuthHandlerStore
 {

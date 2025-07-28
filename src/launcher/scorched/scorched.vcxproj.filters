@@ -416,7 +416,7 @@
     <ClInclude Include="..\..\client\client\UniqueIdStore.h">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\server\tankai\TankAINames.h">
+    <ClInclude Include="..\..\server\tankai\TankAINames.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\landscapedef\LandscapeDefinitionsBase.h">

@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerConsoleProgressCounter.h>
+#include <server/ServerConsoleProgressCounter.hpp>
 #include <common/Logger.h>
 
 ServerConsoleProgressCounter *ServerConsoleProgressCounter::instance_ = 0;

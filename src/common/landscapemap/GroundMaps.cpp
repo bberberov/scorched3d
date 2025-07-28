@@ -29,7 +29,7 @@
 #include <target/Target.h>
 #include <target/TargetContainer.h>
 #include <common/Logger.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIAdder.hpp>
 #include <image/ImageFactory.h>
 #include <lang/LangResource.h>
 

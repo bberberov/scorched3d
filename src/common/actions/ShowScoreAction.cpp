@@ -20,8 +20,8 @@
 
 #include <actions/ShowScoreAction.h>
 #include <engine/ScorchedContext.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankScore.h>

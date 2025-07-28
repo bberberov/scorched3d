@@ -22,7 +22,7 @@
 #define __INCLUDE_ServerTurnsSequentialh_INCLUDE__
 
 #include <list>
-#include <server/ServerTurns.h>
+#include <server/ServerTurns.hpp>
 #include <engine/SimulatorI.h>
 
 class Tank;

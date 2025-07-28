@@ -22,7 +22,7 @@
 #define __INCLUDE_ServerWebServerQueueh_INCLUDE__
 
 #include <SDL/SDL.h>
-#include <webserver/ServerWebServerI.h>
+#include <webserver/ServerWebServerI.hpp>
 #include <list>
 
 class ServerWebServerQueueEntry

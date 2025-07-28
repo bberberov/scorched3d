@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerMain.h>
-#include <server/ServerParams.h>
+#include <server/ServerMain.hpp>
+#include <server/ServerParams.hpp>
 #include <engine/ModDirs.h>
 #include <common/ARGParser.h>
 #include <common/Defines.h>

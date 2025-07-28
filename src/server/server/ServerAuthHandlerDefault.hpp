@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerAuthHandlerDefaulth_INCLUDE__)
 #define __INCLUDE_ServerAuthHandlerDefaulth_INCLUDE__
 
-#include <server/ServerAuthHandler.h>
+#include <server/ServerAuthHandler.hpp>
 
 class ServerAuthHandlerDefault : public ServerAuthHandler
 {

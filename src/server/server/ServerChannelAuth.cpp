@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerChannelAuth.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerDestinations.h>
+#include <server/ServerChannelAuth.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerDestinations.hpp>
 
 ServerChannelAuth::ServerChannelAuth()
 {

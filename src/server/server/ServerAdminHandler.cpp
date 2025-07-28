@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerAdminHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerCommon.h>
-#include <server/ServerSyncCheck.h>
-#include <server/ServerAdminCommon.h>
-#include <server/ServerAdminSessions.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerBanned.h>
+#include <server/ServerAdminHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerSyncCheck.hpp>
+#include <server/ServerAdminCommon.hpp>
+#include <server/ServerAdminSessions.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerBanned.hpp>
 #include <common/Logger.h>
 #include <common/Defines.h>
 #include <coms/ComsAdminMessage.h>

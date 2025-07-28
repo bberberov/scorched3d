@@ -26,7 +26,7 @@
 #include <target/Target.h>
 #include <engine/ScorchedContext.h>
 #include <engine/ActionController.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIAdder.hpp>
 #include <common/Defines.h>
 #include <common/Logger.h>
 

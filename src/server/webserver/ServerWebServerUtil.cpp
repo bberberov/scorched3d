@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebServerUtil.h>
-#include <server/ScorchedServer.h>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <server/ScorchedServer.hpp>
 #include <net/NetMessagePool.h>
 #include <common/OptionsScorched.h>
 #include <common/Defines.h>

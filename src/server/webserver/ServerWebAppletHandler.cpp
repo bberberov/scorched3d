@@ -18,12 +18,12 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebAppletHandler.h>
-#include <webserver/ServerWebServerUtil.h>
-#include <webserver/ServerWebServer.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerAdminCommon.h>
-#include <server/ScorchedServer.h>
+#include <webserver/ServerWebAppletHandler.hpp>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <webserver/ServerWebServer.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerAdminCommon.hpp>
+#include <server/ScorchedServer.hpp>
 #include <XML/XMLNode.h>
 
 bool ServerWebAppletHandler::AppletFileHandler::processRequest(

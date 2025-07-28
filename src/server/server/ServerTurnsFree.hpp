@@ -23,7 +23,7 @@
 
 #include <map>
 #include <list>
-#include <server/ServerTurns.h>
+#include <server/ServerTurns.hpp>
 
 class Tank;
 class ComsPlayedMoveMessage;

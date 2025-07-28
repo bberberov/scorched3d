@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerAuthHandlerMinKillsh_INCLUDE__)
 #define __INCLUDE_ServerAuthHandlerMinKillsh_INCLUDE__
 
-#include <server/ServerAuthHandler.h>
+#include <server/ServerAuthHandler.hpp>
 
 class ServerAuthHandlerMinKills : public ServerAuthHandler
 {

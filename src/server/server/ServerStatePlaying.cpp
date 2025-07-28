@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStatePlaying.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSyncCheck.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerChannelManager.h>
+#include <server/ServerStatePlaying.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSyncCheck.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerChannelManager.hpp>
 #include <simactions/RoundStartSimAction.h>
 #include <simactions/TankTeamBallanceSimAction.h>
 #include <common/OptionsScorched.h>

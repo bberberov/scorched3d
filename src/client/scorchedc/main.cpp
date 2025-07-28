@@ -21,7 +21,7 @@
 #include <client/ClientParams.h>
 #include <client/ScorchedClient.h>
 #include <client/ClientMain.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <engine/ModDirs.h>
 #include <common/OptionsScorched.h>
 #include <common/ARGParser.h>

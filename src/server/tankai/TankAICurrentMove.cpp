@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrentMove.h>
-#include <tankai/TankAIAimGuesser.h>
-#include <tankai/TankAISniperGuesser.h>
+#include <tankai/TankAICurrentMove.hpp>
+#include <tankai/TankAIAimGuesser.hpp>
+#include <tankai/TankAISniperGuesser.hpp>
 #include <coms/ComsPlayedMoveMessage.h>
 #include <coms/ComsDefenseMessage.h>
 #include <common/Logger.h>
 #include <common/OptionsScorched.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
 #include <simactions/TankDefenseSimAction.h>
 #include <simactions/TankStartMoveSimAction.h>
-#include <tankai/TankAI.h>
+#include <tankai/TankAI.hpp>
 #include <tank/Tank.h>
 #include <tank/TankLib.h>
 #include <tanket/TanketAccessories.h>

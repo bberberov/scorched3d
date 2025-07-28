@@ -21,10 +21,10 @@
 #if !defined(AFX_TankAICurrent_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_TankAICurrent_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <tankai/TankAI.h>
-#include <tankai/TankAICurrentWeapons.h>
-#include <tankai/TankAICurrentDefenses.h>
-#include <tankai/TankAICurrentMove.h>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAICurrentWeapons.hpp>
+#include <tankai/TankAICurrentDefenses.hpp>
+#include <tankai/TankAICurrentMove.hpp>
 
 class TankAICurrent : public TankAI
 {

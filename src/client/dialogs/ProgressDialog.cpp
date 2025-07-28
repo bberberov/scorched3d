@@ -29,7 +29,7 @@
 #include <client/ClientState.h>
 #include <client/ClientParams.h>
 #include <client/ClientProcessingLoop.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <engine/MainLoop.h>
 #include <common/OptionsScorched.h>
 #include <common/Clock.h>

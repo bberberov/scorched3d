@@ -21,8 +21,8 @@
 #if !defined(AFX_TankAICurrentMove_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_TankAICurrentMove_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <tankai/TankAICurrentTarget.h>
-#include <tankai/TankAICurrentMoveWeapons.h>
+#include <tankai/TankAICurrentTarget.hpp>
+#include <tankai/TankAICurrentMoveWeapons.hpp>
 #include <common/Vector.h>
 
 class TankAICurrentMove

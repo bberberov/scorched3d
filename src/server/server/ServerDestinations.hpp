@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerDestinationsh_INCLUDE__)
 #define __INCLUDE_ServerDestinationsh_INCLUDE__
 
-#include <server/ServerDestination.h>
+#include <server/ServerDestination.hpp>
 #include <map>
 
 class ServerDestinations

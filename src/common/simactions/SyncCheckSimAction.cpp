@@ -21,8 +21,8 @@
 #include <simactions/SyncCheckSimAction.h>
 #include <coms/ComsSyncCheckMessage.h>
 #include <coms/ComsMessageSender.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSyncCheck.h>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSyncCheck.hpp>
 
 REGISTER_CLASS_SOURCE(SyncCheckSimAction);
 

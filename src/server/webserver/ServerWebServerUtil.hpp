@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerWebServerUtilh_INCLUDE__)
 #define __INCLUDE_ServerWebServerUtilh_INCLUDE__
 
-#include <server/ServerAdminSessions.h>
+#include <server/ServerAdminSessions.hpp>
 #include <lang/LangString.h>
 
 class NetMessage;

@@ -23,7 +23,7 @@
 #include <common/OptionsTransient.h>
 #include <common/Logger.h>
 #include <common/ChannelManager.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIStore.hpp>
 #include <tank/Tank.h>
 #include <tank/TankAvatar.h>
 #include <tank/TankState.h>
@@ -32,7 +32,7 @@
 #include <tank/TankModelContainer.h>
 #include <target/TargetContainer.h>
 #include <tanket/TanketTypes.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <events/EventController.h>
 
 unsigned int TankChangeSimAction::TankChangeSimActionCount = 0;

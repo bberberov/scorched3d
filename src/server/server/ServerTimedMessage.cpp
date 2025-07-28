@@ -21,10 +21,10 @@
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
 #include <common/Defines.h>
-#include <server/ServerTimedMessage.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerCommon.h>
-#include <server/ScorchedServer.h>
+#include <server/ServerTimedMessage.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ScorchedServer.hpp>
 #include <engine/GameState.h>
 #include <XML/XMLFile.h>
 #include <time.h>

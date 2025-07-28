@@ -18,17 +18,17 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebHandler.h>
-#include <server/ServerLog.h>
-#include <server/ScorchedServer.h>
-#include <webserver/ServerWebServerUtil.h>
-#include <server/ServerCommon.h>
-#include <server/ServerAdminCommon.h>
-#include <server/ServerAdminSessions.h>
-#include <server/ServerParams.h>
-#include <server/ServerState.h>
-#include <server/ServerBanned.h>
-#include <server/ServerChannelManager.h>
+#include <webserver/ServerWebHandler.hpp>
+#include <server/ServerLog.hpp>
+#include <server/ScorchedServer.hpp>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerAdminCommon.hpp>
+#include <server/ServerAdminSessions.hpp>
+#include <server/ServerParams.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerBanned.hpp>
+#include <server/ServerChannelManager.hpp>
 #include <landscapedef/LandscapeDefinitionsBase.h>
 #include <engine/ModFiles.h>
 #include <common/Defines.h>
@@ -43,7 +43,7 @@
 #include <tank/TankColorGenerator.h>
 #include <tank/TankState.h>
 #include <tank/TankScore.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIStore.hpp>
 #include <XML/XMLParser.h>
 #include <vector>
 #include <algorithm>

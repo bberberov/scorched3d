@@ -21,8 +21,8 @@
 #include <dialogs/PlayerDialog.h>
 #include <client/ClientState.h>
 #include <client/ScorchedClient.h>
-#include <tankai/TankAIStore.h>
-#include <tankai/TankAIStrings.h>
+#include <tankai/TankAIStore.hpp>
+#include <tankai/TankAIStrings.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankColorGenerator.h>

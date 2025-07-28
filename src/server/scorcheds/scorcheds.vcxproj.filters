@@ -1646,238 +1646,238 @@
     <ClInclude Include="..\..\common\common\VectorLib.h">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ScorchedServer.h">
+    <ClInclude Include="..\server\ScorchedServer.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAdminCommon.h">
+    <ClInclude Include="..\server\ServerAdminCommon.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAdminHandler.h">
+    <ClInclude Include="..\server\ServerAdminHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAdminSessions.h">
+    <ClInclude Include="..\server\ServerAdminSessions.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandler.h">
+    <ClInclude Include="..\server\ServerAuthHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandlerDefault.h">
+    <ClInclude Include="..\server\ServerAuthHandlerDefault.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandlerForumLogin.h">
+    <ClInclude Include="..\server\ServerAuthHandlerForumLogin.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandlerMinKills.h">
+    <ClInclude Include="..\server\ServerAuthHandlerMinKills.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandlerPrefered.h">
+    <ClInclude Include="..\server\ServerAuthHandlerPrefered.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerBanned.h">
+    <ClInclude Include="..\server\ServerBanned.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerBrowserInfo.h">
+    <ClInclude Include="..\server\ServerBrowserInfo.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerBuyAccessoryHandler.h">
+    <ClInclude Include="..\server\ServerBuyAccessoryHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerChannelAuth.h">
+    <ClInclude Include="..\server\ServerChannelAuth.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerChannelFilter.h">
+    <ClInclude Include="..\server\ServerChannelFilter.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerChannelManager.h">
+    <ClInclude Include="..\server\ServerChannelManager.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerCommon.h">
+    <ClInclude Include="..\server\ServerCommon.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerConnectAuthHandler.h">
+    <ClInclude Include="..\server\ServerConnectAuthHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerConnectHandler.h">
+    <ClInclude Include="..\server\ServerConnectHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerConsoleLogger.h">
+    <ClInclude Include="..\server\ServerConsoleLogger.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerConsoleProgressCounter.h">
+    <ClInclude Include="..\server\ServerConsoleProgressCounter.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerDefenseHandler.h">
+    <ClInclude Include="..\server\ServerDefenseHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerDestination.h">
+    <ClInclude Include="..\server\ServerDestination.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerDestinations.h">
+    <ClInclude Include="..\server\ServerDestinations.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerFileAkHandler.h">
+    <ClInclude Include="..\server\ServerFileAkHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerFileServer.h">
+    <ClInclude Include="..\server\ServerFileServer.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerGiftMoneyHandler.h">
+    <ClInclude Include="..\server\ServerGiftMoneyHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerHaveModFilesHandler.h">
+    <ClInclude Include="..\server\ServerHaveModFilesHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerInitializeModHandler.h">
+    <ClInclude Include="..\server\ServerInitializeModHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerLinesHandler.h">
+    <ClInclude Include="..\server\ServerLinesHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerLoadLevel.h">
+    <ClInclude Include="..\server\ServerLoadLevel.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerLog.h">
+    <ClInclude Include="..\server\ServerLog.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerMain.h">
+    <ClInclude Include="..\server\ServerMain.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerMessageHandler.h">
+    <ClInclude Include="..\server\ServerMessageHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerOperationResultHandler.h">
+    <ClInclude Include="..\server\ServerOperationResultHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerParams.h">
+    <ClInclude Include="..\server\ServerParams.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerPlayedMoveHandler.h">
+    <ClInclude Include="..\server\ServerPlayedMoveHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerRegistration.h">
+    <ClInclude Include="..\server\ServerRegistration.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerSimulator.h">
+    <ClInclude Include="..\server\ServerSimulator.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerState.h">
+    <ClInclude Include="..\server\ServerState.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateBuying.h">
+    <ClInclude Include="..\server\ServerStateBuying.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateEnoughPlayers.h">
+    <ClInclude Include="..\server\ServerStateEnoughPlayers.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateFinishWait.h">
+    <ClInclude Include="..\server\ServerStateFinishWait.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateNewGame.h">
+    <ClInclude Include="..\server\ServerStateNewGame.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStatePlaying.h">
+    <ClInclude Include="..\server\ServerStatePlaying.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateScore.h">
+    <ClInclude Include="..\server\ServerStateScore.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateStartingMatch.h">
+    <ClInclude Include="..\server\ServerStateStartingMatch.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerStateTankNewGame.h">
+    <ClInclude Include="..\server\ServerStateTankNewGame.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerSyncCheck.h">
+    <ClInclude Include="..\server\ServerSyncCheck.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTextFilter.h">
+    <ClInclude Include="..\server\ServerTextFilter.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTimedMessage.h">
+    <ClInclude Include="..\server\ServerTimedMessage.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTurns.h">
+    <ClInclude Include="..\server\ServerTurns.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTurnsFree.h">
+    <ClInclude Include="..\server\ServerTurnsFree.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTurnsSequential.h">
+    <ClInclude Include="..\server\ServerTurnsSequential.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTurnsSimultaneous.h">
+    <ClInclude Include="..\server\ServerTurnsSimultaneous.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAI.h">
+    <ClInclude Include="..\tankai\TankAI.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIAdder.h">
+    <ClInclude Include="..\tankai\TankAIAdder.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIAimGuesser.h">
+    <ClInclude Include="..\tankai\TankAIAimGuesser.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrent.h">
+    <ClInclude Include="..\tankai\TankAICurrent.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrentDefenses.h">
+    <ClInclude Include="..\tankai\TankAICurrentDefenses.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrentMove.h">
+    <ClInclude Include="..\tankai\TankAICurrentMove.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrentMoveWeapons.h">
+    <ClInclude Include="..\tankai\TankAICurrentMoveWeapons.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrentTarget.h">
+    <ClInclude Include="..\tankai\TankAICurrentTarget.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAICurrentWeapons.h">
+    <ClInclude Include="..\tankai\TankAICurrentWeapons.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAINames.h">
+    <ClInclude Include="..\tankai\TankAINames.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAINone.h">
+    <ClInclude Include="..\tankai\TankAINone.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIRandom.h">
+    <ClInclude Include="..\tankai\TankAIRandom.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIShallow.h">
+    <ClInclude Include="..\tankai\TankAIShallow.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAISniperGuesser.h">
+    <ClInclude Include="..\tankai\TankAISniperGuesser.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIStore.h">
+    <ClInclude Include="..\tankai\TankAIStore.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIStrings.h">
+    <ClInclude Include="..\tankai\TankAIStrings.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankai\TankAIWeaponSets.h">
+    <ClInclude Include="..\tankai\TankAIWeaponSets.hpp">
       <Filter>tankai</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebAppletHandler.h">
+    <ClInclude Include="..\webserver\ServerWebAppletHandler.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebHandler.h">
+    <ClInclude Include="..\webserver\ServerWebHandler.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebServer.h">
+    <ClInclude Include="..\webserver\ServerWebServer.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebServerI.h">
+    <ClInclude Include="..\webserver\ServerWebServerI.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebServerQueue.h">
+    <ClInclude Include="..\webserver\ServerWebServerQueue.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebServerUtil.h">
+    <ClInclude Include="..\webserver\ServerWebServerUtil.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
-    <ClInclude Include="..\webserver\ServerWebSettingsHandler.h">
+    <ClInclude Include="..\webserver\ServerWebSettingsHandler.hpp">
       <Filter>webserver</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\XML\XMLFile.h">
@@ -2747,25 +2747,25 @@
     <ClInclude Include="..\..\common\image\ImageID.h">
       <Filter>image</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerAuthHandlerStore.h">
+    <ClInclude Include="..\server\ServerAuthHandlerStore.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerHandlers.h">
+    <ClInclude Include="..\server\ServerHandlers.hpp">
       <Filter>server</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\coms\ComsTankChangeMessage.h">
       <Filter>coms</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ServerTankChangeHandler.h">
+    <ClInclude Include="..\server\ServerTankChangeHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\simactions\NextTurnSimAction.h">
       <Filter>simactions</Filter>
     </ClInclude>
-    <ClInclude Include="..\igd\igd.h">
+    <ClInclude Include="..\igd\igd.hpp">
       <Filter>igd</Filter>
     </ClInclude>
-    <ClInclude Include="..\server\ScorchedServerSettings.h">
+    <ClInclude Include="..\server\ScorchedServerSettings.hpp">
       <Filter>server</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\tanket\Tanket.h">

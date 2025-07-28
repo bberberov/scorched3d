@@ -22,7 +22,7 @@
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/OptionEntrySetter.hpp>
 #include <landscapedef/LandscapeDefinitionsBase.h>
-#include <tankai/TankAINames.h>
+#include <tankai/TankAINames.hpp>
 #include <common/OptionsGame.h>
 #include <common/Defines.h>
 #include <wx/wx.h>

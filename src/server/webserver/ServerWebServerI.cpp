@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebServerI.h>
+#include <webserver/ServerWebServerI.hpp>
 #include <net/NetMessagePool.h>
 
 ServerWebServerIRequest::ServerWebServerIRequest(const char *url,

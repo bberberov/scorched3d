@@ -25,7 +25,7 @@
 #ifndef S3D_SERVER
 	#include <client/ScorchedClient.h>
 #endif
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <target/TargetContainer.h>
 #include <target/TargetState.h>
 #include <target/TargetLife.h>

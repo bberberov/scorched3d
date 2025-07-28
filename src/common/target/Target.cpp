@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIAdder.hpp>
 #include <target/Target.h>
 #include <target/TargetState.h>
 #include <target/TargetRenderer.h>

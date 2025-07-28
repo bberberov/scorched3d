@@ -25,7 +25,7 @@
 #include <net/NetInterface.h>
 #include <common/Logger.h>
 #include <target/TargetContainer.h>
-#include <server/ServerMain.h>
+#include <server/ServerMain.hpp>
 #include <engine/Simulator.h>
 
 time_t startTime = 0;

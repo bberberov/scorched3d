@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateStartingMatch.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerChannelManager.h>
+#include <server/ServerStateStartingMatch.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerChannelManager.hpp>
 #include <common/OptionsGame.h>
 #include <common/OptionsScorched.h>
 #include <common/OptionsTransient.h>

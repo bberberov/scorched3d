@@ -24,8 +24,8 @@
 #include <tanket/TanketTypes.h>
 #include <tanket/TanketAccessories.h>
 #include <tanket/TanketShotInfo.h>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIStore.hpp>
 #include <target/TargetLife.h>
 #include <engine/ScorchedContext.h>
 #include <common/Defines.h>

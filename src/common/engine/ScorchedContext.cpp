@@ -36,7 +36,7 @@
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeDefinitions.h>
 #include <weapons/AccessoryStore.h>
-#include <tankai/TankAIStrings.h>
+#include <tankai/TankAIStrings.hpp>
 #include <lua/LUAScriptHook.h>
 #include <events/EventController.h>
 

@@ -20,7 +20,7 @@
 
 #include <client/ClientReloadAdaptor.h>
 #include <client/ScorchedClient.h>
-#include <server/ScorchedServer.h>
+#include <server/ScorchedServer.hpp>
 #include <landscape/LandscapeSoundManager.h>
 #include <landscape/LandscapeMusicManager.h>
 #include <landscapemap/LandscapeMaps.h>

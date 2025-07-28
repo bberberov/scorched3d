@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerBrowserInfo.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
+#include <server/ServerBrowserInfo.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
 #include <common/OptionsScorched.h>
 #include <common/OptionsTransient.h>
 #include <common/Defines.h>

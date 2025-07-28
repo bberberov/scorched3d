@@ -19,11 +19,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tank/Tank.h>
-#include <tankai/TankAIAdder.h>
+#include <tankai/TankAIAdder.hpp>
 #include <events/EventHandlerDataBase.h>
 #include <common/OptionsScorched.h>
 #include <target/TargetContainer.h>
-#include <server/ServerConnectAuthHandler.h>
+#include <server/ServerConnectAuthHandler.hpp>
 
 unsigned int TankAIAdder::getNextTankId(const char *uniqueId, ScorchedContext &context, std::set<unsigned int> &takenPlayerIds)
 {

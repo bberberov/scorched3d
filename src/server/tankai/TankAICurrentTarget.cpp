@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrentTarget.h>
-#include <server/ScorchedServer.h>
+#include <tankai/TankAICurrentTarget.hpp>
+#include <server/ScorchedServer.hpp>
 #include <tank/Tank.h>
 #include <tank/TankScore.h>
 #include <target/TargetContainer.h>

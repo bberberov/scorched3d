@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerWebHandlerh_INCLUDE__)
 #define __INCLUDE_ServerWebHandlerh_INCLUDE__
 
-#include <webserver/ServerWebServer.h>
+#include <webserver/ServerWebServer.hpp>
 
 namespace ServerWebHandler
 {

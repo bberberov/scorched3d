@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerLoadLevel.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerDestinations.h>
+#include <server/ServerLoadLevel.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerDestinations.hpp>
 #include <landscapedef/LandscapeDefinition.h>
 #include <landscapemap/LandscapeMaps.h>
 #include <engine/Simulator.h>

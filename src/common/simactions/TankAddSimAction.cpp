@@ -30,7 +30,7 @@
 #include <tank/TankColorGenerator.h>
 #include <tank/TankModelContainer.h>
 #include <tanket/TanketType.h>
-#include <tankai/TankAIStore.h>
+#include <tankai/TankAIStore.hpp>
 #include <common/ChannelManager.h>
 #include <common/Logger.h>
 #include <common/OptionsScorched.h>
@@ -38,12 +38,12 @@
 #include <events/EventController.h>
 #include <events/EventHandlerDataBase.h>
 #include <coms/ComsTankChangeMessage.h>
-#include <server/ServerBanned.h>
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerMessageHandler.h>
+#include <server/ServerBanned.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerMessageHandler.hpp>
 #ifndef S3D_SERVER
 #include <client/ClientChannelManager.h>
 #include <tankgraph/TargetRendererImplTank.h>

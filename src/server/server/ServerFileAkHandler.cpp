@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerFileAkHandler.h>
-#include <server/ServerDestinations.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerFileServer.h>
+#include <server/ServerFileAkHandler.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerFileServer.hpp>
 #include <coms/ComsFileAkMessage.h>
 
 ServerFileAkHandler::ServerFileAkHandler(ComsMessageHandler &comsMessageHandler)
