@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <common/Defines.h>
-#include <console/Console.h>
-#include <console/ConsoleRuleFnIAdapter.h>
+#include <console/Console.hpp>
+#include <console/ConsoleRuleFnIAdapter.hpp>
 
 ConsoleRuleFnIBooleanAdapter::ConsoleRuleFnIBooleanAdapter(const char *name, bool &param) :
 	name_(name),

@@ -22,7 +22,7 @@
 #define AFX_GLWTime_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_
 
 #include <string>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 #include <common/Vector.h>
 
 class GLWTime : public GLWidget

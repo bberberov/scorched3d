@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_HelpButtonDialogh_INCLUDE__)
 #define __INCLUDE_HelpButtonDialogh_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLMenuI.h>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLMenuI.hpp>
 
 class HelpButtonDialog
 {

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/LandscapeStateHandler.h>
-#include <landscape/Landscape.h>
+#include <landscape/LandscapeStateHandler.hpp>
+#include <landscape/Landscape.hpp>
 
 LandscapeStateLandHandler::LandscapeStateLandHandler() :
 	GameStateI("LandscapeLand")

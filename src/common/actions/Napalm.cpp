@@ -31,12 +31,12 @@
 #include <actions/Napalm.h>
 #include <actions/CameraPositionAction.h>
 #ifndef S3D_SERVER
-	#include <sprites/ExplosionTextures.h>
-	#include <GLEXT/GLStateExtension.h>
-	#include <landscape/Landscape.h>
-	#include <landscape/DeformTextures.h>
-	#include <landscape/Smoke.h>
-	#include <client/ScorchedClient.h>
+	#include <sprites/ExplosionTextures.hpp>
+	#include <GLEXT/GLStateExtension.hpp>
+	#include <landscape/Landscape.hpp>
+	#include <landscape/DeformTextures.hpp>
+	#include <landscape/Smoke.hpp>
+	#include <client/ScorchedClient.hpp>
 #endif
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeDefinition.h>

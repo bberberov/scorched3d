@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SoundUtilsh_INCLUDE__)
 #define __INCLUDE_SoundUtilsh_INCLUDE__
 
-#include <sound/Sound.h>
+#include <sound/Sound.hpp>
 #include <common/Vector.h>
 
 class SoundUtils

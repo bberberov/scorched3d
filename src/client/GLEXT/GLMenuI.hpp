@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// GLMenuI.h: interface for the GLMenuI class.
+// GLMenuI.hpp: interface for the GLMenuI class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -28,7 +28,7 @@
 
 #include <list>
 #include <string>
-#include <GLW/GLWToolTip.h>
+#include <GLW/GLWToolTip.hpp>
 #include <lang/LangString.h>
 
 class GLTextureBase;

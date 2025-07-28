@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_VisibilityPatchInfoh_INCLUDE__)
 #define __INCLUDE_VisibilityPatchInfoh_INCLUDE__
 
-#include <land/LandVisibilityPatch.h>
-#include <land/WaterVisibilityPatch.h>
-#include <land/RoofVisibilityPatch.h>
-#include <land/TargetVisibilityPatch.h>
-#include <land/TargetList.h>
+#include <land/LandVisibilityPatch.hpp>
+#include <land/WaterVisibilityPatch.hpp>
+#include <land/RoofVisibilityPatch.hpp>
+#include <land/TargetVisibilityPatch.hpp>
+#include <land/TargetList.hpp>
 
 class VisibilityPatchInfo
 {

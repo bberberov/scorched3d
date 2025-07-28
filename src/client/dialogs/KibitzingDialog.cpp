@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/KibitzingDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/KibitzingDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 KibitzingDialog *KibitzingDialog::instance_(0);
 

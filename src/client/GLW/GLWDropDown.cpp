@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWDropDown.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWToolTip.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWDropDown.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <client/ScorchedClient.hpp>
 
 GLWDropDownI::~GLWDropDownI()
 {}

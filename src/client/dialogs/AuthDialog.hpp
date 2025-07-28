@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_AuthDialogh_INCLUDE__)
 #define __INCLUDE_AuthDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWTextBox.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWTextBox.hpp>
 
 class AuthDialog : public GLWWindow,
 	public GLWButtonI

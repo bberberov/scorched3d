@@ -22,7 +22,7 @@
 #define __INCLUDE_ExplosionNukeRendererh_INCLUDE__
 
 #include <actions/Action.h>
-#include <graph/ParticleEmitter.h>
+#include <graph/ParticleEmitter.hpp>
 #include <common/Vector.h>
 #include <list>
 

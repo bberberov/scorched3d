@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ModelRendererMeshh_INCLUDE__)
 #define __INCLUDE_ModelRendererMeshh_INCLUDE__
 
-#include <graph/ModelRenderer.h>
+#include <graph/ModelRenderer.hpp>
 #include <3dsparse/Model.h>
 
 class GLTexture;

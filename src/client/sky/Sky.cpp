@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sky/Sky.h>
+#include <sky/Sky.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeDefn.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 
 Sky::Sky()
 {

@@ -21,7 +21,7 @@
 #ifndef _GLWBUTTON_H_
 #define _GLWBUTTON_H_
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWButtonI
 {

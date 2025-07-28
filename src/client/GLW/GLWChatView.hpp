@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_GLWChatViewh_INCLUDE__)
 #define __INCLUDE_GLWChatViewh_INCLUDE__
 
-#include <GLW/GLWidget.h>
-#include <GLW/GLWIconButton.h>
-#include <GLEXT/GLFont2d.h>
-#include <GLEXT/GLTextureReference.h>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWIconButton.hpp>
+#include <GLEXT/GLFont2d.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 #include <common/KeyboardKey.h>
 #include <common/Vector.h>
 #include <lang/LangString.h>

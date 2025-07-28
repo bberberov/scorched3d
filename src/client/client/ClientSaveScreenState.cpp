@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientSaveScreenState.h>
-#include <dialogs/BackdropDialog.h>
+#include <client/ClientSaveScreenState.hpp>
+#include <dialogs/BackdropDialog.hpp>
 
 ClientSaveScreenState *ClientSaveScreenState::instance_ = 0;
 

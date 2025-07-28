@@ -22,7 +22,7 @@
 #include <weapons/WeaponSound.h>
 #include <weapons/AccessoryStore.h>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
+	#include <sound/SoundUtils.hpp>
 #endif
 #include <common/Defines.h>
 

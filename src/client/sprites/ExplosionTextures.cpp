@@ -20,9 +20,9 @@
 
 #include <image/ImageFactory.h>
 #include <XML/XMLFile.h>
-#include <GLEXT/GLTextureStore.h>
-#include <sprites/ExplosionTextures.h>
-#include <landscape/Landscape.h>
+#include <GLEXT/GLTextureStore.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <landscape/Landscape.hpp>
 #include <lang/LangResource.h>
 #include <common/Defines.h>
 #include <stdio.h>

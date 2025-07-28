@@ -21,7 +21,7 @@
 #if !defined(AFX_ConsoleMETHODS_H__D5E893D4_E73A_49CB_B0E8_8C945C692CC7__INCLUDED_)
 #define AFX_ConsoleMETHODS_H__D5E893D4_E73A_49CB_B0E8_8C945C692CC7__INCLUDED_
 
-#include <console/ConsoleRule.h>
+#include <console/ConsoleRule.hpp>
 
 class Console;
 class ConsoleMethods

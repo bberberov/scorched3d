@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_VirtualSoundSourceh_INCLUDE__)
 #define __INCLUDE_VirtualSoundSourceh_INCLUDE__
 
-#include <sound/VirtualSoundPriority.h>
-#include <sound/SoundBuffer.h>
+#include <sound/VirtualSoundPriority.hpp>
+#include <sound/SoundBuffer.hpp>
 #include <common/Vector.h>
 
 class PlayingSoundSource;

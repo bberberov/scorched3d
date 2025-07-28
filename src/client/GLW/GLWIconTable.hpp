@@ -21,9 +21,9 @@
 #ifndef _GLWIconTable_h
 #define _GLWIconTable_h
 
-#include <GLW/GLWScrollWBackwards.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWToolTip.h>
+#include <GLW/GLWScrollWBackwards.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWToolTip.hpp>
 #include <vector>
 #include <list>
 

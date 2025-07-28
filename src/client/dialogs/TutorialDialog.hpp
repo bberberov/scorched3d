@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_TutorialDialogh_INCLUDE__)
 #define __INCLUDE_TutorialDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWListView.h>
-#include <GLEXT/GLTexture.h>
-#include <graph/TutorialFile.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWListView.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <graph/TutorialFile.hpp>
 
 class TutorialDialog :
 	public GLWWindow,

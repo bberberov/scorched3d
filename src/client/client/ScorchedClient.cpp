@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ScorchedClient.h>
-#include <client/ClientSimulator.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientSimulator.hpp>
 #include <engine/MainLoop.h>
 #include <engine/GameState.h>
-#include <graph/MainCamera.h>
-#include <graph/ParticleEngine.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/MainCamera.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <target/TargetSpace.h>
 #include <coms/ComsSimulateMessage.h>
 #include <coms/ComsNetStatMessage.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/GraphicalLandscapeMap.h>
+#include <landscape/GraphicalLandscapeMap.hpp>
 
 TargetSpace *ScorchedClient::targetSpace_ = new TargetSpace();
 

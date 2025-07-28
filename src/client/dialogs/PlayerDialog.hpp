@@ -21,14 +21,14 @@
 #if !defined(__INCLUDE_PlayerDialogh_INCLUDE__)
 #define __INCLUDE_PlayerDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWTextBox.h>
-#include <GLW/GLWImageList.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWDropDownColor.h>
-#include <GLEXT/GLTexture.h>
-#include <GLW/GLWTankViewer.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWTextBox.hpp>
+#include <GLW/GLWImageList.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWDropDownColor.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLW/GLWTankViewer.hpp>
 
 class Tank;
 class PlayerDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI

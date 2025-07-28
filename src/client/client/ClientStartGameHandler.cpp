@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientStartGameHandler.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <landscape/Landscape.h>
+#include <client/ClientStartGameHandler.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <engine/ActionController.h>
 #include <target/TargetContainer.h>
 #include <tanket/TanketAccessories.h>
 #include <tank/Tank.h>
 #include <tank/TankCamera.h>
-#include <graph/MainCamera.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/MainCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/OptionsTransient.h>
 #include <common/OptionsScorched.h>
 #include <common/Defines.h>
-#include <sound/SoundUtils.h>
+#include <sound/SoundUtils.hpp>
 #include <weapons/Accessory.h>
 
 ClientStartGameHandler *ClientStartGameHandler::instance_ = 0;

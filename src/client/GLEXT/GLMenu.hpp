@@ -22,8 +22,8 @@
 #define AFX_GLMENU_H__ED2E8B2C_46B3_400F_A3E2_FC1B53732D15__INCLUDED_
 
 #include <map>
-#include <GLW/GLWWindow.h>
-#include <GLEXT/GLMenuI.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLEXT/GLMenuI.hpp>
 
 class Image;
 class GLMenuEntry;

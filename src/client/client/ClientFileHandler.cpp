@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientFileHandler.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientFileHandler.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <engine/ModFiles.h>
 #include <engine/ModFileEntryLoader.h>
-#include <dialogs/ProgressDialog.h>
+#include <dialogs/ProgressDialog.hpp>
 #include <common/Logger.h>
 #include <common/Defines.h>
 #include <common/OptionsScorched.h>

@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWScrollWBackwards.h>
+#include <GLW/GLWScrollWBackwards.hpp>
 #include <common/Defines.h>
 
 REGISTER_CLASS_SOURCE(GLWScrollWBackwards);

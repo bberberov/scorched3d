@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/Water2Patch.h>
-#include <water/Water2Constants.h>
+#include <water/Water2Patch.hpp>
+#include <water/Water2Constants.hpp>
 #include <common/Logger.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLInfo.h>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLInfo.hpp>
 #include <limits>
 
 Water2Patch::Water2Patch() :

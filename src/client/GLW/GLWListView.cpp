@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWListView.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
+#include <GLW/GLWListView.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
 #include <common/Defines.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <engine/GameState.h>
 #include <stdio.h>
 

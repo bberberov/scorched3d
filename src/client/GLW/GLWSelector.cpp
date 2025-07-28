@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWSelector.h>
-#include <GLW/GLWSelectorPart.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWSelector.hpp>
+#include <GLW/GLWSelectorPart.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 
 GLWSelectorEntry::GLWSelectorEntry(
 	const LangString &text,

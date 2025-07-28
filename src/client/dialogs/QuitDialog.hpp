@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_QuitDialogh_INCLUDE__)
 #define __INCLUDE_QuitDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
 
 class QuitDialog : public GLWWindow,
 				public GLWButtonI

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// GLWProgress.h: interface for the GLWProgress class.
+// GLWProgress.hpp: interface for the GLWProgress class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@
 #define AFX_GLWPROGRESS_H__0712973C_EA7A_4C72_A48B_90B2A898FAF3__INCLUDED_
 
 
-#include <GLW/GLWPanel.h>
+#include <GLW/GLWPanel.hpp>
 
 class GLWProgress : public GLWPanel
 {

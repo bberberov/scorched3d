@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWFont.h>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWFont.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTextButton);
 

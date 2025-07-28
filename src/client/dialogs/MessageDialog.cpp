@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/MessageDialog.h>
-#include <client/ScorchedClient.h>
+#include <dialogs/MessageDialog.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/OptionsScorched.h>
-#include <console/Console.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLW/GLWFont.h>
+#include <console/Console.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLW/GLWFont.hpp>
 
 MessageDialog *MessageDialog::instance_ = 0;
 

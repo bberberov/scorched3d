@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWWeaponModel.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <tankgraph/MissileMesh.h>
+#include <GLW/GLWWeaponModel.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <tankgraph/MissileMesh.hpp>
 #include <target/TargetContainer.h>
 #include <tanket/TanketAccessories.h>
 #include <tank/TankState.h>
-#include <GLW/GLWTranslate.h>
+#include <GLW/GLWTranslate.hpp>
 #include <weapons/AccessoryStore.h>
 #include <weapons/Accessory.h>
-#include <landscape/Landscape.h>
-#include <sky/Sky.h>
+#include <landscape/Landscape.hpp>
+#include <sky/Sky.hpp>
 #include <common/Vector4.h>
 #include <common/Defines.h>
 

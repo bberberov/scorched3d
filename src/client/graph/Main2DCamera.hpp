@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// Main2DCamera.h: interface for the Main2DCamera class.
+// Main2DCamera.hpp: interface for the Main2DCamera class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@
 #define AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_
 
 #include <engine/GameStateI.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLEXT/GLViewPort.hpp>
 
 class Main2DCamera : public GameStateI
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_VisibilityPatchQuadh_INCLUDE__)
 #define __INCLUDE_VisibilityPatchQuadh_INCLUDE__
 
-#include <land/VisibilityPatchInfo.h>
+#include <land/VisibilityPatchInfo.hpp>
 #include <common/Vector.h>
 
 class VisibilityPatchGrid;

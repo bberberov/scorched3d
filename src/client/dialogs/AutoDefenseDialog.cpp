@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AutoDefenseDialog.h>
+#include <dialogs/AutoDefenseDialog.hpp>
 #include <weapons/Accessory.h>
-#include <GLW/GLWFlag.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
+#include <GLW/GLWFlag.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <target/TargetContainer.h>
 #include <target/TargetShield.h>
 #include <target/TargetParachute.h>
@@ -31,8 +31,8 @@
 #include <common/Defines.h>
 #include <coms/ComsPlayedMoveMessage.h>
 #include <coms/ComsMessageSender.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <lang/LangResource.h>
 
 AutoDefenseDialog *AutoDefenseDialog::instance()

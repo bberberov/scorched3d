@@ -21,8 +21,8 @@
 #if !defined(AFX_GLMENUENTRY_H__5AE3319D_D83E_4392_BABB_7E34B2D69BD8__INCLUDED_)
 #define AFX_GLMENUENTRY_H__5AE3319D_D83E_4392_BABB_7E34B2D69BD8__INCLUDED_
 
-#include <GLEXT/GLMenu.h>
-#include <GLW/GLWSelector.h>
+#include <GLEXT/GLMenu.hpp>
+#include <GLW/GLWSelector.hpp>
 
 class GLTexture;
 class Image;

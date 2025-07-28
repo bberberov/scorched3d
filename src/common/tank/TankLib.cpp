@@ -28,7 +28,7 @@
 #include <common/Defines.h>
 #include <landscapemap/LandscapeMaps.h>
 #ifndef S3D_SERVER
-	#include <GLEXT/GLState.h>
+	#include <GLEXT/GLState.hpp>
 #endif
 #include <math.h>
 

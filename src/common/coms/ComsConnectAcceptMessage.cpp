@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #ifndef S3D_SERVER
-	#include <client/ScorchedClient.h>
+	#include <client/ScorchedClient.hpp>
 #endif
 #include <server/ScorchedServer.hpp>
 #include <coms/ComsConnectAcceptMessage.h>

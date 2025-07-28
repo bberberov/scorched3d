@@ -23,7 +23,7 @@
 
 #ifdef HAVE_OGG
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 #ifdef __DARWIN__
 #include <OpenAL/al.h>
 #else

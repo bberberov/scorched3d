@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLViewPort.hpp>
 #include <image/ImageFactory.h>
 #include <XML/XMLParser.h>
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <lang/LangResource.h>
 
 static const float roundSize = 20.0f;

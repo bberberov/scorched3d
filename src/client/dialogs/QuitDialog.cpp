@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/QuitDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ClientParams.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
+#include <dialogs/QuitDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
 #include <engine/MainLoop.h>
 #include <net/NetInterface.h>
 #include <server/ScorchedServer.hpp>

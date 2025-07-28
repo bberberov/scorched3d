@@ -23,7 +23,7 @@
 
 #include <actions/Action.h>
 #include <common/Vector.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class TalkRenderer : public ActionRenderer
 {

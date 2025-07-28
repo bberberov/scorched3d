@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SaveDialog.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/SaveDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
 #include <lang/LangResource.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerState.hpp>

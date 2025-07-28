@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_MessageDialogh_INCLUDE__)
 #define __INCLUDE_MessageDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <client/ClientChannelManager.h>
+#include <GLW/GLWWindow.hpp>
+#include <client/ClientChannelManager.hpp>
 #include <string>
 #include <list>
 

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_AnimatedBackdropDialogh_INCLUDE__)
 #define __INCLUDE_AnimatedBackdropDialogh_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
-#include <GLW/GLWWindow.h>
+#include <GLEXT/GLTexture.hpp>
+#include <GLW/GLWWindow.hpp>
 
 class ProgressCounter;
 class AnimatedBackdropDialog : public GLWWindow

@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWTEXTBUTTON_H__36D49253_FFE6_4E93_89FC_F2CAC2DC3336__INCLUDED_)
 #define AFX_GLWTEXTBUTTON_H__36D49253_FFE6_4E93_89FC_F2CAC2DC3336__INCLUDED_
 
-#include <GLW/GLWButton.h>
-#include <GLW/GLWLabel.h>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWLabel.hpp>
 
 class GLWTextButton : public GLWButton
 {

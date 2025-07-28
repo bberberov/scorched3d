@@ -31,7 +31,7 @@
 #include <map>
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLTextureReference.h>
+#include <GLEXT/GLTextureReference.hpp>
 #endif
 
 class Tank;

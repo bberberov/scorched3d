@@ -25,7 +25,7 @@
 #include <zlib.h>
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 GLTexture *TankAvatar::defaultTexture_ = 0;
 std::list<TankAvatar::AvatarStore> TankAvatar::storeEntries_;

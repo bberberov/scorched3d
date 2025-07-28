@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/CameraDialog.h>
-#include <GLW/GLWFont.h>
-#include <GLEXT/GLCameraFrustum.h>
+#include <dialogs/CameraDialog.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
 #include <common/DefinesString.h>
-#include <graph/Main2DCamera.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ClientSimulator.h>
-#include <landscape/Landscape.h>
-#include <tankgraph/RenderTargets.h>
+#include <graph/Main2DCamera.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientSimulator.hpp>
+#include <landscape/Landscape.hpp>
+#include <tankgraph/RenderTargets.hpp>
 #include <lang/LangResource.h>
 
 CameraDialog *CameraDialog::instance_ = 0;

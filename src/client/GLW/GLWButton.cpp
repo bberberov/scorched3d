@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <common/Keyboard.h>
-#include <GLW/GLWButton.h>
+#include <GLW/GLWButton.hpp>
 
 GLWButtonI::~GLWButtonI()
 {}

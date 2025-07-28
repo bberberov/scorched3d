@@ -25,8 +25,8 @@
 #include <deque>
 #include <engine/GameStateI.h>
 #include <common/KeyboardKey.h>
-#include <GLW/GLWWindow.h>
-#include <GLEXT/GLMenuI.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLEXT/GLMenuI.hpp>
 
 class GLWWindowManager : 
 	public GameStateI,

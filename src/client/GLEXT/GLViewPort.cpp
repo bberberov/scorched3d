@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLState.hpp>
 
 int GLViewPort::width_ = 0;
 int GLViewPort::height_ = 0;

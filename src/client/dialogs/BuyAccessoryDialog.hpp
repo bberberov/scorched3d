@@ -24,14 +24,14 @@
 #include <map>
 #include <set>
 #include <vector>
-#include <dialogs/BuyAccessoryDialogTankInfo.h>
-#include <GLW/GLWFlag.h>
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWTab.h>
-#include <GLW/GLWCheckBoxText.h>
-#include <GLW/GLWDropDownText.h>
+#include <dialogs/BuyAccessoryDialogTankInfo.hpp>
+#include <GLW/GLWFlag.hpp>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWTab.hpp>
+#include <GLW/GLWCheckBoxText.hpp>
+#include <GLW/GLWDropDownText.hpp>
 
 class BuyAccessoryDialog :
 	public GLWWindow,

@@ -21,7 +21,7 @@
 #if !defined(AFX_ModelRendererTankSTORE_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)
 #define AFX_ModelRendererTankSTORE_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_
 
-#include <tankgraph/ModelRendererTank.h>
+#include <tankgraph/ModelRendererTank.hpp>
 #include <common/ModelID.h>
 #include <map>
 

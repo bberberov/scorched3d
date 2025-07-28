@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWPlanView.h>
-#include <GLW/GLWTranslate.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLW/GLWPlanView.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
 #include <image/ImageFactory.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/MainCamera.h>
-#include <client/ClientLinesHandler.h>
-#include <landscape/Landscape.h>
-#include <landscape/LandscapePoints.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/MainCamera.hpp>
+#include <client/ClientLinesHandler.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscape/LandscapePoints.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
@@ -42,7 +42,7 @@
 #include <common/ToolTipResource.h>
 #include <coms/ComsMessageSender.h>
 #include <coms/ComsLinesMessage.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <lang/LangResource.h>
 #include <math.h>
 

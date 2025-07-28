@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientParams.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientMain.h>
+#include <client/ClientParams.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientMain.hpp>
 #include <server/ScorchedServer.hpp>
 #include <engine/ModDirs.h>
 #include <common/OptionsScorched.h>
 #include <common/ARGParser.h>
 #include <common/Defines.h>
 #include <common/OptionsTransient.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <locale.h>
 #include <math.h>
 #include <signal.h>

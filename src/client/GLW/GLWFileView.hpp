@@ -21,8 +21,8 @@
 
 #if !defined(__INCLUDE_GLWFileViewh_INCLUDE__)
 #define __INCLUDE_GLWFileViewh_INCLUDE__
-#include <GLW/GLWidget.h>
-#include <GLW/GLWScrollW.h>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWScrollW.hpp>
 #include <common/FileLines.h>
 
 class GLWFileView :

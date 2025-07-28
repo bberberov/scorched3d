@@ -24,7 +24,7 @@
 #include <list>
 #include <map>
 #include <common/Vector.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <engine/GameStateI.h>
 
 class Tank;

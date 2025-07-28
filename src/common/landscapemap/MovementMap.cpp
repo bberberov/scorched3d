@@ -561,8 +561,8 @@ void MovementMap::calculateAllPositions(fixed fuel)
 }
 
 #ifndef S3D_SERVER
-#include <landscape/Landscape.h>
-#include <client/ScorchedClient.h>
+#include <landscape/Landscape.hpp>
+#include <client/ScorchedClient.hpp>
 
 void MovementMap::movementTexture()
 {

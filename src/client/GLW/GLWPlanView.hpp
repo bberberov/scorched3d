@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWPlanViewh_INCLUDE__)
 #define __INCLUDE_GLWPlanViewh_INCLUDE__
 
-#include <GLW/GLWidget.h>
-#include <GLEXT/GLTextureReference.h>
+#include <GLW/GLWidget.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 #include <common/Vector.h>
 #include <list>
 #include <map>

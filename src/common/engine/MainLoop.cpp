@@ -22,8 +22,8 @@
 #include <common/Defines.h>
 #include <common/Logger.h>
 #ifndef S3D_SERVER
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLState.h>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLState.hpp>
 #include <SDL/SDL.h>
 #endif
 

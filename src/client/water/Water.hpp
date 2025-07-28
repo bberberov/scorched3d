@@ -24,7 +24,7 @@
 #include <common/ProgressCounter.h>
 #include <common/Vector.h>
 #include <image/Image.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class Water2;
 class Water2Renderer;

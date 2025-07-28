@@ -22,7 +22,7 @@
 #define __INCLUDE_GLTextureStoreh_INCLUDE__
 
 #include <map>
-#include <GLEXT/GLTextureReferenceData.h>
+#include <GLEXT/GLTextureReferenceData.hpp>
 
 class GLTextureStore
 {

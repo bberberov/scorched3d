@@ -22,7 +22,7 @@
 #define __INCLUDE_GLWBitmaph_INCLUDE__
 
 #include <image/Image.h>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWBitmap : public GLWidget
 {

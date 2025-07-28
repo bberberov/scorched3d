@@ -21,7 +21,7 @@
 #ifndef _GLWTRACKER_H_
 #define _GLWTRACKER_H_
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWTrackerI
 {

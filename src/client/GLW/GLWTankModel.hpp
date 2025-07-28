@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWTankModelh_INCLUDE__)
 #define __INCLUDE_GLWTankModelh_INCLUDE__
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWTankModel : public GLWidget
 {

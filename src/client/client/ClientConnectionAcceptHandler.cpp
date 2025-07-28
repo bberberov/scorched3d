@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientConnectionAcceptHandler.h>
-#include <client/ClientLoadLevelHandler.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <dialogs/ConnectDialog.h>
-#include <dialogs/ProgressDialog.h>
+#include <client/ClientConnectionAcceptHandler.hpp>
+#include <client/ClientLoadLevelHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <dialogs/ConnectDialog.hpp>
+#include <dialogs/ProgressDialog.hpp>
 #include <engine/ModFiles.h>
 #include <image/ImageFactory.h>
 #include <image/ImagePngFactory.h>
@@ -34,7 +34,7 @@
 #include <coms/ComsMessageSender.h>
 #include <common/Logger.h>
 #include <common/OptionsScorched.h>
-#include <client/ClientParams.h>
+#include <client/ClientParams.hpp>
 #include <common/Defines.h>
 
 ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance_ = 0;

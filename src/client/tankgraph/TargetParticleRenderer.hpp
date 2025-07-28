@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TargetParticleRendererh_INCLUDE__)
 #define __INCLUDE_TargetParticleRendererh_INCLUDE__
 
-#include <graph/ParticleRenderer.h>
-#include <graph/Particle.h>
+#include <graph/ParticleRenderer.hpp>
+#include <graph/Particle.hpp>
 
 class TargetParticleUserData : public ParticleUserData
 {

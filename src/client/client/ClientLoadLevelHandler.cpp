@@ -18,34 +18,34 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientLoadLevelHandler.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ClientReloadAdaptor.h>
-#include <client/ClientSimulator.h>
-#include <client/ClientParams.h>
-#include <sound/Sound.h>
+#include <client/ClientLoadLevelHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientReloadAdaptor.hpp>
+#include <client/ClientSimulator.hpp>
+#include <client/ClientParams.hpp>
+#include <sound/Sound.hpp>
 #include <common/Clock.h>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
 #include <common/ChannelText.h>
 #include <common/ChannelManager.h>
 #include <engine/MainLoop.h>
-#include <dialogs/ProgressDialog.h>
-#include <dialogs/CameraDialog.h>
-#include <dialogs/PlayerInitialDialog.h>
-#include <dialogs/PlayerInGameDialog.h>
+#include <dialogs/ProgressDialog.hpp>
+#include <dialogs/CameraDialog.hpp>
+#include <dialogs/PlayerInitialDialog.hpp>
+#include <dialogs/PlayerInGameDialog.hpp>
 #include <coms/ComsLoadLevelMessage.h>
 #include <coms/ComsLevelLoadedMessage.h>
 #include <coms/ComsMessageSender.h>
-#include <graph/OptionsDisplayConsole.h>
-#include <graph/ParticleEngine.h>
-#include <graph/MainCamera.h>
-#include <graph/SpeedChange.h>
-#include <tankgraph/RenderTracer.h>
+#include <graph/OptionsDisplayConsole.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/SpeedChange.hpp>
+#include <tankgraph/RenderTracer.hpp>
 #include <landscapedef/LandscapeDefinitions.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/Landscape.h>
+#include <landscape/Landscape.hpp>
 #include <lang/LangResource.h>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
@@ -53,7 +53,7 @@
 #include <target/TargetRenderer.h>
 #include <net/NetInterface.h>
 #include <image/ImageFactory.h>
-#include <GLW/GLWWindowManager.h>
+#include <GLW/GLWWindowManager.hpp>
 
 ClientLoadLevelHandler *ClientLoadLevelHandler::instance_ = 0;
 

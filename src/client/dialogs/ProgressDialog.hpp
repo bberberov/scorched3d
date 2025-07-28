@@ -23,8 +23,8 @@
 
 #include <common/ProgressCounter.h>
 #include <common/FileLines.h>
-#include <GLW/GLWWindow.h>
-#include <GLEXT/GLTexture.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLEXT/GLTexture.hpp>
 
 class ScorchedContext;
 class ProgressDialog : 

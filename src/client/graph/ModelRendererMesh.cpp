@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ModelRendererMesh.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/ModelRendererMesh.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <3dsparse/ModelMaths.h>
-#include <GLEXT/GLGlobalState.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLInfo.h>
+#include <GLEXT/GLGlobalState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLInfo.hpp>
 
 ModelRendererMesh::ModelRendererMesh(Model *model) : 
 	model_(model)

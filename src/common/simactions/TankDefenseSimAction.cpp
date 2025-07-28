@@ -27,7 +27,7 @@
 #include <target/TargetShield.h>
 #include <target/TargetParachute.h>
 #ifndef S3D_SERVER
-#include <sound/SoundUtils.h>
+#include <sound/SoundUtils.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(TankDefenseSimAction);

@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <serverbrowser/ServerBrowser.h>
+#include <serverbrowser/ServerBrowser.hpp>
 #include <common/OptionsMasterListServer.h>
 
 ServerBrowser *ServerBrowser::instance_ = 0;

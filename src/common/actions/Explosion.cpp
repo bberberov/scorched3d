@@ -29,20 +29,20 @@
 #include <engine/ScorchedContext.h>
 #include <engine/ActionController.h>
 #ifndef S3D_SERVER
-	#include <graph/OptionsDisplay.h>
-	#include <graph/ParticleEmitter.h>
-	#include <graph/MainCamera.h>
-	#include <client/ScorchedClient.h>
-	#include <sound/SoundUtils.h>
+	#include <graph/OptionsDisplay.hpp>
+	#include <graph/ParticleEmitter.hpp>
+	#include <graph/MainCamera.hpp>
+	#include <client/ScorchedClient.hpp>
+	#include <sound/SoundUtils.hpp>
 #endif
 #include <landscapemap/DeformLandscape.h>
 #include <landscapemap/LandscapeMaps.h>
 #ifndef S3D_SERVER
-	#include <landscape/Landscape.h>
-	#include <water/Water.h>
-	#include <landscape/Smoke.h>
-	#include <sprites/ExplosionNukeRenderer.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <landscape/Landscape.hpp>
+	#include <water/Water.hpp>
+	#include <landscape/Smoke.hpp>
+	#include <sprites/ExplosionNukeRenderer.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 #include <math.h>
 

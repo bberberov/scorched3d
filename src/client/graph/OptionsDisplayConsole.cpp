@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/OptionsDisplayConsole.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplayConsole.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/OptionsScorched.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
 
 OptionsDisplayConsole *OptionsDisplayConsole::instance_ = 0;
 

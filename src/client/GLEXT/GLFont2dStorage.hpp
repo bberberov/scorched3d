@@ -21,7 +21,7 @@
 #ifndef _GLFONT2DSTORAGE_H_
 #define _GLFONT2DSTORAGE_H_
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 
 class GLFont2dStorage
 {

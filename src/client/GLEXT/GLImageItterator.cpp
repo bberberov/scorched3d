@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLImageItterator.h>
+#include <GLEXT/GLImageItterator.hpp>
 
 ImageItterator::ImageItterator(Image &bitmap,
 									int destX,

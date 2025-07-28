@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWWindowSkinManagerh_INCLUDE__)
 #define __INCLUDE_GLWWindowSkinManagerh_INCLUDE__
 
-#include <GLW/GLWWindowSkin.h>
+#include <GLW/GLWWindowSkin.hpp>
 #include <list>
 
 class GLWWindowSkinManager

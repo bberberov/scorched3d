@@ -21,7 +21,7 @@
 #ifndef _SoundBufferWav_H_
 #define _SoundBufferWav_H_
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 
 class SoundBufferWav : public SoundBuffer
 {

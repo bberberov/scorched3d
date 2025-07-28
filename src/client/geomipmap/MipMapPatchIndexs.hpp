@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_MipMapPatchIndexsh_INCLUDE__)
 #define __INCLUDE_MipMapPatchIndexsh_INCLUDE__
 
-#include <geomipmap/MipMapPatchIndex.h>
+#include <geomipmap/MipMapPatchIndex.hpp>
 #include <common/DefinesAssert.h>
 #include <common/DefinesMath.h>
 #include <vector>

@@ -23,10 +23,10 @@
 
 #include <tank/Tank.h>
 #include <tank/TankModel.h>
-#include <tankgraph/ModelRendererTank.h>
-#include <tankgraph/TargetRendererImpl.h>
-#include <GLW/GLWTankTip.h>
-#include <GLEXT/GLState.h>
+#include <tankgraph/ModelRendererTank.hpp>
+#include <tankgraph/TargetRendererImpl.hpp>
+#include <GLW/GLWTankTip.hpp>
+#include <GLEXT/GLState.hpp>
 
 class ModelRendererSimulator;
 class TargetRendererImplTankAIM

@@ -371,7 +371,7 @@
     <ClInclude Include="..\..\common\XML\XMLStringBuffer.h">
       <Filter>XML</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\client\graph\OptionsDisplay.h">
+    <ClInclude Include="..\..\client\graph\OptionsDisplay.hpp">
       <Filter>graph</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\engine\ModDirs.h">
@@ -413,7 +413,7 @@
     <ClInclude Include="..\..\common\net\NetMessagePool.h">
       <Filter>net</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\client\client\UniqueIdStore.h">
+    <ClInclude Include="..\..\client\client\UniqueIdStore.hpp">
       <Filter>client</Filter>
     </ClInclude>
     <ClInclude Include="..\..\server\tankai\TankAINames.hpp">

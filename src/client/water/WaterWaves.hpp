@@ -23,7 +23,7 @@
 
 #include <common/Vector.h>
 #include <common/ProgressCounter.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 #include <vector>
 
 class Water2Patches;

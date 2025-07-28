@@ -21,13 +21,13 @@
 #if !defined(__INCLUDE_SettingsSubSelectDialogh_INCLUDE__)
 #define __INCLUDE_SettingsSubSelectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWCheckBox.h>
-#include <GLW/GLWOptionEntry.h>
-#include <GLW/GLWIconList.h>
-#include <GLW/GLWTab.h>
-#include <GLW/GLWIcon.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWCheckBox.hpp>
+#include <GLW/GLWOptionEntry.hpp>
+#include <GLW/GLWIconList.hpp>
+#include <GLW/GLWTab.hpp>
+#include <GLW/GLWIcon.hpp>
 #include <common/ToolTip.h>
 #include <common/OptionsGame.h>
 

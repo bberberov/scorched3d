@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTankViewer.h>
+#include <GLW/GLWTankViewer.hpp>
 #include <tank/TankModelStore.h>
-#include <tankgraph/ModelRendererTankStore.h>
+#include <tankgraph/ModelRendererTankStore.hpp>
 #include <3dsparse/ModelStore.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/DefinesString.h>
 #include <lang/LangResource.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
 
 static const float TankSquareSize = 90.0f;
 static const float TankHalfSquareSize = TankSquareSize / 2.0f;

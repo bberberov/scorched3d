@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWTabContainer_H__5A717DEA_0AE4_4341_9991_A4575E3FF041__INCLUDED_)
 #define AFX_GLWTabContainer_H__5A717DEA_0AE4_4341_9991_A4575E3FF041__INCLUDED_
 
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWLabel.h>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWLabel.hpp>
 
 class GLWTabContainer : public GLWPanel
 {

@@ -21,7 +21,7 @@
 #ifndef _GLWTankSlider_H_
 #define _GLWTankSlider_H_
 
-#include <GLW/GLWDragger.h>
+#include <GLW/GLWDragger.hpp>
 
 class GLWTankSlider : public GLWDragger, 
 	public GLWDraggerI

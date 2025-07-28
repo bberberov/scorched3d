@@ -23,7 +23,7 @@
 #include <actions/CameraPositionAction.h>
 #include <actions/Resurrection.h>
 #ifndef S3D_SERVER
-	#include <sprites/TextActionRenderer.h>
+	#include <sprites/TextActionRenderer.hpp>
 #endif
 #include <common/OptionsScorched.h>
 #include <common/Defines.h>

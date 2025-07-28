@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLSL/GLSLShaderSetup.h>
+#include <GLSL/GLSLShaderSetup.hpp>
 
 GLSLShaderSetup::GLSLShaderSetup(
 	const std::string &filename_vshader,

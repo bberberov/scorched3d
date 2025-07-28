@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/Main2DCamera.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/Main2DCamera.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <engine/MainLoop.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 
 Main2DCamera *Main2DCamera::instance_ = 0;
 

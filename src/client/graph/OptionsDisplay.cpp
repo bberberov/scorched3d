@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 #include <stdio.h>
 

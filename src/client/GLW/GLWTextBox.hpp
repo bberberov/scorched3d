@@ -22,7 +22,7 @@
 #define _GLWTEXTBOX_H_
 
 #include <string>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWTextBoxI
 {

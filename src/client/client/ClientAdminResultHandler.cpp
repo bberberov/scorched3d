@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientAdminResultHandler.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientAdminResultHandler.hpp>
+#include <client/ScorchedClient.hpp>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
 #include <coms/ComsAdminResultMessage.h>

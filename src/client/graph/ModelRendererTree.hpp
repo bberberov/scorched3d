@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ModelRendererTreeh_INCLUDE__)
 #define __INCLUDE_ModelRendererTreeh_INCLUDE__
 
-#include <graph/ModelRenderer.h>
-#include <GLEXT/GLTextureReference.h>
+#include <graph/ModelRenderer.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 #include <3dsparse/Model.h>
 #include <common/ModelID.h>
 

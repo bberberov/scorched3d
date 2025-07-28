@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/TextActionRenderer.h>
-#include <GLW/GLWFont.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLState.h>
+#include <sprites/TextActionRenderer.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLState.hpp>
 
 TextActionRenderer::TextActionRenderer(
 		Vector &position,

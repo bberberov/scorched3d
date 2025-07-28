@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWTalkBoxh_INCLUDE__)
 #define __INCLUDE_GLWTalkBoxh_INCLUDE__
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 #include <lang/LangString.h>
 
 class GLWTalkBox : public GLWidget

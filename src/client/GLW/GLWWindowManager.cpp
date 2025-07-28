@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWWindowManager.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLEXT/GLViewPort.hpp>
 #include <image/ImageFactory.h>
-#include <dialogs/MainMenuDialog.h>
-#include <graph/OptionsDisplay.h>
+#include <dialogs/MainMenuDialog.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 #include <lang/LangResource.h>
 #include <XML/XMLFile.h>

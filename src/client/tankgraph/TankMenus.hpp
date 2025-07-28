@@ -21,8 +21,8 @@
 #if !defined(AFX_TankMenus_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_)
 #define AFX_TankMenus_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_
 
-#include <GLEXT/GLMenuI.h>
-#include <console/ConsoleRule.h>
+#include <GLEXT/GLMenuI.hpp>
+#include <console/ConsoleRule.hpp>
 #include <weapons/Accessory.h>
 #include <common/FileLogger.h>
 #include <vector>

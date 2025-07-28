@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Water2Rendererh_INCLUDE__)
 #define __INCLUDE_Water2Rendererh_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLFrameBufferObject.h>
-#include <GLSL/GLSLShaderSetup.h>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLFrameBufferObject.hpp>
+#include <GLSL/GLSLShaderSetup.hpp>
 #include <common/Vector.h>
 
 class Water2;

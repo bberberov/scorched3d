@@ -18,27 +18,27 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TankKeyboardControlUtil.h>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
 #include <tank/TankShotHistory.h>
 #include <tanket/TanketAccessories.h>
 #include <tanket/TanketShotInfo.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #include <target/TargetShield.h>
 #include <target/TargetLife.h>
 #include <coms/ComsMessageSender.h>
 #include <coms/ComsPlayedMoveMessage.h>
 #include <coms/ComsDefenseMessage.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
 #include <weapons/AccessoryStore.h>
 #include <common/Keyboard.h>
 #include <common/Line.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/MainCamera.h>
-#include <sound/Sound.h>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/MainCamera.hpp>
+#include <sound/Sound.hpp>
 
 VirtualSoundSource *TankKeyboardControlUtil::elevateSound_(0);
 VirtualSoundSource *TankKeyboardControlUtil::rotateSound_(0);

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_CameraDialogh_INCLUDE__)
 #define __INCLUDE_CameraDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <graph/TargetCamera.h>
+#include <GLW/GLWWindow.hpp>
+#include <graph/TargetCamera.hpp>
 
 class CameraDialog : public GLWWindow 
 {

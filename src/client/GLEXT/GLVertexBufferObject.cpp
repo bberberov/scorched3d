@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLVertexBufferObject.h>
-#include <GLEXT/GLStateExtension.h>
+#include <GLEXT/GLVertexBufferObject.hpp>
+#include <GLEXT/GLStateExtension.hpp>
 #include <common/DefinesAssert.h>
 #include <common/Logger.h>
 

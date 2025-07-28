@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLStateExtension.h>
-#include <graph/OptionsDisplay.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/DefinesString.h>
 #include <common/Logger.h>
 #include <common/Defines.h>

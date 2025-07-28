@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWDropDownTexth_INCLUDE__)
 #define __INCLUDE_GLWDropDownTexth_INCLUDE__
 
-#include <GLW/GLWDropDown.h>
+#include <GLW/GLWDropDown.hpp>
 #include <lang/LangString.h>
 
 class GLWDropDownText : public GLWDropDown

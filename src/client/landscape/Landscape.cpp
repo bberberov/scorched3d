@@ -18,41 +18,41 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/Landscape.h>
-#include <landscape/LandscapePoints.h>
+#include <landscape/Landscape.hpp>
+#include <landscape/LandscapePoints.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/LandscapeSoundManager.h>
-#include <landscape/LandscapeMusicManager.h>
-#include <landscape/Smoke.h>
-#include <landscape/Wall.h>
-#include <landscape/ShadowMap.h>
-#include <landscape/InfoMap.h>
-#include <landscape/GraphicalLandscapeMap.h>
+#include <landscape/LandscapeSoundManager.hpp>
+#include <landscape/LandscapeMusicManager.hpp>
+#include <landscape/Smoke.hpp>
+#include <landscape/Wall.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <landscape/InfoMap.hpp>
+#include <landscape/GraphicalLandscapeMap.hpp>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
 #include <landscapedef/LandscapeDefinition.h>
 #include <landscapedef/LandscapeDefinitions.h>
 #include <lang/LangResource.h>
-#include <sky/Sky.h>
-#include <water/Water.h>
-#include <land/VisibilityPatchGrid.h>
+#include <sky/Sky.hpp>
+#include <water/Water.hpp>
+#include <land/VisibilityPatchGrid.hpp>
 #include <movement/TargetMovement.h>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLImageModifier.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <GLSL/GLSLShaderSetup.h>
+#include <GLEXT/GLImageModifier.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <GLSL/GLSLShaderSetup.hpp>
 #include <common/OptionsTransient.h>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/MainCamera.h>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/MainCamera.hpp>
 #include <engine/Simulator.h>
-#include <sound/Sound.h>
-#include <client/ScorchedClient.h>
-#include <dialogs/CameraDialog.h>
+#include <sound/Sound.hpp>
+#include <client/ScorchedClient.hpp>
+#include <dialogs/CameraDialog.hpp>
 #include <engine/ActionController.h>
-#include <tankgraph/RenderTargets.h>
+#include <tankgraph/RenderTargets.hpp>
 #include <time.h>
 
 Landscape *Landscape::instance_ = 0;

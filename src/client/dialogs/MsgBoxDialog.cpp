@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/MsgBoxDialog.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 MsgBoxDialog *MsgBoxDialog::instance_ = 0;
 

@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_SaveSelectDialogh_INCLUDE__)
 #define __INCLUDE_SaveSelectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWIconList.h>
-#include <GLW/GLWIcon.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWIconList.hpp>
+#include <GLW/GLWIcon.hpp>
 #include <common/ToolTip.h>
 
 class GLWIconListSaveItem : public GLWIconListItem

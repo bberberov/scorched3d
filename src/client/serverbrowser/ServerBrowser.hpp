@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ServerBrowserh_INCLUDE__)
 #define __INCLUDE_ServerBrowserh_INCLUDE__
 
-#include <serverbrowser/ServerBrowserRefresh.h>
-#include <serverbrowser/ServerBrowserCollect.h>
+#include <serverbrowser/ServerBrowserRefresh.hpp>
+#include <serverbrowser/ServerBrowserCollect.hpp>
 
 class ServerBrowser
 {

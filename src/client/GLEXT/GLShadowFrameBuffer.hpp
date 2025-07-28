@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLShadowFrameBufferh_INCLUDE__)
 #define __INCLUDE_GLShadowFrameBufferh_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class GLShadowFrameBuffer
 {

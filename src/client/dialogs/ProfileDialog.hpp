@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ProfileDialogh_INCLUDE__)
 #define __INCLUDE_ProfileDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
+#include <GLW/GLWWindow.hpp>
 
 class Tank;
 class ProfileDialog : public GLWWindow 

@@ -23,9 +23,9 @@
 
 #include <list>
 #include <string>
-#include <GLW/GLWPushButton.h>
-#include <GLW/GLWidget.h>
-#include <GLW/GLWSelector.h>
+#include <GLW/GLWPushButton.hpp>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWSelector.hpp>
 
 class GLWDropDownI
 {

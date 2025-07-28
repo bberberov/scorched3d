@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWCheckBoxTexth_INCLUDE__)
 #define __INCLUDE_GLWCheckBoxTexth_INCLUDE__
 
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWCheckBox.h>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWCheckBox.hpp>
 
 class GLWCheckBoxText : public GLWidget
 {

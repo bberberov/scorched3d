@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTranslate.h>
+#include <GLW/GLWTranslate.hpp>
 
 float GLWTranslate::posX_(0.0f);
 float GLWTranslate::posY_(0.0f);

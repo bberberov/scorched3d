@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ModelRendererTree.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/ModelRendererTree.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <3dsparse/TreeModelFactory.h>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLGlobalState.h>
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLInfo.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLGlobalState.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLInfo.hpp>
 
 bool ModelRendererTree::skipPre_ = false;
 

@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_SkipAllDialogh_INCLUDE__)
 #define __INCLUDE_SkipAllDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWLabel.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWLabel.hpp>
 
 class SkipAllDialog : public GLWWindow,
 				public GLWButtonI

@@ -23,7 +23,7 @@
 
 #ifdef HAVE_OGG
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 #include <ogg/ogg.h>
 #include <vorbis/codec.h>
 #include <vorbis/vorbisfile.h>

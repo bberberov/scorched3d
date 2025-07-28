@@ -20,8 +20,8 @@
 
 #include <common/Keyboard.h>
 #include <common/DefinesString.h>
-#include <GLW/GLWSpinBox.h>
-#include <GLW/GLWFont.h>
+#include <GLW/GLWSpinBox.hpp>
+#include <GLW/GLWFont.hpp>
 
 REGISTER_CLASS_SOURCE(GLWSpinBox);
 

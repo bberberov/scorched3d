@@ -21,8 +21,8 @@
 #ifndef _gLWTankTip_h
 #define _gLWTankTip_h
 
-#include <GLW/GLWToolTip.h>
-#include <GLW/GLWSelector.h>
+#include <GLW/GLWToolTip.hpp>
+#include <GLW/GLWSelector.hpp>
 #include <tank/Tank.h>
 
 class TankUndoMenu : public GLWSelectorI

@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_SaveDialogh_INCLUDE__)
 #define __INCLUDE_SaveDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWTextBox.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWTextBox.hpp>
 
 class SaveDialog : public GLWWindow,
 				public GLWButtonI

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerBrowserRefreshh_INCLUDE__)
 #define __INCLUDE_ServerBrowserRefreshh_INCLUDE__
 
-#include <serverbrowser/ServerBrowserServerList.h>
+#include <serverbrowser/ServerBrowserServerList.hpp>
 #include <net/NetBuffer.h>
 #include <map>
 #include <list>

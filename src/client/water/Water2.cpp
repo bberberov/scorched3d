@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/Water2.h>
+#include <water/Water2.hpp>
 #include <common/Vector.h>
 #include <common/Vector4.h>
 #include <common/Logger.h>
 #include <common/ProgressCounter.h>
 #include <common/OptionsTransient.h>
 #include <engine/Simulator.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLStateExtension.h>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
 #include <image/ImageFactory.h>
 #include <lang/LangResource.h>
-#include "ocean_wave_generator.h"
+#include "ocean_wave_generator.hpp"
 
-#include <water/Water2Constants.h>
+#include <water/Water2Constants.hpp>
 
 Water2::Water2()
 {

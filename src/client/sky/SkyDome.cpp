@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sky/SkyDome.h>
-#include <sky/Sky.h>
-#include <sky/Hemisphere.h>
+#include <sky/SkyDome.hpp>
+#include <sky/Sky.hpp>
+#include <sky/Hemisphere.hpp>
 #include <engine/Simulator.h>
-#include <landscape/Landscape.h>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefinition.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLCamera.h>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLCamera.hpp>
 #include <image/ImageFactory.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 
 SkyDome::SkyDome() : 

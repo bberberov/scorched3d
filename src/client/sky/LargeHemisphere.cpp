@@ -19,10 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <common/Vector.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLInfo.h>
-#include <sky/LargeHemisphere.h>
-#include <sky/Hemisphere.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <sky/LargeHemisphere.hpp>
+#include <sky/Hemisphere.hpp>
 
 LargeHemisphere::LargeHemisphere()
 {

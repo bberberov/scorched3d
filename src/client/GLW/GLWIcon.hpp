@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWIconh_INCLUDE__)
 #define __INCLUDE_GLWIconh_INCLUDE__
 
-#include <GLEXT/GLTextureReference.h>
-#include <GLW/GLWidget.h>
+#include <GLEXT/GLTextureReference.hpp>
+#include <GLW/GLWidget.hpp>
 
 class GLWIcon : public GLWidget
 {

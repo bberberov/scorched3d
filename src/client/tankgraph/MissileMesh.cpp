@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tankgraph/MissileMesh.h>
-#include <graph/ModelRenderer.h>
-#include <graph/ModelRendererStore.h>
+#include <tankgraph/MissileMesh.hpp>
+#include <graph/ModelRenderer.hpp>
+#include <graph/ModelRendererStore.hpp>
 #include <3dsparse/Model.h>
-#include <GLEXT/GLLenseFlare.h>
-#include <landscape/Landscape.h>
+#include <GLEXT/GLLenseFlare.hpp>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <common/Defines.h> // For porting
 
 MissileMesh::MissileMesh(ModelID &missile) : 

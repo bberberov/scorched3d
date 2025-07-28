@@ -22,7 +22,7 @@
 #define __INCLUDE_GLWOptionEntryh_INCLUDE__
 
 #include <common/OptionEntry.h>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 #include <list>
 
 class GLWOptionEntry

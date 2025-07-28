@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ConnectDialog.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <dialogs/ProgressDialog.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <client/ClientState.h>
+#include <dialogs/ConnectDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <dialogs/ProgressDialog.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientState.hpp>
 #include <coms/ComsMessageSender.h>
 #include <coms/ComsConnectMessage.h>
 #include <net/NetInterface.h>

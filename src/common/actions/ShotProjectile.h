@@ -24,7 +24,7 @@
 #include <engine/PhysicsParticle.h>
 #include <engine/ScorchedCollisionIds.h>
 #ifndef	S3D_SERVER
-	#include <tankgraph/RenderTracer.h>
+	#include <tankgraph/RenderTracer.hpp>
 #endif
 #include <actions/ParticleGroup.h>
 #include <weapons/WeaponProjectile.h>

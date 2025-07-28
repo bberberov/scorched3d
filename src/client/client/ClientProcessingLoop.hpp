@@ -23,7 +23,7 @@
 #define __INCLUDE_ClientProcessingLooph_INCLUDE__
 
 #include <engine/GameStateI.h>
-#include <graph/FrameLimiter.h>
+#include <graph/FrameLimiter.hpp>
 
 class ClientProcessingLoop : 
 	public GameStateI

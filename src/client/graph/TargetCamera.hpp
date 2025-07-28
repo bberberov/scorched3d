@@ -21,10 +21,10 @@
 #if !defined(AFX_TARGETCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_)
 #define AFX_TARGETCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_
 
-#include <GLEXT/GLCamera.h>
-#include <GLW/GLWToolTip.h>
+#include <GLEXT/GLCamera.hpp>
+#include <GLW/GLWToolTip.hpp>
 #include <engine/GameState.h>
-#include <graph/ParticleEmitter.h>
+#include <graph/ParticleEmitter.hpp>
 #include <common/Keyboard.h>
 
 class Tank;

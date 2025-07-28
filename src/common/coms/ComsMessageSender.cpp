@@ -27,7 +27,7 @@
 #include <common/Defines.h>
 #include <common/Logger.h>
 #ifndef S3D_SERVER
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #endif
 #include <server/ScorchedServer.hpp>
 #include <server/ServerDestinations.hpp>

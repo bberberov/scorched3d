@@ -24,11 +24,11 @@
 #include <map>
 #include <vector>
 #include <weapons/Weapon.h>
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWTab.h>
-#include <GLW/GLWDropDownText.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWTab.hpp>
+#include <GLW/GLWDropDownText.hpp>
 
 class Tank;
 class InventoryDialog : public GLWWindow,

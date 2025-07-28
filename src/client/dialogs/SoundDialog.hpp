@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_SoundDialogh_INCLUDE__)
 #define __INCLUDE_SoundDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWCheckBoxText.h>
-#include <GLW/GLWSlider.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWCheckBoxText.hpp>
+#include <GLW/GLWSlider.hpp>
 
 class SoundDialog : public GLWWindow ,
 	public GLWButtonI

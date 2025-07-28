@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/BuyAccessoryDialogTankInfo.h>
-#include <client/ScorchedClient.h>
+#include <dialogs/BuyAccessoryDialogTankInfo.hpp>
+#include <client/ScorchedClient.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankScore.h>

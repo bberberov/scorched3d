@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLState.hpp>
 #include <image/ImageFactory.h>
-#include <graph/Main2DCamera.h>
-#include <graph/OptionsDisplay.h>
-#include <dialogs/BackdropDialog.h>
+#include <graph/Main2DCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <dialogs/BackdropDialog.hpp>
 #include <common/Defines.h>
 
 BackdropDialog *BackdropDialog::instance_ = 0;

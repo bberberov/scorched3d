@@ -22,7 +22,7 @@
 #include <actions/Napalm.h>
 #include <common/Defines.h>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
+	#include <sound/SoundUtils.hpp>
 #endif
 #include <engine/ActionController.h>
 #include <engine/Simulator.h>

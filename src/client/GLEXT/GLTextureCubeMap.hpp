@@ -21,7 +21,7 @@
 #if !defined(AFX_GLTEXTURECUBEMAP_H__490E9736_961A_4873_A10F_ED47E6E33527__INCLUDED_)
 #define AFX_GLTEXTURECUBEMAP_H__490E9736_961A_4873_A10F_ED47E6E33527__INCLUDED_
 
-#include <GLEXT/GLTextureBase.h>
+#include <GLEXT/GLTextureBase.hpp>
 #include <image/Image.h>
 
 class GLTextureCubeMap : public GLTextureBase

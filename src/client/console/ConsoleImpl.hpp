@@ -23,11 +23,11 @@
 
 #include <common/LoggerI.h>
 #include <engine/GameStateI.h>
-#include <GLEXT/GLFont2d.h>
-#include <console/Console.h>
-#include <console/ConsoleMethods.h>
-#include <console/ConsoleLines.h>
-#include <console/ConsoleRules.h>
+#include <GLEXT/GLFont2d.hpp>
+#include <console/Console.hpp>
+#include <console/ConsoleMethods.hpp>
+#include <console/ConsoleLines.hpp>
+#include <console/ConsoleRules.hpp>
 
 class ConsoleImpl : public GameStateI, public LoggerI, public Console
 {

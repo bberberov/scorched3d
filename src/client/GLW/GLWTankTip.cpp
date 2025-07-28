@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTankTip.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
+#include <GLW/GLWTankTip.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <tanket/TanketAccessories.h>
 #include <tank/TankState.h>
 #include <tank/TankScore.h>
@@ -30,12 +30,12 @@
 #include <weapons/Weapon.h>
 #include <weapons/Shield.h>
 #include <weapons/AccessoryStore.h>
-#include <landscape/Landscape.h>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <lang/LangResource.h>
 
 TankUndoMenu::TankUndoMenu(Tank *tank) :

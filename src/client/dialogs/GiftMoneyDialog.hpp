@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_GiftMoneyDialogh_INCLUDE__)
 #define __INCLUDE_GiftMoneyDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWDropDownText.h>
-#include <dialogs/BuyAccessoryDialogTankInfo.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWDropDownText.hpp>
+#include <dialogs/BuyAccessoryDialogTankInfo.hpp>
 
 class GiftMoneyDialog : 
 	public GLWWindow ,

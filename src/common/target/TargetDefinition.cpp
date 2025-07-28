@@ -22,7 +22,7 @@
 #include <common/RandomGenerator.h>
 #include <common/DefinesAssert.h>
 #ifndef S3D_SERVER
-	#include <tankgraph/TargetRendererImplTarget.h>
+	#include <tankgraph/TargetRendererImplTarget.hpp>
 #endif
 #include <tanket/Tanket.h>
 #include <tanket/TanketShotInfo.h>

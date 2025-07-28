@@ -1,4 +1,4 @@
-#include <client/SecureID.h>
+#include <client/SecureID.hpp>
 #include <net/NetInterface.h>
 #include <common/Defines.h>
 

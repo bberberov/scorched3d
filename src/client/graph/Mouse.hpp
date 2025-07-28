@@ -25,7 +25,7 @@
 
 #include <SDL/SDL.h>
 
-// Mouse.h: interface for the Mouse class.
+// Mouse.hpp: interface for the Mouse class.
 //
 //////////////////////////////////////////////////////////////////////
 

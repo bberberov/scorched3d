@@ -22,8 +22,8 @@
 #define __INCLUDE_ClientChannelManagerh_INCLUDE__
 
 #include <coms/ComsMessageHandler.h>
-#include <client/ClientChannelManagerI.h>
-#include <console/ConsoleRule.h>
+#include <client/ClientChannelManagerI.hpp>
+#include <console/ConsoleRule.hpp>
 #include <set>
 
 class ClientChannelManager 

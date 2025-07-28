@@ -35,10 +35,10 @@
 #include <lang/LangResource.h>
 #include <math.h>
 #ifndef S3D_SERVER
-	#include <landscape/Landscape.h>
-	#include <landscape/DeformTextures.h>
-	#include <land/VisibilityPatchGrid.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <landscape/Landscape.hpp>
+	#include <landscape/DeformTextures.hpp>
+	#include <land/VisibilityPatchGrid.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 
 class DeformLandscapeCache

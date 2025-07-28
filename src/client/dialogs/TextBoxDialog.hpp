@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_TextBoxDialogh_INCLUDE__)
 #define __INCLUDE_TextBoxDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWTextBox.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWTextBox.hpp>
 
 class TextBoxDialog;
 class TextBoxDialogI 

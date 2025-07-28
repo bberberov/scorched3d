@@ -32,8 +32,8 @@
 #include <common/Defines.h>
 #include <common/Logger.h>
 #ifndef S3D_SERVER
-	#include <GLEXT/GLState.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <GLEXT/GLState.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 #include <math.h>
 #include <set>

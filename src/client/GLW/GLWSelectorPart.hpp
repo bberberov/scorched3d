@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWSelectorParth_INCLUDE__)
 #define __INCLUDE_GLWSelectorParth_INCLUDE__
 
-#include <GLW/GLWSelector.h>
+#include <GLW/GLWSelector.hpp>
 
 class GLWSelectorPart
 {

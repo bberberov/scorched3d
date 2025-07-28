@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_TargetRendererImplTargeth_INCLUDE__)
 #define __INCLUDE_TargetRendererImplTargeth_INCLUDE__
 
-#include <tankgraph/TargetRendererImpl.h>
-#include <graph/ModelRendererSimulator.h>
+#include <tankgraph/TargetRendererImpl.hpp>
+#include <graph/ModelRendererSimulator.hpp>
 #include <common/ModelID.h>
-#include <GLW/GLWTankTip.h>
+#include <GLW/GLWTankTip.hpp>
 
 class TargetRendererImplTarget : public TargetRendererImpl
 {

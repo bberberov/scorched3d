@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientParams.h>
+#include <client/ClientParams.hpp>
 
 ClientParams *ClientParams::instance_ = 0;
 

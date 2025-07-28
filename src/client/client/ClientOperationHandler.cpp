@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientOperationHandler.h>
-#include <client/ScorchedClient.h>
-#include <graph/MainCamera.h>
+#include <client/ClientOperationHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/MainCamera.hpp>
 #include <coms/ComsOperationMessage.h>
 
 ClientOperationHandler *ClientOperationHandler::instance_ = 0;

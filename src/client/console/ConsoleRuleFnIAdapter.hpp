@@ -22,7 +22,7 @@
 #define AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_
 
 #include <common/OptionEntry.h>
-#include <console/ConsoleRuleFn.h>
+#include <console/ConsoleRuleFn.hpp>
 #include <string>
 
 class ConsoleRuleFnIBooleanAdapter : public ConsoleRuleFnI

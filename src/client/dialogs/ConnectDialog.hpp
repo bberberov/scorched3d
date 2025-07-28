@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ConnectDialogh_INCLUDE__)
 #define __INCLUDE_ConnectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <client/UniqueIdStore.h>
+#include <GLW/GLWWindow.hpp>
+#include <client/UniqueIdStore.hpp>
 #include <time.h>
 
 class ConnectDialog : public GLWWindow

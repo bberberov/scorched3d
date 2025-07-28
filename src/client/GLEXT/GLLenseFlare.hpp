@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// GLLenseFlare.h: interface for the GLLenseFlare class.
+// GLLenseFlare.hpp: interface for the GLLenseFlare class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -28,7 +28,7 @@
 
 #include <common/Vector.h>
 #include <common/ProgressCounter.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class GLLenseFlare  
 {

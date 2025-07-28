@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/Water.h>
-#include <water/Water2.h>
-#include <water/Water2Renderer.h>
-#include <water/WaterMapPoints.h>
-#include <water/WaterWaveDistance.h>
-#include <water/WaterWaves.h>
+#include <water/Water.hpp>
+#include <water/Water2.hpp>
+#include <water/Water2Renderer.hpp>
+#include <water/WaterMapPoints.hpp>
+#include <water/WaterWaveDistance.hpp>
+#include <water/WaterWaves.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
 #include <landscapedef/LandscapeDefinition.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 #include <common/Clock.h>
 #include <common/Logger.h>
-#include <sound/SoundUtils.h>
-#include <client/ScorchedClient.h>
-#include <graph/ParticleEmitter.h>
+#include <sound/SoundUtils.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/ParticleEmitter.hpp>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLImageModifier.h>
+#include <GLEXT/GLImageModifier.hpp>
 
 Water::Water() :
 	height_(25.0f),

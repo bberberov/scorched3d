@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWDropDownColorh_INCLUDE__)
 #define __INCLUDE_GLWDropDownColorh_INCLUDE__
 
-#include <GLW/GLWDropDown.h>
-#include <GLEXT/GLTextureReference.h>
+#include <GLW/GLWDropDown.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 
 class GLWDropDownColor : public GLWDropDown
 {

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/WaterVisibilityPatch.h>
-#include <land/VisibilityPatchGrid.h>
-#include <landscape/Landscape.h>
-#include <water/Water.h>
-#include <geomipmap/MipMapPatchIndexs.h>
-#include <graph/OptionsDisplay.h>
+#include <land/WaterVisibilityPatch.hpp>
+#include <land/VisibilityPatchGrid.hpp>
+#include <landscape/Landscape.hpp>
+#include <water/Water.hpp>
+#include <geomipmap/MipMapPatchIndexs.hpp>
+#include <graph/OptionsDisplay.hpp>
 
 WaterVisibilityPatch::WaterVisibilityPatch() :
 	visibilityIndex_(4),

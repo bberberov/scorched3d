@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/TargetVisibilityPatch.h>
-#include <client/ScorchedClient.h>
+#include <land/TargetVisibilityPatch.hpp>
+#include <client/ScorchedClient.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 
 std::set<void *> TargetVisibilityPatch::largeTargets_;
 

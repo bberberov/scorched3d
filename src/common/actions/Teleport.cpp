@@ -35,8 +35,8 @@
 #include <landscapemap/DeformLandscape.h>
 #include <landscapemap/LandscapeMaps.h>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
-	#include <sprites/TeleportRenderer.h>
+	#include <sound/SoundUtils.hpp>
+	#include <sprites/TeleportRenderer.hpp>
 #endif
 
 Teleport::Teleport(FixedVector position, WeaponFireContext &weaponContext, WeaponTeleport *weapon) :

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWSlider.h>
-#include <GLW/GLWFont.h>
-#include <GLEXT/GLState.h>
+#include <GLW/GLWSlider.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLEXT/GLState.hpp>
 #include <common/Keyboard.h>
 #include <common/ToolTip.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
 

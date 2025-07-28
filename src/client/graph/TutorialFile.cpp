@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/TutorialFile.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ScorchedClient.h>
+#include <graph/TutorialFile.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/OptionsTransient.h>
 #include <target/TargetContainer.h>
 #include <server/ServerSimulator.hpp>

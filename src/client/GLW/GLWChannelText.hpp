@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_GLWChannelTexth_INCLUDE__)
 #define __INCLUDE_GLWChannelTexth_INCLUDE__
 
-#include <GLW/GLWChannelView.h>
-#include <GLW/GLWIconButton.h>
-#include <GLW/GLWSelector.h>
-#include <GLEXT/GLTextureReference.h>
+#include <GLW/GLWChannelView.hpp>
+#include <GLW/GLWIconButton.hpp>
+#include <GLW/GLWSelector.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 #include <string>
 
 class GLWChannelText :

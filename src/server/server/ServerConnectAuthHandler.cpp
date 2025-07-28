@@ -50,7 +50,7 @@
 #include <coms/ComsConnectMessage.h>
 #include <coms/ComsMessageSender.h>
 #ifndef S3D_SERVER
-#include <client/ClientParams.h>
+#include <client/ClientParams.hpp>
 #endif
 
 ServerConnectAuthHandler::ServerConnectAuthHandler(ComsMessageHandler &comsMessageHandler)

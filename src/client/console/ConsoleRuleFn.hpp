@@ -21,7 +21,7 @@
 #if !defined(AFX_ConsoleRULEFN_H__B0DEC68E_5D12_410F_AEA2_3BF1AF6B3319__INCLUDED_)
 #define AFX_ConsoleRULEFN_H__B0DEC68E_5D12_410F_AEA2_3BF1AF6B3319__INCLUDED_
 
-#include <console/ConsoleRule.h>
+#include <console/ConsoleRule.hpp>
 #include <common/DefinesAssert.h>
 
 class ConsoleRuleFnI

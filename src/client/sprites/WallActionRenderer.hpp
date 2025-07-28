@@ -24,8 +24,8 @@
 #include <actions/Action.h>
 #include <common/Vector.h>
 #include <common/OptionsTransient.h>
-#include <graph/Particle.h>
-#include <GLEXT/GLTexture.h>
+#include <graph/Particle.hpp>
+#include <GLEXT/GLTexture.hpp>
 
 class WallActionRenderer : public ParticleUserData
 {

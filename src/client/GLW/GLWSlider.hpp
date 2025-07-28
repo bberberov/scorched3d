@@ -21,7 +21,7 @@
 #ifndef _GLWSLIDER_H_
 #define _GLWSLIDER_H_
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWSliderI
 {

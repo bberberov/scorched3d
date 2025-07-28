@@ -23,7 +23,7 @@
 
 #include <common/Vector.h>
 #include <common/Counter.h>
-#include <landscape/Smoke.h>
+#include <landscape/Smoke.hpp>
 
 class SmokeActionRenderer : public ParticleUserData
 {

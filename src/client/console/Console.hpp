@@ -21,7 +21,7 @@
 #if !defined(AFX_Console_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
 #define AFX_Console_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_
 
-#include <console/ConsoleRule.h>
+#include <console/ConsoleRule.hpp>
 
 class Console
 {

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWImageList.h>
-#include <GLW/GLWTranslate.h>
+#include <GLW/GLWImageList.hpp>
+#include <GLW/GLWTranslate.hpp>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <common/FileList.h>
 #include <string.h>
 

@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_SkyDomeh_INCLUDE__)
 #define __INCLUDE_SkyDomeh_INCLUDE__
 
-#include <sky/LargeHemisphere.h>
-#include <sky/SkyLine.h>
-#include <GLEXT/GLTexture.h>
+#include <sky/LargeHemisphere.hpp>
+#include <sky/SkyLine.hpp>
+#include <GLEXT/GLTexture.hpp>
 #include <image/Image.h>
 
 class SkyDome

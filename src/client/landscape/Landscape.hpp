@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Landscapeh_INCLUDE__)
 #define __INCLUDE_Landscapeh_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLShadowFrameBuffer.h>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLShadowFrameBuffer.hpp>
 
 class Wall;
 class ShadowMap;

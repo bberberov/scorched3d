@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ParticleEmitterh_INCLUDE__)
 #define __INCLUDE_ParticleEmitterh_INCLUDE__
 
-#include <graph/ParticleEngine.h>
-#include <GLEXT/GLTextureSet.h>
+#include <graph/ParticleEngine.hpp>
+#include <GLEXT/GLTextureSet.hpp>
 #include <common/OptionsTransient.h>
 
 class ParticleEmitter

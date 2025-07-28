@@ -20,8 +20,8 @@
 
 #include <actions/TankSay.h>
 #ifndef S3D_SERVER
-	#include <sprites/TalkRenderer.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <sprites/TalkRenderer.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>

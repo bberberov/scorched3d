@@ -32,11 +32,11 @@
 #include <landscapemap/MovementMap.h>
 #include <landscapemap/DeformLandscape.h>
 #ifndef S3D_SERVER
-	#include <landscape/Smoke.h>
-	#include <landscape/Landscape.h>
+	#include <landscape/Smoke.hpp>
+	#include <landscape/Landscape.hpp>
 	#include <image/ImageStore.h>
-	#include <GLEXT/GLImageModifier.h>
-	#include <sound/Sound.h>
+	#include <GLEXT/GLImageModifier.hpp>
+	#include <sound/Sound.hpp>
 #endif
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>

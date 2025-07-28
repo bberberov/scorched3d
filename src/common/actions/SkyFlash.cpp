@@ -21,8 +21,8 @@
 #include <actions/SkyFlash.h>
 #include <engine/ScorchedContext.h>
 #ifndef S3D_SERVER
-	#include <landscape/Landscape.h>
-	#include <sky/Sky.h>
+	#include <landscape/Landscape.hpp>
+	#include <sky/Sky.hpp>
 #endif
 
 SkyFlash::SkyFlash() :

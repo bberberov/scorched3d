@@ -21,9 +21,9 @@
 #if !defined(AFX_GLTEXTURE_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_)
 #define AFX_GLTEXTURE_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <image/Image.h>
-#include <GLEXT/GLTextureBase.h>
+#include <GLEXT/GLTextureBase.hpp>
 
 class GLTexture : public GLTextureBase
 {

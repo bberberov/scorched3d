@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLSLShaderSetuph_INCLUDE__)
 #define __INCLUDE_GLSLShaderSetuph_INCLUDE__
 
-#include <GLSL/GLSLShader.h>
-#include <GLSL/GLSLProgram.h>
+#include <GLSL/GLSLShader.hpp>
+#include <GLSL/GLSLProgram.hpp>
 
 class GLSLShaderSetup
 {

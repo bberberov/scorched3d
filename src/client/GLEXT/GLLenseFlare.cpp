@@ -19,11 +19,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLCamera.h>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLCamera.hpp>
 #include <image/ImageLuminanceFactory.h>
-#include <GLEXT/GLLenseFlare.h>
-#include <GLEXT/GLCameraFrustum.h>
+#include <GLEXT/GLLenseFlare.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
 #include <common/Defines.h>
 #include <lang/LangResource.h>
 

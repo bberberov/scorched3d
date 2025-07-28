@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AdminCheckDialog.h>
-#include <dialogs/AdminDialog.h>
-#include <dialogs/AdminAuthDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ClientChannelManager.h>
+#include <dialogs/AdminCheckDialog.hpp>
+#include <dialogs/AdminDialog.hpp>
+#include <dialogs/AdminAuthDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ClientChannelManager.hpp>
 #include <coms/ComsAdminMessage.h>
 #include <coms/ComsMessageSender.h>
 

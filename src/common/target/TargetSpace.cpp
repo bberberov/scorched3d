@@ -318,8 +318,8 @@ void TargetSpace::getCollisionSet(
 }
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLState.h>
-#include <client/ScorchedClient.h>
+#include <GLEXT/GLState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <landscapemap/LandscapeMaps.h>
 
 static void drawBox(Vector &position, Vector &size)

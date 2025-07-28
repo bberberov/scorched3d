@@ -66,7 +66,7 @@ void PlacementShadowDefinition::updateLandscapeHeight(
 
 #ifndef S3D_SERVER
 
-#include <GLEXT/GLImageModifier.h>
+#include <GLEXT/GLImageModifier.hpp>
 void PlacementShadowDefinition::updateLandscapeTexture(
 	bool useShadows,
 	ScorchedContext &context,

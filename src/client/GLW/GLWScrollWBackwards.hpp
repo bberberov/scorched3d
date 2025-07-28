@@ -21,7 +21,7 @@
 #if !defined(AFX_GLWScrollWBackwards_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)
 #define AFX_GLWScrollWBackwards_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_
 
-#include <GLW/GLWScrollW.h>
+#include <GLW/GLWScrollW.hpp>
 
 class GLWScrollWBackwards  : 
 	public GLWScrollW

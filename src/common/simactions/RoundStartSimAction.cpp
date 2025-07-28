@@ -21,7 +21,7 @@
 #include <simactions/RoundStartSimAction.h>
 #include <target/TargetContainer.h>
 #ifndef S3D_SERVER
-#include <graph/ShotCountDown.h>
+#include <graph/ShotCountDown.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(RoundStartSimAction);

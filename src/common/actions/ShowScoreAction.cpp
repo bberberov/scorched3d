@@ -27,9 +27,9 @@
 #include <tank/TankScore.h>
 #include <common/Logger.h>
 #ifndef S3D_SERVER
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ClientSaveScreenState.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientSaveScreenState.hpp>
 #endif
 
 bool ShowScoreAction::finalScoreStatic_ = false;

@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/StartDialog.h>
-#include <dialogs/ModSelectDialog.h>
-#include <dialogs/ModSubSelectDialog.h>
-#include <dialogs/SaveSelectDialog.h>
-#include <dialogs/NetworkSelectDialog.h>
-#include <dialogs/SettingsSelectDialog.h>
-#include <dialogs/SettingsSubSelectDialog.h>
-#include <dialogs/QuitDialog.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <client/ClientMain.h>
+#include <dialogs/StartDialog.hpp>
+#include <dialogs/ModSelectDialog.hpp>
+#include <dialogs/ModSubSelectDialog.hpp>
+#include <dialogs/SaveSelectDialog.hpp>
+#include <dialogs/NetworkSelectDialog.hpp>
+#include <dialogs/SettingsSelectDialog.hpp>
+#include <dialogs/SettingsSubSelectDialog.hpp>
+#include <dialogs/QuitDialog.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientMain.hpp>
 #include <engine/GameState.h>
 #include <engine/MainLoop.h>
-#include <GLW/GLWColors.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWWindowManager.h>
+#include <GLW/GLWColors.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWWindowManager.hpp>
 #include <lang/LangResource.h>
 #include <limits>
 

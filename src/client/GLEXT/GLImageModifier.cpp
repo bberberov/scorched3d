@@ -20,14 +20,14 @@
 
 #include <vector>
 #include <math.h>
-#include <GLEXT/GLImageItterator.h>
-#include <GLEXT/GLImageModifier.h>
+#include <GLEXT/GLImageItterator.hpp>
+#include <GLEXT/GLImageModifier.hpp>
 #include <image/Image.h>
 #include <image/ImageFactory.h>
 #include <engine/ScorchedContext.h>
-#include <landscape/Landscape.h>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <lang/LangResource.h>
 #include <common/OptionsTransient.h>
 #include <common/Defines.h>

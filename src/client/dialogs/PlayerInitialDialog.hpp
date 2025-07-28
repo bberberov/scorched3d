@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlayerInitialDialogh_INCLUDE__)
 #define __INCLUDE_PlayerInitialDialogh_INCLUDE__
 
-#include <dialogs/PlayerDialog.h>
+#include <dialogs/PlayerDialog.hpp>
 
 class PlayerInitialDialog : public PlayerDialog
 {

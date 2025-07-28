@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_AdminDialogh_INCLUDE__)
 #define __INCLUDE_AdminDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIconTable.h>
-#include <GLW/GLWTab.h>
-#include <GLW/GLWDropDown.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIconTable.hpp>
+#include <GLW/GLWTab.hpp>
+#include <GLW/GLWDropDown.hpp>
 
 class AdminDialog : 
 	public GLWWindow,

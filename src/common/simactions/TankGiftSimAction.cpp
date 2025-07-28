@@ -26,7 +26,7 @@
 #include <lang/LangResource.h>
 #include <common/ChannelManager.h>
 #ifndef S3D_SERVER
-#include <dialogs/BuyAccessoryDialog.h>
+#include <dialogs/BuyAccessoryDialog.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(TankGiftSimAction);

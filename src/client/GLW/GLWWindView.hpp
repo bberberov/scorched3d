@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWWindViewh_INCLUDE__)
 #define __INCLUDE_GLWWindViewh_INCLUDE__
 
-#include <GLW/GLWidget.h>
-#include <GLW/GLWToolTip.h>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWToolTip.hpp>
 
 class WindDialogToolTip : public ToolTip
 {

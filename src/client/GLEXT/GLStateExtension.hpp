@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLStateExtensionh_INCLUDE__)
 #define __INCLUDE_GLStateExtensionh_INCLUDE__
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 
 class GLStateExtension
 {

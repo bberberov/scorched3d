@@ -30,9 +30,9 @@
 #include <engine/ActionController.h>
 #include <common/OptionsScorched.h>
 #ifndef S3D_SERVER
-#include <graph/ShotCountDown.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientStartGameHandler.h>
+#include <graph/ShotCountDown.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientStartGameHandler.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(TankStartMoveSimAction);

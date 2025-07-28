@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SettingsSubSelectDialog.h>
-#include <dialogs/SettingsSelectDialog.h>
-#include <dialogs/MsgBoxDialog.h>
+#include <dialogs/SettingsSubSelectDialog.hpp>
+#include <dialogs/SettingsSelectDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
 #include <landscapedef/LandscapeDefinitionsBase.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWOptionEntry.h>
-#include <GLW/GLWTabContainer.h>
-#include <GLW/GLWSpacer.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWFont.h>
-#include <GLEXT/GLTextureStore.h>
-#include <client/ClientParams.h>
-#include <client/ClientMain.h>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWOptionEntry.hpp>
+#include <GLW/GLWTabContainer.hpp>
+#include <GLW/GLWSpacer.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLEXT/GLTextureStore.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientMain.hpp>
 
 SettingsSubSelectDialogListItem::SettingsSubSelectDialogListItem(
 	const char *icon,

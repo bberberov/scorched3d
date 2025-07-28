@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientLinesHandler.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientLinesHandler.hpp>
+#include <client/ScorchedClient.hpp>
 #include <coms/ComsLinesMessage.h>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankState.h>
-#include <GLW/GLWPlanView.h>
+#include <GLW/GLWPlanView.hpp>
 
 ClientLinesHandler *ClientLinesHandler::instance_ = 0;
 

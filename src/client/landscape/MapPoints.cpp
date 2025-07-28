@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/MapPoints.h>
+#include <landscape/MapPoints.hpp>
 #include <3dsparse/ModelStore.h>
-#include <graph/ModelRenderer.h>
-#include <graph/ModelRendererSimulator.h>
-#include <graph/ModelRendererStore.h>
+#include <graph/ModelRenderer.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/ModelRendererStore.hpp>
 
 MapPoints *MapPoints::instance_ = 0;
 

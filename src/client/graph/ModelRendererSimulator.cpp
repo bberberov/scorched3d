@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ModelRendererSimulator.h>
-#include <graph/ModelRenderer.h>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/ModelRenderer.hpp>
 #include <3dsparse/Model.h>
 #include <stdlib.h>
 

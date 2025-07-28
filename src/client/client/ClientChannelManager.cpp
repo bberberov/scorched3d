@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientChannelManager.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientChannelManager.hpp>
+#include <client/ScorchedClient.hpp>
 #include <coms/ComsMessageSender.h>
 #include <coms/ComsChannelMessage.h>
 #include <coms/ComsChannelTextMessage.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
 #include <common/Logger.h>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankState.h>
 #include <target/TargetLife.h>
 #include <tanket/TanketShotInfo.h>
-#include <sprites/TalkRenderer.h>
+#include <sprites/TalkRenderer.hpp>
 #include <engine/ActionController.h>
 
 ClientChannelManager::ChannelEntry::ChannelEntry(ClientChannelManagerI *user) :

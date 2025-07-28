@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// MainMenuDialog.h: interface for the MainMenuDialog class.
+// MainMenuDialog.hpp: interface for the MainMenuDialog class.
 //
 //////////////////////////////////////////////////////////////////////
 
 #if !defined(AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_)
 #define AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_
 
-#include <GLEXT/GLMenu.h>
+#include <GLEXT/GLMenu.hpp>
 
 class MainMenuDialog : public GLMenu
 {

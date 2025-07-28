@@ -28,8 +28,8 @@
 #include <target/TargetShield.h>
 #include <target/TargetRenderer.h>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
-	#include <GLEXT/GLLenseFlare.h>
+	#include <sound/SoundUtils.hpp>
+	#include <GLEXT/GLLenseFlare.hpp>
 #endif
 
 ShieldHit::ShieldHit(unsigned int playerId, FixedVector &position, fixed hitPercentage) :

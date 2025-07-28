@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_GLWChannelViewh_INCLUDE__)
 #define __INCLUDE_GLWChannelViewh_INCLUDE__
 
-#include <GLW/GLWChatView.h>
-#include <GLW/GLWChannelViewTextRenderer.h>
-#include <client/ClientChannelManagerI.h>
+#include <GLW/GLWChatView.hpp>
+#include <GLW/GLWChannelViewTextRenderer.hpp>
+#include <client/ClientChannelManagerI.hpp>
 
 class GLWChannelViewI
 {

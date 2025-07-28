@@ -22,7 +22,7 @@
 #define __INCLUDE_SoftwareMouseh_INCLUDE__
 
 #include <engine/GameStateI.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class SoftwareMouse : 
 	public GameStateI

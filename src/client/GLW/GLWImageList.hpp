@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_GLWImageListh_INCLUDE__)
 #define __INCLUDE_GLWImageListh_INCLUDE__
 
-#include <GLW/GLWButton.h>
-#include <GLW/GLWSelector.h>
-#include <GLEXT/GLTexture.h>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWSelector.hpp>
+#include <GLEXT/GLTexture.hpp>
 #include <list>
 
 class GLWImageList : 

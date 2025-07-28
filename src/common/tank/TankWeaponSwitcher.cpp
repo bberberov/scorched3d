@@ -25,9 +25,9 @@
 #include <weapons/AccessoryStore.h>
 #include <weapons/WeaponMoveTank.h>
 #ifndef S3D_SERVER
-	#include <client/ScorchedClient.h>
-	#include <client/ClientState.h>
-	#include <landscape/Landscape.h>
+	#include <client/ScorchedClient.hpp>
+	#include <client/ClientState.hpp>
+	#include <landscape/Landscape.hpp>
 #endif
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapemap/MovementMap.h>

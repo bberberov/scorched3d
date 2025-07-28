@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_NetworkSelectDialogh_INCLUDE__)
 #define __INCLUDE_NetworkSelectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIconTable.h>
-#include <GLW/GLWDropDownText.h>
-#include <dialogs/TextBoxDialog.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIconTable.hpp>
+#include <GLW/GLWDropDownText.hpp>
+#include <dialogs/TextBoxDialog.hpp>
 #include <common/ToolTip.h>
 
 class NetworkSelectDialog :

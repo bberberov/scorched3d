@@ -767,8 +767,8 @@ void PhysicsParticleActionObject::bounceShieldHit(Target *target)
 
 #ifndef S3D_SERVER
 
-#include <client/ScorchedClient.h>
-#include <graph/ParticleEmitter.h>
+#include <client/ScorchedClient.hpp>
+#include <graph/ParticleEmitter.hpp>
 
 static void addWallCollisionParticle(Vector &position, ScorchedCollisionId collisionId)
 {

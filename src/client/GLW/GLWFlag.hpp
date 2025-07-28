@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWFLAG_H__E5E95ACF_A6F4_4552_B05C_75CA02ACB6D2__INCLUDED_)
 #define AFX_GLWFLAG_H__E5E95ACF_A6F4_4552_B05C_75CA02ACB6D2__INCLUDED_
 
-#include <GLW/GLWFont.h>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWidget.hpp>
 #include <common/Vector.h>
 
 class GLWFlag : public GLWidget

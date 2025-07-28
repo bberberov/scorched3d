@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_WaterAndTargetVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_WaterAndTargetVisibilityPatchh_INCLUDE__
 
-#include <land/WaterVisibilityPatch.h>
-#include <land/TargetVisibilityPatch.h>
+#include <land/WaterVisibilityPatch.hpp>
+#include <land/TargetVisibilityPatch.hpp>
 
 class WaterAndTargetVisibilityPatch
 {

@@ -22,9 +22,9 @@
 #define __INCLUDE_MissileActionRendererh_INCLUDE__
 
 #include <actions/Action.h>
-#include <graph/ParticleEmitter.h>
-#include <tankgraph/MissileMesh.h>
-#include <GLEXT/GLTextureSet.h>
+#include <graph/ParticleEmitter.hpp>
+#include <tankgraph/MissileMesh.hpp>
+#include <GLEXT/GLTextureSet.hpp>
 #include <common/Counter.h>
 #include <string>
 #include <map>

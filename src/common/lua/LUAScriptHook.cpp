@@ -23,7 +23,7 @@
 #include <common/FileList.h>
 #include <common/Logger.h>
 #ifndef S3D_SERVER
-#include <console/ConsoleRuleMethodIAdapter.h>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
 #endif
 
 LUAScriptHook::LUAScriptHook(

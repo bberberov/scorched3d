@@ -22,7 +22,7 @@
 #define AFX_GLWPANEL_H__6619410E_0A6B_459B_8A38_11024F49A6E3__INCLUDED_
 
 #include <list>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 /**
 A container widget for other widgets.

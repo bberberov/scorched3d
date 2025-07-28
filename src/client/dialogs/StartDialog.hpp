@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_StartDialogh_INCLUDE__)
 #define __INCLUDE_StartDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
+#include <GLW/GLWWindow.hpp>
 #include <lang/LangString.h>
 #include <vector>
 

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_OptionsDisplayConsoleh_INCLUDE__)
 #define __INCLUDE_OptionsDisplayConsoleh_INCLUDE__
 
-#include <console/ConsoleRuleFnIAdapter.h>
+#include <console/ConsoleRuleFnIAdapter.hpp>
 
 class OptionsDisplayConsole
 {

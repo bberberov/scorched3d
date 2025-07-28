@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Sunh_INCLUDE__)
 #define __INCLUDE_Sunh_INCLUDE__
 
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLTexture.hpp>
 #include <common/Vector.h>
 
 class Sun

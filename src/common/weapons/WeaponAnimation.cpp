@@ -23,7 +23,7 @@
 #include <engine/ActionController.h>
 #include <common/Defines.h>
 #ifndef S3D_SERVER
-#include <sprites/MetaActionRenderer.h>
+#include <sprites/MetaActionRenderer.hpp>
 #endif
 
 REGISTER_ACCESSORY_SOURCE(WeaponAnimation);

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/Wall.h>
-#include <sound/SoundUtils.h>
+#include <landscape/Wall.hpp>
+#include <sound/SoundUtils.hpp>
 #include <image/ImageFactory.h>
 #include <common/Defines.h>
 

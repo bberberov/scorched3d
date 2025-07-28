@@ -22,7 +22,7 @@
 #define __INCLUDE_TextureReferenceDatah_INCLUDE__
 
 #include <image/ImageID.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class GLTextureReferenceData
 {

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ParticleEngine.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/ParticleEngine.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <engine/Simulator.h>
-#include <client/ScorchedClient.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLCamera.h>
+#include <client/ScorchedClient.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLCamera.hpp>
 #include <algorithm>
 
 float ParticleEngine::speed_ = 1.0f;

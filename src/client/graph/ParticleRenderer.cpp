@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ParticleRenderer.h>
-#include <graph/Particle.h>
-#include <sprites/ExplosionTextures.h>
-#include <sprites/DebrisActionRenderer.h>
-#include <sprites/SmokeActionRenderer.h>
-#include <sprites/NapalmRenderer.h>
-#include <sprites/ExplosionNukeRenderer.h>
-#include <sprites/WallActionRenderer.h>
-#include <landscape/Landscape.h>
+#include <graph/ParticleRenderer.hpp>
+#include <graph/Particle.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <sprites/DebrisActionRenderer.hpp>
+#include <sprites/SmokeActionRenderer.hpp>
+#include <sprites/NapalmRenderer.hpp>
+#include <sprites/ExplosionNukeRenderer.hpp>
+#include <sprites/WallActionRenderer.hpp>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/ShadowMap.h>
-#include <client/ScorchedClient.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLCamera.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLInfo.h>
+#include <landscape/ShadowMap.hpp>
+#include <client/ScorchedClient.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLCamera.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLInfo.hpp>
 #include <common/Defines.h>
 #include <math.h>
 

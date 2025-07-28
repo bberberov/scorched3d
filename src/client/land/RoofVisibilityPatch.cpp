@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/RoofVisibilityPatch.h>
-#include <client/ScorchedClient.h>
+#include <land/RoofVisibilityPatch.hpp>
+#include <client/ScorchedClient.hpp>
 #include <landscapemap/LandscapeMaps.h>
 
 RoofVisibilityPatch::RoofVisibilityPatch() :

@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <image/Image.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <common/Vector.h>
-#include <sky/Hemisphere.h>
+#include <sky/Hemisphere.hpp>
 #include <common/Defines.h>
 #include <vector>
 #include <math.h>

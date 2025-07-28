@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Water2Patchh_INCLUDE__)
 #define __INCLUDE_Water2Patchh_INCLUDE__
 
-#include <geomipmap/MipMapPatchIndexs.h>
-#include <water/Water2Constants.h>
+#include <geomipmap/MipMapPatchIndexs.hpp>
+#include <water/Water2Constants.hpp>
 #include <vector>
 
 class Water2Patch

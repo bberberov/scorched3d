@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <console/ConsoleImpl.h>
-#include <console/ConsoleFileReader.h>
-#include <console/Console.h>
+#include <console/ConsoleImpl.hpp>
+#include <console/ConsoleFileReader.hpp>
+#include <console/Console.hpp>
 #include <common/FileLines.h>
 #include <common/DefinesString.h>
 #include <XML/XMLFile.h>

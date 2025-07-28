@@ -34,7 +34,7 @@
 #include <wxdialogs/ServerSDialog.hpp>
 #include <wxdialogs/TrueTypeFont.hpp>
 #include <scorched/ScorchedParams.hpp>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 
 extern char scorched3dAppName[128];

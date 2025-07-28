@@ -45,8 +45,8 @@
 #include <server/ServerDestinations.hpp>
 #include <server/ServerMessageHandler.hpp>
 #ifndef S3D_SERVER
-#include <client/ClientChannelManager.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <client/ClientChannelManager.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #endif
 
 unsigned int TankAddSimAction::TankAddSimActionCount = 0;

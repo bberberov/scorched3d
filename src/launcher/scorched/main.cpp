@@ -23,7 +23,7 @@
 #include <common/OptionsGame.h>
 #include <common/ARGParser.h>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <wx/wx.h>
 #include <wx/utils.h>
 #include <locale.h>

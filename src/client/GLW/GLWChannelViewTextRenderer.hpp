@@ -23,7 +23,7 @@
 
 #include <common/ChannelTextParser.h>
 #include <common/ToolTip.h>
-#include <GLEXT/GLFont2d.h>
+#include <GLEXT/GLFont2d.hpp>
 
 class GLWChannelView;
 class GLWChannelViewTextRenderer : 

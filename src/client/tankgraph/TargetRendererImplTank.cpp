@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TargetRendererImplTank.h>
-#include <sprites/ExplosionTextures.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <sprites/ExplosionTextures.hpp>
 #include <tank/TankLib.h>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
@@ -29,28 +29,28 @@
 #include <target/TargetLife.h>
 #include <target/TargetShield.h>
 #include <target/TargetState.h>
-#include <tankgraph/ModelRendererTankStore.h>
-#include <landscape/Landscape.h>
-#include <landscape/ShadowMap.h>
-#include <landscape/Smoke.h>
+#include <tankgraph/ModelRendererTankStore.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <landscape/Smoke.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <actions/TargetFalling.h>
 #include <engine/ActionController.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/ModelRenderer.h>
-#include <graph/ModelRendererStore.h>
-#include <graph/ModelRendererSimulator.h>
-#include <graph/MainCamera.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/ModelRenderer.hpp>
+#include <graph/ModelRendererStore.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/MainCamera.hpp>
 #include <common/Defines.h>
 #include <weapons/Shield.h>
 #include <weapons/Accessory.h>
-#include <dialogs/TutorialDialog.h>
+#include <dialogs/TutorialDialog.hpp>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLTexture.h>
-#include <GLW/GLWFont.h>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLW/GLWFont.hpp>
 
 float TargetRendererImplTankHUD::timeLeft_ = -1.0f;
 float TargetRendererImplTankHUD::percentage_ = -1.0f;

@@ -21,7 +21,7 @@
 #if !defined(AFX_ClientAdmin_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_)
 #define AFX_ClientAdmin_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_
 
-#include <console/ConsoleRuleMethodIAdapter.h>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
 
 class ClientAdmin
 {

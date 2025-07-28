@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/TargetCamera.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
+#include <graph/TargetCamera.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
 #include <actions/CameraPositionAction.h>
 #include <weapons/AccessoryStore.h>
 #include <weapons/WeaponMoveTank.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <landscapemap/MovementMap.h>
-#include <landscape/Landscape.h>
+#include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeDefinition.h>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
-#include <water/Water.h>
+#include <water/Water.hpp>
 #include <engine/GameState.h>
 #include <engine/ObjectGroup.h>
 #include <engine/ObjectGroups.h>
 #include <engine/ObjectGroupEntry.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankLib.h>

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/NetworkChatDialog.h>
+#include <dialogs/NetworkChatDialog.hpp>
 #include <common/OptionsMasterListServer.h>
 #include <net/NetBufferUtil.h>
 #include <net/NetMessagePool.h>
-#include <GLW/GLWChatView.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLW/GLWChatView.hpp>
+#include <GLEXT/GLViewPort.hpp>
 #include <XML/XMLStringBuffer.h>
 
 

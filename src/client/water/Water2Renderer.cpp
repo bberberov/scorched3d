@@ -18,28 +18,28 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/Water2Renderer.h>
-#include <water/Water2.h>
-#include <water/WaterMapPoints.h>
-#include <water/WaterWaves.h>
+#include <water/Water2Renderer.hpp>
+#include <water/Water2.hpp>
+#include <water/WaterMapPoints.hpp>
+#include <water/WaterWaves.hpp>
 #include <common/Vector4.h>
 #include <image/ImageFactory.h>
 #include <image/ImageFactory.h>
 #include <engine/Simulator.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLCamera.h>
-#include <GLEXT/GLTextureCubeMap.h>
-#include <client/ScorchedClient.h>
-#include <sky/Sky.h>
-#include <land/VisibilityPatchGrid.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLCamera.hpp>
+#include <GLEXT/GLTextureCubeMap.hpp>
+#include <client/ScorchedClient.hpp>
+#include <sky/Sky.hpp>
+#include <land/VisibilityPatchGrid.hpp>
 #include <landscapemap/LandscapeMaps.h>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
-#include <landscape/Landscape.h>
-#include <graph/MainCamera.h>
-#include <graph/OptionsDisplay.h>
+#include <landscape/Landscape.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
 
-#include <water/Water2Constants.h>
+#include <water/Water2Constants.hpp>
 
 Water2Renderer::Water2Renderer() :
 	totalTime_(0.0f),

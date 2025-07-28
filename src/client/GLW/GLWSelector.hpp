@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_GLWSelectorh_INCLUDE__)
 #define __INCLUDE_GLWSelectorh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWToolTip.h>
-#include <GLEXT/GLTexture.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <GLEXT/GLTexture.hpp>
 #include <lang/LangString.h>
 #include <string>
 #include <list>

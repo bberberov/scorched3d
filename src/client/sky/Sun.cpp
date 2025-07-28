@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sky/Sun.h>
+#include <sky/Sun.hpp>
 #include <landscapedef/LandscapeTex.h>
 #include <landscapedef/LandscapeDefn.h>
 #include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <common/OptionsScorched.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/MainCamera.h>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/MainCamera.hpp>
 #include <common/Defines.h>
 #include <common/Vector4.h>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLLenseFlare.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLViewPort.h>
+#include <GLEXT/GLLenseFlare.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLViewPort.hpp>
 #include <stdlib.h>
 #include <math.h>
 

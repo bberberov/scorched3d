@@ -29,7 +29,7 @@
 #include <string>
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLTextureReference.h>
+#include <GLEXT/GLTextureReference.hpp>
 #endif
 
 class Mesh

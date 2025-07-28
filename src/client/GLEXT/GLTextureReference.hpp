@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TextureReferenceh_INCLUDE__)
 #define __INCLUDE_TextureReferenceh_INCLUDE__
 
-#include <GLEXT/GLTextureReferenceData.h>
+#include <GLEXT/GLTextureReferenceData.hpp>
 
 class GLTextureReference : public GLTextureBase
 {

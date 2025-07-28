@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_MsgBoxDialogh_INCLUDE__)
 #define __INCLUDE_MsgBoxDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIcon.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIcon.hpp>
 
 class MsgBoxDialog : public GLWWindow,
 	public GLWButtonI

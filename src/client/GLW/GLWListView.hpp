@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_GLWListViewh_INCLUDE__)
 #define __INCLUDE_GLWListViewh_INCLUDE__
 
-#include <GLW/GLWidget.h>
-#include <GLW/GLWScrollW.h>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWScrollW.hpp>
 #include <XML/XMLNode.h>
 #include <common/Vector.h>
 #include <vector>

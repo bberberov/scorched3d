@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <XML/XMLStringBuffer.h>
-#include <serverbrowser/ServerBrowserRefresh.h>
-#include <serverbrowser/ServerBrowser.h>
+#include <serverbrowser/ServerBrowserRefresh.hpp>
+#include <serverbrowser/ServerBrowser.hpp>
 #include <common/Defines.h>
 #include <time.h>
 

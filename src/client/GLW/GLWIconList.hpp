@@ -21,8 +21,8 @@
 #ifndef _GLWIconList_h
 #define _GLWIconList_h
 
-#include <GLW/GLWScrollWBackwards.h>
-#include <GLW/GLWToolTip.h>
+#include <GLW/GLWScrollWBackwards.hpp>
+#include <GLW/GLWToolTip.hpp>
 #include <vector>
 
 class GLWIconListI

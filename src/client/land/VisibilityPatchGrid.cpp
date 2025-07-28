@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/VisibilityPatchGrid.h>
-#include <land/LandAndTargetVisibilityPatch.h>
-#include <land/WaterAndTargetVisibilityPatch.h>
-#include <landscape/Landscape.h>
-#include <water/Water2Patches.h>
-#include <sky/Sky.h>
+#include <land/VisibilityPatchGrid.hpp>
+#include <land/LandAndTargetVisibilityPatch.hpp>
+#include <land/WaterAndTargetVisibilityPatch.hpp>
+#include <landscape/Landscape.hpp>
+#include <water/Water2Patches.hpp>
+#include <sky/Sky.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/GraphicalLandscapeMap.h>
-#include <client/ScorchedClient.h>
+#include <landscape/GraphicalLandscapeMap.hpp>
+#include <client/ScorchedClient.hpp>
 #include <engine/GameState.h>
-#include <GLEXT/GLVertexBufferObject.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLCamera.h>
-#include <GLSL/GLSLShaderSetup.h>
-#include <graph/OptionsDisplay.h>
+#include <GLEXT/GLVertexBufferObject.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLCamera.hpp>
+#include <GLSL/GLSLShaderSetup.hpp>
+#include <graph/OptionsDisplay.hpp>
 
 VisibilityPatchGrid *VisibilityPatchGrid::instance()
 {

@@ -60,9 +60,9 @@
 #include <net/NetLoopBack.h>
 
 #ifndef S3D_SERVER
-#include <client/ClientParams.h>
-#include <client/ScorchedClient.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
+#include <client/ClientParams.hpp>
+#include <client/ScorchedClient.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
 #endif
 
 ScorchedServer *ScorchedServer::instance_ = 0;

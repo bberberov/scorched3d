@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWChannelView.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWColors.h>
-#include <GLEXT/GLState.h>
-#include <graph/OptionsDisplay.h>
+#include <GLW/GLWChannelView.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWColors.hpp>
+#include <GLEXT/GLState.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <image/ImageFactory.h>
 #include <XML/XMLParser.h>
 #include <common/Keyboard.h>
 #include <common/ToolTipResource.h>
-#include <client/ClientChannelManager.h>
-#include <client/ScorchedClient.h>
-#include <sound/SoundUtils.h>
+#include <client/ClientChannelManager.hpp>
+#include <client/ScorchedClient.hpp>
+#include <sound/SoundUtils.hpp>
 #include <string>
 #include <target/TargetContainer.h>
 #include <lang/LangResource.h>

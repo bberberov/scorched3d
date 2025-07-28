@@ -21,7 +21,7 @@
 #ifndef _SoundBufferEmpty_H_
 #define _SoundBufferEmpty_H_
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 
 class SoundBufferEmptySourceInstance : public SoundBufferSourceInstance
 {

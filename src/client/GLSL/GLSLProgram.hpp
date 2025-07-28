@@ -23,9 +23,9 @@
 
 #include <list>
 #include <string>
-#include <GLSL/GLSLShader.h>
-#include <GLEXT/GLTexture.h>
-#include <GLEXT/GLShadowFrameBuffer.h>
+#include <GLSL/GLSLShader.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <GLEXT/GLShadowFrameBuffer.hpp>
 #include <common/Vector.h>
 
 /// this class handles an OpenGL GLSL Program, that is a link unit of shaders.

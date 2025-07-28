@@ -24,11 +24,11 @@
 #include <net/NetInterface.h>
 #include <engine/ModDirs.h>
 #include <engine/ModFiles.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
 #include <common/Keyboard.h>
 #include <common/KeyTranslateWx.h>
-#include <client/UniqueIdStore.h>
+#include <client/UniqueIdStore.hpp>
 #include <scorched/ScorchedParams.hpp>
 #include <wx/wx.h>
 #include <wx/image.h>

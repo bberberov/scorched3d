@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/PlayerInitialDialog.h>
+#include <dialogs/PlayerInitialDialog.hpp>
 #include <target/TargetContainer.h>
 #include <tank/Tank.h>
 #include <tank/TankAvatar.h>
 #include <tank/TankModelContainer.h>
 #include <tank/TankModelStore.h>
 #include <tank/TankColorGenerator.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <graph/OptionsDisplay.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/OptionsGame.h>
 #include <common/OptionsTransient.h>
 #include <common/Logger.h>
 #include <coms/ComsTankChangeMessage.h>
 #include <coms/ComsMessageSender.h>
-#include <client/ClientChannelManager.h>
-#include <GLW/GLWWindowManager.h>
+#include <client/ClientChannelManager.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 PlayerInitialDialog *PlayerInitialDialog::instance()
 {

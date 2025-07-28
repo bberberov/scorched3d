@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_SettingsSelectDialogh_INCLUDE__)
 #define __INCLUDE_SettingsSelectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWOptionEntry.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWOptionEntry.hpp>
 #include <common/OptionsGame.h>
 
 class SettingsSelectDialog : 

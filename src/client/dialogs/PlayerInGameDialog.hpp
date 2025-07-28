@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlayerInGameDialogh_INCLUDE__)
 #define __INCLUDE_PlayerInGameDialogh_INCLUDE__
 
-#include <dialogs/PlayerDialog.h>
+#include <dialogs/PlayerDialog.hpp>
 
 class PlayerInGameDialog : public PlayerDialog
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SoundBufferFactoryh_INCLUDE__)
 #define __INCLUDE_SoundBufferFactoryh_INCLUDE__
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 
 class SoundBufferFactory
 {

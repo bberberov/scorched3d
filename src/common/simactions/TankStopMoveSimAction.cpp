@@ -23,9 +23,9 @@
 #include <target/TargetContainer.h>
 #include <tanket/TanketShotInfo.h>
 #ifndef S3D_SERVER
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/ShotCountDown.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/ShotCountDown.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(TankStopMoveSimAction);

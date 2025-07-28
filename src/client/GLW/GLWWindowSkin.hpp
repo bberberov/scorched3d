@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWWindowSkinh_INCLUDE__)
 #define __INCLUDE_GLWWindowSkinh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
+#include <GLW/GLWWindow.hpp>
 #include <XML/XMLFile.h>
 #include <set>
 

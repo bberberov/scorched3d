@@ -21,7 +21,7 @@
 #if !defined(AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)
 #define AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_
 
-#include <graph/ModelRendererMesh.h>
+#include <graph/ModelRendererMesh.hpp>
 
 class ModelRendererTank : public ModelRenderer
 {

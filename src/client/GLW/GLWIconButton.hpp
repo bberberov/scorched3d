@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWIconButton_H__36D49253_FFE6_4E93_89FC_F2CAC2DC3336__INCLUDED_)
 #define AFX_GLWIconButton_H__36D49253_FFE6_4E93_89FC_F2CAC2DC3336__INCLUDED_
 
-#include <GLW/GLWButton.h>
-#include <GLW/GLWIcon.h>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWIcon.hpp>
 
 class GLWIconButton : public GLWButton
 {

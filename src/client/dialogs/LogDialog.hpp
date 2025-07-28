@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_LogDialogh_INCLUDE__)
 #define __INCLUDE_LogDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWListView.h>
-#include <GLW/GLWTextBox.h>
-#include <GLW/GLWLabel.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWListView.hpp>
+#include <GLW/GLWTextBox.hpp>
+#include <GLW/GLWLabel.hpp>
 #include <common/LoggerI.h>
 
 class LogDialog : 

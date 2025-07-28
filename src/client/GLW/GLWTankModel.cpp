@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTankModel.h>
-#include <client/ScorchedClient.h>
-#include <graph/MainCamera.h>
-#include <client/ClientState.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <GLW/GLWTankModel.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/MainCamera.hpp>
+#include <client/ClientState.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #include <target/TargetContainer.h>
 #include <tanket/TanketShotInfo.h>
 #include <common/Vector4.h>
-#include <landscape/Landscape.h>
-#include <sky/Sky.h>
-#include <GLW/GLWTranslate.h>
+#include <landscape/Landscape.hpp>
+#include <sky/Sky.hpp>
+#include <GLW/GLWTranslate.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTankModel);
 

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_AdminCheckDialogh_INCLUDE__)
 #define __INCLUDE_AdminCheckDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <client/ClientAdminResultHandler.h>
+#include <GLW/GLWWindow.hpp>
+#include <client/ClientAdminResultHandler.hpp>
 
 class AdminCheckDialog : public GLWWindow, public ClientAdminResultHandlerI
 {

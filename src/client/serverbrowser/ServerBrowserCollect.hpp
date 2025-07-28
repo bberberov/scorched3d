@@ -22,7 +22,7 @@
 #define __INCLUDE_ServerBrowserCollecth_INCLUDE__
 
 #include <net/NetServerTCP.h>
-#include <serverbrowser/ServerBrowserServerList.h>
+#include <serverbrowser/ServerBrowserServerList.hpp>
 #include <set>
 
 class ServerBrowserCollect : public NetMessageHandlerI

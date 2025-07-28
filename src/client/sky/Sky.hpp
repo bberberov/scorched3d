@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Skyh_INCLUDE__)
 #define __INCLUDE_Skyh_INCLUDE__
 
-#include <sky/SkyDome.h>
-#include <sky/SkyRoof.h>
-#include <sky/Sun.h>
+#include <sky/SkyDome.hpp>
+#include <sky/SkyRoof.hpp>
+#include <sky/Sun.hpp>
 
 class Sky
 {

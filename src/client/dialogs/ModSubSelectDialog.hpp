@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_ModSubSelectDialogh_INCLUDE__)
 #define __INCLUDE_ModSubSelectDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWIconList.h>
-#include <GLW/GLWIcon.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWIconList.hpp>
+#include <GLW/GLWIcon.hpp>
 #include <common/ToolTip.h>
 #include <engine/ModInfo.h>
 

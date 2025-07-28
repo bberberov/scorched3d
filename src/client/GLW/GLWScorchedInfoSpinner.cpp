@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWScorchedInfoSpinner.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWTankTip.h>
-#include <GLEXT/GLState.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWScorchedInfoSpinner.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWTankTip.hpp>
+#include <GLEXT/GLState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <target/TargetRenderer.h>
 #include <image/ImageFactory.h>
 #include <target/TargetContainer.h>
 #include <tank/TankState.h>
 #include <tanket/TanketShotInfo.h>
 #include <target/TargetLife.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
 
 REGISTER_CLASS_SOURCE(GLWScorchedInfoSpinner);
 

@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/SoftwareMouse.h>
-#include <client/ScorchedClient.h>
+#include <graph/SoftwareMouse.hpp>
+#include <client/ScorchedClient.hpp>
 #include <engine/GameState.h>
 #include <image/ImageFactory.h>
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <SDL/SDL.h>
 
 SoftwareMouse *SoftwareMouse::instance_ = 0;

@@ -69,7 +69,7 @@ Image ImageFactory::loadImage(
 
 #ifndef S3D_SERVER
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #include <common/Defines.h>
 
 Image ImageFactory::grabScreen()

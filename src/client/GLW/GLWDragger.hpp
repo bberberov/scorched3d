@@ -21,7 +21,7 @@
 #ifndef _GLWDragger_H_
 #define _GLWDragger_H_
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWDraggerI
 {

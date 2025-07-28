@@ -21,7 +21,7 @@
 #if !defined(AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_)
 #define AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_
 
-#include <GLW/GLWWindow.h>
+#include <GLW/GLWWindow.hpp>
 
 class Tank;
 class ScoreDialog : public GLWWindow

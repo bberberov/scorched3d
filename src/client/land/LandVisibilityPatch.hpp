@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_LandVisibilityPatchh_INCLUDE__
 
-#include <land/HeightMapVisibilityPatch.h>
+#include <land/HeightMapVisibilityPatch.hpp>
 
 class LandVisibilityPatch : public HeightMapVisibilityPatch
 {

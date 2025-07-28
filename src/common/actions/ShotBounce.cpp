@@ -27,10 +27,10 @@
 #include <common/OptionsScorched.h>
 #include <tank/TankViewPoints.h>
 #ifndef S3D_SERVER
-	#include <GLEXT/GLState.h>
-	#include <graph/ModelRenderer.h>
-	#include <graph/ModelRendererStore.h>
-	#include <graph/ModelRendererSimulator.h>
+	#include <GLEXT/GLState.hpp>
+	#include <graph/ModelRenderer.hpp>
+	#include <graph/ModelRendererStore.hpp>
+	#include <graph/ModelRendererSimulator.hpp>
 #endif
 #include <3dsparse/Model.h>
 #include <string.h>

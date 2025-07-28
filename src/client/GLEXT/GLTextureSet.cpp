@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <common/Defines.h>
-#include <GLEXT/GLTextureSet.h>
+#include <GLEXT/GLTextureSet.hpp>
 
 GLTextureSet::GLTextureSet()
 {

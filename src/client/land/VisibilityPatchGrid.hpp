@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_VisibilityPatchGridh_INCLUDE__)
 #define __INCLUDE_VisibilityPatchGridh_INCLUDE__
 
-#include <land/VisibilityPatchQuad.h>
-#include <land/VisibilityPatchInfo.h>
-#include <land/LandSurround.h>
-#include <geomipmap/MipMapPatchIndexs.h>
+#include <land/VisibilityPatchQuad.hpp>
+#include <land/VisibilityPatchInfo.hpp>
+#include <land/LandSurround.hpp>
+#include <geomipmap/MipMapPatchIndexs.hpp>
 
 class Target;
 class GLSLShaderSetup;

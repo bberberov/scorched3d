@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "InventoryDialog.h"
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIcon.h>
-#include <GLW/GLWFlag.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
+#include "InventoryDialog.hpp"
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIcon.hpp>
+#include <GLW/GLWFlag.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/OptionsScorched.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <common/OptionsTransient.h>
 #include <common/Defines.h>
 #include <weapons/AccessoryStore.h>

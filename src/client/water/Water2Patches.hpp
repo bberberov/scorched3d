@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Water2Patchesh_INCLUDE__)
 #define __INCLUDE_Water2Patchesh_INCLUDE__
 
-#include <water/Water2Patch.h>
+#include <water/Water2Patch.hpp>
 #include <image/Image.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 
 class GLVertexBufferObject;
 class Water2Patches

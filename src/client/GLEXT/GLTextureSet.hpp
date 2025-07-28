@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_GLTextureSeth_INCLUDE__)
 #define __INCLUDE_GLTextureSeth_INCLUDE__
 
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTexture.hpp>
 #include <vector>
 
 class GLTextureSet

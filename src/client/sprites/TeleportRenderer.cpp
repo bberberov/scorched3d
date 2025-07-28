@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/TeleportRenderer.h>
-#include <graph/ParticleEmitter.h>
-#include <client/ScorchedClient.h>
-#include <sprites/ExplosionTextures.h>
+#include <sprites/TeleportRenderer.hpp>
+#include <graph/ParticleEmitter.hpp>
+#include <client/ScorchedClient.hpp>
+#include <sprites/ExplosionTextures.hpp>
 
 TeleportRenderer::TeleportRenderer(Vector &position, Vector &color) : 
 	position_(position), color_(color)

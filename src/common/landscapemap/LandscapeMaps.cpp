@@ -24,7 +24,7 @@
 #include <engine/ScorchedContext.h>
 #include <movement/TargetMovement.h>
 #ifndef S3D_SERVER
-	#include <land/VisibilityPatchGrid.h>
+	#include <land/VisibilityPatchGrid.hpp>
 #endif
 
 LandscapeMaps::LandscapeMaps() :

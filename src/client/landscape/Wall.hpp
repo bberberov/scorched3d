@@ -24,7 +24,7 @@
 
 #include <common/Vector.h>
 #include <common/OptionsTransient.h>
-#include <GLEXT/GLTextureReference.h>
+#include <GLEXT/GLTextureReference.hpp>
 
 class Wall
 {

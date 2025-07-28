@@ -21,7 +21,7 @@
 #ifndef _SoundBufferStaticSourceInstance_H_
 #define _SoundBufferStaticSourceInstance_H_
 
-#include <sound/SoundBuffer.h>
+#include <sound/SoundBuffer.hpp>
 
 class SoundBufferStaticSourceInstance : public SoundBufferSourceInstance
 {

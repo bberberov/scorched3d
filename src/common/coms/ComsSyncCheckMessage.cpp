@@ -23,7 +23,7 @@
 #include <common/OptionsTransient.h>
 #include <engine/Simulator.h>
 #ifndef S3D_SERVER
-	#include <client/ScorchedClient.h>
+	#include <client/ScorchedClient.hpp>
 #endif
 #include <server/ScorchedServer.hpp>
 #include <target/TargetContainer.h>

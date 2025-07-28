@@ -22,7 +22,7 @@
 #define __INCLUDE_RenderTargetsh_INCLUDE__
 
 #include <engine/GameStateI.h>
-#include <tankgraph/TankMenus.h>
+#include <tankgraph/TankMenus.hpp>
 
 class RenderTargets
 {

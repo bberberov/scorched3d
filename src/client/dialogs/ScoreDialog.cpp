@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ScoreDialog.h>
+#include <dialogs/ScoreDialog.hpp>
 #include <tank/TankSort.h>
 #include <target/TargetContainer.h>
 #include <tank/TankTeamScore.h>
@@ -27,20 +27,20 @@
 #include <tank/TankState.h>
 #include <tank/TankAvatar.h>
 #include <tanket/TanketShotInfo.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #include <tankai/TankAI.hpp>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWColors.h>
-#include <client/ClientParams.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/ShotCountDown.h>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWColors.hpp>
+#include <client/ClientParams.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/ShotCountDown.hpp>
 #include <common/OptionsTransient.h>
 #include <common/OptionsScorched.h>
 #include <common/Defines.h>
 #include <engine/GameState.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
 #include <actions/ShowScoreAction.h>
 #include <server/ScorchedServer.hpp>
 #include <lang/LangResource.h>

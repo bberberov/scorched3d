@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_HUDDialogh_INCLUDE__)
 #define __INCLUDE_HUDDialogh_INCLUDE__
 
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWButton.h>
-#include <GLW/GLWCheckBoxText.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWButton.hpp>
+#include <GLW/GLWCheckBoxText.hpp>
 
 class HUDDialog : public GLWWindow ,
 	public GLWButtonI

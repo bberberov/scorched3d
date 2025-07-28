@@ -21,7 +21,7 @@
 
 #if !defined(__INCLUDE_GLWPushButtonh_INCLUDE__)
 #define __INCLUDE_GLWPushButtonh_INCLUDE__
-#include <GLW/GLWButton.h>
+#include <GLW/GLWButton.hpp>
 
 class GLWPushButtonI : public GLWButtonI
 {

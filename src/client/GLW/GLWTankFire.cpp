@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTankFire.h>
-#include <client/ScorchedClient.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
+#include <GLW/GLWTankFire.hpp>
+#include <client/ScorchedClient.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <common/ToolTipResource.h>
 #include <lang/LangResource.h>
 #include <target/TargetContainer.h>

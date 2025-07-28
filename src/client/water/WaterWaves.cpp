@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/WaterWaves.h>
-#include <water/WaterWaveDistance.h>
-#include <water/Water2Patches.h>
+#include <water/WaterWaves.hpp>
+#include <water/WaterWaveDistance.hpp>
+#include <water/Water2Patches.hpp>
 #include <engine/Simulator.h>
 #include <landscapemap/LandscapeMaps.h>
 #include <lang/LangResource.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Defines.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLInfo.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLInfo.hpp>
 #include <image/ImageFactory.h>
 #include <math.h>
 

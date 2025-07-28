@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/LandscapePoints.h>
+#include <landscape/LandscapePoints.hpp>
 #include <landscapemap/LandscapeMaps.h>
-#include <landscape/MapPoints.h>
-#include <client/ScorchedClient.h>
+#include <landscape/MapPoints.hpp>
+#include <client/ScorchedClient.hpp>
 #include <common/OptionsTransient.h>
-#include <graph/ModelRendererSimulator.h>
-#include <graph/ModelRendererMesh.h>
-#include <GLEXT/GLGlobalState.h>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/ModelRendererMesh.hpp>
+#include <GLEXT/GLGlobalState.hpp>
 
 LandscapePoints::LandscapePoints()
 {

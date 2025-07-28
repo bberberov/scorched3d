@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <serverbrowser/ServerBrowserCollect.h>
-#include <serverbrowser/ServerBrowser.h>
+#include <serverbrowser/ServerBrowserCollect.hpp>
+#include <serverbrowser/ServerBrowser.hpp>
 #include <XML/XMLStringBuffer.h>
 #include <XML/XMLFile.h>
-#include <client/ScorchedClient.h>
+#include <client/ScorchedClient.hpp>
 #include <common/Defines.h>
 #include <common/OptionsMasterListServer.h>
 #include <time.h>

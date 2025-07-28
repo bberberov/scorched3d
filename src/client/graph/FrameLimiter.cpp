@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/FrameLimiter.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/FrameLimiter.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <SDL/SDL.h>
 
 FrameLimiter::FrameLimiter()

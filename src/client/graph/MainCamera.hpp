@@ -21,9 +21,9 @@
 #if !defined(AFX_MAINCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_)
 #define AFX_MAINCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_
 
-#include <GLEXT/GLMenuI.h>
+#include <GLEXT/GLMenuI.hpp>
 #include <engine/GameStateI.h>
-#include <graph/TargetCamera.h>
+#include <graph/TargetCamera.hpp>
 #include <common/Vector.h>
 #include <map>
 

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// GLSetup.h: interface for the GLSetup class.
+// GLSetup.hpp: interface for the GLSetup class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@
 #define AFX_GLSETUP_H__AEBCDB19_7FCA_4DBF_B4B4_72D831CBFD2F__INCLUDED_
 
 
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 
 namespace GLSetup
 {

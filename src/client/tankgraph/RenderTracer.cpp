@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/RenderTracer.h>
+#include <tankgraph/RenderTracer.hpp>
 #include <target/TargetContainer.h>
-#include <GLEXT/GLTexture.h>
-#include <client/ScorchedClient.h>
+#include <GLEXT/GLTexture.hpp>
+#include <client/ScorchedClient.hpp>
 #include <tank/Tank.h>
 
 RenderTracer *RenderTracer::instance_ = 0;

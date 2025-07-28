@@ -19,28 +19,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <graph/FrameTimer.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/MainCamera.h>
-#include <graph/ParticleEngine.h>
-#include <dialogs/MainMenuDialog.h>
-#include <dialogs/HelpButtonDialog.h>
-#include <dialogs/SoundDialog.h>
+#include <graph/FrameTimer.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <dialogs/MainMenuDialog.hpp>
+#include <dialogs/HelpButtonDialog.hpp>
+#include <dialogs/SoundDialog.hpp>
 #include <common/Defines.h>
-#include <sound/Sound.h>
-#include <GLEXT/GLInfo.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLMenu.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientChannelManager.h>
-#include <client/ClientSimulator.h>
-#include <tankgraph/RenderTargets.h>
+#include <sound/Sound.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLMenu.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <client/ClientSimulator.hpp>
+#include <tankgraph/RenderTargets.hpp>
 #include <engine/ActionController.h>
 #include <image/ImageFactory.h>
-#include <landscape/Landscape.h>
-#include <landscape/ShadowMap.h>
-#include <land/VisibilityPatchGrid.h>
-#include <GLW/GLWWindowManager.h>
+#include <landscape/Landscape.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <land/VisibilityPatchGrid.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 HelpButtonDialog *HelpButtonDialog::instance_ = 0;
 

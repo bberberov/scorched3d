@@ -22,8 +22,8 @@
 #define __INCLUDE_Particleh_INCLUDE__
 
 #include <common/Vector.h>
-#include <graph/ParticleRenderer.h>
-#include <GLEXT/GLTextureSet.h>
+#include <graph/ParticleRenderer.hpp>
+#include <GLEXT/GLTextureSet.hpp>
 
 class ParticleUserData
 {

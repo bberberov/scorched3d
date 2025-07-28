@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLGlobalState.h>
+#include <GLEXT/GLGlobalState.hpp>
 #include <common/DefinesAssert.h>
 
 GLState *GLGlobalState::state_(0);

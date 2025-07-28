@@ -22,8 +22,8 @@
 #define __INCLUDE_DebrisActionRendererh_INCLUDE__
 
 #include <common/Vector.h>
-#include <graph/ModelRendererSimulator.h>
-#include <graph/Particle.h>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/Particle.hpp>
 
 class DebrisActionRenderer : public ParticleUserData
 {

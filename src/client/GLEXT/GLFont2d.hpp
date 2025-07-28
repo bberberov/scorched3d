@@ -24,7 +24,7 @@
 #include <common/Vector.h>
 #include <common/Vector4.h>
 #include <lang/LangString.h>
-#include <GLEXT/GLFont2dStorage.h>
+#include <GLEXT/GLFont2dStorage.hpp>
 
 class GLFont2dFreeType;
 class GLFont2dI;

@@ -32,7 +32,7 @@
 #include <server/ScorchedServer.hpp>
 #include <set>
 #ifndef S3D_SERVER
-#include <tankgraph/TargetRendererImplTank.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #endif
 
 ComsMessageType ComsLoadLevelMessage::ComsLoadLevelMessageType("ComsLoadLevelMessageType");

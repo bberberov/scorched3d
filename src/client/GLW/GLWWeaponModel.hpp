@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWWeaponModelh_INCLUDE__)
 #define __INCLUDE_GLWWeaponModelh_INCLUDE__
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWWeaponModel : public GLWidget
 {

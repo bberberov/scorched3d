@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ExplosionLaserRendererh_INCLUDE__)
 #define __INCLUDE_ExplosionLaserRendererh_INCLUDE__
 
-#include <sprites/MetaActionRenderer.h>
-#include <GLEXT/GLTextureReference.h>
+#include <sprites/MetaActionRenderer.hpp>
+#include <GLEXT/GLTextureReference.hpp>
 
 #define sides 8
 #define layers 5

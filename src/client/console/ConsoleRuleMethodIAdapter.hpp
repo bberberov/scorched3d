@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ConsoleRuleMethodIAdapterh_INCLUDE__)
 #define __INCLUDE_ConsoleRuleMethodIAdapterh_INCLUDE__
 
-#include <console/Console.h>
+#include <console/Console.hpp>
 
 // Q. Hmm what happens when you have a long winded naming scheme?
 // A. name -> inf

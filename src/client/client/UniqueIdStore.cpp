@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/UniqueIdStore.h>
+#include <client/UniqueIdStore.hpp>
 #include <common/Defines.h>
 #include <common/Logger.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <net/NetInterface.h>
 #include <XML/XMLFile.h>
 #include <stdlib.h>

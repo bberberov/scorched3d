@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_LandAndTargetVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_LandAndTargetVisibilityPatchh_INCLUDE__
 
-#include <land/LandVisibilityPatch.h>
-#include <land/RoofVisibilityPatch.h>
-#include <land/TargetVisibilityPatch.h>
+#include <land/LandVisibilityPatch.hpp>
+#include <land/RoofVisibilityPatch.hpp>
+#include <land/TargetVisibilityPatch.hpp>
 
 class LandAndTargetVisibilityPatch
 {

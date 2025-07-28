@@ -23,7 +23,7 @@
 
 #include <string>
 #include <vector>
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 #include <common/Vector.h>
 #include <lang/LangResource.h>
 

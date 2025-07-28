@@ -21,7 +21,7 @@
 
 #if !defined(__INCLUDE_GLWCheckBoxh_INCLUDE__)
 #define __INCLUDE_GLWCheckBoxh_INCLUDE__
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWCheckBoxI
 {

@@ -21,11 +21,11 @@
 #include <landscapedef/LandscapeSound.h>
 #include <landscapemap/LandscapeMaps.h>
 #ifndef S3D_SERVER
-	#include <landscape/Landscape.h>
-	#include <graph/MainCamera.h>
-	#include <sound/Sound.h>
-	#include <water/Water.h>
-	#include <client/ScorchedClient.h>
+	#include <landscape/Landscape.hpp>
+	#include <graph/MainCamera.hpp>
+	#include <sound/Sound.hpp>
+	#include <water/Water.hpp>
+	#include <client/ScorchedClient.hpp>
 #endif
 #include <engine/ObjectGroups.h>
 #include <engine/ObjectGroup.h>

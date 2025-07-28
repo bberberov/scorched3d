@@ -21,7 +21,7 @@
 #ifndef _GLWSPINBOX_H_
 #define _GLWSPINBOX_H_
 
-#include <GLW/GLWButton.h>
+#include <GLW/GLWButton.hpp>
 
 class GLWSpinBox : public GLWidget, public GLWButtonI
 {

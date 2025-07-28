@@ -23,8 +23,8 @@
 
 #include <SDL/SDL_thread.h>
 #include <SDL/SDL.h>
-#include <GLW/GLWWindow.h>
-#include <GLW/GLWChatView.h>
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWChatView.hpp>
 
 class NetworkChatDialogTextRenderer : public GLFont2dI
 {

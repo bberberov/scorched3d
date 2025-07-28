@@ -3333,655 +3333,655 @@
     <ClInclude Include="..\..\common\XML\XMLStringBuffer.h">
       <Filter>XML</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientAdmin.h">
+    <ClInclude Include="..\client\ClientAdmin.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientAdminResultHandler.h">
+    <ClInclude Include="..\client\ClientAdminResultHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientChannelManager.h">
+    <ClInclude Include="..\client\ClientChannelManager.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientChannelManagerI.h">
+    <ClInclude Include="..\client\ClientChannelManagerI.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientConnectionAcceptHandler.h">
+    <ClInclude Include="..\client\ClientConnectionAcceptHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientConnectionAuthHandler.h">
+    <ClInclude Include="..\client\ClientConnectionAuthHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientConnectionRejectHandler.h">
+    <ClInclude Include="..\client\ClientConnectionRejectHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientDialog.h">
+    <ClInclude Include="..\client\ClientDialog.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientFileHandler.h">
+    <ClInclude Include="..\client\ClientFileHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientGameStoppedHandler.h">
+    <ClInclude Include="..\client\ClientGameStoppedHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientInitializeModHandler.h">
+    <ClInclude Include="..\client\ClientInitializeModHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientLinesHandler.h">
+    <ClInclude Include="..\client\ClientLinesHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientLoadLevelHandler.h">
+    <ClInclude Include="..\client\ClientLoadLevelHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientMain.h">
+    <ClInclude Include="..\client\ClientMain.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientMessageHandler.h">
+    <ClInclude Include="..\client\ClientMessageHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientOperationHandler.h">
+    <ClInclude Include="..\client\ClientOperationHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientParams.h">
+    <ClInclude Include="..\client\ClientParams.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientProcessingLoop.h">
+    <ClInclude Include="..\client\ClientProcessingLoop.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientReloadAdaptor.h">
+    <ClInclude Include="..\client\ClientReloadAdaptor.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientSaveScreenState.h">
+    <ClInclude Include="..\client\ClientSaveScreenState.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientSimulator.h">
+    <ClInclude Include="..\client\ClientSimulator.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientStartGameHandler.h">
+    <ClInclude Include="..\client\ClientStartGameHandler.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientState.h">
+    <ClInclude Include="..\client\ClientState.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientWindowSetup.h">
+    <ClInclude Include="..\client\ClientWindowSetup.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ScorchedClient.h">
+    <ClInclude Include="..\client\ScorchedClient.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\SecureID.h">
+    <ClInclude Include="..\client\SecureID.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\UniqueIdStore.h">
+    <ClInclude Include="..\client\UniqueIdStore.hpp">
       <Filter>client</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AdminAuthDialog.h">
+    <ClInclude Include="..\dialogs\AdminAuthDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AdminCheckDialog.h">
+    <ClInclude Include="..\dialogs\AdminCheckDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AdminDialog.h">
+    <ClInclude Include="..\dialogs\AdminDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AnimatedBackdropDialog.h">
+    <ClInclude Include="..\dialogs\AnimatedBackdropDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AuthDialog.h">
+    <ClInclude Include="..\dialogs\AuthDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\AutoDefenseDialog.h">
+    <ClInclude Include="..\dialogs\AutoDefenseDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\BackdropDialog.h">
+    <ClInclude Include="..\dialogs\BackdropDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\BuyAccessoryDialog.h">
+    <ClInclude Include="..\dialogs\BuyAccessoryDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\BuyAccessoryDialogTankInfo.h">
+    <ClInclude Include="..\dialogs\BuyAccessoryDialogTankInfo.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\CameraDialog.h">
+    <ClInclude Include="..\dialogs\CameraDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ConnectDialog.h">
+    <ClInclude Include="..\dialogs\ConnectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\GiftMoneyDialog.h">
+    <ClInclude Include="..\dialogs\GiftMoneyDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\HelpButtonDialog.h">
+    <ClInclude Include="..\dialogs\HelpButtonDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\HUDDialog.h">
+    <ClInclude Include="..\dialogs\HUDDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\InventoryDialog.h">
+    <ClInclude Include="..\dialogs\InventoryDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\KibitzingDialog.h">
+    <ClInclude Include="..\dialogs\KibitzingDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\LogDialog.h">
+    <ClInclude Include="..\dialogs\LogDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\MainMenuDialog.h">
+    <ClInclude Include="..\dialogs\MainMenuDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\MessageDialog.h">
+    <ClInclude Include="..\dialogs\MessageDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ModSelectDialog.h">
+    <ClInclude Include="..\dialogs\ModSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ModSubSelectDialog.h">
+    <ClInclude Include="..\dialogs\ModSubSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\MsgBoxDialog.h">
+    <ClInclude Include="..\dialogs\MsgBoxDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\NetworkSelectDialog.h">
+    <ClInclude Include="..\dialogs\NetworkSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\PlayerDialog.h">
+    <ClInclude Include="..\dialogs\PlayerDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ProfileDialog.h">
+    <ClInclude Include="..\dialogs\ProfileDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ProgressDialog.h">
+    <ClInclude Include="..\dialogs\ProgressDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\QuitDialog.h">
+    <ClInclude Include="..\dialogs\QuitDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SaveDialog.h">
+    <ClInclude Include="..\dialogs\SaveDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SaveSelectDialog.h">
+    <ClInclude Include="..\dialogs\SaveSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\ScoreDialog.h">
+    <ClInclude Include="..\dialogs\ScoreDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SettingsSelectDialog.h">
+    <ClInclude Include="..\dialogs\SettingsSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SettingsSubSelectDialog.h">
+    <ClInclude Include="..\dialogs\SettingsSubSelectDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SkipAllDialog.h">
+    <ClInclude Include="..\dialogs\SkipAllDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SkipDialog.h">
+    <ClInclude Include="..\dialogs\SkipDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\SoundDialog.h">
+    <ClInclude Include="..\dialogs\SoundDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\StartDialog.h">
+    <ClInclude Include="..\dialogs\StartDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\TipDialog.h">
+    <ClInclude Include="..\dialogs\TipDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\TutorialDialog.h">
+    <ClInclude Include="..\dialogs\TutorialDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLCamera.h">
+    <ClInclude Include="..\GLEXT\GLCamera.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLCameraFrustum.h">
+    <ClInclude Include="..\GLEXT\GLCameraFrustum.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLFont2d.h">
+    <ClInclude Include="..\GLEXT\GLFont2d.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLFont2dFreeType.h">
+    <ClInclude Include="..\GLEXT\GLFont2dFreeType.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLFont2dStorage.h">
+    <ClInclude Include="..\GLEXT\GLFont2dStorage.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLFrameBufferObject.h">
+    <ClInclude Include="..\GLEXT\GLFrameBufferObject.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLGlobalState.h">
+    <ClInclude Include="..\GLEXT\GLGlobalState.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLImageItterator.h">
+    <ClInclude Include="..\GLEXT\GLImageItterator.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLImageModifier.h">
+    <ClInclude Include="..\GLEXT\GLImageModifier.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLInfo.h">
+    <ClInclude Include="..\GLEXT\GLInfo.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLLenseFlare.h">
+    <ClInclude Include="..\GLEXT\GLLenseFlare.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLMenu.h">
+    <ClInclude Include="..\GLEXT\GLMenu.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLMenuEntry.h">
+    <ClInclude Include="..\GLEXT\GLMenuEntry.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLMenuI.h">
+    <ClInclude Include="..\GLEXT\GLMenuI.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLMissingExt.h">
+    <ClInclude Include="..\GLEXT\GLMissingExt.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLShadowFrameBuffer.h">
+    <ClInclude Include="..\GLEXT\GLShadowFrameBuffer.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLState.h">
+    <ClInclude Include="..\GLEXT\GLState.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLStateExtension.h">
+    <ClInclude Include="..\GLEXT\GLStateExtension.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTexture.h">
+    <ClInclude Include="..\GLEXT\GLTexture.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureBase.h">
+    <ClInclude Include="..\GLEXT\GLTextureBase.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureCubeMap.h">
+    <ClInclude Include="..\GLEXT\GLTextureCubeMap.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureSet.h">
+    <ClInclude Include="..\GLEXT\GLTextureSet.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLVertexBufferObject.h">
+    <ClInclude Include="..\GLEXT\GLVertexBufferObject.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLViewPort.h">
+    <ClInclude Include="..\GLEXT\GLViewPort.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLSL\GLSLProgram.h">
+    <ClInclude Include="..\GLSL\GLSLProgram.hpp">
       <Filter>GLSL</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLSL\GLSLShader.h">
+    <ClInclude Include="..\GLSL\GLSLShader.hpp">
       <Filter>GLSL</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLSL\GLSLShaderSetup.h">
+    <ClInclude Include="..\GLSL\GLSLShaderSetup.hpp">
       <Filter>GLSL</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWBitmap.h">
+    <ClInclude Include="..\GLW\GLWBitmap.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWButton.h">
+    <ClInclude Include="..\GLW\GLWButton.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWChannelText.h">
+    <ClInclude Include="..\GLW\GLWChannelText.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWChannelView.h">
+    <ClInclude Include="..\GLW\GLWChannelView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWChannelViewTextRenderer.h">
+    <ClInclude Include="..\GLW\GLWChannelViewTextRenderer.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWCheckBox.h">
+    <ClInclude Include="..\GLW\GLWCheckBox.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWCheckBoxText.h">
+    <ClInclude Include="..\GLW\GLWCheckBoxText.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWColors.h">
+    <ClInclude Include="..\GLW\GLWColors.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWDragger.h">
+    <ClInclude Include="..\GLW\GLWDragger.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWDropDown.h">
+    <ClInclude Include="..\GLW\GLWDropDown.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWDropDownColor.h">
+    <ClInclude Include="..\GLW\GLWDropDownColor.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWDropDownText.h">
+    <ClInclude Include="..\GLW\GLWDropDownText.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWFileView.h">
+    <ClInclude Include="..\GLW\GLWFileView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWFlag.h">
+    <ClInclude Include="..\GLW\GLWFlag.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWFont.h">
+    <ClInclude Include="..\GLW\GLWFont.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWIcon.h">
+    <ClInclude Include="..\GLW\GLWIcon.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWIconButton.h">
+    <ClInclude Include="..\GLW\GLWIconButton.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWIconList.h">
+    <ClInclude Include="..\GLW\GLWIconList.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWIconTable.h">
+    <ClInclude Include="..\GLW\GLWIconTable.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWidget.h">
+    <ClInclude Include="..\GLW\GLWidget.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWImageList.h">
+    <ClInclude Include="..\GLW\GLWImageList.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWLabel.h">
+    <ClInclude Include="..\GLW\GLWLabel.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWListView.h">
+    <ClInclude Include="..\GLW\GLWListView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWOptionEntry.h">
+    <ClInclude Include="..\GLW\GLWOptionEntry.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWPanel.h">
+    <ClInclude Include="..\GLW\GLWPanel.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWPlanView.h">
+    <ClInclude Include="..\GLW\GLWPlanView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWProgress.h">
+    <ClInclude Include="..\GLW\GLWProgress.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWPushButton.h">
+    <ClInclude Include="..\GLW\GLWPushButton.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScorchedInfo.h">
+    <ClInclude Include="..\GLW\GLWScorchedInfo.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScorchedInfoSpinner.h">
+    <ClInclude Include="..\GLW\GLWScorchedInfoSpinner.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScrollButton.h">
+    <ClInclude Include="..\GLW\GLWScrollButton.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScrollPanel.h">
+    <ClInclude Include="..\GLW\GLWScrollPanel.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScrollW.h">
+    <ClInclude Include="..\GLW\GLWScrollW.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWScrollWBackwards.h">
+    <ClInclude Include="..\GLW\GLWScrollWBackwards.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWSelector.h">
+    <ClInclude Include="..\GLW\GLWSelector.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWSelectorPart.h">
+    <ClInclude Include="..\GLW\GLWSelectorPart.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWSlider.h">
+    <ClInclude Include="..\GLW\GLWSlider.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWSpacer.h">
+    <ClInclude Include="..\GLW\GLWSpacer.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWSpinBox.h">
+    <ClInclude Include="..\GLW\GLWSpinBox.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTab.h">
+    <ClInclude Include="..\GLW\GLWTab.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTabContainer.h">
+    <ClInclude Include="..\GLW\GLWTabContainer.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTalkBox.h">
+    <ClInclude Include="..\GLW\GLWTalkBox.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTankFire.h">
+    <ClInclude Include="..\GLW\GLWTankFire.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTankModel.h">
+    <ClInclude Include="..\GLW\GLWTankModel.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTankSlider.h">
+    <ClInclude Include="..\GLW\GLWTankSlider.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTankTip.h">
+    <ClInclude Include="..\GLW\GLWTankTip.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTankViewer.h">
+    <ClInclude Include="..\GLW\GLWTankViewer.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTextBox.h">
+    <ClInclude Include="..\GLW\GLWTextBox.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTextButton.h">
+    <ClInclude Include="..\GLW\GLWTextButton.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTime.h">
+    <ClInclude Include="..\GLW\GLWTime.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWToolTip.h">
+    <ClInclude Include="..\GLW\GLWToolTip.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTracker.h">
+    <ClInclude Include="..\GLW\GLWTracker.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWTranslate.h">
+    <ClInclude Include="..\GLW\GLWTranslate.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWeaponModel.h">
+    <ClInclude Include="..\GLW\GLWWeaponModel.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWindow.h">
+    <ClInclude Include="..\GLW\GLWWindow.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWindowManager.h">
+    <ClInclude Include="..\GLW\GLWWindowManager.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWindowSkin.h">
+    <ClInclude Include="..\GLW\GLWWindowSkin.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWindowSkinManager.h">
+    <ClInclude Include="..\GLW\GLWWindowSkinManager.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWWindView.h">
+    <ClInclude Include="..\GLW\GLWWindView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\DeformTextures.h">
+    <ClInclude Include="..\landscape\DeformTextures.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\GraphicalLandscapeMap.h">
+    <ClInclude Include="..\landscape\GraphicalLandscapeMap.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\InfoMap.h">
+    <ClInclude Include="..\landscape\InfoMap.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\Landscape.h">
+    <ClInclude Include="..\landscape\Landscape.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\LandscapeMusicManager.h">
+    <ClInclude Include="..\landscape\LandscapeMusicManager.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\LandscapePoints.h">
+    <ClInclude Include="..\landscape\LandscapePoints.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\LandscapeSoundManager.h">
+    <ClInclude Include="..\landscape\LandscapeSoundManager.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\LandscapeStateHandler.h">
+    <ClInclude Include="..\landscape\LandscapeStateHandler.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\MapPoints.h">
+    <ClInclude Include="..\landscape\MapPoints.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\ShadowMap.h">
+    <ClInclude Include="..\landscape\ShadowMap.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\Smoke.h">
+    <ClInclude Include="..\landscape\Smoke.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\landscape\Wall.h">
+    <ClInclude Include="..\landscape\Wall.hpp">
       <Filter>landscape</Filter>
     </ClInclude>
-    <ClInclude Include="..\serverbrowser\ServerBrowser.h">
+    <ClInclude Include="..\serverbrowser\ServerBrowser.hpp">
       <Filter>serverbrowser</Filter>
     </ClInclude>
-    <ClInclude Include="..\serverbrowser\ServerBrowserCollect.h">
+    <ClInclude Include="..\serverbrowser\ServerBrowserCollect.hpp">
       <Filter>serverbrowser</Filter>
     </ClInclude>
-    <ClInclude Include="..\serverbrowser\ServerBrowserRefresh.h">
+    <ClInclude Include="..\serverbrowser\ServerBrowserRefresh.hpp">
       <Filter>serverbrowser</Filter>
     </ClInclude>
-    <ClInclude Include="..\serverbrowser\ServerBrowserServerList.h">
+    <ClInclude Include="..\serverbrowser\ServerBrowserServerList.hpp">
       <Filter>serverbrowser</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\PlayingSoundSource.h">
+    <ClInclude Include="..\sound\PlayingSoundSource.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\Sound.h">
+    <ClInclude Include="..\sound\Sound.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBuffer.h">
+    <ClInclude Include="..\sound\SoundBuffer.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferDynamicOVSourceInstance.h">
+    <ClInclude Include="..\sound\SoundBufferDynamicOVSourceInstance.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferEmpty.h">
+    <ClInclude Include="..\sound\SoundBufferEmpty.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferFactory.h">
+    <ClInclude Include="..\sound\SoundBufferFactory.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferOV.h">
+    <ClInclude Include="..\sound\SoundBufferOV.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferStaticSourceInstance.h">
+    <ClInclude Include="..\sound\SoundBufferStaticSourceInstance.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundBufferWav.h">
+    <ClInclude Include="..\sound\SoundBufferWav.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundListener.h">
+    <ClInclude Include="..\sound\SoundListener.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundSource.h">
+    <ClInclude Include="..\sound\SoundSource.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\SoundUtils.h">
+    <ClInclude Include="..\sound\SoundUtils.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\VirtualSoundPriority.h">
+    <ClInclude Include="..\sound\VirtualSoundPriority.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sound\VirtualSoundSource.h">
+    <ClInclude Include="..\sound\VirtualSoundSource.hpp">
       <Filter>sound</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\DebrisActionRenderer.h">
+    <ClInclude Include="..\sprites\DebrisActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\ExplosionLaserBeamRenderer.h">
+    <ClInclude Include="..\sprites\ExplosionLaserBeamRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\ExplosionNukeRenderer.h">
+    <ClInclude Include="..\sprites\ExplosionNukeRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\ExplosionTextures.h">
+    <ClInclude Include="..\sprites\ExplosionTextures.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\MetaActionRenderer.h">
+    <ClInclude Include="..\sprites\MetaActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\MissileActionRenderer.h">
+    <ClInclude Include="..\sprites\MissileActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\NapalmRenderer.h">
+    <ClInclude Include="..\sprites\NapalmRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\SmokeActionRenderer.h">
+    <ClInclude Include="..\sprites\SmokeActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\SphereActionRenderer.h">
+    <ClInclude Include="..\sprites\SphereActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\TalkRenderer.h">
+    <ClInclude Include="..\sprites\TalkRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\TeleportRenderer.h">
+    <ClInclude Include="..\sprites\TeleportRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\TextActionRenderer.h">
+    <ClInclude Include="..\sprites\TextActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\sprites\WallActionRenderer.h">
+    <ClInclude Include="..\sprites\WallActionRenderer.hpp">
       <Filter>sprites</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\MissileMesh.h">
+    <ClInclude Include="..\tankgraph\MissileMesh.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\ModelRendererTank.h">
+    <ClInclude Include="..\tankgraph\ModelRendererTank.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\ModelRendererTankStore.h">
+    <ClInclude Include="..\tankgraph\ModelRendererTankStore.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\RenderGeoms.h">
+    <ClInclude Include="..\tankgraph\RenderGeoms.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\RenderTargets.h">
+    <ClInclude Include="..\tankgraph\RenderTargets.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\RenderTracer.h">
+    <ClInclude Include="..\tankgraph\RenderTracer.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TankKeyboardControl.h">
+    <ClInclude Include="..\tankgraph\TankKeyboardControl.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TankKeyboardControlUtil.h">
+    <ClInclude Include="..\tankgraph\TankKeyboardControlUtil.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TankMenus.h">
+    <ClInclude Include="..\tankgraph\TankMenus.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TargetParticleRenderer.h">
+    <ClInclude Include="..\tankgraph\TargetParticleRenderer.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TargetRendererImpl.h">
+    <ClInclude Include="..\tankgraph\TargetRendererImpl.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TargetRendererImplTank.h">
+    <ClInclude Include="..\tankgraph\TargetRendererImplTank.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\tankgraph\TargetRendererImplTarget.h">
+    <ClInclude Include="..\tankgraph\TargetRendererImplTarget.hpp">
       <Filter>tankgraph</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\ocean_wave_generator.h">
+    <ClInclude Include="..\water\ocean_wave_generator.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water.h">
+    <ClInclude Include="..\water\Water.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water2.h">
+    <ClInclude Include="..\water\Water2.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water2Constants.h">
+    <ClInclude Include="..\water\Water2Constants.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water2Patch.h">
+    <ClInclude Include="..\water\Water2Patch.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water2Patches.h">
+    <ClInclude Include="..\water\Water2Patches.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\Water2Renderer.h">
+    <ClInclude Include="..\water\Water2Renderer.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\WaterMapPoints.h">
+    <ClInclude Include="..\water\WaterMapPoints.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\WaterWaveDistance.h">
+    <ClInclude Include="..\water\WaterWaveDistance.hpp">
       <Filter>water</Filter>
     </ClInclude>
-    <ClInclude Include="..\water\WaterWaves.h">
+    <ClInclude Include="..\water\WaterWaves.hpp">
       <Filter>water</Filter>
     </ClInclude>
     <ClInclude Include="..\..\server\tankai\TankAI.hpp">
@@ -4197,160 +4197,160 @@
     <ClInclude Include="..\..\server\server\ServerTurnsSimultaneous.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\geomipmap\MipMapPatchIndex.h">
+    <ClInclude Include="..\geomipmap\MipMapPatchIndex.hpp">
       <Filter>geomipmap</Filter>
     </ClInclude>
-    <ClInclude Include="..\geomipmap\MipMapPatchIndexs.h">
+    <ClInclude Include="..\geomipmap\MipMapPatchIndexs.hpp">
       <Filter>geomipmap</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\LandAndTargetVisibilityPatch.h">
+    <ClInclude Include="..\land\LandAndTargetVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\LandSurround.h">
+    <ClInclude Include="..\land\LandSurround.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\TargetList.h">
+    <ClInclude Include="..\land\TargetList.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\TargetVisibilityPatch.h">
+    <ClInclude Include="..\land\TargetVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\VisibilityPatchGrid.h">
+    <ClInclude Include="..\land\VisibilityPatchGrid.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\VisibilityPatchInfo.h">
+    <ClInclude Include="..\land\VisibilityPatchInfo.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\VisibilityPatchQuad.h">
+    <ClInclude Include="..\land\VisibilityPatchQuad.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\WaterAndTargetVisibilityPatch.h">
+    <ClInclude Include="..\land\WaterAndTargetVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\WaterVisibilityPatch.h">
+    <ClInclude Include="..\land\WaterVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\Hemisphere.h">
+    <ClInclude Include="..\sky\Hemisphere.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\LargeHemisphere.h">
+    <ClInclude Include="..\sky\LargeHemisphere.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\Sky.h">
+    <ClInclude Include="..\sky\Sky.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\SkyDome.h">
+    <ClInclude Include="..\sky\SkyDome.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\SkyLine.h">
+    <ClInclude Include="..\sky\SkyLine.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\SkyRoof.h">
+    <ClInclude Include="..\sky\SkyRoof.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\sky\Sun.h">
+    <ClInclude Include="..\sky\Sun.hpp">
       <Filter>sky</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\Display.h">
+    <ClInclude Include="..\graph\Display.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\FrameLimiter.h">
+    <ClInclude Include="..\graph\FrameLimiter.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\FrameTimer.h">
+    <ClInclude Include="..\graph\FrameTimer.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\Gamma.h">
+    <ClInclude Include="..\graph\Gamma.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\GLSetup.h">
+    <ClInclude Include="..\graph\GLSetup.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\Main2DCamera.h">
+    <ClInclude Include="..\graph\Main2DCamera.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\MainCamera.h">
+    <ClInclude Include="..\graph\MainCamera.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ModelRenderer.h">
+    <ClInclude Include="..\graph\ModelRenderer.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ModelRendererMesh.h">
+    <ClInclude Include="..\graph\ModelRendererMesh.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ModelRendererSimulator.h">
+    <ClInclude Include="..\graph\ModelRendererSimulator.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ModelRendererStore.h">
+    <ClInclude Include="..\graph\ModelRendererStore.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ModelRendererTree.h">
+    <ClInclude Include="..\graph\ModelRendererTree.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\Mouse.h">
+    <ClInclude Include="..\graph\Mouse.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\OptionsDisplay.h">
+    <ClInclude Include="..\graph\OptionsDisplay.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\OptionsDisplayConsole.h">
+    <ClInclude Include="..\graph\OptionsDisplayConsole.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\Particle.h">
+    <ClInclude Include="..\graph\Particle.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ParticleEmitter.h">
+    <ClInclude Include="..\graph\ParticleEmitter.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ParticleEngine.h">
+    <ClInclude Include="..\graph\ParticleEngine.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ParticleRenderer.h">
+    <ClInclude Include="..\graph\ParticleRenderer.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\ShotCountDown.h">
+    <ClInclude Include="..\graph\ShotCountDown.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\SoftwareMouse.h">
+    <ClInclude Include="..\graph\SoftwareMouse.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\SpeedChange.h">
+    <ClInclude Include="..\graph\SpeedChange.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\TargetCamera.h">
+    <ClInclude Include="..\graph\TargetCamera.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\graph\TutorialFile.h">
+    <ClInclude Include="..\graph\TutorialFile.hpp">
       <Filter>graph</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\Console.h">
+    <ClInclude Include="..\console\Console.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleFileReader.h">
+    <ClInclude Include="..\console\ConsoleFileReader.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleImpl.h">
+    <ClInclude Include="..\console\ConsoleImpl.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleLines.h">
+    <ClInclude Include="..\console\ConsoleLines.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleMethods.h">
+    <ClInclude Include="..\console\ConsoleMethods.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleRule.h">
+    <ClInclude Include="..\console\ConsoleRule.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleRuleFn.h">
+    <ClInclude Include="..\console\ConsoleRuleFn.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleRuleFnIAdapter.h">
+    <ClInclude Include="..\console\ConsoleRuleFnIAdapter.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleRuleMethodIAdapter.h">
+    <ClInclude Include="..\console\ConsoleRuleMethodIAdapter.hpp">
       <Filter>console</Filter>
     </ClInclude>
-    <ClInclude Include="..\console\ConsoleRules.h">
+    <ClInclude Include="..\console\ConsoleRules.hpp">
       <Filter>console</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\lang\CachedValueString.h">
@@ -4440,13 +4440,13 @@
     <ClInclude Include="..\..\common\simactions\TankTeamBallanceSimAction.h">
       <Filter>simactions</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\LandVisibilityPatch.h">
+    <ClInclude Include="..\land\LandVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\RoofVisibilityPatch.h">
+    <ClInclude Include="..\land\RoofVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
-    <ClInclude Include="..\land\HeightMapVisibilityPatch.h">
+    <ClInclude Include="..\land\HeightMapVisibilityPatch.hpp">
       <Filter>land</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\simactions\TankBuyingSimAction.h">
@@ -4479,16 +4479,16 @@
     <ClInclude Include="..\..\common\image\ImageID.h">
       <Filter>image</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureStore.h">
+    <ClInclude Include="..\GLEXT\GLTextureStore.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureReference.h">
+    <ClInclude Include="..\GLEXT\GLTextureReference.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLEXT\GLTextureReferenceData.h">
+    <ClInclude Include="..\GLEXT\GLTextureReferenceData.hpp">
       <Filter>GLEXT</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\ClientDisconnected.h">
+    <ClInclude Include="..\client\ClientDisconnected.hpp">
       <Filter>client</Filter>
     </ClInclude>
     <ClInclude Include="..\..\server\server\ServerAuthHandlerStore.hpp">
@@ -4503,22 +4503,22 @@
     <ClInclude Include="..\..\server\server\ServerTankChangeHandler.hpp">
       <Filter>server</Filter>
     </ClInclude>
-    <ClInclude Include="..\client\LoadPNG.h">
+    <ClInclude Include="..\client\LoadPNG.hpp">
       <Filter>client</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\simactions\NextTurnSimAction.h">
       <Filter>simactions</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\TextBoxDialog.h">
+    <ClInclude Include="..\dialogs\TextBoxDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\server\igd\igd.hpp">
       <Filter>igd</Filter>
     </ClInclude>
-    <ClInclude Include="..\GLW\GLWChatView.h">
+    <ClInclude Include="..\GLW\GLWChatView.hpp">
       <Filter>GLW</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\NetworkChatDialog.h">
+    <ClInclude Include="..\dialogs\NetworkChatDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\server\server\ScorchedServerSettings.hpp">
@@ -4587,10 +4587,10 @@
     <ClInclude Include="..\..\common\weapons\WeaponAimed.h">
       <Filter>weapons</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\PlayerInitialDialog.h">
+    <ClInclude Include="..\dialogs\PlayerInitialDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\dialogs\PlayerInGameDialog.h">
+    <ClInclude Include="..\dialogs\PlayerInGameDialog.hpp">
       <Filter>dialogs</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\XML\XMLDiff.h">

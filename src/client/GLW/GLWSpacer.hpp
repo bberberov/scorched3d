@@ -21,7 +21,7 @@
 #if !defined(AFX_GLWSpacer_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_)
 #define AFX_GLWSpacer_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_
 
-#include <GLW/GLWidget.h>
+#include <GLW/GLWidget.hpp>
 
 class GLWSpacer : public GLWidget  
 {

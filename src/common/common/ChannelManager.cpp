@@ -21,7 +21,7 @@
 #include <common/ChannelManager.h>
 #include <engine/ScorchedContext.h>
 #ifndef S3D_SERVER
-	#include <client/ClientChannelManager.h>
+	#include <client/ClientChannelManager.hpp>
 #else
 	#include <common/Logger.h>
 #endif

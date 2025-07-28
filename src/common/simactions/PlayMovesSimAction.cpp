@@ -39,7 +39,7 @@
 #include <server/ServerChannelManager.hpp>
 #include <server/ScorchedServer.hpp>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
+	#include <sound/SoundUtils.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(PlayMovesSimAction);

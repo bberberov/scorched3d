@@ -22,9 +22,9 @@
 #include <common/Defines.h>
 #include <common/RandomGenerator.h>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
-	#include <GLEXT/GLCamera.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <sound/SoundUtils.hpp>
+	#include <GLEXT/GLCamera.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 #include <target/TargetContainer.h>
 #include <target/TargetDamageCalc.h>

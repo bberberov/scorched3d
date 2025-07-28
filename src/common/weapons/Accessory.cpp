@@ -35,7 +35,7 @@ unsigned int Accessory::nextAccessoryId_ = 0;
 #ifndef S3D_SERVER
 #include <3dsparse/Model.h>
 #include <3dsparse/ModelStore.h>
-#include <tankgraph/MissileMesh.h>
+#include <tankgraph/MissileMesh.hpp>
 #include <image/ImageFactory.h>
 #endif
 

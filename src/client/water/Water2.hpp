@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_Water2h_INCLUDE__)
 #define __INCLUDE_Water2h_INCLUDE__
 
-#include <water/Water2Patches.h>
+#include <water/Water2Patches.hpp>
 
 class LandscapeDefn;
 class Image;

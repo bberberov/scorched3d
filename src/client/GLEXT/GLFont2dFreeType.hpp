@@ -22,7 +22,7 @@
 #define _GLFONT2DFREETYPE_H_
 
 #include <string>
-#include <GLEXT/GLFont2dStorage.h>
+#include <GLEXT/GLFont2dStorage.hpp>
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include FT_GLYPH_H

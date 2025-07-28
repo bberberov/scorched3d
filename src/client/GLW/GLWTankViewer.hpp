@@ -21,12 +21,12 @@
 #ifndef _gLWTankViewer_h
 #define _gLWTankViewer_h
 
-#include <GLW/GLWScrollW.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWDropDownText.h>
-#include <GLW/GLWToolTip.h>
+#include <GLW/GLWScrollW.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWDropDownText.hpp>
+#include <GLW/GLWToolTip.hpp>
 #include <tank/TankModel.h>
-#include <tankgraph/ModelRendererTank.h>
+#include <tankgraph/ModelRendererTank.hpp>
 #include <vector>
 
 class GLWTankViewer : public GLWidget, public GLWDropDownI

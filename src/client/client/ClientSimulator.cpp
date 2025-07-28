@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientSimulator.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/ShotCountDown.h>
+#include <client/ClientSimulator.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/ShotCountDown.hpp>
 #include <coms/ComsSimulateMessage.h>
 #include <coms/ComsSimulateResultMessage.h>
 #include <coms/ComsNetStatMessage.h>

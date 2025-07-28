@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ParticleEngineh_INCLUDE__)
 #define __INCLUDE_ParticleEngineh_INCLUDE__
 
-#include <graph/Particle.h>
+#include <graph/Particle.hpp>
 #include <engine/GameStateI.h>
 
 class GLCamera;

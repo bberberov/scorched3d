@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/TextBoxDialog.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/TextBoxDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 TextBoxDialog *TextBoxDialog::instance_ = 0;
 

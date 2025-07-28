@@ -85,7 +85,7 @@ void SplinePath::getPathAttrs(FixedVector &position, FixedVector &direction)
 }
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #endif
 
 void SplinePath::draw()

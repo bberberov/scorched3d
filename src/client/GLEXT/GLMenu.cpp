@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLMenu.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLMenuEntry.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
+#include <GLEXT/GLMenu.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLMenuEntry.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
 
 GLMenu::GLMenu() : GLWWindow("Menu", 0.0f, 10.0f, 10000.0f, 32.0f, eHideName, "")
 {

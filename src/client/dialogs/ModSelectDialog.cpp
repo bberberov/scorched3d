@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ModSelectDialog.h>
-#include <dialogs/ModSubSelectDialog.h>
-#include <dialogs/SettingsSelectDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
+#include <dialogs/ModSelectDialog.hpp>
+#include <dialogs/ModSubSelectDialog.hpp>
+#include <dialogs/SettingsSelectDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
 #include <engine/ModDirs.h>
 #include <common/Defines.h>
 

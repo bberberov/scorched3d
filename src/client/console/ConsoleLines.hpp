@@ -21,7 +21,7 @@
 #if !defined(AFX_ConsoleLINES_H__2DA65C94_3E52_43C6_B75B_D0CEDBF6A9DE__INCLUDED_)
 #define AFX_ConsoleLINES_H__2DA65C94_3E52_43C6_B75B_D0CEDBF6A9DE__INCLUDED_
 
-#include <GLEXT/GLFont2d.h>
+#include <GLEXT/GLFont2d.hpp>
 #include <deque>
 #include <string>
 

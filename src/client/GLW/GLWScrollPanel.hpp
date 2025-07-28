@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWSCROLLPANEL_H__53CDEDBB_3EC0_480E_8E9C_E40645155DD0__INCLUDED_)
 #define AFX_GLWSCROLLPANEL_H__53CDEDBB_3EC0_480E_8E9C_E40645155DD0__INCLUDED_
 
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWScrollW.h>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWScrollW.hpp>
 
 class GLWScrollPanel : public GLWPanel,
 						public GLWScrollWI

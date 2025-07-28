@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientConnectionAuthHandler.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <client/ClientState.h>
+#include <client/ClientConnectionAuthHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientState.hpp>
 #include <common/OptionsScorched.h>
 #include <common/Logger.h>
 #include <server/ScorchedServer.hpp>
-#include <dialogs/ConnectDialog.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <dialogs/ProgressDialog.h>
-#include <dialogs/AuthDialog.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/ConnectDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <dialogs/ProgressDialog.hpp>
+#include <dialogs/AuthDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
 #include <coms/ComsConnectAuthMessage.h>
 #include <coms/ComsMessageSender.h>
-#include <graph/OptionsDisplay.h>
+#include <graph/OptionsDisplay.hpp>
 #include <target/TargetContainer.h>
-#include <client/SecureID.h>
+#include <client/SecureID.hpp>
 #include <net/NetInterface.h>
 
 ClientConnectionAuthHandler *ClientConnectionAuthHandler::instance_ = 0;

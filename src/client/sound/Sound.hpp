@@ -25,11 +25,11 @@
 #include <vector>
 #include <string>
 #include <engine/GameStateI.h>
-#include <sound/VirtualSoundSource.h>
-#include <sound/SoundBuffer.h>
-#include <sound/SoundListener.h>
-#include <sound/SoundSource.h>
-#include <console/ConsoleRule.h>
+#include <sound/VirtualSoundSource.hpp>
+#include <sound/SoundBuffer.hpp>
+#include <sound/SoundListener.hpp>
+#include <sound/SoundSource.hpp>
+#include <console/ConsoleRule.hpp>
 
 #define CACHE_SOUND(var, filename) static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer(filename);
 

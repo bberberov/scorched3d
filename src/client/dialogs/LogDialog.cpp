@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/LogDialog.h>
-#include <dialogs/QuitDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLEXT/GLViewPort.h>
-#include <graph/OptionsDisplay.h>
+#include <dialogs/LogDialog.hpp>
+#include <dialogs/QuitDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <common/Logger.h>
 
 LogDialog *LogDialog::instance_ = 0;
