@@ -22,7 +22,7 @@
 #define AFX_Image_H__0EBAA0E7_3103_43A4_90C0_5708ECE6DB43__INCLUDED_
 
 #include <string>
-#include <image/ImageData.h>
+#include <image/ImageData.hpp>
 
 class Image  
 {

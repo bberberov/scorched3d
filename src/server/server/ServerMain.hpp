@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerMainh_INCLUDE__)
 #define __INCLUDE_ServerMainh_INCLUDE__
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 void serverLoop(fixed timeDifference);
 void consoleServer();

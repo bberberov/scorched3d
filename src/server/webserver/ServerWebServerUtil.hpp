@@ -22,7 +22,7 @@
 #define __INCLUDE_ServerWebServerUtilh_INCLUDE__
 
 #include <server/ServerAdminSessions.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class NetMessage;
 class OptionEntry;

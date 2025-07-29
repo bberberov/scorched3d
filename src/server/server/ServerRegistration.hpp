@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerRegistrationh_INCLUDE__)
 #define __INCLUDE_ServerRegistrationh_INCLUDE__
 
-#include <net/NetServerTCP.h>
+#include <net/NetServerTCP.hpp>
 
 class ServerRegistrationEntry : public NetMessageHandlerI
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TankAIAimGuesserh_INCLUDE__)
 #define __INCLUDE_TankAIAimGuesserh_INCLUDE__
 
-#include <engine/PhysicsParticleObject.h>
+#include <engine/PhysicsParticleObject.hpp>
 
 class Tanket;
 class TankAIAimGuesser : public PhysicsParticleObjectHandler

@@ -23,8 +23,8 @@
 
 #include <GLEXT/GLMenuI.hpp>
 #include <console/ConsoleRule.hpp>
-#include <weapons/Accessory.h>
-#include <common/FileLogger.h>
+#include <weapons/Accessory.hpp>
+#include <common/FileLogger.hpp>
 #include <vector>
 #include <list>
 

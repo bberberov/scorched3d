@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_WeaponRollerh_INCLUDE__)
 #define __INCLUDE_WeaponRollerh_INCLUDE__
 
-#include <weapons/Weapon.h>
-#include <common/ModelID.h>
-#include <engine/ObjectGroupEntryDefinition.h>
+#include <weapons/Weapon.hpp>
+#include <common/ModelID.hpp>
+#include <engine/ObjectGroupEntryDefinition.hpp>
 
 class ScorchedContext;
 class WeaponRoller : public Weapon

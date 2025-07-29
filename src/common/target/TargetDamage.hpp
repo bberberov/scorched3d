@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_TargetDamageh_INCLUDE__)
 #define __INCLUDE_TargetDamageh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class ScorchedContext;
 class Target;

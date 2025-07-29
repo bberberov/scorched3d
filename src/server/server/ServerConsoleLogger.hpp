@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ServerConsoleLoggerh_INCLUDE__)
 #define __INCLUDE_ServerConsoleLoggerh_INCLUDE__
 
-#include <common/LoggerI.h>
-#include <common/ProgressCounter.h>
+#include <common/LoggerI.hpp>
+#include <common/ProgressCounter.hpp>
 
 class ServerConsoleLogger : public LoggerI
 {

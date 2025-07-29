@@ -21,7 +21,7 @@
 #if !defined(AFX_RollingAverage_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_)
 #define AFX_RollingAverage_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 class RollingAverage  
 {

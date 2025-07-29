@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ScorchedClienth_INCLUDE__)
 #define __INCLUDE_ScorchedClienth_INCLUDE__
 
-#include <engine/ScorchedContext.h>
+#include <engine/ScorchedContext.hpp>
 
 class MainLoop;
 class ParticleEngine;

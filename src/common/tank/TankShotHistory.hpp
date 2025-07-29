@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TankShotHistoryh_INCLUDE__)
 #define __INCLUDE_TankShotHistoryh_INCLUDE__
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 #include <vector>
 
 class Tank;

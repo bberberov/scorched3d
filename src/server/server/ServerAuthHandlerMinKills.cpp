@@ -20,10 +20,10 @@
 
 #include <server/ServerAuthHandlerMinKills.hpp>
 #include <server/ScorchedServer.hpp>
-#include <events/EventHandlerDataBase.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <events/EventHandlerDataBase.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 
 ServerAuthHandlerMinKills::ServerAuthHandlerMinKills() : 
 	minKills_(-1), maxKills_(-1)

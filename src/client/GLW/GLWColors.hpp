@@ -21,7 +21,7 @@
 #if !defined(AFX_GLWColors_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_)
 #define AFX_GLWColors_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class GLWColors
 {

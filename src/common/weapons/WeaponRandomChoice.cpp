@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponRandomChoice.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/Simulator.h>
-#include <common/Defines.h>
+#include <weapons/WeaponRandomChoice.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/Simulator.hpp>
+#include <common/Defines.hpp>
 #include <stdlib.h>
 
 REGISTER_ACCESSORY_SOURCE(WeaponRandomChoice);

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <server/ServerConsoleLogger.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 ServerConsoleLogger::ServerConsoleLogger()
 {

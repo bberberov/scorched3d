@@ -22,7 +22,7 @@
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <coms/ComsGameStoppedMessage.h>
+#include <coms/ComsGameStoppedMessage.hpp>
 
 ClientGameStoppedHandler *ClientGameStoppedHandler::instance_ = 0;
 

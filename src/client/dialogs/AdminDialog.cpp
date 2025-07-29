@@ -22,14 +22,14 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWDropDownText.hpp>
 #include <GLW/GLWFont.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankColorGenerator.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankColorGenerator.hpp>
 #include <tankai/TankAINames.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientAdminResultHandler.hpp>
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 AdminDialog *AdminDialog::instance_ = 0;
 

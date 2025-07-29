@@ -20,11 +20,11 @@
 
 #include <GLEXT/GLViewPort.hpp>
 #include <GLEXT/GLState.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <graph/Main2DCamera.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <dialogs/BackdropDialog.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 BackdropDialog *BackdropDialog::instance_ = 0;
 

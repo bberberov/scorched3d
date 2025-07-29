@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_Vertexh_INCLUDE__)
 #define __INCLUDE_Vertexh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 class BoneType;
 class Vertex

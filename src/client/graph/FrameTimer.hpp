@@ -21,8 +21,8 @@
 #if !defined(AFX_FRAMETIMER_H__00CDF717_3628_42C1_B84E_6F9B15C4FC4E__INCLUDED_)
 #define AFX_FRAMETIMER_H__00CDF717_3628_42C1_B84E_6F9B15C4FC4E__INCLUDED_
 
-#include <engine/GameStateI.h>
-#include <common/Clock.h>
+#include <engine/GameStateI.hpp>
+#include <common/Clock.hpp>
 
 class FrameTimer : public GameStateI
 {

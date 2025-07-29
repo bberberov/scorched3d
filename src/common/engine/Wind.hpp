@@ -21,8 +21,8 @@
 #if !defined(AFX_Wind_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
 #define AFX_Wind_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
 
-#include <common/FixedVector.h>
-#include <engine/ScorchedContext.h>
+#include <common/FixedVector.hpp>
+#include <engine/ScorchedContext.hpp>
 
 class Wind
 {

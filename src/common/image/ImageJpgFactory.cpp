@@ -35,8 +35,8 @@ extern "C" {
 }
 #endif
 
-#include <common/Defines.h>
-#include <image/ImageJpgFactory.h>
+#include <common/Defines.hpp>
+#include <image/ImageJpgFactory.hpp>
 #include <setjmp.h>
 
 Image ImageJpgFactory::loadFromFile(const char * filename, bool readalpha)

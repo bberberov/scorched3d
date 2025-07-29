@@ -22,7 +22,7 @@
 #define AFX_GLTEXTURE_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_
 
 #include <GLEXT/GLState.hpp>
-#include <image/Image.h>
+#include <image/Image.hpp>
 #include <GLEXT/GLTextureBase.hpp>
 
 class GLTexture : public GLTextureBase

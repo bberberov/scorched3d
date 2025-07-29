@@ -23,7 +23,7 @@
 #define __INCLUDE_GLWFileViewh_INCLUDE__
 #include <GLW/GLWidget.hpp>
 #include <GLW/GLWScrollW.hpp>
-#include <common/FileLines.h>
+#include <common/FileLines.hpp>
 
 class GLWFileView :
 	public GLWidget

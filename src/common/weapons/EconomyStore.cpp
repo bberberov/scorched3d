@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/EconomyStore.h>
+#include <weapons/EconomyStore.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 #include <stdlib.h>
 
 EconomyStore::EconomyStore() : economy_(0)

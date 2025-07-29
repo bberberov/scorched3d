@@ -19,15 +19,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <landscape/LandscapeMusicManager.hpp>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <sound/Sound.hpp>
-#include <XML/XMLFile.h>
+#include <XML/XMLFile.hpp>
 
 LandscapeMusicManager *LandscapeMusicManager::instance()
 {

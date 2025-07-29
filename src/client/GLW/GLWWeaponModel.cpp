@@ -23,16 +23,16 @@
 #include <client/ClientState.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <tankgraph/MissileMesh.hpp>
-#include <target/TargetContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/TankState.h>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/TankState.hpp>
 #include <GLW/GLWTranslate.hpp>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Accessory.h>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Accessory.hpp>
 #include <landscape/Landscape.hpp>
 #include <sky/Sky.hpp>
-#include <common/Vector4.h>
-#include <common/Defines.h>
+#include <common/Vector4.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_CLASS_SOURCE(GLWWeaponModel);
 

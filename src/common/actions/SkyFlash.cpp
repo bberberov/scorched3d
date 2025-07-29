@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/SkyFlash.h>
-#include <engine/ScorchedContext.h>
+#include <actions/SkyFlash.hpp>
+#include <engine/ScorchedContext.hpp>
 #ifndef S3D_SERVER
 	#include <landscape/Landscape.hpp>
 	#include <sky/Sky.hpp>

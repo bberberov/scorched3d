@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_NetLoopBackh_INCLUDE__)
 #define __INCLUDE_NetLoopBackh_INCLUDE__
 
-#include <net/NetInterface.h>
-#include <net/NetMessageHandler.h>
+#include <net/NetInterface.hpp>
+#include <net/NetMessageHandler.hpp>
 
 class NetLoopBack : public NetInterface
 {

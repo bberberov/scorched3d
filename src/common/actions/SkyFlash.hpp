@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SkyFlashh_INCLUDE__)
 #define __INCLUDE_SkyFlashh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 class SkyFlash : public Action
 {

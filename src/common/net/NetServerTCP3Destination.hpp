@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_NetServerTCP3Destinationh_INCLUDE__)
 #define __INCLUDE_NetServerTCP3Destinationh_INCLUDE__
 
-#include <net/NetServerTCP3Send.h>
-#include <net/NetServerTCP3Recv.h>
+#include <net/NetServerTCP3Send.hpp>
+#include <net/NetServerTCP3Recv.hpp>
 
 class NetServerTCP3Destination
 {

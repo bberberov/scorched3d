@@ -20,7 +20,7 @@
 
 #include <dialogs/MessageDialog.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 #include <console/Console.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <GLW/GLWFont.hpp>

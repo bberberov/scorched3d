@@ -24,8 +24,8 @@
 #include <string>
 #include <map>
 #include <list>
-#include <engine/MainLoopI.h>
-#include <common/Clock.h>
+#include <engine/MainLoopI.hpp>
+#include <common/Clock.hpp>
 
 class GameStateI;
 class GameStateStimulusI;

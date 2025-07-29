@@ -20,8 +20,8 @@
 
 #include <wxdialogs/KeyDialog.hpp>
 #include <wxdialogs/MainDialog.hpp>
-#include <common/Defines.h>
-#include <common/Keyboard.h>
+#include <common/Defines.hpp>
+#include <common/Keyboard.hpp>
 #include <wx/wx.h>
 
 extern char scorched3dAppName[128];

@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_ExplosionNukeRendererh_INCLUDE__)
 #define __INCLUDE_ExplosionNukeRendererh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 #include <graph/ParticleEmitter.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <list>
 
 #define ExplosionNukeRenderer_STEPS 100

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsLinesMessageh_INCLUDE__)
 #define __INCLUDE_ComsLinesMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 #include <list>
 #include <vector>
 

@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <dialogs/ScoreDialog.hpp>
-#include <tank/TankSort.h>
-#include <target/TargetContainer.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tank/TankAvatar.h>
-#include <tanket/TanketShotInfo.h>
+#include <tank/TankSort.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tanket/TanketShotInfo.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <tankai/TankAI.hpp>
 #include <GLW/GLWFont.hpp>
@@ -35,15 +35,15 @@
 #include <client/ClientParams.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/ShotCountDown.hpp>
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <engine/GameState.h>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <engine/GameState.hpp>
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <actions/ShowScoreAction.h>
+#include <actions/ShowScoreAction.hpp>
 #include <server/ScorchedServer.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 #include <stdio.h>
 
 static const float rankLeft = 15.0f;

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementObjecth_INCLUDE__)
 #define __INCLUDE_PlacementObjecth_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class XMLNode;
 class PlacementObject

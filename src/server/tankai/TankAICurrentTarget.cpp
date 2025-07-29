@@ -20,16 +20,16 @@
 
 #include <tankai/TankAICurrentTarget.hpp>
 #include <server/ScorchedServer.hpp>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <weapons/Shield.h>
-#include <weapons/Accessory.h>
-#include <common/Defines.h>
-#include <XML/XMLNode.h>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <weapons/Shield.hpp>
+#include <weapons/Accessory.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLNode.hpp>
 
 TankAICurrentTarget::TankAICurrentTarget()
 {

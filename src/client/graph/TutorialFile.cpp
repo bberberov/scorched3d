@@ -21,11 +21,11 @@
 #include <graph/TutorialFile.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsTransient.h>
-#include <target/TargetContainer.h>
+#include <common/OptionsTransient.hpp>
+#include <target/TargetContainer.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ScorchedServer.hpp>
-#include <simactions/AdminSimAction.h>
+#include <simactions/AdminSimAction.hpp>
 
 TutorialFileEntry *TutorialConditionWindowWait::checkCondition()
 {

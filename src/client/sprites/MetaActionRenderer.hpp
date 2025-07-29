@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_MetaActionRendererh_INCLUDE__)
 #define __INCLUDE_MetaActionRendererh_INCLUDE__
 
-#include <actions/Action.h>
-#include <engine/MetaClass.h>
-#include <common/Vector.h>
+#include <actions/Action.hpp>
+#include <engine/MetaClass.hpp>
+#include <common/Vector.hpp>
 
 class MetaActionRenderer : public ActionRenderer, public MetaClass
 {

@@ -20,7 +20,7 @@
 
 #include <GLSL/GLSLShader.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <string>
 
 GLSLShader::GLSLShader(const char *filename, Type stype,

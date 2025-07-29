@@ -21,8 +21,8 @@
 #include <vector>
 #include <server/ServerTextFilter.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 
 #define IS_SPACE(c) ((c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || (c > 'z' && c <= 127)))
 

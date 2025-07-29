@@ -22,7 +22,7 @@
 #define __INCLUDE_TankAvatarh_INCLUDE__
 
 #include <string>
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 #include <list>
 
 class GLTexture;

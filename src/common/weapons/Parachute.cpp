@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <weapons/Parachute.h>
-#include <common/Defines.h>
+#include <weapons/Parachute.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(Parachute);
 

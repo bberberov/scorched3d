@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/EventContainer.h>
-#include <engine/ScorchedContext.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeEvents.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <engine/EventContainer.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeEvents.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 EventContainer::EventContainer()
 {

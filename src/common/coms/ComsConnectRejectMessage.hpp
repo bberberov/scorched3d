@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsConnectRejectMessageh_INCLUDE__)
 #define __INCLUDE_ComsConnectRejectMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsConnectRejectMessage : public ComsMessage
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerParamsh_INCLUDE__)
 #define __INCLUDE_ServerParamsh_INCLUDE__
 
-#include <common/OptionsParameters.h>
+#include <common/OptionsParameters.hpp>
 
 class ServerParams : public OptionsParameters
 {

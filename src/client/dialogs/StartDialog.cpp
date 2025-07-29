@@ -29,13 +29,13 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientMain.hpp>
-#include <engine/GameState.h>
-#include <engine/MainLoop.h>
+#include <engine/GameState.hpp>
+#include <engine/MainLoop.hpp>
 #include <GLW/GLWColors.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWTranslate.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 #include <limits>
 
 StartDialog *StartDialog::instance_ = 0;

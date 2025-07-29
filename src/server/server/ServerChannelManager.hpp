@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerChannelManagerh_INCLUDE__)
 #define __INCLUDE_ServerChannelManagerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 #include <server/ServerChannelFilter.hpp>
 #include <server/ServerChannelAuth.hpp>
 #include <time.h>

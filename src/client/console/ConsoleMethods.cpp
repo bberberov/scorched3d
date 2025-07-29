@@ -22,7 +22,7 @@
 #include <console/ConsoleMethods.hpp>
 #include <console/ConsoleFileReader.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/MainLoop.h>
+#include <engine/MainLoop.hpp>
 
 ConsoleMethods::ConsoleMethods()
 {

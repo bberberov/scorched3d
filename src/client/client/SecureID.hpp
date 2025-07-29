@@ -22,7 +22,7 @@
 #define __INCLUDE_SecureIDh_INCLUDE__
 
 #include <string>
-#include <common/sha2.h>
+#include <common/sha2.hpp>
 
 class SecureID
 {

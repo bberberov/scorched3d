@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_NetBufferPoolh_INCLUDE__)
 #define __INCLUDE_NetBufferPoolh_INCLUDE__
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 #include <list>
 #include <SDL/SDL_thread.h>
 

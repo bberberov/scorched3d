@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_ShotCountDownh_INCLUDE__)
 #define __INCLUDE_ShotCountDownh_INCLUDE__
 
-#include <engine/GameStateI.h>
-#include <common/fixed.h>
-#include <common/ToolTipResource.h>
+#include <engine/GameStateI.hpp>
+#include <common/fixed.hpp>
+#include <common/ToolTipResource.hpp>
 
 class ShotCountDown : public GameStateI
 {

@@ -24,7 +24,7 @@
 #include <sky/LargeHemisphere.hpp>
 #include <sky/SkyLine.hpp>
 #include <GLEXT/GLTexture.hpp>
-#include <image/Image.h>
+#include <image/Image.hpp>
 
 class SkyDome
 {

@@ -23,15 +23,15 @@
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWLabel.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 #include <client/ScorchedClient.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerState.hpp>
-#include <engine/SaveGame.h>
-#include <common/ChannelManager.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <engine/SaveGame.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <time.h>
 
 SaveDialog *SaveDialog::instance_ = 0;

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ShieldRoundMagh_INCLUDE__)
 #define __INCLUDE_ShieldRoundMagh_INCLUDE__
 
-#include <weapons/ShieldRound.h>
+#include <weapons/ShieldRound.hpp>
 
 class ShieldRoundMag : public ShieldRound
 {

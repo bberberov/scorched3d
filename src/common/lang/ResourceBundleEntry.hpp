@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ResourceBundleEntry_INCLUDE__)
 #define __INCLUDE_ResourceBundleEntry_INCLUDE__
 
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class ResourceBundleEntry
 {

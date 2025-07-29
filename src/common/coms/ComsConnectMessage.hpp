@@ -29,7 +29,7 @@
 // this means we can add any extra args can be added without breaking
 // backward compatability
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 #include <stdlib.h>
 #include <map>
 #include <string>

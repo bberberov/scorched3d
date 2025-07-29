@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/Mesh.h>
-#include <3dsparse/ModelStore.h>
-#include <common/Defines.h>
+#include <3dsparse/Mesh.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <common/Defines.hpp>
 
 Mesh::Mesh(const char *name) : name_(name),
 	sphereMap_(false)

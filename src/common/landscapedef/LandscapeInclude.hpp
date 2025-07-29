@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandscapeIncludeh_INCLUDE__)
 #define __INCLUDE_LandscapeIncludeh_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 #include <vector>
 
 class LandscapeEvent;

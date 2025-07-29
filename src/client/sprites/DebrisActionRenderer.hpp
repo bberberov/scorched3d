@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_DebrisActionRendererh_INCLUDE__)
 #define __INCLUDE_DebrisActionRendererh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/Particle.hpp>
 

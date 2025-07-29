@@ -22,7 +22,7 @@
 #ifndef _clientConnectionAcceptHandler_h
 #define _clientConnectionAcceptHandler_h
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ClientConnectionAcceptHandler : 
 	public ComsMessageHandlerI

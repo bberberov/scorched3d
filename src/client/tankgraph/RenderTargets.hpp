@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_RenderTargetsh_INCLUDE__)
 #define __INCLUDE_RenderTargetsh_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 #include <tankgraph/TankMenus.hpp>
 
 class RenderTargets

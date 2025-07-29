@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/LangString.h>
-#include <common/DefinesString.h>
+#include <lang/LangString.hpp>
+#include <common/DefinesString.hpp>
 
 LangStringConverter::LangStringConverter(const char *value)
 {

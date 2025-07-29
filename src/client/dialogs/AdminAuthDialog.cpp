@@ -23,8 +23,8 @@
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ClientAdminResultHandler.hpp>
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 AdminAuthDialog *AdminAuthDialog::instance_ = 0;
 

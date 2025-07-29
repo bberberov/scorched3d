@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankAccessorySimAction.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/EconomyStore.h>
+#include <simactions/TankAccessorySimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/EconomyStore.hpp>
 #include <server/ScorchedServer.hpp>
 
 REGISTER_CLASS_SOURCE(TankAccessorySimAction);

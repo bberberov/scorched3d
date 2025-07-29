@@ -21,8 +21,8 @@
 #if !defined(AFX_TargetDamageCalc_H__3B055B6D_C8E7_42C7_9D29_FBBFD88457D1__INCLUDED_)
 #define AFX_TargetDamageCalc_H__3B055B6D_C8E7_42C7_9D29_FBBFD88457D1__INCLUDED_
 
-#include <engine/ScorchedContext.h>
-#include <common/FixedVector.h>
+#include <engine/ScorchedContext.hpp>
+#include <common/FixedVector.hpp>
 
 class Target;
 class Weapon;

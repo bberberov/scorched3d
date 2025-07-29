@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ShowScoreAction.h>
-#include <engine/ScorchedContext.h>
+#include <actions/ShowScoreAction.hpp>
+#include <engine/ScorchedContext.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerState.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <common/Logger.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>

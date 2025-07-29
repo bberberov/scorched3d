@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_OptionsTransienth_INCLUDE__)
 #define __INCLUDE_OptionsTransienth_INCLUDE__
 
-#include <common/Vector.h>
-#include <common/OptionsScorched.h>
-#include <net/NetBuffer.h>
+#include <common/Vector.hpp>
+#include <common/OptionsScorched.hpp>
+#include <net/NetBuffer.hpp>
 
 class TargetContainer;
 class OptionsTransient

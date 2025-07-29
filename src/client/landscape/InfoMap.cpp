@@ -20,12 +20,12 @@
 
 #include <landscape/InfoMap.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <console/ConsoleRuleMethodIAdapter.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
-#include <common/OptionsTransient.h>
+#include <common/OptionsTransient.hpp>
 
 InfoMap *InfoMap::instance_ = 0;
 

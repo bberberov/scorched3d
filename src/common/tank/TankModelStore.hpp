@@ -24,8 +24,8 @@
 #include <vector>
 #include <map>
 #include <set>
-#include <tank/TankModel.h>
-#include <common/ProgressCounter.h>
+#include <tank/TankModel.hpp>
+#include <common/ProgressCounter.hpp>
 
 class TankModelStore
 {

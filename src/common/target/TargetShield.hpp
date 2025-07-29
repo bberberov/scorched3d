@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TargetShieldh_INCLUDE__)
 #define __INCLUDE_TargetShieldh_INCLUDE__
 
-#include <engine/ScorchedCollisionIds.h>
-#include <net/NetBuffer.h>
+#include <engine/ScorchedCollisionIds.hpp>
+#include <net/NetBuffer.hpp>
 
 class Target;
 class Accessory;

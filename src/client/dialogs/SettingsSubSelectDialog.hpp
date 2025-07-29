@@ -28,8 +28,8 @@
 #include <GLW/GLWIconList.hpp>
 #include <GLW/GLWTab.hpp>
 #include <GLW/GLWIcon.hpp>
-#include <common/ToolTip.h>
-#include <common/OptionsGame.h>
+#include <common/ToolTip.hpp>
+#include <common/OptionsGame.hpp>
 
 class SettingsSubSelectDialogListItem : public GLWIconListItem
 {

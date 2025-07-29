@@ -24,7 +24,7 @@
 #include <map>
 #include <list>
 #include <server/ServerTurns.hpp>
-#include <engine/SimulatorI.h>
+#include <engine/SimulatorI.hpp>
 
 class Tank;
 class ComsPlayedMoveMessage;

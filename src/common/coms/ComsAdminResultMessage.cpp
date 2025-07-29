@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsAdminResultMessage.h>
+#include <coms/ComsAdminResultMessage.hpp>
 
 ComsMessageType ComsAdminResultMessage::ComsAdminResultMessageType("ComsAdminResultMessageType");
 

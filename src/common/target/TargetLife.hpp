@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_TargetLifeh_INCLUDE__)
 #define __INCLUDE_TargetLifeh_INCLUDE__
 
-#include <engine/ScorchedCollisionIds.h>
-#include <target/TargetSpaceContainment.h>
-#include <net/NetBuffer.h>
-#include <common/FixedVector4.h>
+#include <engine/ScorchedCollisionIds.hpp>
+#include <target/TargetSpaceContainment.hpp>
+#include <net/NetBuffer.hpp>
+#include <common/FixedVector4.hpp>
 
 class TargetSpace;
 class Target;

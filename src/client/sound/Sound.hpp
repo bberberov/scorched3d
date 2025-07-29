@@ -24,7 +24,7 @@
 #include <map>
 #include <vector>
 #include <string>
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 #include <sound/VirtualSoundSource.hpp>
 #include <sound/SoundBuffer.hpp>
 #include <sound/SoundListener.hpp>

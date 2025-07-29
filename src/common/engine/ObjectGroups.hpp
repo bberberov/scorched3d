@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ObjectGroupsh_INCLUDE__)
 #define __INCLUDE_ObjectGroupsh_INCLUDE__
 
-#include <engine/ObjectGroup.h>
+#include <engine/ObjectGroup.hpp>
 #include <map>
 
 class ObjectGroups

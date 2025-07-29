@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_TargetRendererImplh_INCLUDE__)
 #define __INCLUDE_TargetRendererImplh_INCLUDE__
 
-#include <target/Target.h>
-#include <target/TargetRenderer.h>
-#include <common/Matrix16.h>
+#include <target/Target.hpp>
+#include <target/TargetRenderer.hpp>
+#include <common/Matrix16.hpp>
 
 class TargetVisibilityPatch;
 class RenderObjectLists;

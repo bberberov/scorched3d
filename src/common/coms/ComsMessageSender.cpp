@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsMessageHandler.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <net/NetBuffer.h>
-#include <net/NetInterface.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsMessageHandler.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <net/NetBuffer.hpp>
+#include <net/NetInterface.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
 #include <client/ScorchedClient.hpp>
 #endif

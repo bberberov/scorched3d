@@ -21,8 +21,8 @@
 #if !defined(AFX_ImageJpgFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_)
 #define AFX_ImageJpgFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_
 
-#include <image/Image.h>
-#include <net/NetBuffer.h>
+#include <image/Image.hpp>
+#include <net/NetBuffer.hpp>
 
 class ImageJpgFactory
 {

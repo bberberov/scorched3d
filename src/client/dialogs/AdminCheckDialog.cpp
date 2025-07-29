@@ -23,8 +23,8 @@
 #include <dialogs/AdminAuthDialog.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ClientChannelManager.hpp>
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 AdminCheckDialog *AdminCheckDialog::instance_ = 0;
 

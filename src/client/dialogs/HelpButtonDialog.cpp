@@ -26,7 +26,7 @@
 #include <dialogs/MainMenuDialog.hpp>
 #include <dialogs/HelpButtonDialog.hpp>
 #include <dialogs/SoundDialog.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <sound/Sound.hpp>
 #include <GLEXT/GLInfo.hpp>
 #include <GLEXT/GLState.hpp>
@@ -35,8 +35,8 @@
 #include <client/ClientChannelManager.hpp>
 #include <client/ClientSimulator.hpp>
 #include <tankgraph/RenderTargets.hpp>
-#include <engine/ActionController.h>
-#include <image/ImageFactory.h>
+#include <engine/ActionController.hpp>
+#include <image/ImageFactory.hpp>
 #include <landscape/Landscape.hpp>
 #include <landscape/ShadowMap.hpp>
 #include <land/VisibilityPatchGrid.hpp>

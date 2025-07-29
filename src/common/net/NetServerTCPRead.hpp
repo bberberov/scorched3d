@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_NetServerTCPReadh_INCLUDE__)
 #define __INCLUDE_NetServerTCPReadh_INCLUDE__
 
-#include <net/NetInterface.h>
-#include <net/NetServerTCPProtocol.h>
+#include <net/NetInterface.hpp>
+#include <net/NetServerTCPProtocol.hpp>
 
 class NetServerTCPRead
 {

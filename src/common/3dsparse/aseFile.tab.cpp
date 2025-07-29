@@ -55,8 +55,8 @@
 #define	MAX_TM_ROW2	294
 #define	MAX_TM_ROW3	295
 
-#include <common/Defines.h>
-#include <3dsparse/ASEModelFactory.h>
+#include <common/Defines.hpp>
+#include <3dsparse/ASEModelFactory.hpp>
 
 static FixedVector tmRow[3];
 

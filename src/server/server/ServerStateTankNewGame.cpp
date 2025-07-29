@@ -21,10 +21,10 @@
 #include <server/ServerStateTankNewGame.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ScorchedServer.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <simactions/TankNewGameSimAction.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <simactions/TankNewGameSimAction.hpp>
 
 ServerStateTankNewGame::ServerStateTankNewGame()
 {

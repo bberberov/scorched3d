@@ -22,7 +22,7 @@
 #define __INCLUDE_GLWTalkBoxh_INCLUDE__
 
 #include <GLW/GLWidget.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class GLWTalkBox : public GLWidget
 {

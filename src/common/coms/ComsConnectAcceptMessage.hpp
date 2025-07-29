@@ -21,7 +21,7 @@
 #ifndef _comsConnectAcceptMessage_h
 #define _comsConnectAcceptMessage_h
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsConnectAcceptMessage : public ComsMessage
 {

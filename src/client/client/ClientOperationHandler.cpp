@@ -21,7 +21,7 @@
 #include <client/ClientOperationHandler.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/MainCamera.hpp>
-#include <coms/ComsOperationMessage.h>
+#include <coms/ComsOperationMessage.hpp>
 
 ClientOperationHandler *ClientOperationHandler::instance_ = 0;
 

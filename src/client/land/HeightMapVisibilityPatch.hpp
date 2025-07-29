@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_HeightMapVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_HeightMapVisibilityPatchh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class HeightMap;
 class MipMapPatchIndex;

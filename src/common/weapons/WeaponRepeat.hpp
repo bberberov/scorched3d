@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponRepeath_INCLUDE__)
 #define __INCLUDE_WeaponRepeath_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponRepeat : public WeaponCallback
 {

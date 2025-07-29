@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NetServerTCP3Comsh_INCLUDE__)
 #define __INCLUDE_NetServerTCP3Comsh_INCLUDE__
 
-#include <net/NetInterface.h>
+#include <net/NetInterface.hpp>
 
 class NetServerTCP3Coms
 {

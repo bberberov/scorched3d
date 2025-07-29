@@ -20,8 +20,8 @@
 
 #include <server/ServerChannelFilter.hpp>
 #include <server/ScorchedServer.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
 
 ServerChannelFilter::ServerChannelFilter()
 {

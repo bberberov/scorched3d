@@ -22,11 +22,11 @@
 #include <client/ClientParams.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientMain.hpp>
-#include <net/NetInterface.h>
-#include <common/Logger.h>
-#include <target/TargetContainer.h>
+#include <net/NetInterface.hpp>
+#include <common/Logger.hpp>
+#include <target/TargetContainer.hpp>
 #include <server/ServerMain.hpp>
-#include <engine/Simulator.h>
+#include <engine/Simulator.hpp>
 
 time_t startTime = 0;
 

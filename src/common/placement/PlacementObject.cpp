@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementObject.h>
-#include <placement/PlacementObjectTarget.h>
-#include <placement/PlacementObjectGroup.h>
-#include <placement/PlacementObjectRandom.h>
-#include <placement/PlacementObjectShadow.h>
-#include <placement/PlacementObjectNone.h>
-#include <placement/PlacementObjectHeight.h>
-#include <common/DefinesString.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementObject.hpp>
+#include <placement/PlacementObjectTarget.hpp>
+#include <placement/PlacementObjectGroup.hpp>
+#include <placement/PlacementObjectRandom.hpp>
+#include <placement/PlacementObjectShadow.hpp>
+#include <placement/PlacementObjectNone.hpp>
+#include <placement/PlacementObjectHeight.hpp>
+#include <common/DefinesString.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementObject *PlacementObject::create(const char *type)
 {

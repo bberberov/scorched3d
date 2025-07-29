@@ -26,16 +26,16 @@
 #include <server/ServerState.hpp>
 #include <server/ServerTextFilter.hpp>
 #include <server/ServerAuthHandler.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
-#include <coms/ComsTankChangeMessage.h>
-#include <simactions/TankChangeSimAction.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsTankChangeMessage.hpp>
+#include <simactions/TankChangeSimAction.hpp>
 #include <tankai/TankAIStore.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankModelStore.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankModelStore.hpp>
 
 ServerTankChangeHandler::ServerTankChangeHandler(ComsMessageHandler &comsMessageHandler)
 {

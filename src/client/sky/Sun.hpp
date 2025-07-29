@@ -23,7 +23,7 @@
 
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLTexture.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Sun
 {

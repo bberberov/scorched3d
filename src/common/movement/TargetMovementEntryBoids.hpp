@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TargetMovementEntryBoidsh_INCLUDE__)
 #define __INCLUDE_TargetMovementEntryBoidsh_INCLUDE__
 
-#include <common/FixedVector.h>
-#include <movement/TargetMovementEntry.h>
+#include <common/FixedVector.hpp>
+#include <movement/TargetMovementEntry.hpp>
 #include <map>
 #include <vector>
 

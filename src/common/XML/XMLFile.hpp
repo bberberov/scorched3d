@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_XMLFileh_INCLUDE__)
 #define __INCLUDE_XMLFileh_INCLUDE__
 
-#include <XML/XMLParser.h>
+#include <XML/XMLParser.hpp>
 
 class XMLFile
 {

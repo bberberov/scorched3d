@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Matrix16.h>
+#include <common/Matrix16.hpp>
 
 static float IDENTITY_MATRIX[16] = 
 {

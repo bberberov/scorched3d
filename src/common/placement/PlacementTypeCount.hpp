@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementTypeCounth_INCLUDE__)
 #define __INCLUDE_PlacementTypeCounth_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class PlacementTypeCount : public PlacementType
 {

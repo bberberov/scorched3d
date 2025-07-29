@@ -23,9 +23,9 @@
 #include <graph/MainCamera.hpp>
 #include <client/ClientState.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
-#include <common/Vector4.h>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <common/Vector4.hpp>
 #include <landscape/Landscape.hpp>
 #include <sky/Sky.hpp>
 #include <GLW/GLWTranslate.hpp>

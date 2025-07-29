@@ -20,11 +20,11 @@
 
 #include <GLW/GLWDragger.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Keyboard.h>
-#include <common/ToolTip.h>
+#include <common/Keyboard.hpp>
+#include <common/ToolTip.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
 
 REGISTER_CLASS_SOURCE(GLWDragger);
 

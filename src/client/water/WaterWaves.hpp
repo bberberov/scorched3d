@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_WaterWavesh_INCLUDE__)
 #define __INCLUDE_WaterWavesh_INCLUDE__
 
-#include <common/Vector.h>
-#include <common/ProgressCounter.h>
+#include <common/Vector.hpp>
+#include <common/ProgressCounter.hpp>
 #include <GLEXT/GLTexture.hpp>
 #include <vector>
 

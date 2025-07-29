@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LangText_INCLUDE__)
 #define __INCLUDE_LangText_INCLUDE__
 
-#include <lang/Lang.h>
+#include <lang/Lang.hpp>
 
 #define LANG_RESOURCE(key, value) LangResource::getKey(key, value)
 #define LANG_RESOURCE_1(key, value, param1) LangResource::getKey(key, value, param1)

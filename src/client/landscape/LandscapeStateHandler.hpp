@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandscapeStateHandlerh_INCLUDE__)
 #define __INCLUDE_LandscapeStateHandlerh_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 class LandscapeStateLandHandler : public GameStateI
 {

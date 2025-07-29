@@ -21,11 +21,11 @@
 #if !defined(AFX_WEAPON_H__65439E20_84A6_406A_8FD0_045A3E7555D3__INCLUDED_)
 #define AFX_WEAPON_H__65439E20_84A6_406A_8FD0_045A3E7555D3__INCLUDED_
 
-#include <weapons/AccessoryPart.h>
-#include <net/NetBuffer.h>
-#include <common/FixedVector.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ObjectGroups.h>
+#include <weapons/AccessoryPart.hpp>
+#include <net/NetBuffer.hpp>
+#include <common/FixedVector.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ObjectGroups.hpp>
 
 class WeaponFireContextInternal
 {

@@ -21,8 +21,8 @@
 #if !defined(AFX_GLWIDGET_H__3F7BC394_576B_4ADF_8771_7D97EB3AF314__INCLUDED_)
 #define AFX_GLWIDGET_H__3F7BC394_576B_4ADF_8771_7D97EB3AF314__INCLUDED_
 
-#include <engine/MetaClass.h>
-#include <common/KeyboardHistory.h>
+#include <engine/MetaClass.hpp>
+#include <common/KeyboardHistory.hpp>
 
 class XMLNode;
 class ToolTip;

@@ -21,10 +21,10 @@
 #include <console/ConsoleImpl.hpp>
 #include <console/ConsoleFileReader.hpp>
 #include <console/Console.hpp>
-#include <common/FileLines.h>
-#include <common/DefinesString.h>
-#include <XML/XMLFile.h>
-#include <XML/XMLParser.h>
+#include <common/FileLines.hpp>
+#include <common/DefinesString.hpp>
+#include <XML/XMLFile.hpp>
+#include <XML/XMLParser.hpp>
 #include <stdio.h>
 
 bool ConsoleFileReader::loadFileIntoConsole(const std::string &fileName,

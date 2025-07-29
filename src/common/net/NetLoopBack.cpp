@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetLoopBack.h>
-#include <net/NetMessagePool.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <net/NetLoopBack.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 static unsigned int ClientLoopBackID = 100001;
 static unsigned int ServerLoopBackID = 200002;

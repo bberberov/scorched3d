@@ -20,7 +20,7 @@
 
 #include <GLW/GLWFileView.hpp>
 #include <GLW/GLWFont.hpp>
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 
 REGISTER_CLASS_SOURCE(GLWFileView);
 

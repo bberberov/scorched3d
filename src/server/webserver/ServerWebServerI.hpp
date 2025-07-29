@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerWebServerIh_INCLUDE__)
 #define __INCLUDE_ServerWebServerIh_INCLUDE__
 
-#include <net/NetMessage.h>
+#include <net/NetMessage.hpp>
 #include <map>
 #include <server/ServerAdminSessions.hpp>
 

@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/SyncCheckSimAction.h>
-#include <coms/ComsSyncCheckMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <simactions/SyncCheckSimAction.hpp>
+#include <coms/ComsSyncCheckMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSyncCheck.hpp>
 

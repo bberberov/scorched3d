@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankSort.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <common/OptionsScorched.h>
+#include <tank/TankSort.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <common/OptionsScorched.hpp>
 
 int TankSort::compare(ScorchedContext &context,
 		const LangString &nameX, TankScore &scoreX,

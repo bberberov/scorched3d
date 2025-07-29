@@ -22,7 +22,7 @@
 #define __INCLUDE_TargetContainerh_INCLUDE__
 
 #include <map>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class Tank;
 class Target;

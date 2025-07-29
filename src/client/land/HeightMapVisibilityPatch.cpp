@@ -20,11 +20,11 @@
 
 #include <land/HeightMapVisibilityPatch.hpp>
 #include <land/VisibilityPatchGrid.hpp>
-#include <landscapemap/GraphicalHeightMap.h>
+#include <landscapemap/GraphicalHeightMap.hpp>
 #include <landscape/GraphicalLandscapeMap.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/MainCamera.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLInfo.hpp>
 #include <GLW/GLWFont.hpp>

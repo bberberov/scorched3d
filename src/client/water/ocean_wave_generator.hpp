@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef OCEAN_WAVE_GENERATOR
 #define OCEAN_WAVE_GENERATOR
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #ifdef __DARWIN__
 #include <fftw3.h>
 #else

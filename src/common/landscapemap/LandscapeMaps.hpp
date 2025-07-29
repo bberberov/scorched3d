@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_LanscapeMapsh_INCLUDE__)
 #define __INCLUDE_LanscapeMapsh_INCLUDE__
 
-#include <landscapemap/RoofMaps.h>
-#include <landscapemap/GroundMaps.h>
-#include <landscapedef/LandscapeDefinitionCache.h>
+#include <landscapemap/RoofMaps.hpp>
+#include <landscapemap/GroundMaps.hpp>
+#include <landscapedef/LandscapeDefinitionCache.hpp>
 
 class ScorchedClient;
 class LandscapeMaps

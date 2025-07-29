@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LandscapeEventsh_INCLUDE__)
 #define __INCLUDE_LandscapeEventsh_INCLUDE__
 
-#include <common/fixed.h>
-#include <common/ModelID.h>
+#include <common/fixed.hpp>
+#include <common/ModelID.hpp>
 
 class ScorchedContext;
 class LandscapeCondition

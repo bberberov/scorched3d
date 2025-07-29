@@ -21,7 +21,7 @@
 #if !defined(AFX_VECTOR_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_)
 #define AFX_VECTOR_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_
 
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <math.h>
 
 class Vector  

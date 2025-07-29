@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponLightningh_INCLUDE__)
 #define __INCLUDE_WeaponLightningh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class WeaponLightning : public Weapon
 {

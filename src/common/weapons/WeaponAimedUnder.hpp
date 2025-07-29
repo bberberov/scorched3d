@@ -21,7 +21,7 @@
 #if !defined(AFX_WeaponAimedUnder_H__24F2D834_712D_4355_AC74_3571E2F4B14D__INCLUDED_)
 #define AFX_WeaponAimedUnder_H__24F2D834_712D_4355_AC74_3571E2F4B14D__INCLUDED_
 
-#include <weapons/WeaponAimed.h>
+#include <weapons/WeaponAimed.hpp>
 
 class WeaponAimedUnder : public WeaponAimed
 {

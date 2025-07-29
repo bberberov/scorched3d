@@ -20,9 +20,9 @@
 
 #include <client/ClientAdminResultHandler.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <coms/ComsAdminResultMessage.h>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <coms/ComsAdminResultMessage.hpp>
 
 ClientAdminResultHandler *ClientAdminResultHandler::instance()
 {

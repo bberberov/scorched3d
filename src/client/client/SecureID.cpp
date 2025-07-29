@@ -1,6 +1,6 @@
 #include <client/SecureID.hpp>
-#include <net/NetInterface.h>
-#include <common/Defines.h>
+#include <net/NetInterface.hpp>
+#include <common/Defines.hpp>
 
 #ifdef _WIN32
 

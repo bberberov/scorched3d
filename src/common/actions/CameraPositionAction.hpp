@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_CameraPositionActionh_INCLUDE__)
 #define __INCLUDE_CameraPositionActionh_INCLUDE__
 
-#include <actions/Action.h>
-#include <tank/TankViewPoints.h>
+#include <actions/Action.hpp>
+#include <tank/TankViewPoints.hpp>
 
 class CameraPositionAction : public Action
 {

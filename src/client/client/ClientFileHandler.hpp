@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ClientFileHandlerh_INCLUDE__)
 #define __INCLUDE_ClientFileHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ClientFileHandler  : 
 	public ComsMessageHandlerI

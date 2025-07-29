@@ -20,15 +20,15 @@
 
 #include <client/ScorchedClient.hpp>
 #include <client/ClientSimulator.hpp>
-#include <engine/MainLoop.h>
-#include <engine/GameState.h>
+#include <engine/MainLoop.hpp>
+#include <engine/GameState.hpp>
 #include <graph/MainCamera.hpp>
 #include <graph/ParticleEngine.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <target/TargetSpace.h>
-#include <coms/ComsSimulateMessage.h>
-#include <coms/ComsNetStatMessage.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <target/TargetSpace.hpp>
+#include <coms/ComsSimulateMessage.hpp>
+#include <coms/ComsNetStatMessage.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <landscape/GraphicalLandscapeMap.hpp>
 
 TargetSpace *ScorchedClient::targetSpace_ = new TargetSpace();

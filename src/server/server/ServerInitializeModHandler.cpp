@@ -21,7 +21,7 @@
 #include <server/ServerInitializeModHandler.hpp>
 #include <server/ServerLoadLevel.hpp>
 #include <server/ScorchedServer.hpp>
-#include <coms/ComsInitializeModMessage.h>
+#include <coms/ComsInitializeModMessage.hpp>
 
 ServerInitializeModHandler::ServerInitializeModHandler(ComsMessageHandler &comsMessageHandler)
 {

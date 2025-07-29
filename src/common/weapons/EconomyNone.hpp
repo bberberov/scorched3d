@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_EconomyNoneh_INCLUDE__)
 #define __INCLUDE_EconomyNoneh_INCLUDE__
 
-#include <weapons/Economy.h>
+#include <weapons/Economy.hpp>
 
 /**
 A very simple economy.

@@ -24,7 +24,7 @@
 #include <map>
 #include <list>
 #include <string>
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 
 class ScorchedContext;
 class Tanket;

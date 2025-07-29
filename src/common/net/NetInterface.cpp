@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetInterface.h>
-#include <common/Defines.h>
+#include <net/NetInterface.hpp>
+#include <common/Defines.hpp>
 
 unsigned int NetInterface::bytesIn_ = 0;
 unsigned int NetInterface::bytesOut_ = 0;

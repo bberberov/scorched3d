@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWBitmaph_INCLUDE__)
 #define __INCLUDE_GLWBitmaph_INCLUDE__
 
-#include <image/Image.h>
+#include <image/Image.hpp>
 #include <GLW/GLWidget.hpp>
 
 class GLWBitmap : public GLWidget

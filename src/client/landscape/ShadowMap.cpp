@@ -22,9 +22,9 @@
 #include <string.h>
 #include <GLEXT/GLStateExtension.hpp>
 #include <landscape/ShadowMap.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
 
 ShadowMap::ShadowMap() :

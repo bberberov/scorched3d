@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponSound.h>
-#include <engine/ActionController.h>
-#include <actions/SoundAction.h>
-#include <common/Defines.h>
+#include <weapons/WeaponSound.hpp>
+#include <engine/ActionController.hpp>
+#include <actions/SoundAction.hpp>
+#include <common/Defines.hpp>
 #include <stdlib.h>
 
 REGISTER_ACCESSORY_SOURCE(WeaponSound);

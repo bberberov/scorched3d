@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLW/GLWDropDownColor.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <client/ScorchedClient.hpp>
 
 REGISTER_CLASS_SOURCE(GLWDropDownColor);

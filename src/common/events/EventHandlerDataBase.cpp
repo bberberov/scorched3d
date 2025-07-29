@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <events/EventHandlerDataBase.h>
-#include <events/EventHandlerDataBaseMySQL.h>
-#include <events/EventHandlerDataBasePGSQL.h>
-#include <common/OptionsGame.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <events/EventHandlerDataBase.hpp>
+#include <events/EventHandlerDataBaseMySQL.hpp>
+#include <events/EventHandlerDataBasePGSQL.hpp>
+#include <common/OptionsGame.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 #include <server/ScorchedServer.hpp>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Weapon.h>
-#include <net/NetInterface.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankAvatar.h>
-#include <XML/XMLFile.h>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Weapon.hpp>
+#include <net/NetInterface.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankAvatar.hpp>
+#include <XML/XMLFile.hpp>
 #include <stdlib.h>
 
 EventHandlerDataBase *EventHandlerDataBase::createInstance()

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TargetMovementEntrySplineh_INCLUDE__)
 #define __INCLUDE_TargetMovementEntrySplineh_INCLUDE__
 
-#include <common/SplinePath.h>
-#include <movement/TargetMovementEntry.h>
+#include <common/SplinePath.hpp>
+#include <movement/TargetMovementEntry.hpp>
 #include <map>
 
 class ObjectGroup;

@@ -21,8 +21,8 @@
 #if !defined(AFX_TankAIStrings_H__C6D1A1B3_EA15_43B7_9232_A90A5D0CF60B__INCLUDED_)
 #define AFX_TankAIStrings_H__C6D1A1B3_EA15_43B7_9232_A90A5D0CF60B__INCLUDED_
 
-#include <common/FileLines.h>
-#include <engine/ScorchedContext.h>
+#include <common/FileLines.hpp>
+#include <engine/ScorchedContext.hpp>
 
 class TankAIStrings  
 {

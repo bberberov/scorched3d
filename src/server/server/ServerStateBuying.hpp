@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_ServerStateBuyingh_INCLUDE__)
 #define __INCLUDE_ServerStateBuyingh_INCLUDE__
 
-#include <engine/SimulatorI.h>
+#include <engine/SimulatorI.hpp>
 #include <set>
 #include <map>
 #include <server/ServerTurnsSimultaneous.hpp>
-#include <coms/ComsPlayedMoveMessage.h>
+#include <coms/ComsPlayedMoveMessage.hpp>
 
 class ServerStateBuying
 {

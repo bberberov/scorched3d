@@ -22,7 +22,7 @@
 #define __INCLUDE_XMLParserh_INCLUDE__
 
 #include <expat.h>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 class XMLParser
 {

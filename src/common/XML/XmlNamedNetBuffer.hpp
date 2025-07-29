@@ -21,11 +21,11 @@
 #ifndef _XmlNamedNetBuffer_H_
 #define _XmlNamedNetBuffer_H_
 
-#include <net/NetBuffer.h>
-#include <lang/LangString.h>
-#include <common/FixedVector4.h>
-#include <common/FixedVector.h>
-#include <XML/XMLNode.h>
+#include <net/NetBuffer.hpp>
+#include <lang/LangString.hpp>
+#include <common/FixedVector4.hpp>
+#include <common/FixedVector.hpp>
+#include <XML/XMLNode.hpp>
 
 class XmlNamedNetBuffer : public NamedNetBuffer
 {

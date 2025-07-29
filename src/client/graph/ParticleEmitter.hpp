@@ -23,7 +23,7 @@
 
 #include <graph/ParticleEngine.hpp>
 #include <GLEXT/GLTextureSet.hpp>
-#include <common/OptionsTransient.h>
+#include <common/OptionsTransient.hpp>
 
 class ParticleEmitter
 {

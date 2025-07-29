@@ -20,9 +20,9 @@
 
 #include <GLEXT/GLStateExtension.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/DefinesString.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
+#include <common/DefinesString.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
 
 bool GLStateExtension::hasHardwareShadows_ = false;
 bool GLStateExtension::hasMultiTex_ = false;

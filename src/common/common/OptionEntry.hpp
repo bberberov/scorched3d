@@ -22,11 +22,11 @@
 #if !defined(__INCLUDE_OptionEntryh_INCLUDE__)
 #define __INCLUDE_OptionEntryh_INCLUDE__
 
-#include <net/NetBuffer.h>
-#include <common/Vector.h>
-#include <common/FixedVector.h>
-#include <common/ARGParser.h>
-#include <XML/XMLParser.h>
+#include <net/NetBuffer.hpp>
+#include <common/Vector.hpp>
+#include <common/FixedVector.hpp>
+#include <common/ARGParser.hpp>
+#include <XML/XMLParser.hpp>
 
 class OptionEntry
 {

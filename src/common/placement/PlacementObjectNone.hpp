@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementObjectNoneh_INCLUDE__)
 #define __INCLUDE_PlacementObjectNoneh_INCLUDE__
 
-#include <placement/PlacementObject.h>
+#include <placement/PlacementObject.hpp>
 
 class PlacementObjectNone : public PlacementObject
 {

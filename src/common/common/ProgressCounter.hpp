@@ -21,7 +21,7 @@
 #if !defined(AFX_PROGRESSCOUNTER_H__4FA8EFA4_46AC_4790_9F55_B47AEF18EFEC__INCLUDED_)
 #define AFX_PROGRESSCOUNTER_H__4FA8EFA4_46AC_4790_9F55_B47AEF18EFEC__INCLUDED_
 
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class ProgressCounterI
 {

@@ -24,7 +24,7 @@
 #include <graph/OptionsDisplay.hpp>
 #include <GLEXT/GLInfo.hpp>
 #include <GLEXT/GLTexture.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 FrameTimer *FrameTimer::instance_ = 0;
 

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ChannelManagerh_INCLUDE__)
 #define __INCLUDE_ChannelManagerh_INCLUDE__
 
-#include <common/ChannelText.h>
+#include <common/ChannelText.hpp>
 
 class ScorchedContext;
 class ChannelManager

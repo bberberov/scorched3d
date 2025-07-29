@@ -21,7 +21,7 @@
 #if !defined(AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_)
 #define AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_
 
-#include <common/OptionEntry.h>
+#include <common/OptionEntry.hpp>
 #include <console/ConsoleRuleFn.hpp>
 #include <string>
 

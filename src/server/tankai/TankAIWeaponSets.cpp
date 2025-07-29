@@ -19,15 +19,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAIWeaponSets.hpp>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <weapons/AccessoryStore.h>
-#include <simactions/TankAccessorySimAction.h>
-#include <XML/XMLFile.h>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <simactions/TankAccessorySimAction.hpp>
+#include <XML/XMLFile.hpp>
 
 TankAIWeaponSets::WeaponSetAccessories::WeaponSetAccessories(Tanket *tanket) :
 	tankAccessories(ScorchedServer::instance()->getContext())

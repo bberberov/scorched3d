@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponGivePowerh_INCLUDE__)
 #define __INCLUDE_WeaponGivePowerh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponGivePower  : public WeaponCallback
 {

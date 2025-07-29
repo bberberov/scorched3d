@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TankRemove.h>
-#include <target/Target.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Logger.h>
+#include <actions/TankRemove.hpp>
+#include <target/Target.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Logger.hpp>
 
 TankRemove::TankRemove(unsigned int playerId, fixed removeTime) :
 	Action(false),

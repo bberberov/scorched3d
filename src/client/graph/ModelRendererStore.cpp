@@ -21,8 +21,8 @@
 #include <graph/ModelRendererStore.hpp>
 #include <graph/ModelRendererMesh.hpp>
 #include <graph/ModelRendererTree.hpp>
-#include <3dsparse/ModelStore.h>
-#include <common/Defines.h>
+#include <3dsparse/ModelStore.hpp>
+#include <common/Defines.hpp>
 
 ModelRendererStore *ModelRendererStore::instance_ = 0;
 

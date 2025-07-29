@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetLife.h>
-#include <target/TargetRenderer.h>
-#include <target/TargetSpace.h>
-#include <target/TargetState.h>
-#include <target/TargetGroup.h>
-#include <target/Target.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
+#include <target/TargetLife.hpp>
+#include <target/TargetRenderer.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetGroup.hpp>
+#include <target/Target.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
 #include <tankai/TankAIAdder.hpp>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 TargetLife::TargetLife(bool serverMode, TargetSpace &targetSpace, unsigned int playerId) :
 	serverMode_(serverMode),

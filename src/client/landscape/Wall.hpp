@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_Wallh_INCLUDE__)
 #define __INCLUDE_Wallh_INCLUDE__
 
-#include <common/Vector.h>
-#include <common/OptionsTransient.h>
+#include <common/Vector.hpp>
+#include <common/OptionsTransient.hpp>
 #include <GLEXT/GLTextureReference.hpp>
 
 class Wall

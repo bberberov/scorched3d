@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ClientChannelManagerh_INCLUDE__)
 #define __INCLUDE_ClientChannelManagerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 #include <client/ClientChannelManagerI.hpp>
 #include <console/ConsoleRule.hpp>
 #include <set>

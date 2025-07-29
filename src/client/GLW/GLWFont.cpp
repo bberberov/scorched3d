@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLW/GLWFont.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <console/ConsoleRuleMethodIAdapter.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 Vector GLWFont::widgetFontColor = Vector(0.2f, 0.2f, 0.2f);
 Vector GLWFont::disabledWidgetFontColor = Vector(0.4f, 0.4f, 0.4f);

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ResourceBundleEntryImpl_INCLUDE__)
 #define __INCLUDE_ResourceBundleEntryImpl_INCLUDE__
 
-#include <lang/LangParam.h>
-#include <lang/ResourceBundleEntry.h>
+#include <lang/LangParam.hpp>
+#include <lang/ResourceBundleEntry.hpp>
 
 class ResourceBundleEntryImpl : public ResourceBundleEntry
 {

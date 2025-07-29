@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_EconomyStoreh_INCLUDE__)
 #define __INCLUDE_EconomyStoreh_INCLUDE__
 
-#include <weapons/Economy.h>
+#include <weapons/Economy.hpp>
 
 class EconomyStore
 {

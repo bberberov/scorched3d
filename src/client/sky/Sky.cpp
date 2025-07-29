@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <sky/Sky.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefn.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
 #include <client/ScorchedClient.hpp>
 
 Sky::Sky()

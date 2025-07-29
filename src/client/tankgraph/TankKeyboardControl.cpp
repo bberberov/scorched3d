@@ -20,11 +20,11 @@
 
 #include <tankgraph/TankKeyboardControl.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 TankKeyboardControl * TankKeyboardControl::instance_ = 0;
 

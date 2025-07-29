@@ -21,8 +21,8 @@
 #if !defined(AFX_ConsoleImpl_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
 #define AFX_ConsoleImpl_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_
 
-#include <common/LoggerI.h>
-#include <engine/GameStateI.h>
+#include <common/LoggerI.hpp>
+#include <engine/GameStateI.hpp>
 #include <GLEXT/GLFont2d.hpp>
 #include <console/Console.hpp>
 #include <console/ConsoleMethods.hpp>

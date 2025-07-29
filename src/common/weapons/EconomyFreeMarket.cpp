@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/EconomyFreeMarket.h>
-#include <weapons/AccessoryStore.h>
+#include <weapons/EconomyFreeMarket.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <XML/XMLFile.h>
-#include <XML/XMLParser.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tanket/TanketAccessories.h>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <XML/XMLFile.hpp>
+#include <XML/XMLParser.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tanket/TanketAccessories.hpp>
 #include <stdlib.h>
 
 REGISTER_CLASS_SOURCE(EconomyFreeMarket);

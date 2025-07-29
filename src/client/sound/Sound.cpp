@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 #include <sound/Sound.hpp>
 #include <sound/SoundBufferFactory.hpp>
 #include <sound/PlayingSoundSource.hpp>

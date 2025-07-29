@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponAnimation.h>
-#include <weapons/Accessory.h>
-#include <engine/ActionController.h>
-#include <common/Defines.h>
+#include <weapons/WeaponAnimation.hpp>
+#include <weapons/Accessory.hpp>
+#include <engine/ActionController.hpp>
+#include <common/Defines.hpp>
 #ifndef S3D_SERVER
 #include <sprites/MetaActionRenderer.hpp>
 #endif

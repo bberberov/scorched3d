@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ShieldHit.h>
-#include <common/Defines.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/Accessory.h>
-#include <weapons/Shield.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <target/TargetShield.h>
-#include <target/TargetRenderer.h>
+#include <actions/ShieldHit.hpp>
+#include <common/Defines.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/Shield.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetRenderer.hpp>
 #ifndef S3D_SERVER
 	#include <sound/SoundUtils.hpp>
 	#include <GLEXT/GLLenseFlare.hpp>

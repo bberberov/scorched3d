@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_GroundMapsh_INCLUDE__)
 #define __INCLUDE_GroundMapsh_INCLUDE__
 
-#include <landscapemap/HeightMap.h>
-#include <landscapemap/NapalmMap.h>
-#include <placement/PlacementShadowDefinition.h>
+#include <landscapemap/HeightMap.hpp>
+#include <landscapemap/NapalmMap.hpp>
+#include <placement/PlacementShadowDefinition.hpp>
 
 class RandomGenerator;
 class ScorchedContext;

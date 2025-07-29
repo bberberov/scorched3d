@@ -20,7 +20,7 @@
 
 #include <GLW/GLWIconTable.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 
 GLWIconTable::GLWIconTable(
 	float x,

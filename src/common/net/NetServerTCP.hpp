@@ -21,9 +21,9 @@
 #ifndef __INCLUDE_netServer_h_INCLUDE__
 #define __INCLUDE_netServer_h_INCLUDE__
 
-#include <net/NetInterface.h>
-#include <net/NetServerTCPProtocol.h>
-#include <net/NetServerTCPRead.h>
+#include <net/NetInterface.hpp>
+#include <net/NetServerTCPProtocol.hpp>
+#include <net/NetServerTCPRead.hpp>
 #include <list>
 #include <map>
 

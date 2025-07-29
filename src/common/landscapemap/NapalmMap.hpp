@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NapalmMaph_INCLUDE__)
 #define __INCLUDE_NapalmMaph_INCLUDE__
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 class NapalmMap
 {

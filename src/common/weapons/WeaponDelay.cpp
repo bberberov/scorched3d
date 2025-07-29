@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponDelay.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ActionController.h>
+#include <weapons/WeaponDelay.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ActionController.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponDelay);
 

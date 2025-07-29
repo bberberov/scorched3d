@@ -20,9 +20,9 @@
 
 #include <stdio.h>
 #include <math.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <image/ImagePngFactory.h>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <image/ImagePngFactory.hpp>
 #ifdef __DARWIN__
 #include <UnixImageIO/png.h>
 #else

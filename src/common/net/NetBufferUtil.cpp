@@ -28,7 +28,7 @@
 #include <ws2tcpip.h>
 #endif
 
-#include <net/NetBufferUtil.h>
+#include <net/NetBufferUtil.hpp>
 
 // HACK HACK HACK
 // This code has been ripped from the SDL_net library

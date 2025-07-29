@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementTypeTreeh_INCLUDE__)
 #define __INCLUDE_PlacementTypeTreeh_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class PlacementTypeTree : public PlacementType
 {

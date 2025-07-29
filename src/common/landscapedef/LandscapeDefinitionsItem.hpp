@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LandscapeDefinitionsItemh_INCLUDE__)
 #define __INCLUDE_LandscapeDefinitionsItemh_INCLUDE__
 
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
 #include <map>
 #include <string>
 

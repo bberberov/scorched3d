@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_FrameLimiterh_INCLUDE__)
 #define __INCLUDE_FrameLimiterh_INCLUDE__
 
-#include <common/Clock.h>
+#include <common/Clock.hpp>
 
 class FrameLimiter
 {

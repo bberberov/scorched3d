@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankAvatar.h>
-#include <common/Defines.h>
-#include <image/ImagePngFactory.h>
+#include <tank/TankAvatar.hpp>
+#include <common/Defines.hpp>
+#include <image/ImagePngFactory.hpp>
 #include <stdio.h>
 #include <zlib.h>
 

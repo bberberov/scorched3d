@@ -21,11 +21,11 @@
 #include <math.h>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
-#include <image/ImageLuminanceFactory.h>
+#include <image/ImageLuminanceFactory.hpp>
 #include <GLEXT/GLLenseFlare.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
-#include <common/Defines.h>
-#include <lang/LangResource.h>
+#include <common/Defines.hpp>
+#include <lang/LangResource.hpp>
 
 GLLenseFlare *GLLenseFlare::instance_ = 0;
 

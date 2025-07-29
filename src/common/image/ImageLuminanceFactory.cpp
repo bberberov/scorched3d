@@ -20,8 +20,8 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include <image/ImageLuminanceFactory.h>
-#include <common/Defines.h>
+#include <image/ImageLuminanceFactory.hpp>
+#include <common/Defines.hpp>
 
 void ImageLuminanceFactory::convertShort(unsigned short *array, unsigned int length)
 {

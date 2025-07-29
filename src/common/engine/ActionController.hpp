@@ -23,7 +23,7 @@
 
 #include <map>
 #include <string.h>
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 class ScorchedContext;
 class ActionController

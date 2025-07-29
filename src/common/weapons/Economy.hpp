@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_Economyh_INCLUDE__)
 #define __INCLUDE_Economyh_INCLUDE__
 
-#include <engine/MetaClass.h>
+#include <engine/MetaClass.hpp>
 
 class Tank;
 class Economy : public MetaClass

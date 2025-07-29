@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_ClientProcessingLooph_INCLUDE__)
 #define __INCLUDE_ClientProcessingLooph_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 #include <graph/FrameLimiter.hpp>
 
 class ClientProcessingLoop : 

@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/Simulator.h>
-#include <engine/ScorchedContext.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
-#include <movement/TargetMovement.h>
-#include <common/OptionsScorched.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <engine/Simulator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
+#include <movement/TargetMovement.hpp>
+#include <common/OptionsScorched.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <SDL/SDL.h>
 
 static const fixed StepSize = fixed(true, fixed::FIXED_RESOLUTION / Sint64(50));

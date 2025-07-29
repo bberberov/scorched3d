@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>
-#include <lang/LangParam.h>
-#include <common/DefinesString.h>
+#include <lang/LangParam.hpp>
+#include <common/DefinesString.hpp>
 
 LangParam::LangParam(const LangStringConverter &convValue)
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponInvokeWeaponh_INCLUDE__)
 #define __INCLUDE_WeaponInvokeWeaponh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 #include <set>
 
 class WeaponInvokeWeapon  : public Weapon

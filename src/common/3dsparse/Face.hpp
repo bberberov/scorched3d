@@ -21,7 +21,7 @@
 #if !defined(AFX_FACE_H__711CB826_F1C1_4563_8760_65F19C8FDAAC__INCLUDED_)
 #define AFX_FACE_H__711CB826_F1C1_4563_8760_65F19C8FDAAC__INCLUDED_
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 class Face  
 {

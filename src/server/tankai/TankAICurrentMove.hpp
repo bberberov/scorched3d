@@ -23,7 +23,7 @@
 
 #include <tankai/TankAICurrentTarget.hpp>
 #include <tankai/TankAICurrentMoveWeapons.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class TankAICurrentMove
 {

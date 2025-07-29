@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_PlacementObjectTargeth_INCLUDE__)
 #define __INCLUDE_PlacementObjectTargeth_INCLUDE__
 
-#include <placement/PlacementObject.h>
-#include <engine/ObjectGroupEntryDefinition.h>
-#include <target/TargetDefinition.h>
+#include <placement/PlacementObject.hpp>
+#include <engine/ObjectGroupEntryDefinition.hpp>
+#include <target/TargetDefinition.hpp>
 
 class PlacementObjectTarget : public PlacementObject
 {

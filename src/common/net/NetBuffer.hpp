@@ -21,9 +21,9 @@
 #ifndef _NETBUFFER_H_
 #define _NETBUFFER_H_
 
-#include <lang/LangString.h>
-#include <common/FixedVector4.h>
-#include <common/FixedVector.h>
+#include <lang/LangString.hpp>
+#include <common/FixedVector4.hpp>
+#include <common/FixedVector.hpp>
 #include <SDL/SDL.h>
 #ifdef __MACOSX__
 #include <SDL_net/SDL_net.h>

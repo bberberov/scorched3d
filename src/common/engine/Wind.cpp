@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/Simulator.h>
-#include <common/RandomGenerator.h>
-#include <common/OptionsScorched.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <engine/Simulator.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/OptionsScorched.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 Wind::Wind() : context_(0)
 {

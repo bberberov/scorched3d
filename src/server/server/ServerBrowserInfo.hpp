@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerBrowserInfoh_INCLUDE__)
 #define __INCLUDE_ServerBrowserInfoh_INCLUDE__
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 #include <list>
 #include <string>
 

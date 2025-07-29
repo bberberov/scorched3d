@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Keyboard.h>
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
 
 bool Keyboard::dvorak_ = false;
 

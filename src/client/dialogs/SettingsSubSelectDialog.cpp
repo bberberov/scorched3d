@@ -21,7 +21,7 @@
 #include <dialogs/SettingsSubSelectDialog.hpp>
 #include <dialogs/SettingsSelectDialog.hpp>
 #include <dialogs/MsgBoxDialog.hpp>
-#include <landscapedef/LandscapeDefinitionsBase.h>
+#include <landscapedef/LandscapeDefinitionsBase.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWOptionEntry.hpp>
 #include <GLW/GLWTabContainer.hpp>

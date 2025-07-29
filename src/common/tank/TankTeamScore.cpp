@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankTeamScore.h>
-#include <common/Defines.h>
+#include <tank/TankTeamScore.hpp>
+#include <common/Defines.hpp>
 
 TankTeamScore::TankTeamScore() :
 	wonGame_(0)

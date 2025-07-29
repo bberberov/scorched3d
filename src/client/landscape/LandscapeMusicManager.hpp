@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_LandscapeMusicManagerh_INCLUDE__)
 #define __INCLUDE_LandscapeMusicManagerh_INCLUDE__
 
-#include <landscapedef/LandscapeInclude.h>
-#include <landscapedef/LandscapeMusic.h>
-#include <engine/GameStateI.h>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <landscapedef/LandscapeMusic.hpp>
+#include <engine/GameStateI.hpp>
 #include <vector>
 #include <map>
 

@@ -21,7 +21,7 @@
 #ifndef _ClientLoadLevelHandler_h
 #define _ClientLoadLevelHandler_h
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ClientLoadLevelHandler : public ComsMessageHandlerI
 {

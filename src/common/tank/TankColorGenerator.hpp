@@ -24,7 +24,7 @@
 
 #include <map>
 #include <vector>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Tank;
 class TankColorGenerator

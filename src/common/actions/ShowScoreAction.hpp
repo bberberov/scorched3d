@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ShowScoreActionh_INCLUDE__)
 #define __INCLUDE_ShowScoreActionh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 class ShowScoreAction : public Action
 {

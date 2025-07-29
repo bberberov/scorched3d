@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Teleporth_INCLUDE__)
 #define __INCLUDE_Teleporth_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/FixedVector.h>
-#include <weapons/WeaponTeleport.h>
+#include <actions/Action.hpp>
+#include <common/FixedVector.hpp>
+#include <weapons/WeaponTeleport.hpp>
 
 class Teleport : public Action
 {

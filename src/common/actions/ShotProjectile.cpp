@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ShotProjectile.h>
-#include <actions/CameraPositionAction.h>
+#include <actions/ShotProjectile.hpp>
+#include <actions/CameraPositionAction.hpp>
 #ifndef S3D_SERVER
 	#include <sprites/MissileActionRenderer.hpp>
 	#include <tankgraph/RenderTracer.hpp>
 #endif
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <tank/TankViewPoints.h>
-#include <target/TargetContainer.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <target/TargetContainer.hpp>
 #include <tankai/TankAI.hpp>
-#include <tanket/Tanket.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <weapons/AccessoryStore.h>
+#include <tanket/Tanket.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <math.h>
 
 ShotProjectile::ShotProjectile(

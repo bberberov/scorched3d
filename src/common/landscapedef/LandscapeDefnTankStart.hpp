@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_LandscapeDefnTankStarth_INCLUDE__)
 #define __INCLUDE_LandscapeDefnTankStarth_INCLUDE__
 
-#include <landscapedef/LandscapeDefn.h>
-#include <common/fixed.h>
-#include <image/Image.h>
-#include <coms/ComsMessage.h>
-#include <XML/XMLFile.h>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <common/fixed.hpp>
+#include <image/Image.hpp>
+#include <coms/ComsMessage.hpp>
+#include <XML/XMLFile.hpp>
 #include <string>
 
 class LandscapeDefnTypeTankStart

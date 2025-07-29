@@ -21,11 +21,11 @@
 #include <GLW/GLWTankFire.hpp>
 #include <client/ScorchedClient.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <common/ToolTipResource.h>
-#include <lang/LangResource.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <common/ToolTipResource.hpp>
+#include <lang/LangResource.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTankFire);
 

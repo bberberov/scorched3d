@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Lightningh_INCLUDE__)
 #define __INCLUDE_Lightningh_INCLUDE__
 
-#include <actions/Action.h>
-#include <weapons/WeaponLightning.h>
+#include <actions/Action.hpp>
+#include <weapons/WeaponLightning.hpp>
 #include <list>
 
 #ifndef S3D_SERVER

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LangParam_INCLUDE__)
 #define __INCLUDE_LangParam_INCLUDE__
 
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 #include <vector>
 
 #define LANG_PARAM_1(key, param1) \

@@ -25,15 +25,15 @@
 #include <graph/MainCamera.hpp>
 #include <graph/Main2DCamera.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <engine/Simulator.h>
-#include <engine/MainLoop.h>
+#include <engine/Simulator.hpp>
+#include <engine/MainLoop.hpp>
 #include <tankgraph/RenderTargets.hpp>
 #include <landscape/Landscape.hpp>
 #include <client/ScorchedClient.hpp>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <movement/TargetMovement.h>
-#include <common/Defines.h>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <movement/TargetMovement.hpp>
+#include <common/Defines.hpp>
 #include <limits.h>
 
 AnimatedBackdropDialog *AnimatedBackdropDialog::instance_ = 0;

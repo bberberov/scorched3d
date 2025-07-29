@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "LUAS3DWeaponLib.h"
-#include "LUAScript.h"
-#include "LUAUtil.h"
-#include <weapons/AccessoryStore.h>
-#include <actions/Explosion.h>
-#include <actions/ExplosionParams.h>
-#include <actions/Napalm.h>
-#include <actions/Laser.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <common/Logger.h>
+#include "LUAS3DWeaponLib.hpp"
+#include "LUAScript.hpp"
+#include "LUAUtil.hpp"
+#include <weapons/AccessoryStore.hpp>
+#include <actions/Explosion.hpp>
+#include <actions/ExplosionParams.hpp>
+#include <actions/Napalm.hpp>
+#include <actions/Laser.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <common/Logger.hpp>
 
 #define LUA_LIB
 

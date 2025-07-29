@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Triangle.h>
-#include <landscapemap/HeightMap.h>
-#include <landscapemap/GraphicalHeightMap.h>
-#include <common/Defines.h>
+#include <common/Triangle.hpp>
+#include <landscapemap/HeightMap.hpp>
+#include <landscapemap/GraphicalHeightMap.hpp>
+#include <common/Defines.hpp>
 
 static const int minMapShift = 3;
 static FixedVector nvec(fixed(0), fixed(0), fixed(1));

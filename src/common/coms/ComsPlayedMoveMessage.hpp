@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsPlayedMoveMessageh_INCLUDE__)
 #define __INCLUDE_ComsPlayedMoveMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsPlayedMoveMessage : public ComsMessage
 {

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/DeformLandscape.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ScorchedContext.h>
-#include <movement/TargetMovement.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <movement/TargetMovement.hpp>
 #ifndef S3D_SERVER
 	#include <land/VisibilityPatchGrid.hpp>
 #endif

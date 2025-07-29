@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SplinePathh_INCLUDE__)
 #define __INCLUDE_SplinePathh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 #include <vector>
 
 class SplinePath

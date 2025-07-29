@@ -22,19 +22,19 @@
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ActionController.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/Tank.h>
-#include <tank/TankCamera.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ActionController.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankCamera.hpp>
 #include <graph/MainCamera.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 #include <sound/SoundUtils.hpp>
-#include <weapons/Accessory.h>
+#include <weapons/Accessory.hpp>
 
 ClientStartGameHandler *ClientStartGameHandler::instance_ = 0;
 

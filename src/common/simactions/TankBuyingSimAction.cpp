@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankBuyingSimAction.h>
-#include <placement/PlacementTankPosition.h>
-#include <engine/Simulator.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
+#include <simactions/TankBuyingSimAction.hpp>
+#include <placement/PlacementTankPosition.hpp>
+#include <engine/Simulator.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
 
 std::set<unsigned int> TankBuyingSimAction::runningPlayerIds_;
 

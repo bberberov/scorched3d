@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankgraph/TargetRendererImplTarget.hpp>
-#include <target/TargetLife.h>
-#include <target/TargetState.h>
+#include <target/TargetLife.hpp>
+#include <target/TargetState.hpp>
 #include <landscape/Landscape.hpp>
 #include <landscape/ShadowMap.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
 #include <GLEXT/GLState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/ActionController.h>
+#include <engine/ActionController.hpp>
 #include <graph/ModelRendererStore.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <float.h>

@@ -20,8 +20,8 @@
 
 #include <sound/SoundBufferDynamicOVSourceInstance.hpp>
 #include <sound/SoundBufferOV.hpp>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 #ifdef HAVE_OGG
 

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ComsChannelMessageh_INCLUDE__)
 #define __INCLUDE_ComsChannelMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
-#include <common/ChannelText.h>
+#include <coms/ComsMessage.hpp>
+#include <common/ChannelText.hpp>
 #include <list>
 
 class ComsChannelMessage : public ComsMessage

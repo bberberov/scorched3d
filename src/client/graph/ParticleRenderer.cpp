@@ -27,14 +27,14 @@
 #include <sprites/ExplosionNukeRenderer.hpp>
 #include <sprites/WallActionRenderer.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <landscape/ShadowMap.hpp>
 #include <client/ScorchedClient.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
 #include <GLEXT/GLInfo.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <math.h>
 
 ParticleRendererPoints *ParticleRendererPoints::getInstance()

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_EventHandlerAchievementh_INCLUDE__)
 #define __INCLUDE_EventHandlerAchievementh_INCLUDE__
 
-#include <events/EventHandlerDataBase.h>
+#include <events/EventHandlerDataBase.hpp>
 
 class EventHandlerAchievement : public EventHandler
 {

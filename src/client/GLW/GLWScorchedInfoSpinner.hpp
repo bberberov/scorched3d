@@ -23,7 +23,7 @@
 
 #include <GLW/GLWidget.hpp>
 #include <GLEXT/GLTextureReference.hpp>
-#include <XML/XMLParser.h>
+#include <XML/XMLParser.hpp>
 
 class GLWScorchedInfoSpinner : public GLWidget
 {

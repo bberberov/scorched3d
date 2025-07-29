@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
-#include <common/VectorLib.h>
+#include <common/Defines.hpp>
+#include <common/VectorLib.hpp>
 #include <graph/ParticleEmitter.hpp>
 #include <graph/ParticleTypes.hpp>
 #include <sprites/DebrisActionRenderer.hpp>

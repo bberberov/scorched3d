@@ -19,11 +19,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <client/ScorchedClient.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <landscape/Wall.hpp>
 #include <sound/SoundUtils.hpp>
-#include <image/ImageFactory.h>
-#include <common/Defines.h>
+#include <image/ImageFactory.hpp>
+#include <common/Defines.hpp>
 
 Wall::Wall() : texture_(ImageID(S3D::eModLocation,
 	"data/textures/bordershield/grid.bmp",

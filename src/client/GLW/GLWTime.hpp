@@ -23,7 +23,7 @@
 
 #include <string>
 #include <GLW/GLWidget.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class GLWTime : public GLWidget
 {

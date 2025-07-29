@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Explosionh_INCLUDE__)
 #define __INCLUDE_Explosionh_INCLUDE__
 
-#include <actions/Action.h>
-#include <weapons/Weapon.h>
-#include <common/FixedVector.h>
+#include <actions/Action.hpp>
+#include <weapons/Weapon.hpp>
+#include <common/FixedVector.hpp>
 
 class ExplosionParams;
 class Explosion : public Action

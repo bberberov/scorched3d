@@ -22,7 +22,7 @@
 #define __INCLUDE_GLWWindowSkinh_INCLUDE__
 
 #include <GLW/GLWWindow.hpp>
-#include <XML/XMLFile.h>
+#include <XML/XMLFile.hpp>
 #include <set>
 
 class GLWWindowSkin : public GLWWindow

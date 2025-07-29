@@ -21,8 +21,8 @@
 #if !defined(AFX_BuyAccessoryDialogTankInfo_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_)
 #define AFX_BuyAccessoryDialogTankInfo_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_
 
-#include <tanket/TanketAccessories.h>
-#include <common/Vector.h>
+#include <tanket/TanketAccessories.hpp>
+#include <common/Vector.hpp>
 
 class BuyAccessoryDialogTankInfo
 {

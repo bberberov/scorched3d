@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_WeaponAddTargeth_INCLUDE__)
 #define __INCLUDE_WeaponAddTargeth_INCLUDE__
 
-#include <weapons/Weapon.h>
-#include <target/TargetDefinition.h>
+#include <weapons/Weapon.hpp>
+#include <target/TargetDefinition.hpp>
 
 class WeaponAddTarget : public Weapon
 {

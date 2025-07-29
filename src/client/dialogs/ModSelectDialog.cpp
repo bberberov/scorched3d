@@ -26,8 +26,8 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWTranslate.hpp>
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
 
 GLWIconListModItem::GLWIconListModItem(ModInfo &modInfo) :
 	modInfo_(modInfo),

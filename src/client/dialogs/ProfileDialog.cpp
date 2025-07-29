@@ -27,13 +27,13 @@
 #include <graph/Main2DCamera.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/ModelRendererSimulator.hpp>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <sprites/ExplosionTextures.hpp>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 const int INSET = 8;
 

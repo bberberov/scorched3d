@@ -22,8 +22,8 @@
 #define AFX_ImageFactory_H__0EBAA0E7_3103_43A4_90C0_5708ECE6DB43__INCLUDED_
 
 #include <string>
-#include <image/ImageID.h>
-#include <image/Image.h>
+#include <image/ImageID.hpp>
+#include <image/Image.hpp>
 
 class ImageFactory  
 {

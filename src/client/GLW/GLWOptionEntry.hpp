@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_GLWOptionEntryh_INCLUDE__)
 #define __INCLUDE_GLWOptionEntryh_INCLUDE__
 
-#include <common/OptionEntry.h>
+#include <common/OptionEntry.hpp>
 #include <GLW/GLWidget.hpp>
 #include <list>
 

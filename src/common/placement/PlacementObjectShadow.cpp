@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementObjectShadow.h>
-#include <engine/ScorchedContext.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <placement/PlacementObjectShadow.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 PlacementObjectShadow::PlacementObjectShadow()
 {

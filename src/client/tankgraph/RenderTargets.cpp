@@ -25,12 +25,12 @@
 #include <tankgraph/RenderGeoms.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/ModelRendererTree.hpp>
-#include <target/TargetContainer.h>
-#include <target/TargetState.h>
-#include <target/TargetLife.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetLife.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
 #include <GLEXT/GLGlobalState.hpp>
 #include <landscape/Landscape.hpp>
 #include <water/Water.hpp>

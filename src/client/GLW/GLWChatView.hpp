@@ -25,9 +25,9 @@
 #include <GLW/GLWIconButton.hpp>
 #include <GLEXT/GLFont2d.hpp>
 #include <GLEXT/GLTextureReference.hpp>
-#include <common/KeyboardKey.h>
-#include <common/Vector.h>
-#include <lang/LangString.h>
+#include <common/KeyboardKey.hpp>
+#include <common/Vector.hpp>
+#include <lang/LangString.hpp>
 #include <list>
 
 class GLWChatView : public GLWidget, public GLWButtonI

@@ -24,7 +24,7 @@
 #include <set>
 #include <map>
 #include <list>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 #include <time.h>
 
 class ServerBanned

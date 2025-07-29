@@ -20,23 +20,23 @@
 
 #include <GLW/GLWTankTip.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <tanket/TanketAccessories.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankShotHistory.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <weapons/Weapon.h>
-#include <weapons/Shield.h>
-#include <weapons/AccessoryStore.h>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <weapons/Weapon.hpp>
+#include <weapons/Shield.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 TankUndoMenu::TankUndoMenu(Tank *tank) :
 	tank_(tank)

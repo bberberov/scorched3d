@@ -23,12 +23,12 @@
 #include <server/ServerCommon.hpp>
 #include <server/ServerAuthHandler.hpp>
 #include <server/ServerBanned.hpp>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <coms/ComsConnectAuthMessage.h>
-#include <coms/ComsConnectMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <coms/ComsConnectAuthMessage.hpp>
+#include <coms/ComsConnectMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 ServerConnectHandler::ServerConnectHandler(ComsMessageHandler &comsMessageHandler)
 {

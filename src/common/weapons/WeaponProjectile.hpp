@@ -21,9 +21,9 @@
 #if !defined(AFX_WEAPONPROJECTILE_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_)
 #define AFX_WEAPONPROJECTILE_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_
 
-#include <weapons/Weapon.h>
-#include <common/ModelID.h>
-#include <engine/ObjectGroupEntryDefinition.h>
+#include <weapons/Weapon.hpp>
+#include <common/ModelID.hpp>
+#include <engine/ObjectGroupEntryDefinition.hpp>
 
 class WeaponProjectile : public Weapon
 {

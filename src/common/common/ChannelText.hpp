@@ -23,7 +23,7 @@
 
 #include <string>
 #include <vector>
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 
 class ChannelDefinition
 {

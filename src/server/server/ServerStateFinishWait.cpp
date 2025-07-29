@@ -21,9 +21,9 @@
 #include <server/ServerStateFinishWait.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
-#include <engine/ActionController.h>
-#include <common/OptionsScorched.h>
-#include <simactions/RoundStopSimAction.h>
+#include <engine/ActionController.hpp>
+#include <common/OptionsScorched.hpp>
+#include <simactions/RoundStopSimAction.hpp>
 
 ServerStateFinishWait::ServerStateFinishWait()
 {

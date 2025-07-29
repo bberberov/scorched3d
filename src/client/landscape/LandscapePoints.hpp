@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandscapePointsh_INCLUDE__)
 #define __INCLUDE_LandscapePointsh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <vector>
 
 class LandscapePoints

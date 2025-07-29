@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLState.hpp>
 #include <sky/SkyLine.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <math.h>
 
 SkyLine::SkyLine() :

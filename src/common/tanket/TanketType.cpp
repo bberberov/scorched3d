@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tanket/TanketType.h>
-#include <XML/XMLParser.h>
-#include <common/ToolTip.h>
-#include <common/Defines.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
+#include <tanket/TanketType.hpp>
+#include <XML/XMLParser.hpp>
+#include <common/ToolTip.hpp>
+#include <common/Defines.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 TanketType::TanketType() :
 	default_(false),

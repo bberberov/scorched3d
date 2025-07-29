@@ -21,8 +21,8 @@
 #ifndef _KEYBOARD_H_
 #define _KEYBOARD_H_
 
-#include <common/KeyboardHistory.h>
-#include <common/KeyboardKey.h>
+#include <common/KeyboardHistory.hpp>
+#include <common/KeyboardKey.hpp>
 #include <string>
 #include <list>
 #include <map>

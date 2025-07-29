@@ -22,8 +22,8 @@
 #define _comsMessageSender_h
 
 #include <list>
-#include <coms/ComsMessage.h>
-#include <net/NetInterfaceFlags.h>
+#include <coms/ComsMessage.hpp>
+#include <net/NetInterfaceFlags.hpp>
 
 class ComsMessageSender
 {

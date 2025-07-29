@@ -22,8 +22,8 @@
 #define __INCLUDE_LandscapeMovementh_INCLUDE__
 
 #include <vector>
-#include <common/FixedVector.h>
-#include <common/ModelID.h>
+#include <common/FixedVector.hpp>
+#include <common/ModelID.hpp>
 
 class LandscapeMovementType
 {

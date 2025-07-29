@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetState.h>
-#include <net/NetBuffer.h>
+#include <target/TargetState.hpp>
+#include <net/NetBuffer.hpp>
 
 TargetStateMovement::TargetStateMovement()
 {}

@@ -21,10 +21,10 @@
 #include <wxdialogs/DisplayDialog.hpp>
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/OptionEntrySetter.hpp>
-#include <landscapedef/LandscapeDefinitionsBase.h>
+#include <landscapedef/LandscapeDefinitionsBase.hpp>
 #include <tankai/TankAINames.hpp>
-#include <common/OptionsGame.h>
-#include <common/Defines.h>
+#include <common/OptionsGame.hpp>
+#include <common/Defines.hpp>
 #include <wx/wx.h>
 #include <wx/image.h>
 #include <wx/utils.h>

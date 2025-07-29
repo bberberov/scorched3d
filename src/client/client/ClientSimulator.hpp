@@ -21,11 +21,11 @@
 #if !defined(AFX_ClientSimulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
 #define AFX_ClientSimulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
 
-#include <engine/Simulator.h>
-#include <engine/GameStateI.h>
-#include <coms/ComsMessageHandler.h>
-#include <coms/ComsSimulateMessage.h>
-#include <common/RollingAverage.h>
+#include <engine/Simulator.hpp>
+#include <engine/GameStateI.hpp>
+#include <coms/ComsMessageHandler.hpp>
+#include <coms/ComsSimulateMessage.hpp>
+#include <common/RollingAverage.hpp>
 
 class ClientSimulator : 
 	public GameStateI, 

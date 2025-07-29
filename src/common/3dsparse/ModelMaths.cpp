@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/ModelMaths.h>
-#include <common/Defines.h>
+#include <3dsparse/ModelMaths.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 void ModelMaths::quaternionSlerp(fixed p[4], fixed q[4], fixed t, fixed qt[4])

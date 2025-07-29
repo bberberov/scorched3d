@@ -21,13 +21,13 @@
 #if !defined(__INCLUDE_ShotProjectileh_INCLUDE__)
 #define __INCLUDE_ShotProjectileh_INCLUDE__
 
-#include <engine/PhysicsParticle.h>
-#include <engine/ScorchedCollisionIds.h>
+#include <engine/PhysicsParticle.hpp>
+#include <engine/ScorchedCollisionIds.hpp>
 #ifndef	S3D_SERVER
 	#include <tankgraph/RenderTracer.hpp>
 #endif
-#include <actions/ParticleGroup.h>
-#include <weapons/WeaponProjectile.h>
+#include <actions/ParticleGroup.hpp>
+#include <weapons/WeaponProjectile.hpp>
 #include <list>
 
 class TankViewPointProvider;

@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponGiveLife.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ActionController.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <common/Defines.h>
-#include <common/ChannelManager.h>
-#include <lang/LangResource.h>
+#include <weapons/WeaponGiveLife.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ActionController.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
+#include <lang/LangResource.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponGiveLife);
 

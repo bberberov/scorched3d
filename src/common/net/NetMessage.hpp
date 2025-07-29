@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_NetMessageh_INCLUDE__)
 #define __INCLUDE_NetMessageh_INCLUDE__
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 
 class NetMessagePool;
 class NetMessage

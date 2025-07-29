@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "LUAScriptHook.h"
-#include <XML/XMLFile.h>
-#include <common/FileList.h>
-#include <common/Logger.h>
+#include "LUAScriptHook.hpp"
+#include <XML/XMLFile.hpp>
+#include <common/FileList.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
 #include <console/ConsoleRuleMethodIAdapter.hpp>
 #endif

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TreeModelFactoryh_INCLUDE__)
 #define __INCLUDE_TreeModelFactoryh_INCLUDE__
 
-#include <3dsparse/Model.h>
+#include <3dsparse/Model.hpp>
 
 class TreeModelFactory
 {

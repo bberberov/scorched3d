@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <landscape/Smoke.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 Smoke::Smoke()
 {

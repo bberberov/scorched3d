@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerLogh_INCLUDE__)
 #define __INCLUDE_ServerLogh_INCLUDE__
 
-#include <common/LoggerI.h>
+#include <common/LoggerI.hpp>
 #include <deque>
 #include <string>
 

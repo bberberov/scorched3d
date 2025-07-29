@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ScorchedServerh_INCLUDE__)
 #define __INCLUDE_ScorchedServerh_INCLUDE__
 
-#include <engine/ScorchedContext.h>
+#include <engine/ScorchedContext.hpp>
 #include <server/ScorchedServerSettings.hpp>
 #include <string>
 

@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/Shield.h>
-#include <common/VectorLib.h>
-#include <common/Defines.h>
+#include <weapons/Shield.hpp>
+#include <common/VectorLib.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 Shield::Shield() : 

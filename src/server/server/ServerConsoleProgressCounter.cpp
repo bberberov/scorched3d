@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <server/ServerConsoleProgressCounter.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 ServerConsoleProgressCounter *ServerConsoleProgressCounter::instance_ = 0;
 

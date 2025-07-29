@@ -20,8 +20,8 @@
 
 #include <server/ServerOperationResultHandler.hpp>
 #include <server/ScorchedServer.hpp>
-#include <coms/ComsOperationResultMessage.h>
-#include <image/ImageFactory.h>
+#include <coms/ComsOperationResultMessage.hpp>
+#include <image/ImageFactory.hpp>
 #include <time.h>
 
 ServerOperationResultHandler::ServerOperationResultHandler(ComsMessageHandler &comsMessageHandler)

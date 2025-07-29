@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ImageStoreh_INCLUDE__)
 #define __INCLUDE_ImageStoreh_INCLUDE__
 
-#include <image/ImageID.h>
+#include <image/ImageID.hpp>
 #include <map>
 #include <string>
 

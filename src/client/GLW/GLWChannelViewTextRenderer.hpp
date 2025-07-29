@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWChanneViewTextRendererh_INCLUDE__)
 #define __INCLUDE_GLWChanneViewTextRendererh_INCLUDE__
 
-#include <common/ChannelTextParser.h>
-#include <common/ToolTip.h>
+#include <common/ChannelTextParser.hpp>
+#include <common/ToolTip.hpp>
 #include <GLEXT/GLFont2d.hpp>
 
 class GLWChannelView;

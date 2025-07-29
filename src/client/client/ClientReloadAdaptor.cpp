@@ -23,13 +23,13 @@
 #include <server/ScorchedServer.hpp>
 #include <landscape/LandscapeSoundManager.hpp>
 #include <landscape/LandscapeMusicManager.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <console/ConsoleRuleMethodIAdapter.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 ClientReloadAdaptor *ClientReloadAdaptor::instance_ = 0;
 

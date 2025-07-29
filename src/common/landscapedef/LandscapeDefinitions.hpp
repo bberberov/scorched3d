@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_LandscapeDefinitionsh_INCLUDE__)
 #define __INCLUDE_LandscapeDefinitionsh_INCLUDE__
 
-#include <landscapedef/LandscapeDefinitionsBase.h>
-#include <landscapedef/LandscapeDefinitionsItem.h>
-#include <landscapedef/LandscapeDefinition.h>
+#include <landscapedef/LandscapeDefinitionsBase.hpp>
+#include <landscapedef/LandscapeDefinitionsItem.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
 
 class LandscapeDefinitions;
 class LandscapeDefn;

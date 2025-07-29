@@ -21,8 +21,8 @@
 #include <graph/ShotCountDown.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <common/OptionsScorched.h>
-#include <common/DefinesString.h>
+#include <common/OptionsScorched.hpp>
+#include <common/DefinesString.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <GLW/GLWFont.hpp>
@@ -32,9 +32,9 @@
 #include <GLEXT/GLTexture.hpp>
 #include <sound/Sound.hpp>
 #include <sound/SoundUtils.hpp>
-#include <target/TargetContainer.h>
-#include <tank/TankAvatar.h>
-#include <lang/LangResource.h>
+#include <target/TargetContainer.hpp>
+#include <tank/TankAvatar.hpp>
+#include <lang/LangResource.hpp>
 
 ShotCountDown *ShotCountDown::instance_ = 0;
 

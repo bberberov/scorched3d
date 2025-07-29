@@ -20,10 +20,10 @@
 
 #include <graph/SoftwareMouse.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/GameState.h>
-#include <image/ImageFactory.h>
+#include <engine/GameState.hpp>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <SDL/SDL.h>
 

@@ -24,7 +24,7 @@
 #include <GLEXT/GLVertexBufferObject.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 
 Water2Patches::Water2Patches() :
 	size_(0),

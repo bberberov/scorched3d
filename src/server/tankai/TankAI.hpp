@@ -21,9 +21,9 @@
 #if !defined(AFX_TankAI_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_TankAI_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <engine/ScorchedCollisionIds.h>
-#include <common/Vector.h>
-#include <common/ToolTip.h>
+#include <engine/ScorchedCollisionIds.hpp>
+#include <common/Vector.hpp>
+#include <common/ToolTip.hpp>
 #include <string>
 
 class TankAIWeaponSets;

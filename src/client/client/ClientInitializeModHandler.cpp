@@ -24,23 +24,23 @@
 #include <client/ClientWindowSetup.hpp>
 #include <sprites/ExplosionTextures.hpp>
 #include <server/ScorchedServer.hpp>
-#include <weapons/AccessoryStore.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
+#include <weapons/AccessoryStore.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
 #include <client/ClientParams.hpp>
 #include <dialogs/ProgressDialog.hpp>
-#include <engine/ModFiles.h>
+#include <engine/ModFiles.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <coms/ComsInitializeModMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsInitializeModMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWWindowSkinManager.hpp>
 #include <GLEXT/GLLenseFlare.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 #include <tankai/TankAIStrings.hpp>
-#include <tank/TankModelStore.h>
-#include <tanket/TanketTypes.h>
+#include <tank/TankModelStore.hpp>
+#include <tanket/TanketTypes.hpp>
 
 ClientInitializeModHandler *ClientInitializeModHandler::instance_ = 0;
 

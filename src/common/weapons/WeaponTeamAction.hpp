@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponTeamActionh_INCLUDE__)
 #define __INCLUDE_WeaponTeamActionh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponTeamAction  : public WeaponCallback
 {

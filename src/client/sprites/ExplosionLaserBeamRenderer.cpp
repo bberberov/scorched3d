@@ -20,9 +20,9 @@
 
 #include <sprites/ExplosionLaserBeamRenderer.hpp>
 #include <sprites/ExplosionTextures.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <console/Console.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <sound/SoundUtils.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/ParticleEmitter.hpp>

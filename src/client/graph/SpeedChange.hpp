@@ -22,9 +22,9 @@
 #if !defined(__INCLUDE_SpeedChangeh_INCLUDE__)
 #define __INCLUDE_SpeedChangeh_INCLUDE__
 
-#include <engine/GameStateI.h>
-#include <common/Clock.h>
-#include <common/fixed.h>
+#include <engine/GameStateI.hpp>
+#include <common/Clock.hpp>
+#include <common/fixed.hpp>
 
 class SpeedChange : public GameStateI
 {

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/PhysicsParticle.h>
-#include <engine/ScorchedContext.h>
+#include <engine/PhysicsParticle.hpp>
+#include <engine/ScorchedContext.hpp>
 
 PhysicsParticle::PhysicsParticle(bool referenced)  : 
 	Action(referenced),

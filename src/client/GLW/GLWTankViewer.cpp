@@ -19,13 +19,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLW/GLWTankViewer.hpp>
-#include <tank/TankModelStore.h>
+#include <tank/TankModelStore.hpp>
 #include <tankgraph/ModelRendererTankStore.hpp>
-#include <3dsparse/ModelStore.h>
+#include <3dsparse/ModelStore.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/DefinesString.h>
-#include <lang/LangResource.h>
+#include <common/DefinesString.hpp>
+#include <lang/LangResource.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWTranslate.hpp>
 

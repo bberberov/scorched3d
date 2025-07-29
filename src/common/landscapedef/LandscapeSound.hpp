@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandscapeSoundh_INCLUDE__)
 #define __INCLUDE_LandscapeSoundh_INCLUDE__
 
-#include <XML/XMLFile.h>
+#include <XML/XMLFile.hpp>
 #include <string>
 #include <vector>
 

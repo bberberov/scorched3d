@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_MissileActionRendererh_INCLUDE__)
 #define __INCLUDE_MissileActionRendererh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 #include <graph/ParticleEmitter.hpp>
 #include <tankgraph/MissileMesh.hpp>
 #include <GLEXT/GLTextureSet.hpp>
-#include <common/Counter.h>
+#include <common/Counter.hpp>
 #include <string>
 #include <map>
 

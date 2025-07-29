@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TargetVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_TargetVisibilityPatchh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <set>
 
 class Target;

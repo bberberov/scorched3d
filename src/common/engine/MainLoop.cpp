@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/MainLoop.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <engine/MainLoop.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
 #include <graph/OptionsDisplay.hpp>
 #include <GLEXT/GLState.hpp>

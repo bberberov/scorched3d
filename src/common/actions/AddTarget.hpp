@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_AddTargeth_INCLUDE__)
 #define __INCLUDE_AddTargeth_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/FixedVector.h>
+#include <actions/Action.hpp>
+#include <common/FixedVector.hpp>
 
 class WeaponAddTarget;
 class AddTarget : public Action

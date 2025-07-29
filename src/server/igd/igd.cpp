@@ -19,12 +19,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <igd/igd.hpp>
-#include <common/Logger.h>
-#include <XML/XMLStringBuffer.h>
-#include <net/NetInterface.h>
-#include <net/NetBufferUtil.h>
+#include <common/Logger.hpp>
+#include <XML/XMLStringBuffer.hpp>
+#include <net/NetInterface.hpp>
+#include <net/NetBufferUtil.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 
 static const char *UPNP_MCAST_ADDR = "239.255.255.250";
 static unsigned int PORT = 1900;

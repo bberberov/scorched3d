@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/RoofMaps.h>
-#include <landscapemap/HeightMapLoader.h>
-#include <image/ImageFactory.h>
-#include <common/ProgressCounter.h>
-#include <engine/ScorchedContext.h>
-#include <landscapedef/LandscapeDefinitionCache.h>
-#include <landscapedef/LandscapeDefn.h>
+#include <landscapemap/RoofMaps.hpp>
+#include <landscapemap/HeightMapLoader.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/ProgressCounter.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapedef/LandscapeDefinitionCache.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
 
 RoofMaps::RoofMaps(LandscapeDefinitionCache &defnCache) :
 	defnCache_(defnCache), roofBaseHeight_(0)

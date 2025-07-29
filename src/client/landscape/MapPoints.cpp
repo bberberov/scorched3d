@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <landscape/MapPoints.hpp>
-#include <3dsparse/ModelStore.h>
+#include <3dsparse/ModelStore.hpp>
 #include <graph/ModelRenderer.hpp>
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/ModelRendererStore.hpp>

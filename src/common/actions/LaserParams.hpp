@@ -22,8 +22,8 @@
 #define __INCLUDE_LaserParamsh_INCLUDE__
 
 #include <string>
-#include <common/fixed.h>
-#include <common/Vector.h>
+#include <common/fixed.hpp>
+#include <common/Vector.hpp>
 
 struct lua_State;
 class XMLNode;

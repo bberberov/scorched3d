@@ -24,7 +24,7 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWOptionEntry.hpp>
-#include <common/OptionsGame.h>
+#include <common/OptionsGame.hpp>
 
 class SettingsSelectDialog : 
 	public GLWWindow,

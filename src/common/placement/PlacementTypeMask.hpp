@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementTypeMaskh_INCLUDE__)
 #define __INCLUDE_PlacementTypeMaskh_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class PlacementTypeMask : public PlacementType
 {

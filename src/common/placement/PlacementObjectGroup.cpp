@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementObjectGroup.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementObjectGroup.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementObjectGroup::PlacementObjectGroup()
 {

@@ -21,7 +21,7 @@
 #ifndef _ClientConnectionAuthHandler_h
 #define _ClientConnectionAuthHandler_h
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ClientConnectionAuthHandler : 
 	public ComsMessageHandlerI

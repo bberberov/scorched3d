@@ -22,7 +22,7 @@
 #define AFX_ImageLuminanceFactory_H__15020260_678A_40DF_B49C_AB1796BB3EED__INCLUDED_
 
 #include <stdio.h>
-#include <image/Image.h>
+#include <image/Image.hpp>
 
 class ImageLuminanceFactory
 {

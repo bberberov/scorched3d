@@ -20,8 +20,8 @@
 
 #include <GLEXT/GLVertexBufferObject.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/DefinesAssert.h>
-#include <common/Logger.h>
+#include <common/DefinesAssert.hpp>
+#include <common/Logger.hpp>
 
 GLVertexBufferObject::GLVertexBufferObject(bool indexbuffer) :
 	id_(0), size_(0), mapped_(false),

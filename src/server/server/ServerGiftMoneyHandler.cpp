@@ -22,11 +22,11 @@
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerState.hpp>
-#include <simactions/TankGiftSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Logger.h>
+#include <simactions/TankGiftSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Logger.hpp>
 
 ServerGiftMoneyHandler::ServerGiftMoneyHandler(ComsMessageHandler &comsMessageHandler)
 {

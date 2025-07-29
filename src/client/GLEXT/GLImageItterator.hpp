@@ -21,7 +21,7 @@
 #if !defined(AFX_ImageITTERATOR_H__F83D9F30_02DF_44EC_B2E7_1F4D87D6FBC8__INCLUDED_)
 #define AFX_ImageITTERATOR_H__F83D9F30_02DF_44EC_B2E7_1F4D87D6FBC8__INCLUDED_
 
-#include <image/Image.h>
+#include <image/Image.hpp>
 
 /**
 A helper class that simplifes the iteration (looping) through

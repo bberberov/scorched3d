@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponMessageh_INCLUDE__)
 #define __INCLUDE_WeaponMessageh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponMessage  : public WeaponCallback
 {

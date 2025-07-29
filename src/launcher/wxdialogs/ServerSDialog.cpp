@@ -21,9 +21,9 @@
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/SettingsDialog.hpp>
 #include <scorched/ScorchedParams.hpp>
-#include <common/Defines.h>
-#include <common/OptionsGame.h>
-#include <engine/ModDirs.h>
+#include <common/Defines.hpp>
+#include <common/OptionsGame.hpp>
+#include <engine/ModDirs.hpp>
 #include <wx/wx.h>
 #include <wx/utils.h>
 #include <wx/dir.h>

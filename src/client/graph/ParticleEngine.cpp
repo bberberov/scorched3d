@@ -20,7 +20,7 @@
 
 #include <graph/ParticleEngine.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <engine/Simulator.h>
+#include <engine/Simulator.hpp>
 #include <client/ScorchedClient.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>

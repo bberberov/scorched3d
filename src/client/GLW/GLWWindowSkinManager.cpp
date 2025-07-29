@@ -20,8 +20,8 @@
 
 #include <GLW/GLWWindowSkinManager.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <XML/XMLFile.h>
-#include <common/Defines.h>
+#include <XML/XMLFile.hpp>
+#include <common/Defines.hpp>
 
 GLWWindowSkinManager *GLWWindowSkinManager::defaultinstance_ = 0;
 GLWWindowSkinManager *GLWWindowSkinManager::modinstance_ = 0;

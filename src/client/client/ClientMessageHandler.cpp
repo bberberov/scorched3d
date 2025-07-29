@@ -24,10 +24,10 @@
 #include <client/ScorchedClient.hpp>
 #include <dialogs/ConnectDialog.hpp>
 #include <dialogs/MsgBoxDialog.hpp>
-#include <target/TargetContainer.h>
-#include <lang/LangResource.h>
-#include <common/Logger.h>
-#include <net/NetInterface.h>
+#include <target/TargetContainer.hpp>
+#include <lang/LangResource.hpp>
+#include <common/Logger.hpp>
+#include <net/NetInterface.hpp>
 
 ClientMessageHandler *ClientMessageHandler::instance_ = 0;
 

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <wxdialogs/MainDialog.hpp>
-#include <common/OptionsGame.h>
+#include <common/OptionsGame.hpp>
 #include <wx/wx.h>
 #include <wx/image.h>
 #include <locale.h>

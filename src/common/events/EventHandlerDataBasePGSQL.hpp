@@ -26,7 +26,7 @@
 #if defined(_WIN32)
 #include <Winsock2.h>
 #endif
-#include <events/EventHandlerDataBase.h>
+#include <events/EventHandlerDataBase.hpp>
 #include <pgsql/libpq-fe.h>
 
 class EventHandlerDataBasePGSQL : public EventHandlerDataBase

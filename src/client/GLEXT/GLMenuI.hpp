@@ -29,7 +29,7 @@
 #include <list>
 #include <string>
 #include <GLW/GLWToolTip.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class GLTextureBase;
 class GLMenuItem

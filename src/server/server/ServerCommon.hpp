@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerCommonh_INCLUDE__)
 #define __INCLUDE_ServerCommonh_INCLUDE__
 
-#include <common/ChannelText.h>
+#include <common/ChannelText.hpp>
 
 namespace ServerCommon
 {

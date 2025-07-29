@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NetServerTCP3h_INCLUDE__)
 #define __INCLUDE_NetServerTCP3h_INCLUDE__
 
-#include <net/NetServerTCP3Destination.h>
+#include <net/NetServerTCP3Destination.hpp>
 #include <map>
 
 class NetServerTCP3 : 

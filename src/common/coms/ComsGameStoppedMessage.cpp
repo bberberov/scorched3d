@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsGameStoppedMessage.h>
+#include <coms/ComsGameStoppedMessage.hpp>
 
 ComsMessageType ComsGameStoppedMessage::ComsGameStoppedMessageType("ComsGameStoppedMessageType");
 

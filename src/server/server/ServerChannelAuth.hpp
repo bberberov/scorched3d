@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerChannelAuthh_INCLUDE__)
 #define __INCLUDE_ServerChannelAuthh_INCLUDE__
 
-#include <common/ChannelText.h>
+#include <common/ChannelText.hpp>
 
 class ServerChannelAuth
 {

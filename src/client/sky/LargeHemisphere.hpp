@@ -22,7 +22,7 @@
 #define AFX_LargeHemisphere_H__3577D267_2B6C_4300_B0EE_61E1E50E57DD__INCLUDED_
 
 #include <list>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Image;
 class LargeHemisphere  

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/Image.h>
+#include <image/Image.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <sky/Hemisphere.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <vector>
 #include <math.h>
 

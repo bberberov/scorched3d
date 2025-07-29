@@ -23,9 +23,9 @@
 
 #include <list>
 #include <map>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <GLEXT/GLState.hpp>
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 class Tank;
 class RenderTracer : public GameStateI

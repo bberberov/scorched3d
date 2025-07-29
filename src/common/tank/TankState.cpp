@@ -19,16 +19,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetState.h>
-#include <engine/ScorchedContext.h>
-#include <lang/LangResource.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetState.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <lang/LangResource.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 static struct AllowedStateTransitions
 {

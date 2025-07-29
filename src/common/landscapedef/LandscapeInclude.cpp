@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeInclude.h>
-#include <landscapedef/LandscapeEvents.h>
-#include <landscapedef/LandscapeMovement.h>
-#include <landscapedef/LandscapeSound.h>
-#include <landscapedef/LandscapeMusic.h>
-#include <landscapedef/LandscapeOptions.h>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <landscapedef/LandscapeEvents.hpp>
+#include <landscapedef/LandscapeMovement.hpp>
+#include <landscapedef/LandscapeSound.hpp>
+#include <landscapedef/LandscapeMusic.hpp>
+#include <landscapedef/LandscapeOptions.hpp>
 
 LandscapeInclude::LandscapeInclude()
 {

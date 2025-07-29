@@ -23,9 +23,9 @@
 #include <server/ServerStatePlaying.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerState.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 
 ServerPlayedMoveHandler::ServerPlayedMoveHandler(ComsMessageHandler &comsMessageHandler)
 {

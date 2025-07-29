@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ActionController.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
+#include <engine/ActionController.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
 #include <list>
 
 ActionController::ActionController() :

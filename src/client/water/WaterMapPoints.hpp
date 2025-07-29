@@ -22,7 +22,7 @@
 #define __INCLUDE_WaterMapPointsh_INCLUDE__
 
 #include <vector>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Water2Patches;
 class WaterMapPoints

@@ -21,14 +21,14 @@
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLTexture.hpp>
 #include <GLEXT/GLViewPort.hpp>
-#include <image/ImageFactory.h>
-#include <XML/XMLParser.h>
+#include <image/ImageFactory.hpp>
+#include <XML/XMLParser.hpp>
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 static const float roundSize = 20.0f;
 static const float smallRoundSize = 10.0f;

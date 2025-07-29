@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_OptionsScorchedh_INCLUDE__)
 #define __INCLUDE_OptionsScorchedh_INCLUDE__
 
-#include <common/OptionsGame.h>
+#include <common/OptionsGame.hpp>
 
 #define GENERIC_GETTER(x) \
 	{ \

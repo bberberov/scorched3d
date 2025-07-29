@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponGiveLivesh_INCLUDE__)
 #define __INCLUDE_WeaponGiveLivesh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponGiveLives  : public WeaponCallback
 {

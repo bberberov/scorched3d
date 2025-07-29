@@ -22,7 +22,7 @@
 #define __INCLUDE_TankViewPointsh_INCLUDE__
 
 #include <set>
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 class TankViewPointProvider
 {

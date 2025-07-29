@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_EventHandlerAchievementNumberRankh_INCLUDE__)
 #define __INCLUDE_EventHandlerAchievementNumberRankh_INCLUDE__
 
-#include <events/EventHandlerAchievement.h>
+#include <events/EventHandlerAchievement.hpp>
 
 class EventHandlerAchievementNumberRank : public EventHandlerAchievement
 {

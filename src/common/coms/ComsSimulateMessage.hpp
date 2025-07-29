@@ -21,8 +21,8 @@
 #ifndef _ComsSimulateMessage_h
 #define _ComsSimulateMessage_h
 
-#include <coms/ComsMessage.h>
-#include <simactions/SimAction.h>
+#include <coms/ComsMessage.hpp>
+#include <simactions/SimAction.hpp>
 #include <list>
 
 class ComsSimulateMessage : public ComsMessage

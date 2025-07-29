@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/Gamma.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <math.h>

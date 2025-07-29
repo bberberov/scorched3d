@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeDefinitionCache.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <engine/ScorchedContext.h>
+#include <landscapedef/LandscapeDefinitionCache.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <engine/ScorchedContext.hpp>
 #include <limits.h>
 
 LandscapeDefinitionCache::LandscapeDefinitionCache() : 

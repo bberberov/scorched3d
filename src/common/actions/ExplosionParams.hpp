@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ExplosionParamsh_INCLUDE__)
 #define __INCLUDE_ExplosionParamsh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 struct lua_State;
 class XMLNode;

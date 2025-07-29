@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_TargetFallingh_INCLUDE__)
 #define __INCLUDE_TargetFallingh_INCLUDE__
 
-#include <engine/PhysicsParticle.h>
-#include <engine/ScorchedCollisionIds.h>
-#include <weapons/Weapon.h>
+#include <engine/PhysicsParticle.hpp>
+#include <engine/ScorchedCollisionIds.hpp>
+#include <weapons/Weapon.hpp>
 
 #include <map>
 #include <list>

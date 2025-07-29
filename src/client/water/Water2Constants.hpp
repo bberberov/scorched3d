@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_Water2Constantsh_INCLUDE__)
 #define __INCLUDE_Water2Constantsh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 static inline float myfmod(float a, float b) { return a-floorf(a/b)*b; }//fmod is different for negative a/b
 

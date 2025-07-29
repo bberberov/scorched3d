@@ -21,7 +21,7 @@
 #ifndef _TankModelContainer_h
 #define _TankModelContainer_h
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 
 // The model used for this tank
 class ScorchedContext;

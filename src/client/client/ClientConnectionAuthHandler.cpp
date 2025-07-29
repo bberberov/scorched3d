@@ -22,20 +22,20 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientState.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 #include <server/ScorchedServer.hpp>
 #include <dialogs/ConnectDialog.hpp>
 #include <dialogs/MsgBoxDialog.hpp>
 #include <dialogs/ProgressDialog.hpp>
 #include <dialogs/AuthDialog.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <coms/ComsConnectAuthMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsConnectAuthMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <target/TargetContainer.h>
+#include <target/TargetContainer.hpp>
 #include <client/SecureID.hpp>
-#include <net/NetInterface.h>
+#include <net/NetInterface.hpp>
 
 ClientConnectionAuthHandler *ClientConnectionAuthHandler::instance_ = 0;
 

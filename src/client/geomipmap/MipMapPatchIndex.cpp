@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <geomipmap/MipMapPatchIndex.hpp>
-#include <common/DefinesAssert.h>
+#include <common/DefinesAssert.hpp>
 #include <limits.h>
 #include <vector>
 

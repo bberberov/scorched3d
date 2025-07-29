@@ -24,20 +24,20 @@
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWColors.hpp>
 #include <GLEXT/GLState.hpp>
-#include <image/ImageFactory.h>
-#include <XML/XMLParser.h>
+#include <image/ImageFactory.hpp>
+#include <XML/XMLParser.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientChannelManager.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankColorGenerator.h>
-#include <common/ToolTipResource.h>
-#include <common/Defines.h>
-#include <common/Keyboard.h>
-#include <common/OptionsScorched.h>
-#include <lang/LangResource.h>
-#include <lang/LangParam.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <common/ToolTipResource.hpp>
+#include <common/Defines.hpp>
+#include <common/Keyboard.hpp>
+#include <common/OptionsScorched.hpp>
+#include <lang/LangResource.hpp>
+#include <lang/LangParam.hpp>
 
 std::list<ChannelText> GLWChannelText::lastMessages_;
 

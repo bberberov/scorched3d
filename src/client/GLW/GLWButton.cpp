@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLState.hpp>
-#include <common/Keyboard.h>
+#include <common/Keyboard.hpp>
 #include <GLW/GLWButton.hpp>
 
 GLWButtonI::~GLWButtonI()

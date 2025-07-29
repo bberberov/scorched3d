@@ -20,7 +20,7 @@
 
 #include <server/ServerAuthHandlerDefault.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 
 ServerAuthHandlerDefault::ServerAuthHandlerDefault()
 {

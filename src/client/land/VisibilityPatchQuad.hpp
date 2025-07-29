@@ -22,7 +22,7 @@
 #define __INCLUDE_VisibilityPatchQuadh_INCLUDE__
 
 #include <land/VisibilityPatchInfo.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class VisibilityPatchGrid;
 class VisibilityPatchQuad

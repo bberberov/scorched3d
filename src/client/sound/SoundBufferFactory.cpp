@@ -23,7 +23,7 @@
 #include <sound/SoundBufferEmpty.hpp>
 #include <sound/SoundBufferWav.hpp>
 #include <sound/SoundBufferOV.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 SoundBuffer *SoundBufferFactory::createBuffer(const char *fileName)
 {

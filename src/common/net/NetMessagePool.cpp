@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <net/NetMessagePool.h>
+#include <net/NetMessagePool.hpp>
 
 NetMessagePool *NetMessagePool::instance_ = 0;
 

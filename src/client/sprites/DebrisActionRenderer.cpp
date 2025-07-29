@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <sprites/DebrisActionRenderer.hpp>
-#include <3dsparse/ModelStore.h>
-#include <common/Defines.h>
+#include <3dsparse/ModelStore.hpp>
+#include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <graph/ModelRendererStore.hpp>
 #include <stdlib.h>

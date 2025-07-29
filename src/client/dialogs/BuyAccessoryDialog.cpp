@@ -27,12 +27,12 @@
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsBuyAccessoryMessage.h>
-#include <weapons/AccessoryStore.h>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsBuyAccessoryMessage.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <stdio.h>
 
 BuyAccessoryDialog *BuyAccessoryDialog::instance_ = 0;

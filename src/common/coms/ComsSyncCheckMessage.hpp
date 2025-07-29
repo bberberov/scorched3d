@@ -21,8 +21,8 @@
 #ifndef _ComsSyncCheckMessage_h
 #define _ComsSyncCheckMessage_h
 
-#include <coms/ComsMessage.h>
-#include <engine/ScorchedContext.h>
+#include <coms/ComsMessage.hpp>
+#include <engine/ScorchedContext.hpp>
 #include <vector>
 
 class ComsSyncCheckMessage : public ComsMessage

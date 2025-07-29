@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/ASEModelFactory.h>
-#include <3dsparse/MSModelFactory.h>
-#include <3dsparse/TreeModelFactory.h>
-#include <3dsparse/ModelStore.h>
-#include <3dsparse/Model.h>
-#include <common/Defines.h>
+#include <3dsparse/ASEModelFactory.hpp>
+#include <3dsparse/MSModelFactory.hpp>
+#include <3dsparse/TreeModelFactory.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <3dsparse/Model.hpp>
+#include <common/Defines.hpp>
 
 ModelStore *ModelStore::instance_ = 0;
 

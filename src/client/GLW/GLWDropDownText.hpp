@@ -22,7 +22,7 @@
 #define __INCLUDE_GLWDropDownTexth_INCLUDE__
 
 #include <GLW/GLWDropDown.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 
 class GLWDropDownText : public GLWDropDown
 {

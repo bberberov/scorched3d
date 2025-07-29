@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ObjectGroupEntryh_INCLUDE__)
 #define __INCLUDE_ObjectGroupEntryh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 #include <set>
 
 class ObjectGroupEntryReference;

@@ -21,7 +21,7 @@
 #if !defined(AFX_WEAPONLEAPFROG_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_)
 #define AFX_WEAPONLEAPFROG_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class WeaponLeapFrog : public Weapon
 {

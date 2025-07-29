@@ -20,12 +20,12 @@
 
 #include <landscape/DeformTextures.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
 #include <GLEXT/GLImageModifier.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <math.h>
 
 void DeformTextures::deformLandscape(Vector &pos, float radius, 

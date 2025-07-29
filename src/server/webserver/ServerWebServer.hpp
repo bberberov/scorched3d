@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ServerWebServerh_INCLUDE__)
 #define __INCLUDE_ServerWebServerh_INCLUDE__
 
-#include <net/NetServerTCP.h>
-#include <common/FileLogger.h>
+#include <net/NetServerTCP.hpp>
+#include <common/FileLogger.hpp>
 #include <webserver/ServerWebServerQueue.hpp>
 
 class ServerWebServer : public NetMessageHandlerI

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <console/ConsoleLines.hpp>
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 #include <string>
 
 unsigned ConsoleLine::nextLineNumber_ = 0;

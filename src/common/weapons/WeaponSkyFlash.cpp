@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponSkyFlash.h>
-#include <engine/ActionController.h>
-#include <actions/SkyFlash.h>
+#include <weapons/WeaponSkyFlash.hpp>
+#include <engine/ActionController.hpp>
+#include <actions/SkyFlash.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponSkyFlash);
 

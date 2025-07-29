@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_WeaponNapalmh_INCLUDE__)
 #define __INCLUDE_WeaponNapalmh_INCLUDE__
 
-#include <weapons/Weapon.h>
-#include <actions/NapalmParams.h>
+#include <weapons/Weapon.hpp>
+#include <actions/NapalmParams.hpp>
 
 class WeaponNapalm : public Weapon
 {

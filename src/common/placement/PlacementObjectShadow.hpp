@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_PlacementObjectShadowh_INCLUDE__)
 #define __INCLUDE_PlacementObjectShadowh_INCLUDE__
 
-#include <placement/PlacementObject.h>
-#include <placement/PlacementShadowDefinition.h>
+#include <placement/PlacementObject.hpp>
+#include <placement/PlacementShadowDefinition.hpp>
 
 class PlacementObjectShadow : public PlacementObject
 {

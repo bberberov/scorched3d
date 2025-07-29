@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_LandscapeDefinitionCacheh_INCLUDE__)
 #define __INCLUDE_LandscapeDefinitionCacheh_INCLUDE__
 
-#include <landscapedef/LandscapeDefinition.h>
+#include <landscapedef/LandscapeDefinition.hpp>
 
 class ScorchedContext;
 class LandscapeTex;

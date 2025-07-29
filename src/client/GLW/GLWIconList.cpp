@@ -20,7 +20,7 @@
 
 #include <GLW/GLWIconList.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 
 GLWIconListItem::~GLWIconListItem()
 {}

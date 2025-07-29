@@ -23,14 +23,14 @@
 #include <server/ServerSyncCheck.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerChannelManager.hpp>
-#include <simactions/RoundStartSimAction.h>
-#include <simactions/TankTeamBallanceSimAction.h>
-#include <common/OptionsScorched.h>
-#include <events/EventController.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
+#include <simactions/RoundStartSimAction.hpp>
+#include <simactions/TankTeamBallanceSimAction.hpp>
+#include <common/OptionsScorched.hpp>
+#include <events/EventController.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
 
 ServerStatePlaying::ServerStatePlaying() :
 	roundState_(eNone),

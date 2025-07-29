@@ -20,7 +20,7 @@
 
 #include <wxdialogs/OptionEntrySetter.hpp>
 #include <wxdialogs/MainDialog.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 OptionEntrySetter::OptionEntrySetter(wxControl *control, OptionEntry &entry)
 	:

@@ -21,9 +21,9 @@
 #if !defined(AFX_FixedVector_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_)
 #define AFX_FixedVector_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_
 
-#include <common/DefinesAssert.h>
-#include <common/Vector.h>
-#include <common/fixed.h>
+#include <common/DefinesAssert.hpp>
+#include <common/Vector.hpp>
+#include <common/fixed.hpp>
 
 class FixedVector  
 {

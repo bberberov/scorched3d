@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAIStrings.hpp>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
 
 TankAIStrings::TankAIStrings() :
 	playerNamesCounter_(0),

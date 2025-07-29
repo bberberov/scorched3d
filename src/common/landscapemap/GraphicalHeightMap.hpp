@@ -22,7 +22,7 @@
 #define AFX_GraphicalHeightMap_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_
 
 #include <stdlib.h>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class GraphicalHeightMap  
 {

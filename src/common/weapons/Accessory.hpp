@@ -21,12 +21,12 @@
 #if !defined(AFX_ACCESSORY_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_)
 #define AFX_ACCESSORY_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_
 
-#include <common/ToolTip.h>
-#include <common/ModelID.h>
-#include <XML/XMLFile.h>
-#include <weapons/AccessoryPart.h>
-#include <weapons/AccessoryCreateContext.h>
-#include <lang/LangString.h>
+#include <common/ToolTip.hpp>
+#include <common/ModelID.hpp>
+#include <XML/XMLFile.hpp>
+#include <weapons/AccessoryPart.hpp>
+#include <weapons/AccessoryCreateContext.hpp>
+#include <lang/LangString.hpp>
 #include <string>
 #include <map>
 

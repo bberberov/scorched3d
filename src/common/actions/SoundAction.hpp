@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_SoundActionh_INCLUDE__)
 #define __INCLUDE_SoundActionh_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/FixedVector.h>
+#include <actions/Action.hpp>
+#include <common/FixedVector.hpp>
 
 class WeaponSound;
 class SoundAction : public Action

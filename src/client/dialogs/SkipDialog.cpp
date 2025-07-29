@@ -24,11 +24,11 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ScorchedClient.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 #include <time.h>
 
 SkipDialog *SkipDialog::instance_ = 0;

@@ -22,7 +22,7 @@
 #include <server/ServerDestinations.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerFileServer.hpp>
-#include <coms/ComsFileAkMessage.h>
+#include <coms/ComsFileAkMessage.hpp>
 
 ServerFileAkHandler::ServerFileAkHandler(ComsMessageHandler &comsMessageHandler)
 {

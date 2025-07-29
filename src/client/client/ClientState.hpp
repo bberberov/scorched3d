@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_ClientStateh_INCLUDE__)
 #define __INCLUDE_ClientStateh_INCLUDE__
 
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 
 namespace ClientState  
 {

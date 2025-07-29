@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/CallbackWeapon.h>
-#include <weapons/AccessoryStore.h>
+#include <actions/CallbackWeapon.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 CallbackWeapon::CallbackWeapon(
 	const char *name,

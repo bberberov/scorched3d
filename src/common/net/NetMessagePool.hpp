@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_NetMessagePoolh_INCLUDE__)
 #define __INCLUDE_NetMessagePoolh_INCLUDE__
 
-#include <net/NetMessage.h>
+#include <net/NetMessage.hpp>
 #include <list>
 #include <SDL/SDL_thread.h>
 

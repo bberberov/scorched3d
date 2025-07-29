@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/RandomGenerator.h>
-#include <common/NumberParser.h>
-#include <engine/Simulator.h>
+#include <common/RandomGenerator.hpp>
+#include <common/NumberParser.hpp>
+#include <engine/Simulator.hpp>
 #include <string>
 #include <list>
 #include <sstream>

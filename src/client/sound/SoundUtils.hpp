@@ -22,7 +22,7 @@
 #define __INCLUDE_SoundUtilsh_INCLUDE__
 
 #include <sound/Sound.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class SoundUtils
 {

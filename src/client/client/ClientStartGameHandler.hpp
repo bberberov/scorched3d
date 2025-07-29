@@ -22,7 +22,7 @@
 #ifndef _ClientStartGameHandler_h
 #define _ClientStartGameHandler_h
 
-#include <simactions/TankStartMoveSimAction.h>
+#include <simactions/TankStartMoveSimAction.hpp>
 
 class ClientStartGameHandler 
 {

@@ -23,7 +23,7 @@
 
 #include <tankgraph/TargetRendererImpl.hpp>
 #include <graph/ModelRendererSimulator.hpp>
-#include <common/ModelID.h>
+#include <common/ModelID.hpp>
 #include <GLW/GLWTankTip.hpp>
 
 class TargetRendererImplTarget : public TargetRendererImpl

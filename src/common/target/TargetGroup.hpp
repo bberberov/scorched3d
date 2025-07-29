@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TargetGrouph_INCLUDE__)
 #define __INCLUDE_TargetGrouph_INCLUDE__
 
-#include <engine/ObjectGroupEntry.h>
+#include <engine/ObjectGroupEntry.hpp>
 
 class Target;
 class ScorchedContext;

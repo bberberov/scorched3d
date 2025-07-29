@@ -21,7 +21,7 @@
 #if !defined(AFX_PARACHUTE_H__F934B35F_3195_45F7_A6B4_D10CCDB296BD__INCLUDED_)
 #define AFX_PARACHUTE_H__F934B35F_3195_45F7_A6B4_D10CCDB296BD__INCLUDED_
 
-#include <weapons/AccessoryPart.h>
+#include <weapons/AccessoryPart.hpp>
 
 class Parachute : public AccessoryPart
 {

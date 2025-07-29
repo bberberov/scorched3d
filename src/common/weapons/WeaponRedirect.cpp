@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponRedirect.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ActionController.h>
-#include <common/Defines.h>
-#include <tank/TankLib.h>
+#include <weapons/WeaponRedirect.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ActionController.hpp>
+#include <common/Defines.hpp>
+#include <tank/TankLib.hpp>
 #include <math.h>
 
 REGISTER_ACCESSORY_SOURCE(WeaponRedirect);

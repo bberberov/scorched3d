@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/SimAction.h>
+#include <simactions/SimAction.hpp>
 
 SimAction::SimAction()
 {

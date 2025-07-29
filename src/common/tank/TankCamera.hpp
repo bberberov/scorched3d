@@ -21,7 +21,7 @@
 #if !defined(AFX_TankCamera_H__83501862_9536_4108_A7E6_2377AD98EB72__INCLUDED_)
 #define AFX_TankCamera_H__83501862_9536_4108_A7E6_2377AD98EB72__INCLUDED_
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class ScorchedContext;
 class TankCamera  

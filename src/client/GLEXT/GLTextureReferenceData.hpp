@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TextureReferenceDatah_INCLUDE__)
 #define __INCLUDE_TextureReferenceDatah_INCLUDE__
 
-#include <image/ImageID.h>
+#include <image/ImageID.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 class GLTextureReferenceData

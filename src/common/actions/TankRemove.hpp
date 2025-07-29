@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_TankRemoveh_INCLUDE__)
 #define __INCLUDE_TankRemoveh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 class TankRemove : public Action
 {

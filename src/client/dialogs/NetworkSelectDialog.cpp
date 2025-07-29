@@ -31,8 +31,8 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientMain.hpp>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 
 struct ColumnInfo
 {

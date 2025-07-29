@@ -24,7 +24,7 @@
 class ScorchedContext;
 class ProgressCounter;
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 #include <vector>
 
 class DeformLandscape

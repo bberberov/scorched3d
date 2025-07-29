@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <graph/Display.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 Display *Display::instance_ = 0;
 

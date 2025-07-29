@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ModelID.h>
-#include <common/Defines.h>
-#include <net/NetBuffer.h>
-#include <XML/XMLParser.h>
-#include <3dsparse/TreeModelFactory.h>
+#include <common/ModelID.hpp>
+#include <common/Defines.hpp>
+#include <net/NetBuffer.hpp>
+#include <XML/XMLParser.hpp>
+#include <3dsparse/TreeModelFactory.hpp>
 
 ModelID::ModelID()
 {

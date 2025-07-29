@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ComsHaveModFilesMessageh_INCLUDE__)
 #define __INCLUDE_ComsHaveModFilesMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
-#include <engine/ModFiles.h>
+#include <coms/ComsMessage.hpp>
+#include <engine/ModFiles.hpp>
 #include <list>
 
 class ComsHaveModFilesMessage : public ComsMessage

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeSound.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapedef/LandscapeSound.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #ifndef S3D_SERVER
 	#include <landscape/Landscape.hpp>
 	#include <graph/MainCamera.hpp>
@@ -27,14 +27,14 @@
 	#include <water/Water.hpp>
 	#include <client/ScorchedClient.hpp>
 #endif
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroup.h>
-#include <engine/ObjectGroupEntry.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <target/TargetGroup.h>
-#include <common/Defines.h>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetGroup.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 // LandscapeSoundTiming

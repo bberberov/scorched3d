@@ -24,7 +24,7 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 LogDialog *LogDialog::instance_ = 0;
 

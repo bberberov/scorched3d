@@ -20,21 +20,21 @@
 
 #include <server/ServerMain.hpp>
 #include <server/ServerParams.hpp>
-#include <engine/ModDirs.h>
-#include <common/ARGParser.h>
-#include <common/Defines.h>
+#include <engine/ModDirs.hpp>
+#include <common/ARGParser.hpp>
+#include <common/Defines.hpp>
 #include <locale.h>
 #include <math.h>
 #include <signal.h>
 #include <float.h>
 #include <time.h>
-#include <common/main.h>
+#include <common/main.hpp>
 
 int main(int argc, char *argv[])
 {
 	setlocale(LC_ALL, "C");
 
-	// From main.h
+	// From main.hpp
 	run_main(argc, argv, *ServerParams::instance());
 
 	// Start SDL

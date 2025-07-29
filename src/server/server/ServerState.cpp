@@ -22,7 +22,7 @@
 #include <server/ServerSyncCheck.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 
 ServerState::ServerState() :
 	serverState_(ServerStartupState)

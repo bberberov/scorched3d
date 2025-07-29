@@ -20,7 +20,7 @@
 
 #include <dialogs/TutorialDialog.hpp>
 #include <dialogs/MainMenuDialog.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLMenuEntry.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <GLW/GLWTextButton.hpp>
@@ -28,13 +28,13 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWListView.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetContainer.h>
-#include <target/TargetRenderer.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetRenderer.hpp>
 #include <tankgraph/TargetRendererImpl.hpp>
-#include <common/Logger.h>
-#include <common/LoggerI.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <common/Logger.hpp>
+#include <common/LoggerI.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 #include <time.h>
 
 TutorialDialog *TutorialDialog::instance_ = 0;

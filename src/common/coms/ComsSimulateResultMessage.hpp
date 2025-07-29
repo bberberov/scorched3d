@@ -21,7 +21,7 @@
 #ifndef _ComsSimulateResultMessage_h
 #define _ComsSimulateResultMessage_h
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsSimulateResultMessage : public ComsMessage
 {

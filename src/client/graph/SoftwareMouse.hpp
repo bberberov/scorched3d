@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SoftwareMouseh_INCLUDE__)
 #define __INCLUDE_SoftwareMouseh_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 class SoftwareMouse : 

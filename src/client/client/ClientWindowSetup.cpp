@@ -21,8 +21,8 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWWindowSkinManager.hpp>
 #include <GLW/GLWSelector.hpp>
-#include <common/Keyboard.h>
-#include <common/OptionsScorched.h>
+#include <common/Keyboard.hpp>
+#include <common/OptionsScorched.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientState.hpp>
 #include <client/ClientWindowSetup.hpp>

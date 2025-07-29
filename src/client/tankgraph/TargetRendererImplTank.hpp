@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_DefaultTankRendererh_INCLUDE__)
 #define __INCLUDE_DefaultTankRendererh_INCLUDE__
 
-#include <tank/Tank.h>
-#include <tank/TankModel.h>
+#include <tank/Tank.hpp>
+#include <tank/TankModel.hpp>
 #include <tankgraph/ModelRendererTank.hpp>
 #include <tankgraph/TargetRendererImpl.hpp>
 #include <GLW/GLWTankTip.hpp>

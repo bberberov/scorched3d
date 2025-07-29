@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SplineCurveh_INCLUDE__)
 #define __INCLUDE_SplineCurveh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 #include <vector>
 
 class SplineCurve

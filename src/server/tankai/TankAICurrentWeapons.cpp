@@ -20,7 +20,7 @@
 
 #include <server/ScorchedServer.hpp>
 #include <tankai/TankAICurrentWeapons.hpp>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 #include <stdlib.h>
 
 TankAICurrentWeapons::TankAICurrentWeapons() : 

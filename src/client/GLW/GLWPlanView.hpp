@@ -23,7 +23,7 @@
 
 #include <GLW/GLWidget.hpp>
 #include <GLEXT/GLTextureReference.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <list>
 #include <map>
 

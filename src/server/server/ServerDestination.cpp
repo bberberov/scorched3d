@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <server/ServerDestination.hpp>
-#include <engine/ModFiles.h>
-#include <engine/ModFileEntryLoader.h>
+#include <engine/ModFiles.hpp>
+#include <engine/ModFileEntryLoader.hpp>
 
 ServerDestinationMod::ServerDestinationMod() :
 	readyToReceive_(true),

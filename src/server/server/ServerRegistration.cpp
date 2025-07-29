@@ -21,10 +21,10 @@
 #include <time.h>
 #include <server/ServerRegistration.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Logger.h>
-#include <common/OptionsMasterListServer.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <common/Logger.hpp>
+#include <common/OptionsMasterListServer.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 
 ServerRegistration *ServerRegistration::instance_ = 0;
 

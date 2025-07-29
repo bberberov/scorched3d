@@ -21,8 +21,8 @@
 #if !defined(AFX_FixedVector4_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_)
 #define AFX_FixedVector4_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_
 
-#include <common/FixedVector.h>
-#include <common/Vector4.h>
+#include <common/FixedVector.hpp>
+#include <common/Vector4.hpp>
 
 class FixedVector4  
 {

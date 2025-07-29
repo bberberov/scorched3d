@@ -23,11 +23,11 @@
 #include <client/ClientParams.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <engine/MainLoop.h>
-#include <net/NetInterface.h>
+#include <engine/MainLoop.hpp>
+#include <net/NetInterface.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
-#include <simactions/AdminSimAction.h>
+#include <simactions/AdminSimAction.hpp>
 
 QuitDialog *QuitDialog::instance_ = 0;
 

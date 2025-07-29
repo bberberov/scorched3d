@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_OptionsParamh_INCLUDE__)
 #define __INCLUDE_OptionsParamh_INCLUDE__
 
-#include <common/OptionEntry.h>
+#include <common/OptionEntry.hpp>
 
 class OptionsParameters
 {

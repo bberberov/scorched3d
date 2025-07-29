@@ -19,12 +19,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <dialogs/NetworkChatDialog.hpp>
-#include <common/OptionsMasterListServer.h>
-#include <net/NetBufferUtil.h>
-#include <net/NetMessagePool.h>
+#include <common/OptionsMasterListServer.hpp>
+#include <net/NetBufferUtil.hpp>
+#include <net/NetMessagePool.hpp>
 #include <GLW/GLWChatView.hpp>
 #include <GLEXT/GLViewPort.hpp>
-#include <XML/XMLStringBuffer.h>
+#include <XML/XMLStringBuffer.hpp>
 
 
 NetworkChatDialogTextRenderer::NetworkChatDialogTextRenderer(int len) :

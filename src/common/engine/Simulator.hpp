@@ -21,12 +21,12 @@
 #if !defined(AFX_Simulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
 #define AFX_Simulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
 
-#include <engine/ActionController.h>
-#include <engine/EventContainer.h>
-#include <engine/Wind.h>
-#include <engine/SimulatorI.h>
-#include <common/RandomGenerator.h>
-#include <net/NetBuffer.h>
+#include <engine/ActionController.hpp>
+#include <engine/EventContainer.hpp>
+#include <engine/Wind.hpp>
+#include <engine/SimulatorI.hpp>
+#include <common/RandomGenerator.hpp>
+#include <net/NetBuffer.hpp>
 
 class ScorchedContext;
 class Simulator

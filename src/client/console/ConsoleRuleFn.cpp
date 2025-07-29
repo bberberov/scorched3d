@@ -20,7 +20,7 @@
 
 #include <console/Console.hpp>
 #include <console/ConsoleRuleFn.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 ConsoleRuleFnI::~ConsoleRuleFnI()

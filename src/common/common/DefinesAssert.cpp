@@ -20,8 +20,8 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <string>
 
 #ifdef _WIN32

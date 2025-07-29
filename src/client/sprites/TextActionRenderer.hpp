@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_TextActionRendererh_INCLUDE__)
 #define __INCLUDE_TextActionRendererh_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/Vector.h>
+#include <actions/Action.hpp>
+#include <common/Vector.hpp>
 #include <string>
 
 class TextActionRenderer : public ActionRenderer

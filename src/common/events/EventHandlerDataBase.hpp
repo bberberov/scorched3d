@@ -26,7 +26,7 @@
 #include <vector>
 #include <set>
 #include <string>
-#include <events/EventHandler.h>
+#include <events/EventHandler.hpp>
 
 class EventHandlerDataBase : public EventHandler
 {

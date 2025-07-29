@@ -20,11 +20,11 @@
 
 #include <server/ServerBanned.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <net/NetInterface.h>
-#include <XML/XMLFile.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <net/NetInterface.hpp>
+#include <XML/XMLFile.hpp>
 #include <limits.h>
 
 ServerBanned::ServerBanned() : lastReadTime_(0)

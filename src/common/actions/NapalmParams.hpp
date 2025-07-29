@@ -22,7 +22,7 @@
 #define __INCLUDE_NapalmParamsh_INCLUDE__
 
 #include <string>
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 struct lua_State;
 class XMLNode;

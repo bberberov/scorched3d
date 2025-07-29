@@ -22,7 +22,7 @@
 #define __INCLUDE_ModelRendererMeshh_INCLUDE__
 
 #include <graph/ModelRenderer.hpp>
-#include <3dsparse/Model.h>
+#include <3dsparse/Model.hpp>
 
 class GLTexture;
 class ModelRendererMesh : public ModelRenderer

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <events/EventHandlerAchievementNumberRank.h>
-#include <tank/Tank.h>
+#include <events/EventHandlerAchievementNumberRank.hpp>
+#include <tank/Tank.hpp>
 
 EventHandlerAchievementNumberRank::EventHandlerAchievementNumberRank(
 	const std::string &name, 

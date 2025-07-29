@@ -26,16 +26,16 @@
 #include <server/ServerDestinations.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerState.hpp>
-#include <tank/TankDeadContainer.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
+#include <tank/TankDeadContainer.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
 #include <tankai/TankAINone.hpp>
-#include <simactions/TankRemoveSimAction.h>
-#include <coms/ComsMessageSender.h>
-#include <net/NetInterface.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <events/EventController.h>
+#include <simactions/TankRemoveSimAction.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <net/NetInterface.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <events/EventController.hpp>
 
 ServerMessageHandler::ServerMessageHandler()
 {

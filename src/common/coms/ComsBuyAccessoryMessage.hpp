@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsBuyAccessoryMessageh_INCLUDE__)
 #define __INCLUDE_ComsBuyAccessoryMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 #include <string>
 
 class ComsBuyAccessoryMessage : public ComsMessage

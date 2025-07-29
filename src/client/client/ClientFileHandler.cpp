@@ -21,16 +21,16 @@
 #include <client/ClientFileHandler.hpp>
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/ModFiles.h>
-#include <engine/ModFileEntryLoader.h>
+#include <engine/ModFiles.hpp>
+#include <engine/ModFileEntryLoader.hpp>
 #include <dialogs/ProgressDialog.hpp>
-#include <common/Logger.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsFileMessage.h>
-#include <coms/ComsFileAkMessage.h>
-#include <lang/LangResource.h>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsFileMessage.hpp>
+#include <coms/ComsFileAkMessage.hpp>
+#include <lang/LangResource.hpp>
 
 ClientFileHandler *ClientFileHandler::instance_ = 0;
 

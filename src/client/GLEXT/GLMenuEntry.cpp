@@ -22,10 +22,10 @@
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLMenuEntry.hpp>
 #include <GLEXT/GLTexture.hpp>
-#include <image/Image.h>
+#include <image/Image.hpp>
 #include <GLW/GLWidget.hpp>
 #include <GLW/GLWFont.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 static Vector color(0.9f, 0.9f, 1.0f);
 static Vector itemcolor(0.1f, 0.1f, 0.4f);

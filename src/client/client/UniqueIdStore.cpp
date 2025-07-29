@@ -19,11 +19,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <client/UniqueIdStore.hpp>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <net/NetInterface.h>
-#include <XML/XMLFile.h>
+#include <net/NetInterface.hpp>
+#include <XML/XMLFile.hpp>
 #include <stdlib.h>
 
 UniqueIdStore::UniqueIdStore()

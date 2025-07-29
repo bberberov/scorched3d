@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementTypeTree.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ScorchedContext.h>
-#include <common/ProgressCounter.h>
-#include <common/RandomGenerator.h>
-#include <common/Defines.h>
-#include <XML/XMLParser.h>
-#include <image/ImageFactory.h>
+#include <placement/PlacementTypeTree.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/ProgressCounter.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLParser.hpp>
+#include <image/ImageFactory.hpp>
 
 PlacementTypeTree::PlacementTypeTree() :
 	maxobjects(2000),

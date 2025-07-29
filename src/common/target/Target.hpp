@@ -21,9 +21,9 @@
 #if !defined(AFX_TARGET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_)
 #define AFX_TARGET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_
 
-#include <engine/ScorchedContext.h>
-#include <common/FixedVector.h>
-#include <lang/LangString.h>
+#include <engine/ScorchedContext.hpp>
+#include <common/FixedVector.hpp>
+#include <lang/LangString.hpp>
 
 namespace TargetID
 {

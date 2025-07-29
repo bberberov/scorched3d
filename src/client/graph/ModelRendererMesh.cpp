@@ -20,7 +20,7 @@
 
 #include <graph/ModelRendererMesh.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <3dsparse/ModelMaths.h>
+#include <3dsparse/ModelMaths.hpp>
 #include <GLEXT/GLGlobalState.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLTexture.hpp>

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetContainer.h>
-#include <target/Target.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tanket/Tanket.h>
+#include <target/TargetContainer.hpp>
+#include <target/Target.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/Tanket.hpp>
 
 TargetContainer::TargetContainer() :
 	playerId_(0), 

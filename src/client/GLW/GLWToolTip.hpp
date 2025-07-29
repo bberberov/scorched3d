@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_GLWToolTiph_INCLUDE__)
 #define __INCLUDE_GLWToolTiph_INCLUDE__
 
-#include <engine/GameStateI.h>
-#include <common/ToolTip.h>
+#include <engine/GameStateI.hpp>
+#include <common/ToolTip.hpp>
 #include <list>
 
 class GLWToolTip : public GameStateI

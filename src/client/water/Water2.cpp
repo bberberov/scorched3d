@@ -19,21 +19,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <water/Water2.hpp>
-#include <common/Vector.h>
-#include <common/Vector4.h>
-#include <common/Logger.h>
-#include <common/ProgressCounter.h>
-#include <common/OptionsTransient.h>
-#include <engine/Simulator.h>
+#include <common/Vector.hpp>
+#include <common/Vector4.hpp>
+#include <common/Logger.hpp>
+#include <common/ProgressCounter.hpp>
+#include <common/OptionsTransient.hpp>
+#include <engine/Simulator.hpp>
 #include <client/ScorchedClient.hpp>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <image/ImageFactory.h>
-#include <lang/LangResource.h>
+#include <image/ImageFactory.hpp>
+#include <lang/LangResource.hpp>
 #include "ocean_wave_generator.hpp"
 
 #include <water/Water2Constants.hpp>

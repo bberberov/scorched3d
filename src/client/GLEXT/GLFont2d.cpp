@@ -23,7 +23,7 @@
 #include <GLEXT/GLCameraFrustum.hpp>
 #include <GLEXT/GLTextureBase.hpp>
 #include <GLEXT/GLFont2dFreeType.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 unsigned int GLFont2d::totalCharacters_(0);
 

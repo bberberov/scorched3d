@@ -20,10 +20,10 @@
 
 #include <server/ServerAuthHandlerPrefered.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <XML/XMLFile.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <XML/XMLFile.hpp>
 
 ServerAuthHandlerPrefered::ServerAuthHandlerPrefered() : lastReadTime_(0)
 {

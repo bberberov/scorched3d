@@ -21,8 +21,8 @@
 #ifndef _ComsTankChangeMessage_h
 #define _ComsTankChangeMessage_h
 
-#include <coms/ComsMessage.h>
-#include <common/Vector.h>
+#include <coms/ComsMessage.hpp>
+#include <common/Vector.hpp>
 
 class ComsTankChangeMessage : public ComsMessage
 {

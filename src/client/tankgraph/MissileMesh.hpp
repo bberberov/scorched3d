@@ -21,7 +21,7 @@
 #if !defined(AFX_MISSILEMESH_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)
 #define AFX_MISSILEMESH_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <list>
 
 class ModelID;

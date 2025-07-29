@@ -19,16 +19,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLState.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <sprites/WallActionRenderer.hpp>
-#include <engine/ScorchedContext.h>
+#include <engine/ScorchedContext.hpp>
 #include <client/ScorchedClient.hpp>
 #include <landscape/Wall.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
 
 GLTexture WallActionRenderer::texture_ = GLTexture();
 

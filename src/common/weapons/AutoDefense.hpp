@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_AutoDefenseh_INCLUDE__)
 #define __INCLUDE_AutoDefenseh_INCLUDE__
 
-#include <weapons/AccessoryPart.h>
+#include <weapons/AccessoryPart.hpp>
 
 class AutoDefense : public AccessoryPart
 {

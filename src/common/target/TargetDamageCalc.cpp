@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetDamageCalc.h>
-#include <target/TargetDamage.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <common/Logger.h>
-#include <engine/ActionController.h>
+#include <target/TargetDamageCalc.hpp>
+#include <target/TargetDamage.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <common/Logger.hpp>
+#include <engine/ActionController.hpp>
 
 void TargetDamageCalc::explosion(ScorchedContext &context,
 							   Weapon *weapon,WeaponFireContext &weaponContext,

@@ -24,7 +24,7 @@
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 GLWSelectorPart::GLWSelectorPart(
 	GLWSelectorI *user,

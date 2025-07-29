@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/Tank.h>
-#include <tank/TankLib.h>
-#include <tank/TankState.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <engine/Simulator.h>
-#include <common/RandomGenerator.h>
-#include <common/Defines.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <tank/Tank.hpp>
+#include <tank/TankLib.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/Simulator.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/Defines.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #ifndef S3D_SERVER
 	#include <GLEXT/GLState.hpp>
 #endif

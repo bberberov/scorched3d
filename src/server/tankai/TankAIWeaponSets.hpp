@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TankAIWeaponSetsh_INCLUDE__)
 #define __INCLUDE_TankAIWeaponSetsh_INCLUDE__
 
-#include <tanket/TanketAccessories.h>
+#include <tanket/TanketAccessories.hpp>
 
 #include <vector>
 #include <map>

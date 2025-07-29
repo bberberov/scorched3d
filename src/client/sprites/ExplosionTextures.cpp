@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageFactory.h>
-#include <XML/XMLFile.h>
+#include <image/ImageFactory.hpp>
+#include <XML/XMLFile.hpp>
 #include <GLEXT/GLTextureStore.hpp>
 #include <sprites/ExplosionTextures.hpp>
 #include <landscape/Landscape.hpp>
-#include <lang/LangResource.h>
-#include <common/Defines.h>
+#include <lang/LangResource.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 ExplosionTextures *ExplosionTextures::instance_ = 0;

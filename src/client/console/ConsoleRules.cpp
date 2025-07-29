@@ -20,7 +20,7 @@
 
 #include <console/ConsoleRules.hpp>
 #include <console/Console.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 ConsoleRules::ConsoleRules()
 {

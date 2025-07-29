@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerTextFilterh_INCLUDE__)
 #define __INCLUDE_ServerTextFilterh_INCLUDE__
 
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 #include <list>
 #include <time.h>
 

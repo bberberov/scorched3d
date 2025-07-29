@@ -24,7 +24,7 @@
 #include <GLEXT/GLTexture.hpp>
 #include <GLEXT/GLFrameBufferObject.hpp>
 #include <GLSL/GLSLShaderSetup.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Water2;
 class Water2Patches;

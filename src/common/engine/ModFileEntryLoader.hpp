@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ModFileEntryLoaderh_INCLUDE__)
 #define __INCLUDE_ModFileEntryLoaderh_INCLUDE__
 
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 #include <string>
 
 class ModFileEntryLoader

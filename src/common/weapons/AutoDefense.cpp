@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <weapons/AutoDefense.h>
-#include <common/OptionsTransient.h>
+#include <weapons/AutoDefense.hpp>
+#include <common/OptionsTransient.hpp>
 
 REGISTER_ACCESSORY_SOURCE(AutoDefense);
 

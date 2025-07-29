@@ -23,10 +23,10 @@
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/ModelRendererMesh.hpp>
 #include <landscape/MapPoints.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <GLEXT/GLGlobalState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsTransient.h>
+#include <common/OptionsTransient.hpp>
 
 WaterMapPoints::WaterMapPoints()
 {

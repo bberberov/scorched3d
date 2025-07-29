@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NetMessageHandlerh_INCLUDE__)
 #define __INCLUDE_NetMessageHandlerh_INCLUDE__
 
-#include <net/NetMessage.h>
+#include <net/NetMessage.hpp>
 #include <SDL/SDL_thread.h>
 #include <list>
 

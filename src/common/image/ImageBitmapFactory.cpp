@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageBitmapFactory.h>
-#include <common/Defines.h>
+#include <image/ImageBitmapFactory.hpp>
+#include <common/Defines.hpp>
 #include <SDL/SDL.h>
 
 Image ImageBitmapFactory::loadFromFile(const char * filename, bool alpha)

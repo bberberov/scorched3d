@@ -21,7 +21,7 @@
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
 
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 #include <list>
 
 // ************************************************

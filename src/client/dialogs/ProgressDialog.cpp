@@ -30,18 +30,18 @@
 #include <client/ClientParams.hpp>
 #include <client/ClientProcessingLoop.hpp>
 #include <server/ScorchedServer.hpp>
-#include <engine/MainLoop.h>
-#include <common/OptionsScorched.h>
-#include <common/Clock.h>
-#include <common/Defines.h>
-#include <common/ChannelText.h>
-#include <lang/LangResource.h>
+#include <engine/MainLoop.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Clock.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelText.hpp>
+#include <lang/LangResource.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWColors.hpp>
-#include <lang/LangResource.h>
-#include <image/ImagePngFactory.h>
-#include <image/ImageFactory.h>
+#include <lang/LangResource.hpp>
+#include <image/ImagePngFactory.hpp>
+#include <image/ImageFactory.hpp>
 #include <math.h>
 #include <string.h>
 

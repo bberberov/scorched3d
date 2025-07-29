@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TargetSpaceh_INCLUDE__)
 #define __INCLUDE_TargetSpaceh_INCLUDE__
 
-#include <target/Target.h>
+#include <target/Target.hpp>
 #include <map>
 #include <set>
 #include <vector>

@@ -20,8 +20,8 @@
 
 #include <graph/ModelRendererTree.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <3dsparse/TreeModelFactory.h>
-#include <image/ImageFactory.h>
+#include <3dsparse/TreeModelFactory.hpp>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLGlobalState.hpp>
 #include <GLEXT/GLTexture.hpp>

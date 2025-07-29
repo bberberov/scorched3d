@@ -26,14 +26,14 @@
 #include <server/ServerConsoleProgressCounter.hpp>
 #include <server/ServerChannelManager.hpp>
 #include <server/ServerLoadLevel.hpp>
-#include <weapons/EconomyStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <common/OptionsTransient.h>
-#include <events/EventController.h>
+#include <weapons/EconomyStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <common/OptionsTransient.hpp>
+#include <events/EventController.hpp>
 
 ServerStateNewGame::ServerStateNewGame()
 {

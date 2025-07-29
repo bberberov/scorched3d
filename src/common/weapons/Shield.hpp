@@ -21,8 +21,8 @@
 #if !defined(AFX_SHIELD_H__F9BCDF39_FB62_4BB4_9D64_C70215669F9C__INCLUDED_)
 #define AFX_SHIELD_H__F9BCDF39_FB62_4BB4_9D64_C70215669F9C__INCLUDED_
 
-#include <weapons/AccessoryPart.h>
-#include <common/Vector.h>
+#include <weapons/AccessoryPart.hpp>
+#include <common/Vector.hpp>
 
 class Shield : public AccessoryPart
 {

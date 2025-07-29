@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ChannelManager.h>
-#include <engine/ScorchedContext.h>
+#include <common/ChannelManager.hpp>
+#include <engine/ScorchedContext.hpp>
 #ifndef S3D_SERVER
 	#include <client/ClientChannelManager.hpp>
 #else
-	#include <common/Logger.h>
+	#include <common/Logger.hpp>
 #endif
 
 ChannelManager::ChannelManager()

@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLState.hpp>
-#include <XML/XMLParser.h>
-#include <common/Defines.h>
+#include <XML/XMLParser.hpp>
+#include <common/Defines.hpp>
 #include <GLW/GLWTranslate.hpp>
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWTab.hpp>

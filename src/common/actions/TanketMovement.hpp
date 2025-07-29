@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_TanketMovementh_INCLUDE__)
 #define __INCLUDE_TanketMovementh_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/FixedVector.h>
-#include <common/Counter.h>
-#include <weapons/Weapon.h>
+#include <actions/Action.hpp>
+#include <common/FixedVector.hpp>
+#include <common/Counter.hpp>
+#include <weapons/Weapon.hpp>
 #include <list>
 #include <map>
 

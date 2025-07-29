@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_FileLoggerh_INCLUDE__)
 #define __INCLUDE_FileLoggerh_INCLUDE__
 
-#include <common/LoggerI.h>
+#include <common/LoggerI.hpp>
 #include <stdio.h>
 
 class FileLogger : public LoggerI

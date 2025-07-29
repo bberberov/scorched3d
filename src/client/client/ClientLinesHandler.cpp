@@ -20,10 +20,10 @@
 
 #include <client/ClientLinesHandler.hpp>
 #include <client/ScorchedClient.hpp>
-#include <coms/ComsLinesMessage.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <coms/ComsLinesMessage.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 #include <GLW/GLWPlanView.hpp>
 
 ClientLinesHandler *ClientLinesHandler::instance_ = 0;

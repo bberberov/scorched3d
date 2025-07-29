@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// NumberParser.h: interface for the NumberParser class.
+// NumberParser.hpp: interface for the NumberParser class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -28,8 +28,8 @@
 
 #include <string>
 #include <list>
-#include <common/RandomGenerator.h>
-#include <engine/ScorchedContext.h>
+#include <common/RandomGenerator.hpp>
+#include <engine/ScorchedContext.hpp>
 
 class NumberParser
 {

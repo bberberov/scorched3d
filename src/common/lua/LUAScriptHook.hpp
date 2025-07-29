@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LUAScriptHook_INCLUDE__)
 #define __INCLUDE_LUAScriptHook_INCLUDE__
 
-#include "LUAScriptFactory.h"
-#include <lang/LangString.h>
+#include "LUAScriptFactory.hpp"
+#include <lang/LangString.hpp>
 #include <map>
 #include <vector>
 

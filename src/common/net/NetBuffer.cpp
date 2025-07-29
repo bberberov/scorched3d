@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <net/NetBufferPool.h>
-#include <common/Logger.h>
+#include <net/NetBufferPool.hpp>
+#include <common/Logger.hpp>
 #include <string.h>
 #include <zlib.h>
 

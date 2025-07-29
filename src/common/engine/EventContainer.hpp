@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_EventContainerh_INCLUDE__)
 #define __INCLUDE_EventContainerh_INCLUDE__
 
-#include <common/fixed.h>
-#include <landscapedef/LandscapeInclude.h>
+#include <common/fixed.hpp>
+#include <landscapedef/LandscapeInclude.hpp>
 #include <map>
 
 class EventContainer

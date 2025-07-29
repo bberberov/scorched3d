@@ -23,7 +23,7 @@
 
 #include <map>
 #include <vector>
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWPanel.hpp>

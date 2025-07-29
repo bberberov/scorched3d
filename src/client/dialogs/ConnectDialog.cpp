@@ -24,10 +24,10 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientState.hpp>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsConnectMessage.h>
-#include <net/NetInterface.h>
-#include <common/Logger.h>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsConnectMessage.hpp>
+#include <net/NetInterface.hpp>
+#include <common/Logger.hpp>
 
 ConnectDialog *ConnectDialog::instance_ = 0;
 

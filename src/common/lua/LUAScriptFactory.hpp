@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LUAScriptFactory_INCLUDE__)
 #define __INCLUDE_LUAScriptFactory_INCLUDE__
 
-#include <engine/ScorchedContext.h>
-#include "LUAScript.h"
+#include <engine/ScorchedContext.hpp>
+#include "LUAScript.hpp"
 
 class LUAScriptFactory
 {

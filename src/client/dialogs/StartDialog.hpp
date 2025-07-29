@@ -22,7 +22,7 @@
 #define __INCLUDE_StartDialogh_INCLUDE__
 
 #include <GLW/GLWWindow.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 #include <vector>
 
 class StartDialog : public GLWWindow

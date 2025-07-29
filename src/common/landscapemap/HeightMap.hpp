@@ -22,9 +22,9 @@
 #define AFX_HEIGHTMAP_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_
 
 #include <stdlib.h>
-#include <common/ProgressCounter.h>
-#include <common/FixedVector.h>
-#include <common/Vector.h>
+#include <common/ProgressCounter.hpp>
+#include <common/FixedVector.hpp>
+#include <common/Vector.hpp>
 
 class Line;
 class GraphicalHeightMap;

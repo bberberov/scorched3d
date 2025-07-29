@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAI.hpp>
-#include <lang/LangResource.h>
-#include <XML/XMLNode.h>
+#include <lang/LangResource.hpp>
+#include <XML/XMLNode.hpp>
 
 bool TankAI::tankAILogging_ = false;
 

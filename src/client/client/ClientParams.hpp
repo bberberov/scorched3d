@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ClientParamsh_INCLUDE__)
 #define __INCLUDE_ClientParamsh_INCLUDE__
 
-#include <common/OptionsParameters.h>
+#include <common/OptionsParameters.hpp>
 
 class ClientParams : public OptionsParameters
 {

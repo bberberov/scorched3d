@@ -22,7 +22,7 @@
 #define __INCLUDE_LandscapeTexDefnh_INCLUDE__
 
 #include <vector>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 class LandscapeInclude;
 class LandscapeDefinitions;

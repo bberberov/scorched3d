@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_WeaponLaserh_INCLUDE__)
 #define __INCLUDE_WeaponLaserh_INCLUDE__
 
-#include <weapons/Weapon.h>
-#include <actions/LaserParams.h>
+#include <weapons/Weapon.hpp>
+#include <actions/LaserParams.hpp>
 
 class WeaponLaser  : public Weapon
 {

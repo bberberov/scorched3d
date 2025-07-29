@@ -22,9 +22,9 @@
 	#include <client/ScorchedClient.hpp>
 #endif
 #include <server/ScorchedServer.hpp>
-#include <coms/ComsConnectAcceptMessage.h>
-#include <weapons/AccessoryStore.h>
-#include <common/OptionsScorched.h>
+#include <coms/ComsConnectAcceptMessage.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/OptionsScorched.hpp>
 
 ComsMessageType ComsConnectAcceptMessage::ComsConnectAcceptMessageType("ComsConnectAcceptMessageType");
 

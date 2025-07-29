@@ -23,9 +23,9 @@
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <GLEXT/GLState.hpp>
-#include <XML/XMLParser.h>
+#include <XML/XMLParser.hpp>
 #include <console/Console.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <client/ClientChannelManager.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTalkBox);

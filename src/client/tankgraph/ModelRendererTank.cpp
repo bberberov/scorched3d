@@ -26,7 +26,7 @@
 #include <graph/ModelRenderer.hpp>
 #include <graph/ModelRendererStore.hpp>
 #include <graph/ModelRendererSimulator.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 ModelRendererTank::ModelRendererTank(Model *model) :
 	model_(model),

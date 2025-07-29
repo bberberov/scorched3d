@@ -21,9 +21,9 @@
 #include <GLW/GLWListView.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWTranslate.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 #include <stdio.h>
 
 static const float BorderWidth = 20.0f;

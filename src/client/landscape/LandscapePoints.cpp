@@ -19,10 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <landscape/LandscapePoints.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <landscape/MapPoints.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsTransient.h>
+#include <common/OptionsTransient.hpp>
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/ModelRendererMesh.hpp>
 #include <GLEXT/GLGlobalState.hpp>

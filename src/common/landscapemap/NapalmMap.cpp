@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/NapalmMap.h>
-#include <common/DefinesAssert.h>
+#include <landscapemap/NapalmMap.hpp>
+#include <common/DefinesAssert.hpp>
 #include <memory.h>
 
 NapalmMap::NapalmMap() : entries_(0)

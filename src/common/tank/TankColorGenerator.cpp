@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankColorGenerator.h>
-#include <tank/Tank.h>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/Tank.hpp>
 #include <stdlib.h>
 
 TankColorGenerator *TankColorGenerator::instance_ = 0;

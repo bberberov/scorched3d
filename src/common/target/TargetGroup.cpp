@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetGroup.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
+#include <target/TargetGroup.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
 
 TargetGroup::TargetGroup(ScorchedContext &context) :
 	ObjectGroupEntry(context.getObjectGroups())

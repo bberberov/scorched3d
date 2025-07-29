@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Modelh_INCLUDE__)
 #define __INCLUDE_Modelh_INCLUDE__
 
-#include <3dsparse/Mesh.h>
-#include <3dsparse/Bone.h>
+#include <3dsparse/Mesh.hpp>
+#include <3dsparse/Bone.hpp>
 
 class Model
 {

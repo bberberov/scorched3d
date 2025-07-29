@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/Tank.h>
-#include <tank/TankLib.h>
-#include <tank/TankShotHistory.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <tank/Tank.hpp>
+#include <tank/TankLib.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 
 TankShotHistory::TankShotHistory(ScorchedContext &context) :
 	context_(context),

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ModelRendererStoreh_INCLUDE__)
 #define __INCLUDE_ModelRendererStoreh_INCLUDE__
 
-#include <common/ModelID.h>
+#include <common/ModelID.hpp>
 #include <map>
 #include <string>
 

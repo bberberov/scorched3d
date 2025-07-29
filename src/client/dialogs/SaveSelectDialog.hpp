@@ -25,7 +25,7 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWIconList.hpp>
 #include <GLW/GLWIcon.hpp>
-#include <common/ToolTip.h>
+#include <common/ToolTip.hpp>
 
 class GLWIconListSaveItem : public GLWIconListItem
 {

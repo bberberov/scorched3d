@@ -21,8 +21,8 @@
 #if !defined(AFX_GraphicalLandscapeMap_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_)
 #define AFX_GraphicalLandscapeMap_H__F4CB4CAD_C592_4183_AFB2_016FC66C144A__INCLUDED_
 
-#include <landscapemap/GraphicalHeightMap.h>
-#include <common/Vector.h>
+#include <landscapemap/GraphicalHeightMap.hpp>
+#include <common/Vector.hpp>
 
 class GLVertexBufferObject;
 class GraphicalLandscapeMap  : public GraphicalHeightMap

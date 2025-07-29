@@ -21,13 +21,13 @@
 #include <server/ServerStateStartingMatch.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerChannelManager.hpp>
-#include <common/OptionsGame.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <target/TargetContainer.h>
-#include <tank/TankDeadContainer.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankState.h>
+#include <common/OptionsGame.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankDeadContainer.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankState.hpp>
 
 ServerStateStartingMatch::ServerStateStartingMatch()
 {

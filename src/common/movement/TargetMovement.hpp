@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TargetMovementh_INCLUDE__)
 #define __INCLUDE_TargetMovementh_INCLUDE__
 
-#include <landscapedef/LandscapeInclude.h>
-#include <movement/TargetMovementEntry.h>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <movement/TargetMovementEntry.hpp>
 
 class ScorchedContext;
 class RandomGenerator;

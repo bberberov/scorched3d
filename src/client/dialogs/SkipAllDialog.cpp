@@ -19,15 +19,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <dialogs/SkipAllDialog.hpp>
-#include <engine/MainLoop.h>
+#include <engine/MainLoop.hpp>
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ScorchedClient.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Defines.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Defines.hpp>
 #include <time.h>
 
 SkipAllDialog *SkipAllDialog::instance_ = 0;

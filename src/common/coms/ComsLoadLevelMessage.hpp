@@ -21,10 +21,10 @@
 #ifndef _ComsLoadLevelMessage_h
 #define _ComsLoadLevelMessage_h
 
-#include <landscapedef/LandscapeDefinition.h>
-#include <engine/ScorchedContext.h>
-#include <simactions/SimAction.h>
-#include <coms/ComsSimulateMessage.h>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <simactions/SimAction.hpp>
+#include <coms/ComsSimulateMessage.hpp>
 #include <list>
 
 class ComsLoadLevelMessage : public ComsMessage

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ServerAuthHandlerh_INCLUDE__)
 #define __INCLUDE_ServerAuthHandlerh_INCLUDE__
 
-#include <lang/LangString.h>
-#include <coms/ComsConnectAuthMessage.h>
+#include <lang/LangString.hpp>
+#include <coms/ComsConnectAuthMessage.hpp>
 
 class ServerAuthHandler
 {

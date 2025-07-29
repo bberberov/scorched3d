@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_SoundListenerh_INCLUDE__)
 #define __INCLUDE_SoundListenerh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Sound;
 class SoundListener

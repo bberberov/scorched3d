@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetServerTCP.h>
-#include <net/NetBufferUtil.h>
-#include <net/NetMessageHandler.h>
-#include <net/NetMessagePool.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/Clock.h>
+#include <net/NetServerTCP.hpp>
+#include <net/NetBufferUtil.hpp>
+#include <net/NetMessageHandler.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/Clock.hpp>
 
 NetServerTCP::NetServerTCP(NetServerTCPProtocol *protocol) :
 	sockSet_(0),

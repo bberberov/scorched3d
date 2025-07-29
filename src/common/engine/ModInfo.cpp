@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ModInfo.h>
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
+#include <engine/ModInfo.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
 
 ModInfo::ModInfo(const std::string &name) :
 	name_(name)

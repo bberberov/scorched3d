@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ARGParser.h>
-#include <common/Defines.h>
+#include <common/ARGParser.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 ARGParser::Entry::Entry(

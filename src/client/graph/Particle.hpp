@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_Particleh_INCLUDE__)
 #define __INCLUDE_Particleh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 #include <graph/ParticleRenderer.hpp>
 #include <GLEXT/GLTextureSet.hpp>
 

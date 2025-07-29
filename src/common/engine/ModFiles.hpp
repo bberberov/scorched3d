@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ModFilesh_INCLUDE__)
 #define __INCLUDE_ModFilesh_INCLUDE__
 
-#include <engine/ModFileEntry.h>
-#include <common/ProgressCounter.h>
+#include <engine/ModFileEntry.hpp>
+#include <common/ProgressCounter.hpp>
 #include <map>
 
 class ModFiles

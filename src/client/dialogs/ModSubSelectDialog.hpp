@@ -25,8 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWIconList.hpp>
 #include <GLW/GLWIcon.hpp>
-#include <common/ToolTip.h>
-#include <engine/ModInfo.h>
+#include <common/ToolTip.hpp>
+#include <engine/ModInfo.hpp>
 
 class GLWIconListSubModItem : public GLWIconListItem
 {

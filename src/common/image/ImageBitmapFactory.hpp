@@ -21,7 +21,7 @@
 #if !defined(AFX_ImageBitmapFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_)
 #define AFX_ImageBitmapFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_
 
-#include <image/Image.h>
+#include <image/Image.hpp>
 
 /**
 A class that wraps the loading of windows .bmp image data into

@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_ServerConnectAuthHandlerh_INCLUDE__)
 #define __INCLUDE_ServerConnectAuthHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
-#include <coms/ComsConnectAuthMessage.h>
+#include <coms/ComsMessageHandler.hpp>
+#include <coms/ComsConnectAuthMessage.hpp>
 
 class ServerConnectAuthHandler : public ComsMessageHandlerI
 {

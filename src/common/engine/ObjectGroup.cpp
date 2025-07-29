@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ObjectGroup.h>
-#include <engine/ObjectGroupEntry.h>
-#include <target/Target.h>
-#include <common/Defines.h>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <target/Target.hpp>
+#include <common/Defines.hpp>
 
 ObjectGroup::ObjectGroup(const char *name) :
 	name_(name), front_(0), back_(0), iterator_(0)

@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// Triangle.h: interface for the Triangle class.
+// Triangle.hpp: interface for the Triangle class.
 //
 //////////////////////////////////////////////////////////////////////
 
 #if !defined(AFX_TRIANGLE_H__B076B031_36ED_11D3_BE80_000000000000__INCLUDED_)
 #define AFX_TRIANGLE_H__B076B031_36ED_11D3_BE80_000000000000__INCLUDED_
 
-#include <common/Line.h>
+#include <common/Line.hpp>
 
 class Triangle
 {

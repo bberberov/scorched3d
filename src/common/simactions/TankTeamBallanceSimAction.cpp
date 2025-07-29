@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankTeamBallanceSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankModelContainer.h>
-#include <tanket/TanketType.h>
-#include <engine/Simulator.h>
-#include <common/OptionsScorched.h>
-#include <common/ChannelManager.h>
+#include <simactions/TankTeamBallanceSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tanket/TanketType.hpp>
+#include <engine/Simulator.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/ChannelManager.hpp>
 #include <algorithm>
 
 static inline bool lt_score(const Tank *o1, const Tank *o2) 

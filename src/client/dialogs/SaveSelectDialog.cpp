@@ -27,8 +27,8 @@
 #include <client/ClientParams.hpp>
 #include <client/ClientMain.hpp>
 #include <GLEXT/GLTextureStore.hpp>
-#include <common/Defines.h>
-#include <common/FileList.h>
+#include <common/Defines.hpp>
+#include <common/FileList.hpp>
 
 GLWIconListSaveItem::GLWIconListSaveItem( const char *file, const char *time) :
 	icon_(0.0f, 0.0f, 40.0f, 40.0f),

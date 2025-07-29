@@ -24,18 +24,18 @@
 #include <client/ClientState.hpp>
 #include <dialogs/ConnectDialog.hpp>
 #include <dialogs/ProgressDialog.hpp>
-#include <engine/ModFiles.h>
-#include <image/ImageFactory.h>
-#include <image/ImagePngFactory.h>
-#include <target/TargetContainer.h>
-#include <net/NetInterface.h>
-#include <coms/ComsConnectAcceptMessage.h>
-#include <coms/ComsHaveModFilesMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
+#include <engine/ModFiles.hpp>
+#include <image/ImageFactory.hpp>
+#include <image/ImagePngFactory.hpp>
+#include <target/TargetContainer.hpp>
+#include <net/NetInterface.hpp>
+#include <coms/ComsConnectAcceptMessage.hpp>
+#include <coms/ComsHaveModFilesMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
 #include <client/ClientParams.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance_ = 0;
 

@@ -21,11 +21,11 @@
 #if !defined(AFX_TanketAccessories_H__60850A18_DED2_4BB0_B104_CB0941EF6D1D__INCLUDED_)
 #define AFX_TanketAccessories_H__60850A18_DED2_4BB0_B104_CB0941EF6D1D__INCLUDED_
 
-#include <weapons/AccessoryPart.h>
-#include <tanket/TanketWeapon.h>
-#include <tanket/TanketAutoDefense.h>
-#include <tanket/TanketBatteries.h>
-#include <lang/LangString.h>
+#include <weapons/AccessoryPart.hpp>
+#include <tanket/TanketWeapon.hpp>
+#include <tanket/TanketAutoDefense.hpp>
+#include <tanket/TanketBatteries.hpp>
+#include <lang/LangString.hpp>
 
 class Tanket;
 class ScorchedContext;

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponRandomChoiceh_INCLUDE__)
 #define __INCLUDE_WeaponRandomChoiceh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 #include <list>
 
 class WeaponRandomChoice  : public Weapon

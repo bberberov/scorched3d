@@ -26,16 +26,16 @@
 #include <GLEXT/GLViewPort.hpp>
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <weapons/AccessoryStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tanket/TanketAccessories.h>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/TanketAccessories.hpp>
 #include <stdio.h>
 
 InventoryDialog *InventoryDialog::instance_ = 0;

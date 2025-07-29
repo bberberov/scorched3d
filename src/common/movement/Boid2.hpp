@@ -21,8 +21,8 @@
 #ifndef __BOID2_H
 #define __BOID2_H
 
-#include <common/FixedVector.h>
-#include <target/TargetState.h>
+#include <common/FixedVector.hpp>
+#include <target/TargetState.hpp>
 #include <vector>
 
 class ScorchedContext;

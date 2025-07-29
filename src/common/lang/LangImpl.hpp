@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LangImpl_INCLUDE__)
 #define __INCLUDE_LangImpl_INCLUDE__
 
-#include <lang/ResourceBundle.h>
-#include <lang/Lang.h>
+#include <lang/ResourceBundle.hpp>
+#include <lang/Lang.hpp>
 #include <vector>
 
 class LangImpl : public Lang

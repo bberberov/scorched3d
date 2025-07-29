@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ClientDisconnectedh_INCLUDE__)
 #define __INCLUDE_ClientDisconnectedh_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 class ClientDisconnected : public GameStateI
 {

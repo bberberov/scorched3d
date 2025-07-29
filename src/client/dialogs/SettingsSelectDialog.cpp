@@ -21,7 +21,7 @@
 #include <dialogs/SettingsSelectDialog.hpp>
 #include <dialogs/SettingsSubSelectDialog.hpp>
 #include <dialogs/MsgBoxDialog.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWOptionEntry.hpp>
 #include <client/ClientParams.hpp>

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_RoofMapsh_INCLUDE__)
 #define __INCLUDE_RoofMapsh_INCLUDE__
 
-#include <landscapemap/HeightMap.h>
+#include <landscapemap/HeightMap.hpp>
 
 class ScorchedContext;
 class LandscapeDefinitionCache;

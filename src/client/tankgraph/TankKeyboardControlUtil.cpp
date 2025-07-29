@@ -19,23 +19,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tank/TankShotHistory.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketShotInfo.h>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketShotInfo.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <coms/ComsDefenseMessage.h>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <coms/ComsDefenseMessage.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
-#include <weapons/AccessoryStore.h>
-#include <common/Keyboard.h>
-#include <common/Line.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Line.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/MainCamera.hpp>
 #include <sound/Sound.hpp>

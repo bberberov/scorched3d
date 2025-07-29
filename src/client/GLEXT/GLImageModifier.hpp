@@ -21,9 +21,9 @@
 #if !defined(AFX_ImageMODIFIER_H__3C6E8BBF_1AB2_4847_BEB1_934C97C76F05__INCLUDED_)
 #define AFX_ImageMODIFIER_H__3C6E8BBF_1AB2_4847_BEB1_934C97C76F05__INCLUDED_
 
-#include <image/Image.h>
-#include <landscapemap/HeightMap.h>
-#include <common/Vector.h>
+#include <image/Image.hpp>
+#include <landscapemap/HeightMap.hpp>
+#include <common/Vector.hpp>
 
 class ScorchedContext;
 namespace ImageModifier  

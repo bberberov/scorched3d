@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ClientSaveScreenStateh_INCLUDE__)
 #define __INCLUDE_ClientSaveScreenStateh_INCLUDE__
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 class ClientSaveScreenState : public GameStateI
 {

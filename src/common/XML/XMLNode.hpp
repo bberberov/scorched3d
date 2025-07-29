@@ -22,11 +22,11 @@
 #define __INCLUDE_XMLNodeh_INCLUDE__
 
 #include <list>
-#include <lang/LangString.h>
-#include <common/Vector.h>
-#include <common/FixedVector4.h>
-#include <common/FileLines.h>
-#include <common/NumberParser.h>
+#include <lang/LangString.hpp>
+#include <common/Vector.hpp>
+#include <common/FixedVector4.hpp>
+#include <common/FileLines.hpp>
+#include <common/NumberParser.hpp>
 
 class XMLNode
 {

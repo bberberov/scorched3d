@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_ServerDefenseHandlerh_INCLUDE__)
 #define __INCLUDE_ServerDefenseHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
-#include <coms/ComsDefenseMessage.h>
+#include <coms/ComsMessageHandler.hpp>
+#include <coms/ComsDefenseMessage.hpp>
 
 class Tank;
 class ServerDefenseHandler : public ComsMessageHandlerI

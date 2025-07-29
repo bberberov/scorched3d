@@ -21,9 +21,9 @@
 #if !defined(AFX_ServerSimulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
 #define AFX_ServerSimulator_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
 
-#include <engine/Simulator.h>
-#include <coms/ComsMessageHandler.h>
-#include <coms/ComsLoadLevelMessage.h>
+#include <engine/Simulator.hpp>
+#include <coms/ComsMessageHandler.hpp>
+#include <coms/ComsLoadLevelMessage.hpp>
 
 class ServerSimulator : 
 	public Simulator, 

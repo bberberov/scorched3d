@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/SoundAction.h>
-#include <weapons/WeaponSound.h>
-#include <weapons/AccessoryStore.h>
+#include <actions/SoundAction.hpp>
+#include <weapons/WeaponSound.hpp>
+#include <weapons/AccessoryStore.hpp>
 #ifndef S3D_SERVER
 	#include <sound/SoundUtils.hpp>
 #endif
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 SoundAction::SoundAction(FixedVector &position, WeaponSound *weapon) :
 	Action(false),

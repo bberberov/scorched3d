@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_NetInterfaceh_INCLUDE__)
 #define __INCLUDE_NetInterfaceh_INCLUDE__
 
-#include <net/NetMessageHandler.h>
-#include <net/NetInterfaceFlags.h>
+#include <net/NetMessageHandler.hpp>
+#include <net/NetInterfaceFlags.hpp>
 
 class NetInterface
 {

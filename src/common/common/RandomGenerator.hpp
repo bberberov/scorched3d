@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_RandomGeneratorh_INCLUDE__)
 #define __INCLUDE_RandomGeneratorh_INCLUDE__
 
-#include <common/fixed.h>
-#include <net/NetBuffer.h>
+#include <common/fixed.hpp>
+#include <net/NetBuffer.hpp>
 
 class RandomGenerator
 {

@@ -19,13 +19,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAISniperGuesser.hpp>
-#include <tank/TankLib.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
+#include <tank/TankLib.hpp>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Logger.h>
-#include <common/RandomGenerator.h>
+#include <common/Logger.hpp>
+#include <common/RandomGenerator.hpp>
 
 TankAISniperGuesser::TankAISniperGuesser()
 {

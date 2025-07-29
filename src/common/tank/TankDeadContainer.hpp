@@ -22,9 +22,9 @@
 #define AFX_TankDeadContainer_H__56AF98E2_E188_45EC_AA25_1865ADBBA3F1__INCLUDED_
 
 #include <map>
-#include <tank/Tank.h>
-#include <simactions/TankNewMatchSimAction.h>
-#include <simactions/TankAddSimAction.h>
+#include <tank/Tank.hpp>
+#include <simactions/TankNewMatchSimAction.hpp>
+#include <simactions/TankAddSimAction.hpp>
 
 class TankDeadContainer  
 {

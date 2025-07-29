@@ -23,19 +23,19 @@
 #include <server/ServerSimulator.hpp>
 #include <server/ServerChannelManager.hpp>
 #include <server/ServerDestinations.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankTeamScore.h>
-#include <tanket/TanketShotInfo.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <simactions/TankStartMoveSimAction.h>
-#include <simactions/TankStopMoveSimAction.h>
-#include <simactions/PlayMovesSimAction.h>
-#include <simactions/NextTurnSimAction.h>
-#include <coms/ComsPlayedMoveMessage.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <simactions/TankStartMoveSimAction.hpp>
+#include <simactions/TankStopMoveSimAction.hpp>
+#include <simactions/PlayMovesSimAction.hpp>
+#include <simactions/NextTurnSimAction.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
 
 ServerTurns::ServerTurns(bool waitForShots) :
 	shotsState_(eShotsNone),

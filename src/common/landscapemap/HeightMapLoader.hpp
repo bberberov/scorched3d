@@ -22,9 +22,9 @@
 #if !defined(__INCLUDE_HeightMapLoaderh_INCLUDE__)
 #define __INCLUDE_HeightMapLoaderh_INCLUDE__
 
-#include <landscapemap/HeightMapModifier.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <image/Image.h>
+#include <landscapemap/HeightMapModifier.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <image/Image.hpp>
 
 namespace HeightMapLoader
 {

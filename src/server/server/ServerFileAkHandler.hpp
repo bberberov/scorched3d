@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerFileAkHandlerh_INCLUDE__)
 #define __INCLUDE_ServerFileAkHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerFileAkHandler : public ComsMessageHandlerI
 {

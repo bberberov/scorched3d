@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 // This is a mirror of AccessoryStore::SortKey.

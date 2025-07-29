@@ -21,8 +21,8 @@
 #if !defined(AFX_igd_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
 #define AFX_igd_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
 
-#include <net/NetBuffer.h>
-#include <XML/XMLNode.h>
+#include <net/NetBuffer.hpp>
+#include <XML/XMLNode.hpp>
 #include <list>
 #include <set>
 

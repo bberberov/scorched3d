@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerHaveModFilesHandlerh_INCLUDE__)
 #define __INCLUDE_ServerHaveModFilesHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerHaveModFilesHandler : public ComsMessageHandlerI
 {

@@ -21,8 +21,8 @@
 #include <tankgraph/TargetParticleRenderer.hpp>
 #include <tankgraph/TargetRendererImpl.hpp>
 #include <graph/Particle.hpp>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
 #include <client/ScorchedClient.hpp>
 
 TargetParticleRenderer *TargetParticleRenderer::getInstance()

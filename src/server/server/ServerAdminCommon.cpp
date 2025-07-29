@@ -25,16 +25,16 @@
 #include <server/ServerSimulator.hpp>
 #include <server/ServerBanned.hpp>
 #include <server/ServerAuthHandler.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
 #include <tankai/TankAIAdder.hpp>
-#include <target/TargetLife.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/FileLogger.h>
-#include <simactions/AdminSimAction.h>
+#include <target/TargetLife.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/FileLogger.hpp>
+#include <simactions/AdminSimAction.hpp>
 
 static FileLogger *serverAdminFileLogger = 0;
 

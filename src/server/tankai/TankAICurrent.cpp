@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAICurrent.hpp>
-#include <tanket/TanketAccessories.h>
-#include <tanket/Tanket.h>
-#include <target/TargetContainer.h>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/Tanket.hpp>
+#include <target/TargetContainer.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerState.hpp>
-#include <common/OptionsTransient.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <XML/XMLNode.h>
+#include <common/OptionsTransient.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <XML/XMLNode.hpp>
 
 TankAICurrent::TankAICurrent() : tanket_(0)
 {

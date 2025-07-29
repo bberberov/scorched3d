@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_MovementMaph_INCLUDE__)
 #define __INCLUDE_MovementMaph_INCLUDE__
 
-#include <landscapemap/HeightMap.h>
+#include <landscapemap/HeightMap.hpp>
 #include <list>
 #include <queue>
 

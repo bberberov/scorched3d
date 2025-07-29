@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ShieldRoundReflectiveh_INCLUDE__)
 #define __INCLUDE_ShieldRoundReflectiveh_INCLUDE__
 
-#include <weapons/ShieldRound.h>
+#include <weapons/ShieldRound.hpp>
 
 class ShieldRoundReflective : public ShieldRound
 {

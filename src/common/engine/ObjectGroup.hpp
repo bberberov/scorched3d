@@ -23,7 +23,7 @@
 
 #include <map>
 #include <string>
-#include <common/DefinesAssert.h>
+#include <common/DefinesAssert.hpp>
 
 class ObjectGroupEntry;
 class ObjectGroup

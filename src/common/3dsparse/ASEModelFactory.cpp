@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/ASEModelFactory.h>
-#include <common/Defines.h>
+#include <3dsparse/ASEModelFactory.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 #include <math.h>
 

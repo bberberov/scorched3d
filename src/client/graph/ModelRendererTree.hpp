@@ -23,8 +23,8 @@
 
 #include <graph/ModelRenderer.hpp>
 #include <GLEXT/GLTextureReference.hpp>
-#include <3dsparse/Model.h>
-#include <common/ModelID.h>
+#include <3dsparse/Model.hpp>
+#include <common/ModelID.hpp>
 
 class ModelRendererTree : public ModelRenderer
 {

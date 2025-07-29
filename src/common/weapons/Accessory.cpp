@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ToolTip.h>
-#include <common/ModelID.h>
-#include <weapons/Accessory.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <lang/LangResource.h>
-#include <tank/Tank.h>
-#include <tank/TankModel.h>
-#include <tank/TankModelContainer.h>
+#include <common/ToolTip.hpp>
+#include <common/ModelID.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <lang/LangResource.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankModel.hpp>
+#include <tank/TankModelContainer.hpp>
 #include <stdlib.h>
 
 unsigned int Accessory::nextAccessoryId_ = 0;
 
 #ifndef S3D_SERVER
-#include <3dsparse/Model.h>
-#include <3dsparse/ModelStore.h>
+#include <3dsparse/Model.hpp>
+#include <3dsparse/ModelStore.hpp>
 #include <tankgraph/MissileMesh.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #endif
 
 Accessory::Accessory() :

@@ -23,12 +23,12 @@
 #include <GLW/GLWTankTip.hpp>
 #include <GLEXT/GLState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetRenderer.h>
-#include <image/ImageFactory.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
+#include <target/TargetRenderer.hpp>
+#include <image/ImageFactory.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 
 REGISTER_CLASS_SOURCE(GLWScorchedInfoSpinner);

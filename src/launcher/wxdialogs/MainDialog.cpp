@@ -35,7 +35,7 @@
 #include <wxdialogs/TrueTypeFont.hpp>
 #include <scorched/ScorchedParams.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 extern char scorched3dAppName[128];
 static wxFrame *mainDialog = nullptr;

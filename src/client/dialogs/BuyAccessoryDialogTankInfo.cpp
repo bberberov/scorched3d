@@ -20,11 +20,11 @@
 
 #include <dialogs/BuyAccessoryDialogTankInfo.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tanket/TanketShotInfo.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/TanketShotInfo.hpp>
 
 BuyAccessoryDialogTankInfo *BuyAccessoryDialogTankInfo::instance_ = 0;
 

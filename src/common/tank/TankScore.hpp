@@ -24,7 +24,7 @@
 #include <set>
 #include <string>
 #include <time.h>
-#include <net/NetBuffer.h>
+#include <net/NetBuffer.hpp>
 
 class Tank;
 class ScorchedContext;

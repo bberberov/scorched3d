@@ -22,8 +22,8 @@
 #define __INCLUDE_ServerSyncCheckh_INCLUDE__
 
 #include <time.h>
-#include <coms/ComsSyncCheckMessage.h>
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsSyncCheckMessage.hpp>
+#include <coms/ComsMessageHandler.hpp>
 #include <map>
 #include <set>
 

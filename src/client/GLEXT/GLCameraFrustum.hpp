@@ -21,8 +21,8 @@
 #if !defined(AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_)
 #define AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_
 
-#include <engine/GameStateI.h>
-#include <common/Vector.h>
+#include <engine/GameStateI.hpp>
+#include <common/Vector.hpp>
 
 class GLCameraFrustum : public GameStateI
 {

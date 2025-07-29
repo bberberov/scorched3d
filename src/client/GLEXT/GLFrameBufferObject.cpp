@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLFrameBufferObject.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/DefinesAssert.h>
+#include <common/DefinesAssert.hpp>
 
 GLFrameBufferObject::GLFrameBufferObject() : 
 	frameBufferObject_(0), depthBufferObject_(0),

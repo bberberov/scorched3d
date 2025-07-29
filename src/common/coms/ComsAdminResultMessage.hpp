@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsAdminResultMessageh_INCLUDE__)
 #define __INCLUDE_ComsAdminResultMessageh_INCLUDE__
 
-#include <coms/ComsAdminMessage.h>
+#include <coms/ComsAdminMessage.hpp>
 
 class ComsAdminResultMessage : public ComsMessage
 {

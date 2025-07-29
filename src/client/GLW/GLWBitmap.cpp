@@ -20,7 +20,7 @@
 
 #include <GLW/GLWBitmap.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 REGISTER_CLASS_SOURCE(GLWBitmap);
 

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankModelStore.h>
-#include <3dsparse/ModelStore.h>
-#include <3dsparse/Model.h>
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
-#include <lang/LangResource.h>
+#include <tank/TankModelStore.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <3dsparse/Model.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
+#include <lang/LangResource.hpp>
 
 TankModelStore::TankModelStore()
 {

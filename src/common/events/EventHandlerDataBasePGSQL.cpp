@@ -21,8 +21,8 @@
 #ifdef HAVE_PGSQL
 /* Code contains several string format bugs, and at least one buffer overflow */
 
-#include <events/EventHandlerDataBasePGSQL.h>
-#include <common/Logger.h>
+#include <events/EventHandlerDataBasePGSQL.hpp>
+#include <common/Logger.hpp>
 
 EventHandlerDataBasePGSQL::EventHandlerDataBasePGSQL() : pgsql_(NULL), lastresult_ (NULL)
 {

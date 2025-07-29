@@ -24,10 +24,10 @@
 #include <landscape/Landscape.hpp>
 #include <water/Water2Patches.hpp>
 #include <sky/Sky.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <landscape/GraphicalLandscapeMap.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 #include <GLEXT/GLVertexBufferObject.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLCamera.hpp>

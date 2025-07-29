@@ -23,7 +23,7 @@
 
 #include <set>
 #include <string.h>
-#include <lang/ResourceBundleEntry.h>
+#include <lang/ResourceBundleEntry.hpp>
 
 class ResourceBundle
 {

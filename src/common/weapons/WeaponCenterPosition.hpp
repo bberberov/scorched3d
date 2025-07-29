@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponCenterPositionh_INCLUDE__)
 #define __INCLUDE_WeaponCenterPositionh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class WeaponCenterPosition  : public Weapon
 {

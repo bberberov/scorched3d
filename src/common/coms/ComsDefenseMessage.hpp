@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_ComsDefenseMessageh_INCLUDE__)
 #define __INCLUDE_ComsDefenseMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsDefenseMessage : public ComsMessage
 {

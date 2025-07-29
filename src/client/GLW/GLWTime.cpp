@@ -20,7 +20,7 @@
 
 #include <GLW/GLWTime.hpp>
 #include <GLW/GLWFont.hpp>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTime);
 

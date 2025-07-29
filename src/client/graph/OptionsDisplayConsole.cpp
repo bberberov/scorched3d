@@ -20,7 +20,7 @@
 
 #include <graph/OptionsDisplayConsole.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 

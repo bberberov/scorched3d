@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TargetMovementEntryh_INCLUDE__)
 #define __INCLUDE_TargetMovementEntryh_INCLUDE__
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 class NetBuffer;
 class NetBufferReader;

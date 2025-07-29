@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/Teleport.h>
-#include <actions/CameraPositionAction.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankViewPoints.h>
-#include <target/TargetDamageCalc.h>
-#include <target/TargetLife.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
-#include <landscapemap/DeformLandscape.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <actions/Teleport.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <target/TargetDamageCalc.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #ifndef S3D_SERVER
 	#include <sound/SoundUtils.hpp>
 	#include <sprites/TeleportRenderer.hpp>

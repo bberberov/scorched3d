@@ -29,11 +29,11 @@
 #include <server/ServerCommon.hpp>
 #include <webserver/ServerWebServerUtil.hpp>
 #include <server/ScorchedServer.hpp>
-#include <net/NetMessagePool.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/LoggerI.h>
-#include <common/Defines.h>
+#include <net/NetMessagePool.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/LoggerI.hpp>
+#include <common/Defines.hpp>
 
 ServerWebServer *ServerWebServer::instance_ = 0;
 

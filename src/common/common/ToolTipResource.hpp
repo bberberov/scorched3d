@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ToolTipResourceh_INCLUDE__)
 #define __INCLUDE_ToolTipResourceh_INCLUDE__
 
-#include <common/ToolTip.h>
+#include <common/ToolTip.hpp>
 
 class ToolTipResource : public ToolTip
 {

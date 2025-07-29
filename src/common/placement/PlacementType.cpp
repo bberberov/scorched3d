@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementType.h>
-#include <placement/PlacementObject.h>
-#include <placement/PlacementTypeMask.h>
-#include <placement/PlacementTypeDirect.h>
-#include <placement/PlacementTypeTree.h>
-#include <placement/PlacementTypeCount.h>
-#include <placement/PlacementTypeBounds.h>
-#include <placement/PlacementTypeTankStart.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <target/Target.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <common/DefinesString.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementType.hpp>
+#include <placement/PlacementObject.hpp>
+#include <placement/PlacementTypeMask.hpp>
+#include <placement/PlacementTypeDirect.hpp>
+#include <placement/PlacementTypeTree.hpp>
+#include <placement/PlacementTypeCount.hpp>
+#include <placement/PlacementTypeBounds.hpp>
+#include <placement/PlacementTypeTankStart.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <target/Target.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/DefinesString.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementType *PlacementType::create(const char *type)
 {

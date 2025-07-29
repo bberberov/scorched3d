@@ -22,7 +22,7 @@
 #ifndef SCORCHED_netBufferUtil_h
 #define SCORCHED_netBufferUtil_h
 
-#include <net/NetMessage.h>
+#include <net/NetMessage.hpp>
 
 class NetBufferUtil
 {

@@ -22,8 +22,8 @@
 #define AFX_GLWScorchedInfo_H__E5E95ACF_A6F4_4552_B05C_75CA02ACB6D2__INCLUDED_
 
 #include <GLW/GLWidget.hpp>
-#include <XML/XMLParser.h>
-#include <common/Vector.h>
+#include <XML/XMLParser.hpp>
+#include <common/Vector.hpp>
 
 class GLWHudCondition : public GLWCondition
 {

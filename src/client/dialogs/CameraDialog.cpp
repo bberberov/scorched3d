@@ -21,14 +21,14 @@
 #include <dialogs/CameraDialog.hpp>
 #include <GLW/GLWFont.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
-#include <common/DefinesString.h>
+#include <common/DefinesString.hpp>
 #include <graph/Main2DCamera.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
 #include <client/ClientSimulator.hpp>
 #include <landscape/Landscape.hpp>
 #include <tankgraph/RenderTargets.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 CameraDialog *CameraDialog::instance_ = 0;
 

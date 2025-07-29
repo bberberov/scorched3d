@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_EconomyFreeMarketh_INCLUDE__)
 #define __INCLUDE_EconomyFreeMarketh_INCLUDE__
 
-#include <weapons/Economy.h>
+#include <weapons/Economy.hpp>
 #include <map>
 
 /**

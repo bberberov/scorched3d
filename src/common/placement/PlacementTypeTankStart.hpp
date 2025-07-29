@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementTypeTankStarth_INCLUDE__)
 #define __INCLUDE_PlacementTypeTankStarth_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class PlacementTypeTankStart : public PlacementType
 {

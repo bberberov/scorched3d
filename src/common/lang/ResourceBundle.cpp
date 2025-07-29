@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/ResourceBundle.h>
-#include <lang/ResourceBundleEntryImpl.h>
-#include <common/DefinesString.h>
+#include <lang/ResourceBundle.hpp>
+#include <lang/ResourceBundleEntryImpl.hpp>
+#include <common/DefinesString.hpp>
 
 ResourceBundle::~ResourceBundle()
 {

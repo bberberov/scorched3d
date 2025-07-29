@@ -19,21 +19,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <dialogs/AutoDefenseDialog.hpp>
-#include <weapons/Accessory.h>
+#include <weapons/Accessory.hpp>
 #include <GLW/GLWFlag.hpp>
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
-#include <target/TargetContainer.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 AutoDefenseDialog *AutoDefenseDialog::instance()
 {

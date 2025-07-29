@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_PlacementShadowDefinitionh_INCLUDE__)
 #define __INCLUDE_PlacementShadowDefinitionh_INCLUDE__
 
-#include <XML/XMLNode.h>
-#include <image/ImageID.h>
+#include <XML/XMLNode.hpp>
+#include <image/ImageID.hpp>
 
 class ScorchedContext;
 class PlacementShadowDefinition

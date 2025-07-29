@@ -22,8 +22,8 @@
 #define AFX_TANKSORT_H__21F68DAD_9352_4673_9E24_B869AD5645AE__INCLUDED_
 
 #include <list>
-#include <lang/LangString.h>
-#include <engine/ScorchedContext.h>
+#include <lang/LangString.hpp>
+#include <engine/ScorchedContext.hpp>
 
 class Tank;
 class TankScore;

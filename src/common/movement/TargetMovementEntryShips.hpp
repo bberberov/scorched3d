@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_TargetMovementEntryShipsh_INCLUDE__)
 #define __INCLUDE_TargetMovementEntryShipsh_INCLUDE__
 
-#include <common/SplinePath.h>
-#include <movement/TargetMovementEntry.h>
-#include <target/TargetState.h>
+#include <common/SplinePath.hpp>
+#include <movement/TargetMovementEntry.hpp>
+#include <target/TargetState.hpp>
 #include <map>
 
 class TargetMovementEntryShipsOffset : public TargetStateMovement

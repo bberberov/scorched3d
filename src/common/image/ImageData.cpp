@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageData.h>
+#include <image/ImageData.hpp>
 #include <string.h>
 
 ImageData::ImageData() :

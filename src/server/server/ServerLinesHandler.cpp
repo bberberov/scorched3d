@@ -22,12 +22,12 @@
 #include <server/ScorchedServer.hpp>
 #include <server/ServerCommon.hpp>
 #include <server/ServerDestinations.hpp>
-#include <coms/ComsLinesMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Logger.h>
+#include <coms/ComsLinesMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Logger.hpp>
 #include <set>
 
 ServerLinesHandler::ServerLinesHandler(ComsMessageHandler &comsMessageHandler)

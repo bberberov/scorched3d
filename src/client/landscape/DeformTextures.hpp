@@ -22,8 +22,8 @@
 #if !defined(__INCLUDE_DeformTexturesh_INCLUDE__)
 #define __INCLUDE_DeformTexturesh_INCLUDE__
 
-#include <landscapemap/DeformLandscape.h>
-#include <common/Vector.h>
+#include <landscapemap/DeformLandscape.hpp>
+#include <common/Vector.hpp>
 
 class Image;
 namespace DeformTextures

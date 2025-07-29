@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_LandscapeDefnh_INCLUDE__)
 #define __INCLUDE_LandscapeDefnh_INCLUDE__
 
-#include <landscapedef/LandscapeTexDefn.h>
-#include <common/fixed.h>
-#include <coms/ComsMessage.h>
-#include <XML/XMLFile.h>
+#include <landscapedef/LandscapeTexDefn.hpp>
+#include <common/fixed.hpp>
+#include <coms/ComsMessage.hpp>
+#include <XML/XMLFile.hpp>
 #include <string>
 
 class LandscapeDefnType

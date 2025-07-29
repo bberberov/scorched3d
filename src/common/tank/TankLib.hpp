@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TankLibh_INCLUDE__)
 #define __INCLUDE_TankLibh_INCLUDE__
 
-#include <engine/ScorchedContext.h>
-#include <common/FixedVector.h>
+#include <engine/ScorchedContext.hpp>
+#include <common/FixedVector.hpp>
 #include <list>
 
 class Tank;

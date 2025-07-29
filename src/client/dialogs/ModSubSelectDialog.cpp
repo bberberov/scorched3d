@@ -27,8 +27,8 @@
 #include <GLW/GLWTranslate.hpp>
 #include <client/ClientParams.hpp>
 #include <client/ClientMain.hpp>
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
 
 GLWIconListSubModItem::GLWIconListSubModItem(ModInfo::MenuEntry &modInfoEntry) :
 	modInfoEntry_(modInfoEntry),

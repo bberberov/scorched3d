@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "LUAS3DLib.h"
-#include "LUAScript.h"
-#include "LUAUtil.h"
-#include <common/OptionEntry.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Logger.h>
-#include <weapons/AccessoryStore.h>
-#include <tanket/TanketAccessories.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <target/TargetLife.h>
-#include <landscapemap/LandscapeMaps.h>
+#include "LUAS3DLib.hpp"
+#include "LUAScript.hpp"
+#include "LUAUtil.hpp"
+#include <common/OptionEntry.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Logger.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <target/TargetLife.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 #define LUA_LIB
 

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponMuzzleh_INCLUDE__)
 #define __INCLUDE_WeaponMuzzleh_INCLUDE__
 
-#include <weapons/WeaponExplosion.h>
+#include <weapons/WeaponExplosion.hpp>
 
 class WeaponMuzzle : public WeaponExplosion
 {

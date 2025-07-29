@@ -22,7 +22,7 @@
 #define AFX_ModelRendererTankSTORE_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_
 
 #include <tankgraph/ModelRendererTank.hpp>
-#include <common/ModelID.h>
+#include <common/ModelID.hpp>
 #include <map>
 
 class ModelRendererTankStore

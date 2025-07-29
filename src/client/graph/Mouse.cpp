@@ -21,9 +21,9 @@
 #include <GLEXT/GLViewPort.hpp>
 #include <graph/Mouse.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsScorched.h>
+#include <common/OptionsScorched.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 
 Mouse *Mouse::instance_ = 0;
 

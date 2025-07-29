@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerBrowserCollecth_INCLUDE__)
 #define __INCLUDE_ServerBrowserCollecth_INCLUDE__
 
-#include <net/NetServerTCP.h>
+#include <net/NetServerTCP.hpp>
 #include <serverbrowser/ServerBrowserServerList.hpp>
 #include <set>
 

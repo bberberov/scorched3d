@@ -25,7 +25,7 @@
 #include <GLW/GLWFont.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <string.h>
 
 static Vector color(0.1f, 0.1f, 0.4f);

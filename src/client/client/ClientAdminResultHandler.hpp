@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ClientAdminResultHandlerh_INCLUDE__)
 #define __INCLUDE_ClientAdminResultHandlerh_INCLUDE__
 
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageHandler.hpp>
 #include <set>
 
 class ClientAdminResultHandlerI

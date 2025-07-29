@@ -24,9 +24,9 @@
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeTex.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeTex.hpp>
 #include <land/LandSurround.hpp>
 #include <sky/Sky.hpp>
 

@@ -23,7 +23,7 @@
 
 #include <list>
 #include <string>
-#include <common/ChannelText.h>
+#include <common/ChannelText.hpp>
 
 class ClientChannelManagerI
 {

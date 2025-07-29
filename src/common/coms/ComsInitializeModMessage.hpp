@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsInitializeModMessageh_INCLUDE__)
 #define __INCLUDE_ComsInitializeModMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsInitializeModMessage : public ComsMessage
 {

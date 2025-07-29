@@ -21,8 +21,8 @@
 #if !defined(AFX_WEAPONEXPLOSION_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_)
 #define AFX_WEAPONPEXPLOSION_H__70119A64_2064_4066_8EE5_FD6A3E24D5FC__INCLUDED_
 
-#include <weapons/Weapon.h>
-#include <actions/ExplosionParams.h>
+#include <weapons/Weapon.hpp>
+#include <actions/ExplosionParams.hpp>
 
 class WeaponExplosion : public Weapon
 {

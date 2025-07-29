@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponSoundh_INCLUDE__)
 #define __INCLUDE_WeaponSoundh_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 #include <vector>
 
 class WeaponSound : public Weapon

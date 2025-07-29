@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_Meshh_INCLUDE__)
 #define __INCLUDE_Meshh_INCLUDE__
 
-#include <common/DefinesAssert.h>
-#include <common/FixedVector4.h>
-#include <3dsparse/Face.h>
-#include <3dsparse/Vertex.h>
+#include <common/DefinesAssert.hpp>
+#include <common/FixedVector4.hpp>
+#include <3dsparse/Face.hpp>
+#include <3dsparse/Vertex.hpp>
 #include <vector>
 #include <string>
 

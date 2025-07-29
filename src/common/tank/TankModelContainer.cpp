@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankModelContainer.h>
-#include <tank/TankModelStore.h>
-#include <tank/Tank.h>
-#include <tanket/TanketType.h>
+#include <tank/TankModelContainer.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/Tank.hpp>
+#include <tanket/TanketType.hpp>
 #ifndef S3D_SERVER
 	#include <tankgraph/TargetRendererImplTank.hpp>
 #endif
-#include <engine/ScorchedContext.h>
-#include <common/DefinesString.h>
+#include <engine/ScorchedContext.hpp>
+#include <common/DefinesString.hpp>
 
 TankModelContainer::TankModelContainer(ScorchedContext &context) :
 	context_(context),

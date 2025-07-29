@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/ShieldRoundMag.h>
+#include <weapons/ShieldRoundMag.hpp>
 
 REGISTER_ACCESSORY_SOURCE(ShieldRoundMag);
 

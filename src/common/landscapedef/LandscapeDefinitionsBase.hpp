@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LandscapeDefinitionsBaseh_INCLUDE__)
 #define __INCLUDE_LandscapeDefinitionsBaseh_INCLUDE__
 
-#include <common/OptionsScorched.h>
-#include <XML/XMLFile.h>
+#include <common/OptionsScorched.hpp>
+#include <XML/XMLFile.hpp>
 #include <string>
 #include <vector>
 #include <list>

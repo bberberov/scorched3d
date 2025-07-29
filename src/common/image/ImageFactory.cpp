@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageFactory.h>
-#include <image/ImageBitmapFactory.h>
-#include <image/ImageJpgFactory.h>
-#include <image/ImagePngFactory.h>
+#include <image/ImageFactory.hpp>
+#include <image/ImageBitmapFactory.hpp>
+#include <image/ImageJpgFactory.hpp>
+#include <image/ImagePngFactory.hpp>
 #include <string>
 
 ImageFactory::ImageFactory()
@@ -70,7 +70,7 @@ Image ImageFactory::loadImage(
 #ifndef S3D_SERVER
 
 #include <GLEXT/GLState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 Image ImageFactory::grabScreen()
 {

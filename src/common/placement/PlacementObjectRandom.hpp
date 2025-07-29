@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementObjectRandomh_INCLUDE__)
 #define __INCLUDE_PlacementObjectRandomh_INCLUDE__
 
-#include <placement/PlacementObject.h>
+#include <placement/PlacementObject.hpp>
 #include <vector>
 
 class PlacementObjectRandom : public PlacementObject

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/RandomGenerator.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
-#include <engine/ScorchedContext.h>
-#include <net/NetBuffer.h>
+#include <common/RandomGenerator.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <net/NetBuffer.hpp>
 #include <stdlib.h>
 #include <stdio.h>
 

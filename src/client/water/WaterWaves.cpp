@@ -21,15 +21,15 @@
 #include <water/WaterWaves.hpp>
 #include <water/WaterWaveDistance.hpp>
 #include <water/Water2Patches.hpp>
-#include <engine/Simulator.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <lang/LangResource.h>
+#include <engine/Simulator.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <lang/LangResource.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLInfo.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <math.h>
 
 WaterWaves::WaterWaves() :

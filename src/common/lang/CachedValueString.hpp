@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_CachedValueString_INCLUDE__)
 #define __INCLUDE_CachedValueString_INCLUDE__
 
-#include <lang/Lang.h>
-#include <common/fixed.h>
+#include <lang/Lang.hpp>
+#include <common/fixed.hpp>
 
 class CachedValueString
 {

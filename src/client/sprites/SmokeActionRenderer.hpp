@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_SmokeActionRendererh_INCLUDE__)
 #define __INCLUDE_SmokeActionRendererh_INCLUDE__
 
-#include <common/Vector.h>
-#include <common/Counter.h>
+#include <common/Vector.hpp>
+#include <common/Counter.hpp>
 #include <landscape/Smoke.hpp>
 
 class SmokeActionRenderer : public ParticleUserData

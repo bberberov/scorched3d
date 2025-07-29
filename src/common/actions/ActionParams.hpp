@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ActionParamsh_INCLUDE__)
 #define __INCLUDE_ActionParamsh_INCLUDE__
 
-#include <lang/LangString.h>
-#include <common/NumberParser.h>
+#include <lang/LangString.hpp>
+#include <common/NumberParser.hpp>
 #include <vector>
 
 #define FIXED_ACTION_PARAM_DECL(x) \

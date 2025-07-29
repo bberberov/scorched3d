@@ -19,17 +19,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankai/TankAICurrentMoveWeapons.hpp>
-#include <tanket/Tanket.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <target/TargetLife.h>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetLife.hpp>
 #include <server/ScorchedServer.hpp>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <weapons/Accessory.h>
-#include <weapons/WeaponNapalm.h>
-#include <weapons/Shield.h>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/WeaponNapalm.hpp>
+#include <weapons/Shield.hpp>
 
 TankAICurrentMoveWeapons::TankAICurrentMoveWeapons(Tanket *tanket, 
 	Tanket *targetTanket,

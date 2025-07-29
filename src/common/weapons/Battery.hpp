@@ -21,7 +21,7 @@
 #if !defined(AFX_BATTERY_H__F9BCDF39_FB62_4BB4_9D64_C70215669F9C__INCLUDED_)
 #define AFX_BATTERY_H__F9BCDF39_FB62_4BB4_9D64_C70215669F9C__INCLUDED_
 
-#include <weapons/AccessoryPart.h>
+#include <weapons/AccessoryPart.hpp>
 
 class Battery : public AccessoryPart
 {

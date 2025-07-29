@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankgraph/ModelRendererTankStore.hpp>
-#include <3dsparse/ModelStore.h>
+#include <3dsparse/ModelStore.hpp>
 
 ModelRendererTankStore *ModelRendererTankStore::instance_ = 0;
 

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_OptionsGameh_INCLUDE__)
 #define __INCLUDE_OptionsGameh_INCLUDE__
 
-#include <common/OptionEntry.h>
+#include <common/OptionEntry.hpp>
 
 class OptionsGame
 {

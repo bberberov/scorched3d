@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerStateStartingMatchh_INCLUDE__)
 #define __INCLUDE_ServerStateStartingMatchh_INCLUDE__
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 
 class ServerStateStartingMatch 
 {

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsFileMessageh_INCLUDE__)
 #define __INCLUDE_ComsFileMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsFileMessage : public ComsMessage
 {

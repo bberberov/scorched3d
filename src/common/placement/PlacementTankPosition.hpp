@@ -22,9 +22,9 @@
 #define __INCLUDE_PlacementTankPositionh_INCLUDE__
 
 #include <list>
-#include <common/FixedVector.h>
-#include <common/RandomGenerator.h>
-#include <engine/ScorchedContext.h>
+#include <common/FixedVector.hpp>
+#include <common/RandomGenerator.hpp>
+#include <engine/ScorchedContext.hpp>
 
 namespace PlacementTankPosition 
 {

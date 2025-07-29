@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NetServerTCPProtocolh_INCLUDE__)
 #define __INCLUDE_NetServerTCPProtocolh_INCLUDE__
 
-#include <net/NetMessage.h>
+#include <net/NetMessage.hpp>
 
 class NetServerTCPProtocol
 {

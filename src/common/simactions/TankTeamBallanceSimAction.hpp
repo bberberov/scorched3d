@@ -21,7 +21,7 @@
 #if !defined(AFX_TankTeamBallanceSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)
 #define AFX_TankTeamBallanceSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_
 
-#include <simactions/SimAction.h>
+#include <simactions/SimAction.hpp>
 #include <vector>
 
 class Tank;

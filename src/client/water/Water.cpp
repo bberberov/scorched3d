@@ -24,18 +24,18 @@
 #include <water/WaterMapPoints.hpp>
 #include <water/WaterWaveDistance.hpp>
 #include <water/WaterWaves.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeDefinition.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
-#include <common/Clock.h>
-#include <common/Logger.h>
+#include <common/Defines.hpp>
+#include <common/Clock.hpp>
+#include <common/Logger.hpp>
 #include <sound/SoundUtils.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/ParticleEmitter.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLImageModifier.hpp>
 
 Water::Water() :

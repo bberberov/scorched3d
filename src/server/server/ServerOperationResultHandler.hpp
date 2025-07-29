@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerOperationResultHandlerh_INCLUDE__)
 #define __INCLUDE_ServerOperationResultHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerOperationResultHandler : public ComsMessageHandlerI
 {

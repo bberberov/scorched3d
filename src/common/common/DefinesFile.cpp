@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <string>
 #include <string.h>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <sys/types.h>
 #include <sys/stat.h>
 

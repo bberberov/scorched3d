@@ -20,7 +20,7 @@
 
 #include <water/Water2Patch.hpp>
 #include <water/Water2Constants.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLStateExtension.hpp>

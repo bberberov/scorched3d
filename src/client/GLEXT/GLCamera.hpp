@@ -22,7 +22,7 @@
 #define AFX_GLCAMERA_H__A41E0133_3B1F_11D4_BCBB_00A0C9A4CA3E__INCLUDED_
 
 #include <GLEXT/GLState.hpp>
-#include <common/Line.h>
+#include <common/Line.hpp>
 
 /**
 A class that wraps setting and moving the current viewport.

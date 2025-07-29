@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TankSayh_INCLUDE__)
 #define __INCLUDE_TankSayh_INCLUDE__
 
-#include <actions/Action.h>
-#include <lang/LangString.h>
+#include <actions/Action.hpp>
+#include <lang/LangString.hpp>
 
 class TankSay : public Action
 {

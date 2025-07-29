@@ -22,7 +22,7 @@
 #define __INCLUDE_Lang_INCLUDE__
 
 #include <string>
-#include <lang/ResourceBundleEntry.h>
+#include <lang/ResourceBundleEntry.hpp>
 
 class Lang
 {

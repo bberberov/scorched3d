@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_Napalmh_INCLUDE__)
 #define __INCLUDE_Napalmh_INCLUDE__
 
-#include <actions/Action.h>
-#include <weapons/WeaponNapalm.h>
-#include <common/Counter.h>
-#include <landscapemap/DeformLandscape.h>
+#include <actions/Action.hpp>
+#include <weapons/WeaponNapalm.hpp>
+#include <common/Counter.hpp>
+#include <landscapemap/DeformLandscape.hpp>
 #include <list>
 #include <vector>
 #include <set>

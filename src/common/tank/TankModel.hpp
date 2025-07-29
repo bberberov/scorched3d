@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_TankModelh_INCLUDE__)
 #define __INCLUDE_TankModelh_INCLUDE__
 
-#include <common/ModelID.h>
-#include <common/Vector.h>
-#include <image/ImageID.h>
+#include <common/ModelID.hpp>
+#include <common/Vector.hpp>
+#include <image/ImageID.hpp>
 #include <set>
 #include <string>
 

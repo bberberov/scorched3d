@@ -18,27 +18,27 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ScorchedContext.h>
-#include <engine/GameState.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <engine/ModFiles.h>
-#include <engine/ObjectGroups.h>
-#include <net/NetInterface.h>
-#include <coms/ComsMessageHandler.h>
-#include <common/OptionsTransient.h>
-#include <target/TargetContainer.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankModelStore.h>
-#include <tanket/TanketTypes.h>
-#include <target/TargetSpace.h>
-#include <movement/TargetMovement.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <weapons/AccessoryStore.h>
+#include <engine/ScorchedContext.hpp>
+#include <engine/GameState.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ModFiles.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <net/NetInterface.hpp>
+#include <coms/ComsMessageHandler.hpp>
+#include <common/OptionsTransient.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tanket/TanketTypes.hpp>
+#include <target/TargetSpace.hpp>
+#include <movement/TargetMovement.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <tankai/TankAIStrings.hpp>
-#include <lua/LUAScriptHook.h>
-#include <events/EventController.h>
+#include <lua/LUAScriptHook.hpp>
+#include <events/EventController.hpp>
 
 ScorchedContext::ScorchedContext(const char *name)
 {

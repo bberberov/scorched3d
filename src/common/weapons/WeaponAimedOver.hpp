@@ -21,7 +21,7 @@
 #if !defined(AFX_WeaponAimedOver_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)
 #define AFX_WeaponAimedOver_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_
 
-#include <weapons/WeaponAimed.h>
+#include <weapons/WeaponAimed.hpp>
 
 class WeaponAimedOver : public WeaponAimed
 {

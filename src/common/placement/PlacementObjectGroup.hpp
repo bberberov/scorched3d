@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementObjectGrouph_INCLUDE__)
 #define __INCLUDE_PlacementObjectGrouph_INCLUDE__
 
-#include <placement/PlacementObject.h>
+#include <placement/PlacementObject.hpp>
 
 class PlacementObjectGroup : public PlacementObject
 {

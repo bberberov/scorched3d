@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_NetServerTCP3Sendh_INCLUDE__)
 #define __INCLUDE_NetServerTCP3Sendh_INCLUDE__
 
-#include <net/NetInterface.h>
+#include <net/NetInterface.hpp>
 #include <list>
 
 class NetServerTCP3Send : public NetMessageHandlerI

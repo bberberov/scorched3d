@@ -23,16 +23,16 @@
 #include <sky/Sun.hpp>
 #include <land/VisibilityPatchGrid.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
-#include <engine/ScorchedContext.h>
+#include <engine/ScorchedContext.hpp>
 #include <GLEXT/GLInfo.hpp>
 #include <GLEXT/GLStateExtension.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <math.h>
 
 SkyRoof::SkyRoof() : list_(0), tris_(0)

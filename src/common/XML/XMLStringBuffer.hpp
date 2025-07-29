@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_XMLStringBufferh_INCLUDE__)
 #define __INCLUDE_XMLStringBufferh_INCLUDE__
 
-#include <XML/XMLParser.h>
+#include <XML/XMLParser.hpp>
 
 class XMLStringBuffer
 {

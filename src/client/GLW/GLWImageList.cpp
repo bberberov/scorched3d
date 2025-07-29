@@ -20,9 +20,9 @@
 
 #include <GLW/GLWImageList.hpp>
 #include <GLW/GLWTranslate.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/FileList.h>
+#include <common/FileList.hpp>
 #include <string.h>
 
 REGISTER_CLASS_SOURCE(GLWImageList);

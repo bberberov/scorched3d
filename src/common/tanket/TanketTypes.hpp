@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TanketTypesh_INCLUDE__)
 #define __INCLUDE_TanketTypesh_INCLUDE__
 
-#include <tanket/TanketType.h>
+#include <tanket/TanketType.hpp>
 #include <vector>
 
 class TanketTypes

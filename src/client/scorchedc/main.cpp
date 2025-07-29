@@ -22,18 +22,18 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientMain.hpp>
 #include <server/ScorchedServer.hpp>
-#include <engine/ModDirs.h>
-#include <common/OptionsScorched.h>
-#include <common/ARGParser.h>
-#include <common/Defines.h>
-#include <common/OptionsTransient.h>
+#include <engine/ModDirs.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/ARGParser.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsTransient.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <locale.h>
 #include <math.h>
 #include <signal.h>
 #include <float.h>
 #include <time.h>
-#include <common/main.h>
+#include <common/main.hpp>
 #include <SDL/SDL.h>
 
 void checkLaunchFile(char *progPath)
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 {
 	setlocale(LC_ALL, "C");
 
-	// From main.h
+	// From main.hpp
 	run_main(argc, argv, *ClientParams::instance());
 	checkLaunchFile(argv[0]);
 

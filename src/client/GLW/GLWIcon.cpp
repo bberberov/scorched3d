@@ -21,8 +21,8 @@
 #include <GLW/GLWIcon.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLTextureStore.hpp>
-#include <XML/XMLParser.h>
-#include <common/Defines.h>
+#include <XML/XMLParser.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_CLASS_SOURCE(GLWIcon);
 

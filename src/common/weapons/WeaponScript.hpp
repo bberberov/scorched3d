@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponScripth_INCLUDE__)
 #define __INCLUDE_WeaponScripth_INCLUDE__
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class LUAScript;
 class WeaponScript  : public Weapon

@@ -23,9 +23,9 @@
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientSimulator.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <server/ScorchedServer.hpp>
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 #include <dialogs/AnimatedBackdropDialog.hpp>
 
 ClientDisconnected::ClientDisconnected() : GameStateI("ClientDisconnected")

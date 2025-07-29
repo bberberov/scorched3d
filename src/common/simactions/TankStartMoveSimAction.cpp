@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankStartMoveSimAction.h>
+#include <simactions/TankStartMoveSimAction.hpp>
 #include <server/ScorchedServer.hpp>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
 #include <tankai/TankAI.hpp>
-#include <engine/ActionController.h>
-#include <common/OptionsScorched.h>
+#include <engine/ActionController.hpp>
+#include <common/OptionsScorched.hpp>
 #ifndef S3D_SERVER
 #include <graph/ShotCountDown.hpp>
 #include <client/ScorchedClient.hpp>

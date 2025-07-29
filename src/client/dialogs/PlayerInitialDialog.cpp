@@ -19,20 +19,20 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <dialogs/PlayerInitialDialog.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankModelContainer.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankColorGenerator.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankColorGenerator.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/OptionsGame.h>
-#include <common/OptionsTransient.h>
-#include <common/Logger.h>
-#include <coms/ComsTankChangeMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <common/OptionsGame.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Logger.hpp>
+#include <coms/ComsTankChangeMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 #include <client/ClientChannelManager.hpp>
 #include <GLW/GLWWindowManager.hpp>
 

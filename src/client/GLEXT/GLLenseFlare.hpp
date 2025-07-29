@@ -26,8 +26,8 @@
 #if !defined(AFX_GLLENSEFLARE_H__34C2D198_3739_4402_B9FD_BEE4DF738466__INCLUDED_)
 #define AFX_GLLENSEFLARE_H__34C2D198_3739_4402_B9FD_BEE4DF738466__INCLUDED_
 
-#include <common/Vector.h>
-#include <common/ProgressCounter.h>
+#include <common/Vector.hpp>
+#include <common/ProgressCounter.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 class GLLenseFlare  

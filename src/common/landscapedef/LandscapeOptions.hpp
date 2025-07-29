@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_LandscapeOptionsh_INCLUDE__)
 #define __INCLUDE_LandscapeOptionsh_INCLUDE__
 
-#include <XML/XMLFile.h>
-#include <common/OptionsGame.h>
+#include <XML/XMLFile.hpp>
+#include <common/OptionsGame.hpp>
 #include <string>
 #include <vector>
 

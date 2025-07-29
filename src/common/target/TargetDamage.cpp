@@ -18,38 +18,38 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TargetFalling.h>
-#include <actions/TankSay.h>
-#include <actions/CameraPositionAction.h>
-#include <actions/Resurrection.h>
+#include <actions/TargetFalling.hpp>
+#include <actions/TankSay.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <actions/Resurrection.hpp>
 #ifndef S3D_SERVER
 	#include <sprites/TextActionRenderer.hpp>
 #endif
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/ChannelManager.h>
-#include <events/EventController.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Shield.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
+#include <events/EventController.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Shield.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
 #include <tankai/TankAI.hpp>
-#include <tanket/TanketShotInfo.h>
-#include <tanket/TanketAccessories.h>
-#include <target/TargetDamage.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <target/TargetParachute.h>
-#include <target/TargetState.h>
+#include <tanket/TanketShotInfo.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <target/TargetDamage.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetState.hpp>
 #include <tankai/TankAIStrings.hpp>
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 void TargetDamage::damageTarget(ScorchedContext &context,
 	Weapon *weapon, 

@@ -22,7 +22,7 @@
 #include <GLEXT/GLStateExtension.hpp>
 #include <GLEXT/GLVertexBufferObject.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 MipMapPatchIndexs::IndexLevel::IndexLevel()
 {

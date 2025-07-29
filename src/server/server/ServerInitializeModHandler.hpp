@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerInitializeModHandlerh_INCLUDE__)
 #define __INCLUDE_ServerInitializeModHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerInitializeModHandler : public ComsMessageHandlerI
 {

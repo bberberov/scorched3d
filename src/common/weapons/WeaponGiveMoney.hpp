@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponGiveMoneyh_INCLUDE__)
 #define __INCLUDE_WeaponGiveMoneyh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 
 class WeaponGiveMoney  : public WeaponCallback
 {

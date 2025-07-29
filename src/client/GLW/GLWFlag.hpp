@@ -23,7 +23,7 @@
 
 #include <GLW/GLWFont.hpp>
 #include <GLW/GLWidget.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class GLWFlag : public GLWidget
 {

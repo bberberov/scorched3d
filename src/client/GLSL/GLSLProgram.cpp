@@ -20,8 +20,8 @@
 
 #include <GLSL/GLSLProgram.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/Logger.h>
-#include <common/Defines.h>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
 
 const GLSLProgram* GLSLProgram::used_program_(0);
 

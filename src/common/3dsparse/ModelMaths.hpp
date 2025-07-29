@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ModelMathsh_INCLUDE__)
 #define __INCLUDE_ModelMathsh_INCLUDE__
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 class ModelMaths
 {

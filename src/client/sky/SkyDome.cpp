@@ -21,17 +21,17 @@
 #include <sky/SkyDome.hpp>
 #include <sky/Sky.hpp>
 #include <sky/Hemisphere.hpp>
-#include <engine/Simulator.h>
+#include <engine/Simulator.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefinition.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 SkyDome::SkyDome() : 
 	xy_(0.0f), 

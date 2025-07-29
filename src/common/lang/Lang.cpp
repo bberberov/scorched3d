@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/Lang.h>
-#include <lang/LangImpl.h>
+#include <lang/Lang.hpp>
+#include <lang/LangImpl.hpp>
 
 Lang *Lang::instance_ = 0;
 

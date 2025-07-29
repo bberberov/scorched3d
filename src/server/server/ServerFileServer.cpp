@@ -22,11 +22,11 @@
 #include <server/ScorchedServer.hpp>
 #include <server/ServerCommon.hpp>
 #include <server/ServerDestinations.hpp>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsInitializeModMessage.h>
-#include <engine/ModFiles.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsInitializeModMessage.hpp>
+#include <engine/ModFiles.hpp>
 #include <time.h>
 
 ServerFileServer::ServerFileServer() : lastTime_(0), bytesSent_(0)

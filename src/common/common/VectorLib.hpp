@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_VectorLibh_INCLUDE__)
 #define __INCLUDE_VectorLibh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 namespace VectorLib
 {

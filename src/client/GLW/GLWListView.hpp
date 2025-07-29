@@ -24,8 +24,8 @@
 
 #include <GLW/GLWidget.hpp>
 #include <GLW/GLWScrollW.hpp>
-#include <XML/XMLNode.h>
-#include <common/Vector.h>
+#include <XML/XMLNode.hpp>
+#include <common/Vector.hpp>
 #include <vector>
 #include <string>
 #include <map>

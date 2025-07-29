@@ -22,7 +22,7 @@
 #define __INCLUDE_ImageIDh_INCLUDE__
 
 #include <string>
-#include <common/DefinesFile.h>
+#include <common/DefinesFile.hpp>
 
 class XMLNode;
 class ImageID

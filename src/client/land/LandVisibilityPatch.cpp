@@ -20,7 +20,7 @@
 
 #include <land/LandVisibilityPatch.hpp>
 #include <client/ScorchedClient.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 
 LandVisibilityPatch::LandVisibilityPatch() :
 	HeightMapVisibilityPatch(&ScorchedClient::instance()->getLandscapeMaps().

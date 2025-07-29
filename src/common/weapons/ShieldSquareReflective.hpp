@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ShieldReflectiveh_INCLUDE__)
 #define __INCLUDE_ShieldReflectiveh_INCLUDE__
 
-#include <weapons/ShieldSquare.h>
+#include <weapons/ShieldSquare.hpp>
 
 class ShieldSquareReflective : public ShieldSquare
 {

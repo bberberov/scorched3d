@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TargetFalling.h>
-#include <target/TargetDamage.h>
-#include <target/TargetContainer.h>
-#include <target/TargetState.h>
-#include <target/TargetParachute.h>
-#include <target/TargetDamageCalc.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketAccessories.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Parachute.h>
-#include <common/OptionsScorched.h>
-#include <landscapemap/DeformLandscape.h>
+#include <actions/TargetFalling.hpp>
+#include <target/TargetDamage.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetDamageCalc.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Parachute.hpp>
+#include <common/OptionsScorched.hpp>
+#include <landscapemap/DeformLandscape.hpp>
 
 TargetFalling::TargetFalling(
 	Weapon *weapon,

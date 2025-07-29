@@ -21,7 +21,7 @@
 #if !defined(AFX_WEAPONNULL_H__24F2D834_712D_4355_AC74_3571E2F4B14D__INCLUDED_)
 #define AFX_WEAPONNULL_H__24F2D834_712D_4355_AC74_3571E2F4B14D__INCLUDED_
 
-#include <weapons/Weapon.h>
+#include <weapons/Weapon.hpp>
 
 class WeaponNull : public Weapon
 {

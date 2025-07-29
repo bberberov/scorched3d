@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ModDirsh_INCLUDE__)
 #define __INCLUDE_ModDirsh_INCLUDE__
 
-#include <engine/ModInfo.h>
+#include <engine/ModInfo.hpp>
 #include <list>
 
 class ModDirs

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ServerFileServerh_INCLUDE__)
 #define __INCLUDE_ServerFileServerh_INCLUDE__
 
-#include <coms/ComsFileMessage.h>
+#include <coms/ComsFileMessage.hpp>
 
 class ServerDestination;
 class ServerFileServer

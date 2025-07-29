@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <events/EventHandlerAchievement.h>
-#include <events/EventHandlerAchievementNumberRankKills.h>
-#include <common/Logger.h>
-#include <common/DefinesString.h>
+#include <events/EventHandlerAchievement.hpp>
+#include <events/EventHandlerAchievementNumberRankKills.hpp>
+#include <common/Logger.hpp>
+#include <common/DefinesString.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
-#include <simactions/TankAchievementSimAction.h>
+#include <simactions/TankAchievementSimAction.hpp>
 
 EventHandlerAchievement::EventHandlerAchievement(const std::string &name, EventHandlerDataBase *database) :
 	name_(name),

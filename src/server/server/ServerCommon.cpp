@@ -23,19 +23,19 @@
 #include <server/ServerMessageHandler.hpp>
 #include <server/ServerChannelManager.hpp>
 #include <server/ServerDestinations.hpp>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Logger.h>
-#include <common/FileLogger.h>
-#include <common/Defines.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsConnectRejectMessage.h>
-#include <net/NetInterface.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Logger.hpp>
+#include <common/FileLogger.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsConnectRejectMessage.hpp>
+#include <net/NetInterface.hpp>
 
 static FileLogger *serverFileLogger = 0;
 

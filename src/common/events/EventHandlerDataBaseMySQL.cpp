@@ -20,9 +20,9 @@
 
 #ifdef HAVE_MYSQL
 
-#include <events/EventHandlerDataBaseMySQL.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
+#include <events/EventHandlerDataBaseMySQL.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
 #include <stdlib.h>
 
 EventHandlerDataBaseMySQL::EventHandlerDataBaseMySQL() : mysql_(0)

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WaterVisibilityPatchh_INCLUDE__)
 #define __INCLUDE_WaterVisibilityPatchh_INCLUDE__
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class MipMapPatchIndexs;
 class MipMapPatchIndex;

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TanketTypeh_INCLUDE__)
 #define __INCLUDE_TanketTypeh_INCLUDE__
 
-#include <common/fixed.h>
+#include <common/fixed.hpp>
 #include <string>
 #include <map>
 #include <set>

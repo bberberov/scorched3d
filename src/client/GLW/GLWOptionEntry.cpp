@@ -24,9 +24,9 @@
 #include <GLW/GLWCheckBox.hpp>
 #include <GLW/GLWDropDownText.hpp>
 #include <GLW/GLWTextBox.hpp>
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
-#include <common/ToolTip.h>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
+#include <common/ToolTip.hpp>
 
 GLWOptionEntry::GLWOptionEntry(GLWidget *control, OptionEntry *entry) :
 	control_(control),

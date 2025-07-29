@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLTextureCubeMap.hpp>
 #include <string.h>

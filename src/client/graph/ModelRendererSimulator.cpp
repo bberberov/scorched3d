@@ -20,7 +20,7 @@
 
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/ModelRenderer.hpp>
-#include <3dsparse/Model.h>
+#include <3dsparse/Model.hpp>
 #include <stdlib.h>
 
 ModelRendererSimulator::ModelRendererSimulator(ModelRenderer *renderer) : 

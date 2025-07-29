@@ -23,8 +23,8 @@
 
 #include <map>
 #include <deque>
-#include <engine/GameStateI.h>
-#include <common/KeyboardKey.h>
+#include <engine/GameStateI.hpp>
+#include <common/KeyboardKey.hpp>
 #include <GLW/GLWWindow.hpp>
 #include <GLEXT/GLMenuI.hpp>
 

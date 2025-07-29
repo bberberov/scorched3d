@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageID.h>
-#include <common/Defines.h>
-#include <XML/XMLParser.h>
+#include <image/ImageID.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLParser.hpp>
 
 ImageID::ImageID() :
 	imageLocation_(S3D::eInvalidLocation)

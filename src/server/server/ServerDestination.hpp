@@ -22,8 +22,8 @@
 #define __INCLUDE_ServerDestinationh_INCLUDE__
 
 #include <list>
-#include <common/RollingAverage.h>
-#include <net/NetBuffer.h>
+#include <common/RollingAverage.hpp>
+#include <net/NetBuffer.hpp>
 
 struct ModIdentifierEntry;
 class ServerDestinationMod
@@ -53,7 +53,7 @@ protected:
 	unsigned int totalLeft_;
 	NetBuffer sendBuffer_;
 	std::string lastFile_;
-	std::list<ModIdentifierEntry> *files_; // Pointer so we don't include ModFiles.h
+	std::list<ModIdentifierEntry> *files_; // Pointer so we don't include ModFiles.hpp
 
 };
 

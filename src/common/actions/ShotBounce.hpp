@@ -21,10 +21,10 @@
 #if !defined(__INCLUDE_ShotBounceh_INCLUDE__)
 #define __INCLUDE_ShotBounceh_INCLUDE__
 
-#include <engine/PhysicsParticle.h>
-#include <engine/ScorchedCollisionIds.h>
-#include <actions/ParticleGroup.h>
-#include <weapons/WeaponRoller.h>
+#include <engine/PhysicsParticle.hpp>
+#include <engine/ScorchedCollisionIds.hpp>
+#include <actions/ParticleGroup.hpp>
+#include <weapons/WeaponRoller.hpp>
 
 class TankViewPointProvider;
 class ModelRendererSimulator;

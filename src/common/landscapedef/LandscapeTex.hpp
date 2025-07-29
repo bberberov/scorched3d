@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_LandscapeTexh_INCLUDE__)
 #define __INCLUDE_LandscapeTexh_INCLUDE__
 
-#include <landscapedef/LandscapeTexDefn.h>
-#include <common/ModelID.h>
-#include <XML/XMLFile.h>
+#include <landscapedef/LandscapeTexDefn.hpp>
+#include <common/ModelID.hpp>
+#include <XML/XMLFile.hpp>
 #include <string>
 #include <vector>
 

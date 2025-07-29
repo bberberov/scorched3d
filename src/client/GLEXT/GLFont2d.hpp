@@ -21,9 +21,9 @@
 #ifndef _GLFONT2D_H_
 #define _GLFONT2D_H_
 
-#include <common/Vector.h>
-#include <common/Vector4.h>
-#include <lang/LangString.h>
+#include <common/Vector.hpp>
+#include <common/Vector4.hpp>
+#include <lang/LangString.hpp>
 #include <GLEXT/GLFont2dStorage.hpp>
 
 class GLFont2dFreeType;

@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// Line.h: interface for the Line class.
+// Line.hpp: interface for the Line class.
 //
 //////////////////////////////////////////////////////////////////////
 
 #if !defined(AFX_Line_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_)
 #define AFX_Line_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class Line  
 {

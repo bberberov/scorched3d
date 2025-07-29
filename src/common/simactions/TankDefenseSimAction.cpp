@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankDefenseSimAction.h>
-#include <target/TargetContainer.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketAccessories.h>
-#include <weapons/AccessoryStore.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
+#include <simactions/TankDefenseSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
 #ifndef S3D_SERVER
 #include <sound/SoundUtils.hpp>
 #endif

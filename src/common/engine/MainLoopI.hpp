@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// MainLoopI.h: interface for the MainLoopI class.
+// MainLoopI.hpp: interface for the MainLoopI class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -27,7 +27,7 @@
 #define AFX_MainLoopI_H__BDDE5864_49D7_4CEA_8738_51A0EF96BDD7__INCLUDED_
 
 
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class MainLoopI  
 {

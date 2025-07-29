@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeMovement.h>
-#include <XML/XMLNode.h>
-#include <common/Defines.h>
+#include <landscapedef/LandscapeMovement.hpp>
+#include <XML/XMLNode.hpp>
+#include <common/Defines.hpp>
 
 LandscapeMovementType::~LandscapeMovementType()
 {}

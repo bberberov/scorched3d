@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_XMLDiffh_INCLUDE__)
 #define __INCLUDE_XMLDiffh_INCLUDE__
 
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 class XMLDiff
 {

@@ -25,7 +25,7 @@
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWDropDownText.hpp>
 #include <GLW/GLWToolTip.hpp>
-#include <tank/TankModel.h>
+#include <tank/TankModel.hpp>
 #include <tankgraph/ModelRendererTank.hpp>
 #include <vector>
 

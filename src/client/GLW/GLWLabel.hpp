@@ -24,8 +24,8 @@
 #include <string>
 #include <vector>
 #include <GLW/GLWidget.hpp>
-#include <common/Vector.h>
-#include <lang/LangResource.h>
+#include <common/Vector.hpp>
+#include <lang/LangResource.hpp>
 
 class GLWLabel : public GLWidget
 {

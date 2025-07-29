@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankGiftSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <lang/LangResource.h>
-#include <common/ChannelManager.h>
+#include <simactions/TankGiftSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <lang/LangResource.hpp>
+#include <common/ChannelManager.hpp>
 #ifndef S3D_SERVER
 #include <dialogs/BuyAccessoryDialog.hpp>
 #endif

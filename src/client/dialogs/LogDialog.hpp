@@ -26,7 +26,7 @@
 #include <GLW/GLWListView.hpp>
 #include <GLW/GLWTextBox.hpp>
 #include <GLW/GLWLabel.hpp>
-#include <common/LoggerI.h>
+#include <common/LoggerI.hpp>
 
 class LogDialog : 
 	public GLWWindow,

@@ -22,8 +22,8 @@
 #define __INCLUDE_MipMapPatchIndexsh_INCLUDE__
 
 #include <geomipmap/MipMapPatchIndex.hpp>
-#include <common/DefinesAssert.h>
-#include <common/DefinesMath.h>
+#include <common/DefinesAssert.hpp>
+#include <common/DefinesMath.hpp>
 #include <vector>
 
 class GLVertexBufferObject;

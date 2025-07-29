@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_PlacementTypeDirecth_INCLUDE__)
 #define __INCLUDE_PlacementTypeDirecth_INCLUDE__
 
-#include <placement/PlacementType.h>
+#include <placement/PlacementType.hpp>
 
 class PlacementTypeDirect : public PlacementType
 {

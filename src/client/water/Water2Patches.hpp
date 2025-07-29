@@ -22,7 +22,7 @@
 #define __INCLUDE_Water2Patchesh_INCLUDE__
 
 #include <water/Water2Patch.hpp>
-#include <image/Image.h>
+#include <image/Image.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 class GLVertexBufferObject;

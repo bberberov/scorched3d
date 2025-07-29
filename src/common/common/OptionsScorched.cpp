@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <engine/ScorchedContext.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapedef/LandscapeOptions.h>
-#include <landscapedef/LandscapeInclude.h>
-#include <net/NetBufferPool.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapedef/LandscapeOptions.hpp>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <net/NetBufferPool.hpp>
 
 OptionsScorched::OptionsScorched()
 {

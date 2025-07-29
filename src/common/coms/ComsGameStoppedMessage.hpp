@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsGameStoppedMessageh_INCLUDE__)
 #define __INCLUDE_ComsGameStoppedMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsGameStoppedMessage : public ComsMessage
 {

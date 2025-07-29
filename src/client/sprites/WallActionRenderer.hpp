@@ -21,9 +21,9 @@
 #if !defined(AFX_SCENEWALLACTION_H__8D1048A1_FFC6_4950_9C56_8163F8FB2F07__INCLUDED_)
 #define AFX_SCENEWALLACTION_H__8D1048A1_FFC6_4950_9C56_8163F8FB2F07__INCLUDED_
 
-#include <actions/Action.h>
-#include <common/Vector.h>
-#include <common/OptionsTransient.h>
+#include <actions/Action.hpp>
+#include <common/Vector.hpp>
+#include <common/OptionsTransient.hpp>
 #include <graph/Particle.hpp>
 #include <GLEXT/GLTexture.hpp>
 

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "LUAScript.h"
-#include "LUAUtil.h"
-#include "LUAS3DLib.h"
-#include "LUAS3DWeaponLib.h"
-#include <common/Logger.h>
+#include "LUAScript.hpp"
+#include "LUAUtil.hpp"
+#include "LUAS3DLib.hpp"
+#include "LUAS3DWeaponLib.hpp"
+#include <common/Logger.hpp>
 
 LUAScript::LUAScript(ScorchedContext *context) :
 	context_(context),

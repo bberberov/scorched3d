@@ -23,9 +23,9 @@
 
 #include <GLEXT/GLCamera.hpp>
 #include <GLW/GLWToolTip.hpp>
-#include <engine/GameState.h>
+#include <engine/GameState.hpp>
 #include <graph/ParticleEmitter.hpp>
-#include <common/Keyboard.h>
+#include <common/Keyboard.hpp>
 
 class Tank;
 class TargetCamera

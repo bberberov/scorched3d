@@ -22,7 +22,7 @@
 #include <GLW/GLWSelectorPart.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
 
 GLWSelectorEntry::GLWSelectorEntry(

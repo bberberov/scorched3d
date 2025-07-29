@@ -22,12 +22,12 @@
 #include <tankgraph/MissileMesh.hpp>
 #include <graph/ModelRenderer.hpp>
 #include <graph/ModelRendererStore.hpp>
-#include <3dsparse/Model.h>
+#include <3dsparse/Model.hpp>
 #include <GLEXT/GLLenseFlare.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h> // For porting
+#include <common/Defines.hpp> // For porting
 
 MissileMesh::MissileMesh(ModelID &missile) : 
 	innerScale_(1.0f),

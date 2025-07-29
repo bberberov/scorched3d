@@ -20,7 +20,7 @@
 
 #include <land/TargetVisibilityPatch.hpp>
 #include <client/ScorchedClient.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <graph/OptionsDisplay.hpp>
 
 std::set<void *> TargetVisibilityPatch::largeTargets_;

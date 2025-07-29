@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLTextureReference.hpp>
 #include <GLEXT/GLTextureStore.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 GLTextureReference::GLTextureReference() :

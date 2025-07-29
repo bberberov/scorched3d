@@ -20,7 +20,7 @@
 
 #include <wx/utils.h>
 #include <wxdialogs/TrueTypeFont.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 TrueTypeFont::TrueTypeFont(const std::string &typeFace, unsigned int h)
 {

@@ -18,38 +18,38 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/Weapon.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/GameState.h>
-#include <engine/ActionController.h>
-#include <engine/MainLoop.h>
-#include <engine/ObjectGroup.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroupEntry.h>
+#include <weapons/Weapon.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/GameState.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/MainLoop.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroupEntry.hpp>
 #include <client/ClientState.hpp>
 #include <client/ScorchedClient.hpp>
 #include <server/ScorchedServer.hpp>
-#include <target/TargetContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/TankState.h>
-#include <tank/TankModel.h>
-#include <tank/TankModelContainer.h>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankModel.hpp>
+#include <tank/TankModelContainer.hpp>
 #include <tankai/TankAI.hpp>
-#include <target/TargetParachute.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
+#include <target/TargetParachute.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
 #include <tankgraph/TankMenus.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <GLW/GLWWindowManager.hpp>
 #include <client/ClientParams.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/FileLogger.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsMessageHandler.h>
+#include <common/FileLogger.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsMessageHandler.hpp>
 #include <landscape/Landscape.hpp>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <tankgraph/RenderTracer.hpp>
 #include <tankgraph/TargetRendererImplTarget.hpp>
 #include <dialogs/MainMenuDialog.hpp>
@@ -59,10 +59,10 @@
 #include <sound/SoundUtils.hpp>
 #include <console/ConsoleRuleFnIAdapter.hpp>
 #include <console/ConsoleRuleMethodIAdapter.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLTexture.hpp>
 #include <GLEXT/GLTextureStore.hpp>
-#include <lua/LUAScriptFactory.h>
+#include <lua/LUAScriptFactory.hpp>
 
 TankMenus::TankMenus() : logger_("ClientLog")
 {

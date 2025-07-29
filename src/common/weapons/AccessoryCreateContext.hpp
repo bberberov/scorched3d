@@ -24,7 +24,7 @@
 #include <map>
 #include <string>
 
-#include <engine/ScorchedContext.h>
+#include <engine/ScorchedContext.hpp>
 
 class OptionsScorched;
 class AccessoryStore;

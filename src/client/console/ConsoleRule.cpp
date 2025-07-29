@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <console/ConsoleRule.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <string.h>
 
 ConsoleRuleParam::ConsoleRuleParam(const std::string &constant) :

@@ -22,9 +22,9 @@
 #if !defined(__INCLUDE_PhysicsParticleObjecth_INCLUDE__)
 #define __INCLUDE_PhysicsParticleObjecth_INCLUDE__
 
-#include <common/FixedVector.h>
-#include <common/FixedVector4.h>
-#include <engine/ScorchedCollisionIds.h>
+#include <common/FixedVector.hpp>
+#include <common/FixedVector4.hpp>
+#include <engine/ScorchedCollisionIds.hpp>
 
 enum PhysicsParticleType
 {

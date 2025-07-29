@@ -25,10 +25,10 @@
 #include <vector>
 #include <map>
 #include <set>
-#include <weapons/Weapon.h>
-#include <weapons/Accessory.h>
-#include <weapons/AccessoryCreateContext.h>
-#include <common/ProgressCounter.h>
+#include <weapons/Weapon.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/AccessoryCreateContext.hpp>
+#include <common/ProgressCounter.hpp>
 
 class XMLNode;
 class NamedNetBuffer;

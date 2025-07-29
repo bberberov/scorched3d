@@ -20,10 +20,10 @@
 
 #include <server/ServerAuthHandlerForumLogin.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
 
 #ifdef HAVE_MYSQL
 

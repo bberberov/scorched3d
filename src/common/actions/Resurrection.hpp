@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_Resurrectionh_INCLUDE__)
 #define __INCLUDE_Resurrectionh_INCLUDE__
 
-#include <actions/Action.h>
-#include <common/FixedVector.h>
+#include <actions/Action.hpp>
+#include <common/FixedVector.hpp>
 
 class Tank;
 class Resurrection : public Action

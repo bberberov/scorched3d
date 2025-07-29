@@ -22,10 +22,10 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 #include <server/ScorchedServer.hpp>
-#include <common/Keyboard.h>
-#include <common/Defines.h>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
 #include <client/ClientParams.hpp>
-#include <engine/Simulator.h>
+#include <engine/Simulator.hpp>
 #include <graph/ParticleEngine.hpp>
 #include <GLW/GLWFont.hpp>
 #include <stdio.h>

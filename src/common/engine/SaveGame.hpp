@@ -21,7 +21,7 @@
 #if !defined(AFX_SaveGame_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
 #define AFX_SaveGame_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
 
-#include <coms/ComsLoadLevelMessage.h>
+#include <coms/ComsLoadLevelMessage.hpp>
 
 class SaveGame
 {

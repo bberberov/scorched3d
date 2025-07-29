@@ -23,13 +23,13 @@
 #include <server/ServerSyncCheck.hpp>
 #include <server/ServerDestinations.hpp>
 #include <server/ServerState.hpp>
-#include <coms/ComsSimulateMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsSimulateResultMessage.h>
-#include <coms/ComsNetStatMessage.h>
-#include <simactions/SyncCheckSimAction.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <common/Logger.h>
+#include <coms/ComsSimulateMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsSimulateResultMessage.hpp>
+#include <coms/ComsNetStatMessage.hpp>
+#include <simactions/SyncCheckSimAction.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <common/Logger.hpp>
 
 static fixed maxStepSize(true, 1 * fixed::FIXED_RESOLUTION);
 static fixed minStepSize(true, fixed::FIXED_RESOLUTION / Sint64(10));

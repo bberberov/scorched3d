@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLTextureReferenceData.hpp>
 #include <GLEXT/GLTextureReference.hpp>
-#include <image/ImageFactory.h>
+#include <image/ImageFactory.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 GLTextureReferenceData::GLTextureReferenceData(const ImageID &imageId, unsigned texState) :

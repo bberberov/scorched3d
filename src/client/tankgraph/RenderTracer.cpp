@@ -19,10 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankgraph/RenderTracer.hpp>
-#include <target/TargetContainer.h>
+#include <target/TargetContainer.hpp>
 #include <GLEXT/GLTexture.hpp>
 #include <client/ScorchedClient.hpp>
-#include <tank/Tank.h>
+#include <tank/Tank.hpp>
 
 RenderTracer *RenderTracer::instance_ = 0;
 

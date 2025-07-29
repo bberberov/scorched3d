@@ -21,9 +21,9 @@
 #if !defined(__INCLUDE_Waterh_INCLUDE__)
 #define __INCLUDE_Waterh_INCLUDE__
 
-#include <common/ProgressCounter.h>
-#include <common/Vector.h>
-#include <image/Image.h>
+#include <common/ProgressCounter.hpp>
+#include <common/Vector.hpp>
+#include <image/Image.hpp>
 #include <GLEXT/GLTexture.hpp>
 
 class Water2;

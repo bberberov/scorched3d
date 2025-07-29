@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponNapalm.h>
-#include <actions/Napalm.h>
-#include <common/Defines.h>
+#include <weapons/WeaponNapalm.hpp>
+#include <actions/Napalm.hpp>
+#include <common/Defines.hpp>
 #ifndef S3D_SERVER
 	#include <sound/SoundUtils.hpp>
 #endif
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponNapalm);
 

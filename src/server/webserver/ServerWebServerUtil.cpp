@@ -20,11 +20,11 @@
 
 #include <webserver/ServerWebServerUtil.hpp>
 #include <server/ScorchedServer.hpp>
-#include <net/NetMessagePool.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/OptionEntry.h>
+#include <net/NetMessagePool.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionEntry.hpp>
 
 const char *ServerWebServerUtil::getField(
 	std::map<std::string, std::string> &fields, const std::string &field)

@@ -20,7 +20,7 @@
 
 #include <math.h>
 #include <stdlib.h>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
 #include <GLEXT/GLViewPort.hpp>

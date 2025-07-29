@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/DeformLandscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <target/TargetState.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/ProgressCounter.h>
-#include <lang/LangResource.h>
+#include <landscapemap/DeformLandscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetState.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/ProgressCounter.hpp>
+#include <lang/LangResource.hpp>
 #include <math.h>
 #ifndef S3D_SERVER
 	#include <landscape/Landscape.hpp>

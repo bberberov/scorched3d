@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/SplineCurve.h>
+#include <common/SplineCurve.hpp>
 
 //
 // This code is taken from 

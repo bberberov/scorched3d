@@ -23,7 +23,7 @@
 
 #include <string>
 #include <vector>
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 typedef fixed BoneMatrixType[3][4];
 class BoneType

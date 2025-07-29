@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLGlobalState.hpp>
-#include <common/DefinesAssert.h>
+#include <common/DefinesAssert.hpp>
 
 GLState *GLGlobalState::state_(0);
 unsigned int GLGlobalState::stateStack_(0);

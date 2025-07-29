@@ -21,8 +21,8 @@
 #if !defined(AFX_TankWeaponSwitcher_H__83501862_9536_4108_A7E6_2377AD98EB72__INCLUDED_)
 #define AFX_TankWeaponSwitcher_H__83501862_9536_4108_A7E6_2377AD98EB72__INCLUDED_
 
-#include <engine/ScorchedContext.h>
-#include <tanket/TanketWeapon.h>
+#include <engine/ScorchedContext.hpp>
+#include <tanket/TanketWeapon.hpp>
 
 class Tanket;
 class Accessory;

@@ -19,12 +19,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <tankgraph/RenderGeoms.hpp>
-#include <target/TargetSpace.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
+#include <target/TargetSpace.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <engine/ActionController.h>
+#include <engine/ActionController.hpp>
 #include <GLEXT/GLState.hpp>
 
 RenderGeoms *RenderGeoms::instance()

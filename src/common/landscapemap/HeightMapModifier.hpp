@@ -21,9 +21,9 @@
 #if !defined(AFX_HEIGHTMAPMODIFIER_H__26733049_91D4_4AB9_8870_1BC94F531E9A__INCLUDED_)
 #define AFX_HEIGHTMAPMODIFIER_H__26733049_91D4_4AB9_8870_1BC94F531E9A__INCLUDED_
 
-#include <common/RandomGenerator.h>
-#include <common/FixedVector.h>
-#include <landscapemap/HeightMap.h>
+#include <common/RandomGenerator.hpp>
+#include <common/FixedVector.hpp>
+#include <landscapemap/HeightMap.hpp>
 
 class LandscapeDefnHeightMapGenerate;
 

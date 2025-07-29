@@ -22,7 +22,7 @@
 #define __INCLUDE_ParticleEngineh_INCLUDE__
 
 #include <graph/Particle.hpp>
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 class GLCamera;
 class ParticleEngine : public GameStateI

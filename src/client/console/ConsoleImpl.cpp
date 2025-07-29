@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <console/ConsoleImpl.hpp>
-#include <common/Keyboard.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLViewPort.hpp>
 #include <GLW/GLWFont.hpp>

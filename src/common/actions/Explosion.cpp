@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetDamageCalc.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/WeaponExplosion.h>
-#include <actions/Explosion.h>
-#include <actions/CameraPositionAction.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
+#include <target/TargetDamageCalc.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/WeaponExplosion.hpp>
+#include <actions/Explosion.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
 #ifndef S3D_SERVER
 	#include <graph/OptionsDisplay.hpp>
 	#include <graph/ParticleEmitter.hpp>
@@ -35,8 +35,8 @@
 	#include <client/ScorchedClient.hpp>
 	#include <sound/SoundUtils.hpp>
 #endif
-#include <landscapemap/DeformLandscape.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <landscapemap/DeformLandscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #ifndef S3D_SERVER
 	#include <landscape/Landscape.hpp>
 	#include <water/Water.hpp>

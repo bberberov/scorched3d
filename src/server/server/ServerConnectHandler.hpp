@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_ServerConnectHandlerh_INCLUDE__)
 #define __INCLUDE_ServerConnectHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerConnectHandler : public ComsMessageHandlerI
 {

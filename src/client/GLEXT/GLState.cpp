@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLState.hpp>
-#include <common/DefinesString.h>
-#include <common/DefinesAssert.h>
+#include <common/DefinesString.hpp>
+#include <common/DefinesAssert.hpp>
 #include <string.h>
 #include <string>
 

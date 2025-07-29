@@ -20,11 +20,11 @@
 
 #include <serverbrowser/ServerBrowserCollect.hpp>
 #include <serverbrowser/ServerBrowser.hpp>
-#include <XML/XMLStringBuffer.h>
-#include <XML/XMLFile.h>
+#include <XML/XMLStringBuffer.hpp>
+#include <XML/XMLFile.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.h>
-#include <common/OptionsMasterListServer.h>
+#include <common/Defines.hpp>
+#include <common/OptionsMasterListServer.hpp>
 #include <time.h>
 
 ServerBrowserCollect::ServerBrowserCollect(ServerBrowserServerList &list) :

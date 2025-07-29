@@ -21,14 +21,14 @@
 #include <dialogs/GiftMoneyDialog.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <client/ScorchedClient.hpp>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
-#include <coms/ComsGiftMoneyMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <coms/ComsGiftMoneyMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 GiftMoneyDialog *GiftMoneyDialog::instance_ = 0;
 

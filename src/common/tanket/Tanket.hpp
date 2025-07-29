@@ -21,7 +21,7 @@
 #if !defined(AFX_TANKET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_)
 #define AFX_TANKET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_
 
-#include <target/Target.h>
+#include <target/Target.hpp>
 
 class TankAI;
 class TanketType;

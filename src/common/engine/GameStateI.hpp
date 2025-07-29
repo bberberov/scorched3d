@@ -21,8 +21,8 @@
 #if !defined(AFX_GAMESTATEI_H__B6753299_ED54_45EB_A635_733A34F0C920__INCLUDED_)
 #define AFX_GAMESTATEI_H__B6753299_ED54_45EB_A635_733A34F0C920__INCLUDED_
 
-#include <engine/GameState.h>
-#include <common/KeyboardHistory.h>
+#include <engine/GameState.hpp>
+#include <common/KeyboardHistory.hpp>
 #include <vector>
 
 class GameStateI  

@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ObjectGroupEntryDefinitionh_INCLUDE__)
 #define __INCLUDE_ObjectGroupEntryDefinitionh_INCLUDE__
 
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 #include <vector>
 #include <string>
 

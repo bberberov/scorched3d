@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_OptionEntrySetterh_INCLUDE__)
 #define __INCLUDE_OptionEntrySetterh_INCLUDE__
 
-#include <common/OptionEntry.h>
+#include <common/OptionEntry.hpp>
 #include <list>
 #include <wx/wx.h>
 

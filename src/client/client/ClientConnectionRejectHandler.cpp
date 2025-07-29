@@ -21,9 +21,9 @@
 #include <client/ClientConnectionRejectHandler.hpp>
 #include <client/ScorchedClient.hpp>
 #include <dialogs/MsgBoxDialog.hpp>
-#include <lang/LangResource.h>
-#include <coms/ComsConnectRejectMessage.h>
-#include <common/Logger.h>
+#include <lang/LangResource.hpp>
+#include <coms/ComsConnectRejectMessage.hpp>
+#include <common/Logger.hpp>
 
 ClientConnectionRejectHandler *ClientConnectionRejectHandler::instance_ = 0;
 

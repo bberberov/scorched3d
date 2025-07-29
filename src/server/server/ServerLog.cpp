@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <server/ServerLog.hpp>
-#include <common/Logger.h>
+#include <common/Logger.hpp>
 
 ServerLog *ServerLog::instance_ = 0;
 

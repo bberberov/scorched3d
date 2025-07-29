@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_WeaponGiveAccessoryh_INCLUDE__)
 #define __INCLUDE_WeaponGiveAccessoryh_INCLUDE__
 
-#include <actions/CallbackWeapon.h>
+#include <actions/CallbackWeapon.hpp>
 #include <vector>
 
 class WeaponGiveAccessory  : public WeaponCallback

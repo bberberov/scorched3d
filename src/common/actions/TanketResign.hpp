@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TanketResignh_INCLUDE__)
 #define __INCLUDE_TanketResignh_INCLUDE__
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 class TanketResign : public Action
 {

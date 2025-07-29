@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_TutorialFileh_INCLUDE__)
 #define __INCLUDE_TutorialFileh_INCLUDE__
 
-#include <XML/XMLFile.h>
+#include <XML/XMLFile.hpp>
 #include <map>
 
 class TutorialFile;

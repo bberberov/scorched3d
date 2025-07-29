@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/DefinesMath.h>
-#include <common/Defines.h>
+#include <common/DefinesMath.hpp>
+#include <common/Defines.hpp>
 
 #include <math.h>
 static float fastSin[628];

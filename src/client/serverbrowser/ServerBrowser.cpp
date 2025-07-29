@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <serverbrowser/ServerBrowser.hpp>
-#include <common/OptionsMasterListServer.h>
+#include <common/OptionsMasterListServer.hpp>
 
 ServerBrowser *ServerBrowser::instance_ = 0;
 

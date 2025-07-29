@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ScorchedParamsh_INCLUDE__)
 #define __INCLUDE_ScorchedParamsh_INCLUDE__
 
-#include <common/OptionsParameters.h>
+#include <common/OptionsParameters.hpp>
 
 class ScorchedParams : public OptionsParameters
 {

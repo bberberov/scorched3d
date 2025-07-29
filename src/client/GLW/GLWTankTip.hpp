@@ -23,7 +23,7 @@
 
 #include <GLW/GLWToolTip.hpp>
 #include <GLW/GLWSelector.hpp>
-#include <tank/Tank.h>
+#include <tank/Tank.hpp>
 
 class TankUndoMenu : public GLWSelectorI
 {

@@ -26,7 +26,7 @@
 #if !defined(AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_)
 #define AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 #include <GLEXT/GLViewPort.hpp>
 
 class Main2DCamera : public GameStateI

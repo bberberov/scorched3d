@@ -22,11 +22,11 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientChannelManager.hpp>
 #include <client/ClientAdminResultHandler.hpp>
-#include <target/TargetContainer.h>
+#include <target/TargetContainer.hpp>
 #include <console/Console.hpp>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsAdminMessage.h>
-#include <common/Defines.h>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsAdminMessage.hpp>
+#include <common/Defines.hpp>
 
 ClientAdmin *ClientAdmin::instance_ = 0;
 

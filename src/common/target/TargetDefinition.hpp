@@ -21,11 +21,11 @@
 #if !defined(__INCLUDE_TargetDefinitionh_INCLUDE__)
 #define __INCLUDE_TargetDefinitionh_INCLUDE__
 
-#include <common/ModelID.h>
-#include <common/RandomGenerator.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ObjectGroupEntryDefinition.h>
-#include <placement/PlacementShadowDefinition.h>
+#include <common/ModelID.hpp>
+#include <common/RandomGenerator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ObjectGroupEntryDefinition.hpp>
+#include <placement/PlacementShadowDefinition.hpp>
 
 class Target;
 class TargetDefinition

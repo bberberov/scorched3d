@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <movement/TargetMovement.h>
-#include <movement/TargetMovementEntryShips.h>
-#include <movement/TargetMovementEntryBoids.h>
-#include <movement/TargetMovementEntrySpline.h>
-#include <common/RandomGenerator.h>
-#include <engine/ScorchedContext.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeMovement.h>
+#include <movement/TargetMovement.hpp>
+#include <movement/TargetMovementEntryShips.hpp>
+#include <movement/TargetMovementEntryBoids.hpp>
+#include <movement/TargetMovementEntrySpline.hpp>
+#include <common/RandomGenerator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeMovement.hpp>
 
 TargetMovement::TargetMovement()
 {

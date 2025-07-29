@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ParticleGrouph_INCLUDE__)
 #define __INCLUDE_ParticleGrouph_INCLUDE__
 
-#include <engine/ObjectGroupEntry.h>
+#include <engine/ObjectGroupEntry.hpp>
 
 class PhysicsParticle;
 class WeaponFireContext;

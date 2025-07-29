@@ -37,10 +37,10 @@
 	#pragma warning(disable : 4512)
 #endif
 
-#include <common/DefinesString.h>
-#include <common/DefinesAssert.h>
-#include <common/DefinesMath.h>
-#include <common/DefinesScorched.h>
-#include <common/DefinesFile.h>
+#include <common/DefinesString.hpp>
+#include <common/DefinesAssert.hpp>
+#include <common/DefinesMath.hpp>
+#include <common/DefinesScorched.hpp>
+#include <common/DefinesFile.hpp>
 
 #endif // __DEFINES__

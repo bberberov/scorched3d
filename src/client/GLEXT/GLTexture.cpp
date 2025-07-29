@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLTexture.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <set>
 
 unsigned int GLTexture::textureSpace_ = 0;

@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_TankKeyboardControlh_INCLUDE__)
 #define __INCLUDE_TankKeyboardControlh_INCLUDE__
 
-#include <engine/GameStateI.h>
-#include <tank/Tank.h>
+#include <engine/GameStateI.hpp>
+#include <tank/Tank.hpp>
 
 class TankKeyboardControl : public GameStateI
 {

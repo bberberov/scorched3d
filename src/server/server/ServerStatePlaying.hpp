@@ -24,8 +24,8 @@
 #include <server/ServerTurnsSequential.hpp>
 #include <server/ServerTurnsSimultaneous.hpp>
 #include <server/ServerTurnsFree.hpp>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <engine/SimulatorI.h>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <engine/SimulatorI.hpp>
 
 class ServerStatePlaying
 {

@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponGiveWin.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ActionController.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankTeamScore.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankScore.h>
-#include <common/Defines.h>
-#include <common/ChannelManager.h>
-#include <common/OptionsScorched.h>
-#include <lang/LangResource.h>
+#include <weapons/WeaponGiveWin.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ActionController.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankScore.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/OptionsScorched.hpp>
+#include <lang/LangResource.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponGiveWin);
 

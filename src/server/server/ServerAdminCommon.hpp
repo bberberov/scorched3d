@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ServerAdminCommonh_INCLUDE__)
 #define __INCLUDE_ServerAdminCommonh_INCLUDE__
 
-#include <common/DefinesString.h>
-#include <common/ChannelText.h>
+#include <common/DefinesString.hpp>
+#include <common/ChannelText.hpp>
 #include <server/ServerAdminSessions.hpp>
 
 namespace ServerAdminCommon

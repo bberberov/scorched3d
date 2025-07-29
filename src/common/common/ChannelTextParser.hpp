@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ChannelTextParserh_INCLUDE__)
 #define __INCLUDE_ChannelTextParserh_INCLUDE__
 
-#include <lang/LangString.h>
-#include <common/Vector.h>
+#include <lang/LangString.hpp>
+#include <common/Vector.hpp>
 #include <vector>
 
 class ScorchedContext;

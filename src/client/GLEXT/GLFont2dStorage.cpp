@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLEXT/GLFont2dStorage.hpp>
-#include <common/DefinesAssert.h>
+#include <common/DefinesAssert.hpp>
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <webserver/ServerWebServerI.hpp>
-#include <net/NetMessagePool.h>
+#include <net/NetMessagePool.hpp>
 
 ServerWebServerIRequest::ServerWebServerIRequest(const char *url,
 		std::map<std::string, std::string> &fields,

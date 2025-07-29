@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetServerTCP3Destination.h>
-#include <common/Logger.h>
+#include <net/NetServerTCP3Destination.hpp>
+#include <common/Logger.hpp>
 
 NetServerTCP3Destination::NetServerTCP3Destination(
 	NetMessageHandler *recieveMessageHandler,

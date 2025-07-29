@@ -20,7 +20,7 @@
 
 #include <GLEXT/GLFont2dFreeType.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 // This Function Gets The First Power Of 2 >= The
 // Int That We Pass It.

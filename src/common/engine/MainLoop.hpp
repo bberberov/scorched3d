@@ -23,8 +23,8 @@
 
 #include <list>
 #include <set>
-#include <common/Clock.h>
-#include <engine/MainLoopI.h>
+#include <common/Clock.hpp>
+#include <engine/MainLoopI.hpp>
 
 class MainLoop
 {

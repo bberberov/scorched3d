@@ -23,7 +23,7 @@
 
 #include <sound/VirtualSoundPriority.hpp>
 #include <sound/SoundBuffer.hpp>
-#include <common/Vector.h>
+#include <common/Vector.hpp>
 
 class PlayingSoundSource;
 class VirtualSoundSource

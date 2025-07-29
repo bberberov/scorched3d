@@ -22,7 +22,7 @@
 #define __INCLUDE_LUAUtil_INCLUDE__
 
 #include <string>
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 #include <lua.hpp>
 

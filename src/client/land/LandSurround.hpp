@@ -21,7 +21,7 @@
 #if !defined(AFX_LandSurround_H__2FD73942_AF29_49ED_8DD8_925E2E14E464__INCLUDED_)
 #define AFX_LandSurround_H__2FD73942_AF29_49ED_8DD8_925E2E14E464__INCLUDED_
 
-#include <landscapemap/HeightMap.h>
+#include <landscapemap/HeightMap.hpp>
 
 class LandSurround  
 {

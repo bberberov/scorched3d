@@ -21,7 +21,7 @@
 #if !defined(__INCLUDE_ComsNetStatMessageh_INCLUDE__)
 #define __INCLUDE_ComsNetStatMessageh_INCLUDE__
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 
 class ComsNetStatMessage : public ComsMessage
 {

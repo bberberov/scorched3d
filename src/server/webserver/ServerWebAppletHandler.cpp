@@ -24,7 +24,7 @@
 #include <server/ServerChannelManager.hpp>
 #include <server/ServerAdminCommon.hpp>
 #include <server/ScorchedServer.hpp>
-#include <XML/XMLNode.h>
+#include <XML/XMLNode.hpp>
 
 bool ServerWebAppletHandler::AppletFileHandler::processRequest(
 	ServerWebServerIRequest &request,

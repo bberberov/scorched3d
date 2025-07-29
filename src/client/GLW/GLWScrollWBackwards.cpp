@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <GLW/GLWScrollWBackwards.hpp>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 REGISTER_CLASS_SOURCE(GLWScrollWBackwards);
 

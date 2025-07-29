@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankNewGameSimAction.h>
-#include <placement/PlacementTankPosition.h>
-#include <landscapemap/DeformLandscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/Simulator.h>
-#include <engine/ScorchedContext.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
+#include <simactions/TankNewGameSimAction.hpp>
+#include <placement/PlacementTankPosition.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
 
 unsigned int TankNewGameSimAction::instanceCount_(0);
 

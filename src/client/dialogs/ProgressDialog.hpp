@@ -21,8 +21,8 @@
 #if !defined(__INCLUDE_ProgressDialogh_INCLUDE__)
 #define __INCLUDE_ProgressDialogh_INCLUDE__
 
-#include <common/ProgressCounter.h>
-#include <common/FileLines.h>
+#include <common/ProgressCounter.hpp>
+#include <common/FileLines.hpp>
 #include <GLW/GLWWindow.hpp>
 #include <GLEXT/GLTexture.hpp>
 

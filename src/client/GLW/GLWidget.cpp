@@ -23,8 +23,8 @@
 #include <GLW/GLWToolTip.hpp>
 #include <GLW/GLWTranslate.hpp>
 #include <GLEXT/GLState.hpp>
-#include <XML/XMLParser.h>
-#include <common/Defines.h>
+#include <XML/XMLParser.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 unsigned int GLWidget::nextId_ = 0;

@@ -24,7 +24,7 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWToolTip.hpp>
 #include <GLEXT/GLTexture.hpp>
-#include <lang/LangString.h>
+#include <lang/LangString.hpp>
 #include <string>
 #include <list>
 #include <map>

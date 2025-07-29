@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponInvokeWeapon.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
+#include <weapons/WeaponInvokeWeapon.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
 
 std::set<Weapon *> WeaponInvokeWeapon::weaponStack_;
 

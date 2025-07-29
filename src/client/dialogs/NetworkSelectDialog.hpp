@@ -26,7 +26,7 @@
 #include <GLW/GLWIconTable.hpp>
 #include <GLW/GLWDropDownText.hpp>
 #include <dialogs/TextBoxDialog.hpp>
-#include <common/ToolTip.h>
+#include <common/ToolTip.hpp>
 
 class NetworkSelectDialog :
 	public GLWWindow,

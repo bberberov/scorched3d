@@ -22,7 +22,7 @@
 #if !defined(__INCLUDE_ServerBuyAccessoryHandlerh_INCLUDE__)
 #define __INCLUDE_ServerBuyAccessoryHandlerh_INCLUDE__
 
-#include <coms/ComsMessageHandler.h>
+#include <coms/ComsMessageHandler.hpp>
 
 class ServerBuyAccessoryHandler : public ComsMessageHandlerI
 {

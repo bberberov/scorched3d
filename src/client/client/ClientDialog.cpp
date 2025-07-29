@@ -28,9 +28,9 @@
 #include <graph/Gamma.hpp>
 #include <client/ClientParams.hpp>
 #include <GLEXT/GLStateExtension.hpp>
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 #include <time.h>
 
