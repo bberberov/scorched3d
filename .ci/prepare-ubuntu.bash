@@ -3,7 +3,9 @@
 # Install necessary packages
 sudo apt-get update
 sudo apt-get --assume-yes install --no-install-recommends \
+	automake \
 	meson \
+	pkg-config \
 	\
 	libexpat1-dev \
 	libfftw3-dev \
