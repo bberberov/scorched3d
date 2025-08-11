@@ -1,3 +1,6 @@
+# NOTE Meson >= 0.60.0 is required because of the following features:
+# - Dependencies with multiple names
+
 project(
 	'Scorched3D',
 	'cpp', 'c',
@@ -24,9 +27,9 @@ expat_dep       = dependency(
 	fallback : 'expat',
 )
 
-if   target_machine.system() == 'darwin'
+if   host_machine.system() == 'darwin'
 fftw_dep        = dependency('fftw3')
-elif target_machine.system() == 'windows'
+elif host_machine.system() == 'windows'
 fftw_dep        = cc.find_library(
 	'fftw3',
 	dirs : [srcdir / 'deps/windows/lib/fftw3'],
@@ -36,7 +39,7 @@ else
 fftw_dep        = dependency('fftw3f')
 endif
 
-if   target_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 freealut_dep    = cc.find_library(
 	'Alut',
 	dirs : [srcdir / 'deps/windows/lib/al'],
@@ -45,7 +48,7 @@ include_dirs += include_directories('deps/windows/include/al')
 else
 freealut_dep    = dependency(
 	'freealut',
-	required : target_machine.system() != 'darwin',
+	required : host_machine.system() != 'darwin',
 )
 endif
 
@@ -57,7 +60,7 @@ ft2_dep         = dependency(
 
 gl_dep          = dependency(
 	'gl',
-	required : target_machine.system() != 'darwin',
+	required : host_machine.system() != 'darwin',
 )
 
 glew_dep        = dependency(
@@ -67,13 +70,13 @@ glew_dep        = dependency(
 
 glu_dep         = dependency(
 	'glu',
-	required : target_machine.system() == 'linux',
+	required : host_machine.system() == 'linux',
 )
 
 jpeg_dep        = dependency(
 	'libjpeg', 'libjpeg-turbo',
 	fallback : 'libjpeg-turbo',
-	required : target_machine.system() != 'darwin',
+	required : host_machine.system() != 'darwin',
 )
 
 lua_dep         = dependency(
@@ -87,7 +90,7 @@ ogg_dep         = dependency(
 	fallback : 'ogg',
 )
 
-if   target_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 openal_dep    = cc.find_library(
 	'OpenAl32',
 	dirs : [srcdir / 'deps/windows/lib/al'],
@@ -97,17 +100,17 @@ else
 openal_dep      = dependency(
 	'openal',
 	version : ['>= 1.17.2'],
-	required : target_machine.system() != 'darwin',
+	required : host_machine.system() != 'darwin',
 )
 endif
 
 png_dep         = dependency(
 	'libpng',
 	fallback : 'libpng',
-	required : target_machine.system() != 'darwin',
+	required : host_machine.system() != 'darwin',
 )
 
-if   target_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 sdl_dep         = cc.find_library(
 	'SDL',
 	dirs : [srcdir / 'deps/windows/lib/SDL'],
@@ -122,7 +125,7 @@ sdl_dep         = dependency('sdl')
 sdl_net_dep     = dependency('SDL_net')
 endif
 
-if   target_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 vorbis_dep    = cc.find_library(
 	'vorbis',
 	dirs : [srcdir / 'deps/windows/lib/ogg'],
@@ -143,7 +146,7 @@ vorbisfile_dep  = dependency(
 )
 endif
 
-if   target_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 wxwidgets_dep   = cc.find_library(
 	'wxmsw',
 	dirs : [srcdir / 'deps/windows/lib/wx'],
