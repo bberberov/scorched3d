@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/ShieldRound.h>
-#include <common/VectorLib.h>
-#include <common/Defines.h>
+#include <weapons/ShieldRound.hpp>
+#include <common/VectorLib.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 REGISTER_ACCESSORY_SOURCE(ShieldRound);

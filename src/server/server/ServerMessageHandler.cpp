@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerMessageHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerBanned.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <tank/TankDeadContainer.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tankai/TankAINone.h>
-#include <simactions/TankRemoveSimAction.h>
-#include <coms/ComsMessageSender.h>
-#include <net/NetInterface.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <events/EventController.h>
+#include <server/ServerMessageHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerBanned.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <tank/TankDeadContainer.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tankai/TankAINone.hpp>
+#include <simactions/TankRemoveSimAction.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <net/NetInterface.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <events/EventController.hpp>
 
 ServerMessageHandler::ServerMessageHandler()
 {

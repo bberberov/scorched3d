@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/AccessoryStore.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <lang/LangResource.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketType.h>
-#include <tanket/Tanket.h>
+#include <weapons/AccessoryStore.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <lang/LangResource.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketType.hpp>
+#include <tanket/Tanket.hpp>
 
 TanketAccessories::TanketAccessories(ScorchedContext &context) :
 	context_(context),

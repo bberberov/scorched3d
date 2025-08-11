@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2000-2011
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
+#if !defined(__INCLUDE_LandscapeTexDefnh_INCLUDE__)
+#define __INCLUDE_LandscapeTexDefnh_INCLUDE__
+
+#include <vector>
+#include <XML/XMLNode.hpp>
+
+class LandscapeInclude;
+class LandscapeDefinitions;
+class LandscapeTexDefn
+{
+public:
+	LandscapeTexDefn();
+	virtual ~LandscapeTexDefn();
+
+	std::vector<LandscapeInclude *> includes;
+
+	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);
+
+protected:
+	bool readXML(const char *names, const char *name,
+		LandscapeDefinitions *definitions, XMLNode *node);
+};
+
+#endif // __INCLUDE_LandscapeTexDefnh_INCLUDE__

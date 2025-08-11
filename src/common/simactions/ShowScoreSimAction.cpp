@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/ShowScoreSimAction.h>
-#include <simactions/TankRankSimAction.h>
-#include <engine/ActionController.h>
-#include <actions/ShowScoreAction.h>
-#include <common/OptionsScorched.h>
-#include <common/ChannelManager.h>
-#include <events/EventController.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankTeamScore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tank/TankSort.h>
-#include <tanket/TanketShotInfo.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
+#include <simactions/ShowScoreSimAction.hpp>
+#include <simactions/TankRankSimAction.hpp>
+#include <engine/ActionController.hpp>
+#include <actions/ShowScoreAction.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/ChannelManager.hpp>
+#include <events/EventController.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankSort.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
 
 REGISTER_CLASS_SOURCE(ShowScoreSimAction);
 

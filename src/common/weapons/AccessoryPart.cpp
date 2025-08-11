@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/AccessoryPart.h>
+#include <weapons/AccessoryPart.hpp>
 #include <stdlib.h>
 
 unsigned int AccessoryPart::nextAccessoryPartId_ = 100000;

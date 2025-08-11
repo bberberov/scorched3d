@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/DebrisActionRenderer.h>
-#include <3dsparse/ModelStore.h>
-#include <common/Defines.h>
-#include <GLEXT/GLState.h>
-#include <graph/ModelRendererStore.h>
+#include <sprites/DebrisActionRenderer.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <common/Defines.hpp>
+#include <GLEXT/GLState.hpp>
+#include <graph/ModelRendererStore.hpp>
 #include <stdlib.h>
 
 DebrisActionRenderer::DebrisActionRenderer() :

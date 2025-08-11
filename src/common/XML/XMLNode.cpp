@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLNode.h>
-#include <common/Defines.h>
+#include <XML/XMLNode.hpp>
+#include <common/Defines.hpp>
 #include <stdlib.h>
 #include <stdio.h>
-#include <common/NumberParser.h>
+#include <common/NumberParser.hpp>
 
 void XMLNode::removeSpecialChars(const std::string &content, std::string &result)
 {

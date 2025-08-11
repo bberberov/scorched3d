@@ -21,19 +21,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <webserver/ServerWebServer.h>
-#include <webserver/ServerWebHandler.h>
-#include <webserver/ServerWebSettingsHandler.h>
-#include <webserver/ServerWebAppletHandler.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerCommon.h>
-#include <webserver/ServerWebServerUtil.h>
-#include <server/ScorchedServer.h>
-#include <net/NetMessagePool.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/LoggerI.h>
-#include <common/Defines.h>
+#include <webserver/ServerWebServer.hpp>
+#include <webserver/ServerWebHandler.hpp>
+#include <webserver/ServerWebSettingsHandler.hpp>
+#include <webserver/ServerWebAppletHandler.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerCommon.hpp>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <server/ScorchedServer.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/LoggerI.hpp>
+#include <common/Defines.hpp>
 
 ServerWebServer *ServerWebServer::instance_ = 0;
 

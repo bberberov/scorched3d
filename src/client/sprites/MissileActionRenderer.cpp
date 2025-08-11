@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/MissileActionRenderer.h>
-#include <sprites/ExplosionTextures.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <weapons/Accessory.h>
-#include <actions/ShotProjectile.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscape/ShadowMap.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
-#include <target/TargetContainer.h>
-#include <client/ScorchedClient.h>
-#include <engine/ScorchedContext.h>
-#include <graph/ParticleEngine.h>
-#include <sound/Sound.h>
-#include <tank/Tank.h>
+#include <sprites/MissileActionRenderer.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <weapons/Accessory.hpp>
+#include <actions/ShotProjectile.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
+#include <target/TargetContainer.hpp>
+#include <client/ScorchedClient.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <sound/Sound.hpp>
+#include <tank/Tank.hpp>
 
 MissileActionRenderer::MissileActionRenderer(
 	int flareType,

@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AdminDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWDropDownText.h>
-#include <GLW/GLWFont.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankColorGenerator.h>
-#include <tankai/TankAINames.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientAdminResultHandler.h>
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <dialogs/AdminDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWDropDownText.hpp>
+#include <GLW/GLWFont.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tankai/TankAINames.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientAdminResultHandler.hpp>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 AdminDialog *AdminDialog::instance_ = 0;
 

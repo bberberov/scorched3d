@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponLaser.h>
-#include <weapons/AccessoryStore.h>
-#include <actions/Laser.h>
-#include <engine/ActionController.h>
+#include <weapons/WeaponLaser.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <actions/Laser.hpp>
+#include <engine/ActionController.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponLaser);
 

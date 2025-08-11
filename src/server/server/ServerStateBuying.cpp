@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateBuying.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerDestinations.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tanket/TanketShotInfo.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/TankDeadContainer.h>
-#include <tankai/TankAI.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <simactions/TankStartMoveSimAction.h>
-#include <simactions/TankStopMoveSimAction.h>
-#include <simactions/TankBuyingSimAction.h>
+#include <server/ServerStateBuying.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerDestinations.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/TankDeadContainer.hpp>
+#include <tankai/TankAI.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <simactions/TankStartMoveSimAction.hpp>
+#include <simactions/TankStopMoveSimAction.hpp>
+#include <simactions/TankBuyingSimAction.hpp>
 
 ServerStateBuying::ServerStateBuying() :
 	nextMoveId_(0)

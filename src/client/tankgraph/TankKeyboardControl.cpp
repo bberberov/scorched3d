@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TankKeyboardControl.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <common/Defines.h>
+#include <tankgraph/TankKeyboardControl.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <common/Defines.hpp>
 
 TankKeyboardControl * TankKeyboardControl::instance_ = 0;
 

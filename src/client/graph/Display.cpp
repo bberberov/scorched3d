@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <graph/Display.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
+#include <graph/Display.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
 
 Display *Display::instance_ = 0;
 

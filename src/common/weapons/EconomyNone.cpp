@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/EconomyNone.h>
-#include <weapons/AccessoryStore.h>
+#include <weapons/EconomyNone.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 REGISTER_CLASS_SOURCE(EconomyNone);
 

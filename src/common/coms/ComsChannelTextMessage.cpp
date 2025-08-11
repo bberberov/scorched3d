@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsChannelTextMessage.h>
+#include <coms/ComsChannelTextMessage.hpp>
 
 ComsMessageType ComsChannelTextMessage::ComsChannelTextMessageType("ComsChannelTextMessageType");
 

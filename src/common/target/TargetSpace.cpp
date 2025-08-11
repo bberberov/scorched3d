@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetSpace.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetState.h>
-#include <weapons/Accessory.h>
-#include <weapons/ShieldRound.h>
-#include <weapons/ShieldSquare.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <target/TargetSpace.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetState.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/ShieldRound.hpp>
+#include <weapons/ShieldSquare.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 
 TargetSpace::TargetSpace() :
 	context_(nullptr),
@@ -318,9 +318,9 @@ void TargetSpace::getCollisionSet(
 }
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLState.h>
-#include <client/ScorchedClient.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <GLEXT/GLState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 static void drawBox(Vector &position, Vector &size)
 {

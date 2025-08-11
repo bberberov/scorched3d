@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/NextTurnSimAction.h>
-#include <common/OptionsTransient.h>
+#include <simactions/NextTurnSimAction.hpp>
+#include <common/OptionsTransient.hpp>
 
 REGISTER_CLASS_SOURCE(NextTurnSimAction);
 

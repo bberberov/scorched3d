@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tanket/Tanket.h>
-#include <tank/TankLib.h>
-#include <tanket/TanketShotInfo.h>
-#include <tanket/TanketType.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <tanket/Tanket.hpp>
+#include <tank/TankLib.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <tanket/TanketType.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 
 TanketShotInfo::TanketShotInfo(ScorchedContext &context) :
 	context_(context),

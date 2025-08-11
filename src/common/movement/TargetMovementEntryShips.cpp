@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <movement/TargetMovementEntryShips.h>
-#include <common/Defines.h>
-#include <common/RandomGenerator.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroupEntry.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
-#include <target/TargetState.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeMovement.h>
+#include <movement/TargetMovementEntryShips.hpp>
+#include <common/Defines.hpp>
+#include <common/RandomGenerator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetState.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeMovement.hpp>
 
 TargetMovementEntryShips::TargetMovementEntryShips()
 {

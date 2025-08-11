@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <common/Defines.h>
-#include <graph/Gamma.h>
-#include <graph/OptionsDisplay.h>
+#include <common/Defines.hpp>
+#include <graph/Gamma.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <math.h>
 #include <SDL/SDL.h>
 

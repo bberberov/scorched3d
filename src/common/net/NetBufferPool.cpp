@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetBufferPool.h>
+#include <net/NetBufferPool.hpp>
 
 NetBufferPool *NetBufferPool::instance_ = 0;
 

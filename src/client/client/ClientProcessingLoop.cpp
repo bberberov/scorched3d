@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientProcessingLoop.h>
-#include <client/ClientParams.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientMain.h>
-#include <net/NetInterface.h>
-#include <common/Logger.h>
-#include <target/TargetContainer.h>
-#include <server/ServerMain.h>
-#include <engine/Simulator.h>
+#include <client/ClientProcessingLoop.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientMain.hpp>
+#include <net/NetInterface.hpp>
+#include <common/Logger.hpp>
+#include <target/TargetContainer.hpp>
+#include <server/ServerMain.hpp>
+#include <engine/Simulator.hpp>
 
 time_t startTime = 0;
 

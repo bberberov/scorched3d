@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetServerTCPRead.h>
-#include <net/NetServerTCP.h>
-#include <net/NetMessagePool.h>
-#include <common/Clock.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
+#include <net/NetServerTCPRead.hpp>
+#include <net/NetServerTCP.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/Clock.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
 
 NetServerTCPRead::NetServerTCPRead(
 	unsigned int id,

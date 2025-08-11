@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/MetaClass.h>
-#include <common/Defines.h>
+#include <engine/MetaClass.hpp>
+#include <common/Defines.hpp>
 
 unsigned int MetaClass::nextMetaClassId_ = 0;
 

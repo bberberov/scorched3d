@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/Lightning.h>
-#include <common/Defines.h>
-#include <common/RandomGenerator.h>
+#include <actions/Lightning.hpp>
+#include <common/Defines.hpp>
+#include <common/RandomGenerator.hpp>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
-	#include <GLEXT/GLCamera.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <sound/SoundUtils.hpp>
+	#include <GLEXT/GLCamera.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
-#include <target/TargetContainer.h>
-#include <target/TargetDamageCalc.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <weapons/AccessoryStore.h>
+#include <target/TargetContainer.hpp>
+#include <target/TargetDamageCalc.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <math.h>
 
 Lightning::Lightning(

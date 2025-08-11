@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponMoveTank.h>
-#include <weapons/AccessoryStore.h>
-#include <actions/TanketMovement.h>
-#include <engine/ActionController.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefn.h>
+#include <weapons/WeaponMoveTank.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <actions/TanketMovement.hpp>
+#include <engine/ActionController.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponMoveTank);
 

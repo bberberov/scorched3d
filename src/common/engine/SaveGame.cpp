@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/SaveGame.h>
-#include <common/Logger.h>
-#include <common/OptionsTransient.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <engine/SaveGame.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsTransient.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 
 bool SaveGame::saveFile(const std::string &fileName) 
 {

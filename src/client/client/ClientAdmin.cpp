@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientAdmin.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientChannelManager.h>
-#include <client/ClientAdminResultHandler.h>
-#include <target/TargetContainer.h>
-#include <console/Console.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsAdminMessage.h>
-#include <common/Defines.h>
+#include <client/ClientAdmin.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <client/ClientAdminResultHandler.hpp>
+#include <target/TargetContainer.hpp>
+#include <console/Console.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsAdminMessage.hpp>
+#include <common/Defines.hpp>
 
 ClientAdmin *ClientAdmin::instance_ = 0;
 

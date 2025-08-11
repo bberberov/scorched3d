@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/RenderGeoms.h>
-#include <target/TargetSpace.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
-#include <engine/ActionController.h>
-#include <GLEXT/GLState.h>
+#include <tankgraph/RenderGeoms.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <engine/ActionController.hpp>
+#include <GLEXT/GLState.hpp>
 
 RenderGeoms *RenderGeoms::instance()
 {

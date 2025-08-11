@@ -20,12 +20,12 @@
 
 #include <math.h>
 #include <string.h>
-#include <GLEXT/GLStateExtension.h>
-#include <landscape/ShadowMap.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <GLEXT/GLStateExtension.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/Defines.hpp>
+#include <graph/OptionsDisplay.hpp>
 
 ShadowMap::ShadowMap() :
 	shadowCount_(0),

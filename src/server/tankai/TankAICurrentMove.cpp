@@ -18,33 +18,33 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrentMove.h>
-#include <tankai/TankAIAimGuesser.h>
-#include <tankai/TankAISniperGuesser.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <coms/ComsDefenseMessage.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <simactions/TankDefenseSimAction.h>
-#include <simactions/TankStartMoveSimAction.h>
-#include <tankai/TankAI.h>
-#include <tank/Tank.h>
-#include <tank/TankLib.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/MovementMap.h>
-#include <landscapemap/GroundMaps.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Shield.h>
-#include <weapons/WeaponMoveTank.h>
-#include <XML/XMLNode.h>
+#include <tankai/TankAICurrentMove.hpp>
+#include <tankai/TankAIAimGuesser.hpp>
+#include <tankai/TankAISniperGuesser.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <coms/ComsDefenseMessage.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <simactions/TankDefenseSimAction.hpp>
+#include <simactions/TankStartMoveSimAction.hpp>
+#include <tankai/TankAI.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankLib.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/MovementMap.hpp>
+#include <landscapemap/GroundMaps.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Shield.hpp>
+#include <weapons/WeaponMoveTank.hpp>
+#include <XML/XMLNode.hpp>
 
 TankAICurrentMove::TankAICurrentMove() :
 	useResign_(true),

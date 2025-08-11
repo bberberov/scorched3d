@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebServer.h>
+#include <webserver/ServerWebServer.hpp>
 
 ServerWebServerQueueEntry::ServerWebServerQueueEntry(
 	unsigned int destinationId,

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLFile.h>
-#include <common/Defines.h>
-#include <tankai/TankAIStore.h>
-#include <tankai/TankAICurrent.h>
-#include <tankai/TankAIShallow.h>
-#include <tankai/TankAIRandom.h>
+#include <XML/XMLFile.hpp>
+#include <common/Defines.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <tankai/TankAICurrent.hpp>
+#include <tankai/TankAIShallow.hpp>
+#include <tankai/TankAIRandom.hpp>
 #include <stdlib.h>
 
 TankAIStore::TankAIStore()

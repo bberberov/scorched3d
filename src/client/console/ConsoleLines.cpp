@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <console/ConsoleLines.h>
-#include <common/DefinesString.h>
+#include <console/ConsoleLines.hpp>
+#include <common/DefinesString.hpp>
 #include <string>
 
 unsigned ConsoleLine::nextLineNumber_ = 0;

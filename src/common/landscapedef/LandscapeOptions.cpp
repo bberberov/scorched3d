@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeOptions.h>
+#include <landscapedef/LandscapeOptions.hpp>
 #include <math.h>
 
 LandscapeOptionsType::LandscapeOptionsType()

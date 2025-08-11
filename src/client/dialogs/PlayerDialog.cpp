@@ -18,29 +18,29 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/PlayerDialog.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <tankai/TankAIStore.h>
-#include <tankai/TankAIStrings.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankState.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankModelContainer.h>
-#include <tanket/TanketTypes.h>
-#include <client/ClientParams.h>
-#include <graph/OptionsDisplay.h>
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/ChannelText.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWTextButton.h>
-#include <image/ImageFactory.h>
+#include <dialogs/PlayerDialog.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <tankai/TankAIStrings.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tanket/TanketTypes.hpp>
+#include <client/ClientParams.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/ChannelText.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <image/ImageFactory.hpp>
 #include <stdio.h>
 
 PlayerDialog::PlayerDialog(

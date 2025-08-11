@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankDeadContainer.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tanket/TanketAccessories.h>
-#include <net/NetBuffer.h>
-#include <server/ScorchedServer.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <tank/TankDeadContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <net/NetBuffer.hpp>
+#include <server/ScorchedServer.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 
 TankDeadContainer::TankDeadContainer() 
 {

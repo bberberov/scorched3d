@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ModFiles.h>
-#include <engine/ModInfo.h>
-#include <engine/ModFileEntryLoader.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/FileList.h>
-#include <lang/LangResource.h>
+#include <engine/ModFiles.hpp>
+#include <engine/ModInfo.hpp>
+#include <engine/ModFileEntryLoader.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/FileList.hpp>
+#include <lang/LangResource.hpp>
 #include <stdio.h>
 
 ModFiles::ModFiles()

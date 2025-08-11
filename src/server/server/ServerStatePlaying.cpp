@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStatePlaying.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSyncCheck.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerChannelManager.h>
-#include <simactions/RoundStartSimAction.h>
-#include <simactions/TankTeamBallanceSimAction.h>
-#include <common/OptionsScorched.h>
-#include <events/EventController.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
+#include <server/ServerStatePlaying.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSyncCheck.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <simactions/RoundStartSimAction.hpp>
+#include <simactions/TankTeamBallanceSimAction.hpp>
+#include <common/OptionsScorched.hpp>
+#include <events/EventController.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
 
 ServerStatePlaying::ServerStatePlaying() :
 	roundState_(eNone),

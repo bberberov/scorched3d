@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAIRandom.h>
+#include <tankai/TankAIRandom.hpp>
 #include <stdlib.h>
 
 TankAIRandom::TankAIRandom()

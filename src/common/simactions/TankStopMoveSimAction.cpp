@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankStopMoveSimAction.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
+#include <simactions/TankStopMoveSimAction.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
 #ifndef S3D_SERVER
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/ShotCountDown.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/ShotCountDown.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(TankStopMoveSimAction);

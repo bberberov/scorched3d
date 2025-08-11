@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/HeightMapLoader.h>
-#include <image/ImageFactory.h>
-#include <common/RandomGenerator.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <lang/LangResource.h>
+#include <landscapemap/HeightMapLoader.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <lang/LangResource.hpp>
 
 void HeightMapLoader::loadTerrain(HeightMap &hmap, 
 	Image &bitmap,

@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementTankPosition.h>
-#include <landscapedef/LandscapeDefnTankStart.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <placement/PlacementTankPosition.hpp>
+#include <landscapedef/LandscapeDefnTankStart.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 
 FixedVector PlacementTankPosition::placeTank(unsigned int playerId, int team,
 	ScorchedContext &context, RandomGenerator &generator)

@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponExplosion.h>
-#include <weapons/Accessory.h>
-#include <actions/Explosion.h>
-#include <engine/ActionController.h>
-#include <common/Defines.h>
+#include <weapons/WeaponExplosion.hpp>
+#include <weapons/Accessory.hpp>
+#include <actions/Explosion.hpp>
+#include <engine/ActionController.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponExplosion);
 

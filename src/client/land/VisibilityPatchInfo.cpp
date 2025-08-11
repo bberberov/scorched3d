@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/VisibilityPatchInfo.h>
+#include <land/VisibilityPatchInfo.hpp>
 
 VisibilityPatchInfo::VisibilityPatchInfo()
 {

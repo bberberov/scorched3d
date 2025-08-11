@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/MovementMap.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Shield.h>
-#include <weapons/WeaponMoveTank.h>
-#include <engine/ScorchedContext.h>
-#include <common/FixedVector.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <tanket/Tanket.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <image/ImageFactory.h>
+#include <landscapemap/MovementMap.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Shield.hpp>
+#include <weapons/WeaponMoveTank.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/FixedVector.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <tanket/Tanket.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <image/ImageFactory.hpp>
 #include <memory.h>
 
 MovementMap::MovementMap(
@@ -561,8 +561,8 @@ void MovementMap::calculateAllPositions(fixed fuel)
 }
 
 #ifndef S3D_SERVER
-#include <landscape/Landscape.h>
-#include <client/ScorchedClient.h>
+#include <landscape/Landscape.hpp>
+#include <client/ScorchedClient.hpp>
 
 void MovementMap::movementTexture()
 {

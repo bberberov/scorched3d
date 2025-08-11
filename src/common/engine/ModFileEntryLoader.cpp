@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
-#include <engine/ModFileEntryLoader.h>
-#include <engine/ModFiles.h>
+#include <common/Defines.hpp>
+#include <engine/ModFileEntryLoader.hpp>
+#include <engine/ModFiles.hpp>
 #include <cstring>
 
 bool ModFileEntryLoader::writeModFile(NetBuffer &buffer, 

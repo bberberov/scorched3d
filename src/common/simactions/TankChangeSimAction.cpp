@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankChangeSimAction.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Logger.h>
-#include <common/ChannelManager.h>
-#include <tankai/TankAIStore.h>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankModelContainer.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketTypes.h>
-#include <server/ScorchedServer.h>
-#include <events/EventController.h>
+#include <simactions/TankChangeSimAction.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Logger.hpp>
+#include <common/ChannelManager.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketTypes.hpp>
+#include <server/ScorchedServer.hpp>
+#include <events/EventController.hpp>
 
 unsigned int TankChangeSimAction::TankChangeSimActionCount = 0;
 

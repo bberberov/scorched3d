@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sound/SoundBufferDynamicOVSourceInstance.h>
-#include <sound/SoundBufferOV.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <sound/SoundBufferDynamicOVSourceInstance.hpp>
+#include <sound/SoundBufferOV.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 #ifdef HAVE_OGG
 

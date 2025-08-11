@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tankgraph/ModelRendererTank.h>
-#include <GLEXT/GLState.h>
-#include <graph/ModelRenderer.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/ModelRenderer.h>
-#include <graph/ModelRendererStore.h>
-#include <graph/ModelRendererSimulator.h>
-#include <common/Defines.h>
+#include <tankgraph/ModelRendererTank.hpp>
+#include <GLEXT/GLState.hpp>
+#include <graph/ModelRenderer.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/ModelRenderer.hpp>
+#include <graph/ModelRendererStore.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <common/Defines.hpp>
 
 ModelRendererTank::ModelRendererTank(Model *model) :
 	model_(model),

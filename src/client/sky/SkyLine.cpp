@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <sky/SkyLine.h>
-#include <common/Defines.h>
+#include <GLEXT/GLState.hpp>
+#include <sky/SkyLine.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 SkyLine::SkyLine() :

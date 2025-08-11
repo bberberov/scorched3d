@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <console/ConsoleImpl.h>
-#include <common/Keyboard.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWToolTip.h>
+#include <console/ConsoleImpl.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWToolTip.hpp>
 #include <limits.h>
 
 ConsoleImpl::ConsoleImpl() :

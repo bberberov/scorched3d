@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SoundDialog.h>
-#include <graph/OptionsDisplay.h>
-#include <sound/Sound.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWSlider.h>
+#include <dialogs/SoundDialog.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <sound/Sound.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWSlider.hpp>
 
 SoundDialog *SoundDialog::instance_ = 0;
 

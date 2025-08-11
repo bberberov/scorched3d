@@ -18,28 +18,28 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TargetRendererImpl.h>
-#include <tankgraph/TargetParticleRenderer.h>
-#include <target/TargetShield.h>
-#include <target/TargetState.h>
-#include <target/TargetLife.h>
-#include <client/ScorchedClient.h>
-#include <graph/ParticleEngine.h>
-#include <graph/ParticleTypes.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
-#include <sky/Hemisphere.h>
-#include <weapons/ShieldRound.h>
-#include <weapons/ShieldSquare.h>
-#include <weapons/Accessory.h>
-#include <actions/TargetFalling.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLTexture.h>
-#include <image/ImageFactory.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLCamera.h>
-#include <land/VisibilityPatchGrid.h>
+#include <tankgraph/TargetRendererImpl.hpp>
+#include <tankgraph/TargetParticleRenderer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetLife.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <graph/ParticleTypes.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
+#include <sky/Hemisphere.hpp>
+#include <weapons/ShieldRound.hpp>
+#include <weapons/ShieldSquare.hpp>
+#include <weapons/Accessory.hpp>
+#include <actions/TargetFalling.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <image/ImageFactory.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLCamera.hpp>
+#include <land/VisibilityPatchGrid.hpp>
 
 TargetRendererImpl::HighlightType TargetRendererImpl::highlightType_ = 
 	TargetRendererImpl::eNoHighlight;

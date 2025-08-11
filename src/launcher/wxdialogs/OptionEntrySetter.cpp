@@ -18,9 +18,9 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/OptionEntrySetter.h>
-#include <wxdialogs/MainDialog.h>
-#include <common/Defines.h>
+#include <wxdialogs/OptionEntrySetter.hpp>
+#include <wxdialogs/MainDialog.hpp>
+#include <common/Defines.hpp>
 
 OptionEntrySetter::OptionEntrySetter(wxControl *control, OptionEntry &entry)
 	:

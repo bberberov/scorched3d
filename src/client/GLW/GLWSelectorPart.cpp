@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWSelectorPart.h>
-#include <GLW/GLWSelector.h>
-#include <GLW/GLWFont.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ScorchedClient.h>
-#include <common/Defines.h>
+#include <GLW/GLWSelectorPart.hpp>
+#include <GLW/GLWSelector.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/Defines.hpp>
 
 GLWSelectorPart::GLWSelectorPart(
 	GLWSelectorI *user,

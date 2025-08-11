@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AnimatedBackdropDialog.h>
-#include <dialogs/BackdropDialog.h>
-#include <dialogs/ProgressDialog.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <graph/MainCamera.h>
-#include <graph/Main2DCamera.h>
-#include <graph/OptionsDisplay.h>
-#include <engine/Simulator.h>
-#include <engine/MainLoop.h>
-#include <tankgraph/RenderTargets.h>
-#include <landscape/Landscape.h>
-#include <client/ScorchedClient.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <movement/TargetMovement.h>
-#include <common/Defines.h>
+#include <dialogs/AnimatedBackdropDialog.hpp>
+#include <dialogs/BackdropDialog.hpp>
+#include <dialogs/ProgressDialog.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/Main2DCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/MainLoop.hpp>
+#include <tankgraph/RenderTargets.hpp>
+#include <landscape/Landscape.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <movement/TargetMovement.hpp>
+#include <common/Defines.hpp>
 #include <limits.h>
 
 AnimatedBackdropDialog *AnimatedBackdropDialog::instance_ = 0;

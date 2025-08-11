@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWChannelViewTextRenderer.h>
-#include <GLW/GLWChannelView.h>
-#include <GLW/GLWTranslate.h>
-#include <target/TargetContainer.h>
-#include <tank/TankAvatar.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <client/ScorchedClient.h>
-#include <lang/LangResource.h>
-#include <weapons/AccessoryStore.h>
+#include <GLW/GLWChannelViewTextRenderer.hpp>
+#include <GLW/GLWChannelView.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <client/ScorchedClient.hpp>
+#include <lang/LangResource.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 GLWChannelViewTextRenderer::GLWChannelViewTextRenderer()
 {}

@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TankSay.h>
+#include <actions/TankSay.hpp>
 #ifndef S3D_SERVER
-	#include <sprites/TalkRenderer.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <sprites/TalkRenderer.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <common/Defines.h>
-#include <common/ChannelManager.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
 
 TankSay::TankSay(unsigned int playerId, const LangString &text) :
 	Action(false),

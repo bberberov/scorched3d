@@ -21,11 +21,11 @@
 #include <math.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <landscapemap/HeightMapModifier.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <common/Defines.h>
-#include <image/ImageFactory.h>
-#include <lang/LangResource.h>
+#include <landscapemap/HeightMapModifier.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <common/Defines.hpp>
+#include <image/ImageFactory.hpp>
+#include <lang/LangResource.hpp>
 
 void HeightMapModifier::levelSurround(HeightMap &hmap)
 {

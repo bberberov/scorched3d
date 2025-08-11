@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/CachedValueString.h>
+#include <lang/CachedValueString.hpp>
 
 CachedValueString::CachedValueString() : firstTime_(true)
 {

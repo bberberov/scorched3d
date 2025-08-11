@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <geomipmap/MipMapPatchIndexs.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLVertexBufferObject.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Logger.h>
+#include <geomipmap/MipMapPatchIndexs.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLVertexBufferObject.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Logger.hpp>
 
 MipMapPatchIndexs::IndexLevel::IndexLevel()
 {

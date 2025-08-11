@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <XML/XMLParser.h>
-#include <common/Defines.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWTab.h>
+#include <GLEXT/GLState.hpp>
+#include <XML/XMLParser.hpp>
+#include <common/Defines.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWTab.hpp>
 
 GLWPanel::GLWPanelEntry::GLWPanelEntry(GLWidget *w, GLWCondition *c, unsigned int f, float wi) :
 	widget(w),

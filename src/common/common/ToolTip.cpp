@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ToolTip.h>
+#include <common/ToolTip.hpp>
 
 unsigned int ToolTip::nextId_ = 0;
 

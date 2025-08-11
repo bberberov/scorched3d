@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AuthDialog.h>
-#include <graph/OptionsDisplay.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ClientParams.h>
-#include <client/ClientConnectionAuthHandler.h>
+#include <dialogs/AuthDialog.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientConnectionAuthHandler.hpp>
 
 AuthDialog *AuthDialog::instance_ = 0;
 

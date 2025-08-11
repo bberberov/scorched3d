@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementObjectTarget.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <target/Target.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementObjectTarget.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <target/Target.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementObjectTarget::PlacementObjectTarget()
 {

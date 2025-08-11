@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankCamera.h>
+#include <tank/TankCamera.hpp>
 
 TankCamera::TankCamera(ScorchedContext &context) :
 	context_(context)

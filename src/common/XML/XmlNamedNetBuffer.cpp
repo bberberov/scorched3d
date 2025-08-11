@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XmlNamedNetBuffer.h>
+#include <XML/XmlNamedNetBuffer.hpp>
 
 XmlNamedNetBuffer::XmlNamedNetBuffer() :
 	rootNode_("XmlNamedNetBuffer")

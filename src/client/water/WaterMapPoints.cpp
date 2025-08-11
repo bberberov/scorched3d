@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/WaterMapPoints.h>
-#include <water/Water2Patches.h>
-#include <graph/ModelRendererSimulator.h>
-#include <graph/ModelRendererMesh.h>
-#include <landscape/MapPoints.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <GLEXT/GLGlobalState.h>
-#include <client/ScorchedClient.h>
-#include <common/OptionsTransient.h>
+#include <water/WaterMapPoints.hpp>
+#include <water/Water2Patches.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <graph/ModelRendererMesh.hpp>
+#include <landscape/MapPoints.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <GLEXT/GLGlobalState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/OptionsTransient.hpp>
 
 WaterMapPoints::WaterMapPoints()
 {

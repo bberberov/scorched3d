@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankWeaponSwitcher.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/WeaponMoveTank.h>
+#include <tank/TankWeaponSwitcher.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/WeaponMoveTank.hpp>
 #ifndef S3D_SERVER
-	#include <client/ScorchedClient.h>
-	#include <client/ClientState.h>
-	#include <landscape/Landscape.h>
+	#include <client/ScorchedClient.hpp>
+	#include <client/ClientState.hpp>
+	#include <landscape/Landscape.hpp>
 #endif
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/MovementMap.h>
-#include <lang/LangResource.h>
-#include <common/ChannelManager.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/MovementMap.hpp>
+#include <lang/LangResource.hpp>
+#include <common/ChannelManager.hpp>
 
 TankWeaponSwitcher::TankWeaponSwitcher() 
 {

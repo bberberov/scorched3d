@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ParticleGroup.h>
-#include <engine/ScorchedContext.h>
-#include <engine/PhysicsParticle.h>
-#include <weapons/Weapon.h>
+#include <actions/ParticleGroup.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/PhysicsParticle.hpp>
+#include <weapons/Weapon.hpp>
 
 ParticleGroup::ParticleGroup(ScorchedContext &context,
 	PhysicsParticle *physicsParticle, WeaponFireContext *weaponFireContext) :

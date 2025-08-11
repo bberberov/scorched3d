@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateFinishWait.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <engine/ActionController.h>
-#include <common/OptionsScorched.h>
-#include <simactions/RoundStopSimAction.h>
+#include <server/ServerStateFinishWait.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <engine/ActionController.hpp>
+#include <common/OptionsScorched.hpp>
+#include <simactions/RoundStopSimAction.hpp>
 
 ServerStateFinishWait::ServerStateFinishWait()
 {

@@ -18,29 +18,29 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientInitializeModHandler.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ClientWindowSetup.h>
-#include <sprites/ExplosionTextures.h>
-#include <server/ScorchedServer.h>
-#include <weapons/AccessoryStore.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <client/ClientParams.h>
-#include <dialogs/ProgressDialog.h>
-#include <engine/ModFiles.h>
-#include <graph/OptionsDisplay.h>
-#include <coms/ComsInitializeModMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWWindowSkinManager.h>
-#include <GLEXT/GLLenseFlare.h>
-#include <lang/LangResource.h>
-#include <tankai/TankAIStrings.h>
-#include <tank/TankModelStore.h>
-#include <tanket/TanketTypes.h>
+#include <client/ClientInitializeModHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientWindowSetup.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <server/ScorchedServer.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <client/ClientParams.hpp>
+#include <dialogs/ProgressDialog.hpp>
+#include <engine/ModFiles.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <coms/ComsInitializeModMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWWindowSkinManager.hpp>
+#include <GLEXT/GLLenseFlare.hpp>
+#include <lang/LangResource.hpp>
+#include <tankai/TankAIStrings.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tanket/TanketTypes.hpp>
 
 ClientInitializeModHandler *ClientInitializeModHandler::instance_ = 0;
 

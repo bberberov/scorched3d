@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SaveDialog.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
-#include <lang/LangResource.h>
-#include <client/ScorchedClient.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <engine/SaveGame.h>
-#include <common/ChannelManager.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <dialogs/SaveDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <lang/LangResource.hpp>
+#include <client/ScorchedClient.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <engine/SaveGame.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <time.h>
 
 SaveDialog *SaveDialog::instance_ = 0;

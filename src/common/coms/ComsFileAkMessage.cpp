@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsFileAkMessage.h>
+#include <coms/ComsFileAkMessage.hpp>
 
 ComsMessageType ComsFileAkMessage::ComsFileAkMessageType("ComsFileAkMessageType");
 

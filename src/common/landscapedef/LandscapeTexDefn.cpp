@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeTexDefn.h>
-#include <landscapedef/LandscapeDefinitions.h>
+#include <landscapedef/LandscapeTexDefn.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
 
 LandscapeTexDefn::LandscapeTexDefn()
 {

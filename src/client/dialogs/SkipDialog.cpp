@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SkipDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ScorchedClient.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <dialogs/SkipDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ScorchedClient.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 #include <time.h>
 
 SkipDialog *SkipDialog::instance_ = 0;

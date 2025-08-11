@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWOptionEntry.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWCheckBox.h>
-#include <GLW/GLWDropDownText.h>
-#include <GLW/GLWTextBox.h>
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
-#include <common/ToolTip.h>
+#include <GLW/GLWOptionEntry.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWCheckBox.hpp>
+#include <GLW/GLWDropDownText.hpp>
+#include <GLW/GLWTextBox.hpp>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
+#include <common/ToolTip.hpp>
 
 GLWOptionEntry::GLWOptionEntry(GLWidget *control, OptionEntry *entry) :
 	control_(control),

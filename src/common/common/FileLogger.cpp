@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/FileLogger.h>
-#include <common/Defines.h>
+#include <common/FileLogger.hpp>
+#include <common/Defines.hpp>
 #include <time.h>
 
 FileLogger::FileLogger(const std::string &fileName) :

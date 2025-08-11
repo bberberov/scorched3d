@@ -21,7 +21,7 @@
 #include <string>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <SDL/SDL.h>
 #include <SDL/SDL_thread.h>
 

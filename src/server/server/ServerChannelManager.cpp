@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerTextFilter.h>
-#include <lua/LUAScriptHook.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsChannelMessage.h>
-#include <coms/ComsChannelTextMessage.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <lang/LangResource.h>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerTextFilter.hpp>
+#include <lua/LUAScriptHook.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsChannelMessage.hpp>
+#include <coms/ComsChannelTextMessage.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <lang/LangResource.hpp>
 
 ServerChannelManager::ChannelEntry::ChannelEntry(
 	ChannelDefinition def,

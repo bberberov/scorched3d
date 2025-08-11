@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTalkBox.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLEXT/GLState.h>
-#include <XML/XMLParser.h>
-#include <console/Console.h>
-#include <common/Defines.h>
-#include <client/ClientChannelManager.h>
+#include <GLW/GLWTalkBox.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLEXT/GLState.hpp>
+#include <XML/XMLParser.hpp>
+#include <console/Console.hpp>
+#include <common/Defines.hpp>
+#include <client/ClientChannelManager.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTalkBox);
 

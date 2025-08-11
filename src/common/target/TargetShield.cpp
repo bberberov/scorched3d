@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetShield.h>
-#include <target/TargetSpace.h>
-#include <target/TargetContainer.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/ShieldRound.h>
-#include <weapons/ShieldSquare.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <common/OptionsScorched.h>
+#include <target/TargetShield.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetContainer.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/ShieldRound.hpp>
+#include <weapons/ShieldSquare.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <common/OptionsScorched.hpp>
 
 TargetShield::TargetShield(ScorchedContext &context, unsigned int playerId) :
 	context_(context),

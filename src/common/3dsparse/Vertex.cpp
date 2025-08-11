@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/Vertex.h>
+#include <3dsparse/Vertex.hpp>
 
 Vertex::Vertex() : boneIndex(-1)
 {

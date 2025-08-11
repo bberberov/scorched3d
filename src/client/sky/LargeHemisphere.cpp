@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Vector.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLInfo.h>
-#include <sky/LargeHemisphere.h>
-#include <sky/Hemisphere.h>
+#include <common/Vector.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <sky/LargeHemisphere.hpp>
+#include <sky/Hemisphere.hpp>
 
 LargeHemisphere::LargeHemisphere()
 {

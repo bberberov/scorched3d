@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/GameState.h>
-#include <engine/GameStateI.h>
-#include <engine/GameStateStimulusI.h>
-#include <engine/MainLoop.h>
-#include <common/Keyboard.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/LoggerI.h>
+#include <engine/GameState.hpp>
+#include <engine/GameStateI.hpp>
+#include <engine/GameStateStimulusI.hpp>
+#include <engine/MainLoop.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/LoggerI.hpp>
 #include <limits.h>
 #include <SDL/SDL.h>
 

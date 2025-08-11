@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionEntry.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <XML/XMLFile.h>
+#include <common/OptionEntry.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <XML/XMLFile.hpp>
 #include <stdio.h>
 #include <map>
 

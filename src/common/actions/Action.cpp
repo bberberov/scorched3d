@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/Action.h>
+#include <actions/Action.hpp>
 
 Action::Action(bool actionReferenced) : 
 	actionReferenced_(actionReferenced),

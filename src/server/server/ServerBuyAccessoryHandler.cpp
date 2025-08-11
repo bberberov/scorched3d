@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerBuyAccessoryHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
-#include <server/ServerSimulator.h>
-#include <simactions/TankAccessorySimAction.h>
-#include <common/Logger.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <server/ServerBuyAccessoryHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerSimulator.hpp>
+#include <simactions/TankAccessorySimAction.hpp>
+#include <common/Logger.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 
 ServerBuyAccessoryHandler::ServerBuyAccessoryHandler(ComsMessageHandler &comsMessageHandler)
 {

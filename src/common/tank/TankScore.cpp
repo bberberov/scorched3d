@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <engine/ScorchedContext.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 // The maximum amount of money allowed by anyone
 // Range limited to 0 -> maxMoney

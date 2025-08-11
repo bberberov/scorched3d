@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateEnoughPlayers.h>
-#include <server/ServerConnectAuthHandler.h>
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerCommon.h>
-#include <server/ServerMessageHandler.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIAdder.h>
-#include <simactions/TankAddSimAction.h>
-#include <simactions/TankRemoveSimAction.h>
-#include <simactions/TankChangeSimAction.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
+#include <server/ServerStateEnoughPlayers.hpp>
+#include <server/ServerConnectAuthHandler.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerMessageHandler.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIAdder.hpp>
+#include <simactions/TankAddSimAction.hpp>
+#include <simactions/TankRemoveSimAction.hpp>
+#include <simactions/TankChangeSimAction.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
 
 ServerStateEnoughPlayers::ServerStateEnoughPlayers()
 {

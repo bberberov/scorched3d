@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/ShieldSquareReflective.h>
+#include <weapons/ShieldSquareReflective.hpp>
 
 REGISTER_ACCESSORY_SOURCE(ShieldSquareReflective);
 

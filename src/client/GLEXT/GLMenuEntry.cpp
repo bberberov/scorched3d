@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ScorchedClient.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLMenuEntry.h>
-#include <GLEXT/GLTexture.h>
-#include <image/Image.h>
-#include <GLW/GLWidget.h>
-#include <GLW/GLWFont.h>
-#include <lang/LangResource.h>
+#include <client/ScorchedClient.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLMenuEntry.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <image/Image.hpp>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWFont.hpp>
+#include <lang/LangResource.hpp>
 
 static Vector color(0.9f, 0.9f, 1.0f);
 static Vector itemcolor(0.1f, 0.1f, 0.4f);

@@ -18,27 +18,27 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/PhysicsParticleObject.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <tank/Tank.h>
-#include <target/TargetSpace.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <target/TargetContainer.h>
-#include <weapons/Accessory.h>
-#include <weapons/Shield.h>
-#include <weapons/ShieldRoundReflective.h>
-#include <weapons/ShieldSquareReflective.h>
-#include <weapons/ShieldRoundMag.h>
-#include <actions/ShotBounce.h>
-#include <actions/ShotProjectile.h>
-#include <actions/ShieldHit.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <engine/PhysicsParticleObject.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetContainer.hpp>
+#include <weapons/Accessory.hpp>
+#include <weapons/Shield.hpp>
+#include <weapons/ShieldRoundReflective.hpp>
+#include <weapons/ShieldSquareReflective.hpp>
+#include <weapons/ShieldRoundMag.hpp>
+#include <actions/ShotBounce.hpp>
+#include <actions/ShotProjectile.hpp>
+#include <actions/ShieldHit.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 PhysicsParticleObject::PhysicsParticleObject() :
 	info_(ParticleTypeNone, 0, 0),
@@ -767,8 +767,8 @@ void PhysicsParticleActionObject::bounceShieldHit(Target *target)
 
 #ifndef S3D_SERVER
 
-#include <client/ScorchedClient.h>
-#include <graph/ParticleEmitter.h>
+#include <client/ScorchedClient.hpp>
+#include <graph/ParticleEmitter.hpp>
 
 static void addWallCollisionParticle(Vector &position, ScorchedCollisionId collisionId)
 {

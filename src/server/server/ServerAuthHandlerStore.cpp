@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerAuthHandlerStore.h>
-#include <server/ServerAuthHandlerForumLogin.h>
-#include <server/ServerAuthHandlerPrefered.h>
-#include <server/ServerAuthHandlerMinKills.h>
-#include <server/ServerAuthHandlerDefault.h>
-#include <server/ScorchedServer.h>
-#include <common/OptionsScorched.h>
+#include <server/ServerAuthHandlerStore.hpp>
+#include <server/ServerAuthHandlerForumLogin.hpp>
+#include <server/ServerAuthHandlerPrefered.hpp>
+#include <server/ServerAuthHandlerMinKills.hpp>
+#include <server/ServerAuthHandlerDefault.hpp>
+#include <server/ScorchedServer.hpp>
+#include <common/OptionsScorched.hpp>
 
 ServerAuthHandlerStore::ServerAuthHandlerStore()
 {

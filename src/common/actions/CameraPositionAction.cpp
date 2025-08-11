@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <actions/CameraPositionAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
 
 CameraPositionAction::CameraPositionAction(
 	unsigned int playerId,

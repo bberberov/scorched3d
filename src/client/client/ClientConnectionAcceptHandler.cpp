@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientConnectionAcceptHandler.h>
-#include <client/ClientLoadLevelHandler.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <dialogs/ConnectDialog.h>
-#include <dialogs/ProgressDialog.h>
-#include <engine/ModFiles.h>
-#include <image/ImageFactory.h>
-#include <image/ImagePngFactory.h>
-#include <target/TargetContainer.h>
-#include <net/NetInterface.h>
-#include <coms/ComsConnectAcceptMessage.h>
-#include <coms/ComsHaveModFilesMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <client/ClientParams.h>
-#include <common/Defines.h>
+#include <client/ClientConnectionAcceptHandler.hpp>
+#include <client/ClientLoadLevelHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <dialogs/ConnectDialog.hpp>
+#include <dialogs/ProgressDialog.hpp>
+#include <engine/ModFiles.hpp>
+#include <image/ImageFactory.hpp>
+#include <image/ImagePngFactory.hpp>
+#include <target/TargetContainer.hpp>
+#include <net/NetInterface.hpp>
+#include <coms/ComsConnectAcceptMessage.hpp>
+#include <coms/ComsHaveModFilesMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <client/ClientParams.hpp>
+#include <common/Defines.hpp>
 
 ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance_ = 0;
 

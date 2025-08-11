@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerLoadLevel.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerDestinations.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/Simulator.h>
-#include <simactions/TankLoadedSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsLoadLevelMessage.h>
-#include <coms/ComsLevelLoadedMessage.h>
+#include <server/ServerLoadLevel.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerDestinations.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/Simulator.hpp>
+#include <simactions/TankLoadedSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsLoadLevelMessage.hpp>
+#include <coms/ComsLevelLoadedMessage.hpp>
 
 ServerLoadLevel::ServerLoadLevel(ComsMessageHandler &comsMessageHandler)
 {

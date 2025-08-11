@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankRankSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <events/EventHandlerDataBase.h>
+#include <simactions/TankRankSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <events/EventHandlerDataBase.hpp>
 
 REGISTER_CLASS_SOURCE(TankRankSimAction);
 

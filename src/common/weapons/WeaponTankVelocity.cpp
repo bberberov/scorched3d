@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponTankVelocity.h>
-#include <weapons/AccessoryStore.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetContainer.h>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
+#include <weapons/WeaponTankVelocity.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetContainer.hpp>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponTankVelocity);
 

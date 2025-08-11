@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/RoundStartSimAction.h>
-#include <target/TargetContainer.h>
+#include <simactions/RoundStartSimAction.hpp>
+#include <target/TargetContainer.hpp>
 #ifndef S3D_SERVER
-#include <graph/ShotCountDown.h>
+#include <graph/ShotCountDown.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(RoundStartSimAction);

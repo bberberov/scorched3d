@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ActionParams.h>
-#include <lua/LUAUtil.h>
-#include <XML/XMLNode.h>
+#include <actions/ActionParams.hpp>
+#include <lua/LUAUtil.hpp>
+#include <XML/XMLNode.hpp>
 
 void FixedActionParam::copy(ActionParam *other)
 {

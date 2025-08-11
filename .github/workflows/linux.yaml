@@ -4,7 +4,40 @@ on:
   push
 
 jobs:
-  linux-build:
+  linux-build-autotools:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Prepare
+      run: .ci/prepare-ubuntu.bash
+    - name: Create Makefile.ams
+      run: pushd scripts && perl ./createAMMakefile.pl && popd
+    - name: autoreconf
+      run: autoreconf -fiv
+    - name: Configure
+      run: |
+        ./configure \
+        --disable-dependency-tracking \
+        --prefix=/usr \
+        --exec-prefix=/usr \
+        --bindir=/usr/bin \
+        --sbindir=/usr/sbin \
+        --sysconfdir=/etc \
+        --datadir=/usr/share \
+        --includedir=/usr/include \
+        --libdir=/usr/lib64 \
+        --libexecdir=/usr/libexec \
+        --localstatedir=/var \
+        --sharedstatedir=/var/lib \
+        --mandir=/usr/share/man \
+        --infodir=/usr/share/info \
+        --with-system-lua=lua5.1 \
+        --datadir=/usr/share/scorched3d \
+        --with-docdir=/usr/share/doc/scorched3d
+    - name: Make
+      run: make -j4 V=1 VERBOSE=1
+  linux-build-meson:
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout

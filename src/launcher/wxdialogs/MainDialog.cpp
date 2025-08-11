@@ -29,13 +29,13 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <SDL/SDL.h>
-#include <wxdialogs/MainDialog.h>
-#include <wxdialogs/DisplayDialog.h>
-#include <wxdialogs/ServerSDialog.h>
-#include <wxdialogs/TrueTypeFont.h>
-#include <scorched/ScorchedParams.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
+#include <wxdialogs/MainDialog.hpp>
+#include <wxdialogs/DisplayDialog.hpp>
+#include <wxdialogs/ServerSDialog.hpp>
+#include <wxdialogs/TrueTypeFont.hpp>
+#include <scorched/ScorchedParams.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
 
 extern char scorched3dAppName[128];
 static wxFrame *mainDialog = nullptr;

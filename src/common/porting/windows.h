@@ -7,7 +7,7 @@
 #include <strings.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 
 typedef char *          LPSTR;
 typedef const char *    LPCTSTR;

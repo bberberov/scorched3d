@@ -18,28 +18,28 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/PlayMovesSimAction.h>
-#include <engine/ActionController.h>
-#include <weapons/AccessoryStore.h>
-#include <tanket/TanketAccessories.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <tank/Tank.h>
-#include <tank/TankLib.h>
-#include <tank/TankShotHistory.h>
-#include <tank/TankState.h>
-#include <target/TargetRenderer.h>
-#include <tankai/TankAIStrings.h>
-#include <actions/TankSay.h>
-#include <actions/TanketResign.h>
-#include <events/EventController.h>
-#include <common/OptionsScorched.h>
-#include <server/ServerCommon.h>
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
+#include <simactions/PlayMovesSimAction.hpp>
+#include <engine/ActionController.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankLib.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetRenderer.hpp>
+#include <tankai/TankAIStrings.hpp>
+#include <actions/TankSay.hpp>
+#include <actions/TanketResign.hpp>
+#include <events/EventController.hpp>
+#include <common/OptionsScorched.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
 #ifndef S3D_SERVER
-	#include <sound/SoundUtils.h>
+	#include <sound/SoundUtils.hpp>
 #endif
 
 REGISTER_CLASS_SOURCE(PlayMovesSimAction);

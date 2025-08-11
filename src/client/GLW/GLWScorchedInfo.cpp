@@ -18,29 +18,29 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWScorchedInfo.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWWindView.h>
-#include <GLW/GLWColors.h>
-#include <client/ScorchedClient.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankScore.h>
-#include <tank/TankShotHistory.h>
-#include <tanket/TanketShotInfo.h>
-#include <tanket/TanketAccessories.h>
-#include <target/TargetParachute.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <engine/Simulator.h>
-#include <weapons/AccessoryStore.h>
-#include <lang/CachedValueString.h>
-#include <lang/LangResource.h>
+#include <GLW/GLWScorchedInfo.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWWindView.hpp>
+#include <GLW/GLWColors.hpp>
+#include <client/ScorchedClient.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <engine/Simulator.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <lang/CachedValueString.hpp>
+#include <lang/LangResource.hpp>
 
 REGISTER_CLASS_SOURCE(GLWHudCondition);
 

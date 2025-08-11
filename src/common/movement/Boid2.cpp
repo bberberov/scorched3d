@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <movement/Boid2.h>
-#include <movement/TargetMovementEntryBoids.h>
-#include <common/OptionsScorched.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
+#include <movement/Boid2.hpp>
+#include <movement/TargetMovementEntryBoids.hpp>
+#include <common/OptionsScorched.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
 
 Boid2::Boid2(ScorchedContext &context, Target *target, TargetMovementEntryBoids *world) :
 	context_(context), target_(target), world_(world)

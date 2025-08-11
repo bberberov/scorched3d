@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <serverbrowser/ServerBrowserCollect.h>
-#include <serverbrowser/ServerBrowser.h>
-#include <XML/XMLStringBuffer.h>
-#include <XML/XMLFile.h>
-#include <client/ScorchedClient.h>
-#include <common/Defines.h>
-#include <common/OptionsMasterListServer.h>
+#include <serverbrowser/ServerBrowserCollect.hpp>
+#include <serverbrowser/ServerBrowser.hpp>
+#include <XML/XMLStringBuffer.hpp>
+#include <XML/XMLFile.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsMasterListServer.hpp>
 #include <time.h>
 
 ServerBrowserCollect::ServerBrowserCollect(ServerBrowserServerList &list) :

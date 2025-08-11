@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponGroupSelect.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/Simulator.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroup.h>
-#include <engine/ObjectGroupEntry.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
+#include <weapons/WeaponGroupSelect.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponGroupSelect);
 

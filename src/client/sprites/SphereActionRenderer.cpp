@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/SphereActionRenderer.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLState.h>
+#include <sprites/SphereActionRenderer.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLState.hpp>
 
 SphereActionRenderer::SphereActionRenderer(Vector &position, float size) :
 	position_(position),

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TargetParticleRenderer.h>
-#include <tankgraph/TargetRendererImpl.h>
-#include <graph/Particle.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <client/ScorchedClient.h>
+#include <tankgraph/TargetParticleRenderer.hpp>
+#include <tankgraph/TargetRendererImpl.hpp>
+#include <graph/Particle.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <client/ScorchedClient.hpp>
 
 TargetParticleRenderer *TargetParticleRenderer::getInstance()
 {

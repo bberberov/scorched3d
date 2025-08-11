@@ -48,8 +48,8 @@
 #define YY_FLEX_MINOR_VERSION 5
 
 #include <stdio.h>
-#include <common/DefinesString.h>
-#include <common/fixed.h>
+#include <common/DefinesString.hpp>
+#include <common/fixed.hpp>
 
 
 /* cfront 1.2 defines "c_plusplus" instead of "__cplusplus" */
@@ -616,8 +616,8 @@ char *yytext;
 #define INITIAL 0
 
 #include <string.h>
-#include <common/FixedVector.h>
-#include <3dsparse/aseFile.tab.cpp.h>
+#include <common/FixedVector.hpp>
+#include <3dsparse/aseFile.tab.cpp.hpp>
 
 FixedVector aseVector;
 

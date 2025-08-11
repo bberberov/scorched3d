@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/Model.h>
-#include <3dsparse/ModelMaths.h>
-#include <common/Defines.h>
+#include <3dsparse/Model.hpp>
+#include <3dsparse/ModelMaths.hpp>
+#include <common/Defines.hpp>
 
 Model::Model() :
 	startFrame_(0),

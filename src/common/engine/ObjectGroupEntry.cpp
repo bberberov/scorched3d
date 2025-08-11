@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ObjectGroupEntry.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroup.h>
-#include <net/NetBuffer.h>
+#include <engine/ObjectGroupEntry.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <net/NetBuffer.hpp>
 #include <set>
 
 ObjectGroupEntry::ObjectGroupEntry(ObjectGroups &groups) :

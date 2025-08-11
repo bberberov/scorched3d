@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/ResourceBundleEntryImpl.h>
-#include <common/DefinesAssert.h>
-#include <common/DefinesString.h>
+#include <lang/ResourceBundleEntryImpl.hpp>
+#include <common/DefinesAssert.hpp>
+#include <common/DefinesString.hpp>
 
 ResourceBundleEntryImpl::ResourceBundleEntryImpl(const std::string &key) :
 	key_(key),

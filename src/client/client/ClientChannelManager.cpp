@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientChannelManager.h>
-#include <client/ScorchedClient.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsChannelMessage.h>
-#include <coms/ComsChannelTextMessage.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <common/Logger.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
-#include <tanket/TanketShotInfo.h>
-#include <sprites/TalkRenderer.h>
-#include <engine/ActionController.h>
+#include <client/ClientChannelManager.hpp>
+#include <client/ScorchedClient.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsChannelMessage.hpp>
+#include <coms/ComsChannelTextMessage.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <common/Logger.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <sprites/TalkRenderer.hpp>
+#include <engine/ActionController.hpp>
 
 ClientChannelManager::ChannelEntry::ChannelEntry(ClientChannelManagerI *user) :
 	user_(user)

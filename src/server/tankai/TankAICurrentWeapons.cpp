@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ScorchedServer.h>
-#include <tankai/TankAICurrentWeapons.h>
-#include <XML/XMLNode.h>
+#include <server/ScorchedServer.hpp>
+#include <tankai/TankAICurrentWeapons.hpp>
+#include <XML/XMLNode.hpp>
 #include <stdlib.h>
 
 TankAICurrentWeapons::TankAICurrentWeapons() : 

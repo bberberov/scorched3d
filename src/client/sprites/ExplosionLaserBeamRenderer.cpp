@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/ExplosionLaserBeamRenderer.h>
-#include <sprites/ExplosionTextures.h>
-#include <common/Defines.h>
-#include <console/Console.h>
-#include <image/ImageFactory.h>
-#include <sound/SoundUtils.h>
-#include <client/ScorchedClient.h>
-#include <graph/ParticleEmitter.h>
-#include <graph/ParticleEngine.h>
+#include <sprites/ExplosionLaserBeamRenderer.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <common/Defines.hpp>
+#include <console/Console.hpp>
+#include <image/ImageFactory.hpp>
+#include <sound/SoundUtils.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/ParticleEmitter.hpp>
+#include <graph/ParticleEngine.hpp>
 
 REGISTER_CLASS_SOURCE(ExplosionLaserBeamRenderer);
 

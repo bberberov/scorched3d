@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponTeleport.h>
-#include <engine/ActionController.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <actions/Teleport.h>
-#include <common/Defines.h>
+#include <weapons/WeaponTeleport.hpp>
+#include <engine/ActionController.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <actions/Teleport.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponTeleport);
 

@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TanketResign.h>
-#include <actions/Resurrection.h>
-#include <engine/ScorchedContext.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankTeamScore.h>
-#include <common/Defines.h>
-#include <common/ChannelManager.h>
-#include <common/OptionsScorched.h>
-#include <events/EventController.h>
-#include <lang/LangResource.h>
+#include <actions/TanketResign.hpp>
+#include <actions/Resurrection.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/OptionsScorched.hpp>
+#include <events/EventController.hpp>
+#include <lang/LangResource.hpp>
 
 TanketResign::TanketResign(unsigned int playerId, fixed resignTime, bool referenced) :
 	Action(referenced),

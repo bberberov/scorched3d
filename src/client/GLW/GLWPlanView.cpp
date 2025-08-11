@@ -18,32 +18,32 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWPlanView.h>
-#include <GLW/GLWTranslate.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
-#include <image/ImageFactory.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/MainCamera.h>
-#include <client/ClientLinesHandler.h>
-#include <landscape/Landscape.h>
-#include <landscape/LandscapePoints.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <common/Vector.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/OptionsTransient.h>
-#include <common/ToolTipResource.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsLinesMessage.h>
-#include <graph/OptionsDisplay.h>
-#include <lang/LangResource.h>
+#include <GLW/GLWPlanView.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <image/ImageFactory.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/MainCamera.hpp>
+#include <client/ClientLinesHandler.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscape/LandscapePoints.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <common/Vector.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/ToolTipResource.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsLinesMessage.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <lang/LangResource.hpp>
 #include <math.h>
 
 REGISTER_CLASS_SOURCE(GLWPlanView);

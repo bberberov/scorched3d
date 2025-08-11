@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLFont2dFreeType.h>
-#include <GLEXT/GLState.h>
-#include <common/Defines.h>
+#include <GLEXT/GLFont2dFreeType.hpp>
+#include <GLEXT/GLState.hpp>
+#include <common/Defines.hpp>
 
 // This Function Gets The First Power Of 2 >= The
 // Int That We Pass It.

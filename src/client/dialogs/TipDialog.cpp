@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/TipDialog.h>
-#include <graph/OptionsDisplay.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/TipDialog.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 TipDialog *TipDialog::instance_ = 0;
 

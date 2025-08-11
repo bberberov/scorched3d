@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/TutorialFile.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ScorchedClient.h>
-#include <common/OptionsTransient.h>
-#include <target/TargetContainer.h>
-#include <server/ServerSimulator.h>
-#include <server/ScorchedServer.h>
-#include <simactions/AdminSimAction.h>
+#include <graph/TutorialFile.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/OptionsTransient.hpp>
+#include <target/TargetContainer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ScorchedServer.hpp>
+#include <simactions/AdminSimAction.hpp>
 
 TutorialFileEntry *TutorialConditionWindowWait::checkCondition()
 {

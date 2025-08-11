@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponMuzzle.h>
+#include <weapons/WeaponMuzzle.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponMuzzle);
 

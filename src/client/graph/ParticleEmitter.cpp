@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
-#include <common/VectorLib.h>
-#include <graph/ParticleEmitter.h>
-#include <graph/ParticleTypes.h>
-#include <sprites/DebrisActionRenderer.h>
-#include <sprites/SmokeActionRenderer.h>
-#include <sprites/ExplosionTextures.h>
-#include <sprites/NapalmRenderer.h>
-#include <sprites/ExplosionNukeRenderer.h>
-#include <sprites/WallActionRenderer.h>
-#include <landscape/Landscape.h>
+#include <common/Defines.hpp>
+#include <common/VectorLib.hpp>
+#include <graph/ParticleEmitter.hpp>
+#include <graph/ParticleTypes.hpp>
+#include <sprites/DebrisActionRenderer.hpp>
+#include <sprites/SmokeActionRenderer.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <sprites/NapalmRenderer.hpp>
+#include <sprites/ExplosionNukeRenderer.hpp>
+#include <sprites/WallActionRenderer.hpp>
+#include <landscape/Landscape.hpp>
 #include <math.h>
 #include <stdlib.h>
 

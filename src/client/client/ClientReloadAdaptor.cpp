@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientReloadAdaptor.h>
-#include <client/ScorchedClient.h>
-#include <server/ScorchedServer.h>
-#include <landscape/LandscapeSoundManager.h>
-#include <landscape/LandscapeMusicManager.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <common/Logger.h>
+#include <client/ClientReloadAdaptor.hpp>
+#include <client/ScorchedClient.hpp>
+#include <server/ScorchedServer.hpp>
+#include <landscape/LandscapeSoundManager.hpp>
+#include <landscape/LandscapeMusicManager.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <common/Logger.hpp>
 
 ClientReloadAdaptor *ClientReloadAdaptor::instance_ = 0;
 

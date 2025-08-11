@@ -22,11 +22,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string>
-#include <common/DefinesScorched.h>
-#include <common/DefinesFile.h>
-#include <common/DefinesString.h>
-#include <common/DefinesAssert.h>
-#include <common/Logger.h>
+#include <common/DefinesScorched.hpp>
+#include <common/DefinesFile.hpp>
+#include <common/DefinesString.hpp>
+#include <common/DefinesAssert.hpp>
+#include <common/Logger.hpp>
 #include <cstring>
 
 #ifdef _WIN32

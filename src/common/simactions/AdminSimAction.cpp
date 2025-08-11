@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/AdminSimAction.h>
-#include <common/Logger.h>
-#include <common/OptionsTransient.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
+#include <simactions/AdminSimAction.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsTransient.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
 
 REGISTER_CLASS_SOURCE(AdminSimAction);
 

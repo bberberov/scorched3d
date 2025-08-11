@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerAuthHandlerForumLogin.h>
-#include <server/ScorchedServer.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <XML/XMLFile.h>
+#include <server/ServerAuthHandlerForumLogin.hpp>
+#include <server/ScorchedServer.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLFile.hpp>
 
 #ifdef HAVE_MYSQL
 

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsParameters.h>
-#include <common/Defines.h>
+#include <common/OptionsParameters.hpp>
+#include <common/Defines.hpp>
 
 OptionsParameters::OptionsParameters() :
 	settingsdir_(options_, "settingsdir",

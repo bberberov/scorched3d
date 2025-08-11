@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sound/Sound.h>
-#include <sound/SoundBufferFactory.h>
-#include <sound/SoundBufferEmpty.h>
-#include <sound/SoundBufferWav.h>
-#include <sound/SoundBufferOV.h>
-#include <common/Defines.h>
+#include <sound/Sound.hpp>
+#include <sound/SoundBufferFactory.hpp>
+#include <sound/SoundBufferEmpty.hpp>
+#include <sound/SoundBufferWav.hpp>
+#include <sound/SoundBufferOV.hpp>
+#include <common/Defines.hpp>
 
 SoundBuffer *SoundBufferFactory::createBuffer(const char *fileName)
 {

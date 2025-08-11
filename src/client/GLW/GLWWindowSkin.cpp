@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWWindowSkin.h>
-#include <GLW/GLWidget.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWToolTip.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWWindowSkin.hpp>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ScorchedClient.hpp>
 
 GLWWindowSkin::GLWWindowSkin() : 
 	GLWWindow("None", 0.0f, 0.0f,

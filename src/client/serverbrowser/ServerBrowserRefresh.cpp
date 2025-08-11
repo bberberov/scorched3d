@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLStringBuffer.h>
-#include <serverbrowser/ServerBrowserRefresh.h>
-#include <serverbrowser/ServerBrowser.h>
-#include <common/Defines.h>
+#include <XML/XMLStringBuffer.hpp>
+#include <serverbrowser/ServerBrowserRefresh.hpp>
+#include <serverbrowser/ServerBrowser.hpp>
+#include <common/Defines.hpp>
 #include <time.h>
 
 ServerBrowserRefreshEntry::ServerBrowserRefreshEntry() :

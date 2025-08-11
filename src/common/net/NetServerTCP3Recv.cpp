@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetServerTCP3Recv.h>
-#include <net/NetServerTCP3Coms.h>
-#include <net/NetMessagePool.h>
-#include <common/Logger.h>
+#include <net/NetServerTCP3Recv.hpp>
+#include <net/NetServerTCP3Coms.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/Logger.hpp>
 
 NetServerTCP3Recv::NetServerTCP3Recv(
 	TCPsocket socket,

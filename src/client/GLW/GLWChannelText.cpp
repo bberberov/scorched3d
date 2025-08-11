@@ -18,26 +18,26 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWChannelText.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWColors.h>
-#include <GLEXT/GLState.h>
-#include <image/ImageFactory.h>
-#include <XML/XMLParser.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientChannelManager.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankColorGenerator.h>
-#include <common/ToolTipResource.h>
-#include <common/Defines.h>
-#include <common/Keyboard.h>
-#include <common/OptionsScorched.h>
-#include <lang/LangResource.h>
-#include <lang/LangParam.h>
+#include <GLW/GLWChannelText.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWColors.hpp>
+#include <GLEXT/GLState.hpp>
+#include <image/ImageFactory.hpp>
+#include <XML/XMLParser.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <common/ToolTipResource.hpp>
+#include <common/Defines.hpp>
+#include <common/Keyboard.hpp>
+#include <common/OptionsScorched.hpp>
+#include <lang/LangResource.hpp>
+#include <lang/LangParam.hpp>
 
 std::list<ChannelText> GLWChannelText::lastMessages_;
 

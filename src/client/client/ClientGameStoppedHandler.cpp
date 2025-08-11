@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientGameStoppedHandler.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <GLW/GLWWindowManager.h>
-#include <coms/ComsGameStoppedMessage.h>
+#include <client/ClientGameStoppedHandler.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <coms/ComsGameStoppedMessage.hpp>
 
 ClientGameStoppedHandler *ClientGameStoppedHandler::instance_ = 0;
 

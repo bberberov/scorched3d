@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLDiff.h>
-#include <XML/XMLStringBuffer.h>
-#include <common/Defines.h>
+#include <XML/XMLDiff.hpp>
+#include <XML/XMLStringBuffer.hpp>
+#include <common/Defines.hpp>
 #include <stdlib.h>
 #include <stdio.h>
 

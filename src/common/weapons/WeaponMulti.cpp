@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponMulti.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
+#include <weapons/WeaponMulti.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponMulti);
 

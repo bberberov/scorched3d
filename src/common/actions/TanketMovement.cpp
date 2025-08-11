@@ -18,38 +18,38 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/TanketMovement.h>
-#include <actions/TargetFalling.h>
-#include <actions/ShotProjectile.h>
-#include <actions/CameraPositionAction.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <weapons/WeaponMoveTank.h>
-#include <weapons/AccessoryStore.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapemap/MovementMap.h>
-#include <landscapemap/DeformLandscape.h>
+#include <actions/TanketMovement.hpp>
+#include <actions/TargetFalling.hpp>
+#include <actions/ShotProjectile.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <weapons/WeaponMoveTank.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapemap/MovementMap.hpp>
+#include <landscapemap/DeformLandscape.hpp>
 #ifndef S3D_SERVER
-	#include <landscape/Smoke.h>
-	#include <landscape/Landscape.h>
-	#include <image/ImageStore.h>
-	#include <GLEXT/GLImageModifier.h>
-	#include <sound/Sound.h>
+	#include <landscape/Smoke.hpp>
+	#include <landscape/Landscape.hpp>
+	#include <image/ImageStore.hpp>
+	#include <GLEXT/GLImageModifier.hpp>
+	#include <sound/Sound.hpp>
 #endif
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankModelContainer.h>
-#include <tanket/TanketAccessories.h>
-#include <tank/TankViewPoints.h>
-#include <tank/TankModelStore.h>
-#include <target/TargetDamage.h>
-#include <target/TargetLife.h>
-#include <target/TargetState.h>
-#include <target/TargetSpace.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <tank/TankModelStore.hpp>
+#include <target/TargetDamage.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetSpace.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 
 static const int NoMovementTransitions = 4;
 

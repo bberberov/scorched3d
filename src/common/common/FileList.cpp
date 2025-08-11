@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
+#include <common/Defines.hpp>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -34,7 +34,7 @@
 #define WIN32_LEAN_AND_MEAN	
 #include <windows.h>
 #endif
-#include <common/FileList.h>
+#include <common/FileList.hpp>
 
 FileList::FileList(const std::string &directory, 
 				   const std::string &filter, 

@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWDropDownText.h>
-#include <GLW/GLWFont.h>
-#include <client/ScorchedClient.h>
+#include <GLW/GLWDropDownText.hpp>
+#include <GLW/GLWFont.hpp>
+#include <client/ScorchedClient.hpp>
 
 REGISTER_CLASS_SOURCE(GLWDropDownText);
 

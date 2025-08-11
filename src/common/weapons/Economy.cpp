@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/Economy.h>
+#include <weapons/Economy.hpp>
 
 Economy::Economy()
 {

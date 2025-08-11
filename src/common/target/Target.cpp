@@ -19,20 +19,20 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tankai/TankAIAdder.h>
-#include <target/Target.h>
-#include <target/TargetState.h>
-#include <target/TargetRenderer.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <target/TargetGroup.h>
-#include <XML/XmlNamedNetBuffer.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
+#include <tankai/TankAIAdder.hpp>
+#include <target/Target.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetRenderer.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetGroup.hpp>
+#include <XML/XmlNamedNetBuffer.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
 
 Target::Target(unsigned int playerId, const LangString &name, ScorchedContext &context) :
 	playerId_(playerId),

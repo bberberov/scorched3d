@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeDefinition.h>
-#include <coms/ComsLoadLevelMessage.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <engine/Simulator.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankTeamScore.h>
-#include <tankai/TankAIStore.h>
-#include <weapons/AccessoryStore.h>
-#include <server/ScorchedServer.h>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <coms/ComsLoadLevelMessage.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <engine/Simulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankTeamScore.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <server/ScorchedServer.hpp>
 #include <set>
 #ifndef S3D_SERVER
-#include <tankgraph/TargetRendererImplTank.h>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #endif
 
 ComsMessageType ComsLoadLevelMessage::ComsLoadLevelMessageType("ComsLoadLevelMessageType");

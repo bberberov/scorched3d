@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 #include <time.h>
 #include <math.h>
 

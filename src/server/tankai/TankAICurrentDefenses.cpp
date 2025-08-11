@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrentDefenses.h>
-#include <tank/Tank.h>
-#include <tanket/TanketAccessories.h>
-#include <weapons/Accessory.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <coms/ComsDefenseMessage.h>
-#include <simactions/TankDefenseSimAction.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <XML/XMLNode.h>
+#include <tankai/TankAICurrentDefenses.hpp>
+#include <tank/Tank.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <weapons/Accessory.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <coms/ComsDefenseMessage.hpp>
+#include <simactions/TankDefenseSimAction.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <XML/XMLNode.hpp>
 #include <stdlib.h>
 
 TankAICurrentDefenses::TankAICurrentDefenses()

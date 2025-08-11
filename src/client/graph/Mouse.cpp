@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLViewPort.h>
-#include <graph/Mouse.h>
-#include <graph/OptionsDisplay.h>
-#include <common/OptionsScorched.h>
-#include <client/ScorchedClient.h>
-#include <engine/GameState.h>
+#include <GLEXT/GLViewPort.hpp>
+#include <graph/Mouse.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/OptionsScorched.hpp>
+#include <client/ScorchedClient.hpp>
+#include <engine/GameState.hpp>
 
 Mouse *Mouse::instance_ = 0;
 

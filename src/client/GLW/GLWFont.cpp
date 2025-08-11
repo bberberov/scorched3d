@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWFont.h>
-#include <common/Defines.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <common/Logger.h>
+#include <GLW/GLWFont.hpp>
+#include <common/Defines.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <common/Logger.hpp>
 
 Vector GLWFont::widgetFontColor = Vector(0.2f, 0.2f, 0.2f);
 Vector GLWFont::disabledWidgetFontColor = Vector(0.4f, 0.4f, 0.4f);

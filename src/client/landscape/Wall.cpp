@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ScorchedClient.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscape/Wall.h>
-#include <sound/SoundUtils.h>
-#include <image/ImageFactory.h>
-#include <common/Defines.h>
+#include <client/ScorchedClient.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscape/Wall.hpp>
+#include <sound/SoundUtils.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/Defines.hpp>
 
 Wall::Wall() : texture_(ImageID(S3D::eModLocation,
 	"data/textures/bordershield/grid.bmp",

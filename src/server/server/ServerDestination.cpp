@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerDestination.h>
-#include <engine/ModFiles.h>
-#include <engine/ModFileEntryLoader.h>
+#include <server/ServerDestination.hpp>
+#include <engine/ModFiles.hpp>
+#include <engine/ModFileEntryLoader.hpp>
 
 ServerDestinationMod::ServerDestinationMod() :
 	readyToReceive_(true),

@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/Water2.h>
-#include <common/Vector.h>
-#include <common/Vector4.h>
-#include <common/Logger.h>
-#include <common/ProgressCounter.h>
-#include <common/OptionsTransient.h>
-#include <engine/Simulator.h>
-#include <client/ScorchedClient.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLStateExtension.h>
-#include <image/ImageFactory.h>
-#include <lang/LangResource.h>
-#include "ocean_wave_generator.h"
+#include <water/Water2.hpp>
+#include <common/Vector.hpp>
+#include <common/Vector4.hpp>
+#include <common/Logger.hpp>
+#include <common/ProgressCounter.hpp>
+#include <common/OptionsTransient.hpp>
+#include <engine/Simulator.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <image/ImageFactory.hpp>
+#include <lang/LangResource.hpp>
+#include "ocean_wave_generator.hpp"
 
-#include <water/Water2Constants.h>
+#include <water/Water2Constants.hpp>
 
 Water2::Water2()
 {

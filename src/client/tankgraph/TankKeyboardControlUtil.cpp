@@ -18,27 +18,27 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TankKeyboardControlUtil.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
-#include <tank/TankShotHistory.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketShotInfo.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <coms/ComsDefenseMessage.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Keyboard.h>
-#include <common/Line.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/MainCamera.h>
-#include <sound/Sound.h>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <coms/ComsDefenseMessage.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Line.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/MainCamera.hpp>
+#include <sound/Sound.hpp>
 
 VirtualSoundSource *TankKeyboardControlUtil::elevateSound_(0);
 VirtualSoundSource *TankKeyboardControlUtil::rotateSound_(0);

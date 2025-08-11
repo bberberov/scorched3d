@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "common/OptionsTransient.h"
-#include <GLW/GLWWindView.h>
-#include <client/ScorchedClient.h>
-#include <graph/MainCamera.h>
-#include <GLEXT/GLViewPort.h>
-#include <common/Defines.h>
-#include <engine/Simulator.h>
-#include <3dsparse/ModelStore.h>
-#include <graph/ModelRenderer.h>
-#include <graph/ModelRendererStore.h>
-#include <graph/ModelRendererSimulator.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <lang/LangResource.h>
-#include <sky/Sky.h>
+#include "common/OptionsTransient.hpp"
+#include <GLW/GLWWindView.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/MainCamera.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <common/Defines.hpp>
+#include <engine/Simulator.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <graph/ModelRenderer.hpp>
+#include <graph/ModelRendererStore.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <lang/LangResource.hpp>
+#include <sky/Sky.hpp>
 #include <math.h>
 
 REGISTER_CLASS_SOURCE(GLWWindView);

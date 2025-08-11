@@ -19,9 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>
-#include <landscape/Smoke.h>
-#include <client/ScorchedClient.h>
-#include <common/Defines.h>
+#include <landscape/Smoke.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/Defines.hpp>
 
 Smoke::Smoke()
 {

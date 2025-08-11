@@ -18,28 +18,28 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/FrameTimer.h>
-#include <graph/ParticleEngine.h>
-#include <graph/Main2DCamera.h>
-#include <graph/SpeedChange.h>
-#include <graph/MainCamera.h>
-#include <graph/ShotCountDown.h>
-#include <graph/SoftwareMouse.h>
-#include <client/ClientState.h>
-#include <client/ClientSaveScreenState.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientSimulator.h>
-#include <client/ClientProcessingLoop.h>
-#include <client/ClientDisconnected.h>
-#include <sound/Sound.h>
-#include <tankgraph/RenderTargets.h>
-#include <tankgraph/TankKeyboardControl.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWToolTip.h>
-#include <landscape/LandscapeStateHandler.h>
-#include <landscape/LandscapeMusicManager.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <console/ConsoleImpl.h>
+#include <graph/FrameTimer.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <graph/Main2DCamera.hpp>
+#include <graph/SpeedChange.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/ShotCountDown.hpp>
+#include <graph/SoftwareMouse.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientSaveScreenState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientSimulator.hpp>
+#include <client/ClientProcessingLoop.hpp>
+#include <client/ClientDisconnected.hpp>
+#include <sound/Sound.hpp>
+#include <tankgraph/RenderTargets.hpp>
+#include <tankgraph/TankKeyboardControl.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <landscape/LandscapeStateHandler.hpp>
+#include <landscape/LandscapeMusicManager.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <console/ConsoleImpl.hpp>
 
 void ClientState::addMandatoryComponents(GameState &gameState, unsigned state)
 {

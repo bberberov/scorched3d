@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ProfileDialog.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLState.h>
-#include <GLW/GLWFont.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/Main2DCamera.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/ModelRendererSimulator.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <sprites/ExplosionTextures.h>
-#include <XML/XMLNode.h>
+#include <dialogs/ProfileDialog.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLW/GLWFont.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/Main2DCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/ModelRendererSimulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <XML/XMLNode.hpp>
 
 const int INSET = 8;
 

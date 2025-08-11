@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientDialog.h>
-#include <client/LoadPNG.h>
-#include <graph/GLSetup.h>
-#include <graph/MainCamera.h>
-#include <graph/Main2DCamera.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/Display.h>
-#include <graph/Gamma.h>
-#include <client/ClientParams.h>
-#include <GLEXT/GLStateExtension.h>
-#include <common/OptionsTransient.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <client/ClientDialog.hpp>
+#include <client/LoadPNG.hpp>
+#include <graph/GLSetup.hpp>
+#include <graph/MainCamera.hpp>
+#include <graph/Main2DCamera.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/Display.hpp>
+#include <graph/Gamma.hpp>
+#include <client/ClientParams.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 #include <time.h>
 

@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <lang/LangResource.h>
+#include <lang/LangResource.hpp>
 
 LangString LangResource::getKey(const std::string &key, const std::string &value)
 {

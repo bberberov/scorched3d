@@ -20,14 +20,14 @@
 //
 //////////////////////////////////////////////////////////////////////////
 
-#include "fixed.h"
+#include "fixed.hpp"
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#include <common/DefinesAssert.h>
-#include <common/DefinesString.h>
-#include <common/Logger.h>
+#include <common/DefinesAssert.hpp>
+#include <common/DefinesString.hpp>
+#include <common/Logger.hpp>
 
 #define _XPI      31415 // 3.1415926535897932384626433832795
 fixed fixed::XPI = fixed(true,_XPI);

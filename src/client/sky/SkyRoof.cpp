@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sky/SkyRoof.h>
-#include <sky/Sky.h>
-#include <sky/Sun.h>
-#include <land/VisibilityPatchGrid.h>
-#include <landscape/Landscape.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <engine/ScorchedContext.h>
-#include <GLEXT/GLInfo.h>
-#include <GLEXT/GLStateExtension.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
+#include <sky/SkyRoof.hpp>
+#include <sky/Sky.hpp>
+#include <sky/Sun.hpp>
+#include <land/VisibilityPatchGrid.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <client/ScorchedClient.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 SkyRoof::SkyRoof() : list_(0), tris_(0)

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Vector4.h>
-#include <common/Defines.h>
+#include <common/Vector4.hpp>
+#include <common/Defines.hpp>
 
 // Some maths funnies taken from ODE
 #define _R(i,j) R[(i)*4+(j)]

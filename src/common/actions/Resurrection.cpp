@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/Resurrection.h>
-#include <engine/Simulator.h>
-#include <engine/ScorchedContext.h>
-#include <landscapemap/DeformLandscape.h>
-#include <placement/PlacementTankPosition.h>
-#include <common/ChannelManager.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
-#include <lang/LangResource.h>
+#include <actions/Resurrection.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <placement/PlacementTankPosition.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
+#include <lang/LangResource.hpp>
 
 Resurrection::Resurrection(
 	unsigned int playerId,

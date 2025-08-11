@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponLabel.h>
-#include <weapons/AccessoryStore.h>
+#include <weapons/WeaponLabel.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponLabel);
 

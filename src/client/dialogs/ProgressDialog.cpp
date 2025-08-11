@@ -18,30 +18,30 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ProgressDialog.h>
-#include <dialogs/BackdropDialog.h>
-#include <landscape/LandscapeMusicManager.h>
-#include <sound/Sound.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientChannelManager.h>
-#include <graph/Main2DCamera.h>
-#include <client/ClientMain.h>
-#include <client/ClientState.h>
-#include <client/ClientParams.h>
-#include <client/ClientProcessingLoop.h>
-#include <server/ScorchedServer.h>
-#include <engine/MainLoop.h>
-#include <common/OptionsScorched.h>
-#include <common/Clock.h>
-#include <common/Defines.h>
-#include <common/ChannelText.h>
-#include <lang/LangResource.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWColors.h>
-#include <lang/LangResource.h>
-#include <image/ImagePngFactory.h>
-#include <image/ImageFactory.h>
+#include <dialogs/ProgressDialog.hpp>
+#include <dialogs/BackdropDialog.hpp>
+#include <landscape/LandscapeMusicManager.hpp>
+#include <sound/Sound.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <graph/Main2DCamera.hpp>
+#include <client/ClientMain.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientProcessingLoop.hpp>
+#include <server/ScorchedServer.hpp>
+#include <engine/MainLoop.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Clock.hpp>
+#include <common/Defines.hpp>
+#include <common/ChannelText.hpp>
+#include <lang/LangResource.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWColors.hpp>
+#include <lang/LangResource.hpp>
+#include <image/ImagePngFactory.hpp>
+#include <image/ImageFactory.hpp>
 #include <math.h>
 #include <string.h>
 

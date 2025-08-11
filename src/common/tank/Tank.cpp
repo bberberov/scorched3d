@@ -19,25 +19,25 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tank/Tank.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tank/TankShotHistory.h>
-#include <tank/TankModelContainer.h>
-#include <tank/TankViewPoints.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankCamera.h>
-#include <tank/TankWeaponSwitcher.h>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIStore.h>
-#include <weapons/AccessoryStore.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <tank/Tank.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankShotHistory.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankCamera.hpp>
+#include <tank/TankWeaponSwitcher.hpp>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <algorithm>
 
 static TankWeaponSwitcher *weaponSwitcher = new TankWeaponSwitcher();

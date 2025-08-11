@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <water/WaterWaveDistance.h>
-#include <client/ScorchedClient.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <lang/LangResource.h>
-#include <common/ProgressCounter.h>
+#include <water/WaterWaveDistance.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <lang/LangResource.hpp>
+#include <common/ProgressCounter.hpp>
 
 WaterWaveDistance::WaterWaveDistance() : waveDistance_(0)
 {

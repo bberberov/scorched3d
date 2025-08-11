@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <image/ImageFactory.h>
-#include <sprites/WallActionRenderer.h>
-#include <engine/ScorchedContext.h>
-#include <client/ScorchedClient.h>
-#include <landscape/Wall.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
+#include <GLEXT/GLState.hpp>
+#include <image/ImageFactory.hpp>
+#include <sprites/WallActionRenderer.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscape/Wall.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
 
 GLTexture WallActionRenderer::texture_ = GLTexture();
 

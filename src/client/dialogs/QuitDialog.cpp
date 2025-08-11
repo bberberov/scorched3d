@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/QuitDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ClientParams.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <engine/MainLoop.h>
-#include <net/NetInterface.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <simactions/AdminSimAction.h>
+#include <dialogs/QuitDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <engine/MainLoop.hpp>
+#include <net/NetInterface.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <simactions/AdminSimAction.hpp>
 
 QuitDialog *QuitDialog::instance_ = 0;
 

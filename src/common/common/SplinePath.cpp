@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/SplinePath.h>
-#include <common/SplineCurve.h>
-#include <common/Defines.h>
+#include <common/SplinePath.hpp>
+#include <common/SplineCurve.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 SplinePath::SplinePath() : 
@@ -85,7 +85,7 @@ void SplinePath::getPathAttrs(FixedVector &position, FixedVector &direction)
 }
 
 #ifndef S3D_SERVER
-#include <GLEXT/GLState.h>
+#include <GLEXT/GLState.hpp>
 #endif
 
 void SplinePath::draw()

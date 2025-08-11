@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/MainMenuDialog.h>
+#include <dialogs/MainMenuDialog.hpp>
 
 MainMenuDialog *MainMenuDialog::instance_ = 0;
 

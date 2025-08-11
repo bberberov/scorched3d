@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "BuyAccessoryDialog.h"
-#include <dialogs/GiftMoneyDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIcon.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <coms/ComsMessageSender.h>
-#include <coms/ComsBuyAccessoryMessage.h>
-#include <weapons/AccessoryStore.h>
+#include "BuyAccessoryDialog.hpp"
+#include <dialogs/GiftMoneyDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIcon.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <coms/ComsBuyAccessoryMessage.hpp>
+#include <weapons/AccessoryStore.hpp>
 #include <stdio.h>
 
 BuyAccessoryDialog *BuyAccessoryDialog::instance_ = 0;

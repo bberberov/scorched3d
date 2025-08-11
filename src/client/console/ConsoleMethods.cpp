@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <console/ConsoleMethods.h>
-#include <console/ConsoleFileReader.h>
-#include <client/ScorchedClient.h>
-#include <engine/MainLoop.h>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <console/ConsoleMethods.hpp>
+#include <console/ConsoleFileReader.hpp>
+#include <client/ScorchedClient.hpp>
+#include <engine/MainLoop.hpp>
 
 ConsoleMethods::ConsoleMethods()
 {

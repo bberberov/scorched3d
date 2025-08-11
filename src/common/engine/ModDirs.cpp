@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/FileList.h>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/FileList.hpp>
 #include <stdio.h>
 
 ModDirs::ModDirs()

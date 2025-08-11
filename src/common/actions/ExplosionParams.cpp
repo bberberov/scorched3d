@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ExplosionParams.h>
-#include <lua/LUAUtil.h>
-#include <XML/XMLNode.h>
+#include <actions/ExplosionParams.hpp>
+#include <lua/LUAUtil.hpp>
+#include <XML/XMLNode.hpp>
 
 ExplosionParams::ExplosionParams() :
 	size_(1),

@@ -18,26 +18,26 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/PlayerInGameDialog.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketType.h>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankModelContainer.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankColorGenerator.h>
-#include <tankai/TankAI.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <graph/OptionsDisplay.h>
-#include <common/OptionsGame.h>
-#include <common/OptionsTransient.h>
-#include <common/Logger.h>
-#include <lang/LangResource.h>
-#include <coms/ComsTankChangeMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <client/ClientChannelManager.h>
-#include <GLW/GLWWindowManager.h>
+#include <dialogs/PlayerInGameDialog.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketType.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tankai/TankAI.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/OptionsGame.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Logger.hpp>
+#include <lang/LangResource.hpp>
+#include <coms/ComsTankChangeMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <GLW/GLWWindowManager.hpp>
 
 PlayerInGameDialog *PlayerInGameDialog::instance()
 {

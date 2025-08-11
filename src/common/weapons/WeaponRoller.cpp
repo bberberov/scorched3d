@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponRoller.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Shield.h>
-#include <actions/ShotBounce.h>
-#include <common/Defines.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <target/Target.h>
-#include <target/TargetContainer.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <weapons/WeaponRoller.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Shield.hpp>
+#include <actions/ShotBounce.hpp>
+#include <common/Defines.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <target/Target.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <math.h>
 
 REGISTER_ACCESSORY_SOURCE(WeaponRoller);

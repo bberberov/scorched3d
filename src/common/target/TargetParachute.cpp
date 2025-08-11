@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <target/TargetParachute.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
+#include <target/TargetParachute.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 TargetParachute::TargetParachute(ScorchedContext &context) :
 	context_(context),

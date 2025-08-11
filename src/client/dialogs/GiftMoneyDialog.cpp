@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/GiftMoneyDialog.h>
-#include <graph/OptionsDisplay.h>
-#include <client/ScorchedClient.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <coms/ComsGiftMoneyMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <dialogs/GiftMoneyDialog.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <client/ScorchedClient.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <coms/ComsGiftMoneyMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 GiftMoneyDialog *GiftMoneyDialog::instance_ = 0;
 

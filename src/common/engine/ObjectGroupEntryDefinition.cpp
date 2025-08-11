@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ObjectGroupEntryDefinition.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ObjectGroups.h>
+#include <engine/ObjectGroupEntryDefinition.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ObjectGroups.hpp>
 
 ObjectGroupEntryDefinition::ObjectGroupEntryDefinition()
 {

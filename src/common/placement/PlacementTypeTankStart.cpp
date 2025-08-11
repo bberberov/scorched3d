@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementTypeTankStart.h>
-#include <placement/PlacementTankPosition.h>
-#include <engine/ScorchedContext.h>
-#include <common/ProgressCounter.h>
-#include <common/RandomGenerator.h>
-#include <common/Defines.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementTypeTankStart.hpp>
+#include <placement/PlacementTankPosition.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/ProgressCounter.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementTypeTankStart::PlacementTypeTankStart() : mincloseness(0)
 {

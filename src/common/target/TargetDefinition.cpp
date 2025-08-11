@@ -18,27 +18,27 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/AccessoryStore.h>
-#include <common/RandomGenerator.h>
-#include <common/DefinesAssert.h>
+#include <weapons/AccessoryStore.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/DefinesAssert.hpp>
 #ifndef S3D_SERVER
-	#include <tankgraph/TargetRendererImplTarget.h>
+	#include <tankgraph/TargetRendererImplTarget.hpp>
 #endif
-#include <tanket/Tanket.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetDefinition.h>
-#include <target/TargetLife.h>
-#include <target/TargetShield.h>
-#include <target/TargetGroup.h>
-#include <target/TargetParachute.h>
-#include <target/TargetState.h>
-#include <target/TargetContainer.h>
-#include <tankai/TankAIStore.h>
-#include <server/ScorchedServer.h>
-#include <3dsparse/ModelStore.h>
-#include <3dsparse/Model.h>
-#include <common/Defines.h>
-#include <XML/XMLNode.h>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetDefinition.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetGroup.hpp>
+#include <target/TargetParachute.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetContainer.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <server/ScorchedServer.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <3dsparse/Model.hpp>
+#include <common/Defines.hpp>
+#include <XML/XMLNode.hpp>
 
 TargetDefinition::TargetDefinition() :
 	life_(1),

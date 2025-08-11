@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <GLW/GLWTab.h>
+#include <GLEXT/GLState.hpp>
+#include <GLW/GLWTab.hpp>
 
 static const float tabRoundSize = 10.0f;
 static const float tabHeight = 20.0f;

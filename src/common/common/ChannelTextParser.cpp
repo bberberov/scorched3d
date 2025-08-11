@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ChannelTextParser.h>
-#include <engine/ScorchedContext.h>
-#include <weapons/AccessoryStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <lang/LangResource.h>
+#include <common/ChannelTextParser.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <lang/LangResource.hpp>
 
 ChannelTextParser::ChannelTextParser()
 {

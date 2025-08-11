@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/DeformTextures.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <GLEXT/GLImageModifier.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLStateExtension.h>
-#include <common/Defines.h>
+#include <landscape/DeformTextures.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <client/ScorchedClient.hpp>
+#include <GLEXT/GLImageModifier.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 void DeformTextures::deformLandscape(Vector &pos, float radius, 

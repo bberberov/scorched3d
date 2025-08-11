@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <land/VisibilityPatchQuad.h>
-#include <land/VisibilityPatchGrid.h>
-#include <GLEXT/GLCameraFrustum.h>
+#include <land/VisibilityPatchQuad.hpp>
+#include <land/VisibilityPatchGrid.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
 
 VisibilityPatchQuad::VisibilityPatchQuad() :
 	landVisibilityPatch_(nullptr),

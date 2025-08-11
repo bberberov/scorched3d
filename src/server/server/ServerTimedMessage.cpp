@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
-#include <server/ServerTimedMessage.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerCommon.h>
-#include <server/ScorchedServer.h>
-#include <engine/GameState.h>
-#include <XML/XMLFile.h>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
+#include <server/ServerTimedMessage.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ScorchedServer.hpp>
+#include <engine/GameState.hpp>
+#include <XML/XMLFile.hpp>
 #include <time.h>
 
 ServerTimedMessage::ServerTimedMessage() :

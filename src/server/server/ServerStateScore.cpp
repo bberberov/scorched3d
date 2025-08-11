@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateScore.h>
-#include <server/ServerStateEnoughPlayers.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerSyncCheck.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <simactions/ShowScoreSimAction.h>
-#include <lua/LUAScriptHook.h>
+#include <server/ServerStateScore.hpp>
+#include <server/ServerStateEnoughPlayers.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerSyncCheck.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <simactions/ShowScoreSimAction.hpp>
+#include <lua/LUAScriptHook.hpp>
 
 ServerStateScore::ServerStateScore()
 {

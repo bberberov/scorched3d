@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "LUAUtil.h"
-#include <common/Logger.h>
+#include "LUAUtil.hpp"
+#include <common/Logger.hpp>
 
 void LUAUtil::addVectorToStack(lua_State *L, const FixedVector &vector)
 {

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLVertexBufferObject.h>
-#include <GLEXT/GLStateExtension.h>
-#include <common/DefinesAssert.h>
-#include <common/Logger.h>
+#include <GLEXT/GLVertexBufferObject.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <common/DefinesAssert.hpp>
+#include <common/Logger.hpp>
 
 GLVertexBufferObject::GLVertexBufferObject(bool indexbuffer) :
 	id_(0), size_(0), mapped_(false),

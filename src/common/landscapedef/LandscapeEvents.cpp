@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeEvents.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <engine/ObjectGroupEntry.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroup.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Logger.h>
-#include <XML/XMLNode.h>
+#include <landscapedef/LandscapeEvents.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Logger.hpp>
+#include <XML/XMLNode.hpp>
 
 LandscapeCondition::~LandscapeCondition()
 {}

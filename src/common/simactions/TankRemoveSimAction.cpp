@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankRemoveSimAction.h>
-#include <engine/ActionController.h>
-#include <engine/ScorchedContext.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <tankai/TankAINone.h>
-#include <actions/TankRemove.h>
+#include <simactions/TankRemoveSimAction.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <tankai/TankAINone.hpp>
+#include <actions/TankRemove.hpp>
 
 unsigned int TankRemoveSimAction::TankRemoveSimActionCount = 0;
 

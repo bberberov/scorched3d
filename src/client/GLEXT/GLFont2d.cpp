@@ -19,11 +19,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h> 
-#include <GLEXT/GLFont2d.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLTextureBase.h>
-#include <GLEXT/GLFont2dFreeType.h>
-#include <common/Defines.h>
+#include <GLEXT/GLFont2d.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLTextureBase.hpp>
+#include <GLEXT/GLFont2dFreeType.hpp>
+#include <common/Defines.hpp>
 
 unsigned int GLFont2d::totalCharacters_(0);
 

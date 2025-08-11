@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sound/SoundListener.h>
-#include <sound/Sound.h>
+#include <sound/SoundListener.hpp>
+#include <sound/Sound.hpp>
 #ifdef __DARWIN__
 #include <OpenAL/al.h>
 #else

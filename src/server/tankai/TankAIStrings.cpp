@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAIStrings.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
+#include <tankai/TankAIStrings.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
 
 TankAIStrings::TankAIStrings() :
 	playerNamesCounter_(0),

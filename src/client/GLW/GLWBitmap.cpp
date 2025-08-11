@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWBitmap.h>
-#include <GLEXT/GLState.h>
-#include <common/Defines.h>
+#include <GLW/GLWBitmap.hpp>
+#include <GLEXT/GLState.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_CLASS_SOURCE(GLWBitmap);
 

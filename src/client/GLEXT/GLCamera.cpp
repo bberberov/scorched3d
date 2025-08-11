@@ -20,10 +20,10 @@
 
 #include <math.h>
 #include <stdlib.h>
-#include <common/Defines.h>
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLCamera.h>
-#include <GLEXT/GLViewPort.h>
+#include <common/Defines.hpp>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLCamera.hpp>
+#include <GLEXT/GLViewPort.hpp>
 
 GLCamera *GLCamera::currentCamera_ = 0;
 

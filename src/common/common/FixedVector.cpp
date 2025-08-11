@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/FixedVector.h>
+#include <common/FixedVector.hpp>
 
 static FixedVector nullVector;
 static FixedVector minVector, maxVector;

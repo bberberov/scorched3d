@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/ImageStore.h>
-#include <image/ImageFactory.h>
-#include <common/Defines.h>
+#include <image/ImageStore.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/Defines.hpp>
 
 ImageStore *ImageStore::instance_ = 0;
 

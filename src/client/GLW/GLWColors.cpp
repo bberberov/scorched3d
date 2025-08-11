@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWColors.h>
+#include <GLW/GLWColors.hpp>
 
 Vector GLWColors::black = Vector(0.0f, 0.0f, 0.0f);
 Vector GLWColors::white = Vector(1.0f, 1.0f, 1.0f);

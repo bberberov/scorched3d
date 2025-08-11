@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/Laser.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Shield.h>
-#include <actions/ShieldHit.h>
-#include <target/TargetDamage.h>
-#include <target/TargetContainer.h>
-#include <target/TargetShield.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <actions/Laser.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Shield.hpp>
+#include <actions/ShieldHit.hpp>
+#include <target/TargetDamage.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
-	#include <GLEXT/GLState.h>
-	#include <sprites/ExplosionTextures.h>
+	#include <GLEXT/GLState.hpp>
+	#include <sprites/ExplosionTextures.hpp>
 #endif
 #include <math.h>
 #include <set>

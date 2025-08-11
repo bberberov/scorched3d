@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementShadowDefinition.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/DeformLandscape.h>
-#include <common/Defines.h>
-#include <engine/ScorchedContext.h>
-#include <image/ImageStore.h>
+#include <placement/PlacementShadowDefinition.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <common/Defines.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <image/ImageStore.hpp>
 
 PlacementShadowDefinition::PlacementShadowDefinition() :
 	drawShadow_(true), flattenArea_(0)
@@ -66,7 +66,7 @@ void PlacementShadowDefinition::updateLandscapeHeight(
 
 #ifndef S3D_SERVER
 
-#include <GLEXT/GLImageModifier.h>
+#include <GLEXT/GLImageModifier.hpp>
 void PlacementShadowDefinition::updateLandscapeTexture(
 	bool useShadows,
 	ScorchedContext &context,

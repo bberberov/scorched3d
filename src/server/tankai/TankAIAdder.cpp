@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/Tank.h>
-#include <tankai/TankAIAdder.h>
-#include <events/EventHandlerDataBase.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <server/ServerConnectAuthHandler.h>
+#include <tank/Tank.hpp>
+#include <tankai/TankAIAdder.hpp>
+#include <events/EventHandlerDataBase.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <server/ServerConnectAuthHandler.hpp>
 
 unsigned int TankAIAdder::getNextTankId(const char *uniqueId, ScorchedContext &context, std::set<unsigned int> &takenPlayerIds)
 {

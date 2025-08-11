@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientConnectionRejectHandler.h>
-#include <client/ScorchedClient.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <lang/LangResource.h>
-#include <coms/ComsConnectRejectMessage.h>
-#include <common/Logger.h>
+#include <client/ClientConnectionRejectHandler.hpp>
+#include <client/ScorchedClient.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <lang/LangResource.hpp>
+#include <coms/ComsConnectRejectMessage.hpp>
+#include <common/Logger.hpp>
 
 ClientConnectionRejectHandler *ClientConnectionRejectHandler::instance_ = 0;
 

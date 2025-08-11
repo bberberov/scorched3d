@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/ModSubSelectDialog.h>
-#include <dialogs/ModSelectDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
-#include <client/ClientParams.h>
-#include <client/ClientMain.h>
-#include <engine/ModDirs.h>
-#include <common/Defines.h>
+#include <dialogs/ModSubSelectDialog.hpp>
+#include <dialogs/ModSelectDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientMain.hpp>
+#include <engine/ModDirs.hpp>
+#include <common/Defines.hpp>
 
 GLWIconListSubModItem::GLWIconListSubModItem(ModInfo::MenuEntry &modInfoEntry) :
 	modInfoEntry_(modInfoEntry),

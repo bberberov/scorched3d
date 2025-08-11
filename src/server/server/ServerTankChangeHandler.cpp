@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerTankChangeHandler.h>
-#include <server/ServerConnectHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <server/ServerTextFilter.h>
-#include <server/ServerAuthHandler.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/Defines.h>
-#include <coms/ComsTankChangeMessage.h>
-#include <simactions/TankChangeSimAction.h>
-#include <tankai/TankAIStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <tank/TankModelStore.h>
+#include <server/ServerTankChangeHandler.hpp>
+#include <server/ServerConnectHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerTextFilter.hpp>
+#include <server/ServerAuthHandler.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsTankChangeMessage.hpp>
+#include <simactions/TankChangeSimAction.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankModelStore.hpp>
 
 ServerTankChangeHandler::ServerTankChangeHandler(ComsMessageHandler &comsMessageHandler)
 {

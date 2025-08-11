@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientDisconnected.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientSimulator.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <server/ScorchedServer.h>
-#include <engine/GameState.h>
-#include <dialogs/AnimatedBackdropDialog.h>
+#include <client/ClientDisconnected.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientSimulator.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <server/ScorchedServer.hpp>
+#include <engine/GameState.hpp>
+#include <dialogs/AnimatedBackdropDialog.hpp>
 
 ClientDisconnected::ClientDisconnected() : GameStateI("ClientDisconnected")
 {

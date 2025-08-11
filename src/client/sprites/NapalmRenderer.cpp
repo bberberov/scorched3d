@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/NapalmRenderer.h>
-#include <sprites/ExplosionTextures.h>
-#include <client/ScorchedClient.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <common/Defines.h>
+#include <sprites/NapalmRenderer.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <client/ScorchedClient.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <common/Defines.hpp>
 
 NapalmRenderer::NapalmRenderer(GLTextureSet *set) : 
 	textureNo_(0.0f), set_(set)

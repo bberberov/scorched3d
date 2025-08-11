@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/GameStateI.h>
+#include <engine/GameStateI.hpp>
 
 std::vector<std::string> GameStateI::perfCounterNames_;
 

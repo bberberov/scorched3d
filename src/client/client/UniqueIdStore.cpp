@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/UniqueIdStore.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <graph/OptionsDisplay.h>
-#include <net/NetInterface.h>
-#include <XML/XMLFile.h>
+#include <client/UniqueIdStore.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <net/NetInterface.hpp>
+#include <XML/XMLFile.hpp>
 #include <stdlib.h>
 
 UniqueIdStore::UniqueIdStore()

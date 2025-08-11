@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/RollingAverage.h>
+#include <common/RollingAverage.hpp>
 
 RollingAverage::RollingAverage(int numberAverages, fixed startValue) :
 	numberAverages_(numberAverages)

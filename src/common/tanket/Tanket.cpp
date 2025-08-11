@@ -19,17 +19,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketType.h>
-#include <tanket/TanketTypes.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/TanketShotInfo.h>
-#include <tankai/TankAI.h>
-#include <tankai/TankAIStore.h>
-#include <target/TargetLife.h>
-#include <engine/ScorchedContext.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketType.hpp>
+#include <tanket/TanketTypes.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <tankai/TankAI.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <target/TargetLife.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 
 Tanket::Tanket(ScorchedContext &context, 
 		unsigned int playerId, 

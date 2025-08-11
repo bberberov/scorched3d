@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/Particle.h>
+#include <graph/Particle.hpp>
 
 Particle::Particle() :
 	life_(-1.0f),

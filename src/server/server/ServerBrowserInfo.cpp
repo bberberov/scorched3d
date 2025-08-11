@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerBrowserInfo.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <net/NetInterface.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
+#include <server/ServerBrowserInfo.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <net/NetInterface.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
 #include <string.h>
 
 ServerBrowserInfo *ServerBrowserInfo::instance_ = 0;

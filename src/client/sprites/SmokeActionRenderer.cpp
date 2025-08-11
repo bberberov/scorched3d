@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/SmokeActionRenderer.h>
-#include <landscape/Landscape.h>
+#include <sprites/SmokeActionRenderer.hpp>
+#include <landscape/Landscape.hpp>
 
 SmokeActionRenderer::SmokeActionRenderer() : counter_(0.1f, 0.1f)
 {

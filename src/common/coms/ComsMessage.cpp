@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsMessage.h>
+#include <coms/ComsMessage.hpp>
 #include <map>
 #include <vector>
 

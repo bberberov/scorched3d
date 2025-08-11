@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAICurrent.h>
-#include <tanket/TanketAccessories.h>
-#include <tanket/Tanket.h>
-#include <target/TargetContainer.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
-#include <common/OptionsTransient.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <XML/XMLNode.h>
+#include <tankai/TankAICurrent.hpp>
+#include <tanket/TanketAccessories.hpp>
+#include <tanket/Tanket.hpp>
+#include <target/TargetContainer.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
+#include <common/OptionsTransient.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <XML/XMLNode.hpp>
 
 TankAICurrent::TankAICurrent() : tanket_(0)
 {

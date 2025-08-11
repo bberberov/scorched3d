@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <geomipmap/MipMapPatchIndex.h>
-#include <common/DefinesAssert.h>
+#include <geomipmap/MipMapPatchIndex.hpp>
+#include <common/DefinesAssert.hpp>
 #include <limits.h>
 #include <vector>
 

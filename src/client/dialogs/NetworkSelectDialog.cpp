@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/NetworkSelectDialog.h>
-#include <dialogs/MsgBoxDialog.h>
-#include <dialogs/NetworkChatDialog.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
-#include <GLW/GLWPanel.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLEXT/GLTextureStore.h>
-#include <serverbrowser/ServerBrowser.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <client/ClientMain.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <dialogs/NetworkSelectDialog.hpp>
+#include <dialogs/MsgBoxDialog.hpp>
+#include <dialogs/NetworkChatDialog.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLEXT/GLTextureStore.hpp>
+#include <serverbrowser/ServerBrowser.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientMain.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 
 struct ColumnInfo
 {

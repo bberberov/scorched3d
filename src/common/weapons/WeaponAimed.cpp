@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponAimed.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/Simulator.h>
-#include <engine/ObjectGroups.h>
-#include <engine/ObjectGroup.h>
-#include <engine/ObjectGroupEntry.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <tank/TankLib.h>
-#include <tanket/Tanket.h>
-#include <target/TargetContainer.h>
-#include <target/TargetLife.h>
-#include <common/Defines.h>
-#include <common/OptionsTransient.h>
+#include <weapons/WeaponAimed.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/Simulator.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <engine/ObjectGroupEntry.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <tank/TankLib.hpp>
+#include <tanket/Tanket.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetLife.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsTransient.hpp>
 #include <list>
 #include <map>
 #include <math.h>

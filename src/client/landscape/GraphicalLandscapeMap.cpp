@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/GraphicalLandscapeMap.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLVertexBufferObject.h>
+#include <landscape/GraphicalLandscapeMap.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLVertexBufferObject.hpp>
 
 GraphicalLandscapeMap::GraphicalLandscapeMap() :
 	heightData_(nullptr),

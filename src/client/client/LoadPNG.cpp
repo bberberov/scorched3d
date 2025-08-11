@@ -1,4 +1,4 @@
-#include <client/LoadPNG.h>
+#include <client/LoadPNG.hpp>
 #include <png.h>
 
 /* Load a PNG type image from an SDL datasource */

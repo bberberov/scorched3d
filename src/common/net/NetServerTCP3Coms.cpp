@@ -25,8 +25,8 @@
 #else
 #include <errno.h>
 #endif
-#include <common/Logger.h>
-#include <net/NetServerTCP3Coms.h>
+#include <common/Logger.hpp>
+#include <net/NetServerTCP3Coms.hpp>
 
 int NetServerTCP3Coms::SDLNet_TCP_Recv_Wrapper(TCPsocket sock, void *data, int maxlen)
 {

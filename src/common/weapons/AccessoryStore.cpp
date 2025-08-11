@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLFile.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/Weapon.h>
-#include <lang/LangResource.h>
+#include <XML/XMLFile.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/Weapon.hpp>
+#include <lang/LangResource.hpp>
 #include <math.h>
 #include <stdio.h>
 

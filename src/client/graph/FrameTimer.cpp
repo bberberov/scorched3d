@@ -19,12 +19,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include <graph/FrameTimer.h>
-#include <client/ClientChannelManager.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLInfo.h>
-#include <GLEXT/GLTexture.h>
-#include <lang/LangResource.h>
+#include <graph/FrameTimer.hpp>
+#include <client/ClientChannelManager.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <lang/LangResource.hpp>
 
 FrameTimer *FrameTimer::instance_ = 0;
 

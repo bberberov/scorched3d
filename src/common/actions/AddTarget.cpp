@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/AddTarget.h>
-#include <engine/ActionController.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <target/Target.h>
-#include <target/TargetContainer.h>
-#include <target/TargetDamageCalc.h>
-#include <tankai/TankAIAdder.h>
-#include <weapons/AccessoryStore.h>
-#include <weapons/WeaponAddTarget.h>
-#include <weapons/Shield.h>
-#include <common/RandomGenerator.h>
-#include <common/OptionsScorched.h>
+#include <actions/AddTarget.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <target/Target.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetDamageCalc.hpp>
+#include <tankai/TankAIAdder.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <weapons/WeaponAddTarget.hpp>
+#include <weapons/Shield.hpp>
+#include <common/RandomGenerator.hpp>
+#include <common/OptionsScorched.hpp>
 
 AddTarget::AddTarget(FixedVector &position,
 	WeaponAddTarget *addTarget) :

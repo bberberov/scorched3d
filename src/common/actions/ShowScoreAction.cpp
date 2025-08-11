@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ShowScoreAction.h>
-#include <engine/ScorchedContext.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <common/Logger.h>
+#include <actions/ShowScoreAction.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <common/Logger.hpp>
 #ifndef S3D_SERVER
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <client/ClientSaveScreenState.h>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <client/ClientSaveScreenState.hpp>
 #endif
 
 bool ShowScoreAction::finalScoreStatic_ = false;

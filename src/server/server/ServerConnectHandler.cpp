@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerConnectHandler.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerAuthHandler.h>
-#include <server/ServerBanned.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <target/TargetContainer.h>
-#include <coms/ComsConnectAuthMessage.h>
-#include <coms/ComsConnectMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <server/ServerConnectHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerAuthHandler.hpp>
+#include <server/ServerBanned.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <target/TargetContainer.hpp>
+#include <coms/ComsConnectAuthMessage.hpp>
+#include <coms/ComsConnectMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 ServerConnectHandler::ServerConnectHandler(ComsMessageHandler &comsMessageHandler)
 {

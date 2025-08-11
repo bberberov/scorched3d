@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankai/TankAISniperGuesser.h>
-#include <tank/TankLib.h>
-#include <tanket/Tanket.h>
-#include <tanket/TanketShotInfo.h>
-#include <target/TargetLife.h>
-#include <server/ScorchedServer.h>
-#include <common/Logger.h>
-#include <common/RandomGenerator.h>
+#include <tankai/TankAISniperGuesser.hpp>
+#include <tank/TankLib.hpp>
+#include <tanket/Tanket.hpp>
+#include <tanket/TanketShotInfo.hpp>
+#include <target/TargetLife.hpp>
+#include <server/ScorchedServer.hpp>
+#include <common/Logger.hpp>
+#include <common/RandomGenerator.hpp>
 
 TankAISniperGuesser::TankAISniperGuesser()
 {

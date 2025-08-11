@@ -19,10 +19,7 @@ AC_PROG_INSTALL
 AC_PROG_RANLIB
 
 dnl Run once before any other pkg-config or pkgconf PKG_* macros
-PKG_PROG_PKG_CONFIG(
-	[0.29],
-	[AC_MSG_ERROR([must install pkg-config 0.29 or later])]
-)
+PKG_PROG_PKG_CONFIG([0.29])
 
 AC_MSG_CHECKING([beer in fridge])
 AC_MSG_RESULT([Hmm?!])

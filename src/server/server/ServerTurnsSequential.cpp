@@ -18,19 +18,19 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerTurnsSequential.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <common/OptionsGame.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <simactions/PlayMovesSimAction.h>
-#include <simactions/TankStopMoveSimAction.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <tank/TankSort.h>
-#include <tanket/Tanket.h>
-#include <target/TargetContainer.h>
-#include <tanket/TanketShotInfo.h>
+#include <server/ServerTurnsSequential.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <common/OptionsGame.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <simactions/PlayMovesSimAction.hpp>
+#include <simactions/TankStopMoveSimAction.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <tank/TankSort.hpp>
+#include <tanket/Tanket.hpp>
+#include <target/TargetContainer.hpp>
+#include <tanket/TanketShotInfo.hpp>
 #include <list>
 
 ServerTurnsSequential::ServerTurnsSequential() :

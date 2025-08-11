@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWDragger.h>
-#include <GLEXT/GLState.h>
-#include <common/Keyboard.h>
-#include <common/ToolTip.h>
-#include <client/ScorchedClient.h>
-#include <target/TargetContainer.h>
-#include <tank/TankState.h>
+#include <GLW/GLWDragger.hpp>
+#include <GLEXT/GLState.hpp>
+#include <common/Keyboard.hpp>
+#include <common/ToolTip.hpp>
+#include <client/ScorchedClient.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankState.hpp>
 
 REGISTER_CLASS_SOURCE(GLWDragger);
 

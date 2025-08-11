@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AdminAuthDialog.h>
-#include <dialogs/AdminDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <client/ClientAdminResultHandler.h>
-#include <coms/ComsAdminMessage.h>
-#include <coms/ComsMessageSender.h>
+#include <dialogs/AdminAuthDialog.hpp>
+#include <dialogs/AdminDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <client/ClientAdminResultHandler.hpp>
+#include <coms/ComsAdminMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
 
 AdminAuthDialog *AdminAuthDialog::instance_ = 0;
 

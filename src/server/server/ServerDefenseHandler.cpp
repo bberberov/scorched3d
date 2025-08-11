@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerDefenseHandler.h>
-#include <server/ServerState.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <simactions/TankDefenseSimAction.h>
-#include <tank/Tank.h>
-#include <target/TargetContainer.h>
-#include <common/Logger.h>
+#include <server/ServerDefenseHandler.hpp>
+#include <server/ServerState.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <simactions/TankDefenseSimAction.hpp>
+#include <tank/Tank.hpp>
+#include <target/TargetContainer.hpp>
+#include <common/Logger.hpp>
 
 ServerDefenseHandler::ServerDefenseHandler(ComsMessageHandler &comsMessageHandler)
 {

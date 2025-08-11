@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <3dsparse/MSModelFactory.h>
-#include <common/Defines.h>
+#include <3dsparse/MSModelFactory.hpp>
+#include <common/Defines.hpp>
 #include <cstring>
 
 MSModelFactory::MSModelFactory() : lineNo_(0)

@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/ShotBounce.h>
-#include <actions/CameraPositionAction.h>
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <weapons/WeaponRoller.h>
-#include <weapons/AccessoryStore.h>
-#include <common/OptionsScorched.h>
-#include <tank/TankViewPoints.h>
+#include <actions/ShotBounce.hpp>
+#include <actions/CameraPositionAction.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <weapons/WeaponRoller.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/OptionsScorched.hpp>
+#include <tank/TankViewPoints.hpp>
 #ifndef S3D_SERVER
-	#include <GLEXT/GLState.h>
-	#include <graph/ModelRenderer.h>
-	#include <graph/ModelRendererStore.h>
-	#include <graph/ModelRendererSimulator.h>
+	#include <GLEXT/GLState.hpp>
+	#include <graph/ModelRenderer.hpp>
+	#include <graph/ModelRendererStore.hpp>
+	#include <graph/ModelRendererSimulator.hpp>
 #endif
-#include <3dsparse/Model.h>
+#include <3dsparse/Model.hpp>
 #include <string.h>
 
 ShotBounce::ShotBounce(

@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsSyncCheckMessage.h>
-#include <common/Logger.h>
-#include <common/OptionsTransient.h>
-#include <engine/Simulator.h>
+#include <coms/ComsSyncCheckMessage.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsTransient.hpp>
+#include <engine/Simulator.hpp>
 #ifndef S3D_SERVER
-	#include <client/ScorchedClient.h>
+	#include <client/ScorchedClient.hpp>
 #endif
-#include <server/ScorchedServer.h>
-#include <target/TargetContainer.h>
-#include <target/TargetState.h>
-#include <target/TargetLife.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/Tank.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <server/ScorchedServer.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetLife.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/Tank.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <set>
 
 ComsMessageType ComsSyncCheckMessage::ComsSyncCheckMessageType("ComsSyncCheckMessageType");

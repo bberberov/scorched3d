@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>
-#include <common/Counter.h>
-#include <common/Defines.h>
+#include <common/Counter.hpp>
+#include <common/Defines.hpp>
 
 Counter::Counter(float minTime, float timeDiff) :
 	minTime_(minTime),

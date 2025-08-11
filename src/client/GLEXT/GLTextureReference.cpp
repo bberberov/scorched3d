@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLTextureReference.h>
-#include <GLEXT/GLTextureStore.h>
-#include <image/ImageFactory.h>
-#include <GLEXT/GLTexture.h>
+#include <GLEXT/GLTextureReference.hpp>
+#include <GLEXT/GLTextureStore.hpp>
+#include <image/ImageFactory.hpp>
+#include <GLEXT/GLTexture.hpp>
 
 GLTextureReference::GLTextureReference() :
 	data_(0)

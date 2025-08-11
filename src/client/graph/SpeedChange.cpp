@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/SpeedChange.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <server/ScorchedServer.h>
-#include <common/Keyboard.h>
-#include <common/Defines.h>
-#include <client/ClientParams.h>
-#include <engine/Simulator.h>
-#include <graph/ParticleEngine.h>
-#include <GLW/GLWFont.h>
+#include <graph/SpeedChange.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <server/ScorchedServer.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Defines.hpp>
+#include <client/ClientParams.hpp>
+#include <engine/Simulator.hpp>
+#include <graph/ParticleEngine.hpp>
+#include <GLW/GLWFont.hpp>
 #include <stdio.h>
 
 SpeedChange *SpeedChange::instance_ = 0;

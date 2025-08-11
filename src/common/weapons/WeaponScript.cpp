@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponScript.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
-#include <lua/LUAScriptFactory.h>
-#include <lua/LUAScript.h>
+#include <weapons/WeaponScript.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
+#include <lua/LUAScriptFactory.hpp>
+#include <lua/LUAScript.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponScript);
 

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeDefnTankStart.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <common/Defines.h>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeDefnTankStart.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <common/Defines.hpp>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>

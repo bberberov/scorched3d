@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/KeyboardKey.h>
-#include <common/KeyTranslate.h>
-#include <common/KeyStateTranslate.h>
-#include <common/Defines.h>
+#include <common/KeyboardKey.hpp>
+#include <common/KeyTranslate.hpp>
+#include <common/KeyStateTranslate.hpp>
+#include <common/Defines.hpp>
 
 KeyboardKey::KeyboardKey(
 	const char *name,

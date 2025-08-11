@@ -18,35 +18,35 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <simactions/TankAddSimAction.h>
-#include <simactions/TankChangeSimAction.h>
-#include <simactions/TankRankSimAction.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankAvatar.h>
-#include <tank/TankState.h>
-#include <tank/TankScore.h>
-#include <tank/TankModelStore.h>
-#include <tank/TankColorGenerator.h>
-#include <tank/TankModelContainer.h>
-#include <tanket/TanketType.h>
-#include <tankai/TankAIStore.h>
-#include <common/ChannelManager.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <events/EventController.h>
-#include <events/EventHandlerDataBase.h>
-#include <coms/ComsTankChangeMessage.h>
-#include <server/ServerBanned.h>
-#include <server/ServerChannelManager.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerDestinations.h>
-#include <server/ServerMessageHandler.h>
+#include <simactions/TankAddSimAction.hpp>
+#include <simactions/TankChangeSimAction.hpp>
+#include <simactions/TankRankSimAction.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankAvatar.hpp>
+#include <tank/TankState.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankModelStore.hpp>
+#include <tank/TankColorGenerator.hpp>
+#include <tank/TankModelContainer.hpp>
+#include <tanket/TanketType.hpp>
+#include <tankai/TankAIStore.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <events/EventController.hpp>
+#include <events/EventHandlerDataBase.hpp>
+#include <coms/ComsTankChangeMessage.hpp>
+#include <server/ServerBanned.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ServerMessageHandler.hpp>
 #ifndef S3D_SERVER
-#include <client/ClientChannelManager.h>
-#include <tankgraph/TargetRendererImplTank.h>
+#include <client/ClientChannelManager.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
 #endif
 
 unsigned int TankAddSimAction::TankAddSimActionCount = 0;

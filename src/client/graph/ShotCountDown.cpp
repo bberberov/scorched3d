@@ -18,23 +18,23 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ShotCountDown.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <common/OptionsScorched.h>
-#include <common/DefinesString.h>
-#include <graph/OptionsDisplay.h>
-#include <GLEXT/GLViewPort.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWidget.h>
-#include <GLW/GLWColors.h>
-#include <GLW/GLWToolTip.h>
-#include <GLEXT/GLTexture.h>
-#include <sound/Sound.h>
-#include <sound/SoundUtils.h>
-#include <target/TargetContainer.h>
-#include <tank/TankAvatar.h>
-#include <lang/LangResource.h>
+#include <graph/ShotCountDown.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/DefinesString.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWColors.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <GLEXT/GLTexture.hpp>
+#include <sound/Sound.hpp>
+#include <sound/SoundUtils.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/TankAvatar.hpp>
+#include <lang/LangResource.hpp>
 
 ShotCountDown *ShotCountDown::instance_ = 0;
 

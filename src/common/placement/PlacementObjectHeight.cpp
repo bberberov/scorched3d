@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <placement/PlacementObjectHeight.h>
-#include <common/RandomGenerator.h>
-#include <XML/XMLParser.h>
+#include <placement/PlacementObjectHeight.hpp>
+#include <common/RandomGenerator.hpp>
+#include <XML/XMLParser.hpp>
 
 PlacementObjectHeight::PlacementObjectHeight()
 {

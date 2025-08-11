@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWIconTable.h>
-#include <GLEXT/GLState.h>
-#include <common/DefinesString.h>
+#include <GLW/GLWIconTable.hpp>
+#include <GLEXT/GLState.hpp>
+#include <common/DefinesString.hpp>
 
 GLWIconTable::GLWIconTable(
 	float x,

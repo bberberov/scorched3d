@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWidget.h>
-#include <GLW/GLWPanel.h>
-#include <GLW/GLWToolTip.h>
-#include <GLW/GLWTranslate.h>
-#include <GLEXT/GLState.h>
-#include <XML/XMLParser.h>
-#include <common/Defines.h>
+#include <GLW/GLWidget.hpp>
+#include <GLW/GLWPanel.hpp>
+#include <GLW/GLWToolTip.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <GLEXT/GLState.hpp>
+#include <XML/XMLParser.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 unsigned int GLWidget::nextId_ = 0;

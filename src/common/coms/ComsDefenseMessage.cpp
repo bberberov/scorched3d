@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <coms/ComsDefenseMessage.h>
-#include <weapons/AccessoryStore.h>
+#include <coms/ComsDefenseMessage.hpp>
+#include <weapons/AccessoryStore.hpp>
 
 ComsMessageType ComsDefenseMessage::ComsDefenseMessageType("ComsDefenseMessageType");
 

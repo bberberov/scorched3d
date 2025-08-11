@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLSL/GLSLShader.h>
-#include <GLEXT/GLStateExtension.h>
-#include <common/Defines.h>
+#include <GLSL/GLSLShader.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <common/Defines.hpp>
 #include <string>
 
 GLSLShader::GLSLShader(const char *filename, Type stype,

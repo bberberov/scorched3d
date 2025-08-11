@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
-#include <tank/TankViewPoints.h>
-#include <target/TargetContainer.h>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <target/TargetContainer.hpp>
 
 std::set<unsigned int> TankViewPointsCollection::TankViewPointsTanks;
 

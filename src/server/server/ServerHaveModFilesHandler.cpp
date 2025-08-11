@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerHaveModFilesHandler.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerDestinations.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <engine/ModFiles.h>
-#include <coms/ComsHaveModFilesMessage.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
+#include <server/ServerHaveModFilesHandler.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <engine/ModFiles.hpp>
+#include <coms/ComsHaveModFilesMessage.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <time.h>
 
 ServerHaveModFilesHandler::ServerHaveModFilesHandler(ComsMessageHandler &comsMessageHandler)

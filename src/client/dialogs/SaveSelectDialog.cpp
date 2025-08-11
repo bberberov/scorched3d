@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/SaveSelectDialog.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWLabel.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLW/GLWFont.h>
-#include <GLW/GLWTranslate.h>
-#include <client/ClientParams.h>
-#include <client/ClientMain.h>
-#include <GLEXT/GLTextureStore.h>
-#include <common/Defines.h>
-#include <common/FileList.h>
+#include <dialogs/SaveSelectDialog.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWLabel.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLW/GLWFont.hpp>
+#include <GLW/GLWTranslate.hpp>
+#include <client/ClientParams.hpp>
+#include <client/ClientMain.hpp>
+#include <GLEXT/GLTextureStore.hpp>
+#include <common/Defines.hpp>
+#include <common/FileList.hpp>
 
 GLWIconListSaveItem::GLWIconListSaveItem( const char *file, const char *time) :
 	icon_(0.0f, 0.0f, 40.0f, 40.0f),

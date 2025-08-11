@@ -20,17 +20,17 @@
 
 #include <vector>
 #include <math.h>
-#include <GLEXT/GLImageItterator.h>
-#include <GLEXT/GLImageModifier.h>
-#include <image/Image.h>
-#include <image/ImageFactory.h>
-#include <engine/ScorchedContext.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <lang/LangResource.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
+#include <GLEXT/GLImageItterator.hpp>
+#include <GLEXT/GLImageModifier.hpp>
+#include <image/Image.hpp>
+#include <image/ImageFactory.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <client/ScorchedClient.hpp>
+#include <lang/LangResource.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
 
 bool ImageModifier::findIntersection(HeightMap &hMap,
 										Vector start,

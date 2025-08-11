@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <console/Console.h>
-#include <console/ConsoleRuleFn.h>
-#include <common/Defines.h>
+#include <console/Console.hpp>
+#include <console/ConsoleRuleFn.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 ConsoleRuleFnI::~ConsoleRuleFnI()

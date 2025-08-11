@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <graph/ModelRendererStore.h>
-#include <graph/ModelRendererMesh.h>
-#include <graph/ModelRendererTree.h>
-#include <3dsparse/ModelStore.h>
-#include <common/Defines.h>
+#include <graph/ModelRendererStore.hpp>
+#include <graph/ModelRendererMesh.hpp>
+#include <graph/ModelRendererTree.hpp>
+#include <3dsparse/ModelStore.hpp>
+#include <common/Defines.hpp>
 
 ModelRendererStore *ModelRendererStore::instance_ = 0;
 

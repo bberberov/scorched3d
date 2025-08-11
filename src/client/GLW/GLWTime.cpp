@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTime.h>
-#include <GLW/GLWFont.h>
-#include <XML/XMLNode.h>
+#include <GLW/GLWTime.hpp>
+#include <GLW/GLWFont.hpp>
+#include <XML/XMLNode.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTime);
 

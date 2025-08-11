@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLState.h>
-#include <GLEXT/GLStateExtension.h>
-#include <GLEXT/GLInfo.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeTex.h>
-#include <land/LandSurround.h>
-#include <sky/Sky.h>
+#include <GLEXT/GLState.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <GLEXT/GLInfo.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <land/LandSurround.hpp>
+#include <sky/Sky.hpp>
 
 LandSurround::LandSurround() :
 	listNo_(0)

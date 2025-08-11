@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLFrameBufferObject.h>
-#include <GLEXT/GLStateExtension.h>
-#include <common/DefinesAssert.h>
+#include <GLEXT/GLFrameBufferObject.hpp>
+#include <GLEXT/GLStateExtension.hpp>
+#include <common/DefinesAssert.hpp>
 
 GLFrameBufferObject::GLFrameBufferObject() : 
 	frameBufferObject_(0), depthBufferObject_(0),

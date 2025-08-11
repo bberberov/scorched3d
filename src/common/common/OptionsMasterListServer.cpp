@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsMasterListServer.h>
+#include <common/OptionsMasterListServer.hpp>
 
 OptionsMasterListServer *OptionsMasterListServer::instance_ = 0;
 

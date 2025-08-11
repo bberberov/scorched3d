@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/TalkRenderer.h>
-#include <graph/ParticleEmitter.h>
-#include <client/ScorchedClient.h>
+#include <sprites/TalkRenderer.hpp>
+#include <graph/ParticleEmitter.hpp>
+#include <client/ScorchedClient.hpp>
 
 TalkRenderer::TalkRenderer(Vector &position, Vector &color) : 
 	position_(position), color_(color)

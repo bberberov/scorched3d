@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponLightning.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ActionController.h>
-#include <actions/Lightning.h>
-#include <common/Defines.h>
+#include <weapons/WeaponLightning.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ActionController.hpp>
+#include <actions/Lightning.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponLightning);
 

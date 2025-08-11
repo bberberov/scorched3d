@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sprites/ExplosionNukeRenderer.h>
-#include <sprites/ExplosionTextures.h>
-#include <client/ScorchedClient.h>
-#include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
+#include <sprites/ExplosionNukeRenderer.hpp>
+#include <sprites/ExplosionTextures.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/Defines.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
 #include <math.h>
 
 static const int AlphaSteps = int(ExplosionNukeRenderer_STEPS * 0.9f);

@@ -18,17 +18,17 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/TargetRendererImplTarget.h>
-#include <target/TargetLife.h>
-#include <target/TargetState.h>
-#include <landscape/Landscape.h>
-#include <landscape/ShadowMap.h>
-#include <GLEXT/GLCameraFrustum.h>
-#include <GLEXT/GLState.h>
-#include <client/ScorchedClient.h>
-#include <engine/ActionController.h>
-#include <graph/ModelRendererStore.h>
-#include <graph/OptionsDisplay.h>
+#include <tankgraph/TargetRendererImplTarget.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetState.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscape/ShadowMap.hpp>
+#include <GLEXT/GLCameraFrustum.hpp>
+#include <GLEXT/GLState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <engine/ActionController.hpp>
+#include <graph/ModelRendererStore.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <float.h>
 
 TargetRendererImplTarget::TargetRendererImplTarget(

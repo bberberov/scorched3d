@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <image/Image.h>
-#include <image/ImageFactory.h>
-#include <common/DefinesAssert.h>
+#include <image/Image.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/DefinesAssert.hpp>
 #include <SDL/SDL.h>
 #include "string.h"
 
@@ -126,8 +126,8 @@ bool Image::writeToFile(const std::string &filename)
 
 #ifndef S3D_SERVER
 
-#include <GLEXT/GLState.h>
-#include <common/Defines.h>
+#include <GLEXT/GLState.hpp>
+#include <common/Defines.hpp>
 
 Image Image::createAlphaMult(float mult)
 {

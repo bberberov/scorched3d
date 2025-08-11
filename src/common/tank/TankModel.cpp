@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tank/TankModel.h>
-#include <tank/Tank.h>
-#include <tanket/TanketType.h>
-#include <XML/XMLNode.h>
-#include <engine/ScorchedContext.h>
+#include <tank/TankModel.hpp>
+#include <tank/Tank.hpp>
+#include <tanket/TanketType.hpp>
+#include <XML/XMLNode.hpp>
+#include <engine/ScorchedContext.hpp>
 
 TankModel::TankModel() :
 	aiOnly_(false), 

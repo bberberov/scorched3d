@@ -18,16 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/LandscapeSoundManager.h>
-#include <landscapedef/LandscapeInclude.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefn.h>
-#include <landscapedef/LandscapeSound.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <client/ScorchedClient.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
-#include <sound/Sound.h>
+#include <landscape/LandscapeSoundManager.hpp>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefn.hpp>
+#include <landscapedef/LandscapeSound.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <client/ScorchedClient.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
+#include <sound/Sound.hpp>
 
 LandscapeSoundManager *LandscapeSoundManager::instance_(0);
 

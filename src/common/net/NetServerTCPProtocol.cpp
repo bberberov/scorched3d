@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <net/NetServerTCPProtocol.h>
-#include <net/NetServerTCPRead.h>
-#include <net/NetMessagePool.h>
-#include <common/Logger.h>
+#include <net/NetServerTCPProtocol.hpp>
+#include <net/NetServerTCPRead.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/Logger.hpp>
 
 NetServerTCPProtocol::NetServerTCPProtocol()
 {

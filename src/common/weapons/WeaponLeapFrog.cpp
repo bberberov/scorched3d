@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponLeapFrog.h>
-#include <weapons/AccessoryStore.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/HeightMap.h>
+#include <weapons/WeaponLeapFrog.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/HeightMap.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponLeapFrog);
 

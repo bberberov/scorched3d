@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ChannelText.h>
-#include <lang/Lang.h>
+#include <common/ChannelText.hpp>
+#include <lang/Lang.hpp>
 
 ChannelText::ChannelText() :
 	srcPlayerId_(0),

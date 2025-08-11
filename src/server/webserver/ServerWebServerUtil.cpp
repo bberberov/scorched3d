@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebServerUtil.h>
-#include <server/ScorchedServer.h>
-#include <net/NetMessagePool.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/OptionEntry.h>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <server/ScorchedServer.hpp>
+#include <net/NetMessagePool.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionEntry.hpp>
 
 const char *ServerWebServerUtil::getField(
 	std::map<std::string, std::string> &fields, const std::string &field)

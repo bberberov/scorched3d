@@ -18,18 +18,18 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/DisplayDialog.h>
-#include <wxdialogs/MainDialog.h>
-#include <wxdialogs/KeyDialog.h>
-#include <net/NetInterface.h>
-#include <engine/ModDirs.h>
-#include <engine/ModFiles.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Defines.h>
-#include <common/Keyboard.h>
-#include <common/KeyTranslateWx.h>
-#include <client/UniqueIdStore.h>
-#include <scorched/ScorchedParams.h>
+#include <wxdialogs/DisplayDialog.hpp>
+#include <wxdialogs/MainDialog.hpp>
+#include <wxdialogs/KeyDialog.hpp>
+#include <net/NetInterface.hpp>
+#include <engine/ModDirs.hpp>
+#include <engine/ModFiles.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Defines.hpp>
+#include <common/Keyboard.hpp>
+#include <common/KeyTranslateWx.hpp>
+#include <client/UniqueIdStore.hpp>
+#include <scorched/ScorchedParams.hpp>
 #include <wx/wx.h>
 #include <wx/image.h>
 #include <wx/notebook.h>

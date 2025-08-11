@@ -18,25 +18,25 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerSyncCheck.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerState.h>
-#include <server/ServerDestinations.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerParams.h>
-#include <simactions/SyncCheckSimAction.h>
-#include <landscapemap/GroundMaps.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <common/FileLogger.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/Target.h>
-#include <target/TargetLife.h>
-#include <target/TargetGroup.h>
-#include <engine/ObjectGroup.h>
-#include <XML/XMLDiff.h>
+#include <server/ServerSyncCheck.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerDestinations.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerParams.hpp>
+#include <simactions/SyncCheckSimAction.hpp>
+#include <landscapemap/GroundMaps.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <common/FileLogger.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/Target.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetGroup.hpp>
+#include <engine/ObjectGroup.hpp>
+#include <XML/XMLDiff.hpp>
 
 static FileLogger *syncCheckFileLogger = 0;
 

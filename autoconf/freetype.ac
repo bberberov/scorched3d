@@ -9,9 +9,13 @@ PKG_CHECK_MODULES(
 	[FT2],
 	[freetype2 >= 2.1.5],
 	[],
-	[AC_CHECK_FT2(
-		[7.0.1],
-		[],
-		[AC_MSG_ERROR([FreeType2 must be installed on your system (https://freetype.org/)])]
+	[m4_ifdef(
+		[AC_CHECK_FT2],
+		[AC_CHECK_FT2(
+			[7.0.1],
+			[],
+			[AC_MSG_ERROR([FreeType2 must be installed on your system (https://freetype.org/)])]
+		)],
+		[AC_MSG_ERROR([Unable to check for FreeType2 with autoconf macro)])]
 	)]
 )

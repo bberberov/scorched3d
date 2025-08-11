@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWTankFire.h>
-#include <client/ScorchedClient.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
-#include <common/ToolTipResource.h>
-#include <lang/LangResource.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
+#include <GLW/GLWTankFire.hpp>
+#include <client/ScorchedClient.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
+#include <common/ToolTipResource.hpp>
+#include <lang/LangResource.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
 
 REGISTER_CLASS_SOURCE(GLWTankFire);
 

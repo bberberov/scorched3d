@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerInitializeModHandler.h>
-#include <server/ServerLoadLevel.h>
-#include <server/ScorchedServer.h>
-#include <coms/ComsInitializeModMessage.h>
+#include <server/ServerInitializeModHandler.hpp>
+#include <server/ServerLoadLevel.hpp>
+#include <server/ScorchedServer.hpp>
+#include <coms/ComsInitializeModMessage.hpp>
 
 ServerInitializeModHandler::ServerInitializeModHandler(ComsMessageHandler &comsMessageHandler)
 {

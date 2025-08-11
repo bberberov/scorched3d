@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sound/SoundBufferEmpty.h>
+#include <sound/SoundBufferEmpty.hpp>
 
 SoundBufferEmptySourceInstance::SoundBufferEmptySourceInstance(unsigned int source) :
 	SoundBufferSourceInstance(source)

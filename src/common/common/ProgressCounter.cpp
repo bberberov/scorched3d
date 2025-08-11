@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/ProgressCounter.h>
-#include <common/Logger.h>
-#include <lang/LangResource.h>
+#include <common/ProgressCounter.hpp>
+#include <common/Logger.hpp>
+#include <lang/LangResource.hpp>
 
 ProgressCounterI::~ProgressCounterI()
 {

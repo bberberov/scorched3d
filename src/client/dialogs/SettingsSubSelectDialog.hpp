@@ -1,0 +1,102 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2000-2011, 2025
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
+#if !defined(__INCLUDE_SettingsSubSelectDialogh_INCLUDE__)
+#define __INCLUDE_SettingsSubSelectDialogh_INCLUDE__
+
+#include <GLW/GLWWindow.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWCheckBox.hpp>
+#include <GLW/GLWOptionEntry.hpp>
+#include <GLW/GLWIconList.hpp>
+#include <GLW/GLWTab.hpp>
+#include <GLW/GLWIcon.hpp>
+#include <common/ToolTip.hpp>
+#include <common/OptionsGame.hpp>
+
+class SettingsSubSelectDialogListItem : public GLWIconListItem
+{
+public:
+	SettingsSubSelectDialogListItem(
+		const char *icon,
+		const char *name,
+		const char *description,
+		bool selected
+	);
+	virtual ~SettingsSubSelectDialogListItem();
+
+	const char *getName() { return name_.c_str(); }
+	bool getSelected() { return selected_.getState(); }
+	void setSelected(bool selected) { selected_.setState(selected); }
+
+	// GLWIconListItem
+	virtual void draw(float x, float y, float w);
+
+protected:
+	GLWIcon icon_;
+	std::string name_;
+	GLWCheckBox selected_;
+	ToolTip tip_;
+};
+
+class SettingsSubSelectDialog :
+	public GLWWindow,
+	public GLWButtonI,
+	public GLWIconListI
+{
+public:
+	static SettingsSubSelectDialog *instance();
+
+	// GLWButtonI
+	virtual void buttonDown(unsigned int id);
+
+	// GLWWindow
+	virtual void display();
+
+	// GLWIconListI
+	virtual void selected(unsigned int id, int position);
+	virtual void chosen(unsigned int id, int position);
+
+protected:
+	static SettingsSubSelectDialog *instance_;
+
+	GLWTab *mainTab_;
+	GLWTab *moneyTab_;
+	GLWTab *weaponsTab_;
+	GLWTab *scoreTab_;
+	GLWTab *envTab_;
+	GLWTab *landTab_;
+	GLWIconList *landList_;
+	std::list<GLWOptionEntry> controls_;
+	unsigned int cancelId_;
+	unsigned int okId_;
+	unsigned int advancedId_;
+	unsigned int selectAllId_;
+	unsigned int selectNoneId_;
+
+	void displayLand();
+
+private:
+	SettingsSubSelectDialog();
+	virtual ~SettingsSubSelectDialog();
+
+};
+
+#endif

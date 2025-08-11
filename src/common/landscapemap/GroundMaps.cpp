@@ -18,20 +18,20 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapemap/GroundMaps.h>
-#include <landscapemap/HeightMapLoader.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeInclude.h>
-#include <landscapedef/LandscapeTex.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapedef/LandscapeDefinitionCache.h>
-#include <engine/ObjectGroups.h>
-#include <target/Target.h>
-#include <target/TargetContainer.h>
-#include <common/Logger.h>
-#include <tankai/TankAIAdder.h>
-#include <image/ImageFactory.h>
-#include <lang/LangResource.h>
+#include <landscapemap/GroundMaps.hpp>
+#include <landscapemap/HeightMapLoader.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeInclude.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapedef/LandscapeDefinitionCache.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <target/Target.hpp>
+#include <target/TargetContainer.hpp>
+#include <common/Logger.hpp>
+#include <tankai/TankAIAdder.hpp>
+#include <image/ImageFactory.hpp>
+#include <lang/LangResource.hpp>
 
 GroundMaps::GroundMaps(LandscapeDefinitionCache &defnCache) :
 	defnCache_(defnCache),

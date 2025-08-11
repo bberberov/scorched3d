@@ -18,22 +18,22 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <webserver/ServerWebSettingsHandler.h>
-#include <webserver/ServerWebServerUtil.h>
-#include <server/ServerLog.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <server/ServerAdminCommon.h>
-#include <server/ServerParams.h>
-#include <landscapedef/LandscapeDefinitionsBase.h>
-#include <common/Defines.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/OptionsTransient.h>
-#include <engine/ModDirs.h>
-#include <engine/ModFiles.h>
-#include <tankai/TankAINames.h>
-#include <XML/XMLParser.h>
+#include <webserver/ServerWebSettingsHandler.hpp>
+#include <webserver/ServerWebServerUtil.hpp>
+#include <server/ServerLog.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerAdminCommon.hpp>
+#include <server/ServerParams.hpp>
+#include <landscapedef/LandscapeDefinitionsBase.hpp>
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/OptionsTransient.hpp>
+#include <engine/ModDirs.hpp>
+#include <engine/ModFiles.hpp>
+#include <tankai/TankAINames.hpp>
+#include <XML/XMLParser.hpp>
 #include <vector>
 #include <algorithm>
 

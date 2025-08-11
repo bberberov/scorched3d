@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLW/GLWCheckBoxText.h>
+#include <GLW/GLWCheckBoxText.hpp>
 
 REGISTER_CLASS_SOURCE(GLWCheckBoxText);
 

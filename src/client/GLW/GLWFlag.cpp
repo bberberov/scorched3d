@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <math.h>
-#include <GLEXT/GLState.h>
-#include <GLW/GLWFlag.h>
+#include <GLEXT/GLState.hpp>
+#include <GLW/GLWFlag.hpp>
 
 REGISTER_CLASS_SOURCE(GLWFlag);
 

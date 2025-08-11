@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "InventoryDialog.h"
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWIcon.h>
-#include <GLW/GLWFlag.h>
-#include <GLW/GLWWindowManager.h>
-#include <GLEXT/GLViewPort.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <common/OptionsScorched.h>
-#include <graph/OptionsDisplay.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <weapons/AccessoryStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankScore.h>
-#include <tank/TankState.h>
-#include <tanket/TanketAccessories.h>
+#include "InventoryDialog.hpp"
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWIcon.hpp>
+#include <GLW/GLWFlag.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <GLEXT/GLViewPort.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankScore.hpp>
+#include <tank/TankState.hpp>
+#include <tanket/TanketAccessories.hpp>
 #include <stdio.h>
 
 InventoryDialog *InventoryDialog::instance_ = 0;

@@ -18,21 +18,21 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscapedef/LandscapeDefnTankStart.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapemap/DeformLandscape.h>
-#include <engine/Simulator.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <target/TargetLife.h>
-#include <target/TargetSpace.h>
-#include <target/TargetState.h>
-#include <image/ImageFactory.h>
-#include <common/Logger.h>
-#include <common/OptionsScorched.h>
-#include <common/Defines.h>
+#include <landscapedef/LandscapeDefnTankStart.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapemap/DeformLandscape.hpp>
+#include <engine/Simulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <target/TargetLife.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetState.hpp>
+#include <image/ImageFactory.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Defines.hpp>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <GLEXT/GLShadowFrameBuffer.h>
-#include <GLEXT/GLStateExtension.h>
+#include <GLEXT/GLShadowFrameBuffer.hpp>
+#include <GLEXT/GLStateExtension.hpp>
 
 GLShadowFrameBuffer::GLShadowFrameBuffer() :
 	frameBufferObject_(0),

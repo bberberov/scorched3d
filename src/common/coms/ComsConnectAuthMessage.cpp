@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <coms/ComsConnectAuthMessage.h>
-#include <common/Defines.h>
+#include <coms/ComsConnectAuthMessage.hpp>
+#include <common/Defines.hpp>
 
 ComsMessageType ComsConnectAuthMessage::ComsConnectAuthMessageType("ComsConnectAuthMessageType");
 

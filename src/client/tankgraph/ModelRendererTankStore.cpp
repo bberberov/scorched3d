@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/ModelRendererTankStore.h>
-#include <3dsparse/ModelStore.h>
+#include <tankgraph/ModelRendererTankStore.hpp>
+#include <3dsparse/ModelStore.hpp>
 
 ModelRendererTankStore *ModelRendererTankStore::instance_ = 0;
 

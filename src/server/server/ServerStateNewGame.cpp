@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerStateNewGame.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerState.h>
-#include <server/ServerCommon.h>
-#include <server/ServerSimulator.h>
-#include <server/ServerConsoleProgressCounter.h>
-#include <server/ServerChannelManager.h>
-#include <server/ServerLoadLevel.h>
-#include <weapons/EconomyStore.h>
-#include <target/TargetContainer.h>
-#include <tank/Tank.h>
-#include <tank/TankState.h>
-#include <landscapedef/LandscapeDefinitions.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <common/OptionsTransient.h>
-#include <events/EventController.h>
+#include <server/ServerStateNewGame.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerState.hpp>
+#include <server/ServerCommon.hpp>
+#include <server/ServerSimulator.hpp>
+#include <server/ServerConsoleProgressCounter.hpp>
+#include <server/ServerChannelManager.hpp>
+#include <server/ServerLoadLevel.hpp>
+#include <weapons/EconomyStore.hpp>
+#include <target/TargetContainer.hpp>
+#include <tank/Tank.hpp>
+#include <tank/TankState.hpp>
+#include <landscapedef/LandscapeDefinitions.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <common/OptionsTransient.hpp>
+#include <events/EventController.hpp>
 
 ServerStateNewGame::ServerStateNewGame()
 {

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sound/VirtualSoundSource.h>
-#include <sound/PlayingSoundSource.h>
-#include <sound/SoundSource.h>
-#include <sound/Sound.h>
+#include <sound/VirtualSoundSource.hpp>
+#include <sound/PlayingSoundSource.hpp>
+#include <sound/SoundSource.hpp>
+#include <sound/Sound.hpp>
 
 VirtualSoundSource::VirtualSoundSource( unsigned int priority, bool looping, bool managed) :
 	priority_(priority),

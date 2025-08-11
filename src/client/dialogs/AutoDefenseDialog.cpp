@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <dialogs/AutoDefenseDialog.h>
-#include <weapons/Accessory.h>
-#include <GLW/GLWFlag.h>
-#include <GLW/GLWTextButton.h>
-#include <GLW/GLWWindowManager.h>
-#include <tankgraph/TankKeyboardControlUtil.h>
-#include <target/TargetContainer.h>
-#include <target/TargetShield.h>
-#include <target/TargetParachute.h>
-#include <common/OptionsTransient.h>
-#include <common/Defines.h>
-#include <coms/ComsPlayedMoveMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <client/ClientState.h>
-#include <client/ScorchedClient.h>
-#include <lang/LangResource.h>
+#include <dialogs/AutoDefenseDialog.hpp>
+#include <weapons/Accessory.hpp>
+#include <GLW/GLWFlag.hpp>
+#include <GLW/GLWTextButton.hpp>
+#include <GLW/GLWWindowManager.hpp>
+#include <tankgraph/TankKeyboardControlUtil.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetShield.hpp>
+#include <target/TargetParachute.hpp>
+#include <common/OptionsTransient.hpp>
+#include <common/Defines.hpp>
+#include <coms/ComsPlayedMoveMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <client/ClientState.hpp>
+#include <client/ScorchedClient.hpp>
+#include <lang/LangResource.hpp>
 
 AutoDefenseDialog *AutoDefenseDialog::instance()
 {

@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponScatterPosition.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/Simulator.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeTex.h>
-#include <common/Defines.h>
+#include <weapons/WeaponScatterPosition.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/Simulator.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 REGISTER_ACCESSORY_SOURCE(WeaponScatterPosition);

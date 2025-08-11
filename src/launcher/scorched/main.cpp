@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <scorched/ScorchedParams.h>
-#include <engine/ModDirs.h>
-#include <common/OptionsGame.h>
-#include <common/ARGParser.h>
-#include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
+#include <scorched/ScorchedParams.hpp>
+#include <engine/ModDirs.hpp>
+#include <common/OptionsGame.hpp>
+#include <common/ARGParser.hpp>
+#include <common/Defines.hpp>
+#include <graph/OptionsDisplay.hpp>
 #include <wx/wx.h>
 #include <wx/utils.h>
 #include <locale.h>
@@ -31,7 +31,7 @@
 #include <signal.h>
 #include <float.h>
 #include <time.h>
-#include <common/main.h>
+#include <common/main.hpp>
 
 bool newVersion = false;
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {
 	setlocale(LC_ALL, "C");
 
-	// From main.h
+	// From main.hpp
 	run_main(argc, argv, *ScorchedParams::instance());
 
 	// Read display options from a file

@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <XML/XMLFile.h>
-#include <common/FileLines.h>
+#include <XML/XMLFile.hpp>
+#include <common/FileLines.hpp>
 
 XMLFile::XMLFile(bool useContentNodes) :
 	parser_(useContentNodes)

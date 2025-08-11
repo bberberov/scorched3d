@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ObjectGroupEntry.h>
-#include <engine/ObjectGroups.h>
-#include <common/Defines.h>
+#include <engine/ObjectGroupEntry.hpp>
+#include <engine/ObjectGroups.hpp>
+#include <common/Defines.hpp>
 #include <stdio.h>
 
 ObjectGroups::ObjectGroups() : groups_(0)

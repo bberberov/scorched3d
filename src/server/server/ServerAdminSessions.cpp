@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerAdminSessions.h>
-#include <server/ScorchedServer.h>
-#include <server/ServerCommon.h>
-#include <common/OptionsScorched.h>
-#include <common/Logger.h>
-#include <XML/XMLFile.h>
+#include <server/ServerAdminSessions.hpp>
+#include <server/ScorchedServer.hpp>
+#include <server/ServerCommon.hpp>
+#include <common/OptionsScorched.hpp>
+#include <common/Logger.hpp>
+#include <XML/XMLFile.hpp>
 #include <time.h>
 
 std::string ServerAdminSessions::PERMISSION_BANPLAYER("banplayer");

@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <common/VectorLib.h>
-#include <common/Defines.h>
+#include <common/VectorLib.hpp>
+#include <common/Defines.hpp>
 #include <math.h>
 
 Vector VectorLib::reflection(Vector &ray, Vector &normal)

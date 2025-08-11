@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/Battery.h>
-#include <common/Defines.h>
+#include <weapons/Battery.hpp>
+#include <common/Defines.hpp>
 
 REGISTER_ACCESSORY_SOURCE(Battery);
 

@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <landscape/InfoMap.h>
-#include <landscape/Landscape.h>
-#include <landscapemap/LandscapeMaps.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <image/ImageFactory.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientParams.h>
-#include <common/OptionsTransient.h>
+#include <landscape/InfoMap.hpp>
+#include <landscape/Landscape.hpp>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <image/ImageFactory.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientParams.hpp>
+#include <common/OptionsTransient.hpp>
 
 InfoMap *InfoMap::instance_ = 0;
 

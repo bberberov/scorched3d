@@ -18,24 +18,24 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <tankgraph/RenderTargets.h>
-#include <tankgraph/TargetRendererImplTank.h>
-#include <tankgraph/TargetRendererImplTarget.h>
-#include <tankgraph/RenderTracer.h>
-#include <tankgraph/RenderGeoms.h>
-#include <graph/OptionsDisplay.h>
-#include <graph/ModelRendererTree.h>
-#include <target/TargetContainer.h>
-#include <target/TargetState.h>
-#include <target/TargetLife.h>
-#include <client/ScorchedClient.h>
-#include <common/OptionsScorched.h>
-#include <engine/Simulator.h>
-#include <GLEXT/GLGlobalState.h>
-#include <landscape/Landscape.h>
-#include <water/Water.h>
-#include <land/VisibilityPatchGrid.h>
-#include <sky/Sky.h>
+#include <tankgraph/RenderTargets.hpp>
+#include <tankgraph/TargetRendererImplTank.hpp>
+#include <tankgraph/TargetRendererImplTarget.hpp>
+#include <tankgraph/RenderTracer.hpp>
+#include <tankgraph/RenderGeoms.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <graph/ModelRendererTree.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetLife.hpp>
+#include <client/ScorchedClient.hpp>
+#include <common/OptionsScorched.hpp>
+#include <engine/Simulator.hpp>
+#include <GLEXT/GLGlobalState.hpp>
+#include <landscape/Landscape.hpp>
+#include <water/Water.hpp>
+#include <land/VisibilityPatchGrid.hpp>
+#include <sky/Sky.hpp>
 #include <algorithm>
 
 RenderTargets *RenderTargets::instance_ = 0;

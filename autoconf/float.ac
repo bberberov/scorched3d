@@ -1,5 +1,5 @@
 dnl Floating point math
-dnl NOTE: Function list taken from DefinesMath.h
+dnl NOTE: Function list taken from DefinesMath.hpp
 
 AC_MSG_CHECKING(for floating point math support)
 

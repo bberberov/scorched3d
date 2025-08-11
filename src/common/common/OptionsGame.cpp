@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <common/OptionsGame.h>
-#include <common/Defines.h>
+#include <common/OptionsGame.hpp>
+#include <common/Defines.hpp>
 #include <string.h>
 
 static OptionEntryEnum::EnumEntry scoreEnum[] = {

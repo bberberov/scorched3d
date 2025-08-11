@@ -18,11 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/Weapon.h>
-#include <weapons/AccessoryStore.h>
-#include <engine/ScorchedContext.h>
-#include <engine/Simulator.h>
-#include <common/OptionsScorched.h>
+#include <weapons/Weapon.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <engine/ScorchedContext.hpp>
+#include <engine/Simulator.hpp>
+#include <common/OptionsScorched.hpp>
 
 WeaponFireContextInternal::WeaponFireContextInternal(
 	unsigned int selectPositionX,

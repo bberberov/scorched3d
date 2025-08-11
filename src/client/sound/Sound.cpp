@@ -19,14 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
-#include <common/Defines.h>
-#include <graph/OptionsDisplay.h>
-#include <common/Logger.h>
-#include <sound/Sound.h>
-#include <sound/SoundBufferFactory.h>
-#include <sound/PlayingSoundSource.h>
-#include <console/ConsoleRuleMethodIAdapter.h>
-#include <graph/OptionsDisplay.h>
+#include <common/Defines.hpp>
+#include <graph/OptionsDisplay.hpp>
+#include <common/Logger.hpp>
+#include <sound/Sound.hpp>
+#include <sound/SoundBufferFactory.hpp>
+#include <sound/PlayingSoundSource.hpp>
+#include <console/ConsoleRuleMethodIAdapter.hpp>
+#include <graph/OptionsDisplay.hpp>
 #ifdef __DARWIN__
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>

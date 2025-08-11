@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <weapons/WeaponAddTarget.h>
-#include <actions/AddTarget.h>
-#include <engine/ActionController.h>
+#include <weapons/WeaponAddTarget.hpp>
+#include <actions/AddTarget.hpp>
+#include <engine/ActionController.hpp>
 
 REGISTER_ACCESSORY_SOURCE(WeaponAddTarget);
 

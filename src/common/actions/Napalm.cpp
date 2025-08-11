@@ -18,32 +18,32 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <engine/ScorchedContext.h>
-#include <engine/ActionController.h>
-#include <engine/Simulator.h>
-#include <target/TargetContainer.h>
-#include <target/TargetDamageCalc.h>
-#include <target/TargetRenderer.h>
-#include <target/TargetState.h>
-#include <target/TargetSpace.h>
-#include <target/TargetLife.h>
-#include <tank/TankViewPoints.h>
-#include <actions/Napalm.h>
-#include <actions/CameraPositionAction.h>
+#include <engine/ScorchedContext.hpp>
+#include <engine/ActionController.hpp>
+#include <engine/Simulator.hpp>
+#include <target/TargetContainer.hpp>
+#include <target/TargetDamageCalc.hpp>
+#include <target/TargetRenderer.hpp>
+#include <target/TargetState.hpp>
+#include <target/TargetSpace.hpp>
+#include <target/TargetLife.hpp>
+#include <tank/TankViewPoints.hpp>
+#include <actions/Napalm.hpp>
+#include <actions/CameraPositionAction.hpp>
 #ifndef S3D_SERVER
-	#include <sprites/ExplosionTextures.h>
-	#include <GLEXT/GLStateExtension.h>
-	#include <landscape/Landscape.h>
-	#include <landscape/DeformTextures.h>
-	#include <landscape/Smoke.h>
-	#include <client/ScorchedClient.h>
+	#include <sprites/ExplosionTextures.hpp>
+	#include <GLEXT/GLStateExtension.hpp>
+	#include <landscape/Landscape.hpp>
+	#include <landscape/DeformTextures.hpp>
+	#include <landscape/Smoke.hpp>
+	#include <client/ScorchedClient.hpp>
 #endif
-#include <landscapemap/LandscapeMaps.h>
-#include <landscapedef/LandscapeDefinition.h>
-#include <landscapedef/LandscapeTex.h>
-#include <weapons/AccessoryStore.h>
-#include <common/Defines.h>
-#include <common/OptionsScorched.h>
+#include <landscapemap/LandscapeMaps.hpp>
+#include <landscapedef/LandscapeDefinition.hpp>
+#include <landscapedef/LandscapeTex.hpp>
+#include <weapons/AccessoryStore.hpp>
+#include <common/Defines.hpp>
+#include <common/OptionsScorched.hpp>
 
 static const int deformSize = 3;
 static DeformLandscape::DeformPoints deformMap;

@@ -18,15 +18,15 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <client/ClientSimulator.h>
-#include <client/ScorchedClient.h>
-#include <client/ClientState.h>
-#include <graph/ShotCountDown.h>
-#include <coms/ComsSimulateMessage.h>
-#include <coms/ComsSimulateResultMessage.h>
-#include <coms/ComsNetStatMessage.h>
-#include <coms/ComsMessageSender.h>
-#include <common/Logger.h>
+#include <client/ClientSimulator.hpp>
+#include <client/ScorchedClient.hpp>
+#include <client/ClientState.hpp>
+#include <graph/ShotCountDown.hpp>
+#include <coms/ComsSimulateMessage.hpp>
+#include <coms/ComsSimulateResultMessage.hpp>
+#include <coms/ComsNetStatMessage.hpp>
+#include <coms/ComsMessageSender.hpp>
+#include <common/Logger.hpp>
 
 ClientSimulator::ClientSimulator() : 
 	GameStateI("ClientSimulator"),

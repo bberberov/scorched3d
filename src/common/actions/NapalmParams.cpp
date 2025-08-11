@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <actions/NapalmParams.h>
-#include <lua/LUAUtil.h>
-#include <XML/XMLNode.h>
+#include <actions/NapalmParams.hpp>
+#include <lua/LUAUtil.hpp>
+#include <XML/XMLNode.hpp>
 
 NapalmParams::NapalmParams() :
 	napalmTime_(8),

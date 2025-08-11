@@ -19,8 +19,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#include <net/NetMessageHandler.h>
-#include <net/NetMessagePool.h>
+#include <net/NetMessageHandler.hpp>
+#include <net/NetMessagePool.hpp>
 
 NetMessageHandlerI::~NetMessageHandlerI()
 {

@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <server/ServerOperationResultHandler.h>
-#include <server/ScorchedServer.h>
-#include <coms/ComsOperationResultMessage.h>
-#include <image/ImageFactory.h>
+#include <server/ServerOperationResultHandler.hpp>
+#include <server/ScorchedServer.hpp>
+#include <coms/ComsOperationResultMessage.hpp>
+#include <image/ImageFactory.hpp>
 #include <time.h>
 
 ServerOperationResultHandler::ServerOperationResultHandler(ComsMessageHandler &comsMessageHandler)
