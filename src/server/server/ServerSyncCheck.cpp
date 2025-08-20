@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -369,9 +369,9 @@ bool ServerSyncCheck::compareSyncChecks(ComsSyncCheckMessage *server,
 			{
 				// Read the two tank information
 				std::string clientToString, serverToString;
-				Target *target;
+				Target *target = nullptr;
 				{
-					switch ((Target::TargetType) targetType) 
+					switch ((Target::TargetType) targetType)
 					{
 					case Target::TypeTarget:
 					{
@@ -416,7 +416,7 @@ bool ServerSyncCheck::compareSyncChecks(ComsSyncCheckMessage *server,
 					}
 					break;
 					}
-				}	
+				}
 
 				// Output information
 				syncCheckLog(S3D::formatStringBuffer(
