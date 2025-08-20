@@ -546,6 +546,7 @@ yyparse(YYPARSE_PARAM_ARG)
 #endif
 #endif
 
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
   YYSTYPE yyval;		/*  the variable used to return		*/
 				/*  semantic values from the action	*/
 				/*  routines				*/
