@@ -220,16 +220,25 @@ void PlayerInGameDialog::initializeFirst()
 
 void PlayerInGameDialog::initializeFromTank(Tank *tank)
 {
+	// Set the name
+	playerName_->setText(tank->getTargetName());
+
+	// Set the current avatar
+	if (tank->getAvatar().getName()[0])
+	{
+		imageList_->setCurrentShortPath(tank->getAvatar().getName());
+	}
+
 	// Add teams/colors
 	if (ScorchedClient::instance()->getOptionsGame().getTeams() == 1)
 	{
 		// Add colors
-		colorDropDown_->clear();
 		std::map<unsigned int, Tank *> tanks =
 			ScorchedClient::instance()->getTargetContainer().getTanks();
 		std::vector<Vector *> availableColors =
 			TankColorGenerator::instance()->getAvailableColors(tanks, tank);
 		std::vector<Vector *>::iterator itor;
+		colorDropDown_->clear();
 		for (itor = availableColors.begin();
 			itor != availableColors.end();
 			++itor)
@@ -262,15 +271,6 @@ void PlayerInGameDialog::initializeFromTank(Tank *tank)
 	{
 		aiTypeDropDown_->setCurrentText(
 			LANG_RESOURCE(tank->getTankAI()->getName(), tank->getTankAI()->getName()));
-	}
-
-	// Set the anme
-	playerName_->setText(tank->getTargetName());
-
-	// Set the current avatar
-	if (tank->getAvatar().getName()[0])
-	{
-		imageList_->setCurrentShortPath(tank->getAvatar().getName());
 	}
 
 	// Tank types

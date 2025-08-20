@@ -194,8 +194,10 @@ void PlayerInitialDialog::getNextPlayer()
 
 void PlayerInitialDialog::initializeFromTank(Tank *tank)
 {
+	// Set the name
 	playerName_->setText(tank->getTargetName());
 
+	// Add teams/colors
 	if (ScorchedClient::instance()->getOptionsGame().getTeams() == 1)
 	{
 		// Add colors
@@ -204,6 +206,7 @@ void PlayerInitialDialog::initializeFromTank(Tank *tank)
 		std::vector<Vector *> availableColors =
 			TankColorGenerator::instance()->getAvailableColors(tanks, tank);
 		std::vector<Vector *>::iterator itor;
+		colorDropDown_->clear();
 		for (itor = availableColors.begin();
 			itor != availableColors.end();
 			++itor)

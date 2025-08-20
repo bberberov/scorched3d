@@ -197,7 +197,7 @@ PlayerDialog::PlayerDialog(
 		tankTypeDropDown_->setName("TankType");
 	}
 
-	// Create tank vieer
+	// Create tank viewer
 	{
 		GLWPanel *infoPanel = new GLWPanel(10.0f, 40.0f, 720.0f, 330.0f,
 			false, true, true);
