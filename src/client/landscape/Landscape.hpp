@@ -32,6 +32,8 @@ class Water;
 class LandscapePoints;
 class Sky;
 class GLSLShaderSetup;
+
+// SINGLETON
 class Landscape
 {
 public:
@@ -157,6 +159,5 @@ private:
 	Landscape();
 	virtual ~Landscape();
 };
-
 
 #endif

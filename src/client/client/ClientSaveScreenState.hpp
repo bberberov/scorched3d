@@ -23,6 +23,7 @@
 
 #include <engine/GameStateI.hpp>
 
+// SINGLETON
 class ClientSaveScreenState : public GameStateI
 {
 public:
@@ -35,6 +36,7 @@ public:
 
 protected:
 	static ClientSaveScreenState *instance_;
+
 	bool saveScreen_;
 
 private:

@@ -25,8 +25,8 @@
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWIcon.hpp>
 
-class MsgBoxDialog : public GLWWindow,
-	public GLWButtonI
+// SINGLETON
+class MsgBoxDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static MsgBoxDialog *instance();
@@ -57,8 +57,6 @@ protected:
 private:
 	MsgBoxDialog();
 	virtual ~MsgBoxDialog();
-
 };
 
 #endif
-

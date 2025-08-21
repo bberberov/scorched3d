@@ -24,6 +24,7 @@
 #include <engine/GameStateI.hpp>
 #include <tank/Tank.hpp>
 
+// SINGLETON
 class TankKeyboardControl : public GameStateI
 {
 public:
@@ -42,8 +43,6 @@ protected:
 private:
 	TankKeyboardControl();
 	virtual ~TankKeyboardControl();
-
 };
-
 
 #endif

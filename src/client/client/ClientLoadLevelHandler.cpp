@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -55,15 +55,14 @@
 #include <image/ImageFactory.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-ClientLoadLevelHandler *ClientLoadLevelHandler::instance_ = 0;
+ClientLoadLevelHandler *ClientLoadLevelHandler::instance_ = nullptr;
 
 ClientLoadLevelHandler *ClientLoadLevelHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-	  instance_ = new ClientLoadLevelHandler();
+		instance_ = new ClientLoadLevelHandler();
 	}
-
 	return instance_;
 }
 
@@ -75,9 +74,7 @@ ClientLoadLevelHandler::ClientLoadLevelHandler() : initialLevel_(false)
 }
 
 ClientLoadLevelHandler::~ClientLoadLevelHandler()
-{
-
-}
+{}
 
 bool ClientLoadLevelHandler::processMessage(
 	NetMessage &netMessage,

@@ -21,13 +21,13 @@
 #include <serverbrowser/ServerBrowser.hpp>
 #include <common/OptionsMasterListServer.hpp>
 
-ServerBrowser *ServerBrowser::instance_ = 0;
+ServerBrowser *ServerBrowser::instance_ = nullptr;
 
 ServerBrowser *ServerBrowser::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ServerBrowser;
+		instance_ = new ServerBrowser();
 	}
 	return instance_;
 }
@@ -93,14 +93,14 @@ int ServerBrowser::threadFunc(void *var)
 		result = instance_->serverCollector_.fetchLANList();
 		break;
 	case RefreshNet:
-		result = 
-			instance_->serverCollector_.fetchServerList(
-				OptionsMasterListServer::instance()->getMasterListServer(),
-				OptionsMasterListServer::instance()->getMasterListServerURI()) 
-			||
-			instance_->serverCollector_.fetchServerList(
-				OptionsMasterListServer::instance()->getMasterListBackupServer(),
-				OptionsMasterListServer::instance()->getMasterListBackupServerURI());
+		result = instance_->serverCollector_.fetchServerList(
+			OptionsMasterListServer::instance()->getMasterListServer(),
+			OptionsMasterListServer::instance()->getMasterListServerURI()
+		)
+		|| instance_->serverCollector_.fetchServerList(
+			OptionsMasterListServer::instance()->getMasterListBackupServer(),
+			OptionsMasterListServer::instance()->getMasterListBackupServerURI()
+		);
 
 		break;
 	case RefreshFavourites:

@@ -29,16 +29,19 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+// SINGLETON
 class Mouse
 {
 public:
 	static Mouse *instance();
+
 	void processMouseEvent(SDL_Event &event);
-			                       
+
 protected:
 	static Mouse *instance_;
+
 	int mouse_sensitivity_;
-                       
+
 private:
 	Mouse();
 	virtual ~Mouse();
@@ -46,7 +49,6 @@ private:
 	void mouseDown(SDL_Event &event);
 	void mouseUp(SDL_Event &event);
 	void mouseMove(SDL_Event &event);
-
 };
 
 #endif /* _MOUSE_H_ */

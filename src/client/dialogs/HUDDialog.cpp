@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,13 +23,13 @@
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-HUDDialog *HUDDialog::instance_ = 0;
+HUDDialog *HUDDialog::instance_ = nullptr;
 
 HUDDialog *HUDDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new HUDDialog;
+		instance_ = new HUDDialog();
 	}
 	return instance_;
 }

@@ -28,23 +28,22 @@
 #include <console/ConsoleRuleMethodIAdapter.hpp>
 #include <graph/OptionsDisplay.hpp>
 #ifdef __DARWIN__
-#include <OpenAL/al.h>
-#include <OpenAL/alc.h>
+	#include <OpenAL/al.h>
+	#include <OpenAL/alc.h>
 #else
-#include <al.h>
-#include <alc.h>
-#include <alut.h>
+	#include <al.h>
+	#include <alc.h>
+	#include <alut.h>
 #endif
 
-Sound *Sound::instance_ = 0;
+Sound *Sound::instance_ = nullptr;
 
 Sound *Sound::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Sound;
+		instance_ = new Sound();
 	}
-
 	return instance_;
 }
 

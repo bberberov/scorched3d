@@ -25,6 +25,7 @@
 #include <common/fixed.hpp>
 #include <common/ToolTipResource.hpp>
 
+// SINGLETON
 class ShotCountDown : public GameStateI
 {
 public:
@@ -51,6 +52,7 @@ public:
 
 protected:
 	static ShotCountDown *instance_;
+
 	ToolTipResource moveTip_;
 
 	struct MoveInfo
@@ -60,6 +62,7 @@ protected:
 		unsigned int playerId_;
 		bool show_;
 	} move;
+
 	struct RoundInfo
 	{
 		fixed timer_;

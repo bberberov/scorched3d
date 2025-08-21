@@ -27,6 +27,8 @@
 #include <common/Vector.hpp>
 
 class Tank;
+
+// SINGLETON
 class TankColorGenerator
 {
 public:
@@ -46,6 +48,7 @@ public:
 
 protected:
 	static TankColorGenerator *instance_;
+
 	std::vector<Vector *> availableColors_;
 
 	void addColor(unsigned r, unsigned g, unsigned b);

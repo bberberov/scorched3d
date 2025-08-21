@@ -24,7 +24,9 @@
 #include <GLW/GLWWindow.hpp>
 
 class Tank;
-class ProfileDialog : public GLWWindow 
+
+// SINGLETON
+class ProfileDialog : public GLWWindow
 {
 public:
 	static ProfileDialog *instance();
@@ -39,6 +41,7 @@ public:
 
 protected:
 	static ProfileDialog *instance_;
+
 	float profileZoom_, zoomX_, zoomY_;
 	bool zooming_;
 	float ox_, oy_, ow_, oh_;
@@ -54,4 +57,3 @@ private:
 };
 
 #endif
-

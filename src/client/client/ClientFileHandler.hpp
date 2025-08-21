@@ -23,8 +23,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientFileHandler  : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientFileHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientFileHandler* instance();
@@ -36,13 +36,13 @@ public:
 
 protected:
 	static ClientFileHandler* instance_;
+
 	unsigned int totalBytes_;
 	NetBuffer recvBuffer_;
 
 private:
 	ClientFileHandler();
 	virtual ~ClientFileHandler();
-
 };
 
 #endif // __INCLUDE_ClientFileHandlerh_INCLUDE__

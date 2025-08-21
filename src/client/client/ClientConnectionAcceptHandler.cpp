@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,15 +37,14 @@
 #include <client/ClientParams.hpp>
 #include <common/Defines.hpp>
 
-ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance_ = 0;
+ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance_ = nullptr;
 
 ClientConnectionAcceptHandler *ClientConnectionAcceptHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-	  instance_ = new ClientConnectionAcceptHandler();
+		instance_ = new ClientConnectionAcceptHandler();
 	}
-
 	return instance_;
 }
 
@@ -57,9 +56,7 @@ ClientConnectionAcceptHandler::ClientConnectionAcceptHandler()
 }
 
 ClientConnectionAcceptHandler::~ClientConnectionAcceptHandler()
-{
-
-}
+{}
 
 bool ClientConnectionAcceptHandler::processMessage(
 	NetMessage &netMessage,

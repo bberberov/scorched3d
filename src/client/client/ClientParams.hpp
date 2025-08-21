@@ -23,6 +23,7 @@
 
 #include <common/OptionsParameters.hpp>
 
+// SINGLETON
 class ClientParams : public OptionsParameters
 {
 public:
@@ -66,7 +67,6 @@ protected:
 private:
 	ClientParams();
 	virtual ~ClientParams();
-
 };
 
 #endif // __INCLUDE_ClientParamsh_INCLUDE__

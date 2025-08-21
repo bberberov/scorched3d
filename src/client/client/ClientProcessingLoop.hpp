@@ -25,8 +25,8 @@
 #include <engine/GameStateI.hpp>
 #include <graph/FrameLimiter.hpp>
 
-class ClientProcessingLoop : 
-	public GameStateI
+// SINGLETON
+class ClientProcessingLoop : public GameStateI
 {
 public:
 	static ClientProcessingLoop *instance();
@@ -40,6 +40,7 @@ public:
 
 protected:
 	static ClientProcessingLoop *instance_;
+
 	FrameLimiter limiter_;
 	float serverTime_;
 
@@ -47,6 +48,5 @@ private:
 	ClientProcessingLoop();
 	virtual ~ClientProcessingLoop();
 };
-
 
 #endif

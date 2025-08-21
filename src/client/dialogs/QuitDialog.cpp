@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,13 +29,13 @@
 #include <server/ServerSimulator.hpp>
 #include <simactions/AdminSimAction.hpp>
 
-QuitDialog *QuitDialog::instance_ = 0;
+QuitDialog *QuitDialog::instance_ = nullptr;
 
 QuitDialog *QuitDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new QuitDialog;
+		instance_ = new QuitDialog();
 	}
 	return instance_;
 }
@@ -43,14 +43,10 @@ QuitDialog *QuitDialog::instance()
 QuitDialog::QuitDialog() : 
 	GLWWindow("Quit", 210.0f, 150.0f, 0,
 		"Allows the player to quit the game.")
-{
-
-}
+{}
 
 QuitDialog::~QuitDialog()
-{
-
-}
+{}
 
 void QuitDialog::display()
 {

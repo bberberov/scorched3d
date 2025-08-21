@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,13 @@
 #include <dialogs/BackdropDialog.hpp>
 #include <common/Defines.hpp>
 
-BackdropDialog *BackdropDialog::instance_ = 0;
+BackdropDialog *BackdropDialog::instance_ = nullptr;
 
 BackdropDialog *BackdropDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new BackdropDialog;
+		instance_ = new BackdropDialog();
 	}
 	return instance_;
 }

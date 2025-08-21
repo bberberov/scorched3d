@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,15 +24,18 @@
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/ModelRendererStore.hpp>
 
-MapPoints *MapPoints::instance_ = 0;
+MapPoints *MapPoints::instance_ = nullptr;
 
 MapPoints *MapPoints::instance()
 {
-	if (!instance_) instance_ = new MapPoints;
+	if (nullptr == instance_)
+	{
+		instance_ = new MapPoints();
+	}
 	return instance_;
 }
 
-MapPoints::MapPoints() 
+MapPoints::MapPoints()
 {
 	{
 		ModelID id;

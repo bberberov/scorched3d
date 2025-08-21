@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -33,13 +33,13 @@
 
 TargetSpace *ScorchedClient::targetSpace_ = new TargetSpace();
 
-ScorchedClient *ScorchedClient::instance_ = 0;
+ScorchedClient *ScorchedClient::instance_ = nullptr;
 
 ScorchedClient *ScorchedClient::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ScorchedClient;
+		instance_ = new ScorchedClient();
 	}
 	return instance_;
 }
@@ -88,7 +88,7 @@ ScorchedClient::~ScorchedClient()
 	targetSpace_->clear();
 }
 
-Simulator &ScorchedClient::getSimulator() 
-{ 
-	return *clientSimulator_; 
+Simulator &ScorchedClient::getSimulator()
+{
+	return *clientSimulator_;
 }

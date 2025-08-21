@@ -23,6 +23,7 @@
 
 #include <common/OptionEntry.hpp>
 
+// SINGLETON
 class OptionsMasterListServer
 {
 public:

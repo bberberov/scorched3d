@@ -24,8 +24,8 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWTextButton.hpp>
 
-class QuitDialog : public GLWWindow,
-				public GLWButtonI
+// SINGLETON
+class QuitDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static QuitDialog *instance();
@@ -34,15 +34,14 @@ public:
 	virtual void display();
 
 protected:
+	static QuitDialog *instance_;
+
 	GLWTextButton *okButton_, *quitButton_, *disconnectButton_;
 	GLWTextButton *killButton_;
-	static QuitDialog *instance_;
 
 private:
 	QuitDialog();
 	virtual ~QuitDialog();
-
 };
 
 #endif
-

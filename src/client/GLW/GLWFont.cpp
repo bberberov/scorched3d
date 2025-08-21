@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,55 +26,64 @@
 Vector GLWFont::widgetFontColor = Vector(0.2f, 0.2f, 0.2f);
 Vector GLWFont::disabledWidgetFontColor = Vector(0.4f, 0.4f, 0.4f);
 
-GLWFont *GLWFont::instance_ = 0;
+GLWFont *GLWFont::instance_ = nullptr;
 
 GLWFont *GLWFont::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLWFont;
+		instance_ = new GLWFont();
 	}
-
 	return instance_;
 }
 
 GLWFont::GLWFont()
 {
-	gameFont_ = new GLFont2d;
+	gameFont_ = new GLFont2d();
 	gameFont_->createFont(
 		S3D::getDataFile("data/fonts/dejavusconbd.ttf"),
-		16);
-	gameShadowFont_ = new GLFont2d;
+		16
+	);
+	gameShadowFont_ = new GLFont2d();
 	gameShadowFont_->createFont(
 		S3D::getDataFile("data/fonts/dejavusconbd.ttf"),
 		16,
-		true);
-	courierFont_ = new GLFont2d;
+		true
+	);
+	courierFont_ = new GLFont2d();
 	courierFont_->createFont(
 		S3D::getDataFile("data/fonts/dejavusmobd.ttf"),
-		16);
-	normalFont_ = new GLFont2d;
+		16
+	);
+	normalFont_ = new GLFont2d();
 	normalFont_->createFont(
 		S3D::getDataFile("data/fonts/dejavusans.ttf"),
-		16);
-	normalShadowFont_ = new GLFont2d;
+		16
+	);
+	normalShadowFont_ = new GLFont2d();
 	normalShadowFont_->createFont(
 		S3D::getDataFile("data/fonts/dejavusans.ttf"),
 		16,
-		true);
+		true
+	);
 
 	new ConsoleRuleMethodIAdapter<GLWFont>(
-		this, &GLWFont::displayCharacterInfo, "CharacterInfo");
+		this,
+		&GLWFont::displayCharacterInfo,
+		"CharacterInfo"
+	);
 }
 
 GLWFont::~GLWFont()
-{
-
-}
+{}
 
 void GLWFont::displayCharacterInfo()
 {
-	Logger::log(S3D::formatStringBuffer("Characters : %u\nCharacter Blocks : %u\n",
-		GLFont2d::getTotalCharacters(),
-		GLFont2dStorage::getTotalCharacterBlocks()));
+	Logger::log(
+		S3D::formatStringBuffer(
+			"Characters : %u\nCharacter Blocks : %u\n",
+			GLFont2d::getTotalCharacters(),
+			GLFont2dStorage::getTotalCharacterBlocks()
+		)
+	);
 }

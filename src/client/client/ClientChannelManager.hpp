@@ -26,7 +26,8 @@
 #include <console/ConsoleRule.hpp>
 #include <set>
 
-class ClientChannelManager 
+// SINGLETON
+class ClientChannelManager
 {
 public:
 	static ClientChannelManager *instance();
@@ -49,6 +50,7 @@ public:
 
 protected:
 	static ClientChannelManager *instance_;
+
 	static unsigned int nextRecieverId_;
 
 	class ChannelEntry
@@ -77,7 +79,6 @@ protected:
 private:
 	ClientChannelManager();
 	virtual ~ClientChannelManager();
-
 };
 
 #endif

@@ -24,7 +24,8 @@
 
 #include <simactions/TankStartMoveSimAction.hpp>
 
-class ClientStartGameHandler 
+// SINGLETON
+class ClientStartGameHandler
 {
 public:
 	static ClientStartGameHandler* instance();
@@ -44,4 +45,3 @@ private:
 };
 
 #endif // _ClientStartGameHandler_h
-

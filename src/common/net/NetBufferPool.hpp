@@ -26,6 +26,7 @@
 #include <list>
 #include <SDL/SDL_thread.h>
 
+// SINGLETON
 class NetBufferPool
 {
 public:
@@ -36,6 +37,7 @@ public:
 
 protected:
 	static NetBufferPool *instance_;
+
 	std::list<NetBuffer *> messagePool_;
 	SDL_mutex *messagePoolMutex_;
 
@@ -43,6 +45,5 @@ private:
 	NetBufferPool();
 	virtual ~NetBufferPool();
 };
-
 
 #endif

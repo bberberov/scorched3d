@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,24 +20,19 @@
 
 #include <dialogs/MainMenuDialog.hpp>
 
-MainMenuDialog *MainMenuDialog::instance_ = 0;
+MainMenuDialog *MainMenuDialog::instance_ = nullptr;
 
 MainMenuDialog *MainMenuDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new MainMenuDialog();
 	}
-
 	return instance_;
 }
 
 MainMenuDialog::MainMenuDialog()
-{
-
-}
+{}
 
 MainMenuDialog::~MainMenuDialog()
-{
-
-}
+{}

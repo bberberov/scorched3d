@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,13 +23,13 @@
 #include <GLW/GLWTextButton.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-TipDialog *TipDialog::instance_ = 0;
+TipDialog *TipDialog::instance_ = nullptr;
 
 TipDialog *TipDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new TipDialog;
+		instance_ = new TipDialog();
 	}
 	return instance_;
 }

@@ -38,13 +38,13 @@
 #include <lang/LangResource.hpp>
 #include <limits>
 
-StartDialog *StartDialog::instance_ = 0;
+StartDialog *StartDialog::instance_ = nullptr;
 
 StartDialog *StartDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new StartDialog;
+		instance_ = new StartDialog();
 	}
 	return instance_;
 }

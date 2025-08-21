@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,13 @@
 #include <tank/TankState.hpp>
 #include <GLW/GLWPlanView.hpp>
 
-ClientLinesHandler *ClientLinesHandler::instance_ = 0;
+ClientLinesHandler *ClientLinesHandler::instance_ = nullptr;
 
 ClientLinesHandler *ClientLinesHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientLinesHandler;
+		instance_ = new ClientLinesHandler();
 	}
 	return instance_;
 }

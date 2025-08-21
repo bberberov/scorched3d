@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,13 @@
 #include <coms/ComsAdminMessage.hpp>
 #include <coms/ComsMessageSender.hpp>
 
-AdminAuthDialog *AdminAuthDialog::instance_ = 0;
+AdminAuthDialog *AdminAuthDialog::instance_ = nullptr;
 
 AdminAuthDialog *AdminAuthDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new AdminAuthDialog;
+		instance_ = new AdminAuthDialog();
 	}
 	return instance_;
 }
@@ -59,13 +59,13 @@ void AdminAuthDialog::display()
 
 	GLWPanel *inputPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
 
-	username_ = 0;
+	username_ = nullptr;
 	{
 		username_ = new GLWTextBox(0.0f, 0.0f, 200.0f);
 		inputPanel->addWidget(new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("USER_NAME_LABEL", "User Name :")));
 		inputPanel->addWidget(username_, 0, SpaceLeft | SpaceTop, 10.0f);
 	}
-	password_ = 0;
+	password_ = nullptr;
 	{
 		password_ = new GLWTextBox(0.0f, 0.0f, 200.0f, LangString(), GLWTextBox::eFlagPassword);
 		inputPanel->addWidget(new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("PASSWORD_LABEL", "Password :")));

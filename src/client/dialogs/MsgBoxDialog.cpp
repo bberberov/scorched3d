@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,13 +21,13 @@
 #include <dialogs/MsgBoxDialog.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-MsgBoxDialog *MsgBoxDialog::instance_ = 0;
+MsgBoxDialog *MsgBoxDialog::instance_ = nullptr;
 
 MsgBoxDialog *MsgBoxDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new MsgBoxDialog;
+		instance_ = new MsgBoxDialog();
 	}
 	return instance_;
 }
@@ -61,9 +61,7 @@ MsgBoxDialog::MsgBoxDialog() :
 }
 
 MsgBoxDialog::~MsgBoxDialog()
-{
-
-}
+{}
 
 void MsgBoxDialog::show(const LangString &message, ShowType type)
 {

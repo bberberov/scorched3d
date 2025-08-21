@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,13 +29,13 @@
 #include <common/Logger.hpp>
 #include <net/NetInterface.hpp>
 
-ClientMessageHandler *ClientMessageHandler::instance_ = 0;
+ClientMessageHandler *ClientMessageHandler::instance_ = nullptr;
 
 ClientMessageHandler *ClientMessageHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientMessageHandler;
+		instance_ = new ClientMessageHandler();
 	}
 	return instance_;
 }

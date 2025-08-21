@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,10 +36,15 @@
 #include <client/ClientChannelManager.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
+PlayerInitialDialog *PlayerInitialDialog::instance_ = nullptr;
+
 PlayerInitialDialog *PlayerInitialDialog::instance()
 {
-	static PlayerInitialDialog instance_;
-	return &instance_;
+	if (nullptr == instance_)
+	{
+		instance_ = new PlayerInitialDialog();
+	}
+	return instance_;
 }
 
 PlayerInitialDialog::PlayerInitialDialog() :
@@ -129,9 +134,7 @@ void PlayerInitialDialog::okButton(bool spectate)
 }
 
 void PlayerInitialDialog::cancelButton()
-{
-
-}
+{}
 
 void PlayerInitialDialog::nextPlayer()
 {

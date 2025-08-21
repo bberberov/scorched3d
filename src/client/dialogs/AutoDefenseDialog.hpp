@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,10 +26,8 @@
 #include <GLW/GLWDropDownText.hpp>
 #include <dialogs/BuyAccessoryDialogTankInfo.hpp>
 
-class AutoDefenseDialog :
-	public GLWWindow, 
-	public GLWButtonI,
-	public GLWDropDownI
+// SINGLETON
+class AutoDefenseDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
 	static AutoDefenseDialog *instance();
@@ -37,13 +35,15 @@ public:
 	// Inherited from GLWButtonI
 	virtual void buttonDown(unsigned int id);
 
-	// Inherited from GLWDropDownI 
+	// Inherited from GLWDropDownI
 	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
 
 	// Inherited from GLWWindow
 	virtual void windowInit(const unsigned state);
 
 protected:
+	static AutoDefenseDialog *instance_;
+
 	BuyAccessoryDialogTankInfo &tankInfo_;
 	unsigned int okId_;
 	unsigned int cancelId_;
@@ -58,6 +58,5 @@ private:
 	AutoDefenseDialog();
 	virtual ~AutoDefenseDialog();
 };
-
 
 #endif

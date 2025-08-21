@@ -26,6 +26,8 @@
 #include <string>
 
 class ModelRenderer;
+
+// SINGLETON
 class ModelRendererStore
 {
 public:
@@ -35,6 +37,7 @@ public:
 
 protected:
 	static ModelRendererStore *instance_;
+
 	std::map<std::string, ModelRenderer *> fileMap_;
 
 	ModelRenderer *getModel(ModelID &id);

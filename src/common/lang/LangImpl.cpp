@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,9 +24,9 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_thread.h>
 
-static SDL_mutex *langMutex = 0;
+static SDL_mutex *langMutex = nullptr;
 
-LangImpl::LangImpl() : undefinedBundle_(0)
+LangImpl::LangImpl() : undefinedBundle_(nullptr)
 {
 	langMutex = SDL_CreateMutex();
 	init();

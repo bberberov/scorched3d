@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,26 +24,22 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientParams.hpp>
 
-OptionsDisplayConsole *OptionsDisplayConsole::instance_ = 0;
+OptionsDisplayConsole *OptionsDisplayConsole::instance_ = nullptr;
 
 OptionsDisplayConsole *OptionsDisplayConsole::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new OptionsDisplayConsole;
+		instance_ = new OptionsDisplayConsole();
 	}
-
 	return instance_;
 }
 
 OptionsDisplayConsole::OptionsDisplayConsole()
-
-{
-}
+{}
 
 OptionsDisplayConsole::~OptionsDisplayConsole()
-{	
-}
+{}
 
 void OptionsDisplayConsole::addDisplayToConsole()
 {

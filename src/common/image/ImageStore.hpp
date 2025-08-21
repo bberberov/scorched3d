@@ -26,6 +26,8 @@
 #include <string>
 
 class Image;
+
+// SINGLETON
 class ImageStore
 {
 public:
@@ -35,6 +37,7 @@ public:
 
 protected:
 	static ImageStore *instance_;
+
 	std::map<std::string, Image *> imageMap_;
 
 private:

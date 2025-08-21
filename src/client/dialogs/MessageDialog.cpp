@@ -25,11 +25,14 @@
 #include <GLEXT/GLViewPort.hpp>
 #include <GLW/GLWFont.hpp>
 
-MessageDialog *MessageDialog::instance_ = 0;
+MessageDialog *MessageDialog::instance_ = nullptr;
 
 MessageDialog *MessageDialog::instance()
 {
-	if (!instance_) instance_ = new MessageDialog();
+	if (nullptr == instance_)
+	{
+		instance_ = new MessageDialog();
+	}
 	return instance_;
 }
 

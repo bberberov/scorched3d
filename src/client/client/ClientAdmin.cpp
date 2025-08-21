@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,18 +28,18 @@
 #include <coms/ComsAdminMessage.hpp>
 #include <common/Defines.hpp>
 
-ClientAdmin *ClientAdmin::instance_ = 0;
+ClientAdmin *ClientAdmin::instance_ = nullptr;
 
 ClientAdmin *ClientAdmin::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new ClientAdmin();
 	}
 	return instance_;
 }
 
-ClientAdmin::ClientAdmin() 
+ClientAdmin::ClientAdmin()
 {
 	// Help
 	new ConsoleRuleMethodIAdapter<ClientAdmin>(
@@ -169,9 +169,7 @@ ClientAdmin::ClientAdmin()
 }
 
 ClientAdmin::~ClientAdmin()
-{
-
-}
+{}
 
 void ClientAdmin::adminNoParams(std::vector<ConsoleRuleValue> &values, 
 	unsigned int userData)
@@ -234,7 +232,7 @@ void ClientAdmin::adminHelp()
 	Console::instance()->addLine(false, "  show - Show ids for all current players");
 	Console::instance()->addLine(false, "  showbanned - Shows all banned/perm muted players");
 	Console::instance()->addLine(false, "  killall - Kills all current players and starts next round");
-	Console::instance()->addLine(false, "  newgame - Kills all current players and starts new game");	
+	Console::instance()->addLine(false, "  newgame - Kills all current players and starts new game");
 	Console::instance()->addLine(false, "  kick <player id> - Kicks specified player");
 	Console::instance()->addLine(false, "  ban <player id> - Bans and kicks specified player");
 	Console::instance()->addLine(false, "  poor <player id> - Removes all money from player");

@@ -24,9 +24,8 @@
 #include <common/LoggerI.hpp>
 #include <common/ProgressCounter.hpp>
 
-class ServerConsoleProgressCounter : 
-	public ProgressCounterI, 
-	public LoggerI
+// SINGLETON
+class ServerConsoleProgressCounter : public ProgressCounterI, public LoggerI
 {
 public:
 	static ServerConsoleProgressCounter *instance();
@@ -40,6 +39,7 @@ public:
 
 protected:
 	static ServerConsoleProgressCounter *instance_;
+
 	bool firstOp_;
 	int hashes_;
 	ProgressCounter progressCounter_;
@@ -47,7 +47,6 @@ protected:
 private:
 	ServerConsoleProgressCounter();
 	virtual ~ServerConsoleProgressCounter();
-
 };
 
 #endif

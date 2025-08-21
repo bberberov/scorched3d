@@ -25,6 +25,7 @@
 #include <lang/LangString.hpp>
 #include <vector>
 
+// SINGLETON
 class StartDialog : public GLWWindow
 {
 public:
@@ -35,6 +36,7 @@ public:
 
 protected:
 	static StartDialog *instance_;
+
 	struct OptionDefinition
 	{
 		LangString option;

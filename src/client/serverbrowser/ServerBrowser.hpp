@@ -24,6 +24,7 @@
 #include <serverbrowser/ServerBrowserRefresh.hpp>
 #include <serverbrowser/ServerBrowserCollect.hpp>
 
+// SINGLETON
 class ServerBrowser
 {
 public:
@@ -46,6 +47,7 @@ public:
 
 protected:
 	static ServerBrowser *instance_;
+
 	bool refreshing_;
 	SDL_mutex *refreshingMutex_;
 

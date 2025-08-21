@@ -26,14 +26,15 @@
 #include <GLW/GLWTextBox.hpp>
 
 class TextBoxDialog;
-class TextBoxDialogI 
+
+class TextBoxDialogI
 {
 public:
 	virtual void textBoxResult(TextBoxDialog *dialog, const LangString &result) = 0;
 };
 
-class TextBoxDialog : public GLWWindow,
-	public GLWButtonI
+// SINGLETON
+class TextBoxDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static TextBoxDialog *instance();
@@ -61,7 +62,6 @@ protected:
 private:
 	TextBoxDialog();
 	virtual ~TextBoxDialog();
-
 };
 
 #endif

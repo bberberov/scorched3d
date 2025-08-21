@@ -35,11 +35,11 @@
 #include <common/LoggerI.hpp>
 #include <common/Defines.hpp>
 
-ServerWebServer *ServerWebServer::instance_ = 0;
+ServerWebServer *ServerWebServer::instance_ = nullptr;
 
 ServerWebServer *ServerWebServer::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new ServerWebServer();
 	}
@@ -52,10 +52,10 @@ ServerWebServer::ServerWebServer() :
 	logger_(nullptr)
 {
 	sendThread_ = SDL_CreateThread(ServerWebServer::sendThreadFunc, 0);
-	if (sendThread_ == 0)
+	if (nullptr == sendThread_)
 	{
 		Logger::log(S3D::formatStringBuffer("ServerWebServer: Failed to create thread"));
-	}	
+	}
 
 	addRequestHandler("/players", new ServerWebHandler::PlayerHandler());
 	addThrededRequestHandler("/playersthreaded", new ServerWebHandler::PlayerHandlerThreaded());
@@ -89,7 +89,7 @@ int ServerWebServer::sendThreadFunc(void *)
 		SDL_Delay(100);
 
 		// Process the threaded queue
-		instance_->processQueue(instance_->threadedQueue_, false);		
+		instance_->processQueue(instance_->threadedQueue_, false);
 	}
 	return 1;
 }

@@ -27,6 +27,7 @@
 #include <common/Vector.hpp>
 #include <map>
 
+// SINGLETON
 class MainCamera : public GameStateI, public GLMenuI
 {
 public:
@@ -94,6 +95,7 @@ public:
 
 protected:
 	static MainCamera *instance_;
+
 	float waterTransparency_;
 	bool mouseDown_;
 	bool keyDown_;
@@ -109,7 +111,6 @@ protected:
 private:
 	MainCamera();
 	virtual ~MainCamera();
-
 };
 
 #endif // !defined(AFX_MAINCAMERA_H__97593EBB_5901_4D81_BAEB_8ADC76CFB627__INCLUDED_)

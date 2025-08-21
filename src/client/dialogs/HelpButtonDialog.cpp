@@ -42,11 +42,11 @@
 #include <land/VisibilityPatchGrid.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-HelpButtonDialog *HelpButtonDialog::instance_ = 0;
+HelpButtonDialog *HelpButtonDialog::instance_ = nullptr;
 
 HelpButtonDialog *HelpButtonDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new HelpButtonDialog();
 	}

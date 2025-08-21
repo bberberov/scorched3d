@@ -24,6 +24,7 @@
 #include <GLEXT/GLTexture.hpp>
 #include <GLW/GLWWindow.hpp>
 
+// SINGLETON
 class BackdropDialog : public GLWWindow
 {
 public:
@@ -38,6 +39,7 @@ public:
 
 protected:
 	static BackdropDialog *instance_;
+
 	GLTexture backTex_;
 	GLTextureReference logoTex_, footerTex_;
 	std::string lastMod_;
@@ -46,6 +48,5 @@ private:
 	BackdropDialog();
 	virtual ~BackdropDialog();
 };
-
 
 #endif

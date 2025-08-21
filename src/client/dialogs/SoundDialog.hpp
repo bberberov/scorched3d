@@ -26,8 +26,8 @@
 #include <GLW/GLWCheckBoxText.hpp>
 #include <GLW/GLWSlider.hpp>
 
-class SoundDialog : public GLWWindow ,
-	public GLWButtonI
+// SINGLETON
+class SoundDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static SoundDialog *instance();
@@ -40,6 +40,7 @@ public:
 
 protected:
 	static SoundDialog *instance_;
+
 	unsigned int okId_, cancelId_, applyId_;
 	GLWCheckBoxText *noSoundBox_;
 	GLWCheckBoxText *noMusicBox_;

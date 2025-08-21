@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,13 +25,13 @@
 #include <coms/ComsConnectRejectMessage.hpp>
 #include <common/Logger.hpp>
 
-ClientConnectionRejectHandler *ClientConnectionRejectHandler::instance_ = 0;
+ClientConnectionRejectHandler *ClientConnectionRejectHandler::instance_ = nullptr;
 
 ClientConnectionRejectHandler *ClientConnectionRejectHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientConnectionRejectHandler;
+		instance_ = new ClientConnectionRejectHandler();
 	}
 	return instance_;
 }

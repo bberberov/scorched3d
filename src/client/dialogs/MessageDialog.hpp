@@ -26,6 +26,7 @@
 #include <string>
 #include <list>
 
+// SINGLETON
 class MessageDialog : public GLWWindow, public ClientChannelManagerI
 {
 public:
@@ -46,6 +47,7 @@ public:
 
 protected:
 	static MessageDialog *instance_;
+
 	float showTime_;
 	LangString currentText_;
 	std::list<LangString> texts_;

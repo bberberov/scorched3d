@@ -38,13 +38,13 @@
 #include <sky/Sky.hpp>
 #include <algorithm>
 
-RenderTargets *RenderTargets::instance_ = 0;
+RenderTargets *RenderTargets::instance_ = nullptr;
 
 RenderTargets *RenderTargets::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new RenderTargets;
+		instance_ = new RenderTargets();
 	}
 	return instance_;
 }

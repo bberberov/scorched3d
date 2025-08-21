@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,31 +24,26 @@
 
 bool Keyboard::dvorak_ = false;
 
-Keyboard *Keyboard::instance_ = 0;
+Keyboard *Keyboard::instance_ = nullptr;
 
 Keyboard *Keyboard::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Keyboard;
+		instance_ = new Keyboard();
 	}
-
 	return instance_;
 }
 
 Keyboard::Keyboard() : keybHistCnt_(0), mHighSurrogate(0)
-{
-
-}
+{}
 
 Keyboard::~Keyboard()
-{
-
-}
+{}
 
 bool Keyboard::init()
 {
- 	SDL_EnableUNICODE(1);
+	SDL_EnableUNICODE(1);
 	SDL_EnableKeyRepeat(250, 100);
 	return true;
 }
@@ -64,18 +59,18 @@ unsigned int Keyboard::getKeyboardState()
 
 char *Keyboard::getkeyboardbuffer(unsigned int &bufCnt)
 {
- 	bufCnt = SDLK_LAST;
- 	return (char *) SDL_GetKeyState(NULL);
+	bufCnt = SDLK_LAST;
+	return (char *) SDL_GetKeyState(NULL);
 }
  
 KeyboardHistory::HistoryElement *Keyboard::getkeyboardhistory(unsigned int &histCnt)
 {
- 	histCnt = keybHistCnt_;
- 	keybHistCnt_=0;
+	histCnt = keybHistCnt_;
+	keybHistCnt_=0;
 
- 	return keybHist_;
+	return keybHist_;
 }
- 
+
 #define UTF16_IS_HIGH_SURROGATE(U) ((Uint16)((U) - 0xD800) < 0x0400)
 #define UTF16_IS_LOW_SURROGATE(U)  ((Uint16)((U) - 0xDC00) < 0x0400)
 #define UTF16_SURROGATE_PAIR_TO_UTF32(H,L) (((H) << 10) + (L) - (0xD800 << 10) - 0xDC00 + 0x00010000)
@@ -420,7 +415,7 @@ KeyboardKey *Keyboard::getKey(const char *name)
 
 	S3D::dialogMessage("Keyboard", S3D::formatStringBuffer(
 				  "Failed to find key for key name \"%s\"",
-				  name));	
+				  name));
 	return &defaultKey;
 }
 

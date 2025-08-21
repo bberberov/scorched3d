@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,13 +24,13 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <coms/ComsGameStoppedMessage.hpp>
 
-ClientGameStoppedHandler *ClientGameStoppedHandler::instance_ = 0;
+ClientGameStoppedHandler *ClientGameStoppedHandler::instance_ = nullptr;
 
 ClientGameStoppedHandler *ClientGameStoppedHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientGameStoppedHandler;
+		instance_ = new ClientGameStoppedHandler();
 	}
 	return instance_;
 }

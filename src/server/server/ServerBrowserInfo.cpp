@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011,  2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,18 +32,18 @@
 #include <tank/TankScore.hpp>
 #include <string.h>
 
-ServerBrowserInfo *ServerBrowserInfo::instance_ = 0;
+ServerBrowserInfo *ServerBrowserInfo::instance_ = nullptr;
 
 ServerBrowserInfo *ServerBrowserInfo::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new ServerBrowserInfo();
 	}
 	return instance_;
 }
 
-ServerBrowserInfo::ServerBrowserInfo() : udpsock_(0)
+ServerBrowserInfo::ServerBrowserInfo() : udpsock_(nullptr)
 {
 	packetV_ = SDLNet_AllocPacketV(4, 10000);
 	packetVOut_ = SDLNet_AllocPacketV(20, 10000);
@@ -56,13 +56,19 @@ ServerBrowserInfo::~ServerBrowserInfo()
 bool ServerBrowserInfo::start()
 {
 	udpsock_ = SDLNet_UDP_Open(ScorchedServer::instance()->getOptionsGame().getPortNo() + 1);
-	if(!udpsock_) return false;
-	return true;
+	if (nullptr == udpsock_)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 }
 
 void ServerBrowserInfo::processMessages()
 { 
-	if (!udpsock_) return;
+	if (nullptr == udpsock_) return;
 
 	int numrecv = SDLNet_UDP_RecvV(udpsock_, packetV_);
 	if(numrecv <=0) return;

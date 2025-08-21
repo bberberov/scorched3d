@@ -37,13 +37,13 @@
 #include <common/OptionsScorched.hpp>
 #include <time.h>
 
-TutorialDialog *TutorialDialog::instance_ = 0;
+TutorialDialog *TutorialDialog::instance_ = nullptr;
 
 TutorialDialog *TutorialDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new TutorialDialog;
+		instance_ = new TutorialDialog();
 	}
 	return instance_;
 }

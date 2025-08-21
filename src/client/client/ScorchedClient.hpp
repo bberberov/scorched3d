@@ -28,6 +28,8 @@ class ParticleEngine;
 class GameState;
 class SimulatorGameState;
 class ClientSimulator;
+
+// SINGLETON
 class ScorchedClient : public ScorchedContext
 {
 public:
@@ -45,6 +47,7 @@ public:
 
 protected:
 	static ScorchedClient *instance_;
+
 	static TargetSpace *targetSpace_;
 	MainLoop *mainLoop_;
 	ParticleEngine* particleEngine_;

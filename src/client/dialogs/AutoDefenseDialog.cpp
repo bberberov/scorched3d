@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -35,10 +35,15 @@
 #include <client/ScorchedClient.hpp>
 #include <lang/LangResource.hpp>
 
+AutoDefenseDialog *AutoDefenseDialog::instance_ = nullptr;
+
 AutoDefenseDialog *AutoDefenseDialog::instance()
 {
-	static AutoDefenseDialog instance;
-	return &instance;
+	if (nullptr == instance_)
+	{
+		instance_ = new AutoDefenseDialog();
+	}
+	return instance_;
 }
 
 AutoDefenseDialog::AutoDefenseDialog() :

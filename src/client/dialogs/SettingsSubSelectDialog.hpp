@@ -56,6 +56,7 @@ protected:
 	ToolTip tip_;
 };
 
+// SINGLETON
 class SettingsSubSelectDialog :
 	public GLWWindow,
 	public GLWButtonI,
@@ -96,7 +97,6 @@ protected:
 private:
 	SettingsSubSelectDialog();
 	virtual ~SettingsSubSelectDialog();
-
 };
 
 #endif

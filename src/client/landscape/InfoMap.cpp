@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,13 +27,13 @@
 #include <client/ClientParams.hpp>
 #include <common/OptionsTransient.hpp>
 
-InfoMap *InfoMap::instance_ = 0;
+InfoMap *InfoMap::instance_ = nullptr;
 
 InfoMap *InfoMap::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new InfoMap;
+		instance_ = new InfoMap();
 	}
 	return instance_;
 }
@@ -48,23 +48,37 @@ InfoMap::~InfoMap()
 
 void InfoMap::addAdapters()
 {
-	static ConsoleRuleMethodIAdapter<Landscape> *off = 0;
-	static ConsoleRuleMethodIAdapter<InfoMap> *bands = 0;
-	static ConsoleRuleMethodIAdapter<InfoMap> *grid = 0;
+	static ConsoleRuleMethodIAdapter<Landscape> *off = nullptr;
+	static ConsoleRuleMethodIAdapter<InfoMap> *bands = nullptr;
+	static ConsoleRuleMethodIAdapter<InfoMap> *grid  = nullptr;
 	
-	delete off; off = 0;
-	delete bands; bands = 0;
-	delete grid; grid = 0;
+	delete off;
+	off   = nullptr;
+	delete bands;
+	bands = nullptr;
+	delete grid;
+	grid  = nullptr;
 
-	if(ScorchedClient::instance()->getOptionsGame().getDebugFeatures() ||
-		!ClientParams::instance()->getConnectedToServer())
+	if(
+		ScorchedClient::instance()->getOptionsGame().getDebugFeatures()
+		|| !ClientParams::instance()->getConnectedToServer()
+	)
 	{
 		off = new ConsoleRuleMethodIAdapter<Landscape>(
-			Landscape::instance(), &Landscape::restoreLandscapeTexture, "LandscapeInfoOff");
+			Landscape::instance(),
+			&Landscape::restoreLandscapeTexture,
+			"LandscapeInfoOff"
+		);
 		bands = new ConsoleRuleMethodIAdapter<InfoMap>(
-			this, &InfoMap::showHeightBands, "LandscapeInfoHeightBands");
+			this,
+			&InfoMap::showHeightBands,
+			"LandscapeInfoHeightBands"
+		);
 		grid = new ConsoleRuleMethodIAdapter<InfoMap>(
-			this, &InfoMap::showGrid, "LandscapeInfoGrid");
+			this,
+			&InfoMap::showGrid,
+			"LandscapeInfoGrid"
+		);
 	}
 }
 
@@ -72,10 +86,12 @@ void InfoMap::showHeightBands()
 {
 	Image newMap(
 		Landscape::instance()->getMainMap().getWidth(),
-		Landscape::instance()->getMainMap().getHeight());
+		Landscape::instance()->getMainMap().getHeight()
+	);
 	float *heights = new float[
 		Landscape::instance()->getMainMap().getWidth() *
-		Landscape::instance()->getMainMap().getHeight()];
+		Landscape::instance()->getMainMap().getHeight()
+	];
 
 	const float width = (float)
 		ScorchedClient::instance()->getLandscapeMaps().getGroundMaps().getLandscapeWidth();
@@ -95,7 +111,8 @@ void InfoMap::showHeightBands()
 			heights[x + y * newMap.getWidth()] = 
 				ScorchedClient::instance()->getLandscapeMaps().
 					getGroundMaps().getInterpHeight(
-						fixed::fromFloat(posX), fixed::fromFloat(posY)).asFloat();
+						fixed::fromFloat(posX), fixed::fromFloat(posY)
+					).asFloat();
 		}
 	}
 
@@ -111,27 +128,35 @@ void InfoMap::showHeightBands()
 
 			if (x!=0 && y!=0 && x<newMap.getWidth()-1 && y<newMap.getHeight()-1)
 			{
-			float height = heights[x + y * newMap.getWidth()];
-			float height2 = heights[x + 1 + y * newMap.getWidth()];
-			float height3 = heights[x - 1 + y * newMap.getWidth()];
-			float height4 = heights[x + (y +1) * newMap.getWidth()];
-			float height5 = heights[x + (y -1) * newMap.getWidth()];
-			float baseHeight = float(int(height / heightSep)) * heightSep;
-			float baseHeight2 = float(int(height2 / heightSep)) * heightSep;
-			float baseHeight3 = float(int(height3 / heightSep)) * heightSep;
-			float baseHeight4 = float(int(height4 / heightSep)) * heightSep;
-			float baseHeight5 = float(int(height5 / heightSep)) * heightSep;
+				float height = heights[x + y * newMap.getWidth()];
+				float height2 = heights[x + 1 + y * newMap.getWidth()];
+				float height3 = heights[x - 1 + y * newMap.getWidth()];
+				float height4 = heights[x + (y +1) * newMap.getWidth()];
+				float height5 = heights[x + (y -1) * newMap.getWidth()];
+				float baseHeight = float(int(height / heightSep)) * heightSep;
+				float baseHeight2 = float(int(height2 / heightSep)) * heightSep;
+				float baseHeight3 = float(int(height3 / heightSep)) * heightSep;
+				float baseHeight4 = float(int(height4 / heightSep)) * heightSep;
+				float baseHeight5 = float(int(height5 / heightSep)) * heightSep;
 
-			if (baseHeight < baseHeight2 || baseHeight < baseHeight3 ||
-				baseHeight < baseHeight4 || baseHeight < baseHeight5)
-			{
-				r = g = b = 0;
-			}
-			else if (baseHeight > baseHeight2 || baseHeight > baseHeight3 ||
-                        	baseHeight > baseHeight4 || baseHeight > baseHeight5)
-			{
-       				 r = g = b = 255;
-			}
+				if (
+					baseHeight < baseHeight2
+					|| baseHeight < baseHeight3
+					|| baseHeight < baseHeight4
+					|| baseHeight < baseHeight5
+				)
+				{
+					r = g = b = 0;
+				}
+				else if (
+					baseHeight > baseHeight2
+					|| baseHeight > baseHeight3
+					|| baseHeight > baseHeight4
+					|| baseHeight > baseHeight5
+				)
+				{
+					r = g = b = 255;
+				}
 			}
 
 			dest[0] = r;
@@ -153,7 +178,8 @@ void InfoMap::showGrid()
 {
 	Image newMap(
 		Landscape::instance()->getMainMap().getWidth(),
-		Landscape::instance()->getMainMap().getHeight());
+		Landscape::instance()->getMainMap().getHeight()
+	);
 
 	GLubyte *dest = newMap.getBits();
 	GLubyte *src = Landscape::instance()->getMainMap().getBits();
@@ -169,9 +195,9 @@ void InfoMap::showGrid()
 			{
 				r = g = b = 255;
 			}
-			else if ((1+x) % 15 == 0 || (1+y) % 15 == 0)
+			else if ( (1+x) % 15 == 0 || (1+y) % 15 == 0 )
 			{
-                        	r = g = b = 0;
+				r = g = b = 0;
 			}
 	
 			dest[0] = r;

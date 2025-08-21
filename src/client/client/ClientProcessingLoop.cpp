@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,13 +30,13 @@
 
 time_t startTime = 0;
 
-ClientProcessingLoop *ClientProcessingLoop::instance_ = 0;
+ClientProcessingLoop *ClientProcessingLoop::instance_ = nullptr;
 
 ClientProcessingLoop *ClientProcessingLoop::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientProcessingLoop;
+		instance_ = new ClientProcessingLoop();
 	}
 	return instance_;
 }

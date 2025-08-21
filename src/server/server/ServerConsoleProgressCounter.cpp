@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,11 +21,14 @@
 #include <server/ServerConsoleProgressCounter.hpp>
 #include <common/Logger.hpp>
 
-ServerConsoleProgressCounter *ServerConsoleProgressCounter::instance_ = 0;
+ServerConsoleProgressCounter *ServerConsoleProgressCounter::instance_ = nullptr;
 
 ServerConsoleProgressCounter *ServerConsoleProgressCounter::instance()
 {
-	if (!instance_) instance_ = new ServerConsoleProgressCounter();
+	if (nullptr == instance_)
+	{
+		instance_ = new ServerConsoleProgressCounter();
+	}
 	return instance_;
 }
 

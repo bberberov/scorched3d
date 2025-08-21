@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,13 +25,13 @@
 #include <3dsparse/Model.hpp>
 #include <common/Defines.hpp>
 
-ModelStore *ModelStore::instance_ = 0;
+ModelStore *ModelStore::instance_ = nullptr;
 
 ModelStore *ModelStore::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ModelStore;
+		instance_ = new ModelStore();
 	}
 	return instance_;
 }

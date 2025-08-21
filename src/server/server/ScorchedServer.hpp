@@ -47,6 +47,7 @@ class ServerMessageHandler;
 class ServerFileServer;
 class EventHandlerDataBase;
 
+// SINGLETON
 class ScorchedServer : public ScorchedContext
 {
 public:
@@ -84,6 +85,7 @@ public:
 
 protected:
 	static ScorchedServer *instance_;
+
 	static bool started_;
 	static TargetSpace *targetSpace_;
 	
@@ -98,7 +100,7 @@ protected:
 	ServerTextFilter *textFilter_;
 	ServerHandlers *serverHandlers_;
 	ServerLoadLevel *serverLoadLevel_;
-	ServerChannelManager *serverChannelManager_;	
+	ServerChannelManager *serverChannelManager_;
 	ServerAdminSessions *serverAdminSessions_;
 	ServerSyncCheck *serverSyncCheck_;
 	ServerMessageHandler *serverMessageHandler_;

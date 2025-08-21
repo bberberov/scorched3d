@@ -24,7 +24,8 @@
 #include <stdlib.h>
 #include <SDL/SDL.h>
 
-class Display  
+// SINGLETON
+class Display
 {
 public:
 	static Display *instance();
@@ -33,14 +34,12 @@ public:
 
 protected:
 	static Display *instance_;
-			
+
 private:
 	Display();
 	virtual ~Display();
 
 	SDL_Surface *surface;
-
 };
 
 #endif /* _DISPLAY_H_ */
-

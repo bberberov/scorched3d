@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,13 +25,13 @@
 #include <GLW/GLWWindowManager.hpp>
 #include <GLW/GLWSlider.hpp>
 
-SoundDialog *SoundDialog::instance_ = 0;
+SoundDialog *SoundDialog::instance_ = nullptr;
 
 SoundDialog *SoundDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SoundDialog;
+		instance_ = new SoundDialog();
 	}
 	return instance_;
 }

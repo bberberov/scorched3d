@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,13 +25,13 @@
 #include <client/ClientParams.hpp>
 #include <client/ClientConnectionAuthHandler.hpp>
 
-AuthDialog *AuthDialog::instance_ = 0;
+AuthDialog *AuthDialog::instance_ = nullptr;
 
 AuthDialog *AuthDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new AuthDialog;
+		instance_ = new AuthDialog();
 	}
 	return instance_;
 }
@@ -59,7 +59,7 @@ void AuthDialog::display()
 
 	GLWPanel *inputPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
 
-	username_ = 0;
+	username_ = nullptr;
 	if (auth_ & eNameRequired)
 	{
 		username_ = new GLWTextBox(0.0f, 0.0f, 200.0f,
@@ -67,7 +67,7 @@ void AuthDialog::display()
 		inputPanel->addWidget(new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("USER_NAME_LABEL", "User Name :")));
 		inputPanel->addWidget(username_, 0, SpaceLeft | SpaceTop, 10.0f);
 	}
-	password_ = 0;
+	password_ = nullptr;
 	if (auth_ & ePasswordRequired)
 	{
 		password_ = new GLWTextBox(0.0f, 0.0f, 200.0f, 

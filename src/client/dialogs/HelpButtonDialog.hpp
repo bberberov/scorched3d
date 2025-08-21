@@ -24,6 +24,7 @@
 #include <GLEXT/GLTexture.hpp>
 #include <GLEXT/GLMenuI.hpp>
 
+// SINGLETON
 class HelpButtonDialog
 {
 public:

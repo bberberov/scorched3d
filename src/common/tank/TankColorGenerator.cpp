@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,13 +22,13 @@
 #include <tank/Tank.hpp>
 #include <stdlib.h>
 
-TankColorGenerator *TankColorGenerator::instance_ = 0;
+TankColorGenerator *TankColorGenerator::instance_ = nullptr;
 
 TankColorGenerator *TankColorGenerator::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new TankColorGenerator;
+		instance_ = new TankColorGenerator();
 	}
 	return instance_;
 }
@@ -51,7 +51,7 @@ TankColorGenerator::TankColorGenerator()
 	addColor(140, 140, 140);
 	addColor(140, 255, 0);
 	addColor(255, 0, 140);
-	addColor(140, 255, 140);	
+	addColor(140, 255, 140);
 	addColor(0, 0, 140);
 	addColor(0, 140, 0);
 	addColor(0, 255, 140);

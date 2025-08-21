@@ -33,7 +33,9 @@
 #include <GLW/GLWCheckBoxText.hpp>
 #include <GLW/GLWDropDownText.hpp>
 
-class BuyAccessoryDialog :
+// SINGLETON
+class BuyAccessoryDialog
+	:
 	public GLWWindow,
 	public GLWButtonI,
 	public GLWCheckBoxI,
@@ -61,6 +63,7 @@ public:
 
 protected:
 	static BuyAccessoryDialog *instance_;
+
 	BuyAccessoryDialogTankInfo &tankInfo_;
 	unsigned int okId_;
 	unsigned int giftId_;

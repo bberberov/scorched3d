@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,13 +30,13 @@
 #include <common/Defines.hpp>
 #include <time.h>
 
-SkipAllDialog *SkipAllDialog::instance_ = 0;
+SkipAllDialog *SkipAllDialog::instance_ = nullptr;
 
 SkipAllDialog *SkipAllDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SkipAllDialog;
+		instance_ = new SkipAllDialog();
 	}
 	return instance_;
 }

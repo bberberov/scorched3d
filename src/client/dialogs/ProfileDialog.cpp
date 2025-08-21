@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -37,15 +37,14 @@
 
 const int INSET = 8;
 
-ProfileDialog *ProfileDialog::instance_ = 0;
+ProfileDialog *ProfileDialog::instance_ = nullptr;
 
 ProfileDialog *ProfileDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ProfileDialog;
+		instance_ = new ProfileDialog();
 	}
-
 	return instance_;
 }
 

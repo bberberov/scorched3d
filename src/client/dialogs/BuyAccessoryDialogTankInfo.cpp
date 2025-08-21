@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,11 +26,14 @@
 #include <tank/TankState.hpp>
 #include <tanket/TanketShotInfo.hpp>
 
-BuyAccessoryDialogTankInfo *BuyAccessoryDialogTankInfo::instance_ = 0;
+BuyAccessoryDialogTankInfo *BuyAccessoryDialogTankInfo::instance_ = nullptr;
 
 BuyAccessoryDialogTankInfo *BuyAccessoryDialogTankInfo::instance()
 {
-	if (!instance_) instance_ = new BuyAccessoryDialogTankInfo();
+	if (nullptr == instance_)
+	{
+		instance_ = new BuyAccessoryDialogTankInfo();
+	}
 	return instance_;
 }
 

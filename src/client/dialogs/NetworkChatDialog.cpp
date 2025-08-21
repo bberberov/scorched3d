@@ -35,10 +35,10 @@ NetworkChatDialogTextRenderer::NetworkChatDialogTextRenderer(int len) :
 NetworkChatDialogTextRenderer::~NetworkChatDialogTextRenderer()
 {
 }
-    
+
 bool NetworkChatDialogTextRenderer::drawCharacter(
 	unsigned int character,
-	int charPosition, Vector &position, 
+	int charPosition, Vector &position,
 	GLFont2dStorage::CharEntry &charEntry, Vector4 &color)
 {
 	if (charPosition <= len_)
@@ -50,15 +50,14 @@ bool NetworkChatDialogTextRenderer::drawCharacter(
 	return true;
 }
 
-NetworkChatDialog *NetworkChatDialog::instance_ = 0;
+NetworkChatDialog *NetworkChatDialog::instance_ = nullptr;
 
 NetworkChatDialog *NetworkChatDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new NetworkChatDialog;
+		instance_ = new NetworkChatDialog();
 	}
-
 	return instance_;
 }
 

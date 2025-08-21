@@ -24,6 +24,7 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWButton.hpp>
 
+// SINGLETON
 class KibitzingDialog : public GLWWindow, public GLWButtonI
 {
 public:
@@ -33,12 +34,12 @@ public:
 
 protected:
 	static KibitzingDialog *instance_;
+
 	unsigned int okId_;
 
 private:
 	KibitzingDialog();
 	virtual ~KibitzingDialog();
 };
-
 
 #endif

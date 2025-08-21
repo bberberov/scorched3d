@@ -26,9 +26,8 @@
 #include <GLW/GLWOptionEntry.hpp>
 #include <common/OptionsGame.hpp>
 
-class SettingsSelectDialog : 
-	public GLWWindow,
-	public GLWButtonI
+// SINGLETON
+class SettingsSelectDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static SettingsSelectDialog *instance();
@@ -51,7 +50,6 @@ protected:
 private:
 	SettingsSelectDialog();
 	virtual ~SettingsSelectDialog();
-
 };
 
 #endif

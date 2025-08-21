@@ -68,13 +68,13 @@ void GLWIconListSaveItem::draw(float x, float y, float w)
 		time_.c_str());
 }
 
-SaveSelectDialog *SaveSelectDialog::instance_ = 0;
+SaveSelectDialog *SaveSelectDialog::instance_ = nullptr;
 
 SaveSelectDialog *SaveSelectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SaveSelectDialog;
+		instance_ = new SaveSelectDialog();
 	}
 	return instance_;
 }

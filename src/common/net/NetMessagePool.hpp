@@ -26,6 +26,7 @@
 #include <list>
 #include <SDL/SDL_thread.h>
 
+// SINGLETON
 class NetMessagePool
 {
 public:
@@ -40,6 +41,7 @@ public:
 
 protected:
 	static NetMessagePool *instance_;
+
 	std::list<NetMessage *> messagePool_;
 	SDL_mutex *messagePoolMutex_;
 
@@ -47,6 +49,5 @@ private:
 	NetMessagePool();
 	virtual ~NetMessagePool();
 };
-
 
 #endif

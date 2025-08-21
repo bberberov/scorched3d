@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,18 +21,18 @@
 
 #include <net/NetMessagePool.hpp>
 
-NetMessagePool *NetMessagePool::instance_ = 0;
+NetMessagePool *NetMessagePool::instance_ = nullptr;
 
 NetMessagePool *NetMessagePool::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new NetMessagePool;
+		instance_ = new NetMessagePool();
 	}
 	return instance_;
 }
 
-NetMessagePool::NetMessagePool() : messagePoolMutex_(0)
+NetMessagePool::NetMessagePool() : messagePoolMutex_(nullptr)
 {
 	messagePoolMutex_ = SDL_CreateMutex();
 }
@@ -57,7 +57,7 @@ NetMessage *NetMessagePool::getFromPool(NetMessage::MessageType type,
 {
 	SDL_LockMutex(messagePoolMutex_);
 
-	NetMessage *result = 0;
+	NetMessage *result = nullptr;
 	if (messagePool_.empty())
 	{
 		result = new NetMessage;

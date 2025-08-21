@@ -33,6 +33,8 @@ class LandAndTargetVisibilityPatch;
 class WaterAndTargetVisibilityPatch;
 class Water2Patches;
 class GraphicalLandscapeMap;
+
+// SINGLETON
 class VisibilityPatchGrid
 {
 public:
@@ -57,7 +59,7 @@ public:
 	);
 
 	int getEpocNumber() { return epoc_; }
-	int getVisibleLandPatchesCount() { 
+	int getVisibleLandPatchesCount() {
 		return patchInfo_.getVisibleLandPatchesCount(); }
 	int getVisibleWaterPatchesCount() {
 		return patchInfo_.getVisibleWaterPatchesCount(); }
@@ -73,6 +75,8 @@ public:
 	TargetVisibilityPatch *getTargetVisibilityPatch(int x, int y);
 	WaterVisibilityPatch *getWaterVisibilityPatch(int x, int y);
 protected:
+	static VisibilityPatchGrid *instance_;
+
 	int epoc_;
 	LandSurround surround_;
 	MipMapPatchIndexs landIndexs_;

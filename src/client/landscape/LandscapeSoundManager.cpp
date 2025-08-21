@@ -33,7 +33,10 @@ LandscapeSoundManager *LandscapeSoundManager::instance_(0);
 
 LandscapeSoundManager *LandscapeSoundManager::instance()
 {
-	if (!instance_) instance_ = new LandscapeSoundManager();
+	if (nullptr == instance_)
+	{
+		instance_ = new LandscapeSoundManager();
+	}
 	return instance_;
 }
 

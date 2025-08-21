@@ -20,15 +20,14 @@
 
 #include <client/ClientParams.hpp>
 
-ClientParams *ClientParams::instance_ = 0;
+ClientParams *ClientParams::instance_ = nullptr;
 
 ClientParams *ClientParams::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientParams;
+		instance_ = new ClientParams();
 	}
-
 	return instance_;
 }
 

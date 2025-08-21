@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,13 +23,13 @@
 #include <graph/MainCamera.hpp>
 #include <coms/ComsOperationMessage.hpp>
 
-ClientOperationHandler *ClientOperationHandler::instance_ = 0;
+ClientOperationHandler *ClientOperationHandler::instance_ = nullptr;
 
 ClientOperationHandler *ClientOperationHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientOperationHandler;
+		instance_ = new ClientOperationHandler();
 	}
 	return instance_;
 }

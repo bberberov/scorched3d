@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,15 +31,14 @@
 #include <console/ConsoleRuleMethodIAdapter.hpp>
 #include <common/Logger.hpp>
 
-ClientReloadAdaptor *ClientReloadAdaptor::instance_ = 0;
+ClientReloadAdaptor *ClientReloadAdaptor::instance_ = nullptr;
 
 ClientReloadAdaptor *ClientReloadAdaptor::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-	  instance_ = new ClientReloadAdaptor();
+		instance_ = new ClientReloadAdaptor();
 	}
-
 	return instance_;
 }
 

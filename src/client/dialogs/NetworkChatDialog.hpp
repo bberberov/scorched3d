@@ -31,18 +31,20 @@ class NetworkChatDialogTextRenderer : public GLFont2dI
 public:
 	NetworkChatDialogTextRenderer(int len);
 	virtual ~NetworkChatDialogTextRenderer();
-    
+
 	// GLFont2d
 	virtual bool drawCharacter(
 		unsigned int character,
 		int charPosition, Vector &position, 
-		GLFont2dStorage::CharEntry &charEntry, Vector4 &color);
+		GLFont2dStorage::CharEntry &charEntry, Vector4 &color
+	);
 
 private:
 	int len_;
 };
 
-class NetworkChatDialog : public GLWWindow 
+// SINGLETON
+class NetworkChatDialog : public GLWWindow
 {
 public:
 	static NetworkChatDialog *instance();
@@ -56,6 +58,7 @@ public:
 
 protected:
 	static NetworkChatDialog *instance_;
+
 	std::list<std::string> messages_;
 	GLWChatView *chatView_;
 	SDL_mutex *mutex_;

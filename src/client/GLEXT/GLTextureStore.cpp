@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,13 +20,13 @@
 
 #include <GLEXT/GLTextureStore.hpp>
 
-GLTextureStore *GLTextureStore::instance_ = 0;
+GLTextureStore *GLTextureStore::instance_ = nullptr;
 
 GLTextureStore *GLTextureStore::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLTextureStore;
+		instance_ = new GLTextureStore();
 	}
 	return instance_;
 }

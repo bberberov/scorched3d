@@ -24,6 +24,7 @@
 #include <map>
 #include <GLEXT/GLTextureReferenceData.hpp>
 
+// SINGLETON
 class GLTextureStore
 {
 public:
@@ -37,6 +38,7 @@ public:
 
 protected:
 	static GLTextureStore *instance_;
+
 	std::map<std::string, GLTextureReferenceData *> references_;
 
 private:

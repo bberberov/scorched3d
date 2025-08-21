@@ -25,20 +25,23 @@
 #include <deque>
 #include <string>
 
+// SINGLETON
 class ServerLog : public LoggerI
 {
 public:
+	static ServerLog *instance();
+
 	struct ServerLogEntry
 	{
 		std::string text;
 	};
 
-	static ServerLog *instance();
 	virtual void logMessage(LoggerInfo &info);
 	std::deque<ServerLogEntry> &getEntries() { return entries_; }
 
 protected:
 	static ServerLog *instance_;
+
 	std::deque<ServerLogEntry> entries_;
 
 private:

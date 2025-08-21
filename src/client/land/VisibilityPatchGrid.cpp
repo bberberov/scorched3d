@@ -34,10 +34,15 @@
 #include <GLSL/GLSLShaderSetup.hpp>
 #include <graph/OptionsDisplay.hpp>
 
+VisibilityPatchGrid *VisibilityPatchGrid::instance_ = nullptr;
+
 VisibilityPatchGrid *VisibilityPatchGrid::instance()
 {
-	static VisibilityPatchGrid instance;
-	return &instance;
+	if (nullptr == instance_)
+	{
+		instance_ = new VisibilityPatchGrid();
+	}
+	return instance_;
 }
 
 VisibilityPatchGrid::VisibilityPatchGrid() :
@@ -53,13 +58,13 @@ VisibilityPatchGrid::~VisibilityPatchGrid()
 void VisibilityPatchGrid::clear()
 {
 	delete [] landPatches_;
-	landPatches_ = 0;
+	landPatches_ = nullptr;
 
 	delete [] waterPatches_;
-	waterPatches_ = 0;
+	waterPatches_ = nullptr;
 
 	delete [] visibilityPatches_;
-	visibilityPatches_ = 0;
+	visibilityPatches_ = nullptr;
 }
 
 void VisibilityPatchGrid::generate()
@@ -83,11 +88,11 @@ void VisibilityPatchGrid::generate()
 	// Find the mid point
 	midX_ = -actualWidth / 2 + mapWidth / 2;
 	midY_ = -actualHeight / 2 + mapHeight / 2;
-	midX_ = (midX_ / 32) * 32; // Move to the nearest 32 boundry
+	midX_ = (midX_ / 32) * 32; // Move to the nearest 32 boundary
 	midY_ = (midY_ / 32) * 32;
 
 	{
-		// Devide this visible area into a set of patches
+		// Divide this visible area into a set of patches
 		landWidth_ = mapWidth / 32;
 		landHeight_ = mapHeight / 32;
 
@@ -179,9 +184,10 @@ void VisibilityPatchGrid::generate()
 
 	{
 		patchInfo_.generate(
-			landWidth_ * landWidth_, 
-			waterWidth_ * waterHeight_, 
-			landWidth_ * landWidth_ + waterWidth_ * waterHeight_);
+			landWidth_ * landWidth_,
+			waterWidth_ * waterHeight_,
+			landWidth_ * landWidth_ + waterWidth_ * waterHeight_
+		);
 	}
 
 	surround_.generate();
@@ -549,14 +555,14 @@ void VisibilityPatchGrid::drawWater(
 			GLStateExtension::hasDrawRangeElements())
 		{
 			// Map data to draw
-			float *data = 0;
+			float *data = nullptr;
 			if (patch->getBufferOffSet() != -1)
 			{
-				data = (float*) NULL + (patch->getBufferOffSet() / sizeof(unsigned int));
+				data = ( (float*) nullptr ) + ( patch->getBufferOffSet() / sizeof(int) );
 			}
 			else
 			{
-				data = &patch->getInternalData()->x;
+				data = &( patch->getInternalData()->x );
 			}
 
 			// Vertices On

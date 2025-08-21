@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,6 +23,7 @@
 
 #include <dialogs/PlayerDialog.hpp>
 
+// SINGLETON
 class PlayerInGameDialog : public PlayerDialog
 {
 public:
@@ -35,13 +36,16 @@ public:
 	virtual void display();
 
 protected:
-	PlayerInGameDialog();
-	virtual ~PlayerInGameDialog();
+	static PlayerInGameDialog *instance_;
 
 	Tank *getCurrentPlayer();
 	virtual void okButton(bool spectate);
 	virtual void cancelButton();
 	void initializeFromTank(Tank *tank);
+
+private:
+	PlayerInGameDialog();
+	virtual ~PlayerInGameDialog();
 };
 
 #endif

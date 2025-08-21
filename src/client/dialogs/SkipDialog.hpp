@@ -24,8 +24,8 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLW/GLWButton.hpp>
 
-class SkipDialog : public GLWWindow,
-				public GLWButtonI
+// SINGLETON
+class SkipDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static SkipDialog *instance();
@@ -33,14 +33,14 @@ public:
 	virtual void buttonDown(unsigned int id);
 	virtual void display();
 protected:
+	static SkipDialog *instance_;
+
 	GLWButton *resignButton_;
 	unsigned int okId_, allId_, cancelId_, resignId_;
-	static SkipDialog *instance_;
 
 private:
 	SkipDialog();
 	virtual ~SkipDialog();
-
 };
 
 #endif

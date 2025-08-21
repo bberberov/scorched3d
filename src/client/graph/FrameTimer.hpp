@@ -24,6 +24,7 @@
 #include <engine/GameStateI.hpp>
 #include <common/Clock.hpp>
 
+// SINGLETON
 class FrameTimer : public GameStateI
 {
 public:
@@ -40,6 +41,7 @@ public:
 
 protected:
 	static FrameTimer *instance_;
+
 	float totalTime_;
 	int frameCount_;
 	Clock frameClock_;
@@ -49,7 +51,6 @@ protected:
 private:
 	FrameTimer();
 	virtual ~FrameTimer();
-
 };
 
 #endif // !defined(AFX_FRAMETIMER_H__00CDF717_3628_42C1_B84E_6F9B15C4FC4E__INCLUDED_)

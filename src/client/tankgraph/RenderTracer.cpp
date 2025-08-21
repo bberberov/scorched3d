@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,17 +24,21 @@
 #include <client/ScorchedClient.hpp>
 #include <tank/Tank.hpp>
 
-RenderTracer *RenderTracer::instance_ = 0;
+RenderTracer *RenderTracer::instance_ = nullptr;
 
 RenderTracer *RenderTracer::instance()
 {
-	if (!instance_) instance_ = new RenderTracer;
+	if (nullptr == instance_)
+	{
+		instance_ = new RenderTracer();
+	}
 	return instance_;
 }
 
 RenderTracer::RenderTracer() : 
 	GameStateI("RenderTracer"),
-	current_(0), listNo_(0)
+	current_(nullptr),
+	listNo_(0)
 {
 	obj_ = gluNewQuadric();
 }
@@ -46,7 +50,7 @@ RenderTracer::~RenderTracer()
 
 void RenderTracer::clearTracers()
 {
-	if (current_) 
+	if (nullptr != current_)
 	{
 		current_->lines.clear();
 		current_->points.clear();
@@ -55,7 +59,7 @@ void RenderTracer::clearTracers()
 
 void RenderTracer::clearTracerLines()
 {
-	if (current_)
+	if (nullptr != current_)
 	{
 		current_->lines.clear();
 	}
@@ -64,10 +68,10 @@ void RenderTracer::clearTracerLines()
 void RenderTracer::draw(const unsigned state)
 {
 	Tank *current = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
-	if (!current) return;
+	if (nullptr == current) return;
 
-	if (!current_ || 
-		current_->tank != current->getPlayerId())
+	// FIXME next line if already did null poiner check above ?!
+	if (!current_ || current_->tank != current->getPlayerId())
 	{
 		std::map<unsigned int, TraceEntry>::iterator itor = 
 			traceEntries_.find(current->getPlayerId());
@@ -82,6 +86,7 @@ void RenderTracer::draw(const unsigned state)
 			current_ = &(*itor).second;
 		}
 	}
+
 	if (current_->points.empty()) return;
 
 	glColor3fv(current->getColor());
@@ -181,13 +186,12 @@ void RenderTracer::drawSmokeTracer(std::list<TracerLinePoint> &positions)
 void RenderTracer::newGame()
 {
 	traceEntries_.clear();
-	current_ = 0;
+	current_ = nullptr;
 }
 
 void RenderTracer::addTracer(unsigned int tank, Vector &position)
 {
-	std::map<unsigned int, TraceEntry>::iterator itor = 
-		traceEntries_.find(tank);
+	std::map<unsigned int, TraceEntry>::iterator itor = traceEntries_.find(tank);
 	if (itor == traceEntries_.end())
 	{
 		TraceEntry entry(tank);
@@ -200,11 +204,9 @@ void RenderTracer::addTracer(unsigned int tank, Vector &position)
 	}
 }
 
-void RenderTracer::addSmokeTracer(unsigned int tank, 
-	Vector &position, std::list<TracerLinePoint> &positions)
+void RenderTracer::addSmokeTracer(unsigned int tank, Vector &position, std::list<TracerLinePoint> &positions)
 {
-	std::map<unsigned int, TraceEntry>::iterator itor = 
-		traceEntries_.find(tank);
+	std::map<unsigned int, TraceEntry>::iterator itor = traceEntries_.find(tank);
 	if (itor == traceEntries_.end())
 	{
 		TraceEntry entry(tank);

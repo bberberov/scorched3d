@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,13 +36,13 @@
 #include <tank/TankAvatar.hpp>
 #include <lang/LangResource.hpp>
 
-ShotCountDown *ShotCountDown::instance_ = 0;
+ShotCountDown *ShotCountDown::instance_ = nullptr;
 
 ShotCountDown *ShotCountDown::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ShotCountDown;
+		instance_ = new ShotCountDown();
 	}
 	return instance_;
 }
@@ -114,7 +114,7 @@ void ShotCountDown::hideRoundTime()
 
 void ShotCountDown::draw(const unsigned currentstate)
 {
-	if (move.show_) 
+	if (move.show_)
 	{
 		drawMove();
 	}

@@ -23,6 +23,7 @@
 
 #include <console/ConsoleRule.hpp>
 
+// SINGLETON
 class Console
 {
 public:

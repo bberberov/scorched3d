@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,13 +30,13 @@
 #include <GLW/GLWFont.hpp>
 #include <stdio.h>
 
-SpeedChange *SpeedChange::instance_ = 0;
+SpeedChange *SpeedChange::instance_ = nullptr;
 
 SpeedChange *SpeedChange::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SpeedChange;
+		instance_ = new SpeedChange();
 	}
 	return instance_;
 }
@@ -79,10 +79,15 @@ void SpeedChange::simulate(const unsigned state, float simTime)
 	}
 }
 
-void SpeedChange::keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest)
+void SpeedChange::keyboardCheck(
+	const unsigned state,
+	float frameTime,
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
 	if (ClientParams::instance()->getConnectedToServer()) return;
 

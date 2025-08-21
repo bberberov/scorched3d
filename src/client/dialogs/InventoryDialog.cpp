@@ -38,11 +38,14 @@
 #include <tanket/TanketAccessories.hpp>
 #include <stdio.h>
 
-InventoryDialog *InventoryDialog::instance_ = 0;
+InventoryDialog *InventoryDialog::instance_ = nullptr;
 
 InventoryDialog *InventoryDialog::instance()
 {
-	if (!instance_) instance_ = new InventoryDialog;
+	if (nullptr == instance_)
+	{
+		instance_ = new InventoryDialog();
+	}
 	return instance_;
 }
 

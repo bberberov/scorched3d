@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,18 +24,23 @@
 #include <tank/TankState.hpp>
 #include <coms/ComsAdminResultMessage.hpp>
 
+ClientAdminResultHandler *ClientAdminResultHandler::instance_ = nullptr;
+
 ClientAdminResultHandler *ClientAdminResultHandler::instance()
 {
-	static ClientAdminResultHandler *instance = 
-		new ClientAdminResultHandler;
-	return instance;
+	if (nullptr == instance_)
+	{
+		instance_= new ClientAdminResultHandler();
+	}
+	return instance_;
 }
 
 ClientAdminResultHandler::ClientAdminResultHandler() : sid_(0)
 {
 	ScorchedClient::instance()->getComsMessageHandler().addHandler(
 		ComsAdminResultMessage::ComsAdminResultMessageType,
-		this);
+		this
+	);
 }
 
 ClientAdminResultHandler::~ClientAdminResultHandler()
@@ -45,7 +50,8 @@ ClientAdminResultHandler::~ClientAdminResultHandler()
 bool ClientAdminResultHandler::processMessage(
 	NetMessage &netMessage,
 	const char *messageType,
-	NetBufferReader &reader)
+	NetBufferReader &reader
+)
 {
 	ComsAdminResultMessage message;
 	if (!message.readMessage(reader)) return false;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,13 +32,13 @@
 #include <coms/ComsFileAkMessage.hpp>
 #include <lang/LangResource.hpp>
 
-ClientFileHandler *ClientFileHandler::instance_ = 0;
+ClientFileHandler *ClientFileHandler::instance_ = nullptr;
 
 ClientFileHandler *ClientFileHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ClientFileHandler;
+		instance_ = new ClientFileHandler();
 	}
 	return instance_;
 }

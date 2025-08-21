@@ -24,7 +24,8 @@
 #include <GLW/GLWWindow.hpp>
 #include <graph/TargetCamera.hpp>
 
-class CameraDialog : public GLWWindow 
+// SINGLETON
+class CameraDialog : public GLWWindow
 {
 public:
 	static CameraDialog *instance();
@@ -40,6 +41,7 @@ public:
 
 protected:
 	static CameraDialog *instance_;
+
 	TargetCamera targetCam_;
 
 	void drawLandscape();
@@ -50,4 +52,3 @@ private:
 };
 
 #endif
-

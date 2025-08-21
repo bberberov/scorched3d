@@ -45,6 +45,7 @@ protected:
 	std::string time_;
 };
 
+// SINGLETON
 class SaveSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
@@ -70,7 +71,6 @@ protected:
 private:
 	SaveSelectDialog();
 	virtual ~SaveSelectDialog();
-
 };
 
 #endif

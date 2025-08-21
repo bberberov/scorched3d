@@ -24,8 +24,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientMessageHandler : 
-	public ComsMessageConnectionHandlerI
+// SINGLETON
+class ClientMessageHandler : public ComsMessageConnectionHandlerI
 {
 public:
 	static ClientMessageHandler *instance();
@@ -45,6 +45,5 @@ private:
 	ClientMessageHandler();
 	virtual ~ClientMessageHandler();
 };
-
 
 #endif

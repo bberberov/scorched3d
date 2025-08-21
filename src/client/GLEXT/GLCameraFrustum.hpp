@@ -24,6 +24,7 @@
 #include <engine/GameStateI.hpp>
 #include <common/Vector.hpp>
 
+// SINGLETON
 class GLCameraFrustum : public GameStateI
 {
 public:
@@ -42,7 +43,8 @@ public:
 	void restoreFrustum();
 	void drawBilboard(
 		Vector &position, Vector &color, float alpha,
-		float width, float height, bool additive, int texCoord);
+		float width, float height, bool additive, int texCoord
+	);
 
 	Vector &getBilboardVectorX();
 	Vector &getBilboardVectorY();
@@ -52,6 +54,7 @@ public:
 
 protected:
 	static GLCameraFrustum *instance_;
+
 	struct Settings
 	{
 		float frustum_[6][4];
@@ -68,7 +71,6 @@ protected:
 private:
 	GLCameraFrustum();
 	virtual ~GLCameraFrustum();
-
 };
 
 #endif // !defined(AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_)

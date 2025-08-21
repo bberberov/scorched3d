@@ -24,8 +24,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientGameStoppedHandler  : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientGameStoppedHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientGameStoppedHandler *instance();
@@ -42,6 +42,5 @@ private:
 	ClientGameStoppedHandler();
 	virtual ~ClientGameStoppedHandler();
 };
-
 
 #endif

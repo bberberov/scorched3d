@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -24,40 +24,38 @@
 #include <engine/MainLoop.hpp>
 #include <GLEXT/GLState.hpp>
 
-Main2DCamera *Main2DCamera::instance_ = 0;
+Main2DCamera *Main2DCamera::instance_ = nullptr;
 
 Main2DCamera *Main2DCamera::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Main2DCamera;
+		instance_ = new Main2DCamera();
 	}
-
 	return instance_;
 }
 
 Main2DCamera::Main2DCamera() :
 	GameStateI("Main2DCamera"),
 	hide_(false)
-{
-
-}
+{}
 
 Main2DCamera::~Main2DCamera()
-{
-
-}
+{}
 
 void Main2DCamera::draw(const unsigned state)
 {
 	glClearDepth(1.0f);
 	glClear(GL_DEPTH_BUFFER_BIT);
 
-	if (!hide_) viewPort_.draw();
+	if (!hide_)
+	{
+		viewPort_.draw();
+	}
 	else
 	{
 		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();	
+		glLoadIdentity();
 		glViewport(0, 0, 0, 0);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();

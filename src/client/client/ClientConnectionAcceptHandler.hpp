@@ -24,8 +24,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientConnectionAcceptHandler : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientConnectionAcceptHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientConnectionAcceptHandler* instance();
@@ -34,7 +34,8 @@ public:
 	virtual bool processMessage(
 		NetMessage &message,
 		const char *messageType,
-		NetBufferReader &reader);
+		NetBufferReader &reader
+	);
 
 protected:
 	static ClientConnectionAcceptHandler* instance_;
@@ -45,8 +46,6 @@ private:
 
 	ClientConnectionAcceptHandler(const ClientConnectionAcceptHandler &);
 	const ClientConnectionAcceptHandler & operator=(const ClientConnectionAcceptHandler &);
-
 };
 
 #endif // _clientConnectionAcceptHandler_h
-

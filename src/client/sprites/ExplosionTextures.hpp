@@ -27,10 +27,12 @@
 #include <string>
 #include <map>
 
-class ExplosionTextures  
+// SINGLETON
+class ExplosionTextures
 {
 public:
 	static ExplosionTextures *instance();
+
 	bool createTextures(ProgressCounter *counter = 0);
 
 	GLTexture smokeTexture;
@@ -49,10 +51,10 @@ public:
 
 protected:
 	static ExplosionTextures *instance_;
+
 private:
 	ExplosionTextures();
 	virtual ~ExplosionTextures();
-
 };
 
 #endif // !defined(AFX_EXPLOSIONTEXTURES_H__F2BC42E7_B2FB_4C0D_ACF0_0B91D8DC84D3__INCLUDED_)

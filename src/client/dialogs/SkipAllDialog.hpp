@@ -25,8 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWLabel.hpp>
 
-class SkipAllDialog : public GLWWindow,
-				public GLWButtonI
+// SINGLETON
+class SkipAllDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static SkipAllDialog *instance();
@@ -37,17 +37,16 @@ public:
 	virtual void display();
 
 protected:
+	static SkipAllDialog *instance_;
+
 	unsigned int cancelId_, nowId_;
 	GLWLabel *label_;
 	unsigned int startTime_;
 	bool skipAll_;
 
-	static SkipAllDialog *instance_;
-
 private:
 	SkipAllDialog();
 	virtual ~SkipAllDialog();
-
 };
 
 #endif

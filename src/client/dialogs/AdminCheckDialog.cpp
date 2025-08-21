@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,13 +26,13 @@
 #include <coms/ComsAdminMessage.hpp>
 #include <coms/ComsMessageSender.hpp>
 
-AdminCheckDialog *AdminCheckDialog::instance_ = 0;
+AdminCheckDialog *AdminCheckDialog::instance_ = nullptr;
 
 AdminCheckDialog *AdminCheckDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new AdminCheckDialog;
+		instance_ = new AdminCheckDialog();
 	}
 	return instance_;
 }

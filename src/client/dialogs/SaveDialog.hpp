@@ -25,8 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWTextBox.hpp>
 
-class SaveDialog : public GLWWindow,
-				public GLWButtonI
+// SINGLETON
+class SaveDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static SaveDialog *instance();
@@ -35,15 +35,14 @@ public:
 	virtual void display();
 
 protected:
-	unsigned int okId_, cancelId_;
 	static SaveDialog *instance_;
+
+	unsigned int okId_, cancelId_;
 	GLWTextBox *textBox_;
 
 private:
 	SaveDialog();
 	virtual ~SaveDialog();
-
 };
-
 
 #endif

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,15 +36,14 @@
 #include <sound/SoundUtils.hpp>
 #include <weapons/Accessory.hpp>
 
-ClientStartGameHandler *ClientStartGameHandler::instance_ = 0;
+ClientStartGameHandler *ClientStartGameHandler::instance_ = nullptr;
 
 ClientStartGameHandler *ClientStartGameHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-	  instance_ = new ClientStartGameHandler();
+		instance_ = new ClientStartGameHandler();
 	}
-
 	return instance_;
 }
 

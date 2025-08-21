@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,13 +27,13 @@
 #include <graph/OptionsDisplay.hpp>
 #include <SDL/SDL.h>
 
-SoftwareMouse *SoftwareMouse::instance_ = 0;
+SoftwareMouse *SoftwareMouse::instance_ = nullptr;
 
 SoftwareMouse *SoftwareMouse::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SoftwareMouse;
+		instance_ = new SoftwareMouse();
 	}
 	return instance_;
 }
@@ -69,7 +69,7 @@ void SoftwareMouse::draw(const unsigned currentstate)
 	int mouseX = ScorchedClient::instance()->getGameState().getMouseX();
 	int mouseY = ScorchedClient::instance()->getGameState().getMouseY();
 
-	mouseTex_.draw();	
+	mouseTex_.draw();
 	glPushMatrix();
 		glTranslatef(float(mouseX), float(mouseY), 0.0f);
 		glColor3f(1.0f, 1.0f, 1.0f);

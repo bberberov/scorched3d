@@ -31,6 +31,7 @@
 #include <GLW/GLWTankViewer.hpp>
 
 class Tank;
+
 class PlayerDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
@@ -77,7 +78,6 @@ protected:
 
 	virtual void okButton(bool spectate) = 0;
 	virtual void cancelButton() = 0;
-
 };
 
 #endif

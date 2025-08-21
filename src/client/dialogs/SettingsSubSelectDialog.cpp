@@ -73,13 +73,13 @@ void SettingsSubSelectDialogListItem::draw(float x, float y, float w)
 	selected_.draw();
 }
 
-SettingsSubSelectDialog *SettingsSubSelectDialog::instance_ = 0;
+SettingsSubSelectDialog *SettingsSubSelectDialog::instance_ = nullptr;
 
 SettingsSubSelectDialog *SettingsSubSelectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new SettingsSubSelectDialog;
+		instance_ = new SettingsSubSelectDialog();
 	}
 	return instance_;
 }

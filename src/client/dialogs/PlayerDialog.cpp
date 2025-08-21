@@ -326,8 +326,13 @@ void PlayerDialog::initialize()
 		TanketType *type = *tanketTypesItor;
 		tankTypeDropDown_->addEntry(
 			GLWSelectorEntry(
-				LANG_RESOURCE(type->getName(), type->getName()),
-				type->getTooltip(), 
-				false, 0, 0, type->getName()));
+				LANG_RESOURCE( type->getName(), type->getName() ),
+				type->getTooltip(),
+				false,
+				0,
+				0,
+				type->getName()
+			)
+		);
 	}
 }

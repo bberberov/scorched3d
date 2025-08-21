@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -39,10 +39,15 @@
 #include <client/ClientChannelManager.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
+PlayerInGameDialog *PlayerInGameDialog::instance_ = nullptr;
+
 PlayerInGameDialog *PlayerInGameDialog::instance()
 {
-	static PlayerInGameDialog instance_;
-	return &instance_;
+	if (nullptr == instance_)
+	{
+		instance_ = new PlayerInGameDialog();
+	}
+	return instance_;
 }
 
 PlayerInGameDialog::PlayerInGameDialog() :

@@ -25,6 +25,7 @@
 #include <list>
 #include <string>
 
+// SINGLETON
 class ServerBrowserInfo
 {
 public:
@@ -35,6 +36,7 @@ public:
 
 protected:
 	static ServerBrowserInfo *instance_;
+
 	UDPsocket udpsock_;
 	UDPpacket **packetV_;
 	UDPpacket **packetVOut_;

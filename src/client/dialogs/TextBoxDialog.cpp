@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,13 +21,13 @@
 #include <dialogs/TextBoxDialog.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-TextBoxDialog *TextBoxDialog::instance_ = 0;
+TextBoxDialog *TextBoxDialog::instance_ = nullptr;
 
 TextBoxDialog *TextBoxDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new TextBoxDialog;
+		instance_ = new TextBoxDialog();
 	}
 	return instance_;
 }

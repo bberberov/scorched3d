@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -20,18 +20,18 @@
 
 #include <net/NetBufferPool.hpp>
 
-NetBufferPool *NetBufferPool::instance_ = 0;
+NetBufferPool *NetBufferPool::instance_ = nullptr;
 
 NetBufferPool *NetBufferPool::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new NetBufferPool;
+		instance_ = new NetBufferPool();
 	}
 	return instance_;
 }
 
-NetBufferPool::NetBufferPool() : messagePoolMutex_(0)
+NetBufferPool::NetBufferPool() : messagePoolMutex_(nullptr)
 {
 	messagePoolMutex_ = SDL_CreateMutex();
 }
@@ -52,7 +52,7 @@ NetBuffer *NetBufferPool::getFromPool()
 {
 	SDL_LockMutex(messagePoolMutex_);
 
-	NetBuffer *result = 0;
+	NetBuffer *result = nullptr;
 	if (messagePool_.empty())
 	{
 		result = new NetBuffer;

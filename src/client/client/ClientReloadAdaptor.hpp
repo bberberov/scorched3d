@@ -21,7 +21,8 @@
 #ifndef _ClientReloadAdaptor_h
 #define _ClientReloadAdaptor_h
 
-class ClientReloadAdaptor 
+// SINGLETON
+class ClientReloadAdaptor
 {
 public:
 	static ClientReloadAdaptor* instance();
@@ -39,8 +40,6 @@ private:
 
 	ClientReloadAdaptor(const ClientReloadAdaptor &);
 	const ClientReloadAdaptor & operator=(const ClientReloadAdaptor &);
-
 };
 
 #endif // _ClientReloadAdaptor_h
-

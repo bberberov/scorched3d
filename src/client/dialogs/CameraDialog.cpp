@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -30,15 +30,14 @@
 #include <tankgraph/RenderTargets.hpp>
 #include <lang/LangResource.hpp>
 
-CameraDialog *CameraDialog::instance_ = 0;
+CameraDialog *CameraDialog::instance_ = nullptr;
 
 CameraDialog *CameraDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new CameraDialog;
+		instance_ = new CameraDialog();
 	}
-
 	return instance_;
 }
 

@@ -26,9 +26,8 @@
 #include <GLW/GLWDropDownText.hpp>
 #include <dialogs/BuyAccessoryDialogTankInfo.hpp>
 
-class GiftMoneyDialog : 
-	public GLWWindow ,
-	public GLWButtonI
+// SINGLETON
+class GiftMoneyDialog : public GLWWindow , public GLWButtonI
 {
 public:
 	static GiftMoneyDialog *instance();
@@ -41,6 +40,7 @@ public:
 
 protected:
 	static GiftMoneyDialog *instance_;
+
 	BuyAccessoryDialogTankInfo &tankInfo_;
 	unsigned int okId_, cancelId_;
 	GLWDropDownText *players_;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -22,13 +22,13 @@
 #include <image/ImageFactory.hpp>
 #include <common/Defines.hpp>
 
-ImageStore *ImageStore::instance_ = 0;
+ImageStore *ImageStore::instance_ = nullptr;
 
 ImageStore *ImageStore::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ImageStore;
+		instance_ = new ImageStore();
 	}
 	return instance_;
 }

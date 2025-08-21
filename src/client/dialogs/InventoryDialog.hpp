@@ -31,9 +31,9 @@
 #include <GLW/GLWDropDownText.hpp>
 
 class Tank;
-class InventoryDialog : public GLWWindow,
-						public GLWButtonI,
-						public GLWDropDownI
+
+// SINGLETON
+class InventoryDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
 	static InventoryDialog *instance();
@@ -68,4 +68,3 @@ private:
 };
 
 #endif // !defined(AFX_InventoryDialog_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_)
-

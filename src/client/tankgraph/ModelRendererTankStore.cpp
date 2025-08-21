@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,11 +21,14 @@
 #include <tankgraph/ModelRendererTankStore.hpp>
 #include <3dsparse/ModelStore.hpp>
 
-ModelRendererTankStore *ModelRendererTankStore::instance_ = 0;
+ModelRendererTankStore *ModelRendererTankStore::instance_ = nullptr;
 
 ModelRendererTankStore *ModelRendererTankStore::instance()
 {
-	if (!instance_) instance_ = new ModelRendererTankStore();
+	if (nullptr == instance_)
+	{
+		instance_ = new ModelRendererTankStore();
+	}
 	return instance_;
 }
 
@@ -42,7 +45,7 @@ ModelRendererTank *ModelRendererTankStore::getMesh(ModelID modelId)
 	std::map<std::string, ModelRendererTank*>::iterator findItor = 
 		meshes_.find(modelId.getStringHash());
 
-	ModelRendererTank *mesh = 0;
+	ModelRendererTank *mesh = nullptr;
 	if (findItor == meshes_.end())
 	{
 		Model *newFile = ModelStore::instance()->loadModel(modelId);

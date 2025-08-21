@@ -23,8 +23,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientConnectionAuthHandler : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientConnectionAuthHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientConnectionAuthHandler* instance();
@@ -47,7 +47,6 @@ private:
 
 	ClientConnectionAuthHandler(const ClientConnectionAuthHandler &);
 	const ClientConnectionAuthHandler & operator=(const ClientConnectionAuthHandler &);
-
 };
 
 #endif // _ClientConnectionAuthHandler_h

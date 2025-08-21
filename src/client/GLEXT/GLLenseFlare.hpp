@@ -30,22 +30,31 @@
 #include <common/ProgressCounter.hpp>
 #include <GLEXT/GLTexture.hpp>
 
-class GLLenseFlare  
+// SINGLETON
+class GLLenseFlare
 {
 public:
 	static GLLenseFlare *instance();
+
 	void init(ProgressCounter *counter = 0);
 
-	void draw(Vector &flarePos, bool fullFlare, 
-		int color=0, float size = 1.0f, float alpha = 1.0f);
+	void draw(
+		Vector &flarePos,
+		bool fullFlare,
+		int color=0,
+		float size = 1.0f,
+		float alpha = 1.0f
+	);
 	void draw(Vector &flarePos, Vector &flareDirection, int color=0);
 
 protected:
+	static GLLenseFlare *instance_;
+
 	struct Flare
 	{
 		int type;
 		float scale;
-		float loc;            /* postion on axis */
+		float loc;            /* position on axis */
 		Vector color1;
 		Vector color2;
 		Vector color3;
@@ -53,13 +62,21 @@ protected:
 	} flare_[12];
 
 	static bool flaresEnabled_;
-	static GLLenseFlare *instance_;
 	GLTexture flares_[6];
 	GLTexture shines_[10];
 	int shineTic_;
 
-	void setFlare(int index, int type, float scale, float loc, 
-		Vector &color1, Vector &color2, Vector &color3, Vector &color4, float colorScale);
+	void setFlare(
+		int index,
+		int type,
+		float scale,
+		float loc,
+		Vector &color1,
+		Vector &color2,
+		Vector &color3,
+		Vector &color4,
+		float colorScale
+	);
 
 private:
 	GLLenseFlare();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,28 +25,22 @@
 #include <client/ScorchedClient.hpp>
 #include <engine/GameState.hpp>
 
-Mouse *Mouse::instance_ = 0;
+Mouse *Mouse::instance_ = nullptr;
 
 Mouse *Mouse::instance()
 {
-	if (!instance_) {
-		instance_ = new Mouse;
+	if (nullptr == instance_)
+	{
+		instance_ = new Mouse();
 	}
-
 	return instance_;
 }
 
 Mouse::Mouse() : mouse_sensitivity_(120)
-{
-
-}
+{}
 
 Mouse::~Mouse()
-{
-
-}
-
-
+{}
 
 void Mouse::mouseDown(SDL_Event &event)
 {

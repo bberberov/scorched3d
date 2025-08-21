@@ -25,6 +25,7 @@
 #include <client/UniqueIdStore.hpp>
 #include <time.h>
 
+// SINGLETON
 class ConnectDialog : public GLWWindow
 {
 public:
@@ -43,6 +44,8 @@ public:
 	int getPort() { return port_; }
 
 protected:
+	static ConnectDialog *instance_;
+
 	enum ConnectState
 	{
 		eWaiting,
@@ -52,7 +55,6 @@ protected:
 
 	std::string host_;
 	int port_;
-	static ConnectDialog *instance_;
 	SDL_Thread *remoteConnectionThread_;
 	UniqueIdStore *idStore_;
 	ConnectState connectionState_;

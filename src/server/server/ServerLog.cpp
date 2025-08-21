@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,11 +21,14 @@
 #include <server/ServerLog.hpp>
 #include <common/Logger.hpp>
 
-ServerLog *ServerLog::instance_ = 0;
+ServerLog *ServerLog::instance_ = nullptr;
 
 ServerLog *ServerLog::instance()
 {
-	if (!instance_) instance_ = new ServerLog;
+	if (nullptr == instance_)
+	{
+		instance_ = new ServerLog();
+	}
 	return instance_;
 }
 

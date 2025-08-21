@@ -31,15 +31,14 @@ static OptionEntryEnum::EnumEntry accessorySortKeyEnum[] = {
 	{ "", -1 }
 };
 
-OptionsDisplay *OptionsDisplay::instance_ = 0;
+OptionsDisplay *OptionsDisplay::instance_ = nullptr;
 
 OptionsDisplay *OptionsDisplay::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new OptionsDisplay;
+		instance_ = new OptionsDisplay();
 	}
-
 	return instance_;
 }
 

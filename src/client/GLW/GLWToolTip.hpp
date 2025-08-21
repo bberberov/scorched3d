@@ -25,6 +25,7 @@
 #include <common/ToolTip.hpp>
 #include <list>
 
+// SINGLETON
 class GLWToolTip : public GameStateI
 {
 public:
@@ -54,6 +55,7 @@ public:
 
 protected:
 	static GLWToolTip *instance_;
+
 	ToolTip *currentTip_;
 	ToolTip *lastTip_;
 	float timeDrawn_;

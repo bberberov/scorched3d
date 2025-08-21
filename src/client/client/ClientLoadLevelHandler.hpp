@@ -23,6 +23,7 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
+// SINGLETON
 class ClientLoadLevelHandler : public ComsMessageHandlerI
 {
 public:
@@ -37,12 +38,14 @@ public:
 
 protected:
 	static ClientLoadLevelHandler* instance_;
+
 	bool initialLevel_;
 
 	bool actualProcessMessage(
 		NetMessage &netMessage,
 		const char *messageType,
-		NetBufferReader &reader);
+		NetBufferReader &reader
+	);
 
 private:
 	ClientLoadLevelHandler();
@@ -50,8 +53,6 @@ private:
 
 	ClientLoadLevelHandler(const ClientLoadLevelHandler &);
 	const ClientLoadLevelHandler & operator=(const ClientLoadLevelHandler &);
-
 };
 
 #endif // _ClientLoadLevelHandler_h
-

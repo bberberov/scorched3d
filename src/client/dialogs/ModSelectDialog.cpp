@@ -64,13 +64,13 @@ void GLWIconListModItem::draw(float x, float y, float w)
 		modInfo_.getShortDescription());
 }
 
-ModSelectDialog *ModSelectDialog::instance_ = 0;
+ModSelectDialog *ModSelectDialog::instance_ = nullptr;
 
 ModSelectDialog *ModSelectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ModSelectDialog;
+		instance_ = new ModSelectDialog();
 	}
 	return instance_;
 }

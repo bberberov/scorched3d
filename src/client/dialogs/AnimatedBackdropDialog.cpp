@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -36,13 +36,13 @@
 #include <common/Defines.hpp>
 #include <limits.h>
 
-AnimatedBackdropDialog *AnimatedBackdropDialog::instance_ = 0;
+AnimatedBackdropDialog *AnimatedBackdropDialog::instance_ = nullptr;
 
 AnimatedBackdropDialog *AnimatedBackdropDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new AnimatedBackdropDialog;
+		instance_ = new AnimatedBackdropDialog();
 	}
 	return instance_;
 }

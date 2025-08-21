@@ -24,6 +24,7 @@
 #include <tanket/TanketAccessories.hpp>
 #include <common/Vector.hpp>
 
+// SINGLETON
 class BuyAccessoryDialogTankInfo
 {
 public:

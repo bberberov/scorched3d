@@ -65,13 +65,13 @@ void GLWIconListSubModItem::draw(float x, float y, float w)
 		modInfoEntry_.shortdescription.c_str());
 }
 
-ModSubSelectDialog *ModSubSelectDialog::instance_ = 0;
+ModSubSelectDialog *ModSubSelectDialog::instance_ = nullptr;
 
 ModSubSelectDialog *ModSubSelectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ModSubSelectDialog;
+		instance_ = new ModSubSelectDialog();
 	}
 	return instance_;
 }

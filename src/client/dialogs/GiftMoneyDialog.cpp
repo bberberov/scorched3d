@@ -30,13 +30,13 @@
 #include <coms/ComsGiftMoneyMessage.hpp>
 #include <coms/ComsMessageSender.hpp>
 
-GiftMoneyDialog *GiftMoneyDialog::instance_ = 0;
+GiftMoneyDialog *GiftMoneyDialog::instance_ = nullptr;
 
 GiftMoneyDialog *GiftMoneyDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GiftMoneyDialog;
+		instance_ = new GiftMoneyDialog();
 	}
 	return instance_;
 }

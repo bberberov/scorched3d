@@ -29,6 +29,8 @@ class SoundBuffer;
 class LandscapeInclude;
 class LandscapeSoundType;
 class LandscapeSoundItem;
+
+// SINGLETON
 class LandscapeSoundManager
 {
 public:

@@ -44,6 +44,7 @@ protected:
 	virtual void processMessage(NetMessage &message);
 };
 
+// SINGLETON
 class ServerRegistration
 {
 public:

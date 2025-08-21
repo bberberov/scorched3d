@@ -27,10 +27,7 @@
 #include <GLW/GLWTab.hpp>
 #include <GLW/GLWDropDown.hpp>
 
-class AdminDialog : 
-	public GLWWindow,
-	public GLWButtonI,
-	public GLWIconTableI
+class AdminDialog : public GLWWindow, public GLWButtonI, public GLWIconTableI
 {
 public:
 	static AdminDialog *instance();
@@ -49,6 +46,7 @@ public:
 
 protected:
 	static AdminDialog *instance_;
+
 	GLWIconTable *adminTable_;
 	GLWTextButton *ok_;
 	GLWButton *kickButton_, *banButton_, *slapButton_;
@@ -61,7 +59,6 @@ protected:
 private:
 	AdminDialog();
 	virtual ~AdminDialog();
-
 };
 
 #endif

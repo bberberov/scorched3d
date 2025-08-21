@@ -23,6 +23,7 @@
 
 #include <GLEXT/GLFont2d.hpp>
 
+// SINGLETON
 class GLWFont
 {
 public:
@@ -40,7 +41,8 @@ public:
 	void displayCharacterInfo();
 
 protected:
-	static  GLWFont *instance_;
+	static GLWFont *instance_;
+
 	GLFont2d *gameFont_;
 	GLFont2d *gameShadowFont_;
 	GLFont2d *courierFont_;
@@ -50,7 +52,6 @@ protected:
 private:
 	GLWFont();
 	virtual ~GLWFont();
-
 };
 
 #endif // !defined(AFX_GLWFONT_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_)

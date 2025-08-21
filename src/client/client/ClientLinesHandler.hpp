@@ -24,8 +24,9 @@
 #include <coms/ComsMessageHandler.hpp>
 
 class GLWPlanView;
-class ClientLinesHandler : 
-	public ComsMessageHandlerI
+
+// SINGLETON
+class ClientLinesHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientLinesHandler *instance();
@@ -39,12 +40,12 @@ public:
 
 protected:
 	static ClientLinesHandler *instance_;
+
 	std::list<GLWPlanView *> callbacks_;
 
 private:
 	ClientLinesHandler();
 	virtual ~ClientLinesHandler();
-
 };
 
 #endif

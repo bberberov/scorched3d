@@ -24,6 +24,7 @@
 #include <GLW/GLWWindow.hpp>
 #include <client/ClientAdminResultHandler.hpp>
 
+// SINGLETON
 class AdminCheckDialog : public GLWWindow, public ClientAdminResultHandlerI
 {
 public:

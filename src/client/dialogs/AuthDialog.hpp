@@ -25,8 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWTextBox.hpp>
 
-class AuthDialog : public GLWWindow,
-	public GLWButtonI
+// SINGLETON
+class AuthDialog : public GLWWindow, public GLWButtonI
 {
 public:
 	static AuthDialog *instance();
@@ -47,6 +47,7 @@ public:
 
 protected:
 	static AuthDialog *instance_;
+
 	unsigned int okId_, cancelId_;
 	unsigned int auth_;
 

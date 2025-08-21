@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,6 +21,7 @@
 #if !defined(__INCLUDE_RenderGeomsh_INCLUDE__)
 #define __INCLUDE_RenderGeomsh_INCLUDE__
 
+// SINGLETON
 class RenderGeoms
 {
 public:
@@ -29,6 +30,8 @@ public:
 	virtual void draw(const unsigned state);
 
 protected:
+	static RenderGeoms *instance_;
+
 	void drawTargetSpace();
 	void drawCollisionBounds();
 	void drawCollisionGeoms();

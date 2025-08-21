@@ -25,6 +25,8 @@
 #include <GLW/GLWWindow.hpp>
 
 class ProgressCounter;
+
+// SINGLETON
 class AnimatedBackdropDialog : public GLWWindow
 {
 public:
@@ -37,6 +39,7 @@ public:
 
 protected:
 	static AnimatedBackdropDialog *instance_;
+
 	float rotation_;
 	bool init_;
 
@@ -46,6 +49,5 @@ private:
 	AnimatedBackdropDialog();
 	virtual ~AnimatedBackdropDialog();
 };
-
 
 #endif

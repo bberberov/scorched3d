@@ -27,7 +27,9 @@
 #include <GLEXT/GLTexture.hpp>
 
 class ScorchedContext;
-class ProgressDialog : 
+
+// SINGLETON
+class ProgressDialog :
 	public GLWWindow,
 	public ProgressCounterI,
 	public ProgressCounter

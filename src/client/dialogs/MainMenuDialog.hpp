@@ -28,6 +28,7 @@
 
 #include <GLEXT/GLMenu.hpp>
 
+// SINGLETON
 class MainMenuDialog : public GLMenu
 {
 public:
@@ -39,7 +40,6 @@ protected:
 private:
 	MainMenuDialog();
 	virtual ~MainMenuDialog();
-
 };
 
 #endif // !defined(AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_)

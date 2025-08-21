@@ -25,6 +25,7 @@
 #include <common/ModelID.hpp>
 #include <map>
 
+// SINGLETON
 class ModelRendererTankStore
 {
 public:
@@ -34,6 +35,7 @@ public:
 
 protected:
 	static ModelRendererTankStore *instance_;
+
 	std::map<std::string, ModelRendererTank*> meshes_;
 
 private:

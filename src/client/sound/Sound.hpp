@@ -34,6 +34,8 @@
 #define CACHE_SOUND(var, filename) static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer(filename);
 
 class PlayingSoundSource;
+
+// SINGLETON
 class Sound : public GameStateI
 {
 public:
@@ -61,6 +63,7 @@ public:
 
 protected:
 	static Sound *instance_;
+
 	typedef std::map<std::string, SoundBuffer *> BufferMap;
 	typedef std::vector<SoundSource *> SourceList;
 	typedef std::vector<VirtualSoundSource *> VirtualSourceList;
@@ -82,7 +85,6 @@ protected:
 private:
 	Sound();
 	virtual ~Sound();
-
 };
 
 #endif /* _SOUND_H_ */

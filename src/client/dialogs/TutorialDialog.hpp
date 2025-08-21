@@ -26,9 +26,8 @@
 #include <GLEXT/GLTexture.hpp>
 #include <graph/TutorialFile.hpp>
 
-class TutorialDialog :
-	public GLWWindow,
-	public GLWListViewI
+// SINGLETON
+class TutorialDialog : public GLWWindow, public GLWListViewI
 {
 public:
 	static TutorialDialog *instance();
@@ -44,8 +43,10 @@ public:
 	virtual void event(std::map<std::string, std::string> &event);
 
 	void drawHighlight(float x, float y, float w, float h);
+
 protected:
 	static TutorialDialog *instance_;
+
 	float triangleDist_;
 	float triangleDir_;
 	float speed_;
@@ -65,7 +66,6 @@ protected:
 private:
 	TutorialDialog();
 	virtual ~TutorialDialog();
-
 };
 
 #endif

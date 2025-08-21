@@ -22,6 +22,7 @@
 #if !defined(__INCLUDE_InfoMaph_INCLUDE__)
 #define __INCLUDE_InfoMaph_INCLUDE__
 
+// SINGLETON
 class InfoMap
 {
 public:
@@ -31,14 +32,13 @@ public:
 
 protected:
 	static InfoMap *instance_;
+
 	void showHeightBands();
 	void showGrid();
 
 private:
 	InfoMap();
 	virtual ~InfoMap();
-
 };
-
 
 #endif

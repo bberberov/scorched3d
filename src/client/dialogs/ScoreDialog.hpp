@@ -24,6 +24,8 @@
 #include <GLW/GLWWindow.hpp>
 
 class Tank;
+
+// SINGLETON
 class ScoreDialog : public GLWWindow
 {
 public:
@@ -36,8 +38,10 @@ public:
 	virtual void draw();
 
 protected:
+	// FIXME Why two instances?
 	static ScoreDialog *instance_;
 	static ScoreDialog *instance2_;
+
 	std::list<unsigned int> sortedTanks_;
 	int lastScoreValue_;
 	int lastMoneyValue_;
@@ -50,7 +54,6 @@ protected:
 private:
 	ScoreDialog();
 	virtual ~ScoreDialog();
-
 };
 
 #endif // !defined(AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_)

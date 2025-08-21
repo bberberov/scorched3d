@@ -35,13 +35,13 @@
 #include <weapons/AccessoryStore.hpp>
 #include <stdio.h>
 
-BuyAccessoryDialog *BuyAccessoryDialog::instance_ = 0;
+BuyAccessoryDialog *BuyAccessoryDialog::instance_ = nullptr;
 
 BuyAccessoryDialog *BuyAccessoryDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new BuyAccessoryDialog;
+		instance_ = new BuyAccessoryDialog();
 	}
 	return instance_;
 }

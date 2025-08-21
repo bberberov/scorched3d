@@ -29,13 +29,13 @@
 #include <net/NetInterface.hpp>
 #include <common/Logger.hpp>
 
-ConnectDialog *ConnectDialog::instance_ = 0;
+ConnectDialog *ConnectDialog::instance_ = nullptr;
 
 ConnectDialog *ConnectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ConnectDialog;
+		instance_ = new ConnectDialog();
 	}
 	return instance_;
 }
@@ -62,7 +62,7 @@ ConnectDialog::~ConnectDialog()
 
 UniqueIdStore &ConnectDialog::getIdStore()
 {
-	if (!idStore_)
+	if (nullptr == idStore_)
 	{
 		idStore_ = new UniqueIdStore();
 		// Get the unique id

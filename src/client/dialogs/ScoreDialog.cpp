@@ -60,26 +60,24 @@ static const float pingLeft = 525.0f;
 static const float readyLeft = 565.0f;
 static const float lineSpacer = 10.0f;
 
-ScoreDialog *ScoreDialog::instance_ = 0;
-ScoreDialog *ScoreDialog::instance2_ = 0;
+ScoreDialog *ScoreDialog::instance_ = nullptr;
+ScoreDialog *ScoreDialog::instance2_ = nullptr;
 
 ScoreDialog *ScoreDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ScoreDialog;
+		instance_ = new ScoreDialog();
 	}
-
 	return instance_;
 }
 
 ScoreDialog *ScoreDialog::instance2()
 {
-	if (!instance2_)
+	if (nullptr == instance2_)
 	{
-		instance2_ = new ScoreDialog;
+		instance2_ = new ScoreDialog();
 	}
-
 	return instance2_;
 }
 
@@ -87,14 +85,10 @@ ScoreDialog::ScoreDialog() :
 	GLWWindow("Score", 10.0f, 10.0f, 575.0f, 310.0f, eTransparent |eSmallTitle,
 		"Shows the current score for all players."),
 	lastScoreValue_(0), lastMoneyValue_(0), lastNoPlayers_(0)
-{
-
-}
+{}
 
 ScoreDialog::~ScoreDialog()
-{
-
-}
+{}
 
 void ScoreDialog::display()
 {

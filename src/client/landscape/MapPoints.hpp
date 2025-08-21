@@ -22,6 +22,8 @@
 #define __INCLUDE_MapPointsh_INCLUDE__
 
 class ModelRendererSimulator;
+
+// SINGLETON
 class MapPoints
 {
 public:
@@ -33,6 +35,7 @@ public:
 
 protected:
 	static MapPoints *instance_;
+
 	ModelRendererSimulator *borderModelWrap_;
 	ModelRendererSimulator *borderModelBounce_;
 	ModelRendererSimulator *borderModelConcrete_;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,35 +26,29 @@
 #include <client/ClientState.hpp>
 #include <common/Defines.hpp>
 
-TankKeyboardControl * TankKeyboardControl::instance_ = 0;
+TankKeyboardControl * TankKeyboardControl::instance_ = nullptr;
 
 TankKeyboardControl * TankKeyboardControl::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new TankKeyboardControl;
+		instance_ = new TankKeyboardControl();
 	}
-
 	return instance_;
 }
 
 TankKeyboardControl::TankKeyboardControl() :
 	GameStateI("TankKeyboardControl")
-{
-
-}
+{}
 
 TankKeyboardControl::~TankKeyboardControl()
-{
-
-}
+{}
 
 void TankKeyboardControl::enterState(const unsigned state)
 {
 	//if (state == ClientState::StateShot)
 	{
-		Tank *currentTank =
-			ScorchedClient::instance()->getTargetContainer().getCurrentTank();
+		Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 		if (currentTank)
 		{
 			if (currentTank->getState().getState() == TankState::sNormal)
@@ -65,13 +59,17 @@ void TankKeyboardControl::enterState(const unsigned state)
 	}
 }
 
-void TankKeyboardControl::keyboardCheck(const unsigned state, float frameTime, 
-							char *buffer, unsigned int keyState,
-							KeyboardHistory::HistoryElement *history, int hisCount, 
-							bool &skipRest)
+void TankKeyboardControl::keyboardCheck(
+	const unsigned state,
+	float frameTime,
+	char *buffer,
+	unsigned int keyState,
+	KeyboardHistory::HistoryElement *history,
+	int hisCount,
+	bool &skipRest
+)
 {
-	Tank *currentTank =
-		ScorchedClient::instance()->getTargetContainer().getCurrentTank();
+	Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 	if (currentTank)
 	{
 		if (currentTank->getState().getState() == TankState::sNormal)

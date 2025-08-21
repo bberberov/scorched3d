@@ -24,8 +24,8 @@
 #include <engine/GameStateI.hpp>
 #include <GLEXT/GLTexture.hpp>
 
-class SoftwareMouse : 
-	public GameStateI
+// SINGLETON
+class SoftwareMouse : public GameStateI
 {
 public:
 	static SoftwareMouse *instance();
@@ -35,13 +35,12 @@ public:
 
 protected:
 	static SoftwareMouse *instance_;
+
 	GLTexture mouseTex_;
 
 private:
 	SoftwareMouse();
 	virtual ~SoftwareMouse ();
-
-
 };
 
 #endif

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -31,8 +31,8 @@ public:
 	virtual void adminResult(unsigned int sid, ComsAdminMessage::ComsAdminMessageType type) = 0;
 };
 
-class ClientAdminResultHandler : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientAdminResultHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientAdminResultHandler *instance();
@@ -48,15 +48,17 @@ public:
 	virtual bool processMessage(
 		NetMessage &message,
 		const char *messageType,
-		NetBufferReader &reader);
+		NetBufferReader &reader
+	);
 protected:
+	static ClientAdminResultHandler *instance_;
+
 	std::set<ClientAdminResultHandlerI *> handlers_;
 	unsigned int sid_;
 
 private:
 	ClientAdminResultHandler();
 	virtual ~ClientAdminResultHandler();
-
 };
 
 #endif

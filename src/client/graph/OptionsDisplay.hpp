@@ -23,6 +23,7 @@
 
 #include <common/OptionEntry.hpp>
 
+// SINGLETON
 class OptionsDisplay
 {
 public:
@@ -412,6 +413,7 @@ public:
 
 protected:
 	static OptionsDisplay *instance_;
+
 	std::list<OptionEntry *> options_;
 
 	// BEGIN online
@@ -594,7 +596,6 @@ protected:
 private:
 	OptionsDisplay();
 	virtual ~OptionsDisplay();
-
 };
 
 #endif

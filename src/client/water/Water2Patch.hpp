@@ -33,15 +33,19 @@ public:
 
 	struct Data
 	{
-		// Fix me, we don't need all this info all the time!
+		// FIXME, we don't need all this info all the time!
 		float x, y, z;
 		float nx, ny, nz;
 	};
 
-	void generate(Water2Points &heights,
-		int size, int totalSize,
-		int posX, int posY,
-		float waterHeight);
+	void generate(
+		Water2Points &heights,
+		int size,
+		int totalSize,
+		int posX,
+		int posY,
+		float waterHeight
+	);
 	void setBufferOffSet(int offset) { bufferOffSet_ = offset; }
 	int getBufferOffSet() { return bufferOffSet_; }
 

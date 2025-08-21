@@ -24,6 +24,7 @@
 #include <string>
 #include <lang/ResourceBundleEntry.hpp>
 
+// SINGLETON
 class Lang
 {
 public:

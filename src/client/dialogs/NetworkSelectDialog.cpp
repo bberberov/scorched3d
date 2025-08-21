@@ -39,6 +39,7 @@ struct ColumnInfo
 	GLWIconTable::Column col;
 	const char *dataName;
 };
+
 static ColumnInfo *getGamesCols()
 {
 	static ColumnInfo gamescols[] = {
@@ -65,13 +66,13 @@ static ColumnInfo *getPlayerCols()
 	return playerscols;
 }
 
-NetworkSelectDialog *NetworkSelectDialog::instance_ = 0;
+NetworkSelectDialog *NetworkSelectDialog::instance_ = nullptr;
 
 NetworkSelectDialog *NetworkSelectDialog::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new NetworkSelectDialog;
+		instance_ = new NetworkSelectDialog();
 	}
 	return instance_;
 }

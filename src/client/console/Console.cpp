@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,10 +21,13 @@
 #include <console/Console.hpp>
 #include <console/ConsoleImpl.hpp>
 
-Console *Console::instance_ = 0;
+Console *Console::instance_ = nullptr;
 
 Console *Console::instance()
 {
-	if (!instance_) instance_ = new ConsoleImpl();
+	if (nullptr == instance_)
+	{
+		instance_ = new ConsoleImpl();
+	}
 	return instance_;
 }

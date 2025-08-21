@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,10 +29,15 @@
 #include <sound/Sound.hpp>
 #include <XML/XMLFile.hpp>
 
+LandscapeMusicManager *LandscapeMusicManager::instance_ = nullptr;
+
 LandscapeMusicManager *LandscapeMusicManager::instance()
 {
-	static LandscapeMusicManager instance_;
-	return &instance_;
+	if (nullptr == instance_)
+	{
+		instance_ = new LandscapeMusicManager();
+	}
+	return instance_;
 }
 
 LandscapeMusicManager::LandscapeMusicManager() : 

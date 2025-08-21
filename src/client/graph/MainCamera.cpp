@@ -45,15 +45,14 @@
 #include <math.h>
 #include <time.h>
 
-MainCamera *MainCamera::instance_ = 0;
+MainCamera *MainCamera::instance_ = nullptr;
 
 MainCamera *MainCamera::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new MainCamera;
+		instance_ = new MainCamera();
 	}
-
 	return instance_;
 }
 

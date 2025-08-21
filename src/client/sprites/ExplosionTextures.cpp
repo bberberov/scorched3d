@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,27 +27,22 @@
 #include <common/Defines.hpp>
 #include <stdio.h>
 
-ExplosionTextures *ExplosionTextures::instance_ = 0;
+ExplosionTextures *ExplosionTextures::instance_ = nullptr;
 
 ExplosionTextures *ExplosionTextures::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ExplosionTextures;
+		instance_ = new ExplosionTextures();
 	}
-
 	return instance_;
 }
 
 ExplosionTextures::ExplosionTextures()
-{
-
-}
+{}
 
 ExplosionTextures::~ExplosionTextures()
-{
-
-}
+{}
 
 bool ExplosionTextures::createTextures(ProgressCounter *counter)
 {

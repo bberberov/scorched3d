@@ -28,10 +28,8 @@
 #include <GLW/GLWLabel.hpp>
 #include <common/LoggerI.hpp>
 
-class LogDialog : 
-	public GLWWindow,
-	public GLWButtonI,
-	public LoggerI
+// SINGLETON
+class LogDialog : public GLWWindow, public GLWButtonI, public LoggerI
 {
 public:
 	static LogDialog *instance();
@@ -49,6 +47,7 @@ public:
 
 protected:
 	static LogDialog *instance_;
+
 	GLWTextButton *quit_;
 	GLWLabel *serverName_;
 	GLWListView *listView_;

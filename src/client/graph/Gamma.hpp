@@ -25,11 +25,12 @@
 
 struct GammaSettings
 {
-	Uint16 Red  [256];	
+	Uint16 Red  [256];
 	Uint16 Green[256];
 	Uint16 Blue [256];
 };
 
+// SINGLETON
 class Gamma
 {
 public:

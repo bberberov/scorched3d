@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,35 +23,30 @@
 #include <graph/OptionsDisplay.hpp>
 #include <common/Defines.hpp>
 
-Display *Display::instance_ = 0;
+Display *Display::instance_ = nullptr;
 
 Display *Display::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Display;
+		instance_ = new Display();
 	}
-
 	return instance_;
 }
 
 Display::Display()
-{
-
-}
+{}
 
 Display::~Display()
-{
-}
-
+{}
 
 bool Display::changeSettings(int width, int height, bool full)
 {
-	// set opengl double buffering 
+	// Set OpenGL double buffering
 	int doubleBuffer = OptionsDisplay::instance()->getDoubleBuffer()?1:0;
 	SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, doubleBuffer);
 
-	// set opengl component size 
+	// Set OpenGL component size
 	int componentSize = OptionsDisplay::instance()->getColorComponentSize();
 	SDL_GL_SetAttribute( SDL_GL_ALPHA_SIZE, componentSize);
 	SDL_GL_SetAttribute( SDL_GL_RED_SIZE, componentSize);
@@ -70,18 +65,17 @@ bool Display::changeSettings(int width, int height, bool full)
 	int depthBufferBits = OptionsDisplay::instance()->getDepthBufferBits();
 	SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, depthBufferBits );
 
-	// create display surface 
+	// Create display surface
 	int videoFlags = SDL_OPENGL | SDL_ANYFORMAT; // | SDL_RESIZABLE;  
 	int flags = ( full ? videoFlags|SDL_FULLSCREEN : videoFlags);
 	int bpp = OptionsDisplay::instance()->getBitsPerPixel();
 
-	// Try to create suface
+	// Try to create surface
 	surface = SDL_SetVideoMode( width, height, bpp, flags);
 
 	// If this fails
-	// Hack, to check if 16bit depth will work instead if 24 bits specified
-	if (!surface &&
-		depthBufferBits == 24)
+	// HACK, to check if 16bit depth will work instead if 24 bits specified
+	if (!surface && depthBufferBits == 24)
 	{
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 		surface = SDL_SetVideoMode( width, height, bpp, flags);

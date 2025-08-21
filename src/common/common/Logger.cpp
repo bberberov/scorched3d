@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -32,15 +32,16 @@
 // NOTE: This logger is and needs to be thread safe
 // ************************************************
 
-static SDL_mutex *logMutex_ = 0;
+static SDL_mutex *logMutex_ = nullptr;
 static Uint32 threadId = (Uint32) -1;
-Logger * Logger::instance_ = 0;
 
-Logger * Logger::instance()
+Logger *Logger::instance_ = nullptr;
+
+Logger *Logger::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Logger;
+		instance_ = new Logger();
 	}
 	return instance_;
 }
@@ -182,4 +183,3 @@ void Logger::processLogEntries()
 	}
 	SDL_UnlockMutex(logMutex_);
 }
-

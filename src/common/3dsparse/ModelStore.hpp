@@ -26,6 +26,8 @@
 #include <string>
 
 class Model;
+
+// SINGLETON
 class ModelStore
 {
 public:
@@ -35,6 +37,7 @@ public:
 
 protected:
 	static ModelStore *instance_;
+
 	std::map<std::string, Model *> fileMap_;
 
 	Model *getModel(ModelID &id);

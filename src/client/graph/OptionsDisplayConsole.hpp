@@ -23,6 +23,7 @@
 
 #include <console/ConsoleRuleFnIAdapter.hpp>
 
+// SINGLETON
 class OptionsDisplayConsole
 {
 public:
@@ -32,12 +33,12 @@ public:
 
 protected:
 	static OptionsDisplayConsole *instance_;
+
 	std::list<ConsoleRuleFnIOptionsAdapter *> adapters_;
 
 private:
 	OptionsDisplayConsole();
 	virtual ~OptionsDisplayConsole();
-
 };
 
 #endif

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,11 +23,14 @@
 #include <GLW/GLWLabel.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-KibitzingDialog *KibitzingDialog::instance_(0);
+KibitzingDialog *KibitzingDialog::instance_ = nullptr;
 
 KibitzingDialog *KibitzingDialog::instance()
 {
-	if (!instance_) instance_ = new KibitzingDialog();
+	if (nullptr == instance_)
+	{
+		instance_ = new KibitzingDialog();
+	}
 	return instance_;
 }
 

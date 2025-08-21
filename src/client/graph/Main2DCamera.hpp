@@ -29,6 +29,7 @@
 #include <engine/GameStateI.hpp>
 #include <GLEXT/GLViewPort.hpp>
 
+// SINGLETON
 class Main2DCamera : public GameStateI
 {
 public:
@@ -40,16 +41,15 @@ public:
 	bool getHide() { return hide_; }
 	void setHide(bool hide) { hide_ = hide; }
 
-
 protected:
 	static Main2DCamera *instance_;
+
 	GLViewPort viewPort_;
 	bool hide_;
 
 private:
 	Main2DCamera();
 	virtual ~Main2DCamera();
-
 };
 
 #endif // !defined(AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_)

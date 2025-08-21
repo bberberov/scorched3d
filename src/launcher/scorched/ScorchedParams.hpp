@@ -23,6 +23,7 @@
 
 #include <common/OptionsParameters.hpp>
 
+// SINGLETON
 class ScorchedParams : public OptionsParameters
 {
 public:
@@ -32,12 +33,12 @@ public:
 
 protected:
 	static ScorchedParams *instance_;
+
 	bool SDLInitVideo_;
 
 private:
 	ScorchedParams();
 	virtual ~ScorchedParams();
-
 };
 
 #endif // __INCLUDE_ScorchedParamsh_INCLUDE__

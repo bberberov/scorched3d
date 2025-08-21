@@ -44,11 +44,11 @@ GLWSelectorEntry::GLWSelectorEntry(
 	seperator_(false)
 {}
 
-GLWSelector *GLWSelector::instance_ = 0;
+GLWSelector *GLWSelector::instance_ = nullptr;
 
 GLWSelector *GLWSelector::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new GLWSelector();
 	}

@@ -23,8 +23,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientInitializeModHandler  : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientInitializeModHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientInitializeModHandler *instance();
@@ -32,7 +32,8 @@ public:
 	virtual bool processMessage(
 		NetMessage &message,
 		const char *messageType,
-		NetBufferReader &reader);
+		NetBufferReader &reader
+	);
 
 protected:
 	static ClientInitializeModHandler *instance_;

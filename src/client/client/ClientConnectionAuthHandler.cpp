@@ -37,15 +37,14 @@
 #include <client/SecureID.hpp>
 #include <net/NetInterface.hpp>
 
-ClientConnectionAuthHandler *ClientConnectionAuthHandler::instance_ = 0;
+ClientConnectionAuthHandler *ClientConnectionAuthHandler::instance_ = nullptr;
 
 ClientConnectionAuthHandler *ClientConnectionAuthHandler::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-	  instance_ = new ClientConnectionAuthHandler();
+		instance_ = new ClientConnectionAuthHandler();
 	}
-
 	return instance_;
 }
 

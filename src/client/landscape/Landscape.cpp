@@ -55,13 +55,13 @@
 #include <tankgraph/RenderTargets.hpp>
 #include <time.h>
 
-Landscape *Landscape::instance_ = 0;
+Landscape *Landscape::instance_ = nullptr;
 
 Landscape *Landscape::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Landscape;
+		instance_ = new Landscape();
 	}
 	return instance_;
 }

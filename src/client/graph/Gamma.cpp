@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -25,22 +25,19 @@
 #include <math.h>
 #include <SDL/SDL.h>
 
-Gamma *Gamma::instance_ = 0;
+Gamma *Gamma::instance_ = nullptr;
 
 Gamma *Gamma::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new Gamma;
+		instance_ = new Gamma();
 	}
-
 	return instance_;
 }
 
 Gamma::Gamma()
-{
-
-}
+{}
 
 Gamma::~Gamma()
 {
@@ -49,17 +46,16 @@ Gamma::~Gamma()
 
 bool Gamma::set()
 {
-	float gamma = 
-		float(OptionsDisplay::instance()->getBrightness()) / 10.0f;
+	float gamma = float(OptionsDisplay::instance()->getBrightness()) / 10.0f;
 
 	GammaSettings tmpSettings_;
-	for (int n=0; n<256; n++) 
+	for (int n=0; n<256; n++)
 	{
 		float i = (float)n / 256.0f;
 		float c = powf(i,1.0f/gamma);
 
-		int value =  (int)(c*65535.0 + 0.5); 
-		if ( value > 65535 ) { value = 65535; } 
+		int value =  (int)(c*65535.0 + 0.5);
+		if ( value > 65535 ) { value = 65535; }
 
 		tmpSettings_.Red  [n] = (Uint16)value;
 		tmpSettings_.Green[n] = (Uint16)value;
@@ -76,7 +72,7 @@ bool Gamma::set()
 
 bool Gamma::save()
 {
-	if (SDL_GetGammaRamp(savedSettings_.Red,  savedSettings_.Green, savedSettings_.Blue) <0) 
+	if (SDL_GetGammaRamp(savedSettings_.Red,  savedSettings_.Green, savedSettings_.Blue) <0)
 		return false;
 	return true;
 }

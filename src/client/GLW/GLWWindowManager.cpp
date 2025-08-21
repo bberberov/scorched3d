@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -29,15 +29,14 @@
 #include <limits.h>
 #include <set>
 
-GLWWindowManager *GLWWindowManager::instance_ = 0;
+GLWWindowManager *GLWWindowManager::instance_ = nullptr;
 
 GLWWindowManager *GLWWindowManager::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLWWindowManager;
+		instance_ = new GLWWindowManager();
 	}
-
 	return instance_;
 }
 
@@ -48,23 +47,28 @@ GLWWindowManager::GLWWindowManager() :
 {
 	setCurrentEntry(UINT_MAX);
 
-	Image *map = new Image(ImageFactory::loadImage(
-		S3D::eDataLocation,
-		"data/images/screen.bmp",
-		"data/images/screena.bmp",
-		false));
+	Image *map = new Image(
+		ImageFactory::loadImage(
+			S3D::eDataLocation,
+			"data/images/screen.bmp",
+			"data/images/screena.bmp",
+			false
+		)
+	);
 	DIALOG_ASSERT(map->getBits());
-	MainMenuDialog::instance()->
-		addMenu(LANG_RESOURCE("WINDOWS", "Windows"), 
-			"Windows",
-			LANG_RESOURCE("WINDOWS_WINDOW", "Hide and display aspects of the user interface"),
-			32.0f, 0, this, map);
+	MainMenuDialog::instance()->addMenu(
+		LANG_RESOURCE("WINDOWS", "Windows"),
+		"Windows",
+		LANG_RESOURCE("WINDOWS_WINDOW", "Hide and display aspects of the user interface"),
+		32.0f,
+		0,
+		this,
+		map
+	);
 }
 
 GLWWindowManager::~GLWWindowManager()
-{
-
-}
+{}
 
 void GLWWindowManager::clear()
 {
@@ -157,7 +161,8 @@ void GLWWindowManager::addWindow(const unsigned state, GLWWindow *window, Keyboa
 	stateEntrys_[state].windows_.push_back(window);
 	stateEntrys_[state].state_ = state;
 	stateEntrys_[state].windowKeys_.push_back(
-		std::pair<KeyboardKey *, GLWWindow *>(key, window));
+		std::pair<KeyboardKey *, GLWWindow *>(key, window)
+	);
 }
 
 void GLWWindowManager::removeWindow(GLWWindow *removeWindow)

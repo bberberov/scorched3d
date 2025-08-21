@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,6 +28,8 @@
 #include <map>
 
 class VirtualSoundSource;
+
+// SINGLETON
 class LandscapeMusicManager : public GameStateI
 {
 public:
@@ -38,11 +40,14 @@ public:
 	void addMusics();
 
 protected:
+	static LandscapeMusicManager *instance_;
+
 	struct MusicStateEntry
 	{
 		std::string file;
 		float gain;
 	};
+
 	struct MusicPlayingEntry
 	{
 		std::string file;

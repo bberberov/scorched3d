@@ -30,6 +30,7 @@
 #define MAX_KEYBDHIST 1024
 #define KEYBOARDKEY(name, key) static KeyboardKey * key = Keyboard::instance()->getKey( name );
 
+// SINGLETON
 class Keyboard
 {
 public:
@@ -50,10 +51,11 @@ public:
 	std::list<std::string> &getKeyList() { return keyList_; }
 	std::list<KeyboardKey *> &getCommandKeys() { return commandKeys_; }
 	std::map<std::string, KeyboardKey *> &getKeyMap() { return keyMap_; }
-			                       
+
 protected:
 	static Keyboard *instance_;
-	static bool dvorak_; // TODO // FIX ME NOT WORKING
+
+	static bool dvorak_; // TODO // FIXME NOT WORKING
 	KeyboardHistory::HistoryElement keybHist_[MAX_KEYBDHIST];
 	int keybHistCnt_;
 	Uint16 mHighSurrogate;
@@ -66,11 +68,10 @@ protected:
 	std::map<std::string, KeyboardKey *> keyMap_;
 	std::list<KeyboardKey *> commandKeys_;
 	std::list<std::string> keyList_;
-                       
+
 private:
 	Keyboard();
 	virtual ~Keyboard();
-
 };
 
 #endif /* _KEYBOARD_H_ */

@@ -23,8 +23,8 @@
 
 #include <coms/ComsMessageHandler.hpp>
 
-class ClientConnectionRejectHandler : 
-	public ComsMessageHandlerI
+// SINGLETON
+class ClientConnectionRejectHandler : public ComsMessageHandlerI
 {
 public:
 	static ClientConnectionRejectHandler *instance();
@@ -32,7 +32,8 @@ public:
 	virtual bool processMessage(
 		NetMessage &message,
 		const char *messageType,
-		NetBufferReader &reader);
+		NetBufferReader &reader
+	);
 
 protected:
 	static ClientConnectionRejectHandler *instance_;
@@ -40,7 +41,6 @@ protected:
 private:
 	ClientConnectionRejectHandler();
 	virtual ~ClientConnectionRejectHandler();
-
 };
 
 #endif

@@ -28,9 +28,8 @@
 #include <GLW/GLWWindow.hpp>
 #include <GLEXT/GLMenuI.hpp>
 
-class GLWWindowManager : 
-	public GameStateI,
-	public GLMenuI
+// SINGLETON
+class GLWWindowManager : public GameStateI, public GLMenuI
 {
 public:
 	static GLWWindowManager *instance();
@@ -57,24 +56,29 @@ public:
 	virtual void enterState(const unsigned state);
 	virtual void draw(const unsigned state);
 	virtual void simulate(const unsigned state, float simTime);
-	virtual void keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest);
-	virtual void mouseDown(const unsigned state, GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	virtual void mouseUp(const unsigned state, GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	virtual void mouseDrag(const unsigned state, GameState::MouseButton button, 
-		int x, int y, int dx, int dy, bool &skipRest);
-	virtual void mouseWheel(const unsigned state, 
-		int x, int y, int z, bool &skipRest);
+	virtual void keyboardCheck(
+		const unsigned state,
+		float frameTime,
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
+	virtual void mouseDown(
+		const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest
+	);
+	virtual void mouseUp(
+		const unsigned state, GameState::MouseButton button, int x, int y, bool &skipRest
+	);
+	virtual void mouseDrag(
+		const unsigned state, GameState::MouseButton button, int x, int y, int dx, int dy, bool &skipRest
+	);
+	virtual void mouseWheel(const unsigned state, int x, int y, int z, bool &skipRest);
 
 	// Inherited from GLMenuI
-	virtual bool getMenuItems(const char* menuName, 
-		std::list<GLMenuItem> &result);
-	virtual void menuSelection(const char* menuName, 
-		const int position, GLMenuItem &item);
+	virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
+	virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
 
 protected:
 	static GLWWindowManager *instance_;
@@ -102,7 +106,6 @@ protected:
 private:
 	GLWWindowManager();
 	virtual ~GLWWindowManager();
-
 };
 
 #endif

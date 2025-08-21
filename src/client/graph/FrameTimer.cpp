@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,15 +26,14 @@
 #include <GLEXT/GLTexture.hpp>
 #include <lang/LangResource.hpp>
 
-FrameTimer *FrameTimer::instance_ = 0;
+FrameTimer *FrameTimer::instance_ = nullptr;
 
 FrameTimer *FrameTimer::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new FrameTimer;
+		instance_ = new FrameTimer();
 	}
-
 	return instance_;
 }
 
@@ -43,14 +42,10 @@ FrameTimer::FrameTimer() :
 	totalTime_(0.0f), frameCount_(0), 
 	lastStateCount_(0), lastTris_(0), lastTextureSets_(0),
 	fps_(0.0f)
-{
-
-}
+{}
 
 FrameTimer::~FrameTimer()
-{
-
-}
+{}
 
 void FrameTimer::draw(const unsigned state)
 {

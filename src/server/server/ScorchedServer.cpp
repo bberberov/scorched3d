@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -65,8 +65,8 @@
 #include <console/ConsoleRuleMethodIAdapter.hpp>
 #endif
 
-ScorchedServer *ScorchedServer::instance_ = 0;
-static ScorchedServer *instanceLock = 0;
+ScorchedServer *ScorchedServer::instance_ = nullptr;
+static ScorchedServer *instanceLock = nullptr;
 bool ScorchedServer::started_ = false;
 TargetSpace *ScorchedServer::targetSpace_ = new TargetSpace();
 
@@ -89,9 +89,9 @@ bool ScorchedServer::startServer(const ScorchedServerSettings &settings,
 	stopServer();
 
 	DIALOG_ASSERT(!instanceLock);
-	instanceLock = new ScorchedServer;
+	instanceLock = new ScorchedServer();
 	instance_ = instanceLock;
-	instanceLock = 0;
+	instanceLock = nullptr;
 
 	started_ = instance_->startServerInternal(settings, local, counter);
 	return started_;
@@ -99,10 +99,10 @@ bool ScorchedServer::startServer(const ScorchedServerSettings &settings,
 
 void ScorchedServer::stopServer()
 {
-	if (instance_)
+	if (nullptr != instance_)
 	{
 		delete instance_;
-		instance_ = 0;
+		instance_ = nullptr;
 	}
 	started_ = false;
 }
@@ -160,9 +160,9 @@ ScorchedServer::~ScorchedServer()
 	delete economyStore_;
 }
 
-Simulator &ScorchedServer::getSimulator() 
-{ 
-	return *serverSimulator_; 
+Simulator &ScorchedServer::getSimulator()
+{
+	return *serverSimulator_;
 }
 
 ServerAuthHandler *ScorchedServer::getAuthHandler()

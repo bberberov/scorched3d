@@ -26,11 +26,11 @@
 #include <common/OptionsScorched.hpp>
 #include <common/Defines.hpp>
 
-ServerRegistration *ServerRegistration::instance_ = 0;
+ServerRegistration *ServerRegistration::instance_ = nullptr;
 
 ServerRegistration *ServerRegistration::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
 		instance_ = new ServerRegistration();
 	}

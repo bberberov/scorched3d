@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -27,31 +27,34 @@
 #include <common/Defines.hpp>
 #include <lang/LangResource.hpp>
 
-GLLenseFlare *GLLenseFlare::instance_ = 0;
+GLLenseFlare *GLLenseFlare::instance_ = nullptr;
 
 GLLenseFlare *GLLenseFlare::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLLenseFlare;
+		instance_ = new GLLenseFlare();
 	}
-
 	return instance_;
 }
 
 GLLenseFlare::GLLenseFlare() : shineTic_(0)
-{
-
-}
+{}
 
 GLLenseFlare::~GLLenseFlare()
-{
+{}
 
-}
-
-void GLLenseFlare::setFlare(int index, int type, float scale, float loc, 
-							Vector &color1, Vector &color2, Vector &color3, Vector &color4,
-							float colorScale)
+void GLLenseFlare::setFlare(
+	int index,
+	int type,
+	float scale,
+	float loc,
+	Vector &color1,
+	Vector &color2,
+	Vector &color3,
+	Vector &color4,
+	float colorScale
+)
 {
 	if (index > 2) loc *= 500;
 
@@ -100,26 +103,34 @@ void GLLenseFlare::init(ProgressCounter *counter)
 	setFlare(11, 5, -1.0f, 0.03f, red1, red2, red3, red4, 0.2f);
 
 	int i;
-	for (i = 0; i < 10; i++) 
+	for (i = 0; i < 10; i++)
 	{
 		if (counter) counter->setNewPercentage(float (i) / 16.0f * 100.0f);
 
-		Image bitmap = ImageLuminanceFactory::loadFromFile(S3D::getModFile(S3D::formatStringBuffer("data/textures/lensflare/shine%d.bw", i)));
+		Image bitmap = ImageLuminanceFactory::loadFromFile(
+			S3D::getModFile(S3D::formatStringBuffer("data/textures/lensflare/shine%d.bw", i))
+		);
 		shines_[i].create(bitmap);
 	}
 
-	for (i = 0; i < 6; i++) 
+	for (i = 0; i < 6; i++)
 	{
 		if (counter) counter->setNewPercentage(float (i+10) / 16.0f * 100.0f);
 
-		Image bitmap = ImageLuminanceFactory::loadFromFile(S3D::getModFile(S3D::formatStringBuffer("data/textures/lensflare/flare%d.bw", i)));
+		Image bitmap = ImageLuminanceFactory::loadFromFile(
+			S3D::getModFile(S3D::formatStringBuffer("data/textures/lensflare/flare%d.bw", i))
+		);
 		flares_[i].create(bitmap);
 	}
 }
 
-void GLLenseFlare::draw(Vector &flarePos, 
-	bool fullFlare, int colorNo, 
-	float size, float alpha)
+void GLLenseFlare::draw(
+	Vector &flarePos,
+	bool fullFlare,
+	int colorNo,
+	float size,
+	float alpha
+)
 {
 	if (GLCameraFrustum::instance()->sphereInFrustum(flarePos, 5))
 	{
@@ -144,7 +155,7 @@ void GLLenseFlare::draw(Vector &flarePos,
 		GLState *afterThreeState = 0;
 		int endTexture = 12;
 		if (!fullFlare) endTexture = 3;
-		for (int i=0; i<endTexture; i++) 
+		for (int i=0; i<endTexture; i++)
 		{
 			Vector sx = dx * flare_[i].scale;
 			Vector sy = dy * flare_[i].scale;
@@ -157,14 +168,14 @@ void GLLenseFlare::draw(Vector &flarePos,
 				case 2: glColor4f(flare_[i].color3[0], flare_[i].color3[1], flare_[i].color3[2], alpha); break;
 				case 3: glColor4f(flare_[i].color4[0], flare_[i].color4[1], flare_[i].color4[2], alpha); break;
 			}
-			if (flare_[i].type < 0) 
+			if (flare_[i].type < 0)
 			{
 				shines_[shineTic_].draw();
 				shineTic_ = (shineTic_ + 1) % 10;
 
 				position = flarePos + (axis * flare_[i].loc);
-			} 
-			else 
+			}
+			else
 			{
 				flares_[flare_[i].type].draw();
 

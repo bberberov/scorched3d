@@ -30,6 +30,8 @@
 
 class LoggerInfo;
 class LoggerI;
+
+// SINGLETON
 class Logger
 {
 public:

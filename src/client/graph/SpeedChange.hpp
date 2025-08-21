@@ -26,6 +26,7 @@
 #include <common/Clock.hpp>
 #include <common/fixed.hpp>
 
+// SINGLETON
 class SpeedChange : public GameStateI
 {
 public:
@@ -35,20 +36,26 @@ public:
 
 	virtual void draw(const unsigned state);
 	virtual void simulate(const unsigned state, float simTime);
-	virtual void keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest);
+	virtual void keyboardCheck(
+		const unsigned state,
+		float frameTime,
+		char *buffer,
+		unsigned int keyState,
+		KeyboardHistory::HistoryElement *history,
+		int hisCount,
+		bool &skipRest
+	);
 
 protected:
 	static SpeedChange *instance_;
-	void setSpeed(fixed speed);
+
 	Clock frameClock_;
+
+	void setSpeed(fixed speed);
 
 private:
 	SpeedChange();
 	virtual ~SpeedChange();
 };
-
 
 #endif

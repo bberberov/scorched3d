@@ -31,13 +31,13 @@
 static Vector color(0.1f, 0.1f, 0.4f);
 static Vector selectedColor(0.9f, 0.9f, 1.0f);
 
-GLWToolTip *GLWToolTip::instance_ = 0;
+GLWToolTip *GLWToolTip::instance_ = nullptr;
 
 GLWToolTip *GLWToolTip::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLWToolTip;
+		instance_ = new GLWToolTip();
 	}
 	return instance_;
 }
@@ -202,9 +202,14 @@ void GLWToolTip::draw(const unsigned state)
 		return;
 	}
 
-	if ((refreshTime_ > 1.0f || 
-		tipX_ != currentX_ || 
-		tipY_ != currentY_) && lastTip_)
+	if (
+		(
+			refreshTime_ > 1.0f
+			|| tipX_ != currentX_
+			|| tipY_ != currentY_
+		)
+		&& lastTip_
+	)
 	{
 		tipX_ = currentX_;
 		tipY_ = currentY_;
@@ -215,7 +220,7 @@ void GLWToolTip::draw(const unsigned state)
 		setupTip(lastTip_);
 		refreshTime_ = 0.0f;
 	}
-	if (lastTip_) 
+	if (lastTip_)
 	{
 		calculateTip(lastTip_);
 
@@ -228,13 +233,11 @@ void GLWToolTip::draw(const unsigned state)
 		else tipOffY_ = 0.0f;
 	}
 
-	float alpha = timeSeen_ * 
-		float(OptionsDisplay::instance()->getToolTipSpeed());
+	float alpha = timeSeen_ * float(OptionsDisplay::instance()->getToolTipSpeed());
 	if (alpha > 1.0f)
 	{
 		alpha = 1.0f;
-		timeSeen_ = 1.0f / 
-			float(OptionsDisplay::instance()->getToolTipSpeed());
+		timeSeen_ = 1.0f / float(OptionsDisplay::instance()->getToolTipSpeed());
 	}
 
 	GLState currentState(GLState::TEXTURE_OFF | GLState::DEPTH_OFF);
@@ -273,13 +276,14 @@ void GLWToolTip::draw(const unsigned state)
 		}
 
 		GLState currentStateBlend(GLState::BLEND_ON);
-		glColor4f(0.5f, 0.5f, 1.0f, 0.8f * alpha);	
+		glColor4f(0.5f, 0.5f, 1.0f, 0.8f * alpha);
 		glBegin(GL_TRIANGLE_FAN);
 			glVertex2f(posX + 10.0f, posY + 2.0f);
 			glVertex2f(posX + 10.0f, posY);
 			GLWidget::drawRoundBox(
 				posX, posY,
-				posW, posH, 10.0f);
+				posW, posH, 10.0f
+			);
 			glVertex2f(posX + 10.0f, posY);
 		glEnd();
 		glColor4f(0.9f, 0.9f, 1.0f, 0.5f * alpha);
@@ -287,7 +291,8 @@ void GLWToolTip::draw(const unsigned state)
 		glBegin(GL_LINE_LOOP);
 			GLWidget::drawRoundBox(
 				posX, posY,
-				posW, posH, 10.0f);
+				posW, posH, 10.0f
+			);
 		glEnd();
 		glLineWidth(1.0f);
 
@@ -298,8 +303,7 @@ void GLWToolTip::draw(const unsigned state)
 	}
 
 	float pos = posY + posH - 16.0f;
-	GLWFont::instance()->getGameFont()->drawA(selectedColor, alpha, 11, posX + 3.0f, 
-		pos, 0.0f, tipTitle_);
+	GLWFont::instance()->getGameFont()->drawA(selectedColor, alpha, 11, posX + 3.0f, pos, 0.0f, tipTitle_);
 	pos -= 2.0f;
 
 	std::list<LangString>::iterator itor;
@@ -308,8 +312,6 @@ void GLWToolTip::draw(const unsigned state)
 	{
 		pos -= 10.0f;
 
-		GLWFont::instance()->getGameFont()->drawA(
-			color, alpha, 9, posX + 6.0f, 
-			pos, 0.0f, (*itor));
+		GLWFont::instance()->getGameFont()->drawA( color, alpha, 9, posX + 6.0f, pos, 0.0f, (*itor) );
 	}
 }

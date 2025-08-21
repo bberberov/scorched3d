@@ -20,11 +20,14 @@
 
 #include <common/OptionsMasterListServer.hpp>
 
-OptionsMasterListServer *OptionsMasterListServer::instance_ = 0;
+OptionsMasterListServer *OptionsMasterListServer::instance_ = nullptr;
 
 OptionsMasterListServer *OptionsMasterListServer::instance()
 {
-	if (!instance_) instance_ = new OptionsMasterListServer();
+	if (nullptr == instance_)
+	{
+		instance_ = new OptionsMasterListServer();
+	}
 	return instance_;
 }
 

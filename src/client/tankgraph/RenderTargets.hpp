@@ -24,6 +24,7 @@
 #include <engine/GameStateI.hpp>
 #include <tankgraph/TankMenus.hpp>
 
+// SINGLETON
 class RenderTargets
 {
 public:
@@ -40,6 +41,7 @@ public:
 
 		float stepTime;
 	} render3D;
+
 	struct Renderer2D : public GameStateI
 	{
 		Renderer2D() : GameStateI("RenderTargets2D") {}
@@ -58,6 +60,7 @@ public:
 
 	friend struct Renderer3D;
 	friend struct Renderer2D;
+
 protected:
 	static RenderTargets *instance_;
 
@@ -68,6 +71,5 @@ private:
 	RenderTargets();
 	virtual ~RenderTargets();
 };
-
 
 #endif

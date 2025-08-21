@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -28,40 +28,34 @@ Vector GLCameraFrustum::FrustrumBlue(0.0f, 0.0f, 1.0f);
 Vector GLCameraFrustum::FrustrumGreen(0.0f, 1.0f, 0.0f);
 Vector GLCameraFrustum::FrustrumWhite(1.0f, 1.0f, 1.0f);
 
-GLCameraFrustum *GLCameraFrustum::instance_ = 0;
+GLCameraFrustum *GLCameraFrustum::instance_ = nullptr;
 
 GLCameraFrustum *GLCameraFrustum::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new GLCameraFrustum;
+		instance_ = new GLCameraFrustum();
 	}
-
 	return instance_;
 }
 
 GLCameraFrustum::GLCameraFrustum() :
 	GameStateI("GLCameraFrustum")
-{
-
-}
+{}
 
 GLCameraFrustum::~GLCameraFrustum()
-{
-
-}
+{}
 
 void GLCameraFrustum::normalize(float vector[4])
 {
-   float fT = (float) sqrt(
-	   vector[0] * vector[0] + 
-	   vector[1] * vector[1] + 
-	   vector[2] * vector[2]);
+	float fT = (float) sqrt(
+		vector[0] * vector[0] + vector[1] * vector[1] + vector[2] * vector[2]
+	);
 
-   vector[0] /= fT;
-   vector[1] /= fT;
-   vector[2] /= fT;
-   vector[3] /= fT;
+	vector[0] /= fT;
+	vector[1] /= fT;
+	vector[2] /= fT;
+	vector[3] /= fT;
 }
 
 Vector &GLCameraFrustum::getBilboardVectorX()
@@ -95,7 +89,7 @@ void GLCameraFrustum::draw(const unsigned state)
 	glGetFloatv(GL_VIEWPORT, s.viewport);
 	s.aspect = s.viewport[2] / s.viewport[3];
 
-	// Concenate the two matrices
+	// Concatenate the two matrices
 	s.fClip[ 0] = s.fView[ 0] * s.fProj[ 0] + s.fView[ 1] * s.fProj[ 4] + s.fView[ 2] * s.fProj[ 8] + s.fView[ 3] * s.fProj[12];
 	s.fClip[ 1] = s.fView[ 0] * s.fProj[ 1] + s.fView[ 1] * s.fProj[ 5] + s.fView[ 2] * s.fProj[ 9] + s.fView[ 3] * s.fProj[13];
 	s.fClip[ 2] = s.fView[ 0] * s.fProj[ 2] + s.fView[ 1] * s.fProj[ 6] + s.fView[ 2] * s.fProj[10] + s.fView[ 3] * s.fProj[14];

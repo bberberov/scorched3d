@@ -25,9 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWCheckBoxText.hpp>
 
-class TipDialog : 
-	public GLWWindow ,
-	public GLWButtonI
+// SINGLETON
+class TipDialog : public GLWWindow , public GLWButtonI
 {
 public:
 	static TipDialog *instance();
@@ -40,6 +39,7 @@ public:
 
 protected:
 	static TipDialog *instance_;
+
 	unsigned int okId_, cancelId_;
 	GLWCheckBoxText *helpBox_;
 	GLWCheckBoxText *infoBox_;

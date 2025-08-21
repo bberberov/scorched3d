@@ -28,6 +28,7 @@
 #include <dialogs/TextBoxDialog.hpp>
 #include <common/ToolTip.hpp>
 
+// SINGLETON
 class NetworkSelectDialog :
 	public GLWWindow,
 	public GLWButtonI,
@@ -102,7 +103,6 @@ protected:
 private:
 	NetworkSelectDialog();
 	virtual ~NetworkSelectDialog();
-
 };
 
 #endif

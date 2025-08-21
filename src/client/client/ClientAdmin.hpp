@@ -23,6 +23,7 @@
 
 #include <console/ConsoleRuleMethodIAdapter.hpp>
 
+// SINGLETON
 class ClientAdmin
 {
 public:
@@ -42,8 +43,6 @@ protected:
 private:
 	ClientAdmin();
 	virtual ~ClientAdmin();
-
 };
 
 #endif // !defined(AFX_ClientAdmin_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_)
-

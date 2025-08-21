@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -21,10 +21,13 @@
 #include <lang/Lang.hpp>
 #include <lang/LangImpl.hpp>
 
-Lang *Lang::instance_ = 0;
+Lang *Lang::instance_ = nullptr;
 
 Lang *Lang::instance()
 {
-	if (!instance_) instance_ = new LangImpl();
+	if (nullptr == instance_)
+	{
+		instance_ = new LangImpl();
+	}
 	return instance_;
 }

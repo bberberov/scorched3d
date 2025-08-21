@@ -23,6 +23,7 @@
 
 #include <common/OptionsParameters.hpp>
 
+// SINGLETON
 class ServerParams : public OptionsParameters
 {
 public:
@@ -49,7 +50,6 @@ protected:
 private:
 	ServerParams();
 	virtual ~ServerParams();
-
 };
 
 #endif

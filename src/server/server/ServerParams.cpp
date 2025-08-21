@@ -20,15 +20,14 @@
 
 #include <server/ServerParams.hpp>
 
-ServerParams *ServerParams::instance_ = 0;
+ServerParams *ServerParams::instance_ = nullptr;
 
 ServerParams *ServerParams::instance()
 {
-	if (!instance_)
+	if (nullptr == instance_)
 	{
-		instance_ = new ServerParams;
+		instance_ = new ServerParams();
 	}
-
 	return instance_;
 }
 

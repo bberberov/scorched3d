@@ -25,8 +25,8 @@
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWCheckBoxText.hpp>
 
-class HUDDialog : public GLWWindow ,
-	public GLWButtonI
+// SINGLETON
+class HUDDialog : public GLWWindow , public GLWButtonI
 {
 public:
 	static HUDDialog *instance();
@@ -39,6 +39,7 @@ public:
 
 protected:
 	static HUDDialog *instance_;
+
 	unsigned int okId_, cancelId_;
 	GLWCheckBoxText *nameBox_;
 	GLWCheckBoxText *sightBox_;

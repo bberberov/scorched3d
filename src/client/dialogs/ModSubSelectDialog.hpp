@@ -45,7 +45,9 @@ protected:
 	ToolTip tip_;
 };
 
-class ModSubSelectDialog :
+// SINGLETON
+class ModSubSelectDialog
+	:
 	public GLWWindow,
 	public GLWButtonI,
 	public GLWIconListI
@@ -76,7 +78,6 @@ protected:
 private:
 	ModSubSelectDialog();
 	virtual ~ModSubSelectDialog();
-
 };
 
 #endif

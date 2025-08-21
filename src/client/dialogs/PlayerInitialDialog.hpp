@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -23,6 +23,7 @@
 
 #include <dialogs/PlayerDialog.hpp>
 
+// SINGLETON
 class PlayerInitialDialog : public PlayerDialog
 {
 public:
@@ -32,8 +33,7 @@ public:
 	void draw();
 
 protected:
-	PlayerInitialDialog();
-	virtual ~PlayerInitialDialog();
+	static PlayerInitialDialog *instance_;
 
 	unsigned int currentPlayerId_;
 	unsigned int allocatedTeam_;
@@ -44,6 +44,9 @@ protected:
 	virtual void okButton(bool spectate);
 	virtual void cancelButton();
 
+private:
+	PlayerInitialDialog();
+	virtual ~PlayerInitialDialog();
 };
 
 #endif

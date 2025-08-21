@@ -87,6 +87,8 @@ This class is used by other classes that throw up a selection
 window to the user.
 */
 class GLWSelectorPart;
+
+// SINGLETON
 class GLWSelector : public GLWWindow
 {
 public:
@@ -123,6 +125,7 @@ public:
 
 protected:
 	static GLWSelector *instance_;
+
 	std::list<GLWSelectorPart *> parts_;
 	unsigned int showState_;
 	GLWSelectorI *user_;
@@ -130,7 +133,6 @@ protected:
 private:
 	GLWSelector();
 	virtual ~GLWSelector();
-
 };
 
 #endif

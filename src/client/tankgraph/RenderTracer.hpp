@@ -28,6 +28,8 @@
 #include <engine/GameStateI.hpp>
 
 class Tank;
+
+// SINGLETON
 class RenderTracer : public GameStateI
 {
 public:
@@ -47,13 +49,12 @@ public:
 	void newGame();
 	void clearTracers();
 	void clearTracerLines();
-	void addTracer(unsigned int tank, 
-		Vector &position);
-	void addSmokeTracer(unsigned int tank, 
-		Vector &position, std::list<TracerLinePoint> &positions);
+	void addTracer(unsigned int tank, Vector &position);
+	void addSmokeTracer(unsigned int tank, Vector &position, std::list<TracerLinePoint> &positions);
 
 protected:
 	static RenderTracer *instance_;
+
 	class TraceEntry
 	{
 	public:
@@ -72,7 +73,6 @@ protected:
 private:
 	RenderTracer();
 	virtual ~RenderTracer();
-
 };
 
 #endif

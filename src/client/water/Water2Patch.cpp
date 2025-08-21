@@ -39,8 +39,7 @@ Water2Patch::~Water2Patch()
 	delete [] data_;
 }
 
-static Vector getPosition(Water2Points &heights, 
-	int x, int y, int startX, int startY, int totalSize)
+static Vector getPosition(Water2Points &heights, int x, int y, int startX, int startY, int totalSize)
 {
 	int currentX = startX + x;
 	int currentY = startY + y;
@@ -61,10 +60,7 @@ static Vector getPosition(Water2Points &heights,
 	return result;
 }
 
-void Water2Patch::generate(Water2Points &heights,
-	int size, int totalSize,
-	int posX, int posY,
-	float waterHeight)
+void Water2Patch::generate(Water2Points &heights, int size, int totalSize, int posX, int posY, float waterHeight)
 {
 	size_ = size;
 	dataSize_ = (size + 1) * (size + 1);
@@ -98,17 +94,41 @@ void Water2Patch::generate(Water2Points &heights,
 				Vector current(data->x, data->y, data->z);
 				Vector other1, other2, other3, other4;
 
-				if (x<size) other1 = Vector((data+1)->x, (data+1)->y, (data+1)->z);
-				else other1 = getPosition(heights, x + 1, y, startX, startY, totalSize);
-				
-				if (y<size) other2 = Vector((data+size+1)->x, (data+size+1)->y, (data+size+1)->z);
-				else other2 = getPosition(heights, x, y + 1, startX, startY, totalSize);
+				if (x<size)
+				{
+					other1 = Vector((data+1)->x, (data+1)->y, (data+1)->z);
+				}
+				else
+				{
+					other1 = getPosition(heights, x + 1, y, startX, startY, totalSize);
+				}
 
-				if (x>0) other3 = Vector((data-1)->x, (data-1)->y, (data-1)->z);
-				else other3 = getPosition(heights, x - 1, y, startX, startY, totalSize);
+				if (y<size)
+				{
+					other2 = Vector((data+size+1)->x, (data+size+1)->y, (data+size+1)->z);
+				}
+				else
+				{
+					other2 = getPosition(heights, x, y + 1, startX, startY, totalSize);
+				}
 
-				if (y>0) other4 = Vector((data-size-1)->x, (data-size-1)->y, (data-size-1)->z);
-				else other4 = getPosition(heights, x, y - 1, startX, startY, totalSize);
+				if (x>0)
+				{
+					other3 = Vector((data-1)->x, (data-1)->y, (data-1)->z);
+				}
+				else
+				{
+					other3 = getPosition(heights, x - 1, y, startX, startY, totalSize);
+				}
+
+				if (y>0)
+				{
+					other4 = Vector((data-size-1)->x, (data-size-1)->y, (data-size-1)->z);
+				}
+				else
+				{
+					other4 = getPosition(heights, x, y - 1, startX, startY, totalSize);
+				}
 
 				Vector dir1 = other1 - current;
 				Vector dir2 = other2 - current;
@@ -138,10 +158,10 @@ void Water2Patch::draw(MipMapPatchIndex &index)
 		GLStateExtension::hasDrawRangeElements())
 	{
 		// Map indices to draw
-		unsigned short *indices = 0;
+		unsigned short *indices = nullptr;
 		if (index.getBufferOffSet() != std::numeric_limits<unsigned int>::max())
 		{
-			indices = (unsigned short *) NULL + (index.getBufferOffSet() / sizeof(unsigned short));
+			indices = ( (unsigned short *) nullptr ) + ( index.getBufferOffSet() / sizeof(unsigned short) );
 		}
 		else
 		{
@@ -149,24 +169,27 @@ void Water2Patch::draw(MipMapPatchIndex &index)
 		}
 
 		// Draw elements
-		glDrawRangeElements(GL_TRIANGLE_STRIP, 
-			index.getMinIndex(), 
+		glDrawRangeElements(
+			GL_TRIANGLE_STRIP,
+			index.getMinIndex(),
 			index.getMaxIndex(),
-			index.getSize(), 
-			GL_UNSIGNED_SHORT, 
-			indices);
-		DIALOG_ASSERT((index.getMaxIndex()-index.getMinIndex()+1) < 
-			GLStateExtension::getMaxElementVertices());
-		DIALOG_ASSERT(index.getSize() < 
-			GLStateExtension::getMaxElementIndices());
+			index.getSize(),
+			GL_UNSIGNED_SHORT,
+			indices
+		);
+		DIALOG_ASSERT(
+			( index.getMaxIndex() - index.getMinIndex() + 1 ) < GLStateExtension::getMaxElementVertices()
+		);
+		DIALOG_ASSERT(
+			index.getSize() < GLStateExtension::getMaxElementIndices()
+		);
 	}
 	else
 	{
 		glBegin(GL_TRIANGLE_STRIP);
 			for (int i=0; i<index.getSize(); i++)
 			{
-				float *data = &data_[0].x + 
-					(sizeof(Data) / 4 * index.getIndices()[i]);
+				float *data = &data_[0].x + ( sizeof(Data) / 4 * index.getIndices()[i] );
 
 				glNormal3fv(data + 3);
 				glVertex3fv(data);
@@ -177,7 +200,6 @@ void Water2Patch::draw(MipMapPatchIndex &index)
 
 Water2Patch::Data *Water2Patch::getData(int x, int y)
 {
-	DIALOG_ASSERT(x >= 0 && y >= 0 &&
-		x <= size_ && y <= size_);
+	DIALOG_ASSERT( 0 <= x && 0 <= y && x <= size_ && y <= size_ );
 	return &data_[x + y * (size_ + 1)];
 }
