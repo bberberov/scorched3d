@@ -97,9 +97,10 @@ GLWTankViewer::~GLWTankViewer()
 void GLWTankViewer::init()
 {
 	models_.clear();
-	std::set<std::string> &catagories = 
-		ScorchedClient::instance()->getTankModels().getModelCatagories();
+
+	std::set<std::string> &catagories = ScorchedClient::instance()->getTankModels().getModelCatagories();
 	std::set<std::string>::iterator catItor;
+	catagoryChoice_.clear();
 	for (catItor = catagories.begin();
 		 catItor != catagories.end();
 		 ++catItor)
