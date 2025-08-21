@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2025
 //
 //    This file is part of Scorched3D.
 //
@@ -26,7 +26,6 @@
 #if !defined(AFX_GLWPROGRESS_H__0712973C_EA7A_4C72_A48B_90B2A898FAF3__INCLUDED_)
 #define AFX_GLWPROGRESS_H__0712973C_EA7A_4C72_A48B_90B2A898FAF3__INCLUDED_
 
-
 #include <GLW/GLWPanel.hpp>
 
 class GLWProgress : public GLWPanel
@@ -38,7 +37,7 @@ public:
 
 	virtual void draw();
 
-	const float getCurrent() { return current_; }
+	float getCurrent() { return current_; }
 	void setCurrent(float newCurrent);
 
 	REGISTER_CLASS_HEADER(GLWProgress);
@@ -47,7 +46,6 @@ protected:
 	float x_, y_, w_;
 	float min_, max_;
 	float current_;
-
 };
 
 #endif // !defined(AFX_GLWPROGRESS_H__0712973C_EA7A_4C72_A48B_90B2A898FAF3__INCLUDED_)
