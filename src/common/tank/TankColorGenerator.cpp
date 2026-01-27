@@ -106,6 +106,8 @@ std::vector<Vector *> TankColorGenerator::getAvailableColors(
 {
 	std::vector<Vector*> leftColors;
 	std::vector<Vector*>::iterator coloritor;
+
+	leftColors.clear();  // BUG: should not be needed
 	for (coloritor = availableColors_.begin();
 		coloritor != availableColors_.end();
 		++coloritor)
