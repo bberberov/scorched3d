@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLFONT2DSTORAGE_H_
-#define _GLFONT2DSTORAGE_H_
+#ifndef __INCLUDE_GLFont2dStorage_hpp_INCLUDE__
+#define __INCLUDE_GLFont2dStorage_hpp_INCLUDE__
 
 #include <GLEXT/GLState.hpp>
 
@@ -61,4 +61,4 @@ protected:
 	StorageBlock **blocks_;
 };
 
-#endif /* _GLFONT2DSTORAGE_H_ */
+#endif // __INCLUDE_GLFont2dStorage_hpp_INCLUDE__

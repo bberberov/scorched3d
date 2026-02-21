@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_WeaponMuzzleh_INCLUDE__)
-#define __INCLUDE_WeaponMuzzleh_INCLUDE__
+#ifndef __INCLUDE_WeaponMuzzle_hpp_INCLUDE__
+#define __INCLUDE_WeaponMuzzle_hpp_INCLUDE__
 
 #include <weapons/WeaponExplosion.hpp>
 
@@ -32,4 +32,4 @@ public:
 	REGISTER_ACCESSORY_HEADER(WeaponMuzzle, AccessoryPart::AccessoryWeapon);
 };
 
-#endif // __INCLUDE_WeaponMuzzleh_INCLUDE__
+#endif // __INCLUDE_WeaponMuzzle_hpp_INCLUDE__

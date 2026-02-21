@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_)
-#define AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_
+#ifndef __INCLUDE_GLCameraFrustum_hpp_INCLUDE__
+#define __INCLUDE_GLCameraFrustum_hpp_INCLUDE__
 
 #include <engine/GameStateI.hpp>
 #include <common/Vector.hpp>
@@ -73,4 +73,4 @@ private:
 	virtual ~GLCameraFrustum();
 };
 
-#endif // !defined(AFX_GLCAMERAFRUSTUM_H__4C341296_0589_46D5_BFD7_3114534F7E2D__INCLUDED_)
+#endif // __INCLUDE_GLCameraFrustum_hpp_INCLUDE__

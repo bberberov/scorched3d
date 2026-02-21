@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_Resurrectionh_INCLUDE__)
-#define __INCLUDE_Resurrectionh_INCLUDE__
+#ifndef __INCLUDE_Resurrection_hpp_INCLUDE__
+#define __INCLUDE_Resurrection_hpp_INCLUDE__
 
 #include <actions/Action.hpp>
 #include <common/FixedVector.hpp>
@@ -44,8 +44,6 @@ protected:
 	unsigned int playerId_;
 	FixedVector position_;
 	fixed resurrectTime_;
-
 };
 
-#endif
-
+#endif // __INCLUDE_Resurrection_hpp_INCLUDE__

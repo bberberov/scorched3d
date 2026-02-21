@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_Matrix16_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_)
-#define AFX_Matrix16_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_
+#ifndef __INCLUDE_Matrix16_hpp_INCLUDE__
+#define __INCLUDE_Matrix16_hpp_INCLUDE__
 
 #include <common/Defines.hpp>
 #include <math.h>
@@ -42,8 +42,6 @@ public:
 
 protected:
 	float M[16];
-
 };
 
-#endif // !defined(AFX_Matrix16_H__AD959187_7A1C_11D2_957C_00A0C9A4CA3E__INCLUDED_)
-
+#endif // __INCLUDE_Matrix16_hpp_INCLUDE__

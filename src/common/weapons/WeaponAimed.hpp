@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_WeaponAimed_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)
-#define AFX_WeaponAimed_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_
+#ifndef __INCLUDE_WeaponAimed_hpp_INCLUDE__
+#define __INCLUDE_WeaponAimed_hpp_INCLUDE__
 
 #include <weapons/Weapon.hpp>
 
@@ -64,4 +64,4 @@ protected:
 	) = 0;
 };
 
-#endif // !defined(AFX_WeaponAimed_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)
+#endif // __INCLUDE_WeaponAimed_hpp_INCLUDE__

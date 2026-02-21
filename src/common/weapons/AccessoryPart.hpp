@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ACCESSORYPART_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_)
-#define AFX_ACCESSORYPART_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_
+#ifndef __INCLUDE_AccessoryPart_hpp_INCLUDE__
+#define __INCLUDE_AccessoryPart_hpp_INCLUDE__
 
 #include <XML/XMLFile.hpp>
 #include <net/NetBuffer.hpp>
@@ -80,4 +80,4 @@ private:
 	static std::map<std::string, AccessoryPart *> *accessoryMap;
 };
 
-#endif // !defined(AFX_ACCESSORYPART_H__21765D5B_DB45_4275_AB63_BAD1E84C1790__INCLUDED_)
+#endif // __INCLUDE_AccessoryPart_hpp_INCLUDE__

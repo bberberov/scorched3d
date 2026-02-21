@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#if !defined(__INCLUDE_TargetDamageh_INCLUDE__)
-#define __INCLUDE_TargetDamageh_INCLUDE__
+#ifndef __INCLUDE_TargetDamage_hpp_INCLUDE__
+#define __INCLUDE_TargetDamage_hpp_INCLUDE__
 
 #include <weapons/Weapon.hpp>
 
@@ -47,5 +46,4 @@ private:
 	TargetDamage();
 };
 
-
-#endif
+#endif // __INCLUDE_TargetDamage_hpp_INCLUDE__

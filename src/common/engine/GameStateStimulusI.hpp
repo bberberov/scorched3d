@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,14 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_GameStateStimulusI_hpp_INCLUDE__
+#define __INCLUDE_GameStateStimulusI_hpp_INCLUDE__
 
 // GameStateStimulusI.hpp: interface for the GameStateStimulusI class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GAMESTATESTIMULUSI_H__B1601EA8_8021_476B_BD9D_4B5648785B99__INCLUDED_)
-#define AFX_GAMESTATESTIMULUSI_H__B1601EA8_8021_476B_BD9D_4B5648785B99__INCLUDED_
-
 
 class GameStateStimulusI  
 {
@@ -37,4 +35,4 @@ public:
 		float frameTime) = 0;
 };
 
-#endif // !defined(AFX_GAMESTATESTIMULUSI_H__B1601EA8_8021_476B_BD9D_4B5648785B99__INCLUDED_)
+#endif // __INCLUDE_GameStateStimulusI_hpp_INCLUDE__

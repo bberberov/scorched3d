@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_GLLenseFlare_hpp_INCLUDE__
+#define __INCLUDE_GLLenseFlare_hpp_INCLUDE__
 
 // GLLenseFlare.hpp: interface for the GLLenseFlare class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GLLENSEFLARE_H__34C2D198_3739_4402_B9FD_BEE4DF738466__INCLUDED_)
-#define AFX_GLLENSEFLARE_H__34C2D198_3739_4402_B9FD_BEE4DF738466__INCLUDED_
 
 #include <common/Vector.hpp>
 #include <common/ProgressCounter.hpp>
@@ -83,4 +82,4 @@ private:
 	virtual ~GLLenseFlare();
 };
 
-#endif // !defined(AFX_GLLENSEFLARE_H__34C2D198_3739_4402_B9FD_BEE4DF738466__INCLUDED_)
+#endif // __INCLUDE_GLLenseFlare_hpp_INCLUDE__

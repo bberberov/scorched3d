@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_RandomGeneratorh_INCLUDE__)
-#define __INCLUDE_RandomGeneratorh_INCLUDE__
+#ifndef __INCLUDE_RandomGenerator_hpp_INCLUDE__
+#define __INCLUDE_RandomGenerator_hpp_INCLUDE__
 
 #include <common/fixed.hpp>
 #include <net/NetBuffer.hpp>
@@ -60,7 +60,6 @@ protected:
 private:
 	FileRandomGenerator(const FileRandomGenerator &other);
 	FileRandomGenerator &operator=(const FileRandomGenerator &other);
-
 };
 
-#endif
+#endif // __INCLUDE_RandomGenerator_hpp_INCLUDE__

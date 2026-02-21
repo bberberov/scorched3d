@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ModFilesh_INCLUDE__)
-#define __INCLUDE_ModFilesh_INCLUDE__
+#ifndef __INCLUDE_ModFiles_hpp_INCLUDE__
+#define __INCLUDE_ModFiles_hpp_INCLUDE__
 
 #include <engine/ModFileEntry.hpp>
 #include <common/ProgressCounter.hpp>
@@ -60,8 +60,6 @@ protected:
 private:
 	ModFiles(const ModFiles&other);
 	ModFiles &operator=(ModFiles &other);
-
 };
 
-#endif
-
+#endif // __INCLUDE_ModFiles_hpp_INCLUDE__

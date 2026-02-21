@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -17,6 +17,9 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.},
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
+
+#ifndef __INCLUDE_KeyTranslate_hpp_INCLUDE__
+#define __INCLUDE_KeyTranslate_hpp_INCLUDE__
 
 #include <SDL/SDL_keysym.h>
 
@@ -261,3 +264,5 @@ struct KeyTranslation
     {"UNDO", SDLK_UNDO},
     {"LAST", SDLK_LAST}
 };
+
+#endif // __INCLUDE_KeyTranslate_hpp_INCLUDE__

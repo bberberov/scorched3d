@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWSCROLLPANEL_H__53CDEDBB_3EC0_480E_8E9C_E40645155DD0__INCLUDED_)
-#define AFX_GLWSCROLLPANEL_H__53CDEDBB_3EC0_480E_8E9C_E40645155DD0__INCLUDED_
+#ifndef __INCLUDE_GLWScrollPanel_hpp_INCLUDE__
+#define __INCLUDE_GLWScrollPanel_hpp_INCLUDE__
 
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWScrollW.hpp>
@@ -54,7 +54,6 @@ protected:
 	bool drawScrollBar_;
 	int maxSee_;
 	float widgetHeight_;
-
 };
 
-#endif // !defined(AFX_GLWSCROLLPANEL_H__53CDEDBB_3EC0_480E_8E9C_E40645155DD0__INCLUDED_)
+#endif // __INCLUDE_GLWScrollPanel_hpp_INCLUDE__

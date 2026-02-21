@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLWIconTable_h
-#define _GLWIconTable_h
+#ifndef __INCLUDE_GLWIconTable_hpp_INCLUDE__
+#define __INCLUDE_GLWIconTable_hpp_INCLUDE__
 
 #include <GLW/GLWScrollWBackwards.hpp>
 #include <GLW/GLWTextButton.hpp>
@@ -91,5 +91,4 @@ private:
 	const GLWIconTable & operator=(const GLWIconTable &);
 };
 
-#endif // _GLWIconTable_h
-
+#endif // __INCLUDE_GLWIconTable_hpp_INCLUDE__

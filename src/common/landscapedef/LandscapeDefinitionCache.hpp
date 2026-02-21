@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_LandscapeDefinitionCacheh_INCLUDE__)
-#define __INCLUDE_LandscapeDefinitionCacheh_INCLUDE__
+#ifndef __INCLUDE_LandscapeDefinitionCache_hpp_INCLUDE__
+#define __INCLUDE_LandscapeDefinitionCache_hpp_INCLUDE__
 
 #include <landscapedef/LandscapeDefinition.hpp>
 
@@ -44,4 +44,4 @@ protected:
 	LandscapeDefinition defn_;
 };
 
-#endif // __INCLUDE_LandscapeDefinitionCacheh_INCLUDE__
+#endif // __INCLUDE_LandscapeDefinitionCache_hpp_INCLUDE__

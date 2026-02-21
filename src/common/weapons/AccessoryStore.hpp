@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ACCESSORYSTORE_H__6A964E56_3784_42FA_A900_2AB4B98F99A8__INCLUDED_)
-#define AFX_ACCESSORYSTORE_H__6A964E56_3784_42FA_A900_2AB4B98F99A8__INCLUDED_
+#ifndef __INCLUDE_AccessoryStore_hpp_INCLUDE__
+#define __INCLUDE_AccessoryStore_hpp_INCLUDE__
 
 #include <list>
 #include <vector>
@@ -81,7 +81,6 @@ protected:
 	std::map<std::string, XMLNode *> parsingNodes_;
 	Accessory *muzzleFlash_;
 	Accessory *deathAnimation_;
-
 };
 
-#endif // !defined(AFX_ACCESSORYSTORE_H__6A964E56_3784_42FA_A900_2AB4B98F99A8__INCLUDED_)
+#endif // __INCLUDE_AccessoryStore_hpp_INCLUDE__

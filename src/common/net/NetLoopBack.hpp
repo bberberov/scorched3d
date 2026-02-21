@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_NetLoopBackh_INCLUDE__)
-#define __INCLUDE_NetLoopBackh_INCLUDE__
+#ifndef __INCLUDE_NetLoopBack_hpp_INCLUDE__
+#define __INCLUDE_NetLoopBack_hpp_INCLUDE__
 
 #include <net/NetInterface.hpp>
 #include <net/NetMessageHandler.hpp>
@@ -57,4 +57,4 @@ protected:
 	static NetLoopBack *serverLoopback_, *clientLoopback_;
 };
 
-#endif
+#endif // __INCLUDE_NetLoopBack_hpp_INCLUDE__

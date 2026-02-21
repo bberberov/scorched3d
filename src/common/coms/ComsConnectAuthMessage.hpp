@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ComsConnectAuthMessage_h
-#define _ComsConnectAuthMessage_h
+#ifndef __INCLUDE_ComsConnectAuthMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsConnectAuthMessage_hpp_INCLUDE__
 
 // The very first message sent from the client to the server
 // requesting a connection.
@@ -73,8 +73,6 @@ protected:
 private:
 	ComsConnectAuthMessage(const ComsConnectAuthMessage &);
 	const ComsConnectAuthMessage & operator=(const ComsConnectAuthMessage &);
-
 };
 
-#endif // _ComsConnectAuthMessage_h
-
+#endif // __INCLUDE_ComsConnectAuthMessage_hpp_INCLUDE__

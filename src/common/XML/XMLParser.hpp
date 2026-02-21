@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_XMLParserh_INCLUDE__)
-#define __INCLUDE_XMLParserh_INCLUDE__
+#ifndef __INCLUDE_XMLParser_hpp_INCLUDE__
+#define __INCLUDE_XMLParser_hpp_INCLUDE__
 
 #include <expat.h>
 #include <XML/XMLNode.hpp>
@@ -52,4 +52,4 @@ protected:
 	static void characterDataStaticHandler(void *userData, const XML_Char *s, int len);
 };
 
-#endif // __INCLUDE_XMLParserh_INCLUDE__
+#endif // __INCLUDE_XMLParser_hpp_INCLUDE__

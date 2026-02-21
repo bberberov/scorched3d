@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerHandlersh_INCLUDE__)
-#define __INCLUDE_ServerHandlersh_INCLUDE__
+#ifndef __INCLUDE_ServerHandlers_hpp_INCLUDE__
+#define __INCLUDE_ServerHandlers_hpp_INCLUDE__
 
 #include <server/ServerTankChangeHandler.hpp>
 #include <server/ServerAdminHandler.hpp>
@@ -60,4 +60,4 @@ protected:
 	ServerOperationResultHandler serverOperationResultHandler_;
 };
 
-#endif // __INCLUDE_ServerHandlersh_INCLUDE__
+#endif // __INCLUDE_ServerHandlers_hpp_INCLUDE__

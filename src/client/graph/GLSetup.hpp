@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,14 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_GLSetup_hpp_INCLUDE__
+#define __INCLUDE_GLSetup_hpp_INCLUDE__
 
 // GLSetup.hpp: interface for the GLSetup class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GLSETUP_H__AEBCDB19_7FCA_4DBF_B4B4_72D831CBFD2F__INCLUDED_)
-#define AFX_GLSETUP_H__AEBCDB19_7FCA_4DBF_B4B4_72D831CBFD2F__INCLUDED_
-
 
 #include <GLEXT/GLState.hpp>
 
@@ -34,4 +32,4 @@ namespace GLSetup
 	void setup();
 };
 
-#endif // !defined(AFX_GLSETUP_H__AEBCDB19_7FCA_4DBF_B4B4_72D831CBFD2F__INCLUDED_)
+#endif // __INCLUDE_GLSetup_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _gLWTankTip_h
-#define _gLWTankTip_h
+#ifndef __INCLUDE_GLWTankTip_hpp_INCLUDE__
+#define __INCLUDE_GLWTankTip_hpp_INCLUDE__
 
 #include <GLW/GLWToolTip.hpp>
 #include <GLW/GLWSelector.hpp>
@@ -231,5 +231,4 @@ private:
 	const GLWTankTips & operator=(const GLWTankTips &);
 };
 
-#endif // _gLWTankTip_h
-
+#endif // __INCLUDE_GLWTankTip_hpp_INCLUDE__

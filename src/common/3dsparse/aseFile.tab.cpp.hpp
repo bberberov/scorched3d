@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,10 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_aseFile_tab_cpp_hpp_INCLUDE__
+#define __INCLUDE_aseFile_tab_cpp_hpp_INCLUDE__
 
 #ifndef YYSTYPE
 #define YYSTYPE int
 #endif
+
 #define	MAX_DIGIT	258
 #define	MAX_FLOAT	259
 #define	MAX_STRING	260
@@ -61,5 +64,6 @@
 #define	MAX_TM_ROW2	294
 #define	MAX_TM_ROW3	295
 
-
 extern YYSTYPE aselval;
+
+#endif // __INCLUDE_aseFile_tab_cpp_hpp_INCLUDE__

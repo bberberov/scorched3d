@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TankLibh_INCLUDE__)
-#define __INCLUDE_TankLibh_INCLUDE__
+#ifndef __INCLUDE_TankLib_hpp_INCLUDE__
+#define __INCLUDE_TankLib_hpp_INCLUDE__
 
 #include <engine/ScorchedContext.hpp>
 #include <common/FixedVector.hpp>
@@ -54,5 +54,4 @@ namespace TankLib
 	FixedVector &getTankGunPosition(FixedVector &tankTurretPosition, fixed xy, fixed yz);
 };
 
-
-#endif
+#endif // __INCLUDE_TankLib_hpp_INCLUDE__

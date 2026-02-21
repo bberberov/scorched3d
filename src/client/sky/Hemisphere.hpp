@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_HEMISPHERE_H__3577D267_2B6C_4300_B0EE_61E1E50E57DD__INCLUDED_)
-#define AFX_HEMISPHERE_H__3577D267_2B6C_4300_B0EE_61E1E50E57DD__INCLUDED_
+#ifndef __INCLUDE_Hemisphere_hpp_INCLUDE__
+#define __INCLUDE_Hemisphere_hpp_INCLUDE__
 
 class Image;
 class Vector;
@@ -48,4 +48,4 @@ private:
 	virtual ~Hemisphere();
 };
 
-#endif // !defined(AFX_HEMISPHERE_H__3577D267_2B6C_4300_B0EE_61E1E50E57DD__INCLUDED_)
+#endif // __INCLUDE_Hemisphere_hpp_INCLUDE__

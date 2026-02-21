@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ImageLuminanceFactory_H__15020260_678A_40DF_B49C_AB1796BB3EED__INCLUDED_)
-#define AFX_ImageLuminanceFactory_H__15020260_678A_40DF_B49C_AB1796BB3EED__INCLUDED_
+#ifndef __INCLUDE_ImageLuminanceFactory_hpp_INCLUDE__
+#define __INCLUDE_ImageLuminanceFactory_hpp_INCLUDE__
 
 #include <stdio.h>
 #include <image/Image.hpp>
@@ -44,4 +44,4 @@ protected:
 	static void imageGetRow(FILE *file, ImageRec &image, unsigned char *buf, int y, int z, unsigned int *rowStart, int *rowSize);
 };
 
-#endif // !defined(AFX_ImageLuminanceFactory_H__15020260_678A_40DF_B49C_AB1796BB3EED__INCLUDED_)
+#endif // __INCLUDE_ImageLuminanceFactory_hpp_INCLUDE__

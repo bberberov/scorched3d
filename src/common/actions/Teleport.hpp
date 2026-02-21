@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_Teleporth_INCLUDE__)
-#define __INCLUDE_Teleporth_INCLUDE__
+#ifndef __INCLUDE_Teleport_hpp_INCLUDE__
+#define __INCLUDE_Teleport_hpp_INCLUDE__
 
 #include <actions/Action.hpp>
 #include <common/FixedVector.hpp>
@@ -42,7 +42,6 @@ protected:
 	WeaponTeleport *weapon_;
 	fixed totalTime_;
 	bool firstTime_;
-
 };
 
-#endif
+#endif // __INCLUDE_Teleport_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_Triangle_hpp_INCLUDE__
+#define __INCLUDE_Triangle_hpp_INCLUDE__
 
 // Triangle.hpp: interface for the Triangle class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_TRIANGLE_H__B076B031_36ED_11D3_BE80_000000000000__INCLUDED_)
-#define AFX_TRIANGLE_H__B076B031_36ED_11D3_BE80_000000000000__INCLUDED_
 
 #include <common/Line.hpp>
 
@@ -75,4 +74,4 @@ protected:
 	void calcLargest();
 };
 
-#endif // !defined(AFX_TRIANGLE_H__B076B031_36ED_11D3_BE80_000000000000__INCLUDED_)
+#endif // __INCLUDE_Triangle_hpp_INCLUDE__

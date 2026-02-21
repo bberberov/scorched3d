@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_FrameLimiterh_INCLUDE__)
-#define __INCLUDE_FrameLimiterh_INCLUDE__
+#ifndef __INCLUDE_FrameLimiter_hpp_INCLUDE__
+#define __INCLUDE_FrameLimiter_hpp_INCLUDE__
 
 #include <common/Clock.hpp>
 
@@ -36,4 +36,4 @@ protected:
 	Clock frameTime_;
 };
 
-#endif // __INCLUDE_FrameLimiterh_INCLUDE__
+#endif // __INCLUDE_FrameLimiter_hpp_INCLUDE__

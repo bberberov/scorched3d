@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#if !defined(__INCLUDE_DeformTexturesh_INCLUDE__)
-#define __INCLUDE_DeformTexturesh_INCLUDE__
+#ifndef __INCLUDE_DeformTextures_hpp_INCLUDE__
+#define __INCLUDE_DeformTextures_hpp_INCLUDE__
 
 #include <landscapemap/DeformLandscape.hpp>
 #include <common/Vector.hpp>
@@ -33,5 +32,4 @@ namespace DeformTextures
 		DeformLandscape::DeformPoints &map);
 };
 
-
-#endif
+#endif // __INCLUDE_DeformTextures_hpp_INCLUDE__

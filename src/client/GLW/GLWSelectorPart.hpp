@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLWSelectorParth_INCLUDE__)
-#define __INCLUDE_GLWSelectorParth_INCLUDE__
+#ifndef __INCLUDE_GLWSelectorPart_hpp_INCLUDE__
+#define __INCLUDE_GLWSelectorPart_hpp_INCLUDE__
 
 #include <GLW/GLWSelector.hpp>
 
@@ -63,7 +63,6 @@ protected:
 	int parentPosition_;
 
 	void calculateDimensions(float x, float y);
-
 };
 
-#endif
+#endif // __INCLUDE_GLWSelectorPart_hpp_INCLUDE__

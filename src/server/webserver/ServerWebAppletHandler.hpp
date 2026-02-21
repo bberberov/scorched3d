@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerWebAppletHandlerh_INCLUDE__)
-#define __INCLUDE_ServerWebAppletHandlerh_INCLUDE__
+#ifndef __INCLUDE_ServerWebAppletHandler_hpp_INCLUDE__
+#define __INCLUDE_ServerWebAppletHandler_hpp_INCLUDE__
 
 #include <webserver/ServerWebServer.hpp>
 
@@ -69,4 +69,4 @@ namespace ServerWebAppletHandler
 	};
 };
 
-#endif // __INCLUDE_ServerWebAppletHandlerh_INCLUDE__
+#endif // __INCLUDE_ServerWebAppletHandler_hpp_INCLUDE__

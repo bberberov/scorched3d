@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_HEIGHTMAPMODIFIER_H__26733049_91D4_4AB9_8870_1BC94F531E9A__INCLUDED_)
-#define AFX_HEIGHTMAPMODIFIER_H__26733049_91D4_4AB9_8870_1BC94F531E9A__INCLUDED_
+#ifndef __INCLUDE_HeightMapModifier_hpp_INCLUDE__
+#define __INCLUDE_HeightMapModifier_hpp_INCLUDE__
 
 #include <common/RandomGenerator.hpp>
 #include <common/FixedVector.hpp>
@@ -60,4 +60,4 @@ namespace HeightMapModifier
 		RandomGenerator &generator);
 };
 
-#endif // !defined(AFX_HEIGHTMAPMODIFIER_H__26733049_91D4_4AB9_8870_1BC94F531E9A__INCLUDED_)
+#endif // __INCLUDE_HeightMapModifier_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankDeadContainer_H__56AF98E2_E188_45EC_AA25_1865ADBBA3F1__INCLUDED_)
-#define AFX_TankDeadContainer_H__56AF98E2_E188_45EC_AA25_1865ADBBA3F1__INCLUDED_
+#ifndef __INCLUDE_TankDeadContainer_hpp_INCLUDE__
+#define __INCLUDE_TankDeadContainer_hpp_INCLUDE__
 
 #include <map>
 #include <tank/Tank.hpp>
@@ -39,7 +39,6 @@ public:
 
 protected:
 	std::map<std::string, NetBuffer *> deadTanks_;
-
 };
 
-#endif // !defined(AFX_TankDeadContainer_H__56AF98E2_E188_45EC_AA25_1865ADBBA3F1__INCLUDED_)
+#endif // __INCLUDE_TankDeadContainer_hpp_INCLUDE__

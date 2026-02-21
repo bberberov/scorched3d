@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_WeaponRollerh_INCLUDE__)
-#define __INCLUDE_WeaponRollerh_INCLUDE__
+#ifndef __INCLUDE_WeaponRoller_hpp_INCLUDE__
+#define __INCLUDE_WeaponRoller_hpp_INCLUDE__
 
 #include <weapons/Weapon.hpp>
 #include <common/ModelID.hpp>
@@ -93,7 +93,6 @@ protected:
 		FixedVector &position,
 		FixedVector &velocity
 	);
-
 };
 
-#endif
+#endif // __INCLUDE_WeaponRoller_hpp_INCLUDE__

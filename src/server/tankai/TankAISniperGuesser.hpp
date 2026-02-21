@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TankAISniperGuesserh_INCLUDE__)
-#define __INCLUDE_TankAISniperGuesserh_INCLUDE__
+#ifndef __INCLUDE_TankAISniperGuesser_hpp_INCLUDE__
+#define __INCLUDE_TankAISniperGuesser_hpp_INCLUDE__
 
 #include <common/Vector.hpp>
 
@@ -34,4 +34,4 @@ public:
 		float distForSniper, bool checkIntersection, float offset);
 };
 
-#endif // __INCLUDE_TankAISniperGuesserh_INCLUDE__
+#endif // __INCLUDE_TankAISniperGuesser_hpp_INCLUDE__

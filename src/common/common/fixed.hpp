@@ -238,4 +238,3 @@ fixed atanx(fixed x);
 fixed atan2x(fixed x, fixed y);
 
 #endif // _FIXED_H
-

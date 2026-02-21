@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerDestinationsh_INCLUDE__)
-#define __INCLUDE_ServerDestinationsh_INCLUDE__
+#ifndef __INCLUDE_ServerDestinations_hpp_INCLUDE__
+#define __INCLUDE_ServerDestinations_hpp_INCLUDE__
 
 #include <server/ServerDestination.hpp>
 #include <map>
@@ -40,4 +40,4 @@ protected:
 	std::map<unsigned int, ServerDestination*> serverDestinations_;
 };
 
-#endif
+#endif // __INCLUDE_ServerDestinations_hpp_INCLUDE__

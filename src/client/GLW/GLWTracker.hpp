@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLWTRACKER_H_
-#define _GLWTRACKER_H_
+#ifndef __INCLUDE_GLWTracker_hpp_INCLUDE__
+#define __INCLUDE_GLWTracker_hpp_INCLUDE__
 
 #include <GLW/GLWidget.hpp>
 
@@ -67,7 +67,6 @@ public:
 	virtual void currentChanged(unsigned int id, float valueX, float valueY);
 
 	REGISTER_CLASS_HEADER(GLWTankTracker);
-
 };
 
-#endif /* _GLWTRACKER_H_ */
+#endif // __INCLUDE_GLWTracker_hpp_INCLUDE__

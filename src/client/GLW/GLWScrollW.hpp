@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWSCROLLW_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)
-#define AFX_GLWSCROLLW_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_
+#ifndef __INCLUDE_GLWScrollW_hpp_INCLUDE__
+#define __INCLUDE_GLWScrollW_hpp_INCLUDE__
 
 #include <GLW/GLWScrollButton.hpp>
 
@@ -86,7 +86,6 @@ protected:
 	GLWButton backButtonTop_; // Hidden
 	GLWButton backButtonBot_; // Hidden
 	GLWScrollButton middleButton_;
-
 };
 
-#endif // !defined(AFX_GLWSCROLLW_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)
+#endif // __INCLUDE_GLWScrollW_hpp_INCLUDE__

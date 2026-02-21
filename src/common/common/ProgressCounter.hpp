@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_PROGRESSCOUNTER_H__4FA8EFA4_46AC_4790_9F55_B47AEF18EFEC__INCLUDED_)
-#define AFX_PROGRESSCOUNTER_H__4FA8EFA4_46AC_4790_9F55_B47AEF18EFEC__INCLUDED_
+#ifndef __INCLUDE_ProgressCounter_hpp_INCLUDE__
+#define __INCLUDE_ProgressCounter_hpp_INCLUDE__
 
 #include <lang/LangString.hpp>
 
@@ -49,7 +49,6 @@ protected:
 	LangString currentOp_;
 	float currentPercentage_;
 	ProgressCounterI *user_;
-
 };
 
-#endif // !defined(AFX_PROGRESSCOUNTER_H__4FA8EFA4_46AC_4790_9F55_B47AEF18EFEC__INCLUDED_)
+#endif // __INCLUDE_ProgressCounter_hpp_INCLUDE__

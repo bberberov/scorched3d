@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __BOID2_H
-#define __BOID2_H
+#ifndef __INCLUDE_Boid2_hpp_INCLUDE__
+#define __INCLUDE_Boid2_hpp_INCLUDE__
 
 #include <common/FixedVector.hpp>
 #include <target/TargetState.hpp>
@@ -50,7 +50,6 @@ protected:
 
 	fixed directionMag_;
 	FixedVector direction_;
-
 };
 
-#endif /* __BOID2_H */
+#endif // __INCLUDE_Boid2_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLFONT2D_H_
-#define _GLFONT2D_H_
+#ifndef __INCLUDE_GLFont2d_hpp_INCLUDE__
+#define __INCLUDE_GLFont2d_hpp_INCLUDE__
 
 #include <common/Vector.hpp>
 #include <common/Vector4.hpp>
@@ -139,4 +139,4 @@ public:
 		GLFont2dStorage::CharEntry &charEntry, Vector4 &color) = 0;
 };
 
-#endif /* _GLFONT2D_H_ */
+#endif // __INCLUDE_GLFont2d_hpp_INCLUDE__

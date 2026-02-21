@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_FileLines_hpp_INCLUDE__
+#define __INCLUDE_FileLines_hpp_INCLUDE__
 
 // FileLines.hpp: interface for the FileLines class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_FILELINES_H__EE120EC6_091D_4625_A3D0_F24F0D701A62__INCLUDED_)
-#define AFX_FILELINES_H__EE120EC6_091D_4625_A3D0_F24F0D701A62__INCLUDED_
 
 #include <vector>
 #include <string>
@@ -44,7 +43,6 @@ public:
 
 protected:
 	std::vector<std::string> fileLines_;
-
 };
 
-#endif // !defined(AFX_FILELINES_H__EE120EC6_091D_4625_A3D0_F24F0D701A62__INCLUDED_)
+#endif // __INCLUDE_FileLines_hpp_INCLUDE__

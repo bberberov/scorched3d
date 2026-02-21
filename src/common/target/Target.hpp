@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TARGET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_)
-#define AFX_TARGET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_
+#ifndef __INCLUDE_Target_hpp_INCLUDE__
+#define __INCLUDE_Target_hpp_INCLUDE__
 
 #include <engine/ScorchedContext.hpp>
 #include <common/FixedVector.hpp>
@@ -113,7 +113,6 @@ protected:
 	TargetGroup *group_;
 	std::string cStrName_;
 	Accessory *deathAction_, *burnAction_, *collisionAction_;
-
 };
 
-#endif // !defined(AFX_TARGET_H__52F37177_46EA_49C8_9B58_E6C57ABDB78A__INCLUDED_)
+#endif // __INCLUDE_Target_hpp_INCLUDE__

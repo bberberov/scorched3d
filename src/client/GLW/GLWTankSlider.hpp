@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLWTankSlider_H_
-#define _GLWTankSlider_H_
+#ifndef __INCLUDE_GLWTankSlider_hpp_INCLUDE__
+#define __INCLUDE_GLWTankSlider_hpp_INCLUDE__
 
 #include <GLW/GLWDragger.hpp>
 
@@ -34,7 +34,6 @@ public:
 	virtual void currentChanged(unsigned int id, float value);
 
 	REGISTER_CLASS_HEADER(GLWTankSlider);
-
 };
 
-#endif /* _GLWTankSlider_H_ */
+#endif // __INCLUDE_GLWTankSlider_hpp_INCLUDE__

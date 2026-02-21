@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLWChannelTexth_INCLUDE__)
-#define __INCLUDE_GLWChannelTexth_INCLUDE__
+#ifndef __INCLUDE_GLWChannelText_hpp_INCLUDE__
+#define __INCLUDE_GLWChannelText_hpp_INCLUDE__
 
 #include <GLW/GLWChannelView.hpp>
 #include <GLW/GLWIconButton.hpp>
@@ -100,4 +100,4 @@ protected:
 	void setHistoryText();
 };
 
-#endif // __INCLUDE_GLWChannelTexth_INCLUDE__
+#endif // __INCLUDE_GLWChannelText_hpp_INCLUDE__

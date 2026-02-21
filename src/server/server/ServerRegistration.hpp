@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerRegistrationh_INCLUDE__)
-#define __INCLUDE_ServerRegistrationh_INCLUDE__
+#ifndef __INCLUDE_ServerRegistration_hpp_INCLUDE__
+#define __INCLUDE_ServerRegistration_hpp_INCLUDE__
 
 #include <net/NetServerTCP.hpp>
 
@@ -63,4 +63,4 @@ private:
 	virtual ~ServerRegistration();
 };
 
-#endif
+#endif // __INCLUDE_ServerRegistration_hpp_INCLUDE__

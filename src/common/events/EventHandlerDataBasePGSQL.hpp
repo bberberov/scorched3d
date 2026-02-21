@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,8 +20,8 @@
 
 #ifdef HAVE_PGSQL
 
-#if !defined(__INCLUDE_EventHandlerDataBasePGSQLh_INCLUDE__)
-#define __INCLUDE_EventHandlerDataBasePGSQLh_INCLUDE__
+#ifndef __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
+#define __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
 
 #if defined(_WIN32)
 #include <Winsock2.h>
@@ -44,6 +44,6 @@ protected:
 		const char *passwd, const char *db);
 };
 
-#endif 
+#endif // __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
 
 #endif // HAVE_PGSQL

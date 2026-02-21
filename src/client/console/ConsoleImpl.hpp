@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ConsoleImpl_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
-#define AFX_ConsoleImpl_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_
+#ifndef __INCLUDE_ConsoleImpl_hpp_INCLUDE__
+#define __INCLUDE_ConsoleImpl_hpp_INCLUDE__
 
 #include <common/LoggerI.hpp>
 #include <engine/GameStateI.hpp>
@@ -79,4 +79,4 @@ protected:
 	void drawText(float width, float top);
 };
 
-#endif // !defined(AFX_ConsoleImpl_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
+#endif // __INCLUDE_ConsoleImpl_hpp_INCLUDE__

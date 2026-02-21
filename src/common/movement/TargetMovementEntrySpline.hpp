@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TargetMovementEntrySplineh_INCLUDE__)
-#define __INCLUDE_TargetMovementEntrySplineh_INCLUDE__
+#ifndef __INCLUDE_TargetMovementEntrySpline_hpp_INCLUDE__
+#define __INCLUDE_TargetMovementEntrySpline_hpp_INCLUDE__
 
 #include <common/SplinePath.hpp>
 #include <movement/TargetMovementEntry.hpp>
@@ -50,4 +50,4 @@ protected:
 	void makeObject(ObjectGroupEntry *entry);
 };
 
-#endif // __INCLUDE_TargetMovementEntrySplineh_INCLUDE__
+#endif // __INCLUDE_TargetMovementEntrySpline_hpp_INCLUDE__

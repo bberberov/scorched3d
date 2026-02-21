@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_MainMenuDialog_hpp_INCLUDE__
+#define __INCLUDE_MainMenuDialog_hpp_INCLUDE__
 
 // MainMenuDialog.hpp: interface for the MainMenuDialog class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_)
-#define AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_
 
 #include <GLEXT/GLMenu.hpp>
 
@@ -42,4 +41,4 @@ private:
 	virtual ~MainMenuDialog();
 };
 
-#endif // !defined(AFX_MAINMENU_H__F1A639D4_3F3E_484A_BBEB_1E1585B8D7B9__INCLUDED_)
+#endif // __INCLUDE_MainMenuDialog_hpp_INCLUDE__

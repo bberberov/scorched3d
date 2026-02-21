@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_Main2DCamera_hpp_INCLUDE__
+#define __INCLUDE_Main2DCamera_hpp_INCLUDE__
 
 // Main2DCamera.hpp: interface for the Main2DCamera class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_)
-#define AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_
 
 #include <engine/GameStateI.hpp>
 #include <GLEXT/GLViewPort.hpp>
@@ -52,4 +51,4 @@ private:
 	virtual ~Main2DCamera();
 };
 
-#endif // !defined(AFX_MAIN2DCAMERA_H__6E4FE185_C69A_4523_ADF5_2F1B5A1ABF53__INCLUDED_)
+#endif // __INCLUDE_Main2DCamera_hpp_INCLUDE__

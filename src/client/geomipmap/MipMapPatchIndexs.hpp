@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_MipMapPatchIndexsh_INCLUDE__)
-#define __INCLUDE_MipMapPatchIndexsh_INCLUDE__
+#ifndef __INCLUDE_MipMapPatchIndexs_hpp_INCLUDE__
+#define __INCLUDE_MipMapPatchIndexs_hpp_INCLUDE__
 
 #include <geomipmap/MipMapPatchIndex.hpp>
 #include <common/DefinesAssert.hpp>
@@ -97,4 +97,4 @@ protected:
 	GLVertexBufferObject *bufferObject_;
 };
 
-#endif // __INCLUDE_MipMapPatchIndexsh_INCLUDE__
+#endif // __INCLUDE_MipMapPatchIndexs_hpp_INCLUDE__

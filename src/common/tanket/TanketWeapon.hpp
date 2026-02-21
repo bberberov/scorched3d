@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TanketWeapon_H__CC20069B_6E50_49E0_B735_D739BCBF58A9__INCLUDED_)
-#define AFX_TanketWeapon_H__CC20069B_6E50_49E0_B735_D739BCBF58A9__INCLUDED_
+#ifndef __INCLUDE_TanketWeapon_hpp_INCLUDE__
+#define __INCLUDE_TanketWeapon_hpp_INCLUDE__
 
 #include <map>
 #include <list>
@@ -62,7 +62,6 @@ protected:
 	TanketWeaponSwitcher *weaponSwitcher_;
 
 	void setCurrentWeapon(Accessory *wp);
-
 };
 
-#endif // !defined(AFX_TanketWeapon_H__CC20069B_6E50_49E0_B735_D739BCBF58A9__INCLUDED_)
+#endif // __INCLUDE_TanketWeapon_hpp_INCLUDE__

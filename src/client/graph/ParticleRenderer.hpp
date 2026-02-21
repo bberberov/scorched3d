@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ParticleRendererh_INCLUDE__)
-#define __INCLUDE_ParticleRendererh_INCLUDE__
+#ifndef __INCLUDE_ParticleRenderer_hpp_INCLUDE__
+#define __INCLUDE_ParticleRenderer_hpp_INCLUDE__
 
 class Particle;
 class ParticleRenderer
@@ -102,4 +102,4 @@ public:
 	virtual void simulateParticle(Particle &particle, float time);
 };
 
-#endif // __INCLUDE_ParticleRendererh_INCLUDE__
+#endif // __INCLUDE_ParticleRenderer_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ClientLoadLevelHandler_h
-#define _ClientLoadLevelHandler_h
+#ifndef __INCLUDE_ClientLoadLevelHandler_hpp_INCLUDE__
+#define __INCLUDE_ClientLoadLevelHandler_hpp_INCLUDE__
 
 #include <coms/ComsMessageHandler.hpp>
 
@@ -55,4 +55,4 @@ private:
 	const ClientLoadLevelHandler & operator=(const ClientLoadLevelHandler &);
 };
 
-#endif // _ClientLoadLevelHandler_h
+#endif // __INCLUDE_ClientLoadLevelHandler_hpp_INCLUDE__

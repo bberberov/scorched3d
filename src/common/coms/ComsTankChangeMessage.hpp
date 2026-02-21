@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ComsTankChangeMessage_h
-#define _ComsTankChangeMessage_h
+#ifndef __INCLUDE_ComsTankChangeMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsTankChangeMessage_hpp_INCLUDE__
 
 #include <coms/ComsMessage.hpp>
 #include <common/Vector.hpp>
@@ -79,8 +79,6 @@ protected:
 
 private:
 	const ComsTankChangeMessage & operator=(const ComsTankChangeMessage &);
-
 };
 
-#endif // _ComsTankChangeMessage_h
-
+#endif // __INCLUDE_ComsTankChangeMessage_hpp_INCLUDE__

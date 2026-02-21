@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,8 +20,8 @@
 
 #ifdef HAVE_MYSQL
 
-#if !defined(__INCLUDE_EventHandlerDataBaseMySQLh_INCLUDE__)
-#define __INCLUDE_EventHandlerDataBaseMySQLh_INCLUDE__
+#ifndef __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
+#define __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
 
 #if defined(_WIN32)
 #include <Winsock2.h>
@@ -47,9 +47,8 @@ protected:
 
 	virtual int getLastInsertId();
 	virtual void escapeString(char *to, const char *from, unsigned long length);
-
 };
 
-#endif 
+#endif // __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
 
 #endif // HAVE_MYSQL

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_GLMenuI_hpp_INCLUDE__
+#define __INCLUDE_GLMenuI_hpp_INCLUDE__
 
 // GLMenuI.hpp: interface for the GLMenuI class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GLMENUI_H__7171A46C_8265_4A9F_A984_889EF2547CB1__INCLUDED_)
-#define AFX_GLMENUI_H__7171A46C_8265_4A9F_A984_889EF2547CB1__INCLUDED_
 
 #include <list>
 #include <string>
@@ -32,6 +31,7 @@
 #include <lang/LangString.hpp>
 
 class GLTextureBase;
+
 class GLMenuItem
 {
 public:
@@ -73,4 +73,4 @@ public:
 	virtual LangStringStorage *getMenuToolTip(const char* menuName);
 };
 
-#endif // !defined(AFX_GLMENUI_H__7171A46C_8265_4A9F_A984_889EF2547CB1__INCLUDED_)
+#endif // __INCLUDE_GLMenuI_hpp_INCLUDE__

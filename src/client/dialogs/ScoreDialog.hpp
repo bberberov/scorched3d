@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_)
-#define AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_
+#ifndef __INCLUDE_ScoreDialog_hpp_INCLUDE__
+#define __INCLUDE_ScoreDialog_hpp_INCLUDE__
 
 #include <GLW/GLWWindow.hpp>
 
@@ -56,4 +56,4 @@ private:
 	virtual ~ScoreDialog();
 };
 
-#endif // !defined(AFX_ScoreDialog_H__1E583C82_CF52_4F2A_9AF5_7E2AC893EFE9__INCLUDED_)
+#endif // __INCLUDE_ScoreDialog_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_KeyboardHistory_hpp_INCLUDE__
+#define __INCLUDE_KeyboardHistory_hpp_INCLUDE__
 
 // KeyboardHistory.hpp: interface for the KeyboardHistory class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_HISTORY_H__EFFEAE97_E779_4737_8DB4_B76AD9431BBC__INCLUDED_)
-#define AFX_HISTORY_H__EFFEAE97_E779_4737_8DB4_B76AD9431BBC__INCLUDED_
 
 #include <SDL/SDL.h>
 
@@ -37,4 +36,4 @@ namespace KeyboardHistory
 	};
 }
 
-#endif // !defined(AFX_HISTORY_H__EFFEAE97_E779_4737_8DB4_B76AD9431BBC__INCLUDED_)
+#endif // __INCLUDE_KeyboardHistory_hpp_INCLUDE__

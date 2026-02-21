@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __keyboardKey_h__
-#define __keyboardKey_h__
+#ifndef __INCLUDE_KeyboardKey_hpp_INCLUDE__
+#define __INCLUDE_KeyboardKey_hpp_INCLUDE__
 
 #include <string>
 #include <list>
@@ -80,4 +80,4 @@ private:
 	const KeyboardKey & operator=(const KeyboardKey &);
 };
 
-#endif // __keyboardKey_h__
+#endif // __INCLUDE_KeyboardKey_hpp_INCLUDE__

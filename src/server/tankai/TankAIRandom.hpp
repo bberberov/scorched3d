@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankAIRandom_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
-#define AFX_TankAIRandom_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
+#ifndef __INCLUDE_TankAIRandom_hpp_INCLUDE__
+#define __INCLUDE_TankAIRandom_hpp_INCLUDE__
 
 #include <tankai/TankAI.hpp>
 #include <vector>
@@ -52,4 +52,4 @@ protected:
 	std::vector<TankAI *> ais_;
 };
 
-#endif // !defined(AFX_TankAIRandom_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
+#endif // __INCLUDE_TankAIRandom_hpp_INCLUDE__

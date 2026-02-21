@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_ARGParser_hpp_INCLUDE__
+#define __INCLUDE_ARGParser_hpp_INCLUDE__
 
 // ARGParser.hpp: interface for the ARGParser class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_ARGPARSER_H__F5D7DE2F_967A_44B0_A2DF_423F96B02EC0__INCLUDED_)
-#define AFX_ARGPARSER_H__F5D7DE2F_967A_44B0_A2DF_423F96B02EC0__INCLUDED_
 
 #include <list>
 #include <map>
@@ -100,4 +99,4 @@ protected:
 	bool parseArg(ARGParser::Entry &newEntry, std::list<std::string> &cmdLine);
 };
 
-#endif // !defined(AFX_ARGPARSER_H__F5D7DE2F_967A_44B0_A2DF_423F96B02EC0__INCLUDED_)
+#endif // __INCLUDE_ARGParser_hpp_INCLUDE__

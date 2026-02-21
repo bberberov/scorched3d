@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,16 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#ifndef _MOUSE_H_
-#define _MOUSE_H_
-
-
-#include <SDL/SDL.h>
+#ifndef __INCLUDE_Mouse_hpp_INCLUDE__
+#define __INCLUDE_Mouse_hpp_INCLUDE__
 
 // Mouse.hpp: interface for the Mouse class.
 //
 //////////////////////////////////////////////////////////////////////
+
+#include <SDL/SDL.h>
 
 // SINGLETON
 class Mouse
@@ -51,4 +49,4 @@ private:
 	void mouseMove(SDL_Event &event);
 };
 
-#endif /* _MOUSE_H_ */
+#endif // __INCLUDE_Mouse_hpp_INCLUDE__

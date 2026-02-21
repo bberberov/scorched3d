@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWScrollWBackwards_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)
-#define AFX_GLWScrollWBackwards_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_
+#ifndef __INCLUDE_GLWScrollWBackwards_hpp_INCLUDE__
+#define __INCLUDE_GLWScrollWBackwards_hpp_INCLUDE__
 
 #include <GLW/GLWScrollW.hpp>
 
@@ -37,8 +37,6 @@ public:
 	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
 
 	REGISTER_CLASS_HEADER(GLWScrollWBackwards);
-protected:
-
 };
 
-#endif // !defined(AFX_GLWScrollWBackwards_H__DCD17624_BF31_45DD_8766_2710AB9FFC6D__INCLUDED_)
+#endif // __INCLUDE_GLWScrollWBackwards_hpp_INCLUDE__

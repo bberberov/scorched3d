@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWFONT_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_)
-#define AFX_GLWFONT_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_
+#ifndef __INCLUDE_GLWFont_hpp_INCLUDE__
+#define __INCLUDE_GLWFont_hpp_INCLUDE__
 
 #include <GLEXT/GLFont2d.hpp>
 
@@ -54,4 +54,4 @@ private:
 	virtual ~GLWFont();
 };
 
-#endif // !defined(AFX_GLWFONT_H__0BCF1F78_3D58_47EC_8B98_EB39AB3CADD4__INCLUDED_)
+#endif // __INCLUDE_GLWFont_hpp_INCLUDE__

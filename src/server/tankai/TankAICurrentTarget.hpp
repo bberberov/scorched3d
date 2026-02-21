@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankAICurrentTarget_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
-#define AFX_TankAICurrentTarget_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
+#ifndef __INCLUDE_TankAICurrentTarget_hpp_INCLUDE__
+#define __INCLUDE_TankAICurrentTarget_hpp_INCLUDE__
 
 #include <list>
 #include <map>
@@ -63,4 +63,4 @@ protected:
 	float rankPlayer(std::multimap<float, Tanket *> &players, Tanket *player);
 };
 
-#endif // !defined(AFX_TankAICurrentTarget_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
+#endif // __INCLUDE_TankAICurrentTarget_hpp_INCLUDE__

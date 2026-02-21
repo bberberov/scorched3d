@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2009
+//    Scorched3D (c) 2000-2009, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ParticleTypesh_INCLUDE__)
-#define __INCLUDE_ParticleTypesh_INCLUDE__
+#ifndef __INCLUDE_ParticleTypes_hpp_INCLUDE__
+#define __INCLUDE_ParticleTypes_hpp_INCLUDE__
 
 enum ParticleTypes 
 {
@@ -38,4 +38,4 @@ enum ParticleTypes
 	ParticlePrecipitation
 };
 
-#endif // __INCLUDE_ParticleTypesh_INCLUDE__
+#endif // __INCLUDE_ParticleTypes_hpp_INCLUDE__

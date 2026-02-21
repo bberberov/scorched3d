@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLWChannelViewh_INCLUDE__)
-#define __INCLUDE_GLWChannelViewh_INCLUDE__
+#ifndef __INCLUDE_GLWChannelView_hpp_INCLUDE__
+#define __INCLUDE_GLWChannelView_hpp_INCLUDE__
 
 #include <GLW/GLWChatView.hpp>
 #include <GLW/GLWChannelViewTextRenderer.hpp>
@@ -94,4 +94,4 @@ protected:
 	void formCurrentChannelList(std::list<std::string> &result);
 };
 
-#endif // __INCLUDE_GLWChannelViewh_INCLUDE__
+#endif // __INCLUDE_GLWChannelView_hpp_INCLUDE__

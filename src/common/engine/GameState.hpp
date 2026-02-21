@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GAMESTATE_H__00A5F6B7_02B2_45B3_9D9B_F8B0AC9F5614__INCLUDED_)
-#define AFX_GAMESTATE_H__00A5F6B7_02B2_45B3_9D9B_F8B0AC9F5614__INCLUDED_
+#ifndef __INCLUDE_GameState_hpp_INCLUDE__
+#define __INCLUDE_GameState_hpp_INCLUDE__
 
 #include <string>
 #include <map>
@@ -214,7 +214,6 @@ protected:
 	GameState::GameStateEntry* getEntry(const unsigned state);
 	GameState::GameStateSubEntry* getSubEntry(const unsigned state, GameStateI *entry);
 	void clearTimers(bool printTimers = false);
-
 };
 
-#endif // !defined(AFX_GAMESTATE_H__00A5F6B7_02B2_45B3_9D9B_F8B0AC9F5614__INCLUDED_)
+#endif // __INCLUDE_GameState_hpp_INCLUDE__

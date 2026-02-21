@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_NextTurnSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)
-#define AFX_NextTurnSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_
+#ifndef __INCLUDE_NextTurnSimAction_hpp_INCLUDE__
+#define __INCLUDE_NextTurnSimAction_hpp_INCLUDE__
 
 #include <simactions/SimAction.hpp>
 
@@ -34,8 +34,7 @@ public:
 	virtual bool writeMessage(NetBuffer &buffer);
 	virtual bool readMessage(NetBufferReader &reader);
 
-REGISTER_CLASS_HEADER(NextTurnSimAction);
-protected:
+	REGISTER_CLASS_HEADER(NextTurnSimAction);
 };
 
-#endif // !defined(AFX_NextTurnSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)
+#endif // __INCLUDE_NextTurnSimAction_hpp_INCLUDE__

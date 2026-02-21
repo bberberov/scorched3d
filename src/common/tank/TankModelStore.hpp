@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _tankModelStore_h
-#define _tankModelStore_h
+#ifndef __INCLUDE_TankModelStore_hpp_INCLUDE__
+#define __INCLUDE_TankModelStore_hpp_INCLUDE__
 
 #include <vector>
 #include <map>
@@ -53,8 +53,6 @@ protected:
 private:
 	TankModelStore(const TankModelStore &);
 	const TankModelStore & operator=(const TankModelStore &);
-
 };
 
-#endif // _tankModelStore_h
-
+#endif // __INCLUDE_TankModelStore_hpp_INCLUDE__

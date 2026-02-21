@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TanketAccessories_H__60850A18_DED2_4BB0_B104_CB0941EF6D1D__INCLUDED_)
-#define AFX_TanketAccessories_H__60850A18_DED2_4BB0_B104_CB0941EF6D1D__INCLUDED_
+#ifndef __INCLUDE_TanketAccessories_hpp_INCLUDE__
+#define __INCLUDE_TanketAccessories_hpp_INCLUDE__
 
 #include <weapons/AccessoryPart.hpp>
 #include <tanket/TanketWeapon.hpp>
@@ -79,4 +79,4 @@ protected:
 	void add_(Accessory *accessory, int count, bool check);
 };
 
-#endif // !defined(AFX_TanketAccessories_H__60850A18_DED2_4BB0_B104_CB0941EF6D1D__INCLUDED_)
+#endif // __INCLUDE_TanketAccessories_hpp_INCLUDE__

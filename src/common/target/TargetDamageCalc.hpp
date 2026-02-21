@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TargetDamageCalc_H__3B055B6D_C8E7_42C7_9D29_FBBFD88457D1__INCLUDED_)
-#define AFX_TargetDamageCalc_H__3B055B6D_C8E7_42C7_9D29_FBBFD88457D1__INCLUDED_
+#ifndef __INCLUDE_TargetDamageCalc_hpp_INCLUDE__
+#define __INCLUDE_TargetDamageCalc_hpp_INCLUDE__
 
 #include <engine/ScorchedContext.hpp>
 #include <common/FixedVector.hpp>
@@ -46,7 +46,6 @@ public:
 private:
 	TargetDamageCalc();
 	virtual ~TargetDamageCalc();
-
 };
 
-#endif // !defined(AFX_TargetDamageCalc_H__3B055B6D_C8E7_42C7_9D29_FBBFD88457D1__INCLUDED_)
+#endif // __INCLUDE_TargetDamageCalc_hpp_INCLUDE__

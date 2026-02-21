@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __SNPRINTF_SAMBA__
-#define __SNPRINTF_SAMBA__
+#ifndef __INCLUDE_DefinesString_hpp_INCLUDE__
+#define __INCLUDE_DefinesString_hpp_INCLUDE__
 
 #include <stdio.h> // For snprintf on linux
 #include <string>
@@ -66,4 +66,4 @@ namespace S3D
 	void trim(std::string &value);
 }
 
-#endif // __SNPRINTF_SAMBA__
+#endif // __INCLUDE_DefinesString_hpp_INCLUDE__

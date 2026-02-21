@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_WaterWaveDistanceh_INCLUDE__)
-#define __INCLUDE_WaterWaveDistanceh_INCLUDE__
+#ifndef __INCLUDE_WaterWaveDistance_hpp_INCLUDE__
+#define __INCLUDE_WaterWaveDistance_hpp_INCLUDE__
 
 class ProgressCounter;
 class WaterWaveDistance
@@ -37,7 +37,6 @@ protected:
 	float *waveDistance_;
 	int distanceWidth_, distanceHeight_;
 	int distanceWidthMult_, distanceHeightMult_;
-
 };
 
-#endif
+#endif // __INCLUDE_WaterWaveDistance_hpp_INCLUDE__

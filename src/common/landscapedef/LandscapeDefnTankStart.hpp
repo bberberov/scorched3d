@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_LandscapeDefnTankStarth_INCLUDE__)
-#define __INCLUDE_LandscapeDefnTankStarth_INCLUDE__
+#ifndef __INCLUDE_LandscapeDefnTankStart_hpp_INCLUDE__
+#define __INCLUDE_LandscapeDefnTankStart_hpp_INCLUDE__
 
 #include <landscapedef/LandscapeDefn.hpp>
 #include <common/fixed.hpp>
@@ -78,4 +78,4 @@ protected:
 	std::vector<FixedVector> positions;
 };
 
-#endif
+#endif // __INCLUDE_LandscapeDefnTankStart_hpp_INCLUDE__

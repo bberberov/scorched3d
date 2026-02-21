@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_)
-#define AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_
+#ifndef __INCLUDE_ConsoleRuleFnIAdapter_hpp_INCLUDE__
+#define __INCLUDE_ConsoleRuleFnIAdapter_hpp_INCLUDE__
 
 #include <common/OptionEntry.hpp>
 #include <console/ConsoleRuleFn.hpp>
@@ -81,4 +81,4 @@ protected:
 	ConsoleRuleFn *writeRule_;
 };
 
-#endif // !defined(AFX_ConsoleRULEFNIADAPTER_H__A8429FA2_3499_4F4A_95BC_9F94FC58C087__INCLUDED_)
+#endif // __INCLUDE_ConsoleRuleFnIAdapter_hpp_INCLUDE__

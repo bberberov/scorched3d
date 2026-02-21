@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TargetStateh_INCLUDE__)
-#define __INCLUDE_TargetStateh_INCLUDE__
+#ifndef __INCLUDE_TargetState_hpp_INCLUDE__
+#define __INCLUDE_TargetState_hpp_INCLUDE__
 
 class TargetFalling;
 class TanketMovement;
@@ -91,7 +91,6 @@ protected:
 	bool noFallingDamage_;
 	bool driveOverToDestroy_;
 	bool flattenDestroy_;
-
 };
 
-#endif // __INCLUDE_TargetStateh_INCLUDE__
+#endif // __INCLUDE_TargetState_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ComsSimulateMessage_h
-#define _ComsSimulateMessage_h
+#ifndef __INCLUDE_ComsSimulateMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsSimulateMessage_hpp_INCLUDE__
 
 #include <coms/ComsMessage.hpp>
 #include <simactions/SimAction.hpp>
@@ -53,8 +53,6 @@ protected:
 private:
 	ComsSimulateMessage(const ComsSimulateMessage &);
 	const ComsSimulateMessage & operator=(const ComsSimulateMessage &);
-
 };
 
-#endif //_ComsSimulateMessage_h
-
+#endif // __INCLUDE_ComsSimulateMessage_hpp_INCLUDE__

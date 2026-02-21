@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GAMESTATEI_H__B6753299_ED54_45EB_A635_733A34F0C920__INCLUDED_)
-#define AFX_GAMESTATEI_H__B6753299_ED54_45EB_A635_733A34F0C920__INCLUDED_
+#ifndef __INCLUDE_GameStateI_hpp_INCLUDE__
+#define __INCLUDE_GameStateI_hpp_INCLUDE__
 
 #include <engine/GameState.hpp>
 #include <common/KeyboardHistory.hpp>
@@ -62,4 +62,4 @@ protected:
 	static std::vector<std::string> perfCounterNames_;
 };
 
-#endif // !defined(AFX_GAMESTATEI_H__B6753299_ED54_45EB_A635_733A34F0C920__INCLUDED_)
+#endif // __INCLUDE_GameStateI_hpp_INCLUDE__

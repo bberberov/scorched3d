@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerBrowserh_INCLUDE__)
-#define __INCLUDE_ServerBrowserh_INCLUDE__
+#ifndef __INCLUDE_ServerBrowser_hpp_INCLUDE__
+#define __INCLUDE_ServerBrowser_hpp_INCLUDE__
 
 #include <serverbrowser/ServerBrowserRefresh.hpp>
 #include <serverbrowser/ServerBrowserCollect.hpp>
@@ -62,4 +62,4 @@ private:
 	virtual ~ServerBrowser();
 };
 
-#endif
+#endif // __INCLUDE_ServerBrowser_hpp_INCLUDE__

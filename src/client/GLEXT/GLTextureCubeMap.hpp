@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLTEXTURECUBEMAP_H__490E9736_961A_4873_A10F_ED47E6E33527__INCLUDED_)
-#define AFX_GLTEXTURECUBEMAP_H__490E9736_961A_4873_A10F_ED47E6E33527__INCLUDED_
+#ifndef __INCLUDE_GLTextureCubeMap_hpp_INCLUDE__
+#define __INCLUDE_GLTextureCubeMap_hpp_INCLUDE__
 
 #include <GLEXT/GLTextureBase.hpp>
 #include <image/Image.hpp>
@@ -54,7 +54,6 @@ protected:
 						GLint alignment,
 						GLenum format, 
 						bool mipMap);
-
 };
 
-#endif // !defined(AFX_GLTEXTURECUBEMAP_H__490E9736_961A_4873_A10F_ED47E6E33527__INCLUDED_)
+#endif // __INCLUDE_GLTextureCubeMap_hpp_INCLUDE__

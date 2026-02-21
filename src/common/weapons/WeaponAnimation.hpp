@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_WeaponAnimation_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)
-#define AFX_WeaponAnimation_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_
+#ifndef __INCLUDE_WeaponAnimation_hpp_INCLUDE__
+#define __INCLUDE_WeaponAnimation_hpp_INCLUDE__
 
 #include <weapons/Weapon.hpp>
 
@@ -41,7 +41,6 @@ public:
 protected:
 	std::string rendererName_;
 	std::string data_;
-
 };
 
-#endif // !defined(AFX_WeaponAnimation_H__A96ADD10_0901_4E1D_A49B_9BE78AD33B9B__INCLUDED_)
+#endif // __INCLUDE_WeaponAnimation_hpp_INCLUDE__

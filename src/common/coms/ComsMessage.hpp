@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#ifndef _comsMessage_h
-#define _comsMessage_h
+#ifndef __INCLUDE_ComsMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsMessage_hpp_INCLUDE__
 
 #include <string>
 #include <net/NetMessage.hpp>
@@ -66,8 +65,6 @@ protected:
 private:
 	ComsMessage(const ComsMessage &);
 	const ComsMessage & operator=(const ComsMessage &);
-
 };
 
-#endif // _comsMessage_h
-
+#endif // __INCLUDE_ComsMessage_hpp_INCLUDE__

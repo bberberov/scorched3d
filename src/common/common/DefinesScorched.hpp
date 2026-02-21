@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __DEFINESSCORCHED__
-#define __DEFINESSCORCHED__
+#ifndef __INCLUDE_DefinesScorched_hpp_INCLUDE__
+#define __INCLUDE_DefinesScorched_hpp_INCLUDE__
 
 namespace S3D
 {
@@ -48,4 +48,4 @@ namespace S3D
 	extern std::string ScorchedBuildTime;
 }
 
-#endif // __DEFINESSCORCHED__
+#endif // __INCLUDE_DefinesScorched_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerAdminCommonh_INCLUDE__)
-#define __INCLUDE_ServerAdminCommonh_INCLUDE__
+#ifndef __INCLUDE_ServerAdminCommon_hpp_INCLUDE__
+#define __INCLUDE_ServerAdminCommon_hpp_INCLUDE__
 
 #include <common/DefinesString.hpp>
 #include <common/ChannelText.hpp>
@@ -49,4 +49,4 @@ namespace ServerAdminCommon
 		const char *channel, const char *text);
 }
 
-#endif
+#endif // __INCLUDE_ServerAdminCommon_hpp_INCLUDE__

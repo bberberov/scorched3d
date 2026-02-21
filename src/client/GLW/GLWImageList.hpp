@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLWImageListh_INCLUDE__)
-#define __INCLUDE_GLWImageListh_INCLUDE__
+#ifndef __INCLUDE_GLWImageList_hpp_INCLUDE__
+#define __INCLUDE_GLWImageList_hpp_INCLUDE__
 
 #include <GLW/GLWButton.hpp>
 #include <GLW/GLWSelector.hpp>
@@ -65,7 +65,6 @@ protected:
 	std::list<GLWImageListEntry*> entries_;
 	GLWImageListEntry *current_;
 	bool enabled_;
-		
 };
 
-#endif // __INCLUDE_GLWImageListh_INCLUDE__
+#endif // __INCLUDE_GLWImageList_hpp_INCLUDE__

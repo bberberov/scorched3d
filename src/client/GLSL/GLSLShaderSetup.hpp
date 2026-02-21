@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLSLShaderSetuph_INCLUDE__)
-#define __INCLUDE_GLSLShaderSetuph_INCLUDE__
+#ifndef __INCLUDE_GLSLShaderSetup_hpp_INCLUDE__
+#define __INCLUDE_GLSLShaderSetup_hpp_INCLUDE__
 
 #include <GLSL/GLSLShader.hpp>
 #include <GLSL/GLSLProgram.hpp>
@@ -79,4 +79,4 @@ private:
 	GLSLShaderSetup& operator= (const GLSLShaderSetup&);
 };
 
-#endif // __INCLUDE_GLSLShaderSetuph_INCLUDE__
+#endif // __INCLUDE_GLSLShaderSetup_hpp_INCLUDE__

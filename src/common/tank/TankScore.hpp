@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TANKSCORE_H__ED963414_2B77_4027_B35A_D69960165470__INCLUDED_)
-#define AFX_TANKSCORE_H__ED963414_2B77_4027_B35A_D69960165470__INCLUDED_
+#ifndef __INCLUDE_TankScore_hpp_INCLUDE__
+#define __INCLUDE_TankScore_hpp_INCLUDE__
 
 #include <set>
 #include <string>
@@ -105,7 +105,6 @@ protected:
 	bool wonGame_;
 	time_t startTime_;
 	time_t lastStatTime_;
-
 };
 
-#endif // !defined(AFX_TANKSCORE_H__ED963414_2B77_4027_B35A_D69960165470__INCLUDED_)
+#endif // __INCLUDE_TankScore_hpp_INCLUDE__

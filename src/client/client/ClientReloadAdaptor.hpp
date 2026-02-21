@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ClientReloadAdaptor_h
-#define _ClientReloadAdaptor_h
+#ifndef __INCLUDE_ClientReloadAdaptor_hpp_INCLUDE__
+#define __INCLUDE_ClientReloadAdaptor_hpp_INCLUDE__
 
 // SINGLETON
 class ClientReloadAdaptor
@@ -42,4 +42,4 @@ private:
 	const ClientReloadAdaptor & operator=(const ClientReloadAdaptor &);
 };
 
-#endif // _ClientReloadAdaptor_h
+#endif // __INCLUDE_ClientReloadAdaptor_hpp_INCLUDE__

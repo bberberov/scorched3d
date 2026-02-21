@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SHADOWMAP_H__50A1C655_51B8_4B47_982E_58C20CD21815__INCLUDED_)
-#define AFX_SHADOWMAP_H__50A1C655_51B8_4B47_982E_58C20CD21815__INCLUDED_
+#ifndef __INCLUDE_ShadowMap_hpp_INCLUDE__
+#define __INCLUDE_ShadowMap_hpp_INCLUDE__
 
 #include <GLEXT/GLTexture.hpp>
 
@@ -45,7 +45,6 @@ protected:
 	GLint sizeSq_;
 
 	void addShadow(float sx, float sy, float sw, float opacity, bool circle);
-
 };
 
-#endif // !defined(AFX_SHADOWMAP_H__50A1C655_51B8_4B47_982E_58C20CD21815__INCLUDED_)
+#endif // __INCLUDE_ShadowMap_hpp_INCLUDE__

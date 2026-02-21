@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _SOUND_H_
-#define _SOUND_H_
+#ifndef __INCLUDE_Sound_hpp_INCLUDE__
+#define __INCLUDE_Sound_hpp_INCLUDE__
 
 #include <map>
 #include <vector>
@@ -87,4 +87,4 @@ private:
 	virtual ~Sound();
 };
 
-#endif /* _SOUND_H_ */
+#endif // __INCLUDE_Sound_hpp_INCLUDE__

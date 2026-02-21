@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_WeaponLightningh_INCLUDE__)
-#define __INCLUDE_WeaponLightningh_INCLUDE__
+#ifndef __INCLUDE_WeaponLightning_hpp_INCLUDE__
+#define __INCLUDE_WeaponLightning_hpp_INCLUDE__
 
 #include <weapons/Weapon.hpp>
 
@@ -86,7 +86,6 @@ protected:
 	NumberParser totalTimeExp_;
 	NumberParser segHurtExp_;
 	NumberParser segHurtRadiusExp_;
-
 };
 
-#endif // __INCLUDE_WeaponLightningh_INCLUDE__
+#endif // __INCLUDE_WeaponLightning_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __DEFINES__
-#define __DEFINES__
+#ifndef __INCLUDE_Defines_hpp_INCLUDE__
+#define __INCLUDE_Defines_hpp_INCLUDE__
 
 #ifndef _WIN32
 	#include "porting.h"
@@ -43,4 +43,4 @@
 #include <common/DefinesScorched.hpp>
 #include <common/DefinesFile.hpp>
 
-#endif // __DEFINES__
+#endif // __INCLUDE_Defines_hpp_INCLUDE__

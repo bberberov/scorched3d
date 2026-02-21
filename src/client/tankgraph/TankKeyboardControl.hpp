@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TankKeyboardControlh_INCLUDE__)
-#define __INCLUDE_TankKeyboardControlh_INCLUDE__
+#ifndef __INCLUDE_TankKeyboardControl_hpp_INCLUDE__
+#define __INCLUDE_TankKeyboardControl_hpp_INCLUDE__
 
 #include <engine/GameStateI.hpp>
 #include <tank/Tank.hpp>
@@ -45,4 +45,4 @@ private:
 	virtual ~TankKeyboardControl();
 };
 
-#endif
+#endif // __INCLUDE_TankKeyboardControl_hpp_INCLUDE__

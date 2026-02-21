@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __DEFINESASSERT__
-#define __DEFINESASSERT__
+#ifndef __INCLUDE_DefinesAssert_hpp_INCLUDE__
+#define __INCLUDE_DefinesAssert_hpp_INCLUDE__
 
 #include <string>
 
@@ -41,4 +41,4 @@ namespace S3D
 
 #define DIALOG_ASSERT(x) if(!(x)) S3D::dialogAssert(#x, __LINE__, __FILE__);
 
-#endif // __DEFINESASSERT__
+#endif // __INCLUDE_DefinesAssert_hpp_INCLUDE__

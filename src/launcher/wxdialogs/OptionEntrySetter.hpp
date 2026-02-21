@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004, 2025
+//    Scorched3D (c) 2000-2004, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_OptionEntrySetterh_INCLUDE__)
-#define __INCLUDE_OptionEntrySetterh_INCLUDE__
+#ifndef __INCLUDE_OptionEntrySetter_hpp_INCLUDE__
+#define __INCLUDE_OptionEntrySetter_hpp_INCLUDE__
 
 #include <common/OptionEntry.hpp>
 #include <list>
@@ -48,5 +48,4 @@ public:
 	static void updateEntries(std::list<OptionEntrySetter> &controls);
 };
 
-
-#endif // __INCLUDE_OptionEntrySetterh_INCLUDE__
+#endif // __INCLUDE_OptionEntrySetter_hpp_INCLUDE__

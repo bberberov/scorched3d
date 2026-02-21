@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLMISSINGEXT_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_)
-#define AFX_GLMISSINGEXT_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_
+#ifndef __INCLUDE_GLMissingExt_hpp_INCLUDE__
+#define __INCLUDE_GLMissingExt_hpp_INCLUDE__
 
 // Some newer official GL extensions that may not have made it into the SDL
 // implementation yet
@@ -190,4 +190,4 @@ typedef void (APIENTRY * PFNGLGETBUFFERPARAMETERIVARBPROC) (GLenum target, GLenu
 typedef void (APIENTRY * PFNGLGETBUFFERPOINTERVARBPROC) (GLenum target, GLenum pname, GLvoid* *params);
 #endif
 
-#endif // !defined(AFX_GLMISSINGEXT_H__9DA92C48_B9A4_4517_AB9F_55141CCDA817__INCLUDED_)
+#endif // __INCLUDE_GLMissingExt_hpp_INCLUDE__

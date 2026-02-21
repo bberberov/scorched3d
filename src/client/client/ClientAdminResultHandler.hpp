@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ClientAdminResultHandlerh_INCLUDE__)
-#define __INCLUDE_ClientAdminResultHandlerh_INCLUDE__
+#ifndef __INCLUDE_ClientAdminResultHandler_hpp_INCLUDE__
+#define __INCLUDE_ClientAdminResultHandler_hpp_INCLUDE__
 
 #include <coms/ComsAdminMessage.hpp>
 #include <coms/ComsMessageHandler.hpp>
@@ -61,4 +61,4 @@ private:
 	virtual ~ClientAdminResultHandler();
 };
 
-#endif
+#endif // __INCLUDE_ClientAdminResultHandler_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ClientChannelManagerIh_INCLUDE__)
-#define __INCLUDE_ClientChannelManagerIh_INCLUDE__
+#ifndef __INCLUDE_ClientChannelManagerI_hpp_INCLUDE__
+#define __INCLUDE_ClientChannelManagerI_hpp_INCLUDE__
 
 #include <list>
 #include <string>
@@ -35,7 +35,6 @@ public:
 		std::list<ChannelDefinition> &registeredChannels,
 		std::list<ChannelDefinition> &availableChannels) = 0;
 	virtual void channelText(ChannelText &text) = 0;
-
 };
 
-#endif
+#endif // __INCLUDE_ClientChannelManagerI_hpp_INCLUDE__

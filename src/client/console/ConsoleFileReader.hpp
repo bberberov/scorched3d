@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_ConsoleFileReader_hpp_INCLUDE__
+#define __INCLUDE_ConsoleFileReader_hpp_INCLUDE__
 
 // ConsoleFileReader.hpp: interface for the ConsoleFileReader class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_ConsoleFILEREADER_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
-#define AFX_ConsoleFILEREADER_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_
 
 #include <string>
 
@@ -35,4 +34,4 @@ namespace ConsoleFileReader
 	void saveConsoleIntoFile(const std::string &fileName);
 };
 
-#endif // !defined(AFX_ConsoleFILEREADER_H__516D85F7_420B_43EB_B0BE_563DCBE1B143__INCLUDED_)
+#endif // __INCLUDE_ConsoleFileReader_hpp_INCLUDE__

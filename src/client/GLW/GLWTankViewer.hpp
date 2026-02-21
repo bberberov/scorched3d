@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _gLWTankViewer_h
-#define _gLWTankViewer_h
+#ifndef __INCLUDE_GLWTankViewer_hpp_INCLUDE__
+#define __INCLUDE_GLWTankViewer_hpp_INCLUDE__
 
 #include <GLW/GLWScrollW.hpp>
 #include <GLW/GLWPanel.hpp>
@@ -83,8 +83,6 @@ protected:
 private:
 	GLWTankViewer(const GLWTankViewer &);
 	const GLWTankViewer & operator=(const GLWTankViewer &);
-
 };
 
-#endif // _gLWTankViewer_h
-
+#endif // __INCLUDE_GLWTankViewer_hpp_INCLUDE__

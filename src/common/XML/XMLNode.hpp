@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_XMLNodeh_INCLUDE__)
-#define __INCLUDE_XMLNodeh_INCLUDE__
+#ifndef __INCLUDE_XMLNode_hpp_INCLUDE__
+#define __INCLUDE_XMLNode_hpp_INCLUDE__
 
 #include <list>
 #include <lang/LangString.hpp>
@@ -115,4 +115,4 @@ protected:
 	int line_, col_;
 };
 
-#endif
+#endif // __INCLUDE_XMLNode_hpp_INCLUDE__

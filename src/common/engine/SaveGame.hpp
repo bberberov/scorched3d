@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SaveGame_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
-#define AFX_SaveGame_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_
+#ifndef __INCLUDE_SaveGame_hpp_INCLUDE__
+#define __INCLUDE_SaveGame_hpp_INCLUDE__
 
 #include <coms/ComsLoadLevelMessage.hpp>
 
@@ -32,4 +32,4 @@ public:
 	static bool loadTargets(const std::string &fileName);
 };
 
-#endif // !defined(AFX_SaveGame_H__86995B4A_478E_4CFE_BD4C_79128DE51904__INCLUDED_)
+#endif // __INCLUDE_SaveGame_hpp_INCLUDE__

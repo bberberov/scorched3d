@@ -43,4 +43,4 @@ typedef int     HKEY;
 #define FALSE false
 #endif
 
-#endif
+#endif // _WINDOWS_H_

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _NETBUFFER_H_
-#define _NETBUFFER_H_
+#ifndef __INCLUDE_NetBuffer_hpp_INCLUDE__
+#define __INCLUDE_NetBuffer_hpp_INCLUDE__
 
 #include <lang/LangString.hpp>
 #include <common/FixedVector4.hpp>
@@ -174,7 +174,6 @@ protected:
 	char *buffer_;
 	unsigned bufferSize_;
 	unsigned readSize_;
-
 };
 
-#endif /* _NETBUFFER_H_ */
+#endif // __INCLUDE_NetBuffer_hpp_INCLUDE__

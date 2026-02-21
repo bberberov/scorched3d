@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ImageBitmapFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_)
-#define AFX_ImageBitmapFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_
+#ifndef __INCLUDE_ImageBitmapFactory_hpp_INCLUDE__
+#define __INCLUDE_ImageBitmapFactory_hpp_INCLUDE__
 
 #include <image/Image.hpp>
 
@@ -43,4 +43,4 @@ public:
 	static Image loadFromFile(const char *filename, bool alpha = false);
 };
 
-#endif // !defined(AFX_ImageBitmapFactory_H__315BF771_5E56_4C78_9D9F_51608D8CB3F0__INCLUDED_)
+#endif // __INCLUDE_ImageBitmapFactory_hpp_INCLUDE__

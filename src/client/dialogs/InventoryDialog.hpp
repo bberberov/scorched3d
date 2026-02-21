@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_InventoryDialog_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_)
-#define AFX_InventoryDialog_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_
+#ifndef __INCLUDE_InventoryDialog_hpp_INCLUDE__
+#define __INCLUDE_InventoryDialog_hpp_INCLUDE__
 
 #include <map>
 #include <vector>
@@ -67,4 +67,4 @@ private:
 	virtual ~InventoryDialog();
 };
 
-#endif // !defined(AFX_InventoryDialog_H__4B5E93CF_1DE2_4979_A629_AEBD725ABE65__INCLUDED_)
+#endif // __INCLUDE_InventoryDialog_hpp_INCLUDE__

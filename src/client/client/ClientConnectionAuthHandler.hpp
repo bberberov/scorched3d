@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ClientConnectionAuthHandler_h
-#define _ClientConnectionAuthHandler_h
+#ifndef __INCLUDE_ClientConnectionAuthHandler_hpp_INCLUDE__
+#define __INCLUDE_ClientConnectionAuthHandler_hpp_INCLUDE__
 
 #include <coms/ComsMessageHandler.hpp>
 
@@ -49,5 +49,4 @@ private:
 	const ClientConnectionAuthHandler & operator=(const ClientConnectionAuthHandler &);
 };
 
-#endif // _ClientConnectionAuthHandler_h
-
+#endif // __INCLUDE_ClientConnectionAuthHandler_hpp_INCLUDE__

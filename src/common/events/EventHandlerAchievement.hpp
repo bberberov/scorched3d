@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_EventHandlerAchievementh_INCLUDE__)
-#define __INCLUDE_EventHandlerAchievementh_INCLUDE__
+#ifndef __INCLUDE_EventHandlerAchievement_hpp_INCLUDE__
+#define __INCLUDE_EventHandlerAchievement_hpp_INCLUDE__
 
 #include <events/EventHandlerDataBase.hpp>
 
@@ -40,4 +40,4 @@ protected:
 	void awardAchievement(unsigned int playerId, unsigned int rank);
 };
 
-#endif
+#endif // __INCLUDE_EventHandlerAchievement_hpp_INCLUDE__

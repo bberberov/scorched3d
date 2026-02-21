@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)
-#define AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_
+#ifndef __INCLUDE_ModelRendererTank_hpp_INCLUDE__
+#define __INCLUDE_ModelRendererTank_hpp_INCLUDE__
 
 #include <graph/ModelRendererMesh.hpp>
 
@@ -80,4 +80,4 @@ protected:
 	ModelRendererMesh gunRenderer_;
 };
 
-#endif // !defined(AFX_ModelRendererTank_H__CB857C65_A22F_4FBC_9344_EFF22F8A4EEA__INCLUDED_)
+#endif // __INCLUDE_ModelRendererTank_hpp_INCLUDE__

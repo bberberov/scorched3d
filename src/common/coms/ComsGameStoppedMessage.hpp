@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ComsGameStoppedMessageh_INCLUDE__)
-#define __INCLUDE_ComsGameStoppedMessageh_INCLUDE__
+#ifndef __INCLUDE_ComsGameStoppedMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsGameStoppedMessage_hpp_INCLUDE__
 
 #include <coms/ComsMessage.hpp>
 
@@ -34,9 +34,6 @@ public:
 	// Inherited from ComsMessage
 	virtual bool writeMessage(NetBuffer &buffer);
 	virtual bool readMessage(NetBufferReader &reader);
-
-protected:
-
 };
 
-#endif
+#endif // __INCLUDE_ComsGameStoppedMessage_hpp_INCLUDE__

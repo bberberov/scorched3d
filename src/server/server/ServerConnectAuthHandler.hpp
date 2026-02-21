@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#if !defined(__INCLUDE_ServerConnectAuthHandlerh_INCLUDE__)
-#define __INCLUDE_ServerConnectAuthHandlerh_INCLUDE__
+#ifndef __INCLUDE_ServerConnectAuthHandler_hpp_INCLUDE__
+#define __INCLUDE_ServerConnectAuthHandler_hpp_INCLUDE__
 
 #include <coms/ComsMessageHandler.hpp>
 #include <coms/ComsConnectAuthMessage.hpp>
@@ -72,5 +71,4 @@ protected:
 	bool uniqueIdTaken(const std::string &uniqueId);
 };
 
-
-#endif
+#endif // __INCLUDE_ServerConnectAuthHandler_hpp_INCLUDE__

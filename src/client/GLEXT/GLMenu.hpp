@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLMENU_H__ED2E8B2C_46B3_400F_A3E2_FC1B53732D15__INCLUDED_)
-#define AFX_GLMENU_H__ED2E8B2C_46B3_400F_A3E2_FC1B53732D15__INCLUDED_
+#ifndef __INCLUDE_GLMenu_hpp_INCLUDE__
+#define __INCLUDE_GLMenu_hpp_INCLUDE__
 
 #include <map>
 #include <GLW/GLWWindow.hpp>
@@ -27,6 +27,7 @@
 
 class Image;
 class GLMenuEntry;
+
 class GLMenu : public GLWWindow
 {
 public:
@@ -60,7 +61,6 @@ public:
 
 protected:
 	std::map<std::string, GLMenuEntry *> menuList_;
-
 };
 
-#endif // !defined(AFX_GLMENU_H__ED2E8B2C_46B3_400F_A3E2_FC1B53732D15__INCLUDED_)
+#endif // __INCLUDE_GLMenu_hpp_INCLUDE__

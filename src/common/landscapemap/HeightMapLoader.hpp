@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#if !defined(__INCLUDE_HeightMapLoaderh_INCLUDE__)
-#define __INCLUDE_HeightMapLoaderh_INCLUDE__
+#ifndef __INCLUDE_HeightMapLoader_hpp_INCLUDE__
+#define __INCLUDE_HeightMapLoader_hpp_INCLUDE__
 
 #include <landscapemap/HeightMapModifier.hpp>
 #include <landscapedef/LandscapeDefn.hpp>
@@ -41,5 +40,4 @@ namespace HeightMapLoader
 		ProgressCounter *counter = 0);
 };
 
-
-#endif
+#endif // __INCLUDE_HeightMapLoader_hpp_INCLUDE__

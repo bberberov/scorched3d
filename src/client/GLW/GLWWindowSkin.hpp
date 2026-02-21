@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_GLWWindowSkinh_INCLUDE__)
-#define __INCLUDE_GLWWindowSkinh_INCLUDE__
+#ifndef __INCLUDE_GLWWindowSkin_hpp_INCLUDE__
+#define __INCLUDE_GLWWindowSkin_hpp_INCLUDE__
 
 #include <GLW/GLWWindow.hpp>
 #include <XML/XMLFile.hpp>
@@ -39,7 +39,6 @@ public:
 protected:
 	std::set<std::string> states_;
 	std::string key_;
-
 };
 
-#endif
+#endif // __INCLUDE_GLWWindowSkin_hpp_INCLUDE__

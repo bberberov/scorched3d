@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#ifndef _ClientStartGameHandler_h
-#define _ClientStartGameHandler_h
+#ifndef __INCLUDE_ClientStartGameHandler_hpp_INCLUDE__
+#define __INCLUDE_ClientStartGameHandler_hpp_INCLUDE__
 
 #include <simactions/TankStartMoveSimAction.hpp>
 
@@ -41,7 +40,6 @@ private:
 
 	ClientStartGameHandler(const ClientStartGameHandler &);
 	const ClientStartGameHandler & operator=(const ClientStartGameHandler &);
-
 };
 
-#endif // _ClientStartGameHandler_h
+#endif // __INCLUDE_ClientStartGameHandler_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWTime_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_)
-#define AFX_GLWTime_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_
+#ifndef __INCLUDE_GLWTime_hpp_INCLUDE__
+#define __INCLUDE_GLWTime_hpp_INCLUDE__
 
 #include <string>
 #include <GLW/GLWidget.hpp>
@@ -42,7 +42,6 @@ public:
 protected:
 	Vector color_;
 	float size_;
-
 };
 
-#endif // !defined(AFX_GLWTime_H__75483479_A6F8_45CC_8E83_B517E721211F__INCLUDED_)
+#endif // __INCLUDE_GLWTime_hpp_INCLUDE__

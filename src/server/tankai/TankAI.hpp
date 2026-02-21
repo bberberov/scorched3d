@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankAI_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
-#define AFX_TankAI_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
+#ifndef __INCLUDE_TankAI_hpp_INCLUDE__
+#define __INCLUDE_TankAI_hpp_INCLUDE__
 
 #include <engine/ScorchedCollisionIds.hpp>
 #include <common/Vector.hpp>
@@ -74,7 +74,6 @@ protected:
 	bool availableForRandom_;
 	bool availableForPlayers_;
 	ToolTip toolTip_;
-
 };
 
-#endif // !defined(AFX_TankAI_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
+#endif // __INCLUDE_TankAI_hpp_INCLUDE__

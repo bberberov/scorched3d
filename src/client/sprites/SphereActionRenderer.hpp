@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SphereActionRenderer_H__53C71D24_C1E9_41C2_8757_FF947E1B4425__INCLUDED_)
-#define AFX_SphereActionRenderer_H__53C71D24_C1E9_41C2_8757_FF947E1B4425__INCLUDED_
+#ifndef __INCLUDE_SphereActionRenderer_hpp_INCLUDE__
+#define __INCLUDE_SphereActionRenderer_hpp_INCLUDE__
 
 #include <actions/Action.hpp>
 #include <common/Vector.hpp>
@@ -37,7 +37,6 @@ protected:
 	Vector position_;
 	float size_;
 	float frameTime_;
-
 };
 
-#endif // !defined(AFX_SphereActionRenderer_H__53C71D24_C1E9_41C2_8757_FF947E1B4425__INCLUDED_)
+#endif // __INCLUDE_SphereActionRenderer_hpp_INCLUDE__

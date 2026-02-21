@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_ConsoleLINES_H__2DA65C94_3E52_43C6_B75B_D0CEDBF6A9DE__INCLUDED_)
-#define AFX_ConsoleLINES_H__2DA65C94_3E52_43C6_B75B_D0CEDBF6A9DE__INCLUDED_
+#ifndef __INCLUDE_ConsoleLines_hpp_INCLUDE__
+#define __INCLUDE_ConsoleLines_hpp_INCLUDE__
 
 #include <GLEXT/GLFont2d.hpp>
 #include <deque>
@@ -75,7 +75,6 @@ protected:
 	unsigned int currentLine_;
 
 	void addSmallLine(int section, const LangString &line, bool showPointer);
-
 };
 
-#endif // !defined(AFX_ConsoleLINES_H__2DA65C94_3E52_43C6_B75B_D0CEDBF6A9DE__INCLUDED_)
+#endif // __INCLUDE_ConsoleLines_hpp_INCLUDE__

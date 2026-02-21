@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ComsLinesMessageh_INCLUDE__)
-#define __INCLUDE_ComsLinesMessageh_INCLUDE__
+#ifndef __INCLUDE_ComsLinesMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsLinesMessage_hpp_INCLUDE__
 
 #include <coms/ComsMessage.hpp>
 #include <list>
@@ -47,8 +47,6 @@ protected:
 private:
 	ComsLinesMessage(const ComsLinesMessage &);
 	const ComsLinesMessage & operator=(const ComsLinesMessage &);
-
 };
 
-#endif // __INCLUDE_ComsLinesMessageh_INCLUDE__
-
+#endif // __INCLUDE_ComsLinesMessage_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _LOGGER_H_
-#define _LOGGER_H_
+#ifndef __INCLUDE_Logger_hpp_INCLUDE__
+#define __INCLUDE_Logger_hpp_INCLUDE__
 
 #include <common/DefinesString.hpp>
 #include <list>
@@ -59,4 +59,4 @@ private:
 	virtual ~Logger();
 };
 
-#endif /* _LOGGER_H_ */
+#endif // __INCLUDE_Logger_hpp_INCLUDE__

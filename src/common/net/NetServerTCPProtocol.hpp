@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_NetServerTCPProtocolh_INCLUDE__)
-#define __INCLUDE_NetServerTCPProtocolh_INCLUDE__
+#ifndef __INCLUDE_NetServerTCPProtocol_hpp_INCLUDE__
+#define __INCLUDE_NetServerTCPProtocol_hpp_INCLUDE__
 
 #include <net/NetMessage.hpp>
 
@@ -63,4 +63,4 @@ public:
 	virtual NetMessage *readBuffer(TCPsocket socket, unsigned int id);
 };
 
-#endif
+#endif // __INCLUDE_NetServerTCPProtocol_hpp_INCLUDE__

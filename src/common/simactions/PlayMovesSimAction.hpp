@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_PlayMovesSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)
-#define AFX_PlayMovesSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_
+#ifndef __INCLUDE_PlayMovesSimAction_hpp_INCLUDE__
+#define __INCLUDE_PlayMovesSimAction_hpp_INCLUDE__
 
 #include <simactions/SimAction.hpp>
 #include <coms/ComsPlayedMoveMessage.hpp>
@@ -54,4 +54,4 @@ protected:
 		Tanket *tanket, ComsPlayedMoveMessage &message);
 };
 
-#endif // !defined(AFX_PlayMovesSimAction_H__2C00E711_B337_4665_AB54_C6661FD67E5D__INCLUDED_)
+#endif // __INCLUDE_PlayMovesSimAction_hpp_INCLUDE__

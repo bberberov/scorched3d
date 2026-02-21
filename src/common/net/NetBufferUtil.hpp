@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-
-#ifndef SCORCHED_netBufferUtil_h
-#define SCORCHED_netBufferUtil_h
+#ifndef __INCLUDE_NetBufferUtil_hpp_INCLUDE__
+#define __INCLUDE_NetBufferUtil_hpp_INCLUDE__
 
 #include <net/NetMessage.hpp>
 
@@ -36,8 +35,6 @@ private:
 
 	NetBufferUtil(const NetBufferUtil &);
 	const NetBufferUtil & operator=(const NetBufferUtil &);
-
 };
 
-#endif // SCORCHED_netBufferUtil_h
-
+#endif // __INCLUDE_NetBufferUtil_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLCAMERA_H__A41E0133_3B1F_11D4_BCBB_00A0C9A4CA3E__INCLUDED_)
-#define AFX_GLCAMERA_H__A41E0133_3B1F_11D4_BCBB_00A0C9A4CA3E__INCLUDED_
+#ifndef __INCLUDE_GLCamera_hpp_INCLUDE__
+#define __INCLUDE_GLCamera_hpp_INCLUDE__
 
 #include <GLEXT/GLState.hpp>
 #include <common/Line.hpp>
@@ -205,7 +205,6 @@ protected:
 
 	virtual void calculateWantedOffset();
 	virtual void moveViewport(Vector &lookFrom, Vector &lookAt);
-
 };
 
-#endif // !defined(AFX_GLCAMERA_H__A41E0133_3B1F_11D4_BCBB_00A0C9A4CA3E__INCLUDED_)
+#endif // __INCLUDE_GLCamera_hpp_INCLUDE__

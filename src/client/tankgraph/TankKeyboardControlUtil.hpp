@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankKeyboardControlUtil_H__F71C91A5_B74D_4109_8F7B_ACD471025C28__INCLUDED_)
-#define AFX_TankKeyboardControlUtil_H__F71C91A5_B74D_4109_8F7B_ACD471025C28__INCLUDED_
+#ifndef __INCLUDE_TankKeyboardControlUtil_hpp_INCLUDE__
+#define __INCLUDE_TankKeyboardControlUtil_hpp_INCLUDE__
 
 class Tank;
 class VirtualSoundSource;
@@ -65,4 +65,4 @@ private:
 	virtual ~TankKeyboardControlUtil();
 };
 
-#endif // !defined(AFX_TankKeyboardControlUtil_H__F71C91A5_B74D_4109_8F7B_ACD471025C28__INCLUDED_)
+#endif // __INCLUDE_TankKeyboardControlUtil_hpp_INCLUDE__

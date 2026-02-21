@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWIDGET_H__3F7BC394_576B_4ADF_8771_7D97EB3AF314__INCLUDED_)
-#define AFX_GLWIDGET_H__3F7BC394_576B_4ADF_8771_7D97EB3AF314__INCLUDED_
+#ifndef __INCLUDE_GLWidget_hpp_INCLUDE__
+#define __INCLUDE_GLWidget_hpp_INCLUDE__
 
 #include <engine/MetaClass.hpp>
 #include <common/KeyboardHistory.hpp>
@@ -118,4 +118,4 @@ public:
 	virtual bool initFromXML(XMLNode *node);
 };
 
-#endif // !defined(AFX_GLWIDGET_H__3F7BC394_576B_4ADF_8771_7D97EB3AF314__INCLUDED_)
+#endif // __INCLUDE_GLWidget_hpp_INCLUDE__

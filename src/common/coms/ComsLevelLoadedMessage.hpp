@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ComsLevelLoadedMessage_h
-#define _ComsLevelLoadedMessage_h
+#ifndef __INCLUDE_ComsLevelLoadedMessage_hpp_INCLUDE__
+#define __INCLUDE_ComsLevelLoadedMessage_hpp_INCLUDE__
 
 #include <landscapedef/LandscapeDefinition.hpp>
 
@@ -38,8 +38,6 @@ public:
 private:
 	ComsLevelLoadedMessage(const ComsLevelLoadedMessage &);
 	const ComsLevelLoadedMessage & operator=(const ComsLevelLoadedMessage &);
-
 };
 
-#endif //_ComsLevelLoadedMessage_h
-
+#endif // __INCLUDE_ComsLevelLoadedMessage_hpp_INCLUDE__

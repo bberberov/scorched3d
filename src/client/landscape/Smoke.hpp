@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SMOKE_H__6265A8BD_0FB0_4CB0_BDDC_6C706B2A2A07__INCLUDED_)
-#define AFX_SMOKE_H__6265A8BD_0FB0_4CB0_BDDC_6C706B2A2A07__INCLUDED_
+#ifndef __INCLUDE_Smoke_hpp_INCLUDE__
+#define __INCLUDE_Smoke_hpp_INCLUDE__
 
 #include <graph/ParticleEmitter.hpp>
 
@@ -30,7 +30,6 @@ public:
 
 	void addSmoke(float x, float y, float z);
 	ParticleEmitter emitter_;
-
 };
 
-#endif // !defined(AFX_SMOKE_H__6265A8BD_0FB0_4CB0_BDDC_6C706B2A2A07__INCLUDED_)
+#endif // __INCLUDE_Smoke_hpp_INCLUDE__

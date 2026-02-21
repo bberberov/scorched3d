@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,13 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_Line_hpp_INCLUDE__
+#define __INCLUDE_Line_hpp_INCLUDE__
 
 // Line.hpp: interface for the Line class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_Line_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_)
-#define AFX_Line_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_
 
 #include <common/Vector.hpp>
 
@@ -53,4 +52,4 @@ protected:
 	Vector dir_;
 };
 
-#endif // !defined(AFX_Line_H__54F37DA5_36EB_11D3_BE80_000000000000__INCLUDED_)
+#endif // __INCLUDE_Line_hpp_INCLUDE__

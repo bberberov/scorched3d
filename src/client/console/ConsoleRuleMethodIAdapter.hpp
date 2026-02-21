@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ConsoleRuleMethodIAdapterh_INCLUDE__)
-#define __INCLUDE_ConsoleRuleMethodIAdapterh_INCLUDE__
+#ifndef __INCLUDE_ConsoleRuleMethodIAdapter_hpp_INCLUDE__
+#define __INCLUDE_ConsoleRuleMethodIAdapter_hpp_INCLUDE__
 
 #include <console/Console.hpp>
 
@@ -132,5 +132,4 @@ protected:
 	void (T::*call_)(std::vector<ConsoleRuleValue>&, unsigned int);
 };
 
-#endif
-
+#endif // __INCLUDE_ConsoleRuleMethodIAdapter_hpp_INCLUDE__

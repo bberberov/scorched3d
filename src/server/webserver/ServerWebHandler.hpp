@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ServerWebHandlerh_INCLUDE__)
-#define __INCLUDE_ServerWebHandlerh_INCLUDE__
+#ifndef __INCLUDE_ServerWebHandler_hpp_INCLUDE__
+#define __INCLUDE_ServerWebHandler_hpp_INCLUDE__
 
 #include <webserver/ServerWebServer.hpp>
 
@@ -123,8 +123,6 @@ namespace ServerWebHandler
 			ServerWebServerIRequest &request,
 			std::string &text);
 	};
-
-
 };
 
-#endif // __INCLUDE_ServerWebHandlerh_INCLUDE__
+#endif // __INCLUDE_ServerWebHandler_hpp_INCLUDE__

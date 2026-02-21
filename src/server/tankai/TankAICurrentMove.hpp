@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankAICurrentMove_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
-#define AFX_TankAICurrentMove_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_
+#ifndef __INCLUDE_TankAICurrentMove_hpp_INCLUDE__
+#define __INCLUDE_TankAICurrentMove_hpp_INCLUDE__
 
 #include <tankai/TankAICurrentTarget.hpp>
 #include <tankai/TankAICurrentMoveWeapons.hpp>
@@ -141,7 +141,6 @@ protected:
 	void resign(Tanket *tanket, MoveData &moveData);
 	void skipMove(Tanket *tanket, MoveData &moveData);
 	void fireShot(Tanket *tanket, MoveData &moveData);
-
 };
 
-#endif // !defined(AFX_TankAICurrentMove_H__5F21C9C7_0F71_4CCC_ABB9_976CF0A5C5EC__INCLUDED_)
+#endif // __INCLUDE_TankAICurrentMove_hpp_INCLUDE__

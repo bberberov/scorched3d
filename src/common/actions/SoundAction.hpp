@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_SoundActionh_INCLUDE__)
-#define __INCLUDE_SoundActionh_INCLUDE__
+#ifndef __INCLUDE_SoundAction_hpp_INCLUDE__
+#define __INCLUDE_SoundAction_hpp_INCLUDE__
 
 #include <actions/Action.hpp>
 #include <common/FixedVector.hpp>
@@ -40,7 +40,6 @@ public:
 protected:
 	WeaponSound *weapon_;
 	FixedVector position_;
-
 };
 
-#endif // __INCLUDE_SoundActionh_INCLUDE__
+#endif // __INCLUDE_SoundAction_hpp_INCLUDE__

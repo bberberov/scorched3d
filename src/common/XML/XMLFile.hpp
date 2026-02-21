@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_XMLFileh_INCLUDE__)
-#define __INCLUDE_XMLFileh_INCLUDE__
+#ifndef __INCLUDE_XMLFile_hpp_INCLUDE__
+#define __INCLUDE_XMLFile_hpp_INCLUDE__
 
 #include <XML/XMLParser.hpp>
 
@@ -39,7 +39,6 @@ public:
 protected:
 	std::string fileError_;
 	XMLParser parser_;
-
 };
 
-#endif
+#endif // __INCLUDE_XMLFile_hpp_INCLUDE__

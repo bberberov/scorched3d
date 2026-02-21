@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -17,6 +17,9 @@
 //    with this program; if not, write to the Free Software Foundation, Inc.,
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
+
+#ifndef __INCLUDE_main_hpp_INCLUDE__
+#define __INCLUDE_main_hpp_INCLUDE__
 
 #define WIN32_LEAN_AND_MEAN
 
@@ -141,3 +144,5 @@ void run_main(int argc, char *argv[], OptionsParameters &params)
 			"Warning: Failed to set client locale");
 	}
 }
+
+#endif // __INCLUDE_main_hpp_INCLUDE__

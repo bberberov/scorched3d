@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ActionParamsh_INCLUDE__)
-#define __INCLUDE_ActionParamsh_INCLUDE__
+#ifndef __INCLUDE_ActionParams_hpp_INCLUDE__
+#define __INCLUDE_ActionParams_hpp_INCLUDE__
 
 #include <lang/LangString.hpp>
 #include <common/NumberParser.hpp>
@@ -96,4 +96,4 @@ class TestActionParams : public ActionParams
 	FIXED_ACTION_PARAM_DECL(testName);
 };
 
-#endif
+#endif // __INCLUDE_ActionParams_hpp_INCLUDE__

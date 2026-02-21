@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_PhysicsParticle_H__53A44445_C8C9_4108_B5E1_744C0AF7A1D5__INCLUDED_)
-#define AFX_PhysicsParticle_H__53A44445_C8C9_4108_B5E1_744C0AF7A1D5__INCLUDED_
+#ifndef __INCLUDE_PhysicsParticle_hpp_INCLUDE__
+#define __INCLUDE_PhysicsParticle_hpp_INCLUDE__
 
 #include <actions/Action.hpp>
 #include <engine/PhysicsParticleObject.hpp>
@@ -44,7 +44,6 @@ protected:
 	PhysicsParticleActionObject physicsObject_;
 	bool collision_;
 	fixed totalActionTime_;
-
 };
 
-#endif // !defined(AFX_PhysicsParticle_H__53A44445_C8C9_4108_B5E1_744C0AF7A1D5__INCLUDED_)
+#endif // __INCLUDE_PhysicsParticle_hpp_INCLUDE__

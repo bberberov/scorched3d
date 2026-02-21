@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_WaterAndTargetVisibilityPatchh_INCLUDE__)
-#define __INCLUDE_WaterAndTargetVisibilityPatchh_INCLUDE__
+#ifndef __INCLUDE_WaterAndTargetVisibilityPatch_hpp_INCLUDE__
+#define __INCLUDE_WaterAndTargetVisibilityPatch_hpp_INCLUDE__
 
 #include <land/WaterVisibilityPatch.hpp>
 #include <land/TargetVisibilityPatch.hpp>
@@ -38,4 +38,4 @@ protected:
 	TargetVisibilityPatch targetVisibilityPatch_;
 };
 
-#endif // __INCLUDE_WaterAndTargetVisibilityPatchh_INCLUDE__
+#endif // __INCLUDE_WaterAndTargetVisibilityPatch_hpp_INCLUDE__

@@ -38,11 +38,8 @@
 
 *************************************************************/
 
-
-
-
-#ifndef __SHA2C_H__
-#define __SHA2C_H__
+#ifndef __INCLUDE_sha2_hpp_INCLUDE__
+#define __INCLUDE_sha2_hpp_INCLUDE__
 
 #include <string>
 #include <string.h>
@@ -225,4 +222,5 @@ private:
     #endif
 
 };//end class sha2
-#endif // __SHA2C_H__ 
+
+#endif // __INCLUDE_sha2_hpp_INCLUDE__

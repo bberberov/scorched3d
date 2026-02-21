@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _SoundBufferOV_H_
-#define _SoundBufferOV_H_
+#ifndef __INCLUDE_SoundBufferOV_hpp_INCLUDE__
+#define __INCLUDE_SoundBufferOV_hpp_INCLUDE__
 
 #ifdef HAVE_OGG
 
@@ -54,4 +54,4 @@ protected:
 
 #endif // HAVE_OGG
 
-#endif /* _SoundBufferOV_H_ */
+#endif // __INCLUDE_SoundBufferOV_hpp_INCLUDE__

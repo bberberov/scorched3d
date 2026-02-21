@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_ShotCountDownh_INCLUDE__)
-#define __INCLUDE_ShotCountDownh_INCLUDE__
+#ifndef __INCLUDE_ShotCountDown_hpp_INCLUDE__
+#define __INCLUDE_ShotCountDown_hpp_INCLUDE__
 
 #include <engine/GameStateI.hpp>
 #include <common/fixed.hpp>
@@ -76,4 +76,4 @@ private:
 	virtual ~ShotCountDown ();
 };
 
-#endif
+#endif // __INCLUDE_ShotCountDown_hpp_INCLUDE__

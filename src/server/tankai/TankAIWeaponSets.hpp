@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TankAIWeaponSetsh_INCLUDE__)
-#define __INCLUDE_TankAIWeaponSetsh_INCLUDE__
+#ifndef __INCLUDE_TankAIWeaponSets_hpp_INCLUDE__
+#define __INCLUDE_TankAIWeaponSets_hpp_INCLUDE__
 
 #include <tanket/TanketAccessories.hpp>
 
@@ -77,4 +77,4 @@ protected:
 	std::map<std::string, WeaponSet> weaponSets_;
 };
 
-#endif
+#endif // __INCLUDE_TankAIWeaponSets_hpp_INCLUDE__

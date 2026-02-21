@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_EXPLOSIONTEXTURES_H__F2BC42E7_B2FB_4C0D_ACF0_0B91D8DC84D3__INCLUDED_)
-#define AFX_EXPLOSIONTEXTURES_H__F2BC42E7_B2FB_4C0D_ACF0_0B91D8DC84D3__INCLUDED_
+#ifndef __INCLUDE_ExplosionTextures_hpp_INCLUDE__
+#define __INCLUDE_ExplosionTextures_hpp_INCLUDE__
 
 #include <GLEXT/GLTextureSet.hpp>
 #include <image/Image.hpp>
@@ -57,4 +57,4 @@ private:
 	virtual ~ExplosionTextures();
 };
 
-#endif // !defined(AFX_EXPLOSIONTEXTURES_H__F2BC42E7_B2FB_4C0D_ACF0_0B91D8DC84D3__INCLUDED_)
+#endif // __INCLUDE_ExplosionTextures_hpp_INCLUDE__

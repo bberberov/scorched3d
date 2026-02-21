@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _GLWTEXTBOX_H_
-#define _GLWTEXTBOX_H_
+#ifndef __INCLUDE_GLWTextBox_hpp_INCLUDE__
+#define __INCLUDE_GLWTextBox_hpp_INCLUDE__
 
 #include <string>
 #include <GLW/GLWidget.hpp>
@@ -80,7 +80,6 @@ protected:
 	unsigned int maxTextLen_;
 	unsigned int flags_;
 	LangString text_;
-
 };
 
-#endif /* _GLWTEXTBOX_H_ */
+#endif // __INCLUDE_GLWTextBox_hpp_INCLUDE__

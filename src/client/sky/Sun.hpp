@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_Sunh_INCLUDE__)
-#define __INCLUDE_Sunh_INCLUDE__
+#ifndef __INCLUDE_Sun_hpp_INCLUDE__
+#define __INCLUDE_Sun_hpp_INCLUDE__
 
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLTexture.hpp>
@@ -43,4 +43,4 @@ protected:
 	GLTexture texture_;
 };
 
-#endif
+#endif // __INCLUDE_Sun_hpp_INCLUDE__

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,14 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef __INCLUDE_MainLoopI_hpp_INCLUDE__
+#define __INCLUDE_MainLoopI_hpp_INCLUDE__
 
 // MainLoopI.hpp: interface for the MainLoopI class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_MainLoopI_H__BDDE5864_49D7_4CEA_8738_51A0EF96BDD7__INCLUDED_)
-#define AFX_MainLoopI_H__BDDE5864_49D7_4CEA_8738_51A0EF96BDD7__INCLUDED_
-
 
 #include <common/Vector.hpp>
 
@@ -38,4 +36,4 @@ public:
 	virtual void draw();
 };
 
-#endif // !defined(AFX_MainLoopI_H__BDDE5864_49D7_4CEA_8738_51A0EF96BDD7__INCLUDED_)
+#endif // __INCLUDE_MainLoopI_hpp_INCLUDE__

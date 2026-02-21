@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(__INCLUDE_TargetRendererImplh_INCLUDE__)
-#define __INCLUDE_TargetRendererImplh_INCLUDE__
+#ifndef __INCLUDE_TargetRendererImpl_hpp_INCLUDE__
+#define __INCLUDE_TargetRendererImpl_hpp_INCLUDE__
 
 #include <target/Target.hpp>
 #include <target/TargetRenderer.hpp>
@@ -73,7 +73,6 @@ protected:
 	void storeTarget2DPos();
 
 	void setMovedPatch(TargetVisibilityPatch *newPatch);
-
 };
 
-#endif // __INCLUDE_TargetRendererImplh_INCLUDE__
+#endif // __INCLUDE_TargetRendererImpl_hpp_INCLUDE__

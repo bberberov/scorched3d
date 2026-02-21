@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GLWWINDOW_H__DF296D0F_BC67_4A40_B8F9_3B70E8AC1F65__INCLUDED_)
-#define AFX_GLWWINDOW_H__DF296D0F_BC67_4A40_B8F9_3B70E8AC1F65__INCLUDED_
+#ifndef __INCLUDE_GLWWindow_hpp_INCLUDE__
+#define __INCLUDE_GLWWindow_hpp_INCLUDE__
 
 #include <string>
 #include <GLW/GLWPanel.hpp>
@@ -114,7 +114,6 @@ protected:
 	virtual void drawMaximizedWindow();
 	virtual void drawInfoBox(float x, float y, float w);
 	virtual void drawJoin(float x, float y);
-
 };
 
-#endif // !defined(AFX_GLWWINDOW_H__DF296D0F_BC67_4A40_B8F9_3B70E8AC1F65__INCLUDED_)
+#endif // __INCLUDE_GLWWindow_hpp_INCLUDE__

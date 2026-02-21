@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_TankMenus_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_)
-#define AFX_TankMenus_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_
+#ifndef __INCLUDE_TankMenus_hpp_INCLUDE__
+#define __INCLUDE_TankMenus_hpp_INCLUDE__
 
 #include <GLEXT/GLMenuI.hpp>
 #include <console/ConsoleRule.hpp>
@@ -68,7 +68,6 @@ protected:
 	void groupInfo();
 	void logToFile();
 	void runScriptConsole(std::list<ConsoleRuleValue> list);
-
 };
 
-#endif // !defined(AFX_TankMenus_H__571BC1CA_BDBC_4F2B_9F83_4AA083520198__INCLUDED_)
+#endif // __INCLUDE_TankMenus_hpp_INCLUDE__
