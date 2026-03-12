@@ -1,3 +1,6 @@
+# 2026-03-12  Reformatted all `*.hpp`, with `clang-format` and `uncrustify`
+e16b16cec1d9dfe631c12bc3f03e7ffc1f50f085
+
 # 2026-01-27  Fixed end-of-line from `.gitattributes`
 6e7ba24f8ab584cdcd84f3070730d0bdf9027dcc
 
