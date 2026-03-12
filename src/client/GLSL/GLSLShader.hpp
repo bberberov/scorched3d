@@ -28,17 +28,16 @@ class GLSLShader
 {
 public:
 	/// a list of strings with shader preprocessor defines
-	typedef std::list<std::string> defines_list;
+	typedef std::list< std::string > defines_list;
 
 	/// type of shader (vertex or fragment, later maybe geometry shader with GF8800+)
-	enum Type 
+	enum Type
 	{
 		VERTEX,
 		FRAGMENT
 	};
 
-	GLSLShader(const char *filename, Type stype,
-		const defines_list& dl = defines_list());
+	GLSLShader( const char* filename, Type stype, const defines_list& dl = defines_list() );
 	~GLSLShader();
 
 	unsigned int getId() { return id_; }
@@ -47,8 +46,8 @@ protected:
 	unsigned int id_;
 
 private:
-	GLSLShader(const GLSLShader&);
-	GLSLShader& operator= (const GLSLShader&);
+	GLSLShader( const GLSLShader& );
+	GLSLShader& operator=( const GLSLShader& );
 };
 
-#endif // __INCLUDE_GLSLShader_hpp_INCLUDE__
+#endif  // __INCLUDE_GLSLShader_hpp_INCLUDE__

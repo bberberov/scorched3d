@@ -21,15 +21,16 @@
 #ifndef __INCLUDE_ServerStateNewGame_hpp_INCLUDE__
 #define __INCLUDE_ServerStateNewGame_hpp_INCLUDE__
 
-class ServerStateNewGame 
+class ServerStateNewGame
 {
 public:
 	ServerStateNewGame();
 	virtual ~ServerStateNewGame();
 
 	void newGame();
+
 protected:
 	void newGameState();
 };
 
-#endif // __INCLUDE_ServerStateNewGame_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateNewGame_hpp_INCLUDE__

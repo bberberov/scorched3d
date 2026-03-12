@@ -23,4 +23,4 @@
 
 bool showServerSDialog();
 
-#endif // __INCLUDE_ServerSDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerSDialog_hpp_INCLUDE__

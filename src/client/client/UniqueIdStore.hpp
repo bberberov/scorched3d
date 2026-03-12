@@ -31,8 +31,8 @@ public:
 	{
 	public:
 		unsigned int ip;
-		std::string id;
-		std::string published;
+		std::string  id;
+		std::string  published;
 	};
 
 	UniqueIdStore();
@@ -41,14 +41,13 @@ public:
 	bool loadStore();
 	bool saveStore();
 
-	const char *getUniqueId(unsigned int ip);
-	bool saveUniqueId(unsigned int ip, const char *id,
-		const char *published);
+	const char* getUniqueId( unsigned int ip );
+	bool        saveUniqueId( unsigned int ip, const char* id, const char* published );
 
-	std::list<Entry> &getIds() { return ids_; }
+	std::list<Entry>& getIds() { return ids_; }
 
 protected:
 	std::list<Entry> ids_;
 };
 
-#endif // __INCLUDE_UniqueIdStore_hpp_INCLUDE__
+#endif  // __INCLUDE_UniqueIdStore_hpp_INCLUDE__

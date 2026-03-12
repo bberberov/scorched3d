@@ -28,39 +28,43 @@ class WeaponCallback : public Weapon
 {
 public:
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData) = 0;
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	) = 0;
 };
 
 class CallbackWeapon : public Action
 {
 public:
 	CallbackWeapon(
-		const char *name,
-		WeaponCallback *callback,
-		fixed delay,
-		unsigned int callbackData,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		const char*        name,
+		WeaponCallback*    callback,
+		fixed              delay,
+		unsigned int       callbackData,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 	virtual ~CallbackWeapon();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "CallbackWeapon"; }
 
 protected:
-	WeaponCallback *callback_;
-	fixed delay_;
-	unsigned int callbackData_;
+	WeaponCallback*   callback_;
+	fixed             delay_;
+	unsigned int      callbackData_;
 	WeaponFireContext weaponContext_;
-	FixedVector position_;
-	FixedVector velocity_;
+	FixedVector       position_;
+	FixedVector       velocity_;
 
 	fixed totalTime_;
 };
 
-#endif // __INCLUDE_CallbackWeapon_hpp_INCLUDE__
+#endif  // __INCLUDE_CallbackWeapon_hpp_INCLUDE__

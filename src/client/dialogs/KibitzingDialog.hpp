@@ -28,12 +28,12 @@
 class KibitzingDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static KibitzingDialog *instance();
+	static KibitzingDialog* instance();
 
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 protected:
-	static KibitzingDialog *instance_;
+	static KibitzingDialog* instance_;
 
 	unsigned int okId_;
 
@@ -42,4 +42,4 @@ private:
 	virtual ~KibitzingDialog();
 };
 
-#endif // __INCLUDE_KibitzingDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_KibitzingDialog_hpp_INCLUDE__

@@ -29,12 +29,12 @@ public:
 	ServerChannelFilter();
 	virtual ~ServerChannelFilter();
 
-	virtual bool sentToDestination(ChannelText &text, unsigned int destination) = 0;
+	virtual bool sentToDestination( ChannelText& text, unsigned int destination ) = 0;
 };
 
 class ServerChannelFilterTeams : public ServerChannelFilter
 {
-	virtual bool sentToDestination(ChannelText &text, unsigned int destination);
+	virtual bool sentToDestination( ChannelText& text, unsigned int destination );
 };
 
-#endif // __INCLUDE_ServerChannelFilter_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerChannelFilter_hpp_INCLUDE__

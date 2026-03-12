@@ -27,17 +27,15 @@
 
 namespace HeightMapLoader
 {
-	void loadTerrain(HeightMap &hmap, 
-		Image &image, 
-		bool levelSurround,
-		ProgressCounter *counter= 0);
-	
+	void loadTerrain( HeightMap& hmap, Image& image, bool levelSurround, ProgressCounter* counter = 0 );
+
 	bool generateTerrain(
-		unsigned int seed,
-		LandscapeDefnType *defn,
-		HeightMap &hmap,
-		bool &levelSurround,
-		ProgressCounter *counter = 0);
+		unsigned int       seed,
+		LandscapeDefnType* defn,
+		HeightMap&         hmap,
+		bool&              levelSurround,
+		ProgressCounter*   counter = 0
+	);
 };
 
-#endif // __INCLUDE_HeightMapLoader_hpp_INCLUDE__
+#endif  // __INCLUDE_HeightMapLoader_hpp_INCLUDE__

@@ -32,27 +32,27 @@ public:
 	SkyDome();
 	virtual ~SkyDome();
 
-	void simulate(float frameTime);
+	void simulate( float frameTime );
 	void drawBackdrop();
 	void drawLayers();
 	void generate();
 	void flash();
 
 protected:
-	float xy_;
-	float cloudSpeed_;
-	Vector cloudDirection_;
-	float flashTime_;
+	float     xy_;
+	float     cloudSpeed_;
+	Vector    cloudDirection_;
+	float     flashTime_;
 	GLTexture cloudTexture_;
 	GLTexture starTexture_;
 	GLTexture skyLineTexture_;
-	Image skyColorsMap_;
-	bool useStarTexture_;
-	bool noSunFog_;
-	bool horizonGlow_;
-	bool useSkyLine_;
+	Image     skyColorsMap_;
+	bool      useStarTexture_;
+	bool      noSunFog_;
+	bool      horizonGlow_;
+	bool      useSkyLine_;
 
-	SkyLine skyLine1_;
+	SkyLine         skyLine1_;
 	LargeHemisphere clouds1_;
 	LargeHemisphere clouds2_;
 	LargeHemisphere colors_;
@@ -60,4 +60,4 @@ protected:
 	LargeHemisphere flash_;
 };
 
-#endif // __INCLUDE_SkyDome_hpp_INCLUDE__
+#endif  // __INCLUDE_SkyDome_hpp_INCLUDE__

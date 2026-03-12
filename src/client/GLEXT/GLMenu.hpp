@@ -40,27 +40,32 @@ public:
 	virtual ~GLMenu();
 
 	bool addMenu(
-		const LangString &menuName,
-		const char *menuNameInternal,
-		const LangString &menuDescription,
-		float width, 
-		unsigned int state,
-		GLMenuI *callback,
-		Image *icon = 0,
-		unsigned int flags = 0);
-	bool addMenuItem(const char *menuName, const GLMenuItem item);
-	GLMenuEntry *getMenu(const char *menuItem);
+		const LangString& menuName,
+		const char*       menuNameInternal,
+		const LangString& menuDescription,
+		float             width,
+		unsigned int      state,
+		GLMenuI*          callback,
+		Image*            icon  = 0,
+		unsigned int      flags = 0
+	);
+	bool         addMenuItem( const char* menuName, const GLMenuItem item );
+	GLMenuEntry* getMenu( const char* menuItem );
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void keyDown(
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
 
 protected:
-	std::map<std::string, GLMenuEntry *> menuList_;
+	std::map< std::string, GLMenuEntry* > menuList_;
 };
 
-#endif // __INCLUDE_GLMenu_hpp_INCLUDE__
+#endif  // __INCLUDE_GLMenu_hpp_INCLUDE__

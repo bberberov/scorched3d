@@ -22,21 +22,20 @@
 #define __INCLUDE_WaterWaveDistance_hpp_INCLUDE__
 
 class ProgressCounter;
+
 class WaterWaveDistance
 {
 public:
 	WaterWaveDistance();
 	virtual ~WaterWaveDistance();
 
-	void generate(
-		int mapWidth, int mapHeight, float waterHeight,
-		ProgressCounter *counter = 0);
-	float getWaveDistance(int x, int y);
+	void  generate( int mapWidth, int mapHeight, float waterHeight, ProgressCounter* counter = 0 );
+	float getWaveDistance( int x, int y );
 
 protected:
-	float *waveDistance_;
-	int distanceWidth_, distanceHeight_;
-	int distanceWidthMult_, distanceHeightMult_;
+	float* waveDistance_;
+	int    distanceWidth_, distanceHeight_;
+	int    distanceWidthMult_, distanceHeightMult_;
 };
 
-#endif // __INCLUDE_WaterWaveDistance_hpp_INCLUDE__
+#endif  // __INCLUDE_WaterWaveDistance_hpp_INCLUDE__

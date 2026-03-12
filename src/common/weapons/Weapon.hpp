@@ -31,89 +31,97 @@ class WeaponFireContextInternal
 {
 public:
 	WeaponFireContextInternal(
-		unsigned int selectPositionX,
-		unsigned int selectPositionY,
-		const FixedVector &velocityVectory,
-		bool referenced,
-		bool updateStats
+		unsigned int       selectPositionX,
+		unsigned int       selectPositionY,
+		const FixedVector& velocityVectory,
+		bool               referenced,
+		bool               updateStats
 	);
 	virtual ~WeaponFireContextInternal();
 
-	int getKillCount() { return killCount_; }
-	void setKillCount(int killCount) { killCount_ = killCount; }
+	// clang-format off
+	// uncrustify off
+	int  getKillCount()                { return killCount_; }
+	void setKillCount( int killCount ) { killCount_ = killCount; }
 
 	bool getUpdateStats() { return updateStats_; }
-	bool getReferenced() { return referenced_; }
+	bool getReferenced()  { return referenced_; }
 
 	unsigned int getSelectPositionX() { return selectPositionX_; }
 	unsigned int getSelectPositionY() { return selectPositionY_; }
-	FixedVector &getVelocityVector() { return velocityVector_; }
 
-	ObjectGroups &getLocalGroups() { return localGroups_; }
+	FixedVector&  getVelocityVector() { return velocityVector_; }
+	ObjectGroups& getLocalGroups()    { return localGroups_; }
+	// uncrustify on
+	// clang-format on
 
-	int getIncLabelCount(unsigned int label);
+	int getIncLabelCount( unsigned int label );
 
 	void incrementReference();
 	void decrementReference();
 
 protected:
-	unsigned int selectPositionX_;
-	unsigned int selectPositionY_;
-	FixedVector velocityVector_;
-	bool referenced_;
-	bool updateStats_;
-	int killCount_;
-	unsigned int referenceCount_;
-	std::map<unsigned int, int> *labelCount_;
-	ObjectGroups localGroups_;
+	unsigned int                   selectPositionX_;
+	unsigned int                   selectPositionY_;
+	FixedVector                    velocityVector_;
+	bool                           referenced_;
+	bool                           updateStats_;
+	int                            killCount_;
+	unsigned int                   referenceCount_;
+	std::map< unsigned int, int >* labelCount_;
+	ObjectGroups                   localGroups_;
 
 private:
-	WeaponFireContextInternal(WeaponFireContextInternal &other);
-	WeaponFireContextInternal &operator=(WeaponFireContextInternal &other);
+	WeaponFireContextInternal( WeaponFireContextInternal& other );
+	WeaponFireContextInternal& operator=( WeaponFireContextInternal& other );
 };
 
 class WeaponFireContext
 {
 public:
 	WeaponFireContext(
-		unsigned int playerId,
-		unsigned int selectPositionX,
-		unsigned int selectPositionY,
-		const FixedVector &velocityVector,
-		bool referenced,
-		bool updateStats
+		unsigned int       playerId,
+		unsigned int       selectPositionX,
+		unsigned int       selectPositionY,
+		const FixedVector& velocityVector,
+		bool               referenced,
+		bool               updateStats
 	);
-	WeaponFireContext(WeaponFireContext &other);
+	WeaponFireContext( WeaponFireContext& other );
 	virtual ~WeaponFireContext();
 
-	unsigned int getPlayerId() { return playerId_; }
-	void setPlayerId(unsigned int playerId) { playerId_ = playerId; }
-	
-	WeaponFireContextInternal &getInternalContext() { return *internalContext_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getPlayerId()                        { return playerId_; }
+	void         setPlayerId( unsigned int playerId ) { playerId_ = playerId; }
+	// uncrustify on
+	// clang-format on
+
+	WeaponFireContextInternal& getInternalContext() { return *internalContext_; }
 
 protected:
-	unsigned int playerId_;
-	WeaponFireContextInternal *internalContext_;
+	unsigned int               playerId_;
+	WeaponFireContextInternal* internalContext_;
 
 private:
-	WeaponFireContext &operator=(WeaponFireContext &other);
-	
+	WeaponFireContext& operator=( WeaponFireContext& other );
 };
 
 class Action;
+
 class Weapon : public AccessoryPart
 {
 public:
 	Weapon();
 	virtual ~Weapon();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
-	
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
+
 	virtual void fire(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
 	int getArmsLevel();
@@ -122,17 +130,17 @@ protected:
 	int armsLevel_;
 
 	virtual void addWeaponSyncCheck(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 	virtual void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	) = 0;
 };
 
-#endif // __INCLUDE_Weapon_hpp_INCLUDE__
+#endif  // __INCLUDE_Weapon_hpp_INCLUDE__

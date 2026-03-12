@@ -37,10 +37,10 @@ public:
 	~GLSLProgram();
 
 	/// attach a shader
-	void attach(GLSLShader &s);
+	void attach( GLSLShader& s );
 
 	/// attach a shader
-	void detach(GLSLShader &s);
+	void detach( GLSLShader& s );
 
 	/// link program after all shaders are attached
 	void link();
@@ -53,26 +53,26 @@ public:
 	static void use_fixed();
 
 	/// set up texture for a particular shader name
-	void set_gl_texture(GLTexture& tex, const char *texName, unsigned texunit) const;
-	void set_gl_texture(GLShadowFrameBuffer &tex, const char *texName, unsigned texunit) const;
-	void set_gl_texture_unit(const char *texname, unsigned texunit) const;
+	void set_gl_texture( GLTexture& tex, const char* texName, unsigned int texunit ) const;
+	void set_gl_texture( GLShadowFrameBuffer& tex, const char* texName, unsigned int texunit ) const;
+	void set_gl_texture_unit( const char* texname, unsigned int texunit ) const;
 
 	/// set uniform variable
-	void set_uniform(const char *name, const Vector& value) const;
-	void set_uniform(const char *name, const float value) const;
+	void set_uniform( const char* name, const Vector& value ) const;
+	void set_uniform( const char* name, const float value ) const;
 
 	/// get vertex attribute index
-	unsigned get_vertex_attrib_index(const char *name) const;
+	unsigned int get_vertex_attrib_index( const char* name ) const;
 
- protected:
-	unsigned int id_;
-	bool linked_;
-	std::list<GLSLShader*> attached_shaders_;
+protected:
+	unsigned int              id_;
+	bool                      linked_;
+	std::list< GLSLShader* >  attached_shaders_;
 	static const GLSLProgram* used_program_;
 
- private:
-	GLSLProgram(const GLSLProgram&);
-	GLSLProgram& operator= (const GLSLProgram&);
+private:
+	GLSLProgram( const GLSLProgram& );
+	GLSLProgram& operator=( const GLSLProgram& );
 };
 
-#endif // __INCLUDE_GLSLProgram_hpp_INCLUDE__
+#endif  // __INCLUDE_GLSLProgram_hpp_INCLUDE__

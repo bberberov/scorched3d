@@ -26,12 +26,9 @@
 class NetServerTCP3Coms
 {
 public:
-	static int SDLNet_TCP_Recv_Wrapper(
-		TCPsocket sock, void *data, int maxlen);
-	static int SDLNet_TCP_Send_Wrapper(
-		TCPsocket sock, void *datap, int len);
-	static bool SDLNet_TCP_Recv_Full(
-		TCPsocket socket, char *dest, int len);
+	static int  SDLNet_TCP_Recv_Wrapper( TCPsocket sock, void* data, int maxlen );
+	static int  SDLNet_TCP_Send_Wrapper( TCPsocket sock, void* datap, int len );
+	static bool SDLNet_TCP_Recv_Full( TCPsocket socket, char* dest, int len );
 };
 
-#endif // __INCLUDE_NetServerTCP3Coms_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCP3Coms_hpp_INCLUDE__

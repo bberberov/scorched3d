@@ -32,11 +32,11 @@ public:
 
 	int getNoTextures();
 
-	GLTexture *getTexture(int index);
-	void addTexture(GLTexture *texture);
-    
+	GLTexture* getTexture( int index );
+	void       addTexture( GLTexture* texture );
+
 protected:
-	std::vector<GLTexture *> textures_;
+	std::vector< GLTexture* > textures_;
 };
 
-#endif // __INCLUDE_GLTextureSet_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureSet_hpp_INCLUDE__

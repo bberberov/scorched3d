@@ -29,12 +29,10 @@ public:
 	ServerAuthHandlerMinKills();
 	virtual ~ServerAuthHandlerMinKills();
 
-	virtual void createAuthentication(ComsConnectAuthMessage &authMessage);
-	virtual bool authenticateUser(ComsConnectAuthMessage &authMessage, 
-		std::string &message);
-	virtual bool authenticateUserName(const char *uniqueId, 
-		const LangString &playername);
-	virtual void banUser(const char *uniqueId);
+	virtual void createAuthentication( ComsConnectAuthMessage& authMessage );
+	virtual bool authenticateUser( ComsConnectAuthMessage& authMessage, std::string& message );
+	virtual bool authenticateUserName( const char* uniqueId, const LangString& playername );
+	virtual void banUser( const char* uniqueId );
 
 protected:
 	int minKills_;
@@ -43,4 +41,4 @@ protected:
 	void setup();
 };
 
-#endif // __INCLUDE_ServerAuthHandlerMinKills_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAuthHandlerMinKills_hpp_INCLUDE__

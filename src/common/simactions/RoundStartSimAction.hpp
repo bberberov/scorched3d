@@ -27,18 +27,19 @@ class RoundStartSimAction : public SimAction
 {
 public:
 	RoundStartSimAction();
-	RoundStartSimAction(unsigned int roundId, fixed timeout);
+	RoundStartSimAction( unsigned int roundId, fixed timeout );
 	virtual ~RoundStartSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(RoundStartSimAction);
+	REGISTER_CLASS_HEADER( RoundStartSimAction );
+
 protected:
 	unsigned int roundId_;
-	fixed timeout_;
+	fixed        timeout_;
 };
 
-#endif // __INCLUDE_RoundStartSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_RoundStartSimAction_hpp_INCLUDE__

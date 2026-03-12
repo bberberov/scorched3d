@@ -30,6 +30,7 @@ class ScorchedContext;
 class ProgressCounter;
 class RandomGenerator;
 class PlacementObject;
+
 class PlacementType
 {
 public:
@@ -42,36 +43,43 @@ public:
 		eBounds,
 		eTankStart
 	};
+
 	struct Position
 	{
 		FixedVector position;
 		FixedVector velocity;
 	};
 
-	static PlacementType *create(const char *type);
+	static PlacementType* create( const char* type );
 
 	PlacementType();
 	virtual ~PlacementType();
 
-	void createObjects(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		ProgressCounter *counter = 0);
+	void createObjects(
+		ScorchedContext& context,
+		RandomGenerator& generator,
+		unsigned int&    playerId,
+		ProgressCounter* counter = 0
+	);
 
 	virtual Type getType() = 0;
-	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
-		RandomGenerator &generator,
-		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0) = 0;
+	virtual bool readXML( XMLNode* node );
+	virtual void getPositions(
+		ScorchedContext&       context,
+		RandomGenerator&       generator,
+		std::list< Position >& returnPositions,
+		ProgressCounter*       counter = 0
+	) = 0;
 
 protected:
-	PlacementObject *placementobject;
+	PlacementObject* placementobject;
 
-	bool checkCloseness(FixedVector &position,
-		ScorchedContext &context,
-		std::list<Position> &returnPositions,
-		fixed mincloseness);
+	bool checkCloseness(
+		FixedVector&           position,
+		ScorchedContext&       context,
+		std::list< Position >& returnPositions,
+		fixed                  mincloseness
+	);
 };
 
-#endif // __INCLUDE_PlacementType_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementType_hpp_INCLUDE__

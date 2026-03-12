@@ -29,7 +29,7 @@
 class ShotCountDown : public GameStateI
 {
 public:
-	static ShotCountDown *instance();
+	static ShotCountDown* instance();
 
 	enum TimerType
 	{
@@ -37,43 +37,43 @@ public:
 		eBuying
 	};
 
-	void showMoveTime(fixed timer, TimerType type, unsigned int playerId);
-	void showRoundTime(fixed timer);
+	void showMoveTime( fixed timer, TimerType type, unsigned int playerId );
+	void showRoundTime( fixed timer );
 
 	void hideMoveTime();
 	void hideRoundTime();
 
-	void simulateTime(fixed simTime);
+	void simulateTime( fixed simTime );
 
-	bool getRoundTime(std::string &result);
+	bool getRoundTime( std::string& result );
 
-	//Inherited from GameStateI
-	virtual void draw(const unsigned state);
+	// Inherited from GameStateI
+	virtual void draw( const unsigned int state );
 
 protected:
-	static ShotCountDown *instance_;
+	static ShotCountDown* instance_;
 
 	ToolTipResource moveTip_;
 
 	struct MoveInfo
 	{
-		fixed timer_;
-		TimerType type_;
+		fixed        timer_;
+		TimerType    type_;
 		unsigned int playerId_;
-		bool show_;
+		bool         show_;
 	} move;
 
 	struct RoundInfo
 	{
 		fixed timer_;
-		bool show_;
+		bool  show_;
 	} round;
 
 	void drawMove();
 
 private:
 	ShotCountDown();
-	virtual ~ShotCountDown ();
+	virtual ~ShotCountDown();
 };
 
-#endif // __INCLUDE_ShotCountDown_hpp_INCLUDE__
+#endif  // __INCLUDE_ShotCountDown_hpp_INCLUDE__

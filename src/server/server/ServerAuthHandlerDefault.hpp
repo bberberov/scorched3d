@@ -29,12 +29,10 @@ public:
 	ServerAuthHandlerDefault();
 	virtual ~ServerAuthHandlerDefault();
 
-	virtual void createAuthentication(ComsConnectAuthMessage &authMessage);
-	virtual bool authenticateUser(ComsConnectAuthMessage &authMessage, 
-		std::string &message);
-	virtual bool authenticateUserName(const char *uniqueId, 
-		const LangString &playername);
-	virtual void banUser(const char *uniqueId);
+	virtual void createAuthentication( ComsConnectAuthMessage& authMessage );
+	virtual bool authenticateUser( ComsConnectAuthMessage& authMessage, std::string& message );
+	virtual bool authenticateUserName( const char* uniqueId, const LangString& playername );
+	virtual void banUser( const char* uniqueId );
 };
 
-#endif // __INCLUDE_ServerAuthHandlerDefault_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAuthHandlerDefault_hpp_INCLUDE__

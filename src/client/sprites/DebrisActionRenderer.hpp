@@ -31,14 +31,14 @@ public:
 	DebrisActionRenderer();
 	virtual ~DebrisActionRenderer();
 
-	void simulate(float time);
-	void draw(Vector &position);
+	void simulate( float time );
+	void draw( Vector& position );
 
 protected:
-	ModelRendererSimulator *debris_;
-	float rotationAng_;
-	float rotationX_, rotationY_, rotationZ_;
-	float rotationSpeed_;
+	ModelRendererSimulator* debris_;
+	float                   rotationAng_;
+	float                   rotationX_, rotationY_, rotationZ_;
+	float                   rotationSpeed_;
 };
 
-#endif // __INCLUDE_DebrisActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_DebrisActionRenderer_hpp_INCLUDE__

@@ -21,7 +21,7 @@
 #ifndef __INCLUDE_ServerStateTankNewGame_hpp_INCLUDE__
 #define __INCLUDE_ServerStateTankNewGame_hpp_INCLUDE__
 
-class ServerStateTankNewGame 
+class ServerStateTankNewGame
 {
 public:
 	ServerStateTankNewGame();
@@ -31,4 +31,4 @@ public:
 	bool simulate();
 };
 
-#endif // __INCLUDE_ServerStateTankNewGame_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateTankNewGame_hpp_INCLUDE__

@@ -24,31 +24,27 @@
 #include <engine/PhysicsParticleObject.hpp>
 
 class Tanket;
+
 class TankAIAimGuesser : public PhysicsParticleObjectHandler
 {
 public:
-	TankAIAimGuesser(ScorchedContext &context);
+	TankAIAimGuesser( ScorchedContext& context );
 	virtual ~TankAIAimGuesser();
 
-	bool guess(Tanket *tanket, Vector &target, 
-		float angleXYDegs, float distance, 
-		Vector &actualPosition);
+	bool guess( Tanket* tanket, Vector& target, float angleXYDegs, float distance, Vector& actualPosition );
 
 	// PhysicsParticleObjectHandler
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId);
-	virtual void wallCollision(PhysicsParticleObject &position,
-		ScorchedCollisionId collisionId);
+	virtual void collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
+	virtual void wallCollision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
 
 protected:
-	bool collision_;
-	ScorchedContext &context_;
+	bool                  collision_;
+	ScorchedContext&      context_;
 	PhysicsParticleObject currentGuess_;
 
-	void getCurrentGuess(Tanket *tanket);
-	void initialShot(Tanket *tanket, Vector &target);
-	void refineShot(Tanket *tanket,
-		Vector &currentPos, Vector &wantedPos);
+	void getCurrentGuess( Tanket* tanket );
+	void initialShot( Tanket* tanket, Vector& target );
+	void refineShot( Tanket* tanket, Vector& currentPos, Vector& wantedPos );
 };
 
-#endif // __INCLUDE_TankAIAimGuesser_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIAimGuesser_hpp_INCLUDE__

@@ -36,27 +36,28 @@ public:
 	};
 
 	AdminSimAction();
-	AdminSimAction(AdminType type, unsigned int playerId, fixed amount);
-	AdminSimAction(unsigned int playerId, const LangString &newName);
+	AdminSimAction( AdminType type, unsigned int playerId, fixed amount );
+	AdminSimAction( unsigned int playerId, const LangString& newName );
 	virtual ~AdminSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(AdminSimAction);
+	REGISTER_CLASS_HEADER( AdminSimAction );
+
 protected:
-	AdminType type_;
+	AdminType    type_;
 	unsigned int playerId_;
-	fixed amount_;
-	LangString newName_;
+	fixed        amount_;
+	LangString   newName_;
 
-	void killAll(ScorchedContext &context);
-	void newGame(ScorchedContext &context);
-	void slap(ScorchedContext &context);
-	void kill(ScorchedContext &context);
-	void changeName(ScorchedContext &context);
+	void killAll( ScorchedContext& context );
+	void newGame( ScorchedContext& context );
+	void slap( ScorchedContext& context );
+	void kill( ScorchedContext& context );
+	void changeName( ScorchedContext& context );
 };
 
-#endif // __INCLUDE_AdminSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_AdminSimAction_hpp_INCLUDE__

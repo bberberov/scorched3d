@@ -36,6 +36,7 @@
 
 class Tank;
 class MissileMesh;
+
 class Accessory
 {
 public:
@@ -44,90 +45,106 @@ public:
 
 	enum PositionSelectType
 	{
-		ePositionSelectNone = 0,
-		ePositionSelectFuel = 1,
-		ePositionSelectGeneric = 2,
-		ePositionSelectLimit = 3,
+		ePositionSelectNone      = 0,
+		ePositionSelectFuel      = 1,
+		ePositionSelectGeneric   = 2,
+		ePositionSelectLimit     = 3,
 		ePositionSelectFuelLimit = 4
 	};
 
-	bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	const char *getActivationSound();
-	const char *getName() { return name_.c_str(); }
-	LangString &getStringName();
-	const char *getDescription() { return description_.c_str(); }
-	int getPrice() { return price_; }
-	int getSellPrice() { return sellPrice_; }
-	int getOriginalSellPrice() { return originalSellPrice_; }
-	int getOriginalPrice() { return originalPrice_; }
-	int getFreeMarketLimits() { return freemarketLimits_; }
-	int getBundle() { return bundle_; }
-	int getArmsLevel() { return armsLevel_; }
-	int getMaximumNumber() { return maximumNumber_; }
-	int getStartingNumber() { return startingNumber_; }
-	int getUseNumber() { return useNumber_; }
-	bool getAIOnly() { return aiOnly_; }
-	bool getBotOnly() { return botOnly_; }
-	bool getNoBuy() { return noBuy_; }
-	PositionSelectType getPositionSelect() { return positionSelect_; }
-	int getPositionSelectLimit() { return positionSelectLimit_; }
+	// clang-format off
+	// uncrustify off
+	const char*        getActivationSound();
+	const char*        getName()                { return name_.c_str(); }
+	LangString&        getStringName();
+	const char*        getDescription()         { return description_.c_str(); }
+	int                getPrice()               { return price_; }
+	int                getSellPrice()           { return sellPrice_; }
+	int                getOriginalSellPrice()   { return originalSellPrice_; }
+	int                getOriginalPrice()       { return originalPrice_; }
+	int                getFreeMarketLimits()    { return freemarketLimits_; }
+	int                getBundle()              { return bundle_; }
+	int                getArmsLevel()           { return armsLevel_; }
+	int                getMaximumNumber()       { return maximumNumber_; }
+	int                getStartingNumber()      { return startingNumber_; }
+	int                getUseNumber()           { return useNumber_; }
+	bool               getAIOnly()              { return aiOnly_; }
+	bool               getBotOnly()             { return botOnly_; }
+	bool               getNoBuy()               { return noBuy_; }
+	PositionSelectType getPositionSelect()      { return positionSelect_; }
+	int                getPositionSelectLimit() { return positionSelectLimit_; }
 
-	ToolTip &getToolTip() { return toolTip_; }
-	const char *getIconName() { return iconName_.c_str(); }
-	const char *getGroupName() { return groupName_.c_str(); }
-	const char *getTabGroupName() { return tabGroupName_.c_str(); }
-	AccessoryPart *getAction() { return accessoryAction_; }
-	fixed getModelScale() { return modelScale_; }
-	ModelID &getModel() { return modelId_; }
-	bool getMuzzleFlash() { return muzzleFlash_; }
+	ToolTip&       getToolTip()      { return toolTip_; }
+	const char*    getIconName()     { return iconName_.c_str(); }
+	const char*    getGroupName()    { return groupName_.c_str(); }
+	const char*    getTabGroupName() { return tabGroupName_.c_str(); }
+	AccessoryPart* getAction()       { return accessoryAction_; }
+	fixed          getModelScale()   { return modelScale_; }
+	ModelID&       getModel()        { return modelId_; }
+	bool           getMuzzleFlash()  { return muzzleFlash_; }
+	// uncrustify on
+	// clang-format on
 
 	AccessoryPart::AccessoryType getType() { return accessoryAction_->getType(); }
 
-	void setPrice(int p) { if (p>0) price_ = p; }
-	void setSellPrice(int p) { if (p>0) sellPrice_ = p; }
+	void setPrice( int p )
+	{
+		if ( p > 0 ) price_ = p;
+	}
 
-	static void resetAccessoryIds() { nextAccessoryId_ = 0; }
-	unsigned int getAccessoryId() { return accessoryId_; }
+	void setSellPrice( int p )
+	{
+		if ( p > 0 ) sellPrice_ = p;
+	}
+
+	// clang-format off
+	// uncrustify off
+	static void  resetAccessoryIds() { nextAccessoryId_ = 0; }
+	unsigned int getAccessoryId()    { return accessoryId_; }
+	// uncrustify on
+	// clang-format on
 
 #ifndef S3D_SERVER
-	GLTextureReference &getTexture() { return texture_; }
-	static MissileMesh *getWeaponMesh(ModelID &id, Tank *currentPlayer);
-	static std::map<std::string, MissileMesh *> loadedMeshes_;
-	GLTextureReference texture_;
+	GLTextureReference& getTexture() { return texture_; }
+
+	static MissileMesh*                          getWeaponMesh( ModelID& id, Tank* currentPlayer );
+	static std::map< std::string, MissileMesh* > loadedMeshes_;
+	GLTextureReference                           texture_;
 #endif
 
 protected:
 	static unsigned int nextAccessoryId_;
-	unsigned int accessoryId_;
-	AccessoryPart *accessoryAction_;
-	PositionSelectType positionSelect_;
-	ToolTip toolTip_;
-	LangString stringName_;
-	std::string iconName_;
-	std::string groupName_;
-	std::string tabGroupName_;
-	std::string name_;
-	std::string description_;
-	std::string activationSound_;
-	int positionSelectLimit_;
-	int price_;
-	int originalPrice_;
-	int bundle_;
-	int armsLevel_;
-	int sellPrice_;
-	int originalSellPrice_;
-	int freemarketLimits_;
-	int maximumNumber_;
-	int useNumber_;
-	int startingNumber_;
-	fixed modelScale_;
-	bool muzzleFlash_;
-	bool aiOnly_;
-	bool botOnly_;
-	bool noBuy_;
+	unsigned int        accessoryId_;
+	AccessoryPart*      accessoryAction_;
+	PositionSelectType  positionSelect_;
+	ToolTip             toolTip_;
+	LangString          stringName_;
+	std::string         iconName_;
+	std::string         groupName_;
+	std::string         tabGroupName_;
+	std::string         name_;
+	std::string         description_;
+	std::string         activationSound_;
+	int                 positionSelectLimit_;
+	int                 price_;
+	int                 originalPrice_;
+	int                 bundle_;
+	int                 armsLevel_;
+	int                 sellPrice_;
+	int                 originalSellPrice_;
+	int                 freemarketLimits_;
+	int                 maximumNumber_;
+	int                 useNumber_;
+	int                 startingNumber_;
+	fixed               modelScale_;
+	bool                muzzleFlash_;
+	bool                aiOnly_;
+	bool                botOnly_;
+	bool                noBuy_;
 
 	ModelID modelId_;
 };
 
-#endif // __INCLUDE_Accessory_hpp_INCLUDE__
+#endif  // __INCLUDE_Accessory_hpp_INCLUDE__

@@ -33,18 +33,18 @@
 class TrueTypeFont
 {
 public:
-	TrueTypeFont(const std::string &typeFace, unsigned int h);
+	TrueTypeFont( const std::string& typeFace, unsigned int h );
 	virtual ~TrueTypeFont();
 
-	bool getImageForText(const std::string &text, wxImage &image);
+	bool getImageForText( const std::string& text, wxImage& image );
 
 protected:
-	FT_Face face;
+	FT_Face    face;
 	FT_Library library;
-	FT_Glyph glyphs[128];
-	FT_Bitmap *bitmaps[128];
+	FT_Glyph   glyphs[128];
+	FT_Bitmap* bitmaps[128];
 
-	bool createCharacter(FT_Face face, unsigned char ch);
+	bool createCharacter( FT_Face face, unsigned char ch );
 };
 
-#endif // __INCLUDE_TrueTypeFont_hpp_INCLUDE__
+#endif  // __INCLUDE_TrueTypeFont_hpp_INCLUDE__

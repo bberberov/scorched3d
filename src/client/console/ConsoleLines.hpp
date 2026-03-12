@@ -38,43 +38,47 @@ public:
 	ConsoleLine();
 	virtual ~ConsoleLine();
 
-	void set(const LangString &line, LineType type);
-	void drawLine(float x, float y, GLFont2d *font);
+	void set( const LangString& line, LineType type );
+	void drawLine( float x, float y, GLFont2d* font );
 
-	LineType getLineType() { return lineType_; }
-	const LangString &getLine() { return line_; }
+	// clang-format off
+	// uncrustify off
+	LineType          getLineType() { return lineType_; }
+	const LangString& getLine()     { return line_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	unsigned int lineNumber_;
-	LangString line_;
-	LangString lineNumberStr_;
-	static unsigned nextLineNumber_;
-	LineType lineType_;
-
+	unsigned int        lineNumber_;
+	LangString          line_;
+	LangString          lineNumberStr_;
+	static unsigned int nextLineNumber_;
+	LineType            lineType_;
 };
 
 class ConsoleLines
 {
 public:
-	ConsoleLines(unsigned int maxLines);
+	ConsoleLines( unsigned int maxLines );
 	virtual ~ConsoleLines();
 
-	void addLine(const std::string &line, bool showPointer);
-	void drawLines(GLFont2d *font, float startHeight, float totalHeight, float totalWidth);
+	void addLine( const std::string& line, bool showPointer );
+	void drawLines( GLFont2d* font, float startHeight, float totalHeight, float totalWidth );
 
 	void clear();
 
 	void resetScroll() { currentLine_ = 0; }
-	void scroll(int lines);
 
-	std::deque<ConsoleLine *> &getLines() { return lines_; }
+	void scroll( int lines );
+
+	std::deque< ConsoleLine* >& getLines() { return lines_; }
 
 protected:
-	std::deque<ConsoleLine *> lines_;
-	unsigned int maxLines_;
-	unsigned int currentLine_;
+	std::deque< ConsoleLine* > lines_;
+	unsigned int               maxLines_;
+	unsigned int               currentLine_;
 
-	void addSmallLine(int section, const LangString &line, bool showPointer);
+	void addSmallLine( int section, const LangString& line, bool showPointer );
 };
 
-#endif // __INCLUDE_ConsoleLines_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleLines_hpp_INCLUDE__

@@ -28,20 +28,21 @@
 class Teleport : public Action
 {
 public:
-	Teleport( FixedVector position, WeaponFireContext &weaponContext, WeaponTeleport *weapon);
+	Teleport( FixedVector position, WeaponFireContext& weaponContext, WeaponTeleport* weapon );
 	virtual ~Teleport();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "Teleport"; }
 
 protected:
-	FixedVector position_;
+	FixedVector       position_;
 	WeaponFireContext weaponContext_;
-	WeaponTeleport *weapon_;
-	fixed totalTime_;
-	bool firstTime_;
+	WeaponTeleport*   weapon_;
+	fixed             totalTime_;
+	bool              firstTime_;
 };
 
-#endif // __INCLUDE_Teleport_hpp_INCLUDE__
+#endif  // __INCLUDE_Teleport_hpp_INCLUDE__

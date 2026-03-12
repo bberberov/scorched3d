@@ -25,17 +25,18 @@
 #include <common/Vector.hpp>
 
 class Water2Patches;
+
 class WaterMapPoints
 {
 public:
 	WaterMapPoints();
 	virtual ~WaterMapPoints();
 
-	void draw(Water2Patches &currentPatch);
+	void draw( Water2Patches& currentPatch );
 	void generate();
 
 protected:
-	std::vector<Vector> pts_;
+	std::vector< Vector > pts_;
 };
 
-#endif // __INCLUDE_WaterMapPoints_hpp_INCLUDE__
+#endif  // __INCLUDE_WaterMapPoints_hpp_INCLUDE__

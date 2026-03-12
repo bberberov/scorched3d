@@ -27,20 +27,25 @@
 
 class Tank;
 class TankScore;
+
 namespace TankSort
 {
 	struct SortOnScore
 	{
-		bool operator()(const Tank *x, const Tank *y, ScorchedContext &context) const;
+		bool operator()( const Tank* x, const Tank* y, ScorchedContext& context ) const;
 	};
 
-	int compare(ScorchedContext &context,
-		const LangString &nameX, TankScore &scoreX,
-		const LangString &nameY, TankScore &scoreY);
+	int compare(
+		ScorchedContext&  context,
+		const LangString& nameX,
+		TankScore&        scoreX,
+		const LangString& nameY,
+		TankScore&        scoreY
+	);
 
-	unsigned int getWinningTeam(ScorchedContext &context);
-	void getSortedTanks(std::list<Tank *> &list, ScorchedContext &context);
-	void getSortedTanksIds(ScorchedContext &context, std::list<unsigned int> &list);
-};
+	unsigned int getWinningTeam( ScorchedContext& context );
+	void         getSortedTanks( std::list< Tank* >& list, ScorchedContext& context );
+	void         getSortedTanksIds( ScorchedContext& context, std::list< unsigned int >& list );
+};  // namespace TankSort
 
-#endif // __INCLUDE_TankSort_hpp_INCLUDE__
+#endif  // __INCLUDE_TankSort_hpp_INCLUDE__

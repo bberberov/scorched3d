@@ -31,30 +31,43 @@ class GameStateI;
 class GameStateStimulusI;
 class GameState;
 
-#define GAMESTATE_PERF_COUNTER_START(x, y) { static int __counter__ = x.getPerfCounter(y); x.startPerfCount(__counter__); }
-#define GAMESTATE_PERF_COUNTER_END(x, y) { static int __counter__ = x.getPerfCounter(y); x.endPerfCount(__counter__); }
+#define GAMESTATE_PERF_COUNTER_START( x, y ) \
+	{ \
+		static int __counter__ = x.getPerfCounter( y ); \
+		x.startPerfCount( __counter__ ); \
+	}
+#define GAMESTATE_PERF_COUNTER_END( x, y ) \
+	{ \
+		static int __counter__ = x.getPerfCounter( y ); \
+		x.endPerfCount( __counter__ ); \
+	}
 
 class GameStatePerfCounter
 {
 public:
-	GameStatePerfCounter(const char *name);
+	GameStatePerfCounter( const char* name );
 	~GameStatePerfCounter();
 
 	void start();
 	void end();
 
-	const char *getName() { return name_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	const char*  getName() { return name_.c_str(); }
 	unsigned int getTotal();
-	bool getUsed() { return used_; }
+	bool         getUsed() { return used_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string name_;
+	std::string  name_;
 	unsigned int start_;
 	unsigned int total_;
-	bool used_;
+	bool         used_;
 };
 
 class MainLoop;
+
 class GameState : public MainLoopI
 {
 public:
@@ -68,88 +81,78 @@ public:
 		MouseButtonRightDoubleClick  = 0x32
 	};
 
-	GameState(MainLoop *mainLoop, const char *name);
+	GameState( MainLoop* mainLoop, const char* name );
 	virtual ~GameState();
 
 	// Called by the simulator
-	virtual void simulate(float simTime);
+	virtual void simulate( float simTime );
 	virtual void draw();
 
 	void clear();
 
-	// Called by SDL subsystem 
-	void mouseDown(MouseButton button, int x, int y);
-	void mouseUp(MouseButton button, int x, int y);
-	void mouseMove(int x, int y);
-	void mouseWheel(short z);
+	// Called by SDL subsystem
+	void mouseDown( MouseButton button, int x, int y );
+	void mouseUp( MouseButton button, int x, int y );
+	void mouseMove( int x, int y );
+	void mouseWheel( short z );
 
 	// User fns to change + set state
-	void setState(const unsigned state);
-	void stimulate(const unsigned stimulus);
-	void setFakeMiddleButton(bool fake);
-	unsigned getState() { return currentState_; }
-	int getMouseX() { return currentMouseX_; }
-	int getMouseY() { return currentMouseY_; }
-	bool &getStateLogging() { return stateLogging_; }
-	bool &getStateTimeLogging() { return stateTimeLogging_; }
+	void setState( const unsigned int state );
+	void stimulate( const unsigned int stimulus );
+	void setFakeMiddleButton( bool fake );
 
-	int getPerfCounter(const char *name);
-	void startPerfCount(int counter);
-	void endPerfCount(int counter);
+	// clang-format off
+	// uncrustify off
+	unsigned int getState()            { return currentState_; }
+	int          getMouseX()           { return currentMouseX_; }
+	int          getMouseY()           { return currentMouseY_; }
+	bool&        getStateLogging()     { return stateLogging_; }
+	bool&        getStateTimeLogging() { return stateTimeLogging_; }
+	// uncrustify on
+	// clang-format on
+
+	int  getPerfCounter( const char* name );
+	void startPerfCount( int counter );
+	void endPerfCount( int counter );
 
 	// User fns to add classes to state management
-	void addStateStimulus(const unsigned state, 
-						  const unsigned stim, 
-						  const unsigned nexts);
-	void addStateStimulus(const unsigned state, 
-						  GameStateStimulusI *check, 
-						  const unsigned nexts);
-	void addStateEntry(const unsigned state, 
-					   GameStateI *entry);
-	void addStateLoop(const unsigned state, 
-					  GameStateI *entry, 
-					  GameStateI *subEntry);
-	void addStateKeyEntry(const unsigned state, 
-						  GameStateI *subEntry);
-	void addStateMouseDownEntry(const unsigned state, 
-								const unsigned buttons, 
-								GameStateI *subEntry);
-	void addStateMouseUpEntry(const unsigned state, 
-							  const unsigned buttons, 
-							  GameStateI *subEntry);
-	void addStateMouseDragEntry(const unsigned state, 
-								const unsigned buttons, 
-								GameStateI *subEntry);
-	void addStateMouseWheelEntry(const unsigned state, 
-								 GameStateI *subEntry);
+	void addStateStimulus( const unsigned int state, const unsigned int stim, const unsigned int nexts );
+	void addStateStimulus( const unsigned int state, GameStateStimulusI* check, const unsigned int nexts );
+	void addStateEntry( const unsigned int state, GameStateI* entry );
+	void addStateLoop( const unsigned int state, GameStateI* entry, GameStateI* subEntry );
+	void addStateKeyEntry( const unsigned int state, GameStateI* subEntry );
+	void addStateMouseDownEntry( const unsigned int state, const unsigned int buttons, GameStateI* subEntry );
+	void addStateMouseUpEntry( const unsigned int state, const unsigned int buttons, GameStateI* subEntry );
+	void addStateMouseDragEntry( const unsigned int state, const unsigned int buttons, GameStateI* subEntry );
+	void addStateMouseWheelEntry( const unsigned int state, GameStateI* subEntry );
 
 protected:
-	typedef std::list<GameStateI *> StateIList;
-	typedef std::pair<GameStateStimulusI *, unsigned> SimulusIPair;
-	typedef std::list<SimulusIPair> StiulusIList;
+	typedef std::list< GameStateI* >                       StateIList;
+	typedef std::pair< GameStateStimulusI*, unsigned int > SimulusIPair;
+	typedef std::list< SimulusIPair >                      StiulusIList;
 
 	struct TimerInfo
 	{
-		GameStateI *gameStateI;
+		GameStateI*  gameStateI;
 		unsigned int drawTime;
 		unsigned int simulateTime;
 	};
 
 	struct GameStateSubEntry
 	{
-		GameStateI *current;
-		StateIList subLoopList;
+		GameStateI* current;
+		StateIList  subLoopList;
 	};
 
 	struct GameStateEntry
 	{
 		// Classes called for every loop
-		std::list<GameStateSubEntry> loopList;
+		std::list< GameStateSubEntry > loopList;
 
-		 // Possible stimuli in this state
-		std::map<unsigned, unsigned> stimList;
+		// Possible stimuli in this state
+		std::map< unsigned int, unsigned int > stimList;
 		// Stimili checked every loop
-		StiulusIList condStimList;
+		StiulusIList                           condStimList;
 
 		// Classes called on key events
 		StateIList subKeyList;
@@ -177,43 +180,45 @@ protected:
 		StateIList enterStateList;
 	};
 
-	MainLoop *mainLoop_;
-	std::string name_;
-	std::map<unsigned, GameStateEntry> stateList_;
-	unsigned stateCount_;
-	unsigned currentState_;
-	GameStateI *currentStateI_;
-	GameStateEntry *currentEntry_;
-	bool fakeMiddleButton_;
-	bool stateLogging_;
-	bool stateTimeLogging_;
-	float frameTime_;
-	int frameCount_;
-	Clock timerClock_;
-	Clock overallTimerClock_;
-	Clock doubleClickClock_;
-	TimerInfo timers_[50];
+	MainLoop*                                mainLoop_;
+	std::string                              name_;
+	std::map< unsigned int, GameStateEntry > stateList_;
+	unsigned int                             stateCount_;
+	unsigned int                             currentState_;
+	GameStateI*                              currentStateI_;
+	GameStateEntry*                          currentEntry_;
+	bool                                     fakeMiddleButton_;
+	bool                                     stateLogging_;
+	bool                                     stateTimeLogging_;
+	float                                    frameTime_;
+	int                                      frameCount_;
+	Clock                                    timerClock_;
+	Clock                                    overallTimerClock_;
+	Clock                                    doubleClickClock_;
+	TimerInfo                                timers_[50];
 
 	// Dragging stuff
 	// Up or down for each button (bit field)
-	unsigned currentMouseState_;
-	int mouseLDragX_, mouseLDragY_;
-	int mouseMDragX_, mouseMDragY_;
-	int mouseRDragX_, mouseRDragY_;
-	int mouseDoubleX_, mouseDoubleY_;
-	int currentMouseX_, currentMouseY_;
+	unsigned int currentMouseState_;
+	int          mouseLDragX_, mouseLDragY_;
+	int          mouseMDragX_, mouseMDragY_;
+	int          mouseRDragX_, mouseRDragY_;
+	int          mouseDoubleX_, mouseDoubleY_;
+	int          currentMouseX_, currentMouseY_;
 
 	void mouseMoveCall(
-		const unsigned state,
-		MouseButton button,
-		StateIList &currentList,
-		int mx, int my,
-		int dx, int dy
+		const unsigned int state,
+		MouseButton        button,
+		StateIList&        currentList,
+		int                mx,
+		int                my,
+		int                dx,
+		int                dy
 	);
-	void mouseUpDown(MouseButton button, bool down, int x, int y);
-	GameState::GameStateEntry* getEntry(const unsigned state);
-	GameState::GameStateSubEntry* getSubEntry(const unsigned state, GameStateI *entry);
-	void clearTimers(bool printTimers = false);
+	void                          mouseUpDown( MouseButton button, bool down, int x, int y );
+	GameState::GameStateEntry*    getEntry( const unsigned int state );
+	GameState::GameStateSubEntry* getSubEntry( const unsigned int state, GameStateI* entry );
+	void                          clearTimers( bool printTimers = false );
 };
 
-#endif // __INCLUDE_GameState_hpp_INCLUDE__
+#endif  // __INCLUDE_GameState_hpp_INCLUDE__

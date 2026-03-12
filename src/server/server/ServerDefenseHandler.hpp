@@ -25,16 +25,14 @@
 #include <coms/ComsDefenseMessage.hpp>
 
 class Tank;
+
 class ServerDefenseHandler : public ComsMessageHandlerI
 {
 public:
-	ServerDefenseHandler(ComsMessageHandler &comsMessageHandler);
+	ServerDefenseHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerDefenseHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerDefenseHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerDefenseHandler_hpp_INCLUDE__

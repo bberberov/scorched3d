@@ -27,13 +27,17 @@ public:
 	GLTextureBase();
 	virtual ~GLTextureBase();
 
-	virtual void draw(bool force = false) = 0;
+	virtual void draw( bool force = false ) = 0;
 
-	static GLTextureBase *getLastBind() { return lastBind_; }
-	static void setLastBind(GLTextureBase *bind) { lastBind_ = bind; }
+	// clang-format off
+	// uncrustify off
+	static GLTextureBase* getLastBind()                      { return lastBind_; }
+	static void           setLastBind( GLTextureBase* bind ) { lastBind_ = bind; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static GLTextureBase *lastBind_; 
+	static GLTextureBase* lastBind_;
 };
 
-#endif // __INCLUDE_GLTextureBase_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureBase_hpp_INCLUDE__

@@ -1,3 +1,6 @@
+// clang-format off
+// uncrustify off
+
 /*
 Danger from the Deep - Open source submarine simulation
 Copyright (C) 2003-2006  Thorsten Jordan, Luis Barrancos and others.
@@ -67,7 +70,7 @@ class ocean_wave_generator
 	T w0;		// cycle time
 	std::vector<std::complex<T> > h0tilde;
 	std::vector<std::complex<T> > htilde;	// holds values for one fix time.
-	
+
 	ocean_wave_generator& operator= (const ocean_wave_generator& );
 	ocean_wave_generator(const ocean_wave_generator& );
 	static T myrnd();
@@ -77,11 +80,11 @@ class ocean_wave_generator
 	void compute_h0tilde();
 	std::complex<T> h_tilde(Vector& K, int kx, int ky, T time) const;
 	void compute_htilde(T time);
-	
+
 	FFT_COMPLEX_TYPE *fft_in, *fft_in2;	// can't be a vector, since the type is an array
 	FFT_REAL_TYPE *fft_out, *fft_out2;	// for sake of uniformity
 	FFT_PLAN_TYPE plan, plan2, plan3;
-	
+
 public:
 	ocean_wave_generator(
 		int gridsize,
@@ -306,7 +309,7 @@ void ocean_wave_generator<T>::compute_heights(Water2Points& waveheights) const
 	}
 
 	FFT_EXECUTE_PLAN(plan);
-	
+
 	// our kx,ky are in {-N/2...N/2}, but fft goes from {0...N-1}
 	// so we have to add N/2 in the formulas, a term that can be seperated as exponential
 	// term: exp(I*pi*(x+y)) that is equal to (-1)^(x+y), so we have to adjust
@@ -370,7 +373,7 @@ void ocean_wave_generator<T>::compute_normals(std::vector<Vector >& wavenormals)
 
 	FFT_EXECUTE_PLAN(plan);
 	FFT_EXECUTE_PLAN(plan2);
-	
+
 	if (wavenormals.size() != N*N)
 		wavenormals.resize(N*N);
 	T signs[2] = { T(1), T(-1) };
@@ -409,7 +412,7 @@ void ocean_wave_generator<T>::compute_displacements(const T& scalefac,
 
 	FFT_EXECUTE_PLAN(plan);
 	FFT_EXECUTE_PLAN(plan2);
-	
+
 	T signs[2] = { T(1), T(-1) };
 	unsigned ptr = 0;
 	for (int y = 0; y < N; ++y) {

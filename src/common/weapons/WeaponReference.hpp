@@ -23,23 +23,26 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponReference  : public Weapon
+class WeaponReference : public Weapon
 {
 public:
 	WeaponReference();
 	virtual ~WeaponReference();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponReference, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponReference, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *refWeapon_;
+	Weapon* refWeapon_;
 };
 
-#endif // __INCLUDE_WeaponReference_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponReference_hpp_INCLUDE__

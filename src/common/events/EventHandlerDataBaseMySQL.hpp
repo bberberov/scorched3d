@@ -23,13 +23,14 @@
 #ifndef __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
 #define __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
 
-#if defined(_WIN32)
+#if defined( _WIN32 )
 #include <Winsock2.h>
 #endif
 #include <events/EventHandlerDataBase.hpp>
 #include <mysql/mysql.h>
 
 class Weapon;
+
 class EventHandlerDataBaseMySQL : public EventHandlerDataBase
 {
 public:
@@ -37,18 +38,23 @@ public:
 	virtual ~EventHandlerDataBaseMySQL();
 
 protected:
-	MYSQL *mysql_;
+	MYSQL* mysql_;
 
-	virtual bool runQuery(const char *, ...);
-	virtual std::list<EventHandlerDataBase::RowResult> runSelectQuery(const char *, ...);
-	virtual bool connectDatabase(const char *host, const char *port,
-		const char *user, const char *passwd, 
-		const char *db);
+	virtual bool                                         runQuery( const char*, ... );
+	virtual std::list< EventHandlerDataBase::RowResult > runSelectQuery( const char*, ... );
 
-	virtual int getLastInsertId();
-	virtual void escapeString(char *to, const char *from, unsigned long length);
+	virtual bool connectDatabase(
+		const char* host,
+		const char* port,
+		const char* user,
+		const char* passwd,
+		const char* db
+	);
+
+	virtual int  getLastInsertId();
+	virtual void escapeString( char* to, const char* from, unsigned long length );
 };
 
-#endif // __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerDataBaseMySQL_hpp_INCLUDE__
 
-#endif // HAVE_MYSQL
+#endif  // HAVE_MYSQL

@@ -31,9 +31,9 @@ public:
 	GLWHudCondition();
 	virtual ~GLWHudCondition();
 
-	virtual bool getResult(GLWidget *widget);
+	virtual bool getResult( GLWidget* widget );
 
-	REGISTER_CLASS_HEADER(GLWHudCondition);
+	REGISTER_CLASS_HEADER( GLWHudCondition );
 };
 
 class GLWScorchedInfo : public GLWidget
@@ -63,21 +63,21 @@ public:
 		ePowerDiff
 	};
 
-	GLWScorchedInfo(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
+	GLWScorchedInfo( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWScorchedInfo();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual bool initFromXML(XMLNode *node);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual bool initFromXML( XMLNode* node );
 
-	REGISTER_CLASS_HEADER(GLWScorchedInfo);
+	REGISTER_CLASS_HEADER( GLWScorchedInfo );
+
 protected:
 	InfoType infoType_;
-	float fontSize_;
-	Vector fontColor_;
-	Vector selectedColor_;
-	bool noCenter_;
+	float    fontSize_;
+	Vector   fontColor_;
+	Vector   selectedColor_;
+	bool     noCenter_;
 };
 
-#endif // __INCLUDE_GLWScorchedInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScorchedInfo_hpp_INCLUDE__

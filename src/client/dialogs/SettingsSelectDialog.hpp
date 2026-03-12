@@ -30,26 +30,26 @@
 class SettingsSelectDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static SettingsSelectDialog *instance();
+	static SettingsSelectDialog* instance();
 
-	OptionsGame &getOptions() { return options_; }
+	OptionsGame& getOptions() { return options_; }
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWWindow
 	virtual void display();
 
 protected:
-	static SettingsSelectDialog *instance_;
+	static SettingsSelectDialog* instance_;
 
-	std::list<GLWOptionEntry> controls_;
-	OptionsGame options_;
-	unsigned int cancelId_, okId_, advancedId_;
+	std::list< GLWOptionEntry > controls_;
+	OptionsGame                 options_;
+	unsigned int                cancelId_, okId_, advancedId_;
 
 private:
 	SettingsSelectDialog();
 	virtual ~SettingsSelectDialog();
 };
 
-#endif // __INCLUDE_SettingsSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SettingsSelectDialog_hpp_INCLUDE__

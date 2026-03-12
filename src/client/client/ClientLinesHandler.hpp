@@ -29,23 +29,20 @@ class GLWPlanView;
 class ClientLinesHandler : public ComsMessageHandlerI
 {
 public:
-	static ClientLinesHandler *instance();
+	static ClientLinesHandler* instance();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
-	void registerCallback(GLWPlanView *planView);
+	void registerCallback( GLWPlanView* planView );
 
 protected:
-	static ClientLinesHandler *instance_;
+	static ClientLinesHandler* instance_;
 
-	std::list<GLWPlanView *> callbacks_;
+	std::list< GLWPlanView* > callbacks_;
 
 private:
 	ClientLinesHandler();
 	virtual ~ClientLinesHandler();
 };
 
-#endif // __INCLUDE_ClientLinesHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientLinesHandler_hpp_INCLUDE__

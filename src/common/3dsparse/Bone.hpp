@@ -26,6 +26,7 @@
 #include <common/FixedVector.hpp>
 
 typedef fixed BoneMatrixType[3][4];
+
 class BoneType
 {
 public:
@@ -35,62 +36,59 @@ public:
 	BoneMatrixType absolute_;
 	BoneMatrixType relativeFinal_;
 	BoneMatrixType final_;
-	int parent_;
+	int            parent_;
 };
 
 class BonePositionKey
 {
 public:
-	BonePositionKey(fixed time, FixedVector &pos);
+	BonePositionKey( fixed time, FixedVector& pos );
 
-	fixed time;
+	fixed       time;
 	FixedVector position;
 };
 
 class BoneRotationKey
 {
 public:
-	BoneRotationKey(fixed time, FixedVector &rot);
+	BoneRotationKey( fixed time, FixedVector& rot );
 
-	fixed time;
+	fixed       time;
 	FixedVector rotation;
 };
 
 class Bone
 {
 public:
-	Bone(const char *name);
+	Bone( const char* name );
 	virtual ~Bone();
 
-	const char *getName() { return name_.c_str(); }
-	const char *getParentName() { return parentName_.c_str(); }
-	FixedVector &getPosition() { return position_; }
-	FixedVector &getRotation() { return rotation_; }
-	std::vector<BonePositionKey *> &getPositionKeys() 
-		{ return  positionKeys_; }
-	std::vector<BoneRotationKey *> &getRotationKeys()
-		{ return rotationKeys_; }
+	// clang-format off
+	// uncrustify off
+	const char*                      getName()         { return name_.c_str(); }
+	const char*                      getParentName()   { return parentName_.c_str(); }
+	FixedVector&                     getPosition()     { return position_; }
+	FixedVector&                     getRotation()     { return rotation_; }
+	std::vector< BonePositionKey* >& getPositionKeys() { return positionKeys_; }
+	std::vector< BoneRotationKey* >& getRotationKeys() { return rotationKeys_; }
 
-	FixedVector &getPositionAtTime(fixed currentTime);
-	void getRotationAtTime(fixed currentTime, BoneMatrixType &m);
+	FixedVector& getPositionAtTime( fixed currentTime );
+	void         getRotationAtTime( fixed currentTime, BoneMatrixType& m );
 
-	void addPositionKey(BonePositionKey *key) 
-		{ positionKeys_.push_back(key); }
-	void addRotationKey(BoneRotationKey *key) 
-		{ rotationKeys_.push_back(key); }
-	void setParentName(const char *parentName) 
-		{ parentName_ = parentName; }
-	void setPosition(FixedVector &pos)
-		{ position_ = pos; }	
-	void setRotation(FixedVector &rot)
-		{ rotation_ = rot; }	
+	void addPositionKey( BonePositionKey* key )  { positionKeys_.push_back( key ); }
+	void addRotationKey( BoneRotationKey* key )  { rotationKeys_.push_back( key ); }
+	void setParentName( const char* parentName ) { parentName_ = parentName; }
+	void setPosition( FixedVector& pos )         { position_ = pos; }
+	void setRotation( FixedVector& rot )         { rotation_ = rot; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string name_;
-	std::string parentName_;
-	FixedVector position_, rotation_;
-	std::vector<BonePositionKey *> positionKeys_;
-	std::vector<BoneRotationKey *> rotationKeys_;
+	std::string                     name_;
+	std::string                     parentName_;
+	FixedVector                     position_, rotation_;
+	std::vector< BonePositionKey* > positionKeys_;
+	std::vector< BoneRotationKey* > rotationKeys_;
 };
 
-#endif // __INCLUDE_Bone_hpp_INCLUDE__
+#endif  // __INCLUDE_Bone_hpp_INCLUDE__

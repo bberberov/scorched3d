@@ -27,15 +27,16 @@
 #include <vector>
 
 class Water2Patches;
+
 class WaterWaves
 {
 public:
 	WaterWaves();
 	virtual ~WaterWaves();
 
-	void generateWaves(float waterHeight, ProgressCounter *counter = 0);
-	void draw(Water2Patches &currentPatch);
-	void simulate(float frameTime);
+	void generateWaves( float waterHeight, ProgressCounter* counter = 0 );
+	void draw( Water2Patches& currentPatch );
+	void simulate( float frameTime );
 
 protected:
 	struct WaterWaveEntry
@@ -46,42 +47,37 @@ protected:
 		Vector ptC;
 		Vector ptD;
 	};
+
 	struct WaterWaveContext
 	{
-		int mapWidth;
-		int mapHeight;
-		int pointsWidth;
-		int pointsHeight;
-		int pointsMult;
-		bool *wavePoints;
+		int          mapWidth;
+		int          mapHeight;
+		int          pointsWidth;
+		int          pointsHeight;
+		int          pointsMult;
+		bool*        wavePoints;
 		unsigned int pointCount;
 		unsigned int removedCount;
 	};
 
 	GLTexture wavesTexture1_;
 	GLTexture wavesTexture2_;
-	Vector wavesColor_;
+	Vector    wavesColor_;
 
-	std::vector<WaterWaveEntry> paths1_;
-	std::vector<WaterWaveEntry> paths2_;
-	float totalTime_;
+	std::vector< WaterWaveEntry > paths1_;
+	std::vector< WaterWaveEntry > paths2_;
+	float                         totalTime_;
 
-	void findPoints(WaterWaveContext *context, float waterHeight, ProgressCounter *counter);
-	bool findNextPath(WaterWaveContext *context, float waterHeight, ProgressCounter *counter);
-	void findPath(
-		WaterWaveContext *context,
-		std::vector<Vector> &points,
-		int x,
-		int y,
-		ProgressCounter *counter
-	);
-	void constructLines(WaterWaveContext *context, float waterHeight, std::vector<Vector> &points);
+	void findPoints( WaterWaveContext* context, float waterHeight, ProgressCounter* counter );
+	bool findNextPath( WaterWaveContext* context, float waterHeight, ProgressCounter* counter );
+	void findPath( WaterWaveContext* context, std::vector< Vector >& points, int x, int y, ProgressCounter* counter );
+	void constructLines( WaterWaveContext* context, float waterHeight, std::vector< Vector >& points );
 	void drawBoxes(
-		Water2Patches &currentPatch,
-		float totalTime,
-		Vector &windDir,
-		std::vector<WaterWaveEntry> &paths
+		Water2Patches&                 currentPatch,
+		float                          totalTime,
+		Vector&                        windDir,
+		std::vector< WaterWaveEntry >& paths
 	);
 };
 
-#endif // __INCLUDE_WaterWaves_hpp_INCLUDE__
+#endif  // __INCLUDE_WaterWaves_hpp_INCLUDE__

@@ -51,70 +51,71 @@ class EventHandlerDataBase;
 class ScorchedServer : public ScorchedContext
 {
 public:
-	static ScorchedServer *instance();
+	static ScorchedServer* instance();
 
-	static bool startServer(const ScorchedServerSettings &settings, 
-		bool local, ProgressCounter *counter);
+	static bool startServer( const ScorchedServerSettings& settings, bool local, ProgressCounter* counter );
 	static void stopServer();
-	static bool serverStarted() { return started_; }
 
-	virtual bool getServerMode() { return true; }
-
-	virtual Simulator &getSimulator();
-	virtual TargetSpace &getTargetSpace() { return *targetSpace_; }
-	TankDeadContainer &getTankDeadContainer() { return *deadContainer_; }
-	ScorchedContext &getContext() { return *this; }
-	TankAIStore &getTankAIs() { return *tankAIStore_; }
-	ServerSimulator &getServerSimulator() { return *serverSimulator_; }
-	ServerDestinations &getServerDestinations() { return *serverDestinations_; }
-	ServerState &getServerState() { return *serverState_; }
-	ServerAuthHandler *getAuthHandler();
-	ServerTimedMessage &getTimedMessage() { return *timedMessage_; }
-	ServerBanned &getBannedPlayers() { return *bannedPlayers_; }
-	ServerTextFilter &getTextFilter() { return *textFilter_; }
-	ServerHandlers &getServerHandlers() { return *serverHandlers_; }
-	ServerLoadLevel &getServerLoadLevel() { return *serverLoadLevel_; }
-	ServerConnectAuthHandler &getServerConnectAuthHandler();
-	ServerChannelManager &getServerChannelManager() { return *serverChannelManager_; }
-	ServerAdminSessions &getServerAdminSessions() { return *serverAdminSessions_; }
-	ServerSyncCheck &getServerSyncCheck() { return *serverSyncCheck_; }
-	ServerMessageHandler &getServerMessageHandler() { return *serverMessageHandler_; }
-	ServerFileServer &getServerFileServer() { return *serverFileServer_; }
-	EconomyStore &getEconomyStore() { return *economyStore_; }
-	EventHandlerDataBase *getEventHandlerDataBase() { return eventHandlerDataBase_; }
+	// clang-format off
+	// uncrustify off
+	static bool               serverStarted()           { return started_; }
+	virtual bool              getServerMode()           { return true; }
+	virtual Simulator&        getSimulator();
+	virtual TargetSpace&      getTargetSpace()          { return *targetSpace_; }
+	TankDeadContainer&        getTankDeadContainer()    { return *deadContainer_; }
+	ScorchedContext&          getContext()              { return *this; }
+	TankAIStore&              getTankAIs()              { return *tankAIStore_; }
+	ServerSimulator&          getServerSimulator()      { return *serverSimulator_; }
+	ServerDestinations&       getServerDestinations()   { return *serverDestinations_; }
+	ServerState&              getServerState()          { return *serverState_; }
+	ServerAuthHandler*        getAuthHandler();
+	ServerTimedMessage&       getTimedMessage()         { return *timedMessage_; }
+	ServerBanned&             getBannedPlayers()        { return *bannedPlayers_; }
+	ServerTextFilter&         getTextFilter()           { return *textFilter_; }
+	ServerHandlers&           getServerHandlers()       { return *serverHandlers_; }
+	ServerLoadLevel&          getServerLoadLevel()      { return *serverLoadLevel_; }
+	ServerConnectAuthHandler& getServerConnectAuthHandler();
+	ServerChannelManager&     getServerChannelManager() { return *serverChannelManager_; }
+	ServerAdminSessions&      getServerAdminSessions()  { return *serverAdminSessions_; }
+	ServerSyncCheck&          getServerSyncCheck()      { return *serverSyncCheck_; }
+	ServerMessageHandler&     getServerMessageHandler() { return *serverMessageHandler_; }
+	ServerFileServer&         getServerFileServer()     { return *serverFileServer_; }
+	EconomyStore&             getEconomyStore()         { return *economyStore_; }
+	EventHandlerDataBase*     getEventHandlerDataBase() { return eventHandlerDataBase_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static ScorchedServer *instance_;
+	static ScorchedServer* instance_;
 
-	static bool started_;
-	static TargetSpace *targetSpace_;
-	
-	TankDeadContainer *deadContainer_;
-	TankAIStore *tankAIStore_;
-	ServerSimulator *serverSimulator_;
-	ServerDestinations *serverDestinations_;
-	ServerState *serverState_;
-	ServerAuthHandlerStore *authHandler_;
-	ServerTimedMessage *timedMessage_;
-	ServerBanned *bannedPlayers_;
-	ServerTextFilter *textFilter_;
-	ServerHandlers *serverHandlers_;
-	ServerLoadLevel *serverLoadLevel_;
-	ServerChannelManager *serverChannelManager_;
-	ServerAdminSessions *serverAdminSessions_;
-	ServerSyncCheck *serverSyncCheck_;
-	ServerMessageHandler *serverMessageHandler_;
-	ServerFileServer *serverFileServer_;
-	EconomyStore *economyStore_;
-	EventHandlerDataBase *eventHandlerDataBase_;
+	static bool         started_;
+	static TargetSpace* targetSpace_;
+
+	TankDeadContainer*      deadContainer_;
+	TankAIStore*            tankAIStore_;
+	ServerSimulator*        serverSimulator_;
+	ServerDestinations*     serverDestinations_;
+	ServerState*            serverState_;
+	ServerAuthHandlerStore* authHandler_;
+	ServerTimedMessage*     timedMessage_;
+	ServerBanned*           bannedPlayers_;
+	ServerTextFilter*       textFilter_;
+	ServerHandlers*         serverHandlers_;
+	ServerLoadLevel*        serverLoadLevel_;
+	ServerChannelManager*   serverChannelManager_;
+	ServerAdminSessions*    serverAdminSessions_;
+	ServerSyncCheck*        serverSyncCheck_;
+	ServerMessageHandler*   serverMessageHandler_;
+	ServerFileServer*       serverFileServer_;
+	EconomyStore*           economyStore_;
+	EventHandlerDataBase*   eventHandlerDataBase_;
 
 	void checkSettings();
-	bool startServerInternal(const ScorchedServerSettings &settings, 
-		bool local, ProgressCounter *counter);
+	bool startServerInternal( const ScorchedServerSettings& settings, bool local, ProgressCounter* counter );
 
 private:
 	ScorchedServer();
 	virtual ~ScorchedServer();
 };
 
-#endif // __INCLUDE_ScorchedServer_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedServer_hpp_INCLUDE__

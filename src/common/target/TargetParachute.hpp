@@ -25,23 +25,25 @@
 
 class Accessory;
 class ScorchedContext;
+
 class TargetParachute
 {
 public:
-	TargetParachute(ScorchedContext &context);
+	TargetParachute( ScorchedContext& context );
 	virtual ~TargetParachute();
 
 	void loaded();
 
-	Accessory *getCurrentParachute() { return currentParachute_; }
-	void setCurrentParachute(Accessory *para);
+	Accessory* getCurrentParachute() { return currentParachute_; }
 
-    bool writeMessage(NamedNetBuffer &buffer);
-    bool readMessage(NetBufferReader &reader);
+	void setCurrentParachute( Accessory* para );
+
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	Accessory *currentParachute_;
+	ScorchedContext& context_;
+	Accessory*       currentParachute_;
 };
 
-#endif // __INCLUDE_TargetParachute_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetParachute_hpp_INCLUDE__

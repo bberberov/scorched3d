@@ -25,6 +25,7 @@
 
 class Tank;
 class Weapon;
+
 class EventHandler
 {
 public:
@@ -32,24 +33,24 @@ public:
 	virtual ~EventHandler();
 
 	virtual void periodicUpdate();
-	virtual void periodicUpdate(Tank *tank);
+	virtual void periodicUpdate( Tank* tank );
 
-	virtual void gameStart(std::list<Tank *> &tanks);
-	virtual void roundStart(std::list<Tank *> &tanks);
+	virtual void gameStart( std::list< Tank* >& tanks );
+	virtual void roundStart( std::list< Tank* >& tanks );
 
-	virtual void tankConnected(Tank *tank);
-	virtual void tankDisconnected(Tank *tank);
-	virtual void tankJoined(Tank *tank);
+	virtual void tankConnected( Tank* tank );
+	virtual void tankDisconnected( Tank* tank );
+	virtual void tankJoined( Tank* tank );
 
-	virtual void tankFired(Tank *firedTank, Weapon *weapon);
-	virtual void tankResigned(Tank *resignedTank);
+	virtual void tankFired( Tank* firedTank, Weapon* weapon );
+	virtual void tankResigned( Tank* resignedTank );
 
-	virtual void tankKilled(Tank *firedTank, Tank *deadTank, Weapon *weapon);
-	virtual void tankTeamKilled(Tank *firedTank, Tank *deadTank, Weapon *weapon);
-	virtual void tankSelfKilled(Tank *firedTank, Weapon *weapon);
+	virtual void tankKilled( Tank* firedTank, Tank* deadTank, Weapon* weapon );
+	virtual void tankTeamKilled( Tank* firedTank, Tank* deadTank, Weapon* weapon );
+	virtual void tankSelfKilled( Tank* firedTank, Weapon* weapon );
 
-	virtual void tankWon(Tank *tank);
-	virtual void tankOverallWinner(Tank *tank);
+	virtual void tankWon( Tank* tank );
+	virtual void tankOverallWinner( Tank* tank );
 };
 
-#endif // __INCLUDE_EventHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandler_hpp_INCLUDE__

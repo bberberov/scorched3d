@@ -30,8 +30,9 @@ public:
 	virtual ~SkyFlash();
 
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void simulate( fixed frameTime, bool& remove );
+
 	virtual std::string getActionType() { return "SkyFlash"; }
 };
 
-#endif // __INCLUDE_SkyFlash_hpp_INCLUDE__
+#endif  // __INCLUDE_SkyFlash_hpp_INCLUDE__

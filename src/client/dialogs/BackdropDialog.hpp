@@ -28,25 +28,25 @@
 class BackdropDialog : public GLWWindow
 {
 public:
-	static BackdropDialog *instance();
+	static BackdropDialog* instance();
 
 	virtual void draw();
-	void drawBackground();
-	void drawLogo();
-	void drawFooter();
+	void         drawBackground();
+	void         drawLogo();
+	void         drawFooter();
 
 	void capture();
 
 protected:
-	static BackdropDialog *instance_;
+	static BackdropDialog* instance_;
 
-	GLTexture backTex_;
+	GLTexture          backTex_;
 	GLTextureReference logoTex_, footerTex_;
-	std::string lastMod_;
+	std::string        lastMod_;
 
 private:
 	BackdropDialog();
 	virtual ~BackdropDialog();
 };
 
-#endif // __INCLUDE_BackdropDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_BackdropDialog_hpp_INCLUDE__

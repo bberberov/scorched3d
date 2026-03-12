@@ -28,18 +28,18 @@
 class Display
 {
 public:
-	static Display *instance();
+	static Display* instance();
 
-	bool changeSettings(int width,int height, bool fullscreen);
+	bool changeSettings( int width, int height, bool fullscreen );
 
 protected:
-	static Display *instance_;
+	static Display* instance_;
 
 private:
 	Display();
 	virtual ~Display();
 
-	SDL_Surface *surface;
+	SDL_Surface* surface;
 };
 
-#endif // __INCLUDE_Display_hpp_INCLUDE__
+#endif  // __INCLUDE_Display_hpp_INCLUDE__

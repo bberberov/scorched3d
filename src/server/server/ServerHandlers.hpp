@@ -36,28 +36,29 @@
 #include <server/ServerOperationResultHandler.hpp>
 
 class ComsMessageHandler;
+
 class ServerHandlers
 {
 public:
-	ServerHandlers(ComsMessageHandler &comsMessageHandler);
+	ServerHandlers( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerHandlers();
 
-	ServerConnectAuthHandler &getServerConnectAuthHandler() { return serverConnectAuthHandler_; }
+	ServerConnectAuthHandler& getServerConnectAuthHandler() { return serverConnectAuthHandler_; }
 
 protected:
-	ServerTankChangeHandler serverTankChangeHandler_;
-	ServerAdminHandler serverAdminHandler_;
-	ServerBuyAccessoryHandler serverBuyAccessoryHandler_;
-	ServerConnectAuthHandler serverConnectAuthHandler_;
-	ServerConnectHandler serverConnectHandler_;
-	ServerDefenseHandler serverDefenseHandler_;
-	ServerFileAkHandler serverFileAkHandler_;
-	ServerGiftMoneyHandler serverGiftMoneyHandler_;
-	ServerHaveModFilesHandler serverHaveModFileHandler_;
-	ServerInitializeModHandler serverInitializeModHandler_;
-	ServerLinesHandler serverLinesHandler_;
-	ServerPlayedMoveHandler serverPlayedMoveHandler_;
+	ServerTankChangeHandler      serverTankChangeHandler_;
+	ServerAdminHandler           serverAdminHandler_;
+	ServerBuyAccessoryHandler    serverBuyAccessoryHandler_;
+	ServerConnectAuthHandler     serverConnectAuthHandler_;
+	ServerConnectHandler         serverConnectHandler_;
+	ServerDefenseHandler         serverDefenseHandler_;
+	ServerFileAkHandler          serverFileAkHandler_;
+	ServerGiftMoneyHandler       serverGiftMoneyHandler_;
+	ServerHaveModFilesHandler    serverHaveModFileHandler_;
+	ServerInitializeModHandler   serverInitializeModHandler_;
+	ServerLinesHandler           serverLinesHandler_;
+	ServerPlayedMoveHandler      serverPlayedMoveHandler_;
 	ServerOperationResultHandler serverOperationResultHandler_;
 };
 
-#endif // __INCLUDE_ServerHandlers_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerHandlers_hpp_INCLUDE__

@@ -29,69 +29,66 @@ class ObjectGroup;
 class ObjectGroups;
 class NamedNetBuffer;
 class NetBufferReader;
+
 class ObjectGroupEntry
 {
 public:
-	enum ObjectType {
+	enum ObjectType
+	{
 		TypeTarget,
 		TypeParticle
 	};
 
-	ObjectGroupEntry(ObjectGroups &groups);
+	ObjectGroupEntry( ObjectGroups& groups );
 	virtual ~ObjectGroupEntry();
 
-	std::set<ObjectGroup *> &getAllGroups() { return containment_; }
+	std::set< ObjectGroup* >& getAllGroups() { return containment_; }
 
 	void removeFromAllGroups();
 
-	virtual ObjectGroupEntry::ObjectType getType() = 0;
-	virtual void *getObject() = 0;
+	virtual ObjectGroupEntry::ObjectType getType()   = 0;
+	virtual void*                        getObject() = 0;
 
-	virtual FixedVector &getPosition() = 0;
-	virtual FixedVector &getVelocity() = 0;
+	virtual FixedVector& getPosition() = 0;
+	virtual FixedVector& getVelocity() = 0;
 	virtual unsigned int getPlayerId() = 0;
 
-	virtual bool writeMessage(NamedNetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NamedNetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 private:
 	friend class ObjectGroup;
 	friend class ObjectGroupEntryReference;
 
-	void addToGroup(ObjectGroup *group);
-	void removeFromGroup(ObjectGroup *group);
+	void addToGroup( ObjectGroup* group );
+	void removeFromGroup( ObjectGroup* group );
 
 protected:
-	ObjectGroups &groups_;
-	std::set<ObjectGroup *> containment_;
-	std::set<ObjectGroupEntryReference *> references_;
+	ObjectGroups&                          groups_;
+	std::set< ObjectGroup* >               containment_;
+	std::set< ObjectGroupEntryReference* > references_;
 };
 
 class ObjectGroupEntryReference
 {
 public:
-	ObjectGroupEntryReference(ObjectGroupEntry *entry) : entry_(entry)
+	ObjectGroupEntryReference( ObjectGroupEntry* entry ) : entry_( entry )
 	{
-		if (entry_) entry_->references_.insert(this);
+		if ( entry_ ) entry_->references_.insert( this );
 	}
 
 	virtual ~ObjectGroupEntryReference()
 	{
-		if (entry_) entry_->references_.erase(this);
+		if ( entry_ ) entry_->references_.erase( this );
 		entry_ = 0;
 	}
 
-	ObjectGroupEntry *getEntry() 
-	{ 
-		return entry_;
-	}
+	ObjectGroupEntry* getEntry() { return entry_; }
 
-	void clearEntry()
-	{
-		entry_ = 0;
-	}
+	void clearEntry() { entry_ = 0; }
+
 protected:
-	ObjectGroupEntry *entry_;
+	ObjectGroupEntry* entry_;
 };
 
-#endif // __INCLUDE_ObjectGroupEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_ObjectGroupEntry_hpp_INCLUDE__

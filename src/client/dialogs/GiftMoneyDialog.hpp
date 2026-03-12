@@ -27,28 +27,28 @@
 #include <dialogs/BuyAccessoryDialogTankInfo.hpp>
 
 // SINGLETON
-class GiftMoneyDialog : public GLWWindow , public GLWButtonI
+class GiftMoneyDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static GiftMoneyDialog *instance();
+	static GiftMoneyDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 protected:
-	static GiftMoneyDialog *instance_;
+	static GiftMoneyDialog* instance_;
 
-	BuyAccessoryDialogTankInfo &tankInfo_;
-	unsigned int okId_, cancelId_;
-	GLWDropDownText *players_;
-	GLWDropDownText *money_;
+	BuyAccessoryDialogTankInfo& tankInfo_;
+	unsigned int                okId_, cancelId_;
+	GLWDropDownText*            players_;
+	GLWDropDownText*            money_;
 
 private:
 	GiftMoneyDialog();
 	virtual ~GiftMoneyDialog();
 };
 
-#endif // __INCLUDE_GiftMoneyDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_GiftMoneyDialog_hpp_INCLUDE__

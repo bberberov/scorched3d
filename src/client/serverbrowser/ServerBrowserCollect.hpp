@@ -28,33 +28,30 @@
 class ServerBrowserCollect : public NetMessageHandlerI
 {
 public:
-	ServerBrowserCollect(ServerBrowserServerList &list);
+	ServerBrowserCollect( ServerBrowserServerList& list );
 	virtual ~ServerBrowserCollect();
 
 	// Fetch the new list from the server
-	bool fetchServerList(
-		const char *masterListServer,
-		const char *masterListServerURI
-	);
+	bool fetchServerList( const char* masterListServer, const char* masterListServerURI );
 	bool fetchLANList();
 	bool fetchFavoritesList();
 
-	std::set<std::string> getFavourites();
-	void setFavourites(std::set<std::string> &favs);
+	std::set< std::string > getFavourites();
+	void                    setFavourites( std::set< std::string >& favs );
 
-	void setCancel(bool cancel) { cancel_ = cancel; }
+	void setCancel( bool cancel ) { cancel_ = cancel; }
 
 	// Inherited from NetMessageHandlerI
-	virtual void processMessage(NetMessage &message);
+	virtual void processMessage( NetMessage& message );
 
 protected:
-	ServerBrowserServerList &list_;
-	NetServerTCP netServer_;
-	bool complete_;
-	bool cancel_;
-	UDPpacket *sendPacket_;
-	UDPpacket *recvPacket_;
-	NetBuffer sendNetBuffer_;
+	ServerBrowserServerList& list_;
+	NetServerTCP             netServer_;
+	bool                     complete_;
+	bool                     cancel_;
+	UDPpacket*               sendPacket_;
+	UDPpacket*               recvPacket_;
+	NetBuffer                sendNetBuffer_;
 };
 
-#endif // __INCLUDE_ServerBrowserCollect_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBrowserCollect_hpp_INCLUDE__

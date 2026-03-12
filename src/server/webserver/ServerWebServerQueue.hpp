@@ -29,25 +29,29 @@ class ServerWebServerQueueEntry
 {
 public:
 	ServerWebServerQueueEntry(
-		unsigned int destinationId,
-		unsigned int sid,
-		const char *url,
-		ServerWebServerI *handler,
-		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts
+		unsigned int                          destinationId,
+		unsigned int                          sid,
+		const char*                           url,
+		ServerWebServerI*                     handler,
+		std::map< std::string, std::string >& fields,
+		std::map< std::string, NetMessage* >& parts
 	);
 	~ServerWebServerQueueEntry();
 
-	unsigned int getDestinationId() { return destinationId_; }
-	unsigned int getSid() { return sid_; }
-	ServerWebServerI *getHandler() { return handler_; }
-	ServerWebServerIRequest &getRequest() { return request_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int             getDestinationId() { return destinationId_; }
+	unsigned int             getSid()           { return sid_; }
+	ServerWebServerI*        getHandler()       { return handler_; }
+	ServerWebServerIRequest& getRequest()       { return request_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	unsigned int destinationId_;
-	unsigned int sid_;
+	unsigned int            destinationId_;
+	unsigned int            sid_;
 	ServerWebServerIRequest request_;
-	ServerWebServerI *handler_;
+	ServerWebServerI*       handler_;
 };
 
 class ServerWebServerQueue
@@ -56,15 +60,15 @@ public:
 	ServerWebServerQueue();
 	virtual ~ServerWebServerQueue();
 
-	void addEntry(ServerWebServerQueueEntry *entry);
-	ServerWebServerQueueEntry *getEntry();
+	void                       addEntry( ServerWebServerQueueEntry* entry );
+	ServerWebServerQueueEntry* getEntry();
 
-	void removeEntry(unsigned int destinationId);
-	bool hasEntry(unsigned int destinationId);
-	
+	void removeEntry( unsigned int destinationId );
+	bool hasEntry( unsigned int destinationId );
+
 protected:
-	SDL_mutex *queueMutex_;
-	std::list<ServerWebServerQueueEntry *> entries_;
+	SDL_mutex*                              queueMutex_;
+	std::list< ServerWebServerQueueEntry* > entries_;
 };
 
-#endif // __INCLUDE_ServerWebServerQueue_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerWebServerQueue_hpp_INCLUDE__

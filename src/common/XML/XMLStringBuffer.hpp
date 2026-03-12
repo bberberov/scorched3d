@@ -29,13 +29,14 @@ public:
 	XMLStringBuffer();
 	virtual ~XMLStringBuffer();
 
-	bool create(const char *xmlString, unsigned int size);
+	bool create( const char* xmlString, unsigned int size );
 
-	const char *getParserError() { return parser_.getParseError(); }
-	XMLNode *getRootNode() { return parser_.getRoot(); }
+	const char* getParserError() { return parser_.getParseError(); }
+
+	XMLNode* getRootNode() { return parser_.getRoot(); }
 
 protected:
 	XMLParser parser_;
 };
 
-#endif // __INCLUDE_XMLStringBuffer_hpp_INCLUDE__
+#endif  // __INCLUDE_XMLStringBuffer_hpp_INCLUDE__

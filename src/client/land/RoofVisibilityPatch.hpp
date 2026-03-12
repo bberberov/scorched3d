@@ -33,4 +33,4 @@ protected:
 	virtual void calculateErrors();
 };
 
-#endif // __INCLUDE_RoofVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_RoofVisibilityPatch_hpp_INCLUDE__

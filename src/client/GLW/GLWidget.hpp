@@ -35,72 +35,76 @@ Defines the interface.
 class GLWidget : public MetaClass
 {
 public:
-	GLWidget(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
+	GLWidget( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWidget();
 
 	// The widgets implementation
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 	virtual void display();
 	virtual void hide();
 
-	// Accessors
-	unsigned int getId() { return id_; }
-	virtual bool initFromXML(XMLNode *node);
-	virtual void saveSettings(XMLNode *node);
-	virtual void loadSettings(XMLNode *node, bool resetPositions);
-	virtual void setToolTip(ToolTip *tooltip) { tooltip_ = tooltip; }
-	virtual void setParent(GLWPanel *parent);
-	virtual GLWPanel *getParent() { return parent_; }
-	virtual void layout();
-	void setVisible(bool visible) { visible_ = visible; }
-	bool getVisible() { return visible_; }
-	void setUserData(void *data) { userData_ = data; }
-	void *getUserData() { return userData_; }
+	// clang-format off
+	// uncrustify off
 
-	virtual const char *getName() { return name_.c_str(); }
-	virtual void setName(const std::string &name) { name_ = name; }
+	// Accessors
+	unsigned int      getId() { return id_; }
+	virtual bool      initFromXML( XMLNode* node );
+	virtual void      saveSettings( XMLNode* node );
+	virtual void      loadSettings( XMLNode* node, bool resetPositions );
+	virtual void      setToolTip( ToolTip* tooltip ) { tooltip_ = tooltip; }
+	virtual void      setParent( GLWPanel* parent );
+	virtual GLWPanel* getParent() { return parent_; }
+	virtual void      layout();
+	void              setVisible( bool visible ) { visible_ = visible; }
+	bool              getVisible()               { return visible_; }
+	void              setUserData( void* data )  { userData_ = data; }
+	void*             getUserData()              { return userData_; }
+
+	virtual const char* getName()                           { return name_.c_str(); }
+	virtual void        setName( const std::string& name )  { name_ = name; }
 
 	// Width, height and position functions
-	virtual float getX() { return x_; }
-	virtual float getY() { return y_; }
-	virtual float getW() { return w_; }
-	virtual float getH() { return h_; }
-	virtual void setX(float x) { x_ = x; }
-	virtual void setY(float y) { y_ = y; }
-	virtual void setW(float w) { w_ = w; }
-	virtual void setH(float h) { h_ = h; }
+	virtual float getX()         { return x_; }
+	virtual float getY()         { return y_; }
+	virtual float getW()         { return w_; }
+	virtual float getH()         { return h_; }
+	virtual void setX( float x ) { x_ = x; }
+	virtual void setY( float y ) { y_ = y; }
+	virtual void setW( float w ) { w_ = w; }
+	virtual void setH( float h ) { h_ = h; }
+	// uncrustify on
+	// clang-format on
 
 	// Helper Functions
-	static bool inBox(float posX, float posY, float x, float y, float w, float h);
-	static void drawRoundBox(float x, float y, float w, float h, float size);
-	static void drawShadedRoundBox(float x, float y, float w, float h, float size, bool depressed);
-	static void drawCircle(int startA, int endA, float posX, float posY, float size);
-	static void drawWholeCircle(bool cap = false);
-	static void drawBox(float x, float y, float w, float h, bool depressed);
+	static bool inBox( float posX, float posY, float x, float y, float w, float h );
+	static void drawRoundBox( float x, float y, float w, float h, float size );
+	static void drawShadedRoundBox( float x, float y, float w, float h, float size, bool depressed );
+	static void drawCircle( int startA, int endA, float posX, float posY, float size );
+	static void drawWholeCircle( bool cap = false );
+	static void drawBox( float x, float y, float w, float h, bool depressed );
 
 protected:
 	static unsigned int nextId_;
-	std::string name_;
-	unsigned int id_;
-	float x_, y_, w_, h_;
-	ToolTip *tooltip_;
-	bool tooltipTransparent_;
-	bool visible_;
-	GLWPanel *parent_;
-	void *userData_;
-
+	std::string         name_;
+	unsigned int        id_;
+	float               x_, y_, w_, h_;
+	ToolTip*            tooltip_;
+	bool                tooltipTransparent_;
+	bool                visible_;
+	GLWPanel*           parent_;
+	void*               userData_;
 };
 
 /**
@@ -114,8 +118,8 @@ public:
 	GLWCondition();
 	virtual ~GLWCondition();
 
-	virtual bool getResult(GLWidget *widget) = 0;
-	virtual bool initFromXML(XMLNode *node);
+	virtual bool getResult( GLWidget* widget ) = 0;
+	virtual bool initFromXML( XMLNode* node );
 };
 
-#endif // __INCLUDE_GLWidget_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWidget_hpp_INCLUDE__

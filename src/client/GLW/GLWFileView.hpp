@@ -25,27 +25,24 @@
 #include <GLW/GLWScrollW.hpp>
 #include <common/FileLines.hpp>
 
-class GLWFileView :
-	public GLWidget
+class GLWFileView : public GLWidget
 {
 public:
-	GLWFileView(char *fileName = nullptr,
-		float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
+	GLWFileView( char* fileName = nullptr, float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWFileView();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWFileView);
+	REGISTER_CLASS_HEADER( GLWFileView );
 
 protected:
 	GLWScrollW scroll_;
-	FileLines lines_;
+	FileLines  lines_;
 };
 
-#endif // __INCLUDE_GLWFileView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWFileView_hpp_INCLUDE__

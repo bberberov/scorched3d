@@ -38,8 +38,8 @@ struct ConsoleRuleValue
 	int position;
 
 	std::string valueString;
-	bool valueBool;
-	float valueNumber;
+	bool        valueBool;
+	float       valueNumber;
 
 	ConsoleRuleType type;
 };
@@ -47,71 +47,84 @@ struct ConsoleRuleValue
 class ConsoleRuleParam
 {
 public:
-	ConsoleRuleParam(const std::string &constant);
-	ConsoleRuleParam(const std::string &name, ConsoleRuleType type);
+	ConsoleRuleParam( const std::string& constant );
+	ConsoleRuleParam( const std::string& name, ConsoleRuleType type );
 
-	const char *getName() { return name_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	const char*     getName() { return name_.c_str(); }
 	ConsoleRuleType getType() { return type_; }
+	// uncrustify on
+	// clang-format on
 
 private:
-	std::string name_;
+	std::string     name_;
 	ConsoleRuleType type_;
 };
 
 class Console;
+
 class ConsoleRule
 {
 public:
-	ConsoleRule(const char *name, 
-		const std::vector<ConsoleRuleParam> &params,
-		unsigned int userData = 0);
+	ConsoleRule( const char* name, const std::vector< ConsoleRuleParam >& params, unsigned int userData = 0 );
 	virtual ~ConsoleRule();
 
-	virtual void runRule(
-		Console *console,
-		const char *wholeLine,
-		std::vector<ConsoleRuleValue> &values) = 0;
+	virtual void runRule( Console* console, const char* wholeLine, std::vector< ConsoleRuleValue >& values ) = 0;
 
-	std::string toString();
-	std::string toString(std::vector<ConsoleRuleValue> &values);
-	static std::string valuesToString(std::vector<ConsoleRuleValue> &values);
+	std::string        toString();
+	std::string        toString( std::vector< ConsoleRuleValue >& values );
+	static std::string valuesToString( std::vector< ConsoleRuleValue >& values );
 
-	const char *getName() { return name_.c_str(); }
-	std::vector<ConsoleRuleParam> &getParams() { return params_; }
-	unsigned int getUserData() { return userData_; }
+	// clang-format off
+	// uncrustify off
+	const char*                    getName()     { return name_.c_str(); }
+	std::vector<ConsoleRuleParam>& getParams()   { return params_; }
+	unsigned int                   getUserData() { return userData_; }
+	// clang-format off
+	// uncrustify off
 
-	bool matchesPartialParams(std::vector<ConsoleRuleValue> &values);
-	bool matchesExactParams(std::vector<ConsoleRuleValue> &values);
+	bool matchesPartialParams( std::vector<ConsoleRuleValue>& values );
+	bool matchesExactParams( std::vector<ConsoleRuleValue>& values );
+
 protected:
-	std::string name_;
+	std::string                   name_;
 	std::vector<ConsoleRuleParam> params_;
-	unsigned int userData_;
-
+	unsigned int                  userData_;
 };
 
 class ConsoleUtil
 {
 public:
+	// clang-format off
+	// uncrustify off
 	static std::vector<ConsoleRuleParam> formParams(
-		const ConsoleRuleParam &param1);
+		const ConsoleRuleParam& param1
+	);
 	static std::vector<ConsoleRuleParam> formParams(
-		const ConsoleRuleParam &param1, 
-		const ConsoleRuleParam &param2);
+		const ConsoleRuleParam& param1,
+		const ConsoleRuleParam& param2
+	);
 	static std::vector<ConsoleRuleParam> formParams(
-		const ConsoleRuleParam &param1, 
-		const ConsoleRuleParam &param2, 
-		const ConsoleRuleParam &param3);
+		const ConsoleRuleParam& param1,
+		const ConsoleRuleParam& param2,
+		const ConsoleRuleParam& param3
+	);
 	static std::vector<ConsoleRuleParam> formParams(
-		const ConsoleRuleParam &param1, 
-		const ConsoleRuleParam &param2, 
-		const ConsoleRuleParam &param3, 
-		const ConsoleRuleParam &param4);
+		const ConsoleRuleParam& param1,
+		const ConsoleRuleParam& param2,
+		const ConsoleRuleParam& param3,
+		const ConsoleRuleParam& param4
+	);
 	static std::vector<ConsoleRuleParam> formParams(
-		const ConsoleRuleParam &param1, 
-		const ConsoleRuleParam &param2, 
-		const ConsoleRuleParam &param3, 
-		const ConsoleRuleParam &param4, 
-		const ConsoleRuleParam &param5);
+		const ConsoleRuleParam& param1,
+		const ConsoleRuleParam& param2,
+		const ConsoleRuleParam& param3,
+		const ConsoleRuleParam& param4,
+		const ConsoleRuleParam& param5
+	);
+	// uncrustify on
+	// clang-format on
 };
 
-#endif // __INCLUDE_ConsoleRule_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleRule_hpp_INCLUDE__

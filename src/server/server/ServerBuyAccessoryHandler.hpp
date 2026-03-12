@@ -26,13 +26,10 @@
 class ServerBuyAccessoryHandler : public ComsMessageHandlerI
 {
 public:
-	ServerBuyAccessoryHandler(ComsMessageHandler &comsMessageHandler);
+	ServerBuyAccessoryHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerBuyAccessoryHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerBuyAccessoryHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBuyAccessoryHandler_hpp_INCLUDE__

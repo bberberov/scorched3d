@@ -26,30 +26,25 @@
 class SimulatorI
 {
 public:
-	virtual void actionInvoked(fixed actionTime, SimAction *action) = 0;
+	virtual void actionInvoked( fixed actionTime, SimAction* action ) = 0;
 };
 
-template<class T>
-class SimulatorIAdapter : public SimulatorI
+template< class T > class SimulatorIAdapter : public SimulatorI
 {
 public:
-	SimulatorIAdapter(T *inst, 
-		void (T::*call)(fixed actionTime, SimAction *action)) :
-		inst_(inst), call_(call)
-	{
-	};
-	virtual ~SimulatorIAdapter()
-	{
-	};
+	SimulatorIAdapter( T* inst, void ( T::*call )( fixed actionTime, SimAction* action ) )
+		: inst_( inst )
+		, call_( call ) {};
+	virtual ~SimulatorIAdapter() {};
 
-	virtual void actionInvoked(fixed actionTime, SimAction *action)
+	virtual void actionInvoked( fixed actionTime, SimAction* action )
 	{
-		return (inst_->*call_)(actionTime, action);
+		return ( inst_->*call_ )( actionTime, action );
 	}
 
 protected:
-	T *inst_;
-	void (T::*call_)(fixed actionTime, SimAction *action);
+	T* inst_;
+	void ( T::*call_ )( fixed actionTime, SimAction* action );
 };
 
-#endif // __INCLUDE_SimulatorI_hpp_INCLUDE__
+#endif  // __INCLUDE_SimulatorI_hpp_INCLUDE__

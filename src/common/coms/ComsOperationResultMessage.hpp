@@ -31,21 +31,25 @@ public:
 	ComsOperationResultMessage();
 	virtual ~ComsOperationResultMessage();
 
-	int &getWidth() { return width_; }
-	int &getHeight() { return height_; }
-	NetBuffer &getResultBuffer() { return resultBuffer_; }
+	// clang-format off
+	// uncrustify off
+	int&       getWidth()        { return width_; }
+	int&       getHeight()       { return height_; }
+	NetBuffer& getResultBuffer() { return resultBuffer_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	int width_, height_;
+	int       width_, height_;
 	NetBuffer resultBuffer_;
 
 private:
-	ComsOperationResultMessage(const ComsOperationResultMessage &);
-	const ComsOperationResultMessage & operator=(const ComsOperationResultMessage &);
+	ComsOperationResultMessage( const ComsOperationResultMessage& );
+	const ComsOperationResultMessage& operator=( const ComsOperationResultMessage& );
 };
 
-#endif // __INCLUDE_ComsOperationResultMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsOperationResultMessage_hpp_INCLUDE__

@@ -38,56 +38,57 @@ class GraphicalLandscapeMap;
 class VisibilityPatchGrid
 {
 public:
-	static VisibilityPatchGrid *instance();
+	static VisibilityPatchGrid* instance();
 
 	void generate();
 
 	void calculateVisibility();
-	void recalculateLandscapeErrors(FixedVector &position, fixed size);
-	void recalculateRoofErrors(FixedVector &position, fixed size);
+	void recalculateLandscapeErrors( FixedVector& position, fixed size );
+	void recalculateRoofErrors( FixedVector& position, fixed size );
 
-	void drawLand(int addIndex, bool verticesOnly, bool allPatches);
-	void drawRoof(int addIndex, bool verticesOnly, bool allPatches);
+	void drawLand( int addIndex, bool verticesOnly, bool allPatches );
+	void drawRoof( int addIndex, bool verticesOnly, bool allPatches );
 	void drawLandLODLevels();
 	void drawSurround();
 	void drawWater(
-		Water2Patches &patches,
-		MipMapPatchIndexs &indexes,
-		Vector &cameraPosition,
-		Vector landscapeSize,
-		GLSLShaderSetup *waterShader
+		Water2Patches&     patches,
+		MipMapPatchIndexs& indexes,
+		Vector&            cameraPosition,
+		Vector             landscapeSize,
+		GLSLShaderSetup*   waterShader
 	);
 
-	int getEpocNumber() { return epoc_; }
-	int getVisibleLandPatchesCount() {
-		return patchInfo_.getVisibleLandPatchesCount(); }
-	int getVisibleWaterPatchesCount() {
-		return patchInfo_.getVisibleWaterPatchesCount(); }
-	int getVisibleRoofPatchesCount() {
-		return patchInfo_.getVisibleRoofPatchesCount(); }
-	int getPatchesVisitedCount() {
-		return patchInfo_.getPatchesVisitedCount(); }
+	// clang-format off
+	// uncrustify off
+	int getEpocNumber()               { return epoc_; }
+	int getVisibleLandPatchesCount()  { return patchInfo_.getVisibleLandPatchesCount(); }
+	int getVisibleWaterPatchesCount() { return patchInfo_.getVisibleWaterPatchesCount(); }
+	int getVisibleRoofPatchesCount()  { return patchInfo_.getVisibleRoofPatchesCount(); }
+	int getPatchesVisitedCount()      { return patchInfo_.getPatchesVisitedCount(); }
+	// uncrustify on
+	// clang-format on
 
-	VisibilityPatchInfo &getPatchInfo() { return patchInfo_; }
+	VisibilityPatchInfo& getPatchInfo() { return patchInfo_; }
 
-	LandVisibilityPatch *getLandVisibilityPatch(int x, int y);
-	RoofVisibilityPatch *getRoofVisibilityPatch(int x, int y);
-	TargetVisibilityPatch *getTargetVisibilityPatch(int x, int y);
-	WaterVisibilityPatch *getWaterVisibilityPatch(int x, int y);
+	LandVisibilityPatch*   getLandVisibilityPatch( int x, int y );
+	RoofVisibilityPatch*   getRoofVisibilityPatch( int x, int y );
+	TargetVisibilityPatch* getTargetVisibilityPatch( int x, int y );
+	WaterVisibilityPatch*  getWaterVisibilityPatch( int x, int y );
+
 protected:
-	static VisibilityPatchGrid *instance_;
+	static VisibilityPatchGrid* instance_;
 
-	int epoc_;
-	LandSurround surround_;
+	int               epoc_;
+	LandSurround      surround_;
 	MipMapPatchIndexs landIndexs_;
 
 	// All the visibility patches
-	VisibilityPatchInfo patchInfo_;
-	LandAndTargetVisibilityPatch *landPatches_;
-	WaterAndTargetVisibilityPatch *waterPatches_;
+	VisibilityPatchInfo            patchInfo_;
+	LandAndTargetVisibilityPatch*  landPatches_;
+	WaterAndTargetVisibilityPatch* waterPatches_;
 
 	// The visibility data that decides if a visibility patch is visible or not
-	VisibilityPatchQuad *visibilityPatches_;
+	VisibilityPatchQuad* visibilityPatches_;
 
 	// The size of the patches
 	int midX_, midY_;
@@ -97,17 +98,17 @@ protected:
 
 	void clear();
 	void drawHeightMap(
-		GraphicalLandscapeMap *landscapeMap,
-		int addIndex,
-		bool verticesOnly,
-		bool allPatches,
-		bool roof
+		GraphicalLandscapeMap* landscapeMap,
+		int                    addIndex,
+		bool                   verticesOnly,
+		bool                   allPatches,
+		bool                   roof
 	);
-	void recalculateErrors(FixedVector &position, fixed size, bool roof);
+	void recalculateErrors( FixedVector& position, fixed size, bool roof );
 
 private:
 	VisibilityPatchGrid();
 	~VisibilityPatchGrid();
 };
 
-#endif // __INCLUDE_VisibilityPatchGrid_hpp_INCLUDE__
+#endif  // __INCLUDE_VisibilityPatchGrid_hpp_INCLUDE__

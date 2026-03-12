@@ -29,27 +29,28 @@
 class StartDialog : public GLWWindow
 {
 public:
-	static StartDialog *instance();
+	static StartDialog* instance();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
 protected:
-	static StartDialog *instance_;
+	static StartDialog* instance_;
 
 	struct OptionDefinition
 	{
-		LangString option;
-		const char *description;
-		float x, y;
-		float width;
+		LangString  option;
+		const char* description;
+		float       x, y;
+		float       width;
 	};
-	std::vector<OptionDefinition> definitions_;
-	size_t selected_;
+
+	std::vector< OptionDefinition > definitions_;
+	size_t                          selected_;
 
 private:
 	StartDialog();
 	virtual ~StartDialog();
 };
 
-#endif // __INCLUDE_StartDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_StartDialog_hpp_INCLUDE__

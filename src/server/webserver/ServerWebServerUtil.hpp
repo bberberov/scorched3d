@@ -26,44 +26,48 @@
 
 class NetMessage;
 class OptionEntry;
+
 namespace ServerWebServerUtil
 {
 	// Get query fields
-	void extractMultiPartPost(const char *start, 
-		const char *boundry, int sizeleft, std::map<std::string, NetMessage *> &parts);
-	void extractQueryFields(std::map<std::string, std::string> &fields, char *sep);
+	void extractMultiPartPost(
+		const char*                           start,
+		const char*                           boundry,
+		int                                   sizeleft,
+		std::map< std::string, NetMessage* >& parts
+	);
+	void extractQueryFields( std::map< std::string, std::string >& fields, char* sep );
 
 	// General fns
-	const char *strstrlen(const char *start, const char *find, int size);
-	void generateSettingValue(OptionEntry *entry, std::string &value);
-	const char *getField(std::map<std::string, std::string> &fields, 
-		const std::string &field);
-	std::string getFile(const std::string &filename);
-	std::string concatLines(std::list<std::string> &lines);
-	std::string htmlLangString(const LangString &langstring);
+	const char* strstrlen( const char* start, const char* find, int size );
+	void        generateSettingValue( OptionEntry* entry, std::string& value );
+	const char* getField( std::map< std::string, std::string >& fields, const std::string& field );
+	std::string getFile( const std::string& filename );
+	std::string concatLines( std::list< std::string >& lines );
+	std::string htmlLangString( const LangString& langstring );
 
 	// HTML template functions
 	bool getTemplate(
-		ServerAdminSessions::SessionParams *session,
-		const std::string &name,
-		std::map<std::string, std::string> &fields,
-		std::string &result);
+		ServerAdminSessions::SessionParams*   session,
+		const std::string&                    name,
+		std::map< std::string, std::string >& fields,
+		std::string&                          result
+	);
 	bool getHtmlTemplate(
-		ServerAdminSessions::SessionParams *session,
-		const std::string &name,
-		std::map<std::string, std::string> &fields,
-		std::string &result);
-	void getHtmlRedirect(
-		const std::string &url,
-		std::string &result);
-	void getHtmlNotFound(
-		std::string &result);
+		ServerAdminSessions::SessionParams*   session,
+		const std::string&                    name,
+		std::map< std::string, std::string >& fields,
+		std::string&                          result
+	);
+	void getHtmlRedirect( const std::string& url, std::string& result );
+	void getHtmlNotFound( std::string& result );
 	bool getHtmlMessage(
-		ServerAdminSessions::SessionParams *session,
-		const std::string &title,
-		const std::string &text,
-		std::map<std::string, std::string> &fields,
-		std::string &result);
-};
+		ServerAdminSessions::SessionParams*   session,
+		const std::string&                    title,
+		const std::string&                    text,
+		std::map< std::string, std::string >& fields,
+		std::string&                          result
+	);
+};  // namespace ServerWebServerUtil
 
-#endif // __INCLUDE_ServerWebServerUtil_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerWebServerUtil_hpp_INCLUDE__

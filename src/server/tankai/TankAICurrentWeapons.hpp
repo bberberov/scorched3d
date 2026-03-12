@@ -29,15 +29,15 @@ public:
 	TankAICurrentWeapons();
 	virtual ~TankAICurrentWeapons();
 
-	virtual bool parseConfig(TankAIWeaponSets &sets, XMLNode *node);
+	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node );
 
-	void buyWeapons(TankAIWeaponSets::WeaponSetAccessories &tankAccessories, bool lastRound);
+	void buyWeapons( TankAIWeaponSets::WeaponSetAccessories& tankAccessories, bool lastRound );
 
-	TankAIWeaponSets::WeaponSet *getCurrentWeaponSet();
+	TankAIWeaponSets::WeaponSet* getCurrentWeaponSet();
 
 protected:
-	std::vector<TankAIWeaponSets::WeaponSet *> weaponSets_;
-	TankAIWeaponSets::WeaponSet *currentWeaponSet_;
+	std::vector< TankAIWeaponSets::WeaponSet* > weaponSets_;
+	TankAIWeaponSets::WeaponSet*                currentWeaponSet_;
 };
 
-#endif // __INCLUDE_TankAICurrentWeapons_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAICurrentWeapons_hpp_INCLUDE__

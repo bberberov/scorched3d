@@ -32,34 +32,39 @@ public:
 
 	enum RequestType
 	{
-		eNoRequest = 0,
-		eRegisterRequest = 1,
+		eNoRequest         = 0,
+		eRegisterRequest   = 1,
 		eDeregisterRequest = 2,
-		eJoinRequest = 3
+		eJoinRequest       = 3
 	};
 
 	ComsChannelMessage();
-	ComsChannelMessage(RequestType type, unsigned int id);
+	ComsChannelMessage( RequestType type, unsigned int id );
 	virtual ~ComsChannelMessage();
 
-	RequestType getType() { return type_; }
-	unsigned int getId() { return id_; }
-	std::list<ChannelDefinition> &getChannels() { return channels_; }
-	std::list<ChannelDefinition> &getAvailableChannels() { return availableChannels_;	}
+	// clang-format off
+	// uncrustify off
+	RequestType  getType() { return type_; }
+	unsigned int getId()   { return id_; }
+
+	std::list< ChannelDefinition >& getChannels()          { return channels_; }
+	std::list< ChannelDefinition >& getAvailableChannels() { return availableChannels_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	RequestType type_;
-	unsigned int id_;
-	std::list<ChannelDefinition> channels_;
-	std::list<ChannelDefinition> availableChannels_;
+	RequestType                    type_;
+	unsigned int                   id_;
+	std::list< ChannelDefinition > channels_;
+	std::list< ChannelDefinition > availableChannels_;
 
 private:
-	ComsChannelMessage(const ComsChannelMessage &);
-	const ComsChannelMessage & operator=(const ComsChannelMessage &);
+	ComsChannelMessage( const ComsChannelMessage& );
+	const ComsChannelMessage& operator=( const ComsChannelMessage& );
 };
 
-#endif // __INCLUDE_ComsChannelMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsChannelMessage_hpp_INCLUDE__

@@ -31,18 +31,18 @@ class Image;
 class ImageStore
 {
 public:
-	static ImageStore *instance();
+	static ImageStore* instance();
 
-	Image loadImage(ImageID &imageId);
+	Image loadImage( ImageID& imageId );
 
 protected:
-	static ImageStore *instance_;
+	static ImageStore* instance_;
 
-	std::map<std::string, Image *> imageMap_;
+	std::map< std::string, Image* > imageMap_;
 
 private:
 	ImageStore();
 	virtual ~ImageStore();
 };
 
-#endif // __INCLUDE_ImageStore_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageStore_hpp_INCLUDE__

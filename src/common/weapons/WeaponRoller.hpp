@@ -26,73 +26,78 @@
 #include <engine/ObjectGroupEntryDefinition.hpp>
 
 class ScorchedContext;
+
 class WeaponRoller : public Weapon
 {
 public:
 	WeaponRoller();
 	virtual ~WeaponRoller();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	Weapon *getCollisionAction() { return collisionAction_; }
-	ModelID &getRollerModelID() { return rollerModelId_; }
-	bool getRoll() { return roll_; }
-	bool getStickyShields() { return stickyShields_; }
-	bool getNoCameraTrack() { return noCameraTrack_; }
-	bool getLandscapeCollision() { return landscapeCollision_; }
-	bool getShieldCollision() { return shieldCollision_; }
-	bool getTankCollision() { return tankCollision_; }
-	bool getTargetCollision() { return targetCollision_; }
-	fixed getShieldHurtFactor(ScorchedContext &context) { return shieldHurtFactorExp_.getValue(context); }
-	fixed getTime(ScorchedContext &context) { return timeExp_.getValue(context); }
-	fixed getWindFactor(ScorchedContext &context) { return windFactorExp_.getValue(context); }
-	fixed getGravityFactor(ScorchedContext &context) { return gravityFactorExp_.getValue(context); }
-	fixed getStepSize() { return stepSize_; }
-	fixed getScale(ScorchedContext &context) { return scale_.getValue(context); }
-	fixed getTimeout(ScorchedContext &context) { return timeout_.getValue(context); }
+	// clang-format off
+	// uncrustify off
+	Weapon*  getCollisionAction()                            { return collisionAction_; }
+	ModelID& getRollerModelID()                              { return rollerModelId_; }
+	bool     getRoll()                                       { return roll_; }
+	bool     getStickyShields()                              { return stickyShields_; }
+	bool     getNoCameraTrack()                              { return noCameraTrack_; }
+	bool     getLandscapeCollision()                         { return landscapeCollision_; }
+	bool     getShieldCollision()                            { return shieldCollision_; }
+	bool     getTankCollision()                              { return tankCollision_; }
+	bool     getTargetCollision()                            { return targetCollision_; }
+	fixed    getShieldHurtFactor( ScorchedContext& context ) { return shieldHurtFactorExp_.getValue( context ); }
+	fixed    getTime( ScorchedContext& context )             { return timeExp_.getValue( context ); }
+	fixed    getWindFactor( ScorchedContext& context )       { return windFactorExp_.getValue( context ); }
+	fixed    getGravityFactor( ScorchedContext& context )    { return gravityFactorExp_.getValue( context ); }
+	fixed    getStepSize()                                   { return stepSize_; }
+	fixed    getScale( ScorchedContext& context )            { return scale_.getValue( context ); }
+	fixed    getTimeout( ScorchedContext& context )          { return timeout_.getValue( context ); }
 
-	ObjectGroupEntryDefinition &getLocalGroups() { return localGroups_; }
-	ObjectGroupEntryDefinition &getGlobalGroups() { return globalGroups_; }
+	ObjectGroupEntryDefinition& getLocalGroups()  { return localGroups_; }
+	ObjectGroupEntryDefinition& getGlobalGroups() { return globalGroups_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from Weapon
 	virtual void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponRoller, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponRoller, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *collisionAction_;
-	ModelID rollerModelId_;
+	Weapon*                    collisionAction_;
+	ModelID                    rollerModelId_;
 	ObjectGroupEntryDefinition localGroups_;
 	ObjectGroupEntryDefinition globalGroups_;
-	NumberParser shieldHurtFactorExp_;
-	NumberParser windFactorExp_;
-	NumberParser gravityFactorExp_;
-	NumberParser dampenVelocityExp_;
-	NumberParser timeout_;
-	NumberParser scale_;
-	NumberParser timeExp_;
-	NumberParser numberRollers_;
-	fixed stepSize_;
-	bool maintainVelocity_;
-	bool roll_;
-	bool stickyShields_;
-	bool landscapeCollision_;
-	bool shieldCollision_;
-	bool tankCollision_;
-	bool targetCollision_;
-	bool noCameraTrack_;
-	
+	NumberParser               shieldHurtFactorExp_;
+	NumberParser               windFactorExp_;
+	NumberParser               gravityFactorExp_;
+	NumberParser               dampenVelocityExp_;
+	NumberParser               timeout_;
+	NumberParser               scale_;
+	NumberParser               timeExp_;
+	NumberParser               numberRollers_;
+	fixed                      stepSize_;
+	bool                       maintainVelocity_;
+	bool                       roll_;
+	bool                       stickyShields_;
+	bool                       landscapeCollision_;
+	bool                       shieldCollision_;
+	bool                       tankCollision_;
+	bool                       targetCollision_;
+	bool                       noCameraTrack_;
+
 	void addRoller(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 };
 
-#endif // __INCLUDE_WeaponRoller_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponRoller_hpp_INCLUDE__

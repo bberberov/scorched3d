@@ -26,46 +26,52 @@
 class GLStateExtension
 {
 public:
-	static void setup(); // Setup and check for each extension
+	static void setup();  // Setup and check for each extension
+
+	// clang-format off
+	// uncrustify off
 
 	// Use VBO
-	static bool hasVBO() { return hasVBO_; }
-	static int getMaxElementVertices() { return maxElementVertices_; }
-	static int getMaxElementIndices() { return maxElementIndices_; }
+	static bool hasVBO()                { return hasVBO_; }
+	static int  getMaxElementVertices() { return maxElementVertices_; }
+	static int  getMaxElementIndices()  { return maxElementIndices_; }
 	// Use MultiTex
-	static bool hasMultiTex() { return hasMultiTex_; }
+	static bool hasMultiTex()           { return hasMultiTex_; }
 	// Use framebuffers
-	static bool hasFBO() { return hasFBO_; }
+	static bool hasFBO()                { return hasFBO_; }
 	// User drawrangeelements
-	static bool hasDrawRangeElements() { return hasDrawRangeElements_; }
+	static bool hasDrawRangeElements()  { return hasDrawRangeElements_; }
 	// Use tex sub image extension?
-	static bool getNoTexSubImage() { return noTexSubImage_; }
+	static bool getNoTexSubImage()      { return noTexSubImage_; }
 	// Use cube map extension?
-	static bool hasCubeMap() { return hasCubeMap_; }
+	static bool hasCubeMap()            { return hasCubeMap_; }
 	// Use sphere map extension?
-	static bool hasSphereMap() { return hasSphereMap_; }
+	static bool hasSphereMap()          { return hasSphereMap_; }
 	// Use hardware mipmap extension?
-	static bool hasHardwareMipmaps() { return hasHardwareMipmaps_; }
+	static bool hasHardwareMipmaps()    { return hasHardwareMipmaps_; }
 	// Use env combine
-	static bool hasEnvCombine() { return envCombine_; }
+	static bool hasEnvCombine()         { return envCombine_; }
 	// How many texture units
-	static int getTextureUnits() { return textureUnits_; }
+	static int  getTextureUnits()       { return textureUnits_; }
 	// How many image units
-	static int getImageUnits() { return imageUnits_; }
+	static int  getImageUnits()         { return imageUnits_; }
 	// How many texture coords
-	static int getTextureCoords() { return textureCoords_; }
+	static int  getTextureCoords()      { return textureCoords_; }
 	// How many varying floats in shaders
-	static int getMaxVarying() { return maxVarying_; }
+	static int  getMaxVarying()         { return maxVarying_; }
 	// Use FrameBuffer extension
-	static bool hasHardwareShadows() { return hasHardwareShadows_; }
+	static bool hasHardwareShadows()    { return hasHardwareShadows_; }
 	// Use glBlendColorEXT
-	static bool hasBlendColor() { return hasBlendColor_; }
+	static bool hasBlendColor()         { return hasBlendColor_; }
 	// Use shaders
-	static bool hasShaders() { return hasShaders_; }
+	static bool hasShaders()            { return hasShaders_; }
 	// Is this a software implementation
-	static bool isSoftwareOpenGL() { return isSoftwareOpenGL_; }
-	// Should we use simple shaders 
-	static bool useSimpleShaders() { return useSimpleShaders_; }
+	static bool isSoftwareOpenGL()      { return isSoftwareOpenGL_; }
+	// Should we use simple shaders
+	static bool useSimpleShaders()      { return useSimpleShaders_; }
+
+	// uncrustify on
+	// clang-format on
 
 protected:
 	static bool envCombine_;
@@ -73,10 +79,10 @@ protected:
 	static bool hasVBO_;
 	static bool hasFBO_;
 	static bool hasShaders_;
-	static int textureUnits_, imageUnits_, textureCoords_;
-	static int maxVarying_;
-	static int maxElementVertices_;
-	static int maxElementIndices_;
+	static int  textureUnits_, imageUnits_, textureCoords_;
+	static int  maxVarying_;
+	static int  maxElementVertices_;
+	static int  maxElementIndices_;
 	static bool hasCubeMap_;
 	static bool hasSphereMap_;
 	static bool hasHardwareMipmaps_;
@@ -93,4 +99,4 @@ private:
 	~GLStateExtension();
 };
 
-#endif // __INCLUDE_GLStateExtension_hpp_INCLUDE__
+#endif  // __INCLUDE_GLStateExtension_hpp_INCLUDE__

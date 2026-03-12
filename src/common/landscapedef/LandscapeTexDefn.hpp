@@ -26,19 +26,19 @@
 
 class LandscapeInclude;
 class LandscapeDefinitions;
+
 class LandscapeTexDefn
 {
 public:
 	LandscapeTexDefn();
 	virtual ~LandscapeTexDefn();
 
-	std::vector<LandscapeInclude *> includes;
+	std::vector< LandscapeInclude* > includes;
 
-	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);
+	bool readXML( LandscapeDefinitions* definitions, XMLNode* node );
 
 protected:
-	bool readXML(const char *names, const char *name,
-		LandscapeDefinitions *definitions, XMLNode *node);
+	bool readXML( const char* names, const char* name, LandscapeDefinitions* definitions, XMLNode* node );
 };
 
-#endif // __INCLUDE_LandscapeTexDefn_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeTexDefn_hpp_INCLUDE__

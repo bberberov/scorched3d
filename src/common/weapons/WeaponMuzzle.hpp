@@ -29,7 +29,7 @@ public:
 	WeaponMuzzle();
 	virtual ~WeaponMuzzle();
 
-	REGISTER_ACCESSORY_HEADER(WeaponMuzzle, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponMuzzle, AccessoryPart::AccessoryWeapon );
 };
 
-#endif // __INCLUDE_WeaponMuzzle_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponMuzzle_hpp_INCLUDE__

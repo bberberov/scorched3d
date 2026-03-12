@@ -31,9 +31,9 @@
 class ExplosionTextures
 {
 public:
-	static ExplosionTextures *instance();
+	static ExplosionTextures* instance();
 
-	bool createTextures(ProgressCounter *counter = 0);
+	bool createTextures( ProgressCounter* counter = 0 );
 
 	GLTexture smokeTexture;
 	GLTexture smokeTexture2;
@@ -43,18 +43,18 @@ public:
 	GLTexture snowTexture;
 	GLTexture arrowTexture;
 
-	Image &getScorchBitmap(const std::string &name);
+	Image& getScorchBitmap( const std::string& name );
 
-	GLTextureSet *getTextureSetByName(const std::string &name);
-	std::map<std::string, GLTextureSet*> textureSets;
-	std::map<std::string, Image*> scorchedBitmaps;
+	GLTextureSet*                          getTextureSetByName( const std::string& name );
+	std::map< std::string, GLTextureSet* > textureSets;
+	std::map< std::string, Image* >        scorchedBitmaps;
 
 protected:
-	static ExplosionTextures *instance_;
+	static ExplosionTextures* instance_;
 
 private:
 	ExplosionTextures();
 	virtual ~ExplosionTextures();
 };
 
-#endif // __INCLUDE_ExplosionTextures_hpp_INCLUDE__
+#endif  // __INCLUDE_ExplosionTextures_hpp_INCLUDE__

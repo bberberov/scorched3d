@@ -28,45 +28,50 @@ class CameraPositionAction : public Action
 {
 public:
 	CameraPositionAction(
-		unsigned int playerId,
-		TankViewPointProvider *provider,
-		fixed showTime,
-		unsigned int priority,
-		bool explosion
+		unsigned int           playerId,
+		TankViewPointProvider* provider,
+		fixed                  showTime,
+		unsigned int           priority,
+		bool                   explosion
 	);
 	virtual ~CameraPositionAction();
 
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
-	virtual std::string getActionType() { return "CameraPositionAction"; }
-	virtual bool getActionSyncCheck() { return false; }
+	virtual void simulate( fixed frameTime, bool& remove );
 
-	fixed getShowTime() { return showTime_; }
-	TankViewPointProvider *getProvider() { return provider_; }
-	unsigned int &getShowPriority() { return showPriority_; }
+	// clang-format off
+	// uncrustify off
+	virtual std::string getActionType()      { return "CameraPositionAction"; }
+	virtual bool        getActionSyncCheck() { return false; }
+
+	fixed                  getShowTime()     { return showTime_; }
+	TankViewPointProvider* getProvider()     { return provider_; }
+	unsigned int&          getShowPriority() { return showPriority_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	unsigned int playerId_;
-	TankViewPointProvider *provider_;
-	fixed totalTime_;
-	fixed showTime_;
-	unsigned int showPriority_;
-	bool explosion_;
+	unsigned int           playerId_;
+	TankViewPointProvider* provider_;
+	fixed                  totalTime_;
+	fixed                  showTime_;
+	unsigned int           showPriority_;
+	bool                   explosion_;
 };
 
 class CameraPositionActionRegistry
 {
 public:
-	static void addCameraPositionAction(CameraPositionAction *action);
-	static void rmCameraPositionAction(CameraPositionAction *action);
+	static void addCameraPositionAction( CameraPositionAction* action );
+	static void rmCameraPositionAction( CameraPositionAction* action );
 
-	static CameraPositionAction *getCurrentAction();
+	static CameraPositionAction* getCurrentAction();
 
 protected:
-	static std::set<CameraPositionAction *> actions_;
-	static CameraPositionAction *currentAction_;
+	static std::set< CameraPositionAction* > actions_;
+	static CameraPositionAction*             currentAction_;
 
-	static CameraPositionAction *getCurrentBest();
+	static CameraPositionAction* getCurrentBest();
 };
 
-#endif // __INCLUDE_CameraPositionAction_hpp_INCLUDE__
+#endif  // __INCLUDE_CameraPositionAction_hpp_INCLUDE__

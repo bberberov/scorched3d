@@ -29,13 +29,13 @@ public:
 	MSModelFactory();
 	virtual ~MSModelFactory();
 
-	Model *createModel(const char *fileName);
+	Model* createModel( const char* fileName );
 
 protected:
-	void returnError(const char *fileName, const std::string &error);
-	void loadFile(FILE *in, const char *fileName, Model *Model);
-	bool getNextLine(char *line, FILE *in);
+	void         returnError( const char* fileName, const std::string& error );
+	void         loadFile( FILE* in, const char* fileName, Model* Model );
+	bool         getNextLine( char* line, FILE* in );
 	unsigned int lineNo_;
 };
 
-#endif // __INCLUDE_MSModelFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_MSModelFactory_hpp_INCLUDE__

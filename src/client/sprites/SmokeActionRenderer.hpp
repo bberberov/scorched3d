@@ -31,10 +31,10 @@ public:
 	SmokeActionRenderer();
 	virtual ~SmokeActionRenderer();
 
-	void simulate(Vector &position, float timepassed);
+	void simulate( Vector& position, float timepassed );
 
 public:
 	Counter counter_;
 };
 
-#endif // __INCLUDE_SmokeActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_SmokeActionRenderer_hpp_INCLUDE__

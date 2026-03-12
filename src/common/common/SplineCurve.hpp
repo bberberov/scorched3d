@@ -28,13 +28,14 @@ class SplineCurve
 {
 public:
 	static void generate(
-		std::vector<FixedVector> &inPoints, 
-		std::vector<FixedVector> &outPoints,
-		int resolution,
-		int polynomials = 3);
+		std::vector< FixedVector >& inPoints,
+		std::vector< FixedVector >& outPoints,
+		int                         resolution,
+		int                         polynomials = 3
+	);
 
 private:
 	SplineCurve();
 };
 
-#endif // __INCLUDE_SplineCurve_hpp_INCLUDE__
+#endif  // __INCLUDE_SplineCurve_hpp_INCLUDE__

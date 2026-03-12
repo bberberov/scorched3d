@@ -26,29 +26,34 @@
 class GLTextureReference : public GLTextureBase
 {
 public:
-	enum TextureState 
+	enum TextureState
 	{
-		eMipMap = 1,
+		eMipMap         = 1,
 		eTextureClamped = 2
 	};
 
 	GLTextureReference();
-	GLTextureReference(const GLTextureReference &other);
-	GLTextureReference(const ImageID &imageId, unsigned texState = eMipMap);
+	GLTextureReference( const GLTextureReference& other );
+	GLTextureReference( const ImageID& imageId, unsigned int texState = eMipMap );
 	~GLTextureReference();
 
-	GLTextureReference &operator=(const GLTextureReference &other);
-	void setImageID(const ImageID &imageId, unsigned texState = eMipMap);
+	GLTextureReference& operator=( const GLTextureReference& other );
+	void                setImageID( const ImageID& imageId, unsigned int texState = eMipMap );
 
-	virtual void draw(bool force = false) { data_->getTexture()->draw(force); }
-	
-	GLTextureReferenceData *getData() { return data_; }
-	bool isValid() { return data_ != 0; }
-	ImageID &getImageID() { return data_->getImageID(); }
-	unsigned int getTexState() { return data_->getTexState(); }
-	GLTexture *getTexture() { return data_->getTexture(); }
+	virtual void draw( bool force = false ) { data_->getTexture()->draw( force ); }
+
+	// clang-format off
+	// uncrustify off
+	GLTextureReferenceData* getData()     { return data_; }
+	bool                    isValid()     { return data_ != 0; }
+	ImageID&                getImageID()  { return data_->getImageID(); }
+	unsigned int            getTexState() { return data_->getTexState(); }
+	GLTexture*              getTexture()  { return data_->getTexture(); }
+	// uncrustify on
+	// clang-format on
+
 protected:
-	GLTextureReferenceData *data_;
+	GLTextureReferenceData* data_;
 };
 
-#endif // __INCLUDE_GLTextureReference_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureReference_hpp_INCLUDE__

@@ -29,26 +29,26 @@ class ResourceBundle
 {
 public:
 	ResourceBundle() {}
+
 	~ResourceBundle();
 
-	bool loadFromFile(const std::string &file);
-	bool writeToFile(const std::string &file);
+	bool loadFromFile( const std::string& file );
+	bool writeToFile( const std::string& file );
 
-	ResourceBundleEntry *getEntry(const std::string &key);
-	void addEntry(ResourceBundleEntry *entry);
+	ResourceBundleEntry* getEntry( const std::string& key );
+	void                 addEntry( ResourceBundleEntry* entry );
 
 private:
 	struct LessThanResourceBundleEntry
 	{
-		bool operator()(ResourceBundleEntry* s1, 
-			ResourceBundleEntry* s2) const
+		bool operator()( ResourceBundleEntry* s1, ResourceBundleEntry* s2 ) const
 		{
-			return strcmp(s1->getKey(), s2->getKey()) < 0;
+			return strcmp( s1->getKey(), s2->getKey() ) < 0;
 		}
 	};
-	
-	typedef std::set<ResourceBundleEntry*, LessThanResourceBundleEntry> ResourceBundleSet;
-	ResourceBundleSet entries_;
+
+	typedef std::set< ResourceBundleEntry*, LessThanResourceBundleEntry > ResourceBundleSet;
+	ResourceBundleSet                                                     entries_;
 };
 
-#endif // __INCLUDE_ResourceBundle_hpp_INCLUDE__
+#endif  // __INCLUDE_ResourceBundle_hpp_INCLUDE__

@@ -41,4 +41,4 @@ private:
 	virtual ~MainMenuDialog();
 };
 
-#endif // __INCLUDE_MainMenuDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_MainMenuDialog_hpp_INCLUDE__

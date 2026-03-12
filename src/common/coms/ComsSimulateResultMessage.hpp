@@ -29,12 +29,12 @@ public:
 	static ComsMessageType ComsSimulateResultMessageType;
 
 	ComsSimulateResultMessage();
-	ComsSimulateResultMessage(unsigned int serverTime);
+	ComsSimulateResultMessage( unsigned int serverTime );
 	virtual ~ComsSimulateResultMessage();
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 	unsigned int getServerTime() { return serverTime_; }
 
@@ -42,8 +42,8 @@ protected:
 	unsigned int serverTime_;
 
 private:
-	ComsSimulateResultMessage(const ComsSimulateResultMessage &);
-	const ComsSimulateResultMessage & operator=(const ComsSimulateResultMessage &);
+	ComsSimulateResultMessage( const ComsSimulateResultMessage& );
+	const ComsSimulateResultMessage& operator=( const ComsSimulateResultMessage& );
 };
 
-#endif // __INCLUDE_ComsSimulateResultMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsSimulateResultMessage_hpp_INCLUDE__

@@ -27,23 +27,23 @@
 
 #include <common/Vector.hpp>
 
-class Line  
+class Line
 {
 public:
 	Line();
-	Line(Vector &start, Vector &end);
+	Line( Vector& start, Vector& end );
 	virtual ~Line();
 
-	float dotP(const Line &line);
-	bool intersect(const Line &line, Vector &interPt, const bool checkPtOnLine = true);
-	Vector operator*(const Line &line);
+	float  dotP( const Line& line );
+	bool   intersect( const Line& line, Vector& interPt, const bool checkPtOnLine = true );
+	Vector operator*( const Line& line );
 
-	const Vector &getDirection();
-	const Vector &getStart();
-	const Vector &getEnd();
-	void setStart(const Vector &start);
-	void setEnd(const Vector &end);
-	void setPoints(const Vector &start, const Vector &end);
+	const Vector& getDirection();
+	const Vector& getStart();
+	const Vector& getEnd();
+	void          setStart( const Vector& start );
+	void          setEnd( const Vector& end );
+	void          setPoints( const Vector& start, const Vector& end );
 
 	Vector get2DPerp();
 
@@ -52,4 +52,4 @@ protected:
 	Vector dir_;
 };
 
-#endif // __INCLUDE_Line_hpp_INCLUDE__
+#endif  // __INCLUDE_Line_hpp_INCLUDE__

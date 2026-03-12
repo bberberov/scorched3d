@@ -24,33 +24,31 @@
 #include <webserver/ServerWebServer.hpp>
 
 class OptionEntry;
+
 namespace ServerWebAppletHandler
 {
 	class AppletFileHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new AppletFileHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new AppletFileHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class AppletHtmlHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new AppletHtmlHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new AppletHtmlHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class AppletActionHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new AppletActionHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new AppletActionHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class AppletAsyncHandler : public ServerWebServerI
@@ -58,15 +56,14 @@ namespace ServerWebAppletHandler
 	public:
 		AppletAsyncHandler();
 
-		virtual ServerWebServerI *createCopy() { return new AppletAsyncHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new AppletAsyncHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 
 	protected:
 		unsigned int lastMessage_;
-		bool initialized_;
+		bool         initialized_;
 	};
-};
+};  // namespace ServerWebAppletHandler
 
-#endif // __INCLUDE_ServerWebAppletHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerWebAppletHandler_hpp_INCLUDE__

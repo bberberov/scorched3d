@@ -30,17 +30,21 @@ public:
 	WeaponAddTarget();
 	virtual ~WeaponAddTarget();
 
-	TargetDefinition &getTargetDefinition() { return targetDefinition_; }
+	TargetDefinition& getTargetDefinition() { return targetDefinition_; }
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
-	void fireWeapon(ScorchedContext &context, 
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(WeaponAddTarget, AccessoryPart::AccessoryWeapon);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
+
+	REGISTER_ACCESSORY_HEADER( WeaponAddTarget, AccessoryPart::AccessoryWeapon );
 
 protected:
 	TargetDefinition targetDefinition_;
 };
 
-#endif // __INCLUDE_WeaponAddTarget_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponAddTarget_hpp_INCLUDE__

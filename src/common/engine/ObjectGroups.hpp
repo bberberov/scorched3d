@@ -30,12 +30,13 @@ public:
 	ObjectGroups();
 	virtual ~ObjectGroups();
 
-	ObjectGroup *getGroup(const char *name, bool create = false);
-	void clearGroups();
+	ObjectGroup* getGroup( const char* name, bool create = false );
+	void         clearGroups();
 
-	std::map<std::string, ObjectGroup*> *getGroups() { return groups_; }
+	std::map< std::string, ObjectGroup* >* getGroups() { return groups_; }
+
 protected:
-	std::map<std::string, ObjectGroup*> *groups_;
+	std::map< std::string, ObjectGroup* >* groups_;
 };
 
-#endif // __INCLUDE_ObjectGroups_hpp_INCLUDE__
+#endif  // __INCLUDE_ObjectGroups_hpp_INCLUDE__

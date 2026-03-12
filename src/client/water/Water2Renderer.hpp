@@ -32,40 +32,45 @@ class WaterWaves;
 class WaterMapPoints;
 class LandscapeTexBorderWater;
 class ProgressCounter;
+
 class Water2Renderer
 {
 public:
 	Water2Renderer();
 	~Water2Renderer();
 
-	void draw(Water2 &water2, WaterMapPoints &points, WaterWaves &waves, float transparency);
-	void simulate(float frameTime);
-	void generate(LandscapeTexBorderWater *water, ProgressCounter *counter = 0);
+	void draw( Water2& water2, WaterMapPoints& points, WaterWaves& waves, float transparency );
+	void simulate( float frameTime );
+	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = 0 );
 
-	void bindWaterReflection() { reflectionBuffer_.bind(); }
-	void unBindWaterReflection() { reflectionBuffer_.unBind(); }
-	void drawPoints(WaterMapPoints &points);
-	GLTexture &getReflectionTexture() { return reflectionTexture_; }
+	// clang-format off
+	// uncrustify off
+	void       bindWaterReflection()   { reflectionBuffer_.bind(); }
+	void       unBindWaterReflection() { reflectionBuffer_.unBind(); }
+	void       drawPoints( WaterMapPoints& points );
+	GLTexture& getReflectionTexture()  { return reflectionTexture_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	float totalTime_;
-	float waterHeight_;
-	GLTexture reflectionTexture_;
-	GLTexture normalTexture_;
-	GLTextureBase *noShaderWaterTexture_;
+	float               totalTime_;
+	float               waterHeight_;
+	GLTexture           reflectionTexture_;
+	GLTexture           normalTexture_;
+	GLTextureBase*      noShaderWaterTexture_;
 	GLFrameBufferObject reflectionBuffer_;
-	Vector landscapeSize_;
-	Vector windDir1_;
-	Vector windDir2_;
-	float windSpeed1_;
-	float windSpeed2_;
+	Vector              landscapeSize_;
+	Vector              windDir1_;
+	Vector              windDir2_;
+	float               windSpeed1_;
+	float               windSpeed2_;
 
-	Water2Patches *currentPatch_;
-	GLSLShaderSetup *waterShader_;
+	Water2Patches*   currentPatch_;
+	GLSLShaderSetup* waterShader_;
 
-	void drawWaterShaders(Water2 &water2, float transparency);
-	void drawWaterNoShaders(Water2 &water2, float transparency);
-	void drawWater(Water2 &water2, GLSLShaderSetup *waterShader);
+	void drawWaterShaders( Water2& water2, float transparency );
+	void drawWaterNoShaders( Water2& water2, float transparency );
+	void drawWater( Water2& water2, GLSLShaderSetup* waterShader );
 };
 
-#endif // __INCLUDE_Water2Renderer_hpp_INCLUDE__
+#endif  // __INCLUDE_Water2Renderer_hpp_INCLUDE__

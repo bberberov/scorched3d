@@ -30,15 +30,14 @@ public:
 	ServerMessageHandler();
 	virtual ~ServerMessageHandler();
 
-	virtual void clientConnected(NetMessage &message);
-	virtual void clientDisconnected(NetMessage &message);
-	virtual void clientError(NetMessage &message,
-		const std::string &errorString);
+	virtual void clientConnected( NetMessage& message );
+	virtual void clientDisconnected( NetMessage& message );
+	virtual void clientError( NetMessage& message, const std::string& errorString );
 
-	virtual void messageRecv(unsigned int destinationId);
-	virtual void messageSent(unsigned int destinationId);
+	virtual void messageRecv( unsigned int destinationId );
+	virtual void messageSent( unsigned int destinationId );
 
-	void destroyPlayer(unsigned int playerId, const char *reason);
+	void destroyPlayer( unsigned int playerId, const char* reason );
 };
 
-#endif // __INCLUDE_ServerMessageHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerMessageHandler_hpp_INCLUDE__

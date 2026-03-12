@@ -25,39 +25,37 @@
 #include <image/ImageID.hpp>
 
 class ScorchedContext;
+
 class PlacementShadowDefinition
 {
 public:
 	struct Entry
 	{
-		Entry(PlacementShadowDefinition *definition,
-			FixedVector &position,
-			FixedVector &size) : 
-			definition_(definition),
-			position_(position), size_(size) { }
+		Entry( PlacementShadowDefinition* definition, FixedVector& position, FixedVector& size )
+			: definition_( definition )
+			, position_( position )
+			, size_( size )
+		{}
 
-		PlacementShadowDefinition *definition_;
-		FixedVector position_;
-		FixedVector size_;
+		PlacementShadowDefinition* definition_;
+		FixedVector                position_;
+		FixedVector                size_;
 	};
 
 	PlacementShadowDefinition();
 	virtual ~PlacementShadowDefinition();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 
-	void updateLandscapeHeight(ScorchedContext &context,
-		FixedVector &position, FixedVector &size);
-	void updateLandscapeTexture(bool useShadows,
-		ScorchedContext &context,
-		FixedVector &position, FixedVector &size);
+	void updateLandscapeHeight( ScorchedContext& context, FixedVector& position, FixedVector& size );
+	void updateLandscapeTexture( bool useShadows, ScorchedContext& context, FixedVector& position, FixedVector& size );
 
-	void setDrawShadow(bool draw) { drawShadow_ = draw; }
+	void setDrawShadow( bool draw ) { drawShadow_ = draw; }
 
 protected:
-	bool drawShadow_;
-	fixed flattenArea_;
+	bool    drawShadow_;
+	fixed   flattenArea_;
 	ImageID groundMap_;
 };
 
-#endif // __INCLUDE_PlacementShadowDefinition_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementShadowDefinition_hpp_INCLUDE__

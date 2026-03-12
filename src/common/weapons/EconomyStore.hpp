@@ -29,11 +29,11 @@ public:
 	EconomyStore();
 	virtual ~EconomyStore();
 
-	Economy *getEconomy();
+	Economy* getEconomy();
 
 protected:
-	Economy *economy_;
-	void loadEconomy();
+	Economy* economy_;
+	void     loadEconomy();
 };
 
-#endif // __INCLUDE_EconomyStore_hpp_INCLUDE__
+#endif  // __INCLUDE_EconomyStore_hpp_INCLUDE__

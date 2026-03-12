@@ -23,25 +23,28 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponRedirect  : public Weapon
+class WeaponRedirect : public Weapon
 {
 public:
 	WeaponRedirect();
 	virtual ~WeaponRedirect();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponRedirect, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponRedirect, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NumberParser hredirect_, vredirect_;
-	bool habs_, vabs_;
-	Weapon *nextAction_;
+	bool         habs_, vabs_;
+	Weapon*      nextAction_;
 };
 
-#endif // __INCLUDE_WeaponRedirect_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponRedirect_hpp_INCLUDE__

@@ -27,6 +27,7 @@
 #include <vector>
 
 class ScorchedContext;
+
 class TargetSpace
 {
 public:
@@ -35,15 +36,17 @@ public:
 
 	void clear();
 
-	void updateTarget(Target *target);
-	void setContext(ScorchedContext *context) { context_ = context; }
+	void updateTarget( Target* target );
 
-	Target *getCollision(FixedVector &position);
+	void setContext( ScorchedContext* context ) { context_ = context; }
+
+	Target* getCollision( FixedVector& position );
+
 	void getCollisionSet(
-		FixedVector &position,
-		fixed radius, std::map<unsigned int,
-		Target *> &collisionTargets,
-		bool ignoreHeight = false
+		FixedVector&                       position,
+		fixed                              radius,
+		std::map< unsigned int, Target* >& collisionTargets,
+		bool                               ignoreHeight = false
 	);
 
 	void draw();
@@ -52,25 +55,25 @@ protected:
 	class Square
 	{
 	public:
-		std::map<unsigned int, Target *> targets;
-		int squarenum;
+		std::map< unsigned int, Target* > targets;
+		int                               squarenum;
 	};
 
-	ScorchedContext *context_;
-	Square *squares_;
-	int spaceX_, spaceY_; // Position of bottom left of space
-	int spaceW_, spaceH_; // Width, height of space
-	int spaceWSq_, spaceHSq_; // Number of squares in width and height
-	int spaceSq_; // Width of each square
-	int noSquares_; // The total number of squares
+	ScorchedContext* context_;
+	Square*          squares_;
+	int              spaceX_, spaceY_;      // Position of bottom left of space
+	int              spaceW_, spaceH_;      // Width, height of space
+	int              spaceWSq_, spaceHSq_;  // Number of squares in width and height
+	int              spaceSq_;              // Width of each square
+	int              noSquares_;            // The total number of squares
 
-	void normalizeCoords(int &x, int &y)
+	void normalizeCoords( int& x, int& y )
 	{
 		// Make sure x and y are in the space
-		x = MIN(x, spaceW_ + spaceX_ - 1);
-		x = MAX(x, spaceX_);
-		y = MIN(y, spaceH_ + spaceY_ - 1);
-		y = MAX(y, spaceY_);
+		x = MIN( x, spaceW_ + spaceX_ - 1 );
+		x = MAX( x, spaceX_ );
+		y = MIN( y, spaceH_ + spaceY_ - 1 );
+		y = MAX( y, spaceY_ );
 
 		// Find the square pos
 		x -= spaceX_;
@@ -79,12 +82,12 @@ protected:
 		y /= spaceSq_;
 	}
 
-	void getSquares(Target *target, std::vector<Square*> &squares);
-	void removeTarget(Target *target);
+	void getSquares( Target* target, std::vector< Square* >& squares );
+	void removeTarget( Target* target );
 
 private:
-	TargetSpace(TargetSpace &other);
-	TargetSpace &operator=(TargetSpace &other);
+	TargetSpace( TargetSpace& other );
+	TargetSpace& operator=( TargetSpace& other );
 };
 
-#endif // __INCLUDE_TargetSpace_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetSpace_hpp_INCLUDE__

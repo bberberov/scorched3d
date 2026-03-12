@@ -29,15 +29,14 @@ public:
 	Parachute();
 	virtual ~Parachute();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	FixedVector &getSlowForce() { return slowForce_; }
+	FixedVector& getSlowForce() { return slowForce_; }
 
-	REGISTER_ACCESSORY_HEADER(Parachute, AccessoryPart::AccessoryParachute);
+	REGISTER_ACCESSORY_HEADER( Parachute, AccessoryPart::AccessoryParachute );
 
 protected:
 	FixedVector slowForce_;
 };
 
-#endif // __INCLUDE_Parachute_hpp_INCLUDE__
+#endif  // __INCLUDE_Parachute_hpp_INCLUDE__

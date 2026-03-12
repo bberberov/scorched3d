@@ -27,22 +27,26 @@ class ModelRendererSimulator;
 class MapPoints
 {
 public:
-	static MapPoints *instance();
+	static MapPoints* instance();
 
-	ModelRendererSimulator *getBorderModelWrap() { return borderModelWrap_; }
-	ModelRendererSimulator *getBorderModelBounce() { return borderModelBounce_; }
-	ModelRendererSimulator *getBorderModelConcrete() { return borderModelConcrete_; }
+	// clang-format off
+	// uncrustify off
+	ModelRendererSimulator* getBorderModelWrap()     { return borderModelWrap_; }
+	ModelRendererSimulator* getBorderModelBounce()   { return borderModelBounce_; }
+	ModelRendererSimulator* getBorderModelConcrete() { return borderModelConcrete_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static MapPoints *instance_;
+	static MapPoints* instance_;
 
-	ModelRendererSimulator *borderModelWrap_;
-	ModelRendererSimulator *borderModelBounce_;
-	ModelRendererSimulator *borderModelConcrete_;
+	ModelRendererSimulator* borderModelWrap_;
+	ModelRendererSimulator* borderModelBounce_;
+	ModelRendererSimulator* borderModelConcrete_;
 
 private:
 	MapPoints();
 	virtual ~MapPoints();
 };
 
-#endif // __INCLUDE_MapPoints_hpp_INCLUDE__
+#endif  // __INCLUDE_MapPoints_hpp_INCLUDE__

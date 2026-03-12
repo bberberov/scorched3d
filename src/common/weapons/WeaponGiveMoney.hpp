@@ -23,29 +23,35 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponGiveMoney  : public WeaponCallback
+class WeaponGiveMoney : public WeaponCallback
 {
 public:
 	WeaponGiveMoney();
 	virtual ~WeaponGiveMoney();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGiveMoney, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGiveMoney, AccessoryPart::AccessoryWeapon );
 
 protected:
 	int money_;
 };
 
-#endif // __INCLUDE_WeaponGiveMoney_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGiveMoney_hpp_INCLUDE__

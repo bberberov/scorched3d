@@ -26,26 +26,28 @@
 
 class ModelID;
 class ModelRenderer;
-class MissileMesh  
+
+class MissileMesh
 {
 public:
-	MissileMesh(ModelID &missile);
+	MissileMesh( ModelID& missile );
 	virtual ~MissileMesh();
 
-	void draw(Vector &position, Vector &direction, int flareType, float rotation, Vector &rotationAxis, float frame);
-	void setScale(float scale);
+	void draw( Vector& position, Vector& direction, int flareType, float rotation, Vector& rotationAxis, float frame );
+	void setScale( float scale );
 
 protected:
-	float innerScale_;
-	float scale_;
-	ModelRenderer *model_;
+	float          innerScale_;
+	float          scale_;
+	ModelRenderer* model_;
 
 	struct FlareInfo
 	{
 		Vector position;
-		float size;
+		float  size;
 	};
-	std::list<FlareInfo> flares_;
+
+	std::list< FlareInfo > flares_;
 };
 
-#endif // __INCLUDE_MissileMesh_hpp_INCLUDE__
+#endif  // __INCLUDE_MissileMesh_hpp_INCLUDE__

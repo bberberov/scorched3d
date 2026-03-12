@@ -24,19 +24,30 @@
 #include <common/Defines.hpp>
 #include <math.h>
 
-class Matrix16  
+class Matrix16
 {
 public:
-	Matrix16(float *init = 0);
+	Matrix16( float* init = 0 );
 	~Matrix16();
 
-	void multiply(float *b);
-	void scale(float x, float y, float z);
-	void translate(float x, float y, float z);
+	void multiply( float* b );
+	void scale( float x, float y, float z );
+	void translate( float x, float y, float z );
 	void identity();
 
-	float &operator[](const int m) { DIALOG_ASSERT(m<=15); return M[m]; }
-	float const &operator[](const int m) const { DIALOG_ASSERT(m<=15); return M[m]; }
+	float& operator[]( const int m )
+	{
+		DIALOG_ASSERT( m <= 15 );
+
+		return M[m];
+	}
+
+	float const& operator[]( const int m ) const
+	{
+		DIALOG_ASSERT( m <= 15 );
+
+		return M[m];
+	}
 
 	operator float*() { return M; }
 
@@ -44,4 +55,4 @@ protected:
 	float M[16];
 };
 
-#endif // __INCLUDE_Matrix16_hpp_INCLUDE__
+#endif  // __INCLUDE_Matrix16_hpp_INCLUDE__

@@ -33,91 +33,93 @@
 class GLWChatView : public GLWidget, public GLWButtonI
 {
 public:
-	GLWChatView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
+	GLWChatView( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWChatView();
 
-	void addLargeChat(const Vector &color, const LangString &text, GLFont2dI *render = 0);
-	void addChat(const Vector &color, const LangString &text, GLFont2dI *render = 0);
+	void addLargeChat( const Vector& color, const LangString& text, GLFont2dI* render = 0 );
+	void addChat( const Vector& color, const LangString& text, GLFont2dI* render = 0 );
 	void clearChat();
 
-	virtual bool initFromXMLInternal(XMLNode *node);
+	virtual bool initFromXMLInternal( XMLNode* node );
 
-	void setAllowScroll(bool allowScroll) { allowScroll_ = allowScroll; }
-	void setDisplayTime(float displayTime) { displayTime_ = displayTime; }
-	void setSplitLargeLines(bool splitLargeLines) { splitLargeLines_ = splitLargeLines; }
-	void setVisibleLines(int visibleLines) { visibleLines_ = visibleLines; }
+	// clang-format off
+	// uncrustify off
+	void setAllowScroll( bool allowScroll )         { allowScroll_ = allowScroll; }
+	void setDisplayTime( float displayTime )        { displayTime_ = displayTime; }
+	void setSplitLargeLines( bool splitLargeLines ) { splitLargeLines_ = splitLargeLines; }
+	void setVisibleLines( int visibleLines )        { visibleLines_ = visibleLines; }
 
-	bool getParentSized() { return parentSized_; }
-	void setParentSized(bool parentSized) { parentSized_ = parentSized; }
+	bool getParentSized()                   { return parentSized_; }
+	void setParentSized( bool parentSized ) { parentSized_ = parentSized; }
+	// uncrustify on
+	// clang-format on
 
 	// GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual bool initFromXML(XMLNode *node);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual bool initFromXML( XMLNode* node );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
-	virtual void setX(float x);
-	virtual void setY(float y);
+	virtual void setX( float x );
+	virtual void setY( float y );
 
 	// ButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
-	REGISTER_CLASS_HEADER(GLWChatView);
+	REGISTER_CLASS_HEADER( GLWChatView );
 
 protected:
 	bool init_;
 
-	int splitLine(const LangString &message);
+	int splitLine( const LangString& message );
+
 private:
 	class GLWChatViewEntry
 	{
 	public:
-		GLWChatViewEntry(const Vector &color, const LangString &text, float timeRemaining, GLFont2dI *renderer) :
-			color(color),
-			text(text),
-			timeRemaining(timeRemaining),
-			renderer(renderer)
+		GLWChatViewEntry( const Vector& color, const LangString& text, float timeRemaining, GLFont2dI* renderer )
+			: color( color )
+			, text( text )
+			, timeRemaining( timeRemaining )
+			, renderer( renderer )
 		{}
 
-		virtual ~GLWChatViewEntry()
-		{
-			delete renderer;
-		}
+		virtual ~GLWChatViewEntry() { delete renderer; }
 
-		Vector color;
+		Vector     color;
 		LangString text;
-		float timeRemaining;
-		GLFont2dI *renderer;
+		float      timeRemaining;
+		GLFont2dI* renderer;
 	};
 
-	KeyboardKey *scrollUpKey_;
-	KeyboardKey *scrollDownKey_;
-	KeyboardKey *scrollResetKey_;
+	KeyboardKey*  scrollUpKey_;
+	KeyboardKey*  scrollDownKey_;
+	KeyboardKey*  scrollResetKey_;
 	GLWIconButton upButton_;
 	GLWIconButton downButton_;
 	GLWIconButton resetButton_;
 
-	bool alignTop_;
-	bool parentSized_;
-	bool splitLargeLines_;
-	bool allowScroll_;
-	int lineDepth_;
-	int scrollPosition_;
-	int visibleLines_;
-	int totalLines_;
-	int currentVisible_;
-	float displayTime_;
-	float fontSize_;
-	float outlineFontSize_;
-	std::list<GLWChatViewEntry *> textLines_;
+	bool                           alignTop_;
+	bool                           parentSized_;
+	bool                           splitLargeLines_;
+	bool                           allowScroll_;
+	int                            lineDepth_;
+	int                            scrollPosition_;
+	int                            visibleLines_;
+	int                            totalLines_;
+	int                            currentVisible_;
+	float                          displayTime_;
+	float                          fontSize_;
+	float                          outlineFontSize_;
+	std::list< GLWChatViewEntry* > textLines_;
 };
 
-#endif // __INCLUDE_GLWChatView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWChatView_hpp_INCLUDE__

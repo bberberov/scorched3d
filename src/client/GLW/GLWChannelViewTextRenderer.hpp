@@ -26,22 +26,24 @@
 #include <GLEXT/GLFont2d.hpp>
 
 class GLWChannelView;
-class GLWChannelViewTextRenderer : 
-	public ChannelTextParser,
-	public GLFont2dI
+
+class GLWChannelViewTextRenderer : public ChannelTextParser, public GLFont2dI
 {
 public:
 	GLWChannelViewTextRenderer();
 	virtual ~GLWChannelViewTextRenderer();
-    
+
 	// GLFont2d
 	virtual bool drawCharacter(
-		unsigned int character,
-		int charPosition, Vector &position, 
-		GLFont2dStorage::CharEntry &charEntry, Vector4 &color);
+		unsigned int                character,
+		int                         charPosition,
+		Vector&                     position,
+		GLFont2dStorage::CharEntry& charEntry,
+		Vector4&                    color
+	);
 
 protected:
 	ToolTip toolTip_;
 };
 
-#endif // __INCLUDE_GLWChanneViewTextRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWChanneViewTextRenderer_hpp_INCLUDE__

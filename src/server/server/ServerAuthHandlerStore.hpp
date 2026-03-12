@@ -29,7 +29,7 @@ public:
 	ServerAuthHandlerStore();
 	virtual ~ServerAuthHandlerStore();
 
-	ServerAuthHandler *getAuthHandler();
+	ServerAuthHandler* getAuthHandler();
 };
 
-#endif // __INCLUDE_ServerAuthHandlerStore_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAuthHandlerStore_hpp_INCLUDE__

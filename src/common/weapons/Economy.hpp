@@ -24,20 +24,19 @@
 #include <engine/MetaClass.hpp>
 
 class Tank;
+
 class Economy : public MetaClass
 {
 public:
 	Economy();
 	virtual ~Economy();
 
-	virtual bool loadPrices() = 0;
-	virtual bool savePrices() = 0;
+	virtual bool loadPrices()      = 0;
+	virtual bool savePrices()      = 0;
 	virtual void calculatePrices() = 0;
 
-	virtual void accessoryBought(Tank *tank, 
-		const char *accessoryName) = 0;
-	virtual void accessorySold(Tank *tank, 
-		const char *accessoryName) = 0;
+	virtual void accessoryBought( Tank* tank, const char* accessoryName ) = 0;
+	virtual void accessorySold( Tank* tank, const char* accessoryName )   = 0;
 };
 
-#endif // __INCLUDE_Economy_hpp_INCLUDE__
+#endif  // __INCLUDE_Economy_hpp_INCLUDE__

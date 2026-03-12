@@ -32,148 +32,159 @@
 #endif
 
 class NetBuffer;
+
 class NamedNetBuffer
 {
 public:
-	virtual void startSection(const char *name) {}
-	virtual void stopSection(const char *name) {}
+	virtual void startSection( const char* name ) {}
 
-	virtual void addToBufferNamed(const char *name, Vector &vector) = 0;
-	virtual void addToBufferNamed(const char *name, FixedVector &vector) = 0;
-	virtual void addToBufferNamed(const char *name, FixedVector4 &vector) = 0;
-	virtual void addToBufferNamed(const char *name, const char *add) = 0;
-	virtual void addToBufferNamed(const char *name, std::string &string) = 0;
-	virtual void addToBufferNamed(const char *name, const std::string &string) = 0;
-	virtual void addToBufferNamed(const char *name, LangString &string) = 0;
-	virtual void addToBufferNamed(const char *name, const LangString &string) = 0;
-	virtual void addToBufferNamed(const char *name, const char add) = 0;
-	virtual void addToBufferNamed(const char *name, const unsigned char add) = 0;
-	virtual void addToBufferNamed(const char *name, const int add) = 0;
-	virtual void addToBufferNamed(const char *name, const float add) = 0;
-	virtual void addToBufferNamed(const char *name, const bool add) = 0;
-	virtual void addToBufferNamed(const char *name, const unsigned int add) = 0;
-	virtual void addToBufferNamed(const char *name, const fixed add) = 0;
-	virtual void addToBufferNamed(const char *name, NetBuffer &add) = 0;
+	virtual void stopSection( const char* name ) {}
+
+	virtual void addToBufferNamed( const char* name, Vector& vector )            = 0;
+	virtual void addToBufferNamed( const char* name, FixedVector& vector )       = 0;
+	virtual void addToBufferNamed( const char* name, FixedVector4& vector )      = 0;
+	virtual void addToBufferNamed( const char* name, const char* add )           = 0;
+	virtual void addToBufferNamed( const char* name, std::string& string )       = 0;
+	virtual void addToBufferNamed( const char* name, const std::string& string ) = 0;
+	virtual void addToBufferNamed( const char* name, LangString& string )        = 0;
+	virtual void addToBufferNamed( const char* name, const LangString& string )  = 0;
+	virtual void addToBufferNamed( const char* name, const char add )            = 0;
+	virtual void addToBufferNamed( const char* name, const unsigned char add )   = 0;
+	virtual void addToBufferNamed( const char* name, const int add )             = 0;
+	virtual void addToBufferNamed( const char* name, const float add )           = 0;
+	virtual void addToBufferNamed( const char* name, const bool add )            = 0;
+	virtual void addToBufferNamed( const char* name, const unsigned int add )    = 0;
+	virtual void addToBufferNamed( const char* name, const fixed add )           = 0;
+	virtual void addToBufferNamed( const char* name, NetBuffer& add )            = 0;
 };
 
 class NamedNetBufferSection
 {
 public:
-	NamedNetBufferSection(NamedNetBuffer &buffer, const char *name);
+	NamedNetBufferSection( NamedNetBuffer& buffer, const char* name );
 	virtual ~NamedNetBufferSection();
 
 protected:
-	NamedNetBuffer &buffer_;
-	const char *name_;
+	NamedNetBuffer& buffer_;
+	const char*     name_;
 };
 
 class NetBuffer : public NamedNetBuffer
 {
 public:
 	NetBuffer();
-	NetBuffer(unsigned startSize, void *startBuffer = 0);
-	NetBuffer(const NetBuffer &other);
+	NetBuffer( unsigned int startSize, void* startBuffer = 0 );
+	NetBuffer( const NetBuffer& other );
 	virtual ~NetBuffer();
 
 	void reset();
 	void clear();
-	void resize(unsigned newBufferSize);
-	void allocate(unsigned size);
-	void setBufferUsed(unsigned size) { usedSize_ = size; }
+	void resize( unsigned int newBufferSize );
+	void allocate( unsigned int size );
 
-	virtual void addToBufferNamed(const char *name, Vector &vector);
-	virtual void addToBufferNamed(const char *name, FixedVector &vector);
-	virtual void addToBufferNamed(const char *name, FixedVector4 &vector);
-	virtual void addToBufferNamed(const char *name, const char *add);
-	virtual void addToBufferNamed(const char *name, std::string &string);
-	virtual void addToBufferNamed(const char *name, const std::string &string);
-	virtual void addToBufferNamed(const char *name, LangString &string);
-	virtual void addToBufferNamed(const char *name, const LangString &string);
-	virtual void addToBufferNamed(const char *name, const char add);
-	virtual void addToBufferNamed(const char *name, const unsigned char add);
-	virtual void addToBufferNamed(const char *name, const int add);
-	virtual void addToBufferNamed(const char *name, const float add);
-	virtual void addToBufferNamed(const char *name, const bool add);
-	virtual void addToBufferNamed(const char *name, const unsigned int add);
-	virtual void addToBufferNamed(const char *name, const fixed add);
-	virtual void addToBufferNamed(const char *name, NetBuffer &add);
+	void setBufferUsed( unsigned int size ) { usedSize_ = size; }
 
-	void addToBuffer(Vector &vector);
-	void addToBuffer(FixedVector &vector);
-	void addToBuffer(FixedVector4 &vector);
-	void addToBuffer(const char *add);
-	void addToBuffer(std::string &string);
-	void addToBuffer(const std::string &string);
-	void addToBuffer(LangString &string);
-	void addToBuffer(const LangString &string);
-	void addToBuffer(const char add);
-	void addToBuffer(const unsigned char add);
-	void addToBuffer(const int add);
-	void addToBuffer(const float add);
-	void addToBuffer(const bool add);
-	void addToBuffer(const unsigned int add);
-	void addToBuffer(const fixed add);
-	void addToBuffer(NetBuffer &add);
+	virtual void addToBufferNamed( const char* name, Vector& vector );
+	virtual void addToBufferNamed( const char* name, FixedVector& vector );
+	virtual void addToBufferNamed( const char* name, FixedVector4& vector );
+	virtual void addToBufferNamed( const char* name, const char* add );
+	virtual void addToBufferNamed( const char* name, std::string& string );
+	virtual void addToBufferNamed( const char* name, const std::string& string );
+	virtual void addToBufferNamed( const char* name, LangString& string );
+	virtual void addToBufferNamed( const char* name, const LangString& string );
+	virtual void addToBufferNamed( const char* name, const char add );
+	virtual void addToBufferNamed( const char* name, const unsigned char add );
+	virtual void addToBufferNamed( const char* name, const int add );
+	virtual void addToBufferNamed( const char* name, const float add );
+	virtual void addToBufferNamed( const char* name, const bool add );
+	virtual void addToBufferNamed( const char* name, const unsigned int add );
+	virtual void addToBufferNamed( const char* name, const fixed add );
+	virtual void addToBufferNamed( const char* name, NetBuffer& add );
+
+	void addToBuffer( Vector& vector );
+	void addToBuffer( FixedVector& vector );
+	void addToBuffer( FixedVector4& vector );
+	void addToBuffer( const char* add );
+	void addToBuffer( std::string& string );
+	void addToBuffer( const std::string& string );
+	void addToBuffer( LangString& string );
+	void addToBuffer( const LangString& string );
+	void addToBuffer( const char add );
+	void addToBuffer( const unsigned char add );
+	void addToBuffer( const int add );
+	void addToBuffer( const float add );
+	void addToBuffer( const bool add );
+	void addToBuffer( const unsigned int add );
+	void addToBuffer( const fixed add );
+	void addToBuffer( NetBuffer& add );
 
 	bool compressBuffer();
 	bool uncompressBuffer();
 
-	char *getBuffer() { return buffer_; }
-	unsigned getTotalBufferSize() { return bufferSize_; }
-	unsigned getBufferUsed() { return usedSize_; }
-	unsigned getCrc();
+	// clang-format off
+	// uncrustify off
+	char*        getBuffer()          { return buffer_; }
+	unsigned int getTotalBufferSize() { return bufferSize_; }
+	unsigned int getBufferUsed()      { return usedSize_; }
+	unsigned int getCrc();
+	// uncrustify on
+	// clang-format on
 
 	// Adds raw data to into the buffer
 	// NOTE: Care must be taken to ensure that the added data
 	// is in network byte ordering
-	void addDataToBuffer(const void *add, unsigned len);
+	void addDataToBuffer( const void* add, unsigned int len );
 
 protected:
-	char *buffer_;
-	unsigned usedSize_;
-	unsigned bufferSize_;
+	char*        buffer_;
+	unsigned int usedSize_;
+	unsigned int bufferSize_;
 };
 
 class NetBufferReader
 {
 public:
 	NetBufferReader();
-	NetBufferReader(NetBuffer &buffer);
+	NetBufferReader( NetBuffer& buffer );
 	virtual ~NetBufferReader();
 
 	void reset();
 
-	unsigned getBufferSize() { return bufferSize_; }
-	unsigned getReadSize() { return readSize_; }
-	char *getBuffer() { return buffer_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getBufferSize()                    { return bufferSize_; }
+	unsigned int getReadSize()                      { return readSize_; }
+	void         setReadSize( unsigned int size )   { readSize_ = size; }
+	void         setBufferSize( unsigned int size ) { bufferSize_ = size; }
 
-	void setBuffer(char *buffer) { buffer_ = buffer; }
-	void setReadSize(unsigned size) { readSize_ = size; }
-	void setBufferSize(unsigned size) { bufferSize_ = size; }
+	char* getBuffer()               { return buffer_; }
+	void  setBuffer( char* buffer ) { buffer_ = buffer; }
+	// uncrustify on
+	// clang-format on
 
-	bool getFromBuffer(Vector &result);
-	bool getFromBuffer(FixedVector &result);
-	bool getFromBuffer(FixedVector4 &result);
-	bool getFromBuffer(fixed &result);
-	bool getFromBuffer(char &result);
-	bool getFromBuffer(unsigned char &result);
-	bool getFromBuffer(int &result);
-	bool getFromBuffer(float &result);
-	bool getFromBuffer(bool &result);
-	bool getFromBuffer(unsigned int &result);
-	bool getFromBuffer(std::string &string, bool safe = true);
-	bool getFromBuffer(LangString &string);
-	bool getFromBuffer(NetBuffer &buffer);
+	bool getFromBuffer( Vector& result );
+	bool getFromBuffer( FixedVector& result );
+	bool getFromBuffer( FixedVector4& result );
+	bool getFromBuffer( fixed& result );
+	bool getFromBuffer( char& result );
+	bool getFromBuffer( unsigned char& result );
+	bool getFromBuffer( int& result );
+	bool getFromBuffer( float& result );
+	bool getFromBuffer( bool& result );
+	bool getFromBuffer( unsigned int& result );
+	bool getFromBuffer( std::string& string, bool safe = true );
+	bool getFromBuffer( LangString& string );
+	bool getFromBuffer( NetBuffer& buffer );
 
 	// Gets raw data from the buffer
 	// NOTE: Care must be taken to ensure that the data
-	// is in network byte ordering	
-	bool getDataFromBuffer(void *dest, int len);
+	// is in network byte ordering
+	bool getDataFromBuffer( void* dest, int len );
 
 protected:
-	char *buffer_;
-	unsigned bufferSize_;
-	unsigned readSize_;
+	char*        buffer_;
+	unsigned int bufferSize_;
+	unsigned int readSize_;
 };
 
-#endif // __INCLUDE_NetBuffer_hpp_INCLUDE__
+#endif  // __INCLUDE_NetBuffer_hpp_INCLUDE__

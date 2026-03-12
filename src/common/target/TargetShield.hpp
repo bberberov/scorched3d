@@ -27,40 +27,47 @@
 class Target;
 class Accessory;
 class ScorchedContext;
+
 class TargetShield
 {
 public:
-	TargetShield(ScorchedContext &context, unsigned int playerId);
+	TargetShield( ScorchedContext& context, unsigned int playerId );
 	virtual ~TargetShield();
 
 	virtual void loaded();
-	void setTarget(Target *target) { target_ = target; }
 
-	Accessory *getCurrentShield() { return currentShield_; }
-	void setCurrentShield(Accessory *sh);
+	void setTarget( Target* target ) { target_ = target; }
+
+	Accessory* getCurrentShield() { return currentShield_; }
+
+	void setCurrentShield( Accessory* sh );
 
 	// Used only for delayed shield defense
-	Accessory *getGraphicalCurrentShield();
-	fixed getGraphicalShieldPower();
+	Accessory* getGraphicalCurrentShield();
+	fixed      getGraphicalShieldPower();
 
-	fixed getShieldPower() { return power_; }
+	// clang-format off
+	// uncrustify off
+	fixed getShieldPower()        { return power_; }
 	fixed getShieldBoundingSize() { return boundingSize_; }
-	void setShieldPower(fixed power);
+	void setShieldPower( fixed power );
+	// uncrustify on
+	// clang-format on
 
 	// Serialize
-    bool writeMessage(NamedNetBuffer &buffer);
-    bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	Accessory *currentShield_;
-	Target *target_;
-	fixed power_;
-	fixed boundingSize_;
-	Accessory *graphicalCurrentShield_;
-	fixed graphicalShieldPower_;
+	ScorchedContext& context_;
+	Accessory*       currentShield_;
+	Target*          target_;
+	fixed            power_;
+	fixed            boundingSize_;
+	Accessory*       graphicalCurrentShield_;
+	fixed            graphicalShieldPower_;
 
 	bool returnGraphical();
 };
 
-#endif // __INCLUDE_TargetShield_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetShield_hpp_INCLUDE__

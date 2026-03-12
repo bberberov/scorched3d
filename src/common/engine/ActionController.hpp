@@ -26,6 +26,7 @@
 #include <actions/Action.hpp>
 
 class ScorchedContext;
+
 class ActionController
 {
 public:
@@ -33,72 +34,66 @@ public:
 	virtual ~ActionController();
 
 	// Add an action to be simulated
-	void addAction(Action *action);
+	void addAction( Action* action );
 	bool noReferencedActions();
-	void clear(bool warn = false);
+	void clear( bool warn = false );
 
 	// Turn on action tracing
 	void startActionProfiling() { actionProfiling_ = true; }
+
 	void stopActionProfiling();
 	void logActions();
 
 	// Set the simulation speed
-	void setScorchedContext(ScorchedContext *context);
+	void setScorchedContext( ScorchedContext* context );
 
 	// Inherited from GameStateI
-	void simulate(fixed frameTime, fixed time);
+	void simulate( fixed frameTime, fixed time );
 	void draw();
 
 protected:
 	class ActionList
 	{
 	public:
-		ActionList(int startingSize) :
-			actionCount(0),
-			maxActions(startingSize)
+		ActionList( int startingSize ) : actionCount( 0 ), maxActions( startingSize )
 		{
 			actions = new Action*[maxActions];
 		}
-		~ActionList()
-		{
-			delete [] actions;
-		}
 
-		void push_back(Action *action)
+		~ActionList() { delete[] actions; }
+
+		void push_back( Action* action )
 		{
 			actions[actionCount++] = action;
-			if (actionCount == maxActions)
+			if ( actionCount == maxActions )
 			{
-				Action **newActions = new Action*[maxActions * 2];
-				memcpy(newActions, actions, sizeof(Action *) * maxActions);
-				delete [] actions;
+				Action** newActions = new Action*[maxActions * 2];
+				memcpy( newActions, actions, sizeof( Action* ) * maxActions );
+				delete[] actions;
 				maxActions = maxActions * 2;
-				actions = newActions;
+				actions    = newActions;
 			}
 		}
-		void clear()
-		{
-			actionCount = 0;
-		}
-		bool empty()
-		{
-			return (actionCount == 0);
-		}
 
-		int actionCount;
-		Action **actions;
+		void clear() { actionCount = 0; }
+
+		bool empty() { return ( actionCount == 0 ); }
+
+		int      actionCount;
+		Action** actions;
+
 	private:
 		int maxActions;
 	};
 
-	ScorchedContext *context_;
-	ActionList newActions_;
-	ActionList actions_;
-	std::map<std::string, int> actionProfile_;
-	int referenceCount_;
-	bool actionProfiling_;
+	ScorchedContext*             context_;
+	ActionList                   newActions_;
+	ActionList                   actions_;
+	std::map< std::string, int > actionProfile_;
+	int                          referenceCount_;
+	bool                         actionProfiling_;
 
-	void addNewActions(fixed time);
+	void addNewActions( fixed time );
 };
 
-#endif // __INCLUDE_ActionController_hpp_INCLUDE__
+#endif  // __INCLUDE_ActionController_hpp_INCLUDE__

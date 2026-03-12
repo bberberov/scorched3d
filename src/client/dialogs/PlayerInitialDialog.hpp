@@ -27,21 +27,21 @@
 class PlayerInitialDialog : public PlayerDialog
 {
 public:
-	static PlayerInitialDialog *instance();
+	static PlayerInitialDialog* instance();
 
 	void displayDialog();
 	void draw();
 
 protected:
-	static PlayerInitialDialog *instance_;
+	static PlayerInitialDialog* instance_;
 
 	unsigned int currentPlayerId_;
 	unsigned int allocatedTeam_;
 
-	void nextPlayer();
-	void getNextPlayer();
-	void initializeFromTank(Tank *tank);
-	virtual void okButton(bool spectate);
+	void         nextPlayer();
+	void         getNextPlayer();
+	void         initializeFromTank( Tank* tank );
+	virtual void okButton( bool spectate );
 	virtual void cancelButton();
 
 private:
@@ -49,4 +49,4 @@ private:
 	virtual ~PlayerInitialDialog();
 };
 
-#endif // __INCLUDE_PlayerInitialDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_PlayerInitialDialog_hpp_INCLUDE__

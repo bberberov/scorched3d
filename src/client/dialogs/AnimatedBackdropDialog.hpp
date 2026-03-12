@@ -30,18 +30,19 @@ class ProgressCounter;
 class AnimatedBackdropDialog : public GLWWindow
 {
 public:
-	static AnimatedBackdropDialog *instance();
+	static AnimatedBackdropDialog* instance();
 
 	virtual void draw();
-	void drawBackground();
-	virtual void simulate(float frameTime);
+	void         drawBackground();
+	virtual void simulate( float frameTime );
+
 	void reInit() { init_ = false; }
 
 protected:
-	static AnimatedBackdropDialog *instance_;
+	static AnimatedBackdropDialog* instance_;
 
 	float rotation_;
-	bool init_;
+	bool  init_;
 
 	void init();
 
@@ -50,4 +51,4 @@ private:
 	virtual ~AnimatedBackdropDialog();
 };
 
-#endif // __INCLUDE_AnimatedBackdropDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AnimatedBackdropDialog_hpp_INCLUDE__

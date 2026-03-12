@@ -28,34 +28,38 @@ class NetServerTCP3Recv
 {
 public:
 	NetServerTCP3Recv(
-		TCPsocket socket,
-		unsigned int destinationId,
-		unsigned int ipAddress,
-		NetMessageHandler *recieveMessageHandler
+		TCPsocket          socket,
+		unsigned int       destinationId,
+		unsigned int       ipAddress,
+		NetMessageHandler* recieveMessageHandler
 	);
 	virtual ~NetServerTCP3Recv();
 
+	// clang-format off
+	// uncrustify off
 	bool getStopped() { return stopped_; }
-	void stop() { running_ = false; }
+	void stop()       { running_ = false; }
 	void wait();
 
 	unsigned int getMessagesRecieved() { return messagesRecieved_; }
-	unsigned int getBytesIn() { return bytesIn_; }
+	unsigned int getBytesIn()          { return bytesIn_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	TCPsocket socket_;
-	unsigned int destinationId_;
-	unsigned int ipAddress_;
-	SDLNet_SocketSet socketSet_;
-	SDL_Thread *recvThread_;
-	NetMessageHandler *recieveMessageHandler_;
-	unsigned int messagesRecieved_;
-	unsigned int bytesIn_;
-	bool stopped_;
-	bool running_;
+	TCPsocket          socket_;
+	unsigned int       destinationId_;
+	unsigned int       ipAddress_;
+	SDLNet_SocketSet   socketSet_;
+	SDL_Thread*        recvThread_;
+	NetMessageHandler* recieveMessageHandler_;
+	unsigned int       messagesRecieved_;
+	unsigned int       bytesIn_;
+	bool               stopped_;
+	bool               running_;
 
-	static int recvThreadFunc(void *c);
-	bool actualRecvFunc();
+	static int recvThreadFunc( void* c );
+	bool       actualRecvFunc();
 };
 
-#endif // __INCLUDE_NetServerTCP3Recv_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCP3Recv_hpp_INCLUDE__

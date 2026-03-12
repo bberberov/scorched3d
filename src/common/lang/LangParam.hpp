@@ -24,61 +24,73 @@
 #include <lang/LangString.hpp>
 #include <vector>
 
-#define LANG_PARAM_1(key, param1) \
-	LangParam::getKey(key, param1)
-#define LANG_PARAM_2(key, param1, param2) \
-	LangParam::getKey(key, param1, param2)
-#define LANG_PARAM_3(key, param1, param2, param3) \
-	LangParam::getKey(key, param1, param2, param3)
-#define LANG_PARAM_4(key, param1, param2, param3, param4) \
-	LangParam::getKey(key, param1, param2, param3, param4)
-#define LANG_PARAM_5(key, param1, param2, param3, param4, param5) \
-	LangParam::getKey(key, param1, param2, param3, param4, param5)
+#define LANG_PARAM_1( key, param1 )                         LangParam::getKey( key, param1 )
+#define LANG_PARAM_2( key, param1, param2 )                 LangParam::getKey( key, param1, param2 )
+#define LANG_PARAM_3( key, param1, param2, param3 )         LangParam::getKey( key, param1, param2, param3 )
+#define LANG_PARAM_4( key, param1, param2, param3, param4 ) LangParam::getKey( key, param1, param2, param3, param4 )
+#define LANG_PARAM_5( key, param1, param2, param3, param4, param5 ) \
+	LangParam::getKey( key, param1, param2, param3, param4, param5 )
 
 class LangParam
 {
 public:
-	LangParam(const LangStringConverter &value);
+	LangParam( const LangStringConverter& value );
 
 	LangString getValue();
 
 	LangString getParameterizedString();
-	LangString getParameterizedString(const LangStringConverter &param1);
-	LangString getParameterizedString(const LangStringConverter &param1, 
-		const LangStringConverter &param2);
-	LangString getParameterizedString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3);
-	LangString getParameterizedString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3, 
-		const LangStringConverter &param4);
-	LangString getParameterizedString(const LangStringConverter &param1, 
-		const LangStringConverter &param2, const LangStringConverter &param3, 
-		const LangStringConverter &param4, const LangStringConverter &param5);
+	LangString getParameterizedString( const LangStringConverter& param1 );
+	LangString getParameterizedString( const LangStringConverter& param1, const LangStringConverter& param2 );
+	LangString getParameterizedString(
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3
+	);
+	LangString getParameterizedString(
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4
+	);
+	LangString getParameterizedString(
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4,
+		const LangStringConverter& param5
+	);
 
-	static LangString getKey(const LangStringConverter &value,
-		const LangStringConverter &param1);
-	static LangString getKey(const LangStringConverter &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2);
-	static LangString getKey(const LangStringConverter &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3);
-	static LangString getKey(const LangStringConverter &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3,
-		const LangStringConverter &param4);
-	static LangString getKey(const LangStringConverter &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3,
-		const LangStringConverter &param4,
-		const LangStringConverter &param5);
+	static LangString getKey( const LangStringConverter& value, const LangStringConverter& param1 );
+	static LangString getKey(
+		const LangStringConverter& value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2
+	);
+	static LangString getKey(
+		const LangStringConverter& value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3
+	);
+	static LangString getKey(
+		const LangStringConverter& value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4
+	);
+	static LangString getKey(
+		const LangStringConverter& value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4,
+		const LangStringConverter& param5
+	);
 
 private:
-	std::vector<LangString> parts_;
-	std::vector<int> positions_;
+	std::vector< LangString > parts_;
+	std::vector< int >        positions_;
 };
 
-#endif // __INCLUDE_LangParam_hpp_INCLUDE__
+#endif  // __INCLUDE_LangParam_hpp_INCLUDE__

@@ -24,18 +24,21 @@
 #include <string>
 
 class GLTexture;
+
 class LoggerInfo
 {
 public:
-	LoggerInfo(
-		const std::string &message = "", 
-		const std::string &time = "");
+	LoggerInfo( const std::string& message = "", const std::string& time = "" );
 
-	void setMessage(const char *message);
+	void setMessage( const char* message );
 	void setTime();
 
-	const char *getMessage() { return message_.c_str(); }
-	const char *getTime() { return time_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	const char* getMessage() { return message_.c_str(); }
+	const char* getTime()    { return time_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	std::string message_;
@@ -45,7 +48,7 @@ protected:
 class LoggerI
 {
 public:
-	virtual void logMessage(LoggerInfo &info) = 0;
+	virtual void logMessage( LoggerInfo& info ) = 0;
 };
 
-#endif // __INCLUDE_LoggerI_hpp_INCLUDE__
+#endif  // __INCLUDE_LoggerI_hpp_INCLUDE__

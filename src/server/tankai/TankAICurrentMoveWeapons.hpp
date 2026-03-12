@@ -26,22 +26,21 @@
 class Tanket;
 class Shield;
 class Accessory;
+
 class TankAICurrentMoveWeapons
 {
 public:
-	TankAICurrentMoveWeapons(Tanket *tanket, 
-		Tanket *targetTanket,
-		TankAIWeaponSets::WeaponSet *weapons);
+	TankAICurrentMoveWeapons( Tanket* tanket, Tanket* targetTanket, TankAIWeaponSets::WeaponSet* weapons );
 	virtual ~TankAICurrentMoveWeapons();
 
-	Accessory *small;
-	Accessory *large;
-	Accessory *napalm;
-	Accessory *laser;
-	Accessory *digger;
-	Accessory *roller;
-	Accessory *uncover;
-	Shield *shield;
+	Accessory* small;
+	Accessory* large;
+	Accessory* napalm;
+	Accessory* laser;
+	Accessory* digger;
+	Accessory* roller;
+	Accessory* uncover;
+	Shield*    shield;
 };
 
-#endif // __INCLUDE_TankAICurrentMoveWeapons_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAICurrentMoveWeapons_hpp_INCLUDE__

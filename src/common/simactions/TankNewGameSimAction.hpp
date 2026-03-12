@@ -27,20 +27,21 @@ class TankNewGameSimAction : public SimAction
 {
 public:
 	TankNewGameSimAction();
-	TankNewGameSimAction(unsigned int playerId);
+	TankNewGameSimAction( unsigned int playerId );
 	virtual ~TankNewGameSimAction();
 
 	static unsigned int getInstanceCount() { return instanceCount_; }
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankNewGameSimAction);
+	REGISTER_CLASS_HEADER( TankNewGameSimAction );
+
 protected:
 	static unsigned int instanceCount_;
-	unsigned int playerId_;
+	unsigned int        playerId_;
 };
 
-#endif // __INCLUDE_TankNewGameSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankNewGameSimAction_hpp_INCLUDE__

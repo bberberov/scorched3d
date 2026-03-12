@@ -27,35 +27,42 @@
 class NetServerTCP3Send : public NetMessageHandlerI
 {
 public:
-	NetServerTCP3Send(TCPsocket socket, 
-		unsigned int destinationId, unsigned int ipAddress,
-		NetMessageHandler *recieveMessageHandler);
+	NetServerTCP3Send(
+		TCPsocket          socket,
+		unsigned int       destinationId,
+		unsigned int       ipAddress,
+		NetMessageHandler* recieveMessageHandler
+	);
 	virtual ~NetServerTCP3Send();
 
+	// clang-format off
+	// uncrustify off
 	bool getStopped() { return stopped_; }
 	void wait();
 
 	unsigned int getMessagesSent() { return messagesSent_; }
-	unsigned int getBytesOut() { return bytesOut_; }
+	unsigned int getBytesOut()     { return bytesOut_; }
+	// uncrustify on
+	// clang-format on
 
-	void sendMessage(NetMessage *message);
-	virtual void processMessage(NetMessage &message);
+	void         sendMessage( NetMessage* message );
+	virtual void processMessage( NetMessage& message );
 
 protected:
-	TCPsocket socket_;
-	unsigned int destinationId_;
-	unsigned int ipAddress_;
-	SDL_Thread *sendThread_;
-	NetMessageHandler sendMessageHandler_;
-	NetMessageHandler *recieveMessageHandler_;
-	std::list<NetMessage *> outgoingMessages_;
-	unsigned int messagesSent_;
-	unsigned int bytesOut_;
-	bool stopped_;
-	bool running_;
+	TCPsocket                socket_;
+	unsigned int             destinationId_;
+	unsigned int             ipAddress_;
+	SDL_Thread*              sendThread_;
+	NetMessageHandler        sendMessageHandler_;
+	NetMessageHandler*       recieveMessageHandler_;
+	std::list< NetMessage* > outgoingMessages_;
+	unsigned int             messagesSent_;
+	unsigned int             bytesOut_;
+	bool                     stopped_;
+	bool                     running_;
 
-	static int sendThreadFunc(void *c);
-	bool actualSendFunc();
+	static int sendThreadFunc( void* c );
+	bool       actualSendFunc();
 };
 
-#endif // __INCLUDE_NetServerTCP3Send_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCP3Send_hpp_INCLUDE__

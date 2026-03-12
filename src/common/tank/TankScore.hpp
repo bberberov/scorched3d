@@ -28,83 +28,88 @@
 
 class Tank;
 class ScorchedContext;
-class TankScore  
+
+class TankScore
 {
 public:
-	TankScore(ScorchedContext &context);
+	TankScore( ScorchedContext& context );
 	virtual ~TankScore();
 
-	void setTank(Tank *tank) { tank_ = tank; }
+	void setTank( Tank* tank ) { tank_ = tank; }
 
 	void newMatch();
 	void newGame();
 
-	int getKills() { return kills_; }
-	void setKills(int kills) { kills_ = kills; }
+	// clang-format off
+	// uncrustify off
+	int  getKills()            { return kills_; }
+	void setKills( int kills ) { kills_ = kills; }
 
-	int getAssists() { return assists_; }
-	void setAssists(int assists) { assists_ = assists; }
+	int  getAssists()              { return assists_; }
+	void setAssists( int assists ) { assists_ = assists; }
 
-	int getMoney() { return money_; }
-	void setMoney(int money);
+	int  getMoney() { return money_; }
+	void setMoney( int money );
 
-	int getWins() { return wins_; }
-	void setWins(int wins) { wins_ = wins; }
+	int  getWins()           { return wins_; }
+	void setWins( int wins ) { wins_ = wins; }
 
-	int getScore() { return score_; }
-	void setScore(int score);
+	int  getScore() { return score_; }
+	void setScore( int score );
 
 	bool getWonGame() { return wonGame_; }
 	void setWonGame() { wonGame_ = true; }
 
-	int getRank() { return rank_; }
-	void setRank(int rank) { rank_ = rank; }
+	int  getRank()           { return rank_; }
+	void setRank( int rank ) { rank_ = rank; }
 
-	int getSkill() { return skill_; }
-	void setSkill(int skill);
+	int  getSkill() { return skill_; }
+	void setSkill( int skill );
 
-	int getPing() { return ping_; }
-	void setPing(int ping) { ping_ = ping; }
+	int  getPing()           { return ping_; }
+	void setPing( int ping ) { ping_ = ping; }
 
 	int getStartSkill() { return startSkill_; }
 
-	std::set<unsigned int> &getHurtBy() { return hurtBy_; }
+	std::set< unsigned int >& getHurtBy() { return hurtBy_; }
 
-	time_t getTimePlayed() { return time(0) - startTime_; }
-	time_t getStartTime() { return startTime_; }
+	time_t getTimePlayed() { return time( 0 ) - startTime_; }
+	time_t getStartTime()  { return startTime_; }
 
 	// Stuff for stats
 	time_t getTimePlayedStat();
-	int getTotalMoneyEarnedStat() { return totalMoneyEarned_; }
-	int getTotalScoreEarnedStat() { return totalScoreEarned_; }
-	void resetTotalEarnedStats();
+	int    getTotalMoneyEarnedStat() { return totalMoneyEarned_; }
+	int    getTotalScoreEarnedStat() { return totalScoreEarned_; }
+	void   resetTotalEarnedStats();
+	// uncrustify on
+	// clang-format on
 
 	// Get info as text
-	const char *getTimePlayedString();
-	const char *getScoreString();
+	const char* getTimePlayedString();
+	const char* getScoreString();
 
 	// Serialize the tank
-	bool writeMessage(NamedNetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	Tank *tank_;
-	std::set<unsigned int> hurtBy_;
-	int rank_;
-	int skill_;
-	int startSkill_;
-	int kills_;
-	int ping_;
-	int assists_;
-	int money_;
-	int totalMoneyEarned_;
-	int totalScoreEarned_;
-	int wins_;
-	int score_;
-	bool wonGame_;
-	time_t startTime_;
-	time_t lastStatTime_;
+	ScorchedContext&         context_;
+	Tank*                    tank_;
+	std::set< unsigned int > hurtBy_;
+	int                      rank_;
+	int                      skill_;
+	int                      startSkill_;
+	int                      kills_;
+	int                      ping_;
+	int                      assists_;
+	int                      money_;
+	int                      totalMoneyEarned_;
+	int                      totalScoreEarned_;
+	int                      wins_;
+	int                      score_;
+	bool                     wonGame_;
+	time_t                   startTime_;
+	time_t                   lastStatTime_;
 };
 
-#endif // __INCLUDE_TankScore_hpp_INCLUDE__
+#endif  // __INCLUDE_TankScore_hpp_INCLUDE__

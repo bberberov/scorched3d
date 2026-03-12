@@ -31,128 +31,137 @@
 class ServerChannelManager
 {
 public:
-	ServerChannelManager(ComsMessageHandler &comsMessageHandler);
+	ServerChannelManager( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerChannelManager();
 
 	struct MessageEntry
 	{
-		std::string message;
+		std::string  message;
 		unsigned int messageid;
 	};
 
-	void sendText(const ChannelText &text, bool serverLog, bool filter = true);
-	void sendText(const ChannelText &text, unsigned int destination, bool serverLog, bool filter = true);
-	std::list<MessageEntry> &getLastMessages() { return lastMessages_; }
-	std::list<std::string> getAllChannels();
+	void sendText( const ChannelText& text, bool serverLog, bool filter = true );
+	void sendText( const ChannelText& text, unsigned int destination, bool serverLog, bool filter = true );
 
-	void simulate(fixed frameTime);
+	std::list< MessageEntry >& getLastMessages() { return lastMessages_; }
+
+	std::list< std::string > getAllChannels();
+
+	void simulate( fixed frameTime );
 
 	// Notification of when players disconnect
-	void destinationDisconnected(unsigned int destinationId);
-	void refreshDestination(unsigned int destinationId);
+	void destinationDisconnected( unsigned int destinationId );
+	void refreshDestination( unsigned int destinationId );
 
 protected:
-	static ServerChannelManager *instance_;
+	static ServerChannelManager* instance_;
 
 	class DestinationLocalEntry
 	{
 	public:
-		DestinationLocalEntry(unsigned int localId = 0);
+		DestinationLocalEntry( unsigned int localId = 0 );
 
 		unsigned int getLocalId() { return localId_; }
-		std::set<std::string> &getChannels() { return channels_; }
-		std::set<std::string> &getAvailableChannels() { return availableChannels_; }
+
+		// clang-format off
+		// uncrustify off
+		std::set< std::string >& getChannels()          { return channels_; }
+		std::set< std::string >& getAvailableChannels() { return availableChannels_; }
+		// uncrustify on
+		// clang-format on
 
 	protected:
-		unsigned int localId_;
-		std::set<std::string> channels_; // Subscribed channels
-		std::set<std::string> availableChannels_; // Available channeld
+		unsigned int            localId_;
+		std::set< std::string > channels_;           // Subscribed channels
+		std::set< std::string > availableChannels_;  // Available channeld
 	};
+
 	class DestinationEntry
 	{
 	public:
-		DestinationEntry(unsigned int destinationId);
+		DestinationEntry( unsigned int destinationId );
 
 		unsigned int getDestinationId() { return destinationId_; }
 
-		bool hasChannel(const std::string &channel);
-		void addChannel(const std::string &channel, unsigned int localId, bool current);
-		void removeChannel(const std::string &channel, unsigned int localId);
+		bool hasChannel( const std::string& channel );
+		void addChannel( const std::string& channel, unsigned int localId, bool current );
+		void removeChannel( const std::string& channel, unsigned int localId );
 
-		bool hasLocalId(unsigned int localId);
-		void addLocalId(unsigned int localId);
-		void removeLocalId(unsigned int localId);
+		bool hasLocalId( unsigned int localId );
+		void addLocalId( unsigned int localId );
+		void removeLocalId( unsigned int localId );
 
-		void setMessageCount(unsigned int count) { messageCount_ = count; }
-		unsigned int getMessageCount() { return messageCount_; }
+		// clang-format off
+		// uncrustify off
+		void         setMessageCount( unsigned int count ) { messageCount_ = count; }
+		unsigned int getMessageCount()                     { return messageCount_; }
 
-		time_t getMuteTime() { return muteTime_; }
-		void setMuteTime(time_t t) { muteTime_ = t; }
+		time_t getMuteTime()           { return muteTime_; }
+		void   setMuteTime( time_t t ) { muteTime_ = t; }
+		// uncrustify on
+		// clang-format on
 
-		void getLocalIds(const std::string &channel, std::list<unsigned int> &ids);
-		std::map<unsigned int, DestinationLocalEntry> &getLocalEntries() { return localEntries_; }
+		void getLocalIds( const std::string& channel, std::list< unsigned int >& ids );
+
+		std::map< unsigned int, DestinationLocalEntry >& getLocalEntries() { return localEntries_; }
 
 	protected:
-		unsigned int destinationId_;
-		unsigned int messageCount_;
-		time_t muteTime_;
-		std::set<std::string> channels_; // Subscribed channeld for all localids
-		std::map<unsigned int, DestinationLocalEntry> localEntries_;
+		unsigned int                                    destinationId_;
+		unsigned int                                    messageCount_;
+		time_t                                          muteTime_;
+		std::set< std::string >                         channels_;  // Subscribed channeld for all localids
+		std::map< unsigned int, DestinationLocalEntry > localEntries_;
 
 		void updateChannels();
 	};
+
 	class ChannelEntry
 	{
 	public:
-		ChannelEntry(
-			ChannelDefinition def,
-			ServerChannelFilter *filter = 0,
-			ServerChannelAuth *auth = 0
-		);
+		ChannelEntry( ChannelDefinition def, ServerChannelFilter* filter = 0, ServerChannelAuth* auth = 0 );
 		virtual ~ChannelEntry();
 
-		const char *getName() { return channelDef_.getChannel(); }
-		ChannelDefinition &getDefinition() { return channelDef_; }
-		ServerChannelFilter *getFilter() { return filter_; }
-		ServerChannelAuth *getAuth() { return auth_; }
+		// clang-format off
+		// uncrustify off
+		const char*          getName()       { return channelDef_.getChannel(); }
+		ChannelDefinition&   getDefinition() { return channelDef_; }
+		ServerChannelFilter* getFilter()     { return filter_; }
+		ServerChannelAuth*   getAuth()       { return auth_; }
+		// uncrustify on
+		// clang-format on
 
 	protected:
-		ChannelDefinition channelDef_;
-		ServerChannelFilter *filter_;
-		ServerChannelAuth *auth_;
+		ChannelDefinition    channelDef_;
+		ServerChannelFilter* filter_;
+		ServerChannelAuth*   auth_;
 	};
 
-	fixed totalTime_;
-	unsigned int lastMessageId_;
-	std::map<unsigned int, DestinationEntry *> destinationEntries_;
-	std::list<ChannelEntry *> channelEntries_;
-	std::list<MessageEntry> lastMessages_;
-	ComsMessageHandlerI *handler1_, *handler2_;
+	fixed                                       totalTime_;
+	unsigned int                                lastMessageId_;
+	std::map< unsigned int, DestinationEntry* > destinationEntries_;
+	std::list< ChannelEntry* >                  channelEntries_;
+	std::list< MessageEntry >                   lastMessages_;
+	ComsMessageHandlerI *                       handler1_, *handler2_;
 
-	ChannelEntry *getChannelEntryByName(const std::string &name);
-	DestinationEntry *getDestinationEntryById(unsigned int destinationId);
+	ChannelEntry*     getChannelEntryByName( const std::string& name );
+	DestinationEntry* getDestinationEntryById( unsigned int destinationId );
 
 	void registerClient(
-		unsigned int destinationId,
-		unsigned int localId,
-		std::list<ChannelDefinition> &startChannels
+		unsigned int                    destinationId,
+		unsigned int                    localId,
+		std::list< ChannelDefinition >& startChannels
 	);
-	void deregisterClient(unsigned int destinationId, unsigned int localId);
-	void joinClient(
-		unsigned int destinationId,
-		unsigned int localId,
-		std::list<ChannelDefinition> &startChannels
-	);
+	void deregisterClient( unsigned int destinationId, unsigned int localId );
+	void joinClient( unsigned int destinationId, unsigned int localId, std::list< ChannelDefinition >& startChannels );
 	void actualSend(
-		const ChannelText &constText,
-		std::map<unsigned int,
-		DestinationEntry *> &destinations,
-		bool serverLog,
-		bool filter
+		const ChannelText&                           constText,
+		std::map< unsigned int, DestinationEntry* >& destinations,
+		bool                                         serverLog,
+		bool                                         filter
 	);
 
-	bool processChannelMessage(NetMessage &message, NetBufferReader &reader);
-	bool processChannelTextMessage(NetMessage &message, NetBufferReader &reader);
+	bool processChannelMessage( NetMessage& message, NetBufferReader& reader );
+	bool processChannelTextMessage( NetMessage& message, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerChannelManager_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerChannelManager_hpp_INCLUDE__

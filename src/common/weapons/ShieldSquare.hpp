@@ -29,22 +29,26 @@ public:
 	ShieldSquare();
 	virtual ~ShieldSquare();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// ShieldSquare attributes
-	FixedVector &getSize() { return size_; }
+	FixedVector& getSize() { return size_; }
 
-	virtual bool inShield(FixedVector &offset);
-	virtual bool tankInShield(FixedVector &offset);
+	virtual bool       inShield( FixedVector& offset );
+	virtual bool       tankInShield( FixedVector& offset );
 	virtual ShieldType getShieldType();
-	virtual bool getRound() { return false; }
-	virtual fixed getBoundingSize() { return size_.Max(); }
 
-	REGISTER_ACCESSORY_HEADER(ShieldSquare, AccessoryPart::AccessoryShield);
+	// clang-format off
+	// uncrustify off
+	virtual bool  getRound()        { return false; }
+	virtual fixed getBoundingSize() { return size_.Max(); }
+	// uncrustify on
+	// clang-format on
+
+	REGISTER_ACCESSORY_HEADER( ShieldSquare, AccessoryPart::AccessoryShield );
 
 protected:
 	FixedVector size_;
 };
 
-#endif // __INCLUDE_ShieldSquare_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldSquare_hpp_INCLUDE__

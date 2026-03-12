@@ -31,25 +31,25 @@ class Target;
 
 class Boid2 : public TargetStateMovement
 {
-public:  					 
-	Boid2(ScorchedContext &context, Target *target, TargetMovementEntryBoids *world); 
+public:
+	Boid2( ScorchedContext& context, Target* target, TargetMovementEntryBoids* world );
 	~Boid2();
 
-	void update(fixed frameTime, std::vector<Boid2*> &boidSet, bool complexUpdate);  
+	void update( fixed frameTime, std::vector< Boid2* >& boidSet, bool complexUpdate );
 	void clearTarget();
 
 protected:
-	ScorchedContext &context_;
-	Target *target_;
-	TargetMovementEntryBoids *world_;
+	ScorchedContext&          context_;
+	Target*                   target_;
+	TargetMovementEntryBoids* world_;
 
-	FixedVector checkGrouping(std::vector<Boid2*> &boidSet);
-	bool checkCollision(FixedVector &normal);
-	FixedVector &getPosition();
-	FixedVector &getVelocity();
+	FixedVector  checkGrouping( std::vector< Boid2* >& boidSet );
+	bool         checkCollision( FixedVector& normal );
+	FixedVector& getPosition();
+	FixedVector& getVelocity();
 
-	fixed directionMag_;
+	fixed       directionMag_;
 	FixedVector direction_;
 };
 
-#endif // __INCLUDE_Boid2_hpp_INCLUDE__
+#endif  // __INCLUDE_Boid2_hpp_INCLUDE__

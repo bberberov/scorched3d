@@ -30,34 +30,30 @@
 #include <map>
 
 class VirtualSoundSource;
+
 class MissileActionRenderer : public ActionRenderer
 {
 public:
-	MissileActionRenderer(
-		int flareType,
-		float scale,
-		float spinspeed,
-		const Vector &rotationAxis
-	);
+	MissileActionRenderer( int flareType, float scale, float spinspeed, const Vector& rotationAxis );
 	virtual ~MissileActionRenderer();
 
-	virtual void simulate(Action *action, float timepassed, bool &remove);
-	virtual void draw(Action *action);
+	virtual void simulate( Action* action, float timepassed, bool& remove );
+	virtual void draw( Action* action );
 
 protected:
-	int flareType_;
-	float scale_;
-	float spinSpeed_;
-	float rotation_;
-	float frame_;
-	Counter counter_;
-	VirtualSoundSource *sound_;
-	ParticleEmitter *flameemitter_;
-	ParticleEmitter *smokeemitter_;
-	GLTextureSet *flameTextureSet_;
-	GLTextureSet *smokeTextureSet_;
-	MissileMesh *mesh_;
-	Vector rotationAxis_;
+	int                 flareType_;
+	float               scale_;
+	float               spinSpeed_;
+	float               rotation_;
+	float               frame_;
+	Counter             counter_;
+	VirtualSoundSource* sound_;
+	ParticleEmitter*    flameemitter_;
+	ParticleEmitter*    smokeemitter_;
+	GLTextureSet*       flameTextureSet_;
+	GLTextureSet*       smokeTextureSet_;
+	MissileMesh*        mesh_;
+	Vector              rotationAxis_;
 };
 
-#endif // __INCLUDE_MissileActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_MissileActionRenderer_hpp_INCLUDE__

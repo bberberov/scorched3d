@@ -27,16 +27,17 @@
 class TankSay : public Action
 {
 public:
-	TankSay(unsigned int playerId, const LangString &text);
+	TankSay( unsigned int playerId, const LangString& text );
 	virtual ~TankSay();
 
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void simulate( fixed frameTime, bool& remove );
+
 	virtual std::string getActionType() { return "TankSay"; }
 
 protected:
 	unsigned int playerId_;
-	LangString text_;
+	LangString   text_;
 };
 
-#endif // __INCLUDE_TankSay_hpp_INCLUDE__
+#endif  // __INCLUDE_TankSay_hpp_INCLUDE__

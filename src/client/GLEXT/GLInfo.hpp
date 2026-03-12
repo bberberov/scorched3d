@@ -24,18 +24,13 @@
 class GLInfo
 {
 public:
-	static unsigned int getNoTriangles()
-	{
-		return noTriangles_;
-	}
-	static void addNoTriangles(unsigned int count)
-	{
-		noTriangles_ += count;
-	}
-	static void resetNoTriangles()
-	{
-		noTriangles_ = 0;
-	}
+	// clang-format off
+	// uncrustify off
+	static unsigned int getNoTriangles()                     { return noTriangles_; }
+	static void         addNoTriangles( unsigned int count ) { noTriangles_ += count; }
+	static void         resetNoTriangles()                   { noTriangles_ = 0; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	static unsigned int noTriangles_;
@@ -45,4 +40,4 @@ private:
 	virtual ~GLInfo();
 };
 
-#endif // __INCLUDE_GLInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_GLInfo_hpp_INCLUDE__

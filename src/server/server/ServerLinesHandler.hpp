@@ -26,13 +26,10 @@
 class ServerLinesHandler : public ComsMessageHandlerI
 {
 public:
-	ServerLinesHandler(ComsMessageHandler &comsMessageHandler);
+	ServerLinesHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerLinesHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerLinesHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerLinesHandler_hpp_INCLUDE__

@@ -24,8 +24,9 @@
 #include <lua.hpp>
 
 #define LUA_S3DWEAPONLIBNAME "s3dweapon"
-extern "C" {
-LUALIB_API int (luaopen_s3dweapon) (lua_State *L);
+extern "C"
+{
+	LUALIB_API int( luaopen_s3dweapon )( lua_State* L );
 }
 
-#endif // __INCLUDE_LUAWeaponLib_hpp_INCLUDE__
+#endif  // __INCLUDE_LUAWeaponLib_hpp_INCLUDE__

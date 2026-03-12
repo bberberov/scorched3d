@@ -26,13 +26,10 @@
 class ServerGiftMoneyHandler : public ComsMessageHandlerI
 {
 public:
-	ServerGiftMoneyHandler(ComsMessageHandler &comsMessageHandler);
+	ServerGiftMoneyHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerGiftMoneyHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerGiftMoneyHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerGiftMoneyHandler_hpp_INCLUDE__

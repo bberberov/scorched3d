@@ -23,32 +23,36 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponTeleport  : public Weapon
+class WeaponTeleport : public Weapon
 {
 public:
 	WeaponTeleport();
 	virtual ~WeaponTeleport();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	const char *getSound() { return sound_.c_str(); }
-	bool getGroundOnly() { return groundOnly_; }
-	fixed getDelay(ScorchedContext &context);
+	// clang-format off
+	// uncrustify off
+	const char* getSound()      { return sound_.c_str(); }
+	bool        getGroundOnly() { return groundOnly_; }
+	fixed       getDelay( ScorchedContext& context );
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponTeleport, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponTeleport, AccessoryPart::AccessoryWeapon );
 
 protected:
-	bool groundOnly_;
+	bool         groundOnly_;
 	NumberParser delay_;
-	std::string sound_;
+	std::string  sound_;
 };
 
-#endif // __INCLUDE_WeaponTeleport_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponTeleport_hpp_INCLUDE__

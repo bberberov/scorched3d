@@ -30,21 +30,26 @@ public:
 	PlacementObjectHeight();
 	virtual ~PlacementObjectHeight();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual PlacementObject::Type getType() { return PlacementObject::eHeight; }
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position);
+
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	);
 
 protected:
 	struct HeightObject
 	{
-		PlacementObject *object;
-		fixed min;
-		fixed max;
+		PlacementObject* object;
+		fixed            min;
+		fixed            max;
 	};
-	std::vector<HeightObject> objects_;
+
+	std::vector< HeightObject > objects_;
 };
 
-#endif // __INCLUDE_PlacementObjectHeight_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObjectHeight_hpp_INCLUDE__

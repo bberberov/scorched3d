@@ -9,38 +9,42 @@
 #include <ctype.h>
 #include <common/Defines.hpp>
 
-typedef char *          LPSTR;
-typedef const char *    LPCTSTR;
-typedef unsigned int    DWORD;
-typedef unsigned int *  LPDWORD;
-typedef unsigned char * LPBYTE;
-typedef int             INT;
-typedef long            LONG;
-typedef unsigned int    UINT;
-typedef unsigned short  WORD;
-typedef unsigned char   BYTE;
+typedef char*          LPSTR;
+typedef const char*    LPCTSTR;
+typedef unsigned int   DWORD;
+typedef unsigned int*  LPDWORD;
+typedef unsigned char* LPBYTE;
+typedef int            INT;
+typedef long           LONG;
+typedef unsigned int   UINT;
+typedef unsigned short WORD;
+typedef unsigned char  BYTE;
 
-typedef int     HWND;
-typedef void *  HINSTANCE;
-typedef int     WPARAM;
-typedef int     LPARAM;
-typedef int     LRESULT;
-typedef void *  HDC;
-typedef void *  HGLRC;
+typedef int   HWND;
+typedef void* HINSTANCE;
+typedef int   WPARAM;
+typedef int   LPARAM;
+typedef int   LRESULT;
+typedef void* HDC;
+typedef void* HGLRC;
 
-#define _strnicmp(a,b,c)  strncasecmp(a,b,c)
-#define stricmp(a,b)      strcasecmp(a,b)
-#define _strlwr(a)        { for (char *b=a; *b; b++) *b=tolower(*b); }
+#define _strnicmp( a, b, c ) strncasecmp( a, b, c )
+#define stricmp( a, b )      strcasecmp( a, b )
+#define _strlwr( a ) \
+	{ \
+		for ( char* b = a; *b; b++ ) \
+			*b = tolower( *b ); \
+	}
 
 /* registry */
-typedef int     HKEY;
+typedef int HKEY;
 #define HKEY_CURRENT_USER 0
 
 #ifndef TRUE
-#define TRUE  true
+#define TRUE true
 #endif
 #ifndef FALSE
 #define FALSE false
 #endif
 
-#endif // _WINDOWS_H_
+#endif  // _WINDOWS_H_

@@ -33,39 +33,39 @@ class VirtualSoundSource;
 class LandscapeMusicManager : public GameStateI
 {
 public:
-	static LandscapeMusicManager *instance();
+	static LandscapeMusicManager* instance();
 
-	virtual void simulate(const unsigned state, float simTime);
+	virtual void simulate( const unsigned int state, float simTime );
 
 	void addMusics();
 
 protected:
-	static LandscapeMusicManager *instance_;
+	static LandscapeMusicManager* instance_;
 
 	struct MusicStateEntry
 	{
 		std::string file;
-		float gain;
+		float       gain;
 	};
 
 	struct MusicPlayingEntry
 	{
-		std::string file;
-		float currentGain;
-		VirtualSoundSource *currentSource;
+		std::string         file;
+		float               currentGain;
+		VirtualSoundSource* currentSource;
 	};
 
-	std::map<int, MusicStateEntry> stateMusic_;
-	std::list<MusicPlayingEntry *> currentMusic_;
+	std::map< int, MusicStateEntry > stateMusic_;
+	std::list< MusicPlayingEntry* >  currentMusic_;
 
 	void readGlobalMusicFile();
-	void addMusic(std::vector<LandscapeInclude *> &musics);
-	void addMusicTypes(std::vector<LandscapeMusicType *> &musics);
-	void addMusicType(LandscapeMusicType *music);
+	void addMusic( std::vector< LandscapeInclude* >& musics );
+	void addMusicTypes( std::vector< LandscapeMusicType* >& musics );
+	void addMusicType( LandscapeMusicType* music );
 
 private:
 	LandscapeMusicManager();
 	virtual ~LandscapeMusicManager();
 };
 
-#endif // __INCLUDE_LandscapeMusicManager_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeMusicManager_hpp_INCLUDE__

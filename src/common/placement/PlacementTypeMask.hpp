@@ -30,18 +30,21 @@ public:
 	virtual ~PlacementTypeMask();
 
 	virtual PlacementType::Type getType() { return PlacementType::eMask; }
-	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
-		RandomGenerator &generator,
-		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0);
+
+	virtual bool readXML( XMLNode* node );
+	virtual void getPositions(
+		ScorchedContext&       context,
+		RandomGenerator&       generator,
+		std::list< Position >& returnPositions,
+		ProgressCounter*       counter = 0
+	);
 
 protected:
-	int numobjects;
+	int         numobjects;
 	std::string mask;
-	fixed minheight, maxheight;
-	fixed mincloseness, minslope;
-	fixed xsnap, ysnap;
+	fixed       minheight, maxheight;
+	fixed       mincloseness, minslope;
+	fixed       xsnap, ysnap;
 };
 
-#endif // __INCLUDE_PlacementTypeMask_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementTypeMask_hpp_INCLUDE__

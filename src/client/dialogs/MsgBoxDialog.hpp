@@ -29,34 +29,39 @@
 class MsgBoxDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static MsgBoxDialog *instance();
+	static MsgBoxDialog* instance();
 
 	enum ShowType
 	{
 		eError = 1,
-		eOk = 2
+		eOk    = 2
 	};
-	static void show(const LangString &message, ShowType type = MsgBoxDialog::eError);
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	static void show( const LangString& message, ShowType type = MsgBoxDialog::eError );
 
-	virtual void buttonDown(unsigned int id);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void keyDown(
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
+
+	virtual void buttonDown( unsigned int id );
 
 protected:
-	static MsgBoxDialog *instance_;
+	static MsgBoxDialog* instance_;
 
-	GLWTextButton *okButton_;
-	GLWIcon *icon_;
-	GLWLabel *message_;
+	GLWTextButton* okButton_;
+	GLWIcon*       icon_;
+	GLWLabel*      message_;
 
 private:
 	MsgBoxDialog();
 	virtual ~MsgBoxDialog();
 };
 
-#endif // __INCLUDE_MsgBoxDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_MsgBoxDialog_hpp_INCLUDE__

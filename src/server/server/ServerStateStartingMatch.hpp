@@ -23,14 +23,14 @@
 
 #include <common/fixed.hpp>
 
-class ServerStateStartingMatch 
+class ServerStateStartingMatch
 {
 public:
 	ServerStateStartingMatch();
 	virtual ~ServerStateStartingMatch();
 
 	void reset();
-	bool startingMatch(fixed frameTime);
+	bool startingMatch( fixed frameTime );
 	void stoppingMatch();
 
 protected:
@@ -39,4 +39,4 @@ protected:
 	void startMatch();
 };
 
-#endif // __INCLUDE_ServerStateStartingMatch_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateStartingMatch_hpp_INCLUDE__

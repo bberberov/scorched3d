@@ -25,12 +25,12 @@
 class RenderGeoms
 {
 public:
-	static RenderGeoms *instance();
+	static RenderGeoms* instance();
 
-	virtual void draw(const unsigned state);
+	virtual void draw( const unsigned int state );
 
 protected:
-	static RenderGeoms *instance_;
+	static RenderGeoms* instance_;
 
 	void drawTargetSpace();
 	void drawCollisionBounds();
@@ -41,4 +41,4 @@ private:
 	virtual ~RenderGeoms();
 };
 
-#endif // __INCLUDE_RenderGeoms_hpp_INCLUDE__
+#endif  // __INCLUDE_RenderGeoms_hpp_INCLUDE__

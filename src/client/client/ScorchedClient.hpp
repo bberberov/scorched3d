@@ -33,30 +33,35 @@ class ClientSimulator;
 class ScorchedClient : public ScorchedContext
 {
 public:
-	static ScorchedClient *instance();
+	static ScorchedClient* instance();
 
+	virtual Simulator& getSimulator();
+
+	// clang-format off
+	// uncrustify off
 	virtual bool getServerMode() { return false; }
 
-	virtual Simulator &getSimulator();
-	virtual TargetSpace &getTargetSpace() { return *targetSpace_; }
-	MainLoop &getMainLoop() { return *mainLoop_; }
-	ScorchedContext &getContext() { return *this; }
-	ParticleEngine &getParticleEngine() { return *particleEngine_; }
-	GameState &getGameState() { return *gameState; }
-	ClientSimulator &getClientSimulator() { return *clientSimulator_; }
+	virtual TargetSpace& getTargetSpace()     { return *targetSpace_; }
+	MainLoop&            getMainLoop()        { return *mainLoop_; }
+	ScorchedContext&     getContext()         { return *this; }
+	ParticleEngine&      getParticleEngine()  { return *particleEngine_; }
+	GameState&           getGameState()       { return *gameState; }
+	ClientSimulator&     getClientSimulator() { return *clientSimulator_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static ScorchedClient *instance_;
+	static ScorchedClient* instance_;
 
-	static TargetSpace *targetSpace_;
-	MainLoop *mainLoop_;
-	ParticleEngine* particleEngine_;
-	GameState *gameState;
-	ClientSimulator *clientSimulator_;
+	static TargetSpace* targetSpace_;
+	MainLoop*           mainLoop_;
+	ParticleEngine*     particleEngine_;
+	GameState*          gameState;
+	ClientSimulator*    clientSimulator_;
 
 private:
 	ScorchedClient();
 	virtual ~ScorchedClient();
 };
 
-#endif // __INCLUDE_ScorchedClient_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedClient_hpp_INCLUDE__

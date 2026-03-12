@@ -25,12 +25,12 @@
 class InfoMap
 {
 public:
-	static InfoMap *instance();
+	static InfoMap* instance();
 
 	void addAdapters();
 
 protected:
-	static InfoMap *instance_;
+	static InfoMap* instance_;
 
 	void showHeightBands();
 	void showGrid();
@@ -40,4 +40,4 @@ private:
 	virtual ~InfoMap();
 };
 
-#endif // __INCLUDE_InfoMap_hpp_INCLUDE__
+#endif  // __INCLUDE_InfoMap_hpp_INCLUDE__

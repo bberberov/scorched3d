@@ -26,13 +26,19 @@
 
 class Tanket;
 class Accessory;
+
 class TankWeaponSwitcher : public TanketWeaponSwitcher
 {
 public:
 	TankWeaponSwitcher();
 	virtual ~TankWeaponSwitcher();
 
-	virtual void switchWeapon(ScorchedContext &context, Tanket *tanket, Accessory *currentWeapon, Accessory *newWeapon);
+	virtual void switchWeapon(
+		ScorchedContext& context,
+		Tanket*          tanket,
+		Accessory*       currentWeapon,
+		Accessory*       newWeapon
+	);
 };
 
-#endif // __INCLUDE_TankWeaponSwitcher_hpp_INCLUDE__
+#endif  // __INCLUDE_TankWeaponSwitcher_hpp_INCLUDE__

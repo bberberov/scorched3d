@@ -34,58 +34,56 @@
 class SettingsSubSelectDialogListItem : public GLWIconListItem
 {
 public:
-	SettingsSubSelectDialogListItem(
-		const char *icon,
-		const char *name,
-		const char *description,
-		bool selected
-	);
+	SettingsSubSelectDialogListItem( const char* icon, const char* name, const char* description, bool selected );
 	virtual ~SettingsSubSelectDialogListItem();
 
-	const char *getName() { return name_.c_str(); }
-	bool getSelected() { return selected_.getState(); }
-	void setSelected(bool selected) { selected_.setState(selected); }
+	// clang-format off
+	// uncrustify off
+	const char* getName()                    { return name_.c_str(); }
+	bool        getSelected()                { return selected_.getState(); }
+	void        setSelected( bool selected ) { selected_.setState( selected ); }
+	// uncrustify on
+	// clang-format on
 
 	// GLWIconListItem
-	virtual void draw(float x, float y, float w);
+	virtual void draw( float x, float y, float w );
 
 protected:
-	GLWIcon icon_;
+	GLWIcon     icon_;
 	std::string name_;
 	GLWCheckBox selected_;
-	ToolTip tip_;
+	ToolTip     tip_;
 };
 
 // SINGLETON
-class SettingsSubSelectDialog :
-	public GLWWindow,
-	public GLWButtonI,
-	public GLWIconListI
+class SettingsSubSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
-	static SettingsSubSelectDialog *instance();
+	static SettingsSubSelectDialog* instance();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWWindow
 	virtual void display();
 
 	// GLWIconListI
-	virtual void selected(unsigned int id, int position);
-	virtual void chosen(unsigned int id, int position);
+	virtual void selected( unsigned int id, int position );
+	virtual void chosen( unsigned int id, int position );
 
 protected:
-	static SettingsSubSelectDialog *instance_;
+	static SettingsSubSelectDialog* instance_;
 
-	GLWTab *mainTab_;
-	GLWTab *moneyTab_;
-	GLWTab *weaponsTab_;
-	GLWTab *scoreTab_;
-	GLWTab *envTab_;
-	GLWTab *landTab_;
-	GLWIconList *landList_;
-	std::list<GLWOptionEntry> controls_;
+	GLWTab* mainTab_;
+	GLWTab* moneyTab_;
+	GLWTab* weaponsTab_;
+	GLWTab* scoreTab_;
+	GLWTab* envTab_;
+	GLWTab* landTab_;
+
+	GLWIconList*                landList_;
+	std::list< GLWOptionEntry > controls_;
+
 	unsigned int cancelId_;
 	unsigned int okId_;
 	unsigned int advancedId_;
@@ -99,4 +97,4 @@ private:
 	virtual ~SettingsSubSelectDialog();
 };
 
-#endif // __INCLUDE_SettingsSubSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SettingsSubSelectDialog_hpp_INCLUDE__

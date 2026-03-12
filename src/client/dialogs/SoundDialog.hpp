@@ -30,29 +30,29 @@
 class SoundDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static SoundDialog *instance();
+	static SoundDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 protected:
-	static SoundDialog *instance_;
+	static SoundDialog* instance_;
 
-	unsigned int okId_, cancelId_, applyId_;
-	GLWCheckBoxText *noSoundBox_;
-	GLWCheckBoxText *noMusicBox_;
-	GLWCheckBoxText *noCountDownSoundBox_;
-	GLWCheckBoxText *noChannelTextSoundBox_;
-	GLWSlider *soundVolume_;
-	GLWSlider *ambientSoundVolume_;
-	GLWSlider *musicVolume_;
+	unsigned int     okId_, cancelId_, applyId_;
+	GLWCheckBoxText* noSoundBox_;
+	GLWCheckBoxText* noMusicBox_;
+	GLWCheckBoxText* noCountDownSoundBox_;
+	GLWCheckBoxText* noChannelTextSoundBox_;
+	GLWSlider*       soundVolume_;
+	GLWSlider*       ambientSoundVolume_;
+	GLWSlider*       musicVolume_;
 
 private:
 	SoundDialog();
 	virtual ~SoundDialog();
 };
 
-#endif // __INCLUDE_SoundDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundDialog_hpp_INCLUDE__

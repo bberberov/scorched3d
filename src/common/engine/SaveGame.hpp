@@ -26,10 +26,10 @@
 class SaveGame
 {
 public:
-	static bool saveFile(const std::string &fileName);
-	static bool loadFile(const std::string &fileName, ComsLoadLevelMessage &message);
-	static bool loadState(const std::string &fileName);
-	static bool loadTargets(const std::string &fileName);
+	static bool saveFile( const std::string& fileName );
+	static bool loadFile( const std::string& fileName, ComsLoadLevelMessage& message );
+	static bool loadState( const std::string& fileName );
+	static bool loadTargets( const std::string& fileName );
 };
 
-#endif // __INCLUDE_SaveGame_hpp_INCLUDE__
+#endif  // __INCLUDE_SaveGame_hpp_INCLUDE__

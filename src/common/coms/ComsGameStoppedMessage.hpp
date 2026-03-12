@@ -32,8 +32,8 @@ public:
 	virtual ~ComsGameStoppedMessage();
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ComsGameStoppedMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsGameStoppedMessage_hpp_INCLUDE__

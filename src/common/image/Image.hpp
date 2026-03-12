@@ -24,42 +24,47 @@
 #include <string>
 #include <image/ImageData.hpp>
 
-class Image  
+class Image
 {
 public:
 	Image();
-	Image(int width, int height, bool alpha = false);
-	Image(int width, int height, int components, unsigned char fill);
-	Image(const Image &other);
+	Image( int width, int height, bool alpha = false );
+	Image( int width, int height, int components, unsigned char fill );
+	Image( const Image& other );
 	virtual ~Image();
 
-	Image &operator=(const Image &other);
+	Image& operator=( const Image& other );
 
-	unsigned char *getBits() { return data_->getBits(); }
-	unsigned char *getBitsOffset(int offset);
-	unsigned char *getBitsPos(int x, int y);
+	// clang-format off
+	// uncrustify off
+	unsigned char* getBits() { return data_->getBits(); }
+	unsigned char* getBitsOffset( int offset );
+	unsigned char* getBitsPos( int x, int y );
 
-	bool getLossless() { return data_->getLossless(); }
-	int getWidth() { return data_->getWidth(); }
-	int getHeight() { return data_->getHeight(); }
-	int getAlignment() { return data_->getAlignment(); }
-	int getComponents() { return data_->getComponents(); }
+	bool getLossless()   { return data_->getLossless(); }
+	int  getWidth()      { return data_->getWidth(); }
+	int  getHeight()     { return data_->getHeight(); }
+	int  getAlignment()  { return data_->getAlignment(); }
+	int  getComponents() { return data_->getComponents(); }
 
-	void setLossless(bool lossless) { data_->setLossless(lossless); }
-	void setBits(unsigned char *bits) { data_->setBits(bits); }
-	void setWidth(int width) { data_->setWidth(width); }
-	void setHeight(int height) { data_->setHeight(height); }
-	void setAlignment(int alignment) { data_->setAlignment(alignment); }
-	void setComponents(int components) { data_->setComponents(components); }
+	void setLossless( bool lossless )    { data_->setLossless( lossless ); }
+	void setBits( unsigned char* bits )  { data_->setBits( bits ); }
+	void setWidth( int width )           { data_->setWidth( width ); }
+	void setHeight( int height )         { data_->setHeight( height ); }
+	void setAlignment( int alignment )   { data_->setAlignment( alignment ); }
+	void setComponents( int components ) { data_->setComponents( components ); }
+	// uncrustify on
+	// clang-format on
 
-	virtual bool writeToFile(const std::string &filename);
+	virtual bool writeToFile( const std::string& filename );
 
 #ifndef S3D_SERVER
-	Image createAlphaMult(float mult);
-	Image createResize(int newWidth, int newHeight);
+	Image createAlphaMult( float mult );
+	Image createResize( int newWidth, int newHeight );
 #endif
+
 private:
-	ImageData *data_;
+	ImageData* data_;
 };
 
-#endif // __INCLUDE_Image_hpp_INCLUDE__
+#endif  // __INCLUDE_Image_hpp_INCLUDE__

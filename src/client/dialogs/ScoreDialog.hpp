@@ -29,31 +29,31 @@ class Tank;
 class ScoreDialog : public GLWWindow
 {
 public:
-	static ScoreDialog *instance();
-	static ScoreDialog *instance2();
+	static ScoreDialog* instance();
+	static ScoreDialog* instance2();
 
 	// Inherited from GLWWindow
 	virtual void display();
-	virtual void windowInit(const unsigned state);
+	virtual void windowInit( const unsigned int state );
 	virtual void draw();
 
 protected:
 	// FIXME Why two instances?
-	static ScoreDialog *instance_;
-	static ScoreDialog *instance2_;
+	static ScoreDialog* instance_;
+	static ScoreDialog* instance2_;
 
-	std::list<unsigned int> sortedTanks_;
-	int lastScoreValue_;
-	int lastMoneyValue_;
-	unsigned int lastNoPlayers_;
+	std::list< unsigned int > sortedTanks_;
+	int                       lastScoreValue_;
+	int                       lastMoneyValue_;
+	unsigned int              lastNoPlayers_;
 
 	void calculateScores();
-	void addLine(Tank *currentPlayer, Tank *linePlayer, float y, char *rank, bool finished, bool buying);
-	void addScoreLine(float y, Vector &color, int score);
+	void addLine( Tank* currentPlayer, Tank* linePlayer, float y, char* rank, bool finished, bool buying );
+	void addScoreLine( float y, Vector& color, int score );
 
 private:
 	ScoreDialog();
 	virtual ~ScoreDialog();
 };
 
-#endif // __INCLUDE_ScoreDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ScoreDialog_hpp_INCLUDE__

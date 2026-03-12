@@ -28,27 +28,32 @@ class ProgressCounterI
 public:
 	virtual ~ProgressCounterI();
 
-	virtual void operationChange(const LangString &op) = 0;
-	virtual void progressChange(const LangString &op, const float percentage) = 0;
+	virtual void operationChange( const LangString& op )                        = 0;
+	virtual void progressChange( const LangString& op, const float percentage ) = 0;
 };
 
-class ProgressCounter  
+class ProgressCounter
 {
 public:
-	ProgressCounter(ProgressCounterI *user = 0);
+	ProgressCounter( ProgressCounterI* user = 0 );
 	virtual ~ProgressCounter();
 
-	void setUser(ProgressCounterI *user) { user_ = user; }
-	void setNewOp(const LangString &op);
-	void setNewPercentage(float percentage);
+	void setUser( ProgressCounterI* user ) { user_ = user; }
 
-	LangString &getCurrentOp() { return currentOp_; }
-	float getCurrentPercentage() { return currentPercentage_; }
+	void setNewOp( const LangString& op );
+	void setNewPercentage( float percentage );
+
+	// clang-format off
+	// uncrustify off
+	LangString& getCurrentOp()         { return currentOp_; }
+	float       getCurrentPercentage() { return currentPercentage_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	LangString currentOp_;
-	float currentPercentage_;
-	ProgressCounterI *user_;
+	LangString        currentOp_;
+	float             currentPercentage_;
+	ProgressCounterI* user_;
 };
 
-#endif // __INCLUDE_ProgressCounter_hpp_INCLUDE__
+#endif  // __INCLUDE_ProgressCounter_hpp_INCLUDE__

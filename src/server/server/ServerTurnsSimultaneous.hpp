@@ -28,22 +28,23 @@
 
 class Tank;
 class ComsPlayedMoveMessage;
+
 class ServerTurnsSimultaneous : public ServerTurns
 {
 public:
-	ServerTurnsSimultaneous(bool waitForShots);
+	ServerTurnsSimultaneous( bool waitForShots );
 	virtual ~ServerTurnsSimultaneous();
 
 	virtual void internalEnterState();
-	virtual void internalSimulate(fixed frameTime);
-	virtual void internalMoveFinished(ComsPlayedMoveMessage &playedMessage);
+	virtual void internalSimulate( fixed frameTime );
+	virtual void internalMoveFinished( ComsPlayedMoveMessage& playedMessage );
 	virtual void internalShotsFinished();
 
 protected:
-	ShotsState shotsState_;
-	unsigned int nextMoveId_;
-	fixed waitingTime_;
-	std::map<unsigned int, ComsPlayedMoveMessage*>  moves_;
+	ShotsState                                       shotsState_;
+	unsigned int                                     nextMoveId_;
+	fixed                                            waitingTime_;
+	std::map< unsigned int, ComsPlayedMoveMessage* > moves_;
 };
 
-#endif // __INCLUDE_ServerTurnsSimultaneous_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTurnsSimultaneous_hpp_INCLUDE__

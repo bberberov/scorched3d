@@ -24,23 +24,25 @@
 #include <simactions/SimAction.hpp>
 
 class Tanket;
+
 class TankStopMoveSimAction : public SimAction
 {
 public:
 	TankStopMoveSimAction();
-	TankStopMoveSimAction(unsigned int playerId);
+	TankStopMoveSimAction( unsigned int playerId );
 	virtual ~TankStopMoveSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	static void stopMove(ScorchedContext &context, Tanket *tanket);
+	static void stopMove( ScorchedContext& context, Tanket* tanket );
 
-REGISTER_CLASS_HEADER(TankStopMoveSimAction);
+	REGISTER_CLASS_HEADER( TankStopMoveSimAction );
+
 protected:
 	unsigned int playerId_;
 };
 
-#endif // __INCLUDE_TankStopMoveSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankStopMoveSimAction_hpp_INCLUDE__

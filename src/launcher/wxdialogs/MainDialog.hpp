@@ -25,26 +25,21 @@
 #include <string>
 
 void showMainDialog();
-void runScorched3D(const char *flags, bool server);
+void runScorched3D( const char* flags, bool server );
 
-wxString convertString(const std::string &input);
+wxString convertString( const std::string& input );
 
-wxFrame *getMainDialog();
-void addTitleToWindow(
-	wxWindow *parent,
-	wxSizer *sizer,
-	const char *fileName,
-	int buttonId = -1
-);
+wxFrame* getMainDialog();
+void     addTitleToWindow( wxWindow* parent, wxSizer* sizer, const char* fileName, int buttonId = -1 );
 
 // NOTE: Inactive/unused function?
-wxButton *addButtonToWindow(
-	int id,
-	const char *text,
-	const char *bitmapName,
-	wxWindow *parent,
-	wxSizer *sizer,
-	wxObjectRefData *data = 0
+wxButton* addButtonToWindow(
+	int              id,
+	const char*      text,
+	const char*      bitmapName,
+	wxWindow*        parent,
+	wxSizer*         sizer,
+	wxObjectRefData* data = 0
 );
 
-#endif // __INCLUDE_MainDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_MainDialog_hpp_INCLUDE__

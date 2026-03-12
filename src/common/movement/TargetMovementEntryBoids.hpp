@@ -30,40 +30,42 @@ class ObjectGroupEntry;
 class ObjectGroup;
 class Obstacle;
 class Boid2;
+
 class TargetMovementEntryBoids : public TargetMovementEntry
 {
 public:
 	TargetMovementEntryBoids();
 	virtual ~TargetMovementEntryBoids();
 
-	fixed getCruiseDistance() { return cruiseDistance_; }
-	fixed getCruiseVelocity() { return cruiseVelocity_; }
-	fixed getMaxVelocity() { return maxVelocity_; }
-	fixed getMaxAcceleration() { return maxAcceleration_; }
-	FixedVector &getMinBounds() { return minBounds_; }
-	FixedVector &getMaxBounds() { return maxBounds_; }
+	// clang-format off
+	// uncrustify off
+	fixed        getCruiseDistance()  { return cruiseDistance_; }
+	fixed        getCruiseVelocity()  { return cruiseVelocity_; }
+	fixed        getMaxVelocity()     { return maxVelocity_; }
+	fixed        getMaxAcceleration() { return maxAcceleration_; }
+	FixedVector& getMinBounds()       { return minBounds_; }
+	FixedVector& getMaxBounds()       { return maxBounds_; }
+	// uncrustify on
+	// clang-format on
 
 	// Overridden from TargetMovementEntry
-	virtual void generate(ScorchedContext &context, 
-		RandomGenerator &random, 
-		LandscapeMovementType *movementType);
-	virtual void simulate(ScorchedContext &context, fixed frameTime);
+	virtual void generate( ScorchedContext& context, RandomGenerator& random, LandscapeMovementType* movementType );
+	virtual void simulate( ScorchedContext& context, fixed frameTime );
 	virtual void draw();
 	virtual void reset();
 
 protected:
-	ObjectGroup *objectGroup_;
+	ObjectGroup* objectGroup_;
 
 	unsigned int movementNumber_;
-	FixedVector minBounds_, maxBounds_;
-	fixed cruiseDistance_;
-	fixed maxVelocity_, cruiseVelocity_;
-	fixed maxAcceleration_;
+	FixedVector  minBounds_, maxBounds_;
+	fixed        cruiseDistance_;
+	fixed        maxVelocity_, cruiseVelocity_;
+	fixed        maxAcceleration_;
 
-	void makeBoids(ScorchedContext &context, RandomGenerator &random,
-		FixedVector &maxBounds, FixedVector &minBounds);
-	Boid2 *makeBoid(ScorchedContext &context, ObjectGroupEntry *entry);
-	void processSet(fixed frameTime, std::vector<Boid2*> &boidSet);
+	void makeBoids( ScorchedContext& context, RandomGenerator& random, FixedVector& maxBounds, FixedVector& minBounds );
+	Boid2* makeBoid( ScorchedContext& context, ObjectGroupEntry* entry );
+	void   processSet( fixed frameTime, std::vector< Boid2* >& boidSet );
 };
 
-#endif // __INCLUDE_TargetMovementEntryBoids_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetMovementEntryBoids_hpp_INCLUDE__

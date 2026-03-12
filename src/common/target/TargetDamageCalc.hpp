@@ -27,25 +27,34 @@
 class Target;
 class Weapon;
 class WeaponFireContext;
+
 class TargetDamageCalc
 {
 public:
-	static void explosion(ScorchedContext &context,
-		Weapon *weapon, WeaponFireContext &weaponContext,
-		FixedVector &position, fixed radius,
-		fixed damageAmount,
-		bool checkFall,
-		bool shieldOnlyDamage);
-	static void damageTarget(ScorchedContext &context,
-		unsigned int playerId, 
-		Weapon *weapon, WeaponFireContext &weaponContext,
-		fixed damage,
-		bool useShieldDamage, bool checkFall,
-		bool shieldOnlyDamage);
+	static void explosion(
+		ScorchedContext&   context,
+		Weapon*            weapon,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		fixed              radius,
+		fixed              damageAmount,
+		bool               checkFall,
+		bool               shieldOnlyDamage
+	);
+	static void damageTarget(
+		ScorchedContext&   context,
+		unsigned int       playerId,
+		Weapon*            weapon,
+		WeaponFireContext& weaponContext,
+		fixed              damage,
+		bool               useShieldDamage,
+		bool               checkFall,
+		bool               shieldOnlyDamage
+	);
 
 private:
 	TargetDamageCalc();
 	virtual ~TargetDamageCalc();
 };
 
-#endif // __INCLUDE_TargetDamageCalc_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetDamageCalc_hpp_INCLUDE__

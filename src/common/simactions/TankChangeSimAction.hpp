@@ -28,19 +28,20 @@ class TankChangeSimAction : public SimAction
 {
 public:
 	TankChangeSimAction();
-	TankChangeSimAction(ComsTankChangeMessage &message);
+	TankChangeSimAction( ComsTankChangeMessage& message );
 	virtual ~TankChangeSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 	static unsigned int TankChangeSimActionCount;
 
-REGISTER_CLASS_HEADER(TankChangeSimAction);
+	REGISTER_CLASS_HEADER( TankChangeSimAction );
+
 protected:
 	ComsTankChangeMessage message_;
 };
 
-#endif // __INCLUDE_TankChangeSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankChangeSimAction_hpp_INCLUDE__

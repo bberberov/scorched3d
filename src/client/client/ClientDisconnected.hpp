@@ -29,7 +29,7 @@ public:
 	ClientDisconnected();
 	virtual ~ClientDisconnected();
 
-	virtual void enterState(const unsigned state);
+	virtual void enterState( const unsigned int state );
 };
 
-#endif // __INCLUDE_ClientDisconnected_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientDisconnected_hpp_INCLUDE__

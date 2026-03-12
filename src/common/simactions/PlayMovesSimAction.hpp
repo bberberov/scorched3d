@@ -26,32 +26,31 @@
 #include <list>
 
 class Tanket;
+
 class PlayMovesSimAction : public SimAction
 {
 public:
 	PlayMovesSimAction();
-	PlayMovesSimAction(unsigned int moveId, bool timeoutPlayers, bool referenced);
+	PlayMovesSimAction( unsigned int moveId, bool timeoutPlayers, bool referenced );
 	virtual ~PlayMovesSimAction();
 
-	void addMove(ComsPlayedMoveMessage *message);
+	void addMove( ComsPlayedMoveMessage* message );
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(PlayMovesSimAction);
+	REGISTER_CLASS_HEADER( PlayMovesSimAction );
+
 protected:
-	unsigned int moveId_;
-	bool timeoutPlayers_, referenced_;
-	std::list<ComsPlayedMoveMessage *> messages_;
+	unsigned int                        moveId_;
+	bool                                timeoutPlayers_, referenced_;
+	std::list< ComsPlayedMoveMessage* > messages_;
 
-	void tankTimedOut(ScorchedContext &context, 
-		Tanket *tanket);
-	void tankFired(ScorchedContext &context,
-		Tanket *tanket, ComsPlayedMoveMessage &message);
-	void tankResigned(ScorchedContext &context,
-		Tanket *tanket, ComsPlayedMoveMessage &message);
+	void tankTimedOut( ScorchedContext& context, Tanket* tanket );
+	void tankFired( ScorchedContext& context, Tanket* tanket, ComsPlayedMoveMessage& message );
+	void tankResigned( ScorchedContext& context, Tanket* tanket, ComsPlayedMoveMessage& message );
 };
 
-#endif // __INCLUDE_PlayMovesSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_PlayMovesSimAction_hpp_INCLUDE__

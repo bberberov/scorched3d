@@ -26,28 +26,29 @@
 class Sound;
 class SoundBuffer;
 class SoundBufferSourceInstance;
+
 class SoundSource
 {
 public:
 	virtual ~SoundSource();
 
-	void play(SoundBuffer *buffer, bool repeat = false);
-	void simulate(bool repeat = false);
+	void play( SoundBuffer* buffer, bool repeat = false );
+	void simulate( bool repeat = false );
 	void stop();
 
 	bool getPlaying();
 
-	void setRelative(bool relative);
-	void setPosition(Vector &position);
-	void setVelocity(Vector &velocity);
-	void setReferenceDistance(float refDist);
-	void setRolloff(float rolloff);
-	void setGain(float gain);
+	void setRelative( bool relative );
+	void setPosition( Vector& position );
+	void setVelocity( Vector& velocity );
+	void setReferenceDistance( float refDist );
+	void setRolloff( float rolloff );
+	void setGain( float gain );
 
 protected:
 	friend class Sound;
-	unsigned int source_;
-	SoundBufferSourceInstance *buffer_;
+	unsigned int               source_;
+	SoundBufferSourceInstance* buffer_;
 
 	SoundSource();
 
@@ -55,4 +56,4 @@ protected:
 	void destroy();
 };
 
-#endif // __INCLUDE_SoundSource_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundSource_hpp_INCLUDE__

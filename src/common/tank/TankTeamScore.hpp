@@ -32,18 +32,18 @@ public:
 	void newMatch();
 	void newGame();
 
-	void addScore(int score, int team);
-	int getScore(int team);
+	void addScore( int score, int team );
+	int  getScore( int team );
 
-	void setWonGame(int team);
-	int getWonGame();
+	void setWonGame( int team );
+	int  getWonGame();
 
-	bool writeMessage(NamedNetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
 	int scores_[5];
 	int wonGame_;
 };
 
-#endif // __INCLUDE_TankTeamScore_hpp_INCLUDE__
+#endif  // __INCLUDE_TankTeamScore_hpp_INCLUDE__

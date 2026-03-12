@@ -5,13 +5,13 @@
 //////////////////////////////////////////////////////////////////////////
 //
 //  Released under GNU license
-//		Erik H Gawtry
-//			July, 2005	Version 1.0
+//  	Erik H Gawtry
+//  		July, 2005  Version 1.0
 //
 //
 //  Algorythms borrowed from:
-//		Andrew Ryder, 11 September 2001
-//      Joseph Hall, Unknown Date
+//  	Andrew Ryder, 11 September 2001
+//  	Joseph Hall, Unknown Date
 //
 //
 //////////////////////////////////////////////////////////////////////////

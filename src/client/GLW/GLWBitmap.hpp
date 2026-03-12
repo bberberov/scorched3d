@@ -27,17 +27,16 @@
 class GLWBitmap : public GLWidget
 {
 public:
-	GLWBitmap(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
-		Image *bitmap = 0);
+	GLWBitmap( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f, Image* bitmap = 0 );
 	virtual ~GLWBitmap();
 
 	virtual void draw();
-	virtual bool initFromXML(XMLNode *node);
+	virtual bool initFromXML( XMLNode* node );
 
-	REGISTER_CLASS_HEADER(GLWBitmap);
+	REGISTER_CLASS_HEADER( GLWBitmap );
+
 protected:
-	Image *bitmap_;
+	Image* bitmap_;
 };
 
-#endif // __INCLUDE_GLWBitmap_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWBitmap_hpp_INCLUDE__

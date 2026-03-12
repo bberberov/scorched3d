@@ -42,25 +42,29 @@ public:
 	ComsConnectMessage();
 	virtual ~ComsConnectMessage();
 
-	void setVersion(const char *version) { setValue("version", version); }
-	void setProtocolVersion(const char *pversion) { setValue("pversion", pversion); }
+	// clang-format off
+	// uncrustify off
+	void setVersion( const char* version )          { setValue( "version", version ); }
+	void setProtocolVersion( const char* pversion ) { setValue( "pversion", pversion ); }
 
-	const char *getVersion() { return getValue("version"); }
-	const char *getProtocolVersion() { return getValue("pversion"); }
+	const char* getVersion()         { return getValue( "version" ); }
+	const char* getProtocolVersion() { return getValue( "pversion" ); }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::map<std::string, std::string> values_;
+	std::map< std::string, std::string > values_;
 
-	void setValue(const char *name, const char *value);
-	const char *getValue(const char *name);
+	void        setValue( const char* name, const char* value );
+	const char* getValue( const char* name );
 
 private:
-	ComsConnectMessage(const ComsConnectMessage &);
-	const ComsConnectMessage & operator=(const ComsConnectMessage &);
+	ComsConnectMessage( const ComsConnectMessage& );
+	const ComsConnectMessage& operator=( const ComsConnectMessage& );
 };
 
-#endif // __INCLUDE_ComsConnectMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsConnectMessage_hpp_INCLUDE__

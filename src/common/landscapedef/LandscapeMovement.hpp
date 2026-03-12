@@ -37,9 +37,9 @@ public:
 
 	virtual ~LandscapeMovementType();
 
-	static LandscapeMovementType *create(const char *type);
+	static LandscapeMovementType* create( const char* type );
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 	virtual Type getType() = 0;
 
 	std::string groupname;
@@ -48,13 +48,14 @@ public:
 class LandscapeMovementTypeBoids : public LandscapeMovementType
 {
 public:
-	ModelID model;
+	ModelID     model;
 	FixedVector minbounds, maxbounds;
-	fixed maxvelocity;
-	fixed cruisedistance;
-	fixed maxacceleration;
+	fixed       maxvelocity;
+	fixed       cruisedistance;
+	fixed       maxacceleration;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual Type getType() { return eBoids; }
 };
 
@@ -62,27 +63,29 @@ class LandscapeMovementTypeShips : public LandscapeMovementType
 {
 public:
 	fixed speed;
-	int controlpoints;
+	int   controlpoints;
 	fixed controlpointswidth;
 	fixed controlpointsheight;
 	fixed controlpointsrand;
 	fixed starttime;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual Type getType() { return eShips; }
 };
 
 class LandscapeMovementTypeSpline : public LandscapeMovementType
 {
 public:
-	fixed speed;
-	fixed starttime;
-	bool groundonly;
-	std::vector<FixedVector> points;
+	fixed                      speed;
+	fixed                      starttime;
+	bool                       groundonly;
+	std::vector< FixedVector > points;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual Type getType() { return eSpline; }
 };
 
 
-#endif // __INCLUDE_LandscapeMovement_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeMovement_hpp_INCLUDE__

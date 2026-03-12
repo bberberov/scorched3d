@@ -28,24 +28,30 @@ class ComsAdminResultMessage : public ComsMessage
 public:
 	static ComsMessageType ComsAdminResultMessageType;
 
-	ComsAdminResultMessage(unsigned int sid = 0,
-		ComsAdminMessage::ComsAdminMessageType type = ComsAdminMessage::AdminNone);
+	ComsAdminResultMessage(
+		unsigned int                           sid  = 0,
+		ComsAdminMessage::ComsAdminMessageType type = ComsAdminMessage::AdminNone
+	);
 	virtual ~ComsAdminResultMessage();
 
-	unsigned int getSid() { return sid_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int                           getSid()  { return sid_; }
 	ComsAdminMessage::ComsAdminMessageType getType() { return type_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int sid_;
+	unsigned int                           sid_;
 	ComsAdminMessage::ComsAdminMessageType type_;
 
 private:
-	ComsAdminResultMessage(const ComsAdminResultMessage &);
-	const ComsAdminResultMessage & operator=(const ComsAdminResultMessage &);
+	ComsAdminResultMessage( const ComsAdminResultMessage& );
+	const ComsAdminResultMessage& operator=( const ComsAdminResultMessage& );
 };
 
-#endif // __INCLUDE_ComsAdminResultMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsAdminResultMessage_hpp_INCLUDE__

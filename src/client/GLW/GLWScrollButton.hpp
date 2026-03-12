@@ -28,23 +28,23 @@ class GLWScrollButtonI
 public:
 	virtual ~GLWScrollButtonI();
 
-	virtual void buttonDrag(unsigned int id, float x, float y) = 0;
-	virtual void startDrag(unsigned int id) = 0;
+	virtual void buttonDrag( unsigned int id, float x, float y ) = 0;
+	virtual void startDrag( unsigned int id )                    = 0;
 };
 
 class GLWScrollButton : public GLWButton
 {
 public:
-	GLWScrollButton(float x, float y, float w, float h);
+	GLWScrollButton( float x, float y, float w, float h );
 	virtual ~GLWScrollButton();
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	void setScrollHandler(GLWScrollButtonI *handler);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	void         setScrollHandler( GLWScrollButtonI* handler );
 
 protected:
-	GLWScrollButtonI *scrollHandler_;
-	float startX_, startY_;
+	GLWScrollButtonI* scrollHandler_;
+	float             startX_, startY_;
 };
 
-#endif // __INCLUDE_GLWScrollButton_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScrollButton_hpp_INCLUDE__

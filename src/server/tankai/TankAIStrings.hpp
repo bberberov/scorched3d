@@ -24,7 +24,7 @@
 #include <common/FileLines.hpp>
 #include <engine/ScorchedContext.hpp>
 
-class TankAIStrings  
+class TankAIStrings
 {
 public:
 	TankAIStrings();
@@ -32,18 +32,18 @@ public:
 
 	void load();
 
-	const char *getDeathLine(ScorchedContext &context);
-	const char *getAttackLine(ScorchedContext &context);
-	const char *getPlayerName();
-	const char *getAIPlayerName(ScorchedContext &context);
+	const char* getDeathLine( ScorchedContext& context );
+	const char* getAttackLine( ScorchedContext& context );
+	const char* getPlayerName();
+	const char* getAIPlayerName( ScorchedContext& context );
 
 protected:
 	unsigned int playerNamesCounter_;
 	unsigned int aiPlayerNamesCounter_;
-	FileLines deathLines_;
-	FileLines attackLines_;
-	FileLines playerNames_;
-	FileLines aiPlayerNames_;
+	FileLines    deathLines_;
+	FileLines    attackLines_;
+	FileLines    playerNames_;
+	FileLines    aiPlayerNames_;
 };
 
-#endif // __INCLUDE_TankAIStrings_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIStrings_hpp_INCLUDE__

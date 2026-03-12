@@ -36,20 +36,23 @@ public:
 	in which case the graphics will seem larger or smaller
 	than usual.
 	*/
-	void setWindowSize(int width, int height,
-		int awidth = 0, int aheight = 0);
+	void setWindowSize( int width, int height, int awidth = 0, int aheight = 0 );
 
-	static int getWidth() { return width_; }
-	static int getHeight() { return height_; }
-	static int getActualWidth() { return actualWidth_; }
-	static int getActualHeight() { return actualHeight_; }
-	static float getWidthMult() { return widthMult_; }
-	static float getHeightMult() { return heightMult_; }
+	// clang-format off
+	// uncrustify off
+	static int   getWidth()        { return width_; }
+	static int   getHeight()       { return height_; }
+	static int   getActualWidth()  { return actualWidth_; }
+	static int   getActualHeight() { return actualHeight_; }
+	static float getWidthMult()    { return widthMult_; }
+	static float getHeightMult()   { return heightMult_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static int width_, height_;
+	static int   width_, height_;
 	static float widthMult_, heightMult_;
-	static int actualWidth_, actualHeight_;
+	static int   actualWidth_, actualHeight_;
 };
 
-#endif // __INCLUDE_GLViewPort_hpp_INCLUDE__
+#endif  // __INCLUDE_GLViewPort_hpp_INCLUDE__

@@ -27,18 +27,18 @@
 class FileLogger : public LoggerI
 {
 public:
-	FileLogger(const std::string &fileName);
+	FileLogger( const std::string& fileName );
 	virtual ~FileLogger();
 
-	virtual void logMessage(LoggerInfo &info);
+	virtual void logMessage( LoggerInfo& info );
 
 protected:
-	std::string fileName_;
+	std::string  fileName_;
 	unsigned int fileCount_;
-	FILE *logFile_;
+	FILE*        logFile_;
 	unsigned int size_;
 
-	void openFile(const char *fileName);
+	void openFile( const char* fileName );
 };
 
-#endif // __INCLUDE_FileLogger_hpp_INCLUDE__
+#endif  // __INCLUDE_FileLogger_hpp_INCLUDE__

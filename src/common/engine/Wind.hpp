@@ -30,24 +30,29 @@ public:
 	Wind();
 	virtual ~Wind();
 
-	void setScorchedContext(ScorchedContext *context) { context_ = context; }
-	void newLevel();
-	void simulate(fixed frameTime);
+	void setScorchedContext( ScorchedContext* context ) { context_ = context; }
 
-	fixed getWindAngle() { return windAngle_; }
-	fixed getWindSpeed() { return windSpeed_; }
-	FixedVector &getWindDirection() { return windDirection_; }
-	FixedVector &getWindStartingDirection() { return windStartingDirection_; }
-	bool getWindOn() { return (windSpeed_ > fixed(0)); }
+	void newLevel();
+	void simulate( fixed frameTime );
+
+	// clang-format off
+	// uncrustify off
+	fixed        getWindAngle()             { return windAngle_; }
+	fixed        getWindSpeed()             { return windSpeed_; }
+	FixedVector& getWindDirection()         { return windDirection_; }
+	FixedVector& getWindStartingDirection() { return windStartingDirection_; }
+	bool         getWindOn()                { return ( windSpeed_ > fixed( 0 ) ); }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ScorchedContext *context_;
-	fixed windAngle_, windStartAngle_, windSpeed_;
-	fixed windChangeTime_;
-	FixedVector windDirection_, windStartingDirection_;
+	ScorchedContext* context_;
+	fixed            windAngle_, windStartAngle_, windSpeed_;
+	fixed            windChangeTime_;
+	FixedVector      windDirection_, windStartingDirection_;
 
 	void updateDirection();
 	void updateChangeTime();
 };
 
-#endif // __INCLUDE_Wind_hpp_INCLUDE__
+#endif  // __INCLUDE_Wind_hpp_INCLUDE__

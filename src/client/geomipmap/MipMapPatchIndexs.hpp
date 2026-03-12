@@ -27,74 +27,73 @@
 #include <vector>
 
 class GLVertexBufferObject;
+
 class MipMapPatchIndexs
 {
 protected:
-
-	class IndexLevel // One per LOD
+	class IndexLevel  // One per LOD
 	{
 	public:
 		IndexLevel();
 		~IndexLevel();
 
-		std::vector<MipMapPatchIndex *> borderIndexs_;
+		std::vector< MipMapPatchIndex* > borderIndexs_;
 	};
 
 public:
 	MipMapPatchIndexs();
 	~MipMapPatchIndexs();
 
-	MipMapPatchIndex *getIndex(int lod, int leftLod, int rightLod, int topLod, int bottomLod, int addLod = 0)
+	MipMapPatchIndex* getIndex( int lod, int leftLod, int rightLod, int topLod, int bottomLod, int addLod = 0 )
 	{
-		lod = MIN(lod + addLod, getNoLevels() - 1);
-		leftLod = MIN(leftLod + addLod, getNoLevels() - 1);
-		rightLod = MIN(rightLod + addLod, getNoLevels() - 1);
-		topLod = MIN(topLod + addLod, getNoLevels() - 1);
-		bottomLod = MIN(bottomLod + addLod, getNoLevels() - 1);
+		// clang-format off
+		// uncrustify off
+		lod       = MIN( lod       + addLod, getNoLevels() - 1 );
+		leftLod   = MIN( leftLod   + addLod, getNoLevels() - 1 );
+		rightLod  = MIN( rightLod  + addLod, getNoLevels() - 1 );
+		topLod    = MIN( topLod    + addLod, getNoLevels() - 1 );
+		bottomLod = MIN( bottomLod + addLod, getNoLevels() - 1 );
 
 		unsigned int borders = 0;
-		if (leftLod != -1 && leftLod > lod) 
-		{
-			borders |= (leftLod - lod);
-		}
-		if (rightLod != -1 && rightLod > lod)
-		{
-			borders |= (rightLod - lod) << 3;
-		}
-		if (topLod != -1 && topLod > lod) 
-		{
-			borders |= (topLod - lod) << 9;
-		}
-		if (bottomLod != -1 && bottomLod > lod) 
-		{
-			borders |= (bottomLod - lod) << 6;
-		}
+		if ( leftLod   != -1 && leftLod   > lod ) borders |= ( leftLod   - lod );
+		if ( rightLod  != -1 && rightLod  > lod ) borders |= ( rightLod  - lod ) << 3;
+		if ( topLod    != -1 && topLod    > lod ) borders |= ( topLod    - lod ) << 9;
+		if ( bottomLod != -1 && bottomLod > lod ) borders |= ( bottomLod - lod ) << 6;
+		// uncrustify on
+		// clang-format on
 
-		return getIndex(lod, borders);
+		return getIndex( lod, borders );
 	}
 
-	MipMapPatchIndex *getIndex(int lod, int border) 
-	{ 
-		if (lod<0) lod=0;
-		else if (lod >= getNoLevels()) lod = getNoLevels()-1;
+	MipMapPatchIndex* getIndex( int lod, int border )
+	{
+		if ( lod < 0 )
+		{
+			lod = 0;
+		}
+		else if ( lod >= getNoLevels() )
+		{
+			lod = getNoLevels() - 1;
+		}
 
-		DIALOG_ASSERT(border < 4096);
+		DIALOG_ASSERT( border < 4096 );
 
-		IndexLevel *level = levels_[lod];
-		MipMapPatchIndex *index = level->borderIndexs_[border];
-		if (!index->getIndices()) return 0;
+		IndexLevel*       level = levels_[lod];
+		MipMapPatchIndex* index = level->borderIndexs_[border];
+		if ( ! index->getIndices() ) return 0;
 
 		return index;
 	}
-	int getNoLevels() { return (int) levels_.size(); }
 
-	void generate(int size, int totalsize, unsigned int totallods = 99);
+	int getNoLevels() { return (int)levels_.size(); }
 
-	GLVertexBufferObject *getBufferObject() { return bufferObject_; }
+	void generate( int size, int totalsize, unsigned int totallods = 99 );
+
+	GLVertexBufferObject* getBufferObject() { return bufferObject_; }
 
 protected:
-	std::vector<IndexLevel *> levels_;
-	GLVertexBufferObject *bufferObject_;
+	std::vector< IndexLevel* > levels_;
+	GLVertexBufferObject*      bufferObject_;
 };
 
-#endif // __INCLUDE_MipMapPatchIndexs_hpp_INCLUDE__
+#endif  // __INCLUDE_MipMapPatchIndexs_hpp_INCLUDE__

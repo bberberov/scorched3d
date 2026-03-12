@@ -26,19 +26,18 @@
 class XMLFile
 {
 public:
-	XMLFile(bool useContentNodes = false);
+	XMLFile( bool useContentNodes = false );
 	virtual ~XMLFile();
 
-	bool readFile(const std::string &fileName);
+	bool readFile( const std::string& fileName );
 
-	const char *getParserError() { 
-		return fileError_.empty()?parser_.getParseError():fileError_.c_str(); 
-	}
-	XMLNode *getRootNode() { return parser_.getRoot(); }
+	const char* getParserError() { return fileError_.empty() ? parser_.getParseError() : fileError_.c_str(); }
+
+	XMLNode* getRootNode() { return parser_.getRoot(); }
 
 protected:
 	std::string fileError_;
-	XMLParser parser_;
+	XMLParser   parser_;
 };
 
-#endif // __INCLUDE_XMLFile_hpp_INCLUDE__
+#endif  // __INCLUDE_XMLFile_hpp_INCLUDE__

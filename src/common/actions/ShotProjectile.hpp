@@ -23,77 +23,79 @@
 
 #include <engine/PhysicsParticle.hpp>
 #include <engine/ScorchedCollisionIds.hpp>
-#ifndef	S3D_SERVER
-	#include <tankgraph/RenderTracer.hpp>
+#ifndef S3D_SERVER
+#include <tankgraph/RenderTracer.hpp>
 #endif
 #include <actions/ParticleGroup.hpp>
 #include <weapons/WeaponProjectile.hpp>
 #include <list>
 
 class TankViewPointProvider;
+
 class ShotProjectile : public PhysicsParticle
 {
 public:
 	ShotProjectile(
-		FixedVector &startPosition,
-		FixedVector &velocity,
-		WeaponProjectile *weapon,
-		WeaponFireContext &weaponContext,
-		unsigned int flareType,
-		fixed spinSpeed,
-		const Vector &spinAxis
+		FixedVector&       startPosition,
+		FixedVector&       velocity,
+		WeaponProjectile*  weapon,
+		WeaponFireContext& weaponContext,
+		unsigned int       flareType,
+		fixed              spinSpeed,
+		const Vector&      spinAxis
 	);
 	virtual ~ShotProjectile();
 
-	virtual void simulate(fixed frameTime, bool &remove);
-	virtual void init();
-	virtual void collision(
-		PhysicsParticleObject &position,
-		ScorchedCollisionId collisionId
-	);
+	virtual void        simulate( fixed frameTime, bool& remove );
+	virtual void        init();
+	virtual void        collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "ShotProjectile"; }
 
 	unsigned int getPlayerId() { return weaponContext_.getPlayerId(); }
-	WeaponProjectile *getWeapon() { return weapon_; }
+
+	WeaponProjectile* getWeapon() { return weapon_; }
+
 #ifndef S3D_SERVER
-	std::list<RenderTracer::TracerLinePoint> &getPositions() { return positions_; }
+	std::list< RenderTracer::TracerLinePoint >& getPositions() { return positions_; }
 #endif
 
 protected:
-	ParticleGroup *groups_;
-	FixedVector startPosition_;
-	FixedVector velocity_;
-	WeaponProjectile *weapon_;
-	WeaponFireContext weaponContext_;
-	TankViewPointProvider *vPoint_;
-	unsigned int flareType_;
-	bool up_;
-	bool collided_;
-	fixed snapTime_;
-	fixed totalTime_;
-	fixed simulateTime_;
-	fixed timeout_;
-	fixed thrustTime_;
-	fixed thrustAmount_;
-	fixed wobbleSpin_;
-	fixed wobbleAmount_;
-	fixed drag_;
-	fixed stepSize_;
-	fixed timedCollision_;
-	fixed heightCollision_;
-	fixed spinSpeed_;
-	fixed physicsSpin_;
-	Vector spinAxis_;
+	ParticleGroup*         groups_;
+	FixedVector            startPosition_;
+	FixedVector            velocity_;
+	WeaponProjectile*      weapon_;
+	WeaponFireContext      weaponContext_;
+	TankViewPointProvider* vPoint_;
+	unsigned int           flareType_;
+	bool                   up_;
+	bool                   collided_;
+	fixed                  snapTime_;
+	fixed                  totalTime_;
+	fixed                  simulateTime_;
+	fixed                  timeout_;
+	fixed                  thrustTime_;
+	fixed                  thrustAmount_;
+	fixed                  wobbleSpin_;
+	fixed                  wobbleAmount_;
+	fixed                  drag_;
+	fixed                  stepSize_;
+	fixed                  timedCollision_;
+	fixed                  heightCollision_;
+	fixed                  spinSpeed_;
+	fixed                  physicsSpin_;
+	Vector                 spinAxis_;
+
 #ifndef S3D_SERVER
-	std::list<RenderTracer::TracerLinePoint> positions_;
+	std::list< RenderTracer::TracerLinePoint > positions_;
 #endif
 
-	void doCollision(FixedVector &position);
+	void doCollision( FixedVector& position );
 
 private:
-	ShotProjectile(const ShotProjectile &);
-	const ShotProjectile & operator=(const ShotProjectile &);
+	ShotProjectile( const ShotProjectile& );
+	const ShotProjectile& operator=( const ShotProjectile& );
 };
 
-#endif // __INCLUDE_ShotProjectile_hpp_INCLUDE__
+#endif  // __INCLUDE_ShotProjectile_hpp_INCLUDE__

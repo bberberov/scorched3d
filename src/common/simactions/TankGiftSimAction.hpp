@@ -28,17 +28,18 @@ class TankGiftSimAction : public SimAction
 {
 public:
 	TankGiftSimAction();
-	TankGiftSimAction(ComsGiftMoneyMessage &giftMessage);
+	TankGiftSimAction( ComsGiftMoneyMessage& giftMessage );
 	virtual ~TankGiftSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankGiftSimAction);
+	REGISTER_CLASS_HEADER( TankGiftSimAction );
+
 protected:
 	ComsGiftMoneyMessage giftMessage_;
 };
 
-#endif // __INCLUDE_TankGiftSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankGiftSimAction_hpp_INCLUDE__

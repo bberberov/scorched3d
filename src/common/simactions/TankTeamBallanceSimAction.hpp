@@ -25,27 +25,31 @@
 #include <vector>
 
 class Tank;
+
 class TankTeamBallanceSimAction : public SimAction
 {
 public:
 	TankTeamBallanceSimAction();
 	virtual ~TankTeamBallanceSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankTeamBallanceSimAction);
+	REGISTER_CLASS_HEADER( TankTeamBallanceSimAction );
+
 protected:
-	static void minMaxTeams(ScorchedContext &context,
-		std::vector<Tank *> *teamPlayers,
-		std::vector<Tank *> *&minPlayers,
-		std::vector<Tank *> *&maxPlayers);
+	static void minMaxTeams(
+		ScorchedContext&       context,
+		std::vector< Tank* >*  teamPlayers,
+		std::vector< Tank* >*& minPlayers,
+		std::vector< Tank* >*& maxPlayers
+	);
 
-	void checkTeamsAuto(ScorchedContext &context);
-	void checkTeamsBotsVs(ScorchedContext &context);
-	void setTeam(ScorchedContext &context, Tank *tank, unsigned int team);
+	void checkTeamsAuto( ScorchedContext& context );
+	void checkTeamsBotsVs( ScorchedContext& context );
+	void setTeam( ScorchedContext& context, Tank* tank, unsigned int team );
 };
 
-#endif // __INCLUDE_TankTeamBallanceSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankTeamBallanceSimAction_hpp_INCLUDE__

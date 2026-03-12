@@ -29,12 +29,12 @@ public:
 	NextTurnSimAction();
 	virtual ~NextTurnSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	REGISTER_CLASS_HEADER(NextTurnSimAction);
+	REGISTER_CLASS_HEADER( NextTurnSimAction );
 };
 
-#endif // __INCLUDE_NextTurnSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_NextTurnSimAction_hpp_INCLUDE__

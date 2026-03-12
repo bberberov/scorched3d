@@ -28,73 +28,79 @@
 
 class TargetSpace;
 class Target;
+
 class TargetLife
 {
 public:
-	TargetLife(bool serverMode, TargetSpace &targetSpace, unsigned int playerId);
+	TargetLife( bool serverMode, TargetSpace& targetSpace, unsigned int playerId );
 	virtual ~TargetLife();
 
 	void newGame();
 
-	// Position
-	void setTargetPositionAndRotation(FixedVector &position, fixed rotation);
-	void setTargetPosition(FixedVector &position);
-	FixedVector &getTargetPosition() { return targetPosition_; }
-	FixedVector &getCenterPosition();
-	void setSize(FixedVector &size);
-	FixedVector &getSize() { return size_; }
-	FixedVector4 &getQuaternion() { return quaternion_; }
-	FixedVector &getAabbSize() { return aabbSize_; }
-	void setRotation(fixed rotation);
-	FixedVector &getVelocity() { return velocity_; }
-	void setVelocity(FixedVector &velocity) { velocity_ = velocity; }
-	FixedVector &getTankTurretPosition();
+	// clang-format off
+	// uncrustify off
 
-	void setTarget(Target *target) { target_ = target; }
-	void setBoundingSphere(bool sphereGeom);
-	bool getBoundingSphere() { return sphereGeom_; }
-	TargetSpaceContainment &getSpaceContainment() { return spaceContainment_; }
+	// Position
+	void                    setTargetPositionAndRotation( FixedVector& position, fixed rotation );
+	void                    setTargetPosition( FixedVector& position );
+	FixedVector&            getTargetPosition()                  { return targetPosition_; }
+	FixedVector&            getCenterPosition();
+	void                    setSize( FixedVector& size );
+	FixedVector&            getSize()                            { return size_; }
+	FixedVector4&           getQuaternion()                      { return quaternion_; }
+	FixedVector&            getAabbSize()                        { return aabbSize_; }
+	void                    setRotation( fixed rotation );
+	FixedVector&            getVelocity()                        { return velocity_; }
+	void                    setVelocity( FixedVector& velocity ) { velocity_ = velocity; }
+	FixedVector&            getTankTurretPosition();
+	void                    setTarget( Target* target )          { target_ = target; }
+	void                    setBoundingSphere( bool sphereGeom );
+	bool                    getBoundingSphere()                  { return sphereGeom_; }
+	TargetSpaceContainment& getSpaceContainment()                { return spaceContainment_; }
 
 	// Client only performance functions
-	Vector &getFloatPosition() { return floatPosition_; }
-	Vector &getFloatAabbSize() { return floatAabbSize_; }
-	float *getFloatRotMatrix() { return floatRotMatrix_; }
-	float getFloatBoundingSize() { return floatBoundingSize_; }
-	Vector &getFloatCenterPosition();
+	Vector& getFloatPosition()     { return floatPosition_; }
+	Vector& getFloatAabbSize()     { return floatAabbSize_; }
+	float*  getFloatRotMatrix()    { return floatRotMatrix_; }
+	float   getFloatBoundingSize() { return floatBoundingSize_; }
+	Vector& getFloatCenterPosition();
 
 	// Collision
-	fixed collisionDistance(FixedVector &position);
-	bool collision(FixedVector &position);
+	fixed collisionDistance( FixedVector& position );
+	bool  collision( FixedVector& position );
 
 	// Tank Life / Health
-	fixed getLife() { return life_; }
-	void setLife(fixed life);
-	fixed getMaxLife() { return maxLife_; }
-	void setMaxLife(fixed life) { maxLife_ = life; }
+	fixed getLife()                { return life_; }
+	void  setLife( fixed life );
+	fixed getMaxLife()             { return maxLife_; }
+	void  setMaxLife( fixed life ) { maxLife_ = life; }
+
+	// uncrustify on
+	// clang-format on
 
 	// Serialize the tank
-	bool writeMessage(NamedNetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	bool serverMode_;
-	TargetSpace &targetSpace_;
+	bool                   serverMode_;
+	TargetSpace&           targetSpace_;
 	TargetSpaceContainment spaceContainment_;
-	Target *target_;
-	FixedVector4 quaternion_;
-	FixedVector targetPosition_;
-	FixedVector velocity_;
-	FixedVector aabbSize_;
-	FixedVector size_;
-	Vector floatPosition_;
-	Vector floatAabbSize_;
-	float floatRotMatrix_[16], floatBoundingSize_;
-	fixed life_;
-	fixed maxLife_;
-	bool sphereGeom_;
+	Target*                target_;
+	FixedVector4           quaternion_;
+	FixedVector            targetPosition_;
+	FixedVector            velocity_;
+	FixedVector            aabbSize_;
+	FixedVector            size_;
+	Vector                 floatPosition_;
+	Vector                 floatAabbSize_;
+	float                  floatRotMatrix_[16], floatBoundingSize_;
+	fixed                  life_;
+	fixed                  maxLife_;
+	bool                   sphereGeom_;
 
 	void updateSpace();
 	void updateAABB();
 };
 
-#endif // __INCLUDE_TargetLife_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetLife_hpp_INCLUDE__

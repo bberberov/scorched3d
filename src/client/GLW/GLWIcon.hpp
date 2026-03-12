@@ -27,21 +27,19 @@
 class GLWIcon : public GLWidget
 {
 public:
-	GLWIcon(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
-	GLWIcon(float x, float y, 
-		float w, float h, 
-		const ImageID &imageId);
+	GLWIcon( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
+	GLWIcon( float x, float y, float w, float h, const ImageID& imageId );
 	virtual ~GLWIcon();
 
 	virtual void draw();
-	virtual bool initFromXML(XMLNode *node);
+	virtual bool initFromXML( XMLNode* node );
 
-	void setTextureImage(const ImageID &imageId);
+	void setTextureImage( const ImageID& imageId );
 
-	REGISTER_CLASS_HEADER(GLWIcon);
+	REGISTER_CLASS_HEADER( GLWIcon );
+
 protected:
 	GLTextureReference texture_;
 };
 
-#endif // __INCLUDE_GLWIcon_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWIcon_hpp_INCLUDE__

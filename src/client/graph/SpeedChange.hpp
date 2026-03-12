@@ -29,32 +29,32 @@
 class SpeedChange : public GameStateI
 {
 public:
-	static SpeedChange *instance();
+	static SpeedChange* instance();
 
 	void resetSpeed();
 
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned state, float simTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float simTime );
 	virtual void keyboardCheck(
-		const unsigned state,
-		float frameTime,
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		const unsigned int               state,
+		float                            frameTime,
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
 protected:
-	static SpeedChange *instance_;
+	static SpeedChange* instance_;
 
 	Clock frameClock_;
 
-	void setSpeed(fixed speed);
+	void setSpeed( fixed speed );
 
 private:
 	SpeedChange();
 	virtual ~SpeedChange();
 };
 
-#endif // __INCLUDE_SpeedChange_hpp_INCLUDE__
+#endif  // __INCLUDE_SpeedChange_hpp_INCLUDE__

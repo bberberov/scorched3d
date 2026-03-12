@@ -29,26 +29,34 @@ public:
 	ShieldRound();
 	virtual ~ShieldRound();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// ShieldRound attributes
+	// clang-format off
+	// uncrustify off
 	fixed getActualRadius() { return radius_; }
-	bool getHalfShield() { return halfShield_; }
-	bool getGlow() { return glow_; }
+	bool  getHalfShield()   { return halfShield_; }
+	bool  getGlow()         { return glow_; }
+	// uncrustify on
+	// clang-format on
 
-	virtual bool inShield(FixedVector &offset);
-	virtual bool tankInShield(FixedVector &offset);
+	virtual bool       inShield( FixedVector& offset );
+	virtual bool       tankInShield( FixedVector& offset );
 	virtual ShieldType getShieldType();
-	virtual bool getRound() { return true; }
-	virtual fixed getBoundingSize() { return radius_; }
 
-	REGISTER_ACCESSORY_HEADER(ShieldRound, AccessoryPart::AccessoryShield);
+	// clang-format off
+	// uncrustify off
+	virtual bool  getRound()        { return true; }
+	virtual fixed getBoundingSize() { return radius_; }
+	// uncrustify on
+	// clang-format on
+
+	REGISTER_ACCESSORY_HEADER( ShieldRound, AccessoryPart::AccessoryShield );
 
 protected:
 	fixed radius_;
-	bool halfShield_;
-	bool glow_;
+	bool  halfShield_;
+	bool  glow_;
 };
 
-#endif // __INCLUDE_ShieldRound_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldRound_hpp_INCLUDE__

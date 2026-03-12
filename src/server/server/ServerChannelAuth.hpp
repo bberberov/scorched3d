@@ -29,12 +29,12 @@ public:
 	ServerChannelAuth();
 	virtual ~ServerChannelAuth();
 
-	virtual bool allowConnection(const char *channel, unsigned int destination) = 0;
+	virtual bool allowConnection( const char* channel, unsigned int destination ) = 0;
 };
 
 class ServerChannelAuthAdmin : public ServerChannelAuth
 {
-	virtual bool allowConnection(const char *channel, unsigned int destination);
+	virtual bool allowConnection( const char* channel, unsigned int destination );
 };
 
-#endif // __INCLUDE_ServerChannelAuth_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerChannelAuth_hpp_INCLUDE__

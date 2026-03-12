@@ -28,21 +28,19 @@ class GLWPushButtonI : public GLWButtonI
 public:
 	virtual ~GLWPushButtonI();
 
-	virtual void buttonUp(unsigned int id) = 0;
+	virtual void buttonUp( unsigned int id ) = 0;
 };
 
 class GLWPushButton : public GLWButton
 {
 public:
-	GLWPushButton(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
-		GLWPushButtonI *handler = 0);
+	GLWPushButton( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f, GLWPushButtonI* handler = 0 );
 	virtual ~GLWPushButton();
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWPushButton);
+	REGISTER_CLASS_HEADER( GLWPushButton );
 };
 
-#endif // __INCLUDE_GLWPushButton_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWPushButton_hpp_INCLUDE__

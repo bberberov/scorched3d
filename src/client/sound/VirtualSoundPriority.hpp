@@ -26,13 +26,13 @@ namespace VirtualSoundPriority
 	enum Priorities
 	{
 		eEnvironment = 100,
-		eMissile = 200,
-		eAction = 10000,
-		eMusic = 20000,
-		eBoids = 100,
-		eText = 100,
-		eRotation = 500
+		eMissile     = 200,
+		eAction      = 10000,
+		eMusic       = 20000,
+		eBoids       = 100,
+		eText        = 100,
+		eRotation    = 500
 	};
-};
+};  // namespace VirtualSoundPriority
 
-#endif // __INCLUDE_VirtualSoundPriority_hpp_INCLUDE__
+#endif  // __INCLUDE_VirtualSoundPriority_hpp_INCLUDE__

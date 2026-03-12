@@ -33,21 +33,24 @@ class ARGParserBoolI
 {
 public:
 	virtual ~ARGParserBoolI() {}
-	virtual bool setBoolArgument(bool value) = 0;
+
+	virtual bool setBoolArgument( bool value ) = 0;
 };
 
 class ARGParserIntI
 {
 public:
 	virtual ~ARGParserIntI() {}
-	virtual bool setIntArgument(int value) = 0;
+
+	virtual bool setIntArgument( int value ) = 0;
 };
 
 class ARGParserStringI
 {
 public:
 	virtual ~ARGParserStringI() {}
-	virtual bool setStringArgument(const char *value) = 0;
+
+	virtual bool setStringArgument( const char* value ) = 0;
 };
 
 class ARGParser
@@ -56,47 +59,47 @@ public:
 	ARGParser();
 	virtual ~ARGParser();
 
-	bool parse(const char *lpCmdLine);
-	bool parse(int argc,char *argv[]);
-	void addEntry(char *cmd, char **destStr, const char *help = "");
-	void addEntry(char *cmd, int   *destI,   const char *help = "");
-	void addEntry(char *cmd, bool  *destB,   const char *help = "");
+	bool parse( const char* lpCmdLine );
+	bool parse( int argc, char* argv[] );
+	void addEntry( char* cmd, char** destStr, const char* help = "" );
+	void addEntry( char* cmd, int* destI, const char* help = "" );
+	void addEntry( char* cmd, bool* destB, const char* help = "" );
 
-	void addEntry(char *cmd, ARGParserBoolI   *destBool,   const char *help = "");
-	void addEntry(char *cmd, ARGParserIntI    *destInt,    const char *help = "");
-	void addEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
+	void addEntry( char* cmd, ARGParserBoolI* destBool, const char* help = "" );
+	void addEntry( char* cmd, ARGParserIntI* destInt, const char* help = "" );
+	void addEntry( char* cmd, ARGParserStringI* destString, const char* help = "" );
 
-	void addNonParamEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
+	void addNonParamEntry( char* cmd, ARGParserStringI* destString, const char* help = "" );
 
-	void showArgs(const char *topString = NULL);
+	void showArgs( const char* topString = NULL );
 
 protected:
 	struct Entry
 	{
 		Entry(
-			ARGParserBoolI   *destBoolArg   = 0,
-			ARGParserIntI    *destIntArg    = 0,
-			ARGParserStringI *destStringArg = 0,
-			char **destCArg = 0,
-			int   *destIArg = 0,
-			bool  *destBArg = 0,
-			const char *helpArg = ""
+			ARGParserBoolI*   destBoolArg   = 0,
+			ARGParserIntI*    destIntArg    = 0,
+			ARGParserStringI* destStringArg = 0,
+			char**            destCArg      = 0,
+			int*              destIArg      = 0,
+			bool*             destBArg      = 0,
+			const char*       helpArg       = ""
 		);
 
-		ARGParserBoolI   *destBool;
-		ARGParserIntI    *destInt;
-		ARGParserStringI *destString;
-		char **destC;
-		int   *destI;
-		bool  *destB;
-		std::string help;
+		ARGParserBoolI*   destBool;
+		ARGParserIntI*    destInt;
+		ARGParserStringI* destString;
+		char**            destC;
+		int*              destI;
+		bool*             destB;
+		std::string       help;
 	};
 
-	std::map<std::string, Entry> argMap_;
-	std::map<std::string, Entry> nonParamMap_;
-	void addNewEntry(const char *cmd, ARGParser::Entry &entry);
-	bool parseLineIntoStrings(const char *line, std::list<std::string> &cmdLine);
-	bool parseArg(ARGParser::Entry &newEntry, std::list<std::string> &cmdLine);
+	std::map< std::string, Entry > argMap_;
+	std::map< std::string, Entry > nonParamMap_;
+	void                           addNewEntry( const char* cmd, ARGParser::Entry& entry );
+	bool                           parseLineIntoStrings( const char* line, std::list< std::string >& cmdLine );
+	bool                           parseArg( ARGParser::Entry& newEntry, std::list< std::string >& cmdLine );
 };
 
-#endif // __INCLUDE_ARGParser_hpp_INCLUDE__
+#endif  // __INCLUDE_ARGParser_hpp_INCLUDE__

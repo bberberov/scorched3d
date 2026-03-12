@@ -29,9 +29,8 @@
 
 namespace ConsoleFileReader
 {
-	bool loadFileIntoConsole(const std::string &fileName,
-		std::string &errorMessage);
-	void saveConsoleIntoFile(const std::string &fileName);
+	bool loadFileIntoConsole( const std::string& fileName, std::string& errorMessage );
+	void saveConsoleIntoFile( const std::string& fileName );
 };
 
-#endif // __INCLUDE_ConsoleFileReader_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleFileReader_hpp_INCLUDE__

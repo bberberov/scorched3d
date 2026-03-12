@@ -28,20 +28,22 @@
 class QuitDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static QuitDialog *instance();
+	static QuitDialog* instance();
 
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 	virtual void display();
 
 protected:
-	static QuitDialog *instance_;
+	static QuitDialog* instance_;
 
-	GLWTextButton *okButton_, *quitButton_, *disconnectButton_;
-	GLWTextButton *killButton_;
+	GLWTextButton* okButton_;
+	GLWTextButton* quitButton_;
+	GLWTextButton* disconnectButton_;
+	GLWTextButton* killButton_;
 
 private:
 	QuitDialog();
 	virtual ~QuitDialog();
 };
 
-#endif // __INCLUDE_QuitDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_QuitDialog_hpp_INCLUDE__

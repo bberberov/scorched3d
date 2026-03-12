@@ -25,41 +25,51 @@
 #include <common/KeyboardHistory.hpp>
 #include <vector>
 
-class GameStateI  
+class GameStateI
 {
 public:
-	GameStateI(const char *name);
+	GameStateI( const char* name );
 	virtual ~GameStateI();
 
-	virtual void simulate(const unsigned state, float simTime);
-	virtual void draw(const unsigned state);
+	virtual void simulate( const unsigned int state, float simTime );
+	virtual void draw( const unsigned int state );
 
-	virtual void mouseDown(const unsigned state, GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	virtual void mouseUp(const unsigned state, GameState::MouseButton button, 
-		int x, int y, bool &skipRest);
-	virtual void mouseDrag(const unsigned state, GameState::MouseButton button,
-		int x, int y, int dx, int dy, bool &skipRest);
-	virtual void mouseWheel(const unsigned state, int x, int y, int z, bool &skipRest);
-	virtual void enterState(const unsigned state);
-	virtual void keyboardCheck(const unsigned state, float frameTime, 
-							   char *buffer, unsigned int keyState,
-							   KeyboardHistory::HistoryElement *history, int hisCount, 
-							   bool &skipRest);
+	virtual void mouseDown( const unsigned int state, GameState::MouseButton button, int x, int y, bool& skipRest );
+	virtual void mouseUp( const unsigned int state, GameState::MouseButton button, int x, int y, bool& skipRest );
+	virtual void mouseDrag(
+		const unsigned int     state,
+		GameState::MouseButton button,
+		int                    x,
+		int                    y,
+		int                    dx,
+		int                    dy,
+		bool&                  skipRest
+	);
+	virtual void mouseWheel( const unsigned int state, int x, int y, int z, bool& skipRest );
+	virtual void enterState( const unsigned int state );
+	virtual void keyboardCheck(
+		const unsigned int               state,
+		float                            frameTime,
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
 
-	const char *getGameStateIName() { return gameStateIName_; }
+	const char* getGameStateIName() { return gameStateIName_; }
 
-	int getPerfCounter(const char *perfName);
-	void startPerfCount(int counter);
-	void endPerfCount(int counter);
+	int  getPerfCounter( const char* perfName );
+	void startPerfCount( int counter );
+	void endPerfCount( int counter );
 
-	std::vector<GameStatePerfCounter *> &getPerfCounters() { return perfCounters_; }
+	std::vector< GameStatePerfCounter* >& getPerfCounters() { return perfCounters_; }
 
 protected:
-	const char *gameStateIName_;
-	std::vector<GameStatePerfCounter *> perfCounters_;
+	const char*                          gameStateIName_;
+	std::vector< GameStatePerfCounter* > perfCounters_;
 
-	static std::vector<std::string> perfCounterNames_;
+	static std::vector< std::string > perfCounterNames_;
 };
 
-#endif // __INCLUDE_GameStateI_hpp_INCLUDE__
+#endif  // __INCLUDE_GameStateI_hpp_INCLUDE__

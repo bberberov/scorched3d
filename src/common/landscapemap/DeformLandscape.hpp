@@ -36,32 +36,44 @@ public:
 	};
 
 	static void deformLandscape(
-		ScorchedContext &context,
-		FixedVector &pos, fixed radius, 
-		bool down, fixed depthScale,
-		const char *deformTexture);
+		ScorchedContext& context,
+		FixedVector&     pos,
+		fixed            radius,
+		bool             down,
+		fixed            depthScale,
+		const char*      deformTexture
+	);
 	static void flattenArea(
-		ScorchedContext &context, 
-		FixedVector &tankPos,
-		bool removeObjects = true,
-		fixed size = 2);
+		ScorchedContext& context,
+		FixedVector&     tankPos,
+		bool             removeObjects = true,
+		fixed            size          = 2
+	);
 
 private:
 	static bool deformLandscapeInternal(
-		ScorchedContext &context,
-		FixedVector &pos, fixed radius, 
-		bool down, DeformPoints &map,
-		bool setNormals, fixed depthScale);
+		ScorchedContext& context,
+		FixedVector&     pos,
+		fixed            radius,
+		bool             down,
+		DeformPoints&    map,
+		bool             setNormals,
+		fixed            depthScale
+	);
 	static bool deformRoofInternal(
-		ScorchedContext &context,
-		FixedVector &pos, fixed radius, fixed depthScale,
-		bool setNormals);
+		ScorchedContext& context,
+		FixedVector&     pos,
+		fixed            radius,
+		fixed            depthScale,
+		bool             setNormals
+	);
 	static void flattenAreaInternal(
-		ScorchedContext &context, 
-		FixedVector &tankPos,
-		bool removeObjects,
-		fixed size, 
-		bool setNormals);
+		ScorchedContext& context,
+		FixedVector&     tankPos,
+		bool             removeObjects,
+		fixed            size,
+		bool             setNormals
+	);
 };
 
-#endif // __INCLUDE_DeformLandscape_hpp_INCLUDE__
+#endif  // __INCLUDE_DeformLandscape_hpp_INCLUDE__

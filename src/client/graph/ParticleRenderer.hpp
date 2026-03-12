@@ -22,84 +22,86 @@
 #define __INCLUDE_ParticleRenderer_hpp_INCLUDE__
 
 class Particle;
+
 class ParticleRenderer
 {
 public:
-	virtual void renderParticle(Particle &particle) = 0;
-	virtual void simulateParticle(Particle &particle, float time) = 0;
-	virtual void recycleParticle(Particle &particle) { }
+	virtual void renderParticle( Particle& particle )               = 0;
+	virtual void simulateParticle( Particle& particle, float time ) = 0;
+
+	virtual void recycleParticle( Particle& particle ) {}
 };
 
 class ParticleRendererPoints : public ParticleRenderer
 {
 public:
-	static ParticleRendererPoints *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererPoints* getInstance();
+	virtual void                   renderParticle( Particle& particle );
+	virtual void                   simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererQuads : public ParticleRenderer
 {
 public:
-	static ParticleRendererQuads *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererQuads* getInstance();
+	virtual void                  renderParticle( Particle& particle );
+	virtual void                  simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererDebris : public ParticleRenderer
 {
 public:
-	static ParticleRendererDebris *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererDebris* getInstance();
+	virtual void                   renderParticle( Particle& particle );
+	virtual void                   simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererSmoke : public ParticleRenderer
 {
 public:
-	static ParticleRendererSmoke *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererSmoke* getInstance();
+	virtual void                  renderParticle( Particle& particle );
+	virtual void                  simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererNapalm : public ParticleRenderer
 {
 public:
-	static ParticleRendererNapalm *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererNapalm* getInstance();
+	virtual void                   renderParticle( Particle& particle );
+	virtual void                   simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererMushroom : public ParticleRenderer
 {
 public:
-	static ParticleRendererMushroom *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererMushroom* getInstance();
+	virtual void                     renderParticle( Particle& particle );
+	virtual void                     simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererRain : public ParticleRenderer
 {
 public:
-	static ParticleRendererRain *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererRain* getInstance();
+	virtual void                 renderParticle( Particle& particle );
+	virtual void                 simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererSnow : public ParticleRenderer
 {
 public:
-	static ParticleRendererSnow *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererSnow* getInstance();
+	virtual void                 renderParticle( Particle& particle );
+	virtual void                 simulateParticle( Particle& particle, float time );
 };
 
 class ParticleRendererWall : public ParticleRenderer
 {
 public:
-	static ParticleRendererWall *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
+	static ParticleRendererWall* getInstance();
+	virtual void                 renderParticle( Particle& particle );
+	virtual void                 simulateParticle( Particle& particle, float time );
 };
 
-#endif // __INCLUDE_ParticleRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_ParticleRenderer_hpp_INCLUDE__

@@ -25,36 +25,37 @@
 
 class ScorchedContext;
 class LandscapeDefinitionCache;
+
 class RoofMaps
 {
 public:
-	RoofMaps(LandscapeDefinitionCache &defnCache);
+	RoofMaps( LandscapeDefinitionCache& defnCache );
 	virtual ~RoofMaps();
 
-	void generateMaps(
-		ScorchedContext &context,
-		ProgressCounter *counter = 0);
+	void generateMaps( ScorchedContext& context, ProgressCounter* counter = 0 );
 
-	fixed getRoofHeight(int x, int y);
-	fixed getInterpRoofHeight(fixed x, fixed y);
+	fixed getRoofHeight( int x, int y );
+	fixed getInterpRoofHeight( fixed x, fixed y );
 
-	bool getRoofOn();
+	// clang-format off
+	// uncrustify off
+	bool  getRoofOn();
 	fixed getRoofBaseHeight() { return roofBaseHeight_; }
 
-	HeightMap &getRoofMap() { return rmap_; }
-	HeightMap &getDeformRoofMap() { return deformRMap_; }
+	HeightMap& getRoofMap()       { return rmap_; }
+	HeightMap& getDeformRoofMap() { return deformRMap_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	LandscapeDefinitionCache &defnCache_;
+	LandscapeDefinitionCache& defnCache_;
 
 	// The roof of the landscape
 	HeightMap rmap_;
 	HeightMap deformRMap_;
-	fixed roofBaseHeight_;
+	fixed     roofBaseHeight_;
 
-	void generateRMap(
-		ScorchedContext &context,
-		ProgressCounter *counter = 0);
+	void generateRMap( ScorchedContext& context, ProgressCounter* counter = 0 );
 };
 
-#endif // __INCLUDE_RoofMaps_hpp_INCLUDE__
+#endif  // __INCLUDE_RoofMaps_hpp_INCLUDE__

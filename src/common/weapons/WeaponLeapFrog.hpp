@@ -29,23 +29,23 @@ public:
 	WeaponLeapFrog();
 	virtual ~WeaponLeapFrog();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	Weapon *getCollisionAction() { return collisionAction_; }
+	Weapon* getCollisionAction() { return collisionAction_; }
 
 	// Inherited from Weapon
 	virtual void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponLeapFrog, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponLeapFrog, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *collisionAction_;
+	Weapon*      collisionAction_;
 	NumberParser bounce_;
 };
 
-#endif // __INCLUDE_WeaponLeapFrog_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponLeapFrog_hpp_INCLUDE__

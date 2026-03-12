@@ -28,6 +28,7 @@
 #include <vector>
 
 class ScorchedContext;
+
 class LandscapeTexType
 {
 public:
@@ -43,14 +44,15 @@ public:
 
 	virtual ~LandscapeTexType();
 
-	virtual bool readXML(XMLNode *node) = 0;
-	virtual TexType getType() = 0;
+	virtual bool    readXML( XMLNode* node ) = 0;
+	virtual TexType getType()                = 0;
 };
 
 class LandscapeTexTypeNone : public LandscapeTexType
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual TexType getType() { return eNone; }
 };
 
@@ -59,7 +61,7 @@ class LandscapeTexPrecipitation : public LandscapeTexType
 public:
 	int particles;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 };
 
 class LandscapeTexPrecipitationRain : public LandscapeTexPrecipitation
@@ -92,8 +94,9 @@ public:
 	// Both
 	fixed height;
 	float waterTransparency;
-	
-	virtual bool readXML(XMLNode *node);
+
+	virtual bool readXML( XMLNode* node );
+
 	virtual TexType getType() { return eWater; }
 };
 
@@ -108,7 +111,8 @@ public:
 	std::string texture2;
 	std::string texture3;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual TexType getType() { return eTextureGenerate; }
 };
 
@@ -118,7 +122,8 @@ public:
 	std::string texture;
 	std::string surroundTexture;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual TexType getType() { return eTextureFile; }
 };
 
@@ -129,39 +134,39 @@ public:
 	virtual ~LandscapeTex();
 
 	unsigned int seed;
-	std::string detail;
-	std::string magmasmall;
-	std::string scorch;
-	Vector fog;
-	Vector suncolor;
-	bool nosunfog;
-	bool nohorizonglow;
-	bool nosunblend;
-	std::string suntexture;
-	std::string suntexturemask;
-	float fogdensity;
-	std::string skytexture;
-	std::string skytexturestatic;
-	std::string skytexturemask;
-	std::string skycolormap;
-	std::string skyline;
-	std::string skylinemask;
-	int skytimeofday;
-	float skysunxy;
-	float skysunyz;
-	Vector skydiffuse;
-	Vector skyambience;
+	std::string  detail;
+	std::string  magmasmall;
+	std::string  scorch;
+	Vector       fog;
+	Vector       suncolor;
+	bool         nosunfog;
+	bool         nohorizonglow;
+	bool         nosunblend;
+	std::string  suntexture;
+	std::string  suntexturemask;
+	float        fogdensity;
+	std::string  skytexture;
+	std::string  skytexturestatic;
+	std::string  skytexturemask;
+	std::string  skycolormap;
+	std::string  skyline;
+	std::string  skylinemask;
+	int          skytimeofday;
+	float        skysunxy;
+	float        skysunyz;
+	Vector       skydiffuse;
+	Vector       skyambience;
 
-	LandscapeTexType *border;
-	LandscapeTexType *texture;
-	LandscapeTexType *precipitation;
-	LandscapeTexDefn texDefn;
+	LandscapeTexType* border;
+	LandscapeTexType* texture;
+	LandscapeTexType* precipitation;
+	LandscapeTexDefn  texDefn;
 
-	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);
+	bool readXML( LandscapeDefinitions* definitions, XMLNode* node );
 
 private:
-	LandscapeTex(const LandscapeTex &other);
-	LandscapeTex &operator=(LandscapeTex &other);
+	LandscapeTex( const LandscapeTex& other );
+	LandscapeTex& operator=( LandscapeTex& other );
 };
 
-#endif // __INCLUDE_LandscapeTex_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeTex_hpp_INCLUDE__

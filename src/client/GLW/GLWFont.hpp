@@ -27,31 +27,35 @@
 class GLWFont
 {
 public:
-	static GLWFont *instance();
+	static GLWFont* instance();
 
 	static Vector widgetFontColor;
 	static Vector disabledWidgetFontColor;
 
-	GLFont2d *getGameFont() { return gameFont_; }
-	GLFont2d *getGameShadowFont() { return gameShadowFont_; }
-	GLFont2d *getCourierFont() { return courierFont_; }
-	GLFont2d *getNormalFont() { return normalFont_; }
-	GLFont2d *getNormalShadowFont() { return normalShadowFont_; }
+	// clang-format off
+	// uncrustify off
+	GLFont2d* getGameFont()         { return gameFont_; }
+	GLFont2d* getGameShadowFont()   { return gameShadowFont_; }
+	GLFont2d* getCourierFont()      { return courierFont_; }
+	GLFont2d* getNormalFont()       { return normalFont_; }
+	GLFont2d* getNormalShadowFont() { return normalShadowFont_; }
+	// uncrustify on
+	// clang-format on
 
 	void displayCharacterInfo();
 
 protected:
-	static GLWFont *instance_;
+	static GLWFont* instance_;
 
-	GLFont2d *gameFont_;
-	GLFont2d *gameShadowFont_;
-	GLFont2d *courierFont_;
-	GLFont2d *normalFont_;
-	GLFont2d *normalShadowFont_;
+	GLFont2d* gameFont_;
+	GLFont2d* gameShadowFont_;
+	GLFont2d* courierFont_;
+	GLFont2d* normalFont_;
+	GLFont2d* normalShadowFont_;
 
 private:
 	GLWFont();
 	virtual ~GLWFont();
 };
 
-#endif // __INCLUDE_GLWFont_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWFont_hpp_INCLUDE__

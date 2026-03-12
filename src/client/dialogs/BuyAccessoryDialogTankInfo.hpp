@@ -28,21 +28,21 @@
 class BuyAccessoryDialogTankInfo
 {
 public:
-	static BuyAccessoryDialogTankInfo *instance();
+	static BuyAccessoryDialogTankInfo* instance();
 
 	TanketAccessories tankAccessories;
-	Vector tankColor;
-	LangString tankName;
-	int tankMoney;
-	unsigned int tankId;
-	unsigned int tankMoveId;
+	Vector            tankColor;
+	LangString        tankName;
+	int               tankMoney;
+	unsigned int      tankId;
+	unsigned int      tankMoveId;
 
 	void set();
 
 protected:
-	static BuyAccessoryDialogTankInfo *instance_;
+	static BuyAccessoryDialogTankInfo* instance_;
 
 	BuyAccessoryDialogTankInfo();
 };
 
-#endif // __INCLUDE_BuyAccessoryDialogTankInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_BuyAccessoryDialogTankInfo_hpp_INCLUDE__

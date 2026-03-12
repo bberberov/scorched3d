@@ -23,26 +23,29 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponTranslate  : public Weapon
+class WeaponTranslate : public Weapon
 {
 public:
 	WeaponTranslate();
 	virtual ~WeaponTranslate();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	Weapon *getNextAction() { return nextAction_; }
+	Weapon* getNextAction() { return nextAction_; }
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponTranslate, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponTranslate, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NumberParser translateDist_;
-	Weapon *nextAction_;
+	Weapon*      nextAction_;
 };
 
-#endif // __INCLUDE_WeaponTranslate_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponTranslate_hpp_INCLUDE__

@@ -32,57 +32,58 @@
 class GLWTankViewer : public GLWidget, public GLWDropDownI
 {
 public:
-	GLWTankViewer(float x = 0.0f, float y = 0.0f, int numH = 0, int numV = 0);
+	GLWTankViewer( float x = 0.0f, float y = 0.0f, int numH = 0, int numV = 0 );
 	virtual ~GLWTankViewer();
 
 	void init();
 
-	void selectModelByName(const char *name);
-	const char *getModelName();
-	void setTeam(int team);
-	void setTankType(const std::string &tankType);
+	void        selectModelByName( const char* name );
+	const char* getModelName();
+	void        setTeam( int team );
+	void        setTankType( const std::string& tankType );
 
 	// Inhertied from GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 	// Inhertied from GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool &skipRest );
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWTankViewer);
+	REGISTER_CLASS_HEADER( GLWTankViewer );
+
 protected:
 	struct ModelEntry
 	{
-		TankModel *model;
-		ModelRendererTank *mesh;
+		TankModel*         model;
+		ModelRendererTank* mesh;
 	};
 
-	GLWScrollW scrollBar_;
-	GLWPanel infoWindow_;
-	ToolTip toolTip_;
-	std::vector<ModelEntry> models_;
-	int numH_, numV_;
-	float rot_;
-	float rotXY_, rotYZ_;
-	float rotXYD_, rotYZD_;
-	float totalTime_;
-	int selected_;
-	int team_;
-	std::string tankType_;
-	GLWDropDownText catagoryChoice_;
+	GLWScrollW                scrollBar_;
+	GLWPanel                  infoWindow_;
+	ToolTip                   toolTip_;
+	std::vector< ModelEntry > models_;
+	int                       numH_, numV_;
+	float                     rot_;
+	float                     rotXY_, rotYZ_;
+	float                     rotXYD_, rotYZD_;
+	float                     totalTime_;
+	int                       selected_;
+	int                       team_;
+	std::string               tankType_;
+	GLWDropDownText           catagoryChoice_;
 
-	void refreshAvailableModels();
-	void setTankModels(std::vector<ModelEntry> &models);
-	virtual void drawItem(int pos, bool selected);
-	virtual void drawCaption(int pos);
+	void         refreshAvailableModels();
+	void         setTankModels( std::vector< ModelEntry >& models );
+	virtual void drawItem( int pos, bool selected );
+	virtual void drawCaption( int pos );
 
 private:
-	GLWTankViewer(const GLWTankViewer &);
-	const GLWTankViewer & operator=(const GLWTankViewer &);
+	GLWTankViewer( const GLWTankViewer& );
+	const GLWTankViewer& operator=( const GLWTankViewer& );
 };
 
-#endif // __INCLUDE_GLWTankViewer_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTankViewer_hpp_INCLUDE__

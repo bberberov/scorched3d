@@ -31,100 +31,112 @@
 #endif
 
 static ARGParser aParser;
-char scorched3dAppName[128];
+char             scorched3dAppName[128];
 
-#if defined(__BORLANDC__) || defined (__TURBOC__)
-// NOTE: possibly aldo  defined(__BCPLUSPLUS__) || defined(__TCPLUSPLUS__)
+#if defined( __BORLANDC__ ) || defined( __TURBOC__ )
+// NOTE: possibly also  defined(__BCPLUSPLUS__) || defined(__TCPLUSPLUS__)
 // NOTE: https://digitalmars.com/ctg/fromBorland.html
 
 // Compilers from Borland report floating-point exceptions in a manner
 // that is incompatible with Microsoft Direct3D.
-int _matherr(struct _exception  *e)
+int _matherr( struct _exception* e )
 {
-    e;               // Dummy reference to catch the warning.
-    return 1;        // Error has been handled.
+	e;  // Dummy reference to catch the warning.
+
+	return 1;  // Error has been handled.
 }
 #endif
 
 void _no_storage()
 {
-	printf("Failed to allocate memory!!");
-	std::exit(1);
+	printf( "Failed to allocate memory!!" );
+	std::exit( 1 );
 }
 
-void run_main(int argc, char *argv[], OptionsParameters &params)
+void run_main( int argc, char* argv[], OptionsParameters& params )
 {
-	std::set_new_handler(&_no_storage);
+	std::set_new_handler( &_no_storage );
 
 	// Set the path the executable was run with
-	S3D::setExeName((const char *) argv[0]);
+	S3D::setExeName( (const char*)argv[0] );
 
 	// Generate the version
-	snprintf(scorched3dAppName, 128, "Scorched3D - Version %s (%s)", 
-		S3D::ScorchedVersion.c_str(), S3D::ScorchedProtocolVersion.c_str());
+	snprintf(
+		scorched3dAppName,
+		128,
+		"Scorched3D - Version %s (%s)",
+		S3D::ScorchedVersion.c_str(),
+		S3D::ScorchedProtocolVersion.c_str()
+	);
 
-	srand((unsigned)time(0));
+	srand( (unsigned int)time( 0 ) );
 
 	// Parse command line
 	// Read options from command line
-	if (!OptionEntryHelper::addToArgParser(
-		params.getOptions(), aParser)) exit(64);
-	std::list<OptionEntry *>::iterator nonParamItor;
-	for (nonParamItor = params.getNonParamOptions().begin();
-		nonParamItor != params.getNonParamOptions().end();
-		++nonParamItor)
+	if ( ! OptionEntryHelper::addToArgParser( params.getOptions(), aParser ) ) exit( 64 );
+	std::list< OptionEntry* >::iterator nonParamItor;
+	for (
+		nonParamItor  = params.getNonParamOptions().begin();  // NOLINT
+		nonParamItor != params.getNonParamOptions().end();  // NOLINT
+		++nonParamItor  // NOLINT
+	)
 	{
-		OptionEntryString *str = (OptionEntryString *) *nonParamItor;
-		aParser.addNonParamEntry(
-			(char *) str->getName(), str, 
-			(char *) str->getDescription());
+		OptionEntryString* str = (OptionEntryString*)*nonParamItor;
+		aParser.addNonParamEntry( (char*)str->getName(), str, (char*)str->getDescription() );
 	}
-	if (!aParser.parse(argc, argv)) exit(64);
-	S3D::setSettingsDir(params.getSettingsDir());
+	if ( ! aParser.parse( argc, argv ) ) exit( 64 );
+	S3D::setSettingsDir( params.getSettingsDir() );
 
 	// Check we are in the correct directory
-	std::string fileName = S3D::getDataFile("data/autoexec.xml");
-	FILE *checkfile = fopen(fileName.c_str(), "r");
-	if (!checkfile)
+	std::string fileName  = S3D::getDataFile( "data/autoexec.xml" );
+	FILE*       checkfile = fopen( fileName.c_str(), "r" );
+	if ( ! checkfile )
 	{
 		// Perhaps we can get the directory from the executables path name
 		std::string path = argv[0];
-		S3D::fileDos2Unix(path);
-		size_t slashPos = path.rfind('/');
-		if (slashPos != std::string::npos)
+		S3D::fileDos2Unix( path );
+		size_t slashPos = path.rfind( '/' );
+		if ( slashPos != std::string::npos )
 		{
-			path.erase(slashPos);
+			path.erase( slashPos );
 #ifdef _WIN32
-			SetCurrentDirectory(path.c_str());
+			SetCurrentDirectory( path.c_str() );
 #else
-			chdir(path.c_str());
-#endif // _WIN32			
+			chdir( path.c_str() );
+#endif  // _WIN32
 		}
 
 		// Now try again for the correct directory
-		std::string execFile = S3D::getDataFile("data/autoexec.xml");
-		checkfile = fopen(execFile.c_str(), "r");
-		if (!checkfile)
-		{	
+		std::string execFile = S3D::getDataFile( "data/autoexec.xml" );
+		checkfile            = fopen( execFile.c_str(), "r" );
+		if ( ! checkfile )
+		{
 			static char currentDir[1024];
 #ifdef _WIN32
-			GetCurrentDirectory(sizeof(currentDir), currentDir);
+			GetCurrentDirectory( sizeof( currentDir ), currentDir );
 #else
-			getcwd(currentDir, sizeof(currentDir));
-#endif // _WIN32
-			std::string dataPath = S3D::getDataFile("data");
+			getcwd( currentDir, sizeof( currentDir ) );
+#endif  // _WIN32
+			std::string dataPath = S3D::getDataFile( "data" );
 			S3D::dialogExit(
-				scorched3dAppName, S3D::formatStringBuffer(
-				"Error: This game requires the Scorched3D data directory to run.\n"
-				"Your machine does not appear to have the Scorched3D data directory in\n"
-				"the required location.\n"
-				"The data directory is set to \"%s\" which does not exist.\n"
-				"(Current working directory %s)\n\n"
-				"If Scorched3D does not run please re-install Scorched3D.",
-				dataPath.c_str(), currentDir));
+				scorched3dAppName,
+				S3D::formatStringBuffer(
+					"Error: This game requires the Scorched3D data directory to run.\n"
+					"Your machine does not appear to have the Scorched3D data directory in\n"
+					"the required location.\n"
+					"The data directory is set to \"%s\" which does not exist.\n"
+					"(Current working directory %s)\n\n"
+					"If Scorched3D does not run please re-install Scorched3D.",
+					dataPath.c_str(),
+					currentDir
+				)
+			);
 		}
 	}
-	else fclose(checkfile);
+	else
+	{
+		fclose( checkfile );
+	}
 
 	// Check that the mods are up to date with the current scorched3d version
 	ModDirs dirs;
@@ -133,16 +145,12 @@ void run_main(int argc, char *argv[], OptionsParameters &params)
 #ifndef _WIN32
 	// Tells Linux not to issue a sig pipe when writing to a closed socket
 	// Why does it have to be difficult!
-	signal(SIGPIPE, SIG_IGN);
-	signal(SIGFPE, SIG_IGN);
+	signal( SIGPIPE, SIG_IGN );
+	signal( SIGFPE, SIG_IGN );
 #endif
 
-	if (setlocale(LC_ALL, "C") == 0)
-	{
-		S3D::dialogMessage(
-			scorched3dAppName,
-			"Warning: Failed to set client locale");
-	}
+	if ( setlocale( LC_ALL, "C" ) == 0 )
+		S3D::dialogMessage( scorched3dAppName, "Warning: Failed to set client locale" );
 }
 
-#endif // __INCLUDE_main_hpp_INCLUDE__
+#endif  // __INCLUDE_main_hpp_INCLUDE__

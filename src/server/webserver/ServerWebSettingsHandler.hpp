@@ -24,52 +24,48 @@
 #include <webserver/ServerWebServer.hpp>
 
 class OptionEntry;
+
 namespace ServerWebSettingsHandler
 {
 	class SettingsAllHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SettingsAllHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new SettingsAllHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class SettingsPlayersHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SettingsPlayersHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new SettingsPlayersHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class SettingsLandscapeHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SettingsLandscapeHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new SettingsLandscapeHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class SettingsMainHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SettingsMainHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new SettingsMainHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class SettingsModHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SettingsModHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
-	};
-};
+		virtual ServerWebServerI* createCopy() { return new SettingsModHandler(); }
 
-#endif // __INCLUDE_ServerWebSettingsHandler_hpp_INCLUDE__
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
+	};
+};  // namespace ServerWebSettingsHandler
+
+#endif  // __INCLUDE_ServerWebSettingsHandler_hpp_INCLUDE__

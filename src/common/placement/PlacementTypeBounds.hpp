@@ -30,16 +30,19 @@ public:
 	virtual ~PlacementTypeBounds();
 
 	virtual PlacementType::Type getType() { return PlacementType::eBounds; }
-	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
-		RandomGenerator &generator,
-		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0);
+
+	virtual bool readXML( XMLNode* node );
+	virtual void getPositions(
+		ScorchedContext&       context,
+		RandomGenerator&       generator,
+		std::list< Position >& returnPositions,
+		ProgressCounter*       counter = 0
+	);
 
 protected:
-	int count;
-	bool onground;
+	int         count;
+	bool        onground;
 	FixedVector minbounds, maxbounds;
 };
 
-#endif // __INCLUDE_PlacementTypeBounds_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementTypeBounds_hpp_INCLUDE__

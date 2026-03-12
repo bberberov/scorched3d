@@ -26,13 +26,10 @@
 class ServerFileAkHandler : public ComsMessageHandlerI
 {
 public:
-	ServerFileAkHandler(ComsMessageHandler &comsMessageHandler);
+	ServerFileAkHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerFileAkHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerFileAkHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerFileAkHandler_hpp_INCLUDE__

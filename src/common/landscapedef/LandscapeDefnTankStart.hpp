@@ -39,43 +39,59 @@ public:
 
 	virtual ~LandscapeDefnTypeTankStart();
 
-	static LandscapeDefnTypeTankStart *createType(const char *type);
+	static LandscapeDefnTypeTankStart* createType( const char* type );
 
-	virtual bool readXML(XMLNode *node) = 0;
-	virtual TankStartDefnType getType() = 0;
+	virtual bool              readXML( XMLNode* node ) = 0;
+	virtual TankStartDefnType getType()                = 0;
 
-	virtual FixedVector placeTank(unsigned int playerId, int team,
-		ScorchedContext &context, RandomGenerator &generator) = 0;
+	virtual FixedVector placeTank(
+		unsigned int     playerId,
+		int              team,
+		ScorchedContext& context,
+		RandomGenerator& generator
+	) = 0;
 };
 
 class LandscapeDefnTankStartHeight : public LandscapeDefnTypeTankStart
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual TankStartDefnType getType() { return eHeight; }
-	virtual FixedVector placeTank(unsigned int playerId, int team,
-		ScorchedContext &context, RandomGenerator &generator);
+
+	virtual FixedVector placeTank(
+		unsigned int     playerId,
+		int              team,
+		ScorchedContext& context,
+		RandomGenerator& generator
+	);
 
 protected:
-	fixed flatness;
-	fixed startcloseness;
-	fixed heightmin, heightmax;
+	fixed       flatness;
+	fixed       startcloseness;
+	fixed       heightmin, heightmax;
 	std::string startmask;
-	Image tankMask;
+	Image       tankMask;
 };
 
 class LandscapeDefnTankStartPositional : public LandscapeDefnTypeTankStart
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual TankStartDefnType getType() { return ePositional; }
-	virtual FixedVector placeTank(unsigned int playerId, int team,
-		ScorchedContext &context, RandomGenerator &generator);
+
+	virtual FixedVector placeTank(
+		unsigned int     playerId,
+		int              team,
+		ScorchedContext& context,
+		RandomGenerator& generator
+	);
 
 protected:
-	fixed flatness;
-	fixed heightmin, heightmax;
-	std::vector<FixedVector> positions;
+	fixed                      flatness;
+	fixed                      heightmin, heightmax;
+	std::vector< FixedVector > positions;
 };
 
-#endif // __INCLUDE_LandscapeDefnTankStart_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefnTankStart_hpp_INCLUDE__

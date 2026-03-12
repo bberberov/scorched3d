@@ -30,24 +30,27 @@ public:
 	WeaponExplosion();
 	virtual ~WeaponExplosion();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponExplosion, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponExplosion, AccessoryPart::AccessoryWeapon );
 
 protected:
 	ExplosionParams params_;
-	bool deformSizeSet_;
-	NumberParser sizeExp_;
-	NumberParser deformSizeExp_;
-	NumberParser shakeExp_;
-	NumberParser minLifeExp_, maxLifeExp_;
-	NumberParser createMushroomAmountExp_;
-	NumberParser hurtAmountExp_;
+	bool            deformSizeSet_;
+	NumberParser    sizeExp_;
+	NumberParser    deformSizeExp_;
+	NumberParser    shakeExp_;
+	NumberParser    minLifeExp_, maxLifeExp_;
+	NumberParser    createMushroomAmountExp_;
+	NumberParser    hurtAmountExp_;
 };
 
-#endif // __INCLUDE_WeaponExplosion_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponExplosion_hpp_INCLUDE__

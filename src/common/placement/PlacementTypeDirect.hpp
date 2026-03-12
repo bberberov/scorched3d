@@ -30,14 +30,17 @@ public:
 	virtual ~PlacementTypeDirect();
 
 	virtual PlacementType::Type getType() { return PlacementType::eDirect; }
-	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
-		RandomGenerator &generator,
-		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0);
+
+	virtual bool readXML( XMLNode* node );
+	virtual void getPositions(
+		ScorchedContext&       context,
+		RandomGenerator&       generator,
+		std::list< Position >& returnPositions,
+		ProgressCounter*       counter = 0
+	);
 
 protected:
-	std::list<Position> positions;
+	std::list< Position > positions;
 };
 
-#endif // __INCLUDE_PlacementTypeDirect_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementTypeDirect_hpp_INCLUDE__

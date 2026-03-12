@@ -31,59 +31,64 @@ class GLMenuEntry : public GLWSelectorI, public ToolTipI
 {
 public:
 	GLMenuEntry(
-		const LangString &menuName,
-		const char *menuNameInternal,
-		const LangString &menuDescription,
-		float width,
-		unsigned int state,
-		GLMenuI *callback,
-		Image *icon,
-		unsigned int flags
+		const LangString& menuName,
+		const char*       menuNameInternal,
+		const LangString& menuDescription,
+		float             width,
+		unsigned int      state,
+		GLMenuI*          callback,
+		Image*            icon,
+		unsigned int      flags
 	);
 	virtual ~GLMenuEntry();
 
-	bool click(float currentTop, int x, int y);
-	bool inMenu(float currentTop, int x, int y);
-	unsigned int getState() { return state_; }
-	void draw(float currentTop, float currentLeft);
+	bool click( float currentTop, int x, int y );
+	bool inMenu( float currentTop, int x, int y );
+	void draw( float currentTop, float currentLeft );
 
-	void addMenuItem(GLMenuItem &item);
-	float getX() { return left_; }
-	float getY() { return top_; }
-	float getW() { return width_; }
-	float getH() { return height_; }
-	bool getSelected() { return selected_; }
-	LangString &getName() { return menuName_; }
-	const char *getNameInternal() { return menuNameInternal_.c_str(); }
-	GLMenuI *getCallback() { return callback_; }
-	ToolTip &getToolTip() { return toolTip_; }
-	unsigned int getFlags() { return flags_; }
+	void addMenuItem( GLMenuItem& item );
 
-	virtual void itemSelected(GLWSelectorEntry *entry, int position);
+	// clang-format off
+	// uncrustify off
+	unsigned int getState()        { return state_; }
+	float        getX()            { return left_; }
+	float        getY()            { return top_; }
+	float        getW()            { return width_; }
+	float        getH()            { return height_; }
+	bool         getSelected()     { return selected_; }
+	LangString&  getName()         { return menuName_; }
+	const char*  getNameInternal() { return menuNameInternal_.c_str(); }
+	GLMenuI*     getCallback()     { return callback_; }
+	ToolTip&     getToolTip()      { return toolTip_; }
+	unsigned int getFlags()        { return flags_; }
+	// uncrustify on
+	// clang-format on
+
+	virtual void itemSelected( GLWSelectorEntry* entry, int position );
 	virtual void noItemSelected();
 
-	virtual void populateCalled(unsigned int id);
+	virtual void populateCalled( unsigned int id );
 
 protected:
-	LangString menuName_;
+	LangString  menuName_;
 	std::string menuNameInternal_;
-	LangString menuDescription_;
+	LangString  menuDescription_;
 
-	bool selected_;
-	float left_;
-	float top_;
-	float width_;
-	float height_;
-	unsigned int state_;
-	unsigned int flags_;
-	GLMenuI *callback_;
-	GLTexture *texture_;
-	Image *icon_;
-	ToolTip toolTip_;
-	std::list<GLMenuItem> menuItems_;
+	bool                    selected_;
+	float                   left_;
+	float                   top_;
+	float                   width_;
+	float                   height_;
+	unsigned int            state_;
+	unsigned int            flags_;
+	GLMenuI*                callback_;
+	GLTexture*              texture_;
+	Image*                  icon_;
+	ToolTip                 toolTip_;
+	std::list< GLMenuItem > menuItems_;
 
 	void drawText();
 	void drawIcon();
 };
 
-#endif // __INCLUDE_GLMenuEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_GLMenuEntry_hpp_INCLUDE__

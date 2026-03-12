@@ -22,7 +22,8 @@
 #define __INCLUDE_ServerStateEnoughPlayers_hpp_INCLUDE__
 
 class ScorchedContext;
-class ServerStateEnoughPlayers 
+
+class ServerStateEnoughPlayers
 {
 public:
 	enum Result
@@ -36,12 +37,13 @@ public:
 	virtual ~ServerStateEnoughPlayers();
 
 	ServerStateEnoughPlayers::Result enoughPlayers();
+
 protected:
 	void checkExit();
-	void ballanceBots(ScorchedContext &context);
-	int countBots(ScorchedContext &context);
-	void removeBots(int requiredPlayers, int noPlayers);
-	void addBots(int requiredPlayers, int noPlayers);
+	void ballanceBots( ScorchedContext& context );
+	int  countBots( ScorchedContext& context );
+	void removeBots( int requiredPlayers, int noPlayers );
+	void addBots( int requiredPlayers, int noPlayers );
 };
 
-#endif // __INCLUDE_ServerStateEnoughPlayers_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateEnoughPlayers_hpp_INCLUDE__

@@ -28,21 +28,17 @@
 class TextActionRenderer : public ActionRenderer
 {
 public:
-	TextActionRenderer(
-		Vector &position,
-		Vector &color,
-		const std::string &text
-	);
+	TextActionRenderer( Vector& position, Vector& color, const std::string& text );
 	virtual ~TextActionRenderer();
 
-	virtual void simulate(Action *action, float timepassed, bool &remove);
-	virtual void draw(Action *action);
+	virtual void simulate( Action* action, float timepassed, bool& remove );
+	virtual void draw( Action* action );
 
 protected:
-	Vector position_;
-	Vector color_;
+	Vector      position_;
+	Vector      color_;
 	std::string text_;
-	float frameTime_;
+	float       frameTime_;
 };
 
-#endif // __INCLUDE_TextActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_TextActionRenderer_hpp_INCLUDE__

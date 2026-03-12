@@ -24,26 +24,23 @@
 #include <actions/Action.hpp>
 #include <engine/PhysicsParticleObject.hpp>
 
-class PhysicsParticle : 
-	public Action,
-	public PhysicsParticleObjectHandler
+class PhysicsParticle : public Action, public PhysicsParticleObjectHandler
 {
 public:
-	PhysicsParticle(bool referenced);
+	PhysicsParticle( bool referenced );
 	virtual ~PhysicsParticle();
 
-	virtual void collision(PhysicsParticleObject &position, 
-		ScorchedCollisionId collisionId);
+	virtual void collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
 
-	PhysicsParticleActionObject &getPhysics() { return physicsObject_; }
+	PhysicsParticleActionObject& getPhysics() { return physicsObject_; }
 
 	// Inherited from action
-	virtual void simulate(fixed timepassed, bool &remove);
+	virtual void simulate( fixed timepassed, bool& remove );
 
 protected:
 	PhysicsParticleActionObject physicsObject_;
-	bool collision_;
-	fixed totalActionTime_;
+	bool                        collision_;
+	fixed                       totalActionTime_;
 };
 
-#endif // __INCLUDE_PhysicsParticle_hpp_INCLUDE__
+#endif  // __INCLUDE_PhysicsParticle_hpp_INCLUDE__

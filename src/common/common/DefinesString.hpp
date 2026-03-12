@@ -21,49 +21,50 @@
 #ifndef __INCLUDE_DefinesString_hpp_INCLUDE__
 #define __INCLUDE_DefinesString_hpp_INCLUDE__
 
-#include <stdio.h> // For snprintf on linux
+#include <stdio.h>  // For snprintf on linux
 #include <string>
-#include <stdarg.h> // For va_list
+#include <stdarg.h>  // For va_list
 
 #ifndef HAVE_SNPRINTF
 
-#define snprintf smb_snprintf
+#define snprintf  smb_snprintf
 #define vsnprintf smb_vsnprintf
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-extern int snprintf(char *str, size_t size, const char *format, ...);
-extern int vsnprintf(char *str, size_t size, const char *format, va_list ap);
+	extern int snprintf( char* str, size_t size, const char* format, ... );
+	extern int vsnprintf( char* str, size_t size, const char* format, va_list ap );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // HAVE_SNPRINTF
+#endif  // HAVE_SNPRINTF
 
 /*
 #define _STD_USING
 #ifdef sprintf
 #undef sprintf
-#endif 
+#endif
 #define sprintf __ERROR__XX__NEVER_USE_SPRINTF__;
 
 #ifdef vsprintf
 #undef vsprintf
-#endif 
+#endif
 #define vsprintf __ERROR__XX__NEVER_USE_VSPRINTF__;
 */
 
 namespace S3D
 {
-	//extern const char *formatStringBuffer(const char *format, ...);
-	std::string formatMoney(int amount);
-	std::string formatStringBuffer(const char *format, ...);
-	std::string formatStringList(const char *format, va_list ap);
-	char *stristr(const char *x, const char *y);
-	void trim(std::string &value);
-}
+	// extern const char *formatStringBuffer(const char *format, ...);
+	std::string formatMoney( int amount );
+	std::string formatStringBuffer( const char* format, ... );
+	std::string formatStringList( const char* format, va_list ap );
+	char*       stristr( const char* x, const char* y );
+	void        trim( std::string& value );
+}  // namespace S3D
 
-#endif // __INCLUDE_DefinesString_hpp_INCLUDE__
+#endif  // __INCLUDE_DefinesString_hpp_INCLUDE__

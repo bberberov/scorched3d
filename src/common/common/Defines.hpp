@@ -22,19 +22,19 @@
 #define __INCLUDE_Defines_hpp_INCLUDE__
 
 #ifndef _WIN32
-	#include "porting.h"
+#include "porting.h"
 #else
-	// WARNING: a function, class member, variable, or typedef is marked deprecated
-	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
-	#pragma warning(disable : 4996)
+// WARNING: a function, class member, variable, or typedef is marked deprecated
+// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-140
+#pragma warning( disable : 4996 )
 
-	// WARNING: 'identifier' : unreferenced formal parameter
-	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4100?view=msvc-140
-	#pragma warning(disable : 4100)
+// WARNING: 'identifier' : unreferenced formal parameter
+// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4100?view=msvc-140
+#pragma warning( disable : 4100 )
 
-	// WARNING: 'class' : assignment operator could not be generated
-	// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4512?view=msvc-140
-	#pragma warning(disable : 4512)
+// WARNING: 'class' : assignment operator could not be generated
+// https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4512?view=msvc-140
+#pragma warning( disable : 4512 )
 #endif
 
 #include <common/DefinesString.hpp>
@@ -43,4 +43,4 @@
 #include <common/DefinesScorched.hpp>
 #include <common/DefinesFile.hpp>
 
-#endif // __INCLUDE_Defines_hpp_INCLUDE__
+#endif  // __INCLUDE_Defines_hpp_INCLUDE__

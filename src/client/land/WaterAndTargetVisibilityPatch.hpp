@@ -30,12 +30,16 @@ public:
 	WaterAndTargetVisibilityPatch();
 	~WaterAndTargetVisibilityPatch();
 
-	WaterVisibilityPatch &getWaterVisibilityPatch() { return waterVisibilityPatch_; }
-	TargetVisibilityPatch &getTargetVisibilityPatch() { return targetVisibilityPatch_; }
+	// clang-format off
+	// uncrustify off
+	WaterVisibilityPatch&  getWaterVisibilityPatch()  { return waterVisibilityPatch_; }
+	TargetVisibilityPatch& getTargetVisibilityPatch() { return targetVisibilityPatch_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	WaterVisibilityPatch waterVisibilityPatch_;
+	WaterVisibilityPatch  waterVisibilityPatch_;
 	TargetVisibilityPatch targetVisibilityPatch_;
 };
 
-#endif // __INCLUDE_WaterAndTargetVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_WaterAndTargetVisibilityPatch_hpp_INCLUDE__

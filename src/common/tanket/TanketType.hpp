@@ -30,6 +30,7 @@ class ToolTip;
 class XMLNode;
 class Accessory;
 class ScorchedContext;
+
 class TanketType
 {
 public:
@@ -38,26 +39,31 @@ public:
 
 	bool getUseAsDefault() { return default_; }
 
-	const char *getName() { return name_.c_str(); }
-	ToolTip *getTooltip() { return tooltip_; }
-	fixed getLife() { return life_; }
-	fixed getPower() { return power_; }
+	// clang-format off
+	// uncrustify off
+	const char* getName()    { return name_.c_str(); }
+	ToolTip*    getTooltip() { return tooltip_; }
+	fixed       getLife()    { return life_; }
+	fixed       getPower()   { return power_; }
+	// uncrustify on
+	// clang-format on
 
-	std::map<Accessory *, int> &getAccessories() { return accessories_; }
-	bool getAccessoryDisabled(Accessory *accessory);
+	std::map< Accessory*, int >& getAccessories() { return accessories_; }
 
-	bool initFromXML(ScorchedContext &context, XMLNode *node);
+	bool getAccessoryDisabled( Accessory* accessory );
+
+	bool initFromXML( ScorchedContext& context, XMLNode* node );
 
 protected:
-	bool default_;
-	ToolTip *tooltip_;
-	std::string name_, description_;
-	std::map<Accessory *, int> accessories_;
-	std::set<Accessory *> disabledAccessories_;
-	fixed life_;
-	fixed power_;
+	bool                        default_;
+	ToolTip*                    tooltip_;
+	std::string                 name_, description_;
+	std::map< Accessory*, int > accessories_;
+	std::set< Accessory* >      disabledAccessories_;
+	fixed                       life_;
+	fixed                       power_;
 
 	void formTooltip();
 };
 
-#endif // __INCLUDE_TanketType_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketType_hpp_INCLUDE__

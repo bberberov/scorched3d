@@ -24,13 +24,14 @@
 #include <common/ChannelText.hpp>
 
 class ScorchedContext;
+
 class ChannelManager
 {
 public:
-	static void showText(ScorchedContext &context, const ChannelText &text);
+	static void showText( ScorchedContext& context, const ChannelText& text );
 
 private:
 	ChannelManager();
 };
 
-#endif // __INCLUDE_ChannelManager_hpp_INCLUDE__
+#endif  // __INCLUDE_ChannelManager_hpp_INCLUDE__

@@ -29,21 +29,26 @@ public:
 	GLShadowFrameBuffer();
 	virtual ~GLShadowFrameBuffer();
 
-	bool create(int width, int height);
+	bool create( int width, int height );
 	void destroy();
 
 	void bind();
 	void bindDepthTexture();
 	void unBind();
+
 	bool bufferValid() { return frameBufferObject_ != 0; }
 
-	int getWidth() { return width_; }
+	// clang-format off
+	// uncrustify off
+	int getWidth()  { return width_; }
 	int getHeight() { return height_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	GLuint frameBufferObject_;
 	GLuint depthTextureObject_;
-	int width_, height_;
+	int    width_, height_;
 };
 
-#endif // __INCLUDE_GLShadowFrameBuffer_hpp_INCLUDE__
+#endif  // __INCLUDE_GLShadowFrameBuffer_hpp_INCLUDE__

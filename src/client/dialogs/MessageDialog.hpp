@@ -30,31 +30,31 @@
 class MessageDialog : public GLWWindow, public ClientChannelManagerI
 {
 public:
-	static MessageDialog *instance();
+	static MessageDialog* instance();
 
 	void clear();
 
 	// GLWWindow
 	virtual void draw();
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 
 	// ClientChannelManagerI
-	virtual void channelText(ChannelText &text);
+	virtual void channelText( ChannelText& text );
 	virtual void registeredForChannels(
-		std::list<ChannelDefinition> &registeredChannels,
-		std::list<ChannelDefinition> &availableChannels
+		std::list< ChannelDefinition >& registeredChannels,
+		std::list< ChannelDefinition >& availableChannels
 	);
 
 protected:
-	static MessageDialog *instance_;
+	static MessageDialog* instance_;
 
-	float showTime_;
-	LangString currentText_;
-	std::list<LangString> texts_;
+	float                   showTime_;
+	LangString              currentText_;
+	std::list< LangString > texts_;
 
 private:
 	MessageDialog();
 	virtual ~MessageDialog();
 };
 
-#endif // __INCLUDE_MessageDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_MessageDialog_hpp_INCLUDE__

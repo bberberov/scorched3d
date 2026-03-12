@@ -26,58 +26,53 @@
 class ModelRendererTank : public ModelRenderer
 {
 public:
-	ModelRendererTank(Model *tank);
+	ModelRendererTank( Model* tank );
 	virtual ~ModelRendererTank();
 
-	virtual void draw(
-		float currentFrame,
-		float distance,
-		float fade,
-		bool setState
-	);
-	virtual void drawBottomAligned(
-		float currentFrame,
-		float distance,
-		float fade,
-		bool setState
-	);
+	virtual void draw( float currentFrame, float distance, float fade, bool setState );
+	virtual void drawBottomAligned( float currentFrame, float distance, float fade, bool setState );
 
-	virtual Model *getModel() { return model_; }
+	virtual Model* getModel() { return model_; }
 
 	void draw(
-		float frame,
-		float *rotMatrix,
-		Vector &position,
-		float fireOffSet,
-		float rotXY,
-		float rotXZ,
-		bool absCenter = false,
-		float scale = 1.0f,
-		float fade = 1.0f,
-		bool setState = true
+		float   frame,
+		float*  rotMatrix,
+		Vector& position,
+		float   fireOffSet,
+		float   rotXY,
+		float   rotXZ,
+		bool    absCenter = false,
+		float   scale     = 1.0f,
+		float   fade      = 1.0f,
+		bool    setState  = true
 	);
 	int getNoTris();
 
-	FixedVector &getGunOffSet() { return gunOffset_; }
-	FixedVector &getTurretCenter() { return turretCenter_; }
-	float getScale() { return scale_; }
+	// clang-format off
+	// uncrustify off
+	FixedVector& getGunOffSet()    { return gunOffset_; }
+	FixedVector& getTurretCenter() { return turretCenter_; }
+	float        getScale()        { return scale_; }
+	// uncrustify on
+	// clang-format on
+
 protected:
-	Model *model_;
-	float fireOffSet_;
-	float scale_;
-	float rotXY_;
-	float rotXZ_;
+	Model*      model_;
+	float       fireOffSet_;
+	float       scale_;
+	float       rotXY_;
+	float       rotXZ_;
 	FixedVector gunOffset_;
 	FixedVector turretCenter_;
 
 	void setupModelRendererTank();
 
-	std::vector<Mesh *> normalMeshes_;
-	std::vector<Mesh *> turretMeshes_;
-	std::vector<Mesh *> gunMeshes_;
-	ModelRendererMesh normalRenderer_;
-	ModelRendererMesh turretRenderer_;
-	ModelRendererMesh gunRenderer_;
+	std::vector< Mesh* > normalMeshes_;
+	std::vector< Mesh* > turretMeshes_;
+	std::vector< Mesh* > gunMeshes_;
+	ModelRendererMesh    normalRenderer_;
+	ModelRendererMesh    turretRenderer_;
+	ModelRendererMesh    gunRenderer_;
 };
 
-#endif // __INCLUDE_ModelRendererTank_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererTank_hpp_INCLUDE__

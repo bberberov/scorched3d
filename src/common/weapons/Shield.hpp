@@ -35,6 +35,7 @@ public:
 		ShieldTypeSquareNormal,
 		ShieldTypeSquareReflective
 	};
+
 	enum ShieldMovementType
 	{
 		ShieldMovementAll,
@@ -45,6 +46,7 @@ public:
 		ShieldMovementTeam3,
 		ShieldMovementTeam4
 	};
+
 	enum ShieldLaserProofType
 	{
 		ShieldLaserProofNone,
@@ -55,32 +57,35 @@ public:
 	Shield();
 	virtual ~Shield();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Shield attributes
-	const char *getCollisionSound();
-	fixed getHitRemovePower() { return removePower_; }
-	fixed getHitPenetration() { return penetration_; }
-	fixed getPower() { return power_; }
-	Vector &getColor() { return color_; }
-	ShieldLaserProofType getLaserProof() { return laserProof_; }
-	ShieldMovementType getMovementProof() { return movementProof_; }
+	// clang-format off
+	// uncrustify off
+	const char*          getCollisionSound();
+	fixed                getHitRemovePower() { return removePower_; }
+	fixed                getHitPenetration() { return penetration_; }
+	fixed                getPower()          { return power_; }
+	Vector&              getColor()          { return color_; }
+	ShieldLaserProofType getLaserProof()     { return laserProof_; }
+	ShieldMovementType   getMovementProof()  { return movementProof_; }
+	// uncrustify on
+	// clang-format on
 
-	virtual fixed getBoundingSize() = 0;
-	virtual bool inShield(FixedVector &offset) = 0;
-	virtual bool tankInShield(FixedVector &offset) = 0;
-	virtual ShieldType getShieldType() = 0;
-	virtual bool getRound() = 0;
+	virtual fixed      getBoundingSize()                   = 0;
+	virtual bool       inShield( FixedVector& offset )     = 0;
+	virtual bool       tankInShield( FixedVector& offset ) = 0;
+	virtual ShieldType getShieldType()                     = 0;
+	virtual bool       getRound()                          = 0;
 
 protected:
-	std::string collisionSound_;
-	Vector color_;
-	fixed removePower_;
-	fixed penetration_;
-	fixed power_;
+	std::string          collisionSound_;
+	Vector               color_;
+	fixed                removePower_;
+	fixed                penetration_;
+	fixed                power_;
 	ShieldLaserProofType laserProof_;
-	ShieldMovementType movementProof_;
+	ShieldMovementType   movementProof_;
 };
 
-#endif // __INCLUDE_Shield_hpp_INCLUDE__
+#endif  // __INCLUDE_Shield_hpp_INCLUDE__

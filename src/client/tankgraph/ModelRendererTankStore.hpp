@@ -29,18 +29,18 @@
 class ModelRendererTankStore
 {
 public:
-	static ModelRendererTankStore *instance();
+	static ModelRendererTankStore* instance();
 
-	ModelRendererTank *getMesh(ModelID modelId);
+	ModelRendererTank* getMesh( ModelID modelId );
 
 protected:
-	static ModelRendererTankStore *instance_;
+	static ModelRendererTankStore* instance_;
 
-	std::map<std::string, ModelRendererTank*> meshes_;
+	std::map< std::string, ModelRendererTank* > meshes_;
 
 private:
 	ModelRendererTankStore();
 	virtual ~ModelRendererTankStore();
 };
 
-#endif // __INCLUDE_ModelRendererTankStore_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererTankStore_hpp_INCLUDE__

@@ -27,17 +27,14 @@
 class ClientAdmin
 {
 public:
-	static ClientAdmin *instance();
+	static ClientAdmin* instance();
 
 protected:
-	static ClientAdmin *instance_;
+	static ClientAdmin* instance_;
 
-	void adminNoParams(std::vector<ConsoleRuleValue> &split, 
-		unsigned int userData);
-	void adminOneParam(std::vector<ConsoleRuleValue> &split, 
-		unsigned int userData);
-	void adminTwoParam(std::vector<ConsoleRuleValue> &split, 
-		unsigned int userData);
+	void adminNoParams( std::vector< ConsoleRuleValue >& split, unsigned int userData );
+	void adminOneParam( std::vector< ConsoleRuleValue >& split, unsigned int userData );
+	void adminTwoParam( std::vector< ConsoleRuleValue >& split, unsigned int userData );
 	void adminHelp();
 
 private:
@@ -45,4 +42,4 @@ private:
 	virtual ~ClientAdmin();
 };
 
-#endif // __INCLUDE_ClientAdmin_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientAdmin_hpp_INCLUDE__

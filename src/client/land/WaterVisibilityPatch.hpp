@@ -33,44 +33,48 @@ public:
 	~WaterVisibilityPatch();
 
 	void setLocation(
-		int x,
-		int y,
-		int patchX,
-		int patchY,
-		WaterVisibilityPatch *leftPatch,
-		WaterVisibilityPatch *rightPatch,
-		WaterVisibilityPatch *topPatch,
-		WaterVisibilityPatch *bottomPatch
+		int                   x,
+		int                   y,
+		int                   patchX,
+		int                   patchY,
+		WaterVisibilityPatch* leftPatch,
+		WaterVisibilityPatch* rightPatch,
+		WaterVisibilityPatch* topPatch,
+		WaterVisibilityPatch* bottomPatch
 	);
-	bool setVisible(Vector &cameraPos);
+	bool setVisible( Vector& cameraPos );
 	void setNotVisible();
 
-	int getVisibilityIndex() { return visible_?visibilityIndex_:-1; }
-	int getPatchX() { return patchX_; }
-	int getPatchY() { return patchY_; }
-	int getPatchIndex() { return patchIndex_; }
-	Vector &getOffset() { return offset_; }
-	Vector &getPosition() { return position_; }
+	// clang-format off
+	// uncrustify off
+	int     getVisibilityIndex() { return visible_ ? visibilityIndex_ : -1; }
+	int     getPatchX()          { return patchX_; }
+	int     getPatchY()          { return patchY_; }
+	int     getPatchIndex()      { return patchIndex_; }
+	Vector& getOffset()          { return offset_; }
+	Vector& getPosition()        { return position_; }
 
-	WaterVisibilityPatch *getLeftPatch() { return leftPatch_; }
-	WaterVisibilityPatch *getRightPatch() { return rightPatch_; }
-	WaterVisibilityPatch *getTopPatch() { return topPatch_; }
-	WaterVisibilityPatch *getBottomPatch() { return bottomPatch_; }
+	WaterVisibilityPatch* getLeftPatch()   { return leftPatch_; }
+	WaterVisibilityPatch* getRightPatch()  { return rightPatch_; }
+	WaterVisibilityPatch* getTopPatch()    { return topPatch_; }
+	WaterVisibilityPatch* getBottomPatch() { return bottomPatch_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	int x_;
-	int y_;
-	int patchX_;
-	int patchY_;
-	int patchIndex_;
-	int visibilityIndex_;
-	bool visible_;
-	Vector offset_;
-	Vector position_;
-	WaterVisibilityPatch *leftPatch_;
-	WaterVisibilityPatch *rightPatch_;
-	WaterVisibilityPatch *topPatch_;
-	WaterVisibilityPatch *bottomPatch_;
+	int                   x_;
+	int                   y_;
+	int                   patchX_;
+	int                   patchY_;
+	int                   patchIndex_;
+	int                   visibilityIndex_;
+	bool                  visible_;
+	Vector                offset_;
+	Vector                position_;
+	WaterVisibilityPatch* leftPatch_;
+	WaterVisibilityPatch* rightPatch_;
+	WaterVisibilityPatch* topPatch_;
+	WaterVisibilityPatch* bottomPatch_;
 };
 
-#endif // __INCLUDE_WaterVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_WaterVisibilityPatch_hpp_INCLUDE__

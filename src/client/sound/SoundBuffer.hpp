@@ -26,28 +26,29 @@
 class SoundBufferSourceInstance
 {
 public:
-	SoundBufferSourceInstance(unsigned int source);
+	SoundBufferSourceInstance( unsigned int source );
 	virtual ~SoundBufferSourceInstance();
 
-	virtual void play(bool loop) = 0;
-	virtual void stop() = 0;
-	virtual void simulate(bool loop) = 0;
+	virtual void play( bool loop )     = 0;
+	virtual void stop()                = 0;
+	virtual void simulate( bool loop ) = 0;
 
 protected:
 	unsigned int source_;
 };
 
-class SoundBuffer  
+class SoundBuffer
 {
 public:
-	SoundBuffer(const char *fileName);
+	SoundBuffer( const char* fileName );
 	virtual ~SoundBuffer();
 
-	virtual SoundBufferSourceInstance *createSourceInstance(unsigned int source) = 0;
-	const char *getFileName() { return fileName_.c_str(); }
+	virtual SoundBufferSourceInstance* createSourceInstance( unsigned int source ) = 0;
+
+	const char* getFileName() { return fileName_.c_str(); }
 
 protected:
 	std::string fileName_;
 };
 
-#endif // __INCLUDE_SoundBuffer_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBuffer_hpp_INCLUDE__

@@ -28,20 +28,24 @@
 class GLWOptionEntry
 {
 public:
-	GLWOptionEntry(GLWidget *control, OptionEntry *entry);
+	GLWOptionEntry( GLWidget* control, OptionEntry* entry );
 	virtual ~GLWOptionEntry();
 
-	static void createEntry( std::list<GLWOptionEntry> &controls, GLWPanel *parent, OptionEntry &entry);
+	static void createEntry( std::list< GLWOptionEntry >& controls, GLWPanel* parent, OptionEntry& entry );
 
-	static void updateControls(std::list<GLWOptionEntry> &controls);
-	static void updateEntries(std::list<GLWOptionEntry> &controls);
+	static void updateControls( std::list< GLWOptionEntry >& controls );
+	static void updateEntries( std::list< GLWOptionEntry >& controls );
 
-	OptionEntry *getEntry() { return entry_; }
-	GLWidget *getControl() { return control_; }
+	// clang-format off
+	// uncrustify off
+	OptionEntry* getEntry()   { return entry_; }
+	GLWidget*    getControl() { return control_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	GLWidget *control_;
-	OptionEntry *entry_;
+	GLWidget*    control_;
+	OptionEntry* entry_;
 };
 
-#endif // __INCLUDE_GLWOptionEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWOptionEntry_hpp_INCLUDE__

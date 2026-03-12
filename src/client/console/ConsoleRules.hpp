@@ -24,35 +24,34 @@
 #include <console/ConsoleRule.hpp>
 
 class Console;
-class ConsoleRules  
+
+class ConsoleRules
 {
 public:
 	ConsoleRules();
 	virtual ~ConsoleRules();
 
-	void addLine(Console *console, const char *line);
+	void addLine( Console* console, const char* line );
 
-	void addRule(ConsoleRule *rule);
-	void removeRule(ConsoleRule *rule);
+	void addRule( ConsoleRule* rule );
+	void removeRule( ConsoleRule* rule );
 
-	std::string matchRule(const char *line,
-		std::vector<ConsoleRule *> &matches);
-	void dump(std::vector<std::string> &resultList);
+	std::string matchRule( const char* line, std::vector< ConsoleRule* >& matches );
+	void        dump( std::vector< std::string >& resultList );
 
 protected:
-	typedef std::multimap<std::string, ConsoleRule *> RulesMap;
-	RulesMap rules_;
+	typedef std::multimap< std::string, ConsoleRule* > RulesMap;
+	RulesMap                                           rules_;
 
-	bool parseLine(const char *line, 
-		std::vector<ConsoleRuleValue> &split);
-	void parseAddLine(int position, const char *line, 
-		std::vector<ConsoleRuleValue> &split);
-	ConsoleRule *matchRule(std::vector<ConsoleRuleValue> &values,
-		std::vector<ConsoleRule *> &closeMatches);
+	bool         parseLine( const char* line, std::vector< ConsoleRuleValue >& split );
+	void         parseAddLine( int position, const char* line, std::vector< ConsoleRuleValue >& split );
+	ConsoleRule* matchRule( std::vector< ConsoleRuleValue >& values, std::vector< ConsoleRule* >& closeMatches );
+
 	void getMatchedRules(
-		std::vector<ConsoleRule *> &result,
-		std::multimap<int, ConsoleRule *> &matchedRules,
-		int argCount);
+		std::vector< ConsoleRule* >&        result,
+		std::multimap< int, ConsoleRule* >& matchedRules,
+		int                                 argCount
+	);
 };
 
-#endif // __INCLUDE_ConsoleRules_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleRules_hpp_INCLUDE__

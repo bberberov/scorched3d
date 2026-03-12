@@ -27,20 +27,20 @@
 class GLWDropDownColor : public GLWDropDown
 {
 public:
-	GLWDropDownColor(float x = 0.0f, float y = 0.0f, float w = 0.0f);
+	GLWDropDownColor( float x = 0.0f, float y = 0.0f, float w = 0.0f );
 	virtual ~GLWDropDownColor();
 
-	void addColor(Vector &color);
-	Vector &getCurrentColor();
-	void setCurrentColor(const Vector &color);
+	void    addColor( Vector& color );
+	Vector& getCurrentColor();
+	void    setCurrentColor( const Vector& color );
 
 	// Inherited from GLWidget
 	virtual void draw();
 
-	REGISTER_CLASS_HEADER(GLWDropDownColor);
+	REGISTER_CLASS_HEADER( GLWDropDownColor );
 
 protected:
 	GLTextureReference colorTexture_;
 };
 
-#endif // __INCLUDE_GLWDropDownColor_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWDropDownColor_hpp_INCLUDE__

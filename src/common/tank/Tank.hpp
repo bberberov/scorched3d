@@ -30,16 +30,19 @@ class TankModelContainer;
 class TankAvatar;
 class TankCamera;
 class TankViewPointsCollection;
+
 class Tank : public Tanket
 {
 public:
 	// Constructor for tank
 	// The name and color are copied
-	Tank(ScorchedContext &context, 
-		unsigned int playerId, 
-		unsigned int destinationId,
-		const LangString &name, 
-		Vector &color);
+	Tank(
+		ScorchedContext&  context,
+		unsigned int      playerId,
+		unsigned int      destinationId,
+		const LangString& name,
+		Vector&           color
+	);
 	virtual ~Tank();
 
 	virtual TargetType getType() { return Target::TypeTank; }
@@ -48,53 +51,58 @@ public:
 	virtual void newMatch();
 	virtual void newGame();
 	virtual void clientNewGame();
-	void rezTank();
+	void         rezTank();
 
 	// Serialize the tank
-	virtual bool writeMessage(NamedNetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NamedNetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 	// The base attributes of the tank
 	virtual bool getVisible();
 	virtual bool getAlive();
 	virtual bool getPlaying();
+
 	virtual bool isTarget() { return false; }
 
-	const char *getUniqueId() { return uniqueId_.c_str(); }
-	void setUniqueId(const char *id) { uniqueId_ = id; }
-	const char *getSUI() { return SUI_.c_str(); }
-	void setSUI(const char *SecID) { SUI_ = SecID; }
-	const char *getHostDesc() { return hostDesc_.c_str(); }
-	void setHostDesc(const char *id) { hostDesc_ = id; }
-	Vector &getColor();
-	void setColor(const Vector &color) { color_ = color; }
-	unsigned int getIpAddress() { return ipAddress_; }
-	void setIpAddress(unsigned int ipAddress) { ipAddress_ = ipAddress; }
-	virtual Accessory *getDeathAction();
+	// clang-format off
+	// uncrustify off
+	const char*        getUniqueId()                          { return uniqueId_.c_str(); }
+	void               setUniqueId( const char* id )          { uniqueId_ = id; }
+	const char*        getSUI()                               { return SUI_.c_str(); }
+	void               setSUI( const char* SecID )            { SUI_ = SecID; }
+	const char*        getHostDesc()                          { return hostDesc_.c_str(); }
+	void               setHostDesc( const char* id )          { hostDesc_ = id; }
+	Vector&            getColor();
+	void               setColor( const Vector& color )        { color_ = color; }
+	unsigned int       getIpAddress()                         { return ipAddress_; }
+	void               setIpAddress( unsigned int ipAddress ) { ipAddress_ = ipAddress; }
+	virtual Accessory* getDeathAction();
 
 	// Other attributes
-	TankScore &getScore() { return *score_; }
-	TankShotHistory &getShotHistory() { return *shotHistory_; }
-	TankState &getState() { return *state_; }
-	TankAvatar &getAvatar() { return *avatar_; }
-	TankCamera &getCamera() { return *camera_; }
-	TankModelContainer &getModelContainer() { return *modelContainer_; }
-	TankViewPointsCollection &getViewPoints() { return *viewPoints_; }
+	TankScore&                getScore()          { return *score_; }
+	TankShotHistory&          getShotHistory()    { return *shotHistory_; }
+	TankState&                getState()          { return *state_; }
+	TankAvatar&               getAvatar()         { return *avatar_; }
+	TankCamera&               getCamera()         { return *camera_; }
+	TankModelContainer&       getModelContainer() { return *modelContainer_; }
+	TankViewPointsCollection& getViewPoints()     { return *viewPoints_; }
+	// clang-format off
+	// uncrustify off
 
 protected:
-	ScorchedContext &context_;
-	TankViewPointsCollection *viewPoints_;
-	TankModelContainer *modelContainer_;
-	TankScore *score_;
-	TankShotHistory *shotHistory_;
-	TankState *state_;
-	TankAvatar *avatar_;
-	TankCamera *camera_;
-	Vector color_;
-	std::string uniqueId_;
-	std::string SUI_;
-	std::string hostDesc_;
-	unsigned int ipAddress_;
+	ScorchedContext&          context_;
+	TankViewPointsCollection* viewPoints_;
+	TankModelContainer*       modelContainer_;
+	TankScore*                score_;
+	TankShotHistory*          shotHistory_;
+	TankState*                state_;
+	TankAvatar*               avatar_;
+	TankCamera*               camera_;
+	Vector                    color_;
+	std::string               uniqueId_;
+	std::string               SUI_;
+	std::string               hostDesc_;
+	unsigned int              ipAddress_;
 };
 
-#endif // __INCLUDE_Tank_hpp_INCLUDE__
+#endif  // __INCLUDE_Tank_hpp_INCLUDE__

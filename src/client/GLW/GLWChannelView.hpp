@@ -30,7 +30,7 @@ class GLWChannelViewI
 public:
 	virtual ~GLWChannelViewI();
 
-	virtual void channelsChanged(unsigned int id) = 0;
+	virtual void channelsChanged( unsigned int id ) = 0;
 };
 
 class GLWChannelView : public GLWChatView, public ClientChannelManagerI
@@ -39,59 +39,63 @@ public:
 	class BaseChannelEntry
 	{
 	public:
-		std::string channel;
+		std::string  channel;
 		unsigned int type;
 	};
 
 	class CurrentChannelEntry : public BaseChannelEntry
 	{
 	public:
-		Vector color;
+		Vector       color;
 		unsigned int id;
 	};
 
 	GLWChannelView();
 	virtual ~GLWChannelView();
 
-	virtual bool initFromXMLInternal(XMLNode *node);
+	virtual bool initFromXMLInternal( XMLNode* node );
 
 	unsigned int getLastWhisperSrc() { return lastWhisperSrc_; }
 
-	std::list<CurrentChannelEntry> &getCurrentChannels() { return currentChannels_; }
-	std::list<BaseChannelEntry> &getAvailableChannels() { return availableChannels_; }
-	CurrentChannelEntry *getChannel(const std::string &channelName);
+	// clang-format off
+	// uncrustify off
+	std::list<CurrentChannelEntry>& getCurrentChannels() { return currentChannels_; }
+	std::list<BaseChannelEntry>& getAvailableChannels()  { return availableChannels_; }
+	CurrentChannelEntry* getChannel( const std::string& channelName );
+	// uncrustify on
+	// clang-format on
 
-	void joinChannel(const std::string &channelName);
-	void leaveChannel(const std::string &channelName);
+	void joinChannel( const std::string& channelName );
+	void leaveChannel( const std::string& channelName );
 
-	void setHandler(GLWChannelViewI *handler) { handler_ = handler; };
+	void setHandler( GLWChannelViewI* handler ) { handler_ = handler; };
 
 	// GLWidget
 	virtual void draw();
 
 	// ClientChannelManagerI
-	virtual void channelText(ChannelText &text);
+	virtual void channelText( ChannelText& text );
 	virtual void registeredForChannels(
-		std::list<ChannelDefinition> &registeredChannels,
-		std::list<ChannelDefinition> &availableChannels
+		std::list< ChannelDefinition >& registeredChannels,
+		std::list< ChannelDefinition >& availableChannels
 	);
 
-	REGISTER_CLASS_HEADER(GLWChannelView);
+	REGISTER_CLASS_HEADER( GLWChannelView );
 
 protected:
-	GLWChannelViewI *handler_;
+	GLWChannelViewI* handler_;
 
-	std::string textSound_;
-	unsigned int lastChannelId_;
-	unsigned int lastWhisperSrc_;
-	bool showChannelName_;
-	bool showChannelNumber_;
-	std::map<std::string, Vector> channelColors_;
-	std::list<std::string> startupChannels_;
-	std::list<CurrentChannelEntry> currentChannels_;
-	std::list<BaseChannelEntry> availableChannels_;
+	std::string                      textSound_;
+	unsigned int                     lastChannelId_;
+	unsigned int                     lastWhisperSrc_;
+	bool                             showChannelName_;
+	bool                             showChannelNumber_;
+	std::map< std::string, Vector >  channelColors_;
+	std::list< std::string >         startupChannels_;
+	std::list< CurrentChannelEntry > currentChannels_;
+	std::list< BaseChannelEntry >    availableChannels_;
 
-	void formCurrentChannelList(std::list<std::string> &result);
+	void formCurrentChannelList( std::list< std::string >& result );
 };
 
-#endif // __INCLUDE_GLWChannelView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWChannelView_hpp_INCLUDE__

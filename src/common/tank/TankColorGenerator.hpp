@@ -31,30 +31,28 @@ class Tank;
 class TankColorGenerator
 {
 public:
-	static TankColorGenerator *instance();
+	static TankColorGenerator* instance();
 
-	Vector &getNextColor(std::map<unsigned int, Tank *> &tanks);
+	Vector& getNextColor( std::map< unsigned int, Tank* >& tanks );
 
-	bool colorAvailable(
-		Vector &color, std::map<unsigned int, Tank *> &tanks,
-		Tank *currentTank = 0);
-	std::vector<Vector *> getAvailableColors(std::map<unsigned int, Tank *> &tanks,
-		Tank *currentTank = 0);
-	std::vector<Vector *> &getAllColors() { return availableColors_; }
+	bool colorAvailable( Vector& color, std::map< unsigned int, Tank* >& tanks, Tank* currentTank = 0 );
+	std::vector< Vector* > getAvailableColors( std::map< unsigned int, Tank* >& tanks, Tank* currentTank = 0 );
 
-	static Vector &getTeamColor(int team);
-	static const char *getTeamName(int team);
+	std::vector< Vector* >& getAllColors() { return availableColors_; }
+
+	static Vector&     getTeamColor( int team );
+	static const char* getTeamName( int team );
 
 protected:
-	static TankColorGenerator *instance_;
+	static TankColorGenerator* instance_;
 
-	std::vector<Vector *> availableColors_;
+	std::vector< Vector* > availableColors_;
 
-	void addColor(unsigned r, unsigned g, unsigned b);
+	void addColor( unsigned int r, unsigned int g, unsigned int b );
 
 private:
 	TankColorGenerator();
 	virtual ~TankColorGenerator();
 };
 
-#endif // __INCLUDE_TankColorGenerator_hpp_INCLUDE__
+#endif  // __INCLUDE_TankColorGenerator_hpp_INCLUDE__

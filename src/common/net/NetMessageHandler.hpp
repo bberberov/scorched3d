@@ -30,7 +30,7 @@ class NetMessageHandlerI
 public:
 	virtual ~NetMessageHandlerI();
 
-	virtual void processMessage(NetMessage &message) = 0;
+	virtual void processMessage( NetMessage& message ) = 0;
 };
 
 class NetMessageHandler
@@ -39,18 +39,18 @@ public:
 	NetMessageHandler();
 	virtual ~NetMessageHandler();
 
-	void addMessage(NetMessage *message);
+	void addMessage( NetMessage* message );
 
-	int processMessages();
-	void setMessageHandler(NetMessageHandlerI *handler);
+	int  processMessages();
+	void setMessageHandler( NetMessageHandlerI* handler );
 
 protected:
-	NetMessageHandlerI *handler_;
-	std::list<NetMessage *> messages_;
-	SDL_mutex *messagesMutex_;
-	bool messagesWaiting_;
+	NetMessageHandlerI*      handler_;
+	std::list< NetMessage* > messages_;
+	SDL_mutex*               messagesMutex_;
+	bool                     messagesWaiting_;
 
 	bool processSingleMessage();
 };
 
-#endif // __INCLUDE_NetMessageHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_NetMessageHandler_hpp_INCLUDE__

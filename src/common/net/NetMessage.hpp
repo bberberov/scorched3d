@@ -24,6 +24,7 @@
 #include <net/NetBuffer.hpp>
 
 class NetMessagePool;
+
 class NetMessage
 {
 public:
@@ -38,39 +39,46 @@ public:
 		BufferMessage,
 		SentMessage
 	};
+
 	enum DisconnectFlags
 	{
 		UnknownDisconnect = 0,
-		UserDisconnect = 1,
-		KickDisconnect = 2,
+		UserDisconnect    = 1,
+		KickDisconnect    = 2,
 		TimeoutDisconnect = 4
 	};
 
-	unsigned int getDestinationId() { return destinationId_; }
-	unsigned int getIpAddress() { return ipAddress_; }
-	unsigned int getFlags() { return flags_; }
-	unsigned int getRecvTime() { return recvTime_; }
-	MessageType getMessageType() { return type_; }
-	NetBuffer &getBuffer() { return messageBuffer_; }
-	void setType(MessageType type) { type_ = type; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getDestinationId()          { return destinationId_; }
+	unsigned int getIpAddress()              { return ipAddress_; }
+	unsigned int getFlags()                  { return flags_; }
+	unsigned int getRecvTime()               { return recvTime_; }
+	MessageType  getMessageType()            { return type_; }
+	NetBuffer&   getBuffer()                 { return messageBuffer_; }
+	void         setType( MessageType type ) { type_ = type; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	NetBuffer messageBuffer_;
-	MessageType type_;
+	NetBuffer    messageBuffer_;
+	MessageType  type_;
 	unsigned int destinationId_;
 	unsigned int ipAddress_;
 	unsigned int flags_;
 	unsigned int recvTime_;
 
-	void setDestinationId(unsigned int destinationId) { destinationId_ = destinationId; }
-	void setIpAddress(unsigned int ipAddress) { ipAddress_ = ipAddress; }
-	void setRecvTime(unsigned int recvTime) { recvTime_ = recvTime; }
-	void setFlags(unsigned int flags) { flags_ = flags; }
+	// clang-format off
+	// uncrustify off
+	void setDestinationId( unsigned int destinationId ) { destinationId_ = destinationId; }
+	void setIpAddress( unsigned int ipAddress )         { ipAddress_ = ipAddress; }
+	void setRecvTime( unsigned int recvTime )           { recvTime_ = recvTime; }
+	void setFlags( unsigned int flags )                 { flags_ = flags; }
+	// uncrustify on
+	// clang-format on
 
-	NetMessage(MessageType type = NetMessage::NoMessage,
-			   unsigned int destinationId = 0,
-			   unsigned int ipAddress = 0);
+	NetMessage( MessageType type = NetMessage::NoMessage, unsigned int destinationId = 0, unsigned int ipAddress = 0 );
 	virtual ~NetMessage();
 };
 
-#endif // __INCLUDE_NetMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_NetMessage_hpp_INCLUDE__

@@ -27,15 +27,15 @@
 class ClientSaveScreenState : public GameStateI
 {
 public:
-	static ClientSaveScreenState *instance();
+	static ClientSaveScreenState* instance();
 
 	void saveScreen() { saveScreen_ = true; }
 
 	// GameStateI
-	virtual void draw(const unsigned state);
+	virtual void draw( const unsigned int state );
 
 protected:
-	static ClientSaveScreenState *instance_;
+	static ClientSaveScreenState* instance_;
 
 	bool saveScreen_;
 
@@ -44,4 +44,4 @@ private:
 	virtual ~ClientSaveScreenState();
 };
 
-#endif // __INCLUDE_ClientSaveScreenState_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientSaveScreenState_hpp_INCLUDE__

@@ -24,16 +24,14 @@
 #include <coms/ComsMessageHandler.hpp>
 
 class ComsPlayedMoveMessage;
+
 class ServerPlayedMoveHandler : public ComsMessageHandlerI
 {
 public:
-	ServerPlayedMoveHandler(ComsMessageHandler &comsMessageHandler);
+	ServerPlayedMoveHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerPlayedMoveHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerPlayedMoveHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerPlayedMoveHandler_hpp_INCLUDE__

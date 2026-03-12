@@ -27,31 +27,30 @@ class TankStartMoveSimAction : public SimAction
 {
 public:
 	TankStartMoveSimAction();
-	TankStartMoveSimAction(
-		unsigned int playerId,
-		unsigned int moveId,
-		fixed timeout,
-		bool buying,
-		fixed ping
-	);
+	TankStartMoveSimAction( unsigned int playerId, unsigned int moveId, fixed timeout, bool buying, fixed ping );
 	virtual ~TankStartMoveSimAction();
 
+	// clang-format off
+	// uncrustify off
 	unsigned int getPlayerId() { return playerId_; }
-	unsigned int getMoveId() { return moveId_; }
-	bool getBuying() { return buying_; }
+	unsigned int getMoveId()   { return moveId_; }
+	bool         getBuying()   { return buying_; }
+	// uncrustify on
+	// clang-format on
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankStartMoveSimAction);
+	REGISTER_CLASS_HEADER( TankStartMoveSimAction );
+
 protected:
 	unsigned int playerId_;
 	unsigned int moveId_;
-	fixed timeout_;
-	bool buying_;
-	fixed ping_;
+	fixed        timeout_;
+	bool         buying_;
+	fixed        ping_;
 };
 
-#endif // __INCLUDE_TankStartMoveSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankStartMoveSimAction_hpp_INCLUDE__

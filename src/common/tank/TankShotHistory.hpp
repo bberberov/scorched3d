@@ -26,48 +26,48 @@
 
 class Tank;
 class ScorchedContext;
+
 class TankShotHistory
 {
 public:
 	struct ShotEntry
 	{
-		ShotEntry(fixed p = 0, fixed r = 0, fixed e = 0) : 
-			power(p), rot(r), ele(e) { }
-	
+		ShotEntry( fixed p = 0, fixed r = 0, fixed e = 0 ) : power( p ), rot( r ), ele( e ) {}
+
 		fixed power;
 		fixed rot;
 		fixed ele;
-		bool current;
+		bool  current;
 	};
 
-	TankShotHistory(ScorchedContext &context);
+	TankShotHistory( ScorchedContext& context );
 	virtual ~TankShotHistory();
 
-	void setTank(Tank *tank) { tank_ = tank; }
+	void setTank( Tank* tank ) { tank_ = tank; }
 
 	// State change
 	void clientNewGame();
 	void madeShot();
-	
-	// Saved settings
-	fixed getRotationXYDiff();
-	fixed getRotationYZDiff();
-	fixed getPowerDiff();
-	void revertSettings(unsigned int index = 0);
-	void undo();
-	std::vector<ShotEntry> &getOldShots();
 
-	const char *getRotationString();
-	const char *getElevationString();
-	const char *getPowerString();
+	// Saved settings
+	fixed                     getRotationXYDiff();
+	fixed                     getRotationYZDiff();
+	fixed                     getPowerDiff();
+	void                      revertSettings( unsigned int index = 0 );
+	void                      undo();
+	std::vector< ShotEntry >& getOldShots();
+
+	const char* getRotationString();
+	const char* getElevationString();
+	const char* getPowerString();
 
 protected:
-	ScorchedContext &context_;
-	Tank *tank_;
+	ScorchedContext& context_;
+	Tank*            tank_;
 
 	// Turret angles
-	std::vector<ShotEntry> oldShots_;
-	fixed oldTurretRotXY_, oldTurretRotYZ_, oldPower_;
+	std::vector< ShotEntry > oldShots_;
+	fixed                    oldTurretRotXY_, oldTurretRotYZ_, oldPower_;
 };
 
-#endif // __INCLUDE_TankShotHistory_hpp_INCLUDE__
+#endif  // __INCLUDE_TankShotHistory_hpp_INCLUDE__

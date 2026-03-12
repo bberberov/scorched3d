@@ -26,44 +26,51 @@
 #include <list>
 
 class GLTexture;
+
 class TankAvatar
 {
 public:
 	TankAvatar();
 	virtual ~TankAvatar();
-	
-	bool writeMessage(NamedNetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 	void clear();
-	bool loadFromFile(const std::string &fileName);
-	bool setFromBuffer(const std::string &fileName, NetBuffer &buffer);
+	bool loadFromFile( const std::string& fileName );
+	bool setFromBuffer( const std::string& fileName, NetBuffer& buffer );
 
 #ifndef S3D_SERVER
-	GLTexture *getTexture();
-	static GLTexture *getDefaultTexture();
+	GLTexture*        getTexture();
+	static GLTexture* getDefaultTexture();
 #endif
 
-	const char *getName() { return name_.c_str(); }
-	NetBuffer &getFile() { return *file_; }
+	// clang-format off
+	// uncrustify off
+	const char*  getName() { return name_.c_str(); }
+	NetBuffer&   getFile() { return *file_; }
 	unsigned int getCrc();
-	
+	// uncrustify on
+	// clang-format on
+
 protected:
 #ifndef S3D_SERVER
-	static GLTexture *defaultTexture_;
+	static GLTexture* defaultTexture_;
+
 	class AvatarStore
 	{
 	public:
-		GLTexture *texture_;
+		GLTexture*   texture_;
 		unsigned int crc_;
-		std::string name_;
+		std::string  name_;
 	};
-	static std::list<AvatarStore> storeEntries_;
-	GLTexture *texture_;
+
+	static std::list< AvatarStore > storeEntries_;
+	GLTexture*                      texture_;
 #endif
 
-	NetBuffer *file_;
+	NetBuffer*  file_;
 	std::string name_;
 };
 
-#endif // __INCLUDE_TankAvatar_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAvatar_hpp_INCLUDE__

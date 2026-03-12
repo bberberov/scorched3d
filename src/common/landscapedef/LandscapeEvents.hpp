@@ -25,27 +25,28 @@
 #include <common/ModelID.hpp>
 
 class ScorchedContext;
+
 class LandscapeCondition
 {
 public:
 	virtual ~LandscapeCondition();
 
-	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber) = 0;
-	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber) = 0;
-	virtual bool readXML(XMLNode *node) = 0;
+	virtual fixed getNextEventTime( ScorchedContext& context, int eventNumber )          = 0;
+	virtual bool  fireEvent( ScorchedContext& context, fixed timeLeft, int eventNumber ) = 0;
+	virtual bool  readXML( XMLNode* node )                                               = 0;
 
-	static LandscapeCondition *create(const char *name);
+	static LandscapeCondition* create( const char* name );
 };
 
 class LandscapeConditionGroupSize : public LandscapeCondition
 {
 public:
-	int groupsize;
+	int         groupsize;
 	std::string groupname;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
-	virtual bool readXML(XMLNode *node);
+	virtual fixed getNextEventTime( ScorchedContext& context, int eventNumber );
+	virtual bool  fireEvent( ScorchedContext& context, fixed timeLeft, int eventNumber );
+	virtual bool  readXML( XMLNode* node );
 };
 
 class LandscapeConditionTime : public LandscapeCondition
@@ -53,11 +54,11 @@ class LandscapeConditionTime : public LandscapeCondition
 public:
 	fixed mintime;
 	fixed maxtime;
-	bool singletimeonly;
+	bool  singletimeonly;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
-	virtual bool readXML(XMLNode *node);
+	virtual fixed getNextEventTime( ScorchedContext& context, int eventNumber );
+	virtual bool  fireEvent( ScorchedContext& context, fixed timeLeft, int eventNumber );
+	virtual bool  readXML( XMLNode* node );
 };
 
 class LandscapeConditionRandom : public LandscapeCondition
@@ -66,9 +67,9 @@ public:
 	fixed randomchance;
 	fixed randomdelay;
 
-	virtual fixed getNextEventTime(ScorchedContext &context, int eventNumber);
-	virtual bool fireEvent(ScorchedContext &context, fixed timeLeft, int eventNumber);
-	virtual bool readXML(XMLNode *node);
+	virtual fixed getNextEventTime( ScorchedContext& context, int eventNumber );
+	virtual bool  fireEvent( ScorchedContext& context, fixed timeLeft, int eventNumber );
+	virtual bool  readXML( XMLNode* node );
 };
 
 class LandscapeAction
@@ -76,10 +77,10 @@ class LandscapeAction
 public:
 	virtual ~LandscapeAction();
 
-	virtual bool readXML(XMLNode *node) = 0;
-	virtual void fireAction(ScorchedContext &context) = 0;
+	virtual bool readXML( XMLNode* node )               = 0;
+	virtual void fireAction( ScorchedContext& context ) = 0;
 
-	static LandscapeAction *create(const char *name);
+	static LandscapeAction* create( const char* name );
 };
 
 class LandscapeActionFireWeapon : public LandscapeAction
@@ -87,8 +88,8 @@ class LandscapeActionFireWeapon : public LandscapeAction
 public:
 	std::string weapon;
 
-	virtual void fireAction(ScorchedContext &context);
-	virtual bool readXML(XMLNode *node);
+	virtual void fireAction( ScorchedContext& context );
+	virtual bool readXML( XMLNode* node );
 };
 
 class LandscapeActionFireWeaponFromGroup : public LandscapeAction
@@ -97,8 +98,8 @@ public:
 	std::string weapon;
 	std::string groupname;
 
-	virtual void fireAction(ScorchedContext &context);
-	virtual bool readXML(XMLNode *node);
+	virtual void fireAction( ScorchedContext& context );
+	virtual bool readXML( XMLNode* node );
 };
 
 class LandscapeEvent
@@ -107,10 +108,10 @@ public:
 	LandscapeEvent();
 	virtual ~LandscapeEvent();
 
-	LandscapeCondition *condition;
-	LandscapeAction *action;
+	LandscapeCondition* condition;
+	LandscapeAction*    action;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 };
 
-#endif // __INCLUDE_LandscapeEvents_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeEvents_hpp_INCLUDE__

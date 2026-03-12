@@ -27,10 +27,8 @@
 class TargetParticleUserData : public ParticleUserData
 {
 public:
-	TargetParticleUserData(unsigned int playerId) :
-		playerId_(playerId)
-	{
-	}
+	TargetParticleUserData( unsigned int playerId ) : playerId_( playerId ) {}
+
 	virtual ~TargetParticleUserData() {}
 
 	unsigned int playerId_;
@@ -39,10 +37,10 @@ public:
 class TargetParticleRenderer : public ParticleRenderer
 {
 public:
-	static TargetParticleRenderer *getInstance();
-	virtual void renderParticle(Particle &particle);
-	virtual void simulateParticle(Particle &particle, float time);
-	virtual void recycleParticle(Particle &particle);
+	static TargetParticleRenderer* getInstance();
+	virtual void                   renderParticle( Particle& particle );
+	virtual void                   simulateParticle( Particle& particle, float time );
+	virtual void                   recycleParticle( Particle& particle );
 };
 
-#endif // __INCLUDE_TargetParticleRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetParticleRenderer_hpp_INCLUDE__

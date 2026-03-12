@@ -31,23 +31,24 @@ public:
 	static ComsMessageType ComsChannelTextMessageType;
 
 	ComsChannelTextMessage();
-	ComsChannelTextMessage(ChannelText &text);
+	ComsChannelTextMessage( ChannelText& text );
 	virtual ~ComsChannelTextMessage();
 
-	std::list<unsigned int> &getIds() { return ids_; }
-	ChannelText &getChannelText() { return channelText_; }
+	std::list< unsigned int >& getIds() { return ids_; }
+
+	ChannelText& getChannelText() { return channelText_; }
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::list<unsigned int> ids_;
-	ChannelText channelText_;
+	std::list< unsigned int > ids_;
+	ChannelText               channelText_;
 
 private:
-	ComsChannelTextMessage(const ComsChannelTextMessage &);
-	const ComsChannelTextMessage & operator=(const ComsChannelTextMessage &);
+	ComsChannelTextMessage( const ComsChannelTextMessage& );
+	const ComsChannelTextMessage& operator=( const ComsChannelTextMessage& );
 };
 
-#endif // __INCLUDE_ComsChannelTextMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsChannelTextMessage_hpp_INCLUDE__

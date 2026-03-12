@@ -28,48 +28,52 @@
 class RenderTargets
 {
 public:
-	static RenderTargets *instance();
+	static RenderTargets* instance();
 
 	struct Renderer3D : public GameStateI
 	{
-		Renderer3D() : GameStateI("RenderTargets3D"), stepTime(0.0f)  {}
+		Renderer3D() : GameStateI( "RenderTargets3D" ), stepTime( 0.0f ) {}
 
 		// Inherited from GameStateI
-		virtual void draw(const unsigned state);
-		virtual void simulate(const unsigned state, float simTime);
-		virtual void enterState(const unsigned state);
+		virtual void draw( const unsigned int state );
+		virtual void simulate( const unsigned int state, float simTime );
+		virtual void enterState( const unsigned int state );
 
 		float stepTime;
 	} render3D;
 
 	struct Renderer2D : public GameStateI
 	{
-		Renderer2D() : GameStateI("RenderTargets2D") {}
+		Renderer2D() : GameStateI( "RenderTargets2D" ) {}
 
 		// Inherited from GameStateI
-		virtual void draw(const unsigned state);
-		virtual void simulate(const unsigned state, float simTime);
+		virtual void draw( const unsigned int state );
+		virtual void simulate( const unsigned int state, float simTime );
 	} render2D;
 
 	void shadowDraw();
 	void draw2d();
-	void draw(bool reflection);
+	void draw( bool reflection );
 
+	// clang-format off
+	// uncrustify off
 	unsigned int getTreesDrawn() { return treesDrawn_; }
 	unsigned int getTargetsDrawn() { return targetsDrawn_; }
+	// uncrustify on
+	// clang-format on
 
 	friend struct Renderer3D;
 	friend struct Renderer2D;
 
 protected:
-	static RenderTargets *instance_;
+	static RenderTargets* instance_;
 
 	unsigned int treesDrawn_, targetsDrawn_;
-	TankMenus menus_;
+	TankMenus    menus_;
 
 private:
 	RenderTargets();
 	virtual ~RenderTargets();
 };
 
-#endif // __INCLUDE_RenderTargets_hpp_INCLUDE__
+#endif  // __INCLUDE_RenderTargets_hpp_INCLUDE__

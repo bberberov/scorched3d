@@ -29,27 +29,27 @@
 class ServerBrowserInfo
 {
 public:
-	static ServerBrowserInfo *instance();
+	static ServerBrowserInfo* instance();
 
 	bool start();
 	void processMessages();
 
 protected:
-	static ServerBrowserInfo *instance_;
+	static ServerBrowserInfo* instance_;
 
-	UDPsocket udpsock_;
-	UDPpacket **packetV_;
-	UDPpacket **packetVOut_;
+	UDPsocket   udpsock_;
+	UDPpacket** packetV_;
+	UDPpacket** packetVOut_;
 
-	void processMessage(UDPpacket *packet);
-	void processStatusMessage(std::list<std::string> &reply);
-	void processPlayerMessage(std::list<std::string> &reply);
-	void processInfoMessage(std::list<std::string> &reply);
-	std::string addTag(const std::string &name, const std::string &value);
+	void        processMessage( UDPpacket* packet );
+	void        processStatusMessage( std::list< std::string >& reply );
+	void        processPlayerMessage( std::list< std::string >& reply );
+	void        processInfoMessage( std::list< std::string >& reply );
+	std::string addTag( const std::string& name, const std::string& value );
 
 private:
 	ServerBrowserInfo();
 	virtual ~ServerBrowserInfo();
 };
 
-#endif // __INCLUDE_ServerBrowserInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBrowserInfo_hpp_INCLUDE__

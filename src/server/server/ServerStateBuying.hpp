@@ -34,32 +34,32 @@ public:
 	virtual ~ServerStateBuying();
 
 	void enterState();
-	bool simulate(fixed frameTime);
+	bool simulate( fixed frameTime );
 
-	void buyingFinished(ComsPlayedMoveMessage &playedMessage);
+	void buyingFinished( ComsPlayedMoveMessage& playedMessage );
 
 protected:
 	struct BuyingPlayer
 	{
-		BuyingPlayer( unsigned int moveId, fixed moveTime ) :
-			startedMove_(false),
-			moveId_(moveId),
-			moveTime_(moveTime)
+		BuyingPlayer( unsigned int moveId, fixed moveTime )
+			: startedMove_( false )
+			, moveId_( moveId )
+			, moveTime_( moveTime )
 		{}
 
-		bool startedMove_;
+		bool         startedMove_;
 		unsigned int moveId_;
-		fixed moveTime_;
+		fixed        moveTime_;
 	};
 
-	fixed totalTime_;
-	unsigned int nextMoveId_;
-	std::set<unsigned int> boughtPlayers_;
-	SimulatorIAdapter<ServerStateBuying> *buyingStarted_;
-	std::map<unsigned int, BuyingPlayer*> buyingPlayers_;
+	fixed                                   totalTime_;
+	unsigned int                            nextMoveId_;
+	std::set< unsigned int >                boughtPlayers_;
+	SimulatorIAdapter< ServerStateBuying >* buyingStarted_;
+	std::map< unsigned int, BuyingPlayer* > buyingPlayers_;
 
-	void playerBuying(unsigned int playerId);
-	void buyingStarted(fixed simulationTime, SimAction *action);
+	void playerBuying( unsigned int playerId );
+	void buyingStarted( fixed simulationTime, SimAction* action );
 };
 
-#endif // __INCLUDE_ServerStateBuying_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateBuying_hpp_INCLUDE__

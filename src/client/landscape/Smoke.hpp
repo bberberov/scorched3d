@@ -24,12 +24,12 @@
 #include <graph/ParticleEmitter.hpp>
 
 class Smoke
-{ 
+{
 public:
 	Smoke();
 
-	void addSmoke(float x, float y, float z);
+	void            addSmoke( float x, float y, float z );
 	ParticleEmitter emitter_;
 };
 
-#endif // __INCLUDE_Smoke_hpp_INCLUDE__
+#endif  // __INCLUDE_Smoke_hpp_INCLUDE__

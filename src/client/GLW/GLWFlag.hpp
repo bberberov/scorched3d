@@ -28,21 +28,26 @@
 class GLWFlag : public GLWidget
 {
 public:
-	GLWFlag(Vector &color = GLWFont::widgetFontColor, float x = 0.0f, float y = 0.0f, float w = 0.0f);
+	GLWFlag( Vector& color = GLWFont::widgetFontColor, float x = 0.0f, float y = 0.0f, float w = 0.0f );
 	virtual ~GLWFlag();
 
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 	virtual void draw();
 
-	float getOffset() { return offset_; }
-	void setOffset(float offset) { offset_ = offset; }
-	void setColor(Vector &color) { color_ = color; }
-	Vector &getColor() { return color_; }
+	// clang-format off
+	// uncrustify off
+	float   getOffset()               { return offset_; }
+	void    setOffset( float offset ) { offset_ = offset; }
+	void    setColor( Vector& color ) { color_ = color; }
+	Vector& getColor()                { return color_; }
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWFlag);
+	REGISTER_CLASS_HEADER( GLWFlag );
+
 protected:
 	Vector color_;
-	float offset_;
+	float  offset_;
 };
 
-#endif // __INCLUDE_GLWFlag_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWFlag_hpp_INCLUDE__

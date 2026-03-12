@@ -27,45 +27,38 @@
 class ResourceBundleEntryImpl : public ResourceBundleEntry
 {
 public:
-	ResourceBundleEntryImpl(const std::string &key);
-	ResourceBundleEntryImpl(
-		const std::string &key,
-		const LangString &value
-	);
+	ResourceBundleEntryImpl( const std::string& key );
+	ResourceBundleEntryImpl( const std::string& key, const LangString& value );
 
-	virtual const char *getKey() { return key_.c_str(); }
+	virtual const char* getKey() { return key_.c_str(); }
+
 	virtual LangString getValue();
 
 	virtual LangString getString();
+	virtual LangString getString( const LangStringConverter& param1 );
+	virtual LangString getString( const LangStringConverter& param1, const LangStringConverter& param2 );
 	virtual LangString getString(
-		const LangStringConverter &param1
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3
 	);
 	virtual LangString getString(
-		const LangStringConverter &param1,
-		const LangStringConverter &param2
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4
 	);
 	virtual LangString getString(
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3
-	);
-	virtual LangString getString(
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3,
-		const LangStringConverter &param4
-	);
-	virtual LangString getString(
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3,
-		const LangStringConverter &param4,
-		const LangStringConverter &param5
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4,
+		const LangStringConverter& param5
 	);
 
 private:
 	std::string key_;
-	LangParam parameterizedString_;
+	LangParam   parameterizedString_;
 };
 
-#endif // __INCLUDE_ResourceBundleEntryImpl_hpp_INCLUDE__
+#endif  // __INCLUDE_ResourceBundleEntryImpl_hpp_INCLUDE__

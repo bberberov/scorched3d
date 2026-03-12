@@ -27,45 +27,50 @@
 class Tank;
 class Target;
 class Tanket;
+
 class TargetContainer
 {
 public:
 	TargetContainer();
 	virtual ~TargetContainer();
 
-	void addTarget(Target *target);
-	Target *removeTarget(unsigned int playerId);
-	Target *getTargetById(unsigned int id);
-	Tanket *getTanketById(unsigned int id);
-	Tank *getTankById(unsigned int id);
-	Tank *getTankByName(const LangString &name);
-	
-	std::map<unsigned int, Target *> &getTargets() { return targets_; }
-	std::map<unsigned int, Tanket *> &getTankets() { return tankets_; }
-	std::map<unsigned int, Tank *> &getTanks() { return tanks_; }
+	void    addTarget( Target* target );
+	Target* removeTarget( unsigned int playerId );
+	Target* getTargetById( unsigned int id );
+	Tanket* getTanketById( unsigned int id );
+	Tank*   getTankById( unsigned int id );
+	Tank*   getTankByName( const LangString& name );
 
-	Tank *getCurrentTank() { return currentPlayer_; }
-	unsigned int getCurrentDestinationId() { return destinationId_; }
-	void setCurrentDestinationId(unsigned int did) { destinationId_ = did; }
-	unsigned int getCurrentPlayerId() { return playerId_; }
-	void setCurrentPlayerId(unsigned int pid);
-	unsigned int getCurrentRoundId() { return roundId_; }
-	void setCurrentRoundId(unsigned int rid) { roundId_ = rid; }
+	// clang-format off
+	// uncrustify off
+	std::map< unsigned int, Target* >& getTargets() { return targets_; }
+	std::map< unsigned int, Tanket* >& getTankets() { return tankets_; }
+	std::map< unsigned int, Tank* >&   getTanks()   { return tanks_; }
+
+	Tank*        getCurrentTank()                            { return currentPlayer_; }
+	unsigned int getCurrentDestinationId()                   { return destinationId_; }
+	void         setCurrentDestinationId( unsigned int did ) { destinationId_ = did; }
+	unsigned int getCurrentPlayerId()                        { return playerId_; }
+	void         setCurrentPlayerId( unsigned int pid );
+	unsigned int getCurrentRoundId()                         { return roundId_; }
+	void         setCurrentRoundId( unsigned int rid )       { roundId_ = rid; }
 
 	int aliveCount();
 	int teamCount();
 
 	int getNoOfTanks() { return tanks_.size(); }
 	int getNoOfNonSpectatorTanks();
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::map<unsigned int, Target *> targets_;
-	std::map<unsigned int, Tanket *> tankets_;
-	std::map<unsigned int, Tank *> tanks_;
-	unsigned int playerId_;
-	unsigned int destinationId_;
-	unsigned int roundId_;
-	Tank *currentPlayer_;
+	std::map< unsigned int, Target* > targets_;
+	std::map< unsigned int, Tanket* > tankets_;
+	std::map< unsigned int, Tank* >   tanks_;
+	unsigned int                      playerId_;
+	unsigned int                      destinationId_;
+	unsigned int                      roundId_;
+	Tank*                             currentPlayer_;
 };
 
-#endif // __INCLUDE_TargetContainer_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetContainer_hpp_INCLUDE__

@@ -29,29 +29,30 @@ class Laser : public Action
 {
 public:
 	Laser(
-		Weapon *weapon,
-		LaserParams *params,
-		FixedVector &position,
-		FixedVector &direction,
-		WeaponFireContext &weaponContext
+		Weapon*            weapon,
+		LaserParams*       params,
+		FixedVector&       position,
+		FixedVector&       direction,
+		WeaponFireContext& weaponContext
 	);
 	virtual ~Laser();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
-	virtual void draw();
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
+	virtual void        draw();
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "Laser"; }
 
 protected:
-	Weapon *weapon_;
+	Weapon*           weapon_;
 	WeaponFireContext weaponContext_;
-	LaserParams *params_;
-	FixedVector position_;
-	FixedVector direction_;
-	fixed totalTime_;
-	fixed drawLength_;
-	fixed directionMagnitude_;
+	LaserParams*      params_;
+	FixedVector       position_;
+	FixedVector       direction_;
+	fixed             totalTime_;
+	fixed             drawLength_;
+	fixed             directionMagnitude_;
 
 	fixed laserTime_;
 	fixed hurtRadius_;
@@ -59,7 +60,7 @@ protected:
 	float angYZ_;
 	fixed length_;
 	fixed damage_;
-	bool firstTime_;
+	bool  firstTime_;
 };
 
-#endif // __INCLUDE_Laser_hpp_INCLUDE__
+#endif  // __INCLUDE_Laser_hpp_INCLUDE__

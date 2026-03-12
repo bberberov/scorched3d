@@ -26,6 +26,7 @@
 #include <common/DefinesAssert.hpp>
 
 class ObjectGroupEntry;
+
 class ObjectGroup
 {
 public:
@@ -34,75 +35,75 @@ public:
 	// so the ordering is consistent across platforms
 	// but with fast removal and insertion speed
 	class ObjectGroupEntryHolderIterator;
+
 	class ObjectGroupEntryHolder
 	{
 	public:
-		ObjectGroupEntryHolder(ObjectGroupEntryHolder *previous, ObjectGroupEntry *current)
+		ObjectGroupEntryHolder( ObjectGroupEntryHolder* previous, ObjectGroupEntry* current )
 		{
 			this->previous = previous;
-			this->current = current;
-			this->next = 0;
-			if (previous) previous->next = this;
+			this->current  = current;
+			this->next     = 0;
+			if ( previous ) previous->next = this;
 		}
 
 	protected:
 		friend class ObjectGroup;
 		friend class ObjectGroupEntryHolderIterator;
 
-		ObjectGroupEntryHolder *next;
-		ObjectGroupEntry *current;
-		ObjectGroupEntryHolder *previous;
+		ObjectGroupEntryHolder* next;
+		ObjectGroupEntry*       current;
+		ObjectGroupEntryHolder* previous;
 	};
 
 	class ObjectGroupEntryHolderIterator
 	{
-	public :
-		ObjectGroupEntryHolderIterator(ObjectGroup *group) : group_(group)
+	public:
+		ObjectGroupEntryHolderIterator( ObjectGroup* group ) : group_( group )
 		{
 			current_ = group->front_;
-			DIALOG_ASSERT(!group_->iterator_);
+			DIALOG_ASSERT( ! group_->iterator_ );
 			group_->iterator_ = this;
 		}
-		~ObjectGroupEntryHolderIterator()
-		{
-			group_->iterator_ = 0;
-		}
 
-		ObjectGroupEntry *getNext() 
+		~ObjectGroupEntryHolderIterator() { group_->iterator_ = 0; }
+
+		ObjectGroupEntry* getNext()
 		{
-			if (!current_) return 0;
-			ObjectGroupEntryHolder *tmp = current_;
-			current_ = current_->next;
+			if ( ! current_ ) return 0;
+			ObjectGroupEntryHolder* tmp = current_;
+			current_                    = current_->next;
+
 			return tmp->current;
 		}
 
 	protected:
 		friend class ObjectGroup;
-		ObjectGroup *group_;
-		ObjectGroupEntryHolder *current_;
+		ObjectGroup*            group_;
+		ObjectGroupEntryHolder* current_;
 	};
 
-	ObjectGroup(const char *name);
+	ObjectGroup( const char* name );
 	virtual ~ObjectGroup();
 
-	const char *getName() { return name_.c_str(); }
+	const char* getName() { return name_.c_str(); }
 
-	ObjectGroupEntry *getObjectByPos(int position);
-	bool hasObject(ObjectGroupEntry *object);
+	ObjectGroupEntry* getObjectByPos( int position );
+	bool              hasObject( ObjectGroupEntry* object );
 
-	void addObject(ObjectGroupEntry *object);
-	bool removeObject(ObjectGroupEntry *object);
+	void addObject( ObjectGroupEntry* object );
+	bool removeObject( ObjectGroupEntry* object );
 
 	int getObjectCount();
 
 protected:
 	friend class ObjectGroupEntryHolderIterator;
 
-	std::string name_;
-	ObjectGroupEntryHolder *front_;
-	ObjectGroupEntryHolder *back_;
-	ObjectGroupEntryHolderIterator *iterator_;
-	std::map<ObjectGroupEntry *, ObjectGroupEntryHolder *> objects_;
+	std::string                                            name_;
+	ObjectGroupEntryHolder*                                front_;
+	ObjectGroupEntryHolder*                                back_;
+	ObjectGroupEntryHolderIterator*                        iterator_;
+	std::map< ObjectGroupEntry*, ObjectGroupEntryHolder* > objects_;
 };
 
-#endif // __INCLUDE_ObjectGroup_hpp_INCLUDE__
+#endif  // __INCLUDE_ObjectGroup_hpp_INCLUDE__

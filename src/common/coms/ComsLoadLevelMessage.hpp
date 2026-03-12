@@ -35,37 +35,42 @@ public:
 	ComsLoadLevelMessage();
 	virtual ~ComsLoadLevelMessage();
 
-	bool saveState(ScorchedContext &context);
-	bool loadState(ScorchedContext &context, bool fullState = true);
+	bool saveState( ScorchedContext& context );
+	bool loadState( ScorchedContext& context, bool fullState = true );
 
-	bool saveTanks(ScorchedContext &context);
-	bool loadTanks(ScorchedContext &context);
+	bool saveTanks( ScorchedContext& context );
+	bool loadTanks( ScorchedContext& context );
 
-	void setActualTime(fixed t) { actualTime_ = t; }
-	fixed getActualTime() { return actualTime_; }
+	// clang-format off
+	// uncrustify off
+	void  setActualTime( fixed t ) { actualTime_ = t; }
+	fixed getActualTime()          { return actualTime_; }
+	// uncrustify on
+	// clang-format on
 
-	void addSimulation(ComsSimulateMessage &simulateMessage);
-	bool getSimulations(std::list<ComsSimulateMessage *> &simulateMessages);
+	void addSimulation( ComsSimulateMessage& simulateMessage );
+	bool getSimulations( std::list< ComsSimulateMessage* >& simulateMessages );
 
-	void setLandscapeDefinition(LandscapeDefinition &definition) { landscapeDefinition_ = definition; }
-	LandscapeDefinition &getLandscapeDefinition() { return landscapeDefinition_; }
+	void setLandscapeDefinition( LandscapeDefinition& definition ) { landscapeDefinition_ = definition; }
+
+	LandscapeDefinition& getLandscapeDefinition() { return landscapeDefinition_; }
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int emptyPosition_;
-	bool lastEmpty_;
+	unsigned int        emptyPosition_;
+	bool                lastEmpty_;
 	LandscapeDefinition landscapeDefinition_;
-	NetBuffer stateBuffer_;
-	NetBuffer simulateBuffer_;
-	NetBuffer tanksBuffer_;
-	fixed actualTime_;
+	NetBuffer           stateBuffer_;
+	NetBuffer           simulateBuffer_;
+	NetBuffer           tanksBuffer_;
+	fixed               actualTime_;
 
 private:
-	ComsLoadLevelMessage(const ComsLoadLevelMessage &);
-	const ComsLoadLevelMessage & operator=(const ComsLoadLevelMessage &);
+	ComsLoadLevelMessage( const ComsLoadLevelMessage& );
+	const ComsLoadLevelMessage& operator=( const ComsLoadLevelMessage& );
 };
 
-#endif // __INCLUDE_ComsLoadLevelMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsLoadLevelMessage_hpp_INCLUDE__

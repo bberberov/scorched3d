@@ -25,6 +25,7 @@
 #include <common/Vector.hpp>
 
 class VisibilityPatchGrid;
+
 class VisibilityPatchQuad
 {
 public:
@@ -32,35 +33,35 @@ public:
 	~VisibilityPatchQuad();
 
 	void setLocation(
-		VisibilityPatchGrid *patchGrid,
-		int x,
-		int y,
-		int size,
-		int mapwidth,
-		int mapheight,
-		int roofBaseHeight
+		VisibilityPatchGrid* patchGrid,
+		int                  x,
+		int                  y,
+		int                  size,
+		int                  mapwidth,
+		int                  mapheight,
+		int                  roofBaseHeight
 	);
-	void calculateGroundVisibility(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
-	void calculateRoofVisibility(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
+	void calculateGroundVisibility( VisibilityPatchInfo& patchInfo, Vector& cameraPos, float C );
+	void calculateRoofVisibility( VisibilityPatchInfo& patchInfo, Vector& cameraPos, float C );
 
 protected:
-	int x_;
-	int y_;
-	int size_;
+	int    x_;
+	int    y_;
+	int    size_;
 	Vector position_;
 	Vector roofPosition_;
 
-	LandVisibilityPatch *landVisibilityPatch_;
-	RoofVisibilityPatch *roofVisibilityPatch_;
-	WaterVisibilityPatch *waterVisibilityPatch_;
-	TargetVisibilityPatch *targetVisibilityPatch_;
-	VisibilityPatchQuad *topLeft_, *topRight_;
-	VisibilityPatchQuad *botLeft_, *botRight_;
+	LandVisibilityPatch*   landVisibilityPatch_;
+	RoofVisibilityPatch*   roofVisibilityPatch_;
+	WaterVisibilityPatch*  waterVisibilityPatch_;
+	TargetVisibilityPatch* targetVisibilityPatch_;
+	VisibilityPatchQuad *  topLeft_, *topRight_;
+	VisibilityPatchQuad *  botLeft_, *botRight_;
 
-	void setGroundNotVisible(VisibilityPatchInfo &patchInfo, Vector &cameraPos);
-	void setGroundVisible(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
-	void setRoofNotVisible(VisibilityPatchInfo &patchInfo, Vector &cameraPos);
-	void setRoofVisible(VisibilityPatchInfo &patchInfo, Vector &cameraPos, float C);
+	void setGroundNotVisible( VisibilityPatchInfo& patchInfo, Vector& cameraPos );
+	void setGroundVisible( VisibilityPatchInfo& patchInfo, Vector& cameraPos, float C );
+	void setRoofNotVisible( VisibilityPatchInfo& patchInfo, Vector& cameraPos );
+	void setRoofVisible( VisibilityPatchInfo& patchInfo, Vector& cameraPos, float C );
 };
 
-#endif // __INCLUDE_VisibilityPatchQuad_hpp_INCLUDE__
+#endif  // __INCLUDE_VisibilityPatchQuad_hpp_INCLUDE__

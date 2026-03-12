@@ -38,26 +38,23 @@ public:
 		float nx, ny, nz;
 	};
 
-	void generate(
-		Water2Points &heights,
-		int size,
-		int totalSize,
-		int posX,
-		int posY,
-		float waterHeight
-	);
-	void setBufferOffSet(int offset) { bufferOffSet_ = offset; }
-	int getBufferOffSet() { return bufferOffSet_; }
+	// clang-format off
+	// uncrustify off
+	void generate( Water2Points& heights, int size, int totalSize, int posX, int posY, float waterHeight );
+	void setBufferOffSet( int offset ) { bufferOffSet_ = offset; }
+	int  getBufferOffSet()             { return bufferOffSet_; }
 
-	void draw(MipMapPatchIndex &index);
-	Data *getData(int x, int y);
-	Data *getInternalData() { return data_; }
+	void  draw( MipMapPatchIndex& index );
+	Data* getData( int x, int y );
+	Data* getInternalData() { return data_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	Data *data_;
-	int dataSize_;
-	int size_;
-	int bufferOffSet_;
+	Data* data_;
+	int   dataSize_;
+	int   size_;
+	int   bufferOffSet_;
 };
 
-#endif // __INCLUDE_Water2Patch_hpp_INCLUDE__
+#endif  // __INCLUDE_Water2Patch_hpp_INCLUDE__

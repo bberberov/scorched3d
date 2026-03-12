@@ -26,35 +26,37 @@
 class TankAINone : public TankAI
 {
 public:
-	TankAINone(unsigned int playerId);
+	TankAINone( unsigned int playerId );
 	virtual ~TankAINone();
 
-	virtual TankAINone *createCopy(Tanket *tanket) { return 0; }
+	virtual TankAINone* createCopy( Tanket* tanket ) { return nullptr; }
 
-	virtual bool parseConfig(TankAIWeaponSets &sets, XMLNode *node) { return false; }
+	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node ) { return false; }
 
-	virtual const char *getName() { return "None"; }
-	virtual const char *getDescription() { return "None"; }
-	virtual ToolTip *getToolTip() { return 0; }
+	// clang-format off
+	// uncrustify off
+	virtual const char* getName()        { return "None"; }
+	virtual const char* getDescription() { return "None"; }
+	virtual ToolTip* getToolTip()        { return nullptr; }
 
 	virtual void newMatch() {}
-	virtual void newGame() {}
-	virtual void playMove(unsigned int moveId);
-	virtual void buyAccessories(unsigned int moveId);
+	virtual void newGame()  {}
+
+	virtual void playMove( unsigned int moveId );
+	virtual void buyAccessories( unsigned int moveId );
 
 	// Notification of actions happened
-	virtual void tankHurt(Weapon *weapon, float damage, 
-		unsigned int damaged, unsigned int firer) {}
-	virtual void shotLanded(ScorchedCollisionId collision,
-		Weapon *weapon, unsigned int firer, 
-		Vector &position) {}
+	virtual void tankHurt( Weapon* weapon, float damage, unsigned int damaged, unsigned int firer )                {}
+	virtual void shotLanded( ScorchedCollisionId collision, Weapon* weapon, unsigned int firer, Vector& position ) {}
 
-	virtual bool availableForRandom() { return false; }
+	virtual bool availableForRandom()  { return false; }
 	virtual bool availableForPlayers() { return false; }
-	virtual bool removedPlayer() { return true; }
+	virtual bool removedPlayer()       { return true; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	unsigned int playerId_;
 };
 
-#endif // __INCLUDE_TankAINone_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAINone_hpp_INCLUDE__

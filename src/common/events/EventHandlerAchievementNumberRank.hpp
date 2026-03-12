@@ -26,36 +26,34 @@
 class EventHandlerAchievementNumberRank : public EventHandlerAchievement
 {
 public:
-	EventHandlerAchievementNumberRank(const std::string &name, 
-		EventHandlerDataBase *database,
-		unsigned int *availableRanks,
-		unsigned int numberOfRanks);
+	EventHandlerAchievementNumberRank(
+		const std::string&    name,
+		EventHandlerDataBase* database,
+		unsigned int*         availableRanks,
+		unsigned int          numberOfRanks
+	);
 	virtual ~EventHandlerAchievementNumberRank();
 
-	virtual unsigned int getCurrentCount(Tank *tank) = 0;
-	virtual void incrementCount(Tank *tank);
+	virtual unsigned int getCurrentCount( Tank* tank ) = 0;
+	virtual void         incrementCount( Tank* tank );
 
-	virtual void tankConnected(Tank *tank);
-	virtual void tankDisconnected(Tank *tank);
+	virtual void tankConnected( Tank* tank );
+	virtual void tankDisconnected( Tank* tank );
 
 protected:
 	struct RankInformation
 	{
-		RankInformation(unsigned int nr = 0, unsigned int num = 0) :
-			nextRank(nr),
-			currentNumber(num)
-		{
-		}
+		RankInformation( unsigned int nr = 0, unsigned int num = 0 ) : nextRank( nr ), currentNumber( num ) {}
 
 		unsigned int nextRank;
 		unsigned int currentNumber;
 	};
 
-	std::map<unsigned int, RankInformation> playerRanks_;
-	std::vector<unsigned int> availableRanks_;
+	std::map< unsigned int, RankInformation > playerRanks_;
+	std::vector< unsigned int >               availableRanks_;
 
-	unsigned int getNextAchievement(unsigned int currentKills);
-	unsigned int getCurrentAchievement(unsigned int currentKills);
+	unsigned int getNextAchievement( unsigned int currentKills );
+	unsigned int getCurrentAchievement( unsigned int currentKills );
 };
 
-#endif // __INCLUDE_EventHandlerAchievementNumberRank_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerAchievementNumberRank_hpp_INCLUDE__

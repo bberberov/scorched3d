@@ -31,20 +31,20 @@ class ModelRenderer;
 class ModelRendererStore
 {
 public:
-	static ModelRendererStore *instance();
+	static ModelRendererStore* instance();
 
-	ModelRenderer *loadModel(ModelID &modelId);
+	ModelRenderer* loadModel( ModelID& modelId );
 
 protected:
-	static ModelRendererStore *instance_;
+	static ModelRendererStore* instance_;
 
-	std::map<std::string, ModelRenderer *> fileMap_;
+	std::map< std::string, ModelRenderer* > fileMap_;
 
-	ModelRenderer *getModel(ModelID &id);
+	ModelRenderer* getModel( ModelID& id );
 
 private:
 	ModelRendererStore();
 	virtual ~ModelRendererStore();
 };
 
-#endif // __INCLUDE_ModelRendererStore_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererStore_hpp_INCLUDE__

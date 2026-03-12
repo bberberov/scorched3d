@@ -32,4 +32,4 @@ namespace GLSetup
 	void setup();
 };
 
-#endif // __INCLUDE_GLSetup_hpp_INCLUDE__
+#endif  // __INCLUDE_GLSetup_hpp_INCLUDE__

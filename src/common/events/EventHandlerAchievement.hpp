@@ -26,18 +26,18 @@
 class EventHandlerAchievement : public EventHandler
 {
 public:
-	EventHandlerAchievement(const std::string &name, EventHandlerDataBase *database);
+	EventHandlerAchievement( const std::string& name, EventHandlerDataBase* database );
 	virtual ~EventHandlerAchievement();
 
-	const std::string &getAchievementName() { return name_; }
+	const std::string& getAchievementName() { return name_; }
 
 protected:
-	std::string name_;
-	EventHandlerDataBase *database_;
-	unsigned int achievementId_;
+	std::string           name_;
+	EventHandlerDataBase* database_;
+	unsigned int          achievementId_;
 
-	unsigned int getRank(unsigned int playerId);
-	void awardAchievement(unsigned int playerId, unsigned int rank);
+	unsigned int getRank( unsigned int playerId );
+	void         awardAchievement( unsigned int playerId, unsigned int rank );
 };
 
-#endif // __INCLUDE_EventHandlerAchievement_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerAchievement_hpp_INCLUDE__

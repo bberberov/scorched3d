@@ -32,6 +32,7 @@ Thus making people choose different weapons from time to time
 (perhaps).
 */
 class Accessory;
+
 class EconomyFreeMarket : public Economy
 {
 public:
@@ -42,17 +43,15 @@ public:
 	virtual bool savePrices();
 	virtual void calculatePrices();
 
-	virtual void accessoryBought(Tank *tank, 
-		const char *accessoryName);
-	virtual void accessorySold(Tank *tank, 
-		const char *accessoryName);
+	virtual void accessoryBought( Tank* tank, const char* accessoryName );
+	virtual void accessorySold( Tank* tank, const char* accessoryName );
 
-REGISTER_CLASS_HEADER(EconomyFreeMarket);
+	REGISTER_CLASS_HEADER( EconomyFreeMarket );
 
 protected:
-	std::map<unsigned int, float> accessoryPrice_;
+	std::map< unsigned int, float > accessoryPrice_;
 
-	void setPrice(Accessory *accessory, int price);
+	void setPrice( Accessory* accessory, int price );
 };
 
-#endif // __INCLUDE_EconomyFreeMarket_hpp_INCLUDE__
+#endif  // __INCLUDE_EconomyFreeMarket_hpp_INCLUDE__

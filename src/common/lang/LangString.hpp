@@ -23,47 +23,51 @@
 
 #include <string>
 
-#define LANG_STRING(x) LangStringUtil::convertToLang(x)
+#define LANG_STRING( x ) LangStringUtil::convertToLang( x )
 
-typedef unsigned int LangStringStorage;
-typedef std::basic_string<LangStringStorage> LangString;
+typedef unsigned int                           LangStringStorage;
+typedef std::basic_string< LangStringStorage > LangString;
 
 class LangStringConverter
 {
 public:
-	LangStringConverter(const char *value); 
-	LangStringConverter(const std::string &value); 
-	LangStringConverter(const LangString &value); 
-	LangStringConverter(const int value); 
-	LangStringConverter(const unsigned int value); 
-	LangStringConverter(const float value, int decimal = 0); 
+	LangStringConverter( const char* value );
+	LangStringConverter( const std::string& value );
+	LangStringConverter( const LangString& value );
+	LangStringConverter( const int value );
+	LangStringConverter( const unsigned int value );
+	LangStringConverter( const float value, int decimal = 0 );
 
-	LangString &getValue() { return value_; }
-	const LangString &getValue() const { return value_; }
+	// clang-format off
+	// uncrustify off
+	LangString&       getValue()       { return value_; }
+	const LangString& getValue() const { return value_; }
+	// uncrustify on
+	// clang-format on
 
 	std::string getValueAsString();
 
 private:
 	LangString value_;
 
-	void appendValue(const std::string &value);
+	void appendValue( const std::string& value );
 };
 
 namespace LangStringUtil
 {
-	LangString convertToLang(const LangStringConverter &input);
-	void appendToLang(LangString &output, const LangStringConverter &input);
-	void replaceToLang(LangString &output, const LangStringConverter &input);
+	LangString convertToLang( const LangStringConverter& input );
+	void       appendToLang( LangString& output, const LangStringConverter& input );
+	void       replaceToLang( LangString& output, const LangStringConverter& input );
 
-	std::string convertFromLang(const LangString &input);
+	std::string convertFromLang( const LangString& input );
 
-	void trim(LangString &str1);
-	void lowercase(LangString &str1);
-	int strcmp(const LangString &str1, const LangString &str2);
-	int strcasecmp(const LangString &str1, const LangString &str2);
-	int strlen(const LangString &str1);
-	unsigned int *strstr(const unsigned int *str1, const LangString &str2);
-	unsigned int *stristr(const unsigned int *str1, const LangString &str2);
-};
+	void          trim( LangString& str1 );
+	void          lowercase( LangString& str1 );
+	int           strcmp( const LangString& str1, const LangString& str2 );
+	int           strcasecmp( const LangString& str1, const LangString& str2 );
+	int           strlen( const LangString& str1 );
+	unsigned int* strstr( const unsigned int* str1, const LangString& str2 );
+	unsigned int* stristr( const unsigned int* str1, const LangString& str2 );
+};  // namespace LangStringUtil
 
-#endif // __INCLUDE_LangString_hpp_INCLUDE__
+#endif  // __INCLUDE_LangString_hpp_INCLUDE__

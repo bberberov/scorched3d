@@ -31,18 +31,18 @@ public:
 	Sky();
 	virtual ~Sky();
 
-	void drawBackdrop(bool asShadow);
+	void drawBackdrop( bool asShadow );
 	void drawLayers();
-	void simulate(float frameTime);
+	void simulate( float frameTime );
 	void generate();
 	void flashSky();
 
-	Sun &getSun() { return sun_; }
+	Sun& getSun() { return sun_; }
 
 protected:
 	SkyDome dome_;
 	SkyRoof roof_;
-	Sun sun_;
+	Sun     sun_;
 };
 
-#endif // __INCLUDE_Sky_hpp_INCLUDE__
+#endif  // __INCLUDE_Sky_hpp_INCLUDE__

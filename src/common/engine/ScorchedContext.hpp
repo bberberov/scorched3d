@@ -48,55 +48,64 @@ class EventController;
 class ScorchedContext
 {
 public:
-	ScorchedContext(const char *name);
+	ScorchedContext( const char* name );
 	virtual ~ScorchedContext();
 
 	virtual bool getServerMode() = 0;
 
-	void setNetInterface(NetInterface *i) { netInterface_ = i; }
-	NetInterface &getNetInterface() { return *netInterface_; }
-	bool getNetInterfaceValid() { return netInterface_ != 0; }
+	// clang-format off
+	// uncrustify off
+	void          setNetInterface( NetInterface* i ) { netInterface_ = i; }
+	NetInterface& getNetInterface()                  { return *netInterface_; }
+	bool          getNetInterfaceValid()             { return netInterface_ != 0; }
+	// uncrustify on
+	// clang-format on
 
-	virtual TargetSpace &getTargetSpace() = 0;
-	virtual Simulator &getSimulator() = 0;
-	AccessoryStore &getAccessoryStore() { return *accessoryStore_; }
-	TargetContainer &getTargetContainer() { return *targetContainer_; }
-	TargetMovement &getTargetMovement() { return *targetMovement_; }
-	TankTeamScore &getTankTeamScore() { return *tankTeamScore_; }
-	ActionController &getActionController();
-	LandscapeMaps &getLandscapeMaps() { return *landscapeMaps_; }
-	OptionsScorched &getOptionsGame() { return *optionsGame_; }
-	OptionsTransient &getOptionsTransient() { return *optionsTransient_; }
-	ComsMessageHandler &getComsMessageHandler() { return *comsMessageHandler_; }
-	ModFiles &getModFiles() { return *modFiles_; }
-	LandscapeDefinitions &getLandscapes() { return *landscapes_; }
-	TanketTypes &getTanketTypes() { return *tanketTypes_; }
-	TankModelStore &getTankModels() { return *tankModelStore_; }
-	LUAScriptFactory &getLUAScriptFactory() { return *luaScriptFactory_; }
-	LUAScriptHook &getLUAScriptHook() { return *luaScriptHook_; }
-	TankAIStrings &getTankAIStrings() { return *tankAIStrings_; }
-	ObjectGroups &getObjectGroups() { return *objectGroups_; }
-	EventController &getEventController() { return *eventController_; }
-	
+	virtual TargetSpace& getTargetSpace() = 0;
+	virtual Simulator&   getSimulator()   = 0;
+
+	// clang-format off
+	// uncrustify off
+	AccessoryStore&       getAccessoryStore()     { return *accessoryStore_; }
+	TargetContainer&      getTargetContainer()    { return *targetContainer_; }
+	TargetMovement&       getTargetMovement()     { return *targetMovement_; }
+	TankTeamScore&        getTankTeamScore()      { return *tankTeamScore_; }
+	ActionController&     getActionController();
+	LandscapeMaps&        getLandscapeMaps()      { return *landscapeMaps_; }
+	OptionsScorched&      getOptionsGame()        { return *optionsGame_; }
+	OptionsTransient&     getOptionsTransient()   { return *optionsTransient_; }
+	ComsMessageHandler&   getComsMessageHandler() { return *comsMessageHandler_; }
+	ModFiles&             getModFiles()           { return *modFiles_; }
+	LandscapeDefinitions& getLandscapes()         { return *landscapes_; }
+	TanketTypes&          getTanketTypes()        { return *tanketTypes_; }
+	TankModelStore&       getTankModels()         { return *tankModelStore_; }
+	LUAScriptFactory&     getLUAScriptFactory()   { return *luaScriptFactory_; }
+	LUAScriptHook&        getLUAScriptHook()      { return *luaScriptHook_; }
+	TankAIStrings&        getTankAIStrings()      { return *tankAIStrings_; }
+	ObjectGroups&         getObjectGroups()       { return *objectGroups_; }
+	EventController&      getEventController()    { return *eventController_; }
+	// uncrustify on
+	// clang-format on
+
 protected:
-	LandscapeMaps *landscapeMaps_;
-	ComsMessageHandler *comsMessageHandler_;
-	NetInterface *netInterface_;
-	OptionsScorched *optionsGame_;
-	OptionsTransient *optionsTransient_;
-	ModFiles *modFiles_;
-	AccessoryStore *accessoryStore_;
-	LandscapeDefinitions *landscapes_;
-	TargetContainer *targetContainer_;
-	TankModelStore *tankModelStore_;
-	TankTeamScore *tankTeamScore_;
-	TanketTypes *tanketTypes_;
-	TargetMovement *targetMovement_;
-	LUAScriptFactory *luaScriptFactory_;
-	LUAScriptHook *luaScriptHook_;
-	TankAIStrings *tankAIStrings_;
-	ObjectGroups *objectGroups_;
-	EventController *eventController_;
+	LandscapeMaps*        landscapeMaps_;
+	ComsMessageHandler*   comsMessageHandler_;
+	NetInterface*         netInterface_;
+	OptionsScorched*      optionsGame_;
+	OptionsTransient*     optionsTransient_;
+	ModFiles*             modFiles_;
+	AccessoryStore*       accessoryStore_;
+	LandscapeDefinitions* landscapes_;
+	TargetContainer*      targetContainer_;
+	TankModelStore*       tankModelStore_;
+	TankTeamScore*        tankTeamScore_;
+	TanketTypes*          tanketTypes_;
+	TargetMovement*       targetMovement_;
+	LUAScriptFactory*     luaScriptFactory_;
+	LUAScriptHook*        luaScriptHook_;
+	TankAIStrings*        tankAIStrings_;
+	ObjectGroups*         objectGroups_;
+	EventController*      eventController_;
 };
 
-#endif // __INCLUDE_ScorchedContext_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedContext_hpp_INCLUDE__

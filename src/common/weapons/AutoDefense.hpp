@@ -29,10 +29,9 @@ public:
 	AutoDefense();
 	virtual ~AutoDefense();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(AutoDefense, AccessoryPart::AccessoryAutoDefense);
+	REGISTER_ACCESSORY_HEADER( AutoDefense, AccessoryPart::AccessoryAutoDefense );
 };
 
-#endif // __INCLUDE_AutoDefense_hpp_INCLUDE__
+#endif  // __INCLUDE_AutoDefense_hpp_INCLUDE__

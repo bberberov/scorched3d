@@ -24,12 +24,13 @@
 #include <lang/LangString.hpp>
 
 class GLWToolTip;
+
 class ToolTipI
 {
 public:
 	virtual ~ToolTipI();
 
-	virtual void populateCalled(unsigned int id) = 0;
+	virtual void populateCalled( unsigned int id ) = 0;
 };
 
 class ToolTip
@@ -37,42 +38,46 @@ class ToolTip
 public:
 	enum ToolTipType
 	{
-		ToolTipNone = 0,
-		ToolTipHelp = 1,
-		ToolTipInfo = 2,
-		ToolTipAlignLeft = 4,
+		ToolTipNone        = 0,
+		ToolTipHelp        = 1,
+		ToolTipInfo        = 2,
+		ToolTipAlignLeft   = 4,
 		ToolTipAlignBottom = 8
 	};
 
 	friend class GLWToolTip;
 	ToolTip(
-		unsigned int type = ToolTipNone,
-		const LangString &title = LangString(),
-		const LangString &text = LangString()
+		unsigned int      type  = ToolTipNone,
+		const LangString& title = LangString(),
+		const LangString& text  = LangString()
 	);
 	virtual ~ToolTip();
 
 	// Used to set the title and text of the tooltip
-	void setText(unsigned int type, const LangString &title, const LangString &text);
+	void setText( unsigned int type, const LangString& title, const LangString& text );
 
 	// Called just before the tooltip is shown
 	// can be used to dynamically populate the title and text fields
 	virtual void populate();
 
-	void setHandler(ToolTipI *handler) { handler_ = handler; }
+	void setHandler( ToolTipI* handler ) { handler_ = handler; }
 
-	unsigned int getId() { return id_; }
-	LangString &getText() { return text_; }
-	LangString &getTitle() { return title_; }
-	unsigned int getType() { return type_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getId()    { return id_; }
+	LangString&  getText()  { return text_; }
+	LangString&  getTitle() { return title_; }
+	unsigned int getType()  { return type_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ToolTipI *handler_;
-	unsigned int id_;
+	ToolTipI*           handler_;
+	unsigned int        id_;
 	static unsigned int nextId_;
-	unsigned int type_;
-	LangString title_;
-	LangString text_;
+	unsigned int        type_;
+	LangString          title_;
+	LangString          text_;
 };
 
-#endif // __INCLUDE_ToolTip_hpp_INCLUDE__
+#endif  // __INCLUDE_ToolTip_hpp_INCLUDE__

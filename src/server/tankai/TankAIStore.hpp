@@ -31,17 +31,18 @@ public:
 	TankAIStore();
 	virtual ~TankAIStore();
 
-	bool loadAIs(bool shallow = false); 
+	bool loadAIs( bool shallow = false );
 	void clearAIs();
 
-	std::list<TankAI*> &getAis() { return ais_; }
-	TankAI *getAIByName(const char *name);
+	std::list< TankAI* >& getAis() { return ais_; }
+
+	TankAI* getAIByName( const char* name );
 
 protected:
-	TankAIWeaponSets tankAiWeaponSets_;
-	std::list<TankAI *> ais_;
+	TankAIWeaponSets     tankAiWeaponSets_;
+	std::list< TankAI* > ais_;
 
-	void addAI(TankAI *ai);
+	void addAI( TankAI* ai );
 };
 
-#endif // __INCLUDE_TankAIStore_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIStore_hpp_INCLUDE__

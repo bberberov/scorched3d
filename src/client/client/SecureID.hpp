@@ -26,12 +26,12 @@
 
 class SecureID
 {
-    sha2 shacalc;
-    std::string GetPrivateKey(void);
-    std::string MakeID (std::string ServerAddress);
-public:
+	sha2        shacalc;
+	std::string GetPrivateKey( void );
+	std::string MakeID( std::string ServerAddress );
 
-    std::string getSecureID(unsigned int ip);
+public:
+	std::string getSecureID( unsigned int ip );
 };
 
-#endif // __INCLUDE_SecureID_hpp_INCLUDE__
+#endif  // __INCLUDE_SecureID_hpp_INCLUDE__

@@ -27,31 +27,35 @@
 class ClientParams : public OptionsParameters
 {
 public:
-	static ClientParams *instance();
+	static ClientParams* instance();
 
-	const char *getConnect() { return connect_.getValue(); }
-	const char *getClientFile() { return client_.getValue(); }
-	const char *getSaveFile() { return save_.getValue(); }
-	const char *getUserName() { return username_.getValue(); }
-	const char *getPassword() { return password_.getValue(); }
-	const char *getNonParam() { return nonParam_.getValue(); }
-	int getExitTime() { return exittime_.getValue(); }
-	int getDisconnectTime() { return disconnecttime_.getValue(); }
-	bool getStartCustom() { return startcustom_.getValue(); }
-	bool getConnectAcceptDefaults() { return connectAcceptDefaults_.getValue(); }
-	bool getConnectedToServer() { return (getConnect()[0] != '\0'); }
+	// clang-format off
+	// uncrustify off
+	const char* getConnect()               { return connect_.getValue(); }
+	const char* getClientFile()            { return client_.getValue(); }
+	const char* getSaveFile()              { return save_.getValue(); }
+	const char* getUserName()              { return username_.getValue(); }
+	const char* getPassword()              { return password_.getValue(); }
+	const char* getNonParam()              { return nonParam_.getValue(); }
+	int         getExitTime()              { return exittime_.getValue(); }
+	int         getDisconnectTime()        { return disconnecttime_.getValue(); }
+	bool        getStartCustom()           { return startcustom_.getValue(); }
+	bool        getConnectAcceptDefaults() { return connectAcceptDefaults_.getValue(); }
+	bool        getConnectedToServer()     { return ( getConnect()[0] != '\0' ); }
 
-	void setStartCustom(bool custom) { startcustom_.setValue(custom); }
-	void setClientFile(const char *file) { client_.setValue(file); }
-	void setSaveFile(const char *file) { save_.setValue(file); }
-	void setUserName(const char *username) { username_.setValue(username); }
-	void setPassword(const char *password) { password_.setValue(password); }
-	void setConnect(const char *address) { connect_.setValue(address); }
+	void setStartCustom( bool custom )       { startcustom_.setValue( custom ); }
+	void setClientFile( const char* file )   { client_.setValue( file ); }
+	void setSaveFile( const char* file )     { save_.setValue( file ); }
+	void setUserName( const char* username ) { username_.setValue( username ); }
+	void setPassword( const char* password ) { password_.setValue( password ); }
+	void setConnect( const char* address )   { connect_.setValue( address ); }
+	// uncrustify on
+	// clang-format on
 
 	void reset();
 
 protected:
-	static ClientParams *instance_;
+	static ClientParams* instance_;
 
 	OptionEntryString connect_;
 	OptionEntryString client_;
@@ -59,14 +63,14 @@ protected:
 	OptionEntryString password_;
 	OptionEntryString save_;
 	OptionEntryString nonParam_;
-	OptionEntryBool startcustom_;
-	OptionEntryBool connectAcceptDefaults_;
-	OptionEntryInt exittime_;
-	OptionEntryInt disconnecttime_;
+	OptionEntryBool   startcustom_;
+	OptionEntryBool   connectAcceptDefaults_;
+	OptionEntryInt    exittime_;
+	OptionEntryInt    disconnecttime_;
 
 private:
 	ClientParams();
 	virtual ~ClientParams();
 };
 
-#endif // __INCLUDE_ClientParams_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientParams_hpp_INCLUDE__

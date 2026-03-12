@@ -25,19 +25,32 @@
 #include <net/NetBuffer.hpp>
 #include <map>
 
-#define REGISTER_ACCESSORY_HEADER(x, y) \
-	virtual const char *getAccessoryTypeName() { return #x ; } \
-	virtual AccessoryType getType() { return y ; } \
-	virtual AccessoryPart *getAccessoryCopy() { return new x ; }
+#define REGISTER_ACCESSORY_HEADER( x, y ) \
+	virtual const char* getAccessoryTypeName() \
+	{ \
+		return #x; \
+	} \
+	virtual AccessoryType getType() \
+	{ \
+		return y; \
+	} \
+	virtual AccessoryPart* getAccessoryCopy() \
+	{ \
+		return new x; \
+	}
 
-#define REGISTER_ACCESSORY_SOURCE(x) \
-	struct META_##x { META_##x() { AccessoryMetaRegistration::addMap(#x , new x ); } }; \
-	static META_##x META_IMPL_##x ;
+#define REGISTER_ACCESSORY_SOURCE( x ) \
+	struct META_##x \
+	{ \
+		META_##x() { AccessoryMetaRegistration::addMap( #x, new x ); } \
+	}; \
+	static META_##x META_IMPL_##x;
 
 class Accessory;
 class AccessoryStore;
 class AccessoryCreateContext;
-class AccessoryPart  
+
+class AccessoryPart
 {
 public:
 	enum AccessoryType
@@ -52,32 +65,36 @@ public:
 	AccessoryPart();
 	virtual ~AccessoryPart();
 
-	void setParent(Accessory *parent) { parent_ = parent; }
-	Accessory *getParent() { return parent_; }
+	// clang-format off
+	// uncrustify off
+	void       setParent( Accessory* parent ) { parent_ = parent; }
+	Accessory* getParent()                    { return parent_; }
 
-	unsigned int getAccessoryPartId() { return accessoryPartId_; }
-	static void resetAccessoryPartIds() { nextAccessoryPartId_ = 100000; }
+	unsigned int getAccessoryPartId()    { return accessoryPartId_; }
+	static void  resetAccessoryPartIds() { nextAccessoryPartId_ = 100000; }
+	// uncrustify on
+	// clang-format on
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode) = 0;
-	virtual AccessoryType getType() = 0;
-	virtual const char *getAccessoryTypeName() = 0;
-	virtual AccessoryPart *getAccessoryCopy() = 0;
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode ) = 0;
+
+	virtual AccessoryType  getType()              = 0;
+	virtual const char*    getAccessoryTypeName() = 0;
+	virtual AccessoryPart* getAccessoryCopy()     = 0;
 
 protected:
 	static unsigned int nextAccessoryPartId_;
-	unsigned int accessoryPartId_;
-	Accessory *parent_;
-
+	unsigned int        accessoryPartId_;
+	Accessory*          parent_;
 };
 
 class AccessoryMetaRegistration
 {
 public:
-	static void addMap(const char *name, AccessoryPart *action);
-	static AccessoryPart *getNewAccessory(const char *name, AccessoryStore *store);
+	static void           addMap( const char* name, AccessoryPart* action );
+	static AccessoryPart* getNewAccessory( const char* name, AccessoryStore* store );
 
 private:
-	static std::map<std::string, AccessoryPart *> *accessoryMap;
+	static std::map< std::string, AccessoryPart* >* accessoryMap;
 };
 
-#endif // __INCLUDE_AccessoryPart_hpp_INCLUDE__
+#endif  // __INCLUDE_AccessoryPart_hpp_INCLUDE__

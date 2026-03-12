@@ -23,28 +23,28 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponVelocity  : public Weapon
+class WeaponVelocity : public Weapon
 {
 public:
 	WeaponVelocity();
 	virtual ~WeaponVelocity();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponVelocity, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponVelocity, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NumberParser velocityChange_;
-	bool abs_;
-	Weapon *aimedWeapon_;
+	bool         abs_;
+	Weapon*      aimedWeapon_;
 };
 
-#endif // __INCLUDE_WeaponVelocity_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponVelocity_hpp_INCLUDE__

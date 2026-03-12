@@ -23,7 +23,7 @@
 
 #include <engine/GameState.hpp>
 
-namespace ClientState  
+namespace ClientState
 {
 	enum Stimulus
 	{
@@ -57,9 +57,9 @@ namespace ClientState
 	};
 
 	void setupGameState();
-	void addWindowManager(GameState &gameState, unsigned state);
-	void addStandardComponents(GameState &gameState, unsigned state);
-	void addMandatoryComponents(GameState &gameState, unsigned state);
-};
+	void addWindowManager( GameState& gameState, unsigned int state );
+	void addStandardComponents( GameState& gameState, unsigned int state );
+	void addMandatoryComponents( GameState& gameState, unsigned int state );
+};  // namespace ClientState
 
-#endif // __INCLUDE_ClientState_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientState_hpp_INCLUDE__

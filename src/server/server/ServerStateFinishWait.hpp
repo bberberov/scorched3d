@@ -21,7 +21,7 @@
 #ifndef __INCLUDE_ServerStateFinishWait_hpp_INCLUDE__
 #define __INCLUDE_ServerStateFinishWait_hpp_INCLUDE__
 
-class ServerStateFinishWait 
+class ServerStateFinishWait
 {
 public:
 	ServerStateFinishWait();
@@ -31,4 +31,4 @@ public:
 	bool simulate();
 };
 
-#endif // __INCLUDE_ServerStateFinishWait_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateFinishWait_hpp_INCLUDE__

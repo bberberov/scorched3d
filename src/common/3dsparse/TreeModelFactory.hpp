@@ -61,10 +61,9 @@ public:
 	TreeModelFactory();
 	virtual ~TreeModelFactory();
 
-	Model *createModel(const char *fileName);
+	Model* createModel( const char* fileName );
 
-	static bool getTypes(const char *type, bool snow, 
-		TreeType &normalType, TreeType &burntType);
+	static bool getTypes( const char* type, bool snow, TreeType& normalType, TreeType& burntType );
 };
 
-#endif // __INCLUDE_TreeModelFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_TreeModelFactory_hpp_INCLUDE__

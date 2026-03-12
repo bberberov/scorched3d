@@ -26,10 +26,9 @@
 #include <common/RandomGenerator.hpp>
 #include <engine/ScorchedContext.hpp>
 
-namespace PlacementTankPosition 
+namespace PlacementTankPosition
 {
-	FixedVector placeTank(unsigned int playerId, int team,
-		ScorchedContext &context, RandomGenerator &generator);
+	FixedVector placeTank( unsigned int playerId, int team, ScorchedContext& context, RandomGenerator& generator );
 };
 
-#endif // __INCLUDE_PlacementTankPosition_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementTankPosition_hpp_INCLUDE__

@@ -31,26 +31,31 @@ public:
 	virtual ~SplinePath();
 
 	void generate(
-		std::vector<FixedVector> &inPoints, 
-		int resolution = 200,
-		int polynomials = 3,
-		fixed pointsPerSecond = 5);
+		std::vector< FixedVector >& inPoints,
+		int                         resolution      = 200,
+		int                         polynomials     = 3,
+		fixed                       pointsPerSecond = 5
+	);
 
 	void draw();
-	void simulate(fixed frameTime);
-	void getPathAttrs(FixedVector &position, FixedVector &direction);
+	void simulate( fixed frameTime );
+	void getPathAttrs( FixedVector& position, FixedVector& direction );
 
-	fixed getPathTime() { return pathTime_; }
-	void setPathTime(fixed pathTime) { pathTime_ = pathTime; }
+	// clang-format off
+	// uncrustify off
+	fixed getPathTime()                 { return pathTime_; }
+	void  setPathTime( fixed pathTime ) { pathTime_ = pathTime; }
 
-	std::vector<FixedVector> &getControlPoints() { return controlPoints_; }
-	std::vector<FixedVector> &getPathPoints() { return pathPoints_; }
+	std::vector< FixedVector >& getControlPoints() { return controlPoints_; }
+	std::vector< FixedVector >& getPathPoints()    { return pathPoints_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::vector<FixedVector> controlPoints_;
-	std::vector<FixedVector> pathPoints_;
-	fixed pathTime_;
-	fixed pointsPerSecond_;
+	std::vector< FixedVector > controlPoints_;
+	std::vector< FixedVector > pathPoints_;
+	fixed                      pathTime_;
+	fixed                      pointsPerSecond_;
 };
 
-#endif // __INCLUDE_SplinePath_hpp_INCLUDE__
+#endif  // __INCLUDE_SplinePath_hpp_INCLUDE__

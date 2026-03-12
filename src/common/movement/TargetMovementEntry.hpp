@@ -28,19 +28,17 @@ class NetBufferReader;
 class RandomGenerator;
 class ScorchedContext;
 class LandscapeMovementType;
+
 class TargetMovementEntry
 {
 public:
 	virtual ~TargetMovementEntry();
 
-	virtual void generate(
-		ScorchedContext &context,
-		RandomGenerator &random,
-		LandscapeMovementType *movementType
-	) = 0;
-	virtual void simulate(ScorchedContext &context, fixed frameTime) = 0;
-	virtual void draw() = 0;
+	virtual void generate( ScorchedContext& context, RandomGenerator& random, LandscapeMovementType* movementType ) = 0;
+	virtual void simulate( ScorchedContext& context, fixed frameTime )                                              = 0;
+
+	virtual void draw()  = 0;
 	virtual void reset() = 0;
 };
 
-#endif // __INCLUDE_TargetMovementEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetMovementEntry_hpp_INCLUDE__

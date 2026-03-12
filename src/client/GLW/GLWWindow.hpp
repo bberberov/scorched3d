@@ -45,46 +45,48 @@ public:
 	};
 
 	GLWWindow(
-		const std::string &name = "None",
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f,
-		unsigned int states = 0,
-		const std::string &description = "None"
+		const std::string& name        = "None",
+		float              x           = 0.0f,
+		float              y           = 0.0f,
+		float              w           = 0.0f,
+		float              h           = 0.0f,
+		unsigned int       states      = 0,
+		const std::string& description = "None"
 	);
-	GLWWindow(
-		const std::string &name,
-		float w,
-		float h,
-		unsigned int states,
-		const std::string &description
-	);
+	GLWWindow( const std::string& name, float w, float h, unsigned int states, const std::string& description );
 	virtual ~GLWWindow();
 
-	virtual bool initFromXML(XMLNode *node);
-	virtual void windowInit(const unsigned state);
+	virtual bool initFromXML( XMLNode* node );
+	virtual void windowInit( const unsigned int state );
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void keyDown(
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	virtual void saveSettings(XMLNode *node);
-	virtual void loadSettings(XMLNode *node, bool resetPositions);
+	virtual void saveSettings( XMLNode* node );
+	virtual void loadSettings( XMLNode* node, bool resetPositions );
 
-	const char *getDescription() { return description_.c_str(); }
-	ToolTip &getToolTip() { return toolTip_; }
-	void setWindowLevel(unsigned int windowLevel) { windowLevel_ = windowLevel; }
-	unsigned int getWindowLevel() { return windowLevel_; }
-	unsigned int getWindowState() { return windowState_; }
-	void needsCentered() { needCentered_ = true; }
-	virtual void drawIconBox(float x, float y);
+	// clang-format off
+	// uncrustify off
+	const char* getDescription()                    { return description_.c_str(); }
+	ToolTip& getToolTip()                           { return toolTip_; }
+	void setWindowLevel( unsigned int windowLevel ) { windowLevel_ = windowLevel; }
+	unsigned int getWindowLevel()                   { return windowLevel_; }
+	unsigned int getWindowState()                   { return windowState_; }
+	void needsCentered()                            { needCentered_ = true; }
+	virtual void drawIconBox( float x, float y );
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWWindow);
+	REGISTER_CLASS_HEADER( GLWWindow );
 
 protected:
 	enum
@@ -96,24 +98,24 @@ protected:
 
 	static GLTextureReference moveTexture_;
 	static GLTextureReference resizeTexture_;
-	bool showTitle_;
-	bool needCentered_;
-	bool disabled_;
-	bool initPosition_;
-	unsigned int windowState_;
-	unsigned int windowLevel_;
-	std::string description_;
-	float maxWindowSize_;
-	ToolTip toolTip_;
+	bool                      showTitle_;
+	bool                      needCentered_;
+	bool                      disabled_;
+	bool                      initPosition_;
+	unsigned int              windowState_;
+	unsigned int              windowLevel_;
+	std::string               description_;
+	float                     maxWindowSize_;
+	ToolTip                   toolTip_;
 
-	virtual void drawWindowCircle(float x, float y, float w, float h);
-	virtual void drawOutlinePoints(float x, float y, float w, float h);
-	virtual void drawBackSurface(float x, float y, float w, float h);
-	virtual void drawTitleBar(float x, float y, float w, float h);
-	virtual void drawSurround(float x, float y, float w, float h);
+	virtual void drawWindowCircle( float x, float y, float w, float h );
+	virtual void drawOutlinePoints( float x, float y, float w, float h );
+	virtual void drawBackSurface( float x, float y, float w, float h );
+	virtual void drawTitleBar( float x, float y, float w, float h );
+	virtual void drawSurround( float x, float y, float w, float h );
 	virtual void drawMaximizedWindow();
-	virtual void drawInfoBox(float x, float y, float w);
-	virtual void drawJoin(float x, float y);
+	virtual void drawInfoBox( float x, float y, float w );
+	virtual void drawJoin( float x, float y );
 };
 
-#endif // __INCLUDE_GLWWindow_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWWindow_hpp_INCLUDE__

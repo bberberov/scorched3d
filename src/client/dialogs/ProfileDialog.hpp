@@ -29,31 +29,31 @@ class Tank;
 class ProfileDialog : public GLWWindow
 {
 public:
-	static ProfileDialog *instance();
+	static ProfileDialog* instance();
 
 	// Inherited from GLWWindow
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void saveSettings(XMLNode *node);
-	virtual void loadSettings(XMLNode *node, bool resetPositions);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void saveSettings( XMLNode* node );
+	virtual void loadSettings( XMLNode* node, bool resetPositions );
 
 protected:
-	static ProfileDialog *instance_;
+	static ProfileDialog* instance_;
 
 	float profileZoom_, zoomX_, zoomY_;
-	bool zooming_;
+	bool  zooming_;
 	float ox_, oy_, ow_, oh_;
 
-	void drawLandscape(Tank *currentTank);
-	void drawTanks(Tank *currentTank);
-	void drawAiming(Tank *currentTank);
-	void drawAIM(Tank *currentTank);
+	void drawLandscape( Tank* currentTank );
+	void drawTanks( Tank* currentTank );
+	void drawAiming( Tank* currentTank );
+	void drawAIM( Tank* currentTank );
 
 private:
 	ProfileDialog();
 	virtual ~ProfileDialog();
 };
 
-#endif // __INCLUDE_ProfileDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ProfileDialog_hpp_INCLUDE__

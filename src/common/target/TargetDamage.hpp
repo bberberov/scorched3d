@@ -25,25 +25,43 @@
 
 class ScorchedContext;
 class Target;
+
 class TargetDamage
 {
 public:
-	static void damageTarget(ScorchedContext &context,
-		Weapon *weapon, 
-		unsigned int damagedPlayerId, WeaponFireContext &weaponContext,
-		fixed damage, bool useShieldDamage, bool checkFall,
-		bool shieldOnlyDamage);
+	static void damageTarget(
+		ScorchedContext&   context,
+		Weapon*            weapon,
+		unsigned int       damagedPlayerId,
+		WeaponFireContext& weaponContext,
+		fixed              damage,
+		bool               useShieldDamage,
+		bool               checkFall,
+		bool               shieldOnlyDamage
+	);
 
 protected:
-	static void calculateDeath(ScorchedContext &context, WeaponFireContext &weaponContext,
-		Weapon *weapon, unsigned int damagedPlayerId);
-	static void addDamageAction(ScorchedContext &context, WeaponFireContext &weaponContext,
-		Target *target, Accessory *weapon);
-	static void logDeath(ScorchedContext &context, WeaponFireContext &weaponContext,
-		Weapon *weapon, unsigned int damagedPlayerId);
+	static void calculateDeath(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		Weapon*            weapon,
+		unsigned int       damagedPlayerId
+	);
+	static void addDamageAction(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		Target*            target,
+		Accessory*         weapon
+	);
+	static void logDeath(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		Weapon*            weapon,
+		unsigned int       damagedPlayerId
+	);
 
 private:
 	TargetDamage();
 };
 
-#endif // __INCLUDE_TargetDamage_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetDamage_hpp_INCLUDE__

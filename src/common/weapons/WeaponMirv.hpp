@@ -23,26 +23,29 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponMirv  : public Weapon
+class WeaponMirv : public Weapon
 {
 public:
 	WeaponMirv();
 	virtual ~WeaponMirv();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponMirv, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponMirv, AccessoryPart::AccessoryWeapon );
 
 protected:
-	int noWarheads_;
+	int          noWarheads_;
 	NumberParser hspreadDist_;
 	NumberParser vspreadDist_;
-	Weapon *aimedWeapon_;
+	Weapon*      aimedWeapon_;
 };
 
-#endif // __INCLUDE_WeaponMirv_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponMirv_hpp_INCLUDE__

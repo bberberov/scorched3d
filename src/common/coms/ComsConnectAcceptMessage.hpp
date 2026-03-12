@@ -28,30 +28,36 @@ class ComsConnectAcceptMessage : public ComsMessage
 public:
 	static ComsMessageType ComsConnectAcceptMessageType;
 
-	ComsConnectAcceptMessage(unsigned int destinationId = 0,
-		const char *serverName = "",
-		const char *publishAddress = "",
-		const char *uniqueId = "");
+	ComsConnectAcceptMessage(
+		unsigned int destinationId  = 0,
+		const char*  serverName     = "",
+		const char*  publishAddress = "",
+		const char*  uniqueId       = ""
+	);
 	virtual ~ComsConnectAcceptMessage();
 
-	unsigned int getDestinationId() { return destinationId_; }
-	const char *getServerName() { return serverName_.c_str(); }
-	const char *getPublishAddress() { return publishAddress_.c_str(); }
-	const char *getUniqueId() { return uniqueId_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	unsigned int getDestinationId()  { return destinationId_; }
+	const char*  getServerName()     { return serverName_.c_str(); }
+	const char*  getPublishAddress() { return publishAddress_.c_str(); }
+	const char*  getUniqueId()       { return uniqueId_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int destinationId_;
-	std::string serverName_;
-	std::string publishAddress_;
-	std::string uniqueId_;
+	std::string  serverName_;
+	std::string  publishAddress_;
+	std::string  uniqueId_;
 
 private:
-	ComsConnectAcceptMessage(const ComsConnectAcceptMessage &);
-	const ComsConnectAcceptMessage & operator=(const ComsConnectAcceptMessage &);
+	ComsConnectAcceptMessage( const ComsConnectAcceptMessage& );
+	const ComsConnectAcceptMessage& operator=( const ComsConnectAcceptMessage& );
 };
 
-#endif // __INCLUDE_ComsConnectAcceptMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsConnectAcceptMessage_hpp_INCLUDE__

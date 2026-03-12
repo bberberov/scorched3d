@@ -29,16 +29,15 @@ public:
 	ShieldRoundMag();
 	virtual ~ShieldRoundMag();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool       parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 	virtual ShieldType getShieldType();
 
 	fixed getDeflectPower() { return deflectPower_; }
 
-	REGISTER_ACCESSORY_HEADER(ShieldRoundMag, AccessoryPart::AccessoryShield);
+	REGISTER_ACCESSORY_HEADER( ShieldRoundMag, AccessoryPart::AccessoryShield );
 
 protected:
 	fixed deflectPower_;
 };
 
-#endif // __INCLUDE_ShieldRoundMag_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldRoundMag_hpp_INCLUDE__

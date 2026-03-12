@@ -23,15 +23,15 @@
 
 #include <common/FixedVector.hpp>
 
-class Face  
+class Face
 {
 public:
 	Face();
 	virtual ~Face();
 
-	int v[3];
+	int         v[3];
 	FixedVector normal[3];
 	FixedVector tcoord[3];
 };
 
-#endif // __INCLUDE_Face_hpp_INCLUDE__
+#endif  // __INCLUDE_Face_hpp_INCLUDE__

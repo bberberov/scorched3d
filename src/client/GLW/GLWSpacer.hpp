@@ -23,13 +23,13 @@
 
 #include <GLW/GLWidget.hpp>
 
-class GLWSpacer : public GLWidget  
+class GLWSpacer : public GLWidget
 {
 public:
-	GLWSpacer(float w = 0.0f, float h = 0.0f);
+	GLWSpacer( float w = 0.0f, float h = 0.0f );
 	virtual ~GLWSpacer();
 
-	REGISTER_CLASS_HEADER(GLWSpacer);
+	REGISTER_CLASS_HEADER( GLWSpacer );
 };
 
-#endif // __INCLUDE_GLWSpacer_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWSpacer_hpp_INCLUDE__

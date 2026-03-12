@@ -24,23 +24,26 @@
 #include <weapons/Weapon.hpp>
 #include <list>
 
-class WeaponMulti  : public Weapon
+class WeaponMulti : public Weapon
 {
 public:
 	WeaponMulti();
 	virtual ~WeaponMulti();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponMulti, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponMulti, AccessoryPart::AccessoryWeapon );
 
 protected:
-	std::list<Weapon *> subWeapons_;
+	std::list< Weapon* > subWeapons_;
 };
 
-#endif // __INCLUDE_WeaponMulti_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponMulti_hpp_INCLUDE__

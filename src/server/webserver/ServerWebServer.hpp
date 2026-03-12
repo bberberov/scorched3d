@@ -29,16 +29,16 @@
 class ServerWebServer : public NetMessageHandlerI
 {
 public:
-	static ServerWebServer *instance();
+	static ServerWebServer* instance();
 
-	void start(int port);
+	void start( int port );
 	void processMessages();
-	void addRequestHandler(const char *url, ServerWebServerI *handler);
-	void addThrededRequestHandler(const char *url, ServerWebServerI *handler);
-	void addAsyncRequestHandler(const char *url, ServerWebServerI *handler);
+	void addRequestHandler( const char* url, ServerWebServerI* handler );
+	void addThrededRequestHandler( const char* url, ServerWebServerI* handler );
+	void addAsyncRequestHandler( const char* url, ServerWebServerI* handler );
 
 protected:
-	static ServerWebServer *instance_;
+	static ServerWebServer* instance_;
 
 	struct HandlerEntry
 	{
@@ -48,50 +48,42 @@ protected:
 			eThreaded = 2
 		};
 
-		ServerWebServerI *handler;
-		unsigned int flags;
+		ServerWebServerI* handler;
+		unsigned int      flags;
 	};
-	std::map<std::string, HandlerEntry> handlers_;
+
+	std::map< std::string, HandlerEntry > handlers_;
 
 	ServerWebServerQueue asyncQueue_;
 	ServerWebServerQueue threadedQueue_;
 	ServerWebServerQueue normalQueue_;
 
-	unsigned int asyncTimer_;
-	std::list<std::pair<unsigned int, NetMessage *> > delayedMessages_;
+	unsigned int                                        asyncTimer_;
+	std::list< std::pair< unsigned int, NetMessage* > > delayedMessages_;
 
-	SDL_Thread *sendThread_;
+	SDL_Thread*  sendThread_;
 	NetServerTCP netServer_;
-	FileLogger *logger_;
+	FileLogger*  logger_;
 
 	bool processRequest(
-		unsigned int destinationId,
-		const char *ip,
-		const char *url,
-		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts
+		unsigned int                          destinationId,
+		const char*                           ip,
+		const char*                           url,
+		std::map< std::string, std::string >& fields,
+		std::map< std::string, NetMessage* >& parts
 	);
-	bool validateUser(
-		const char *ip,
-		const char *url,
-		std::map<std::string, std::string> &fields,
-		bool &delayed
-	);
-	unsigned int validateSession(
-		const char *ip,
-		const char *url,
-		std::map<std::string, std::string> &fields
-	);
+	bool validateUser( const char* ip, const char* url, std::map< std::string, std::string >& fields, bool& delayed );
+	unsigned int validateSession( const char* ip, const char* url, std::map< std::string, std::string >& fields );
 
-	static int sendThreadFunc(void *);
-	bool processQueue(ServerWebServerQueue &queue, bool keepEntries);
+	static int sendThreadFunc( void* );
+	bool       processQueue( ServerWebServerQueue& queue, bool keepEntries );
 
 	// Inherited from NetMessageHandlerI
-	virtual void processMessage(NetMessage &message);
+	virtual void processMessage( NetMessage& message );
 
 private:
 	ServerWebServer();
 	virtual ~ServerWebServer();
 };
 
-#endif // __INCLUDE_ServerWebServer_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerWebServer_hpp_INCLUDE__

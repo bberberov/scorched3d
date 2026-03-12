@@ -28,17 +28,18 @@ class TankAccessorySimAction : public SimAction
 {
 public:
 	TankAccessorySimAction();
-	TankAccessorySimAction(ComsBuyAccessoryMessage &accessoryMessage);
+	TankAccessorySimAction( ComsBuyAccessoryMessage& accessoryMessage );
 	virtual ~TankAccessorySimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankAccessorySimAction);
+	REGISTER_CLASS_HEADER( TankAccessorySimAction );
+
 protected:
 	ComsBuyAccessoryMessage accessoryMessage_;
 };
 
-#endif // __INCLUDE_TankAccessorySimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAccessorySimAction_hpp_INCLUDE__

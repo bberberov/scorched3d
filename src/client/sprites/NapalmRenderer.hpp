@@ -24,19 +24,20 @@
 #include <graph/Particle.hpp>
 
 class GLTextureSet;
+
 class NapalmRenderer : public ParticleUserData
 {
 public:
-	NapalmRenderer(GLTextureSet *set);
+	NapalmRenderer( GLTextureSet* set );
 	virtual ~NapalmRenderer();
 
-	void draw(Particle *particle);
-	void simulate(Particle *particle, float timepassed);
+	void draw( Particle* particle );
+	void simulate( Particle* particle, float timepassed );
 
 protected:
-	int plus_;
-	float textureNo_;
-	GLTextureSet *set_;
+	int           plus_;
+	float         textureNo_;
+	GLTextureSet* set_;
 };
 
-#endif // __INCLUDE_NapalmRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_NapalmRenderer_hpp_INCLUDE__

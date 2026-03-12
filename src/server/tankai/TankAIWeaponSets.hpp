@@ -28,6 +28,7 @@
 #include <string>
 
 class XMLNode;
+
 class TankAIWeaponSets
 {
 public:
@@ -36,45 +37,45 @@ public:
 
 	bool parseConfig();
 
-	class WeaponSetAccessories 
+	class WeaponSetAccessories
 	{
 	public:
-		WeaponSetAccessories(Tanket *tanket);
+		WeaponSetAccessories( Tanket* tanket );
 
-		int tankMoney;
-		unsigned int tankId;
+		int               tankMoney;
+		unsigned int      tankId;
 		TanketAccessories tankAccessories;
 	};
 
 	class WeaponSetEntry
 	{
 	public:
-		Accessory *accessory;
-		int buymin, buymax;
-		int moneymin, moneymax;
-		int prioritybuy, priorityuse;
+		Accessory*  accessory;
+		int         buymin, buymax;
+		int         moneymin, moneymax;
+		int         prioritybuy, priorityuse;
 		std::string type;
 
-		bool parseConfig(XMLNode *node);
-		bool weaponValid(WeaponSetAccessories &tankAccessories, bool lastRound);
-		static bool checkType(const char *type);
+		bool        parseConfig( XMLNode* node );
+		bool        weaponValid( WeaponSetAccessories& tankAccessories, bool lastRound );
+		static bool checkType( const char* type );
 	};
 
 	class WeaponSet
 	{
 	public:
-		std::string name;
-		std::vector<WeaponSetEntry> weapons;
+		std::string                   name;
+		std::vector< WeaponSetEntry > weapons;
 
-		bool parseConfig(XMLNode *node);
-		void buyWeapons(WeaponSetAccessories &tankAccessories, bool lastRound);
-		Accessory *getTankAccessoryByType(Tanket *tanket, const char *type);
+		bool       parseConfig( XMLNode* node );
+		void       buyWeapons( WeaponSetAccessories& tankAccessories, bool lastRound );
+		Accessory* getTankAccessoryByType( Tanket* tanket, const char* type );
 	};
 
-	WeaponSet *getWeaponSet(const char *name);
+	WeaponSet* getWeaponSet( const char* name );
 
 protected:
-	std::map<std::string, WeaponSet> weaponSets_;
+	std::map< std::string, WeaponSet > weaponSets_;
 };
 
-#endif // __INCLUDE_TankAIWeaponSets_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIWeaponSets_hpp_INCLUDE__

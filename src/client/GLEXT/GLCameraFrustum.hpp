@@ -28,32 +28,41 @@
 class GLCameraFrustum : public GameStateI
 {
 public:
-	static GLCameraFrustum *instance();
+	static GLCameraFrustum* instance();
 
 	static Vector FrustrumRed;
 	static Vector FrustrumBlue;
 	static Vector FrustrumGreen;
 	static Vector FrustrumWhite;
 
-	virtual void draw(const unsigned state);
+	virtual void draw( const unsigned int state );
 
-	bool sphereInFrustum(Vector &point, float fRadius = 1, Vector &color = FrustrumWhite);
-	bool sphereInFrustumThreadSafe(Vector &point, float fRadius);
+	bool sphereInFrustum( Vector& point, float fRadius = 1, Vector& color = FrustrumWhite );
+	bool sphereInFrustumThreadSafe( Vector& point, float fRadius );
 	void backupFrustum();
 	void restoreFrustum();
 	void drawBilboard(
-		Vector &position, Vector &color, float alpha,
-		float width, float height, bool additive, int texCoord
+		Vector& position,
+		Vector& color,
+		float   alpha,
+		float   width,
+		float   height,
+		bool    additive,
+		int     texCoord
 	);
 
-	Vector &getBilboardVectorX();
-	Vector &getBilboardVectorY();
+	Vector& getBilboardVectorX();
+	Vector& getBilboardVectorY();
 
-	float *getBilboardMatrix() { return s.fBilboard; }
-	float *getViewMatrix() { return s.fView; }
+	// clang-format off
+	// uncrustify off
+	float* getBilboardMatrix() { return s.fBilboard; }
+	float* getViewMatrix()     { return s.fView; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static GLCameraFrustum *instance_;
+	static GLCameraFrustum* instance_;
 
 	struct Settings
 	{
@@ -66,11 +75,11 @@ protected:
 		float aspect;
 	} s, b;
 
-	void normalize(float vector[4]);
+	void normalize( float vector[4] );
 
 private:
 	GLCameraFrustum();
 	virtual ~GLCameraFrustum();
 };
 
-#endif // __INCLUDE_GLCameraFrustum_hpp_INCLUDE__
+#endif  // __INCLUDE_GLCameraFrustum_hpp_INCLUDE__

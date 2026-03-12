@@ -31,13 +31,13 @@
 class GLWIconListModItem : public GLWIconListItem
 {
 public:
-	GLWIconListModItem(ModInfo &modInfo);
+	GLWIconListModItem( ModInfo& modInfo );
 	virtual ~GLWIconListModItem();
 
-	ModInfo &getModInfo() { return modInfo_; }
+	ModInfo& getModInfo() { return modInfo_; }
 
 	// GLWIconListItem
-	virtual void draw(float x, float y, float w);
+	virtual void draw( float x, float y, float w );
 
 protected:
 	ModInfo modInfo_;
@@ -49,28 +49,28 @@ protected:
 class ModSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
-	static ModSelectDialog *instance();
+	static ModSelectDialog* instance();
 
 	// GLWWindow
 	virtual void display();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWIconListI
-	virtual void selected(unsigned int id, int position);
-	virtual void chosen(unsigned int id, int position);
+	virtual void selected( unsigned int id, int position );
+	virtual void chosen( unsigned int id, int position );
 
 protected:
-	static ModSelectDialog *instance_;
+	static ModSelectDialog* instance_;
 
 	unsigned int okId_;
 	unsigned int cancelId_;
-	GLWIconList *iconList_;
+	GLWIconList* iconList_;
 
 private:
 	ModSelectDialog();
 	virtual ~ModSelectDialog();
 };
 
-#endif // __INCLUDE_ModSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ModSelectDialog_hpp_INCLUDE__

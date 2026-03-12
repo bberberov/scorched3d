@@ -32,60 +32,57 @@ class TankViewPointProvider;
 class VirtualSoundSource;
 class WeaponMoveTank;
 class Tanket;
+
 class TanketMovement : public Action
 {
 public:
-	TanketMovement(
-		WeaponFireContext &weaponContext,
-		WeaponMoveTank *weapon_,
-		int positionX, int positionY
-	);
+	TanketMovement( WeaponFireContext& weaponContext, WeaponMoveTank* weapon_, int positionX, int positionY );
 	virtual ~TanketMovement();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "TanketMovement"; }
 
 protected:
 	// A list containing smooth positions
 	struct PositionEntry
 	{
-		PositionEntry(
-			int fX, int fY,
-			int sX, int sY,
-			fixed newx, fixed newy, fixed newa,
-			bool useF
-		) :
-			firstX(fX), firstY(fY),
-			secondX(sX), secondY(sY),
-			x(newx), y(newy), ang(newa),
-			useFuel(useF)
+		PositionEntry( int fX, int fY, int sX, int sY, fixed newx, fixed newy, fixed newa, bool useF )
+			: firstX( fX )
+			, firstY( fY )
+			, secondX( sX )
+			, secondY( sY )
+			, x( newx )
+			, y( newy )
+			, ang( newa )
+			, useFuel( useF )
 		{}
 
-		int firstX, firstY;
-		int secondX, secondY;
+		int   firstX, firstY;
+		int   secondX, secondY;
 		fixed x, y, ang;
-		bool useFuel;
+		bool  useFuel;
 	};
 
 	WeaponFireContext weaponContext_;
 
-	WeaponMoveTank *weapon_;
-	std::list<PositionEntry> expandedPositions_;
-	fixed timePassed_;
-	TankViewPointProvider *vPoint_;
-	VirtualSoundSource *moveSoundSource_;
-	Counter smokeCounter_;
+	WeaponMoveTank*            weapon_;
+	std::list< PositionEntry > expandedPositions_;
+	fixed                      timePassed_;
+	TankViewPointProvider*     vPoint_;
+	VirtualSoundSource*        moveSoundSource_;
+	Counter                    smokeCounter_;
 
-	FixedVector startPosition_;
-	int positionX_, positionY_;
+	FixedVector  startPosition_;
+	int          positionX_, positionY_;
 	unsigned int stepCount_;
-	bool remove_;
-	bool moving_;
+	bool         remove_;
+	bool         moving_;
 
-	void moveTanket(Tanket *tanket);
-	void simulationMove(fixed frameTime);
+	void moveTanket( Tanket* tanket );
+	void simulationMove( fixed frameTime );
 };
 
-#endif // __INCLUDE_TanketMovement_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketMovement_hpp_INCLUDE__

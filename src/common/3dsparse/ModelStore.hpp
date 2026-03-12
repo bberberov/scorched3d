@@ -31,20 +31,20 @@ class Model;
 class ModelStore
 {
 public:
-	static ModelStore *instance();
+	static ModelStore* instance();
 
-	Model *loadModel(ModelID &modelId);
+	Model* loadModel( ModelID& modelId );
 
 protected:
-	static ModelStore *instance_;
+	static ModelStore* instance_;
 
-	std::map<std::string, Model *> fileMap_;
+	std::map< std::string, Model* > fileMap_;
 
-	Model *getModel(ModelID &id);
+	Model* getModel( ModelID& id );
 
 private:
 	ModelStore();
 	virtual ~ModelStore();
 };
 
-#endif // __INCLUDE_ModelStore_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelStore_hpp_INCLUDE__

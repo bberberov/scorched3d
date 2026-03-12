@@ -24,6 +24,7 @@
 #include <coms/ComsFileMessage.hpp>
 
 class ServerDestination;
+
 class ServerFileServer
 {
 public:
@@ -32,16 +33,19 @@ public:
 
 	void simulate();
 
-	void sendToDestination(ServerDestination *destination);
+	void sendToDestination( ServerDestination* destination );
 
 protected:
 	unsigned int lastTime_;
 	unsigned int bytesSent_;
 
-	void sendBytes(ServerDestination *destination, unsigned int size);
-	bool sendNextFile(ComsFileMessage &message,
-		ServerDestination *destination, 
-		unsigned int size, unsigned int &sentSize);
+	void sendBytes( ServerDestination* destination, unsigned int size );
+	bool sendNextFile(
+		ComsFileMessage&   message,
+		ServerDestination* destination,
+		unsigned int       size,
+		unsigned int&      sentSize
+	);
 };
 
-#endif // __INCLUDE_ServerFileServer_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerFileServer_hpp_INCLUDE__

@@ -29,7 +29,7 @@ class ClientStartGameHandler
 public:
 	static ClientStartGameHandler* instance();
 
-	void startGame(TankStartMoveSimAction *action);
+	void startGame( TankStartMoveSimAction* action );
 
 protected:
 	static ClientStartGameHandler* instance_;
@@ -38,8 +38,8 @@ private:
 	ClientStartGameHandler();
 	virtual ~ClientStartGameHandler();
 
-	ClientStartGameHandler(const ClientStartGameHandler &);
-	const ClientStartGameHandler & operator=(const ClientStartGameHandler &);
+	ClientStartGameHandler( const ClientStartGameHandler& );
+	const ClientStartGameHandler& operator=( const ClientStartGameHandler& );
 };
 
-#endif // __INCLUDE_ClientStartGameHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientStartGameHandler_hpp_INCLUDE__

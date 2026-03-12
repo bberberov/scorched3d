@@ -31,28 +31,32 @@ public:
 	static ComsMessageType ComsSyncCheckMessageType;
 
 	ComsSyncCheckMessage();
-	ComsSyncCheckMessage(unsigned int syncId, ScorchedContext &context);
+	ComsSyncCheckMessage( unsigned int syncId, ScorchedContext& context );
 	virtual ~ComsSyncCheckMessage();
 
-	unsigned int getSyncId() { return syncId_; }
-	NetBuffer &getLandscapeBuffer() { return landscapeBuffer_; }
-	NetBuffer &getRoofBuffer() { return roofBuffer_; }
-	NetBuffer &getTargetsBuffer() { return targetsBuffer_; }
-	std::vector<std::string> &getSyncCheck() { return syncChecks_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int                getSyncId()          { return syncId_; }
+	NetBuffer&                  getLandscapeBuffer() { return landscapeBuffer_; }
+	NetBuffer&                  getRoofBuffer()      { return roofBuffer_; }
+	NetBuffer&                  getTargetsBuffer()   { return targetsBuffer_; }
+	std::vector< std::string >& getSyncCheck()       { return syncChecks_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::vector<std::string> syncChecks_;
-	unsigned int syncId_;
-	NetBuffer landscapeBuffer_, roofBuffer_;
-	NetBuffer targetsBuffer_;
+	std::vector< std::string > syncChecks_;
+	unsigned int               syncId_;
+	NetBuffer                  landscapeBuffer_, roofBuffer_;
+	NetBuffer                  targetsBuffer_;
 
 private:
-	ComsSyncCheckMessage(const ComsSyncCheckMessage &);
-	const ComsSyncCheckMessage & operator=(const ComsSyncCheckMessage &);
+	ComsSyncCheckMessage( const ComsSyncCheckMessage& );
+	const ComsSyncCheckMessage& operator=( const ComsSyncCheckMessage& );
 };
 
-#endif // __INCLUDE_ComsSyncCheckMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsSyncCheckMessage_hpp_INCLUDE__

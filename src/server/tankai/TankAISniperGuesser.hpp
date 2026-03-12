@@ -24,14 +24,14 @@
 #include <common/Vector.hpp>
 
 class Tanket;
+
 class TankAISniperGuesser
 {
 public:
 	TankAISniperGuesser();
 	virtual ~TankAISniperGuesser();
 
-	bool guess(Tanket *tanket, Vector &target, 
-		float distForSniper, bool checkIntersection, float offset);
+	bool guess( Tanket* tanket, Vector& target, float distForSniper, bool checkIntersection, float offset );
 };
 
-#endif // __INCLUDE_TankAISniperGuesser_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAISniperGuesser_hpp_INCLUDE__

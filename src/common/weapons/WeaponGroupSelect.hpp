@@ -23,24 +23,27 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponGroupSelect  : public Weapon
+class WeaponGroupSelect : public Weapon
 {
 public:
 	WeaponGroupSelect();
 	virtual ~WeaponGroupSelect();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGroupSelect, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGroupSelect, AccessoryPart::AccessoryWeapon );
 
 protected:
 	std::string groupName_;
-	Weapon *nextAction_;
+	Weapon*     nextAction_;
 };
 
-#endif // __INCLUDE_WeaponGroupSelect_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGroupSelect_hpp_INCLUDE__

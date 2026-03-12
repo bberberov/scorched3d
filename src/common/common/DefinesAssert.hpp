@@ -25,20 +25,23 @@
 
 namespace S3D
 {
-	void dialogAssert(const char *lineText, const int line, const char *file);
-	void glAssert(unsigned int e, const int line, const char *file);
+	void dialogAssert( const char* lineText, const int line, const char* file );
+	void glAssert( unsigned int e, const int line, const char* file );
 
-	void dialogMessage(const std::string &header, const std::string &text, bool split = true);
-	void dialogExit(const std::string &header, const std::string &text, bool split = true);
-}
+	void dialogMessage( const std::string& header, const std::string& text, bool split = true );
+	void dialogExit( const std::string& header, const std::string& text, bool split = true );
+}  // namespace S3D
 
 #ifndef S3D_SERVER
-//#define GL_ASSERT() { GLenum e=glGetError(); if(e!= GL_NO_ERROR) S3D::glAssert(e, __LINE__, __FILE__); }
-#define GL_ASSERT() {}
+// #define GL_ASSERT() { GLenum e=glGetError(); if(e!= GL_NO_ERROR) S3D::glAssert(e, __LINE__, __FILE__); }
+#define GL_ASSERT() \
+	{}
 #else
-#define GL_ASSERT() {}
+#define GL_ASSERT() \
+	{}
 #endif
 
-#define DIALOG_ASSERT(x) if(!(x)) S3D::dialogAssert(#x, __LINE__, __FILE__);
+#define DIALOG_ASSERT( x ) \
+	if ( ! ( x ) ) S3D::dialogAssert( #x, __LINE__, __FILE__ );
 
-#endif // __INCLUDE_DefinesAssert_hpp_INCLUDE__
+#endif  // __INCLUDE_DefinesAssert_hpp_INCLUDE__

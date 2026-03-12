@@ -29,26 +29,32 @@
 class OptionsScorched;
 class AccessoryStore;
 class WeaponLabel;
-class AccessoryCreateContext  
+
+class AccessoryCreateContext
 {
 public:
-	AccessoryCreateContext(ScorchedContext &context);
+	AccessoryCreateContext( ScorchedContext& context );
 	virtual ~AccessoryCreateContext();
 
-	ScorchedContext &getScorchedContext() { return context_; }
-	OptionsScorched &getOptionsGame() { return context_.getOptionsGame(); }
-	AccessoryStore &getAccessoryStore() { return context_.getAccessoryStore(); }
-	WeaponLabel *getLabel(const char *label);
-	void addLabel(const char *label, WeaponLabel *weapon);
-	void removeLabel(const char *label);
+	// clang-format off
+	// uncrustify off
+	ScorchedContext& getScorchedContext() { return context_; }
+	OptionsScorched& getOptionsGame()     { return context_.getOptionsGame(); }
+	AccessoryStore&  getAccessoryStore()  { return context_.getAccessoryStore(); }
+	// uncrustify on
+	// clang-format on
+
+	WeaponLabel* getLabel( const char* label );
+	void         addLabel( const char* label, WeaponLabel* weapon );
+	void         removeLabel( const char* label );
 
 protected:
-	ScorchedContext &context_;
-	std::map<std::string, WeaponLabel*> labels_;
+	ScorchedContext&                      context_;
+	std::map< std::string, WeaponLabel* > labels_;
 
 private:
-	AccessoryCreateContext(const AccessoryCreateContext&);
-	AccessoryCreateContext &operator=(const AccessoryCreateContext &other);
+	AccessoryCreateContext( const AccessoryCreateContext& );
+	AccessoryCreateContext& operator=( const AccessoryCreateContext& other );
 };
 
-#endif // __INCLUDE_AccessoryCreateContext_hpp_INCLUDE__
+#endif  // __INCLUDE_AccessoryCreateContext_hpp_INCLUDE__

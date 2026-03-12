@@ -27,18 +27,18 @@
 class OptionsDisplayConsole
 {
 public:
-	static OptionsDisplayConsole *instance();
+	static OptionsDisplayConsole* instance();
 
 	void addDisplayToConsole();
 
 protected:
-	static OptionsDisplayConsole *instance_;
+	static OptionsDisplayConsole* instance_;
 
-	std::list<ConsoleRuleFnIOptionsAdapter *> adapters_;
+	std::list< ConsoleRuleFnIOptionsAdapter* > adapters_;
 
 private:
 	OptionsDisplayConsole();
 	virtual ~OptionsDisplayConsole();
 };
 
-#endif // __INCLUDE_OptionsDisplayConsole_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionsDisplayConsole_hpp_INCLUDE__

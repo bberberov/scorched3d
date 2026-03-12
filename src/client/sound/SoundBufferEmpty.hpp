@@ -26,21 +26,21 @@
 class SoundBufferEmptySourceInstance : public SoundBufferSourceInstance
 {
 public:
-	SoundBufferEmptySourceInstance(unsigned int source);
+	SoundBufferEmptySourceInstance( unsigned int source );
 	virtual ~SoundBufferEmptySourceInstance();
 
-	virtual void play(bool loop) {};
+	virtual void play( bool loop ) {};
 	virtual void stop() {};
-	virtual void simulate(bool loop) {};
+	virtual void simulate( bool loop ) {};
 };
 
 class SoundBufferEmpty : public SoundBuffer
 {
 public:
-	SoundBufferEmpty(const char *fileName);
+	SoundBufferEmpty( const char* fileName );
 	virtual ~SoundBufferEmpty();
 
-	SoundBufferSourceInstance *createSourceInstance(unsigned int source);
+	SoundBufferSourceInstance* createSourceInstance( unsigned int source );
 };
 
-#endif // __INCLUDE_SoundBufferEmpty_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferEmpty_hpp_INCLUDE__

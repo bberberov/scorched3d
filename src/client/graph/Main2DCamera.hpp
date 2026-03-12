@@ -32,23 +32,27 @@
 class Main2DCamera : public GameStateI
 {
 public:
-	static Main2DCamera *instance();
+	static Main2DCamera* instance();
 
-	virtual void draw(const unsigned state);
+	virtual void draw( const unsigned int state );
 
-	GLViewPort &getViewPort() { return viewPort_; }
-	bool getHide() { return hide_; }
-	void setHide(bool hide) { hide_ = hide; }
+	// clang-format off
+	// uncrustify off
+	GLViewPort& getViewPort() { return viewPort_; }
+	bool getHide()            { return hide_; }
+	void setHide( bool hide ) { hide_ = hide; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static Main2DCamera *instance_;
+	static Main2DCamera* instance_;
 
 	GLViewPort viewPort_;
-	bool hide_;
+	bool       hide_;
 
 private:
 	Main2DCamera();
 	virtual ~Main2DCamera();
 };
 
-#endif // __INCLUDE_Main2DCamera_hpp_INCLUDE__
+#endif  // __INCLUDE_Main2DCamera_hpp_INCLUDE__

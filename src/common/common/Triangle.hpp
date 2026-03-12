@@ -33,38 +33,48 @@ public:
 	Triangle();
 	virtual ~Triangle();
 
-	Vector &getNormal() { return faceN_; }
+	Vector& getNormal() { return faceN_; }
 
-	void setPointComponents(const float ptA1, const float ptA2, const float ptA3, 
-		Vector &normalA,
-		const float ptB1, const float ptB2, const float ptB3, 
-		Vector &normalB,
-		const float ptC1, const float ptC2, const float ptC3,
-		Vector &normalC);
+	void setPointComponents(
+		const float ptA1,
+		const float ptA2,
+		const float ptA3,
+		Vector&     normalA,
+		const float ptB1,
+		const float ptB2,
+		const float ptB3,
+		Vector&     normalB,
+		const float ptC1,
+		const float ptC2,
+		const float ptC3,
+		Vector&     normalC
+	);
 
-	bool pointInBoundingBox(const Vector &pt);
-	bool pointInTriangle(const Vector &pt);
+	bool pointInBoundingBox( const Vector& pt );
+	bool pointInTriangle( const Vector& pt );
 
 	virtual bool rayIntersect(
-		const Line &ray, 
-		Vector &intersectPt, 
-		Vector &intersectN,
-		float &intersectDist,
-		const bool checkPtOnLine = true);
+		const Line& ray,
+		Vector&     intersectPt,
+		Vector&     intersectN,
+		float&      intersectDist,
+		const bool  checkPtOnLine = true
+	);
 
 	virtual bool sphereIntersect(
-		Vector &sphereCentre, 
-		float &sphereRadius,
-		Vector &intersectPt,
-		Vector &intersectN,
-		float &intersectDist);
+		Vector& sphereCentre,
+		float&  sphereRadius,
+		Vector& intersectPt,
+		Vector& intersectN,
+		float&  intersectDist
+	);
 
-protected:	
-	enum largestNormalPart 
-	{ 
-		scalarX, 
-		scalarY, 
-		scalarZ 
+protected:
+	enum largestNormalPart
+	{
+		scalarX,
+		scalarY,
+		scalarZ
 	} largest_;
 
 	Vector ptA_, ptB_, ptC_;
@@ -74,4 +84,4 @@ protected:
 	void calcLargest();
 };
 
-#endif // __INCLUDE_Triangle_hpp_INCLUDE__
+#endif  // __INCLUDE_Triangle_hpp_INCLUDE__

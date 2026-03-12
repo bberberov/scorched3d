@@ -25,6 +25,7 @@
 
 struct lua_State;
 class XMLNode;
+
 class ExplosionParams
 {
 public:
@@ -32,54 +33,61 @@ public:
 	{
 		DeformNone = 0,
 		DeformDown = 1,
-		DeformUp = 2,
+		DeformUp   = 2,
 	};
+
 	enum ExplosionType
 	{
-		ExplosionNormal = 0,
-		ExplosionRing = 1,
+		ExplosionNormal          = 0,
+		ExplosionRing            = 1,
 		ExplosionRingDirectional = 2
 	};
 
 	ExplosionParams();
 	~ExplosionParams();
 
-	bool parseXML(XMLNode *accessoryNode);
-	void parseLUA(lua_State *L, int position);
+	bool parseXML( XMLNode* accessoryNode );
+	void parseLUA( lua_State* L, int position );
 
-	void setSize(fixed size) { size_ = size; }
-	void setDeformSize(fixed size) { deformSize_ = size; }
-	void setShake(fixed shake) { shake_ = shake; }
-	void setMinLife(fixed minLife) { minLife_ = minLife; }
-	void setMaxLife(fixed maxLife) { maxLife_ = maxLife; }
-	void setHurtAmount(fixed amount) { hurtAmount_ = amount; }
-	void setCreateMushroomAmount(fixed amount) { createMushroomAmount_ = amount; }
+	// clang-format off
+	// uncrustify off
+	void setSize( fixed size )                   { size_ = size; }
+	void setDeformSize( fixed size )             { deformSize_ = size; }
+	void setShake( fixed shake )                 { shake_ = shake; }
+	void setMinLife( fixed minLife )             { minLife_ = minLife; }
+	void setMaxLife( fixed maxLife )             { maxLife_ = maxLife; }
+	void setHurtAmount( fixed amount )           { hurtAmount_ = amount; }
+	void setCreateMushroomAmount( fixed amount ) { createMushroomAmount_ = amount; }
+	// uncrustify on
+	// clang-format on
 
-	const char *getExplosionTexture();
-	const char *getMushroomTexture();
-	const char *getExplosionSound();
-	FixedVector &getExplosionColor();
+	const char*  getExplosionTexture();
+	const char*  getMushroomTexture();
+	const char*  getExplosionSound();
+	FixedVector& getExplosionColor();
 
-	fixed getSize() { return size_; }
-	fixed getDeformSize() { return deformSize_; }
-	fixed getMaxLife() { return maxLife_; }
-	fixed getMinLife() { return minLife_; }
-	fixed getHurtAmount() { return hurtAmount_; }
-	fixed getShake() { return shake_; }
-	fixed getCreateMushroomAmount() { return createMushroomAmount_; }
-
-	DeformType getDeformType() { return deform_; }
-	ExplosionType getExplosionType() { return explosionType_; }
-	bool getCreateDebris() { return createDebris_; }
-	bool getCreateSplash() { return createSplash_; }
-	bool getWindAffected() { return windAffected_; }
-	bool getOnlyHurtShield() { return onlyHurtShield_; }
-	bool getLuminance() { return luminance_; }
-	bool getAnimate() { return animate_; }
-	bool getExplodeUnderGround() { return explodeUnderGround_; }
-	bool getNoCameraTrack() { return noCameraTrack_; }
-	
-	const char *getDeformTexture() { return deformTexture_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	fixed         getSize()                 { return size_; }
+	fixed         getDeformSize()           { return deformSize_; }
+	fixed         getMaxLife()              { return maxLife_; }
+	fixed         getMinLife()              { return minLife_; }
+	fixed         getHurtAmount()           { return hurtAmount_; }
+	fixed         getShake()                { return shake_; }
+	fixed         getCreateMushroomAmount() { return createMushroomAmount_; }
+	DeformType    getDeformType()           { return deform_; }
+	ExplosionType getExplosionType()        { return explosionType_; }
+	bool          getCreateDebris()         { return createDebris_; }
+	bool          getCreateSplash()         { return createSplash_; }
+	bool          getWindAffected()         { return windAffected_; }
+	bool          getOnlyHurtShield()       { return onlyHurtShield_; }
+	bool          getLuminance()            { return luminance_; }
+	bool          getAnimate()              { return animate_; }
+	bool          getExplodeUnderGround()   { return explodeUnderGround_; }
+	bool          getNoCameraTrack()        { return noCameraTrack_; }
+	const char*   getDeformTexture()        { return deformTexture_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	fixed size_;
@@ -88,22 +96,22 @@ protected:
 	fixed shake_;
 	fixed minLife_, maxLife_;
 	fixed createMushroomAmount_;
-	bool luminance_;
-	bool windAffected_;
-	bool multiColored_;
-	bool createDebris_;
-	bool createSplash_;
-	bool explodeUnderGround_;
-	bool onlyHurtShield_;
-	bool animate_;
-	bool noCameraTrack_;
+	bool  luminance_;
+	bool  windAffected_;
+	bool  multiColored_;
+	bool  createDebris_;
+	bool  createSplash_;
+	bool  explodeUnderGround_;
+	bool  onlyHurtShield_;
+	bool  animate_;
+	bool  noCameraTrack_;
 
-	std::string deformTexture_;
-	std::string explosionTexture_;
-	std::string explosionSound_;
-	std::string mushroomTexture_;
-	DeformType deform_;
+	std::string   deformTexture_;
+	std::string   explosionTexture_;
+	std::string   explosionSound_;
+	std::string   mushroomTexture_;
+	DeformType    deform_;
 	ExplosionType explosionType_;
 };
 
-#endif // __INCLUDE_ExplosionParams_hpp_INCLUDE__
+#endif  // __INCLUDE_ExplosionParams_hpp_INCLUDE__

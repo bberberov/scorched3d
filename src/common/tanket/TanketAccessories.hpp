@@ -29,54 +29,57 @@
 
 class Tanket;
 class ScorchedContext;
-class TanketAccessories  
+
+class TanketAccessories
 {
 public:
-	TanketAccessories(ScorchedContext &context);
+	TanketAccessories( ScorchedContext& context );
 	virtual ~TanketAccessories();
 
-	void setTanket(Tanket *tanket);
+	void setTanket( Tanket* tanket );
 
 	void newMatch();
-	void add(Accessory *accessory, int count, bool check = true);
-	void rm(Accessory *accessory, int count);
+	void add( Accessory* accessory, int count, bool check = true );
+	void rm( Accessory* accessory, int count );
 	void clearAccessories();
 
-	bool canUse(Accessory *accessory);
+	bool canUse( Accessory* accessory );
 
-	bool accessoryAllowed(Accessory *accessory, int count);
-	int getAccessoryCount(Accessory *accessory);
-	void getAllAccessories(std::list<Accessory *> &result);
-	std::list<Accessory *> &getAllAccessoriesByType(
-		AccessoryPart::AccessoryType type);
-	std::list<Accessory *> &getAllAccessoriesByGroup(
-		const char *groupName);
+	bool                     accessoryAllowed( Accessory* accessory, int count );
+	int                      getAccessoryCount( Accessory* accessory );
+	void                     getAllAccessories( std::list< Accessory* >& result );
+	std::list< Accessory* >& getAllAccessoriesByType( AccessoryPart::AccessoryType type );
+	std::list< Accessory* >& getAllAccessoriesByGroup( const char* groupName );
 
-	TanketWeapon &getWeapons() { return tankWeapon_; }
-	TanketAutoDefense &getAutoDefense() { return tankAuto_; }
-	TanketBatteries &getBatteries() { return tankBatteries_; }
+	// clang-format off
+	// uncrustify off
+	TanketWeapon&      getWeapons()     { return tankWeapon_; }
+	TanketAutoDefense& getAutoDefense() { return tankAuto_; }
+	TanketBatteries&   getBatteries()   { return tankBatteries_; }
+	// uncrustify on
+	// clang-format on
 
-	LangString getAccessoryCountString(Accessory *accessory);
-	LangString getAccessoryAndCountString(Accessory *accessory);
+	LangString getAccessoryCountString( Accessory* accessory );
+	LangString getAccessoryAndCountString( Accessory* accessory );
 
 	// Serialize the tank accessories
-	bool writeMessage(NamedNetBuffer &buffer, bool writeAccessories);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer, bool writeAccessories );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	TanketWeapon tankWeapon_;
+	ScorchedContext&  context_;
+	TanketWeapon      tankWeapon_;
 	TanketAutoDefense tankAuto_;
-	TanketBatteries tankBatteries_;
-	Tanket *tanket_;
+	TanketBatteries   tankBatteries_;
+	Tanket*           tanket_;
 
-	typedef std::list<Accessory *> AccessoryList;
-	std::map<Accessory *, int> accessories_;
-	std::map<std::string, AccessoryList*> accessoryGroups_;
-	std::map<AccessoryPart::AccessoryType, AccessoryList*> accessoryTypes_;
+	typedef std::list< Accessory* >                          AccessoryList;
+	std::map< Accessory*, int >                              accessories_;
+	std::map< std::string, AccessoryList* >                  accessoryGroups_;
+	std::map< AccessoryPart::AccessoryType, AccessoryList* > accessoryTypes_;
 
 	void changed();
-	void add_(Accessory *accessory, int count, bool check);
+	void add_( Accessory* accessory, int count, bool check );
 };
 
-#endif // __INCLUDE_TanketAccessories_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketAccessories_hpp_INCLUDE__

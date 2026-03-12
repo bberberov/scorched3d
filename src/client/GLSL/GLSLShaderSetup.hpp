@@ -29,9 +29,10 @@ class GLSLShaderSetup
 public:
 	/// create shader setup of two shaders
 	GLSLShaderSetup(
-		const std::string &filename_vshader,
-		const std::string &filename_fshader,
-		const GLSLShader::defines_list& dl = GLSLShader::defines_list());
+		const std::string&              filename_vshader,
+		const std::string&              filename_fshader,
+		const GLSLShader::defines_list& dl = GLSLShader::defines_list()
+	);
 	~GLSLShaderSetup();
 
 	/// use this setup
@@ -41,42 +42,39 @@ public:
 	static void use_fixed() { GLSLProgram::use_fixed(); }
 
 	/// set up texture for a particular shader name
-	void set_gl_texture(GLTexture &tex, const char *texname, unsigned texunitnr) const 
+	void set_gl_texture( GLTexture& tex, const char* texname, unsigned int texunitnr ) const
 	{
-		prog_.set_gl_texture(tex, texname, texunitnr);
+		prog_.set_gl_texture( tex, texname, texunitnr );
 	}
-	void set_gl_texture(GLShadowFrameBuffer &tex, const char *texname, unsigned texunitnr) const
+
+	void set_gl_texture( GLShadowFrameBuffer& tex, const char* texname, unsigned int texunitnr ) const
 	{
-		prog_.set_gl_texture(tex, texname, texunitnr);
+		prog_.set_gl_texture( tex, texname, texunitnr );
 	}
-	void set_gl_texture_unit(const char *texname, unsigned texunitnr) const
+
+	void set_gl_texture_unit( const char* texname, unsigned int texunitnr ) const
 	{
-		prog_.set_gl_texture_unit(texname, texunitnr);
+		prog_.set_gl_texture_unit( texname, texunitnr );
 	}
 
 	/// set uniform variable
-	void set_uniform(const char *name, const Vector& value) const 
-	{
-		prog_.set_uniform(name, value);
-	}
-	void set_uniform(const char *name, const float value) const
-	{
-		prog_.set_uniform(name, value);
-	}
+	// clang-format off
+	// uncrustify off
+	void set_uniform( const char* name, const Vector& value ) const { prog_.set_uniform( name, value ); }
+	void set_uniform( const char* name, const float value ) const   { prog_.set_uniform( name, value ); }
+	// uncrustify on
+	// clang-format on
 
 	/// get vertex attribute index
-	unsigned get_vertex_attrib_index(const char *name) const 
-	{
-		return prog_.get_vertex_attrib_index(name);
-	}
+	unsigned int get_vertex_attrib_index( const char* name ) const { return prog_.get_vertex_attrib_index( name ); }
 
 protected:
-	GLSLShader vs_, fs_;
+	GLSLShader  vs_, fs_;
 	GLSLProgram prog_;
 
 private:
-	GLSLShaderSetup(const GLSLShaderSetup&);
-	GLSLShaderSetup& operator= (const GLSLShaderSetup&);
+	GLSLShaderSetup( const GLSLShaderSetup& );
+	GLSLShaderSetup& operator=( const GLSLShaderSetup& );
 };
 
-#endif // __INCLUDE_GLSLShaderSetup_hpp_INCLUDE__
+#endif  // __INCLUDE_GLSLShaderSetup_hpp_INCLUDE__

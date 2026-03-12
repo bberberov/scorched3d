@@ -39,45 +39,50 @@ public:
 	};
 
 	ComsPlayedMoveMessage();
-	ComsPlayedMoveMessage(const ComsPlayedMoveMessage &other);
-	ComsPlayedMoveMessage(unsigned int playerId, unsigned int moveId, MoveType type);
+	ComsPlayedMoveMessage( const ComsPlayedMoveMessage& other );
+	ComsPlayedMoveMessage( unsigned int playerId, unsigned int moveId, MoveType type );
 	virtual ~ComsPlayedMoveMessage();
 
-	void setShot(unsigned int weaponId,
-		fixed rotationXY,
-		fixed rotationYZ,
-		fixed power,
-		int positionX,
-		int positionY
+	void setShot(
+		unsigned int weaponId,
+		fixed        rotationXY,
+		fixed        rotationYZ,
+		fixed        power,
+		int          positionX,
+		int          positionY
 	);
 
-	unsigned int getPlayerId() { return playerId_; }
-	unsigned int getMoveId() { return moveId_; }
-	unsigned int getWeaponId() { return weaponId_; }
-	fixed getRotationXY() { return rotationXY_; }
-	fixed getRotationYZ() { return rotationYZ_; }
-	int getSelectPositionX() { return selectPositionX_; }
-	int getSelectPositionY() { return selectPositionY_; }
-	fixed getPower() { return power_; }
-	MoveType getType() { return moveType_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getPlayerId()        { return playerId_; }
+	unsigned int getMoveId()          { return moveId_; }
+	unsigned int getWeaponId()        { return weaponId_; }
+	fixed        getRotationXY()      { return rotationXY_; }
+	fixed        getRotationYZ()      { return rotationYZ_; }
+	int          getSelectPositionX() { return selectPositionX_; }
+	int          getSelectPositionY() { return selectPositionY_; }
+	fixed        getPower()           { return power_; }
+	MoveType     getType()            { return moveType_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int playerId_;
 	unsigned int moveId_;
 	unsigned int weaponId_;
-	MoveType moveType_;
-	fixed rotationXY_;
-	fixed rotationYZ_;
-	fixed power_;
-	int selectPositionX_;
-	int selectPositionY_;
+	MoveType     moveType_;
+	fixed        rotationXY_;
+	fixed        rotationYZ_;
+	fixed        power_;
+	int          selectPositionX_;
+	int          selectPositionY_;
 
 private:
-	const ComsPlayedMoveMessage & operator=(const ComsPlayedMoveMessage &);
+	const ComsPlayedMoveMessage& operator=( const ComsPlayedMoveMessage& );
 };
 
-#endif // __INCLUDE_ComsPlayedMoveMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsPlayedMoveMessage_hpp_INCLUDE__

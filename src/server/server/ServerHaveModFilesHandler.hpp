@@ -26,13 +26,10 @@
 class ServerHaveModFilesHandler : public ComsMessageHandlerI
 {
 public:
-	ServerHaveModFilesHandler(ComsMessageHandler &comsMessageHandler);
+	ServerHaveModFilesHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerHaveModFilesHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerHaveModFilesHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerHaveModFilesHandler_hpp_INCLUDE__

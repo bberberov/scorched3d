@@ -24,36 +24,40 @@
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWScrollW.hpp>
 
-class GLWScrollPanel : public GLWPanel,
-						public GLWScrollWI
+class GLWScrollPanel : public GLWPanel, public GLWScrollWI
 {
 public:
-	GLWScrollPanel(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
+	GLWScrollPanel( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWScrollPanel();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	virtual void positionChange(unsigned int id, int current, int movement);
+	virtual void positionChange( unsigned int id, int current, int movement );
 	virtual void clear();
 
-	virtual void setH(float h);
+	virtual void setH( float h );
 
 	void calculateVisible();
-	bool &getDrawScrollBar() { return drawScrollBar_; }
-	GLWScrollW &getScrollBar() { return scrollW_; }
 
-	REGISTER_CLASS_HEADER(GLWScrollPanel);
+	// clang-format off
+	// uncrustify off
+	bool&       getDrawScrollBar() { return drawScrollBar_; }
+	GLWScrollW& getScrollBar()     { return scrollW_; }
+	// uncrustify on
+	// clang-format on
+
+	REGISTER_CLASS_HEADER( GLWScrollPanel );
+
 protected:
 	GLWScrollW scrollW_;
-	bool drawScrollBar_;
-	int maxSee_;
-	float widgetHeight_;
+	bool       drawScrollBar_;
+	int        maxSee_;
+	float      widgetHeight_;
 };
 
-#endif // __INCLUDE_GLWScrollPanel_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScrollPanel_hpp_INCLUDE__

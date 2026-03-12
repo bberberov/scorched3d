@@ -44,12 +44,11 @@ public:
 	// Creds
 	struct Credential
 	{
-		std::string username;
-		std::string password;
-		std::set<std::string> permissions;
+		std::string             username;
+		std::string             password;
+		std::set< std::string > permissions;
 
-		bool hasPermission(const std::string &perm) 
-			{ return (permissions.find(perm) != permissions.end()); }
+		bool hasPermission( const std::string& perm ) { return ( permissions.find( perm ) != permissions.end() ); }
 	};
 
 	// Sessions
@@ -57,27 +56,28 @@ public:
 	{
 		unsigned int sessionTime;
 		unsigned int sid;
-		std::string ipAddress;
-		Credential credentials;
+		std::string  ipAddress;
+		Credential   credentials;
 	};
 
-	unsigned int login(const char *name, const char *password, const char *ipAddress);
-	void logout(unsigned int sid);
+	unsigned int login( const char* name, const char* password, const char* ipAddress );
+	void         logout( unsigned int sid );
 
-	SessionParams *getFirstSession();
-	SessionParams *getSession(unsigned int sid);
+	SessionParams* getFirstSession();
+	SessionParams* getSession( unsigned int sid );
 
-	bool setPassword(const char *name, 
-		const char *oldpassword, const char *newpassword);
+	bool setPassword( const char* name, const char* oldpassword, const char* newpassword );
 
-	Credential &getLocalUserCredentials() { return localCreds_; }
-	bool getAllCredentials(std::list<Credential> &creds);
-	bool setAllCredentials(std::list<Credential> &creds);
-	std::map<unsigned int, SessionParams> &getAllSessions() { return sessions_; }
+	Credential& getLocalUserCredentials() { return localCreds_; }
+
+	bool getAllCredentials( std::list< Credential >& creds );
+	bool setAllCredentials( std::list< Credential >& creds );
+
+	std::map< unsigned int, SessionParams >& getAllSessions() { return sessions_; }
 
 protected:
-	Credential localCreds_;
-	std::map<unsigned int, SessionParams> sessions_;
+	Credential                              localCreds_;
+	std::map< unsigned int, SessionParams > sessions_;
 };
 
-#endif // __INCLUDE_ServerAdminSessions_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAdminSessions_hpp_INCLUDE__

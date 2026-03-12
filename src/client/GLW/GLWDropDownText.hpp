@@ -27,20 +27,20 @@
 class GLWDropDownText : public GLWDropDown
 {
 public:
-	GLWDropDownText(float x = 0.0f, float y = 0.0f, float w = 0.0f);
+	GLWDropDownText( float x = 0.0f, float y = 0.0f, float w = 0.0f );
 	virtual ~GLWDropDownText();
 
-	void addText(const LangString &text, const std::string &datatext);
-	void setCurrentText(const LangString &text);
-	LangString &getCurrentText();
-	const char *getCurrentDataText();
+	void        addText( const LangString& text, const std::string& datatext );
+	void        setCurrentText( const LangString& text );
+	LangString& getCurrentText();
+	const char* getCurrentDataText();
 
-	bool isSelected(const LangString &text);
+	bool isSelected( const LangString& text );
 
 	// Inherited from GLWidget
 	virtual void draw();
 
-	REGISTER_CLASS_HEADER(GLWDropDownText);
+	REGISTER_CLASS_HEADER( GLWDropDownText );
 };
 
-#endif // __INCLUDE_GLWDropDownText_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWDropDownText_hpp_INCLUDE__

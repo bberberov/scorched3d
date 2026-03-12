@@ -26,37 +26,28 @@
 class TargetList
 {
 public:
-	TargetList() :
-		objects_(nullptr)
-	{
-		clear();
-	}
-	~TargetList()
-	{
-		clear();
-	}
+	TargetList() : objects_( nullptr ) { clear(); }
+
+	~TargetList() { clear(); }
 
 	void clear()
 	{
-		delete [] objects_;
-		objects_ = nullptr;
+		delete[] objects_;
+		objects_    = nullptr;
 		lastObject_ = nullptr;
-		capacity_ = 0;
-		count_ = 0;
+		capacity_   = 0;
+		count_      = 0;
 	}
 
-	bool empty()
-	{
-		return (count_ == 0);
-	}
+	bool empty() { return ( count_ == 0 ); }
 
 	void reset()
 	{
-		count_ = 0;
+		count_      = 0;
 		lastObject_ = objects_;
 	}
 
-	void setCapacity(int capacity)
+	void setCapacity( int capacity )
 	{
 		clear();
 		capacity_ = capacity;
@@ -64,21 +55,27 @@ public:
 		reset();
 	}
 
-	void **add(void *obj)
+	void** add( void* obj )
 	{
-		if (count_ == capacity_)
+		if ( count_ == capacity_ )
 		{
-			if (capacity_ == 0) capacity_ = 128;
-			else capacity_ *= 2;
-
-			void **newObjects = new void*[capacity_];
-			memset(newObjects, 0, sizeof(void*) * capacity_);
-			if (objects_)
+			if ( capacity_ == 0 )
 			{
-				memcpy(newObjects, objects_, sizeof(void *) * count_);
-				delete [] objects_;
+				capacity_ = 128;
 			}
-			objects_ = newObjects;
+			else
+			{
+				capacity_ *= 2;
+			}
+
+			void** newObjects = new void*[capacity_];
+			memset( newObjects, 0, sizeof( void* ) * capacity_ );
+			if ( objects_ )
+			{
+				memcpy( newObjects, objects_, sizeof( void* ) * count_ );
+				delete[] objects_;
+			}
+			objects_    = newObjects;
 			lastObject_ = &newObjects[count_];
 		}
 
@@ -86,51 +83,50 @@ public:
 		count_++;
 		lastObject_++;
 
-		return (lastObject_ - 1);
+		return ( lastObject_ - 1 );
 	}
 
-	int getObjectCount() { return count_; }
-	void **getObjects() { return objects_; }
+	// clang-format off
+	// uncrustify off
+	int    getObjectCount() { return count_; }
+	void** getObjects()     { return objects_; }
+	// uncrustify on
+	// clang-format on
 
 private:
-	int count_, capacity_;
-	void **objects_, **lastObject_;
+	int    count_, capacity_;
+	void** objects_;
+	void** lastObject_;
 };
 
 class TargetListIterator
 {
 public:
-	TargetListIterator() :
-		i_(0),
-		list_(nullptr),
-		current_(nullptr)
-	{}
+	TargetListIterator() : i_( 0 ), list_( nullptr ), current_( nullptr ) {}
 
-	TargetListIterator(TargetList &list)
-	{
-		init(list);
-	}
+	TargetListIterator( TargetList& list ) { init( list ); }
 
-	void init(TargetList &list)
+	void init( TargetList& list )
 	{
-		list_ = &list;
+		list_    = &list;
 		current_ = list_->getObjects();
-		i_ = 0;
+		i_       = 0;
 	}
 
-	void *getNext()
+	void* getNext()
 	{
-		if (i_ == list_->getObjectCount()) return 0;
-		void *result = *current_;
+		if ( i_ == list_->getObjectCount() ) return 0;
+		void* result = *current_;
 		i_++;
 		current_++;
+
 		return result;
 	}
 
 private:
-	int i_;
-	TargetList *list_;
-	void **current_;
+	int         i_;
+	TargetList* list_;
+	void**      current_;
 };
 
-#endif // __INCLUDE_TargetList_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetList_hpp_INCLUDE__

@@ -28,8 +28,8 @@
 class GLWIconListI
 {
 public:
-	virtual void selected(unsigned int id, int position) = 0;
-	virtual void chosen(unsigned int id, int position) = 0;
+	virtual void selected( unsigned int id, int position ) = 0;
+	virtual void chosen( unsigned int id, int position )   = 0;
 };
 
 class GLWIconListItem
@@ -37,7 +37,7 @@ class GLWIconListItem
 public:
 	virtual ~GLWIconListItem();
 
-	virtual void draw(float x, float y, float w) = 0;
+	virtual void draw( float x, float y, float w ) = 0;
 };
 
 class GLWIconList : public GLWidget
@@ -49,44 +49,50 @@ public:
 	};
 
 	GLWIconList(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f,
-		float squaresHeight = 40.0f,
-		unsigned int flags = 0
+		float        x             = 0.0f,
+		float        y             = 0.0f,
+		float        w             = 0.0f,
+		float        h             = 0.0f,
+		float        squaresHeight = 40.0f,
+		unsigned int flags         = 0
 	);
 	virtual ~GLWIconList();
 
-	void addItem(GLWIconListItem *item);
+	void addItem( GLWIconListItem* item );
 	void clear();
 
-	void setFlags(unsigned int flags) { flags_ = flags; }
-	void setHandler(GLWIconListI *handler) { handler_ = handler; }
+	// clang-format off
+	// uncrustify off
+	void setFlags( unsigned int flags )      { flags_ = flags; }
+	void setHandler( GLWIconListI* handler ) { handler_ = handler; }
+	// uncrustify on
+	// clang-format on
 
-	GLWIconListItem *getSelected();
-	std::vector<GLWIconListItem *> &getItems() { return items_; }
+	GLWIconListItem* getSelected();
+
+	std::vector< GLWIconListItem* >& getItems() { return items_; }
 
 	// Inhertied from GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWIconList);
+	REGISTER_CLASS_HEADER( GLWIconList );
+
 protected:
-	std::vector<GLWIconListItem *> items_;
-	GLWScrollWBackwards scrollBar_;
-	GLWIconListI *handler_;
-	float squaresHeight_;
-	int selected_;
-	unsigned int flags_;
+	std::vector< GLWIconListItem* > items_;
+	GLWScrollWBackwards             scrollBar_;
+	GLWIconListI*                   handler_;
+	float                           squaresHeight_;
+	int                             selected_;
+	unsigned int                    flags_;
 
 private:
-	GLWIconList(const GLWIconList &);
-	const GLWIconList & operator=(const GLWIconList &);
+	GLWIconList( const GLWIconList& );
+	const GLWIconList& operator=( const GLWIconList& );
 };
 
-#endif // __INCLUDE_GLWIconList_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWIconList_hpp_INCLUDE__

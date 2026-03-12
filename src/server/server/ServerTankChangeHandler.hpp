@@ -24,18 +24,16 @@
 #include <coms/ComsMessageHandler.hpp>
 
 class Tank;
+
 class ServerTankChangeHandler : public ComsMessageHandlerI
 {
 public:
-	ServerTankChangeHandler(ComsMessageHandler &comsMessageHandler);
+	ServerTankChangeHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerTankChangeHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
-	static bool filterName(Tank *tank, LangString &sentname);
+	static bool filterName( Tank* tank, LangString& sentname );
 };
 
-#endif // __INCLUDE_ServerTankChangeHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTankChangeHandler_hpp_INCLUDE__

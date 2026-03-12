@@ -23,24 +23,27 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponScatterDirection  : public Weapon
+class WeaponScatterDirection : public Weapon
 {
 public:
 	WeaponScatterDirection();
 	virtual ~WeaponScatterDirection();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponScatterDirection, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponScatterDirection, AccessoryPart::AccessoryWeapon );
 
 protected:
 	FixedVector direction_, directionOffset_;
-	Weapon *aimedWeapon_;
+	Weapon*     aimedWeapon_;
 };
 
-#endif // __INCLUDE_WeaponScatterDirection_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponScatterDirection_hpp_INCLUDE__

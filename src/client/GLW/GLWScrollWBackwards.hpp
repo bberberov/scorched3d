@@ -23,20 +23,17 @@
 
 #include <GLW/GLWScrollW.hpp>
 
-class GLWScrollWBackwards  : 
-	public GLWScrollW
+class GLWScrollWBackwards : public GLWScrollW
 {
 public:
-	GLWScrollWBackwards(float x = 0.0f, float y = 0.0f, 
-		float h = 0.0f, 
-		int min = 0, int max = 0, int see = 1);
+	GLWScrollWBackwards( float x = 0.0f, float y = 0.0f, float h = 0.0f, int min = 0, int max = 0, int see = 1 );
 	virtual ~GLWScrollWBackwards();
 
-	virtual void setCurrent(int c);
-	virtual int getCurrent();
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void setCurrent( int c );
+	virtual int  getCurrent();
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWScrollWBackwards);
+	REGISTER_CLASS_HEADER( GLWScrollWBackwards );
 };
 
-#endif // __INCLUDE_GLWScrollWBackwards_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScrollWBackwards_hpp_INCLUDE__

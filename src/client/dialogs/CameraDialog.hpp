@@ -28,19 +28,19 @@
 class CameraDialog : public GLWWindow
 {
 public:
-	static CameraDialog *instance();
+	static CameraDialog* instance();
 
-	TargetCamera &getCamera() { return targetCam_; }
+	TargetCamera& getCamera() { return targetCam_; }
 
 	// Inherited from GLWWindow
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void saveSettings(XMLNode *node);
-	virtual void loadSettings(XMLNode *node, bool resetPositions);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void saveSettings( XMLNode* node );
+	virtual void loadSettings( XMLNode* node, bool resetPositions );
 
 protected:
-	static CameraDialog *instance_;
+	static CameraDialog* instance_;
 
 	TargetCamera targetCam_;
 
@@ -51,4 +51,4 @@ private:
 	virtual ~CameraDialog();
 };
 
-#endif // __INCLUDE_CameraDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_CameraDialog_hpp_INCLUDE__

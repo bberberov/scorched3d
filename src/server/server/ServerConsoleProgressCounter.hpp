@@ -28,20 +28,20 @@
 class ServerConsoleProgressCounter : public ProgressCounterI, public LoggerI
 {
 public:
-	static ServerConsoleProgressCounter *instance();
+	static ServerConsoleProgressCounter* instance();
 
-	ProgressCounter *getProgressCounter() { return &progressCounter_; }
+	ProgressCounter* getProgressCounter() { return &progressCounter_; }
 
-	virtual void drawHashes(int neededHashes);
-	virtual void logMessage(LoggerInfo &info);
-	virtual void operationChange(const LangString &op);
-	virtual void progressChange(const LangString &op, const float percentage);
+	virtual void drawHashes( int neededHashes );
+	virtual void logMessage( LoggerInfo& info );
+	virtual void operationChange( const LangString& op );
+	virtual void progressChange( const LangString& op, const float percentage );
 
 protected:
-	static ServerConsoleProgressCounter *instance_;
+	static ServerConsoleProgressCounter* instance_;
 
-	bool firstOp_;
-	int hashes_;
+	bool            firstOp_;
+	int             hashes_;
 	ProgressCounter progressCounter_;
 
 private:
@@ -49,4 +49,4 @@ private:
 	virtual ~ServerConsoleProgressCounter();
 };
 
-#endif // __INCLUDE_ServerConsoleProgressCounter_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerConsoleProgressCounter_hpp_INCLUDE__

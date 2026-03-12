@@ -30,37 +30,37 @@
 struct ServerBrowserRefreshEntry
 {
 	ServerBrowserRefreshEntry();
-	ServerBrowserRefreshEntry(const char *address, int position);
+	ServerBrowserRefreshEntry( const char* address, int position );
 
 	std::string address_;
-	int position_;
-	int retries_;
-	int sentTime_;
-	int recieved_;
+	int         position_;
+	int         retries_;
+	int         sentTime_;
+	int         recieved_;
 };
 
 class ServerBrowserRefresh
 {
 public:
-	ServerBrowserRefresh(ServerBrowserServerList &list);
+	ServerBrowserRefresh( ServerBrowserServerList& list );
 	virtual ~ServerBrowserRefresh();
 
 	void refreshList();
 
-	void setCancel(bool cancel) { cancel_ = cancel; }
+	void setCancel( bool cancel ) { cancel_ = cancel; }
 
 protected:
-	ServerBrowserServerList &list_;
-	std::list<ServerBrowserRefreshEntry> refreshEntries_;
-	std::map<UDPsocket, ServerBrowserRefreshEntry> entryMap_;
-	UDPpacket *sendPacketStatus_;
-	UDPpacket *sendPacketPlayers_;
-	UDPpacket *recvPacket_;
-	bool cancel_;
+	ServerBrowserServerList&                         list_;
+	std::list< ServerBrowserRefreshEntry >           refreshEntries_;
+	std::map< UDPsocket, ServerBrowserRefreshEntry > entryMap_;
+	UDPpacket*                                       sendPacketStatus_;
+	UDPpacket*                                       sendPacketPlayers_;
+	UDPpacket*                                       recvPacket_;
+	bool                                             cancel_;
 
-	void sendNextEntry(ServerBrowserRefreshEntry &entry, time_t theTime);
-	void processMessages(time_t theTime);
-	void processMessage(UDPpacket *packet, ServerBrowserRefreshEntry &entry);
+	void sendNextEntry( ServerBrowserRefreshEntry& entry, time_t theTime );
+	void processMessages( time_t theTime );
+	void processMessage( UDPpacket* packet, ServerBrowserRefreshEntry& entry );
 };
 
-#endif // __INCLUDE_ServerBrowserRefresh_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBrowserRefresh_hpp_INCLUDE__

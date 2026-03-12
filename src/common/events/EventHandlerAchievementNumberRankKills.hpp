@@ -26,12 +26,12 @@
 class EventHandlerAchievementNumberRankKills : public EventHandlerAchievementNumberRank
 {
 public:
-	EventHandlerAchievementNumberRankKills(EventHandlerDataBase *database);
+	EventHandlerAchievementNumberRankKills( EventHandlerDataBase* database );
 	virtual ~EventHandlerAchievementNumberRankKills();
 
-	virtual unsigned int getCurrentCount(Tank *tank);
+	virtual unsigned int getCurrentCount( Tank* tank );
 
-	virtual void tankKilled(Tank *firedTank, Tank *deadTank, Weapon *weapon);
+	virtual void tankKilled( Tank* firedTank, Tank* deadTank, Weapon* weapon );
 };
 
-#endif // __INCLUDE_EventHandlerAchievementNumberRankKills_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerAchievementNumberRankKills_hpp_INCLUDE__

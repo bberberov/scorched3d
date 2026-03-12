@@ -28,29 +28,33 @@
 class FrameTimer : public GameStateI
 {
 public:
-	static FrameTimer *instance();
+	static FrameTimer* instance();
 
-	float getFPS() { return fps_; }
-	unsigned int getLastStateCount() { return lastStateCount_; }
-	unsigned int getLastTris() { return lastTris_; }
+	// clang-format off
+	// uncrustify off
+	float        getFPS()             { return fps_; }
+	unsigned int getLastStateCount()  { return lastStateCount_; }
+	unsigned int getLastTris()        { return lastTris_; }
 	unsigned int getLastTextureSets() { return lastTextureSets_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from GameStateI
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned state, float frameTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float frameTime );
 
 protected:
-	static FrameTimer *instance_;
+	static FrameTimer* instance_;
 
-	float totalTime_;
-	int frameCount_;
-	Clock frameClock_;
+	float        totalTime_;
+	int          frameCount_;
+	Clock        frameClock_;
 	unsigned int lastStateCount_, lastTris_, lastTextureSets_;
-	float fps_;
+	float        fps_;
 
 private:
 	FrameTimer();
 	virtual ~FrameTimer();
 };
 
-#endif // __INCLUDE_FrameTimer_hpp_INCLUDE__
+#endif  // __INCLUDE_FrameTimer_hpp_INCLUDE__

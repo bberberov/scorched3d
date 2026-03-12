@@ -30,23 +30,27 @@ class ComsLinesMessage : public ComsMessage
 public:
 	static ComsMessageType ComsLinesMessageType;
 
-	ComsLinesMessage(unsigned int playerId = 0);
+	ComsLinesMessage( unsigned int playerId = 0 );
 	virtual ~ComsLinesMessage();
 
-	unsigned int getPlayerId() { return playerId_; }
-	std::list<Vector> &getLines() { return lines_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int         getPlayerId() { return playerId_; }
+	std::list< Vector >& getLines()    { return lines_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int playerId_;
-	std::list<Vector> lines_;
+	unsigned int        playerId_;
+	std::list< Vector > lines_;
 
 private:
-	ComsLinesMessage(const ComsLinesMessage &);
-	const ComsLinesMessage & operator=(const ComsLinesMessage &);
+	ComsLinesMessage( const ComsLinesMessage& );
+	const ComsLinesMessage& operator=( const ComsLinesMessage& );
 };
 
-#endif // __INCLUDE_ComsLinesMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsLinesMessage_hpp_INCLUDE__

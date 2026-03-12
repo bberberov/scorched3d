@@ -30,55 +30,58 @@
 class ClientChannelManager
 {
 public:
-	static ClientChannelManager *instance();
+	static ClientChannelManager* instance();
 
-	void showText(const ChannelText &text);
-	void sendText(const ChannelText &text);
+	void showText( const ChannelText& text );
+	void sendText( const ChannelText& text );
 
-	bool channelActive(const std::string &channelName);
+	bool channelActive( const std::string& channelName );
 
-	std::set<unsigned int> &getMutedPlayers() { return mutedPlayers_; }
+	std::set< unsigned int >& getMutedPlayers() { return mutedPlayers_; }
 
-	bool registerClient(ClientChannelManagerI *reciever,
-		std::list<std::string> &channels);
-	bool deregisterClient(ClientChannelManagerI *reciever);
-	bool changeRegistration(ClientChannelManagerI *reciever,
-		std::list<std::string> &channels);
+	bool registerClient( ClientChannelManagerI* reciever, std::list< std::string >& channels );
+	bool deregisterClient( ClientChannelManagerI* reciever );
+	bool changeRegistration( ClientChannelManagerI* reciever, std::list< std::string >& channels );
 
-	void addChannel(const char *lookfor, const char *channel);
-	void removeChannel(const char *channel);
+	void addChannel( const char* lookfor, const char* channel );
+	void removeChannel( const char* channel );
 
 protected:
-	static ClientChannelManager *instance_;
+	static ClientChannelManager* instance_;
 
 	static unsigned int nextRecieverId_;
 
 	class ChannelEntry
 	{
 	public:
-		ChannelEntry(ClientChannelManagerI *user);
+		ChannelEntry( ClientChannelManagerI* user );
 
-		ClientChannelManagerI *getUser() { return user_; }
-		void setChannels(std::list<ChannelDefinition> &channels);
-		std::set<std::string> &getChannels() { return channels_; }
+		// clang-format off
+		// uncrustify off
+		ClientChannelManagerI* getUser()     { return user_; }
+		void setChannels( std::list<ChannelDefinition>& channels );
+		std::set<std::string>& getChannels() { return channels_; }
+		// uncrustify on
+		// clang-format on
 
-		bool hasChannel(const std::string &channel);
+		bool hasChannel( const std::string& channel );
 
 	protected:
-		ClientChannelManagerI *user_;
-		std::set<std::string> channels_;
+		ClientChannelManagerI*  user_;
+		std::set< std::string > channels_;
 	};
 
-	std::set<unsigned int> mutedPlayers_;
-	std::map<unsigned int, ChannelEntry *> recievers_;
-	unsigned int getChannelEntry(ClientChannelManagerI *reciever);
-	void say(std::vector<ConsoleRuleValue> &values);
-	bool processChannelMessage(NetMessage &message, NetBufferReader &reader);
-	bool processChannelTextMessage(NetMessage &message, NetBufferReader &reader);
+	std::set< unsigned int >                mutedPlayers_;
+	std::map< unsigned int, ChannelEntry* > recievers_;
+
+	unsigned int getChannelEntry( ClientChannelManagerI* reciever );
+	void         say( std::vector< ConsoleRuleValue >& values );
+	bool         processChannelMessage( NetMessage& message, NetBufferReader& reader );
+	bool         processChannelTextMessage( NetMessage& message, NetBufferReader& reader );
 
 private:
 	ClientChannelManager();
 	virtual ~ClientChannelManager();
 };
 
-#endif // __INCLUDE_ClientChannelManager_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientChannelManager_hpp_INCLUDE__

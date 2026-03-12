@@ -27,6 +27,7 @@
 
 class Tank;
 class ComsPlayedMoveMessage;
+
 class ServerTurnsFree : public ServerTurns
 {
 public:
@@ -34,12 +35,12 @@ public:
 	virtual ~ServerTurnsFree();
 
 	virtual void internalEnterState();
-	virtual void internalSimulate(fixed frameTime);
-	virtual void internalMoveFinished(ComsPlayedMoveMessage &playedMessage);
+	virtual void internalSimulate( fixed frameTime );
+	virtual void internalMoveFinished( ComsPlayedMoveMessage& playedMessage );
 
 protected:
-	unsigned int nextMoveId_;
-	std::list<unsigned int> waitingPlayers_;
+	unsigned int              nextMoveId_;
+	std::list< unsigned int > waitingPlayers_;
 };
 
-#endif // __INCLUDE_ServerTurnsFree_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTurnsFree_hpp_INCLUDE__

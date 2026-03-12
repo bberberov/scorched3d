@@ -26,9 +26,13 @@
 class ToolTipResource : public ToolTip
 {
 public:
-	ToolTipResource(unsigned int type, 
-		const std::string &titleKey, const std::string &titleValue,
-		const std::string &textKey, const std::string &textValue);
+	ToolTipResource(
+		unsigned int       type,
+		const std::string& titleKey,
+		const std::string& titleValue,
+		const std::string& textKey,
+		const std::string& textValue
+	);
 	virtual ~ToolTipResource();
 
 	// Called just before the ToolTipResource is shown
@@ -40,4 +44,4 @@ protected:
 	std::string textKey_, textValue_;
 };
 
-#endif // __INCLUDE_ToolTipResource_hpp_INCLUDE__
+#endif  // __INCLUDE_ToolTipResource_hpp_INCLUDE__

@@ -40,7 +40,7 @@ public:
 	opacity.  When creating an alpha bitmap the bitmap is created
 	in RGBA format, otherwise in RGB format.
 	*/
-	static Image loadFromFile(const char *filename, bool alpha = false);
+	static Image loadFromFile( const char* filename, bool alpha = false );
 };
 
-#endif // __INCLUDE_ImageBitmapFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageBitmapFactory_hpp_INCLUDE__

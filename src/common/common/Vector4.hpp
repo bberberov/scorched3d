@@ -23,39 +23,36 @@
 
 #include <common/Vector.hpp>
 
-class Vector4  
+class Vector4
 {
 public:
-	Vector4()
-	{
-		V[0] = V[1] = V[2] = V[3] = 0.0f;
-	}
+	Vector4() { V[0] = V[1] = V[2] = V[3] = 0.0f; }
 
-	Vector4(const Vector &v, float a = 1.0f)
+	Vector4( const Vector& v, float a = 1.0f )
 	{
-		V[0] = ((Vector &) v)[0];
-		V[1] = ((Vector &) v)[1];
-		V[2] = ((Vector &) v)[2];
+		V[0] = ( (Vector&)v )[0];
+		V[1] = ( (Vector&)v )[1];
+		V[2] = ( (Vector&)v )[2];
 		V[3] = a;
 	}
 
-	Vector4(const Vector4 &c1, const Vector4 &c2, float scal) 
+	Vector4( const Vector4& c1, const Vector4& c2, float scal )
 	{
-		V[0] = (c1[0]*(1-scal) + c2[0]*scal);
-		V[1] = (c1[1]*(1-scal) + c2[1]*scal);
-		V[2] = (c1[2]*(1-scal) + c2[2]*scal);
-		V[3] = (c1[3]*(1-scal) + c2[3]*scal);
+		V[0] = ( c1[0] * ( 1 - scal ) + c2[0] * scal );
+		V[1] = ( c1[1] * ( 1 - scal ) + c2[1] * scal );
+		V[2] = ( c1[2] * ( 1 - scal ) + c2[2] * scal );
+		V[3] = ( c1[3] * ( 1 - scal ) + c2[3] * scal );
 	}
 
-	Vector4(const Vector4 &v)
+	Vector4( const Vector4& v )
 	{
-		V[0] = ((Vector4 &) v)[0];
-		V[1] = ((Vector4 &) v)[1];
-		V[2] = ((Vector4 &) v)[2];
-		V[3] = ((Vector4 &) v)[3];
+		V[0] = ( (Vector4&)v )[0];
+		V[1] = ( (Vector4&)v )[1];
+		V[2] = ( (Vector4&)v )[2];
+		V[3] = ( (Vector4&)v )[3];
 	}
 
-	Vector4(const float Pt[4])
+	Vector4( const float Pt[4] )
 	{
 		V[0] = Pt[0];
 		V[1] = Pt[1];
@@ -63,7 +60,7 @@ public:
 		V[3] = Pt[3];
 	}
 
-	Vector4(const float ptA, const float ptB, const float ptC, float ptD=0.0f)
+	Vector4( const float ptA, const float ptB, const float ptC, float ptD = 0.0f )
 	{
 		V[0] = ptA;
 		V[1] = ptB;
@@ -71,30 +68,24 @@ public:
 		V[3] = ptD;
 	}
 
-	Vector4(const int ptA, const int ptB, const int ptC, const int ptD=0)
+	Vector4( const int ptA, const int ptB, const int ptC, const int ptD = 0 )
 	{
-		V[0] = (float) ptA;
-		V[1] = (float) ptB;
-		V[2] = (float) ptC;
-		V[3] = (float) ptD;
+		V[0] = (float)ptA;
+		V[1] = (float)ptB;
+		V[2] = (float)ptC;
+		V[3] = (float)ptD;
 	}
 
-	void zero()
+	void zero() { V[0] = V[1] = V[2] = V[3] = 0.0f; }
+
+	bool operator==( const Vector4& Vin1 )
 	{
-		V[0] = V[1] = V[2] = V[3] = 0.0f;
+		return ( Vin1.V[0] == V[0] && Vin1.V[1] == V[1] && Vin1.V[2] == V[2] && Vin1.V[3] == V[3] );
 	}
 
-	bool operator==(const Vector4 &Vin1)
-	{
-		return (Vin1.V[0]==V[0] && Vin1.V[1]==V[1] && Vin1.V[2]==V[2] && Vin1.V[3]==V[3]);
-	}
+	bool operator!=( const Vector4& Vin1 ) { return ! ( ( *this ) == Vin1 ); }
 
-	bool operator!=(const Vector4 &Vin1)
-	{
-		return !((*this) == Vin1);
-	}
-
-	Vector4 &operator+=(const Vector4 &qc)
+	Vector4& operator+=( const Vector4& qc )
 	{
 		V[0] += qc.V[0];
 		V[1] += qc.V[1];
@@ -104,47 +95,60 @@ public:
 		return *this;
 	}
 
-	Vector4 operator*(const Vector4 &qc)
+	Vector4 operator*( const Vector4& qc )
 	{
-		Vector4 qa;
-		Vector4 &qb = *this;
-		
+		Vector4  qa;
+		Vector4& qb = *this;
+
 		// dQMultiply0 from ODE
-		qa[0] = qb[0]*qc[0] - qb[1]*qc[1] - qb[2]*qc[2] - qb[3]*qc[3];
-		qa[1] = qb[0]*qc[1] + qb[1]*qc[0] + qb[2]*qc[3] - qb[3]*qc[2];
-		qa[2] = qb[0]*qc[2] + qb[2]*qc[0] + qb[3]*qc[1] - qb[1]*qc[3];
-		qa[3] = qb[0]*qc[3] + qb[3]*qc[0] + qb[1]*qc[2] - qb[2]*qc[1];
-	
+		qa[0] = qb[0] * qc[0] - qb[1] * qc[1] - qb[2] * qc[2] - qb[3] * qc[3];
+		qa[1] = qb[0] * qc[1] + qb[1] * qc[0] + qb[2] * qc[3] - qb[3] * qc[2];
+		qa[2] = qb[0] * qc[2] + qb[2] * qc[0] + qb[3] * qc[1] - qb[1] * qc[3];
+		qa[3] = qb[0] * qc[3] + qb[3] * qc[0] + qb[1] * qc[2] - qb[2] * qc[1];
+
 		return qa;
 	}
 
 	///> component wise linear interpolation
-	Vector4 lerp(Vector4 &c1, Vector4 &c2) 
+	Vector4 lerp( Vector4& c1, Vector4& c2 )
 	{
 		return Vector4(
-			c1[0] * (1.0f - V[0]) + c2[0] * V[0],
-			c1[1] * (1.0f - V[1]) + c2[1] * V[1],
-			c1[2] * (1.0f - V[2]) + c2[2] * V[2],
-			c1[3] * (1.0f - V[3]) + c2[3] * V[3]);
+			c1[0] * ( 1.0f - V[0] ) + c2[0] * V[0],
+			c1[1] * ( 1.0f - V[1] ) + c2[1] * V[1],
+			c1[2] * ( 1.0f - V[2] ) + c2[2] * V[2],
+			c1[3] * ( 1.0f - V[3] ) + c2[3] * V[3]
+		);
 	}
 
 	void Normalize();
 
 	// Quaternion maths
-	void setQuatFromAxisAndAngle(Vector &axis, float angle);
-	void getRotationMatrix(float *R); // R = float[4*3];
-	void getOpenGLRotationMatrix(float *R); // R = float[16];
-	void getRelativeVector(Vector &result, Vector &position);
-	static void dDQfromW(Vector4 &dq, Vector &w, Vector4 &q);
+	void        setQuatFromAxisAndAngle( Vector& axis, float angle );
+	void        getRotationMatrix( float* R );        // R = float[4*3];
+	void        getOpenGLRotationMatrix( float* R );  // R = float[16];
+	void        getRelativeVector( Vector& result, Vector& position );
+	static void dDQfromW( Vector4& dq, Vector& w, Vector4& q );
 
-	float &operator[](const int m) { DIALOG_ASSERT(m<=3); return V[m]; }
-	float const &operator[](const int m) const { DIALOG_ASSERT(m<=3); return V[m]; }
+	float& operator[]( const int m )
+	{
+		DIALOG_ASSERT( m <= 3 );
+
+		return V[m];
+	}
+
+	float const& operator[]( const int m ) const
+	{
+		DIALOG_ASSERT( m <= 3 );
+
+		return V[m];
+	}
 
 	operator float*() { return V; }
-	static Vector4 &getNullVector();
+
+	static Vector4& getNullVector();
 
 protected:
 	float V[4];
 };
 
-#endif // __INCLUDE_Vector4_hpp_INCLUDE__
+#endif  // __INCLUDE_Vector4_hpp_INCLUDE__

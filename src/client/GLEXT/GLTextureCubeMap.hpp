@@ -30,30 +30,33 @@ public:
 	GLTextureCubeMap();
 	virtual ~GLTextureCubeMap();
 
-	virtual void draw(bool force = false);
+	virtual void draw( bool force = false );
 
-	bool create(Image &bitmap, 
-			bool mipMap = true);
-	bool create(const void * data, 
-			GLint width, 
-			GLint height, 
-			GLint components, 
-			GLint alignment,
-			GLenum format, 
-			bool mipMap);
+	bool create( Image& bitmap, bool mipMap = true );
+	bool create(
+		const void* data,
+		GLint       width,
+		GLint       height,
+		GLint       components,
+		GLint       alignment,
+		GLenum      format,
+		bool        mipMap
+	);
 
 	bool textureValid();
 
 protected:
 	GLuint cubeTexNum_[6];
 
-	bool createTexture(const void * data, 
-						GLint width, 
-						GLint height, 
-						GLint components, 
-						GLint alignment,
-						GLenum format, 
-						bool mipMap);
+	bool createTexture(
+		const void* data,
+		GLint       width,
+		GLint       height,
+		GLint       components,
+		GLint       alignment,
+		GLenum      format,
+		bool        mipMap
+	);
 };
 
-#endif // __INCLUDE_GLTextureCubeMap_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureCubeMap_hpp_INCLUDE__

@@ -27,18 +27,19 @@ class TankLoadedSimAction : public SimAction
 {
 public:
 	TankLoadedSimAction();
-	TankLoadedSimAction(unsigned int playerId, bool notSpectator);
+	TankLoadedSimAction( unsigned int playerId, bool notSpectator );
 	virtual ~TankLoadedSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankLoadedSimAction);
+	REGISTER_CLASS_HEADER( TankLoadedSimAction );
+
 protected:
 	unsigned int playerId_;
-	bool notSpectator_;
+	bool         notSpectator_;
 };
 
-#endif // __INCLUDE_TankLoadedSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankLoadedSimAction_hpp_INCLUDE__

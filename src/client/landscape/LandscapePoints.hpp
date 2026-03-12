@@ -33,10 +33,10 @@ public:
 	void generate();
 	void draw();
 
-	std::vector<Vector> &getPoints() { return points_; }
+	std::vector< Vector >& getPoints() { return points_; }
 
 protected:
-	std::vector<Vector> points_;
+	std::vector< Vector > points_;
 };
 
-#endif // __INCLUDE_LandscapePoints_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapePoints_hpp_INCLUDE__

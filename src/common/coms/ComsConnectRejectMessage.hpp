@@ -28,21 +28,21 @@ class ComsConnectRejectMessage : public ComsMessage
 public:
 	static ComsMessageType ComsConnectRejectMessageType;
 
-	ComsConnectRejectMessage(const char *text = "");
+	ComsConnectRejectMessage( const char* text = "" );
 	virtual ~ComsConnectRejectMessage();
 
-	const char *getText() { return text_.c_str(); }
+	const char* getText() { return text_.c_str(); }
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	std::string text_;
 
 private:
-	ComsConnectRejectMessage(const ComsConnectRejectMessage &);
-	const ComsConnectRejectMessage & operator=(const ComsConnectRejectMessage &);
+	ComsConnectRejectMessage( const ComsConnectRejectMessage& );
+	const ComsConnectRejectMessage& operator=( const ComsConnectRejectMessage& );
 };
 
-#endif // __INCLUDE_ComsConnectRejectMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsConnectRejectMessage_hpp_INCLUDE__

@@ -29,23 +29,26 @@ public:
 	static ComsMessageType ComsNetStatMessageType;
 
 	ComsNetStatMessage();
-	ComsNetStatMessage(fixed roundTripTime, fixed sendStepSize);
+	ComsNetStatMessage( fixed roundTripTime, fixed sendStepSize );
 	virtual ~ComsNetStatMessage();
 
+	// clang-format off
+	// uncrustify off
 	fixed getRoundTripTime() { return roundTripTime_; }
-	fixed getSendStepSize() { return sendStepSize_; }
+	fixed getSendStepSize()  { return sendStepSize_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	fixed roundTripTime_, sendStepSize_;
 
 private:
-	ComsNetStatMessage(const ComsNetStatMessage &);
-	const ComsNetStatMessage & operator=(const ComsNetStatMessage &);
-
+	ComsNetStatMessage( const ComsNetStatMessage& );
+	const ComsNetStatMessage& operator=( const ComsNetStatMessage& );
 };
 
-#endif // __INCLUDE_ComsNetStatMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsNetStatMessage_hpp_INCLUDE__

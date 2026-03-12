@@ -26,22 +26,22 @@
 class PhysicsParticle;
 class WeaponFireContext;
 class ScorchedContext;
+
 class ParticleGroup : public ObjectGroupEntry
 {
 public:
-	ParticleGroup(ScorchedContext &context, 
-		PhysicsParticle *physicsParticle, WeaponFireContext *weaponFireContext);
+	ParticleGroup( ScorchedContext& context, PhysicsParticle* physicsParticle, WeaponFireContext* weaponFireContext );
 	virtual ~ParticleGroup();
 
-	virtual void *getObject();
+	virtual void*                        getObject();
 	virtual ObjectGroupEntry::ObjectType getType();
-	virtual FixedVector &getPosition();
-	virtual FixedVector &getVelocity();
-	virtual unsigned int getPlayerId();
+	virtual FixedVector&                 getPosition();
+	virtual FixedVector&                 getVelocity();
+	virtual unsigned int                 getPlayerId();
 
 protected:
-	PhysicsParticle *physicsParticle_;
-	WeaponFireContext *weaponFireContext_;
+	PhysicsParticle*   physicsParticle_;
+	WeaponFireContext* weaponFireContext_;
 };
 
-#endif // __INCLUDE_ParticleGroup_hpp_INCLUDE__
+#endif  // __INCLUDE_ParticleGroup_hpp_INCLUDE__

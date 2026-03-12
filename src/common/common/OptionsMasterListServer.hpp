@@ -27,20 +27,24 @@
 class OptionsMasterListServer
 {
 public:
-	static OptionsMasterListServer *instance();
+	static OptionsMasterListServer* instance();
 
-	const char *getMasterListServer() { return masterListServer_; }
-	const char *getMasterListServerURI() { return masterListServerURI_; }
-	const char *getMasterListBackupServer() { return masterListBackupServer_; }
-	const char *getMasterListBackupServerURI() { return masterListBackupServerURI_; }
-	const char *getChatServer() { return chatServer_; }
-	const char *getChatServerURI() { return chatServerURI_; }
-	int getMasterListServerTimeout() { return masterListServerTimeout_; }
+	// clang-format off
+	// uncrustify off
+	const char* getMasterListServer()          { return masterListServer_; }
+	const char* getMasterListServerURI()       { return masterListServerURI_; }
+	const char* getMasterListBackupServer()    { return masterListBackupServer_; }
+	const char* getMasterListBackupServerURI() { return masterListBackupServerURI_; }
+	const char* getChatServer()                { return chatServer_; }
+	const char* getChatServerURI()             { return chatServerURI_; }
+	int         getMasterListServerTimeout()   { return masterListServerTimeout_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static OptionsMasterListServer *instance_;
+	static OptionsMasterListServer* instance_;
 
-	std::list<OptionEntry *> options_;
+	std::list< OptionEntry* > options_;
 
 	OptionEntryString masterListServer_;
 	OptionEntryString masterListServerURI_;
@@ -48,7 +52,7 @@ protected:
 	OptionEntryString masterListBackupServerURI_;
 	OptionEntryString chatServer_;
 	OptionEntryString chatServerURI_;
-	OptionEntryInt masterListServerTimeout_;
+	OptionEntryInt    masterListServerTimeout_;
 
 	bool readOptionsFromFile();
 	bool writeOptionsToFile();
@@ -58,4 +62,4 @@ private:
 	virtual ~OptionsMasterListServer();
 };
 
-#endif // __INCLUDE_OptionsMasterListServer_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionsMasterListServer_hpp_INCLUDE__

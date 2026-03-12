@@ -27,42 +27,48 @@ class GLWSelectorPart
 {
 public:
 	GLWSelectorPart(
-		GLWSelectorI *user,
-		int basePosition,
-		float x, float y,
-		std::list<GLWSelectorEntry> &entries,
-		bool transparent,
-		GLWSelectorPart *parent,
-		int parentPosition
+		GLWSelectorI*                  user,
+		int                            basePosition,
+		float                          x,
+		float                          y,
+		std::list< GLWSelectorEntry >& entries,
+		bool                           transparent,
+		GLWSelectorPart*               parent,
+		int                            parentPosition
 	);
 	virtual ~GLWSelectorPart();
 
 	void draw();
-	void mouseDown(float x, float y, bool &hit);
+	void mouseDown( float x, float y, bool& hit );
 
+	// clang-format off
+	// uncrustify off
 	// Links the SelectorParts together for popups
-	GLWSelectorPart *getParent() { return parent_; }
-	GLWSelectorPart *getChild() { return child_; }
+	GLWSelectorPart* getParent() { return parent_; }
+	GLWSelectorPart* getChild()  { return child_; }
+
 	int getParentPosition() { return parentPosition_; }
-	
+
 	float getSelectedHeight() { return selectedHeight_; }
-	float getSelectedWidth() { return selectedWidth_; }
+	float getSelectedWidth()  { return selectedWidth_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	GLWSelectorI *user_;
-	int basePosition_;
-	std::list<GLWSelectorEntry> entries_;
-	float selectedHeight_, selectedWidth_;
-	float selectedX_, selectedY_;
-	float selectedIndent_;
-	bool transparent_;
-	bool hasSelectedEntry_;
-	bool hasPopupEntry_;
-	GLWSelectorPart *parent_; // If this is popup it will have a parent
-	GLWSelectorPart *child_; // If this has a popup it may have a child
-	int parentPosition_;
+	GLWSelectorI*                 user_;
+	int                           basePosition_;
+	std::list< GLWSelectorEntry > entries_;
+	float                         selectedHeight_, selectedWidth_;
+	float                         selectedX_, selectedY_;
+	float                         selectedIndent_;
+	bool                          transparent_;
+	bool                          hasSelectedEntry_;
+	bool                          hasPopupEntry_;
+	GLWSelectorPart*              parent_;  // If this is popup it will have a parent
+	GLWSelectorPart*              child_;   // If this has a popup it may have a child
+	int                           parentPosition_;
 
-	void calculateDimensions(float x, float y);
+	void calculateDimensions( float x, float y );
 };
 
-#endif // __INCLUDE_GLWSelectorPart_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWSelectorPart_hpp_INCLUDE__

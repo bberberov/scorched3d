@@ -28,14 +28,15 @@
 class SkipDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static SkipDialog *instance();
+	static SkipDialog* instance();
 
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 	virtual void display();
-protected:
-	static SkipDialog *instance_;
 
-	GLWButton *resignButton_;
+protected:
+	static SkipDialog* instance_;
+
+	GLWButton*   resignButton_;
 	unsigned int okId_, allId_, cancelId_, resignId_;
 
 private:
@@ -43,4 +44,4 @@ private:
 	virtual ~SkipDialog();
 };
 
-#endif // __INCLUDE_SkipDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SkipDialog_hpp_INCLUDE__

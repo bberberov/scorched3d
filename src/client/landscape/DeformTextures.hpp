@@ -25,11 +25,10 @@
 #include <common/Vector.hpp>
 
 class Image;
+
 namespace DeformTextures
 {
-	void deformLandscape(Vector &pos, float radius, 
-		Image &deformMap, 
-		DeformLandscape::DeformPoints &map);
+	void deformLandscape( Vector& pos, float radius, Image& deformMap, DeformLandscape::DeformPoints& map );
 };
 
-#endif // __INCLUDE_DeformTextures_hpp_INCLUDE__
+#endif  // __INCLUDE_DeformTextures_hpp_INCLUDE__

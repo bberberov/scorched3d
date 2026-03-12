@@ -28,15 +28,15 @@
 class HelpButtonDialog
 {
 public:
-	static HelpButtonDialog *instance();
+	static HelpButtonDialog* instance();
 
 	struct HelpMenu : public GLMenuI
 	{
 		HelpMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
-		virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
+		virtual void menuSelection( const char* menuName, const int position, GLMenuItem& item );
+		virtual bool getMenuItems( const char* menuName, std::list< GLMenuItem >& result );
 
 	protected:
 		GLTexture helpTexture_;
@@ -47,10 +47,9 @@ public:
 		VolumeMenu();
 
 		// Inherited from GLMenuI
-		virtual bool menuOpened(const char* menuName);
+		virtual bool menuOpened( const char* menuName );
 
 		GLTexture soundTexture_;
-
 	} volumeMenu_;
 
 	struct PerformanceMenu : public GLMenuI
@@ -58,20 +57,20 @@ public:
 		PerformanceMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, const int position, GLMenuItem &item);
-		virtual bool getMenuItems(const char* menuName, std::list<GLMenuItem> &result);
-		virtual LangStringStorage *getMenuToolTip(const char* menuName);
+		virtual void               menuSelection( const char* menuName, const int position, GLMenuItem& item );
+		virtual bool               getMenuItems( const char* menuName, std::list< GLMenuItem >& result );
+		virtual LangStringStorage* getMenuToolTip( const char* menuName );
 
 	protected:
 		GLTexture helpTexture_;
 	} performanceMenu_;
 
 protected:
-	static HelpButtonDialog *instance_;
+	static HelpButtonDialog* instance_;
 
 private:
 	HelpButtonDialog();
 	virtual ~HelpButtonDialog();
 };
 
-#endif // __INCLUDE_HelpButtonDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_HelpButtonDialog_hpp_INCLUDE__

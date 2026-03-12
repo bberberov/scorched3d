@@ -28,37 +28,36 @@
 class ClientAdminResultHandlerI
 {
 public:
-	virtual void adminResult(unsigned int sid, ComsAdminMessage::ComsAdminMessageType type) = 0;
+	virtual void adminResult( unsigned int sid, ComsAdminMessage::ComsAdminMessageType type ) = 0;
 };
 
 // SINGLETON
 class ClientAdminResultHandler : public ComsMessageHandlerI
 {
 public:
-	static ClientAdminResultHandler *instance();
+	static ClientAdminResultHandler* instance();
 
-	void addHandler(ClientAdminResultHandlerI *handler) 
-		{ handlers_.insert(handler); }
-	void removeHandler(ClientAdminResultHandlerI *handler) 
-		{ handlers_.erase(handler); }
+	// clang-format off
+	// uncrustify off
+	void addHandler( ClientAdminResultHandlerI* handler )    { handlers_.insert( handler ); }
+	void removeHandler( ClientAdminResultHandlerI* handler ) { handlers_.erase( handler ); }
+	// uncrustify on
+	// clang-format on
 
 	unsigned int getSid() { return sid_; }
 
 	// Inherited from ComsMessageHandlerI
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader
-	);
-protected:
-	static ClientAdminResultHandler *instance_;
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
-	std::set<ClientAdminResultHandlerI *> handlers_;
-	unsigned int sid_;
+protected:
+	static ClientAdminResultHandler* instance_;
+
+	std::set< ClientAdminResultHandlerI* > handlers_;
+	unsigned int                           sid_;
 
 private:
 	ClientAdminResultHandler();
 	virtual ~ClientAdminResultHandler();
 };
 
-#endif // __INCLUDE_ClientAdminResultHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientAdminResultHandler_hpp_INCLUDE__

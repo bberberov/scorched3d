@@ -23,20 +23,20 @@
 
 #include <landscapemap/HeightMap.hpp>
 
-class LandSurround  
+class LandSurround
 {
 public:
 	LandSurround();
 	virtual ~LandSurround();
 
-	void draw(HeightMap &map, bool detail, bool lightMap);
+	void draw( HeightMap& map, bool detail, bool lightMap );
 	void generate();
 
 protected:
 	unsigned int listNo_;
-	Vector hMapBoxVerts_[16];
-	void generateList(HeightMap &map, bool detail, bool lightMap);
-	void generateVerts(HeightMap &map);
+	Vector       hMapBoxVerts_[16];
+	void         generateList( HeightMap& map, bool detail, bool lightMap );
+	void         generateVerts( HeightMap& map );
 };
 
-#endif // __INCLUDE_LandSurround_hpp_INCLUDE__
+#endif  // __INCLUDE_LandSurround_hpp_INCLUDE__

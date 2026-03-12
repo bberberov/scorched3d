@@ -28,15 +28,15 @@
 class TeleportRenderer : public ActionRenderer
 {
 public:
-	TeleportRenderer(Vector &position, Vector &color);
+	TeleportRenderer( Vector& position, Vector& color );
 	virtual ~TeleportRenderer();
 
-	virtual void simulate(Action *action, float timepassed, bool &remove);
-	virtual void draw(Action *action);
+	virtual void simulate( Action* action, float timepassed, bool& remove );
+	virtual void draw( Action* action );
 
 protected:
 	Vector position_;
 	Vector color_;
 };
 
-#endif // __INCLUDE_TeleportRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_TeleportRenderer_hpp_INCLUDE__

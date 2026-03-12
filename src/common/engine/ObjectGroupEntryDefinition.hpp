@@ -27,24 +27,23 @@
 
 class ObjectGroupEntry;
 class ObjectGroups;
+
 class ObjectGroupEntryDefinition
 {
 public:
 	ObjectGroupEntryDefinition();
 	virtual ~ObjectGroupEntryDefinition();
 
-	bool readXML(XMLNode *node, const std::string &nodeName);
+	bool readXML( XMLNode* node, const std::string& nodeName );
 
-	bool hasGroups() { return !groupnames_.empty(); }
-	void addToGroups(ObjectGroups &objectGroups,
-		ObjectGroupEntry *objectGroupEntry);
+	bool hasGroups() { return ! groupnames_.empty(); }
+
+	void addToGroups( ObjectGroups& objectGroups, ObjectGroupEntry* objectGroupEntry );
 
 protected:
-	std::vector<std::string> groupnames_;
+	std::vector< std::string > groupnames_;
 
-	void addToGroup(const char *groupName,
-		ObjectGroups &objectGroups,
-		ObjectGroupEntry *objectGroupEntry);
+	void addToGroup( const char* groupName, ObjectGroups& objectGroups, ObjectGroupEntry* objectGroupEntry );
 };
 
-#endif // __INCLUDE_ObjectGroupEntryDefinition_hpp_INCLUDE__
+#endif  // __INCLUDE_ObjectGroupEntryDefinition_hpp_INCLUDE__

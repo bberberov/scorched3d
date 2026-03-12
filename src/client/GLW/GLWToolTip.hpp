@@ -29,56 +29,51 @@
 class GLWToolTip : public GameStateI
 {
 public:
-	static GLWToolTip *instance();
+	static GLWToolTip* instance();
 
 	bool addToolTip(
 		ToolTip::ToolTipType type,
-		const LangString &title,
-		const LangString &text,
-		float x,
-		float y,
-		float w,
-		float h
+		const LangString&    title,
+		const LangString&    text,
+		float                x,
+		float                y,
+		float                w,
+		float                h
 	);
-	bool addToolTip(
-		ToolTip *tip,
-		float x,
-		float y,
-		float w,
-		float h
-	);
-	void clearToolTip(float x, float y, float w, float h);
+	bool addToolTip( ToolTip* tip, float x, float y, float w, float h );
+	void clearToolTip( float x, float y, float w, float h );
 
 	// Inherited from GameStateI
-	virtual void simulate(const unsigned state, float frameTime);
-	virtual void draw(const unsigned state);
+	virtual void simulate( const unsigned int state, float frameTime );
+	virtual void draw( const unsigned int state );
 
 protected:
-	static GLWToolTip *instance_;
+	static GLWToolTip* instance_;
 
-	ToolTip *currentTip_;
-	ToolTip *lastTip_;
-	float timeDrawn_;
-	float timeSeen_;
-	float refreshTime_;
+	ToolTip* currentTip_;
+	ToolTip* lastTip_;
+	float    timeDrawn_;
+	float    timeSeen_;
+	float    refreshTime_;
 
 	// ToolTip properties
-	float currentX_, currentY_;
-	float currentW_, currentH_;
-	float tipX_, tipY_;
-	float tipW_, tipH_;
-	float tipOffX_, tipOffY_;
-	float tipTextWidth_;
-	float tipTextHeight_;
-	LangString tipTitle_;
-	LangString tipText_;
-	std::list<LangString> tipTexts_;
+	float                   currentX_, currentY_;
+	float                   currentW_, currentH_;
+	float                   tipX_, tipY_;
+	float                   tipW_, tipH_;
+	float                   tipOffX_, tipOffY_;
+	float                   tipTextWidth_;
+	float                   tipTextHeight_;
+	LangString              tipTitle_;
+	LangString              tipText_;
+	std::list< LangString > tipTexts_;
 
-	void setupTip(ToolTip *tip);
-	void calculateTip(ToolTip *tip);
+	void setupTip( ToolTip* tip );
+	void calculateTip( ToolTip* tip );
+
 private:
 	GLWToolTip();
 	virtual ~GLWToolTip();
 };
 
-#endif // __INCLUDE_GLWToolTip_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWToolTip_hpp_INCLUDE__

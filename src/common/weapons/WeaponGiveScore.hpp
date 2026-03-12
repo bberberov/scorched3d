@@ -23,29 +23,35 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponGiveScore  : public WeaponCallback
+class WeaponGiveScore : public WeaponCallback
 {
 public:
 	WeaponGiveScore();
 	virtual ~WeaponGiveScore();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGiveScore, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGiveScore, AccessoryPart::AccessoryWeapon );
 
 protected:
 	int score_;
 };
 
-#endif // __INCLUDE_WeaponGiveScore_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGiveScore_hpp_INCLUDE__

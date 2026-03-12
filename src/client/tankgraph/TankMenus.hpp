@@ -42,22 +42,19 @@ protected:
 		PlayerMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, 
-			const int position, GLMenuItem &item);
-		virtual bool getEnabled(const char* menuName);
-	} playerMenu_;	
+		virtual void menuSelection( const char* menuName, const int position, GLMenuItem& item );
+		virtual bool getEnabled( const char* menuName );
+	} playerMenu_;
 
 	struct AccessoryMenu : public GLMenuI
 	{
 		AccessoryMenu();
 
 		// Inherited from GLMenuI
-		virtual void menuSelection(const char* menuName, 
-			const int position, GLMenuItem &item);
-		virtual bool getMenuItems(const char* menuName, 
-			std::list<GLMenuItem> &result);
-		virtual bool getEnabled(const char* menuName);
-	} accessoryMenu_;	
+		virtual void menuSelection( const char* menuName, const int position, GLMenuItem& item );
+		virtual bool getMenuItems( const char* menuName, std::list< GLMenuItem >& result );
+		virtual bool getEnabled( const char* menuName );
+	} accessoryMenu_;
 
 	void showTankDetails();
 	void showTargetDetails();
@@ -67,7 +64,7 @@ protected:
 	void clearTracerLines();
 	void groupInfo();
 	void logToFile();
-	void runScriptConsole(std::list<ConsoleRuleValue> list);
+	void runScriptConsole( std::list< ConsoleRuleValue > list );
 };
 
-#endif // __INCLUDE_TankMenus_hpp_INCLUDE__
+#endif  // __INCLUDE_TankMenus_hpp_INCLUDE__

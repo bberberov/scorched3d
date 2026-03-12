@@ -27,7 +27,7 @@
 class PlayerInGameDialog : public PlayerDialog
 {
 public:
-	static PlayerInGameDialog *instance();
+	static PlayerInGameDialog* instance();
 
 	void displayDialog();
 	void initializeFirst();
@@ -36,16 +36,16 @@ public:
 	virtual void display();
 
 protected:
-	static PlayerInGameDialog *instance_;
+	static PlayerInGameDialog* instance_;
 
-	Tank *getCurrentPlayer();
-	virtual void okButton(bool spectate);
+	Tank*        getCurrentPlayer();
+	virtual void okButton( bool spectate );
 	virtual void cancelButton();
-	void initializeFromTank(Tank *tank);
+	void         initializeFromTank( Tank* tank );
 
 private:
 	PlayerInGameDialog();
 	virtual ~PlayerInGameDialog();
 };
 
-#endif // __INCLUDE_PlayerInGameDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_PlayerInGameDialog_hpp_INCLUDE__

@@ -31,18 +31,18 @@ public:
 	ServerTextFilter();
 	virtual ~ServerTextFilter();
 
-	void filterString(LangString &text);
+	void filterString( LangString& text );
 
 protected:
 	struct TextPart
 	{
-		LangString part;
-		unsigned int *pos;
+		LangString    part;
+		unsigned int* pos;
 	};
 
-	std::list<LangString> words_;
-	time_t lastReadTime_;
-	void loadFile();
+	std::list< LangString > words_;
+	time_t                  lastReadTime_;
+	void                    loadFile();
 };
 
-#endif // __INCLUDE_ServerTextFilter_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTextFilter_hpp_INCLUDE__

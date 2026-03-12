@@ -31,12 +31,12 @@
 class Mouse
 {
 public:
-	static Mouse *instance();
+	static Mouse* instance();
 
-	void processMouseEvent(SDL_Event &event);
+	void processMouseEvent( SDL_Event& event );
 
 protected:
-	static Mouse *instance_;
+	static Mouse* instance_;
 
 	int mouse_sensitivity_;
 
@@ -44,9 +44,9 @@ private:
 	Mouse();
 	virtual ~Mouse();
 
-	void mouseDown(SDL_Event &event);
-	void mouseUp(SDL_Event &event);
-	void mouseMove(SDL_Event &event);
+	void mouseDown( SDL_Event& event );
+	void mouseUp( SDL_Event& event );
+	void mouseMove( SDL_Event& event );
 };
 
-#endif // __INCLUDE_Mouse_hpp_INCLUDE__
+#endif  // __INCLUDE_Mouse_hpp_INCLUDE__

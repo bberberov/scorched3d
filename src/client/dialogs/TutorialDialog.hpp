@@ -30,42 +30,42 @@
 class TutorialDialog : public GLWWindow, public GLWListViewI
 {
 public:
-	static TutorialDialog *instance();
+	static TutorialDialog* instance();
 
 	virtual void display();
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 	virtual void draw();
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
 
-	virtual void url(const char *url);
-	virtual void event(std::map<std::string, std::string> &event);
+	virtual void url( const char* url );
+	virtual void event( std::map< std::string, std::string >& event );
 
-	void drawHighlight(float x, float y, float w, float h);
+	void drawHighlight( float x, float y, float w, float h );
 
 protected:
-	static TutorialDialog *instance_;
+	static TutorialDialog* instance_;
 
-	float triangleDist_;
-	float triangleDir_;
-	float speed_;
-	GLWListView *listView_;
-	GLTexture triangleTex_;
-	TutorialFile file_;
-	TutorialFileEntry *current_;
+	float              triangleDist_;
+	float              triangleDir_;
+	float              speed_;
+	GLWListView*       listView_;
+	GLTexture          triangleTex_;
+	TutorialFile       file_;
+	TutorialFileEntry* current_;
 
-	std::map<std::string, std::string> currentEvents_;
+	std::map< std::string, std::string > currentEvents_;
 
-	void processEvents(bool log = false);
-	void processHighlight(bool log);
-	void processMenu(bool log);
-	void showPage(TutorialFileEntry *entry);
-	void drawTriangle(float x, float y, float size, int tex);
+	void processEvents( bool log = false );
+	void processHighlight( bool log );
+	void processMenu( bool log );
+	void showPage( TutorialFileEntry* entry );
+	void drawTriangle( float x, float y, float size, int tex );
 
 private:
 	TutorialDialog();
 	virtual ~TutorialDialog();
 };
 
-#endif // __INCLUDE_TutorialDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_TutorialDialog_hpp_INCLUDE__

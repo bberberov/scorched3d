@@ -29,13 +29,13 @@ public:
 	GLWTankFire();
 	virtual ~GLWTankFire();
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWTankFire);
+	REGISTER_CLASS_HEADER( GLWTankFire );
 
 protected:
 	bool dragging_;
 };
 
-#endif // __INCLUDE_GLWTankFire_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTankFire_hpp_INCLUDE__

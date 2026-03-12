@@ -29,16 +29,15 @@ public:
 	ShieldSquareReflective();
 	virtual ~ShieldSquareReflective();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool       parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 	virtual ShieldType getShieldType();
 
 	fixed getDeflectFactor() { return deflectFactor_; }
 
-	REGISTER_ACCESSORY_HEADER(ShieldSquareReflective, AccessoryPart::AccessoryShield);
+	REGISTER_ACCESSORY_HEADER( ShieldSquareReflective, AccessoryPart::AccessoryShield );
 
 protected:
 	fixed deflectFactor_;
 };
 
-#endif // __INCLUDE_ShieldReflective_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldReflective_hpp_INCLUDE__

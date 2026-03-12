@@ -27,21 +27,29 @@
 class ImageLuminanceFactory
 {
 public:
-	static Image loadFromFile(const std::string &filename);
+	static Image loadFromFile( const std::string& filename );
 
 protected:
 	struct ImageRec
 	{
-	  unsigned short imagic;
-	  unsigned short type;
-	  unsigned short dim;
-	  unsigned short xsize, ysize, zsize;
+		unsigned short imagic;
+		unsigned short type;
+		unsigned short dim;
+		unsigned short xsize, ysize, zsize;
 	};
 
-	static void convertShort(unsigned short *array, unsigned int length);
-	static void convertUint(unsigned *array, unsigned int length);
+	static void convertShort( unsigned short* array, unsigned int length );
+	static void convertUint( unsigned int* array, unsigned int length );
 
-	static void imageGetRow(FILE *file, ImageRec &image, unsigned char *buf, int y, int z, unsigned int *rowStart, int *rowSize);
+	static void imageGetRow(
+		FILE*          file,
+		ImageRec&      image,
+		unsigned char* buf,
+		int            y,
+		int            z,
+		unsigned int*  rowStart,
+		int*           rowSize
+	);
 };
 
-#endif // __INCLUDE_ImageLuminanceFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageLuminanceFactory_hpp_INCLUDE__

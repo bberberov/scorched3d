@@ -24,30 +24,36 @@
 #include <actions/CallbackWeapon.hpp>
 #include <vector>
 
-class WeaponGiveAccessory  : public WeaponCallback
+class WeaponGiveAccessory : public WeaponCallback
 {
 public:
 	WeaponGiveAccessory();
 	virtual ~WeaponGiveAccessory();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGiveAccessory, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGiveAccessory, AccessoryPart::AccessoryWeapon );
 
 protected:
-	std::vector<Accessory *> giveAccessories_;
-	int number_;
+	std::vector< Accessory* > giveAccessories_;
+	int                       number_;
 };
 
-#endif // __INCLUDE_WeaponGiveAccessory_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGiveAccessory_hpp_INCLUDE__

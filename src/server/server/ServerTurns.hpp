@@ -28,23 +28,24 @@
 class Tanket;
 class ComsPlayedMoveMessage;
 class fixed;
+
 class ServerTurns
 {
 public:
-	ServerTurns(bool waitForShots);
+	ServerTurns( bool waitForShots );
 	virtual ~ServerTurns();
 
 	// Called by ServerState
 	virtual void enterState();
-	virtual void simulate(fixed frameTime);
+	virtual void simulate( fixed frameTime );
 	virtual bool finished();
-	virtual void moveFinished(ComsPlayedMoveMessage &playedMessage);
+	virtual void moveFinished( ComsPlayedMoveMessage& playedMessage );
 
 	// Called by This Class
-	virtual void internalEnterState() = 0;
-	virtual void internalSimulate(fixed frameTime) = 0;
+	virtual void internalEnterState()                = 0;
+	virtual void internalSimulate( fixed frameTime ) = 0;
 	virtual bool internalFinished();
-	virtual void internalMoveFinished(ComsPlayedMoveMessage &playedMessage) = 0;
+	virtual void internalMoveFinished( ComsPlayedMoveMessage& playedMessage ) = 0;
 	virtual void internalShotsFinished();
 
 protected:
@@ -54,34 +55,39 @@ protected:
 		eShotsWaitingStart,
 		eShotsWaitingEnd
 	};
+
 	struct PlayingPlayer
 	{
-		PlayingPlayer( unsigned int moveId, fixed moveTime ) :
-			startedMove_(false),
-			moveId_(moveId),
-			moveTime_(moveTime)
+		PlayingPlayer( unsigned int moveId, fixed moveTime )
+			: startedMove_( false )
+			, moveId_( moveId )
+			, moveTime_( moveTime )
 		{}
 
-		bool startedMove_;
+		bool         startedMove_;
 		unsigned int moveId_;
-		fixed moveTime_;
+		fixed        moveTime_;
 	};
 
-	ShotsState shotsState_;
-	bool waitForShots_;
-	unsigned int nextNonNormalMoveId_;
-	SimulatorIAdapter<ServerTurns> *shotsStarted_, *moveStarted_;
-	std::map<unsigned int, PlayingPlayer*> playingPlayers_;
-	std::map<unsigned int, fixed> timedPlayers_;
+	ShotsState                               shotsState_;
+	bool                                     waitForShots_;
+	unsigned int                             nextNonNormalMoveId_;
+	SimulatorIAdapter< ServerTurns >*        shotsStarted_, *moveStarted_;
+	std::map< unsigned int, PlayingPlayer* > playingPlayers_;
+	std::map< unsigned int, fixed >          timedPlayers_;
 
 	bool showScore();
-	void playMove(Tanket *tank, unsigned int moveId, fixed maximumShotTime);
-	void playMoveFinished(Tanket *tank);
-	void playShots(std::list<ComsPlayedMoveMessage *> messages, unsigned int moveId, 
-		bool timeOutPlayers, bool referenced);
-	void shotsStarted(fixed simulationTime, SimAction *action);
-	void moveStarted(fixed simulationTime, SimAction *action);
+	void playMove( Tanket* tank, unsigned int moveId, fixed maximumShotTime );
+	void playMoveFinished( Tanket* tank );
+	void playShots(
+		std::list< ComsPlayedMoveMessage* > messages,
+		unsigned int                        moveId,
+		bool                                timeOutPlayers,
+		bool                                referenced
+	);
+	void shotsStarted( fixed simulationTime, SimAction* action );
+	void moveStarted( fixed simulationTime, SimAction* action );
 	void incrementTurn();
 };
 
-#endif // __INCLUDE_ServerTurns_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTurns_hpp_INCLUDE__

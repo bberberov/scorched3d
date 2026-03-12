@@ -26,51 +26,56 @@
 #include <common/Vector.hpp>
 
 class PlayingSoundSource;
+
 class VirtualSoundSource
 {
 public:
-	VirtualSoundSource( unsigned int priority, bool looping, bool managed);
+	VirtualSoundSource( unsigned int priority, bool looping, bool managed );
 	virtual ~VirtualSoundSource();
 
-	void play(SoundBuffer *buffer);
+	void play( SoundBuffer* buffer );
 	void stop();
 
-	bool getPlaying();
-	bool getManaged() { return managed_; }
-	bool getLooping() { return looping_; }
-	bool getRelative() { return relative_; }
-	Vector &getPosition() { return position_; }
-	unsigned int getPriority() { return priority_; }
-	SoundBuffer *getBuffer() { return buffer_; }
-	PlayingSoundSource *getPlayingSource() { return playingSource_; }
-	float getDistance() { return distance_; }
-	float getGain() { return gain_; }
+	// clang-format off
+	// uncrustify off
+	bool                getPlaying();
+	bool                getManaged()       { return managed_; }
+	bool                getLooping()       { return looping_; }
+	bool                getRelative()      { return relative_; }
+	Vector&             getPosition()      { return position_; }
+	unsigned int        getPriority()      { return priority_; }
+	SoundBuffer*        getBuffer()        { return buffer_; }
+	PlayingSoundSource* getPlayingSource() { return playingSource_; }
+	float               getDistance()      { return distance_; }
+	float               getGain()          { return gain_; }
+	// uncrustify on
+	// clang-format on
 
 	void setRelative();
-	void setPosition(Vector &position);
-	void setVelocity(Vector &velocity);
-	void setGain(float gain);
-	void setReferenceDistance(float refDist);
-	void setRolloff(float rolloff);
+	void setPosition( Vector& position );
+	void setVelocity( Vector& velocity );
+	void setGain( float gain );
+	void setReferenceDistance( float refDist );
+	void setRolloff( float rolloff );
 
 	// Internal
 	void actualPlay();
-	void setPlayingSource(PlayingSoundSource *s);
-	void updateDistance(Vector &listener);
+	void setPlayingSource( PlayingSoundSource* s );
+	void updateDistance( Vector& listener );
 
 protected:
-	unsigned int priority_;
-	PlayingSoundSource *playingSource_;
-	SoundBuffer *buffer_;
-	Vector position_;
-	Vector velocity_;
-	float distance_;
-	float gain_;
-	float refDist_;
-	float rolloff_;
-	bool relative_;
-	bool looping_;
-	bool managed_;
+	unsigned int        priority_;
+	PlayingSoundSource* playingSource_;
+	SoundBuffer*        buffer_;
+	Vector              position_;
+	Vector              velocity_;
+	float               distance_;
+	float               gain_;
+	float               refDist_;
+	float               rolloff_;
+	bool                relative_;
+	bool                looping_;
+	bool                managed_;
 };
 
-#endif // __INCLUDE_VirtualSoundSource_hpp_INCLUDE__
+#endif  // __INCLUDE_VirtualSoundSource_hpp_INCLUDE__

@@ -27,13 +27,11 @@
 class SoundUtils
 {
 public:
-	static void playRelativeSound(unsigned int priority, 
-		SoundBuffer *buffer);
-	static void playAbsoluteSound(unsigned int priority, 
-		SoundBuffer *buffer, Vector &position);
+	static void playRelativeSound( unsigned int priority, SoundBuffer* buffer );
+	static void playAbsoluteSound( unsigned int priority, SoundBuffer* buffer, Vector& position );
 
 private:
 	SoundUtils();
 };
 
-#endif // __INCLUDE_SoundUtils_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundUtils_hpp_INCLUDE__

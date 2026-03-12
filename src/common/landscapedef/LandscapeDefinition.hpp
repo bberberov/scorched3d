@@ -29,28 +29,32 @@ class LandscapeDefinition
 public:
 	LandscapeDefinition();
 	LandscapeDefinition(
-		const std::string &tex,
-		const std::string &defn,
-		unsigned int seed,
-		const std::string &name,
-		unsigned int definitionNumber
+		const std::string& tex,
+		const std::string& defn,
+		unsigned int       seed,
+		const std::string& name,
+		unsigned int       definitionNumber
 	);
 
-	const char *getTex() { return tex_.c_str(); }
-	const char *getDefn() { return defn_.c_str(); }
-	const char *getName() { return name_.c_str(); }
-	unsigned int getSeed() { return seed_; }
+	// clang-format off
+	// uncrustify off
+	const char*  getTex()              { return tex_.c_str(); }
+	const char*  getDefn()             { return defn_.c_str(); }
+	const char*  getName()             { return name_.c_str(); }
+	unsigned int getSeed()             { return seed_; }
 	unsigned int getDefinitionNumber() { return definitionNumber_; }
+	// uncrustify on
+	// clang-format on
 
-	bool writeMessage(NetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::string tex_;
-	std::string defn_;
-	std::string name_;
+	std::string  tex_;
+	std::string  defn_;
+	std::string  name_;
 	unsigned int seed_;
 	unsigned int definitionNumber_;
 };
 
-#endif // __INCLUDE_LandscapeDefinition_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefinition_hpp_INCLUDE__

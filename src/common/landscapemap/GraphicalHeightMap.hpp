@@ -24,16 +24,16 @@
 #include <stdlib.h>
 #include <common/Vector.hpp>
 
-class GraphicalHeightMap  
+class GraphicalHeightMap
 {
 public:
 	GraphicalHeightMap();
 	virtual ~GraphicalHeightMap();
 
-	virtual void create(int width, int height) = 0;
+	virtual void create( int width, int height ) = 0;
 
-	virtual void setHeight(int w, int h, float height) = 0;
-	virtual void setNormal(int w, int h, Vector &normal) = 0;
+	virtual void setHeight( int w, int h, float height )   = 0;
+	virtual void setNormal( int w, int h, Vector& normal ) = 0;
 };
 
-#endif // __INCLUDE_GraphicalHeightMap_hpp_INCLUDE__
+#endif  // __INCLUDE_GraphicalHeightMap_hpp_INCLUDE__

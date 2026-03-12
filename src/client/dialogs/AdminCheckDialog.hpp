@@ -28,20 +28,20 @@
 class AdminCheckDialog : public GLWWindow, public ClientAdminResultHandlerI
 {
 public:
-	static AdminCheckDialog *instance();
+	static AdminCheckDialog* instance();
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 	// Inherited from ClientAdminResultHandlerI
-	virtual void adminResult(unsigned int sid, ComsAdminMessage::ComsAdminMessageType type);
+	virtual void adminResult( unsigned int sid, ComsAdminMessage::ComsAdminMessageType type );
 
 protected:
-	static AdminCheckDialog *instance_;
+	static AdminCheckDialog* instance_;
 
 private:
 	AdminCheckDialog();
 	virtual ~AdminCheckDialog();
 };
 
-#endif // __INCLUDE_AdminCheckDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AdminCheckDialog_hpp_INCLUDE__

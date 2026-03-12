@@ -23,29 +23,29 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponScatterPosition  : public Weapon
+class WeaponScatterPosition : public Weapon
 {
 public:
 	WeaponScatterPosition();
 	virtual ~WeaponScatterPosition();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponScatterPosition, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponScatterPosition, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NumberParser scatterpercentage_;
-	bool landonly_;
-	bool landheight_;
-	Weapon *aimedWeapon_;
+	bool         landonly_;
+	bool         landheight_;
+	Weapon*      aimedWeapon_;
 };
 
-#endif // __INCLUDE_WeaponScatterPosition_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponScatterPosition_hpp_INCLUDE__

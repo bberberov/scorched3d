@@ -25,20 +25,22 @@
 #include <common/FixedVector.hpp>
 
 class WeaponAddTarget;
+
 class AddTarget : public Action
 {
 public:
-	AddTarget(FixedVector &position, WeaponAddTarget *addTarget);
+	AddTarget( FixedVector& position, WeaponAddTarget* addTarget );
 	virtual ~AddTarget();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "AddTarget"; }
 
 protected:
-	FixedVector position_;
-	WeaponAddTarget *addTarget_;
+	FixedVector      position_;
+	WeaponAddTarget* addTarget_;
 };
 
-#endif // __INCLUDE_AddTarget_hpp_INCLUDE__
+#endif  // __INCLUDE_AddTarget_hpp_INCLUDE__

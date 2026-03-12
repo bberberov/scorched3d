@@ -27,20 +27,16 @@
 class ClientConnectionRejectHandler : public ComsMessageHandlerI
 {
 public:
-	static ClientConnectionRejectHandler *instance();
+	static ClientConnectionRejectHandler* instance();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader
-	);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
-	static ClientConnectionRejectHandler *instance_;
+	static ClientConnectionRejectHandler* instance_;
 
 private:
 	ClientConnectionRejectHandler();
 	virtual ~ClientConnectionRejectHandler();
 };
 
-#endif // __INCLUDE_ClientConnectionRejectHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientConnectionRejectHandler_hpp_INCLUDE__

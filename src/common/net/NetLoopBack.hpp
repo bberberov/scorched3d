@@ -27,34 +27,33 @@
 class NetLoopBack : public NetInterface
 {
 public:
-	NetLoopBack(bool server);
+	NetLoopBack( bool server );
 	virtual ~NetLoopBack();
 
 	virtual bool started();
-	virtual bool connect(const char *hostName, int portNo);
-	virtual bool start(int portNo) { return true; }
-	virtual void stop() { }
+	virtual bool connect( const char* hostName, int portNo );
 
-	virtual int processMessages();
-	virtual void setMessageHandler(NetMessageHandlerI *handler);
+	virtual bool start( int portNo ) { return true; }
+
+	virtual void stop() {}
+
+	virtual int  processMessages();
+	virtual void setMessageHandler( NetMessageHandlerI* handler );
 
 	virtual void disconnectAllClients();
-	virtual void disconnectClient(unsigned int client);
-	virtual void disconnectClient(NetBuffer &buffer, 
-		unsigned int client);
-	virtual void sendMessageServer(NetBuffer &buffer, 
-		unsigned int flags = 0);
-	virtual void sendMessageDest(NetBuffer &buffer, 
-		unsigned int destination, unsigned int flags = 0);
+	virtual void disconnectClient( unsigned int client );
+	virtual void disconnectClient( NetBuffer& buffer, unsigned int client );
+	virtual void sendMessageServer( NetBuffer& buffer, unsigned int flags = 0 );
+	virtual void sendMessageDest( NetBuffer& buffer, unsigned int destination, unsigned int flags = 0 );
 
 protected:
-	bool server_;
-	bool started_;
+	bool              server_;
+	bool              started_;
 	NetMessageHandler messageHandler_;
-	
-	NetLoopBack *getLoopback();
+
+	NetLoopBack* getLoopback();
 
 	static NetLoopBack *serverLoopback_, *clientLoopback_;
 };
 
-#endif // __INCLUDE_NetLoopBack_hpp_INCLUDE__
+#endif  // __INCLUDE_NetLoopBack_hpp_INCLUDE__

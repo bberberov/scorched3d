@@ -28,17 +28,15 @@
 class Lang
 {
 public:
-	static Lang *instance();
+	static Lang* instance();
 
 	virtual void saveUndefined() = 0;
 
-	virtual ResourceBundleEntry *getEntry(
-		const std::string &key, const std::string &value) = 0;
-	virtual ResourceBundleEntry *getEntry(
-		const std::string &key, const LangString &value) = 0;
+	virtual ResourceBundleEntry* getEntry( const std::string& key, const std::string& value ) = 0;
+	virtual ResourceBundleEntry* getEntry( const std::string& key, const LangString& value )  = 0;
 
 private:
-	static Lang *instance_;
+	static Lang* instance_;
 };
 
-#endif // __INCLUDE_Lang_hpp_INCLUDE__
+#endif  // __INCLUDE_Lang_hpp_INCLUDE__

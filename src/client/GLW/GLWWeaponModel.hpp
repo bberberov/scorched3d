@@ -26,18 +26,17 @@
 class GLWWeaponModel : public GLWidget
 {
 public:
-	GLWWeaponModel(float x = 0.0f, float y = 0.0f,
-		float w = 0.0f, float h = 0.0f);
+	GLWWeaponModel( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWWeaponModel();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWWeaponModel);
+	REGISTER_CLASS_HEADER( GLWWeaponModel );
 
 protected:
 	float totalTime_;
 };
 
-#endif // __INCLUDE_GLWWeaponModel_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWWeaponModel_hpp_INCLUDE__

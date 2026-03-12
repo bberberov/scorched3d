@@ -26,32 +26,35 @@
 class GLWDraggerI
 {
 public:
-	virtual void currentChanged(unsigned int id, float value) = 0;
+	virtual void currentChanged( unsigned int id, float value ) = 0;
 };
 
 class GLWDragger : public GLWidget
 {
 public:
-	GLWDragger(float x = 0.0f, float y = 0.0f, float w = 0.0f, float range = 0.0f);
+	GLWDragger( float x = 0.0f, float y = 0.0f, float w = 0.0f, float range = 0.0f );
 	virtual ~GLWDragger();
 
-	void setHandler(GLWDraggerI *handler) { handler_ = handler; }
+	void setHandler( GLWDraggerI* handler ) { handler_ = handler; }
 
-	float getCurrent() { return current_; }
-	void setCurrent(float current) { current_ = current; }
+	// clang-format off
+	// uncrustify off
+	float getCurrent()                { return current_; }
+	void  setCurrent( float current ) { current_ = current; }
+	// uncrustify on
+	// clang-format on
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWDragger);
+	REGISTER_CLASS_HEADER( GLWDragger );
 
 protected:
-	GLWDraggerI *handler_;
-	bool dragging_;
-	float current_;
-	float range_;
-
+	GLWDraggerI* handler_;
+	bool         dragging_;
+	float        current_;
+	float        range_;
 };
 
-#endif // __INCLUDE_GLWDragger_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWDragger_hpp_INCLUDE__

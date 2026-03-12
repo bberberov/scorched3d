@@ -28,24 +28,24 @@
 class ClientProcessingLoop : public GameStateI
 {
 public:
-	static ClientProcessingLoop *instance();
+	static ClientProcessingLoop* instance();
 
-	virtual void simulate(const unsigned state, float simTime);
-	virtual void draw(const unsigned state);
+	virtual void simulate( const unsigned int state, float simTime );
+	virtual void draw( const unsigned int state );
 
-	void process(float frameTime, bool processClientMessages);
+	void process( float frameTime, bool processClientMessages );
 
 	void dontLimitFrameTime() { limiter_.dontLimitFrameTime(); }
 
 protected:
-	static ClientProcessingLoop *instance_;
+	static ClientProcessingLoop* instance_;
 
 	FrameLimiter limiter_;
-	float serverTime_;
+	float        serverTime_;
 
 private:
 	ClientProcessingLoop();
 	virtual ~ClientProcessingLoop();
 };
 
-#endif // __INCLUDE_ClientProcessingLoop_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientProcessingLoop_hpp_INCLUDE__

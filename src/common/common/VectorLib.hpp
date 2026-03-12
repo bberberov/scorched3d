@@ -25,12 +25,11 @@
 
 namespace VectorLib
 {
-	Vector reflection(Vector &ray, Vector &normal);
+	Vector reflection( Vector& ray, Vector& normal );
 
-	bool sphereIntersection(Vector &start, Vector &end, 
-							Vector &sphereCentre, float radius, float &distance);
+	bool sphereIntersection( Vector& start, Vector& end, Vector& sphereCentre, float radius, float& distance );
 
-	Vector rotationAroundAxis(Vector &p, float angle, Vector &axis);
+	Vector rotationAroundAxis( Vector& p, float angle, Vector& axis );
 };
 
-#endif // __INCLUDE_VectorLib_hpp_INCLUDE__
+#endif  // __INCLUDE_VectorLib_hpp_INCLUDE__

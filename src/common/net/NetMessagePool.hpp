@@ -29,24 +29,26 @@
 class NetMessagePool
 {
 public:
-	static NetMessagePool *instance();
+	static NetMessagePool* instance();
 
-	void addToPool(NetMessage *message);
-	NetMessage *getFromPool(NetMessage::MessageType type,
-		unsigned int destinationId,
-		unsigned int ipAddress,
-		unsigned int flags = 0,
-		unsigned int recvTime = 0);
+	void        addToPool( NetMessage* message );
+	NetMessage* getFromPool(
+		NetMessage::MessageType type,
+		unsigned int            destinationId,
+		unsigned int            ipAddress,
+		unsigned int            flags    = 0,
+		unsigned int            recvTime = 0
+	);
 
 protected:
-	static NetMessagePool *instance_;
+	static NetMessagePool* instance_;
 
-	std::list<NetMessage *> messagePool_;
-	SDL_mutex *messagePoolMutex_;
+	std::list< NetMessage* > messagePool_;
+	SDL_mutex*               messagePoolMutex_;
 
 private:
 	NetMessagePool();
 	virtual ~NetMessagePool();
 };
 
-#endif // __INCLUDE_NetMessagePool_hpp_INCLUDE__
+#endif  // __INCLUDE_NetMessagePool_hpp_INCLUDE__

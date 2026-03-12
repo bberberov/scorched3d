@@ -36,9 +36,9 @@ public:
 	bool showScore();
 
 	void enterState();
-	void simulate(fixed frameTime);
+	void simulate( fixed frameTime );
 
-	void moveFinished(ComsPlayedMoveMessage &playedMessage);
+	void moveFinished( ComsPlayedMoveMessage& playedMessage );
 
 protected:
 	enum RoundState
@@ -48,17 +48,17 @@ protected:
 		eFinished
 	};
 
-	fixed roundTime_;
-	RoundState roundState_;
-	unsigned int nextRoundId_;
-	ServerTurns *turns_;
-	ServerTurnsSequential turnsSequential_;
-	ServerTurnsSimultaneous turnsSimultaneous_;
-	ServerTurnsSimultaneous turnsSimultaneousNoWait_;
-	ServerTurnsFree turnsFree_;
-	SimulatorIAdapter<ServerStatePlaying> *roundStarted_;
+	fixed                                    roundTime_;
+	RoundState                               roundState_;
+	unsigned int                             nextRoundId_;
+	ServerTurns*                             turns_;
+	ServerTurnsSequential                    turnsSequential_;
+	ServerTurnsSimultaneous                  turnsSimultaneous_;
+	ServerTurnsSimultaneous                  turnsSimultaneousNoWait_;
+	ServerTurnsFree                          turnsFree_;
+	SimulatorIAdapter< ServerStatePlaying >* roundStarted_;
 
-	void roundStarted(fixed simulationTime, SimAction *action);
+	void roundStarted( fixed simulationTime, SimAction* action );
 };
 
-#endif // __INCLUDE_ServerStatePlaying_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStatePlaying_hpp_INCLUDE__

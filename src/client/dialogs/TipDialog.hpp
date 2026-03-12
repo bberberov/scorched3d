@@ -26,27 +26,27 @@
 #include <GLW/GLWCheckBoxText.hpp>
 
 // SINGLETON
-class TipDialog : public GLWWindow , public GLWButtonI
+class TipDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static TipDialog *instance();
+	static TipDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 protected:
-	static TipDialog *instance_;
+	static TipDialog* instance_;
 
-	unsigned int okId_, cancelId_;
-	GLWCheckBoxText *helpBox_;
-	GLWCheckBoxText *infoBox_;
+	unsigned int     okId_, cancelId_;
+	GLWCheckBoxText* helpBox_;
+	GLWCheckBoxText* infoBox_;
 
 private:
 	TipDialog();
 	virtual ~TipDialog();
 };
 
-#endif // __INCLUDE_TipDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_TipDialog_hpp_INCLUDE__

@@ -27,16 +27,12 @@
 class ClientInitializeModHandler : public ComsMessageHandlerI
 {
 public:
-	static ClientInitializeModHandler *instance();
+	static ClientInitializeModHandler* instance();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader
-	);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
-	static ClientInitializeModHandler *instance_;
+	static ClientInitializeModHandler* instance_;
 
 	bool initialize();
 
@@ -45,4 +41,4 @@ private:
 	virtual ~ClientInitializeModHandler();
 };
 
-#endif // __INCLUDE_ClientInitializeModHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientInitializeModHandler_hpp_INCLUDE__

@@ -24,50 +24,47 @@
 #include <common/Defines.hpp>
 #include <math.h>
 
-class Vector  
+class Vector
 {
 public:
-	Vector()
+	Vector() { V[0] = V[1] = V[2] = 0.0f; }
+
+	Vector( const Vector& v )
 	{
-		V[0] = V[1] = V[2] = 0.0f;
+		V[0] = ( (Vector&)v )[0];
+		V[1] = ( (Vector&)v )[1];
+		V[2] = ( (Vector&)v )[2];
 	}
 
-	Vector(const Vector &v)
-	{
-		V[0] = ((Vector &) v)[0];
-		V[1] = ((Vector &) v)[1];
-		V[2] = ((Vector &) v)[2];
-	}
-
-	Vector(const float Pt[3])
+	Vector( const float Pt[3] )
 	{
 		V[0] = Pt[0];
 		V[1] = Pt[1];
 		V[2] = Pt[2];
 	}
 
-	Vector(const float ang, const double length)
+	Vector( const float ang, const double length )
 	{
-		V[0] = (float) sin(ang / 180.0f * 3.14f) * float(length);
-		V[1] = (float) cos(ang / 180.0f * 3.14f) * float(length);
+		V[0] = (float)sin( ang / 180.0f * 3.14f ) * float( length );
+		V[1] = (float)cos( ang / 180.0f * 3.14f ) * float( length );
 		V[2] = 0.0f;
 	}
 
-	Vector(const float ptA, const float ptB, const float ptC=0.0f)
+	Vector( const float ptA, const float ptB, const float ptC = 0.0f )
 	{
 		V[0] = ptA;
 		V[1] = ptB;
 		V[2] = ptC;
 	}
 
-	Vector(const int ptA, const int ptB, const int ptC=0)
+	Vector( const int ptA, const int ptB, const int ptC = 0 )
 	{
-		V[0] = (float) ptA;
-		V[1] = (float) ptB;
-		V[2] = (float) ptC;
+		V[0] = (float)ptA;
+		V[1] = (float)ptB;
+		V[2] = (float)ptC;
 	}
 
-	void initialise(const float a, const float b, const float c)
+	void initialise( const float a, const float b, const float c )
 	{
 		V[0] = a;
 		V[1] = b;
@@ -77,53 +74,42 @@ public:
 	Vector Normalize()
 	{
 		float mag = Magnitude();
-		if (mag == 0.0f) mag = 0.00001f;
-		Vector v(V[0] / mag, V[1] / mag, V[2] / mag);
+		if ( mag == 0.0f ) mag = 0.00001f;
+		Vector v( V[0] / mag, V[1] / mag, V[2] / mag );
+
 		return v;
 	}
 
 	Vector Normalize2D()
 	{
 		float mag = Magnitude2d();
-		if (mag == 0.0f) mag = 0.00001f;
-		Vector v(V[0] / mag, V[1] / mag, V[2] / mag);
+		if ( mag == 0.0f ) mag = 0.00001f;
+		Vector v( V[0] / mag, V[1] / mag, V[2] / mag );
+
 		return v;
 	}
 
-	float Magnitude()
+	float Magnitude() { return float( sqrt( MagnitudeSquared() ) ); }
+
+	float Magnitude2d() { return float( sqrt( Magnitude2dSquared() ) ); }
+
+	float Magnitude2dSquared() { return V[0] * V[0] + V[1] * V[1]; }
+
+	float MagnitudeSquared() { return V[0] * V[0] + V[1] * V[1] + V[2] * V[2]; }
+
+	float dotP( const Vector& Vin )
 	{
-		return float(sqrt(MagnitudeSquared()));
+		Vector& V2 = (Vector&)Vin;
+
+		return ( V[0] * V2.V[0] ) + ( V[1] * V2.V[1] ) + ( V[2] * V2.V[2] );
 	}
 
-	float Magnitude2d()
-	{
-		return float(sqrt(Magnitude2dSquared()));
-	}
-
-	float Magnitude2dSquared()
-	{
-		return V[0]*V[0] + V[1]*V[1];
-	}
-
-	float MagnitudeSquared()
-	{
-		return V[0]*V[0] + V[1]*V[1] + V[2]*V[2];
-	}
-
-	float dotP(const Vector &Vin)
-	{
-		Vector &V2 = (Vector &) Vin;
-		return (V[0] * V2.V[0]) + (V[1] * V2.V[1]) + (V[2] * V2.V[2]);
-	}
-
-	float Max()
-	{
-		return MAX(V[0], MAX(V[1], V[2]));
-	}
+	float Max() { return MAX( V[0], MAX( V[1], V[2] ) ); }
 
 	Vector get2DPerp()
 	{
-		Vector v(V[1], -V[0], 0.0f);
+		Vector v( V[1], -V[0], 0.0f );
+
 		return v;
 	}
 
@@ -137,169 +123,182 @@ public:
 	void StoreNormalize()
 	{
 		float mag = Magnitude();
-		if (mag == 0.0f) mag = 0.00001f;
+		if ( mag == 0.0f ) mag = 0.00001f;
 		V[0] /= mag;
 		V[1] /= mag;
 		V[2] /= mag;
 	}
 
-	void zero()
-	{
-		V[0] = V[1] = V[2] = 0.0f;
-	}
+	void zero() { V[0] = V[1] = V[2] = 0.0f; }
 
-	Vector operator+(const float m)
+	Vector operator+( const float m )
 	{
-		Vector v(V[0]+m, V[1]+m, V[2]+m);
-		return v;
-	}
-
-	Vector operator+(const Vector &Vin)
-	{
-		Vector v(Vin.V[0] + V[0], Vin.V[1] + V[1], Vin.V[2] + V[2]);
-		return v;
-	}
-
-	Vector operator-(const float m)
-	{
-		Vector v(V[0]-m, V[1]-m, V[2]-m);
-		return v;
-	}
-
-	Vector operator-(const Vector &Vin)
-	{
-		Vector v(V[0] - Vin.V[0], V[1] - Vin.V[1], V[2] - Vin.V[2]);
-		return v;
-	}
-
-	Vector operator*(const float a)
-	{
-		Vector v(V[0]*a, V[1]*a, V[2]*a);
-		return v;
-	}
-
-	Vector operator*(const Vector &Vin)
-	{
-		Vector v(V[1] * ((Vector &)Vin)[2] - V[2] * ((Vector &)Vin)[1], 
-				V[2] * ((Vector &)Vin)[0] - V[0] * ((Vector &)Vin)[2],
-				V[0] * ((Vector &)Vin)[1] - V[1] * ((Vector &)Vin)[0]);
+		Vector v( V[0] + m, V[1] + m, V[2] + m );
 
 		return v;
 	}
 
-	Vector operator/(const float a)
+	Vector operator+( const Vector& Vin )
 	{
-		const float b = (a==0.0f?0.00001f:a);
-		Vector v(V[0]/b, V[1]/b, V[2]/b);
+		Vector v( Vin.V[0] + V[0], Vin.V[1] + V[1], Vin.V[2] + V[2] );
+
 		return v;
 	}
 
-	Vector operator/(const Vector &Vin)
+	Vector operator-( const float m )
 	{
-		float a = ((Vector &)Vin)[0];
-		float b = ((Vector &)Vin)[1];
-		float c = ((Vector &)Vin)[2];
+		Vector v( V[0] - m, V[1] - m, V[2] - m );
 
-		const float a2 = (a==0.0f?0.00001f:a);
-		const float b2 = (b==0.0f?0.00001f:b);
-		const float c2 = (c==0.0f?0.00001f:c);
+		return v;
+	}
 
-		Vector v(V[0]/ a2, V[1]/ b2, V[2]/ c2);
+	Vector operator-( const Vector& Vin )
+	{
+		Vector v( V[0] - Vin.V[0], V[1] - Vin.V[1], V[2] - Vin.V[2] );
+
+		return v;
+	}
+
+	Vector operator*( const float a )
+	{
+		Vector v( V[0] * a, V[1] * a, V[2] * a );
+
+		return v;
+	}
+
+	Vector operator*( const Vector& Vin )
+	{
+		Vector v(
+			V[1] * ( (Vector&)Vin )[2] - V[2] * ( (Vector&)Vin )[1],
+			V[2] * ( (Vector&)Vin )[0] - V[0] * ( (Vector&)Vin )[2],
+			V[0] * ( (Vector&)Vin )[1] - V[1] * ( (Vector&)Vin )[0]
+		);
+
+		return v;
+	}
+
+	Vector operator/( const float a )
+	{
+		const float b = ( a == 0.0f ? 0.00001f : a );
+		Vector      v( V[0] / b, V[1] / b, V[2] / b );
+
+		return v;
+	}
+
+	Vector operator/( const Vector& Vin )
+	{
+		float a = ( (Vector&)Vin )[0];
+		float b = ( (Vector&)Vin )[1];
+		float c = ( (Vector&)Vin )[2];
+
+		const float a2 = ( a == 0.0f ? 0.00001f : a );
+		const float b2 = ( b == 0.0f ? 0.00001f : b );
+		const float c2 = ( c == 0.0f ? 0.00001f : c );
+
+		Vector v( V[0] / a2, V[1] / b2, V[2] / c2 );
+
 		return v;
 	}
 
 	Vector operator-()
 	{
-		Vector v(-V[0], -V[1], -V[2]);
+		Vector v( -V[0], -V[1], -V[2] );
+
 		return v;
 	}
 
-	void operator*=(const float a)
+	void operator*=( const float a )
 	{
 		V[0] *= a;
 		V[1] *= a;
 		V[2] *= a;
 	}
 
-	void operator*=(const Vector &Vin)
+	void operator*=( const Vector& Vin )
 	{
-		float a = V[1] * ((Vector &)Vin)[2] - V[2] * ((Vector &)Vin)[1];
-		float b = V[2] * ((Vector &)Vin)[0] - V[0] * ((Vector &)Vin)[2];
-		float c = V[0] * ((Vector &)Vin)[1] - V[1] * ((Vector &)Vin)[0];
-		V[0] = a;
-		V[1] = b;
-		V[2] = c;
+		float a = V[1] * ( (Vector&)Vin )[2] - V[2] * ( (Vector&)Vin )[1];
+		float b = V[2] * ( (Vector&)Vin )[0] - V[0] * ( (Vector&)Vin )[2];
+		float c = V[0] * ( (Vector&)Vin )[1] - V[1] * ( (Vector&)Vin )[0];
+		V[0]    = a;
+		V[1]    = b;
+		V[2]    = c;
 	}
 
-	void operator/=(const float a)
+	void operator/=( const float a )
 	{
-		const float b = (a==0.0f?0.00001f:a);
-		V[0] /= b;
-		V[1] /= b;
-		V[2] /= b;
+		const float b  = ( a == 0.0f ? 0.00001f : a );
+		V[0]          /= b;
+		V[1]          /= b;
+		V[2]          /= b;
 	}
 
-	void operator/=(const Vector &Vin)
+	void operator/=( const Vector& Vin )
 	{
-		float a = ((Vector &)Vin)[0];
-		float b = ((Vector &)Vin)[1];
-		float c = ((Vector &)Vin)[2];
+		float a = ( (Vector&)Vin )[0];
+		float b = ( (Vector&)Vin )[1];
+		float c = ( (Vector&)Vin )[2];
 
-		const float a2 = (a==0.0f?0.00001f:a);
-		const float b2 = (b==0.0f?0.00001f:b);
-		const float c2 = (c==0.0f?0.00001f:c);
+		const float a2 = ( a == 0.0f ? 0.00001f : a );
+		const float b2 = ( b == 0.0f ? 0.00001f : b );
+		const float c2 = ( c == 0.0f ? 0.00001f : c );
 
 		V[0] /= a2;
 		V[1] /= b2;
 		V[2] /= c2;
 	}
 
-	void operator+=(const float a)
+	void operator+=( const float a )
 	{
 		V[0] += a;
 		V[1] += a;
 		V[2] += a;
 	}
 
-	void operator+=(const Vector &Vin)
+	void operator+=( const Vector& Vin )
 	{
 		V[0] += Vin.V[0];
 		V[1] += Vin.V[1];
 		V[2] += Vin.V[2];
 	}
 
-	void operator-=(const float a)
+	void operator-=( const float a )
 	{
 		V[0] -= a;
 		V[1] -= a;
 		V[2] -= a;
 	}
 
-	void operator-=(const Vector &Vin)
+	void operator-=( const Vector& Vin )
 	{
 		V[0] -= Vin.V[0];
 		V[1] -= Vin.V[1];
 		V[2] -= Vin.V[2];
 	}
 
-	bool operator==(const Vector &Vin1)
+	bool operator==( const Vector& Vin1 ) { return ( Vin1.V[0] == V[0] && Vin1.V[1] == V[1] && Vin1.V[2] == V[2] ); }
+
+	bool operator!=( const Vector& Vin1 ) { return ( Vin1.V[0] != V[0] || Vin1.V[1] != V[1] || Vin1.V[2] != V[2] ); }
+
+	float& operator[]( const int m )
 	{
-		return (Vin1.V[0]==V[0] && Vin1.V[1]==V[1] && Vin1.V[2]==V[2]);
+		DIALOG_ASSERT( m <= 2 );
+
+		return V[m];
 	}
 
-	bool operator!=(const Vector &Vin1)
+	float const& operator[]( const int m ) const
 	{
-		return (Vin1.V[0]!=V[0] || Vin1.V[1]!=V[1] || Vin1.V[2]!=V[2]);
-	}
+		DIALOG_ASSERT( m <= 2 );
 
-	float &operator[](const int m) { DIALOG_ASSERT(m<=2); return V[m]; }
-	float const &operator[](const int m) const { DIALOG_ASSERT(m<=2); return V[m]; }
+		return V[m];
+	}
 
 	operator float*() { return V; }
-	static Vector &getNullVector();
+
+	static Vector& getNullVector();
 
 protected:
 	float V[3];
 };
 
-#endif // __INCLUDE_Vector_hpp_INCLUDE__
+#endif  // __INCLUDE_Vector_hpp_INCLUDE__

@@ -28,22 +28,23 @@
 class GLTextureStore
 {
 public:
-	static GLTextureStore *instance();
+	static GLTextureStore* instance();
 
 	void resetModFiles();
+
 	unsigned int getReferenceCount() { return references_.size(); }
 
-	GLTextureReferenceData *getTextureReference(const ImageID &imageId, unsigned texState);
-	void removeTextureReference(GLTextureReferenceData *reference);
+	GLTextureReferenceData* getTextureReference( const ImageID& imageId, unsigned int texState );
+	void                    removeTextureReference( GLTextureReferenceData* reference );
 
 protected:
-	static GLTextureStore *instance_;
+	static GLTextureStore* instance_;
 
-	std::map<std::string, GLTextureReferenceData *> references_;
+	std::map< std::string, GLTextureReferenceData* > references_;
 
 private:
 	GLTextureStore();
 	virtual ~GLTextureStore();
 };
 
-#endif // __INCLUDE_GLTextureStore_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureStore_hpp_INCLUDE__

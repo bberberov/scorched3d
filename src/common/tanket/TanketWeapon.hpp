@@ -33,35 +33,40 @@ class Accessory;
 class TanketWeaponSwitcher
 {
 public:
-	virtual void switchWeapon(ScorchedContext &context, Tanket *tanket, Accessory *currentWeapon, Accessory *newWeapon) = 0;
+	virtual void switchWeapon(
+		ScorchedContext& context,
+		Tanket*          tanket,
+		Accessory*       currentWeapon,
+		Accessory*       newWeapon
+	) = 0;
 };
 
-class TanketWeapon  
+class TanketWeapon
 {
 public:
-	TanketWeapon(ScorchedContext &context);
+	TanketWeapon( ScorchedContext& context );
 	virtual ~TanketWeapon();
 
-	void setWeaponSwitcher(TanketWeaponSwitcher *weaponSwitcher) { weaponSwitcher_ = weaponSwitcher; }
+	void setWeaponSwitcher( TanketWeaponSwitcher* weaponSwitcher ) { weaponSwitcher_ = weaponSwitcher; }
 
-	void setTanket(Tanket *tanket) { tanket_ = tanket; }
+	void setTanket( Tanket* tanket ) { tanket_ = tanket; }
 
 	void newMatch();
 	void changed();
 
-	bool setWeapon(Accessory *wp);
+	bool setWeapon( Accessory* wp );
 
 	// Change the currently selected weapon
-	Accessory *getCurrent();
-	const char *getWeaponString();
+	Accessory*  getCurrent();
+	const char* getWeaponString();
 
 protected:
-	Accessory *currentWeapon_;
-	ScorchedContext &context_;
-	Tanket *tanket_;
-	TanketWeaponSwitcher *weaponSwitcher_;
+	Accessory*            currentWeapon_;
+	ScorchedContext&      context_;
+	Tanket*               tanket_;
+	TanketWeaponSwitcher* weaponSwitcher_;
 
-	void setCurrentWeapon(Accessory *wp);
+	void setCurrentWeapon( Accessory* wp );
 };
 
-#endif // __INCLUDE_TanketWeapon_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketWeapon_hpp_INCLUDE__

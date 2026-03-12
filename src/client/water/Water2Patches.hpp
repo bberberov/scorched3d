@@ -26,37 +26,37 @@
 #include <GLEXT/GLTexture.hpp>
 
 class GLVertexBufferObject;
+
 class Water2Patches
 {
 public:
 	Water2Patches();
 	~Water2Patches();
 
-	void generate(
-		Water2Points &heights,
-		unsigned int totalSize,
-		unsigned int patchSize,
-		float waterHeight
-	);
+	void generate( Water2Points& heights, unsigned int totalSize, unsigned int patchSize, float waterHeight );
 
-	Water2Patch *getPatch(int index);
-	Water2Patch *getPatch(int x, int y);
-	Water2Patch::Data *getPoint(int x, int y);
-	int getSize() { return size_; }
-	Image &getNormalMap() { return normalMap_; }
-	GLTexture &getAOF() { return aof_; }
-	GLVertexBufferObject *getBufferObject() { return bufferObject_; }
+	// clang-format off
+	// uncrustify off
+	Water2Patch*          getPatch( int index );
+	Water2Patch*          getPatch( int x, int y );
+	Water2Patch::Data*    getPoint( int x, int y );
+	int                   getSize()         { return size_; }
+	Image&                getNormalMap()    { return normalMap_; }
+	GLTexture&            getAOF()          { return aof_; }
+	GLVertexBufferObject* getBufferObject() { return bufferObject_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	int size_;
-	int totalSize_;
-	int patchSize_;
-	Image normalMap_;
-	GLTexture aof_;
-	GLVertexBufferObject *bufferObject_;
-	Water2Patch *patches_;
+	int                   size_;
+	int                   totalSize_;
+	int                   patchSize_;
+	Image                 normalMap_;
+	GLTexture             aof_;
+	GLVertexBufferObject* bufferObject_;
+	Water2Patch*          patches_;
 
 	void generateNormalMap();
 };
 
-#endif // __INCLUDE_Water2Patches_hpp_INCLUDE__
+#endif  // __INCLUDE_Water2Patches_hpp_INCLUDE__

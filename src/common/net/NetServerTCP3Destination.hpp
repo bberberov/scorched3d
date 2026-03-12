@@ -27,31 +27,27 @@
 class NetServerTCP3Destination
 {
 public:
-	NetServerTCP3Destination(
-		NetMessageHandler *recieveMessageHandler,
-		TCPsocket socket,
-		unsigned int destinationId
-	);
+	NetServerTCP3Destination( NetMessageHandler* recieveMessageHandler, TCPsocket socket, unsigned int destinationId );
 	virtual ~NetServerTCP3Destination();
 
-	void sendMessage(NetMessage *message);
+	void sendMessage( NetMessage* message );
 	void printStats();
 
-	void close(NetMessage *message);
+	void close( NetMessage* message );
 	bool allFinished();
 	bool anyFinished();
 
 	unsigned int getIpAddress() { return ipAddress_; }
 
 protected:
-	TCPsocket socket_;
-	unsigned int destinationId_;
-	unsigned int ipAddress_;
+	TCPsocket         socket_;
+	unsigned int      destinationId_;
+	unsigned int      ipAddress_;
 	NetServerTCP3Send send_;
 	NetServerTCP3Recv recv_;
-	bool running_;
+	bool              running_;
 
-	static unsigned int getIpAddressFromSocket(TCPsocket socket);
+	static unsigned int getIpAddressFromSocket( TCPsocket socket );
 };
 
-#endif // __INCLUDE_NetServerTCP3Destination_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCP3Destination_hpp_INCLUDE__

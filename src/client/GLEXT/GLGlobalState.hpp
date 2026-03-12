@@ -21,21 +21,21 @@
 #ifndef __INCLUDE_GLGlobalState_hpp_INCLUDE__
 #define __INCLUDE_GLGlobalState_hpp_INCLUDE__
 
-#define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
+#define WIN32_LEAN_AND_MEAN  // Exclude rarely-used stuff from Windows headers
 
 #include <GLEXT/GLState.hpp>
 
-class GLGlobalState  
+class GLGlobalState
 {
 public:
-	GLGlobalState(unsigned wantedState);
+	GLGlobalState( unsigned int wantedState );
 	virtual ~GLGlobalState();
 
-	static void setState(unsigned wanted);
+	static void setState( unsigned int wanted );
 
 protected:
-	static GLState *state_;
+	static GLState*     state_;
 	static unsigned int stateStack_;
 };
 
-#endif // __INCLUDE_GLGlobalState_hpp_INCLUDE__
+#endif  // __INCLUDE_GLGlobalState_hpp_INCLUDE__

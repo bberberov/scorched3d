@@ -27,27 +27,28 @@
 class ScorchedContext;
 class TankModel;
 class Tank;
+
 class TankModelContainer
 {
 public:
-	TankModelContainer(ScorchedContext &context);
+	TankModelContainer( ScorchedContext& context );
 	virtual ~TankModelContainer();
 
-	void setTank(Tank *tank) { tank_ = tank; }
+	void setTank( Tank* tank ) { tank_ = tank; }
 
-	TankModel *getTankModel();
+	TankModel* getTankModel();
 
-	void setTankModelName(const char *modelName);
+	void setTankModelName( const char* modelName );
 
 	// Serialize the modelid
-    bool writeMessage(NamedNetBuffer &buffer);
-    bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	Tank *tank_;
-	std::string modelName_;
-	TankModel *tankModel_;
+	ScorchedContext& context_;
+	Tank*            tank_;
+	std::string      modelName_;
+	TankModel*       tankModel_;
 };
 
-#endif // __INCLUDE_TankModelContainer_hpp_INCLUDE__
+#endif  // __INCLUDE_TankModelContainer_hpp_INCLUDE__

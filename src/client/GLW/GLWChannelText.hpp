@@ -27,77 +27,74 @@
 #include <GLEXT/GLTextureReference.hpp>
 #include <string>
 
-class GLWChannelText :
-	public GLWidget,
-	public GLWButtonI,
-	public GLWSelectorI,
-	public GLWChannelViewI
+class GLWChannelText : public GLWidget, public GLWButtonI, public GLWSelectorI, public GLWChannelViewI
 {
 public:
 	GLWChannelText();
 	virtual ~GLWChannelText();
 
 	// GLWChannelViewI
-	virtual void channelsChanged(unsigned int id);
+	virtual void channelsChanged( unsigned int id );
 
 	// GLWSelectorI
-	virtual void itemSelected(GLWSelectorEntry *entry, int position);
+	virtual void itemSelected( GLWSelectorEntry* entry, int position );
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual bool initFromXML(XMLNode *node);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual bool initFromXML( XMLNode* node );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
-	virtual void setParent(GLWPanel *parent);
-	virtual void setX(float x);
-	virtual void setY(float y);
-	virtual void setW(float w);
-	virtual void setH(float h);
+	virtual void setParent( GLWPanel* parent );
+	virtual void setX( float x );
+	virtual void setY( float y );
+	virtual void setW( float w );
+	virtual void setH( float h );
 
-	REGISTER_CLASS_HEADER(GLWChannelText);
+	REGISTER_CLASS_HEADER( GLWChannelText );
+
 protected:
-	static std::list<ChannelText> lastMessages_;
-	GLTextureReference colorTexture_;
-	GLWChannelViewTextRenderer prompt_;
-	GLWChannelView::CurrentChannelEntry channelEntry_;
-	GLWIconButton button_;
-	GLWChannelView view_;
-	std::map<KeyboardKey *, std::string> keys_;
-	LangString text_;
-	float fontSize_;
-	float outlineFontSize_;
-	float ctime_;
-	bool cursor_;
-	bool visible_;
-	bool createdTexture_;
-	int maxTextLen_;
-	int cursorPosition_;
-	int historyPosition_;
+	static std::list< ChannelText >       lastMessages_;
+	GLTextureReference                    colorTexture_;
+	GLWChannelViewTextRenderer            prompt_;
+	GLWChannelView::CurrentChannelEntry   channelEntry_;
+	GLWIconButton                         button_;
+	GLWChannelView                        view_;
+	std::map< KeyboardKey*, std::string > keys_;
+	LangString                            text_;
+	float                                 fontSize_;
+	float                                 outlineFontSize_;
+	float                                 ctime_;
+	bool                                  cursor_;
+	bool                                  visible_;
+	bool                                  createdTexture_;
+	int                                   maxTextLen_;
+	int                                   cursorPosition_;
+	int                                   historyPosition_;
 
 	unsigned int whisperDest_;
-	LangString whisperDestStr_;
+	LangString   whisperDestStr_;
 
-	void processNotVisibleKey(unsigned int unicode, unsigned int dik, bool &skipRest);
-	void processVisibleKey(unsigned int keystate, unsigned int unicode, unsigned int dik);
+	void processNotVisibleKey( unsigned int unicode, unsigned int dik, bool& skipRest );
+	void processVisibleKey( unsigned int keystate, unsigned int unicode, unsigned int dik );
 	void processSpecialText();
 	void processNormalText();
 	bool checkCurrentChannel();
-	bool channelValid(const char *channelName);
-	void setVisible(bool visible);
-	void setChannelEntry(GLWChannelView::CurrentChannelEntry &entry);
+	bool channelValid( const char* channelName );
+	void setVisible( bool visible );
+	void setChannelEntry( GLWChannelView::CurrentChannelEntry& entry );
 	void setHistoryText();
 };
 
-#endif // __INCLUDE_GLWChannelText_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWChannelText_hpp_INCLUDE__

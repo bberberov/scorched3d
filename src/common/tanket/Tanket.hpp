@@ -27,14 +27,12 @@ class TankAI;
 class TanketType;
 class TanketShotInfo;
 class TanketAccessories;
+
 class Tanket : public Target
 {
 public:
 	// Constructor for tanket
-	Tanket(ScorchedContext &context, 
-		unsigned int playerId, 
-		unsigned int destinationId,
-		const LangString &name);
+	Tanket( ScorchedContext& context, unsigned int playerId, unsigned int destinationId, const LangString& name );
 	virtual ~Tanket();
 
 	virtual TargetType getType() { return Target::TypeTanket; }
@@ -44,29 +42,32 @@ public:
 	virtual void newGame();
 
 	// Serialize the tanket
-	virtual bool writeMessage(NamedNetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NamedNetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	TankAI *getTankAI() { return tankAI_; }
-	void setTankAI(TankAI *ai);
-	unsigned int getTeam() { return team_; }
-	void setTeam(unsigned int team) { team_ = team; }
-	unsigned int getDestinationId();
-	void setDestinationId(unsigned int id) { destinationId_ = id; }
-
-	void setTanketType(TanketType *type) { tanketType_ = type; }
-	TanketType *getTanketType() { return tanketType_; }
-	TanketAccessories& getAccessories() { return *accessories_; }
-	TanketShotInfo& getShotInfo() { return *shotInfo_; }
+	// clang-format off
+	// uncrustify off
+	TankAI*            getTankAI()                         { return tankAI_; }
+	void               setTankAI( TankAI* ai );
+	unsigned int       getTeam()                           { return team_; }
+	void               setTeam( unsigned int team )        { team_ = team; }
+	unsigned int       getDestinationId();
+	void               setDestinationId( unsigned int id ) { destinationId_ = id; }
+	void               setTanketType( TanketType* type )   { tanketType_ = type; }
+	TanketType*        getTanketType()                     { return tanketType_; }
+	TanketAccessories& getAccessories()                    { return *accessories_; }
+	TanketShotInfo&    getShotInfo()                       { return *shotInfo_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ScorchedContext &context_;
-	TanketAccessories *accessories_;
-	TanketShotInfo *shotInfo_;
-	TanketType *tanketType_;
-	TankAI *tankAI_;
-	unsigned int team_;
-	unsigned int destinationId_;
+	ScorchedContext&   context_;
+	TanketAccessories* accessories_;
+	TanketShotInfo*    shotInfo_;
+	TanketType*        tanketType_;
+	TankAI*            tankAI_;
+	unsigned int       team_;
+	unsigned int       destinationId_;
 };
 
-#endif // __INCLUDE_Tanket_hpp_INCLUDE__
+#endif  // __INCLUDE_Tanket_hpp_INCLUDE__

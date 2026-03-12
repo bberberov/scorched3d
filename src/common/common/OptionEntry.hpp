@@ -35,6 +35,7 @@ public:
 		DataDepricated = 128,
 		DataProtected  = 256
 	};
+
 	enum EntryType
 	{
 		OptionEntryIntType,
@@ -50,115 +51,127 @@ public:
 		OptionEntryBoundedIntType
 	};
 
-	OptionEntry(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data
-	);
+	OptionEntry( std::list< OptionEntry* >& group, const char* name, const char* description, unsigned int data );
 	virtual ~OptionEntry();
 
-	const char *getName() { return name_.c_str(); }
-	virtual const char *getDescription() { return description_.c_str(); }
-	virtual const char *getRangeDescription() { return 0; }
-	virtual unsigned getData() { return data_; }
+	// clang-format off
+	// uncrustify off
+	const char*          getName()             { return name_.c_str(); }
+	virtual const char*  getDescription()      { return description_.c_str(); }
+	virtual const char*  getRangeDescription() { return 0; }
+	virtual unsigned int getData()             { return data_; }
+	// uncrustify on
+	// clang-format on
 
-	virtual EntryType getEntryType() = 0;
-	virtual const char *getDefaultValueAsString() = 0;
-	virtual const char *getValueAsString() = 0;
-	virtual bool isDefaultValue() = 0;
+	virtual EntryType   getEntryType()            = 0;
+	virtual const char* getDefaultValueAsString() = 0;
+	virtual const char* getValueAsString()        = 0;
+	virtual bool        isDefaultValue()          = 0;
+
 	virtual bool isChangedValue() { return changedValue_; }
-	virtual bool setValueFromString(const std::string &string) = 0;
-	virtual bool addToArgParser(ARGParser &parser) = 0;
+
+	virtual bool setValueFromString( const std::string& string ) = 0;
+	virtual bool addToArgParser( ARGParser& parser )             = 0;
+
 	virtual void setNotChanged() { changedValue_ = false; }
 
-	virtual const char *getComsBufferValue() { return getValueAsString(); }
-	virtual bool setComsBufferValue(const char *string) { return setValueFromString(string); }
+	// clang-format off
+	// uncrustify off
+	virtual const char* getComsBufferValue()                     { return getValueAsString(); }
+	virtual bool        setComsBufferValue( const char* string ) { return setValueFromString( string ); }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string name_;
-	std::string description_;
+	std::string  name_;
+	std::string  description_;
 	unsigned int data_;
-	bool changedValue_;
+	bool         changedValue_;
 };
 
 class OptionEntryHelper
 {
 public:
-	static bool writeToBuffer(std::list<OptionEntry *> &options, NetBuffer &buffer, bool useprotected);
-	static bool readFromBuffer(std::list<OptionEntry *> &options, NetBufferReader &reader, bool useprotected);
+	static bool writeToBuffer( std::list< OptionEntry* >& options, NetBuffer& buffer, bool useprotected );
+	static bool readFromBuffer( std::list< OptionEntry* >& options, NetBufferReader& reader, bool useprotected );
 
-	static bool writeToXML(std::list<OptionEntry *> &options, XMLNode *node, bool allOptions);
-	static bool readFromXML(std::list<OptionEntry *> &options, XMLNode *node);
+	static bool writeToXML( std::list< OptionEntry* >& options, XMLNode* node, bool allOptions );
+	static bool readFromXML( std::list< OptionEntry* >& options, XMLNode* node );
 
-	static bool writeToFile(std::list<OptionEntry *> &options, const std::string &fileName, bool allOptions);
-	static bool readFromFile(std::list<OptionEntry *> &options, const std::string &fileName);
+	static bool writeToFile( std::list< OptionEntry* >& options, const std::string& fileName, bool allOptions );
+	static bool readFromFile( std::list< OptionEntry* >& options, const std::string& fileName );
 
-	static bool addToArgParser(std::list<OptionEntry *> &options, ARGParser &parser);
+	static bool addToArgParser( std::list< OptionEntry* >& options, ARGParser& parser );
 
-	static OptionEntry *getEntry(std::list<OptionEntry *> &options, const char *name);
+	static OptionEntry* getEntry( std::list< OptionEntry* >& options, const char* name );
 };
 
 class OptionEntryInt : public OptionEntry, public ARGParserIntI
 {
 public:
 	OptionEntryInt(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		int defaultValue
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		int                        defaultValue
 	);
 	virtual ~OptionEntryInt();
 
 	virtual EntryType getEntryType() { return OptionEntryIntType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
 
-	virtual int getValue();
-	virtual bool setValue(int value);
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
-	virtual bool addToArgParser(ARGParser &parser);
-	virtual bool setIntArgument(int value);
+	virtual int  getValue();
+	virtual bool setValue( int value );
+
+	virtual bool addToArgParser( ARGParser& parser );
+	virtual bool setIntArgument( int value );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
-	operator int () { return value_; }
+	operator int() { return value_; }
 
 protected:
 	int defaultValue_;
 	int value_;
-
 };
 
 class OptionEntryBoundedInt : public OptionEntryInt
 {
 public:
 	OptionEntryBoundedInt(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		int defaultValue,
-		int minValue,
-		int maxValue,
-		int stepValue
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		int                        defaultValue,
+		int                        minValue,
+		int                        maxValue,
+		int                        stepValue
 	);
 	virtual ~OptionEntryBoundedInt();
 
-	virtual const char *getRangeDescription();
-	virtual EntryType getEntryType() { return OptionEntryBoundedIntType; }
-	virtual bool setValue(int value);
+	virtual const char* getRangeDescription();
 
-	int getMinValue() { return minValue_; }
-	int getMaxValue() { return maxValue_; }
+	virtual EntryType getEntryType() { return OptionEntryBoundedIntType; }
+
+	virtual bool setValue( int value );
+
+	// clang-format off
+	// uncrustify off
+	int getMinValue()  { return minValue_; }
+	int getMaxValue()  { return maxValue_; }
 	int getStepValue() { return stepValue_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	int minValue_;
 	int maxValue_;
 	int stepValue_;
-
 };
 
 class OptionEntryEnum : public OptionEntryInt
@@ -166,63 +179,66 @@ class OptionEntryEnum : public OptionEntryInt
 public:
 	struct EnumEntry
 	{
-		const char *description;
-		int value;
+		const char* description;
+		int         value;
 	};
 
 	OptionEntryEnum(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		int defaultValue,
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		int                        defaultValue,
 		OptionEntryEnum::EnumEntry enums[]
 	);
 	virtual ~OptionEntryEnum();
 
 	virtual EntryType getEntryType() { return OptionEntryEnumType; }
-	virtual bool setValue(int value);
-	virtual const char *getRangeDescription();
 
-	virtual const char *getDefaultValueAsString();
-	virtual const char *getValueAsString();
-	virtual bool setValueFromString(const std::string &string);
+	virtual bool        setValue( int value );
+	virtual const char* getRangeDescription();
 
-	virtual const char *getComsBufferValue() { return OptionEntryInt::getValueAsString(); }
-	virtual bool setComsBufferValue(const char *string) { return OptionEntryInt::setValueFromString(string); }
+	virtual const char* getDefaultValueAsString();
+	virtual const char* getValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
-	OptionEntryEnum::EnumEntry *getEnums() { return enums_; }
+	virtual const char* getComsBufferValue() { return OptionEntryInt::getValueAsString(); }
+
+	virtual bool setComsBufferValue( const char* string ) { return OptionEntryInt::setValueFromString( string ); }
+
+	OptionEntryEnum::EnumEntry* getEnums() { return enums_; }
 
 protected:
-	EnumEntry *enums_;
-
+	EnumEntry* enums_;
 };
 
 class OptionEntryBool : public OptionEntry, public ARGParserBoolI
 {
 public:
 	OptionEntryBool(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		bool defaultValue
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		bool                       defaultValue
 	);
 	virtual ~OptionEntryBool();
 
 	virtual EntryType getEntryType() { return OptionEntryBoolType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
 
-	virtual bool setValue(bool value);
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
+
+	virtual bool setValue( bool value );
 	virtual bool getValue();
 
-	virtual bool addToArgParser(ARGParser &parser);
-	virtual bool setBoolArgument(bool value);
+	virtual bool addToArgParser( ARGParser& parser );
+	virtual bool setBoolArgument( bool value );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
-	operator bool () { return value_; }
+	operator bool() { return value_; }
 
 protected:
 	bool defaultValue_;
@@ -233,34 +249,35 @@ class OptionEntryString : public OptionEntry, public ARGParserStringI
 {
 public:
 	OptionEntryString(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		const char *defaultValue,
-		bool multiline = false
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		const char*                defaultValue,
+		bool                       multiline = false
 	);
 	virtual ~OptionEntryString();
 
-	virtual EntryType getEntryType() { return (multiline_ ? OptionEntryTextType : OptionEntryStringType); }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
+	virtual EntryType getEntryType() { return ( multiline_ ? OptionEntryTextType : OptionEntryStringType ); }
 
-	virtual const char *getValue();
-	virtual bool setValue(const std::string &value);
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
-	virtual bool addToArgParser(ARGParser &parser);
-	virtual bool setStringArgument(const char* value);
+	virtual const char* getValue();
+	virtual bool        setValue( const std::string& value );
 
-	operator const char *() { return value_.c_str(); }
+	virtual bool addToArgParser( ARGParser& parser );
+	virtual bool setStringArgument( const char* value );
+
+	operator const char*() { return value_.c_str(); }
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
 protected:
 	std::string defaultValue_;
 	std::string value_;
-	bool multiline_;
-
+	bool        multiline_;
 };
 
 class OptionEntryStringEnum : public OptionEntryString
@@ -268,87 +285,90 @@ class OptionEntryStringEnum : public OptionEntryString
 public:
 	struct EnumEntry
 	{
-		const char *value;
+		const char* value;
 	};
 
 	OptionEntryStringEnum(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		const char *defaultValue,
+		std::list< OptionEntry* >&       group,
+		const char*                      name,
+		const char*                      description,
+		unsigned int                     data,
+		const char*                      defaultValue,
 		OptionEntryStringEnum::EnumEntry enums[]
 	);
 	virtual ~OptionEntryStringEnum();
 
 	virtual EntryType getEntryType() { return OptionEntryStringEnumType; }
-	virtual bool setValue(const std::string &value);
-	virtual const char *getRangeDescription();
 
-	virtual bool setValueFromString(const std::string &string);
+	virtual bool        setValue( const std::string& value );
+	virtual const char* getRangeDescription();
 
-	OptionEntryStringEnum::EnumEntry *getEnums() { return enums_; }
+	virtual bool setValueFromString( const std::string& string );
+
+	OptionEntryStringEnum::EnumEntry* getEnums() { return enums_; }
 
 protected:
-	EnumEntry *enums_;
-
+	EnumEntry* enums_;
 };
 
 class OptionEntryFloat : public OptionEntry
 {
 public:
 	OptionEntryFloat(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		float defaultValue,
-		bool truncate = false
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		float                      defaultValue,
+		bool                       truncate = false
 	);
 	virtual ~OptionEntryFloat();
 
 	virtual EntryType getEntryType() { return OptionEntryFloatType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
+
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
 	virtual float getValue();
-	virtual bool setValue(float value);
+	virtual bool  setValue( float value );
 
-	virtual bool addToArgParser(ARGParser &parser);
+	virtual bool addToArgParser( ARGParser& parser );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
-	operator float () { return value_; }
+	operator float() { return value_; }
 
 protected:
 	float defaultValue_;
 	float value_;
-	bool truncate_;
-
+	bool  truncate_;
 };
 
 class OptionEntryVector : public OptionEntry
 {
 public:
 	OptionEntryVector(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		Vector defaultValue,
-		bool truncate = false
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		Vector                     defaultValue,
+		bool                       truncate = false
 	);
 	virtual ~OptionEntryVector();
 
 	virtual EntryType getEntryType() { return OptionEntryVectorType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
 
-	virtual Vector &getValue();
-	virtual bool setValue(Vector value);
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
-	virtual bool addToArgParser(ARGParser &parser);
+	virtual Vector& getValue();
+	virtual bool    setValue( Vector value );
+
+	virtual bool addToArgParser( ARGParser& parser );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
 	operator Vector() { return value_; }
@@ -356,62 +376,64 @@ public:
 protected:
 	Vector defaultValue_;
 	Vector value_;
-	bool truncate_;
-
+	bool   truncate_;
 };
 
 class OptionEntryFixed : public OptionEntry
 {
 public:
 	OptionEntryFixed(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		fixed defaultValue
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		fixed                      defaultValue
 	);
 	virtual ~OptionEntryFixed();
 
 	virtual EntryType getEntryType() { return OptionEntryFixedType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
+
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
 	virtual fixed getValue();
-	virtual bool setValue(fixed value);
+	virtual bool  setValue( fixed value );
 
-	virtual bool addToArgParser(ARGParser &parser);
+	virtual bool addToArgParser( ARGParser& parser );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
-	operator fixed () { return value_; }
+	operator fixed() { return value_; }
 
 protected:
 	fixed defaultValue_;
 	fixed value_;
-
 };
 
 class OptionEntryFixedVector : public OptionEntry
 {
 public:
 	OptionEntryFixedVector(
-		std::list<OptionEntry *> &group,
-		const char *name,
-		const char *description,
-		unsigned int data,
-		FixedVector defaultValue
+		std::list< OptionEntry* >& group,
+		const char*                name,
+		const char*                description,
+		unsigned int               data,
+		FixedVector                defaultValue
 	);
 	virtual ~OptionEntryFixedVector();
 
 	virtual EntryType getEntryType() { return OptionEntryFixedVectorType; }
-	virtual const char *getValueAsString();
-	virtual const char *getDefaultValueAsString();
-	virtual bool setValueFromString(const std::string &string);
 
-	virtual FixedVector &getValue();
-	virtual bool setValue(FixedVector value);
+	virtual const char* getValueAsString();
+	virtual const char* getDefaultValueAsString();
+	virtual bool        setValueFromString( const std::string& string );
 
-	virtual bool addToArgParser(ARGParser &parser);
+	virtual FixedVector& getValue();
+	virtual bool         setValue( FixedVector value );
+
+	virtual bool addToArgParser( ARGParser& parser );
+
 	virtual bool isDefaultValue() { return value_ == defaultValue_; }
 
 	operator FixedVector() { return value_; }
@@ -421,4 +443,4 @@ protected:
 	FixedVector value_;
 };
 
-#endif // __INCLUDE_OptionEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionEntry_hpp_INCLUDE__

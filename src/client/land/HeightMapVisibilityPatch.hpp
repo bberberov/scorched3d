@@ -29,71 +29,60 @@ class MipMapPatchIndex;
 class HeightMapVisibilityPatch
 {
 public:
-	HeightMapVisibilityPatch(HeightMap *heightMap);
+	HeightMapVisibilityPatch( HeightMap* heightMap );
 	virtual ~HeightMapVisibilityPatch();
 
+	// clang-format off
+	// uncrustify off
 	void setLocation(
-		int x,
-		int y,
-		HeightMapVisibilityPatch *leftPatch,
-		HeightMapVisibilityPatch *rightPatch,
-		HeightMapVisibilityPatch *topPatch,
-		HeightMapVisibilityPatch *bottomPatch
+		int                       x,
+		int                       y,
+		HeightMapVisibilityPatch* leftPatch,
+		HeightMapVisibilityPatch* rightPatch,
+		HeightMapVisibilityPatch* topPatch,
+		HeightMapVisibilityPatch* bottomPatch
 	);
-	bool setVisible(float distance, float C);
+	bool setVisible( float distance, float C );
 	void setNotVisible();
 	void setRecalculateErrors() { recalculateErrors_ = true; }
 
-	int getVisibilityIndex() { return visible_?visibilityIndex_:-1; }
-	Vector &getPosition() { return position_; }
-	float getBoundingSize() { return boundingSize_; }
+	int     getVisibilityIndex() { return visible_ ? visibilityIndex_ : -1; }
+	Vector& getPosition()        { return position_; }
+	float   getBoundingSize()    { return boundingSize_; }
 
-	HeightMapVisibilityPatch *getLeftPatch() { return leftPatch_; }
-	HeightMapVisibilityPatch *getRightPatch() { return rightPatch_; }
-	HeightMapVisibilityPatch *getTopPatch() { return topPatch_; }
-	HeightMapVisibilityPatch *getBottomPatch() { return bottomPatch_; }
+	HeightMapVisibilityPatch* getLeftPatch()   { return leftPatch_; }
+	HeightMapVisibilityPatch* getRightPatch()  { return rightPatch_; }
+	HeightMapVisibilityPatch* getTopPatch()    { return topPatch_; }
+	HeightMapVisibilityPatch* getBottomPatch() { return bottomPatch_; }
+	// uncrustify on
+	// clang-format on
 
-	void draw(MipMapPatchIndex &index, bool simple);
-	void drawLODLevel(MipMapPatchIndex &index);
+	void draw( MipMapPatchIndex& index, bool simple );
+	void drawLODLevel( MipMapPatchIndex& index );
 
 protected:
-	int x_;
-	int y_;
-	int dataOffSet_;
-	float maxHeight_;
-	float minHeight_;
-	float boundingSize_;
-	int dataSize_;
-	int visibilityIndex_;
-	bool visible_;
-	bool recalculateErrors_;
-	float indexErrors_[5];
-	Vector position_;
-	HeightMap *heightMap_;
-	HeightMapVisibilityPatch *leftPatch_;
-	HeightMapVisibilityPatch *rightPatch_;
-	HeightMapVisibilityPatch *topPatch_;
-	HeightMapVisibilityPatch *bottomPatch_;
+	int                       x_;
+	int                       y_;
+	int                       dataOffSet_;
+	float                     maxHeight_;
+	float                     minHeight_;
+	float                     boundingSize_;
+	int                       dataSize_;
+	int                       visibilityIndex_;
+	bool                      visible_;
+	bool                      recalculateErrors_;
+	float                     indexErrors_[5];
+	Vector                    position_;
+	HeightMap*                heightMap_;
+	HeightMapVisibilityPatch* leftPatch_;
+	HeightMapVisibilityPatch* rightPatch_;
+	HeightMapVisibilityPatch* topPatch_;
+	HeightMapVisibilityPatch* bottomPatch_;
 
 	virtual void calculateErrors();
-	float getHeight(int x, int y);
-	float calculateError(
-		int x1,
-		int x2,
-		int y1,
-		int y2,
-		float x1y1,
-		float x2y2,
-		float x1y2,
-		float x2y1
-	);
-	float calculateError2(
-		int x,
-		int y,
-		int width,
-		float &minHeight,
-		float &maxHeight
-	);
+	float        getHeight( int x, int y );
+	float        calculateError( int x1, int x2, int y1, int y2, float x1y1, float x2y2, float x1y2, float x2y1 );
+	float        calculateError2( int x, int y, int width, float& minHeight, float& maxHeight );
 };
 
-#endif // __INCLUDE_HeightMapVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_HeightMapVisibilityPatch_hpp_INCLUDE__

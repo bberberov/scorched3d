@@ -26,45 +26,44 @@
 #include <GLEXT/GLTexture.hpp>
 #include <list>
 
-class GLWImageList : 
-	public GLWidget,
-	public GLWSelectorI
+class GLWImageList : public GLWidget, public GLWSelectorI
 {
 public:
-	GLWImageList(float x = 0.0f, float y = 0.0f);
+	GLWImageList( float x = 0.0f, float y = 0.0f );
 	virtual ~GLWImageList();
 
-	void addDirectory(const std::string &directory);
+	void addDirectory( const std::string& directory );
 
-	const char *getCurrentShortPath();
-	const char *getCurrentLongPath();
-	bool setCurrentShortPath(const char *current);
+	const char* getCurrentShortPath();
+	const char* getCurrentLongPath();
+	bool        setCurrentShortPath( const char* current );
 
 	// GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 
 	// GLWSelectorI
-	virtual void itemSelected(GLWSelectorEntry *entry, int position);
+	virtual void itemSelected( GLWSelectorEntry* entry, int position );
 
-	void setEnabled(bool enabled) { enabled_ = enabled; }
+	void setEnabled( bool enabled ) { enabled_ = enabled; }
 
-	REGISTER_CLASS_HEADER(GLWImageList);
+	REGISTER_CLASS_HEADER( GLWImageList );
 
 protected:
-	class GLWImageListEntry 
+	class GLWImageListEntry
 	{
 	public:
 		std::string shortFileName;
 		std::string longFileName;
-		GLTexture texture;
+		GLTexture   texture;
 	};
-	std::list<GLWImageListEntry*> entries_;
-	GLWImageListEntry *current_;
-	bool enabled_;
+
+	std::list< GLWImageListEntry* > entries_;
+	GLWImageListEntry*              current_;
+	bool                            enabled_;
 };
 
-#endif // __INCLUDE_GLWImageList_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWImageList_hpp_INCLUDE__

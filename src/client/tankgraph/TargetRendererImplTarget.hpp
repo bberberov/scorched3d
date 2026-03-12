@@ -30,47 +30,51 @@ class TargetRendererImplTarget : public TargetRendererImpl
 {
 public:
 	TargetRendererImplTarget(
-		Target *target,
+		Target* target,
 		ModelID model,
 		ModelID burntModel,
-		float scale,
-		float color,
-		bool billboard
+		float   scale,
+		float   color,
+		bool    billboard
 	);
 	virtual ~TargetRendererImplTarget();
 
 	// TargetRendererImpl
-	virtual void drawParticle(float distance);
-	virtual void simulate(float frameTime);
+	virtual void drawParticle( float distance );
+	virtual void simulate( float frameTime );
 
-	void render(float distance);
-	void renderReflection(float distance);
-	void renderShadow(float distance);
-	void render2D(float distance);
+	void render( float distance );
+	void renderReflection( float distance );
+	void renderShadow( float distance );
+	void render2D( float distance );
 
 	// TargetRenderer
 	virtual void shieldHit();
 	virtual void fired();
 	virtual void targetBurnt();
 
-	GLWTargetTips &getTips() { return targetTips_; }
-	ModelID &getModelId() { return modelId_; }
+	// clang-format off
+	// uncrustify off
+	GLWTargetTips& getTips()    { return targetTips_; }
+	ModelID&       getModelId() { return modelId_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ModelID modelId_;
-	ModelID burntModelId_;
-	Target *target_;
-	ModelRendererSimulator *modelRenderer_;
-	ModelRendererSimulator *burntModelRenderer_;
-	bool burnt_;
-	bool billboard_;
-	float shieldHit_;
-	float totalTime_;
-	float scale_;
-	float color_;
-	GLWTargetTips targetTips_;
+	ModelID                 modelId_;
+	ModelID                 burntModelId_;
+	Target*                 target_;
+	ModelRendererSimulator* modelRenderer_;
+	ModelRendererSimulator* burntModelRenderer_;
+	bool                    burnt_;
+	bool                    billboard_;
+	float                   shieldHit_;
+	float                   totalTime_;
+	float                   scale_;
+	float                   color_;
+	GLWTargetTips           targetTips_;
 
 	void cacheMatrix();
 };
 
-#endif // __INCLUDE_TargetRendererImplTarget_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetRendererImplTarget_hpp_INCLUDE__

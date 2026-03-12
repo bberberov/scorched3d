@@ -34,51 +34,45 @@
 #include <GLW/GLWDropDownText.hpp>
 
 // SINGLETON
-class BuyAccessoryDialog
-	:
-	public GLWWindow,
-	public GLWButtonI,
-	public GLWCheckBoxI,
-	public GLWDropDownI,
-	public GLWTabI
+class BuyAccessoryDialog : public GLWWindow, public GLWButtonI, public GLWCheckBoxI, public GLWDropDownI, public GLWTabI
 {
 public:
-	static BuyAccessoryDialog *instance();
+	static BuyAccessoryDialog* instance();
 
 	// Inherited from GLWButtonI
 	virtual void draw();
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 	virtual void display();
 
 	// Inherited from GLWCheckBoxI
-	virtual void stateChange(bool state, unsigned int id);
+	virtual void stateChange( bool state, unsigned int id );
 
 	// Inherited from GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 	// Inherited from GLWTabI
-	virtual void tabDown(unsigned int id);
+	virtual void tabDown( unsigned int id );
 
 	void playerRefreshKeepPos();
 
 protected:
-	static BuyAccessoryDialog *instance_;
+	static BuyAccessoryDialog* instance_;
 
-	BuyAccessoryDialogTankInfo &tankInfo_;
-	unsigned int okId_;
-	unsigned int giftId_;
-	bool firstDrawTime_;
-	std::map<std::string, GLWTab *> buyTabs_;
-	GLWTab *sellTab_;
-	GLWTab *favouritesTab_;
-	GLWPanel *topPanel_;
-	GLWDropDownText *sortDropDown_;
-	GLWCheckBoxText *defaultTab_;
-	GLWFlag *flag_;
-	std::map<unsigned int, Accessory *> sellMap_;
-	std::map<unsigned int, Accessory *> buyMap_;
-	std::map<unsigned int, Accessory *> favMap_;
-	std::set<std::string> favorites_;
+	BuyAccessoryDialogTankInfo&          tankInfo_;
+	unsigned int                         okId_;
+	unsigned int                         giftId_;
+	bool                                 firstDrawTime_;
+	std::map< std::string, GLWTab* >     buyTabs_;
+	GLWTab*                              sellTab_;
+	GLWTab*                              favouritesTab_;
+	GLWPanel*                            topPanel_;
+	GLWDropDownText*                     sortDropDown_;
+	GLWCheckBoxText*                     defaultTab_;
+	GLWFlag*                             flag_;
+	std::map< unsigned int, Accessory* > sellMap_;
+	std::map< unsigned int, Accessory* > buyMap_;
+	std::map< unsigned int, Accessory* > favMap_;
+	std::set< std::string >              favorites_;
 
 	void addTabs();
 	void loadFavorites();
@@ -88,12 +82,12 @@ protected:
 	void addPlayerWeapons();
 	void addPlayerWeaponsSell();
 	void addPlayerFavorites();
-	void addPlayerWeaponsBuy(GLWTab *tab, const char *group);
-	bool addAccessory(GLWTab *tab, float height, Accessory *current);
+	void addPlayerWeaponsBuy( GLWTab* tab, const char* group );
+	bool addAccessory( GLWTab* tab, float height, Accessory* current );
 
 private:
 	BuyAccessoryDialog();
 	virtual ~BuyAccessoryDialog();
 };
 
-#endif // __INCLUDE_BuyAccessoryDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_BuyAccessoryDialog_hpp_INCLUDE__

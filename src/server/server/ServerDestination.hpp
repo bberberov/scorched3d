@@ -26,35 +26,39 @@
 #include <net/NetBuffer.hpp>
 
 struct ModIdentifierEntry;
+
 class ServerDestinationMod
 {
 public:
 	ServerDestinationMod();
 	virtual ~ServerDestinationMod();
 
-	void setReadyToReceive(bool r) { readyToReceive_ = r; }
-	bool getReadyToReceive() { return readyToReceive_; }
+	// clang-format off
+	// uncrustify off
+	void setReadyToReceive( bool r ) { readyToReceive_ = r; }
+	bool getReadyToReceive()         { return readyToReceive_; }
 
-	void setInit(bool i) { init_ = i; }
-	bool getInit() { return init_; }
+	void setInit( bool i ) { init_ = i; }
+	bool getInit()         { return init_; }
 
-	void setTotalLeft(unsigned int size) { totalLeft_ = size; };
-	unsigned int getTotalLeft() { return totalLeft_; }
+	void setTotalLeft( unsigned int size ) { totalLeft_ = size; };
+	unsigned int getTotalLeft()            { return totalLeft_; }
+	// uncrustify on
+	// clang-format on
 
-	void addFile(ModIdentifierEntry &entry);
-	void rmFile(const char *file);
-	ModIdentifierEntry *getNextFile();
-	
-	NetBuffer &getSendBuffer() { return sendBuffer_; }
+	void                addFile( ModIdentifierEntry& entry );
+	void                rmFile( const char* file );
+	ModIdentifierEntry* getNextFile();
+
+	NetBuffer& getSendBuffer() { return sendBuffer_; }
 
 protected:
-	bool readyToReceive_;
-	bool init_;
-	unsigned int totalLeft_;
-	NetBuffer sendBuffer_;
-	std::string lastFile_;
-	std::list<ModIdentifierEntry> *files_; // Pointer so we don't include ModFiles.hpp
-
+	bool                             readyToReceive_;
+	bool                             init_;
+	unsigned int                     totalLeft_;
+	NetBuffer                        sendBuffer_;
+	std::string                      lastFile_;
+	std::list< ModIdentifierEntry >* files_;  // Pointer so we don't include ModFiles.hpp
 };
 
 class ServerDestination
@@ -68,40 +72,44 @@ public:
 		sFinished
 	};
 
-	ServerDestination(unsigned int destinationId, unsigned int ipAddress);
+	ServerDestination( unsigned int destinationId, unsigned int ipAddress );
 	virtual ~ServerDestination();
 
-	void setState(State s);
+	// clang-format off
+	// uncrustify off
+	void  setState( State s );
 	State getState() { return state_; }
 
 	unsigned int getDestinationId() { return destinationId_; }
-	unsigned int getIpAddress() { return ipAddress_; }
+	unsigned int getIpAddress()     { return ipAddress_; }
 
-	void setAdmin(bool admin) { admin_ = admin; }
-	bool getAdmin() { return admin_; }
+	void setAdmin( bool admin ) { admin_ = admin; }
+	bool getAdmin()             { return admin_; }
 
-	int getAdminTries() { return adminTries_; }
-	void setAdminTries(int adminTries) { adminTries_ = adminTries; }
+	int  getAdminTries()                 { return adminTries_; }
+	void setAdminTries( int adminTries ) { adminTries_ = adminTries; }
 
-	unsigned int getLevelNumber() { return levelNumber_; }
-	void setLevelNumber(unsigned int ln) { levelNumber_ = ln; }
+	unsigned int getLevelNumber()                  { return levelNumber_; }
+	void         setLevelNumber( unsigned int ln ) { levelNumber_ = ln; }
 
-	ServerDestinationMod &getMod() { return mod_; }
-	RollingAverage &getPing() { return ping_; }
+	ServerDestinationMod& getMod()  { return mod_; }
+	RollingAverage&       getPing() { return ping_; }
 
-	fixed getLastSentPingTime() { return lastSentPingTime_; }
-	void setLastSentPingTime(fixed t) { lastSentPingTime_ = t; }
+	fixed getLastSentPingTime()          { return lastSentPingTime_; }
+	void  setLastSentPingTime( fixed t ) { lastSentPingTime_ = t; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	ServerDestinationMod mod_;
-	State state_;
-	unsigned int destinationId_;
-	unsigned int ipAddress_;
-	unsigned int levelNumber_;
-	bool admin_;
-	int adminTries_;
-	RollingAverage ping_;
-	fixed lastSentPingTime_;
+	State                state_;
+	unsigned int         destinationId_;
+	unsigned int         ipAddress_;
+	unsigned int         levelNumber_;
+	bool                 admin_;
+	int                  adminTries_;
+	RollingAverage       ping_;
+	fixed                lastSentPingTime_;
 };
 
-#endif // __INCLUDE_ServerDestination_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerDestination_hpp_INCLUDE__

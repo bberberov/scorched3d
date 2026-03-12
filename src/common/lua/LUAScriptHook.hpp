@@ -39,43 +39,28 @@ public:
 			eBoolean
 		};
 
-		Param(fixed innumber) :
-			type(eNumber),
-			number(innumber)
-		{};
-		Param(const char *instr) :
-			type(eString),
-			str(instr)
-		{};
-		Param(const std::string &instr) :
-			type(eString),
-			str(instr)
-		{};
-		Param(const LangString &instr) :
-			type(eString),
-			str( LangStringUtil::convertFromLang(instr) )
-		{};
-		Param(bool b) :
-			type(eBoolean),
-			boolean(b)
-		{};
+		Param( fixed innumber ) : type( eNumber ), number( innumber ) {};
+		Param( const char* instr ) : type( eString ), str( instr ) {};
+		Param( const std::string& instr ) : type( eString ), str( instr ) {};
+		Param( const LangString& instr ) : type( eString ), str( LangStringUtil::convertFromLang( instr ) ) {};
+		Param( bool b ) : type( eBoolean ), boolean( b ) {};
 
-		Type type;
-		bool boolean;
-		fixed number;
+		Type        type;
+		bool        boolean;
+		fixed       number;
 		std::string str;
 	};
 
-	LUAScriptHook(LUAScriptFactory *factory, const std::string &hooksName, const std::string &directoryName);
+	LUAScriptHook( LUAScriptFactory* factory, const std::string& hooksName, const std::string& directoryName );
 	~LUAScriptHook();
 
-	void addHookProvider(const std::string &hookName);
+	void addHookProvider( const std::string& hookName );
 
-	void callHook(const std::string &hookName);
-	void callHook(const std::string &hookName, const Param &param1);
-	void callHook(const std::string &hookName, const Param &param1, const Param &param2);
-	void callHook(const std::string &hookName, const Param &param1, const Param &param2, const Param &param3);
-	
+	void callHook( const std::string& hookName );
+	void callHook( const std::string& hookName, const Param& param1 );
+	void callHook( const std::string& hookName, const Param& param1, const Param& param2 );
+	void callHook( const std::string& hookName, const Param& param1, const Param& param2, const Param& param3 );
+
 	void clearHooks();
 	bool loadHooks();
 	void listHooks();
@@ -83,18 +68,19 @@ public:
 protected:
 	struct HookEntry
 	{
-		LUAScript *script;
+		LUAScript*  script;
 		std::string entryPoint;
 	};
 
-	LUAScriptFactory *factory_;
-	std::string hooksName_;
-	std::string directoryName_;
-	std::map<std::string, std::vector<HookEntry> > hookNames_;
-	bool loadHook(const std::string &directoryName, const std::string &fileName);
+	LUAScriptFactory*                                 factory_;
+	std::string                                       hooksName_;
+	std::string                                       directoryName_;
+	std::map< std::string, std::vector< HookEntry > > hookNames_;
+	bool loadHook( const std::string& directoryName, const std::string& fileName );
+
 	void reloadHooks() { loadHooks(); }
 
-	void callHookInternal(const std::string &hookName, const std::vector<Param> &params);
+	void callHookInternal( const std::string& hookName, const std::vector< Param >& params );
 };
 
-#endif // __INCLUDE_LUAScriptHook_hpp_INCLUDE__
+#endif  // __INCLUDE_LUAScriptHook_hpp_INCLUDE__

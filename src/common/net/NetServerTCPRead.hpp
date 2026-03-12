@@ -28,44 +28,44 @@ class NetServerTCPRead
 {
 public:
 	NetServerTCPRead(
-		unsigned int id,
-		TCPsocket socket,
-		NetServerTCPProtocol *protocol,
-		NetMessageHandler *messageHandler,
-		bool *checkDeleted
+		unsigned int          id,
+		TCPsocket             socket,
+		NetServerTCPProtocol* protocol,
+		NetMessageHandler*    messageHandler,
+		bool*                 checkDeleted
 	);
 	virtual ~NetServerTCPRead();
 
-	void start();
-	bool getDisconnect();
-	void addMessage(NetMessage *message);
+	void         start();
+	bool         getDisconnect();
+	void         addMessage( NetMessage* message );
 	unsigned int getIpAddress();
 
-	static unsigned int getIpAddressFromSocket(TCPsocket socket);
+	static unsigned int getIpAddressFromSocket( TCPsocket socket );
 
 protected:
-	unsigned int id_;
-	TCPsocket socket_;
-	SDLNet_SocketSet sockSet_;
-	NetServerTCPProtocol *protocol_;
-	SDL_mutex *outgoingMessagesMutex_;
-	NetMessageHandler *messageHandler_;
-	bool *checkDeleted_;
-	bool disconnect_;
-	bool sentDisconnect_;
-	unsigned int startCount_;
-	SDL_Thread *ctrlThread_;
-	SDL_Thread *recvThread_;
-	SDL_Thread *sendThread_;
-	std::list<NetMessage *> newMessages_;
+	unsigned int             id_;
+	TCPsocket                socket_;
+	SDLNet_SocketSet         sockSet_;
+	NetServerTCPProtocol*    protocol_;
+	SDL_mutex*               outgoingMessagesMutex_;
+	NetMessageHandler*       messageHandler_;
+	bool*                    checkDeleted_;
+	bool                     disconnect_;
+	bool                     sentDisconnect_;
+	unsigned int             startCount_;
+	SDL_Thread*              ctrlThread_;
+	SDL_Thread*              recvThread_;
+	SDL_Thread*              sendThread_;
+	std::list< NetMessage* > newMessages_;
 
-	void actualCtrlThreadFunc();
-	void actualSendRecvThreadFunc(bool send);
-	bool pollOutgoing();
-	bool pollIncoming();
-	static int ctrlThreadFunc(void *);
-	static int sendThreadFunc(void *);
-	static int recvThreadFunc(void *);
+	void       actualCtrlThreadFunc();
+	void       actualSendRecvThreadFunc( bool send );
+	bool       pollOutgoing();
+	bool       pollIncoming();
+	static int ctrlThreadFunc( void* );
+	static int sendThreadFunc( void* );
+	static int recvThreadFunc( void* );
 };
 
-#endif // __INCLUDE_NetServerTCPRead_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCPRead_hpp_INCLUDE__

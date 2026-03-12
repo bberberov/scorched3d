@@ -30,45 +30,45 @@
 class NetServerTCP : public NetInterface
 {
 public:
-	NetServerTCP(NetServerTCPProtocol *protocol);
+	NetServerTCP( NetServerTCPProtocol* protocol );
 	virtual ~NetServerTCP();
 
 	virtual bool started();
-	virtual bool connect(const char *hostName, int portNo);
-	virtual bool start(int portNo);
+	virtual bool connect( const char* hostName, int portNo );
+	virtual bool start( int portNo );
 	virtual void stop();
 
-	virtual int processMessages();
-	virtual void setMessageHandler(NetMessageHandlerI *handler);
+	virtual int  processMessages();
+	virtual void setMessageHandler( NetMessageHandlerI* handler );
 
 	virtual void disconnectAllClients();
-	virtual void disconnectClient(unsigned int client);
-	virtual void disconnectClient(NetBuffer &buffer, unsigned int client);
-	virtual void sendMessageServer(NetBuffer &buffer, unsigned int flags = 0);
-	virtual void sendMessageDest(NetBuffer &buffer, unsigned int destination, unsigned int flags = 0);
+	virtual void disconnectClient( unsigned int client );
+	virtual void disconnectClient( NetBuffer& buffer, unsigned int client );
+	virtual void sendMessageServer( NetBuffer& buffer, unsigned int flags = 0 );
+	virtual void sendMessageDest( NetBuffer& buffer, unsigned int destination, unsigned int flags = 0 );
 
 protected:
-	SDLNet_SocketSet sockSet_;
-	TCPsocket server_;
-	NetServerTCPProtocol *protocol_;
-	NetMessageHandler messageHandler_;
-	unsigned int firstDestination_;
-	unsigned int lastId_;
-	std::map<unsigned int, NetServerTCPRead *> connections_;
-	SDL_mutex *setMutex_;
-	bool checkDeleted_;
+	SDLNet_SocketSet                            sockSet_;
+	TCPsocket                                   server_;
+	NetServerTCPProtocol*                       protocol_;
+	NetMessageHandler                           messageHandler_;
+	unsigned int                                firstDestination_;
+	unsigned int                                lastId_;
+	std::map< unsigned int, NetServerTCPRead* > connections_;
+	SDL_mutex*                                  setMutex_;
+	bool                                        checkDeleted_;
 
-	static int threadFunc(void *);
+	static int threadFunc( void* );
 
-	bool pollIncoming();
-	bool pollDeleted();
-	void addClient(TCPsocket client);
-	void sendMessage(unsigned int client, NetMessage *message);
-	unsigned int getIpAddress(unsigned int destination);
+	bool         pollIncoming();
+	bool         pollDeleted();
+	void         addClient( TCPsocket client );
+	void         sendMessage( unsigned int client, NetMessage* message );
+	unsigned int getIpAddress( unsigned int destination );
 
 private:
-	NetServerTCP(const NetServerTCP &);
-	const NetServerTCP & operator=(const NetServerTCP &);
+	NetServerTCP( const NetServerTCP& );
+	const NetServerTCP& operator=( const NetServerTCP& );
 };
 
-#endif // __INCLUDE_NetServerTCP_hpp_INCLUDE__
+#endif  // __INCLUDE_NetServerTCP_hpp_INCLUDE__

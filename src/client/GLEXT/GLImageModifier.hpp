@@ -26,84 +26,76 @@
 #include <common/Vector.hpp>
 
 class ScorchedContext;
-namespace ImageModifier  
+
+namespace ImageModifier
 {
-	bool findIntersection(HeightMap &hMap,
-							Vector start,
-							Vector end,
-							float &dist,
-							float stopDist);
+	bool findIntersection( HeightMap& hMap, Vector start, Vector end, float& dist, float stopDist );
 
-	void tileBitmap(Image &src, Image &dest);
+	void tileBitmap( Image& src, Image& dest );
 
-	void addLightMapToBitmap(Image &bitmap, 
-							HeightMap &hMap,
-							Vector &sunPos,
-							Vector &ambience,
-							Vector &diffuse,
-							ProgressCounter *counter = 0);
+	void addLightMapToBitmap(
+		Image&           bitmap,
+		HeightMap&       hMap,
+		Vector&          sunPos,
+		Vector&          ambience,
+		Vector&          diffuse,
+		ProgressCounter* counter = 0
+	);
 
-	void addHeightToBitmap(HeightMap &hMap,
-							Image &destBitmap, 
-							Image &slopeBitmap,
-							Image &shoreBitmap,
-							Image **heightBitmaps,
-							int numberSources,
-							int destBitmapScaleSize,
-							ProgressCounter *counter = 0);
+	void addHeightToBitmap(
+		HeightMap&       hMap,
+		Image&           destBitmap,
+		Image&           slopeBitmap,
+		Image&           shoreBitmap,
+		Image**          heightBitmaps,
+		int              numberSources,
+		int              destBitmapScaleSize,
+		ProgressCounter* counter = 0
+	);
 
-	void redBitmap(
-		Image &destBitmap);
+	void redBitmap( Image& destBitmap );
 
 	void addTexturesToBitmap(
-		Image &destBitmap,
-		Image &slopeBitmap,
-		Image &shoreBitmap,
-		Image **heightBitmaps,
-		int numberSources);
+		Image&  destBitmap,
+		Image&  slopeBitmap,
+		Image&  shoreBitmap,
+		Image** heightBitmaps,
+		int     numberSources
+	);
 
 
-	void addWaterToBitmap(HeightMap &hMap,
-							Image &destBitmap,
-							Image &waterBitmap,
-							float waterHeight);
+	void addWaterToBitmap( HeightMap& hMap, Image& destBitmap, Image& waterBitmap, float waterHeight );
 
-	void removeWaterFromBitmap(HeightMap &hMap,
-							Image &srcBitmap,
-							Image &destBitmap,
-							Image &alphaBitmap,
-							float waterHeight);
+	void removeWaterFromBitmap(
+		HeightMap& hMap,
+		Image&     srcBitmap,
+		Image&     destBitmap,
+		Image&     alphaBitmap,
+		float      waterHeight
+	);
 
 	Image makeArenaBitmap();
 	Image makeArenaSurroundBitmap();
 
-	void addBorderToBitmap(Image &destBitmap,
-		int borderWidth,
-		float colors[3]);
+	void addBorderToBitmap( Image& destBitmap, int borderWidth, float colors[3] );
 
-	void makeBitmapTransparent(Image &output,
-		Image &input,
-		Image &mask);
+	void makeBitmapTransparent( Image& output, Image& input, Image& mask );
 
-	void addCircleToLandscape(
-		ScorchedContext &context,
-		float sx, float sy, float sw, float opacity);
-	void addCircle(Image &destBitmap,
-		float sx, float sy, float sw, float opacity);
+	void addCircleToLandscape( ScorchedContext& context, float sx, float sy, float sw, float opacity );
+	void addCircle( Image& destBitmap, float sx, float sy, float sw, float opacity );
 
 	void addBitmapToLandscape(
-		ScorchedContext &context,
-		Image &srcBitmap,
-		float sx, float sy, float scalex, float scaley, 
-		bool commit = false);
-	void addBitmap(Image &destBitmap,
-		Image &srcBitmap,
-		float sx, float sy, float scalex, float scaley, 
-		bool commit);
+		ScorchedContext& context,
+		Image&           srcBitmap,
+		float            sx,
+		float            sy,
+		float            scalex,
+		float            scaley,
+		bool             commit = false
+	);
+	void addBitmap( Image& destBitmap, Image& srcBitmap, float sx, float sy, float scalex, float scaley, bool commit );
 
-	void scalePlanBitmap(Image &destBitmap,
-		Image &srcBitmap,
-		int landscapeX, int landscapeY);
-};
+	void scalePlanBitmap( Image& destBitmap, Image& srcBitmap, int landscapeX, int landscapeY );
+};  // namespace ImageModifier
 
-#endif // __INCLUDE_GLImageModifier_hpp_INCLUDE__
+#endif  // __INCLUDE_GLImageModifier_hpp_INCLUDE__

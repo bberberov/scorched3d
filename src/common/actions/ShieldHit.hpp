@@ -27,20 +27,21 @@
 class ShieldHit : public Action
 {
 public:
-	ShieldHit(unsigned int playerId, FixedVector &position, fixed hitPercentage);
+	ShieldHit( unsigned int playerId, FixedVector& position, fixed hitPercentage );
 	virtual ~ShieldHit();
 
 	virtual void draw();
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void simulate( fixed frameTime, bool& remove );
+
 	virtual std::string getActionType() { return "ShieldHit"; }
 
 protected:
 	unsigned int playerId_;
-	FixedVector position_;
-	fixed hitPercentage_;
-	fixed totalTime_;
-	bool firstTime_;
+	FixedVector  position_;
+	fixed        hitPercentage_;
+	fixed        totalTime_;
+	bool         firstTime_;
 };
 
-#endif // __INCLUDE_ShieldHit_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldHit_hpp_INCLUDE__

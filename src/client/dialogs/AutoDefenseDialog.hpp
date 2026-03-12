@@ -30,26 +30,26 @@
 class AutoDefenseDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
-	static AutoDefenseDialog *instance();
+	static AutoDefenseDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 	// Inherited from GLWWindow
-	virtual void windowInit(const unsigned state);
+	virtual void windowInit( const unsigned int state );
 
 protected:
-	static AutoDefenseDialog *instance_;
+	static AutoDefenseDialog* instance_;
 
-	BuyAccessoryDialogTankInfo &tankInfo_;
-	unsigned int okId_;
-	unsigned int cancelId_;
-	GLWPanel *topPanel_;
-	GLWDropDownText *ddshields_;
-	GLWDropDownText *ddpara_;
+	BuyAccessoryDialogTankInfo& tankInfo_;
+	unsigned int                okId_;
+	unsigned int                cancelId_;
+	GLWPanel*                   topPanel_;
+	GLWDropDownText*            ddshields_;
+	GLWDropDownText*            ddpara_;
 
 	void finished();
 	void displayCurrent();
@@ -59,4 +59,4 @@ private:
 	virtual ~AutoDefenseDialog();
 };
 
-#endif // __INCLUDE_AutoDefenseDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AutoDefenseDialog_hpp_INCLUDE__

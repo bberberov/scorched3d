@@ -24,27 +24,34 @@
 #include <string>
 #include <list>
 
-class FileList  
+class FileList
 {
 public:
-	typedef std::list<std::string> ListType;
+	typedef std::list< std::string > ListType;
 
-	FileList(const std::string &directory, 
-		const std::string &filter = "*.*", 
-		bool fullPath = true, bool recurse = false);
+	FileList(
+		const std::string& directory,
+		const std::string& filter   = "*.*",
+		bool               fullPath = true,
+		bool               recurse  = false
+	);
 	virtual ~FileList();
 
 	bool getStatus();
-	ListType &getFiles() { return files_; }
+
+	ListType& getFiles() { return files_; }
 
 protected:
 	ListType files_;
-	bool status_;
+	bool     status_;
 
-	bool readFiles(const std::string &directory, 
-		const std::string &filter, bool fullPath);
-	bool addAllFiles(const std::string &baseDir, 
-		const std::string &directory, const std::string &filter, bool fullPath);
+	bool readFiles( const std::string& directory, const std::string& filter, bool fullPath );
+	bool addAllFiles(
+		const std::string& baseDir,
+		const std::string& directory,
+		const std::string& filter,
+		bool               fullPath
+	);
 };
 
-#endif // __INCLUDE_FileList_hpp_INCLUDE__
+#endif  // __INCLUDE_FileList_hpp_INCLUDE__

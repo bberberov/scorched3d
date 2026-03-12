@@ -29,20 +29,28 @@ public:
 	WeaponAimedOver();
 	virtual ~WeaponAimedOver();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(WeaponAimedOver, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponAimedOver, AccessoryPart::AccessoryWeapon );
 
 protected:
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	virtual void aimShot(ScorchedContext &context,
-		RandomGenerator &random,
-		FixedVector &position, FixedVector &shootAt,
-		fixed &angleXYDegs, fixed &angleYZDegs, fixed &power);
+	virtual void aimShot(
+		ScorchedContext& context,
+		RandomGenerator& random,
+		FixedVector&     position,
+		FixedVector&     shootAt,
+		fixed&           angleXYDegs,
+		fixed&           angleYZDegs,
+		fixed&           power
+	);
 };
 
-#endif // __INCLUDE_WeaponAimedOver_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponAimedOver_hpp_INCLUDE__

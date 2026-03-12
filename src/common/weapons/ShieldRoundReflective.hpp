@@ -29,16 +29,15 @@ public:
 	ShieldRoundReflective();
 	virtual ~ShieldRoundReflective();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool       parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 	virtual ShieldType getShieldType();
 
 	fixed getDeflectFactor() { return deflectFactor_; }
 
-	REGISTER_ACCESSORY_HEADER(ShieldRoundReflective, AccessoryPart::AccessoryShield);
+	REGISTER_ACCESSORY_HEADER( ShieldRoundReflective, AccessoryPart::AccessoryShield );
 
 protected:
 	fixed deflectFactor_;
 };
 
-#endif // __INCLUDE_ShieldRoundReflective_hpp_INCLUDE__
+#endif  // __INCLUDE_ShieldRoundReflective_hpp_INCLUDE__

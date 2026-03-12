@@ -28,57 +28,55 @@
 class ConsoleRuleFnIBooleanAdapter : public ConsoleRuleFnI
 {
 public:
-	ConsoleRuleFnIBooleanAdapter(const char *name, bool &param);
+	ConsoleRuleFnIBooleanAdapter( const char* name, bool& param );
 	virtual ~ConsoleRuleFnIBooleanAdapter();
 
 	// Inherited from ConsoleRuleFnI
-	virtual bool getBoolParam(const char *name);
-	virtual void setBoolParam(const char *name, bool value);
+	virtual bool getBoolParam( const char* name );
+	virtual void setBoolParam( const char* name, bool value );
 
 protected:
-	std::string name_;
-	bool &param_;
-	ConsoleRuleFn *readRule_;
-	ConsoleRuleFn *writeRule_;
-
+	std::string    name_;
+	bool&          param_;
+	ConsoleRuleFn* readRule_;
+	ConsoleRuleFn* writeRule_;
 };
 
 class ConsoleRuleFnINumberAdapter : public ConsoleRuleFnI
 {
 public:
-	ConsoleRuleFnINumberAdapter(const char *name, float &param);
+	ConsoleRuleFnINumberAdapter( const char* name, float& param );
 	virtual ~ConsoleRuleFnINumberAdapter();
 
 	// Inherited from ConsoleRuleFnI
-	virtual float getNumberParam(const char *name);
-	virtual void  setNumberParam(const char *name, float value);
+	virtual float getNumberParam( const char* name );
+	virtual void  setNumberParam( const char* name, float value );
 
 protected:
-	std::string name_;
-	float &param_;
-	ConsoleRuleFn *readRule_;
-	ConsoleRuleFn *writeRule_;
-
+	std::string    name_;
+	float&         param_;
+	ConsoleRuleFn* readRule_;
+	ConsoleRuleFn* writeRule_;
 };
 
 class ConsoleRuleFnIOptionsAdapter : public ConsoleRuleFnI
 {
 public:
-	ConsoleRuleFnIOptionsAdapter(OptionEntry &entry, bool write = false);
+	ConsoleRuleFnIOptionsAdapter( OptionEntry& entry, bool write = false );
 	virtual ~ConsoleRuleFnIOptionsAdapter();
 
 	// Inherited from ConsoleRuleFnI
-	virtual bool getBoolParam(const char *name);
-	virtual void setBoolParam(const char *name, bool value);
-	virtual float getNumberParam(const char *name);
-	virtual void  setNumberParam(const char *name, float value);
-	virtual const char *getStringParam(const char *name);
-	virtual void setStringParam(const char *name, const char *value);
+	virtual bool        getBoolParam( const char* name );
+	virtual void        setBoolParam( const char* name, bool value );
+	virtual float       getNumberParam( const char* name );
+	virtual void        setNumberParam( const char* name, float value );
+	virtual const char* getStringParam( const char* name );
+	virtual void        setStringParam( const char* name, const char* value );
 
 protected:
-	OptionEntry &entry_;
-	ConsoleRuleFn *readRule_;
-	ConsoleRuleFn *writeRule_;
+	OptionEntry&   entry_;
+	ConsoleRuleFn* readRule_;
+	ConsoleRuleFn* writeRule_;
 };
 
-#endif // __INCLUDE_ConsoleRuleFnIAdapter_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleRuleFnIAdapter_hpp_INCLUDE__

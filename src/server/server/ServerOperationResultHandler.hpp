@@ -26,13 +26,10 @@
 class ServerOperationResultHandler : public ComsMessageHandlerI
 {
 public:
-	ServerOperationResultHandler(ComsMessageHandler &comsMessageHandler);
+	ServerOperationResultHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerOperationResultHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerOperationResultHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerOperationResultHandler_hpp_INCLUDE__

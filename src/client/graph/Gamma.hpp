@@ -25,16 +25,16 @@
 
 struct GammaSettings
 {
-	Uint16 Red  [256];
+	Uint16 Red[256];
 	Uint16 Green[256];
-	Uint16 Blue [256];
+	Uint16 Blue[256];
 };
 
 // SINGLETON
 class Gamma
 {
 public:
-	static Gamma *instance();
+	static Gamma* instance();
 
 	// should be between 0.3f, 4.0f
 	bool save();
@@ -43,7 +43,7 @@ public:
 	void reset();
 
 protected:
-	static Gamma *instance_;
+	static Gamma* instance_;
 
 private:
 	Gamma();
@@ -52,4 +52,4 @@ private:
 	GammaSettings savedSettings_;
 };
 
-#endif // __INCLUDE_Gamma_hpp_INCLUDE__
+#endif  // __INCLUDE_Gamma_hpp_INCLUDE__

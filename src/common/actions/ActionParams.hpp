@@ -25,29 +25,37 @@
 #include <common/NumberParser.hpp>
 #include <vector>
 
-#define FIXED_ACTION_PARAM_DECL(x) \
-	private: \
+#define FIXED_ACTION_PARAM_DECL( x ) \
+\
+private: \
 	FixedActionParam x_; \
-	public: \
-	fixed get##x() { return x_.getValue(); }
-#define FIXED_ACTION_PARAM_DEFN(x, y, z) \
-	x_.setValue(z); \
-	x_.setName(y); \
-	params_.push_back(&x_);
+\
+public: \
+	fixed get##x() \
+	{ \
+		return x_.getValue(); \
+	}
+
+#define FIXED_ACTION_PARAM_DEFN( x, y, z ) \
+	x_.setValue( z ); \
+	x_.setName( y ); \
+	params_.push_back( &x_ );
 
 struct lua_State;
 class XMLNode;
+
 class ActionParam
 {
 public:
-	const std::string &getName() { return name_; }
-	void setName(const std::string &name) { name_ = name; }
+	const std::string& getName() { return name_; }
 
-	virtual void copy(ActionParam *other) = 0;
-	virtual bool parseXML(XMLNode *accessoryNode) = 0;
-	virtual void initLUA(lua_State *L, int position) = 0;
-	virtual void initXML(ScorchedContext &context) = 0;
-		
+	void setName( const std::string& name ) { name_ = name; }
+
+	virtual void copy( ActionParam* other )            = 0;
+	virtual bool parseXML( XMLNode* accessoryNode )    = 0;
+	virtual void initLUA( lua_State* L, int position ) = 0;
+	virtual void initXML( ScorchedContext& context )   = 0;
+
 protected:
 	std::string name_;
 };
@@ -55,45 +63,49 @@ protected:
 class FixedActionParam : public ActionParam
 {
 public:
-	FixedActionParam() : parser_("FixedActionParam") {}
+	FixedActionParam() : parser_( "FixedActionParam" ) {}
 
-	fixed getValue() { return value_; }
-	void setValue(fixed value) { value_ = value; }
+	// clang-format off
+	// uncrustify off
+	fixed getValue()              { return value_; }
+	void  setValue( fixed value ) { value_ = value; }
+	// uncrustify on
+	// clang-format on
 
-	virtual void copy(ActionParam *other);
-	virtual bool parseXML(XMLNode *accessoryNode);
-	virtual void initLUA(lua_State *L, int position);
-	virtual void initXML(ScorchedContext &context);
+	virtual void copy( ActionParam* other );
+	virtual bool parseXML( XMLNode* accessoryNode );
+	virtual void initLUA( lua_State* L, int position );
+	virtual void initXML( ScorchedContext& context );
 
 protected:
 	NumberParser parser_;
-	fixed value_;
+	fixed        value_;
 };
 
-class ActionParams 
+class ActionParams
 {
 public:
 	ActionParams();
 
-	bool parseXML(XMLNode *accessoryNode);
-	void initLUA(lua_State *L, int position);
-	void initXML(ScorchedContext &context);
+	bool parseXML( XMLNode* accessoryNode );
+	void initLUA( lua_State* L, int position );
+	void initXML( ScorchedContext& context );
 
-	void copy(ActionParams &other);
+	void copy( ActionParams& other );
 
 protected:
-	std::vector<ActionParam *> params_;
+	std::vector< ActionParam* > params_;
 
 private:
-	ActionParams(const ActionParams &other);
-	ActionParams &operator=(const ActionParams &other);
+	ActionParams( const ActionParams& other );
+	ActionParams& operator=( const ActionParams& other );
 };
 
 class TestActionParams : public ActionParams
 {
 	TestActionParams();
 
-	FIXED_ACTION_PARAM_DECL(testName);
+	FIXED_ACTION_PARAM_DECL( testName );
 };
 
-#endif // __INCLUDE_ActionParams_hpp_INCLUDE__
+#endif  // __INCLUDE_ActionParams_hpp_INCLUDE__

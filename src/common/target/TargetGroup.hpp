@@ -25,22 +25,23 @@
 
 class Target;
 class ScorchedContext;
+
 class TargetGroup : public ObjectGroupEntry
 {
 public:
-	TargetGroup(ScorchedContext &context);
+	TargetGroup( ScorchedContext& context );
 	virtual ~TargetGroup();
 
-	virtual void *getObject();
+	virtual void*                        getObject();
 	virtual ObjectGroupEntry::ObjectType getType();
-	virtual FixedVector &getPosition();
-	virtual FixedVector &getVelocity();
-	virtual unsigned int getPlayerId();
+	virtual FixedVector&                 getPosition();
+	virtual FixedVector&                 getVelocity();
+	virtual unsigned int                 getPlayerId();
 
-	void setTarget(Target *target) { target_ = target; }
+	void setTarget( Target* target ) { target_ = target; }
 
 protected:
-	Target *target_;
+	Target* target_;
 };
 
-#endif // __INCLUDE_TargetGroup_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetGroup_hpp_INCLUDE__

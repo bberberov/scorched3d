@@ -29,37 +29,38 @@ class RandomGenerator
 public:
 	virtual ~RandomGenerator();
 
-	virtual unsigned int getRandUInt(const char *source) = 0;
-	virtual fixed getRandFixed(const char *source) = 0;
+	virtual unsigned int getRandUInt( const char* source )  = 0;
+	virtual fixed        getRandFixed( const char* source ) = 0;
 };
 
 class ScorchedContext;
+
 class FileRandomGenerator : public RandomGenerator
 {
 public:
 	FileRandomGenerator();
 	virtual ~FileRandomGenerator();
 
-	void setScorchedContext(ScorchedContext *context) { context_ = context; }
+	void setScorchedContext( ScorchedContext* context ) { context_ = context; }
 
-	void seed(unsigned int seed);
+	void         seed( unsigned int seed );
 	unsigned int getSeed();
 
-	virtual unsigned int getRandUInt(const char *source);
-	virtual fixed getRandFixed(const char *source);
+	virtual unsigned int getRandUInt( const char* source );
+	virtual fixed        getRandFixed( const char* source );
 
-	bool writeMessage(NetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	static unsigned int bufferSize_;
-	static unsigned int *buffer_;
-	ScorchedContext *context_;
-	unsigned int position_;
+	static unsigned int  bufferSize_;
+	static unsigned int* buffer_;
+	ScorchedContext*     context_;
+	unsigned int         position_;
 
 private:
-	FileRandomGenerator(const FileRandomGenerator &other);
-	FileRandomGenerator &operator=(const FileRandomGenerator &other);
+	FileRandomGenerator( const FileRandomGenerator& other );
+	FileRandomGenerator& operator=( const FileRandomGenerator& other );
 };
 
-#endif // __INCLUDE_RandomGenerator_hpp_INCLUDE__
+#endif  // __INCLUDE_RandomGenerator_hpp_INCLUDE__

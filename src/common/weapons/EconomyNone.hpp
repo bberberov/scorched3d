@@ -39,12 +39,10 @@ public:
 	virtual bool savePrices();
 	virtual void calculatePrices();
 
-	virtual void accessoryBought(Tank *tank, 
-		const char *accessoryName);
-	virtual void accessorySold(Tank *tank, 
-		const char *accessoryName);
+	virtual void accessoryBought( Tank* tank, const char* accessoryName );
+	virtual void accessorySold( Tank* tank, const char* accessoryName );
 
-	REGISTER_CLASS_HEADER(EconomyNone);
+	REGISTER_CLASS_HEADER( EconomyNone );
 };
 
-#endif // __INCLUDE_EconomyNone_hpp_INCLUDE__
+#endif  // __INCLUDE_EconomyNone_hpp_INCLUDE__

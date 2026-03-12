@@ -33,24 +33,24 @@
 class NumberParser
 {
 public:
-	NumberParser(const char *valueName);
-	NumberParser(const char *valueName, fixed value);
+	NumberParser( const char* valueName );
+	NumberParser( const char* valueName, fixed value );
 	virtual ~NumberParser();
 
-	fixed getValue(ScorchedContext &context); 
-	fixed getValue(ScorchedContext &context, fixed defaultValue);
-	int getInt(ScorchedContext &context);
-	unsigned int getUInt(ScorchedContext &context);
-	bool setExpression(const char *expression);
-	bool setExpression(fixed value);
+	fixed        getValue( ScorchedContext& context );
+	fixed        getValue( ScorchedContext& context, fixed defaultValue );
+	int          getInt( ScorchedContext& context );
+	unsigned int getUInt( ScorchedContext& context );
+	bool         setExpression( const char* expression );
+	bool         setExpression( fixed value );
 
 protected:
-	const char *valueName_;
-	bool getOperands();
-	bool isFixed_, isValid_;
-	std::string expression_;
-	std::list<fixed> operands_;
-	fixed max_, min_, step_;
+	const char*        valueName_;
+	bool               getOperands();
+	bool               isFixed_, isValid_;
+	std::string        expression_;
+	std::list< fixed > operands_;
+	fixed              max_, min_, step_;
 };
 
-#endif // __INCLUDE_NumberParser_hpp_INCLUDE__
+#endif  // __INCLUDE_NumberParser_hpp_INCLUDE__

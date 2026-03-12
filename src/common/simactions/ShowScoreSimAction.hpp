@@ -27,21 +27,22 @@ class ShowScoreSimAction : public SimAction
 {
 public:
 	ShowScoreSimAction();
-	ShowScoreSimAction(fixed scoreTime, bool finalScore);
+	ShowScoreSimAction( fixed scoreTime, bool finalScore );
 	virtual ~ShowScoreSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(ShowScoreSimAction);
+	REGISTER_CLASS_HEADER( ShowScoreSimAction );
+
 protected:
 	fixed scoreTime_;
-	bool finalScore_;
+	bool  finalScore_;
 
-	void scoreWinners(ScorchedContext &context);
-	void scoreOverallWinner(ScorchedContext &context);
+	void scoreWinners( ScorchedContext& context );
+	void scoreOverallWinner( ScorchedContext& context );
 };
 
-#endif // __INCLUDE_ShowScoreSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_ShowScoreSimAction_hpp_INCLUDE__

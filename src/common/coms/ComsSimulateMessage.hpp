@@ -31,28 +31,30 @@ public:
 	static ComsMessageType ComsSimulateMessageType;
 
 	ComsSimulateMessage();
-	ComsSimulateMessage(fixed eventTime, fixed actualTime, 
-		unsigned int serverTime,
-		std::list<SimAction *> &actions);
+	ComsSimulateMessage( fixed eventTime, fixed actualTime, unsigned int serverTime, std::list< SimAction* >& actions );
 	virtual ~ComsSimulateMessage();
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	fixed &getEventTime() { return eventTime_; }
-	fixed &getActualTime() { return actualTime_; }
-	unsigned int getServerTime() { return serverTime_; }
-	std::list<SimAction *> &getActions() { return actions_; }
+	// clang-format off
+	// uncrustify off
+	fixed&                   getEventTime()  { return eventTime_; }
+	fixed&                   getActualTime() { return actualTime_; }
+	unsigned int             getServerTime() { return serverTime_; }
+	std::list< SimAction* >& getActions()    { return actions_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	fixed eventTime_, actualTime_;
-	unsigned int serverTime_;
-	std::list<SimAction *> actions_;
+	fixed                   eventTime_, actualTime_;
+	unsigned int            serverTime_;
+	std::list< SimAction* > actions_;
 
 private:
-	ComsSimulateMessage(const ComsSimulateMessage &);
-	const ComsSimulateMessage & operator=(const ComsSimulateMessage &);
+	ComsSimulateMessage( const ComsSimulateMessage& );
+	const ComsSimulateMessage& operator=( const ComsSimulateMessage& );
 };
 
-#endif // __INCLUDE_ComsSimulateMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsSimulateMessage_hpp_INCLUDE__

@@ -29,10 +29,10 @@ public:
 	TargetRenderer();
 	virtual ~TargetRenderer();
 
-	virtual void moved() = 0;
+	virtual void moved()       = 0;
 	virtual void targetBurnt() = 0;
-	virtual void shieldHit() = 0;
-	virtual void fired() = 0;
+	virtual void shieldHit()   = 0;
+	virtual void fired()       = 0;
 };
 
-#endif // __INCLUDE_TargetRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetRenderer_hpp_INCLUDE__

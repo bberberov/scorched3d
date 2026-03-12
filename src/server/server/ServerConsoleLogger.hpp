@@ -30,7 +30,7 @@ public:
 	ServerConsoleLogger();
 	virtual ~ServerConsoleLogger();
 
-	virtual void logMessage(LoggerInfo &info);
+	virtual void logMessage( LoggerInfo& info );
 };
 
-#endif // __INCLUDE_ServerConsoleLogger_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerConsoleLogger_hpp_INCLUDE__

@@ -24,7 +24,7 @@
 class GLWTranslate
 {
 public:
-	GLWTranslate(float x, float y);
+	GLWTranslate( float x, float y );
 	virtual ~GLWTranslate();
 
 	static float getPosX();
@@ -33,7 +33,7 @@ public:
 protected:
 	static float posX_;
 	static float posY_;
-	float x_, y_;
+	float        x_, y_;
 };
 
-#endif // __INCLUDE_GLWTranslate_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTranslate_hpp_INCLUDE__

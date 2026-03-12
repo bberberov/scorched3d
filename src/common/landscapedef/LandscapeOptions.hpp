@@ -32,9 +32,9 @@ public:
 	LandscapeOptionsType();
 	virtual ~LandscapeOptionsType();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 
 	OptionsGame options;
 };
 
-#endif // __INCLUDE_LandscapeOptions_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeOptions_hpp_INCLUDE__

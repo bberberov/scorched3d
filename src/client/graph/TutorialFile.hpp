@@ -26,65 +26,66 @@
 
 class TutorialFile;
 class TutorialFileEntry;
+
 class TutorialCondition
 {
 public:
-	virtual TutorialFileEntry *checkCondition() = 0;
-	virtual bool parseXML(TutorialFile *file, XMLNode *node) = 0;
+	virtual TutorialFileEntry* checkCondition()                              = 0;
+	virtual bool               parseXML( TutorialFile* file, XMLNode* node ) = 0;
 
-	static TutorialCondition *create(const char *type);
+	static TutorialCondition* create( const char* type );
 };
 
 class TutorialConditionFirstMove : public TutorialCondition
 {
 public:
-	virtual TutorialFileEntry *checkCondition();
-	virtual bool parseXML(TutorialFile *file, XMLNode *node);
+	virtual TutorialFileEntry* checkCondition();
+	virtual bool               parseXML( TutorialFile* file, XMLNode* node );
 
 protected:
-	TutorialFileEntry *next_;
+	TutorialFileEntry* next_;
 };
 
 class TutorialConditionTankDead : public TutorialCondition
 {
 public:
-	virtual TutorialFileEntry *checkCondition();
-	virtual bool parseXML(TutorialFile *file, XMLNode *node);
+	virtual TutorialFileEntry* checkCondition();
+	virtual bool               parseXML( TutorialFile* file, XMLNode* node );
 
 protected:
-	TutorialFileEntry *next_;
+	TutorialFileEntry* next_;
 };
 
 class TutorialConditionWindowVisible : public TutorialCondition
 {
 public:
-	virtual TutorialFileEntry *checkCondition();
-	virtual bool parseXML(TutorialFile *file, XMLNode *node);
+	virtual TutorialFileEntry* checkCondition();
+	virtual bool               parseXML( TutorialFile* file, XMLNode* node );
 
 protected:
-	std::string window_;
-	TutorialFileEntry *next_;
+	std::string        window_;
+	TutorialFileEntry* next_;
 };
 
 class TutorialConditionWindowWait : public TutorialCondition
 {
 public:
-	virtual TutorialFileEntry *checkCondition();
-	virtual bool parseXML(TutorialFile *file, XMLNode *node);
+	virtual TutorialFileEntry* checkCondition();
+	virtual bool               parseXML( TutorialFile* file, XMLNode* node );
 
 protected:
-	std::string window_;
-	TutorialFileEntry *next_;
+	std::string        window_;
+	TutorialFileEntry* next_;
 };
 
 class TutorialFileEntry
 {
 public:
-	std::list<TutorialCondition *> conditions_;
-	std::string name_;
-	XMLNode *text_;
+	std::list< TutorialCondition* > conditions_;
+	std::string                     name_;
+	XMLNode*                        text_;
 
-	TutorialFileEntry *checkConditions();
+	TutorialFileEntry* checkConditions();
 };
 
 class TutorialFile
@@ -93,15 +94,16 @@ public:
 	TutorialFile();
 	virtual ~TutorialFile();
 
-	bool parseFile(const std::string &file);
+	bool parseFile( const std::string& file );
 
-	TutorialFileEntry *getStartEntry() { return start_; }
-	TutorialFileEntry *getEntry(const char *name); 
+	TutorialFileEntry* getStartEntry() { return start_; }
+
+	TutorialFileEntry* getEntry( const char* name );
 
 protected:
-	XMLFile file_;
-	std::map<std::string, TutorialFileEntry *> entries_;
-	TutorialFileEntry *start_;
+	XMLFile                                     file_;
+	std::map< std::string, TutorialFileEntry* > entries_;
+	TutorialFileEntry*                          start_;
 };
 
-#endif // __INCLUDE_TutorialFile_hpp_INCLUDE__
+#endif  // __INCLUDE_TutorialFile_hpp_INCLUDE__

@@ -22,18 +22,17 @@
 #define __INCLUDE_ModelRenderer_hpp_INCLUDE__
 
 class Model;
+
 class ModelRenderer
 {
 public:
 	ModelRenderer();
 	virtual ~ModelRenderer();
 
-	virtual void draw(float currentFrame, 
-		float distance, float fade, bool setState) = 0;
-	virtual void drawBottomAligned(float currentFrame, 
-		float distance, float fade, bool setState) = 0;
+	virtual void draw( float currentFrame, float distance, float fade, bool setState )              = 0;
+	virtual void drawBottomAligned( float currentFrame, float distance, float fade, bool setState ) = 0;
 
-	virtual Model *getModel() = 0;
+	virtual Model* getModel() = 0;
 };
 
-#endif // __INCLUDE_ModelRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRenderer_hpp_INCLUDE__

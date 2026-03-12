@@ -57,30 +57,35 @@ public:
 	};
 
 	ComsAdminMessage(
-		unsigned int sid = 0,
-		ComsAdminMessageType type = AdminNone, 
-		const std::string &param1_ = "",
-		const std::string &param2_ = "");
+		unsigned int         sid     = 0,
+		ComsAdminMessageType type    = AdminNone,
+		const std::string&   param1_ = "",
+		const std::string&   param2_ = ""
+	);
 	virtual ~ComsAdminMessage();
 
-	unsigned int getSid() { return sid_; }
-	ComsAdminMessageType getType() { return type_; }
-	const char *getParam1() { return param1_.c_str(); }
-	const char *getParam2() { return param2_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	unsigned int         getSid()    { return sid_; }
+	ComsAdminMessageType getType()   { return type_; }
+	const char*          getParam1() { return param1_.c_str(); }
+	const char*          getParam2() { return param2_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int sid_;
+	unsigned int         sid_;
 	ComsAdminMessageType type_;
-	std::string param1_;
-	std::string param2_;
+	std::string          param1_;
+	std::string          param2_;
 
 private:
-	ComsAdminMessage(const ComsAdminMessage &);
-	const ComsAdminMessage & operator=(const ComsAdminMessage &);
+	ComsAdminMessage( const ComsAdminMessage& );
+	const ComsAdminMessage& operator=( const ComsAdminMessage& );
 };
 
-#endif // __INCLUDE_ComsAdminMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsAdminMessage_hpp_INCLUDE__

@@ -26,27 +26,28 @@
 
 class ScorchedContext;
 class RandomGenerator;
+
 class TargetMovement
 {
 public:
 	TargetMovement();
 	virtual ~TargetMovement();
 
-	void generate(ScorchedContext &context);
-	void simulate(ScorchedContext &context, fixed frameTime);
+	void generate( ScorchedContext& context );
+	void simulate( ScorchedContext& context, fixed frameTime );
 	void draw();
 	void reset();
 	void clear();
 
 protected:
-	std::vector<TargetMovementEntry *> movements_;
+	std::vector< TargetMovementEntry* > movements_;
 
-	void addMovements(ScorchedContext &context, 
-		RandomGenerator &random, 
-		std::vector<LandscapeInclude *> &movements);
-	void addMovementType(ScorchedContext &context, 
-		RandomGenerator &random, 
-		std::vector<LandscapeMovementType *> &movementtype);
+	void addMovements( ScorchedContext& context, RandomGenerator& random, std::vector< LandscapeInclude* >& movements );
+	void addMovementType(
+		ScorchedContext&                       context,
+		RandomGenerator&                       random,
+		std::vector< LandscapeMovementType* >& movementtype
+	);
 };
 
-#endif // __INCLUDE_TargetMovement_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetMovement_hpp_INCLUDE__

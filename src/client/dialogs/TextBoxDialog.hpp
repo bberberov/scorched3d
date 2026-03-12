@@ -30,38 +30,44 @@ class TextBoxDialog;
 class TextBoxDialogI
 {
 public:
-	virtual void textBoxResult(TextBoxDialog *dialog, const LangString &result) = 0;
+	virtual void textBoxResult( TextBoxDialog* dialog, const LangString& result ) = 0;
 };
 
 // SINGLETON
 class TextBoxDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static TextBoxDialog *instance();
+	static TextBoxDialog* instance();
 
-	static void show(const LangString &message, const LangString &text, TextBoxDialogI *user);
-	static LangString &getText() { return instance_->result_->getLangString(); }
+	static void show( const LangString& message, const LangString& text, TextBoxDialogI* user );
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	static LangString& getText() { return instance_->result_->getLangString(); }
 
-	virtual void buttonDown(unsigned int id);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void keyDown(
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
+
+	virtual void buttonDown( unsigned int id );
 
 protected:
-	static TextBoxDialog *instance_;
+	static TextBoxDialog* instance_;
 
-	GLWTextButton *okButton_, *cancelButton_;
-	GLWTextBox *result_;
-	GLWLabel *message_;
-	TextBoxDialogI *user_;
-	
+	GLWTextButton*  okButton_;
+	GLWTextButton*  cancelButton_;
+	GLWTextBox*     result_;
+	GLWLabel*       message_;
+	TextBoxDialogI* user_;
+
 private:
 	TextBoxDialog();
 	virtual ~TextBoxDialog();
 };
 
-#endif // __INCLUDE_TextBoxDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_TextBoxDialog_hpp_INCLUDE__

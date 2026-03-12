@@ -32,12 +32,12 @@ public:
 	virtual ~ComsFileAkMessage();
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 private:
-	ComsFileAkMessage(const ComsFileAkMessage &);
-	const ComsFileAkMessage & operator=(const ComsFileAkMessage &);
+	ComsFileAkMessage( const ComsFileAkMessage& );
+	const ComsFileAkMessage& operator=( const ComsFileAkMessage& );
 };
 
-#endif // __INCLUDE_ComsFileAkMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsFileAkMessage_hpp_INCLUDE__

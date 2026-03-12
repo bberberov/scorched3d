@@ -5,15 +5,15 @@
 //////////////////////////////////////////////////////////////////////////
 //
 //  Released under GNU license
-//		Erik H Gawtry
-//			July, 2005	Version 1.0
-//		Altered G Camp
-//			Aug, 2007 Version 1.1
+//  	Erik H Gawtry
+//  		July, 2005  Version 1.0
+//  	Altered G Camp
+//  		Aug, 2007   Version 1.1
 //
 //
 //  Algorythms borrowed from:
-//		Andrew Ryder, 11 September 2001
-//      Joseph Hall, Unknown Date
+//  	Andrew Ryder, 11 September 2001
+//  	Joseph Hall, Unknown Date
 //
 //
 //////////////////////////////////////////////////////////////////////////
@@ -35,142 +35,89 @@ class fixed
 {
 private:
 	Sint64 m_nVal;
+
 public:
-	fixed()
-	{
-		m_nVal = 0;
-	}
+	// clang-format off
+	// uncrustify off
+	fixed()                              { m_nVal = 0; }
+	fixed( const fixed& fixedVal )       { m_nVal = fixedVal.m_nVal; }
+	fixed( bool bInternal, Sint64 nVal ) { m_nVal = nVal; }
+	fixed( unsigned int nVal )           { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
+	fixed( int nVal )                    { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
+	fixed( Sint64 nVal )                 { m_nVal = nVal * FIXED_RESOLUTION; }
+	fixed( const char* nVal );
+	// uncrustify on
+	// clang-format on
 
-	fixed(const fixed& fixedVal)
-	{
-		m_nVal = fixedVal.m_nVal;
-	}
-
-	fixed(bool bInternal, Sint64 nVal)
-	{
-		m_nVal = nVal;
-	}
-
-	fixed(unsigned int nVal)
-	{
-		m_nVal = Sint64(nVal)*FIXED_RESOLUTION;
-	}
-
-	fixed(int nVal)
-	{
-		m_nVal = Sint64(nVal)*FIXED_RESOLUTION;
-	}
-
-	fixed(Sint64 nVal)
-	{
-		m_nVal = nVal*FIXED_RESOLUTION;
-	}
-
-	fixed(const char *nVal);
-
-	~fixed()
-	{
-	}
+	~fixed() {}
 
 	fixed operator++()
 	{
 		m_nVal += FIXED_RESOLUTION;
+
 		return *this;
 	}
 
 	fixed operator--()
 	{
 		m_nVal -= FIXED_RESOLUTION;
+
 		return *this;
 	}
 
-	fixed operator-()
-	{
-		return fixed(0) - *this;
-	}
+	fixed operator-() { return fixed( 0 ) - *this; }
 
-	fixed& operator=(fixed fixedVal)
+	fixed& operator=( fixed fixedVal )
 	{
 		m_nVal = fixedVal.m_nVal;
+
 		return *this;
 	}
 
-	bool operator==(fixed fixedVal)
-	{
-		return (m_nVal == fixedVal.m_nVal);
-	}
+	// clang-format off
+	// uncrustify off
+	bool operator==( fixed fixedVal ) { return ( m_nVal == fixedVal.m_nVal ); }
+	bool operator!=( fixed fixedVal ) { return ( m_nVal != fixedVal.m_nVal ); }
+	bool operator< ( fixed fixedVal ) { return ( m_nVal <  fixedVal.m_nVal ); }
+	bool operator<=( fixed fixedVal ) { return ( m_nVal <= fixedVal.m_nVal ); }
+	bool operator> ( fixed fixedVal ) { return ( m_nVal >  fixedVal.m_nVal ); }
+	bool operator>=( fixed fixedVal ) { return ( m_nVal >= fixedVal.m_nVal ); }
+	// uncrustify on
+	// clang-format on
 
-	bool operator!=(fixed fixedVal)
-	{
-		return (m_nVal != fixedVal.m_nVal);
-	}
+	const char* asString();
+	const char* asQuickString();
 
-	bool operator<(fixed fixedVal)
-	{
-		return (m_nVal < fixedVal.m_nVal);
-	}
+	float asFloat() { return m_nVal / FIXED_RESOLUTION_FLOAT; }
 
-	bool operator<=(fixed fixedVal)
-	{
-		return (m_nVal <= fixedVal.m_nVal);
-	}
+	int asInt() { return (int)( m_nVal / FIXED_RESOLUTION ); }
 
-	bool operator>(fixed fixedVal)
-	{
-		return (m_nVal > fixedVal.m_nVal);
-	}
+	Sint64 getInternalData() { return m_nVal; }
 
-	bool operator>=(fixed fixedVal)
-	{
-		return (m_nVal >= fixedVal.m_nVal);
-	}
+	fixed floor() { return fixed( m_nVal / FIXED_RESOLUTION ); }
 
-	const char *asString();
-	const char *asQuickString();
+	fixed ceil() { return fixed( m_nVal / FIXED_RESOLUTION + Sint64( 1 ) ); }
 
-	float asFloat()
-	{
-		return m_nVal/FIXED_RESOLUTION_FLOAT;
-	}
-
-	int asInt()
-	{
-		return (int)(m_nVal/FIXED_RESOLUTION);
-	}
-
-	Sint64 getInternalData() 
-	{ 
-		return m_nVal; 
-	}
-
-	fixed floor()
-	{
-		return fixed(m_nVal/FIXED_RESOLUTION);
-	}
-
-	fixed ceil()
-	{
-		return fixed(m_nVal/FIXED_RESOLUTION+Sint64(1));
-	}
-
-	fixed operator+(fixed b)
+	fixed operator+( fixed b )
 	{
 		fixed a;
-		a.m_nVal = m_nVal+b.m_nVal;
+		a.m_nVal = m_nVal + b.m_nVal;
+
 		return a;
 	}
 
-	fixed operator-(fixed b)
+	fixed operator-( fixed b )
 	{
 		fixed a;
-		a.m_nVal = m_nVal-b.m_nVal;
+		a.m_nVal = m_nVal - b.m_nVal;
+
 		return a;
 	}
 
-	fixed operator*(fixed b);
-	fixed operator/(fixed b);
+	fixed operator*( fixed b );
+	fixed operator/( fixed b );
 	fixed sqrt();
-	fixed pow(fixed fixedPower);
+	fixed pow( fixed fixedPower );
 	fixed log10();
 	fixed log();
 	fixed exp();
@@ -183,29 +130,38 @@ public:
 
 	fixed abs()
 	{
-		if (m_nVal > Sint64(0)) return fixed(*this);
-		else return fixed(true, -m_nVal);
+		if ( m_nVal > Sint64( 0 ) )
+		{
+			return fixed( *this );
+		}
+		else
+		{
+			return fixed( true, -m_nVal );
+		}
 	}
 
-	fixed operator%(fixed fixedVal)
+	fixed operator%( fixed fixedVal )
 	{
 		fixed a;
-		a.m_nVal = m_nVal%fixedVal.m_nVal;
+		a.m_nVal = m_nVal % fixedVal.m_nVal;
+
 		return a;
 	}
 
-	fixed operator*=(fixed val);
-	fixed operator/=(fixed val);
+	fixed operator*=( fixed val );
+	fixed operator/=( fixed val );
 
-	fixed operator-=(fixed val)
+	fixed operator-=( fixed val )
 	{
 		m_nVal -= val.m_nVal;
+
 		return *this;
 	}
 
-	fixed operator+=(fixed val)
+	fixed operator+=( fixed val )
 	{
 		m_nVal += val.m_nVal;
+
 		return *this;
 	}
 
@@ -215,26 +171,26 @@ public:
 	static fixed X2PI;
 	static fixed XPIO2;
 
-	static fixed fromFloat(float flt);
+	static fixed fromFloat( float flt );
 
 	static Sint64 FIXED_RESOLUTION;
-	static float FIXED_RESOLUTION_FLOAT;
+	static float  FIXED_RESOLUTION_FLOAT;
 };
 
 fixed absx( fixed p_Base );
-fixed floorx(fixed fixedVal);
-fixed ceilx(fixed fixedVal);
-fixed sqrtx(fixed fixedVal);
-fixed powx(fixed fixedVal, fixed fixedPower);
-fixed log10x(fixed fixedVal);
-fixed logx(fixed fixedVal);
-fixed expx(fixed fixedVal);
-fixed sinx(fixed x);
-fixed asinx(fixed x);
-fixed cosx(fixed x);
-fixed acosx(fixed x);
-fixed tanx(fixed x);
-fixed atanx(fixed x);
-fixed atan2x(fixed x, fixed y);
+fixed floorx( fixed fixedVal );
+fixed ceilx( fixed fixedVal );
+fixed sqrtx( fixed fixedVal );
+fixed powx( fixed fixedVal, fixed fixedPower );
+fixed log10x( fixed fixedVal );
+fixed logx( fixed fixedVal );
+fixed expx( fixed fixedVal );
+fixed sinx( fixed x );
+fixed asinx( fixed x );
+fixed cosx( fixed x );
+fixed acosx( fixed x );
+fixed tanx( fixed x );
+fixed atanx( fixed x );
+fixed atan2x( fixed x, fixed y );
 
-#endif // _FIXED_H
+#endif  // _FIXED_H

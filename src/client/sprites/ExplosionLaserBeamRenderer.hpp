@@ -24,8 +24,8 @@
 #include <sprites/MetaActionRenderer.hpp>
 #include <GLEXT/GLTextureReference.hpp>
 
-#define sides 8
-#define layers 5
+#define sides         8
+#define layers        5
 #define star_interval 10
 
 class ExplosionLaserBeamRenderer : public MetaActionRenderer
@@ -34,26 +34,21 @@ public:
 	ExplosionLaserBeamRenderer();
 	virtual ~ExplosionLaserBeamRenderer();
 
-	virtual void init(
-		unsigned int playerId,
-		Vector &position,
-		Vector &velocity,
-		const char *data
-	);
+	virtual void init( unsigned int playerId, Vector& position, Vector& velocity, const char* data );
 
-	virtual void draw(Action *action);
-	virtual void simulate(Action *action, float frameTime, bool &remove);
+	virtual void draw( Action* action );
+	virtual void simulate( Action* action, float frameTime, bool& remove );
 
-	REGISTER_CLASS_HEADER(ExplosionLaserBeamRenderer);
+	REGISTER_CLASS_HEADER( ExplosionLaserBeamRenderer );
+
 private:
-
-	Vector position_;
-	float totalTime_;
-	float time_;
-	float size_;
-	float angle_;
-	Vector points[layers][sides];
+	Vector                    position_;
+	float                     totalTime_;
+	float                     time_;
+	float                     size_;
+	float                     angle_;
+	Vector                    points[layers][sides];
 	static GLTextureReference _texture;
 };
 
-#endif // __INCLUDE_ExplosionLaserRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_ExplosionLaserRenderer_hpp_INCLUDE__

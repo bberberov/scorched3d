@@ -31,7 +31,7 @@
 #include <sound/SoundSource.hpp>
 #include <console/ConsoleRule.hpp>
 
-#define CACHE_SOUND(var, filename) static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer(filename);
+#define CACHE_SOUND( var, filename ) static SoundBuffer* var = Sound::instance()->fetchOrCreateBuffer( filename );
 
 class PlayingSoundSource;
 
@@ -39,52 +39,56 @@ class PlayingSoundSource;
 class Sound : public GameStateI
 {
 public:
-	static Sound *instance();
+	static Sound* instance();
 
-	bool init(int channels);
+	// clang-format off
+	// uncrustify off
+	bool init( int channels );
 	bool getInit() { return init_; }
 	void destroy();
+	// uncrustify on
+	// clang-format on
 
 	void showSoundBuffers();
-	void soundPlay(std::vector<ConsoleRuleValue> &values);
+	void soundPlay( std::vector< ConsoleRuleValue >& values );
 
-	SoundBuffer *fetchOrCreateBuffer(const std::string &filename);
-	SoundListener *getDefaultListener();
-	
-	void addManaged(VirtualSoundSource *source);
-	void addPlaying(VirtualSoundSource *source);
-	void removePlaying(VirtualSoundSource *source);
+	SoundBuffer*   fetchOrCreateBuffer( const std::string& filename );
+	SoundListener* getDefaultListener();
 
-	void setPlaySounds(bool playSounds) { playSounds_ = playSounds; }
+	void addManaged( VirtualSoundSource* source );
+	void addPlaying( VirtualSoundSource* source );
+	void removePlaying( VirtualSoundSource* source );
 
-	void simulate(const unsigned state, float simTime);
-	int getAvailableChannels();
-	int getPlayingChannels();
+	void setPlaySounds( bool playSounds ) { playSounds_ = playSounds; }
+
+	void simulate( const unsigned int state, float simTime );
+	int  getAvailableChannels();
+	int  getPlayingChannels();
 
 protected:
-	static Sound *instance_;
+	static Sound* instance_;
 
-	typedef std::map<std::string, SoundBuffer *> BufferMap;
-	typedef std::vector<SoundSource *> SourceList;
-	typedef std::vector<VirtualSoundSource *> VirtualSourceList;
-	typedef std::vector<PlayingSoundSource *> PlayingSourceList;
+	typedef std::map< std::string, SoundBuffer* > BufferMap;
+	typedef std::vector< SoundSource* >           SourceList;
+	typedef std::vector< VirtualSoundSource* >    VirtualSourceList;
+	typedef std::vector< PlayingSoundSource* >    PlayingSourceList;
 
-	float totalTime_;
-	BufferMap bufferMap_;
-	SourceList totalSources_;
-	SourceList availableSources_;
-	SoundListener listener_;
+	float             totalTime_;
+	BufferMap         bufferMap_;
+	SourceList        totalSources_;
+	SourceList        availableSources_;
+	SoundListener     listener_;
 	VirtualSourceList managedSources_;
 	PlayingSourceList playingSources_;
-	bool init_;
-	bool playSounds_;
+	bool              init_;
+	bool              playSounds_;
 
-	void updateSources();
-	SoundBuffer *createBuffer(char *fileName);
+	void         updateSources();
+	SoundBuffer* createBuffer( char* fileName );
 
 private:
 	Sound();
 	virtual ~Sound();
 };
 
-#endif // __INCLUDE_Sound_hpp_INCLUDE__
+#endif  // __INCLUDE_Sound_hpp_INCLUDE__

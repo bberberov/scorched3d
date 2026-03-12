@@ -31,14 +31,18 @@ public:
 	LandAndTargetVisibilityPatch();
 	~LandAndTargetVisibilityPatch();
 
-	LandVisibilityPatch &getLandVisibilityPatch() { return landVisibilityPatch_; }
-	RoofVisibilityPatch &getRoofVisibilityPatch() { return roofVisibilityPatch_; }
-	TargetVisibilityPatch &getTargetVisibilityPatch() { return targetVisibilityPatch_; }
+	// clang-format off
+	// uncrustify off
+	LandVisibilityPatch&   getLandVisibilityPatch()   { return landVisibilityPatch_; }
+	RoofVisibilityPatch&   getRoofVisibilityPatch()   { return roofVisibilityPatch_; }
+	TargetVisibilityPatch& getTargetVisibilityPatch() { return targetVisibilityPatch_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	LandVisibilityPatch landVisibilityPatch_;
+	LandVisibilityPatch   landVisibilityPatch_;
 	TargetVisibilityPatch targetVisibilityPatch_;
-	RoofVisibilityPatch roofVisibilityPatch_;
+	RoofVisibilityPatch   roofVisibilityPatch_;
 };
 
-#endif // __INCLUDE_LandAndTargetVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_LandAndTargetVisibilityPatch_hpp_INCLUDE__

@@ -32,12 +32,12 @@ public:
 	virtual ~ComsLevelLoadedMessage();
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 private:
-	ComsLevelLoadedMessage(const ComsLevelLoadedMessage &);
-	const ComsLevelLoadedMessage & operator=(const ComsLevelLoadedMessage &);
+	ComsLevelLoadedMessage( const ComsLevelLoadedMessage& );
+	const ComsLevelLoadedMessage& operator=( const ComsLevelLoadedMessage& );
 };
 
-#endif // __INCLUDE_ComsLevelLoadedMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsLevelLoadedMessage_hpp_INCLUDE__

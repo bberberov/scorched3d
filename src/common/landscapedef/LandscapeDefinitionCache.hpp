@@ -26,22 +26,27 @@
 class ScorchedContext;
 class LandscapeTex;
 class LandscapeDefn;
+
 class LandscapeDefinitionCache
 {
 public:
 	LandscapeDefinitionCache();
 	virtual ~LandscapeDefinitionCache();
 
-	void setDefinition(ScorchedContext &context, LandscapeDefinition &defn);
-	LandscapeDefinition &getDefinition() { return defn_; }
-	LandscapeTex *getTex() { return cachedTex_; }
-	LandscapeDefn *getDefn() { return cachedDefn_; }
-	unsigned int getSeed() { return defn_.getSeed(); }
+	// clang-format off
+	// uncrustify off
+	void                 setDefinition( ScorchedContext& context, LandscapeDefinition& defn );
+	LandscapeDefinition& getDefinition() { return defn_; }
+	LandscapeTex*        getTex()        { return cachedTex_; }
+	LandscapeDefn*       getDefn()       { return cachedDefn_; }
+	unsigned int         getSeed()       { return defn_.getSeed(); }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	LandscapeTex *cachedTex_;
-	LandscapeDefn *cachedDefn_;
+	LandscapeTex*       cachedTex_;
+	LandscapeDefn*      cachedDefn_;
 	LandscapeDefinition defn_;
 };
 
-#endif // __INCLUDE_LandscapeDefinitionCache_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefinitionCache_hpp_INCLUDE__

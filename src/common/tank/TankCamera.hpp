@@ -24,25 +24,28 @@
 #include <common/Vector.hpp>
 
 class ScorchedContext;
-class TankCamera  
+
+class TankCamera
 {
 public:
-	TankCamera(ScorchedContext &context);
+	TankCamera( ScorchedContext& context );
 	virtual ~TankCamera();
 
-	int getCameraType() { return cameraType_; }
-	void setCameraType(int c) { cameraType_ = c; }
-
-	Vector &getCameraRotation() { return cameraRotation_; }
-	void setCameraRotation(Vector &rot) { cameraRotation_ = rot; }
-	
-	Vector &getCameraLookAt() { return lookAt_; }
-	void setCameraLookAt(Vector &pos) { lookAt_ = pos; }
+	// clang-format off
+	// uncrustify off
+	int     getCameraType()                  { return cameraType_; }
+	void    setCameraType( int c )           { cameraType_ = c; }
+	Vector& getCameraRotation()              { return cameraRotation_; }
+	void    setCameraRotation( Vector& rot ) { cameraRotation_ = rot; }
+	Vector& getCameraLookAt()                { return lookAt_; }
+	void    setCameraLookAt( Vector& pos )   { lookAt_ = pos; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ScorchedContext &context_;
-	Vector cameraRotation_, lookAt_;
-	int cameraType_;
+	ScorchedContext& context_;
+	Vector           cameraRotation_, lookAt_;
+	int              cameraType_;
 };
 
-#endif // __INCLUDE_TankCamera_hpp_INCLUDE__
+#endif  // __INCLUDE_TankCamera_hpp_INCLUDE__

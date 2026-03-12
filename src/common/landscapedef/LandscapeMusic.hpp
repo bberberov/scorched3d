@@ -42,11 +42,11 @@ public:
 	LandscapeMusicType();
 	virtual ~LandscapeMusicType();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 
-	std::string file;
-	std::vector<PlayState> playstates;
-	float gain;
+	std::string              file;
+	std::vector< PlayState > playstates;
+	float                    gain;
 };
 
-#endif // __INCLUDE_LandscapeMusic_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeMusic_hpp_INCLUDE__

@@ -34,4 +34,4 @@ enum ScorchedCollisionId
 	CollisionIdShield
 };
 
-#endif // __INCLUDE_ScorchedCollisionIds_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedCollisionIds_hpp_INCLUDE__

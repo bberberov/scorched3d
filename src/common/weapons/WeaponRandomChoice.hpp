@@ -24,30 +24,33 @@
 #include <weapons/Weapon.hpp>
 #include <list>
 
-class WeaponRandomChoice  : public Weapon
+class WeaponRandomChoice : public Weapon
 {
 public:
 	WeaponRandomChoice();
 	virtual ~WeaponRandomChoice();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponRandomChoice, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponRandomChoice, AccessoryPart::AccessoryWeapon );
 
 protected:
 	struct WeaponWeight
 	{
-		int weight;
-		Weapon *weapon;
+		int     weight;
+		Weapon* weapon;
 	};
 
-	int totalWeight_;
-	std::list<WeaponWeight> weaponsChoice_;
+	int                       totalWeight_;
+	std::list< WeaponWeight > weaponsChoice_;
 };
 
-#endif // __INCLUDE_WeaponRandomChoice_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponRandomChoice_hpp_INCLUDE__

@@ -25,43 +25,52 @@
 #include <engine/GameStateI.hpp>
 
 class GLCamera;
+
 class ParticleEngine : public GameStateI
 {
 public:
-	ParticleEngine(GLCamera *camera, unsigned int maxParticles);
+	ParticleEngine( GLCamera* camera, unsigned int maxParticles );
 	virtual ~ParticleEngine();
 
-	void setMaxParticles(unsigned int maxParticles);
+	// uncrustify on
+	// clang-format on
+	void         setMaxParticles( unsigned int maxParticles );
 	unsigned int getMaxParticles();
 	unsigned int getParticlesOnScreen();
-	GLCamera *getCamera() { return camera_; }
-	void setAllowSorting(bool sorting) { allowSorting_ = sorting; }
+	GLCamera*    getCamera()                     { return camera_; }
+	void         setAllowSorting( bool sorting ) { allowSorting_ = sorting; }
+	// uncrustify on
+	// clang-format on
 
 	void killAll();
 
-	Particle *getNextAliveParticle(unsigned int type);
+	Particle* getNextAliveParticle( unsigned int type );
 
-	static void setFast(float speedMult) { speed_ = speedMult; }
-	static float getFast() { return speed_; }
+	// clang-format off
+	// uncrustify off
+	static void  setFast( float speedMult ) { speed_ = speedMult; }
+	static float getFast()                  { return speed_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from GameStateI
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned int state, float simTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float simTime );
 
 protected:
-	GLCamera *camera_;
-	Particle *particles_;
-	Particle **usedParticles_;
-	Particle **freeParticles_;
+	GLCamera*  camera_;
+	Particle*  particles_;
+	Particle** usedParticles_;
+	Particle** freeParticles_;
 
-	float totalTime_;
+	float        totalTime_;
 	unsigned int maxParticles_;
 	unsigned int particlesOnScreen_;
-	bool allowSorting_;
+	bool         allowSorting_;
 
 	static float speed_;
 
-	void normalizedSimulate(float time);
+	void normalizedSimulate( float time );
 };
 
-#endif // __INCLUDE_ParticleEngine_hpp_INCLUDE__
+#endif  // __INCLUDE_ParticleEngine_hpp_INCLUDE__

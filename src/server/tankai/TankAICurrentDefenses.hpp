@@ -29,9 +29,9 @@ public:
 	TankAICurrentDefenses();
 	virtual ~TankAICurrentDefenses();
 
-	virtual bool parseConfig(XMLNode *node);
+	virtual bool parseConfig( XMLNode* node );
 
-	void raiseDefenses(Tanket *tanket);
+	void raiseDefenses( Tanket* tanket );
 
 	bool getUseBatteries() { return useBatteries_; }
 
@@ -40,10 +40,10 @@ protected:
 	bool useShields_;
 	bool useBatteries_;
 
-	void selectFirstShield(Tanket *tanket);
-	void selectFirstParachute(Tanket *tanket);
-	void parachutesUpDown(Tanket *tanket, unsigned int paraId);
-	void shieldsUpDown(Tanket *tanket, unsigned int shieldId);
+	void selectFirstShield( Tanket* tanket );
+	void selectFirstParachute( Tanket* tanket );
+	void parachutesUpDown( Tanket* tanket, unsigned int paraId );
+	void shieldsUpDown( Tanket* tanket, unsigned int shieldId );
 };
 
-#endif // __INCLUDE_TankAICurrentDefenses_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAICurrentDefenses_hpp_INCLUDE__

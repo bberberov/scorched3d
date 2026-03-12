@@ -32,29 +32,29 @@
 class LogDialog : public GLWWindow, public GLWButtonI, public LoggerI
 {
 public:
-	static LogDialog *instance();
+	static LogDialog* instance();
 
 	// Inherited from GLWWindow
 	virtual void draw();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// LoggerI
-	virtual void logMessage(LoggerInfo &info);
+	virtual void logMessage( LoggerInfo& info );
 
-	void setServerName(const char *name) { serverName_->setText(LANG_STRING(name)); }
+	void setServerName( const char* name ) { serverName_->setText( LANG_STRING( name ) ); }
 
 protected:
-	static LogDialog *instance_;
+	static LogDialog* instance_;
 
-	GLWTextButton *quit_;
-	GLWLabel *serverName_;
-	GLWListView *listView_;
+	GLWTextButton* quit_;
+	GLWLabel*      serverName_;
+	GLWListView*   listView_;
 
 private:
 	LogDialog();
 	virtual ~LogDialog();
 };
 
-#endif // __INCLUDE_LogDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_LogDialog_hpp_INCLUDE__

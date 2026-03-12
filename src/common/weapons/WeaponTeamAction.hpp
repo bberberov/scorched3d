@@ -23,29 +23,35 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponTeamAction  : public WeaponCallback
+class WeaponTeamAction : public WeaponCallback
 {
 public:
 	WeaponTeamAction();
 	virtual ~WeaponTeamAction();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponCallback
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponTeamAction, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponTeamAction, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *action_[5];
+	Weapon* action_[5];
 };
 
-#endif // __INCLUDE_WeaponTeamAction_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponTeamAction_hpp_INCLUDE__

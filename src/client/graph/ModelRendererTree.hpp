@@ -29,25 +29,24 @@
 class ModelRendererTree : public ModelRenderer
 {
 public:
-	ModelRendererTree(Model *model, ModelID &id);
+	ModelRendererTree( Model* model, ModelID& id );
 	virtual ~ModelRendererTree();
 
-	virtual void draw(float currentFrame, 
-		float distance, float fade, bool setState);
-	virtual void drawBottomAligned(float currentFrame, 
-		float distance, float fade, bool setState);
+	virtual void draw( float currentFrame, float distance, float fade, bool setState );
+	virtual void drawBottomAligned( float currentFrame, float distance, float fade, bool setState );
 
-	virtual Model *getModel() { return model_; }
+	virtual Model* getModel() { return model_; }
 
-	static void setSkipPre(bool skip) { skipPre_ = skip; }
-	static void drawInternalPre(bool setState);
-	void drawInternal(float distance, float fade, bool setState);
+	static void setSkipPre( bool skip ) { skipPre_ = skip; }
+
+	static void drawInternalPre( bool setState );
+	void        drawInternal( float distance, float fade, bool setState );
 
 protected:
-	Model *model_;
-	int treeType_;
+	Model* model_;
+	int    treeType_;
 
-	static bool skipPre_;
+	static bool   skipPre_;
 	static GLuint treePineList, treePineSmallList;
 	static GLuint treePine2List, treePine2SmallList;
 	static GLuint treePine3List, treePine3SmallList;
@@ -83,4 +82,4 @@ protected:
 	static GLTextureReference oakTextureA_;
 };
 
-#endif // __INCLUDE_ModelRendererTree_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererTree_hpp_INCLUDE__

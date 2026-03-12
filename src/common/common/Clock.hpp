@@ -21,17 +21,17 @@
 #ifndef __INCLUDE_Clock_hpp_INCLUDE__
 #define __INCLUDE_Clock_hpp_INCLUDE__
 
-class Clock  
+class Clock
 {
 public:
 	Clock();
 	virtual ~Clock();
 
-	float getTimeDifference();
+	float        getTimeDifference();
 	unsigned int getTicksDifference();
 
 protected:
-	unsigned int  dwLastTime_;
+	unsigned int dwLastTime_;
 };
 
-#endif // __INCLUDE_Clock_hpp_INCLUDE__
+#endif  // __INCLUDE_Clock_hpp_INCLUDE__

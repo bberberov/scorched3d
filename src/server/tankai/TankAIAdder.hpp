@@ -26,11 +26,15 @@
 
 namespace TankAIAdder
 {
-	void addTankAIs(ScorchedServer &context);
-	void addTankAI(ScorchedServer &context, const char *aiName);
+	void addTankAIs( ScorchedServer& context );
+	void addTankAI( ScorchedServer& context, const char* aiName );
 
-	unsigned int getNextTankId(const char *unqiueId, ScorchedContext &context, std::set<unsigned int> &takenPlayerIds);
-	unsigned int getNextTargetId(ScorchedContext &context);
-};
+	unsigned int getNextTankId(
+		const char*               unqiueId,
+		ScorchedContext&          context,
+		std::set< unsigned int >& takenPlayerIds
+	);
+	unsigned int getNextTargetId( ScorchedContext& context );
+};  // namespace TankAIAdder
 
-#endif // __INCLUDE_TankAIAdder_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIAdder_hpp_INCLUDE__

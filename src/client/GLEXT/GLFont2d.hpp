@@ -28,104 +28,127 @@
 
 class GLFont2dFreeType;
 class GLFont2dI;
-class GLFont2d  
+
+class GLFont2d
 {
 public:
 	GLFont2d();
 	~GLFont2d();
 
-	bool createFont(const std::string &typeFace, unsigned int h, bool makeShadow = false);
+	bool createFont( const std::string& typeFace, unsigned int h, bool makeShadow = false );
 
-	void draw(Vector &color, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawA(Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawA(GLFont2dI *handler, Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawWidth(float width, 
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	float drawWidthRhs(float width, 
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawSubStr(int start, int len,
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawSubStrA(int start, int len,
-		Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const LangString &text);
-	void drawBilboard(Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const LangString &text);
+	void draw( Vector& color, float size, float x, float y, float z, const LangString& text );
+	void drawA( Vector& color, float alpha, float size, float x, float y, float z, const LangString& text );
+	void drawA(
+		GLFont2dI*        handler,
+		Vector&           color,
+		float             alpha,
+		float             size,
+		float             x,
+		float             y,
+		float             z,
+		const LangString& text
+	);
 
-	float getWidth(float size, const unsigned int c);
-	float getWidth(float size, const LangString &text, int len = 0);
-	int getChars(float size, const LangString &text, float width);
+	void  drawWidth( float width, Vector& color, float size, float x, float y, float z, const LangString& text );
+	float drawWidthRhs( float width, Vector& color, float size, float x, float y, float z, const LangString& text );
 
-	void draw(Vector &color, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawA(Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawA(GLFont2dI *handler, Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawWidth(float width, 
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawWidthRhs(float width, 
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawSubStr(int start, int len,
-		Vector &color, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawSubStrA(int start, int len,
-		Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const std::string &text);
-	void drawBilboard(Vector &color, float alpha, float size, 
-		float x, float y, float z, 
-		const std::string &text);
+	void drawSubStr( int start, int len, Vector& color, float size, float x, float y, float z, const LangString& text );
+	void drawSubStrA(
+		int               start,
+		int               len,
+		Vector&           color,
+		float             alpha,
+		float             size,
+		float             x,
+		float             y,
+		float             z,
+		const LangString& text
+	);
 
-	float getWidth(float size, const std::string &text, int len = 0);
-	int getChars(float size, const std::string &text, float width);
+	void drawBilboard( Vector& color, float alpha, float size, float x, float y, float z, const LangString& text );
+
+	float getWidth( float size, const unsigned int c );
+	float getWidth( float size, const LangString& text, int len = 0 );
+	int   getChars( float size, const LangString& text, float width );
+
+	void draw( Vector& color, float size, float x, float y, float z, const std::string& text );
+	void drawA( Vector& color, float alpha, float size, float x, float y, float z, const std::string& text );
+	void drawA(
+		GLFont2dI*         handler,
+		Vector&            color,
+		float              alpha,
+		float              size,
+		float              x,
+		float              y,
+		float              z,
+		const std::string& text
+	);
+
+	void drawWidth( float width, Vector& color, float size, float x, float y, float z, const std::string& text );
+	void drawWidthRhs( float width, Vector& color, float size, float x, float y, float z, const std::string& text );
+
+	void drawSubStr(
+		int                start,
+		int                len,
+		Vector&            color,
+		float              size,
+		float              x,
+		float              y,
+		float              z,
+		const std::string& text
+	);
+	void drawSubStrA(
+		int                start,
+		int                len,
+		Vector&            color,
+		float              alpha,
+		float              size,
+		float              x,
+		float              y,
+		float              z,
+		const std::string& text
+	);
+	void drawBilboard( Vector& color, float alpha, float size, float x, float y, float z, const std::string& text );
+
+	float getWidth( float size, const std::string& text, int len = 0 );
+	int   getChars( float size, const std::string& text, float width );
 
 	static unsigned int getTotalCharacters() { return totalCharacters_; }
 
 protected:
 	static unsigned int totalCharacters_;
-	GLFont2dFreeType *freetype_;
-	GLFont2dStorage characters_;
-	LangString langText_;
-	float height_;
+	GLFont2dFreeType*   freetype_;
+	GLFont2dStorage     characters_;
+	LangString          langText_;
+	float               height_;
 
-	GLFont2dStorage::CharEntry *getCharacter(unsigned int character);
+	GLFont2dStorage::CharEntry* getCharacter( unsigned int character );
 
-	void drawLetter(GLFont2dStorage::CharEntry *entry);
+	void drawLetter( GLFont2dStorage::CharEntry* entry );
 
-	bool drawString(unsigned len,
-		Vector &color, float alpha, 
-		float size, 
-		float x, float y, float z, 
-		const unsigned int *string,
-		bool bilboard);
-	bool drawStringHandler(unsigned length, 
-		GLFont2dI *handler, 
-		Vector &color, float alpha, 
-		float size, 
-		float x, float y, float z, 
-		const unsigned int *string);
+	bool drawString(
+		unsigned int        len,
+		Vector&             color,
+		float               alpha,
+		float               size,
+		float               x,
+		float               y,
+		float               z,
+		const unsigned int* string,
+		bool                bilboard
+	);
+	bool drawStringHandler(
+		unsigned int        length,
+		GLFont2dI*          handler,
+		Vector&             color,
+		float               alpha,
+		float               size,
+		float               x,
+		float               y,
+		float               z,
+		const unsigned int* string
+	);
 };
 
 class GLFont2dI
@@ -134,9 +157,12 @@ public:
 	virtual ~GLFont2dI() {}
 
 	virtual bool drawCharacter(
-		unsigned int character,
-		int charPosition, Vector &position, 
-		GLFont2dStorage::CharEntry &charEntry, Vector4 &color) = 0;
+		unsigned int                character,
+		int                         charPosition,
+		Vector&                     position,
+		GLFont2dStorage::CharEntry& charEntry,
+		Vector4&                    color
+	) = 0;
 };
 
-#endif // __INCLUDE_GLFont2d_hpp_INCLUDE__
+#endif  // __INCLUDE_GLFont2d_hpp_INCLUDE__

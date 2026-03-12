@@ -28,21 +28,23 @@
 #include <vector>
 #include <string>
 
-class FileLines  
+class FileLines
 {
 public:
 	FileLines();
 	virtual ~FileLines();
 
-	bool readFile(const std::string &filename);
-	bool writeFile(const std::string &filename);
+	bool readFile( const std::string& filename );
+	bool writeFile( const std::string& filename );
 
-	void addLine(const std::string &text);
-	std::vector<std::string> &getLines() { return fileLines_; }
-	void getAsOneLine(std::string &output);
+	void addLine( const std::string& text );
+
+	std::vector< std::string >& getLines() { return fileLines_; }
+
+	void getAsOneLine( std::string& output );
 
 protected:
-	std::vector<std::string> fileLines_;
+	std::vector< std::string > fileLines_;
 };
 
-#endif // __INCLUDE_FileLines_hpp_INCLUDE__
+#endif  // __INCLUDE_FileLines_hpp_INCLUDE__

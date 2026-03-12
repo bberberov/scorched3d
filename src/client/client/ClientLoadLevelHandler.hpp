@@ -29,30 +29,23 @@ class ClientLoadLevelHandler : public ComsMessageHandlerI
 public:
 	static ClientLoadLevelHandler* instance();
 
-	void setInitialLevel(bool initialLevel) { initialLevel_ = initialLevel; }
+	void setInitialLevel( bool initialLevel ) { initialLevel_ = initialLevel; }
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
 	static ClientLoadLevelHandler* instance_;
 
 	bool initialLevel_;
 
-	bool actualProcessMessage(
-		NetMessage &netMessage,
-		const char *messageType,
-		NetBufferReader &reader
-	);
+	bool actualProcessMessage( NetMessage& netMessage, const char* messageType, NetBufferReader& reader );
 
 private:
 	ClientLoadLevelHandler();
 	virtual ~ClientLoadLevelHandler();
 
-	ClientLoadLevelHandler(const ClientLoadLevelHandler &);
-	const ClientLoadLevelHandler & operator=(const ClientLoadLevelHandler &);
+	ClientLoadLevelHandler( const ClientLoadLevelHandler& );
+	const ClientLoadLevelHandler& operator=( const ClientLoadLevelHandler& );
 };
 
-#endif // __INCLUDE_ClientLoadLevelHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientLoadLevelHandler_hpp_INCLUDE__

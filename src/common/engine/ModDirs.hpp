@@ -31,13 +31,14 @@ public:
 	virtual ~ModDirs();
 
 	bool loadModDirs();
-	std::list<ModInfo> &getDirs() { return dirs_; }
+
+	std::list< ModInfo >& getDirs() { return dirs_; }
 
 protected:
-	std::list<ModInfo> dirs_;
-	
-	bool loadModDir(const std::string &dir, bool global);
-	bool loadModFile(const std::string &fileName, bool global);
+	std::list< ModInfo > dirs_;
+
+	bool loadModDir( const std::string& dir, bool global );
+	bool loadModFile( const std::string& fileName, bool global );
 };
 
-#endif // __INCLUDE_ModDirs_hpp_INCLUDE__
+#endif  // __INCLUDE_ModDirs_hpp_INCLUDE__

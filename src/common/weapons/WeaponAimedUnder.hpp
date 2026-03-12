@@ -29,22 +29,30 @@ public:
 	WeaponAimedUnder();
 	virtual ~WeaponAimedUnder();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(WeaponAimedUnder, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponAimedUnder, AccessoryPart::AccessoryWeapon );
 
 protected:
 	bool moveUnderground_;
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context, 
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	virtual void aimShot(ScorchedContext &context,
-		RandomGenerator &random,
-		FixedVector &position, FixedVector &shootAt,
-		fixed &angleXYDegs, fixed &angleYZDegs, fixed &power);
+	virtual void aimShot(
+		ScorchedContext& context,
+		RandomGenerator& random,
+		FixedVector&     position,
+		FixedVector&     shootAt,
+		fixed&           angleXYDegs,
+		fixed&           angleYZDegs,
+		fixed&           power
+	);
 };
 
-#endif // __INCLUDE_WeaponAimedUnder_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponAimedUnder_hpp_INCLUDE__

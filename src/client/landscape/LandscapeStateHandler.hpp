@@ -30,8 +30,8 @@ public:
 	virtual ~LandscapeStateLandHandler();
 
 	// Inherited from GameStateI
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned state, float frameTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float frameTime );
 };
 
 class LandscapeStateWaterHandler : public GameStateI
@@ -41,8 +41,8 @@ public:
 	virtual ~LandscapeStateWaterHandler();
 
 	// Inherited from GameStateI
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned state, float frameTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float frameTime );
 };
 
 class LandscapeStateObjectsHandler : public GameStateI
@@ -52,8 +52,8 @@ public:
 	virtual ~LandscapeStateObjectsHandler();
 
 	// Inherited from GameStateI
-	virtual void draw(const unsigned state);
-	virtual void simulate(const unsigned state, float frameTime);
+	virtual void draw( const unsigned int state );
+	virtual void simulate( const unsigned int state, float frameTime );
 };
 
-#endif // __INCLUDE_LandscapeStateHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeStateHandler_hpp_INCLUDE__

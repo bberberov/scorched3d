@@ -32,11 +32,11 @@ public:
 	ServerBrowserEntry();
 	virtual ~ServerBrowserEntry();
 
-	void addAttribute(const std::string &name, const std::string &value);
-	const char *getAttribute(const std::string &attrName);
+	void        addAttribute( const std::string& name, const std::string& value );
+	const char* getAttribute( const std::string& attrName );
 
 protected:
-	std::map<std::string, std::string> attributes_;
+	std::map< std::string, std::string > attributes_;
 };
 
 class ServerBrowserServerList
@@ -45,21 +45,21 @@ public:
 	ServerBrowserServerList();
 	virtual ~ServerBrowserServerList();
 
-	unsigned int &getRefreshId() { return refreshId_; }
+	unsigned int& getRefreshId() { return refreshId_; }
 
 	// Accessors onto the list
-	int getNoEntries();
-	const char *getEntryValue(int pos, const std::string &name);
-	void addEntryValue(int pos, const std::string &name, const std::string &value);
-	void sortEntries(const std::string &name);
-	void addEntry(ServerBrowserEntry &entry);
+	int         getNoEntries();
+	const char* getEntryValue( int pos, const std::string& name );
+	void        addEntryValue( int pos, const std::string& name, const std::string& value );
+	void        sortEntries( const std::string& name );
+	void        addEntry( ServerBrowserEntry& entry );
 
 	void clear();
 
 protected:
-	unsigned int refreshId_;
-	std::vector<ServerBrowserEntry> servers_;
-	SDL_mutex *vectorMutex_;
+	unsigned int                      refreshId_;
+	std::vector< ServerBrowserEntry > servers_;
+	SDL_mutex*                        vectorMutex_;
 };
 
-#endif // __INCLUDE_ServerBrowserServerList_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBrowserServerList_hpp_INCLUDE__

@@ -32,9 +32,11 @@ public:
 	virtual ~ClientChannelManagerI();
 
 	virtual void registeredForChannels(
-		std::list<ChannelDefinition> &registeredChannels,
-		std::list<ChannelDefinition> &availableChannels) = 0;
-	virtual void channelText(ChannelText &text) = 0;
+		std::list< ChannelDefinition >& registeredChannels,
+		std::list< ChannelDefinition >& availableChannels
+	) = 0;
+
+	virtual void channelText( ChannelText& text ) = 0;
 };
 
-#endif // __INCLUDE_ClientChannelManagerI_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientChannelManagerI_hpp_INCLUDE__

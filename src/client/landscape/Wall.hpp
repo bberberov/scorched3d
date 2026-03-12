@@ -31,17 +31,15 @@ public:
 	Wall();
 	virtual ~Wall();
 
-	void wallHit(Vector &position, OptionsTransient::WallSide side);
+	void wallHit( Vector& position, OptionsTransient::WallSide side );
 	void draw();
-	void simulate(float time);
+	void simulate( float time );
 
 protected:
 	GLTextureReference texture_;
-	float fadeTime_[4];
+	float              fadeTime_[4];
 
-	void drawWall(Vector &cornerA, Vector &cornerB, 
-				Vector &cornerC, Vector &cornerD,
-				float fade);
+	void drawWall( Vector& cornerA, Vector& cornerB, Vector& cornerC, Vector& cornerD, float fade );
 };
 
-#endif // __INCLUDE_Wall_hpp_INCLUDE__
+#endif  // __INCLUDE_Wall_hpp_INCLUDE__

@@ -27,29 +27,30 @@
 class XMLParser
 {
 public:
-	XMLParser(bool useContentNodes = false);
+	XMLParser( bool useContentNodes = false );
 	virtual ~XMLParser();
 
-	bool parse(const char *data, int len, int final);
-	const char *getParseError();
+	bool        parse( const char* data, int len, int final );
+	const char* getParseError();
 
-	void setSource(const std::string &source) { source_ = source; }
-	XMLNode *getRoot() { return root_; }
+	void setSource( const std::string& source ) { source_ = source; }
+
+	XMLNode* getRoot() { return root_; }
 
 protected:
-	bool useContentNodes_;
-	XMLNode *root_;
-	XMLNode *current_;
+	bool        useContentNodes_;
+	XMLNode*    root_;
+	XMLNode*    current_;
 	std::string source_;
-	XML_Parser p_;
+	XML_Parser  p_;
 
-	void startElementHandler(const XML_Char *name, const XML_Char **atts);
-	void endElementHandler(const XML_Char *name);
-	void characterDataHandler(const XML_Char *s, int len);
+	void startElementHandler( const XML_Char* name, const XML_Char** atts );
+	void endElementHandler( const XML_Char* name );
+	void characterDataHandler( const XML_Char* s, int len );
 
-	static void startElementStaticHandler(void *userData, const XML_Char *name, const XML_Char **atts);
-	static void endElementStaticHandler(void *userData, const XML_Char *name);
-	static void characterDataStaticHandler(void *userData, const XML_Char *s, int len);
+	static void startElementStaticHandler( void* userData, const XML_Char* name, const XML_Char** atts );
+	static void endElementStaticHandler( void* userData, const XML_Char* name );
+	static void characterDataStaticHandler( void* userData, const XML_Char* s, int len );
 };
 
-#endif // __INCLUDE_XMLParser_hpp_INCLUDE__
+#endif  // __INCLUDE_XMLParser_hpp_INCLUDE__

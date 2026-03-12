@@ -30,29 +30,34 @@ public:
 	WeaponSound();
 	virtual ~WeaponSound();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	const char *getSound();
-	fixed getGain() { return gain_; }
-	fixed getRolloff() { return rolloff_; }
-	fixed getReferenceDistance() { return referenceDistance_; }
-	bool getRelative() { return relative_; }
+	// clang-format off
+	// uncrustify off
+	const char* getSound();
+	fixed       getGain()              { return gain_; }
+	fixed       getRolloff()           { return rolloff_; }
+	fixed       getReferenceDistance() { return referenceDistance_; }
+	bool        getRelative()          { return relative_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponSound, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponSound, AccessoryPart::AccessoryWeapon );
+
 protected:
-	std::vector<std::string> sounds_;
-	fixed gain_;
-	bool relative_;
-	fixed rolloff_;
-	fixed referenceDistance_;
+	std::vector< std::string > sounds_;
+	fixed                      gain_;
+	bool                       relative_;
+	fixed                      rolloff_;
+	fixed                      referenceDistance_;
 };
 
-#endif // __INCLUDE_WeaponSound_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponSound_hpp_INCLUDE__

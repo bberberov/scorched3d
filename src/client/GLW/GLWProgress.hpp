@@ -30,16 +30,16 @@
 class GLWProgress : public GLWPanel
 {
 public:
-	GLWProgress(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float min = 0.0f, float max = 100.0f);
+	GLWProgress( float x = 0.0f, float y = 0.0f, float w = 0.0f, float min = 0.0f, float max = 100.0f );
 	virtual ~GLWProgress();
 
 	virtual void draw();
 
 	float getCurrent() { return current_; }
-	void setCurrent(float newCurrent);
 
-	REGISTER_CLASS_HEADER(GLWProgress);
+	void setCurrent( float newCurrent );
+
+	REGISTER_CLASS_HEADER( GLWProgress );
 
 protected:
 	float x_, y_, w_;
@@ -47,4 +47,4 @@ protected:
 	float current_;
 };
 
-#endif // __INCLUDE_GLWProgress_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWProgress_hpp_INCLUDE__

@@ -33,17 +33,15 @@ public:
 
 	virtual void saveUndefined();
 
-	virtual ResourceBundleEntry *getEntry(
-		const std::string &key, const std::string &value);
-	virtual ResourceBundleEntry *getEntry(
-		const std::string &key, const LangString &value);
+	virtual ResourceBundleEntry* getEntry( const std::string& key, const std::string& value );
+	virtual ResourceBundleEntry* getEntry( const std::string& key, const LangString& value );
 
 protected:
 	void init();
 	void clear();
 
-	std::vector<ResourceBundle *> bundles_;
-	ResourceBundle *undefinedBundle_;
+	std::vector< ResourceBundle* > bundles_;
+	ResourceBundle*                undefinedBundle_;
 };
 
-#endif // __INCLUDE_LangImpl_hpp_INCLUDE__
+#endif  // __INCLUDE_LangImpl_hpp_INCLUDE__

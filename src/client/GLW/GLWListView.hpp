@@ -32,92 +32,108 @@
 class GLWListViewI
 {
 public:
-	virtual void url(const char *url) = 0;
-	virtual void event(std::map<std::string, std::string> &event) = 0;
+	virtual void url( const char* url )                               = 0;
+	virtual void event( std::map< std::string, std::string >& event ) = 0;
 };
 
-class GLWListView :
-	public GLWidget
+class GLWListView : public GLWidget
 {
 public:
 	GLWListView(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f,
-		int maxLen = -1,
-		float textSize = 10.0f,
+		float x           = 0.0f,
+		float y           = 0.0f,
+		float w           = 0.0f,
+		float h           = 0.0f,
+		int   maxLen      = -1,
+		float textSize    = 10.0f,
 		float scrollSpeed = 0.0f
 	);
 	virtual ~GLWListView();
 
-	void setHandler(GLWListViewI *handler) { handler_ = handler; }
-	void setColor(Vector &color) { color_ = color; }
+	void setHandler( GLWListViewI* handler ) { handler_ = handler; }
 
-	bool addXML(XMLNode *node);
-	void addLine(const std::string &text);
+	void setColor( Vector& color ) { color_ = color; }
+
+	bool addXML( XMLNode* node );
+	void addLine( const std::string& text );
 	void clear();
 	void resetPosition();
 	void endPosition();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	virtual void setX(float x) { x_ = x; scroll_.setX(x_ + w_ - 17); }
-	virtual void setY(float y) { y_ = y; scroll_.setY(y_); }
-	virtual void setW(float w) { w_ = w; scroll_.setX(x_ + w_ - 17); }
-	virtual void setH(float h) { h_ = h; scroll_.setH(h_ - 1); }
+	virtual void setX( float x )
+	{
+		x_ = x;
+		scroll_.setX( x_ + w_ - 17 );
+	}
 
-	REGISTER_CLASS_HEADER(GLWListView);
+	virtual void setY( float y )
+	{
+		y_ = y;
+		scroll_.setY( y_ );
+	}
+
+	virtual void setW( float w )
+	{
+		w_ = w;
+		scroll_.setX( x_ + w_ - 17 );
+	}
+
+	virtual void setH( float h )
+	{
+		h_ = h;
+		scroll_.setH( h_ - 1 );
+	}
+
+	REGISTER_CLASS_HEADER( GLWListView );
 
 protected:
 	struct WordEntry
 	{
-		WordEntry(const char *word, Vector &color) :
-			word_(word),
-			color_(color),
-			wordRef_(0)
-		{ }
+		WordEntry( const char* word, Vector& color ) : word_( word ), color_( color ), wordRef_( 0 ) {}
 
-		std::string href_;
-		std::string word_;
-		std::map<std::string, std::string> event_;
-		Vector color_;
+		std::string                          href_;
+		std::string                          word_;
+		std::map< std::string, std::string > event_;
+		Vector                               color_;
 
-		unsigned wordRef_;
-		static unsigned wordRefCount_;
+		unsigned int        wordRef_;
+		static unsigned int wordRefCount_;
 	};
+
 	struct LineEntry
 	{
-		std::vector<WordEntry> words_;
+		std::vector< WordEntry > words_;
 	};
+
 	struct UrlEntry
 	{
-		float x_, y_;
-		float w_, h_;
-		WordEntry *entry_;
+		float      x_, y_;
+		float      w_, h_;
+		WordEntry* entry_;
 	};
 
-	GLWListViewI *handler_;
-	GLWScrollW scroll_;
-	int maxLen_;
-	float textSize_;
-	float scrollSpeed_;
-	float currentPosition_;
-	Vector color_;
-	std::vector<LineEntry> lines_;
-	std::vector<UrlEntry> urls_;
+	GLWListViewI*            handler_;
+	GLWScrollW               scroll_;
+	int                      maxLen_;
+	float                    textSize_;
+	float                    scrollSpeed_;
+	float                    currentPosition_;
+	Vector                   color_;
+	std::vector< LineEntry > lines_;
+	std::vector< UrlEntry >  urls_;
 
 	void setScroll();
-	bool addWordEntry(std::list<WordEntry> &words, 
-		std::string &word, XMLNode *parentNode);
-	bool getLines(std::list<WordEntry> &words, float &lineLen);
-	bool getWords(XMLNode *node, std::list<WordEntry> &words);
-	void drawUrl(WordEntry &entry, int drawChars, float x, float y);
+	bool addWordEntry( std::list< WordEntry >& words, std::string& word, XMLNode* parentNode );
+	bool getLines( std::list< WordEntry >& words, float& lineLen );
+	bool getWords( XMLNode* node, std::list< WordEntry >& words );
+	void drawUrl( WordEntry& entry, int drawChars, float x, float y );
 };
 
-#endif // __INCLUDE_GLWListView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWListView_hpp_INCLUDE__

@@ -25,7 +25,8 @@
 #include <common/Vector.hpp>
 
 class Image;
-class LargeHemisphere  
+
+class LargeHemisphere
 {
 public:
 	LargeHemisphere();
@@ -33,11 +34,8 @@ public:
 
 	void clear();
 
-	void draw(float radius, float radius2, 
-		unsigned int flags = 0);
-	void drawColored(float radius, float radius2, 
-		Image &colors, Vector &sunDir, int daytime, 
-		bool horizonGlow);
+	void draw( float radius, float radius2, unsigned int flags = 0 );
+	void drawColored( float radius, float radius2, Image& colors, Vector& sunDir, int daytime, bool horizonGlow );
 
 private:
 	struct Entry
@@ -45,7 +43,7 @@ private:
 		unsigned int listNo_;
 	};
 
-	std::list<Entry> entries_;
+	std::list< Entry > entries_;
 };
 
-#endif // __INCLUDE_LargeHemisphere_hpp_INCLUDE__
+#endif  // __INCLUDE_LargeHemisphere_hpp_INCLUDE__

@@ -30,12 +30,12 @@ public:
 	LUAScriptFactory();
 	~LUAScriptFactory();
 
-	LUAScript *createScript();
+	LUAScript* createScript();
 
-	void setContext(ScorchedContext *context) { context_ = context; }
+	void setContext( ScorchedContext* context ) { context_ = context; }
 
 protected:
-	ScorchedContext *context_;
+	ScorchedContext* context_;
 };
 
-#endif // __INCLUDE_LUAScriptFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_LUAScriptFactory_hpp_INCLUDE__

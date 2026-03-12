@@ -31,40 +31,45 @@
 class ExplosionNukeRendererEntry : public ParticleUserData
 {
 public:
-	ExplosionNukeRendererEntry(Vector &position, float size);
+	ExplosionNukeRendererEntry( Vector& position, float size );
 	virtual ~ExplosionNukeRendererEntry();
 
-	void simulate(Particle *particle, float time);
+	void simulate( Particle* particle, float time );
 
-	float getCloudRotation() { return cloudRotation_; }
-	Vector &getRotation() { return rotation_; }
+	// clang-format off
+	// uncrustify off
+	float   getCloudRotation() { return cloudRotation_; }
+	Vector& getRotation()      { return rotation_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	Vector startPosition_;
 	Vector rotation_;
-	float size_;
-	float totalTime_;
-	float cloudRotation_;
+	float  size_;
+	float  totalTime_;
+	float  cloudRotation_;
 };
 
 class ExplosionNukeRenderer : public ActionRenderer
 {
 public:
-	ExplosionNukeRenderer(Vector &position, float size, GLTextureSet *set, bool animate);
+	ExplosionNukeRenderer( Vector& position, float size, GLTextureSet* set, bool animate );
 	virtual ~ExplosionNukeRenderer();
 
-	virtual void draw(Action *action);
-	virtual void simulate(Action *action, float frameTime, bool &remove);
+	virtual void draw( Action* action );
+	virtual void simulate( Action* action, float frameTime, bool& remove );
 
-	static Vector *positions_;
+	static Vector* positions_;
+
 protected:
-	Vector position_;
-	float size_;
-	float time_;
-	float totalTime_;
-	GLTextureSet *set_;
+	Vector          position_;
+	float           size_;
+	float           time_;
+	float           totalTime_;
+	GLTextureSet*   set_;
 	ParticleEmitter emitter_;
-	bool animate_;
+	bool            animate_;
 };
 
-#endif // __INCLUDE_ExplosionNukeRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_ExplosionNukeRenderer_hpp_INCLUDE__

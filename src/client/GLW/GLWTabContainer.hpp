@@ -27,17 +27,15 @@
 class GLWTabContainer : public GLWPanel
 {
 public:
-	GLWTabContainer(
-		float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h =  0.0f);
+	GLWTabContainer( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWTabContainer();
 
 	virtual void layout();
 
-	virtual void setX(float x);
-	virtual void setY(float y);
+	virtual void setX( float x );
+	virtual void setY( float y );
 
-	REGISTER_CLASS_HEADER(GLWTabContainer);
+	REGISTER_CLASS_HEADER( GLWTabContainer );
 };
 
-#endif // __INCLUDE_GLWTabContainer_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTabContainer_hpp_INCLUDE__

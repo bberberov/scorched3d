@@ -28,21 +28,22 @@ class TankBuyingSimAction : public SimAction
 {
 public:
 	TankBuyingSimAction();
-	TankBuyingSimAction(unsigned int playerId);
+	TankBuyingSimAction( unsigned int playerId );
 	virtual ~TankBuyingSimAction();
 
-	static std::set<unsigned int> &getRunningPlayerIds() { return runningPlayerIds_; }
-	
-	virtual bool invokeAction(ScorchedContext &context);
+	static std::set< unsigned int >& getRunningPlayerIds() { return runningPlayerIds_; }
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool invokeAction( ScorchedContext& context );
 
-REGISTER_CLASS_HEADER(TankBuyingSimAction);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
+
+	REGISTER_CLASS_HEADER( TankBuyingSimAction );
+
 protected:
-	unsigned int playerId_;
-	bool server_;
-	static std::set<unsigned int> runningPlayerIds_;
+	unsigned int                    playerId_;
+	bool                            server_;
+	static std::set< unsigned int > runningPlayerIds_;
 };
 
-#endif // __INCLUDE_TankBuyingSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankBuyingSimAction_hpp_INCLUDE__

@@ -32,45 +32,46 @@ class GLWDropDownI
 public:
 	virtual ~GLWDropDownI();
 
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value) = 0;
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value ) = 0;
 };
 
 class GLWDropDown : public GLWidget, public GLWSelectorI, public GLWPushButtonI
 {
 public:
-	GLWDropDown(float x = 0.0f, float y = 0.0f, float w = 0.0f);
+	GLWDropDown( float x = 0.0f, float y = 0.0f, float w = 0.0f );
 	virtual ~GLWDropDown();
 
-	void setHandler(GLWDropDownI *handler);
-	void addEntry(GLWSelectorEntry text);
+	void setHandler( GLWDropDownI* handler );
+	void addEntry( GLWSelectorEntry text );
 
-	void setCurrentPosition(int pos);
-	int getCurrentPosition();
-	GLWSelectorEntry *getCurrentEntry();
+	void              setCurrentPosition( int pos );
+	int               getCurrentPosition();
+	GLWSelectorEntry* getCurrentEntry();
 
 	// Inherited from GLWidget
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void setX(float x);
-	virtual void setY(float y);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void setX( float x );
+	virtual void setY( float y );
 
 	// Inherited from GLWSelectorI
-	virtual void itemSelected(GLWSelectorEntry *entry, int position);
+	virtual void itemSelected( GLWSelectorEntry* entry, int position );
 	virtual void noItemSelected();
 
 	// Inhertied from GLWButtonI
-	virtual void buttonDown(unsigned int id);
-	virtual void buttonUp(unsigned int id);
+	virtual void buttonDown( unsigned int id );
+	virtual void buttonUp( unsigned int id );
 
 	void clear();
 
-	REGISTER_CLASS_HEADER(GLWDropDown);
+	REGISTER_CLASS_HEADER( GLWDropDown );
+
 protected:
-	std::list<GLWSelectorEntry> texts_;
-	GLWDropDownI *handler_;
-	GLWSelectorEntry *current_;
-	GLWPushButton button_;
+	std::list< GLWSelectorEntry > texts_;
+	GLWDropDownI*                 handler_;
+	GLWSelectorEntry*             current_;
+	GLWPushButton                 button_;
 };
 
-#endif // __INCLUDE_GLWDropDown_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWDropDown_hpp_INCLUDE__

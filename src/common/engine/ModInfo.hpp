@@ -35,27 +35,31 @@ public:
 		std::string gamefile;
 	};
 
-	ModInfo(const std::string &name);
+	ModInfo( const std::string& name );
 	virtual ~ModInfo();
 
-	bool parse(const std::string &fileName);
+	bool parse( const std::string& fileName );
 
-	const char *getName() { return name_.c_str(); }
-	const char *getUrl() { return url_.c_str(); }
-	const char *getIcon() { return icon_.c_str(); }
-	const char *getDescription() { return description_.c_str(); }
-	const char *getShortDescription() { return shortDescription_.c_str(); }
-	const char *getProtocolVersion() { return protocolversion_.c_str(); }
-	std::list<MenuEntry> &getMenuEntries() { return entries_; }
+	// clang-format off
+	// uncrustify off
+	const char*             getName()             { return name_.c_str(); }
+	const char*             getUrl()              { return url_.c_str(); }
+	const char*             getIcon()             { return icon_.c_str(); }
+	const char*             getDescription()      { return description_.c_str(); }
+	const char*             getShortDescription() { return shortDescription_.c_str(); }
+	const char*             getProtocolVersion()  { return protocolversion_.c_str(); }
+	std::list< MenuEntry >& getMenuEntries()      { return entries_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string name_;
-	std::string url_;
-	std::string icon_;
-	std::string description_;
-	std::string shortDescription_;
-	std::string protocolversion_;
-	std::list<MenuEntry> entries_;
+	std::string            name_;
+	std::string            url_;
+	std::string            icon_;
+	std::string            description_;
+	std::string            shortDescription_;
+	std::string            protocolversion_;
+	std::list< MenuEntry > entries_;
 };
 
-#endif // __INCLUDE_ModInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_ModInfo_hpp_INCLUDE__

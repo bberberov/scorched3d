@@ -26,39 +26,33 @@
 class GLWSliderI
 {
 public:
-	virtual void currentChanged(unsigned int id, float value) = 0;
+	virtual void currentChanged( unsigned int id, float value ) = 0;
 };
 
 class GLWSlider : public GLWidget
 {
 public:
-	GLWSlider(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float min = 0.0f,
-		float max = 100.0f,
-		int marks = 10
-	);
+	GLWSlider( float x = 0.0f, float y = 0.0f, float w = 0.0f, float min = 0.0f, float max = 100.0f, int marks = 10 );
 	virtual ~GLWSlider();
 
-	void setHandler(GLWSliderI *handler) { handler_ = handler; }
+	void setHandler( GLWSliderI* handler ) { handler_ = handler; }
 
 	float getCurrent() { return current_; }
-	void setCurrent(float current);
+
+	void setCurrent( float current );
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWSlider);
+	REGISTER_CLASS_HEADER( GLWSlider );
 
 protected:
-	GLWSliderI *handler_;
-	float current_;
-	float min_, max_;
-	int marks_;
+	GLWSliderI* handler_;
+	float       current_;
+	float       min_, max_;
+	int         marks_;
 };
 
-#endif // __INCLUDE_GLWSlider_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWSlider_hpp_INCLUDE__

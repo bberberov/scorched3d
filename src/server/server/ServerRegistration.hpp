@@ -26,34 +26,34 @@
 class ServerRegistrationEntry : public NetMessageHandlerI
 {
 public:
-	ServerRegistrationEntry(const char *masterListServer, const char *masterListServerURI);
+	ServerRegistrationEntry( const char* masterListServer, const char* masterListServerURI );
 	virtual ~ServerRegistrationEntry();
 
 	void start();
 
 protected:
 	NetServerTCP netServer_;
-	const char *masterListServer_;
-	bool finished_, success_;
-	NetBuffer sendNetBuffer_;
-	static int threadFunc(void *);
-	void actualThreadFunc();
-	bool registerGame();
+	const char*  masterListServer_;
+	bool         finished_, success_;
+	NetBuffer    sendNetBuffer_;
+	static int   threadFunc( void* );
+	void         actualThreadFunc();
+	bool         registerGame();
 
 	// Inherited from NetMessageHandlerI
-	virtual void processMessage(NetMessage &message);
+	virtual void processMessage( NetMessage& message );
 };
 
 // SINGLETON
 class ServerRegistration
 {
 public:
-	static ServerRegistration *instance();
+	static ServerRegistration* instance();
 
 	void start();
 
 protected:
-	static ServerRegistration *instance_;
+	static ServerRegistration* instance_;
 
 	ServerRegistrationEntry mainServer_;
 	ServerRegistrationEntry backupServer_;
@@ -63,4 +63,4 @@ private:
 	virtual ~ServerRegistration();
 };
 
-#endif // __INCLUDE_ServerRegistration_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerRegistration_hpp_INCLUDE__

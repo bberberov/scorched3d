@@ -27,6 +27,7 @@
 
 class ObjectGroup;
 class ObjectGroupEntry;
+
 class TargetMovementEntrySpline : public TargetMovementEntry
 {
 public:
@@ -34,20 +35,18 @@ public:
 	virtual ~TargetMovementEntrySpline();
 
 	// Overridden from TargetMovementEntry
-	virtual void generate(ScorchedContext &context, 
-		RandomGenerator &random, 
-		LandscapeMovementType *movementType);
-	virtual void simulate(ScorchedContext &context, fixed frameTime);
+	virtual void generate( ScorchedContext& context, RandomGenerator& random, LandscapeMovementType* movementType );
+	virtual void simulate( ScorchedContext& context, fixed frameTime );
 	virtual void draw();
 	virtual void reset();
 
 protected:
-	SplinePath path_;
-	ObjectGroup *objectGroup_;
-	bool groundOnly_;
-	ScorchedContext *context_;
+	SplinePath       path_;
+	ObjectGroup*     objectGroup_;
+	bool             groundOnly_;
+	ScorchedContext* context_;
 
-	void makeObject(ObjectGroupEntry *entry);
+	void makeObject( ObjectGroupEntry* entry );
 };
 
-#endif // __INCLUDE_TargetMovementEntrySpline_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetMovementEntrySpline_hpp_INCLUDE__

@@ -23,17 +23,16 @@
 
 #include <GLW/GLWDragger.hpp>
 
-class GLWTankSlider : public GLWDragger, 
-	public GLWDraggerI
+class GLWTankSlider : public GLWDragger, public GLWDraggerI
 {
 public:
 	GLWTankSlider();
 	virtual ~GLWTankSlider();
 
 	virtual void draw();
-	virtual void currentChanged(unsigned int id, float value);
+	virtual void currentChanged( unsigned int id, float value );
 
-	REGISTER_CLASS_HEADER(GLWTankSlider);
+	REGISTER_CLASS_HEADER( GLWTankSlider );
 };
 
-#endif // __INCLUDE_GLWTankSlider_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTankSlider_hpp_INCLUDE__

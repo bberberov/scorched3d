@@ -26,47 +26,49 @@
 class GLWTrackerI
 {
 public:
-	virtual void currentChanged(unsigned int id, float valueX, float valueY) = 0;
+	virtual void currentChanged( unsigned int id, float valueX, float valueY ) = 0;
 };
 
 class GLWTracker : public GLWidget
 {
 public:
-	GLWTracker(float x = 0.0f, float y = 0.0f, float w = 0.0f, float range = 0.0f);
+	GLWTracker( float x = 0.0f, float y = 0.0f, float w = 0.0f, float range = 0.0f );
 	virtual ~GLWTracker();
 
-	void setHandler(GLWTrackerI *handler) { handler_ = handler; }
+	void setHandler( GLWTrackerI* handler ) { handler_ = handler; }
 
-	float getCurrentX() { return currentX_; }
-	float getCurrentY() { return currentY_; }
-	void setCurrentX(float currentx) { currentX_ = currentx; }
-	void setCurrentY(float currenty) { currentY_ = currenty; }
+	// clang-format off
+	// uncrustify off
+	float getCurrentX()                 { return currentX_; }
+	float getCurrentY()                 { return currentY_; }
+	void  setCurrentX( float currentx ) { currentX_ = currentx; }
+	void  setCurrentY( float currenty ) { currentY_ = currenty; }
+	// uncrustify on
+	// clang-format on
 
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWTracker);
+	REGISTER_CLASS_HEADER( GLWTracker );
 
 protected:
-	GLWTrackerI *handler_;
-	bool dragging_;
-	float currentX_, currentY_;
-	float range_;
-
+	GLWTrackerI* handler_;
+	bool         dragging_;
+	float        currentX_, currentY_;
+	float        range_;
 };
 
-class GLWTankTracker : public GLWTracker,
-	public GLWTrackerI
+class GLWTankTracker : public GLWTracker, public GLWTrackerI
 {
 public:
 	GLWTankTracker();
 	virtual ~GLWTankTracker();
 
 	virtual void draw();
-	virtual void currentChanged(unsigned int id, float valueX, float valueY);
+	virtual void currentChanged( unsigned int id, float valueX, float valueY );
 
-	REGISTER_CLASS_HEADER(GLWTankTracker);
+	REGISTER_CLASS_HEADER( GLWTankTracker );
 };
 
-#endif // __INCLUDE_GLWTracker_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTracker_hpp_INCLUDE__

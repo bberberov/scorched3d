@@ -28,36 +28,41 @@
 
 class Weapon;
 class ScorchedContext;
+
 class LUAScript
 {
 public:
-	LUAScript(ScorchedContext *context);
+	LUAScript( ScorchedContext* context );
 	~LUAScript();
 
-	bool loadFromFile(const std::string &filename, std::string &error);
+	bool loadFromFile( const std::string& filename, std::string& error );
 
 	void addWeaponFunctions();
 
-	bool functionExists(const std::string &functionName);
-	bool startFunction(const std::string &functionName);
-	bool endFunction(int argCount);
+	bool functionExists( const std::string& functionName );
+	bool startFunction( const std::string& functionName );
+	bool endFunction( int argCount );
 
-	bool addStringParameter(const std::string &str);
-	bool addNumberParameter(fixed number);
-	bool addBoolParameter(bool boolean);
-	bool addVectorParameter(const FixedVector &vector);
+	bool addStringParameter( const std::string& str );
+	bool addNumberParameter( fixed number );
+	bool addBoolParameter( bool boolean );
+	bool addVectorParameter( const FixedVector& vector );
 
-	bool setGlobal(const std::string &name, fixed value);
+	bool setGlobal( const std::string& name, fixed value );
 
-	ScorchedContext *getContext() { return context_; }
+	ScorchedContext* getContext() { return context_; }
 
-	void setWeapon(Weapon *weapon) { weapon_ = weapon; }
-	Weapon *getWeapon() { return weapon_; }
+	// clang-format off
+	// uncrustify off
+	void    setWeapon( Weapon* weapon ) { weapon_ = weapon; }
+	Weapon* getWeapon()                 { return weapon_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	ScorchedContext *context_;
-	lua_State *L_;
-	Weapon *weapon_;
+	ScorchedContext* context_;
+	lua_State*       L_;
+	Weapon*          weapon_;
 };
 
-#endif // __INCLUDE_LUAScript_hpp_INCLUDE__
+#endif  // __INCLUDE_LUAScript_hpp_INCLUDE__

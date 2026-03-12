@@ -25,19 +25,22 @@
 
 struct KeyStateTranslation
 {
-	const char *keyStateName;
+	const char*  keyStateName;
 	unsigned int keyStateSym;
-} KeyStateTranslationTable [] =
-{
-	{ "NONE", KMOD_NONE },
-	{ "LCTRL", KMOD_LCTRL },
-	{ "RCTRL", KMOD_RCTRL },
+} KeyStateTranslationTable[] = {
+	// clang-format off
+	// uncrustify off
+	{ "NONE",       KMOD_NONE                },
+	{ "LCTRL",      KMOD_LCTRL               },
+	{ "RCTRL",      KMOD_RCTRL               },
 	{ "LSHIFTCTRL", KMOD_LCTRL | KMOD_LSHIFT },
 	{ "RSHIFTCTRL", KMOD_RCTRL | KMOD_RSHIFT },
-	{ "RSHIFT", KMOD_RSHIFT },
-	{ "LSHIFT", KMOD_LSHIFT },
-	{ "RALT", KMOD_RALT },
-	{ "LALT", KMOD_LALT }
+	{ "RSHIFT",     KMOD_RSHIFT              },
+	{ "LSHIFT",     KMOD_LSHIFT              },
+	{ "RALT",       KMOD_RALT                },
+	{ "LALT",       KMOD_LALT                }
+	// uncrustify on
+	// clang-format on
 };
 
-#endif // __INCLUDE_KeyStateTranslate_hpp_INCLUDE__
+#endif  // __INCLUDE_KeyStateTranslate_hpp_INCLUDE__

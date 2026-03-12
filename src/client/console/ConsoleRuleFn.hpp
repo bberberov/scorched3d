@@ -29,36 +29,48 @@ class ConsoleRuleFnI
 public:
 	virtual ~ConsoleRuleFnI();
 
-	virtual bool getBoolParam(const char *name) { DIALOG_ASSERT(0); return true; }
-	virtual void setBoolParam(const char *name, bool value) { DIALOG_ASSERT(0); }
+	virtual bool getBoolParam( const char* name )
+	{
+		DIALOG_ASSERT( 0 );
 
-	virtual float getNumberParam(const char *name) { DIALOG_ASSERT(0); return 0.0f; }
-	virtual void  setNumberParam(const char *name, float value) { DIALOG_ASSERT(0); }
+		return true;
+	}
 
-	virtual const char *getStringParam(const char *name) { DIALOG_ASSERT(0); return 0; }
-	virtual void setStringParam(const char *name, const char *value) { DIALOG_ASSERT(0); }
+	virtual void setBoolParam( const char* name, bool value ) { DIALOG_ASSERT( 0 ); }
+
+	virtual float getNumberParam( const char* name )
+	{
+		DIALOG_ASSERT( 0 );
+
+		return 0.0f;
+	}
+
+	virtual void setNumberParam( const char* name, float value ) { DIALOG_ASSERT( 0 ); }
+
+	virtual const char* getStringParam( const char* name )
+	{
+		DIALOG_ASSERT( 0 );
+
+		return 0;
+	}
+
+	virtual void setStringParam( const char* name, const char* value ) { DIALOG_ASSERT( 0 ); }
 };
 
 class ConsoleRuleFn : public ConsoleRule
 {
 public:
-	ConsoleRuleFn(const char *name, 
-		ConsoleRuleFnI *user, 
-		ConsoleRuleType type, 
-		bool write = false);
+	ConsoleRuleFn( const char* name, ConsoleRuleFnI* user, ConsoleRuleType type, bool write = false );
 	virtual ~ConsoleRuleFn();
 
-	virtual void runRule(
-		Console *console,
-		const char *wholeLine,
-		std::vector<ConsoleRuleValue> &values);
+	virtual void runRule( Console* console, const char* wholeLine, std::vector< ConsoleRuleValue >& values );
 
 protected:
-	ConsoleRuleFnI *user_;
+	ConsoleRuleFnI* user_;
 	ConsoleRuleType type_;
 
-	void setValue(ConsoleRuleValue &split);
-	const char *getValue();
+	void        setValue( ConsoleRuleValue& split );
+	const char* getValue();
 };
 
-#endif // __INCLUDE_ConsoleRuleFn_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleRuleFn_hpp_INCLUDE__

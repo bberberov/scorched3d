@@ -28,49 +28,52 @@
 
 class TankViewPointProvider;
 class ModelRendererSimulator;
+
 class ShotBounce : public PhysicsParticle
 {
 public:
 	ShotBounce(
-		WeaponRoller *weapon,
-		FixedVector &startPosition,
-		FixedVector &velocity,
-		WeaponFireContext &weaponContext
+		WeaponRoller*      weapon,
+		FixedVector&       startPosition,
+		FixedVector&       velocity,
+		WeaponFireContext& weaponContext
 	);
 	virtual ~ShotBounce();
 
-	virtual void simulate(fixed frameTime, bool &remove);
-	virtual void init();
-	virtual void draw();
-	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId);
+	virtual void        simulate( fixed frameTime, bool& remove );
+	virtual void        init();
+	virtual void        draw();
+	virtual void        collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "ShotBounce"; }
 
 	unsigned int getPlayerId() { return weaponContext_.getPlayerId(); }
-	WeaponRoller *getWeapon() { return weapon_; }
+
+	WeaponRoller* getWeapon() { return weapon_; }
 
 protected:
-	ParticleGroup *groups_;
-	FixedVector startPosition_;
-	FixedVector velocity_;
-	WeaponRoller *weapon_;
-	WeaponFireContext weaponContext_;
-	TankViewPointProvider *vPoint_;
-	FixedVector lookFrom_;
-	ModelRendererSimulator *model_;
-	bool collided_;
-	fixed totalTime_;
-	fixed simulateTime_;
-	fixed timeout_;
-	fixed stepSize_;
-	fixed weaponTime_;
-	float scale_;
+	ParticleGroup*          groups_;
+	FixedVector             startPosition_;
+	FixedVector             velocity_;
+	WeaponRoller*           weapon_;
+	WeaponFireContext       weaponContext_;
+	TankViewPointProvider*  vPoint_;
+	FixedVector             lookFrom_;
+	ModelRendererSimulator* model_;
+	bool                    collided_;
+	fixed                   totalTime_;
+	fixed                   simulateTime_;
+	fixed                   timeout_;
+	fixed                   stepSize_;
+	fixed                   weaponTime_;
+	float                   scale_;
 
 	void doCollision();
 
 private:
-	ShotBounce(const ShotBounce &);
-	const ShotBounce & operator=(const ShotBounce &);
+	ShotBounce( const ShotBounce& );
+	const ShotBounce& operator=( const ShotBounce& );
 };
 
-#endif // __INCLUDE_ShotBounce_hpp_INCLUDE__
+#endif  // __INCLUDE_ShotBounce_hpp_INCLUDE__

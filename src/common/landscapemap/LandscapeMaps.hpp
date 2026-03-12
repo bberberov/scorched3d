@@ -26,25 +26,27 @@
 #include <landscapedef/LandscapeDefinitionCache.hpp>
 
 class ScorchedClient;
+
 class LandscapeMaps
 {
 public:
 	LandscapeMaps();
 	virtual ~LandscapeMaps();
 
-	void generateMaps(
-		ScorchedContext &context,
-		LandscapeDefinition &defn,
-		ProgressCounter *counter = 0);
+	void generateMaps( ScorchedContext& context, LandscapeDefinition& defn, ProgressCounter* counter = 0 );
 
-	GroundMaps &getGroundMaps() { return gMaps_; }
-	RoofMaps &getRoofMaps() { return rMaps_; }
-	LandscapeDefinitionCache &getDefinitions() { return dCache_; }
+	// clang-format off
+	// uncrustify off
+	GroundMaps&               getGroundMaps()  { return gMaps_; }
+	RoofMaps&                 getRoofMaps()    { return rMaps_; }
+	LandscapeDefinitionCache& getDefinitions() { return dCache_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	LandscapeDefinitionCache dCache_;
-	GroundMaps gMaps_;
-	RoofMaps rMaps_;
+	GroundMaps               gMaps_;
+	RoofMaps                 rMaps_;
 };
 
-#endif // __INCLUDE_LanscapeMaps_hpp_INCLUDE__
+#endif  // __INCLUDE_LanscapeMaps_hpp_INCLUDE__

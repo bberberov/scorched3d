@@ -32,31 +32,28 @@ public:
 	TankAICurrent();
 	virtual ~TankAICurrent();
 
-	virtual TankAI *createCopy(Tanket *tanket);
+	virtual TankAI* createCopy( Tanket* tanket );
 
-	virtual bool parseConfig(TankAIWeaponSets &sets, XMLNode *node);
+	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node );
 
 	// Inherited from TankAI
 	virtual void newMatch();
 	virtual void newGame();
-	virtual void playMove(unsigned int moveId);
-	virtual void buyAccessories(unsigned int moveId);
+	virtual void playMove( unsigned int moveId );
+	virtual void buyAccessories( unsigned int moveId );
 
 	// Notification of actions happened
-	virtual void tankHurt(Weapon *weapon, float damage, 
-		unsigned int damaged, unsigned int firer);
-	virtual void shotLanded(ScorchedCollisionId collision,
-		Weapon *weapon, unsigned int firer, 
-		Vector &position);
+	virtual void tankHurt( Weapon* weapon, float damage, unsigned int damaged, unsigned int firer );
+	virtual void shotLanded( ScorchedCollisionId collision, Weapon* weapon, unsigned int firer, Vector& position );
 
 protected:
-	Tanket *tanket_;
-	TankAICurrentWeapons wantedWeapons_;
+	Tanket*               tanket_;
+	TankAICurrentWeapons  wantedWeapons_;
 	TankAICurrentDefenses defenses_;
-	TankAICurrentMove move_;
+	TankAICurrentMove     move_;
 
-	void setTanket(Tanket *tanket);
+	void setTanket( Tanket* tanket );
 	void resign();
 };
 
-#endif // __INCLUDE_TankAICurrent_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAICurrent_hpp_INCLUDE__

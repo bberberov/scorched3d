@@ -30,21 +30,26 @@ public:
 	PlacementObjectRandom();
 	virtual ~PlacementObjectRandom();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual PlacementObject::Type getType() { return PlacementObject::eRandom; }
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position);
+
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	);
 
 protected:
 	struct RandomObject
 	{
-		PlacementObject *object;
-		fixed weight;
+		PlacementObject* object;
+		fixed            weight;
 	};
-	fixed totalWeight_;
-	std::vector<RandomObject> objects_;
+
+	fixed                       totalWeight_;
+	std::vector< RandomObject > objects_;
 };
 
-#endif // __INCLUDE_PlacementObjectRandom_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObjectRandom_hpp_INCLUDE__

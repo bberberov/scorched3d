@@ -27,15 +27,14 @@
 class ImageJpgFactory
 {
 public:
-
 	/**
 	Overwrite the bitmap with the contents of the given file.
 	If alpha is true then any black areas in the bitmap have full
 	opacity.  When creating an alpha bitmap the bitmap is created
 	in RGBA format, otherwise in RGB format.
 	*/
-	static Image loadFromFile(const char *filename, bool readalpha = false);
-	static Image loadFromBuffer(NetBuffer &buffer, bool readalpha, std::string &errorMessage);
+	static Image loadFromFile( const char* filename, bool readalpha = false );
+	static Image loadFromBuffer( NetBuffer& buffer, bool readalpha, std::string& errorMessage );
 };
 
-#endif // __INCLUDE_ImageJpgFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageJpgFactory_hpp_INCLUDE__

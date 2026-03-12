@@ -29,15 +29,24 @@
 #include <GLEXT/GLState.hpp>
 
 class ModelRendererSimulator;
+
 class TargetRendererImplTankAIM
 {
 public:
-	static void simulate(float frameTime) { timeLeft_ -= frameTime; }
+	static void simulate( float frameTime ) { timeLeft_ -= frameTime; }
 
-	static ModelRendererSimulator *getAutoAimModel();
-	static bool drawAim() { return (timeLeft_ > 0.0f); }
-	static void setAimPosition(Vector &pos) { aimPosition_ = pos; timeLeft_= 5.0f; }
-	static Vector &getAimPosition() { return aimPosition_; }
+	// clang-format off
+	// uncrustify off
+	static ModelRendererSimulator* getAutoAimModel();
+	static bool                    drawAim() { return ( timeLeft_ > 0.0f ); }
+	static void                    setAimPosition( Vector& pos )
+	{
+		aimPosition_ = pos;
+		timeLeft_    = 5.0f;
+	}
+	static Vector&                 getAimPosition() { return aimPosition_; }
+	// uncrustify on
+	// clang-format on
 
 	static Vector aimPosition_;
 
@@ -48,64 +57,77 @@ protected:
 class TargetRendererImplTankHUD
 {
 public:
-	static void simulate(float frameTime) { timeLeft_ -= frameTime; }
+	static void simulate( float frameTime ) { timeLeft_ -= frameTime; }
 
-	static bool drawText() { return (timeLeft_ > 0.0f); }
-	static void setText(const char *textA, const char *textB, float percentage = -1.0f)
-		{ textA_ = textA; textB_ = textB; percentage_ = percentage; timeLeft_= 2.0f; }
-	static const char *getTextA() { return textA_.c_str(); }
-	static const char *getTextB() { return textB_.c_str(); }
-	static float getPercentage() { return percentage_; }
+	// clang-format off
+	// uncrustify off
+	static bool drawText() { return ( timeLeft_ > 0.0f ); }
+	static void setText( const char* textA, const char* textB, float percentage = -1.0f )
+	{
+		textA_      = textA;
+		textB_      = textB;
+		percentage_ = percentage;
+		timeLeft_   = 2.0f;
+	}
+	static const char* getTextA()      { return textA_.c_str(); }
+	static const char* getTextB()      { return textB_.c_str(); }
+	static float       getPercentage() { return percentage_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static float timeLeft_;
-	static float percentage_;
+	static float       timeLeft_;
+	static float       percentage_;
 	static std::string textA_;
 	static std::string textB_;
-
 };
 
 class TargetRendererImplTank : public TargetRendererImpl
 {
 public:
-	TargetRendererImplTank(Tank *tank);
+	TargetRendererImplTank( Tank* tank );
 	virtual ~TargetRendererImplTank();
 
 	// TargetRendererImpl
-	virtual void simulate(float frameTime);
-	virtual void drawParticle(float distance);
+	virtual void simulate( float frameTime );
+	virtual void drawParticle( float distance );
 
-	void render(float distance);
-	void renderReflection(float distance);
-	void renderShadow(float distance);
-	void render2D(float distance);
+	void render( float distance );
+	void renderReflection( float distance );
+	void renderShadow( float distance );
+	void render2D( float distance );
 
 	// TargetRenderer
 	virtual void fired();
 	virtual void shieldHit();
+
 	virtual void targetBurnt() {}
 
-	void resetModel() { mesh_ = 0; }
-	ModelRendererTank *getMesh();
-	GLWTankTips *getTips() { return &tankTips_; }
+	// clang-format off
+	// uncrustify off
+	void               resetModel() { mesh_ = 0; }
+	ModelRendererTank* getMesh();
+	GLWTankTips*       getTips()    { return &tankTips_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	Tank *tank_;
-	ModelRendererTank *mesh_;
-	GLWTankTips tankTips_;
-	float fireOffSet_;
-	float shieldHit_;
-	float smokeTime_;
-	float smokeWaitForTime_;
-	float totalTime_;
-	float frame_;
+	Tank*              tank_;
+	ModelRendererTank* mesh_;
+	GLWTankTips        tankTips_;
+	float              fireOffSet_;
+	float              shieldHit_;
+	float              smokeTime_;
+	float              smokeWaitForTime_;
+	float              totalTime_;
+	float              frame_;
 
 	void drawNames();
 	void drawLife();
-	void drawLifeBar(Vector &bilX, float value, float height, float barheight);
+	void drawLifeBar( Vector& bilX, float value, float height, float barheight );
 	void drawSight();
 	void drawOldSight();
 	void drawArrow();
 };
 
-#endif // __INCLUDE_TargetRendererImplTank_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetRendererImplTank_hpp_INCLUDE__

@@ -27,20 +27,20 @@ class TankAchievementSimAction : public SimAction
 {
 public:
 	TankAchievementSimAction();
-	TankAchievementSimAction(unsigned int playerId, 
-		const std::string &achievementName, unsigned int rank);
+	TankAchievementSimAction( unsigned int playerId, const std::string& achievementName, unsigned int rank );
 	virtual ~TankAchievementSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankAchievementSimAction);
+	REGISTER_CLASS_HEADER( TankAchievementSimAction );
+
 protected:
 	unsigned int playerId_;
-	std::string achievementName_;
+	std::string  achievementName_;
 	unsigned int rank_;
 };
 
-#endif // __INCLUDE_TankAchievementSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAchievementSimAction_hpp_INCLUDE__

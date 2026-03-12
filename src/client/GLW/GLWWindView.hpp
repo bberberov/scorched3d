@@ -34,25 +34,26 @@ public:
 };
 
 class ModelRendererSimulator;
+
 class GLWWindView : public GLWidget
 {
 public:
-	GLWWindView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
+	GLWWindView( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWWindView();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWWindView);
+	REGISTER_CLASS_HEADER( GLWWindView );
 
 protected:
-	unsigned int listNo_;
-	unsigned int changeCount_;
-	ModelRendererSimulator *windModel_;
+	unsigned int            listNo_;
+	unsigned int            changeCount_;
+	ModelRendererSimulator* windModel_;
 
 	void drawArrow();
 	void drawScene();
 	void drawDisplay();
 };
 
-#endif // __INCLUDE_GLWWindView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWWindView_hpp_INCLUDE__

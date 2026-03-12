@@ -26,18 +26,19 @@
 class TanketResign : public Action
 {
 public:
-	TanketResign(unsigned int playerId, fixed resignTime, bool referenced);
+	TanketResign( unsigned int playerId, fixed resignTime, bool referenced );
 	virtual ~TanketResign();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "TanketResign"; }
 
 protected:
-	fixed resignTime_;
+	fixed        resignTime_;
 	unsigned int playerId_;
 	unsigned int stateChangeCount_;
 };
 
-#endif // __INCLUDE_TanketResign_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketResign_hpp_INCLUDE__

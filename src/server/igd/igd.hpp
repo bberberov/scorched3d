@@ -32,7 +32,7 @@ public:
 	igd();
 	virtual ~igd();
 
-	void sendInitialRequest(int portNumber);
+	void sendInitialRequest( int portNumber );
 
 protected:
 	struct Location
@@ -40,24 +40,37 @@ protected:
 		std::string friendlyName, manufacturer;
 		std::string location, st;
 		std::string host, path;
-		int port;
-		IPaddress ipAddress;
+		int         port;
+		IPaddress   ipAddress;
 		std::string serviceData;
 		std::string controlUrl;
 		std::string serviceType;
 	};
 
-	void sendInitialRequest(UDPsocket udpsock, const char *serviceType);
-	void recvInitialRequest(UDPsocket udpsock, std::list<Location> &locations);
-	void sendServiceRequest(Location &location, std::string &localAddress);
-	bool parseServiceRequest(Location &location);
-	bool sendTCPRequest(Location &location, const std::string &request, std::string &response, std::string &localAddress);
-	bool findServiceType(XMLNode *deviceNode, std::set<std::string> &wantedServiceTypes,
-		std::string &serviceType, std::string &controlUrl);
-	bool addPortMapping(Location &location, const std::string &protocol,
-		int portNumber, const std::string &localName);
-	bool getExtenalAddress(Location &location, const std::string &localName);
-	bool sendRequest(Location &location, const std::string &action, std::string &data, std::string &response);
+	void sendInitialRequest( UDPsocket udpsock, const char* serviceType );
+	void recvInitialRequest( UDPsocket udpsock, std::list< Location >& locations );
+	void sendServiceRequest( Location& location, std::string& localAddress );
+	bool parseServiceRequest( Location& location );
+	bool sendTCPRequest(
+		Location&          location,
+		const std::string& request,
+		std::string&       response,
+		std::string&       localAddress
+	);
+	bool findServiceType(
+		XMLNode*                 deviceNode,
+		std::set< std::string >& wantedServiceTypes,
+		std::string&             serviceType,
+		std::string&             controlUrl
+	);
+	bool addPortMapping(
+		Location&          location,
+		const std::string& protocol,
+		int                portNumber,
+		const std::string& localName
+	);
+	bool getExtenalAddress( Location& location, const std::string& localName );
+	bool sendRequest( Location& location, const std::string& action, std::string& data, std::string& response );
 };
 
-#endif // __INCLUDE_igd_hpp_INCLUDE__
+#endif  // __INCLUDE_igd_hpp_INCLUDE__

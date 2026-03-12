@@ -25,46 +25,41 @@
 #include <coms/ComsMessageHandler.hpp>
 #include <coms/ComsLoadLevelMessage.hpp>
 
-class ServerSimulator : 
-	public Simulator, 
-	public ComsMessageHandlerI
+class ServerSimulator : public Simulator, public ComsMessageHandlerI
 {
 public:
 	ServerSimulator();
 	virtual ~ServerSimulator();
 
 	virtual void clear();
-	void processRemaining();
+	void         processRemaining();
 
-	void addSimulatorAction(SimAction *action, SimulatorI *callback = 0);
+	void addSimulatorAction( SimAction* action, SimulatorI* callback = 0 );
 
 	bool getSendActionsEmpty() { return sendActions_.empty() && simActions_.empty(); }
 
 	fixed getSendStepSize() { return sendStepSize_; }
 
-	virtual void newLevel();
-	ComsLoadLevelMessage &getLevelMessage();
+	virtual void          newLevel();
+	ComsLoadLevelMessage& getLevelMessage();
 
-	virtual bool processMessage(
-		NetMessage &netMessage,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& netMessage, const char* messageType, NetBufferReader& reader );
 
 protected:
 	struct SendAction
 	{
-		SimAction *action;
-		SimulatorI *callback;
+		SimAction*  action;
+		SimulatorI* callback;
 	};
 
-	std::list<SendAction> sendActions_;
-	fixed nextSendTime_, nextEventTime_;
-	fixed sendStepSize_;
+	std::list< SendAction > sendActions_;
+	fixed                   nextSendTime_, nextEventTime_;
+	fixed                   sendStepSize_;
 
-	virtual bool continueToSimulate();
-	void nextSendTime();
-	fixed calcSendStepSize();
-	ComsLoadLevelMessage *levelMessage_;
+	virtual bool          continueToSimulate();
+	void                  nextSendTime();
+	fixed                 calcSendStepSize();
+	ComsLoadLevelMessage* levelMessage_;
 };
 
-#endif // __INCLUDE_ServerSimulator_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerSimulator_hpp_INCLUDE__

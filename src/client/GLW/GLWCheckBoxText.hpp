@@ -27,30 +27,37 @@
 class GLWCheckBoxText : public GLWidget
 {
 public:
-	GLWCheckBoxText(float x = 0.0f, float y = 0.0f, 
-		const LangString &text = LangString(),
-		bool startState = true,
-		float offset = 0.0f);
+	GLWCheckBoxText(
+		float             x          = 0.0f,
+		float             y          = 0.0f,
+		const LangString& text       = LangString(),
+		bool              startState = true,
+		float             offset     = 0.0f
+	);
 	virtual ~GLWCheckBoxText();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 
 	virtual float getW();
-	virtual void setX(float x);
-	virtual void setY(float y);
+	virtual void  setX( float x );
+	virtual void  setY( float y );
 
-	GLWCheckBox &getCheckBox() { return box_; }
-	GLWLabel &getLabel() { return label_; }
+	// clang-format off
+	// uncrustify off
+	GLWCheckBox& getCheckBox() { return box_; }
+	GLWLabel&    getLabel()    { return label_; }
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWCheckBoxText);
+	REGISTER_CLASS_HEADER( GLWCheckBoxText );
 
 protected:
-	float offset_;
+	float       offset_;
 	GLWCheckBox box_;
-	GLWLabel label_;
+	GLWLabel    label_;
 };
 
-#endif // __INCLUDE_GLWCheckBoxText_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWCheckBoxText_hpp_INCLUDE__

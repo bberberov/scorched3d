@@ -21,7 +21,7 @@
 #ifndef __INCLUDE_ParticleTypes_hpp_INCLUDE__
 #define __INCLUDE_ParticleTypes_hpp_INCLUDE__
 
-enum ParticleTypes 
+enum ParticleTypes
 {
 	ParticleTarget = 1,
 	ParticleLinear,
@@ -38,4 +38,4 @@ enum ParticleTypes
 	ParticlePrecipitation
 };
 
-#endif // __INCLUDE_ParticleTypes_hpp_INCLUDE__
+#endif  // __INCLUDE_ParticleTypes_hpp_INCLUDE__

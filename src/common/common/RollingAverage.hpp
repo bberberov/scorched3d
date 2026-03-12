@@ -23,23 +23,24 @@
 
 #include <common/fixed.hpp>
 
-class RollingAverage  
+class RollingAverage
 {
 public:
-	RollingAverage(int numberAverages, fixed startValue);
+	RollingAverage( int numberAverages, fixed startValue );
 	~RollingAverage();
 
-	void reset(fixed value);
+	void reset( fixed value );
 
-	void addValue(fixed value);
+	void addValue( fixed value );
+
 	fixed getAverage() { return average_; }
 
 private:
-	int index_;
-	int numberAverages_;
-	fixed *averages_;
-	fixed average_;
-	fixed total_;
+	int    index_;
+	int    numberAverages_;
+	fixed* averages_;
+	fixed  average_;
+	fixed  total_;
 };
 
-#endif // __INCLUDE_RollingAverage_hpp_INCLUDE__
+#endif  // __INCLUDE_RollingAverage_hpp_INCLUDE__

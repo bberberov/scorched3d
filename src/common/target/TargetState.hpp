@@ -39,58 +39,62 @@ public:
 	TargetState();
 	virtual ~TargetState();
 
-	TargetFalling *getFalling() { return falling_; }
-	void setFalling(TargetFalling *falling) { falling_ = falling; }
+	// clang-format off
+	// uncrustify off
+	TargetFalling* getFalling()               { return falling_; }
+	void setFalling( TargetFalling* falling ) { falling_ = falling; }
 
-	TanketMovement *getMoving() { return moving_; }
-	void setMoving(TanketMovement *moving) { moving_ = moving; }
+	TanketMovement* getMoving()              { return moving_; }
+	void setMoving( TanketMovement* moving ) { moving_ = moving; }
 
-	bool getDisplayDamage() { return displayDamage_; }
-	void setDisplayDamage(bool displayDamage) { displayDamage_ = displayDamage; }
+	bool getDisplayDamage()                     { return displayDamage_; }
+	void setDisplayDamage( bool displayDamage ) { displayDamage_ = displayDamage; }
 
-	bool getDisplayShadow() { return displayShadow_; }
-	void setDisplayShadow(bool displayShadow) { displayShadow_ = displayShadow; }
+	bool getDisplayShadow()                     { return displayShadow_; }
+	void setDisplayShadow( bool displayShadow ) { displayShadow_ = displayShadow; }
 
-	bool getDisplayHardwareShadow() { return displayHardwareShadow_; }
-	void setDisplayHardwareShadow(bool displayHardwareShadow) { displayHardwareShadow_ = displayHardwareShadow; }
+	bool getDisplayHardwareShadow()                             { return displayHardwareShadow_; }
+	void setDisplayHardwareShadow( bool displayHardwareShadow ) { displayHardwareShadow_ = displayHardwareShadow; }
 
-	bool getNoDamageBurn() { return noDamageBurn_; }
-	void setNoDamageBurn(bool noDamageBurn) { noDamageBurn_ = noDamageBurn; }
+	bool getNoDamageBurn()                    { return noDamageBurn_; }
+	void setNoDamageBurn( bool noDamageBurn ) { noDamageBurn_ = noDamageBurn; }
 
-	bool getNoCollision() { return noCollision_; }
-	void setNoCollision(bool noCollision) { noCollision_ = noCollision; }
+	bool getNoCollision()                   { return noCollision_; }
+	void setNoCollision( bool noCollision ) { noCollision_ = noCollision; }
 
-	bool getNoFalling() { return noFalling_; }
-	void setNoFalling(bool noFalling) { noFalling_ = noFalling; }
+	bool getNoFalling()                 { return noFalling_; }
+	void setNoFalling( bool noFalling ) { noFalling_ = noFalling; }
 
-	bool getNoFallingDamage() { return noFallingDamage_; }
-	void setNoFallingDamage(bool noFalling) { noFallingDamage_ = noFalling; }
+	bool getNoFallingDamage()                 { return noFallingDamage_; }
+	void setNoFallingDamage( bool noFalling ) { noFallingDamage_ = noFalling; }
 
-	TargetStateMovement *getMovement() { return movement_; }
-	void setMovement(TargetStateMovement *movement) { movement_ = movement; }
+	TargetStateMovement* getMovement()                { return movement_; }
+	void setMovement( TargetStateMovement* movement ) { movement_ = movement; }
 
-	void setDriveOverToDestroy(bool d) { driveOverToDestroy_ = d; }
-	bool getDriveOverToDestroy() { return driveOverToDestroy_; }
+	bool getDriveOverToDestroy()         { return driveOverToDestroy_; }
+	void setDriveOverToDestroy( bool d ) { driveOverToDestroy_ = d; }
 
-	void setFlattenDestroy(bool d) { flattenDestroy_ = d; }
-	bool getFlattenDestroy() { return flattenDestroy_; }
+	bool getFlattenDestroy()         { return flattenDestroy_; }
+	void setFlattenDestroy( bool d ) { flattenDestroy_ = d; }
+	// uncrustify on
+	// clang-format on
 
-    bool writeMessage(NamedNetBuffer &buffer);
-    bool readMessage(NetBufferReader &reader);
+	bool readMessage( NetBufferReader& reader );
+	bool writeMessage( NamedNetBuffer& buffer );
 
 protected:
-	TargetFalling *falling_;
-	TanketMovement *moving_;
-	TargetStateMovement *movement_;
-	bool displayDamage_;
-	bool displayShadow_;
-	bool displayHardwareShadow_;
-	bool noDamageBurn_;
-	bool noCollision_;
-	bool noFalling_;
-	bool noFallingDamage_;
-	bool driveOverToDestroy_;
-	bool flattenDestroy_;
+	TargetFalling*       falling_;
+	TanketMovement*      moving_;
+	TargetStateMovement* movement_;
+	bool                 displayDamage_;
+	bool                 displayShadow_;
+	bool                 displayHardwareShadow_;
+	bool                 noDamageBurn_;
+	bool                 noCollision_;
+	bool                 noFalling_;
+	bool                 noFallingDamage_;
+	bool                 driveOverToDestroy_;
+	bool                 flattenDestroy_;
 };
 
-#endif // __INCLUDE_TargetState_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetState_hpp_INCLUDE__

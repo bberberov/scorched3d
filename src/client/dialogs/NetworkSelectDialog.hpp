@@ -37,34 +37,34 @@ class NetworkSelectDialog :
 	public GLWDropDownI
 {
 public:
-	static NetworkSelectDialog *instance();
+	static NetworkSelectDialog* instance();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 
 	// GLWWindow
 	virtual void display();
 	virtual void hide();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWIconTableI
-	virtual void drawColumn(unsigned int id, int row, int column, float x, float y, float w);
-	virtual void rowSelected(unsigned int id, int row);
-	virtual void rowChosen(unsigned int id, int row);
-	virtual void columnSelected(unsigned int id, int col);
+	virtual void drawColumn( unsigned int id, int row, int column, float x, float y, float w );
+	virtual void rowSelected( unsigned int id, int row );
+	virtual void rowChosen( unsigned int id, int row );
+	virtual void columnSelected( unsigned int id, int col );
 
 	// GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 	// TextBoxDialogI
-	virtual void textBoxResult(TextBoxDialog *dialog, const LangString &result);
+	virtual void textBoxResult( TextBoxDialog* dialog, const LangString& result );
 
 protected:
-	static NetworkSelectDialog *instance_;
+	static NetworkSelectDialog* instance_;
 
-	float totalTime_;
+	float              totalTime_;
 	GLTextureReference okTex_;
 	GLTextureReference questionTex_;
 	GLTextureReference warningTex_;
@@ -73,36 +73,36 @@ protected:
 	GLTextureReference keyTex_;
 	GLTextureReference cogTex_;
 	GLTextureReference tankTex_;
-	GLWIconTable *gamesIconTable_;
-	GLWIconTable *playersIconTable_;
-	GLWTextButton *ok_;
-	GLWTextButton *refresh_;
-	GLWTextButton *favourites_;
-	GLWTextButton *connectTo_;
-	GLWLabel *ipaddress_;
-	GLWDropDownText *refreshType_;
-	unsigned int invalidateId_;
-	unsigned int cancelId_;
-	unsigned int addFavouriteId_;
-	ToolTip colToolTip_;
+	GLWIconTable*      gamesIconTable_;
+	GLWIconTable*      playersIconTable_;
+	GLWTextButton*     ok_;
+	GLWTextButton*     refresh_;
+	GLWTextButton*     favourites_;
+	GLWTextButton*     connectTo_;
+	GLWLabel*          ipaddress_;
+	GLWDropDownText*   refreshType_;
+	unsigned int       invalidateId_;
+	unsigned int       cancelId_;
+	unsigned int       addFavouriteId_;
+	ToolTip            colToolTip_;
 
-	void updateTable();
-	void startRefresh();
-	void stopRefresh();
-	bool serverCompatable(std::string pversion, std::string version);
-	GLTexture *getTexture(int row, LangString *&message);
-	void drawIcon(GLTexture *tex, float &x, float y, LangString &message);
-	void setIPAddress(const LangString &text);
+	void       updateTable();
+	void       startRefresh();
+	void       stopRefresh();
+	bool       serverCompatable( std::string pversion, std::string version );
+	GLTexture* getTexture( int row, LangString*& message );
+	void       drawIcon( GLTexture* tex, float& x, float y, LangString& message );
+	void       setIPAddress( const LangString& text );
 
-	void drawColumnGames(unsigned int id, int row, int column, float x, float y, float w);
-	void drawColumnPlayers(unsigned int id, int row, int col, float x, float y, float w);
-	void rowSelectedGames(unsigned int id, int row);
-	void rowChosenGames(unsigned int id, int row);
-	void columnSelectedGames(unsigned int id, int col);
+	void drawColumnGames( unsigned int id, int row, int column, float x, float y, float w );
+	void drawColumnPlayers( unsigned int id, int row, int col, float x, float y, float w );
+	void rowSelectedGames( unsigned int id, int row );
+	void rowChosenGames( unsigned int id, int row );
+	void columnSelectedGames( unsigned int id, int col );
 
 private:
 	NetworkSelectDialog();
 	virtual ~NetworkSelectDialog();
 };
 
-#endif // __INCLUDE_NetworkSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_NetworkSelectDialog_hpp_INCLUDE__

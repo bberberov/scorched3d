@@ -23,24 +23,27 @@
 
 #include <weapons/WeaponLabel.hpp>
 
-class WeaponGotoLabel  : public Weapon
+class WeaponGotoLabel : public Weapon
 {
 public:
 	WeaponGotoLabel();
 	virtual ~WeaponGotoLabel();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGotoLabel, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGotoLabel, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *weaponLabel_;
-	int count_;
+	Weapon* weaponLabel_;
+	int     count_;
 };
 
-#endif // __INCLUDE_WeaponGotoLabel_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGotoLabel_hpp_INCLUDE__

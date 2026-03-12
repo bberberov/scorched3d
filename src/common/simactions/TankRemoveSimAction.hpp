@@ -27,20 +27,21 @@ class TankRemoveSimAction : public SimAction
 {
 public:
 	TankRemoveSimAction();
-	TankRemoveSimAction(unsigned int playerId, fixed removalTime);
+	TankRemoveSimAction( unsigned int playerId, fixed removalTime );
 	virtual ~TankRemoveSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 	static unsigned int TankRemoveSimActionCount;
 
-REGISTER_CLASS_HEADER(TankRemoveSimAction);
+	REGISTER_CLASS_HEADER( TankRemoveSimAction );
+
 protected:
 	unsigned int playerId_;
-	fixed removalTime_;
+	fixed        removalTime_;
 };
 
-#endif // __INCLUDE_TankRemoveSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankRemoveSimAction_hpp_INCLUDE__

@@ -31,11 +31,12 @@ public:
 	SimAction();
 	virtual ~SimAction();
 
-	virtual bool invokeAction(ScorchedContext &context) = 0;
+	virtual bool invokeAction( ScorchedContext& context ) = 0;
+
 	virtual bool replayAction() { return true; }
 
-	virtual bool writeMessage(NetBuffer &buffer) = 0;
-	virtual bool readMessage(NetBufferReader &reader) = 0;
+	virtual bool writeMessage( NetBuffer& buffer )      = 0;
+	virtual bool readMessage( NetBufferReader& reader ) = 0;
 };
 
-#endif // __INCLUDE_SimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_SimAction_hpp_INCLUDE__

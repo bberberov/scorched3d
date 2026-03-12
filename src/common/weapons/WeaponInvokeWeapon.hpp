@@ -24,24 +24,27 @@
 #include <weapons/Weapon.hpp>
 #include <set>
 
-class WeaponInvokeWeapon  : public Weapon
+class WeaponInvokeWeapon : public Weapon
 {
 public:
 	WeaponInvokeWeapon();
 	virtual ~WeaponInvokeWeapon();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponInvokeWeapon, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponInvokeWeapon, AccessoryPart::AccessoryWeapon );
 
 protected:
-	Weapon *invokeWeapon_;
-	static std::set<Weapon *> weaponStack_;
+	Weapon*                    invokeWeapon_;
+	static std::set< Weapon* > weaponStack_;
 };
 
-#endif // __INCLUDE_WeaponInvokeWeapon_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponInvokeWeapon_hpp_INCLUDE__

@@ -29,30 +29,30 @@ public:
 	WeaponRepeat();
 	virtual ~WeaponRepeat();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponRepeat, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponRepeat, AccessoryPart::AccessoryWeapon );
 
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity,
-		unsigned int userData
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
 	);
 
 protected:
 	NumberParser delay_;
-	Weapon *repeatWeapon_;
-	int repeat_;
+	Weapon*      repeatWeapon_;
+	int          repeat_;
 };
 
-#endif // __INCLUDE_WeaponRepeat_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponRepeat_hpp_INCLUDE__

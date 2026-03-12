@@ -27,25 +27,31 @@
 class GLTextureReferenceData
 {
 public:
-	GLTextureReferenceData(const ImageID &imageId, unsigned texState);
+	GLTextureReferenceData( const ImageID& imageId, unsigned int texState );
 	~GLTextureReferenceData();
-	
+
 	void reset();
 
+	// clang-format off
+	// uncrustify off
 	int incrementReferenceCount() { return ++referenceCount_; }
 	int decrementReferenceCount() { return --referenceCount_; }
 
-	ImageID &getImageID() { return imageId_; }
+	ImageID&     getImageID()  { return imageId_; }
 	unsigned int getTexState() { return texState_; }
-	GLTexture *getTexture();
+	GLTexture*   getTexture();
+	// uncrustify on
+	// clang-format on
+
 protected:
-	ImageID imageId_;
-	GLTexture *texture_;
-	unsigned texState_;
-	int referenceCount_;
+	ImageID      imageId_;
+	GLTexture*   texture_;
+	unsigned int texState_;
+	int          referenceCount_;
+
 private:
-	GLTextureReferenceData(const GLTextureReferenceData &other);
-	GLTextureReferenceData &operator=(const GLTextureReferenceData &other);
+	GLTextureReferenceData( const GLTextureReferenceData& other );
+	GLTextureReferenceData& operator=( const GLTextureReferenceData& other );
 };
 
-#endif // __INCLUDE_GLTextureReferenceData_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTextureReferenceData_hpp_INCLUDE__

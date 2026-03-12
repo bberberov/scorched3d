@@ -28,7 +28,7 @@
 class ServerBrowser
 {
 public:
-	static ServerBrowser *instance();
+	static ServerBrowser* instance();
 
 	enum RefreshType
 	{
@@ -38,28 +38,32 @@ public:
 		RefreshFavourites = 3
 	};
 
+	// clang-format off
+	// uncrustify off
 	bool getRefreshing() { return refreshing_; }
-	void refreshList(RefreshType t);
+	void refreshList( RefreshType t );
 	void cancel();
-	
-	ServerBrowserServerList &getServerList() { return serverList_; }
-	ServerBrowserCollect &getCollect() { return serverCollector_; }
+
+	ServerBrowserServerList& getServerList() { return serverList_; }
+	ServerBrowserCollect&    getCollect()    { return serverCollector_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static ServerBrowser *instance_;
+	static ServerBrowser* instance_;
 
-	bool refreshing_;
-	SDL_mutex *refreshingMutex_;
+	bool       refreshing_;
+	SDL_mutex* refreshingMutex_;
 
 	ServerBrowserServerList serverList_;
-	ServerBrowserCollect serverCollector_;
-	ServerBrowserRefresh serverRefresh_;
+	ServerBrowserCollect    serverCollector_;
+	ServerBrowserRefresh    serverRefresh_;
 
-	static int threadFunc(void *);
+	static int threadFunc( void* );
 
 private:
 	ServerBrowser();
 	virtual ~ServerBrowser();
 };
 
-#endif // __INCLUDE_ServerBrowser_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBrowser_hpp_INCLUDE__

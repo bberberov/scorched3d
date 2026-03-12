@@ -29,53 +29,49 @@
 class ScorchedContext;
 
 // SINGLETON
-class ProgressDialog :
-	public GLWWindow,
-	public ProgressCounterI,
-	public ProgressCounter
+class ProgressDialog : public GLWWindow, public ProgressCounterI, public ProgressCounter
 {
 public:
-	static ProgressDialog *instance();
+	static ProgressDialog* instance();
 
-	virtual void operationChange(const LangString &op);
-	virtual void progressChange(const LangString &op, const float percentage);
+	virtual void operationChange( const LangString& op );
+	virtual void progressChange( const LangString& op, const float percentage );
 	virtual void draw();
 
 	void changeTip();
-	void setIcon(Image iconName);
+	void setIcon( Image iconName );
 
 protected:
-	static ProgressDialog *instance_;
+	static ProgressDialog* instance_;
 
-	GLTexture icon_;
-	GLTexture bar1_, bar2_;
-	FileLines tips_;
+	GLTexture  icon_;
+	GLTexture  bar1_, bar2_;
+	FileLines  tips_;
 	LangString progressText_;
-	float progressPercentage_;
+	float      progressPercentage_;
 
-	void drawRules(ScorchedContext &context);
+	void drawRules( ScorchedContext& context );
 
 private:
 	ProgressDialog();
 	virtual ~ProgressDialog();
 };
 
-class ProgressDialogSync :
-	public ProgressCounterI,
-	public ProgressCounter
+class ProgressDialogSync : public ProgressCounterI, public ProgressCounter
 {
 public:
-	static ProgressDialogSync *events_instance();
-	static ProgressDialogSync *noevents_instance();
+	static ProgressDialogSync* events_instance();
+	static ProgressDialogSync* noevents_instance();
 
-	virtual void operationChange(const LangString &op);
-	virtual void progressChange(const LangString &op, const float percentage);
+	virtual void operationChange( const LangString& op );
+	virtual void progressChange( const LangString& op, const float percentage );
+
 protected:
 	bool processEvents_;
 
 private:
-	ProgressDialogSync(bool processEvents);
+	ProgressDialogSync( bool processEvents );
 	virtual ~ProgressDialogSync();
 };
 
-#endif // __INCLUDE_ProgressDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ProgressDialog_hpp_INCLUDE__

@@ -23,7 +23,7 @@
 #ifndef __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
 #define __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
 
-#if defined(_WIN32)
+#if defined( _WIN32 )
 #include <Winsock2.h>
 #endif
 #include <events/EventHandlerDataBase.hpp>
@@ -36,14 +36,13 @@ public:
 	virtual ~EventHandlerDataBasePGSQL();
 
 protected:
-	PGconn *pgsql_;
-	PGresult *lastresult_;
+	PGconn*   pgsql_;
+	PGresult* lastresult_;
 
-	virtual bool runQuery(const char *, ...);
-	virtual bool connectDatabase(const char *host, const char *user, 
-		const char *passwd, const char *db);
+	virtual bool runQuery( const char*, ... );
+	virtual bool connectDatabase( const char* host, const char* user, const char* passwd, const char* db );
 };
 
-#endif // __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerDataBasePGSQL_hpp_INCLUDE__
 
-#endif // HAVE_PGSQL
+#endif  // HAVE_PGSQL

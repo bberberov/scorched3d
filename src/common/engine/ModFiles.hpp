@@ -31,35 +31,39 @@ public:
 	ModFiles();
 	virtual ~ModFiles();
 
-	bool exportModFiles(const std::string &mod, const std::string &fileName);
-	bool importModFiles(std::string &mod, const std::string &fileName);
-	bool importModFiles(std::string &mod, NetBuffer &buffer);
+	bool exportModFiles( const std::string& mod, const std::string& fileName );
+	bool importModFiles( std::string& mod, const std::string& fileName );
+	bool importModFiles( std::string& mod, NetBuffer& buffer );
 
-	bool loadModFiles(const std::string &mod, bool createDir, 
-		ProgressCounter *counter = 0);
+	bool loadModFiles( const std::string& mod, bool createDir, ProgressCounter* counter = 0 );
 	void clearAll();
 
-	std::map<std::string, ModFileEntry *> &getFiles() { return files_; }
-	static bool excludeSpecialFile(const std::string &file);
-	static bool excludeFile(const std::string &file);
-	static bool fileEnding(const std::string &file, const std::string &ext);
+	std::map< std::string, ModFileEntry* >& getFiles() { return files_; }
+
+	static bool excludeSpecialFile( const std::string& file );
+	static bool excludeFile( const std::string& file );
+	static bool fileEnding( const std::string& file, const std::string& ext );
 
 protected:
-	std::map<std::string, ModFileEntry *> files_;
+	std::map< std::string, ModFileEntry* > files_;
 
-	bool loadModDir(NetBuffer  &tmpFileContents, 
-		const std::string &moddir, const std::string &mod,
-		ProgressCounter *counter = 0);
-	bool loadModFile(NetBuffer &tmpFileContents, 
-		const std::string &fullFileName,
-		const std::string &modDir, const std::string &mod);
-	bool loadLocalModFile(NetBuffer &tmpFileContents, 
-		const std::string &local, 
-		const std::string &mod);
+	bool loadModDir(
+		NetBuffer&         tmpFileContents,
+		const std::string& moddir,
+		const std::string& mod,
+		ProgressCounter*   counter = 0
+	);
+	bool loadModFile(
+		NetBuffer&         tmpFileContents,
+		const std::string& fullFileName,
+		const std::string& modDir,
+		const std::string& mod
+	);
+	bool loadLocalModFile( NetBuffer& tmpFileContents, const std::string& local, const std::string& mod );
 
 private:
-	ModFiles(const ModFiles&other);
-	ModFiles &operator=(ModFiles &other);
+	ModFiles( const ModFiles& other );
+	ModFiles& operator=( ModFiles& other );
 };
 
-#endif // __INCLUDE_ModFiles_hpp_INCLUDE__
+#endif  // __INCLUDE_ModFiles_hpp_INCLUDE__

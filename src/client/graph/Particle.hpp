@@ -28,11 +28,11 @@
 class ParticleUserData
 {
 public:
-	virtual ~ParticleUserData()
-	{}
+	virtual ~ParticleUserData() {}
 };
 
 class ParticleEngine;
+
 class Particle
 {
 public:
@@ -40,51 +40,51 @@ public:
 	virtual ~Particle();
 
 	void setParticle(
-		float life,
-		float mass,
-		float friction,
-		Vector &velocity,
-		Vector &gravity,
-		Vector &color,
-		Vector &colorCounter,
-		Vector &size,
-		Vector &sizeCounter,
-		float alpha,
-		float alphaCounter,
-		bool additiveTexture,
-		bool windAffect
+		float   life,
+		float   mass,
+		float   friction,
+		Vector& velocity,
+		Vector& gravity,
+		Vector& color,
+		Vector& colorCounter,
+		Vector& size,
+		Vector& sizeCounter,
+		float   alpha,
+		float   alphaCounter,
+		bool    additiveTexture,
+		bool    windAffect
 	);
 	void unsetParticle();
 
-	float life_;
-	float mass_;
-	float friction_;
-	float percent_;
-	float percentCounter_;
-	Vector position_;
-	Vector velocity_;
-	Vector gravity_;
-	Vector color_;
-	Vector colorCounter_;
-	Vector size_;
-	Vector sizeCounter_;
-	float alpha_;
-	float alphaCounter_;
-	bool windAffect_;
-	ParticleEngine *engine_;
-	unsigned int type_;
+	float           life_;
+	float           mass_;
+	float           friction_;
+	float           percent_;
+	float           percentCounter_;
+	Vector          position_;
+	Vector          velocity_;
+	Vector          gravity_;
+	Vector          color_;
+	Vector          colorCounter_;
+	Vector          size_;
+	Vector          sizeCounter_;
+	float           alpha_;
+	float           alphaCounter_;
+	bool            windAffect_;
+	ParticleEngine* engine_;
+	unsigned int    type_;
 
 	// Used for texturing
-	bool additiveTexture_;
-	GLTexture *texture_;
-	GLTextureSet *textureSet_;
-	int textureCoord_;
-	bool shadow_;
-	bool simulated_;
+	bool          additiveTexture_;
+	GLTexture*    texture_;
+	GLTextureSet* textureSet_;
+	int           textureCoord_;
+	bool          shadow_;
+	bool          simulated_;
 
-	float distance_; // Dist from camera
-	ParticleUserData *userData_;
-	ParticleRenderer *renderer_; // How to render
+	float             distance_;  // Dist from camera
+	ParticleUserData* userData_;
+	ParticleRenderer* renderer_;  // How to render
 };
 
-#endif // __INCLUDE_Particle_hpp_INCLUDE__
+#endif  // __INCLUDE_Particle_hpp_INCLUDE__

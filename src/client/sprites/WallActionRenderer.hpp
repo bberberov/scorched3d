@@ -30,24 +30,24 @@
 class WallActionRenderer : public ParticleUserData
 {
 public:
-	WallActionRenderer(Vector &position, OptionsTransient::WallSide type);
+	WallActionRenderer( Vector& position, OptionsTransient::WallSide type );
 	virtual ~WallActionRenderer();
 
-	void simulate(float frameTime);
+	void simulate( float frameTime );
 	void draw();
 
 protected:
-	static GLTexture texture_;
-	Vector position_;
+	static GLTexture           texture_;
+	Vector                     position_;
 	OptionsTransient::WallSide type_;
-	float fade_;
-	float xOff_, yOff_;
-	bool init_;
-	Vector color_;
-	Vector cornerA_, cornerB_;
-	Vector cornerC_, cornerD_;
+	float                      fade_;
+	float                      xOff_, yOff_;
+	bool                       init_;
+	Vector                     color_;
+	Vector                     cornerA_, cornerB_;
+	Vector                     cornerC_, cornerD_;
 
 	void init();
 };
 
-#endif // __INCLUDE_WallActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_WallActionRenderer_hpp_INCLUDE__

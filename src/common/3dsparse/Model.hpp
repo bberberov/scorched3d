@@ -30,32 +30,36 @@ public:
 	Model();
 	virtual ~Model();
 
-	FixedVector &getMin() { return min_; }
-	FixedVector &getMax() { return max_; }
-	std::vector<Mesh *> &getMeshes() { return meshes_; }
-	std::vector<BoneType *> &getBaseBoneTypes() { return baseBoneTypes_; }
-	std::vector<Bone *> &getBones() { return bones_; }
-	int getNumberTriangles() { return noTriangles_; }
-	int getStartFrame() { return startFrame_; }
-	int getTotalFrames() { return totalFrames_; }
-	bool getTexturesUsed() { return texturesUsed_; }
+	// clang-format off
+	// uncrustify off
+	FixedVector&              getMin()             { return min_; }
+	FixedVector&              getMax()             { return max_; }
+	std::vector< Mesh* >&     getMeshes()          { return meshes_; }
+	std::vector< BoneType* >& getBaseBoneTypes()   { return baseBoneTypes_; }
+	std::vector< Bone* >&     getBones()           { return bones_; }
+	int                       getNumberTriangles() { return noTriangles_; }
+	int                       getStartFrame()      { return startFrame_; }
+	int                       getTotalFrames()     { return totalFrames_; }
+	bool                      getTexturesUsed()    { return texturesUsed_; }
 
 	// Used during building
 	void setup();
-	void addMesh(Mesh *mesh) { meshes_.push_back(mesh); }
-	void addBone(Bone *bone) { bones_.push_back(bone); }
-	void setStartFrame(int frame) { startFrame_ = frame; }
-	void setTotalFrames(int frames) { totalFrames_ = frames; }
+	void addMesh( Mesh* mesh )        { meshes_.push_back( mesh ); }
+	void addBone( Bone* bone )        { bones_.push_back( bone ); }
+	void setStartFrame( int frame )   { startFrame_ = frame; }
+	void setTotalFrames( int frames ) { totalFrames_ = frames; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::vector<Mesh *> meshes_;
-	std::vector<Bone *> bones_;
-	std::vector<BoneType *> baseBoneTypes_;
-	FixedVector min_, max_;
+	std::vector< Mesh* >     meshes_;
+	std::vector< Bone* >     bones_;
+	std::vector< BoneType* > baseBoneTypes_;
+	FixedVector              min_, max_;
 
-	int startFrame_;
-	int totalFrames_;
-	int noTriangles_;
+	int  startFrame_;
+	int  totalFrames_;
+	int  noTriangles_;
 	bool texturesUsed_;
 
 	void centre();
@@ -64,4 +68,4 @@ protected:
 	void setupColor();
 };
 
-#endif // __INCLUDE_Model_hpp_INCLUDE__
+#endif  // __INCLUDE_Model_hpp_INCLUDE__

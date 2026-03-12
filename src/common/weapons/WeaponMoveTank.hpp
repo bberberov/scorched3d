@@ -23,32 +23,36 @@
 
 #include <weapons/Weapon.hpp>
 
-class WeaponMoveTank  : public Weapon
+class WeaponMoveTank : public Weapon
 {
 public:
 	WeaponMoveTank();
 	virtual ~WeaponMoveTank();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	int getMaximumRange() { return maximumRange_; }
-	fixed getStepTime() { return stepTime_; }
-	int getUseFuel() { return useFuel_; }
+	// clang-format off
+	// uncrustify off
+	int   getMaximumRange() { return maximumRange_; }
+	fixed getStepTime()     { return stepTime_; }
+	int   getUseFuel()      { return useFuel_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from Weapon
 	void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponMoveTank, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponMoveTank, AccessoryPart::AccessoryWeapon );
 
 protected:
 	fixed stepTime_;
-	int useFuel_;
-	int maximumRange_;
+	int   useFuel_;
+	int   maximumRange_;
 };
 
-#endif // __INCLUDE_WeaponMoveTank_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponMoveTank_hpp_INCLUDE__

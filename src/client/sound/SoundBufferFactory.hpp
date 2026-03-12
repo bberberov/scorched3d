@@ -26,11 +26,11 @@
 class SoundBufferFactory
 {
 public:
-	static SoundBuffer *createBuffer(const char *fileName);
+	static SoundBuffer* createBuffer( const char* fileName );
 
 private:
 	SoundBufferFactory();
 	virtual ~SoundBufferFactory();
 };
 
-#endif // __INCLUDE_SoundBufferFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferFactory_hpp_INCLUDE__

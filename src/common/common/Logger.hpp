@@ -35,28 +35,28 @@ class LoggerI;
 class Logger
 {
 public:
-	static Logger *instance();
+	static Logger* instance();
 
 	static LoggerInfo defaultInfo;
-	static void addLogger(LoggerI *logger);
-	static void remLogger(LoggerI *logger);
-	static void processLogEntries();
+	static void       addLogger( LoggerI* logger );
+	static void       remLogger( LoggerI* logger );
+	static void       processLogEntries();
 
-	static void log(const LoggerInfo &info);
-	static void log(const char *text);
-	static void log(const std::string &text);
+	static void log( const LoggerInfo& info );
+	static void log( const char* text );
+	static void log( const std::string& text );
 
 protected:
-	static Logger *instance_;
+	static Logger* instance_;
 
-	std::list<LoggerI *> loggers_;
-	std::list<LoggerInfo *> entries_;
+	std::list< LoggerI* >    loggers_;
+	std::list< LoggerInfo* > entries_;
 
-	static void addLog(LoggerInfo &info);
+	static void addLog( LoggerInfo& info );
 
 private:
 	Logger();
 	virtual ~Logger();
 };
 
-#endif // __INCLUDE_Logger_hpp_INCLUDE__
+#endif  // __INCLUDE_Logger_hpp_INCLUDE__

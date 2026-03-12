@@ -27,25 +27,32 @@
 class GLWTextButton : public GLWButton
 {
 public:
-	GLWTextButton(const LangString &buttonText = LangString(), 
-		float x = 0.0f, float y = 0.0f, float w = 0.0f, 
-		GLWButtonI *handler = 0,
-		unsigned flags = 0,
-		float size = 14.0f);
+	GLWTextButton(
+		const LangString& buttonText = LangString(),
+		float             x          = 0.0f,
+		float             y          = 0.0f,
+		float             w          = 0.0f,
+		GLWButtonI*       handler    = 0,
+		unsigned int      flags      = 0,
+		float             size       = 14.0f
+	);
 	virtual ~GLWTextButton();
 
 	virtual void draw();
 
-	void setText(const LangString &text) 
-		{ label_.setText(text); }
-	void setColor(const Vector &color) { color_ = color; }
-	bool getEmpty() { return label_.getEmpty(); }
+	// clang-format off
+	// uncrustify off
+	void setText( const LangString& text ) { label_.setText( text ); }
+	void setColor( const Vector& color )   { color_ = color; }
+	bool getEmpty()                        { return label_.getEmpty(); }
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWTextButton);
+	REGISTER_CLASS_HEADER( GLWTextButton );
 
 protected:
 	GLWLabel label_;
-	Vector color_;
+	Vector   color_;
 };
 
-#endif // __INCLUDE_GLWTextButton_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTextButton_hpp_INCLUDE__

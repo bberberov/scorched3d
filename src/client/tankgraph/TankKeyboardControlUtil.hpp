@@ -23,13 +23,18 @@
 
 class Tank;
 class VirtualSoundSource;
+
 class TankKeyboardControlUtil
 {
 public:
-	static void keyboardCheck(Tank *tank,
-		const unsigned state, 
-		float frameTime, char *buffer, unsigned int keyState);
-	static void endPlayMove(Tank *tank);
+	static void keyboardCheck(
+		Tank*              tank,
+		const unsigned int state,
+		float              frameTime,
+		char*              buffer,
+		unsigned int       keyState
+	);
+	static void endPlayMove( Tank* tank );
 
 	// Tank move methods and tank defense methods
 	//
@@ -37,32 +42,32 @@ public:
 	// the actions associated with the method name.
 	// Humans can only be on a client machine so we
 	// don't need to check if we are on the server etc..
-	static void fireShot(Tank *tank);
-	static void skipShot(Tank *tank);
-	static void resign(Tank *tank);
-	static void parachutesUpDown(unsigned int playerId, unsigned int paraId=0);
-	static void shieldsUpDown(unsigned int playerId, unsigned int shieldId=0);
-	static void useBattery(unsigned int playerId, unsigned int batteryId);
+	static void fireShot( Tank* tank );
+	static void skipShot( Tank* tank );
+	static void resign( Tank* tank );
+	static void parachutesUpDown( unsigned int playerId, unsigned int paraId = 0 );
+	static void shieldsUpDown( unsigned int playerId, unsigned int shieldId = 0 );
+	static void useBattery( unsigned int playerId, unsigned int batteryId );
 
 protected:
-	static void movePower(Tank *tank, char *buffer, unsigned int keyState, float frameTime);
-	static void moveUpDown(Tank *tank, char *buffer, unsigned int keyState, float frameTime);
-	static void moveLeftRight(Tank *tank, char *buffer, unsigned int keyState, float frameTime);
-	static void leftRightHUD(Tank *tank);
-	static void upDownHUD(Tank *tank);
-	static void powerHUD(Tank *tank);
-	static void autoAim(Tank *tank);
-	static void prevWeapon(Tank *tank);
-	static void nextWeapon(Tank *tank);
+	static void movePower( Tank* tank, char* buffer, unsigned int keyState, float frameTime );
+	static void moveUpDown( Tank* tank, char* buffer, unsigned int keyState, float frameTime );
+	static void moveLeftRight( Tank* tank, char* buffer, unsigned int keyState, float frameTime );
+	static void leftRightHUD( Tank* tank );
+	static void upDownHUD( Tank* tank );
+	static void powerHUD( Tank* tank );
+	static void autoAim( Tank* tank );
+	static void prevWeapon( Tank* tank );
+	static void nextWeapon( Tank* tank );
 
-	static VirtualSoundSource *elevateSound_;
-	static VirtualSoundSource *rotateSound_;
-	static VirtualSoundSource *startSound_;
-	static VirtualSoundSource *powerSound_;
+	static VirtualSoundSource* elevateSound_;
+	static VirtualSoundSource* rotateSound_;
+	static VirtualSoundSource* startSound_;
+	static VirtualSoundSource* powerSound_;
 
 private:
 	TankKeyboardControlUtil();
 	virtual ~TankKeyboardControlUtil();
 };
 
-#endif // __INCLUDE_TankKeyboardControlUtil_hpp_INCLUDE__
+#endif  // __INCLUDE_TankKeyboardControlUtil_hpp_INCLUDE__

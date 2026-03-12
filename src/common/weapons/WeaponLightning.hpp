@@ -29,49 +29,56 @@ public:
 	WeaponLightning();
 	virtual ~WeaponLightning();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	fixed getConeLength() { return coneLength_; }
-	fixed getSegLength() { return segLength_; }
-	fixed getSegVar() { return segVar_; }
-	fixed getSize() { return size_; }
-	fixed getSizeVar() { return sizeVar_; }
-	fixed getMinSize() { return minSize_; }
-	fixed getSplitProb() { return splitProb_; }
-	fixed getSplitVar() { return splitVar_; }
-	fixed getDeathProb() { return deathProb_; }
-	fixed getDerivAngle() { return derivAngle_; }
-	fixed getAngleVar() { return angleVar_; }
-	fixed getTotalTime() { return totalTime_; }
-	fixed getSegHurt() { return segHurt_; }
-	fixed getSegHurtRadius() { return segHurtRadius_; }
-	const char *getSound() { return sound_.c_str(); }
-	const char *getTexture() { return texture_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	fixed       getConeLength()    { return coneLength_; }
+	fixed       getSegLength()     { return segLength_; }
+	fixed       getSegVar()        { return segVar_; }
+	fixed       getSize()          { return size_; }
+	fixed       getSizeVar()       { return sizeVar_; }
+	fixed       getMinSize()       { return minSize_; }
+	fixed       getSplitProb()     { return splitProb_; }
+	fixed       getSplitVar()      { return splitVar_; }
+	fixed       getDeathProb()     { return deathProb_; }
+	fixed       getDerivAngle()    { return derivAngle_; }
+	fixed       getAngleVar()      { return angleVar_; }
+	fixed       getTotalTime()     { return totalTime_; }
+	fixed       getSegHurt()       { return segHurt_; }
+	fixed       getSegHurtRadius() { return segHurtRadius_; }
+	const char* getSound()         { return sound_.c_str(); }
+	const char* getTexture()       { return texture_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponLightning, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponLightning, AccessoryPart::AccessoryWeapon );
 
 protected:
-	fixed coneLength_;
-	fixed segLength_;
-	fixed segVar_;
-	fixed size_;
-	fixed sizeVar_;
-	fixed minSize_;
-	fixed splitProb_;
-	fixed splitVar_;
-	fixed deathProb_;
-	fixed derivAngle_;
-	fixed angleVar_;
-	fixed totalTime_;
-	fixed segHurt_;
-	fixed segHurtRadius_;
-	std::string sound_;
-	std::string texture_;
+	fixed        coneLength_;
+	fixed        segLength_;
+	fixed        segVar_;
+	fixed        size_;
+	fixed        sizeVar_;
+	fixed        minSize_;
+	fixed        splitProb_;
+	fixed        splitVar_;
+	fixed        deathProb_;
+	fixed        derivAngle_;
+	fixed        angleVar_;
+	fixed        totalTime_;
+	fixed        segHurt_;
+	fixed        segHurtRadius_;
+	std::string  sound_;
+	std::string  texture_;
 	NumberParser coneLengthExp_;
 	NumberParser segLengthExp_;
 	NumberParser segVarExp_;
@@ -88,4 +95,4 @@ protected:
 	NumberParser segHurtRadiusExp_;
 };
 
-#endif // __INCLUDE_WeaponLightning_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponLightning_hpp_INCLUDE__

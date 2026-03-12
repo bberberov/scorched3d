@@ -28,25 +28,22 @@
 class ComsMessageSender
 {
 public:
-	static bool sendToServer(
-		ComsMessage &message, unsigned int flags = 0);
-	static bool sendToSingleClient(
-		ComsMessage &message, unsigned int destination, unsigned int flags = 0);
+	static bool sendToServer( ComsMessage& message, unsigned int flags = 0 );
+	static bool sendToSingleClient( ComsMessage& message, unsigned int destination, unsigned int flags = 0 );
 	static bool sendToMultipleClients(
-		ComsMessage &message, std::list<unsigned int> destinations, unsigned int flags = 0);
-	static bool sendToAllLoadedClients(
-		ComsMessage &message, unsigned int flags = 0);
-	static bool sendToAllConnectedClients(
-		ComsMessage &message, unsigned int flags = 0);
+		ComsMessage&              message,
+		std::list< unsigned int > destinations,
+		unsigned int              flags = 0
+	);
+	static bool sendToAllLoadedClients( ComsMessage& message, unsigned int flags = 0 );
+	static bool sendToAllConnectedClients( ComsMessage& message, unsigned int flags = 0 );
 
 protected:
-
-	static bool formMessage(
-		ComsMessage &message, unsigned int flags);
+	static bool formMessage( ComsMessage& message, unsigned int flags );
 
 private:
 	ComsMessageSender();
 	virtual ~ComsMessageSender();
 };
 
-#endif // __INCLUDE_ComsMessageSender_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsMessageSender_hpp_INCLUDE__

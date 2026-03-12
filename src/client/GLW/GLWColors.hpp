@@ -34,4 +34,4 @@ private:
 	~GLWColors();
 };
 
-#endif // __INCLUDE_GLWColors_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWColors_hpp_INCLUDE__

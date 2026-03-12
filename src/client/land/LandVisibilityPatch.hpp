@@ -30,4 +30,4 @@ public:
 	virtual ~LandVisibilityPatch();
 };
 
-#endif // __INCLUDE_LandVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_LandVisibilityPatch_hpp_INCLUDE__

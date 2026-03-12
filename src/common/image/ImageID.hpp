@@ -25,37 +25,45 @@
 #include <common/DefinesFile.hpp>
 
 class XMLNode;
+
 class ImageID
 {
 public:
 	ImageID();
-	ImageID(S3D::FileLocation imageLocation,
-		const std::string &imageName,
-		const std::string &alphaName = "",
-		bool invert = false);
+	ImageID(
+		S3D::FileLocation  imageLocation,
+		const std::string& imageName,
+		const std::string& alphaName = "",
+		bool               invert    = false
+	);
 	virtual ~ImageID();
 
-	bool initFromNode(XMLNode *imageNode);
+	bool initFromNode( XMLNode* imageNode );
 
 	bool initFromString(
-		S3D::FileLocation imageLocation,
-		const std::string &imageName,
-		const std::string &alphaName = "",
-		bool invert = false);
+		S3D::FileLocation  imageLocation,
+		const std::string& imageName,
+		const std::string& alphaName = "",
+		bool               invert    = false
+	);
 
-	bool isValid() { return imageLocation_ != S3D::eInvalidLocation; }
-	S3D::FileLocation getImageLocation() { return imageLocation_; }
-	const std::string &getStringHash();
-	const std::string &getImageName() { return imageName_; }
-	const std::string &getAlphaName() { return alphaName_; }
-	bool getInvert() { return invert_; }
+	// clang-format off
+	// uncrustify off
+	bool               isValid()          { return imageLocation_ != S3D::eInvalidLocation; }
+	S3D::FileLocation  getImageLocation() { return imageLocation_; }
+	const std::string& getStringHash();
+	const std::string& getImageName()     { return imageName_; }
+	const std::string& getAlphaName()     { return alphaName_; }
+	bool               getInvert()        { return invert_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	S3D::FileLocation imageLocation_;
-	std::string imageName_;
-	std::string alphaName_;
-	std::string hash_;
-	bool invert_;
+	std::string       imageName_;
+	std::string       alphaName_;
+	std::string       hash_;
+	bool              invert_;
 };
 
-#endif // __INCLUDE_ImageID_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageID_hpp_INCLUDE__

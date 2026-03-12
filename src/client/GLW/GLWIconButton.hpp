@@ -27,26 +27,30 @@
 class GLWIconButton : public GLWButton
 {
 public:
-	GLWIconButton(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f, 
-		GLWButtonI *handler = 0,
-		unsigned flags = 0);
+	GLWIconButton(
+		float        x       = 0.0f,
+		float        y       = 0.0f,
+		float        w       = 0.0f,
+		float        h       = 0.0f,
+		GLWButtonI*  handler = 0,
+		unsigned int flags   = 0
+	);
 	virtual ~GLWIconButton();
 
 	virtual void draw();
-	virtual void setX(float x);
-	virtual void setY(float y);
-	virtual void setW(float w);
-	virtual void setH(float h);
+	virtual void setX( float x );
+	virtual void setY( float y );
+	virtual void setW( float w );
+	virtual void setH( float h );
 
-	virtual void setToolTip(ToolTip *tooltip);
+	virtual void setToolTip( ToolTip* tooltip );
 
-	void setTextureImage(const ImageID &imageId) { icon_.setTextureImage(imageId); }
+	void setTextureImage( const ImageID& imageId ) { icon_.setTextureImage( imageId ); }
 
-	REGISTER_CLASS_HEADER(GLWIconButton);
+	REGISTER_CLASS_HEADER( GLWIconButton );
 
 protected:
 	GLWIcon icon_;
 };
 
-#endif // __INCLUDE_GLWIconButton_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWIconButton_hpp_INCLUDE__

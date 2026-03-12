@@ -24,9 +24,9 @@
 class Counter
 {
 public:
-	Counter(float minTime, float timeDiff);
+	Counter( float minTime, float timeDiff );
 
-	bool nextDraw(float frameTime);
+	bool nextDraw( float frameTime );
 
 protected:
 	float minTime_, timeDiff_;
@@ -36,4 +36,4 @@ protected:
 	void genNextTime();
 };
 
-#endif // __INCLUDE_Counter_hpp_INCLUDE__
+#endif  // __INCLUDE_Counter_hpp_INCLUDE__

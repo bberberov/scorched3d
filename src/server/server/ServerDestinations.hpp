@@ -30,14 +30,14 @@ public:
 	ServerDestinations();
 	virtual ~ServerDestinations();
 
-	void addDestination(unsigned int destinationId, unsigned int ipAddress);
-	void removeDestination(unsigned int destinationId);
+	void               addDestination( unsigned int destinationId, unsigned int ipAddress );
+	void               removeDestination( unsigned int destinationId );
+	ServerDestination* getDestination( unsigned int destinationId );
 
-	ServerDestination *getDestination(unsigned int destinationId);
-	std::map<unsigned int, ServerDestination*> &getServerDestinations() { return serverDestinations_; }
+	std::map< unsigned int, ServerDestination* >& getServerDestinations() { return serverDestinations_; }
 
 protected:
-	std::map<unsigned int, ServerDestination*> serverDestinations_;
+	std::map< unsigned int, ServerDestination* > serverDestinations_;
 };
 
-#endif // __INCLUDE_ServerDestinations_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerDestinations_hpp_INCLUDE__

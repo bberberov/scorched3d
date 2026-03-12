@@ -37,46 +37,51 @@ public:
 
 	virtual void init();
 
-	virtual void addRule(ConsoleRule *rule) { rules_.addRule(rule); }
-	virtual void removeRule(ConsoleRule *rule) { rules_.removeRule(rule); }
+	// clang-format off
+	// uncrustify off
+	virtual void addRule( ConsoleRule* rule )    { rules_.addRule( rule ); }
+	virtual void removeRule( ConsoleRule* rule ) { rules_.removeRule( rule ); }
 
-	virtual void addLine(bool parse, const std::string &line);
+	virtual void addLine( bool parse, const std::string& line );
 	virtual void clear() { lines_.clear(); }
+	// uncrustify on
+	// clang-format on
+
 	virtual void help();
 
-	std::deque<ConsoleLine *> &getLines() { return lines_.getLines(); }
+	std::deque< ConsoleLine* >& getLines() { return lines_.getLines(); }
 
 	// Inherited from GameStateI
-	virtual void simulate(const unsigned state, float frameTime);
-	virtual void draw(const unsigned state);
+	virtual void simulate( const unsigned int state, float frameTime );
+	virtual void draw( const unsigned int state );
 	virtual void keyboardCheck(
-		const unsigned state,
-		float frameTime,
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		const unsigned int               state,
+		float                            frameTime,
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
 	// Inherited from LoggerI
-	virtual void logMessage(LoggerInfo &info);
+	virtual void logMessage( LoggerInfo& info );
 
 protected:
-	float height_;
-	bool opening_;
-	bool showCursor_;
-	GLFont2d *font_;
-	ConsoleLines lines_;
-	ConsoleRules rules_;
-	ConsoleMethods methods_;
-	std::string currentLine_;
-	int historyPosition_;
-	std::deque<std::string> history_;
+	float                     height_;
+	bool                      opening_;
+	bool                      showCursor_;
+	GLFont2d*                 font_;
+	ConsoleLines              lines_;
+	ConsoleRules              rules_;
+	ConsoleMethods            methods_;
+	std::string               currentLine_;
+	int                       historyPosition_;
+	std::deque< std::string > history_;
 
 	void resetPositions();
-	void drawBackdrop(float width, float top);
-	void drawText(float width, float top);
+	void drawBackdrop( float width, float top );
+	void drawText( float width, float top );
 };
 
-#endif // __INCLUDE_ConsoleImpl_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleImpl_hpp_INCLUDE__

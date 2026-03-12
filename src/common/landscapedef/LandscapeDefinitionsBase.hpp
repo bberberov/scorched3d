@@ -31,14 +31,14 @@
 class LandscapeDefinitionsEntry
 {
 public:
-	std::string name; 
-	std::vector<std::string> texs; 
-	std::vector<std::string> defns; 
-	float weight; // The posibility this defn will be choosen
-	std::string description;  // Description of this landscape definition type
-	std::string picture; // Visible view of this landscape definition type
+	std::string                name;
+	std::vector< std::string > texs;
+	std::vector< std::string > defns;
+	float                      weight;       // The posibility this defn will be choosen
+	std::string                description;  // Description of this landscape definition type
+	std::string                picture;      // Visible view of this landscape definition type
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 };
 
 class LandscapeDefinitionsBase
@@ -50,13 +50,13 @@ public:
 	virtual bool readLandscapeDefinitions();
 	virtual void clearLandscapeDefinitions();
 
-	bool landscapeEnabled(OptionsGame &context, const char *name);
-	LandscapeDefinitionsEntry *getLandscapeByName(const char *name);
-	std::list<LandscapeDefinitionsEntry> &getAllLandscapes() 
-		{ return entries_; }
+	bool                       landscapeEnabled( OptionsGame& context, const char* name );
+	LandscapeDefinitionsEntry* getLandscapeByName( const char* name );
+
+	std::list< LandscapeDefinitionsEntry >& getAllLandscapes() { return entries_; }
 
 protected:
-	std::list<LandscapeDefinitionsEntry> entries_;
+	std::list< LandscapeDefinitionsEntry > entries_;
 };
 
-#endif // __INCLUDE_LandscapeDefinitionsBase_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefinitionsBase_hpp_INCLUDE__

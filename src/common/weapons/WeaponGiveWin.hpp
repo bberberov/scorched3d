@@ -23,30 +23,36 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponGiveWin  : public WeaponCallback
+class WeaponGiveWin : public WeaponCallback
 {
 public:
 	WeaponGiveWin();
 	virtual ~WeaponGiveWin();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGiveWin, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGiveWin, AccessoryPart::AccessoryWeapon );
 
 protected:
 	std::string objective_;
-	int winningTeam_;
+	int         winningTeam_;
 };
 
-#endif // __INCLUDE_WeaponGiveWin_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGiveWin_hpp_INCLUDE__

@@ -28,20 +28,26 @@
 class GLWTime : public GLWidget
 {
 public:
-	GLWTime(float x = 0.0f, float y = 0.0f, float size = 14.0f);
+	GLWTime( float x = 0.0f, float y = 0.0f, float size = 14.0f );
 	virtual ~GLWTime();
 
-	virtual float getW() { calcWidth(); return GLWidget::getW(); }
+	virtual float getW()
+	{
+		calcWidth();
+
+		return GLWidget::getW();
+	}
+
 	virtual void draw();
 
-	void calcWidth();
-	virtual bool initFromXML(XMLNode *node);
+	void         calcWidth();
+	virtual bool initFromXML( XMLNode* node );
 
-	REGISTER_CLASS_HEADER(GLWTime);
+	REGISTER_CLASS_HEADER( GLWTime );
 
 protected:
 	Vector color_;
-	float size_;
+	float  size_;
 };
 
-#endif // __INCLUDE_GLWTime_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTime_hpp_INCLUDE__

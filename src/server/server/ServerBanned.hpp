@@ -40,46 +40,61 @@ public:
 		Muted,
 		Flagged
 	};
+
 	struct BannedEntry
 	{
-		time_t bantime;
-		LangString name;
+		time_t      bantime;
+		LangString  name;
 		std::string uniqueid;
 		std::string SUI;
 		std::string adminname;
 		std::string reason;
-		BannedType type;
+		BannedType  type;
 	};
+
 	struct BannedRange
 	{
-		unsigned int mask;
-		std::map<unsigned int, BannedEntry> ips;
-	};	
+		unsigned int                          mask;
+		std::map< unsigned int, BannedEntry > ips;
+	};
 
-	std::list<BannedRange> &getBannedIps();
-	BannedType getBanned(const char *unqiueid, const char *SUI);
-	BannedType getBanned(unsigned int ip);
-	void addBanned(unsigned int ip, 
-		const LangString &name, 
-		const char *uniqueId,
-		const char *SUI,
-		BannedType type,
-		const char *adminname,
-		const char *reason);
+	std::list< BannedRange >& getBannedIps();
+
+	BannedType getBanned( const char* unqiueid, const char* SUI );
+	BannedType getBanned( unsigned int ip );
+
+	void addBanned(
+		unsigned int      ip,
+		const LangString& name,
+		const char*       uniqueId,
+		const char*       SUI,
+		BannedType        type,
+		const char*       adminname,
+		const char*       reason
+	);
+
 	bool save();
-	bool load(bool force = false);
+	bool load( bool force = false );
 
-	static const char *getBannedTypeStr(BannedType type);
+	static const char* getBannedTypeStr( BannedType type );
 
 protected:
-	std::list<BannedRange> bannedIps_;	
-	std::map<std::string, BannedEntry> bannedIds_;
-	std::map<std::string, BannedEntry> bannedSUIs_;
-	time_t lastReadTime_;
+	std::list< BannedRange >             bannedIps_;
+	std::map< std::string, BannedEntry > bannedIds_;
+	std::map< std::string, BannedEntry > bannedSUIs_;
+	time_t                               lastReadTime_;
 
-	void addBannedEntry(unsigned int ip, unsigned int mask,
-		const LangString &name, const char *unqiueId, const char *SUid, unsigned int bantime,
-		BannedType type, const char *adminname, const char *reason);
+	void addBannedEntry(
+		unsigned int      ip,
+		unsigned int      mask,
+		const LangString& name,
+		const char*       unqiueId,
+		const char*       SUid,
+		unsigned int      bantime,
+		BannedType        type,
+		const char*       adminname,
+		const char*       reason
+	);
 };
 
-#endif // __INCLUDE_ServerBanned_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerBanned_hpp_INCLUDE__

@@ -30,10 +30,10 @@
 class GLWIconTableI
 {
 public:
-	virtual void drawColumn(unsigned int id, int row, int column, float x, float y, float w) = 0;
-	virtual void rowSelected(unsigned int id, int row) = 0;
-	virtual void columnSelected(unsigned int id, int col) = 0;
-	virtual void rowChosen(unsigned int id, int row) = 0;
+	virtual void drawColumn( unsigned int id, int row, int column, float x, float y, float w ) = 0;
+	virtual void rowSelected( unsigned int id, int row )                                       = 0;
+	virtual void columnSelected( unsigned int id, int col )                                    = 0;
+	virtual void rowChosen( unsigned int id, int row )                                         = 0;
 };
 
 class GLWIconTable : public GLWidget, public GLWButtonI
@@ -41,54 +41,56 @@ class GLWIconTable : public GLWidget, public GLWButtonI
 public:
 	struct Column
 	{
-		Column(const LangString &name_ = LangString(), float width_ = 0.0f) :
-			name(name_),
-			width(width_)
-		{}
+		Column( const LangString& name_ = LangString(), float width_ = 0.0f ) : name( name_ ), width( width_ ) {}
 
 		LangString name;
-		float width;
+		float      width;
 	};
 
 	GLWIconTable(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f,
-		std::list<Column> *columns = 0,
-		float rowHeight = 20.0f
+		float                x         = 0.0f,
+		float                y         = 0.0f,
+		float                w         = 0.0f,
+		float                h         = 0.0f,
+		std::list< Column >* columns   = 0,
+		float                rowHeight = 20.0f
 	);
 	virtual ~GLWIconTable();
 
-	void setItemCount(int items);
-	int getItemCount() { return itemCount_; }
+	// clang-format off
+	// uncrustify off
+	void setItemCount( int items );
+	int  getItemCount() { return itemCount_; }
 
-	void setHandler(GLWIconTableI *handler) { handler_ = handler; }
-	int getSelected() { return selected_; }
+	void setHandler( GLWIconTableI* handler ) { handler_ = handler; }
+	int  getSelected()                        { return selected_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inhertied from GLWidget
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool &skipRest );
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
-	REGISTER_CLASS_HEADER(GLWIconTable);
+	REGISTER_CLASS_HEADER( GLWIconTable );
+
 protected:
-	std::vector<GLWTextButton *> columns_;
-	GLWScrollWBackwards scrollBar_;
-	GLWIconTableI *handler_;
-	float rowHeight_;
-	int selected_;
-	int itemCount_;
+	std::vector< GLWTextButton* > columns_;
+	GLWScrollWBackwards           scrollBar_;
+	GLWIconTableI*                handler_;
+	float                         rowHeight_;
+	int                           selected_;
+	int                           itemCount_;
 
 private:
-	GLWIconTable(const GLWIconTable &);
-	const GLWIconTable & operator=(const GLWIconTable &);
+	GLWIconTable( const GLWIconTable& );
+	const GLWIconTable& operator=( const GLWIconTable& );
 };
 
-#endif // __INCLUDE_GLWIconTable_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWIconTable_hpp_INCLUDE__

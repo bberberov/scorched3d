@@ -28,34 +28,39 @@ class ComsOperationMessage : public ComsMessage
 public:
 	enum ComsOperationMessageType
 	{
-		OperationNone = 0,
+		OperationNone     = 0,
 		OperationTestSave = 1
 	};
 
 	static ComsMessageType ComsOperationMessageTyper;
 
 	ComsOperationMessage(
-		ComsOperationMessageType type = OperationNone, 
-		const char *param1_ = "",
-		const char *param2_ = "");
+		ComsOperationMessageType type    = OperationNone,
+		const char*              param1_ = "",
+		const char*              param2_ = ""
+	);
 	virtual ~ComsOperationMessage();
 
-	ComsOperationMessageType getType() { return type_; }
-	const char *getParam1() { return param1_.c_str(); }
-	const char *getParam2() { return param2_.c_str(); }
+	// clang-format off
+	// uncrustify off
+	ComsOperationMessageType getType()   { return type_; }
+	const char*              getParam1() { return param1_.c_str(); }
+	const char*              getParam2() { return param2_.c_str(); }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	ComsOperationMessageType type_;
-	std::string param1_;
-	std::string param2_;
+	std::string              param1_;
+	std::string              param2_;
 
 private:
-	ComsOperationMessage(const ComsOperationMessage &);
-	const ComsOperationMessage & operator=(const ComsOperationMessage &);
+	ComsOperationMessage( const ComsOperationMessage& );
+	const ComsOperationMessage& operator=( const ComsOperationMessage& );
 };
 
-#endif // __INCLUDE_ComsOperationMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsOperationMessage_hpp_INCLUDE__

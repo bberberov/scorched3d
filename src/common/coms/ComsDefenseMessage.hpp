@@ -39,27 +39,32 @@ public:
 	};
 
 	ComsDefenseMessage();
-	ComsDefenseMessage(unsigned int playerId, DefenseChange change, unsigned int infoId);
-	ComsDefenseMessage(ComsDefenseMessage &other);
+	ComsDefenseMessage( unsigned int playerId, DefenseChange change, unsigned int infoId );
+	ComsDefenseMessage( ComsDefenseMessage& other );
 	virtual ~ComsDefenseMessage();
 
-	void setPlayerId(unsigned int id) { playerId_ = id; }
-	void setInfoId(unsigned int infoId) { infoId_ = infoId; }
+	// clang-format off
+	// uncrustify off
+	void setPlayerId( unsigned int id )   { playerId_ = id; }
+	void setInfoId( unsigned int infoId ) { infoId_ = infoId; }
+
 	unsigned int getPlayerId() { return playerId_; }
-	DefenseChange getChange() { return change_; }
-	unsigned int getInfoId() { return infoId_; }
+	DefenseChange getChange()  { return change_; }
+	unsigned int getInfoId()   { return infoId_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int playerId_;
+	unsigned int  playerId_;
 	DefenseChange change_;
-	unsigned int infoId_;
+	unsigned int  infoId_;
 
 private:
-	const ComsDefenseMessage & operator=(const ComsDefenseMessage &);
+	const ComsDefenseMessage& operator=( const ComsDefenseMessage& );
 };
 
-#endif // __INCLUDE_ComsDefenseMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsDefenseMessage_hpp_INCLUDE__

@@ -26,32 +26,35 @@
 #include <common/FixedVector.hpp>
 
 class ExplosionParams;
+
 class Explosion : public Action
 {
 public:
 	Explosion(
-		FixedVector &position,
-		FixedVector &velocity,
-		ExplosionParams *params,
-		Weapon *weapon,
-		WeaponFireContext &weaponContext
+		FixedVector&       position,
+		FixedVector&       velocity,
+		ExplosionParams*   params,
+		Weapon*            weapon,
+		WeaponFireContext& weaponContext
 	);
 	virtual ~Explosion();
 
-	FixedVector &getPosition() { return position_; }
+	FixedVector& getPosition() { return position_; }
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "Explosion"; }
+
 protected:
-	FixedVector position_;
-	FixedVector velocity_;
-	ExplosionParams *params_;
-	Weapon *weapon_;
+	FixedVector       position_;
+	FixedVector       velocity_;
+	ExplosionParams*  params_;
+	Weapon*           weapon_;
 	WeaponFireContext weaponContext_;
-	fixed totalTime_;
-	bool firstTime_;
+	fixed             totalTime_;
+	bool              firstTime_;
 };
 
-#endif // __INCLUDE_Explosion_hpp_INCLUDE__
+#endif  // __INCLUDE_Explosion_hpp_INCLUDE__

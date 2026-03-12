@@ -27,20 +27,21 @@ class TankNewMatchSimAction : public SimAction
 {
 public:
 	TankNewMatchSimAction();
-	TankNewMatchSimAction(unsigned int playerId);
+	TankNewMatchSimAction( unsigned int playerId );
 	virtual ~TankNewMatchSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	NetBuffer &getScoreNetBuffer() { return scoreNetBuffer_; }
+	NetBuffer& getScoreNetBuffer() { return scoreNetBuffer_; }
 
-REGISTER_CLASS_HEADER(TankNewMatchSimAction);
+	REGISTER_CLASS_HEADER( TankNewMatchSimAction );
+
 protected:
 	unsigned int playerId_;
-	NetBuffer scoreNetBuffer_;
+	NetBuffer    scoreNetBuffer_;
 };
 
-#endif // __INCLUDE_TankNewMatchSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankNewMatchSimAction_hpp_INCLUDE__

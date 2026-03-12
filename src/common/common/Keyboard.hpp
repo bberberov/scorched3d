@@ -27,51 +27,55 @@
 #include <list>
 #include <map>
 
-#define MAX_KEYBDHIST 1024
-#define KEYBOARDKEY(name, key) static KeyboardKey * key = Keyboard::instance()->getKey( name );
+#define MAX_KEYBDHIST            1024
+#define KEYBOARDKEY( name, key ) static KeyboardKey* key = Keyboard::instance()->getKey( name );
 
 // SINGLETON
 class Keyboard
 {
 public:
-	static Keyboard *instance();
+	static Keyboard* instance();
 
-	bool loadKeyFile(bool loadDefaults = false);
+	bool loadKeyFile( bool loadDefaults = false );
 	bool saveKeyFile();
 	bool init();
 
-	char *getkeyboardbuffer(unsigned int &bufCnt);
-	unsigned int getKeyboardState();
-	KeyboardHistory::HistoryElement *getkeyboardhistory(unsigned int &histCnt); 
+	char*                            getkeyboardbuffer( unsigned int& bufCnt );
+	unsigned int                     getKeyboardState();
+	KeyboardHistory::HistoryElement* getkeyboardhistory( unsigned int& histCnt );
 
-	void processKeyboardEvent(SDL_Event &event);
-	static bool &getDvorak();
+	void         processKeyboardEvent( SDL_Event& event );
+	static bool& getDvorak();
 
-	KeyboardKey *getKey(const char *name);
-	std::list<std::string> &getKeyList() { return keyList_; }
-	std::list<KeyboardKey *> &getCommandKeys() { return commandKeys_; }
-	std::map<std::string, KeyboardKey *> &getKeyMap() { return keyMap_; }
+	// clang-format off
+	// uncrustify off
+	KeyboardKey*                           getKey( const char* name );
+	std::list< std::string >&              getKeyList()     { return keyList_; }
+	std::list< KeyboardKey* >&             getCommandKeys() { return commandKeys_; }
+	std::map< std::string, KeyboardKey* >& getKeyMap()      { return keyMap_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static Keyboard *instance_;
+	static Keyboard* instance_;
 
-	static bool dvorak_; // TODO // FIXME NOT WORKING
+	static bool                     dvorak_;  // TODO // FIXME NOT WORKING
 	KeyboardHistory::HistoryElement keybHist_[MAX_KEYBDHIST];
-	int keybHistCnt_;
-	Uint16 mHighSurrogate;
+	int                             keybHistCnt_;
+	Uint16                          mHighSurrogate;
 
 	void clear();
-	bool loadKeyFile(const std::string &fileName, bool masterFile);
-	void handleUnicodeUTF16(Uint16 utf16, SDLKey key);
-	void raiseUnicodeUTF16(Uint16 utf16, SDLKey key);
+	bool loadKeyFile( const std::string& fileName, bool masterFile );
+	void handleUnicodeUTF16( Uint16 utf16, SDLKey key );
+	void raiseUnicodeUTF16( Uint16 utf16, SDLKey key );
 
-	std::map<std::string, KeyboardKey *> keyMap_;
-	std::list<KeyboardKey *> commandKeys_;
-	std::list<std::string> keyList_;
+	std::map< std::string, KeyboardKey* > keyMap_;
+	std::list< KeyboardKey* >             commandKeys_;
+	std::list< std::string >              keyList_;
 
 private:
 	Keyboard();
 	virtual ~Keyboard();
 };
 
-#endif // __INCLUDE_Keyboard_hpp_INCLUDE__
+#endif  // __INCLUDE_Keyboard_hpp_INCLUDE__

@@ -27,48 +27,41 @@
 class ServerConnectAuthHandler : public ComsMessageHandlerI
 {
 public:
-	ServerConnectAuthHandler(ComsMessageHandler &comsMessageHandler);
+	ServerConnectAuthHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerConnectAuthHandler();
 
 	void processMessages();
 
-	void addTankAI(std::string tankAi) { aiAdditions_.push_back(tankAi); }
-	bool outstandingRequests() { return (!authMessages_.empty() || !aiAdditions_.empty()); }
+	void addTankAI( std::string tankAi ) { aiAdditions_.push_back( tankAi ); }
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	bool outstandingRequests() { return ( ! authMessages_.empty() || ! aiAdditions_.empty() ); }
+
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
 	struct AuthMessage
 	{
-		unsigned int ipAddress, destinationId;
+		unsigned int           ipAddress, destinationId;
 		ComsConnectAuthMessage message;
 	};
 
-	static ServerConnectAuthHandler *instance_;
-	std::list<AuthMessage *> authMessages_;
-	std::list<std::string> aiAdditions_;
+	static ServerConnectAuthHandler* instance_;
+	std::list< AuthMessage* >        authMessages_;
+	std::list< std::string >         aiAdditions_;
 
-	void processAIInternal(
-		std::list<std::string> &aiAdditions);
-	void processMessageInternal(
+	void processAIInternal( std::list< std::string >& aiAdditions );
+	void processMessageInternal( unsigned int destinationId, unsigned int ipAddress, ComsConnectAuthMessage& message );
+	bool checkAuthSettings( unsigned int destinationId, unsigned int ipAddress, ComsConnectAuthMessage& message );
+	void addNextTank(
 		unsigned int destinationId,
 		unsigned int ipAddress,
-		ComsConnectAuthMessage &message);
-	bool checkAuthSettings(
-		unsigned int destinationId,
-		unsigned int ipAddress,
-		ComsConnectAuthMessage &message);
-	void addNextTank(unsigned int destinationId,
-		unsigned int ipAddress,
-		const char *uniqueId,
-		const char *SUI,
-		const char *hostDesc,
-		bool extraSpectator);
+		const char*  uniqueId,
+		const char*  SUI,
+		const char*  hostDesc,
+		bool         extraSpectator
+	);
 
-	bool uniqueIdTaken(const std::string &uniqueId);
+	bool uniqueIdTaken( const std::string& uniqueId );
 };
 
-#endif // __INCLUDE_ServerConnectAuthHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerConnectAuthHandler_hpp_INCLUDE__

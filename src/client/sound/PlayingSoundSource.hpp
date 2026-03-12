@@ -23,25 +23,30 @@
 
 class SoundSource;
 class VirtualSoundSource;
+
 class PlayingSoundSource
 {
 public:
-	PlayingSoundSource(VirtualSoundSource *virt);
+	PlayingSoundSource( VirtualSoundSource* virt );
 	virtual ~PlayingSoundSource();
 
-	void setActualSource(SoundSource *actualSource);
-	SoundSource *getActualSource() { return actualSource_; }
+	// clang-format off
+	// uncrustify off
+	void         setActualSource( SoundSource* actualSource );
+	SoundSource* getActualSource() { return actualSource_; }
 
-	void setVirtualSource(VirtualSoundSource *virtualSource);
-	VirtualSoundSource *getVirtualSource() { return virtualSource_; }
+	void                setVirtualSource( VirtualSoundSource* virtualSource );
+	VirtualSoundSource* getVirtualSource() { return virtualSource_; }
 
-	void setStopped(bool stopped);
+	void setStopped( bool stopped );
 	bool getStopped() { return stopped_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	VirtualSoundSource *virtualSource_;
-	SoundSource *actualSource_;
-	bool stopped_;
+	VirtualSoundSource* virtualSource_;
+	SoundSource*        actualSource_;
+	bool                stopped_;
 };
 
-#endif // __INCLUDE_PlayingSoundSource_hpp_INCLUDE__
+#endif  // __INCLUDE_PlayingSoundSource_hpp_INCLUDE__

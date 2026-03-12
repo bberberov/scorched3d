@@ -40,7 +40,7 @@ the components contained within bitmap files.
 		}
 	}
 */
-class ImageItterator  
+class ImageItterator
 {
 public:
 	/**
@@ -61,39 +61,36 @@ public:
 	DestY is the maximum height you will ask the iterator to return.
 	Type defines how these width/height maps the bitmaps size.
 	*/
-	ImageItterator(Image &bitmap, 
-						int destX,
-						int destY,
-						Type type = stretch);
+	ImageItterator( Image& bitmap, int destX, int destY, Type type = stretch );
 	virtual ~ImageItterator();
 
 	/**
 	Reset the iterator.
 	*/
-	void reset();
+	void           reset();
 	/**
 	Position the iterator at the next bitmap bytes in the row.
 	*/
-	void incX();
+	void           incX();
 	/**
 	Position the iterator at the next row.
 	*/
-	void incY();
+	void           incY();
 	/**
 	Get the bytes at the current iterator's position.
 	*/
-	unsigned char *getPos();
+	unsigned char* getPos();
 
 	int getComponents() { return components_; }
 
 protected:
-	Image &bitmap_;
-	float dx_, dy_;
-	int width_, components_;
-	Type type_;
+	Image& bitmap_;
+	float  dx_, dy_;
+	int    width_, components_;
+	Type   type_;
 
-	unsigned char *pos_;
-	float posX_, posY_;
+	unsigned char* pos_;
+	float          posX_, posY_;
 };
 
-#endif // __INCLUDE_GLImageItterator_hpp_INCLUDE__
+#endif  // __INCLUDE_GLImageItterator_hpp_INCLUDE__

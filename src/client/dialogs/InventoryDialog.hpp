@@ -36,35 +36,35 @@ class Tank;
 class InventoryDialog : public GLWWindow, public GLWButtonI, public GLWDropDownI
 {
 public:
-	static InventoryDialog *instance();
+	static InventoryDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
-	virtual void windowInit(const unsigned state);
+	virtual void buttonDown( unsigned int id );
+	virtual void windowInit( const unsigned int state );
 
 	// Inherited from GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 	// Inherited from GLWPanel through GLWPanel
 	virtual void display();
 
 protected:
-	static InventoryDialog *instance_;
+	static InventoryDialog* instance_;
 
-	unsigned int okId_;
-	GLWTab *sellTab_;
-	GLWPanel *topPanel_;
-	GLWDropDownText *sortDropDown_;
+	unsigned int     okId_;
+	GLWTab*          sellTab_;
+	GLWPanel*        topPanel_;
+	GLWDropDownText* sortDropDown_;
 
-	Tank *getCurrentTank();
-	void setupWindow();
-	void playerRefresh();
-	void addPlayerName();
-	void addPlayerWeapons();
+	Tank* getCurrentTank();
+	void  setupWindow();
+	void  playerRefresh();
+	void  addPlayerName();
+	void  addPlayerWeapons();
 
 private:
 	InventoryDialog();
 	virtual ~InventoryDialog();
 };
 
-#endif // __INCLUDE_InventoryDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_InventoryDialog_hpp_INCLUDE__

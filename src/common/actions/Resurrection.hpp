@@ -25,25 +25,24 @@
 #include <common/FixedVector.hpp>
 
 class Tank;
+
 class Resurrection : public Action
 {
 public:
-	Resurrection(
-		unsigned int playerId,
-		FixedVector &position,
-		fixed resurrectTime);
+	Resurrection( unsigned int playerId, FixedVector& position, fixed resurrectTime );
 	virtual ~Resurrection();
 
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void simulate( fixed frameTime, bool& remove );
+
 	virtual std::string getActionType() { return "Resurrection"; }
 
-	static void checkResurection(ScorchedContext *context, Tank *tank);
+	static void checkResurection( ScorchedContext* context, Tank* tank );
 
 protected:
 	unsigned int playerId_;
-	FixedVector position_;
-	fixed resurrectTime_;
+	FixedVector  position_;
+	fixed        resurrectTime_;
 };
 
-#endif // __INCLUDE_Resurrection_hpp_INCLUDE__
+#endif  // __INCLUDE_Resurrection_hpp_INCLUDE__

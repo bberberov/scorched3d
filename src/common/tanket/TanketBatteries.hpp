@@ -26,23 +26,24 @@
 class ScorchedContext;
 class Tanket;
 class Accessory;
-class TanketBatteries  
+
+class TanketBatteries
 {
 public:
-	TanketBatteries(ScorchedContext &context);
+	TanketBatteries( ScorchedContext& context );
 	virtual ~TanketBatteries();
 
-	void setTanket(Tanket *tanket) { tanket_ = tanket; }
+	void setTanket( Tanket* tanket ) { tanket_ = tanket; }
 
-	void newMatch();
-	void changed();
-	int getNoBatteries();
-	Accessory *getBatteryAccessory();
-	bool canUse();
+	void       newMatch();
+	void       changed();
+	int        getNoBatteries();
+	Accessory* getBatteryAccessory();
+	bool       canUse();
 
 protected:
-	ScorchedContext &context_;
-	Tanket *tanket_;
+	ScorchedContext& context_;
+	Tanket*          tanket_;
 };
 
-#endif // __INCLUDE_TanketBatteries_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketBatteries_hpp_INCLUDE__

@@ -27,7 +27,7 @@
 class GLWTextBoxI
 {
 public:
-	virtual void textChanged(unsigned int id, const LangString &text) = 0;
+	virtual void textChanged( unsigned int id, const LangString& text ) = 0;
 };
 
 class GLWTextBox : public GLWidget
@@ -39,47 +39,51 @@ public:
 	};
 
 	GLWTextBox(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		const LangString &startText = LangString(),
-		unsigned int flags = 0
+		float             x         = 0.0f,
+		float             y         = 0.0f,
+		float             w         = 0.0f,
+		const LangString& startText = LangString(),
+		unsigned int      flags     = 0
 	);
 	virtual ~GLWTextBox();
 
-	void setHandler(GLWTextBoxI *handler) { handler_ = handler; }
+	void setHandler( GLWTextBoxI* handler ) { handler_ = handler; }
 
-	virtual void setParent(GLWPanel *parent);
+	virtual void setParent( GLWPanel* parent );
 	virtual void draw();
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
+	// clang-format off
+	// uncrustify off
 	void setCurrent();
-	void setAllowUnicode(bool allowUnicode) { allowUnicode_ = allowUnicode; }
+	void setAllowUnicode( bool allowUnicode ) { allowUnicode_ = allowUnicode; }
 
-	std::string &getText();
-	LangString &getLangString() { return text_; }
-	void setText(const LangString &text);
-	void setMaxTextLen(unsigned int maxLen) { maxTextLen_ = maxLen; }
+	std::string& getText();
+	LangString&  getLangString() { return text_; }
+	void         setText( const LangString& text );
+	void         setMaxTextLen( unsigned int maxLen ) { maxTextLen_ = maxLen; }
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWTextBox);
+	REGISTER_CLASS_HEADER( GLWTextBox );
 
 protected:
-	GLWTextBoxI *handler_;
-	float ctime_;
-	bool cursor_;
-	bool current_;
-	bool allowUnicode_;
+	GLWTextBoxI* handler_;
+	float        ctime_;
+	bool         cursor_;
+	bool         current_;
+	bool         allowUnicode_;
 	unsigned int maxTextLen_;
 	unsigned int flags_;
-	LangString text_;
+	LangString   text_;
 };
 
-#endif // __INCLUDE_GLWTextBox_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTextBox_hpp_INCLUDE__

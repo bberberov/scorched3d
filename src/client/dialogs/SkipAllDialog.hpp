@@ -29,24 +29,24 @@
 class SkipAllDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static SkipAllDialog *instance();
+	static SkipAllDialog* instance();
 
-	virtual void buttonDown(unsigned int id);
-	virtual void windowInit(const unsigned state);
-	virtual void simulate(float frameTime);
+	virtual void buttonDown( unsigned int id );
+	virtual void windowInit( const unsigned int state );
+	virtual void simulate( float frameTime );
 	virtual void display();
 
 protected:
-	static SkipAllDialog *instance_;
+	static SkipAllDialog* instance_;
 
 	unsigned int cancelId_, nowId_;
-	GLWLabel *label_;
+	GLWLabel*    label_;
 	unsigned int startTime_;
-	bool skipAll_;
+	bool         skipAll_;
 
 private:
 	SkipAllDialog();
 	virtual ~SkipAllDialog();
 };
 
-#endif // __INCLUDE_SkipAllDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SkipAllDialog_hpp_INCLUDE__

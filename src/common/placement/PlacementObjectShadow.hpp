@@ -30,16 +30,20 @@ public:
 	PlacementObjectShadow();
 	virtual ~PlacementObjectShadow();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual PlacementObject::Type getType() { return PlacementObject::eShadow; }
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position);
+
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	);
 
 protected:
 	PlacementShadowDefinition shadowDef_;
-	FixedVector size_;
+	FixedVector               size_;
 };
 
-#endif // __INCLUDE_PlacementObjectShadow_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObjectShadow_hpp_INCLUDE__

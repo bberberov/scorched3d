@@ -25,6 +25,7 @@
 
 class Tank;
 class ScorchedContext;
+
 class TankState
 {
 public:
@@ -37,56 +38,65 @@ public:
 		sDead
 	};
 
-	TankState(ScorchedContext &context, unsigned int playerId);
+	TankState( ScorchedContext& context, unsigned int playerId );
 	virtual ~TankState();
-	
-	void setTank(Tank *tank) { tank_ = tank; }
+
+	void setTank( Tank* tank ) { tank_ = tank; }
 
 	// State Modifiers
 	void newGame();
 	void newMatch();
 	void clientNewGame();
 
+	// clang-format off
+	// uncrustify off
+
 	// State
-	void setState(State s);
+	void  setState( State s );
 	State getState() { return state_; }
 
-	bool getNotSpectator() { return notSpectator_; }
-	void setNotSpectator(bool notSpectator) { notSpectator_ = notSpectator; }
+	bool getNotSpectator()                    { return notSpectator_; }
+	void setNotSpectator( bool notSpectator ) { notSpectator_ = notSpectator; }
 
 	bool getTankPlaying();
 	bool getTankAliveOrBuying();
 
-	void setMuted(bool muted) { muted_ = muted; }
-	bool getMuted() { return muted_; }
-	void setSkipShots(bool skip) { skipshots_ = skip; }
-	bool getSkipShots() { return skipshots_; }
-	int getLives() { return lives_; }
-	void setLives(int lives) { lives_ = lives; }
-	int getMaxLives() { return maxLives_; }
-	bool getNewlyJoined() { return newlyJoined_; }
-	void setNewlyJoined(bool n) { newlyJoined_ = n; }
+	void setMuted( bool muted ) { muted_ = muted; }
+	bool getMuted()             { return muted_; }
+
+	void setSkipShots( bool skip ) { skipshots_ = skip; }
+	bool getSkipShots()            { return skipshots_; }
+
+	int  getLives()            { return lives_; }
+	void setLives( int lives ) { lives_ = lives; }
+	int  getMaxLives()         { return maxLives_; }
+
+	bool getNewlyJoined()         { return newlyJoined_; }
+	void setNewlyJoined( bool n ) { newlyJoined_ = n; }
+
 	unsigned int getStateChangeCount() { return stateChangeCount_; }
-	
-	const char *getStateString();
-	const char *getSmallStateString();
-	LangString &getSmallStateLangString();
+	// uncrustify on
+	// clang-format on
+
+	const char* getStateString();
+	const char* getSmallStateString();
+	LangString& getSmallStateLangString();
 
 	// Serialize the tank
-	bool writeMessage(NamedNetBuffer &buffer);
-	bool readMessage(NetBufferReader &reader);
+	bool writeMessage( NamedNetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
-	ScorchedContext &context_;
-	Tank *tank_;
-	State state_;
-	int lives_;
-	int maxLives_;
-	unsigned int stateChangeCount_;
-	bool muted_;
-	bool skipshots_;
-	bool notSpectator_;
-	bool newlyJoined_;
+	ScorchedContext& context_;
+	Tank*            tank_;
+	State            state_;
+	int              lives_;
+	int              maxLives_;
+	unsigned int     stateChangeCount_;
+	bool             muted_;
+	bool             skipshots_;
+	bool             notSpectator_;
+	bool             newlyJoined_;
 };
 
-#endif // __INCLUDE_TankState_hpp_INCLUDE__
+#endif  // __INCLUDE_TankState_hpp_INCLUDE__

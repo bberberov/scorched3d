@@ -36,20 +36,18 @@ public:
 	ServerAuthHandlerPrefered();
 	virtual ~ServerAuthHandlerPrefered();
 
-	virtual void createAuthentication(ComsConnectAuthMessage &authMessage);
-	virtual bool authenticateUser(ComsConnectAuthMessage &authMessage, 
-		std::string &message);
-	virtual bool authenticateUserName(const char *uniqueId, 
-		const LangString &playername);
-	virtual void banUser(const char *uniqueId);
+	virtual void createAuthentication( ComsConnectAuthMessage& authMessage );
+	virtual bool authenticateUser( ComsConnectAuthMessage& authMessage, std::string& message );
+	virtual bool authenticateUserName( const char* uniqueId, const LangString& playername );
+	virtual void banUser( const char* uniqueId );
 
 protected:
-	std::list<UserEntry> entries_;
-	unsigned int lastReadTime_;
+	std::list< UserEntry > entries_;
+	unsigned int           lastReadTime_;
 
-	UserEntry *getUserByName(const char *name);
-	UserEntry *getUserById(const char *uniqueId);
-	bool load();
+	UserEntry* getUserByName( const char* name );
+	UserEntry* getUserById( const char* uniqueId );
+	bool       load();
 };
 
-#endif // __INCLUDE_ServerAuthHandlerPrefered_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAuthHandlerPrefered_hpp_INCLUDE__

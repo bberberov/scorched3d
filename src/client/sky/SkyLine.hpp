@@ -21,7 +21,7 @@
 #ifndef __INCLUDE_SkyLine_hpp_INCLUDE__
 #define __INCLUDE_SkyLine_hpp_INCLUDE__
 
-class SkyLine  
+class SkyLine
 {
 public:
 	SkyLine();
@@ -29,12 +29,12 @@ public:
 
 	void clear();
 
-	void draw(float radius, float radius2, float height);
+	void draw( float radius, float radius2, float height );
 
 private:
 	unsigned int listNo_;
 
-	void actualDraw(float radius, float radius2, float height);
+	void actualDraw( float radius, float radius2, float height );
 };
 
-#endif // __INCLUDE_SkyLine_hpp_INCLUDE__
+#endif  // __INCLUDE_SkyLine_hpp_INCLUDE__

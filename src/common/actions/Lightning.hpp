@@ -30,21 +30,23 @@
 #endif
 
 class Target;
+
 class Lightning : public Action
 {
 public:
 	Lightning(
-		WeaponLightning *weapon,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		WeaponLightning*   weapon,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 	virtual ~Lightning();
 
-	virtual void draw();
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        draw();
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "Lightning"; }
 
 protected:
@@ -53,38 +55,34 @@ protected:
 		FixedVector start;
 		FixedVector end;
 		FixedVector direction;
-		bool endsegment;
-		fixed size;
+		bool        endsegment;
+		fixed       size;
 	};
 
-	std::list<Segment> segments_;
+	std::list< Segment > segments_;
 
 #ifndef S3D_SERVER
 	GLTextureReference texture_;
 #endif
-	WeaponLightning *weapon_;
+	WeaponLightning*  weapon_;
 	WeaponFireContext weaponContext_;
-	FixedVector position_;
-	FixedVector velocity_;
-	fixed totalTime_;
-	bool firstTime_;
+	FixedVector       position_;
+	FixedVector       velocity_;
+	fixed             totalTime_;
+	bool              firstTime_;
 
-	void damageTargets(FixedVector &position, std::map<unsigned int, fixed> &hurtMap);
-	void dispaceDirection(
-		FixedVector &direction,
-		FixedVector &originalDirection,
-		fixed angle
-	);
+	void damageTargets( FixedVector& position, std::map< unsigned int, fixed >& hurtMap );
+	void dispaceDirection( FixedVector& direction, FixedVector& originalDirection, fixed angle );
 	void generateLightning(
-		int id,
-		int depth,
-		fixed size,
-		FixedVector &originalPosition,
-		FixedVector &originalDirection,
-		FixedVector &position,
-		FixedVector &direction,
-		std::map<unsigned int, fixed> &hurtMap
+		int                              id,
+		int                              depth,
+		fixed                            size,
+		FixedVector&                     originalPosition,
+		FixedVector&                     originalDirection,
+		FixedVector&                     position,
+		FixedVector&                     direction,
+		std::map< unsigned int, fixed >& hurtMap
 	);
 };
 
-#endif // __INCLUDE_Lightning_hpp_INCLUDE__
+#endif  // __INCLUDE_Lightning_hpp_INCLUDE__

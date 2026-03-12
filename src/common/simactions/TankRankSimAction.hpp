@@ -30,17 +30,19 @@ public:
 	TankRankSimAction();
 	virtual ~TankRankSimAction();
 
-	void addRank(EventHandlerDataBase::TankRank &rank) { ranks_.push_back(rank); }
-	std::list<EventHandlerDataBase::TankRank> &getRanks() { return  ranks_; }
+	void addRank( EventHandlerDataBase::TankRank& rank ) { ranks_.push_back( rank ); }
 
-	virtual bool invokeAction(ScorchedContext &context);
+	std::list< EventHandlerDataBase::TankRank >& getRanks() { return ranks_; }
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool invokeAction( ScorchedContext& context );
 
-REGISTER_CLASS_HEADER(TankRankSimAction);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
+
+	REGISTER_CLASS_HEADER( TankRankSimAction );
+
 protected:
-	std::list<EventHandlerDataBase::TankRank> ranks_;
+	std::list< EventHandlerDataBase::TankRank > ranks_;
 };
 
-#endif // __INCLUDE_TankRankSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankRankSimAction_hpp_INCLUDE__

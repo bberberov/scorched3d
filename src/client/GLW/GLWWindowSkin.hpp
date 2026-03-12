@@ -31,14 +31,15 @@ public:
 	GLWWindowSkin();
 	virtual ~GLWWindowSkin();
 
-	virtual bool initFromXML(XMLNode *node);
+	virtual bool initFromXML( XMLNode* node );
 
-	bool inState(const char *state);
-	const char *getKey() { return key_.c_str(); }
+	bool inState( const char* state );
+
+	const char* getKey() { return key_.c_str(); }
 
 protected:
-	std::set<std::string> states_;
-	std::string key_;
+	std::set< std::string > states_;
+	std::string             key_;
 };
 
-#endif // __INCLUDE_GLWWindowSkin_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWWindowSkin_hpp_INCLUDE__

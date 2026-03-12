@@ -27,39 +27,41 @@ class GLWSpinBox : public GLWidget, public GLWButtonI
 {
 public:
 	GLWSpinBox(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		int start = 0,
-		int minRange = 0, int maxRange = 0,
-		int step = 1
+		float x        = 0.0f,
+		float y        = 0.0f,
+		float w        = 0.0f,
+		int   start    = 0,
+		int   minRange = 0,
+		int   maxRange = 0,
+		int   step     = 1
 	);
 	virtual ~GLWSpinBox();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
+
 	int getValue() { return value_; }
 
-	REGISTER_CLASS_HEADER(GLWSpinBox);
+	REGISTER_CLASS_HEADER( GLWSpinBox );
 
 protected:
-	int value_;
-	int minRange_, maxRange_;
-	int step_;
+	int       value_;
+	int       minRange_, maxRange_;
+	int       step_;
 	GLWButton top_, bottom_;
-	bool keyDown_;
-	bool dragging_;
+	bool      keyDown_;
+	bool      dragging_;
 };
 
-#endif // __INCLUDE_GLWSpinBox_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWSpinBox_hpp_INCLUDE__

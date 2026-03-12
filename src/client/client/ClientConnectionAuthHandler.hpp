@@ -30,10 +30,7 @@ public:
 	static ClientConnectionAuthHandler* instance();
 
 	// Inherited from ComsMessageHandlerI
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 	void sendAuth();
 	void cancelAuth();
@@ -45,8 +42,8 @@ private:
 	ClientConnectionAuthHandler();
 	virtual ~ClientConnectionAuthHandler();
 
-	ClientConnectionAuthHandler(const ClientConnectionAuthHandler &);
-	const ClientConnectionAuthHandler & operator=(const ClientConnectionAuthHandler &);
+	ClientConnectionAuthHandler( const ClientConnectionAuthHandler& );
+	const ClientConnectionAuthHandler& operator=( const ClientConnectionAuthHandler& );
 };
 
-#endif // __INCLUDE_ClientConnectionAuthHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientConnectionAuthHandler_hpp_INCLUDE__

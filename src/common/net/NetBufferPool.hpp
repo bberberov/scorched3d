@@ -29,20 +29,20 @@
 class NetBufferPool
 {
 public:
-	static NetBufferPool *instance();
+	static NetBufferPool* instance();
 
-	void addToPool(NetBuffer *message);
-	NetBuffer *getFromPool();
+	void       addToPool( NetBuffer* message );
+	NetBuffer* getFromPool();
 
 protected:
-	static NetBufferPool *instance_;
+	static NetBufferPool* instance_;
 
-	std::list<NetBuffer *> messagePool_;
-	SDL_mutex *messagePoolMutex_;
+	std::list< NetBuffer* > messagePool_;
+	SDL_mutex*              messagePoolMutex_;
 
 private:
 	NetBufferPool();
 	virtual ~NetBufferPool();
 };
 
-#endif // __INCLUDE_NetBufferPool_hpp_INCLUDE__
+#endif  // __INCLUDE_NetBufferPool_hpp_INCLUDE__

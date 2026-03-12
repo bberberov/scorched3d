@@ -33,110 +33,108 @@ class EventHandlerDataBase : public EventHandler
 public:
 	struct TankRank
 	{
-		TankRank(unsigned int playerId) :
-			playerId_(playerId),
-			rank_(-1),
-			skill_(-1)
-		{}
-		TankRank(unsigned int playerId, int rank, int skill) :
-			playerId_(playerId),
-			rank_(rank),
-			skill_(skill)
+		TankRank( unsigned int playerId ) : playerId_( playerId ), rank_( -1 ), skill_( -1 ) {}
+
+		TankRank( unsigned int playerId, int rank, int skill ) : playerId_( playerId ), rank_( rank ), skill_( skill )
 		{}
 
-		int getRank() { return rank_; }
-		int getSkill() { return skill_; }
-		unsigned int getPlayerId() { return playerId_; }
-
-		void setRank(int rank) { rank_ = rank; }
-		void setSkill(int skill) { skill_ = skill; }
-		void setPlayerId(int playerId) { playerId_ = playerId; }
+		// clang-format off
+		// uncrustify off
+		int          getRank()                   { return rank_; }
+		int          getSkill()                  { return skill_; }
+		unsigned int getPlayerId()               { return playerId_; }
+		void         setRank( int rank )         { rank_ = rank; }
+		void         setSkill( int skill )       { skill_ = skill; }
+		void         setPlayerId( int playerId ) { playerId_ = playerId; }
+		// uncrustify on
+		// clang-format on
 
 	protected:
 		unsigned int playerId_;
-		int rank_;
-		int skill_;
+		int          rank_;
+		int          skill_;
 	};
 
-	static EventHandlerDataBase *createInstance();
+	static EventHandlerDataBase* createInstance();
 
 	EventHandlerDataBase();
 	virtual ~EventHandlerDataBase();
 
-	int getKillCount(const char *uniqueId);
-	std::list<std::string> getAliases(const char *unqiueId);
-	std::list<std::string> getIpAliases(const char *unqiueId);
-	TankRank tankRank(Tank *tank);
-	std::string allocateId();
-	unsigned int getStatsId(const char *uniqueId);
-	std::string getTopRanks();
-	std::string getPlayerInfo(const char *player);
-	void combinePlayers(unsigned int player1, unsigned int player2);
+	int                      getKillCount( const char* uniqueId );
+	std::list< std::string > getAliases( const char* unqiueId );
+	std::list< std::string > getIpAliases( const char* unqiueId );
+	TankRank                 tankRank( Tank* tank );
+	std::string              allocateId();
+	unsigned int             getStatsId( const char* uniqueId );
+	std::string              getTopRanks();
+	std::string              getPlayerInfo( const char* player );
+	void                     combinePlayers( unsigned int player1, unsigned int player2 );
 
-	unsigned int getAchievementId(const std::string &name);
-	unsigned int getAchievementRank(unsigned int achievementId, unsigned int playerId);
+	unsigned int getAchievementId( const std::string& name );
+	unsigned int getAchievementRank( unsigned int achievementId, unsigned int playerId );
 
-	void assignAchievementRank(unsigned int playerId, unsigned int achievementId, unsigned int rank);
+	void assignAchievementRank( unsigned int playerId, unsigned int achievementId, unsigned int rank );
 
 	virtual void periodicUpdate();
-	virtual void periodicUpdate(Tank *tank);
+	virtual void periodicUpdate( Tank* tank );
 
-	virtual void gameStart(std::list<Tank *> &tanks);
-	virtual void roundStart(std::list<Tank *> &tanks);
+	virtual void gameStart( std::list< Tank* >& tanks );
+	virtual void roundStart( std::list< Tank* >& tanks );
 
-	virtual void tankConnected(Tank *tank);
-	virtual void tankDisconnected(Tank *tank);
-	virtual void tankJoined(Tank *tank);
+	virtual void tankConnected( Tank* tank );
+	virtual void tankDisconnected( Tank* tank );
+	virtual void tankJoined( Tank* tank );
 
-	virtual void tankFired(Tank *firedTank, Weapon *weapon);
-	virtual void tankResigned(Tank *resignedTank);
+	virtual void tankFired( Tank* firedTank, Weapon* weapon );
+	virtual void tankResigned( Tank* resignedTank );
 
-	virtual void tankKilled(Tank *firedTank, Tank *deadTank, Weapon *weapon);
-	virtual void tankTeamKilled(Tank *firedTank, Tank *deadTank, Weapon *weapon);
-	virtual void tankSelfKilled(Tank *firedTank, Weapon *weapon);
+	virtual void tankKilled( Tank* firedTank, Tank* deadTank, Weapon* weapon );
+	virtual void tankTeamKilled( Tank* firedTank, Tank* deadTank, Weapon* weapon );
+	virtual void tankSelfKilled( Tank* firedTank, Weapon* weapon );
 
-	virtual void tankWon(Tank *tank);
-	virtual void tankOverallWinner(Tank *tank);
+	virtual void tankWon( Tank* tank );
+	virtual void tankOverallWinner( Tank* tank );
 
 protected:
 	struct RowResult
 	{
-		std::vector<std::string> columns;
-		std::map<std::string, unsigned int> names;
+		std::vector< std::string >            columns;
+		std::map< std::string, unsigned int > names;
 
-		const char *getValue(const char *name);
+		const char* getValue( const char* name );
 	};
 
 	// Overridden by new implementations
-	virtual bool runQuery(const char *, ...) = 0;
-	virtual std::list<RowResult> runSelectQuery(const char *, ...) = 0;
+	virtual bool                   runQuery( const char*, ... )       = 0;
+	virtual std::list< RowResult > runSelectQuery( const char*, ... ) = 0;
+
 	virtual bool connectDatabase(
-		const char *host,
-		const char *port,
-		const char *user,
-		const char *passwd,
-		const char *db
+		const char* host,
+		const char* port,
+		const char* user,
+		const char* passwd,
+		const char* db
 	) = 0;
 
-	virtual int getLastInsertId() = 0;
-	virtual void escapeString(char *to, const char *from, unsigned long length) = 0;
+	virtual int  getLastInsertId()                                                = 0;
+	virtual void escapeString( char* to, const char* from, unsigned long length ) = 0;
 
 	// Default stuff
-	int serverid_;
-	int seriesid_;
-	int prefixid_;
+	int    serverid_;
+	int    seriesid_;
+	int    prefixid_;
 	time_t updateTime_;
-	bool displayStats_;
+	bool   displayStats_;
 
-	std::map<std::string, int> playerId_;
-	std::map<std::string, int> weaponId_;
+	std::map< std::string, int > playerId_;
+	std::map< std::string, int > weaponId_;
 
 	bool connect();
-	int getPlayerId(const char *uniqueId);
+	int  getPlayerId( const char* uniqueId );
 
-	void addInfo(Tank *tank);
-	void addAliases(int playerId, std::list<std::string> &results);
-	void addIpAliases(int playerId, std::set<int> &currentPlayers, std::list<std::string> &result);
+	void addInfo( Tank* tank );
+	void addAliases( int playerId, std::list< std::string >& results );
+	void addIpAliases( int playerId, std::set< int >& currentPlayers, std::list< std::string >& result );
 };
 
-#endif // __INCLUDE_EventHandlerDataBase_hpp_INCLUDE__
+#endif  // __INCLUDE_EventHandlerDataBase_hpp_INCLUDE__

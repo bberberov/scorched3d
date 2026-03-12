@@ -29,18 +29,21 @@ public:
 	WeaponAnimation();
 	virtual ~WeaponAnimation();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponAnimation, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponAnimation, AccessoryPart::AccessoryWeapon );
 
 protected:
 	std::string rendererName_;
 	std::string data_;
 };
 
-#endif // __INCLUDE_WeaponAnimation_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponAnimation_hpp_INCLUDE__

@@ -26,12 +26,12 @@
 class XMLDiff
 {
 public:
-	static std::string diffString(const std::string &first, const std::string &second);
-	static void diffNodes(XMLNode &first, XMLNode &second);
+	static std::string diffString( const std::string& first, const std::string& second );
+	static void        diffNodes( XMLNode& first, XMLNode& second );
 
 private:
-	static bool nodesEqual(XMLNode &first, XMLNode &second);
-	static bool nodesEqualNoChildren(XMLNode &first, XMLNode &second);
+	static bool nodesEqual( XMLNode& first, XMLNode& second );
+	static bool nodesEqualNoChildren( XMLNode& first, XMLNode& second );
 };
 
-#endif // __INCLUDE_XMLDiff_hpp_INCLUDE__
+#endif  // __INCLUDE_XMLDiff_hpp_INCLUDE__

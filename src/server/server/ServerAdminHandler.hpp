@@ -26,14 +26,11 @@
 class ServerAdminHandler : public ComsMessageHandlerI
 {
 public:
-	ServerAdminHandler(ComsMessageHandler &comsMessageHandler);
+	ServerAdminHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerAdminHandler();
 
 	// Inherited from ComsMessageHandlerI
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerAdminHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAdminHandler_hpp_INCLUDE__

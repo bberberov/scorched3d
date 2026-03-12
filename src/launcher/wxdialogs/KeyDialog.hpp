@@ -24,9 +24,9 @@
 class wxDialog;
 
 unsigned int getKeyDialogKey();
-bool getKeyDialogShift();
-bool getKeyDialogControl();
-bool getKeyDialogAlt();
-void showKeyDialog(wxDialog *dialog);
+bool         getKeyDialogShift();
+bool         getKeyDialogControl();
+bool         getKeyDialogAlt();
+void         showKeyDialog( wxDialog* dialog );
 
-#endif // __INCLUDE_KeyDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_KeyDialog_hpp_INCLUDE__

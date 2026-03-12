@@ -26,19 +26,14 @@
 
 struct ModIdentifierEntry
 {
-	ModIdentifierEntry(bool a = true,
-		const std::string &f = "",
-		unsigned int l = 0,
-		unsigned int c = 0) :
-		addFile(a),
-		fileName(f),
-		length(l),
-		crc(c)
-	{
-	};
+	ModIdentifierEntry( bool a = true, const std::string& f = "", unsigned int l = 0, unsigned int c = 0 )
+		: addFile( a )
+		, fileName( f )
+		, length( l )
+		, crc( c ) {};
 
-	bool addFile;
-	std::string fileName;
+	bool         addFile;
+	std::string  fileName;
 	unsigned int length;
 	unsigned int crc;
 };
@@ -46,18 +41,21 @@ struct ModIdentifierEntry
 class ModFileEntry
 {
 public:
-	ModFileEntry(const std::string &name, 
-		unsigned int uncompressedcrc, unsigned int uncompressedSize);
+	ModFileEntry( const std::string& name, unsigned int uncompressedcrc, unsigned int uncompressedSize );
 	virtual ~ModFileEntry();
 
-	std::string &getFileName() { return fileName_; }
-	unsigned int getUncompressedCrc() { return uncompressedcrc_; }
+	// clang-format off
+	// uncrustify off
+	std::string& getFileName()         { return fileName_; }
+	unsigned int getUncompressedCrc()  { return uncompressedcrc_; }
 	unsigned int getUncompressedSize() { return uncompressedSize_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string fileName_;
+	std::string  fileName_;
 	unsigned int uncompressedcrc_;
 	unsigned int uncompressedSize_;
 };
 
-#endif // __INCLUDE_ModFileEntry_hpp_INCLUDE__
+#endif  // __INCLUDE_ModFileEntry_hpp_INCLUDE__

@@ -27,15 +27,16 @@
 
 class TargetVisibilityPatch;
 class RenderObjectLists;
+
 class TargetRendererImpl : public TargetRenderer
 {
 public:
-	TargetRendererImpl(Target *target);
+	TargetRendererImpl( Target* target );
 	virtual ~TargetRendererImpl();
 
 	// Interface
-	virtual void drawParticle(float distance) = 0;
-	virtual void simulate(float frameTime) = 0;
+	virtual void drawParticle( float distance ) = 0;
+	virtual void simulate( float frameTime )    = 0;
 	virtual void moved();
 
 	// Particles
@@ -48,31 +49,33 @@ public:
 		ePlayerHighlight,
 		eOtherHighlight
 	};
-	static void setHighlightType(HighlightType type) { highlightType_ = type; }
+
+	static void setHighlightType( HighlightType type ) { highlightType_ = type; }
+
 	void createParticle();
 
 protected:
-	Target *target_;
-	static HighlightType highlightType_;
-	bool particleMade_;
-	bool tree_;
-	bool matrixCached_;
-	Matrix16 cachedMatrix_;
-	TargetVisibilityPatch *currentVisibilityPatch_;
-	int patchEpoc_;
+	Target*                target_;
+	static HighlightType   highlightType_;
+	bool                   particleMade_;
+	bool                   tree_;
+	bool                   matrixCached_;
+	Matrix16               cachedMatrix_;
+	TargetVisibilityPatch* currentVisibilityPatch_;
+	int                    patchEpoc_;
 
 	double posX_, posY_, posZ_;
 
-	void drawShield(float shieldHit, float totalTime);
+	void drawShield( float shieldHit, float totalTime );
 	void drawParachute();
 
 	bool getVisible();
 
 	float getTargetSize();
-	float getTargetFade(float distance, float size);
-	void storeTarget2DPos();
+	float getTargetFade( float distance, float size );
+	void  storeTarget2DPos();
 
-	void setMovedPatch(TargetVisibilityPatch *newPatch);
+	void setMovedPatch( TargetVisibilityPatch* newPatch );
 };
 
-#endif // __INCLUDE_TargetRendererImpl_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetRendererImpl_hpp_INCLUDE__

@@ -27,27 +27,31 @@ class GLWCheckBoxI
 public:
 	virtual ~GLWCheckBoxI();
 
-	virtual void stateChange(bool state, unsigned int id) = 0;
+	virtual void stateChange( bool state, unsigned int id ) = 0;
 };
 
 class GLWCheckBox : public GLWidget
 {
 public:
-	GLWCheckBox(float x = 0.0f, float y = 0.0f, 
-		bool startState = true);
+	GLWCheckBox( float x = 0.0f, float y = 0.0f, bool startState = true );
 	virtual ~GLWCheckBox();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
-	bool &getState() { return state_; }
-	void setState(bool state) { state_ = state; }
-	void setHandler(GLWCheckBoxI *handler);
+	// clang-format off
+	// uncrustify off
+	bool& getState()            { return state_; }
+	void setState( bool state ) { state_ = state; }
+	void setHandler( GLWCheckBoxI* handler );
+	// uncrustify on
+	// clang-format on
 
-	REGISTER_CLASS_HEADER(GLWCheckBox);
+	REGISTER_CLASS_HEADER( GLWCheckBox );
+
 protected:
-	bool state_;
-	GLWCheckBoxI *handler_;
+	bool          state_;
+	GLWCheckBoxI* handler_;
 };
 
-#endif // __INCLUDE_GLWCheckBox_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWCheckBox_hpp_INCLUDE__

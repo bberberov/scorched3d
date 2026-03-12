@@ -24,21 +24,28 @@
 #include <string>
 #include <map>
 
-#define REGISTER_CLASS_HEADER(x) \
+#define REGISTER_CLASS_HEADER( x ) \
 \
-class METAFACTORY_##x : public MetaClassFactory \
-{ \
-	virtual MetaClass *getClassCopy() { return new x ; } \
-}; \
-virtual const char *getClassName() { return #x ; } \
-virtual unsigned int getMetaClassId() \
-{ \
-	static unsigned int metaClassID = nextMetaClassId_++; return metaClassID; \
-} 
+	class METAFACTORY_##x : public MetaClassFactory \
+	{ \
+		virtual MetaClass* getClassCopy() { return new x; } \
+	}; \
+	virtual const char* getClassName() \
+	{ \
+		return #x; \
+	} \
+	virtual unsigned int getMetaClassId() \
+	{ \
+		static unsigned int metaClassID = nextMetaClassId_++; \
+		return metaClassID; \
+	}
 
-#define REGISTER_CLASS_SOURCE(x) \
-	struct META_##x { META_##x() { MetaClassRegistration::addMap(#x , new x::METAFACTORY_##x ); } }; \
-	static META_##x META_IMPL_##x ;
+#define REGISTER_CLASS_SOURCE( x ) \
+	struct META_##x \
+	{ \
+		META_##x() { MetaClassRegistration::addMap( #x, new x::METAFACTORY_##x ); } \
+	}; \
+	static META_##x META_IMPL_##x;
 
 class MetaClass
 {
@@ -46,11 +53,12 @@ public:
 	MetaClass();
 	virtual ~MetaClass();
 
-	// Automatically given by the 
+	// Automatically given by the
 	// REGISTER_CLASS_HEADER and
 	// REGISTER_CLASS_SOURCE macros
 	virtual unsigned int getMetaClassId() = 0;
-	virtual const char *getClassName() = 0;
+	virtual const char*  getClassName()   = 0;
+
 protected:
 	static unsigned int nextMetaClassId_;
 };
@@ -60,20 +68,20 @@ class MetaClassFactory
 public:
 	MetaClassFactory();
 	virtual ~MetaClassFactory();
-	
-	// Automatically given by the 
+
+	// Automatically given by the
 	// REGISTER_CLASS_HEADER and
 	// REGISTER_CLASS_SOURCE macros
-	virtual MetaClass *getClassCopy() = 0;
+	virtual MetaClass* getClassCopy() = 0;
 };
 
 class MetaClassRegistration
 {
 public:
-	static void addMap(const char *name, MetaClassFactory *mclass);
-	static std::map<std::string, MetaClassFactory *> *classMap;
-	static MetaClass *getNewClass(const char *name);
-	static MetaClassFactory *getFactory(const char *name);
+	static void                                        addMap( const char* name, MetaClassFactory* mclass );
+	static std::map< std::string, MetaClassFactory* >* classMap;
+	static MetaClass*                                  getNewClass( const char* name );
+	static MetaClassFactory*                           getFactory( const char* name );
 };
 
-#endif // __INCLUDE_MetaClass_hpp_INCLUDE__
+#endif  // __INCLUDE_MetaClass_hpp_INCLUDE__

@@ -25,46 +25,49 @@
 #include <net/NetMessage.hpp>
 
 class ComsMessage;
+
 class ComsMessageType
 {
 public:
-	ComsMessageType(const std::string &name);
+	ComsMessageType( const std::string& name );
 	~ComsMessageType();
-	
-	const std::string &getName() { return name_; }
+
+	const std::string& getName() { return name_; }
+
 	unsigned int getId();
 
-	static ComsMessageType *getTypeForId(unsigned int id);
+	static ComsMessageType* getTypeForId( unsigned int id );
 
 protected:
-	std::string name_;
+	std::string  name_;
 	unsigned int id_;
 
 private:
-	ComsMessageType(const ComsMessageType &other);
-	ComsMessageType &operator=(ComsMessageType &other);
+	ComsMessageType( const ComsMessageType& other );
+	ComsMessageType& operator=( ComsMessageType& other );
 };
 
 class ComsMessage
 {
 public:
-	ComsMessage(ComsMessageType &messageType);
+	ComsMessage( ComsMessageType& messageType );
 	virtual ~ComsMessage();
 
-	virtual bool writeMessage(NetBuffer &buffer) = 0;
-	virtual bool readMessage(NetBufferReader &reader) = 0;
+	virtual bool writeMessage( NetBuffer& buffer )      = 0;
+	virtual bool readMessage( NetBufferReader& reader ) = 0;
 
 	// The string that defines the type of coms message
-	bool writeTypeMessage(NetBuffer &buffer);
-	bool readTypeMessage(NetBufferReader &reader);
-	ComsMessageType &getComsMessageType() { return messageType_; }
+	bool writeTypeMessage( NetBuffer& buffer );
+	bool readTypeMessage( NetBufferReader& reader );
+
+	ComsMessageType& getComsMessageType() { return messageType_; }
 
 protected:
-	ComsMessageType &messageType_;
+	ComsMessageType& messageType_;
 
 private:
-	ComsMessage(const ComsMessage &);
-	const ComsMessage & operator=(const ComsMessage &);
+	ComsMessage( const ComsMessage& );
+	const ComsMessage& operator=( const ComsMessage& );
 };
 
-#endif // __INCLUDE_ComsMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsMessage_hpp_INCLUDE__

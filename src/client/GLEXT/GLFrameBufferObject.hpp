@@ -29,18 +29,19 @@ public:
 	GLFrameBufferObject();
 	virtual ~GLFrameBufferObject();
 
-	bool create(GLTexture &texture, bool withDepth = false);
+	bool create( GLTexture& texture, bool withDepth = false );
 	void destroy();
 
 	void bind();
 	void unBind();
+
 	bool bufferValid() { return frameBufferObject_ != 0; }
 
 protected:
-	GLuint frameBufferObject_;
-	GLuint depthBufferObject_;
-	GLTexture *texture_;
-	bool bound_;
+	GLuint     frameBufferObject_;
+	GLuint     depthBufferObject_;
+	GLTexture* texture_;
+	bool       bound_;
 };
 
-#endif // __INCLUDE_GLFrameBufferObject_hpp_INCLUDE__
+#endif  // __INCLUDE_GLFrameBufferObject_hpp_INCLUDE__

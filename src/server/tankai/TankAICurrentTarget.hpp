@@ -27,27 +27,28 @@
 class Target;
 class Tanket;
 class XMLNode;
+
 class TankAICurrentTarget
 {
 public:
 	TankAICurrentTarget();
 	virtual ~TankAICurrentTarget();
 
-	virtual bool parseConfig(XMLNode *node);
+	virtual bool parseConfig( XMLNode* node );
 
 	void clear();
-	void getTargets(Tanket *tanket, std::list<Tanket *> &targets);
+	void getTargets( Tanket* tanket, std::list< Tanket* >& targets );
 
-	void gaveDamage(Tanket *tanket, float damage);
-	void tookDamage(Tanket *tanket, float damage);
-	void shotAt(Tanket *tanket);
+	void gaveDamage( Tanket* tanket, float damage );
+	void tookDamage( Tanket* tanket, float damage );
+	void shotAt( Tanket* tanket );
 
 	float getTotalDamageTaken();
 
 protected:
-	std::map<Tanket *, float> damageGiven_;
-	std::map<Tanket *, float> damageTaken_;
-	std::map<Tanket *, float> shotAt_;
+	std::map< Tanket*, float > damageGiven_;
+	std::map< Tanket*, float > damageTaken_;
+	std::map< Tanket*, float > shotAt_;
 
 	float health_;
 	float random_;
@@ -59,8 +60,8 @@ protected:
 	float player_;
 	float distance_;
 
-	float rankPlayer(std::list<Tanket *> &players, Tanket *player);
-	float rankPlayer(std::multimap<float, Tanket *> &players, Tanket *player);
+	float rankPlayer( std::list< Tanket* >& players, Tanket* player );
+	float rankPlayer( std::multimap< float, Tanket* >& players, Tanket* player );
 };
 
-#endif // __INCLUDE_TankAICurrentTarget_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAICurrentTarget_hpp_INCLUDE__

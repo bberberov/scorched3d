@@ -39,80 +39,85 @@ public:
 		XMLContentType
 	};
 
-	XMLNode( const char *name, const char *content = "", NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, const std::string &content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, const LangString &content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, NumberParser &content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, float content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, bool content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, int content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, Vector &content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, unsigned int content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, fixed content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, FixedVector &content, NodeType = XMLNode::XMLNodeType );
-	XMLNode( const char *name, FixedVector4 &content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, const char* content = "", NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, const std::string& content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, const LangString& content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, NumberParser& content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, float content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, bool content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, int content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, Vector& content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, unsigned int content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, fixed content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, FixedVector& content, NodeType = XMLNode::XMLNodeType );
+	XMLNode( const char* name, FixedVector4& content, NodeType = XMLNode::XMLNodeType );
 
 	virtual ~XMLNode();
 
-	bool writeToFile(const std::string &fileName);
-	void addNodeToFile(FileLines &lines, int spacing);
+	bool writeToFile( const std::string& fileName );
+	void addNodeToFile( FileLines& lines, int spacing );
 
-	NodeType getType() { return type_; }
-	const char *getName() { return name_.c_str(); }
-	const char *getContent();
-	const char *getSource() { return source_.c_str(); }
-	const XMLNode *getParent() { return parent_; }
+	// clang-format off
+	// uncrustify off
+	NodeType       getType()   { return type_; }
+	const char*    getName()   { return name_.c_str(); }
+	const char*    getContent();
+	const char*    getSource() { return source_.c_str(); }
+	const XMLNode* getParent() { return parent_; }
+	// uncrustify on
+	// clang-format on
 
-	std::list<XMLNode *> &getChildren() { return children_; }
-	std::list<XMLNode *> &getParameters() { return parameters_; }
+	std::list< XMLNode* >& getChildren()   { return children_; }
+	std::list< XMLNode* >& getParameters() { return parameters_; }
 
-	bool getNamedParameter( const char *name, XMLNode *&node, bool failOnError = true, bool remove = true );
-	bool getNamedParameter( const char *name, std::string &value, bool failOnError = true, bool remove = true );
-	bool getNamedParameter( const char *name, LangString &value, bool failOnError = true, bool remove = true );
+	bool getNamedParameter( const char* name, XMLNode*& node, bool failOnError = true, bool remove = true );
+	bool getNamedParameter( const char* name, std::string& value, bool failOnError = true, bool remove = true );
+	bool getNamedParameter( const char* name, LangString& value, bool failOnError = true, bool remove = true );
 
-	bool getNamedChild( const char *name, XMLNode *&node, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, LangString &node, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, std::string &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, bool &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, NumberParser &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, float &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, int &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, unsigned int &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, fixed &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, Vector &value, bool failOnError = true, bool remove = true );
-	bool getNamedChild( const char *name, FixedVector &value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, XMLNode*& node, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, LangString& node, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, std::string& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, bool& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, NumberParser& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, float& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, int& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, unsigned int& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, fixed& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, Vector& value, bool failOnError = true, bool remove = true );
+	bool getNamedChild( const char* name, FixedVector& value, bool failOnError = true, bool remove = true );
 
 	bool failChildren();
 	bool failContent();
 	void resurrectRemovedChildren();
 
-	void setSource(const char *source);
-	void setLine(int line, int col);
-	void setUseContentNodes(bool useContentNodes) { useContentNodes_ = useContentNodes; }
+	void setSource( const char* source );
+	void setLine( int line, int col );
 
-	bool returnError(const std::string &error);
-	void addChild(XMLNode *node); 
-	void addParameter(XMLNode *node);
-	void addContent(const char *data, int len);
+	void setUseContentNodes( bool useContentNodes ) { useContentNodes_ = useContentNodes; }
+
+	bool returnError( const std::string& error );
+	void addChild( XMLNode* node );
+	void addParameter( XMLNode* node );
+	void addContent( const char* data, int len );
 
 	void clear();
 
-	static void removeSpecialChars(const std::string &content, std::string &result);
-	static void addSpecialChars(const std::string &content, std::string &result);
-	static const char *getSpacer(int space);
+	static void        removeSpecialChars( const std::string& content, std::string& result );
+	static void        addSpecialChars( const std::string& content, std::string& result );
+	static const char* getSpacer( int space );
 
 protected:
-	std::string name_;
-	XMLNode *parent_;
-	NodeType type_;
-	bool useContentNodes_;
-	std::list<XMLNode *> children_;
-	std::list<XMLNode *> removedChildren_; // So they are tidied up as well
-	std::list<XMLNode *> parameters_;
-	std::list<XMLNode *> removedParameters_; // Tidied
-	std::string content_;
-	std::string source_;
-	int line_, col_;
+	std::string           name_;
+	XMLNode*              parent_;
+	NodeType              type_;
+	bool                  useContentNodes_;
+	std::list< XMLNode* > children_;
+	std::list< XMLNode* > removedChildren_;  // So they are tidied up as well
+	std::list< XMLNode* > parameters_;
+	std::list< XMLNode* > removedParameters_;  // Tidied
+	std::string           content_;
+	std::string           source_;
+	int                   line_, col_;
 };
 
-#endif // __INCLUDE_XMLNode_hpp_INCLUDE__
+#endif  // __INCLUDE_XMLNode_hpp_INCLUDE__

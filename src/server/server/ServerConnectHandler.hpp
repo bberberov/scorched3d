@@ -26,15 +26,12 @@
 class ServerConnectHandler : public ComsMessageHandlerI
 {
 public:
-	ServerConnectHandler(ComsMessageHandler &comsMessageHandler);
+	ServerConnectHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerConnectHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
-	static bool checkStandardParams(unsigned int destinationId, unsigned int ipAddress);
+	static bool checkStandardParams( unsigned int destinationId, unsigned int ipAddress );
 };
 
-#endif // __INCLUDE_ServerConnectHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerConnectHandler_hpp_INCLUDE__

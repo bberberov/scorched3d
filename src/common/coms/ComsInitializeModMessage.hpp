@@ -32,12 +32,12 @@ public:
 	virtual ~ComsInitializeModMessage();
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 private:
-	ComsInitializeModMessage(const ComsInitializeModMessage &);
-	const ComsInitializeModMessage & operator=(const ComsInitializeModMessage &);
+	ComsInitializeModMessage( const ComsInitializeModMessage& );
+	const ComsInitializeModMessage& operator=( const ComsInitializeModMessage& );
 };
 
-#endif // __INCLUDE_ComsInitializeModMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsInitializeModMessage_hpp_INCLUDE__

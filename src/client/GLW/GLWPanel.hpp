@@ -45,6 +45,7 @@ public:
 		AlignBottom          = 512,
 		AlignCenterTopBottom = 1024
 	};
+
 	enum LayoutType
 	{
 		LayoutNone,
@@ -55,76 +56,73 @@ public:
 
 	struct GLWPanelEntry
 	{
-		GLWPanelEntry(GLWidget *widget, GLWCondition *con, unsigned int flags, float width);
+		GLWPanelEntry( GLWidget* widget, GLWCondition* con, unsigned int flags, float width );
 
-		GLWidget *widget;
-		GLWCondition *condition;
-		unsigned flags;
-		float leftSpace;
-		float rightSpace;
-		float topSpace;
-		float bottomSpace;
+		GLWidget*     widget;
+		GLWCondition* condition;
+		unsigned int  flags;
+		float         leftSpace;
+		float         rightSpace;
+		float         topSpace;
+		float         bottomSpace;
 	};
 
 	GLWPanel(
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f,
-		bool depressed = false,
-		bool visible = true,
-		bool ridge = false
+		float x         = 0.0f,
+		float y         = 0.0f,
+		float w         = 0.0f,
+		float h         = 0.0f,
+		bool  depressed = false,
+		bool  visible   = true,
+		bool  ridge     = false
 	);
 	virtual ~GLWPanel();
 
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 	virtual void display();
 	virtual void hide();
 
-	virtual bool initFromXML(XMLNode *node);
-	virtual void saveSettings(XMLNode *node);
-	virtual void loadSettings(XMLNode *node, bool resetPositions);
+	virtual bool initFromXML( XMLNode* node );
+	virtual void saveSettings( XMLNode* node );
+	virtual void loadSettings( XMLNode* node, bool resetPositions );
 	virtual void clear();
 	virtual void layout();
 
-	virtual void setLayout(unsigned int layout);
+	virtual void         setLayout( unsigned int layout );
 	virtual unsigned int getLayout();
-	virtual void setGridWidth(unsigned int grid);
+	virtual void         setGridWidth( unsigned int grid );
 	virtual unsigned int getGridWidth();
 
-	GLWidget *addWidget(
-		GLWidget *widget,
-		GLWCondition *condition = 0,
-		unsigned int flags = 0,
-		float width = 0.0f
-	);
-	std::list<GLWPanelEntry> &getWidgets() { return widgets_; }
-	GLWidget *getWidgetByName(const char *name);
+	GLWidget* addWidget( GLWidget* widget, GLWCondition* condition = 0, unsigned int flags = 0, float width = 0.0f );
 
-	REGISTER_CLASS_HEADER(GLWPanel);
+	std::list< GLWPanelEntry >& getWidgets() { return widgets_; }
+
+	GLWidget* getWidgetByName( const char* name );
+
+	REGISTER_CLASS_HEADER( GLWPanel );
 
 	// Accessors
-	bool &getDrawPanel() { return drawPanel_; }
+	bool& getDrawPanel() { return drawPanel_; }
 
 protected:
-	std::list<GLWPanelEntry> widgets_;
-	bool depressed_;
-	bool drawPanel_;
-	bool ridge_;
-	unsigned int layout_;
-	unsigned int gridWidth_;
+	std::list< GLWPanelEntry > widgets_;
+	bool                       depressed_;
+	bool                       drawPanel_;
+	bool                       ridge_;
+	unsigned int               layout_;
+	unsigned int               gridWidth_;
 };
 
-#endif // __INCLUDE_GLWPanel_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWPanel_hpp_INCLUDE__

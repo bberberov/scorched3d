@@ -27,13 +27,13 @@
 
 #include <common/Vector.hpp>
 
-class MainLoopI  
+class MainLoopI
 {
 public:
 	virtual ~MainLoopI();
 
-	virtual void simulate(float simTime);
+	virtual void simulate( float simTime );
 	virtual void draw();
 };
 
-#endif // __INCLUDE_MainLoopI_hpp_INCLUDE__
+#endif  // __INCLUDE_MainLoopI_hpp_INCLUDE__

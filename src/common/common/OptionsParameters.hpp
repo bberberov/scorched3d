@@ -29,22 +29,26 @@ public:
 	OptionsParameters();
 	virtual ~OptionsParameters();
 
-	const char *getSettingsDir() { return settingsdir_.getValue(); }
-	bool getAllowExceptions() { return allowexceptions_.getValue(); }
-	bool getWriteFullOptions() { return writefulloptions_.getValue(); }
-	bool getRewriteOptions() { return rewriteoptions_.getValue(); }
+	// clang-format off
+	// uncrustify off
+	const char* getSettingsDir()      { return settingsdir_.getValue(); }
+	bool        getAllowExceptions()  { return allowexceptions_.getValue(); }
+	bool        getWriteFullOptions() { return writefulloptions_.getValue(); }
+	bool        getRewriteOptions()   { return rewriteoptions_.getValue(); }
+	// uncrustify on
+	// clang-format on
 
-	std::list<OptionEntry *> &getOptions();
-	std::list<OptionEntry *> &getNonParamOptions();
+	std::list< OptionEntry* >& getOptions();
+	std::list< OptionEntry* >& getNonParamOptions();
 
 protected:
-	std::list<OptionEntry *> options_;
-	std::list<OptionEntry *> nonParamOptions_;
+	std::list< OptionEntry* > options_;
+	std::list< OptionEntry* > nonParamOptions_;
 
 	OptionEntryString settingsdir_;
-	OptionEntryBool allowexceptions_;
-	OptionEntryBool writefulloptions_;
-	OptionEntryBool rewriteoptions_;
+	OptionEntryBool   allowexceptions_;
+	OptionEntryBool   writefulloptions_;
+	OptionEntryBool   rewriteoptions_;
 };
 
-#endif // __INCLUDE_OptionsParameters_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionsParameters_hpp_INCLUDE__

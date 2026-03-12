@@ -33,7 +33,7 @@ class Tank;
 class RenderTracer : public GameStateI
 {
 public:
-	static RenderTracer *instance();
+	static RenderTracer* instance();
 
 	struct TracerLinePoint
 	{
@@ -41,38 +41,38 @@ public:
 		Vector cross;
 	};
 
-	virtual void draw(const unsigned state);
+	virtual void draw( const unsigned int state );
 
-	void drawTracerEnd(Vector &position);
-	void drawSmokeTracer(std::list<TracerLinePoint> &positions);
+	void drawTracerEnd( Vector& position );
+	void drawSmokeTracer( std::list< TracerLinePoint >& positions );
 
 	void newGame();
 	void clearTracers();
 	void clearTracerLines();
-	void addTracer(unsigned int tank, Vector &position);
-	void addSmokeTracer(unsigned int tank, Vector &position, std::list<TracerLinePoint> &positions);
+	void addTracer( unsigned int tank, Vector& position );
+	void addSmokeTracer( unsigned int tank, Vector& position, std::list< TracerLinePoint >& positions );
 
 protected:
-	static RenderTracer *instance_;
+	static RenderTracer* instance_;
 
 	class TraceEntry
 	{
 	public:
-		TraceEntry(unsigned int t = 0) : tank(t) {}
+		TraceEntry( unsigned int t = 0 ) : tank( t ) {}
 
-		unsigned int tank;
-		std::list<Vector> points;
-		std::list<std::list<TracerLinePoint> > lines;
+		unsigned int                              tank;
+		std::list< Vector >                       points;
+		std::list< std::list< TracerLinePoint > > lines;
 	};
 
-	std::map<unsigned int, TraceEntry> traceEntries_;
-	TraceEntry *current_;
-	GLUquadric *obj_;
-	GLuint listNo_;
+	std::map< unsigned int, TraceEntry > traceEntries_;
+	TraceEntry*                          current_;
+	GLUquadric*                          obj_;
+	GLuint                               listNo_;
 
 private:
 	RenderTracer();
 	virtual ~RenderTracer();
 };
 
-#endif // __INCLUDE_RenderTracer_hpp_INCLUDE__
+#endif  // __INCLUDE_RenderTracer_hpp_INCLUDE__

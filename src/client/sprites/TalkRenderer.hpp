@@ -28,15 +28,15 @@
 class TalkRenderer : public ActionRenderer
 {
 public:
-	TalkRenderer(Vector &position, Vector &color);
+	TalkRenderer( Vector& position, Vector& color );
 	virtual ~TalkRenderer();
 
-	virtual void simulate(Action *action, float timepassed, bool &remove);
-	virtual void draw(Action *action);
+	virtual void simulate( Action* action, float timepassed, bool& remove );
+	virtual void draw( Action* action );
 
 protected:
 	Vector position_;
 	Vector color_;
 };
 
-#endif // __INCLUDE_TalkRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_TalkRenderer_hpp_INCLUDE__

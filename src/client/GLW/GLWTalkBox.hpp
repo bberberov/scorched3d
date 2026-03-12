@@ -37,23 +37,28 @@ public:
 	virtual ~GLWTalkBox();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void keyDown(char *buffer, unsigned int keyState, 
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void keyDown(
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
 	virtual void display();
 
-	virtual bool initFromXML(XMLNode *node);
+	virtual bool initFromXML( XMLNode* node );
 
-	REGISTER_CLASS_HEADER(GLWTalkBox);
+	REGISTER_CLASS_HEADER( GLWTalkBox );
+
 protected:
 	LangString text_;
-	float ctime_;
-	bool cursor_;
-	int maxTextLen_;
-	bool parentSized_;
-	TalkMode mode_;
-	TalkMode defaultMode_;
+	float      ctime_;
+	bool       cursor_;
+	int        maxTextLen_;
+	bool       parentSized_;
+	TalkMode   mode_;
+	TalkMode   defaultMode_;
 };
 
-#endif // __INCLUDE_GLWTalkBox_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTalkBox_hpp_INCLUDE__

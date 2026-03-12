@@ -24,20 +24,23 @@
 #include <weapons/Weapon.hpp>
 #include <actions/LaserParams.hpp>
 
-class WeaponLaser  : public Weapon
+class WeaponLaser : public Weapon
 {
 public:
 	WeaponLaser();
 	virtual ~WeaponLaser();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponLaser, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponLaser, AccessoryPart::AccessoryWeapon );
 
 protected:
 	LaserParams laserParams_;
@@ -50,4 +53,4 @@ protected:
 	NumberParser totalTime_;
 };
 
-#endif // __INCLUDE_WeaponLaser_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponLaser_hpp_INCLUDE__

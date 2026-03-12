@@ -29,46 +29,49 @@ class GLWTabI
 public:
 	virtual ~GLWTabI();
 
-	virtual void tabDown(unsigned int id) = 0;
+	virtual void tabDown( unsigned int id ) = 0;
 };
 
 class GLWTab : public GLWScrollPanel
 {
 public:
 	GLWTab(
-		const std::string &tabName = "",
-		const LangString &tabLabel = LangString(),
-		float x = 0.0f,
-		float y = 0.0f,
-		float w = 0.0f,
-		float h = 0.0f
+		const std::string& tabName  = "",
+		const LangString&  tabLabel = LangString(),
+		float              x        = 0.0f,
+		float              y        = 0.0f,
+		float              w        = 0.0f,
+		float              h        = 0.0f
 	);
 	virtual ~GLWTab();
 
-	virtual void setParent(GLWPanel *parent);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void setParent( GLWPanel* parent );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 	virtual void draw();
-	virtual void setH(float h);
+	virtual void setH( float h );
 
 	float getTw();
-	const char *getName() { return name_.c_str(); }
-	
-	void setDepressed();
-	bool getDepressed() { return depressed_; }
-	void setHandler(GLWTabI *handler) { handler_ = handler; }
 
-	REGISTER_CLASS_HEADER(GLWTab);
+	const char* getName() { return name_.c_str(); }
+
+	void setDepressed();
+
+	bool getDepressed() { return depressed_; }
+
+	void setHandler( GLWTabI* handler ) { handler_ = handler; }
+
+	REGISTER_CLASS_HEADER( GLWTab );
 
 protected:
 	std::string name_;
-	GLWLabel label_;
-	GLWTabI *handler_;
-	bool depressed_;
-	float index_;
+	GLWLabel    label_;
+	GLWTabI*    handler_;
+	bool        depressed_;
+	float       index_;
 
 	void drawSurround();
 	void drawNonSurround();
 };
 
-#endif // __INCLUDE_GLWTab_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTab_hpp_INCLUDE__

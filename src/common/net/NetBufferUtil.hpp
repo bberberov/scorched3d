@@ -26,15 +26,15 @@
 class NetBufferUtil
 {
 public:
-	static void setBlockingIO(TCPsocket &socket);
-	static bool getLocalIPAddress(TCPsocket &so, std::string &result);
+	static void setBlockingIO( TCPsocket& socket );
+	static bool getLocalIPAddress( TCPsocket& so, std::string& result );
 
 private:
 	NetBufferUtil();
 	virtual ~NetBufferUtil();
 
-	NetBufferUtil(const NetBufferUtil &);
-	const NetBufferUtil & operator=(const NetBufferUtil &);
+	NetBufferUtil( const NetBufferUtil& );
+	const NetBufferUtil& operator=( const NetBufferUtil& );
 };
 
-#endif // __INCLUDE_NetBufferUtil_hpp_INCLUDE__
+#endif  // __INCLUDE_NetBufferUtil_hpp_INCLUDE__

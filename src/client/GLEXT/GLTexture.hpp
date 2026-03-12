@@ -31,53 +31,57 @@ public:
 	GLTexture();
 	virtual ~GLTexture();
 
-	virtual void draw(bool force = false);
+	virtual void draw( bool force = false );
 
-	bool create(Image &bitmap, bool mipMap = true);
+	bool create( Image& bitmap, bool mipMap = true );
 	bool create(
-		const void * data,
-		GLint width,
-		GLint height,
-		GLint components,
-		GLint alignment = 4,
-		GLenum format = GL_RGB,
-		bool mipMap = true
+		const void* data,
+		GLint       width,
+		GLint       height,
+		GLint       components,
+		GLint       alignment = 4,
+		GLenum      format    = GL_RGB,
+		bool        mipMap    = true
 	);
-	bool create(GLint width, GLint height, GLenum format = GL_RGB);
-	bool createBufferTexture(GLint width, GLint height, bool depthTex);
-	bool replace(Image &bitmap, bool mipMap = true);
+	bool create( GLint width, GLint height, GLenum format = GL_RGB );
+	bool createBufferTexture( GLint width, GLint height, bool depthTex );
+	bool replace( Image& bitmap, bool mipMap = true );
 
-	bool textureValid();
-	GLenum getTexType() { return texType_; }
+	// clang-format off
+	// uncrustify off
+	bool   textureValid();
+	GLenum getTexType()   { return texType_; }
 	GLenum getTexFormat() { return texFormat_; }
-	GLuint getTexName() { return texNum_; }
-	int getWidth() { return width_; }
-	int getHeight() { return height_; }
+	GLuint getTexName()   { return texNum_; }
+	int    getWidth()     { return width_; }
+	int    getHeight()    { return height_; }
 
-	static unsigned int getTextureSpace() { return textureSpace_; }
-	static unsigned int getTextureSets() { return textureSets_; }
-	static void resetTextureSets() { textureSets_ = 0; }
-	static bool validateSize(int size);
+	static unsigned int getTextureSpace()  { return textureSpace_; }
+	static unsigned int getTextureSets()   { return textureSets_; }
+	static void         resetTextureSets() { textureSets_ = 0; }
+	static bool         validateSize( int size );
+	// uncrustify on
+	// clang-format on
 
 protected:
 	static unsigned int textureSpace_;
 	static unsigned int textureSets_;
-	unsigned int usedSpace_;
-	int width_, height_;
-	GLuint texNum_;
-	GLenum texType_;
-	GLenum texFormat_;
+	unsigned int        usedSpace_;
+	int                 width_, height_;
+	GLuint              texNum_;
+	GLenum              texType_;
+	GLenum              texFormat_;
 
 	bool createTexture(
-		const void * data,
-		GLint width,
-		GLint height,
-		GLint components,
-		GLint alignment,
-		GLenum format,
-		bool mipMap
+		const void* data,
+		GLint       width,
+		GLint       height,
+		GLint       components,
+		GLint       alignment,
+		GLenum      format,
+		bool        mipMap
 	);
 	bool createObject();
 };
 
-#endif // __INCLUDE_GLTexture_hpp_INCLUDE__
+#endif  // __INCLUDE_GLTexture_hpp_INCLUDE__

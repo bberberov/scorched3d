@@ -30,55 +30,59 @@ public:
 	static ComsMessageType ComsTankChangeMessageType;
 
 	ComsTankChangeMessage();
-	ComsTankChangeMessage(ComsTankChangeMessage &other);
+	ComsTankChangeMessage( ComsTankChangeMessage& other );
 	ComsTankChangeMessage(
-		unsigned int playerId,
-		const LangString &playerName,
-		Vector playerColor,
-		const char *tankType,
-		const char *modelName,
-		unsigned int destinationId,
-		unsigned int playerTeam,
-		const char *playerType,
-		bool spectate
+		unsigned int      playerId,
+		const LangString& playerName,
+		Vector            playerColor,
+		const char*       tankType,
+		const char*       modelName,
+		unsigned int      destinationId,
+		unsigned int      playerTeam,
+		const char*       playerType,
+		bool              spectate
 	);
 	virtual ~ComsTankChangeMessage();
 
-	const LangString &getPlayerName() { return playerName_; }
-	void setPlayerName(const LangString &name) { playerName_ = name; }
-	const char *getPlayerType() { return playerType_.c_str(); }
-	const char *getModelName() { return modelName_.c_str(); }
-	const char *getTankType() { return tankType_.c_str(); }
-	void setModelName(const char *modelName) { modelName_ = modelName; }
-	unsigned int getPlayerId() { return playerId_; }
-	Vector &getPlayerColor() { return playerColor_; }
-	unsigned int getDestinationId() { return destinationId_; }
-	unsigned int getPlayerTeam() { return playerTeam_; }
-	bool getSpectate() { return spectate_; }
+	// clang-format off
+	// uncrustify off
+	const LangString& getPlayerName()                         { return playerName_; }
+	void              setPlayerName( const LangString& name ) { playerName_ = name; }
+	const char*       getPlayerType()                         { return playerType_.c_str(); }
+	const char*       getModelName()                          { return modelName_.c_str(); }
+	const char*       getTankType()                           { return tankType_.c_str(); }
+	void              setModelName( const char* modelName )   { modelName_ = modelName; }
+	unsigned int      getPlayerId()                           { return playerId_; }
+	Vector&           getPlayerColor()                        { return playerColor_; }
+	unsigned int      getDestinationId()                      { return destinationId_; }
+	unsigned int      getPlayerTeam()                         { return playerTeam_; }
+	bool              getSpectate()                           { return spectate_; }
 
-	void setPlayerIconName(const char *name) { playerIconName_ = name; }
-	const char *getPlayerIconName() { return playerIconName_.c_str(); }
-	NetBuffer &getPlayerIcon() { return playerIcon_; }
+	void        setPlayerIconName( const char* name ) { playerIconName_ = name; }
+	const char* getPlayerIconName()                   { return playerIconName_.c_str(); }
+	NetBuffer&  getPlayerIcon()                       { return playerIcon_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int playerId_;
-	LangString playerName_;
-	Vector playerColor_;
-	std::string tankType_;
-	std::string modelName_;
+	LangString   playerName_;
+	Vector       playerColor_;
+	std::string  tankType_;
+	std::string  modelName_;
 	unsigned int destinationId_;
 	unsigned int playerTeam_;
-	std::string playerType_;
-	std::string playerIconName_;
-	NetBuffer playerIcon_;
-	bool spectate_;
+	std::string  playerType_;
+	std::string  playerIconName_;
+	NetBuffer    playerIcon_;
+	bool         spectate_;
 
 private:
-	const ComsTankChangeMessage & operator=(const ComsTankChangeMessage &);
+	const ComsTankChangeMessage& operator=( const ComsTankChangeMessage& );
 };
 
-#endif // __INCLUDE_ComsTankChangeMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsTankChangeMessage_hpp_INCLUDE__

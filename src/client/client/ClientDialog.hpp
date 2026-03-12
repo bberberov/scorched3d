@@ -23,4 +23,4 @@
 
 bool createScorchedWindow();
 
-#endif // __INCLUDE_ClientDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientDialog_hpp_INCLUDE__

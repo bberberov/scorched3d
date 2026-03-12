@@ -43,14 +43,15 @@ public:
 
 	virtual ~LandscapeDefnType();
 
-	virtual bool readXML(XMLNode *node) = 0;
-	virtual DefnType getType() = 0;
+	virtual bool     readXML( XMLNode* node ) = 0;
+	virtual DefnType getType()                = 0;
 };
 
 class LandscapeDefnTypeNone : public LandscapeDefnType
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eNone; }
 };
 
@@ -60,12 +61,13 @@ public:
 	LandscapeDefnRoofCavern();
 	virtual ~LandscapeDefnRoofCavern();
 
-	fixed width;
-	fixed height;
-	LandscapeDefnType *heightmap;
-	LandscapeDefnType *deform;
+	fixed              width;
+	fixed              height;
+	LandscapeDefnType* heightmap;
+	LandscapeDefnType* deform;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eRoofCavern; }
 };
 
@@ -73,23 +75,26 @@ class LandscapeDefnDeformFile : public LandscapeDefnType
 {
 public:
 	std::string file;
-	bool levelsurround;
+	bool        levelsurround;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eDeformFile; }
 };
 
 class LandscapeDefnDeformSolid : public LandscapeDefnType
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eDeformSolid; }
 };
 
 class LandscapeDefnDeformDeform : public LandscapeDefnType
 {
 public:
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eDeformDeform; }
 };
 
@@ -97,9 +102,10 @@ class LandscapeDefnHeightMapFile : public LandscapeDefnType
 {
 public:
 	std::string file;
-	bool levelsurround;
+	bool        levelsurround;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eHeightMapFile; }
 };
 
@@ -109,48 +115,54 @@ public:
 	std::string mask;
 
 	fixed noisefactor;
-	int noisewidth, noiseheight;
+	int   noisewidth, noiseheight;
 
-	int errosions;
-	int errosionlayering, errosionsurroundsize;
+	int   errosions;
+	int   errosionlayering, errosionsurroundsize;
 	fixed errosionforce, errosionmaxdepth;
 	fixed errosionsurroundforce;
-	
-	int landhillsmax, landhillsmin;
+
+	int   landhillsmax, landhillsmin;
 	fixed landheightmax, landheightmin;
 	fixed landpeakwidthxmax, landpeakwidthxmin;
 	fixed landpeakwidthymax, landpeakwidthymin;
 	fixed landpeakheightmax, landpeakheightmin;
 	fixed landsmoothing;
-	bool levelsurround;
+	bool  levelsurround;
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual DefnType getType() { return eHeightMapGenerate; }
 };
 
 class LandscapeDefnTypeTankStart;
+
 class LandscapeDefn
 {
 public:
 	LandscapeDefn();
 	virtual ~LandscapeDefn();
 
-	int getMinPlayers() { return minplayers; }
-	int getMaxPlayers() { return maxplayers; }
-	int getLandscapeWidth() { return landscapewidth; }
+	// clang-format off
+	// uncrustify off
+	int getMinPlayers()      { return minplayers; }
+	int getMaxPlayers()      { return maxplayers; }
+	int getLandscapeWidth()  { return landscapewidth; }
 	int getLandscapeHeight() { return landscapeheight; }
-	int getArenaWidth() { return arenawidth; }
-	int getArenaHeight() { return arenaheight; }
-	int getArenaX() { return arenax; }
-	int getArenaY() { return arenay; }
+	int getArenaWidth()      { return arenawidth; }
+	int getArenaHeight()     { return arenaheight; }
+	int getArenaX()          { return arenax; }
+	int getArenaY()          { return arenay; }
+	// uncrustify on
+	// clang-format on
 
-	LandscapeDefnType *roof;
-	LandscapeDefnType *heightmap;
-	LandscapeDefnType *deform;
-	LandscapeDefnTypeTankStart *tankstart;
-	LandscapeTexDefn texDefn;
+	LandscapeDefnType*          roof;
+	LandscapeDefnType*          heightmap;
+	LandscapeDefnType*          deform;
+	LandscapeDefnTypeTankStart* tankstart;
+	LandscapeTexDefn            texDefn;
 
-	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);
+	bool readXML( LandscapeDefinitions* definitions, XMLNode* node );
 
 protected:
 	int minplayers, maxplayers;
@@ -159,8 +171,8 @@ protected:
 	int arenax, arenay;
 
 private:
-	LandscapeDefn(const LandscapeDefn &other);
-	LandscapeDefn &operator=(LandscapeDefn &other);
+	LandscapeDefn( const LandscapeDefn& other );
+	LandscapeDefn& operator=( LandscapeDefn& other );
 };
 
-#endif // __INCLUDE_LandscapeDefn_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefn_hpp_INCLUDE__

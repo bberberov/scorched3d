@@ -28,17 +28,18 @@ class TankDefenseSimAction : public SimAction
 {
 public:
 	TankDefenseSimAction();
-	TankDefenseSimAction(ComsDefenseMessage &defenseMessage);
+	TankDefenseSimAction( ComsDefenseMessage& defenseMessage );
 	virtual ~TankDefenseSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(TankDefenseSimAction);
+	REGISTER_CLASS_HEADER( TankDefenseSimAction );
+
 protected:
 	ComsDefenseMessage defenseMessage_;
 };
 
-#endif // __INCLUDE_TankDefenseSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_TankDefenseSimAction_hpp_INCLUDE__

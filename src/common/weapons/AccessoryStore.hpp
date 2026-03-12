@@ -32,55 +32,58 @@
 
 class XMLNode;
 class NamedNetBuffer;
+
 class AccessoryStore
 {
 public:
-
 	// This is mirrored by accessorySortKeyEnum in client/graph/OptionsDisplay.cpp.
-
 	enum SortKey
 	{
 		SortNothing = 0,
-		SortName = 1,
-		SortPrice = 2
+		SortName    = 1,
+		SortPrice   = 2
 	};
 
 	AccessoryStore();
 	virtual ~AccessoryStore();
 
-	bool parseFile(ScorchedContext &context, ProgressCounter *counter = 0);
+	bool parseFile( ScorchedContext& context, ProgressCounter* counter = 0 );
 	void clearAccessories();
 
-	Accessory *findByAccessoryId(unsigned int id);
-	Accessory *findByPrimaryAccessoryName(const char *name); // **careful there**
-	AccessoryPart *findAccessoryPartByAccessoryId(unsigned int id, const char *type);
-	AccessoryPart *createAccessoryPart(AccessoryCreateContext &context, 
-		Accessory *parent, XMLNode *currentNode);
+	Accessory*     findByAccessoryId( unsigned int id );
+	Accessory*     findByPrimaryAccessoryName( const char* name );  // **careful there**
+	AccessoryPart* findAccessoryPartByAccessoryId( unsigned int id, const char* type );
+	AccessoryPart* createAccessoryPart( AccessoryCreateContext& context, Accessory* parent, XMLNode* currentNode );
 
-	Accessory *getDeathAnimation();
-	Accessory *getMuzzelFlash();
+	Accessory* getDeathAnimation();
+	Accessory* getMuzzelFlash();
 
-	std::list<Accessory *> getAllAccessories(int sortKey=SortNothing);
-	std::list<Accessory *> getAllAccessoriesByTabGroup(const char *tabgroup, int sortKey=SortNothing);
-	std::map<std::string, XMLNode *> &getParsingNodes() { return parsingNodes_; }
-	std::set<std::string> &getTabGroupNames() { return tabGroups_; }
+	std::list< Accessory* > getAllAccessories( int sortKey = SortNothing );
+	std::list< Accessory* > getAllAccessoriesByTabGroup( const char* tabgroup, int sortKey = SortNothing );
 
-	bool writeAccessory(NamedNetBuffer &buffer, Accessory *accessory);
-	bool readAccessory(NetBufferReader &reader, Accessory *&accessory);
+	// clang-format off
+	// uncrustify off
+	std::map< std::string, XMLNode* >& getParsingNodes()  { return parsingNodes_; }
+	std::set< std::string >&           getTabGroupNames() { return tabGroups_; }
+	// uncrustify on
+	// clang-format on
 
-	bool writeEconomyToBuffer(NetBuffer &buffer);
-	bool readEconomyFromBuffer(NetBufferReader &reader);
+	bool writeAccessory( NamedNetBuffer& buffer, Accessory* accessory );
+	bool readAccessory( NetBufferReader& reader, Accessory*& accessory );
 
-	void sortList(std::list<Accessory *> &accList, int sortKey=SortNothing);
+	bool writeEconomyToBuffer( NetBuffer& buffer );
+	bool readEconomyFromBuffer( NetBufferReader& reader );
+
+	void sortList( std::list< Accessory* >& accList, int sortKey = SortNothing );
 
 protected:
-	std::set<std::string> tabGroups_;
-	std::map<unsigned int, Accessory *> accessoriesById_;
-	std::list<Accessory *> accessories_;
-	std::list<AccessoryPart *> accessoryParts_;
-	std::map<std::string, XMLNode *> parsingNodes_;
-	Accessory *muzzleFlash_;
-	Accessory *deathAnimation_;
+	std::set< std::string >              tabGroups_;
+	std::map< unsigned int, Accessory* > accessoriesById_;
+	std::list< Accessory* >              accessories_;
+	std::list< AccessoryPart* >          accessoryParts_;
+	std::map< std::string, XMLNode* >    parsingNodes_;
+	Accessory*                           muzzleFlash_;
+	Accessory*                           deathAnimation_;
 };
 
-#endif // __INCLUDE_AccessoryStore_hpp_INCLUDE__
+#endif  // __INCLUDE_AccessoryStore_hpp_INCLUDE__

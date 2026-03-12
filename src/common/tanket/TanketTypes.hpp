@@ -30,18 +30,18 @@ public:
 	TanketTypes();
 	virtual ~TanketTypes();
 
-	TanketType *getDefaultType() { return defaultType_; }
+	TanketType* getDefaultType() { return defaultType_; }
 
-	bool loadTanketTypes(ScorchedContext &context);
-	TanketType *getType(const char *name);
+	bool        loadTanketTypes( ScorchedContext& context );
+	TanketType* getType( const char* name );
 
-	std::vector<TanketType *> &getTypes() { return types_; }
+	std::vector< TanketType* >& getTypes() { return types_; }
 
 	void clear();
 
 protected:
-	TanketType *defaultType_;
-	std::vector<TanketType *> types_;
+	TanketType*                defaultType_;
+	std::vector< TanketType* > types_;
 };
 
-#endif // __INCLUDE_TanketTypes_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketTypes_hpp_INCLUDE__

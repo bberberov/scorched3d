@@ -28,39 +28,49 @@
 
 class Line;
 class GraphicalHeightMap;
+
 class HeightMap
 {
 public:
 	HeightMap();
 	virtual ~HeightMap();
 
-	void create(const int width, const int height, bool invertedNormals);
+	void create( const int width, const int height, bool invertedNormals );
 	void reset();
 
+	// clang-format off
+	// uncrustify off
 	// Height map size fns
-	int getMapWidth() { return width_; }
+	int getMapWidth()  { return width_; }
 	int getMapHeight() { return height_; }
+	// uncrustify on
+	// clang-format on
 
 	// Get height fns (z values)
-	inline fixed getHeight(int w, int h)
+	inline fixed getHeight( int w, int h )
 	{
-		if (0 <= w && w <= width_ && 0 <= h && h <= height_)
-			return heightData_[ (width_+1) * h + w ].position[2];
-		return fixed(0);
+		if ( 0 <= w && w <= width_ && 0 <= h && h <= height_ ) return heightData_[( width_ + 1 ) * h + w].position[2];
+
+		return fixed( 0 );
 	}
-	fixed getInterpHeight(fixed w, fixed h);
+
+	fixed getInterpHeight( fixed w, fixed h );
 
 	// Get normal functions
-	FixedVector &getNormal(int w, int h);
-	void getInterpNormal(fixed w, fixed h, FixedVector &normal);
+	FixedVector& getNormal( int w, int h );
+	void         getInterpNormal( fixed w, fixed h, FixedVector& normal );
 
-	bool getIntersect(Line &direction, Vector &intersect);
+	bool getIntersect( Line& direction, Vector& intersect );
 
 	// Alters the actual internal HeightMap points
-	void setHeight(int w, int h, fixed height);
+	void setHeight( int w, int h, fixed height );
 
-	GraphicalHeightMap *getGraphicalMap() { return graphicalMap_; }
-	void setGraphicalMap(GraphicalHeightMap *map) { graphicalMap_ = map; }
+	// clang-format off
+	// uncrustify off
+	GraphicalHeightMap* getGraphicalMap()                          { return graphicalMap_; }
+	void                setGraphicalMap( GraphicalHeightMap* map ) { graphicalMap_ = map; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	struct HeightData
@@ -69,14 +79,14 @@ protected:
 		FixedVector normal;
 	};
 
-	int width_;
-	int height_;
-	HeightData *heightData_;
-	GraphicalHeightMap *graphicalMap_;
-	bool invertedNormals_;
+	int                 width_;
+	int                 height_;
+	HeightData*         heightData_;
+	GraphicalHeightMap* graphicalMap_;
+	bool                invertedNormals_;
 
-	bool getVector(FixedVector &vec, int x, int y);
-	void getVectorPos(int pos, int &x, int &y, int dist=1);
+	bool getVector( FixedVector& vec, int x, int y );
+	void getVectorPos( int pos, int& x, int& y, int dist = 1 );
 };
 
-#endif // __INCLUDE_HeightMap_hpp_INCLUDE__
+#endif  // __INCLUDE_HeightMap_hpp_INCLUDE__

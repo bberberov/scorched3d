@@ -27,37 +27,50 @@
 
 class LandscapeDefnHeightMapGenerate;
 
-namespace HeightMapModifier  
+namespace HeightMapModifier
 {
-	void levelSurround(HeightMap &hmap);
-	void noise(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		RandomGenerator &generator,
-		ProgressCounter *counter = 0);
-	void edgeEnhance(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		RandomGenerator &generator,
-		ProgressCounter *counter = 0);
-	void waterErrosion(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		RandomGenerator &generator,
-		ProgressCounter *counter = 0);
-	void smooth(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		ProgressCounter *counter = 0);
-	void scale(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		RandomGenerator &generator,
-		ProgressCounter *counter = 0);
+	void levelSurround( HeightMap& hmap );
+	void noise(
+		HeightMap&                      hmap,
+		LandscapeDefnHeightMapGenerate& defn,
+		RandomGenerator&                generator,
+		ProgressCounter*                counter = 0
+	);
+	void edgeEnhance(
+		HeightMap&                      hmap,
+		LandscapeDefnHeightMapGenerate& defn,
+		RandomGenerator&                generator,
+		ProgressCounter*                counter = 0
+	);
+	void waterErrosion(
+		HeightMap&                      hmap,
+		LandscapeDefnHeightMapGenerate& defn,
+		RandomGenerator&                generator,
+		ProgressCounter*                counter = 0
+	);
+	void smooth( HeightMap& hmap, LandscapeDefnHeightMapGenerate& defn, ProgressCounter* counter = 0 );
+	void scale(
+		HeightMap&                      hmap,
+		LandscapeDefnHeightMapGenerate& defn,
+		RandomGenerator&                generator,
+		ProgressCounter*                counter = 0
+	);
 
-	void generateTerrain(HeightMap &hmap, 
-		LandscapeDefnHeightMapGenerate &defn,
-		RandomGenerator &generator, 
-		RandomGenerator &offsetGenerator,
-		ProgressCounter *counter = 0);
-	void addCirclePeak(HeightMap &hmap, FixedVector &start, 
-		fixed sizew, fixed sizew2, fixed sizeh,
-		RandomGenerator &generator);
-};
+	void generateTerrain(
+		HeightMap&                      hmap,
+		LandscapeDefnHeightMapGenerate& defn,
+		RandomGenerator&                generator,
+		RandomGenerator&                offsetGenerator,
+		ProgressCounter*                counter = 0
+	);
+	void addCirclePeak(
+		HeightMap&       hmap,
+		FixedVector&     start,
+		fixed            sizew,
+		fixed            sizew2,
+		fixed            sizeh,
+		RandomGenerator& generator
+	);
+};  // namespace HeightMapModifier
 
-#endif // __INCLUDE_HeightMapModifier_hpp_INCLUDE__
+#endif  // __INCLUDE_HeightMapModifier_hpp_INCLUDE__

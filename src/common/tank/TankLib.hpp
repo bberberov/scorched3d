@@ -28,30 +28,40 @@
 class Tank;
 class Target;
 class RandomGenerator;
+
 namespace TankLib
 {
-	bool intersection(ScorchedContext &context,
-		FixedVector position, fixed xy, fixed yz, fixed power,
-		int dist);
-	fixed getDistanceToTank(FixedVector &position, Target *targetTank);
-	void getTargetsSortedByDistance(
-		FixedVector &position, 
-		std::list<Target *> &srcTargets,
-		std::list<std::pair<fixed, Target *> > &result,
-		unsigned int teams,
-		fixed maxDistance = -1);
-	bool getSniperShotTowardsPosition(ScorchedContext &context,
-		FixedVector &position, FixedVector &shootAt, fixed distForSniper, 
-		fixed &angleXYDegs, fixed &angleYZDegs, fixed &power,
-		bool checkIntersection = false);
+	bool  intersection( ScorchedContext& context, FixedVector position, fixed xy, fixed yz, fixed power, int dist );
+	fixed getDistanceToTank( FixedVector& position, Target* targetTank );
+	void  getTargetsSortedByDistance(
+		 FixedVector&                              position,
+		 std::list< Target* >&                     srcTargets,
+		 std::list< std::pair< fixed, Target* > >& result,
+		 unsigned int                              teams,
+		 fixed                                     maxDistance = -1
+	 );
+	bool getSniperShotTowardsPosition(
+		ScorchedContext& context,
+		FixedVector&     position,
+		FixedVector&     shootAt,
+		fixed            distForSniper,
+		fixed&           angleXYDegs,
+		fixed&           angleYZDegs,
+		fixed&           power,
+		bool             checkIntersection = false
+	);
 	void getShotTowardsPosition(
-		ScorchedContext &context,
-		RandomGenerator &random,
-		FixedVector &position, FixedVector &shootAt, 
-		fixed &angleXYDegs, fixed &angleYZDegs, fixed &power);
-	FixedVector &getVelocityVector(fixed xy, fixed yz);
-	FixedVector &getGunPosition(fixed xy, fixed yz);
-	FixedVector &getTankGunPosition(FixedVector &tankTurretPosition, fixed xy, fixed yz);
-};
+		ScorchedContext& context,
+		RandomGenerator& random,
+		FixedVector&     position,
+		FixedVector&     shootAt,
+		fixed&           angleXYDegs,
+		fixed&           angleYZDegs,
+		fixed&           power
+	);
+	FixedVector& getVelocityVector( fixed xy, fixed yz );
+	FixedVector& getGunPosition( fixed xy, fixed yz );
+	FixedVector& getTankGunPosition( FixedVector& tankTurretPosition, fixed xy, fixed yz );
+};  // namespace TankLib
 
-#endif // __INCLUDE_TankLib_hpp_INCLUDE__
+#endif  // __INCLUDE_TankLib_hpp_INCLUDE__

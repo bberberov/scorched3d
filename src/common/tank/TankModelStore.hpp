@@ -33,26 +33,29 @@ public:
 	TankModelStore();
 	virtual ~TankModelStore();
 
-	bool loadTankMeshes(ScorchedContext &context, int detailLevel,
-		ProgressCounter *counter = 0);
+	bool loadTankMeshes( ScorchedContext& context, int detailLevel, ProgressCounter* counter = 0 );
 	void clear();
 
-	TankModel *getModelByName(const char *name);
-	TankModel *getRandomModel(int team, bool ai, const char *tankType);
+	TankModel* getModelByName( const char* name );
+	TankModel* getRandomModel( int team, bool ai, const char* tankType );
 
-	std::vector<TankModel *> &getModels() { return models_; }
-	std::set<std::string> &getModelCatagories() { return modelCatagories_; }
+	// clang-format off
+	// uncrustify off
+	std::vector< TankModel* >& getModels()          { return models_; }
+	std::set< std::string >&   getModelCatagories() { return modelCatagories_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::vector<TankModel *> models_;
-	std::set<std::string, std::less<std::string> > modelCatagories_;
+	std::vector< TankModel* >                         models_;
+	std::set< std::string, std::less< std::string > > modelCatagories_;
 
-	void addModels(std::vector<TankModel *> &src);
-	void killModels(std::vector<TankModel *> &src);
+	void addModels( std::vector< TankModel* >& src );
+	void killModels( std::vector< TankModel* >& src );
 
 private:
-	TankModelStore(const TankModelStore &);
-	const TankModelStore & operator=(const TankModelStore &);
+	TankModelStore( const TankModelStore& );
+	const TankModelStore& operator=( const TankModelStore& );
 };
 
-#endif // __INCLUDE_TankModelStore_hpp_INCLUDE__
+#endif  // __INCLUDE_TankModelStore_hpp_INCLUDE__

@@ -30,21 +30,21 @@ public:
 	static ComsMessageType ComsGiftMoneyMessageType;
 
 	ComsGiftMoneyMessage();
-	ComsGiftMoneyMessage(
-		unsigned int fromPlayerId,
-		unsigned int toPlayerId,
-		int money);
-	ComsGiftMoneyMessage(
-		ComsGiftMoneyMessage &other);
+	ComsGiftMoneyMessage( unsigned int fromPlayerId, unsigned int toPlayerId, int money );
+	ComsGiftMoneyMessage( ComsGiftMoneyMessage& other );
 	virtual ~ComsGiftMoneyMessage();
 
+	// clang-format off
+	// uncrustify off
 	unsigned int getFromPlayerId() { return fromPlayerId_; }
-	unsigned int getToPlayerId() { return toPlayerId_; }
-	unsigned int getMoney() { return money_; }
+	unsigned int getToPlayerId()   { return toPlayerId_; }
+	unsigned int getMoney()        { return money_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int fromPlayerId_;
@@ -52,4 +52,4 @@ protected:
 	unsigned int money_;
 };
 
-#endif // __INCLUDE_ComsGiftMoneyMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsGiftMoneyMessage_hpp_INCLUDE__

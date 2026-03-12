@@ -24,24 +24,28 @@
 #include <weapons/Weapon.hpp>
 
 class LUAScript;
-class WeaponScript  : public Weapon
+
+class WeaponScript : public Weapon
 {
 public:
 	WeaponScript();
 	virtual ~WeaponScript();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponScript, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponScript, AccessoryPart::AccessoryWeapon );
 
 protected:
-	LUAScript *script_;
+	LUAScript*  script_;
 	std::string entrypoint_;
 };
 
-#endif // __INCLUDE_WeaponScript_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponScript_hpp_INCLUDE__

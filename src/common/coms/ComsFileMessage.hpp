@@ -34,12 +34,12 @@ public:
 	NetBuffer fileBuffer;
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 private:
-	ComsFileMessage(const ComsFileMessage &);
-	const ComsFileMessage & operator=(const ComsFileMessage &);
+	ComsFileMessage( const ComsFileMessage& );
+	const ComsFileMessage& operator=( const ComsFileMessage& );
 };
 
-#endif // __INCLUDE_ComsFileMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsFileMessage_hpp_INCLUDE__

@@ -26,18 +26,17 @@
 class GLWTankModel : public GLWidget
 {
 public:
-	GLWTankModel(float x = 0.0f, float y = 0.0f,
-		float w = 0.0f, float h = 0.0f);
+	GLWTankModel( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWTankModel();
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
 
-	REGISTER_CLASS_HEADER(GLWTankModel);
+	REGISTER_CLASS_HEADER( GLWTankModel );
 
 protected:
 	float totalTime_;
 };
 
-#endif // __INCLUDE_GLWTankModel_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWTankModel_hpp_INCLUDE__

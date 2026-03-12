@@ -34,50 +34,44 @@ public:
 		unsigned int state;
 	};
 
-	KeyboardKey(
-		const char *name,
-		const char *title,
-		const char *description,
-		int group,
-		bool command
-	);
+	KeyboardKey( const char* name, const char* title, const char* description, int group, bool command );
 	virtual ~KeyboardKey();
 
-	bool keyDown(char *buffer, unsigned int keyState, bool repeat = true);
-	bool keyMatch(unsigned key);
-	
-	bool addKeys(std::list<std::string> &keyNames, std::list<std::string> &keyStates);
-	void addKey(unsigned int position, unsigned int key, unsigned int state);
-	void removeKey(unsigned int position);
-	int keyIndex(unsigned int key, unsigned int state);
+	bool keyDown( char* buffer, unsigned int keyState, bool repeat = true );
+	bool keyMatch( unsigned key );
 
-	std::vector<KeyEntry> &getKeys();
-	const char *getName();
-	const char *getTitle();
-	const char *getDescription();
-	int getGroup();
-	bool getNameIsCommand();
-	bool getChanged();
-	void setChanged(bool changed);
+	bool addKeys( std::list< std::string >& keyNames, std::list< std::string >& keyStates );
+	void addKey( unsigned int position, unsigned int key, unsigned int state );
+	void removeKey( unsigned int position );
+	int  keyIndex( unsigned int key, unsigned int state );
 
-	static bool translateKeyName(const char *name, unsigned int &key);
-	static bool translateKeyState(const char *name, unsigned int &state);
-	static bool translateKeyNameValue(unsigned int key, const char *&name);
-	static bool translateKeyStateValue(unsigned int state, const char *&name);
+	std::vector< KeyEntry >& getKeys();
+	const char*              getName();
+	const char*              getTitle();
+	const char*              getDescription();
+	int                      getGroup();
+	bool                     getNameIsCommand();
+	bool                     getChanged();
+	void                     setChanged( bool changed );
+
+	static bool translateKeyName( const char* name, unsigned int& key );
+	static bool translateKeyState( const char* name, unsigned int& state );
+	static bool translateKeyNameValue( unsigned int key, const char*& name );
+	static bool translateKeyStateValue( unsigned int state, const char*& name );
 
 protected:
-	std::string name_;
-	std::string title_;
-	std::string description_;
-	std::vector<KeyEntry> keys_;
-	int group_;
-	bool command_;
-	bool keyToogle_;
-	bool changed_;
+	std::string             name_;
+	std::string             title_;
+	std::string             description_;
+	std::vector< KeyEntry > keys_;
+	int                     group_;
+	bool                    command_;
+	bool                    keyToogle_;
+	bool                    changed_;
 
 private:
-	KeyboardKey(const KeyboardKey &);
-	const KeyboardKey & operator=(const KeyboardKey &);
+	KeyboardKey( const KeyboardKey& );
+	const KeyboardKey& operator=( const KeyboardKey& );
 };
 
-#endif // __INCLUDE_KeyboardKey_hpp_INCLUDE__
+#endif  // __INCLUDE_KeyboardKey_hpp_INCLUDE__

@@ -36,36 +36,49 @@ public:
 	};
 
 	GLWLabel(
-		float x = 0.0f,
-		float y = 0.0f,
-		const LangString &labelText = LangString(),
-		float size = 14.0f,
-		unsigned int flags = 0
+		float             x         = 0.0f,
+		float             y         = 0.0f,
+		const LangString& labelText = LangString(),
+		float             size      = 14.0f,
+		unsigned int      flags     = 0
 	);
 	virtual ~GLWLabel();
 
-	virtual float getW() { calcWidth(); return GLWidget::getW(); }
-	virtual float getH() { calcWidth(); return GLWidget::getH(); }
+	virtual float getW()
+	{
+		calcWidth();
+
+		return GLWidget::getW();
+	}
+
+	virtual float getH()
+	{
+		calcWidth();
+
+		return GLWidget::getH();
+	}
+
 	virtual void draw();
 
 	bool getEmpty() { return labelText_.empty() && labelTexts_.size() == 0; }
 
-	void setText(const LangString &text);
-	void setColor(const Vector &color);
-	void setSize(float size);
+	void setText( const LangString& text );
+	void setColor( const Vector& color );
+	void setSize( float size );
 	void calcWidth();
 
-	std::string &getText();
-	LangString &getLangString() { return labelText_; }
+	std::string& getText();
 
-	REGISTER_CLASS_HEADER(GLWLabel);
+	LangString& getLangString() { return labelText_; }
+
+	REGISTER_CLASS_HEADER( GLWLabel );
 
 protected:
-	float size_;
-	unsigned int flags_;
-	Vector color_;
-	LangString labelText_;
-	std::vector<LangString> labelTexts_;
+	float                     size_;
+	unsigned int              flags_;
+	Vector                    color_;
+	LangString                labelText_;
+	std::vector< LangString > labelTexts_;
 };
 
-#endif // __INCLUDE_GLWLabel_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWLabel_hpp_INCLUDE__

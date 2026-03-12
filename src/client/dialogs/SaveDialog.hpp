@@ -29,20 +29,20 @@
 class SaveDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static SaveDialog *instance();
+	static SaveDialog* instance();
 
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 	virtual void display();
 
 protected:
-	static SaveDialog *instance_;
+	static SaveDialog* instance_;
 
 	unsigned int okId_, cancelId_;
-	GLWTextBox *textBox_;
+	GLWTextBox*  textBox_;
 
 private:
 	SaveDialog();
 	virtual ~SaveDialog();
 };
 
-#endif // __INCLUDE_SaveDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SaveDialog_hpp_INCLUDE__

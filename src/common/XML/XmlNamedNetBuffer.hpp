@@ -35,32 +35,32 @@ public:
 
 	void clear();
 
-	virtual void startSection(const char *name);
-	virtual void stopSection(const char *name);
+	virtual void startSection( const char* name );
+	virtual void stopSection( const char* name );
 
-	virtual void addToBufferNamed(const char *name, Vector &vector);
-	virtual void addToBufferNamed(const char *name, FixedVector &vector);
-	virtual void addToBufferNamed(const char *name, FixedVector4 &vector);
-	virtual void addToBufferNamed(const char *name, const char *add);
-	virtual void addToBufferNamed(const char *name, std::string &string);
-	virtual void addToBufferNamed(const char *name, const std::string &string);
-	virtual void addToBufferNamed(const char *name, LangString &string);
-	virtual void addToBufferNamed(const char *name, const LangString &string);
-	virtual void addToBufferNamed(const char *name, const char add);
-	virtual void addToBufferNamed(const char *name, const unsigned char add);
-	virtual void addToBufferNamed(const char *name, const int add);
-	virtual void addToBufferNamed(const char *name, const float add);
-	virtual void addToBufferNamed(const char *name, const bool add);
-	virtual void addToBufferNamed(const char *name, const unsigned int add);
-	virtual void addToBufferNamed(const char *name, const fixed add);
-	virtual void addToBufferNamed(const char *name, NetBuffer &add);
+	virtual void addToBufferNamed( const char* name, Vector& vector );
+	virtual void addToBufferNamed( const char* name, FixedVector& vector );
+	virtual void addToBufferNamed( const char* name, FixedVector4& vector );
+	virtual void addToBufferNamed( const char* name, const char* add );
+	virtual void addToBufferNamed( const char* name, std::string& string );
+	virtual void addToBufferNamed( const char* name, const std::string& string );
+	virtual void addToBufferNamed( const char* name, LangString& string );
+	virtual void addToBufferNamed( const char* name, const LangString& string );
+	virtual void addToBufferNamed( const char* name, const char add );
+	virtual void addToBufferNamed( const char* name, const unsigned char add );
+	virtual void addToBufferNamed( const char* name, const int add );
+	virtual void addToBufferNamed( const char* name, const float add );
+	virtual void addToBufferNamed( const char* name, const bool add );
+	virtual void addToBufferNamed( const char* name, const unsigned int add );
+	virtual void addToBufferNamed( const char* name, const fixed add );
+	virtual void addToBufferNamed( const char* name, NetBuffer& add );
 
-	XMLNode &getBuffer() { return rootNode_; }
+	XMLNode& getBuffer() { return rootNode_; }
 
 protected:
 	XMLNode rootNode_, *currentNode_;
 
-	const char *formName(const char *name);
+	const char* formName( const char* name );
 };
 
-#endif // __INCLUDE_XmlNamedNetBuffer_hpp_INCLUDE__
+#endif  // __INCLUDE_XmlNamedNetBuffer_hpp_INCLUDE__

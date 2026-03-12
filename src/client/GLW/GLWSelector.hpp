@@ -36,38 +36,42 @@ class GLWSelectorEntry
 {
 public:
 	GLWSelectorEntry(
-		const LangString &text = LangString(),
-		ToolTip *tooltip = 0,
-		bool selected = false,
-		GLTextureBase *icon = 0,
-		void *userData = 0,
-		const std::string &dataText = ""
+		const LangString&  text     = LangString(),
+		ToolTip*           tooltip  = 0,
+		bool               selected = false,
+		GLTextureBase*     icon     = 0,
+		void*              userData = 0,
+		const std::string& dataText = ""
 	);
-	
-	LangString &getText() { return text_; }
-	const char *getDataText() { return dataText_.c_str(); }
-	ToolTip *getToolTip() { return tip_; }
-	GLTextureBase *getIcon() { return icon_; }
-	bool getSelected() { return selected_; }
-	bool getSeperator() { return seperator_; }
-	void setSeperator() { seperator_ = true; }
-	void *getUserData() { return userData_; }
-	Vector &getColor() { return color_; }
-	int &getTextureWidth() { return textureWidth_; }
 
-	std::list<GLWSelectorEntry> &getPopups() { return popups_; }
-	
+	// clang-format off
+	// uncrustify off
+	LangString& getText()     { return text_; }
+	const char* getDataText() { return dataText_.c_str(); }
+	ToolTip* getToolTip()     { return tip_; }
+	GLTextureBase* getIcon()  { return icon_; }
+	bool getSelected()        { return selected_; }
+	bool getSeperator()       { return seperator_; }
+	void setSeperator()       { seperator_ = true; }
+	void* getUserData()       { return userData_; }
+	Vector& getColor()        { return color_; }
+	int& getTextureWidth()    { return textureWidth_; }
+
+	std::list<GLWSelectorEntry>& getPopups() { return popups_; }
+	// uncrustify on
+	// clang-format on
+
 protected:
-	LangString text_;
-	ToolTip *tip_;
-	bool selected_;
-	GLTextureBase *icon_;
-	void *userData_;
-	std::string dataText_;
-	int textureWidth_;
-	Vector color_;
-	bool seperator_;
-	std::list<GLWSelectorEntry> popups_;
+	LangString                    text_;
+	ToolTip*                      tip_;
+	bool                          selected_;
+	GLTextureBase*                icon_;
+	void*                         userData_;
+	std::string                   dataText_;
+	int                           textureWidth_;
+	Vector                        color_;
+	bool                          seperator_;
+	std::list< GLWSelectorEntry > popups_;
 };
 
 /**
@@ -76,8 +80,8 @@ The user interested in the chosen selection.
 class GLWSelectorI
 {
 public:
-	virtual void itemSelected(GLWSelectorEntry *entry, int position) = 0;
-	virtual void noItemSelected() { };
+	virtual void itemSelected( GLWSelectorEntry* entry, int position ) = 0;
+	virtual void noItemSelected() {};
 };
 
 /**
@@ -92,47 +96,49 @@ class GLWSelectorPart;
 class GLWSelector : public GLWWindow
 {
 public:
-    static GLWSelector *instance();
+	static GLWSelector* instance();
 
 	// Show the selector as the specified position
 	void showSelector(
-		GLWSelectorI *user,
-		float x, float y,
-		std::list<GLWSelectorEntry> &entries,
-		unsigned int showState = 0,
-		bool transparent = true
+		GLWSelectorI*                  user,
+		float                          x,
+		float                          y,
+		std::list< GLWSelectorEntry >& entries,
+		unsigned int                   showState   = 0,
+		bool                           transparent = true
 	);
 	// Hide the selector
 	void hideSelector();
 
 	// Add/remove a popup
-	GLWSelectorI *getUser() { return user_; }
-	void addPart(GLWSelectorPart *part);
-	void rmPart(GLWSelectorPart *part);
+	GLWSelectorI* getUser() { return user_; }
+
+	void addPart( GLWSelectorPart* part );
+	void rmPart( GLWSelectorPart* part );
 
 	// Inherited from GLWWindow
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
 protected:
-	static GLWSelector *instance_;
+	static GLWSelector* instance_;
 
-	std::list<GLWSelectorPart *> parts_;
-	unsigned int showState_;
-	GLWSelectorI *user_;
+	std::list< GLWSelectorPart* > parts_;
+	unsigned int                  showState_;
+	GLWSelectorI*                 user_;
 
 private:
 	GLWSelector();
 	virtual ~GLWSelector();
 };
 
-#endif // __INCLUDE_GLWSelector_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWSelector_hpp_INCLUDE__

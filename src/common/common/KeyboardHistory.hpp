@@ -31,9 +31,9 @@ namespace KeyboardHistory
 {
 	struct HistoryElement
 	{
-		SDLKey sdlKey;
+		SDLKey       sdlKey;
 		unsigned int representedUnicode;
 	};
-}
+}  // namespace KeyboardHistory
 
-#endif // __INCLUDE_KeyboardHistory_hpp_INCLUDE__
+#endif  // __INCLUDE_KeyboardHistory_hpp_INCLUDE__

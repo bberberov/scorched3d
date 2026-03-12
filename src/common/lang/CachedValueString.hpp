@@ -30,13 +30,13 @@ public:
 	CachedValueString();
 	~CachedValueString();
 
-	bool hasChanged(fixed newValue);
+	bool hasChanged( fixed newValue );
 
 	LangString cachedString;
-	fixed cachedValue;
+	fixed      cachedValue;
 
 private:
 	bool firstTime_;
 };
 
-#endif // __INCLUDE_CachedValueString_hpp_INCLUDE__
+#endif  // __INCLUDE_CachedValueString_hpp_INCLUDE__

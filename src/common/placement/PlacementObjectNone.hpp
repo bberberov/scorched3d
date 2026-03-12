@@ -29,12 +29,16 @@ public:
 	PlacementObjectNone();
 	virtual ~PlacementObjectNone();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual PlacementObject::Type getType() { return PlacementObject::eNone; }
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position);
+
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	);
 };
 
-#endif // __INCLUDE_PlacementObjectNone_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObjectNone_hpp_INCLUDE__

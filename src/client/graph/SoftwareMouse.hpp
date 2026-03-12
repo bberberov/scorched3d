@@ -28,19 +28,19 @@
 class SoftwareMouse : public GameStateI
 {
 public:
-	static SoftwareMouse *instance();
+	static SoftwareMouse* instance();
 
-	//Inherited from GameStateI
-	virtual void draw(const unsigned state);
+	// Inherited from GameStateI
+	virtual void draw( const unsigned int state );
 
 protected:
-	static SoftwareMouse *instance_;
+	static SoftwareMouse* instance_;
 
 	GLTexture mouseTex_;
 
 private:
 	SoftwareMouse();
-	virtual ~SoftwareMouse ();
+	virtual ~SoftwareMouse();
 };
 
-#endif // __INCLUDE_SoftwareMouse_hpp_INCLUDE__
+#endif  // __INCLUDE_SoftwareMouse_hpp_INCLUDE__

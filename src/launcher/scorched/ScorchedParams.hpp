@@ -27,12 +27,12 @@
 class ScorchedParams : public OptionsParameters
 {
 public:
-	static ScorchedParams *instance();
+	static ScorchedParams* instance();
 
-	bool &getSDLInitVideo() { return SDLInitVideo_; }
+	bool& getSDLInitVideo() { return SDLInitVideo_; }
 
 protected:
-	static ScorchedParams *instance_;
+	static ScorchedParams* instance_;
 
 	bool SDLInitVideo_;
 
@@ -41,4 +41,4 @@ private:
 	virtual ~ScorchedParams();
 };
 
-#endif // __INCLUDE_ScorchedParams_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedParams_hpp_INCLUDE__

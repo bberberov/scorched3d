@@ -26,32 +26,34 @@
 class NetBuffer;
 class NetBufferReader;
 class XMLNode;
+
 class ModelID
 {
 public:
 	ModelID();
-	ModelID(const ModelID &other);
+	ModelID( const ModelID& other );
 	virtual ~ModelID();
 
-	ModelID &operator=(const ModelID &other);
+	ModelID& operator=( const ModelID& other );
 
-	bool initFromNode(XMLNode *modelNode);
+	bool initFromNode( XMLNode* modelNode );
 
-	bool initFromString(
-		const char *type,
-		const char *meshName,
-		const char *skinName);
+	bool initFromString( const char* type, const char* meshName, const char* skinName );
 
 	// Not very generic but it will do for now!!
-	const char *getStringHash();
-	const char *getSkinName() { return skinName_.c_str(); }
-	const char *getMeshName() { return meshName_.c_str(); }
-	const char *getType() { return type_.c_str(); }
-	bool modelValid() { return !type_.empty(); }
+	// clang-format off
+	// uncrustify off
+	const char* getStringHash();
+	const char* getSkinName() { return skinName_.c_str(); }
+	const char* getMeshName() { return meshName_.c_str(); }
+	const char* getType()     { return type_.c_str(); }
+	bool        modelValid()  { return ! type_.empty(); }
+	// uncrustify on
+	// clang-format on
 
 	// Serialize
-	virtual bool writeModelID(NetBuffer &buffer);
-	virtual bool readModelID(NetBufferReader &reader);
+	virtual bool writeModelID( NetBuffer& buffer );
+	virtual bool readModelID( NetBufferReader& reader );
 
 protected:
 	std::string type_;
@@ -60,4 +62,4 @@ protected:
 	std::string hash_;
 };
 
-#endif // __INCLUDE_ModelID_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelID_hpp_INCLUDE__

@@ -26,19 +26,19 @@
 #include <simactions/TankNewMatchSimAction.hpp>
 #include <simactions/TankAddSimAction.hpp>
 
-class TankDeadContainer  
+class TankDeadContainer
 {
 public:
 	TankDeadContainer();
 	virtual ~TankDeadContainer();
 
 	void clearTanks();
-	void addDeadTank(Tank *tank, const std::string &storedName);
-	void getDeadTank(TankNewMatchSimAction *simAction, const std::string &storedName);
-	void getDeadTank(TankAddSimAction *simAction, const std::string &storedName);
+	void addDeadTank( Tank* tank, const std::string& storedName );
+	void getDeadTank( TankNewMatchSimAction* simAction, const std::string& storedName );
+	void getDeadTank( TankAddSimAction* simAction, const std::string& storedName );
 
 protected:
-	std::map<std::string, NetBuffer *> deadTanks_;
+	std::map< std::string, NetBuffer* > deadTanks_;
 };
 
-#endif // __INCLUDE_TankDeadContainer_hpp_INCLUDE__
+#endif  // __INCLUDE_TankDeadContainer_hpp_INCLUDE__

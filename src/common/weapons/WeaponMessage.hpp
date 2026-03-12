@@ -23,29 +23,35 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponMessage  : public WeaponCallback
+class WeaponMessage : public WeaponCallback
 {
 public:
 	WeaponMessage();
 	virtual ~WeaponMessage();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponMessage, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponMessage, AccessoryPart::AccessoryWeapon );
 
 protected:
 	std::string message_;
 };
 
-#endif // __INCLUDE_WeaponMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponMessage_hpp_INCLUDE__

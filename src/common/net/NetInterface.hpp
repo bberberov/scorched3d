@@ -30,28 +30,29 @@ public:
 	NetInterface();
 	virtual ~NetInterface();
 
-	virtual bool started() = 0;
-	virtual bool connect(const char *hostName, int portNo) = 0;
-	virtual bool start(int portNo) = 0;
-	virtual void stop() = 0;
+	virtual bool started()                                   = 0;
+	virtual bool connect( const char* hostName, int portNo ) = 0;
+	virtual bool start( int portNo )                         = 0;
+	virtual void stop()                                      = 0;
 
-	virtual int processMessages() = 0;
-	virtual void setMessageHandler(NetMessageHandlerI *handler) = 0;
+	virtual int  processMessages()                                = 0;
+	virtual void setMessageHandler( NetMessageHandlerI* handler ) = 0;
 
-	virtual void disconnectAllClients() = 0;
-	virtual void disconnectClient(unsigned int client) = 0;
-	virtual void disconnectClient(NetBuffer &buffer, 
-		unsigned int client) = 0;
-	virtual void sendMessageServer(NetBuffer &buffer, 
-		unsigned int flags = 0) = 0;
-	virtual void sendMessageDest(NetBuffer &buffer, 
-		unsigned int destination, unsigned int flags = 0) = 0;
+	virtual void disconnectAllClients()                                                                 = 0;
+	virtual void disconnectClient( unsigned int client )                                                = 0;
+	virtual void disconnectClient( NetBuffer& buffer, unsigned int client )                             = 0;
+	virtual void sendMessageServer( NetBuffer& buffer, unsigned int flags = 0 )                         = 0;
+	virtual void sendMessageDest( NetBuffer& buffer, unsigned int destination, unsigned int flags = 0 ) = 0;
 
-	static unsigned int &getBytesIn() { return bytesIn_; }
-	static unsigned int &getBytesOut() { return bytesOut_; }
-	static unsigned int &getPings() { return pings_; }
-	static unsigned int &getConnects() { return connects_; }
-	static const char *getIpName(unsigned int ipAddress);
+	// clang-format off
+	// uncrustify off
+	static unsigned int& getBytesIn()  { return bytesIn_; }
+	static unsigned int& getBytesOut() { return bytesOut_; }
+	static unsigned int& getPings()    { return pings_; }
+	static unsigned int& getConnects() { return connects_; }
+	static const char*   getIpName( unsigned int ipAddress );
+	// uncrustify on
+	// clang-format on
 
 protected:
 	static unsigned int bytesIn_;
@@ -60,4 +61,4 @@ protected:
 	static unsigned int connects_;
 };
 
-#endif // __INCLUDE_NetInterface_hpp_INCLUDE__
+#endif  // __INCLUDE_NetInterface_hpp_INCLUDE__

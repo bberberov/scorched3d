@@ -30,52 +30,56 @@
 class ScorchedContext;
 class Tank;
 class TankModelStore;
+
 class TankModel
 {
 public:
 	TankModel();
 	virtual ~TankModel();
 
-	bool initFromXML(ScorchedContext &context, XMLNode *node);
+	bool initFromXML( ScorchedContext& context, XMLNode* node );
 
-	virtual bool lessThan(TankModel *other);
+	virtual bool lessThan( TankModel* other );
 
-	const char *getName() { return tankName_.c_str(); }
-	ModelID &getTankModelID() { return modelId_; }
-	ModelID &getProjectileModelID() { return projectileModelId_; }
-	ImageID &getTracksVId() { return tracksVId_; }
-	ImageID &getTracksHId() { return tracksHId_; }
-	ImageID &getTracksVHId() { return tracksVHId_; }
-	ImageID &getTracksHVId() { return tracksHVId_; }
+	// clang-format off
+	// uncrustify off
+	const char* getName()              { return tankName_.c_str(); }
+	ModelID&    getTankModelID()       { return modelId_; }
+	ModelID&    getProjectileModelID() { return projectileModelId_; }
+	ImageID&    getTracksVId()         { return tracksVId_; }
+	ImageID&    getTracksHId()         { return tracksHId_; }
+	ImageID&    getTracksVHId()        { return tracksVHId_; }
+	ImageID&    getTracksHVId()        { return tracksHVId_; }
+	bool        getMovementSmoke()     { return movementSmoke_; }
+	// uncrustify on
+	// clang-format on
 
-	bool getMovementSmoke() { return movementSmoke_; }
-	bool isOfCatagory(const char *catagory);
-	bool isOfAi(bool ai);
-	bool isOfTankType(const char *tankType);
-	bool isOfTeam(int team);
+	bool isOfCatagory( const char* catagory );
+	bool isOfAi( bool ai );
+	bool isOfTankType( const char* tankType );
+	bool isOfTeam( int team );
 
-	bool availableForTank(Tank *tank);
+	bool availableForTank( Tank* tank );
 
 protected:
 	friend class TankModelStore;
 
-	bool aiOnly_;
-	bool movementSmoke_;
-	std::string tankName_;
-	ModelID modelId_;
-	ModelID projectileModelId_;
-	ImageID tracksVId_;
-	ImageID tracksHId_;
-	ImageID tracksVHId_;
-	ImageID tracksHVId_;
-	std::set<std::string> tankTypes_;
-	std::set<std::string> catagories_;
-	std::set<int> teams_;
+	bool                    aiOnly_;
+	bool                    movementSmoke_;
+	std::string             tankName_;
+	ModelID                 modelId_;
+	ModelID                 projectileModelId_;
+	ImageID                 tracksVId_;
+	ImageID                 tracksHId_;
+	ImageID                 tracksVHId_;
+	ImageID                 tracksHVId_;
+	std::set< std::string > tankTypes_;
+	std::set< std::string > catagories_;
+	std::set< int >         teams_;
 
-	std::set<std::string> &getCatagories() { return catagories_; }
+	std::set< std::string >& getCatagories() { return catagories_; }
 
-	bool loadImage(XMLNode *node, const char *nodeName, 
-		ImageID &image, const char *backupImage);
+	bool loadImage( XMLNode* node, const char* nodeName, ImageID& image, const char* backupImage );
 };
 
-#endif // __INCLUDE_TankModel_hpp_INCLUDE__
+#endif  // __INCLUDE_TankModel_hpp_INCLUDE__

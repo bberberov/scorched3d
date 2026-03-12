@@ -24,13 +24,14 @@
 #include <common/Vector.hpp>
 
 class HeightMap;
+
 class SkyRoof
 {
 public:
 	SkyRoof();
 	virtual ~SkyRoof();
 
-	void draw(bool asShadow);
+	void draw( bool asShadow );
 	void generate();
 
 protected:
@@ -38,10 +39,8 @@ protected:
 	unsigned int tris_;
 
 	void makeList();
-	void drawSegment(
-		Vector &a, Vector &b, 
-		Vector &na, Vector &nb);
-	void makeNormal(Vector &position, Vector &normal);
+	void drawSegment( Vector& a, Vector& b, Vector& na, Vector& nb );
+	void makeNormal( Vector& position, Vector& normal );
 };
 
-#endif // __INCLUDE_SkyRoof_hpp_INCLUDE__
+#endif  // __INCLUDE_SkyRoof_hpp_INCLUDE__

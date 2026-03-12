@@ -29,19 +29,21 @@ public:
 	TankAIShallow();
 	virtual ~TankAIShallow();
 
-	virtual TankAI *createCopy(Tanket *tanket) { return 0; }
+	virtual TankAI* createCopy( Tanket* tanket ) { return 0; }
 
-	virtual void newMatch() {}
-	virtual void newGame() {}
-	virtual void playMove(unsigned int moveId) {}
-	virtual void buyAccessories(unsigned int moveId) {}
+	// clang-format off
+	// uncrustify off
+	virtual void newMatch()                            {}
+	virtual void newGame()                             {}
+	virtual void playMove( unsigned int moveId )       {}
+	virtual void buyAccessories( unsigned int moveId ) {}
 
 	// Notification of actions happened
-	virtual void tankHurt(Weapon *weapon, float damage, 
-		unsigned int damaged, unsigned int firer) {}
-	virtual void shotLanded(ScorchedCollisionId collision,
-		Weapon *weapon, unsigned int firer, 
-		Vector &position) {}
+	virtual void tankHurt( Weapon* weapon, float damage, unsigned int damaged, unsigned int firer )                {}
+	virtual void shotLanded( ScorchedCollisionId collision, Weapon* weapon, unsigned int firer, Vector& position ) {}
+
+	// uncrustify on
+	// clang-format on
 };
 
-#endif // __INCLUDE_TankAIShallow_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIShallow_hpp_INCLUDE__

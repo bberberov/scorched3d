@@ -29,13 +29,12 @@ public:
 	ASEModelFactory();
 	virtual ~ASEModelFactory();
 
-	Model *createModel(const char *fileName,
-		const char *texName);
+	Model* createModel( const char* fileName, const char* texName );
 
 	// Used by parser
-	static ASEModelFactory *getCurrent();
-	void addMesh(char *meshName);
-	Mesh *getCurrentMesh();
+	static ASEModelFactory* getCurrent();
+	void                    addMesh( char* meshName );
+	Mesh*                   getCurrentMesh();
 
 protected:
 	enum MaxMag
@@ -45,9 +44,9 @@ protected:
 		MagZ
 	};
 
-	bool loadFile(const char *fileName);
-	void calculateTexCoords();
-	FixedVector getTexCoord(FixedVector &tri, MaxMag mag, FixedVector &max, FixedVector &min);
+	bool        loadFile( const char* fileName );
+	void        calculateTexCoords();
+	FixedVector getTexCoord( FixedVector& tri, MaxMag mag, FixedVector& max, FixedVector& min );
 };
 
-#endif // __INCLUDE_ASEModelFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_ASEModelFactory_hpp_INCLUDE__

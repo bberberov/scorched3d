@@ -23,7 +23,7 @@
 
 #ifdef HAVE_MYSQL
 
-#if defined(_WIN32)
+#if defined( _WIN32 )
 #include <Winsock2.h>
 #endif
 #include <server/ServerAuthHandler.hpp>
@@ -35,21 +35,19 @@ public:
 	ServerAuthHandlerForumLogin();
 	virtual ~ServerAuthHandlerForumLogin();
 
-	virtual void createAuthentication(ComsConnectAuthMessage &authMessage);
-	virtual bool authenticateUser(ComsConnectAuthMessage &authMessage, 
-		std::string &message);
-	virtual bool authenticateUserName(const char *uniqueId, 
-		const LangString &playername);
-	virtual void banUser(const char *uniqueId);
+	virtual void createAuthentication( ComsConnectAuthMessage& authMessage );
+	virtual bool authenticateUser( ComsConnectAuthMessage& authMessage, std::string& message );
+	virtual bool authenticateUserName( const char* uniqueId, const LangString& playername );
+	virtual void banUser( const char* uniqueId );
 
 protected:
-	MYSQL *mysql_;
+	MYSQL*      mysql_;
 	std::string name_;
-	bool success_;
+	bool        success_;
 
 	bool connectHandler();
 };
 
-#endif // HAVE_MYSQL
+#endif  // HAVE_MYSQL
 
-#endif // __INCLUDE_ServerAuthHandlerForumLogin_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAuthHandlerForumLogin_hpp_INCLUDE__

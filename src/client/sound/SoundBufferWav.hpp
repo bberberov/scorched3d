@@ -26,13 +26,13 @@
 class SoundBufferWav : public SoundBuffer
 {
 public:
-	SoundBufferWav(const char *wavFileName);
+	SoundBufferWav( const char* wavFileName );
 	virtual ~SoundBufferWav();
 
-	SoundBufferSourceInstance *createSourceInstance(unsigned int source);
+	SoundBufferSourceInstance* createSourceInstance( unsigned int source );
 
 protected:
 	unsigned int buffer_;
 };
 
-#endif // __INCLUDE_SoundBufferWav_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferWav_hpp_INCLUDE__

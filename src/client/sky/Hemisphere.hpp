@@ -23,7 +23,8 @@
 
 class Image;
 class Vector;
-class Hemisphere  
+
+class Hemisphere
 {
 public:
 	enum Flags
@@ -31,21 +32,37 @@ public:
 		eWidthTexture = 1
 	};
 
-	static void draw(float radius, float radius2,
-		int heightSlices = 10, int rotationSlices = 20,
-		int startHeightSlice = 0, int startRotationSlice = 0,
-		int endHeightSlice = 10, int endRotationSlice = 10,
-		bool inverse = false, unsigned int flags = 0);
-	static void drawColored(float radius, float radius2, 
-		int heightSlices, int rotationSlices,
-		int startHeightSlice, int startRotationSlice,
-		int endHeightSlice, int endRotationSlice,
-		bool inverse, Image &colors, Vector &sunDir, int daytime, 
-		bool horizonGlow);
+	static void draw(
+		float        radius,
+		float        radius2,
+		int          heightSlices       = 10,
+		int          rotationSlices     = 20,
+		int          startHeightSlice   = 0,
+		int          startRotationSlice = 0,
+		int          endHeightSlice     = 10,
+		int          endRotationSlice   = 10,
+		bool         inverse            = false,
+		unsigned int flags              = 0
+	);
+	static void drawColored(
+		float   radius,
+		float   radius2,
+		int     heightSlices,
+		int     rotationSlices,
+		int     startHeightSlice,
+		int     startRotationSlice,
+		int     endHeightSlice,
+		int     endRotationSlice,
+		bool    inverse,
+		Image&  colors,
+		Vector& sunDir,
+		int     daytime,
+		bool    horizonGlow
+	);
 
 private:
 	Hemisphere();
 	virtual ~Hemisphere();
 };
 
-#endif // __INCLUDE_Hemisphere_hpp_INCLUDE__
+#endif  // __INCLUDE_Hemisphere_hpp_INCLUDE__

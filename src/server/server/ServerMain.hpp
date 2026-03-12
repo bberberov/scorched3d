@@ -23,7 +23,7 @@
 
 #include <common/fixed.hpp>
 
-void serverLoop(fixed timeDifference);
+void serverLoop( fixed timeDifference );
 void consoleServer();
 
-#endif // __INCLUDE_ServerMain_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerMain_hpp_INCLUDE__

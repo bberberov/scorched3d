@@ -34,41 +34,41 @@ class LandscapeSoundItem;
 class LandscapeSoundManager
 {
 public:
-	static LandscapeSoundManager *instance();
+	static LandscapeSoundManager* instance();
 
 	void addSounds();
-	void simulate(float frameTime);
+	void simulate( float frameTime );
 	void cleanUp();
 
 protected:
-	static LandscapeSoundManager *instance_;
+	static LandscapeSoundManager* instance_;
 
 	struct LandscapeSoundManagerEntry
 	{
-		LandscapeSoundManagerEntry() :
-			soundSource(nullptr),
-			soundType(nullptr),
-			initData(nullptr),
-			removed(false)
+		LandscapeSoundManagerEntry()
+			: soundSource( nullptr )
+			, soundType( nullptr )
+			, initData( nullptr )
+			, removed( false )
 		{}
 
-		VirtualSoundSource *soundSource;
-		LandscapeSoundType *soundType;
-		LandscapeSoundItem *initData;
+		VirtualSoundSource* soundSource;
+		LandscapeSoundType* soundType;
+		LandscapeSoundItem* initData;
 
 		float timeLeft;
-		bool removed;
+		bool  removed;
 	};
 
-	std::list<LandscapeSoundManagerEntry> entries_;
-	float lastTime_;
-	bool haveSound_;
+	std::list< LandscapeSoundManagerEntry > entries_;
+	float                                   lastTime_;
+	bool                                    haveSound_;
 
-	void loadSound(std::vector<LandscapeInclude *> &sounds);
+	void loadSound( std::vector< LandscapeInclude* >& sounds );
 
 private:
 	LandscapeSoundManager();
 	virtual ~LandscapeSoundManager();
 };
 
-#endif // __INCLUDE_LandscapeSoundManager_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeSoundManager_hpp_INCLUDE__

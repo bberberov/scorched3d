@@ -29,34 +29,34 @@
 class AuthDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static AuthDialog *instance();
+	static AuthDialog* instance();
 
 	enum AuthRequired
 	{
-		eNameRequired = 1,
+		eNameRequired     = 1,
 		ePasswordRequired = 2
 	};
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
-	void setRequiredAuth(unsigned int auth) { auth_ = auth; }
+	void setRequiredAuth( unsigned int auth ) { auth_ = auth; }
 
 protected:
-	static AuthDialog *instance_;
+	static AuthDialog* instance_;
 
 	unsigned int okId_, cancelId_;
 	unsigned int auth_;
 
-	GLWTextBox *username_;
-	GLWTextBox *password_;
+	GLWTextBox* username_;
+	GLWTextBox* password_;
 
 private:
 	AuthDialog();
 	virtual ~AuthDialog();
 };
 
-#endif // __INCLUDE_AuthDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AuthDialog_hpp_INCLUDE__

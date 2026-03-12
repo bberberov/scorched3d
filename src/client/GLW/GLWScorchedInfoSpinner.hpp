@@ -36,20 +36,20 @@ public:
 		ePower
 	};
 
-	GLWScorchedInfoSpinner(float x = 0.0f, float y = 0.0f, 
-		float w = 0.0f, float h = 0.0f);
+	GLWScorchedInfoSpinner( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWScorchedInfoSpinner();
 
 	virtual void draw();
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual bool initFromXML(XMLNode *node);
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual bool initFromXML( XMLNode* node );
 
-	REGISTER_CLASS_HEADER(GLWScorchedInfoSpinner);
+	REGISTER_CLASS_HEADER( GLWScorchedInfoSpinner );
+
 protected:
-	InfoType infoType_;
-	float halfWidth_, halfHeight_;
+	InfoType           infoType_;
+	float              halfWidth_, halfHeight_;
 	GLTextureReference filledTex_, unfilledTex_;
-	Vector filledColor_, unfilledColor_;
+	Vector             filledColor_, unfilledColor_;
 };
 
-#endif // __INCLUDE_GLWScorchedInfoSpinner_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScorchedInfoSpinner_hpp_INCLUDE__

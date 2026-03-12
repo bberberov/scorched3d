@@ -30,35 +30,40 @@
 class AdminDialog : public GLWWindow, public GLWButtonI, public GLWIconTableI
 {
 public:
-	static AdminDialog *instance();
+	static AdminDialog* instance();
 
 	// GLWWindow
 	virtual void draw();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWIconTableI
-	virtual void drawColumn(unsigned int id, int row, int column, float x, float y, float w);
-	virtual void rowSelected(unsigned int id, int row);
-	virtual void rowChosen(unsigned int id, int row);
-	virtual void columnSelected(unsigned int id, int col);
+	virtual void drawColumn( unsigned int id, int row, int column, float x, float y, float w );
+	virtual void rowSelected( unsigned int id, int row );
+	virtual void rowChosen( unsigned int id, int row );
+	virtual void columnSelected( unsigned int id, int col );
 
 protected:
-	static AdminDialog *instance_;
+	static AdminDialog* instance_;
 
-	GLWIconTable *adminTable_;
-	GLWTextButton *ok_;
-	GLWButton *kickButton_, *banButton_, *slapButton_;
-	GLWButton *poorButton_, *muteButton_, *unmuteButton_;
-	GLWButton *changeNameButton_;
-	GLWTab *playerTab_, *botsTab_;
-	GLWDropDown *aiSelector_;
-	GLWButton *addButton_;
+	GLWIconTable*  adminTable_;
+	GLWTextButton* ok_;
+	GLWButton*     kickButton_;
+	GLWButton*     banButton_;
+	GLWButton*     slapButton_;
+	GLWButton*     poorButton_;
+	GLWButton*     muteButton_;
+	GLWButton*     unmuteButton_;
+	GLWButton*     changeNameButton_;
+	GLWTab*        playerTab_;
+	GLWTab*        botsTab_;
+	GLWDropDown*   aiSelector_;
+	GLWButton*     addButton_;
 
 private:
 	AdminDialog();
 	virtual ~AdminDialog();
 };
 
-#endif // __INCLUDE_AdminDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AdminDialog_hpp_INCLUDE__

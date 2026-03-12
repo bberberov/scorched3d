@@ -26,16 +26,15 @@
 class SoundBufferStaticSourceInstance : public SoundBufferSourceInstance
 {
 public:
-	SoundBufferStaticSourceInstance(
-		unsigned int source, unsigned int buffer);
+	SoundBufferStaticSourceInstance( unsigned int source, unsigned int buffer );
 	virtual ~SoundBufferStaticSourceInstance();
 
-	virtual void play(bool loop);
+	virtual void play( bool loop );
 	virtual void stop();
-	virtual void simulate(bool loop);
+	virtual void simulate( bool loop );
 
 protected:
 	unsigned int buffer_;
 };
 
-#endif // __INCLUDE_SoundBufferStaticSourceInstance_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferStaticSourceInstance_hpp_INCLUDE__

@@ -28,64 +28,71 @@ class GLWScrollWI
 public:
 	virtual ~GLWScrollWI();
 
-	virtual void positionChange(unsigned int id, int current, int movement) = 0;
+	virtual void positionChange( unsigned int id, int current, int movement ) = 0;
 };
 
-class GLWScrollW  :
-	public GLWidget,
-	public GLWButtonI,
-	public GLWScrollButtonI
+class GLWScrollW : public GLWidget, public GLWButtonI, public GLWScrollButtonI
 {
 public:
 	GLWScrollW(
-		float x = 0.0f,
-		float y = 0.0f,
-		float h = 0.0f,
-		int min = 0, int max = 0,
-		int see = 1,
-		GLWScrollWI *handler = 0
+		float        x       = 0.0f,
+		float        y       = 0.0f,
+		float        h       = 0.0f,
+		int          min     = 0,
+		int          max     = 0,
+		int          see     = 1,
+		GLWScrollWI* handler = 0
 	);
 	virtual ~GLWScrollW();
 
-	virtual void setHandler(GLWScrollWI *handler = 0) { handler_ = handler; }
-	void setMin(int min) { min_ = min; }
-	void setMax(int max) { max_ = max; }
-	void setSee(int see) { see_ = see; }
-	virtual void setCurrent(int c);
+	// clang-format off
+	// uncrustify off
+	virtual void setHandler( GLWScrollWI* handler = 0 ) { handler_ = handler; }
+	void         setMin( int min )                      { min_ = min; }
+	void         setMax( int max )                      { max_ = max; }
+	void         setSee( int see )                      { see_ = see; }
+	virtual void setCurrent( int c );
+	// uncrustify on
+	// clang-format on
 
-	virtual void setX(float x);
-	virtual void setY(float y);
-	virtual void setW(float w);
-	virtual void setH(float h);
+	virtual void setX( float x );
+	virtual void setY( float y );
+	virtual void setW( float w );
+	virtual void setH( float h );
 
+	// clang-format off
+	// uncrustify off
 	virtual int getCurrent() { return current_; }
-	int getMin() { return min_; }
-	int getMax() { return max_; }
-	int getSee() { return see_; }
+	int         getMin()     { return min_; }
+	int         getMax()     { return max_; }
+	int         getSee()     { return see_; }
+	// uncrustify on
+	// clang-format on
 
 	virtual void draw();
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void buttonDown(unsigned int id);
-	virtual void mouseWheel(float x, float y, float z, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void buttonDown( unsigned int id );
+	virtual void mouseWheel( float x, float y, float z, bool& skipRest );
 
-	virtual void startDrag(unsigned int id);
-	virtual void buttonDrag(unsigned int id, float x, float y);
+	virtual void startDrag( unsigned int id );
+	virtual void buttonDrag( unsigned int id, float x, float y );
 
-	REGISTER_CLASS_HEADER(GLWScrollW);
+	REGISTER_CLASS_HEADER( GLWScrollW );
+
 protected:
-	int min_, max_;
-	int see_;
-	int current_;
-	int dragCurrent_;
-	GLWScrollWI *handler_;
-	GLWButton topButton_;
-	GLWButton bottomButton_;
-	GLWButton backButtonTop_; // Hidden
-	GLWButton backButtonBot_; // Hidden
+	int             min_, max_;
+	int             see_;
+	int             current_;
+	int             dragCurrent_;
+	GLWScrollWI*    handler_;
+	GLWButton       topButton_;
+	GLWButton       bottomButton_;
+	GLWButton       backButtonTop_;  // Hidden
+	GLWButton       backButtonBot_;  // Hidden
 	GLWScrollButton middleButton_;
 };
 
-#endif // __INCLUDE_GLWScrollW_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWScrollW_hpp_INCLUDE__

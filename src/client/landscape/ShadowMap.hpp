@@ -30,8 +30,8 @@ public:
 	virtual ~ShadowMap();
 
 	void setTexture();
-	void addSquare(float x, float y, float w, float opacity = 1.0f);
-	void addCircle(float sx, float sy, float sw, float opacity = 1.0f);
+	void addSquare( float x, float y, float w, float opacity = 1.0f );
+	void addCircle( float sx, float sy, float sw, float opacity = 1.0f );
 
 	bool shouldAddShadow();
 
@@ -39,12 +39,12 @@ public:
 
 protected:
 	unsigned int shadowCount_;
-	GLTexture shadowTexture_;
-	GLubyte *shadowBytes_;
-	GLint size_;
-	GLint sizeSq_;
+	GLTexture    shadowTexture_;
+	GLubyte*     shadowBytes_;
+	GLint        size_;
+	GLint        sizeSq_;
 
-	void addShadow(float sx, float sy, float sw, float opacity, bool circle);
+	void addShadow( float sx, float sy, float sw, float opacity, bool circle );
 };
 
-#endif // __INCLUDE_ShadowMap_hpp_INCLUDE__
+#endif  // __INCLUDE_ShadowMap_hpp_INCLUDE__

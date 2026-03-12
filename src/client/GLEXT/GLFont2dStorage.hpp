@@ -26,7 +26,7 @@
 class GLFont2dStorage
 {
 public:
-	struct CharEntry 
+	struct CharEntry
 	{
 	public:
 		CharEntry();
@@ -34,8 +34,8 @@ public:
 
 		float x, y;
 		float width, height;
-		int advances;
-		int left, rows;
+		int   advances;
+		int   left, rows;
 
 		GLuint texture;
 		GLuint displaylist;
@@ -44,21 +44,23 @@ public:
 	GLFont2dStorage();
 	~GLFont2dStorage();
 
-	CharEntry *getEntry(unsigned int character);
+	CharEntry* getEntry( unsigned int character );
+
 	static unsigned int getTotalCharacterBlocks() { return totalCharacterBlocks_; }
 
 protected:
 	static unsigned int totalCharacterBlocks_;
+
 	struct StorageBlock
 	{
 	public:
 		StorageBlock();
 		~StorageBlock();
 
-		CharEntry *entries;
+		CharEntry* entries;
 	};
 
-	StorageBlock **blocks_;
+	StorageBlock** blocks_;
 };
 
-#endif // __INCLUDE_GLFont2dStorage_hpp_INCLUDE__
+#endif  // __INCLUDE_GLFont2dStorage_hpp_INCLUDE__

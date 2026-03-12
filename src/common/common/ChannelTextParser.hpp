@@ -26,6 +26,7 @@
 #include <vector>
 
 class ScorchedContext;
+
 class ChannelTextParser
 {
 public:
@@ -37,45 +38,40 @@ public:
 		eAdminEntry,
 		eTipEntry
 	};
+
 	struct ChannelTextEntry
 	{
-		ChannelTextEntry() : data(0) {}
+		ChannelTextEntry() : data( 0 ) {}
 
 		ChannelTextEntryType type;
-		unsigned int data; // Not a pointer incase for e.g. the tank disconects 
-		LangString text;
-		LangString part;
-		Vector color;
+		unsigned int         data;  // Not a pointer incase for e.g. the tank disconects
+		LangString           text;
+		LangString           part;
+		Vector               color;
 	};
 
 	ChannelTextParser();
 	virtual ~ChannelTextParser();
 
-	void parseText(ScorchedContext &context, const LangString &text);
-	void subset(ChannelTextParser &other, int start, int len);
+	void parseText( ScorchedContext& context, const LangString& text );
+	void subset( ChannelTextParser& other, int start, int len );
 
-	const LangString &getString() { return text_; }
+	const LangString& getString() { return text_; }
 
-	ChannelTextEntry *getEntry(int position);
-    
+	ChannelTextEntry* getEntry( int position );
+
 protected:
-	LangString text_;
-	std::vector<unsigned int> entryIndex_;
-	std::vector<ChannelTextEntry> entries_;
+	LangString                      text_;
+	std::vector< unsigned int >     entryIndex_;
+	std::vector< ChannelTextEntry > entries_;
 
-	bool parseUrl(ScorchedContext &context, 
-		const LangString &url, ChannelTextEntry &entry);
-	bool createPlayerEntry(ScorchedContext &context,
-		const LangString &part, ChannelTextEntry &entry);
-	bool createWeaponEntry(ScorchedContext &context, 
-		const LangString &partt, ChannelTextEntry &entry);
-	bool createChannelEntry(ScorchedContext &context, 
-		const LangString &part, ChannelTextEntry &entry);
-	bool createTipEntry(ScorchedContext &context, 
-		const LangString &part, ChannelTextEntry &entry);
-	bool createAdminEntry(ScorchedContext &context, 
-		const LangString &part, ChannelTextEntry &entry);
-	void addIndex(int number, unsigned char index);
+	bool parseUrl( ScorchedContext& context, const LangString& url, ChannelTextEntry& entry );
+	bool createPlayerEntry( ScorchedContext& context, const LangString& part, ChannelTextEntry& entry );
+	bool createWeaponEntry( ScorchedContext& context, const LangString& partt, ChannelTextEntry& entry );
+	bool createChannelEntry( ScorchedContext& context, const LangString& part, ChannelTextEntry& entry );
+	bool createTipEntry( ScorchedContext& context, const LangString& part, ChannelTextEntry& entry );
+	bool createAdminEntry( ScorchedContext& context, const LangString& part, ChannelTextEntry& entry );
+	void addIndex( int number, unsigned char index );
 };
 
-#endif // __INCLUDE_ChannelTextParser_hpp_INCLUDE__
+#endif  // __INCLUDE_ChannelTextParser_hpp_INCLUDE__

@@ -25,11 +25,11 @@
 
 namespace ServerCommon
 {
-	void startFileLogger(const std::string &settingsFile);
-	void serverLog(const std::string &text);
-	void kickDestination(unsigned int destinationId, const std::string &message);
-	void kickPlayer(unsigned int playerId, const std::string &message);
-	bool &getExitEmpty();
-}
+	void  startFileLogger( const std::string& settingsFile );
+	void  serverLog( const std::string& text );
+	void  kickDestination( unsigned int destinationId, const std::string& message );
+	void  kickPlayer( unsigned int playerId, const std::string& message );
+	bool& getExitEmpty();
+}  // namespace ServerCommon
 
-#endif // __INCLUDE_ServerCommon_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerCommon_hpp_INCLUDE__

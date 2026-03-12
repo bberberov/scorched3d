@@ -25,14 +25,12 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-class GameStateStimulusI  
+class GameStateStimulusI
 {
 public:
 	virtual ~GameStateStimulusI();
 
-	virtual bool acceptStateChange(const unsigned state, 
-		const unsigned nextState,
-		float frameTime) = 0;
+	virtual bool acceptStateChange( const unsigned int state, const unsigned int nextState, float frameTime ) = 0;
 };
 
-#endif // __INCLUDE_GameStateStimulusI_hpp_INCLUDE__
+#endif  // __INCLUDE_GameStateStimulusI_hpp_INCLUDE__

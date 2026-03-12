@@ -23,9 +23,10 @@
 
 #include <lua.hpp>
 
-#define LUA_S3DLIBNAME	"s3d"
-extern "C" {
-LUALIB_API int (luaopen_s3d) (lua_State *L);
+#define LUA_S3DLIBNAME "s3d"
+extern "C"
+{
+	LUALIB_API int( luaopen_s3d )( lua_State* L );
 }
 
-#endif // __INCLUDE_LUAS3DLib_hpp_INCLUDE__
+#endif  // __INCLUDE_LUAS3DLib_hpp_INCLUDE__

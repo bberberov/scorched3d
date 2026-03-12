@@ -22,24 +22,23 @@
 #define __INCLUDE_ModelRendererSimulator_hpp_INCLUDE__
 
 class ModelRenderer;
+
 class ModelRendererSimulator
 {
 public:
-	ModelRendererSimulator(ModelRenderer *renderer);
+	ModelRendererSimulator( ModelRenderer* renderer );
 	virtual ~ModelRendererSimulator();
 
-	void draw(float distance = 0.0f, float fade = 1.0f, 
-		bool setState = true);
-	void drawBottomAligned(float distance = 0.0f, float fade = 1.0f, 
-		bool setState = true);
-	void simulate(float frameTime);
+	void draw( float distance = 0.0f, float fade = 1.0f, bool setState = true );
+	void drawBottomAligned( float distance = 0.0f, float fade = 1.0f, bool setState = true );
+	void simulate( float frameTime );
 
-	ModelRenderer *getRenderer() { return renderer_; }
+	ModelRenderer* getRenderer() { return renderer_; }
 
 protected:
-	ModelRenderer *renderer_;
+	ModelRenderer* renderer_;
 
 	float currentFrame_;
 };
 
-#endif // __INCLUDE_ModelRendererSimulator_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererSimulator_hpp_INCLUDE__

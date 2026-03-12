@@ -25,50 +25,53 @@
 #include <3dsparse/Model.hpp>
 
 class GLTexture;
+
 class ModelRendererMesh : public ModelRenderer
 {
 public:
-	ModelRendererMesh(Model *model);
+	ModelRendererMesh( Model* model );
 	virtual ~ModelRendererMesh();
 
-	virtual void draw(float currentFrame, 
-		float distance, float fade, bool setState);
-	virtual void drawBottomAligned(float currentFrame, 
-		float distance, float fade, bool setState);
+	virtual void draw( float currentFrame, float distance, float fade, bool setState );
+	virtual void drawBottomAligned( float currentFrame, float distance, float fade, bool setState );
 
-	virtual Model *getModel() { return model_; }
+	virtual Model* getModel() { return model_; }
 
-	virtual Mesh *drawModel(float currentFrame, 
-		float distance, float fade, bool setState, 
-		std::vector<Mesh *> &meshes, Mesh *lastMesh);
+	virtual Mesh* drawModel(
+		float                 currentFrame,
+		float                 distance,
+		float                 fade,
+		bool                  setState,
+		std::vector< Mesh* >& meshes,
+		Mesh*                 lastMesh
+	);
 
-	void setVertexTranslation(FixedVector &translation) { vertexTranslation_ = translation; }
+	void setVertexTranslation( FixedVector& translation ) { vertexTranslation_ = translation; }
 
 protected:
 	struct MeshFrameInfo
 	{
-		MeshFrameInfo() : displayList(0) {}
+		MeshFrameInfo() : displayList( 0 ) {}
 
 		unsigned int displayList;
 	};
 
-	Model *model_;
-	std::vector<BoneType *> boneTypes_;
-	std::vector<MeshFrameInfo> frameInfos_;
-	FixedVector vertexTranslation_;
+	Model*                       model_;
+	std::vector< BoneType* >     boneTypes_;
+	std::vector< MeshFrameInfo > frameInfos_;
+	FixedVector                  vertexTranslation_;
 
 	struct TriangleInfo
 	{
 		Vector position;
 		Vector normal;
 		Vector color;
-		float texCoordx, texCoordy;
+		float  texCoordx, texCoordy;
 	};
 
-	virtual void drawMesh(Mesh *mesh, Mesh *lastMesh,
-		int frame, bool useTextures, bool vertexLighting);
-	virtual void drawVerts(Mesh *mesh, bool vertexLighting, int frame);
+	virtual void drawMesh( Mesh* mesh, Mesh* lastMesh, int frame, bool useTextures, bool vertexLighting );
+	virtual void drawVerts( Mesh* mesh, bool vertexLighting, int frame );
 	virtual void setup();
 };
 
-#endif // __INCLUDE_ModelRendererMesh_hpp_INCLUDE__
+#endif  // __INCLUDE_ModelRendererMesh_hpp_INCLUDE__

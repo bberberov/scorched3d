@@ -26,13 +26,14 @@
 #include <net/NetBuffer.hpp>
 
 class TargetContainer;
+
 class OptionsTransient
 {
 public:
-	OptionsTransient(OptionsScorched &optionsGame);
+	OptionsTransient( OptionsScorched& optionsGame );
 	virtual ~OptionsTransient();
 
-	unsigned int getLeastUsedTeam(TargetContainer &container);
+	unsigned int getLeastUsedTeam( TargetContainer& container );
 
 	enum WallType
 	{
@@ -41,6 +42,7 @@ public:
 		wallWrapAround = 2,
 		wallNone       = 3
 	};
+
 	enum WallSide
 	{
 		LeftSide = 0,
@@ -55,35 +57,40 @@ public:
 	void startNewGame();
 
 	// Walls
-	WallType getWallType() { return (WallType) wallType_.getValue(); }
-	Vector &getWallColor();
+	WallType getWallType() { return (WallType)wallType_.getValue(); }
+
+	Vector& getWallColor();
 
 	// Rounds left
-	int getCurrentRoundNo() { return currentRoundNo_.getValue(); }
-	void setCurrentRoundNo(int round) { currentRoundNo_.setValue(round); }
+	// clang-format off
+	// uncrustify off
+	int  getCurrentRoundNo()            { return currentRoundNo_.getValue(); }
+	void setCurrentRoundNo( int round ) { currentRoundNo_.setValue( round ); }
 
-	int getCurrentTurnNo() { return currentTurnNo_.getValue(); }
-	void setCurrentTurnNo(int round) { currentTurnNo_.setValue(round); }
+	int  getCurrentTurnNo()            { return currentTurnNo_.getValue(); }
+	void setCurrentTurnNo( int round ) { currentTurnNo_.setValue( round ); }
+	// uncrustify on
+	// clang-format on
 
 	// Arms Level
 	int getArmsLevel();
 
 	// Used to send this structure over coms
-	bool writeToBuffer(NetBuffer &buffer);
-	bool readFromBuffer(NetBufferReader &reader);
+	bool writeToBuffer( NetBuffer& buffer );
+	bool readFromBuffer( NetBufferReader& reader );
 
-	std::list<OptionEntry *> &getOptions() { return options_; }
+	std::list< OptionEntry* >& getOptions() { return options_; }
 
 protected:
 	bool newGame_;
 
-	std::list<OptionEntry *> options_;
-	OptionsScorched &optionsGame_;
-	OptionEntryInt currentRoundNo_;
-	OptionEntryInt currentTurnNo_;
-	OptionEntryInt wallType_;
+	std::list< OptionEntry* > options_;
+	OptionsScorched&          optionsGame_;
+	OptionEntryInt            currentRoundNo_;
+	OptionEntryInt            currentTurnNo_;
+	OptionEntryInt            wallType_;
 
 	void newGameWall();
 };
 
-#endif // __INCLUDE_OptionsTransient_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionsTransient_hpp_INCLUDE__

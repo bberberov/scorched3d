@@ -27,23 +27,25 @@ class SyncCheckSimAction : public SimAction
 {
 public:
 	SyncCheckSimAction();
-	SyncCheckSimAction(unsigned int syncId);
+	SyncCheckSimAction( unsigned int syncId );
 	virtual ~SyncCheckSimAction();
 
 	unsigned int getSyncId() { return syncId_; }
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
+
 	virtual bool replayAction() { return false; }
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-REGISTER_CLASS_HEADER(SyncCheckSimAction);
+	REGISTER_CLASS_HEADER( SyncCheckSimAction );
+
 protected:
 	unsigned int syncId_;
 
-	void scoreWinners(ScorchedContext &context);
-	void scoreOverallWinner(ScorchedContext &context);
+	void scoreWinners( ScorchedContext& context );
+	void scoreOverallWinner( ScorchedContext& context );
 };
 
-#endif // __INCLUDE_SyncCheckSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_SyncCheckSimAction_hpp_INCLUDE__

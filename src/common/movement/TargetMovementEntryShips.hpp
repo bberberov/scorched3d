@@ -33,6 +33,7 @@ public:
 };
 
 class ObjectGroup;
+
 class TargetMovementEntryShips : public TargetMovementEntry
 {
 public:
@@ -40,16 +41,14 @@ public:
 	virtual ~TargetMovementEntryShips();
 
 	// Overridden from TargetMovementEntry
-	virtual void generate(ScorchedContext &context, 
-		RandomGenerator &random, 
-		LandscapeMovementType *movementType);
-	virtual void simulate(ScorchedContext &context, fixed frameTime);
+	virtual void generate( ScorchedContext& context, RandomGenerator& random, LandscapeMovementType* movementType );
+	virtual void simulate( ScorchedContext& context, fixed frameTime );
 	virtual void draw();
 	virtual void reset();
 
 protected:
-	SplinePath path_;
-	ObjectGroup *objectGroup_;
+	SplinePath   path_;
+	ObjectGroup* objectGroup_;
 };
 
-#endif // __INCLUDE_TargetMovementEntryShips_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetMovementEntryShips_hpp_INCLUDE__

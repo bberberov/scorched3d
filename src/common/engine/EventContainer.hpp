@@ -32,23 +32,21 @@ public:
 	virtual ~EventContainer();
 
 	void clear();
-	void initialize(ScorchedContext &context);
-	void simulate(fixed frameTime, ScorchedContext &context);
+	void initialize( ScorchedContext& context );
+	void simulate( fixed frameTime, ScorchedContext& context );
 
 protected:
 	struct EventEntry
 	{
-		LandscapeEvent *event;
-		fixed eventTime;
-		int eventNumber;
+		LandscapeEvent* event;
+		fixed           eventTime;
+		int             eventNumber;
 	};
 
-	std::vector<EventEntry> events_;
+	std::vector< EventEntry > events_;
 
-	void addEvent(ScorchedContext &context, 
-		std::vector<LandscapeEvent *> &events);
-	void addEvents(ScorchedContext &context, 
-		std::vector<LandscapeInclude *> &events);
+	void addEvent( ScorchedContext& context, std::vector< LandscapeEvent* >& events );
+	void addEvents( ScorchedContext& context, std::vector< LandscapeInclude* >& events );
 };
 
-#endif // __INCLUDE_EventContainer_hpp_INCLUDE__
+#endif  // __INCLUDE_EventContainer_hpp_INCLUDE__

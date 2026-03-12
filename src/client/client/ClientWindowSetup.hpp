@@ -22,16 +22,14 @@
 #define __INCLUDE_ClientWindowSetup_hpp_INCLUDE__
 
 class GLWWindowSkinManager;
+
 namespace ClientWindowSetup
 {
-	void addStateWindows(GLWWindowSkinManager *skinManager,
-		unsigned int state, const char *windowState);
-	void addCommonComponents(GLWWindowSkinManager *skinManager,
-		unsigned state);
-	void addMessageComponents(GLWWindowSkinManager *skinManager,
-		unsigned state);
-	void setupStartWindows(GLWWindowSkinManager *skinManager);
-	void setupGameWindows(GLWWindowSkinManager *skinManager);
-};
+	void addStateWindows( GLWWindowSkinManager* skinManager, unsigned int state, const char* windowState );
+	void addCommonComponents( GLWWindowSkinManager* skinManager, unsigned int state );
+	void addMessageComponents( GLWWindowSkinManager* skinManager, unsigned int state );
+	void setupStartWindows( GLWWindowSkinManager* skinManager );
+	void setupGameWindows( GLWWindowSkinManager* skinManager );
+};  // namespace ClientWindowSetup
 
-#endif // __INCLUDE_ClientWindowSetup_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientWindowSetup_hpp_INCLUDE__

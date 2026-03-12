@@ -32,15 +32,15 @@ public:
 	virtual ~Sun();
 
 	void draw();
-	void setLightPosition(bool light0 = false);
-	void setPosition(float sunRotXY, float sunRotYZ);
+	void setLightPosition( bool light0 = false );
+	void setPosition( float sunRotXY, float sunRotYZ );
 	void generate();
 
-	Vector &getPosition() { return position_; }
+	Vector& getPosition() { return position_; }
 
 protected:
-	Vector position_;
+	Vector    position_;
 	GLTexture texture_;
 };
 
-#endif // __INCLUDE_Sun_hpp_INCLUDE__
+#endif  // __INCLUDE_Sun_hpp_INCLUDE__

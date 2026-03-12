@@ -24,6 +24,7 @@
 #include <placement/PlacementType.hpp>
 
 class XMLNode;
+
 class PlacementObject
 {
 public:
@@ -39,17 +40,19 @@ public:
 		eNone
 	};
 
-	static PlacementObject *create(const char *type);
+	static PlacementObject* create( const char* type );
 
 	PlacementObject();
 	virtual ~PlacementObject();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
 	virtual Type getType() = 0;
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position) = 0;
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	) = 0;
 };
 
-#endif // __INCLUDE_PlacementObject_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObject_hpp_INCLUDE__

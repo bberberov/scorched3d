@@ -30,26 +30,29 @@ public:
 	TankAIRandom();
 	virtual ~TankAIRandom();
 
-	virtual TankAI *createCopy(Tanket *tanket);
+	virtual TankAI* createCopy( Tanket* tanket );
 
-	virtual bool parseConfig(TankAIWeaponSets &sets, XMLNode *node) { return true; }
-	void addTankAI(TankAI *ai);
+	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node ) { return true; }
+
+	void addTankAI( TankAI* ai );
+
+	// clang-format off
+	// uncrustify off
 
 	// Inherited from TankAIRandom
-	virtual void newMatch() {}
-	virtual void newGame() {}
-	virtual void playMove(unsigned int moveId) {}
-	virtual void buyAccessories(unsigned int moveId) {}
+	virtual void newMatch()                            {}
+	virtual void newGame()                             {}
+	virtual void playMove( unsigned int moveId )       {}
+	virtual void buyAccessories( unsigned int moveId ) {}
 
 	// Notification of actions happened
-	virtual void tankHurt(Weapon *weapon, float damage, 
-		unsigned int damaged, unsigned int firer) {}
-	virtual void shotLanded(ScorchedCollisionId collision,
-		Weapon *weapon, unsigned int firer, 
-		Vector &position) {}
+	virtual void tankHurt( Weapon* weapon, float damage, unsigned int damaged, unsigned int firer )                {}
+	virtual void shotLanded( ScorchedCollisionId collision, Weapon* weapon, unsigned int firer, Vector& position ) {}
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::vector<TankAI *> ais_;
+	std::vector< TankAI* > ais_;
 };
 
-#endif // __INCLUDE_TankAIRandom_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAIRandom_hpp_INCLUDE__

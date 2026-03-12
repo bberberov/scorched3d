@@ -29,6 +29,7 @@
 #include <net/NetBuffer.hpp>
 
 class ScorchedContext;
+
 class Simulator
 {
 public:
@@ -37,58 +38,62 @@ public:
 
 	virtual void clear();
 
-	void setScorchedContext(ScorchedContext *context);
+	void setScorchedContext( ScorchedContext* context );
 
 	virtual void simulate();
 
 	// Accessors
-	RandomGenerator &getRandomGenerator() { return random_; }
-	ActionController &getActionController() { return actionController_; }
-	Wind &getWind() { return wind_; }
-
-	fixed getCurrentTime() { return currentTime_; }
+	// clang-format off
+	// uncrustify off
+	RandomGenerator&  getRandomGenerator()  { return random_; }
+	ActionController& getActionController() { return actionController_; }
+	Wind&             getWind()             { return wind_; }
+	fixed             getCurrentTime()      { return currentTime_; }
+	// uncrustify on
+	// clang-format on
 
 	// SyncCheck
-	void addSyncCheck(const std::string &msg);
-	std::vector<std::string> &getSyncCheck() { return syncCheck_; }
+	void addSyncCheck( const std::string& msg );
+
+	std::vector< std::string >& getSyncCheck() { return syncCheck_; }
 
 	// Set the simulation speed
-	void setFast(fixed speedMult) { speed_ = speedMult; }
+	void setFast( fixed speedMult ) { speed_ = speedMult; }
+
 	fixed getFast() { return speed_; }
+
 protected:
 	class SimActionContainer
 	{
 	public:
-		SimActionContainer(SimAction *action, fixed fireTime, SimulatorI *callback = 0) :
-			action_(action),
-			fireTime_(fireTime),
-			callback_(callback)
+		SimActionContainer( SimAction* action, fixed fireTime, SimulatorI* callback = 0 )
+			: action_( action )
+			, fireTime_( fireTime )
+			, callback_( callback )
 		{}
-		~SimActionContainer()
-		{
-			delete action_;
-		}
 
-		SimAction *action_;
-		fixed fireTime_;
-		SimulatorI *callback_;
+		~SimActionContainer() { delete action_; }
+
+		SimAction*  action_;
+		fixed       fireTime_;
+		SimulatorI* callback_;
 	};
 
-	unsigned int lastTickTime_;
-	fixed speed_;
-	fixed currentTime_, actualTime_;
-	ScorchedContext *context_;
-	EventContainer events_;
-	Wind wind_;
-	FileRandomGenerator random_;
-	ActionController actionController_;
-	std::list<SimActionContainer *> simActions_;
-	std::vector<std::string> syncCheck_;
+	unsigned int                     lastTickTime_;
+	fixed                            speed_;
+	fixed                            currentTime_, actualTime_;
+	ScorchedContext*                 context_;
+	EventContainer                   events_;
+	Wind                             wind_;
+	FileRandomGenerator              random_;
+	ActionController                 actionController_;
+	std::list< SimActionContainer* > simActions_;
+	std::vector< std::string >       syncCheck_;
 
 	virtual void simulateTime();
-	virtual void actualSimulate(fixed frameTime);
+	virtual void actualSimulate( fixed frameTime );
 	virtual bool continueToSimulate() = 0;
 	virtual void newLevel();
 };
 
-#endif // __INCLUDE_Simulator_hpp_INCLUDE__
+#endif  // __INCLUDE_Simulator_hpp_INCLUDE__

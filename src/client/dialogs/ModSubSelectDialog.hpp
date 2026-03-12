@@ -31,53 +31,49 @@
 class GLWIconListSubModItem : public GLWIconListItem
 {
 public:
-	GLWIconListSubModItem(ModInfo::MenuEntry &modInfoEntry);
+	GLWIconListSubModItem( ModInfo::MenuEntry& modInfoEntry );
 	virtual ~GLWIconListSubModItem();
 
-	ModInfo::MenuEntry &getModInfoEntry() { return modInfoEntry_; }
+	ModInfo::MenuEntry& getModInfoEntry() { return modInfoEntry_; }
 
 	// GLWIconListItem
-	virtual void draw(float x, float y, float w);
+	virtual void draw( float x, float y, float w );
 
 protected:
 	ModInfo::MenuEntry modInfoEntry_;
-	GLWIcon icon_;
-	ToolTip tip_;
+	GLWIcon            icon_;
+	ToolTip            tip_;
 };
 
 // SINGLETON
-class ModSubSelectDialog
-	:
-	public GLWWindow,
-	public GLWButtonI,
-	public GLWIconListI
+class ModSubSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
-	static ModSubSelectDialog *instance();
+	static ModSubSelectDialog* instance();
 
-	void setModInfo(ModInfo &modInfo);
+	void setModInfo( ModInfo& modInfo );
 
 	// GLWWindow
 	virtual void display();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWIconListI
-	virtual void selected(unsigned int id, int position);
-	virtual void chosen(unsigned int id, int position);
+	virtual void selected( unsigned int id, int position );
+	virtual void chosen( unsigned int id, int position );
 
 protected:
-	static ModSubSelectDialog *instance_;
+	static ModSubSelectDialog* instance_;
 
 	unsigned int okId_;
 	unsigned int cancelId_;
-	GLWIconList *iconList_;
-	ModInfo modInfo_;
+	GLWIconList* iconList_;
+	ModInfo      modInfo_;
 
 private:
 	ModSubSelectDialog();
 	virtual ~ModSubSelectDialog();
 };
 
-#endif // __INCLUDE_ModSubSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ModSubSelectDialog_hpp_INCLUDE__

@@ -29,22 +29,26 @@
 class ConnectDialog : public GLWWindow
 {
 public:
-	static ConnectDialog *instance();
+	static ConnectDialog* instance();
 
 	void start();
 	void connected();
 
-	virtual void windowInit(const unsigned state);
+	virtual void windowInit( const unsigned int state );
 
 	// Inherited from GLWWindow
-	virtual void simulate(float frameTime);
+	virtual void simulate( float frameTime );
 
-	UniqueIdStore &getIdStore();
-	const char *getHost() { return host_.c_str(); }
-	int getPort() { return port_; }
+	// clang-format off
+	// uncrustify off
+	UniqueIdStore& getIdStore();
+	const char*    getHost() { return host_.c_str(); }
+	int            getPort() { return port_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static ConnectDialog *instance_;
+	static ConnectDialog* instance_;
 
 	enum ConnectState
 	{
@@ -53,23 +57,23 @@ protected:
 		eFinished
 	};
 
-	std::string host_;
-	int port_;
-	SDL_Thread *remoteConnectionThread_;
-	UniqueIdStore *idStore_;
-	ConnectState connectionState_;
-	int tryCount_;
-	time_t lastTime_;
+	std::string    host_;
+	int            port_;
+	SDL_Thread*    remoteConnectionThread_;
+	UniqueIdStore* idStore_;
+	ConnectState   connectionState_;
+	int            tryCount_;
+	time_t         lastTime_;
 
-	void tryConnection();
-	static int tryRemoteConnection(void *);
-	void tryLocalConnection();
-	void finishedTryingConnection();
-	void finished();
+	void       tryConnection();
+	static int tryRemoteConnection( void* );
+	void       tryLocalConnection();
+	void       finishedTryingConnection();
+	void       finished();
 
 private:
 	ConnectDialog();
 	virtual ~ConnectDialog();
 };
 
-#endif // __INCLUDE_ConnectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_ConnectDialog_hpp_INCLUDE__

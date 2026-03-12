@@ -26,13 +26,10 @@
 class ServerInitializeModHandler : public ComsMessageHandlerI
 {
 public:
-	ServerInitializeModHandler(ComsMessageHandler &comsMessageHandler);
+	ServerInitializeModHandler( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerInitializeModHandler();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 };
 
-#endif // __INCLUDE_ServerInitializeModHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerInitializeModHandler_hpp_INCLUDE__

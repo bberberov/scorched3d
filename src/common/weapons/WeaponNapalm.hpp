@@ -30,28 +30,30 @@ public:
 	WeaponNapalm();
 	virtual ~WeaponNapalm();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	virtual void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponNapalm, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponNapalm, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NapalmParams params_;
-	std::string napalmSound_;
-	int numberStreams_;			// The number of napalm paths
-	NumberParser napalmTime_;   // The time to generate napalm
-	NumberParser napalmHeight_; // The height of a napalm point
-	NumberParser stepTime_;     // Add/rm napalm every StepTime secs
-	NumberParser hurtStepTime_; // Calculate damage every HurtStepTime secs
-	NumberParser hurtPerSecond_;// Damage per second
-	NumberParser landscapeErosion_; // Removal of the landscape
+	std::string  napalmSound_;
+	int          numberStreams_;     // The number of napalm paths
+	NumberParser napalmTime_;        // The time to generate napalm
+	NumberParser napalmHeight_;      // The height of a napalm point
+	NumberParser stepTime_;          // Add/rm napalm every StepTime secs
+	NumberParser hurtStepTime_;      // Calculate damage every HurtStepTime secs
+	NumberParser hurtPerSecond_;     // Damage per second
+	NumberParser landscapeErosion_;  // Removal of the landscape
 
-	void addNapalm(ScorchedContext &context, WeaponFireContext &weaponContext,
-		int x, int y);
+	void addNapalm( ScorchedContext& context, WeaponFireContext& weaponContext, int x, int y );
 };
 
-#endif // __INCLUDE_WeaponNapalm_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponNapalm_hpp_INCLUDE__

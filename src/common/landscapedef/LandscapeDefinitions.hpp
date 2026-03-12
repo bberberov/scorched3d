@@ -41,29 +41,29 @@ public:
 	virtual bool readLandscapeDefinitions();
 	virtual void clearLandscapeDefinitions();
 
-	void checkEnabled(OptionsScorched &context);
+	void                checkEnabled( OptionsScorched& context );
 	LandscapeDefinition getBlankLandscapeDefn();
-	LandscapeDefinition getRandomLandscapeDefn(OptionsScorched &context, TargetContainer &TargetContainer);
-	LandscapeTex *getTex(const char *file, bool load = false);
-	LandscapeDefn *getDefn(const char *file, bool load = false);
-	LandscapeInclude *getInclude(const char *file, bool load = false);
+	LandscapeDefinition getRandomLandscapeDefn( OptionsScorched& context, TargetContainer& TargetContainer );
+	LandscapeTex*       getTex( const char* file, bool load = false );
+	LandscapeDefn*      getDefn( const char* file, bool load = false );
+	LandscapeInclude*   getInclude( const char* file, bool load = false );
 
 protected:
-	static unsigned int lastDefinitionNumber_;
-	LandscapeDefinitionsEntry* lastDefinition_;
-	LandscapeDefinitionsEntry blankDefinition_;
-	std::map<std::string, int> usedFiles_;
+	static unsigned int          lastDefinitionNumber_;
+	LandscapeDefinitionsEntry*   lastDefinition_;
+	LandscapeDefinitionsEntry    blankDefinition_;
+	std::map< std::string, int > usedFiles_;
 
-	LandscapeDefinitionsItem<LandscapeTex> texs_;
-	LandscapeDefinitionsItem<LandscapeDefn> defns_;
-	LandscapeDefinitionsItem<LandscapeInclude> include_;
+	LandscapeDefinitionsItem< LandscapeTex >     texs_;
+	LandscapeDefinitionsItem< LandscapeDefn >    defns_;
+	LandscapeDefinitionsItem< LandscapeInclude > include_;
 
-	const std::string getLeastUsedFile(
-		OptionsScorched &context, std::vector<std::string> &files);
-	LandscapeDefinitionsEntry *getRandomLandscapeDefnEntry(
-		OptionsScorched &context,
-		std::list<LandscapeDefinitionsEntry *> passedLandscapes);
-	bool readLandscapeDefinitionsEntry(LandscapeDefinitionsEntry &entry);
+	const std::string          getLeastUsedFile( OptionsScorched& context, std::vector< std::string >& files );
+	LandscapeDefinitionsEntry* getRandomLandscapeDefnEntry(
+		OptionsScorched&                        context,
+		std::list< LandscapeDefinitionsEntry* > passedLandscapes
+	);
+	bool readLandscapeDefinitionsEntry( LandscapeDefinitionsEntry& entry );
 };
 
-#endif // __INCLUDE_LandscapeDefinitions_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefinitions_hpp_INCLUDE__

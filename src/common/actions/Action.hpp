@@ -26,6 +26,7 @@
 
 class Action;
 class ScorchedContext;
+
 class ActionRenderer
 {
 public:
@@ -34,38 +35,46 @@ public:
 	ActionRenderer();
 	virtual ~ActionRenderer();
 
-	virtual void draw(Action *action) = 0;
-	virtual void simulate(Action *action, float frametime, bool &removeAction);
-
+	virtual void draw( Action* action ) = 0;
+	virtual void simulate( Action* action, float frametime, bool& removeAction );
 };
 
 class Action
 {
 public:
-	Action(bool actionReferenced);
+	Action( bool actionReferenced );
 	virtual ~Action();
 
 	virtual void init() = 0;
 
 	virtual void draw();
-	virtual void simulate(fixed frameTime, bool &removeAction);	
+	virtual void simulate( fixed frameTime, bool& removeAction );
+
 	virtual bool getActionSyncCheck() { return true; }
+
 	virtual std::string getActionType() = 0;
+
 	virtual std::string getActionDetails() { return ""; }
 
-	void setActionRender(ActionRenderer *renderer);
-	void setScorchedContext(ScorchedContext *context);
-	ScorchedContext *getScorchedContext();
+	void             setActionRender( ActionRenderer* renderer );
+	void             setScorchedContext( ScorchedContext* context );
+	ScorchedContext* getScorchedContext();
+
 	bool getReferenced() { return actionReferenced_; }
-	void setActionStartTime(fixed time) { actionStartTime_ = time; }
-	fixed getActionStartTime() { return actionStartTime_; }
+
+	// clang-format off
+	// uncrustify off
+	void  setActionStartTime( fixed time ) { actionStartTime_ = time; }
+	fixed getActionStartTime()             { return actionStartTime_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	const char *name_;
-	bool actionReferenced_;
-	ActionRenderer *renderer_;
-	ScorchedContext *context_;
-	fixed actionStartTime_;
+	const char*      name_;
+	bool             actionReferenced_;
+	ActionRenderer*  renderer_;
+	ScorchedContext* context_;
+	fixed            actionStartTime_;
 };
 
 #ifndef S3D_SERVER
@@ -73,14 +82,19 @@ protected:
 class SpriteAction : public Action
 {
 public:
-	SpriteAction(ActionRenderer *render = 0);
+	SpriteAction( ActionRenderer* render = nullptr );
 	virtual ~SpriteAction();
 
 	virtual void init();
-	virtual std::string getActionType() { return "SpriteAction"; }
-	virtual bool getActionSyncCheck() { return false; }
+
+	// clang-format off
+	// uncrustify off
+	virtual std::string getActionType()      { return "SpriteAction"; }
+	virtual bool        getActionSyncCheck() { return false; }
+	// uncrustify on
+	// clang-format on
 };
 
-#endif // S3D_SERVER
+#endif  // S3D_SERVER
 
-#endif // __INCLUDE_Action_hpp_INCLUDE__
+#endif  // __INCLUDE_Action_hpp_INCLUDE__

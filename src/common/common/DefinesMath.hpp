@@ -21,31 +21,31 @@
 #ifndef __INCLUDE_DefinesMath_hpp_INCLUDE__
 #define __INCLUDE_DefinesMath_hpp_INCLUDE__
 
-#define PI 3.14159f
-#define TWOPI 6.28318f
+#define PI     3.14159f
+#define TWOPI  6.28318f
 #define HALFPI 1.570795f
 #define PIO180 0.017453278f
 
-#define RAND ((float) rand() / (float) RAND_MAX)
-#define MAX(x,y) ((x)>(y)?(x):(y))
-#define MIN(x,y) ((x)<(y)?(x):(y))
+#define RAND        ( (float)rand() / (float)RAND_MAX )
+#define MAX( x, y ) ( ( x ) > ( y ) ? ( x ) : ( y ) )
+#define MIN( x, y ) ( ( x ) < ( y ) ? ( x ) : ( y ) )
 
-extern float getFastSin(float angle);
-extern float getFastCos(float angle);
+extern float getFastSin( float angle );
+extern float getFastCos( float angle );
 
 #ifdef NO_FLOAT_MATH
 
-#define sinf(x)     ((float)sin(x))
-#define cosf(x)     ((float)cos(x))
+#define sinf( x ) ( (float)sin( x ) )
+#define cosf( x ) ( (float)cos( x ) )
 #ifndef __DARWIN__
-#define fabsf(x)    ((float)fabs(x))
+#define fabsf( x ) ( (float)fabs( x ) )
 #endif
-#define sqrtf(x)    ((float)sqrt(x))
-#define acosf(x)    ((float)acos(x))
-#define atan2f(x,y) ((float)atan2(x,y))
-#define powf(x,y)   ((float)pow(x,y))
-#define floorf(x)   ((float)floor(x))
+#define sqrtf( x )     ( (float)sqrt( x ) )
+#define acosf( x )     ( (float)acos( x ) )
+#define atan2f( x, y ) ( (float)atan2( x, y ) )
+#define powf( x, y )   ( (float)pow( x, y ) )
+#define floorf( x )    ( (float)floor( x ) )
 
-#endif // NO_FLOAT_MATH
+#endif  // NO_FLOAT_MATH
 
-#endif // __INCLUDE_DefinesMath_hpp_INCLUDE__
+#endif  // __INCLUDE_DefinesMath_hpp_INCLUDE__

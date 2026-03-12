@@ -23,29 +23,36 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponDelay  : public WeaponCallback
+class WeaponDelay : public WeaponCallback
 {
 public:
 	WeaponDelay();
 	virtual ~WeaponDelay();
 
 	// Inherited from Weapon
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(WeaponDelay, AccessoryPart::AccessoryWeapon);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
+
+	REGISTER_ACCESSORY_HEADER( WeaponDelay, AccessoryPart::AccessoryWeapon );
 
 	// Inhirited from CallbackWeapon
 	virtual void weaponCallback(
-			ScorchedContext &context,
-			WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-			unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
 protected:
 	NumberParser delay_;
-	Weapon *delayedWeapon_;
+	Weapon*      delayedWeapon_;
 };
 
-#endif // __INCLUDE_WeaponDelay_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponDelay_hpp_INCLUDE__

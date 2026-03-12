@@ -24,8 +24,8 @@
 namespace ClientMain
 {
 	bool startClient();
-	bool clientEventLoop(float frameTime);
+	bool clientEventLoop( float frameTime );
 	bool clientMain();
 };
 
-#endif // __INCLUDE_ClientMain_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientMain_hpp_INCLUDE__

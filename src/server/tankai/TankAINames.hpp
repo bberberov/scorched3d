@@ -26,10 +26,11 @@
 class TankAINames
 {
 public:
-	static bool loadAIs(std::list<std::string> &ais); 
+	static bool loadAIs( std::list< std::string >& ais );
+
 protected:
 	TankAINames();
 	virtual ~TankAINames();
 };
 
-#endif // __INCLUDE_TankAINames_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAINames_hpp_INCLUDE__

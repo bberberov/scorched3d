@@ -27,16 +27,16 @@
 class SphereActionRenderer : public ActionRenderer
 {
 public:
-	SphereActionRenderer(Vector &position, float size);
+	SphereActionRenderer( Vector& position, float size );
 	virtual ~SphereActionRenderer();
 
-	virtual void simulate(Action *action, float timepassed, bool &remove);
-	virtual void draw(Action *action);
+	virtual void simulate( Action* action, float timepassed, bool& remove );
+	virtual void draw( Action* action );
 
 protected:
 	Vector position_;
-	float size_;
-	float frameTime_;
+	float  size_;
+	float  frameTime_;
 };
 
-#endif // __INCLUDE_SphereActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_SphereActionRenderer_hpp_INCLUDE__

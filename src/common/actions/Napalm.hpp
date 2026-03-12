@@ -32,17 +32,13 @@
 class Target;
 class TankViewPointProvider;
 class GLTextureSet;
+
 class Napalm : public Action
 {
 public:
 	struct NapalmEntry
 	{
-		NapalmEntry(int x, int y, int o, int p) :
-			posX(x),
-			posY(y),
-			offset(o),
-			pset(p)
-		{}
+		NapalmEntry( int x, int y, int o, int p ) : posX( x ), posY( y ), offset( o ), pset( p ) {}
 
 		int posX;
 		int posY;
@@ -50,43 +46,45 @@ public:
 		int pset;
 	};
 
-	Napalm(int x, int y, Weapon *weapon, NapalmParams *params, WeaponFireContext &weaponContext);
+	Napalm( int x, int y, Weapon* weapon, NapalmParams* params, WeaponFireContext& weaponContext );
 	virtual ~Napalm();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "Napalm"; }
 
 	unsigned int getPlayerId() { return weaponContext_.getPlayerId(); }
-	NapalmParams *getParams() { return params_; }
+
+	NapalmParams* getParams() { return params_; }
 
 protected:
-	TankViewPointProvider *vPoint_;
-	Weapon *weapon_;
-	NapalmParams *params_;
-	WeaponFireContext weaponContext_;
-	Counter counter_;
-	GLTextureSet *set_;
+	TankViewPointProvider* vPoint_;
+	Weapon*                weapon_;
+	NapalmParams*          params_;
+	WeaponFireContext      weaponContext_;
+	Counter                counter_;
+	GLTextureSet*          set_;
 
 	// Not sent by wire
-	int particleSet_;
-	int startX_;
-	int startY_;
-	fixed totalTime_;
-	fixed hurtTime_;
-	fixed napalmTime_;
-	std::set<unsigned int> burnedTargets_;
-	std::set<unsigned int> edgePoints_;
-	std::map<unsigned int, int> napalmPointsCount_;
-	std::list<NapalmEntry *> napalmPoints_;
+	int                           particleSet_;
+	int                           startX_;
+	int                           startY_;
+	fixed                         totalTime_;
+	fixed                         hurtTime_;
+	fixed                         napalmTime_;
+	std::set< unsigned int >      burnedTargets_;
+	std::set< unsigned int >      edgePoints_;
+	std::map< unsigned int, int > napalmPointsCount_;
+	std::list< NapalmEntry* >     napalmPoints_;
 
-	fixed getHeight(int x, int y);
-	void simulateAddStep();
-	void simulateAddEdge(int x, int y);
-	void simulateRmStep();
-	void simulateDamage();
-	void addBurnAction(Target *target);
+	fixed getHeight( int x, int y );
+	void  simulateAddStep();
+	void  simulateAddEdge( int x, int y );
+	void  simulateRmStep();
+	void  simulateDamage();
+	void  addBurnAction( Target* target );
 };
 
-#endif // __INCLUDE_Napalm_hpp_INCLUDE__
+#endif  // __INCLUDE_Napalm_hpp_INCLUDE__

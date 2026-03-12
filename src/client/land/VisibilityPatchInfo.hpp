@@ -33,57 +33,49 @@ public:
 	VisibilityPatchInfo();
 	~VisibilityPatchInfo();
 
-	unsigned int &getPatchesVisitedCount() {
-		return patchesVisited_; }
+	unsigned int& getPatchesVisitedCount() { return patchesVisited_; }
 
-	int getVisibleLandPatchesCount() { 
-		return landVisibility_.getObjectCount(); }
-	int getVisibleRoofPatchesCount() { 
-		return roofVisibility_.getObjectCount(); }
-	int getVisibleWaterPatchesCount() { 
-		return waterVisibility_[0].getObjectCount() +
-			waterVisibility_[1].getObjectCount() +
-			waterVisibility_[2].getObjectCount() +
-			waterVisibility_[3].getObjectCount(); }
+	// clang-format off
+	// uncrustify off
+	int getVisibleLandPatchesCount() { return landVisibility_.getObjectCount(); }
+	int getVisibleRoofPatchesCount() { return roofVisibility_.getObjectCount(); }
+	int getVisibleWaterPatchesCount()
+	{
+		return waterVisibility_[0].getObjectCount()
+			   + waterVisibility_[1].getObjectCount()
+			   + waterVisibility_[2].getObjectCount()
+			   + waterVisibility_[3].getObjectCount();
+	}
+	// uncrustify on
+	// clang-format on
 
 	void reset();
-	void generate(int maxLandPatches, int maxWaterPatches, int maxTargetPatches);
+	void generate( int maxLandPatches, int maxWaterPatches, int maxTargetPatches );
 
-	TargetList &getLandVisibility() 
+	// clang-format off
+	// uncrustify off
+	TargetList& getLandVisibility()   { return landVisibility_; }
+	TargetList& getRoofVisibility()   { return roofVisibility_; }
+	TargetList& getWaterVisibility( int index )
 	{
-		return landVisibility_;
-	}
+		DIALOG_ASSERT( index >= 0 && index <= 4 );
 
-	TargetList &getRoofVisibility() 
-	{
-		return roofVisibility_;
-	}
-
-	TargetList &getWaterVisibility(int index) 
-	{
-		DIALOG_ASSERT(index >= 0 && index <= 4);
 		return waterVisibility_[index];
 	}
-
-	TargetList &getTreeVisibility()
-	{
-		return treeVisibility_;
-	}
-
-	TargetList &getTargetVisibility()
-	{
-		return targetVisibility_;
-	}
+	TargetList& getTreeVisibility()   { return treeVisibility_; }
+	TargetList& getTargetVisibility() { return targetVisibility_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	unsigned int patchesVisited_;
-	TargetList waterVisibility_[4];
-	TargetList landVisibility_;
-	TargetList roofVisibility_;
-	TargetList treeVisibility_;
-	TargetList targetVisibility_;
+	TargetList   waterVisibility_[4];
+	TargetList   landVisibility_;
+	TargetList   roofVisibility_;
+	TargetList   treeVisibility_;
+	TargetList   targetVisibility_;
 
 	void clear();
 };
 
-#endif // __INCLUDE_VisibilityPatchInfo_hpp_INCLUDE__
+#endif  // __INCLUDE_VisibilityPatchInfo_hpp_INCLUDE__

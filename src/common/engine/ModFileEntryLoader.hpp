@@ -27,12 +27,13 @@
 class ModFileEntryLoader
 {
 public:
-	static bool loadModFile(NetBuffer &buffer, const std::string &file);
-	static bool writeModFile(NetBuffer &buffer, const std::string &file, const std::string &mod);
-	static bool removeModFile(const std::string &file, const std::string &mod);
+	static bool loadModFile( NetBuffer& buffer, const std::string& file );
+	static bool writeModFile( NetBuffer& buffer, const std::string& file, const std::string& mod );
+	static bool removeModFile( const std::string& file, const std::string& mod );
+
 private:
 	ModFileEntryLoader();
 	virtual ~ModFileEntryLoader();
 };
 
-#endif // __INCLUDE_ModFileEntryLoader_hpp_INCLUDE__
+#endif  // __INCLUDE_ModFileEntryLoader_hpp_INCLUDE__

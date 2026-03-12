@@ -25,104 +25,93 @@
 
 namespace ServerWebHandler
 {
-
 	class PlayerHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new PlayerHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new PlayerHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
+
 	class PlayerHandlerThreaded : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new PlayerHandlerThreaded(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new PlayerHandlerThreaded(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class LogFileHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new LogFileHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new LogFileHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class LogHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new LogHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new LogHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class GameHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new GameHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new GameHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class ServerHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new ServerHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new ServerHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class BannedHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new BannedHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new BannedHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class ModsHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new ModsHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new ModsHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class SessionsHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new SessionsHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new SessionsHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class AccountHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new AccountHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
+		virtual ServerWebServerI* createCopy() { return new AccountHandler(); }
+
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
 	};
 
 	class StatsHandler : public ServerWebServerI
 	{
 	public:
-		virtual ServerWebServerI *createCopy() { return new StatsHandler(); }
-		virtual bool processRequest(
-			ServerWebServerIRequest &request,
-			std::string &text);
-	};
-};
+		virtual ServerWebServerI* createCopy() { return new StatsHandler(); }
 
-#endif // __INCLUDE_ServerWebHandler_hpp_INCLUDE__
+		virtual bool processRequest( ServerWebServerIRequest& request, std::string& text );
+	};
+};  // namespace ServerWebHandler
+
+#endif  // __INCLUDE_ServerWebHandler_hpp_INCLUDE__

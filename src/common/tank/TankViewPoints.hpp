@@ -29,67 +29,77 @@ class TankViewPointProvider
 public:
 	static FixedVector defaultLookFrom;
 
-	TankViewPointProvider() : referenceCount_(0)
-	{
-	}
+	TankViewPointProvider() : referenceCount_( 0 ) {}
+
 	void incrementReference() { referenceCount_++; }
-	void decrementReference() { if (--referenceCount_ == 0) delete this; }
+
+	void decrementReference()
+	{
+		if ( --referenceCount_ == 0 ) delete this;
+	}
+
 	int getReferenceCount() { return referenceCount_; }
 
-	void setValues(const FixedVector position, 
-		const FixedVector &lookFrom = defaultLookFrom,
-		const fixed radius = 1) 
+	void setValues( const FixedVector position, const FixedVector& lookFrom = defaultLookFrom, const fixed radius = 1 )
 	{
 		lookFrom_ = lookFrom;
 		position_ = position;
-		radius_ = radius;
+		radius_   = radius;
 	}
 
-	FixedVector &getLookFrom() { return lookFrom_; }
-	FixedVector &getPosition() { return position_; }
-	fixed getRadius() { return radius_; }
+	// clang-format off
+	// uncrustify off
+	FixedVector& getLookFrom() { return lookFrom_; }
+	FixedVector& getPosition() { return position_; }
+	fixed        getRadius()   { return radius_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	~TankViewPointProvider() {}
 
 	FixedVector lookFrom_, position_;
-	fixed radius_;
-	int referenceCount_;
+	fixed       radius_;
+	int         referenceCount_;
 };
 
 class ScorchedContext;
+
 class TankViewPoints
 {
 public:
-	TankViewPoints(ScorchedContext &context);
+	TankViewPoints( ScorchedContext& context );
 	virtual ~TankViewPoints();
 
-	void addViewPoint(TankViewPointProvider *provider);
-	void removeViewPoint(TankViewPointProvider *provider);
-	bool hasViewPoints() { return !points_.empty(); }
+	void addViewPoint( TankViewPointProvider* provider );
+	void removeViewPoint( TankViewPointProvider* provider );
 
-	bool getValues(FixedVector &lookAt, FixedVector &lookFrom);
+	bool hasViewPoints() { return ! points_.empty(); }
+
+	bool getValues( FixedVector& lookAt, FixedVector& lookFrom );
 
 protected:
-	std::set<TankViewPointProvider *> points_;
-	ScorchedContext &context_;
+	std::set< TankViewPointProvider* > points_;
+	ScorchedContext&                   context_;
 };
 
 class TankViewPointsCollection
 {
 public:
-	TankViewPointsCollection(ScorchedContext &context);
+	TankViewPointsCollection( ScorchedContext& context );
 
-	TankViewPoints &getExplosionViewPoints() 
-		{ return explosionViewPoints_; }
-	TankViewPoints &getProjectileViewPoints() 
-		{ return projectileViewPonts_; }
+	// clang-format off
+	// uncrustify off
+	TankViewPoints& getExplosionViewPoints()  { return explosionViewPoints_; }
+	TankViewPoints& getProjectileViewPoints() { return projectileViewPonts_; }
+	// uncrustify on
+	// clang-format on
 
-	static std::set<unsigned int> TankViewPointsTanks;
+	static std::set< unsigned int > TankViewPointsTanks;
 
 protected:
 	TankViewPoints explosionViewPoints_;
 	TankViewPoints projectileViewPonts_;
 };
 
-#endif // __INCLUDE_TankViewPoints_hpp_INCLUDE__
+#endif  // __INCLUDE_TankViewPoints_hpp_INCLUDE__

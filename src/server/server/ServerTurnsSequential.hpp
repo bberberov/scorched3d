@@ -26,6 +26,7 @@
 #include <engine/SimulatorI.hpp>
 
 class Tank;
+
 class ServerTurnsSequential : public ServerTurns
 {
 public:
@@ -33,15 +34,15 @@ public:
 	virtual ~ServerTurnsSequential();
 
 	virtual void internalEnterState();
-	virtual void internalSimulate(fixed frameTime);
-	virtual void internalMoveFinished(ComsPlayedMoveMessage &playedMessage);
+	virtual void internalSimulate( fixed frameTime );
+	virtual void internalMoveFinished( ComsPlayedMoveMessage& playedMessage );
 
 protected:
-	unsigned int nextMoveId_;
-	unsigned int playingPlayer_;
-	std::list<unsigned int> waitingPlayers_;
+	unsigned int              nextMoveId_;
+	unsigned int              playingPlayer_;
+	std::list< unsigned int > waitingPlayers_;
 
-	void makeMove(Tanket *tanket);
+	void makeMove( Tanket* tanket );
 };
 
-#endif // __INCLUDE_ServerTurnsSequential_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTurnsSequential_hpp_INCLUDE__

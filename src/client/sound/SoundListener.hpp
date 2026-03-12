@@ -24,16 +24,17 @@
 #include <common/Vector.hpp>
 
 class Sound;
+
 class SoundListener
 {
 public:
 	virtual ~SoundListener();
 
-	Vector &getPosition();
-	void setPosition(Vector &position);
-	void setVelocity(Vector &velocity);
-	void setOrientation(Vector &orientation);
-	void setGain(float gain);
+	Vector& getPosition();
+	void    setPosition( Vector& position );
+	void    setVelocity( Vector& velocity );
+	void    setOrientation( Vector& orientation );
+	void    setGain( float gain );
 
 protected:
 	friend class Sound;
@@ -41,4 +42,4 @@ protected:
 	SoundListener();
 };
 
-#endif // __INCLUDE_SoundListener_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundListener_hpp_INCLUDE__

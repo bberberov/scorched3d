@@ -38,8 +38,8 @@ private:
 	ClientReloadAdaptor();
 	virtual ~ClientReloadAdaptor();
 
-	ClientReloadAdaptor(const ClientReloadAdaptor &);
-	const ClientReloadAdaptor & operator=(const ClientReloadAdaptor &);
+	ClientReloadAdaptor( const ClientReloadAdaptor& );
+	const ClientReloadAdaptor& operator=( const ClientReloadAdaptor& );
 };
 
-#endif // __INCLUDE_ClientReloadAdaptor_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientReloadAdaptor_hpp_INCLUDE__

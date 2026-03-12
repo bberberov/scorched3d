@@ -28,74 +28,76 @@
 
 class LandscapeDefinitions;
 
-template <class T>
-class LandscapeDefinitionsItem
+template< class T > class LandscapeDefinitionsItem
 {
 public:
-	LandscapeDefinitionsItem(const char *typeName) :
-		typeName_(typeName)
-	{
-	}
-	~LandscapeDefinitionsItem()
-	{
-		clearItems();
-	}
+	LandscapeDefinitionsItem( const char* typeName ) : typeName_( typeName ) {}
+
+	~LandscapeDefinitionsItem() { clearItems(); }
 
 	void clearItems()
 	{
-		typename std::map<std::string, T *>::iterator itor;
-		for (itor = items_.begin();
-			itor != items_.end();
-			++itor)
+		typename std::map< std::string, T* >::iterator itor;
+		for ( itor = items_.begin(); itor != items_.end(); ++itor )
 		{
-			T *item = (*itor).second;
+			T* item = ( *itor ).second;
 			delete item;
 		}
 		items_.clear();
 	}
 
-	T *getItem(LandscapeDefinitions *defns,
-		const char *fileName, bool load)
+	T* getItem( LandscapeDefinitions* defns, const char* fileName, bool load )
 	{
-		T *item = 0;
-		typename std::map<std::string, T *>::iterator itor;
-		itor = items_.find(fileName);
-		if (itor != items_.end())
+		T*                                             item = 0;
+		typename std::map< std::string, T* >::iterator itor;
+		itor = items_.find( fileName );
+		if ( itor != items_.end() )
 		{
-			item = (*itor).second;
+			item = ( *itor ).second;
 		}
-		else if (load)
+		else if ( load )
 		{
-			std::string dataFile = S3D::getModFile(fileName);
-			if (!S3D::fileExists(dataFile.c_str()))
+			std::string dataFile = S3D::getModFile( fileName );
+			if ( ! S3D::fileExists( dataFile.c_str() ) )
 			{
-				S3D::dialogMessage("Scorched Landscape", 
-							S3D::formatStringBuffer("Failed to find file \"%s\"\n"
-							"When loading %s file", 
-							dataFile.c_str(),
-							typeName_.c_str()));
+				S3D::dialogMessage(
+					"Scorched Landscape",
+					S3D::formatStringBuffer(
+						"Failed to find file \"%s\"\n"
+						"When loading %s file",
+						dataFile.c_str(),
+						typeName_.c_str()
+					)
+				);
+
 				return 0;
 			}
 
 			XMLFile file;
-			if (!file.readFile(dataFile.c_str()) ||
-				!file.getRootNode())
+			if ( ! file.readFile( dataFile.c_str() ) || ! file.getRootNode() )
 			{
-				S3D::dialogMessage("Scorched Landscape", 
-							S3D::formatStringBuffer("Failed to parse \"%s\"\n"
-							"%s", 
-							dataFile.c_str(),
-							file.getParserError()));
+				S3D::dialogMessage(
+					"Scorched Landscape",
+					S3D::formatStringBuffer(
+						"Failed to parse \"%s\"\n"
+						"%s",
+						dataFile.c_str(),
+						file.getParserError()
+					)
+				);
+
 				return 0;
 			}
 
-			item = new T;
+			item             = new T;
 			items_[fileName] = item;
-			if (!item->readXML(defns, file.getRootNode()))
+			if ( ! item->readXML( defns, file.getRootNode() ) )
 			{
-				S3D::dialogMessage("Scorched Landscape", 
-					S3D::formatStringBuffer("Failed to parse \"%s\"",
-					dataFile.c_str()));
+				S3D::dialogMessage(
+					"Scorched Landscape",
+					S3D::formatStringBuffer( "Failed to parse \"%s\"", dataFile.c_str() )
+				);
+
 				return 0;
 			}
 		}
@@ -104,8 +106,8 @@ public:
 	}
 
 protected:
-	std::map<std::string, T *> items_;
-	std::string typeName_;
+	std::map< std::string, T* > items_;
+	std::string                 typeName_;
 };
 
-#endif // __INCLUDE_LandscapeDefinitionsItem_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeDefinitionsItem_hpp_INCLUDE__

@@ -31,93 +31,100 @@ public:
 	WeaponProjectile();
 	virtual ~WeaponProjectile();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	Weapon *getCollisionAction() { return collisionAction_; }
+	Weapon* getCollisionAction() { return collisionAction_; }
 
 	// Inherited from Weapon
 	virtual void fireWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponProjectile, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponProjectile, AccessoryPart::AccessoryWeapon );
 
-	bool getUnder() { return under_; }
-	bool getShowShotPath() { return showShotPath_; }
-	bool getShowEndPoint() { return showEndPoint_; }
-	bool getApexCollision() { return apexCollision_; }
-	bool getWaterCollision() { return waterCollision_; }
-	bool getLandscapeCollision() { return landscapeCollision_; }
-	bool getShieldCollision() { return shieldCollision_; }
-	bool getTankCollision() { return tankCollision_; }
-	bool getTargetCollision() { return targetCollision_; }
-	bool getWallCollision() { return wallCollision_; }
-	bool getApexNoDud() { return apexNoDud_; }
-	bool getCreateSmoke() { return createSmoke_; }
-	bool getCreateFlame() { return createFlame_; }
-	bool getTimedDud() { return timedDud_; }
-	fixed getWindFactor(ScorchedContext &context);
-	fixed getGravityFactor(ScorchedContext &context);
-	fixed getShieldHurtFactor(ScorchedContext &context);
-	fixed getTimedCollision(ScorchedContext &context) { return timedCollision_.getValue(context); }
-	fixed getHeightCollision(ScorchedContext &context) { return heightCollision_.getValue(context); }
-	fixed getSpinSpeed(ScorchedContext &context) { return spinSpeed_.getValue(context); }
-	fixed getTimeout(ScorchedContext &context) { return timeout_.getValue(context); }
-	fixed getStepSize() { return stepSize_; }
-	float getFlameLife() { return flameLife_; }
-	float getFlameStartSize() { return flameStartSize_; }
-	float getFlameEndSize() { return flameEndSize_; }
-	float getSmokeLife() { return smokeLife_; }
-	float getSmokeStartSize() { return smokeStartSize_; }
-	float getSmokeEndSize() { return smokeEndSize_; }
-	fixed getThrustAmount(ScorchedContext &context) { return thrustAmount_.getValue(context); }
-	fixed getThrustTime(ScorchedContext &context) { return thrustTime_.getValue(context); }
-	fixed getDrag(ScorchedContext &context) { return drag_.getValue(context); }
-	fixed getWobbleSpin(ScorchedContext &context) { return wobbleSpin_.getValue(context); }
-	fixed getWobbleAmount(ScorchedContext &context) { return wobbleAmount_.getValue(context); }
-	Vector &getFlameStartColor1() { return flameStartColor1_; }
-	Vector &getFlameStartColor2() { return flameStartColor2_; }
-	Vector &getFlameEndColor1() { return flameEndColor1_; }
-	Vector &getFlameEndColor2() { return flameEndColor2_; }
-	const char *getEngineSound() { return engineSound_.c_str(); }
-	const char *getFlameTexture() { return flameTexture_.c_str(); }
-	const char *getSmokeTexture() { return smokeTexture_.c_str(); }
-	bool getAnimateFlameTexture() { return animateFlameTexture_; }
-	bool getAnimateSmokeTexture() { return animateSmokeTexture_; }
-	bool getNoCameraTrack() { return noCameraTrack_; }
-	fixed getScale(ScorchedContext &context) { return scale_.getValue(context); }
-	ModelID &getModelID() { return modelId_; }
-	ObjectGroupEntryDefinition &getLocalGroups() { return localGroups_; }
-	ObjectGroupEntryDefinition &getGlobalGroups() { return globalGroups_; }
+	// clang-format off
+	// uncrustify off
+	bool        getUnder()                                     { return under_; }
+	bool        getShowShotPath()                              { return showShotPath_; }
+	bool        getShowEndPoint()                              { return showEndPoint_; }
+	bool        getApexCollision()                             { return apexCollision_; }
+	bool        getWaterCollision()                            { return waterCollision_; }
+	bool        getLandscapeCollision()                        { return landscapeCollision_; }
+	bool        getShieldCollision()                           { return shieldCollision_; }
+	bool        getTankCollision()                             { return tankCollision_; }
+	bool        getTargetCollision()                           { return targetCollision_; }
+	bool        getWallCollision()                             { return wallCollision_; }
+	bool        getApexNoDud()                                 { return apexNoDud_; }
+	bool        getCreateSmoke()                               { return createSmoke_; }
+	bool        getCreateFlame()                               { return createFlame_; }
+	bool        getTimedDud()                                  { return timedDud_; }
+	fixed       getWindFactor( ScorchedContext& context );
+	fixed       getGravityFactor( ScorchedContext& context );
+	fixed       getShieldHurtFactor( ScorchedContext& context );
+	fixed       getTimedCollision( ScorchedContext& context )  { return timedCollision_.getValue( context ); }
+	fixed       getHeightCollision( ScorchedContext& context ) { return heightCollision_.getValue( context ); }
+	fixed       getSpinSpeed( ScorchedContext& context )       { return spinSpeed_.getValue( context ); }
+	fixed       getTimeout( ScorchedContext& context )         { return timeout_.getValue( context ); }
+	fixed       getStepSize()                                  { return stepSize_; }
+	float       getFlameLife()                                 { return flameLife_; }
+	float       getFlameStartSize()                            { return flameStartSize_; }
+	float       getFlameEndSize()                              { return flameEndSize_; }
+	float       getSmokeLife()                                 { return smokeLife_; }
+	float       getSmokeStartSize()                            { return smokeStartSize_; }
+	float       getSmokeEndSize()                              { return smokeEndSize_; }
+	fixed       getThrustAmount( ScorchedContext& context )    { return thrustAmount_.getValue( context ); }
+	fixed       getThrustTime( ScorchedContext& context )      { return thrustTime_.getValue( context ); }
+	fixed       getDrag( ScorchedContext& context )            { return drag_.getValue( context ); }
+	fixed       getWobbleSpin( ScorchedContext& context )      { return wobbleSpin_.getValue( context ); }
+	fixed       getWobbleAmount( ScorchedContext& context )    { return wobbleAmount_.getValue( context ); }
+	Vector&     getFlameStartColor1()                          { return flameStartColor1_; }
+	Vector&     getFlameStartColor2()                          { return flameStartColor2_; }
+	Vector&     getFlameEndColor1()                            { return flameEndColor1_; }
+	Vector&     getFlameEndColor2()                            { return flameEndColor2_; }
+	const char* getEngineSound()                               { return engineSound_.c_str(); }
+	const char* getFlameTexture()                              { return flameTexture_.c_str(); }
+	const char* getSmokeTexture()                              { return smokeTexture_.c_str(); }
+	bool        getAnimateFlameTexture()                       { return animateFlameTexture_; }
+	bool        getAnimateSmokeTexture()                       { return animateSmokeTexture_; }
+	bool        getNoCameraTrack()                             { return noCameraTrack_; }
+
+	fixed getScale( ScorchedContext& context ) { return scale_.getValue( context ); }
+
+	ModelID& getModelID() { return modelId_; }
+
+	ObjectGroupEntryDefinition& getLocalGroups()  { return localGroups_; }
+	ObjectGroupEntryDefinition& getGlobalGroups() { return globalGroups_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	Weapon *collisionAction_;
-	bool apexCollision_;
-	bool waterCollision_;
-	bool wallCollision_;
-	bool landscapeCollision_;
-	bool shieldCollision_;
-	bool tankCollision_;
-	bool targetCollision_;
-	bool under_;
-	bool showShotPath_;
-	bool showEndPoint_;
-	bool createSmoke_;
-	bool createFlame_;
-	bool apexNoDud_;
-	bool timedDud_;
-	bool noCameraTrack_;
+	Weapon*      collisionAction_;
+	bool         apexCollision_;
+	bool         waterCollision_;
+	bool         wallCollision_;
+	bool         landscapeCollision_;
+	bool         shieldCollision_;
+	bool         tankCollision_;
+	bool         targetCollision_;
+	bool         under_;
+	bool         showShotPath_;
+	bool         showEndPoint_;
+	bool         createSmoke_;
+	bool         createFlame_;
+	bool         apexNoDud_;
+	bool         timedDud_;
+	bool         noCameraTrack_;
 	NumberParser spinSpeed_;
-	Vector spinAxis_;
+	Vector       spinAxis_;
 
-	float flameLife_, smokeLife_;
-	float flameStartSize_, flameEndSize_;
-	float smokeStartSize_, smokeEndSize_;
-	Vector flameStartColor1_, flameStartColor2_;
-	Vector flameEndColor1_, flameEndColor2_;
+	float        flameLife_, smokeLife_;
+	float        flameStartSize_, flameEndSize_;
+	float        smokeStartSize_, smokeEndSize_;
+	Vector       flameStartColor1_, flameStartColor2_;
+	Vector       flameEndColor1_, flameEndColor2_;
 	NumberParser scale_;
 	NumberParser timedCollision_;
 	NumberParser heightCollision_;
@@ -130,16 +137,16 @@ protected:
 	NumberParser drag_;
 	NumberParser wobbleSpin_;
 	NumberParser wobbleAmount_;
-	fixed stepSize_;
-	std::string engineSound_;
-	std::string flameTexture_;
-	std::string smokeTexture_;
-	bool animateFlameTexture_;
-	bool animateSmokeTexture_;
-	int flareType_;
+	fixed        stepSize_;
+	std::string  engineSound_;
+	std::string  flameTexture_;
+	std::string  smokeTexture_;
+	bool         animateFlameTexture_;
+	bool         animateSmokeTexture_;
+	int          flareType_;
 
 	ObjectGroupEntryDefinition localGroups_, globalGroups_;
-	ModelID modelId_;
+	ModelID                    modelId_;
 };
 
-#endif // __INCLUDE_WeaponProjectile_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponProjectile_hpp_INCLUDE__

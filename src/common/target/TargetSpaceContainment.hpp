@@ -30,11 +30,11 @@ public:
 	virtual ~TargetSpaceContainment();
 
 	// Which squares this target ocupies within the target space
-	std::vector<int> squares;
+	std::vector< int > squares;
 
 private:
-	TargetSpaceContainment(TargetSpaceContainment &other);
-	TargetSpaceContainment &operator=(TargetSpaceContainment &other);
+	TargetSpaceContainment( TargetSpaceContainment& other );
+	TargetSpaceContainment& operator=( TargetSpaceContainment& other );
 };
 
-#endif // __INCLUDE_TargetSpaceContainment_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetSpaceContainment_hpp_INCLUDE__

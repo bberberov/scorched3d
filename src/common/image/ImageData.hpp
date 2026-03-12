@@ -27,42 +27,50 @@ class ImageData
 {
 public:
 	ImageData();
-	ImageData(int width, int height, int components = 3, unsigned char fill = 255);
+	ImageData( int width, int height, int components = 3, unsigned char fill = 255 );
 	~ImageData();
 
 	void clear();
 
-	bool getLossless() { return lossless_; }
-	unsigned char *getBits() { return bits_; }
-	int getWidth() { return width_; }
-	int getHeight() { return height_; }
-	int getAlignment() { return alignment_; }
-	int getComponents() { return components_; }
+	// clang-format off
+	// uncrustify off
+	bool           getLossless()   { return lossless_; }
+	unsigned char* getBits()       { return bits_; }
+	int            getWidth()      { return width_; }
+	int            getHeight()     { return height_; }
+	int            getAlignment()  { return alignment_; }
+	int            getComponents() { return components_; }
 
-	void setLossless(bool lossless) { lossless_ = lossless; }
-	void setBits(unsigned char *bits) { delete [] bits_; bits_ = bits; }
-	void setWidth(int width) { width_ = width; }
-	void setHeight(int height) { height_ = height; }
-	void setAlignment(int alignment) { alignment_ = alignment; }
-	void setComponents(int components) { components_ = components; }
+	void setLossless( bool lossless ) { lossless_ = lossless; }
+	void setBits( unsigned char* bits )
+	{
+		delete[] bits_;
+		bits_ = bits;
+	}
+	void setWidth( int width )           { width_ = width; }
+	void setHeight( int height )         { height_ = height; }
+	void setAlignment( int alignment )   { alignment_ = alignment; }
+	void setComponents( int components ) { components_ = components; }
+	// uncrustify on
+	// clang-format on
 
 	void reference();
 	void dereference();
 
 protected:
-	int referenceCount_;
-	unsigned char *bits_;
-	int width_;
-	int height_;
-	int alignment_;
-	int components_;
-	bool lossless_;
+	int            referenceCount_;
+	unsigned char* bits_;
+	int            width_;
+	int            height_;
+	int            alignment_;
+	int            components_;
+	bool           lossless_;
 
-	void createBlankInternal(int width, int height, int components, unsigned char fill);
+	void createBlankInternal( int width, int height, int components, unsigned char fill );
 
 private:
-	ImageData(const ImageData &other);
-	ImageData &operator=(ImageData &other);
+	ImageData( const ImageData& other );
+	ImageData& operator=( ImageData& other );
 };
 
-#endif // __INCLUDE_ImageData_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageData_hpp_INCLUDE__

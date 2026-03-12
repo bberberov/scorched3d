@@ -29,20 +29,17 @@ class ClientFileHandler : public ComsMessageHandlerI
 public:
 	static ClientFileHandler* instance();
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
 	static ClientFileHandler* instance_;
 
 	unsigned int totalBytes_;
-	NetBuffer recvBuffer_;
+	NetBuffer    recvBuffer_;
 
 private:
 	ClientFileHandler();
 	virtual ~ClientFileHandler();
 };
 
-#endif // __INCLUDE_ClientFileHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientFileHandler_hpp_INCLUDE__

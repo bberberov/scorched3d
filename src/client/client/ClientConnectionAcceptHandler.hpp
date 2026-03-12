@@ -30,11 +30,7 @@ public:
 	static ClientConnectionAcceptHandler* instance();
 
 	// Inherited from ComsMessageHandlerI
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader
-	);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
 	static ClientConnectionAcceptHandler* instance_;
@@ -43,8 +39,8 @@ private:
 	ClientConnectionAcceptHandler();
 	virtual ~ClientConnectionAcceptHandler();
 
-	ClientConnectionAcceptHandler(const ClientConnectionAcceptHandler &);
-	const ClientConnectionAcceptHandler & operator=(const ClientConnectionAcceptHandler &);
+	ClientConnectionAcceptHandler( const ClientConnectionAcceptHandler& );
+	const ClientConnectionAcceptHandler& operator=( const ClientConnectionAcceptHandler& );
 };
 
-#endif // __INCLUDE_ClientConnectionAcceptHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientConnectionAcceptHandler_hpp_INCLUDE__

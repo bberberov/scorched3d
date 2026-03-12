@@ -28,32 +28,39 @@
 class ServerWebServerIRequest
 {
 public:
-	ServerWebServerIRequest(const char *url,
-		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts);
+	ServerWebServerIRequest(
+		const char*                           url,
+		std::map< std::string, std::string >& fields,
+		std::map< std::string, NetMessage* >& parts
+	);
 	~ServerWebServerIRequest();
 
-	const char *getUrl() { return url_.c_str(); }
-	std::map<std::string, std::string> &getFields() { return fields_; }
-	std::map<std::string, NetMessage *> &getParts() { return parts_; }
-	ServerAdminSessions::SessionParams *getSession() { return session_; }
-	void setSession(ServerAdminSessions::SessionParams *session) { session_ = session; }
+	// clang-format off
+	// uncrustify off
+	const char*                           getUrl()     { return url_.c_str(); }
+	std::map< std::string, std::string >& getFields()  { return fields_; }
+	std::map< std::string, NetMessage* >& getParts()   { return parts_; }
+	ServerAdminSessions::SessionParams*   getSession() { return session_; }
+
+	void setSession( ServerAdminSessions::SessionParams* session ) { session_ = session; }
+	// uncrustify on
+	// clang-format on
 
 private:
-	std::string url_;
-	std::map<std::string, std::string> fields_;
-	std::map<std::string, NetMessage *> parts_;
-	ServerAdminSessions::SessionParams *session_;
+	std::string                          url_;
+	std::map< std::string, std::string > fields_;
+	std::map< std::string, NetMessage* > parts_;
+	ServerAdminSessions::SessionParams*  session_;
 };
 
 class ServerWebServerI
 {
 public:
 	virtual ~ServerWebServerI();
-	virtual ServerWebServerI *createCopy() = 0;
-	virtual bool processRequest(
-		ServerWebServerIRequest &request,
-		std::string &text) = 0;
+
+	virtual ServerWebServerI* createCopy() = 0;
+
+	virtual bool processRequest( ServerWebServerIRequest& request, std::string& text ) = 0;
 };
 
-#endif // __INCLUDE_ServerWebServerI_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerWebServerI_hpp_INCLUDE__

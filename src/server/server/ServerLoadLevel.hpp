@@ -26,19 +26,16 @@
 class ServerLoadLevel : public ComsMessageHandlerI
 {
 public:
-	ServerLoadLevel(ComsMessageHandler &comsMessageHandler);
+	ServerLoadLevel( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerLoadLevel();
 
-	static void destinationLoadLevel(unsigned int destinationId);
-	static bool destinationUsingCurrentLevel(unsigned int destinationId);
+	static void destinationLoadLevel( unsigned int destinationId );
+	static bool destinationUsingCurrentLevel( unsigned int destinationId );
 
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
-	static void setLoaded(unsigned int destinationId);
+	static void setLoaded( unsigned int destinationId );
 };
 
-#endif // __INCLUDE_ServerLoadLevel_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerLoadLevel_hpp_INCLUDE__

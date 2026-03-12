@@ -36,17 +36,18 @@ public:
 protected:
 	struct TimedMessageEntry
 	{
-		TimedMessageEntry() : lastTime(0) {}
-		unsigned int timeInterval;
-		time_t lastTime;
-		std::list<LangString> messages;
+		TimedMessageEntry() : lastTime( 0 ) {}
+
+		unsigned int            timeInterval;
+		time_t                  lastTime;
+		std::list< LangString > messages;
 	};
 
-	time_t lastCheckTime_, lastReadTime_;
-	std::list<TimedMessageEntry> entries_;
+	time_t                         lastCheckTime_, lastReadTime_;
+	std::list< TimedMessageEntry > entries_;
 
 	bool load();
-	void checkEntries(time_t currentTime);
+	void checkEntries( time_t currentTime );
 };
 
-#endif // __INCLUDE_ServerTimedMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerTimedMessage_hpp_INCLUDE__

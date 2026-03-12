@@ -27,109 +27,107 @@
 // A. name -> inf
 
 // Usage pattern :-
-// 	new ConsoleRuleMethodIAdapter<InfoMap>(
-//		this, showHeightBands, "InfoHeightBands");
-// Calls InfoMap::showHeightBands when InfoHeightBands is selected 
+//     new ConsoleRuleMethodIAdapter<InfoMap>(
+//         this, showHeightBands, "InfoHeightBands");
+// Calls InfoMap::showHeightBands when InfoHeightBands is selected
 // in the console
-template<class T>
-class ConsoleRuleMethodIAdapter : public ConsoleRule
+template< class T > class ConsoleRuleMethodIAdapter : public ConsoleRule
 {
 public:
-	ConsoleRuleMethodIAdapter(T *inst, 
-		void (T::*call)(), 
-		const char *name) : 
-		ConsoleRule(name, std::vector<ConsoleRuleParam>()), inst_(inst), call_(call)
+	ConsoleRuleMethodIAdapter( T* inst, void ( T::*call )(), const char* name )
+		: ConsoleRule( name, std::vector< ConsoleRuleParam >() )
+		, inst_( inst )
+		, call_( call )
 	{
-		Console::instance()->addRule(this);
+		Console::instance()->addRule( this );
 	};
 
-	ConsoleRuleMethodIAdapter(T *inst, 
-		void (T::*call)(), 
-		const char *name, const std::vector<ConsoleRuleParam> &params) : 
-		ConsoleRule(name, params), inst_(inst), call_(call)
+	ConsoleRuleMethodIAdapter(
+		T* inst,
+		void ( T::*call )(),
+		const char*                            name,
+		const std::vector< ConsoleRuleParam >& params
+	)
+		: ConsoleRule( name, params )
+		, inst_( inst )
+		, call_( call )
 	{
-		Console::instance()->addRule(this);
-	};
-	virtual ~ConsoleRuleMethodIAdapter()
-	{
-		Console::instance()->removeRule(this);
+		Console::instance()->addRule( this );
 	};
 
-	virtual void runRule(
-		Console *console,
-		const char *wholeLine,
-		std::vector<ConsoleRuleValue> &values)
+	virtual ~ConsoleRuleMethodIAdapter() { Console::instance()->removeRule( this ); };
+
+	virtual void runRule( Console* console, const char* wholeLine, std::vector< ConsoleRuleValue >& values )
 	{
-		(inst_->*call_)();
+		( inst_->*call_ )();
 	};
 
 protected:
 	std::string name_;
-	T *inst_;
-	void (T::*call_)();
+	T*          inst_;
+
+	void ( T::*call_ )();
 };
 
 // Same as above but passed params to method
-template<class T>
-class ConsoleRuleMethodIAdapterEx : public ConsoleRule
+template< class T > class ConsoleRuleMethodIAdapterEx : public ConsoleRule
 {
 public:
-	ConsoleRuleMethodIAdapterEx(T *inst, 
-		void (T::*call)(std::vector<ConsoleRuleValue>&), 
-		const char *name, const std::vector<ConsoleRuleParam> &params) :
-		ConsoleRule(name, params), inst_(inst), call_(call)
+	ConsoleRuleMethodIAdapterEx(
+		T* inst,
+		void ( T::*call )( std::vector< ConsoleRuleValue >& ),
+		const char*                            name,
+		const std::vector< ConsoleRuleParam >& params
+	)
+		: ConsoleRule( name, params )
+		, inst_( inst )
+		, call_( call )
 	{
-		Console::instance()->addRule(this);
-	};
-	virtual ~ConsoleRuleMethodIAdapterEx()
-	{
-		Console::instance()->removeRule(this);
+		Console::instance()->addRule( this );
 	};
 
-	virtual void runRule(
-		Console *console,
-		const char *wholeLine,
-		std::vector<ConsoleRuleValue> &values)
+	virtual ~ConsoleRuleMethodIAdapterEx() { Console::instance()->removeRule( this ); };
+
+	virtual void runRule( Console* console, const char* wholeLine, std::vector< ConsoleRuleValue >& values )
 	{
-		(inst_->*call_)(values);
+		( inst_->*call_ )( values );
 	};
 
 protected:
 	std::string name_;
-	T *inst_;
-	void (T::*call_)(std::vector<ConsoleRuleValue>&);
+	T*          inst_;
+	void ( T::*call_ )( std::vector< ConsoleRuleValue >& );
 };
 
 // Same as above but passed userdata to method
-template<class T>
-class ConsoleRuleMethodIAdapterEx2 : public ConsoleRule
+template< class T > class ConsoleRuleMethodIAdapterEx2 : public ConsoleRule
 {
 public:
-	ConsoleRuleMethodIAdapterEx2(T *inst, 
-		void (T::*call)(std::vector<ConsoleRuleValue>&, unsigned int), 
-		const char *name, const std::vector<ConsoleRuleParam> &params,
-		unsigned int userData) :
-		ConsoleRule(name, params, userData), inst_(inst), call_(call)
+	ConsoleRuleMethodIAdapterEx2(
+		T* inst,
+		void ( T::*call )( std::vector< ConsoleRuleValue >&, unsigned int ),
+		const char*                            name,
+		const std::vector< ConsoleRuleParam >& params,
+		unsigned int                           userData
+	)
+		: ConsoleRule( name, params, userData )
+		, inst_( inst )
+		, call_( call )
 	{
-		Console::instance()->addRule(this);
-	};
-	virtual ~ConsoleRuleMethodIAdapterEx2()
-	{
-		Console::instance()->removeRule(this);
+		Console::instance()->addRule( this );
 	};
 
-	virtual void runRule(
-		Console *console,
-		const char *wholeLine,
-		std::vector<ConsoleRuleValue> &values)
+	virtual ~ConsoleRuleMethodIAdapterEx2() { Console::instance()->removeRule( this ); };
+
+	virtual void runRule( Console* console, const char* wholeLine, std::vector< ConsoleRuleValue >& values )
 	{
-		(inst_->*call_)(values, userData_);
+		( inst_->*call_ )( values, userData_ );
 	};
 
 protected:
 	std::string name_;
-	T *inst_;
-	void (T::*call_)(std::vector<ConsoleRuleValue>&, unsigned int);
+	T*          inst_;
+	void ( T::*call_ )( std::vector< ConsoleRuleValue >&, unsigned int );
 };
 
-#endif // __INCLUDE_ConsoleRuleMethodIAdapter_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleRuleMethodIAdapter_hpp_INCLUDE__

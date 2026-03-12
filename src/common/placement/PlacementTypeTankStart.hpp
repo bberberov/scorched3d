@@ -30,16 +30,19 @@ public:
 	virtual ~PlacementTypeTankStart();
 
 	virtual PlacementType::Type getType() { return PlacementType::eTankStart; }
-	virtual bool readXML(XMLNode *node);
-	virtual void getPositions(ScorchedContext &context,
-		RandomGenerator &generator,
-		std::list<Position> &returnPositions,
-		ProgressCounter *counter = 0);
+
+	virtual bool readXML( XMLNode* node );
+	virtual void getPositions(
+		ScorchedContext&       context,
+		RandomGenerator&       generator,
+		std::list< Position >& returnPositions,
+		ProgressCounter*       counter = 0
+	);
 
 protected:
-	int numobjects;
-	int team;
+	int   numobjects;
+	int   team;
 	fixed mincloseness;
 };
 
-#endif // __INCLUDE_PlacementTypeTankStart_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementTypeTankStart_hpp_INCLUDE__

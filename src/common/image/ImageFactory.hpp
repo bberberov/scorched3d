@@ -25,30 +25,28 @@
 #include <image/ImageID.hpp>
 #include <image/Image.hpp>
 
-class ImageFactory  
+class ImageFactory
 {
 public:
-	static Image loadImageID(
-		const ImageID &imageId);
+	static Image loadImageID( const ImageID& imageId );
 	static Image loadImage(
-		S3D::FileLocation imageLocation,
-		const std::string &filename, 
-		const std::string &alphafilename = "", 
-		bool invert = true);
-	static Image loadAlphaImage(
-		S3D::FileLocation imageLocation,
-		const std::string &filename);
+		S3D::FileLocation  imageLocation,
+		const std::string& filename,
+		const std::string& alphafilename = "",
+		bool               invert        = true
+	);
+	static Image loadAlphaImage( S3D::FileLocation imageLocation, const std::string& filename );
 
 #ifndef S3D_SERVER
 	static Image grabScreen();
 #endif
 
 protected:
-	static Image loadImageInternal(S3D::FileLocation imageLocation, const std::string &filename, bool alphaName);
-	static Image combineImage(Image file, Image alphaFile, bool invert);
+	static Image loadImageInternal( S3D::FileLocation imageLocation, const std::string& filename, bool alphaName );
+	static Image combineImage( Image file, Image alphaFile, bool invert );
 
 private:
 	ImageFactory();
 };
 
-#endif // __INCLUDE_ImageFactory_hpp_INCLUDE__
+#endif  // __INCLUDE_ImageFactory_hpp_INCLUDE__

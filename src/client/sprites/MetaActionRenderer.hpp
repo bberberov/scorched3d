@@ -31,9 +31,7 @@ public:
 	MetaActionRenderer();
 	virtual ~MetaActionRenderer();
 
-	virtual void init(unsigned int playerId,
-		Vector &position, Vector &velocity,
-		const char *data) = 0;
+	virtual void init( unsigned int playerId, Vector& position, Vector& velocity, const char* data ) = 0;
 };
 
-#endif // __INCLUDE_MetaActionRenderer_hpp_INCLUDE__
+#endif  // __INCLUDE_MetaActionRenderer_hpp_INCLUDE__

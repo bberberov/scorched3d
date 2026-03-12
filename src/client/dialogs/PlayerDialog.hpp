@@ -39,45 +39,41 @@ public:
 
 	// Inherited from GLWWindow
 	virtual void keyDown(
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWDropDownI
-	virtual void select(unsigned int id, const int pos, GLWSelectorEntry value);
+	virtual void select( unsigned int id, const int pos, GLWSelectorEntry value );
 
 protected:
-	PlayerDialog(
-		const std::string &name,
-		unsigned int states,
-		const std::string &description
-	);
+	PlayerDialog( const std::string& name, unsigned int states, const std::string& description );
 	virtual ~PlayerDialog();
 
-	GLWDropDownText *aiTypeDropDown_;
-	GLWDropDownText *teamDropDown_;
-	GLWDropDownText *tankTypeDropDown_;
-	GLWDropDownColor *colorDropDown_;
-	GLWLabel *colorLabel_;
-	GLWLabel *teamLabel_;
-	GLWTankViewer *viewer_;
-	GLWTextBox *playerName_;
-	GLWImageList *imageList_;
-	ToolTip avatarTip1_;
-	ToolTip humanToolTip_;
-	GLTexture colorTexture_;
-	GLWTextButton *cancelButton_;
-	GLWTextButton *spectateButton_;
-	GLWTextButton *okButton_;
+	GLWDropDownText*  aiTypeDropDown_;
+	GLWDropDownText*  teamDropDown_;
+	GLWDropDownText*  tankTypeDropDown_;
+	GLWDropDownColor* colorDropDown_;
+	GLWLabel*         colorLabel_;
+	GLWLabel*         teamLabel_;
+	GLWTankViewer*    viewer_;
+	GLWTextBox*       playerName_;
+	GLWImageList*     imageList_;
+	ToolTip           avatarTip1_;
+	ToolTip           humanToolTip_;
+	GLTexture         colorTexture_;
+	GLWTextButton*    cancelButton_;
+	GLWTextButton*    spectateButton_;
+	GLWTextButton*    okButton_;
 
-	virtual void okButton(bool spectate) = 0;
-	virtual void cancelButton() = 0;
+	virtual void okButton( bool spectate ) = 0;
+	virtual void cancelButton()            = 0;
 };
 
-#endif // __INCLUDE_PlayerDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_PlayerDialog_hpp_INCLUDE__

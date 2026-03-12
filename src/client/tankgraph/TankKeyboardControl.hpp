@@ -28,21 +28,26 @@
 class TankKeyboardControl : public GameStateI
 {
 public:
-	static TankKeyboardControl *instance();
+	static TankKeyboardControl* instance();
 
 	// Inherited from GameStateI
-	virtual void enterState(const unsigned state);
-	virtual void keyboardCheck(const unsigned state, float frameTime, 
-		char *buffer, unsigned int keyState,
-		KeyboardHistory::HistoryElement *history, int hisCount, 
-		bool &skipRest);
+	virtual void enterState( const unsigned int state );
+	virtual void keyboardCheck(
+		const unsigned int               state,
+		float                            frameTime,
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
+	);
 
 protected:
-	static TankKeyboardControl *instance_;
+	static TankKeyboardControl* instance_;
 
 private:
 	TankKeyboardControl();
 	virtual ~TankKeyboardControl();
 };
 
-#endif // __INCLUDE_TankKeyboardControl_hpp_INCLUDE__
+#endif  // __INCLUDE_TankKeyboardControl_hpp_INCLUDE__

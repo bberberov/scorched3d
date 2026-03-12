@@ -26,17 +26,18 @@
 class TankRemove : public Action
 {
 public:
-	TankRemove(unsigned int playerId, fixed removeTime);
+	TankRemove( unsigned int playerId, fixed removeTime );
 	virtual ~TankRemove();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "TankRemove"; }
 
 protected:
-	fixed removeTime_;
+	fixed        removeTime_;
 	unsigned int playerId_;
 };
 
-#endif // __INCLUDE_TankRemove_hpp_INCLUDE__
+#endif  // __INCLUDE_TankRemove_hpp_INCLUDE__

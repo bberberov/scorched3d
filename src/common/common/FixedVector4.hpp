@@ -24,42 +24,39 @@
 #include <common/FixedVector.hpp>
 #include <common/Vector4.hpp>
 
-class FixedVector4  
+class FixedVector4
 {
 public:
-	FixedVector4()
-	{
-		V[0] = V[1] = V[2] = V[3] = 0;
-	}
+	FixedVector4() { V[0] = V[1] = V[2] = V[3] = 0; }
 
-	FixedVector4(const FixedVector &v, fixed a = 1)
+	FixedVector4( const FixedVector& v, fixed a = 1 )
 	{
-		V[0] = ((FixedVector &) v)[0];
-		V[1] = ((FixedVector &) v)[1];
-		V[2] = ((FixedVector &) v)[2];
+		V[0] = ( (FixedVector&)v )[0];
+		V[1] = ( (FixedVector&)v )[1];
+		V[2] = ( (FixedVector&)v )[2];
 		V[3] = a;
 	}
 
-	FixedVector4(const FixedVector4 &cc1, const FixedVector4 &cc2, fixed scal) 
+	FixedVector4( const FixedVector4& cc1, const FixedVector4& cc2, fixed scal )
 	{
-		FixedVector4 &c1 = (FixedVector4 &) cc1;
-		FixedVector4 &c2 = (FixedVector4 &) cc2;
+		FixedVector4& c1 = (FixedVector4&)cc1;
+		FixedVector4& c2 = (FixedVector4&)cc2;
 
-		V[0] = (c1[0]*(fixed(1)-scal) + c2[0]*scal);
-		V[1] = (c1[1]*(fixed(1)-scal) + c2[1]*scal);
-		V[2] = (c1[2]*(fixed(1)-scal) + c2[2]*scal);
-		V[3] = (c1[3]*(fixed(1)-scal) + c2[3]*scal);
+		V[0] = ( c1[0] * ( fixed( 1 ) - scal ) + c2[0] * scal );
+		V[1] = ( c1[1] * ( fixed( 1 ) - scal ) + c2[1] * scal );
+		V[2] = ( c1[2] * ( fixed( 1 ) - scal ) + c2[2] * scal );
+		V[3] = ( c1[3] * ( fixed( 1 ) - scal ) + c2[3] * scal );
 	}
 
-	FixedVector4(const FixedVector4 &v)
+	FixedVector4( const FixedVector4& v )
 	{
-		V[0] = ((FixedVector4 &) v)[0];
-		V[1] = ((FixedVector4 &) v)[1];
-		V[2] = ((FixedVector4 &) v)[2];
-		V[3] = ((FixedVector4 &) v)[3];
+		V[0] = ( (FixedVector4&)v )[0];
+		V[1] = ( (FixedVector4&)v )[1];
+		V[2] = ( (FixedVector4&)v )[2];
+		V[3] = ( (FixedVector4&)v )[3];
 	}
 
-	FixedVector4(const fixed Pt[4])
+	FixedVector4( const fixed Pt[4] )
 	{
 		V[0] = Pt[0];
 		V[1] = Pt[1];
@@ -67,7 +64,7 @@ public:
 		V[3] = Pt[3];
 	}
 
-	FixedVector4(const fixed ptA, const fixed ptB, const fixed ptC, fixed ptD=0)
+	FixedVector4( const fixed ptA, const fixed ptB, const fixed ptC, fixed ptD = 0 )
 	{
 		V[0] = ptA;
 		V[1] = ptB;
@@ -75,24 +72,18 @@ public:
 		V[3] = ptD;
 	}
 
-	void zero()
+	void zero() { V[0] = V[1] = V[2] = V[3] = 0; }
+
+	bool operator==( const FixedVector4& Vin )
 	{
-		V[0] = V[1] = V[2] = V[3] = 0;
+		FixedVector4& Vin1 = (FixedVector4&)Vin;
+
+		return ( Vin1.V[0] == V[0] && Vin1.V[1] == V[1] && Vin1.V[2] == V[2] && Vin1.V[3] == V[3] );
 	}
 
-	bool operator==(const FixedVector4 &Vin)
-	{
-		FixedVector4 &Vin1 = (FixedVector4 &) Vin;
-		return (Vin1.V[0]==V[0] && Vin1.V[1]==V[1] && 
-			Vin1.V[2]==V[2] && Vin1.V[3]==V[3]);
-	}
+	bool operator!=( const FixedVector4& Vin1 ) { return ! ( ( *this ) == Vin1 ); }
 
-	bool operator!=(const FixedVector4 &Vin1)
-	{
-		return !((*this) == Vin1);
-	}
-
-	FixedVector4 &operator+=(const FixedVector4 &qc)
+	FixedVector4& operator+=( const FixedVector4& qc )
 	{
 		V[0] += qc.V[0];
 		V[1] += qc.V[1];
@@ -102,46 +93,48 @@ public:
 		return *this;
 	}
 
-	FixedVector4 operator*(const FixedVector4 &qc)
+	FixedVector4 operator*( const FixedVector4& qc )
 	{
-		FixedVector4 qa;
-		FixedVector4 &qb = *this;
-		
+		FixedVector4  qa;
+		FixedVector4& qb = *this;
+
 		// dQMultiply0 from ODE
-		qa[0] = qb[0]*qc[0] - qb[1]*qc[1] - qb[2]*qc[2] - qb[3]*qc[3];
-		qa[1] = qb[0]*qc[1] + qb[1]*qc[0] + qb[2]*qc[3] - qb[3]*qc[2];
-		qa[2] = qb[0]*qc[2] + qb[2]*qc[0] + qb[3]*qc[1] - qb[1]*qc[3];
-		qa[3] = qb[0]*qc[3] + qb[3]*qc[0] + qb[1]*qc[2] - qb[2]*qc[1];
-	
+		qa[0] = qb[0] * qc[0] - qb[1] * qc[1] - qb[2] * qc[2] - qb[3] * qc[3];
+		qa[1] = qb[0] * qc[1] + qb[1] * qc[0] + qb[2] * qc[3] - qb[3] * qc[2];
+		qa[2] = qb[0] * qc[2] + qb[2] * qc[0] + qb[3] * qc[1] - qb[1] * qc[3];
+		qa[3] = qb[0] * qc[3] + qb[3] * qc[0] + qb[1] * qc[2] - qb[2] * qc[1];
+
 		return qa;
 	}
 
 	///> component wise linear interpolation
-	FixedVector4 lerp(FixedVector4 &c1, FixedVector4 &c2) 
+	FixedVector4 lerp( FixedVector4& c1, FixedVector4& c2 )
 	{
 		return FixedVector4(
-			c1[0] * (fixed(1) - V[0]) + c2[0] * V[0],
-			c1[1] * (fixed(1) - V[1]) + c2[1] * V[1],
-			c1[2] * (fixed(1) - V[2]) + c2[2] * V[2],
-			c1[3] * (fixed(1) - V[3]) + c2[3] * V[3]);
+			c1[0] * ( fixed( 1 ) - V[0] ) + c2[0] * V[0],
+			c1[1] * ( fixed( 1 ) - V[1] ) + c2[1] * V[1],
+			c1[2] * ( fixed( 1 ) - V[2] ) + c2[2] * V[2],
+			c1[3] * ( fixed( 1 ) - V[3] ) + c2[3] * V[3]
+		);
 	}
 
 	void Normalize();
 
-	Vector4 &asVector4()
+	Vector4& asVector4()
 	{
-		static Vector4 a[10];
+		static Vector4      a[10];
 		static unsigned int count = 0;
-		
-		Vector4 &b = a[++count % 10];
-		b[0] = V[0].asFloat();
-		b[1] = V[1].asFloat();
-		b[2] = V[2].asFloat();
-		b[3] = V[3].asFloat();
+
+		Vector4& b = a[++count % 10];
+		b[0]       = V[0].asFloat();
+		b[1]       = V[1].asFloat();
+		b[2]       = V[2].asFloat();
+		b[3]       = V[3].asFloat();
+
 		return b;
 	}
 
-	void asVector(Vector4 &dest)
+	void asVector( Vector4& dest )
 	{
 		dest[0] = V[0].asFloat();
 		dest[1] = V[1].asFloat();
@@ -150,19 +143,30 @@ public:
 	}
 
 	// Quaternion maths
-	void setQuatFromAxisAndAngle(FixedVector &axis, fixed angle);
-	void getRotationMatrix(fixed *R); // R = fixed[4*3];
-	void getOpenGLRotationMatrix(float *R); // R = fixed[16];
-	void getRelativeVector(FixedVector &result, FixedVector &position);
-	static void dDQfromW(FixedVector4 &dq, FixedVector &w, FixedVector4 &q);
+	void        setQuatFromAxisAndAngle( FixedVector& axis, fixed angle );
+	void        getRotationMatrix( fixed* R );        // R = fixed[4*3];
+	void        getOpenGLRotationMatrix( float* R );  // R = fixed[16];
+	void        getRelativeVector( FixedVector& result, FixedVector& position );
+	static void dDQfromW( FixedVector4& dq, FixedVector& w, FixedVector4& q );
 
-	fixed &operator[](const int m) { DIALOG_ASSERT(m<=3); return V[m]; }
-	fixed const &operator[](const int m) const { DIALOG_ASSERT(m<=3); return V[m]; }
+	fixed& operator[]( const int m )
+	{
+		DIALOG_ASSERT( m <= 3 );
 
-	static FixedVector4 &getNullVector();
+		return V[m];
+	}
+
+	fixed const& operator[]( const int m ) const
+	{
+		DIALOG_ASSERT( m <= 3 );
+
+		return V[m];
+	}
+
+	static FixedVector4& getNullVector();
 
 protected:
 	fixed V[4];
 };
 
-#endif // __INCLUDE_FixedVector4_hpp_INCLUDE__
+#endif  // __INCLUDE_FixedVector4_hpp_INCLUDE__

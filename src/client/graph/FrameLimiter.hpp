@@ -36,4 +36,4 @@ protected:
 	Clock frameTime_;
 };
 
-#endif // __INCLUDE_FrameLimiter_hpp_INCLUDE__
+#endif  // __INCLUDE_FrameLimiter_hpp_INCLUDE__

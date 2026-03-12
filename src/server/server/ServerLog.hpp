@@ -29,24 +29,25 @@
 class ServerLog : public LoggerI
 {
 public:
-	static ServerLog *instance();
+	static ServerLog* instance();
 
 	struct ServerLogEntry
 	{
 		std::string text;
 	};
 
-	virtual void logMessage(LoggerInfo &info);
-	std::deque<ServerLogEntry> &getEntries() { return entries_; }
+	virtual void logMessage( LoggerInfo& info );
+
+	std::deque< ServerLogEntry >& getEntries() { return entries_; }
 
 protected:
-	static ServerLog *instance_;
+	static ServerLog* instance_;
 
-	std::deque<ServerLogEntry> entries_;
+	std::deque< ServerLogEntry > entries_;
 
 private:
 	ServerLog();
 	virtual ~ServerLog();
 };
 
-#endif // __INCLUDE_ServerLog_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerLog_hpp_INCLUDE__

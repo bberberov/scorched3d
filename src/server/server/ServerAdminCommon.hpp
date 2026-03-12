@@ -27,26 +27,29 @@
 
 namespace ServerAdminCommon
 {
-	bool addPlayer(ServerAdminSessions::Credential &credential, const char *playerType);
-	bool kickPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId);
-	bool poorPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId);
-	bool killPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId);
-	bool banPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, const char *reason);
-	bool flagPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, const char *reason);
-	bool changeNamePlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, const LangString &newName);
-	bool slapPlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, float slap);
-	bool mutePlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, bool mute);
-	bool permMutePlayer(ServerAdminSessions::Credential &credential, unsigned int playerId, const char *reason);
-	bool unpermMutePlayer(ServerAdminSessions::Credential &credential, unsigned int playerId);
-	bool newGame(ServerAdminSessions::Credential &credential);
-	bool killAll(ServerAdminSessions::Credential &credential);
-	bool stopServer(ServerAdminSessions::Credential &credential);
-	bool stopServerWhenEmpty(ServerAdminSessions::Credential &credential);
-	bool setLogging(ServerAdminSessions::Credential &credential, bool logging);
+	bool addPlayer( ServerAdminSessions::Credential& credential, const char* playerType );
+	bool kickPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId );
+	bool poorPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId );
+	bool killPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId );
+	bool banPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId, const char* reason );
+	bool flagPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId, const char* reason );
+	bool changeNamePlayer(
+		ServerAdminSessions::Credential& credential,
+		unsigned int                     playerId,
+		const LangString&                newName
+	);
+	bool slapPlayer( ServerAdminSessions::Credential& credential, unsigned int playerId, float slap );
+	bool mutePlayer( ServerAdminSessions::Credential& credential, unsigned int playerId, bool mute );
+	bool permMutePlayer( ServerAdminSessions::Credential& credential, unsigned int playerId, const char* reason );
+	bool unpermMutePlayer( ServerAdminSessions::Credential& credential, unsigned int playerId );
+	bool newGame( ServerAdminSessions::Credential& credential );
+	bool killAll( ServerAdminSessions::Credential& credential );
+	bool stopServer( ServerAdminSessions::Credential& credential );
+	bool stopServerWhenEmpty( ServerAdminSessions::Credential& credential );
+	bool setLogging( ServerAdminSessions::Credential& credential, bool logging );
 
-	void adminLog(const ChannelText &message);
-	bool adminSay(ServerAdminSessions::Credential &credential,
-		const char *channel, const char *text);
-}
+	void adminLog( const ChannelText& message );
+	bool adminSay( ServerAdminSessions::Credential& credential, const char* channel, const char* text );
+}  // namespace ServerAdminCommon
 
-#endif // __INCLUDE_ServerAdminCommon_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerAdminCommon_hpp_INCLUDE__

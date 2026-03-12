@@ -25,21 +25,22 @@
 #include <common/FixedVector.hpp>
 
 class WeaponSound;
+
 class SoundAction : public Action
 {
 public:
-	SoundAction(FixedVector &position = FixedVector::getNullVector(), 
-		WeaponSound *weapon = 0);
+	SoundAction( FixedVector& position = FixedVector::getNullVector(), WeaponSound* weapon = 0 );
 	virtual ~SoundAction();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "SoundAction"; }
 
 protected:
-	WeaponSound *weapon_;
-	FixedVector position_;
+	WeaponSound* weapon_;
+	FixedVector  position_;
 };
 
-#endif // __INCLUDE_SoundAction_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundAction_hpp_INCLUDE__

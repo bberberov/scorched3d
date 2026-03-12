@@ -26,32 +26,33 @@
 #include <GLW/GLWCheckBoxText.hpp>
 
 // SINGLETON
-class HUDDialog : public GLWWindow , public GLWButtonI
+class HUDDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static HUDDialog *instance();
+	static HUDDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 protected:
-	static HUDDialog *instance_;
+	static HUDDialog* instance_;
 
 	unsigned int okId_, cancelId_;
-	GLWCheckBoxText *nameBox_;
-	GLWCheckBoxText *sightBox_;
-	GLWCheckBoxText *oldSightBox_;
-	GLWCheckBoxText *largeSightBox_;
-	GLWCheckBoxText *colorBox_;
-	GLWCheckBoxText *healthBox_;
-	GLWCheckBoxText *iconBox_;
+
+	GLWCheckBoxText* nameBox_;
+	GLWCheckBoxText* sightBox_;
+	GLWCheckBoxText* oldSightBox_;
+	GLWCheckBoxText* largeSightBox_;
+	GLWCheckBoxText* colorBox_;
+	GLWCheckBoxText* healthBox_;
+	GLWCheckBoxText* iconBox_;
 
 private:
 	HUDDialog();
 	virtual ~HUDDialog();
 };
 
-#endif // __INCLUDE_HUDDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_HUDDialog_hpp_INCLUDE__

@@ -32,7 +32,7 @@ public:
 	MainLoop();
 	virtual ~MainLoop();
 
-	void addMainLoop(MainLoopI *MainLoop);
+	void addMainLoop( MainLoopI* MainLoop );
 
 	bool mainLoop();
 	void draw();
@@ -40,26 +40,31 @@ public:
 	bool getFlip();
 
 	void swapBuffers();
-	Clock &getTimer() { return fTimer_; }
+
+	Clock& getTimer() { return fTimer_; }
 
 	void exitLoop() { exitLoop_ = true; }
-	
-	float &getDrawTime() { return drawTime_; }
-	float &getClearTime() { return clearTime_; }
-	float &getTotalTime() { return totalTime_; }
+
+	// clang-format off
+	// uncrustify off
+	float& getDrawTime()  { return drawTime_; }
+	float& getClearTime() { return clearTime_; }
+	float& getTotalTime() { return totalTime_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::list<MainLoopI *> newMainLoops_;
-	std::set<MainLoopI *> mainLoops_;
-	Clock fTimer_; // Frame/simulation timer
-	Clock dTimer_; // Draw timer
-	float drawTime_;
-	float clearTime_;
-	float totalTime_;
-	bool exitLoop_;
+	std::list< MainLoopI* > newMainLoops_;
+	std::set< MainLoopI* >  mainLoops_;
+	Clock                   fTimer_;  // Frame/simulation timer
+	Clock                   dTimer_;  // Draw timer
+	float                   drawTime_;
+	float                   clearTime_;
+	float                   totalTime_;
+	bool                    exitLoop_;
 
-	void simulate(float frameTime);
+	void simulate( float frameTime );
 	void addNew();
 };
 
-#endif // __INCLUDE_MainLoop_hpp_INCLUDE__
+#endif  // __INCLUDE_MainLoop_hpp_INCLUDE__

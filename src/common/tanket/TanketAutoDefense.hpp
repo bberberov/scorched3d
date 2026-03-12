@@ -25,21 +25,22 @@
 
 class Tanket;
 class ScorchedContext;
+
 class TanketAutoDefense
 {
 public:
-	TanketAutoDefense(ScorchedContext &context);
+	TanketAutoDefense( ScorchedContext& context );
 	virtual ~TanketAutoDefense();
 
-	void setTanket(Tanket *tanket) { tanket_ = tanket; }
+	void setTanket( Tanket* tanket ) { tanket_ = tanket; }
 
 	void newMatch();
 	void changed();
 	bool haveDefense();
 
 protected:
-	ScorchedContext &context_;
-	Tanket *tanket_;
+	ScorchedContext& context_;
+	Tanket*          tanket_;
 };
 
-#endif // __INCLUDE_TanketAutoDefense_hpp_INCLUDE__
+#endif  // __INCLUDE_TanketAutoDefense_hpp_INCLUDE__

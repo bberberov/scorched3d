@@ -27,22 +27,21 @@
 class ClientMessageHandler : public ComsMessageConnectionHandlerI
 {
 public:
-	static ClientMessageHandler *instance();
+	static ClientMessageHandler* instance();
 
-	virtual void clientConnected(NetMessage &message);
-	virtual void clientDisconnected(NetMessage &message);
-	virtual void clientError(NetMessage &message,
-		const std::string &errorString);
+	virtual void clientConnected( NetMessage& message );
+	virtual void clientDisconnected( NetMessage& message );
+	virtual void clientError( NetMessage& message, const std::string& errorString );
 
-	virtual void messageRecv(unsigned int destinationId);
-	virtual void messageSent(unsigned int destinationId);
+	virtual void messageRecv( unsigned int destinationId );
+	virtual void messageSent( unsigned int destinationId );
 
 protected:
-	static ClientMessageHandler *instance_;
+	static ClientMessageHandler* instance_;
 
 private:
 	ClientMessageHandler();
 	virtual ~ClientMessageHandler();
 };
 
-#endif // __INCLUDE_ClientMessageHandler_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientMessageHandler_hpp_INCLUDE__

@@ -30,46 +30,46 @@
 class GLWPlanView : public GLWidget
 {
 public:
-	GLWPlanView(float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f);
+	GLWPlanView( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWPlanView();
 
-	virtual void simulate(float frameTime);
-	virtual void mouseDown(int button, float x, float y, bool &skipRest);
-	virtual void mouseDrag(int button, float mx, float my, float x, float y, bool &skipRest);
-	virtual void mouseUp(int button, float x, float y, bool &skipRest);
+	virtual void simulate( float frameTime );
+	virtual void mouseDown( int button, float x, float y, bool& skipRest );
+	virtual void mouseDrag( int button, float mx, float my, float x, float y, bool& skipRest );
+	virtual void mouseUp( int button, float x, float y, bool& skipRest );
 	virtual void draw();
 
-	void addRecievePoints(unsigned int playerId, std::list<Vector> &recievepoints);
+	void addRecievePoints( unsigned int playerId, std::list< Vector >& recievepoints );
 
-	REGISTER_CLASS_HEADER(GLWPlanView);
+	REGISTER_CLASS_HEADER( GLWPlanView );
 
 protected:
 	struct PlayerDrawnInfo
 	{
-		unsigned int playerId;
-		std::list<Vector> points;
-		std::list<Vector> recievepoints;
+		unsigned int        playerId;
+		std::list< Vector > points;
+		std::list< Vector > recievepoints;
 	};
 
 	float arenaX_, arenaY_;
 	float arenaWidth_, arenaHeight_;
 	float landscapeWidth_, landscapeHeight_;
 
-	float animationTime_;
-	float flashTime_;
-	float totalTime_;
-	float pointTime_;
-	float planColor_;
-	bool flash_;
-	bool firstTime_;
-	bool dragging_;
-	float dragLastX_, dragLastY_;
-	PlayerDrawnInfo localPoints_;
-	std::list<PlayerDrawnInfo> dragPoints_;
-	std::list<Vector> sendPoints;
-	GLTextureReference arrowTex_;
-	GLTextureReference tankTex_;
-	GLTextureReference circleTex_;
+	float                        animationTime_;
+	float                        flashTime_;
+	float                        totalTime_;
+	float                        pointTime_;
+	float                        planColor_;
+	bool                         flash_;
+	bool                         firstTime_;
+	bool                         dragging_;
+	float                        dragLastX_, dragLastY_;
+	PlayerDrawnInfo              localPoints_;
+	std::list< PlayerDrawnInfo > dragPoints_;
+	std::list< Vector >          sendPoints;
+	GLTextureReference           arrowTex_;
+	GLTextureReference           tankTex_;
+	GLTextureReference           circleTex_;
 
 	void drawMap();
 	void drawTexture();
@@ -77,9 +77,9 @@ protected:
 	void drawCameraPointer();
 	void drawTanks();
 	void drawLines();
-	void drawLine(PlayerDrawnInfo &info);
+	void drawLine( PlayerDrawnInfo& info );
 	void drawBuoys();
-	bool simulateLine(PlayerDrawnInfo &info);
+	bool simulateLine( PlayerDrawnInfo& info );
 };
 
-#endif // __INCLUDE_GLWPlanView_hpp_INCLUDE__
+#endif  // __INCLUDE_GLWPlanView_hpp_INCLUDE__

@@ -24,6 +24,7 @@
 #include <common/FixedVector.hpp>
 
 class BoneType;
+
 class Vertex
 {
 public:
@@ -32,7 +33,7 @@ public:
 
 	FixedVector position;
 	FixedVector lightintense;
-	int boneIndex;
+	int         boneIndex;
 };
 
-#endif // __INCLUDE_Vertex_hpp_INCLUDE__
+#endif  // __INCLUDE_Vertex_hpp_INCLUDE__

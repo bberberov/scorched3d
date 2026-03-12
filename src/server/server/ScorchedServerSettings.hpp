@@ -26,15 +26,11 @@
 class ScorchedServerSettings
 {
 public:
-	ScorchedServerSettings(const std::string &type) :
-		type_(type)
-	{
-	}
-	virtual ~ScorchedServerSettings() 
-	{
-	}
+	ScorchedServerSettings( const std::string& type ) : type_( type ) {}
 
-	const std::string &type() { return type_; }
+	virtual ~ScorchedServerSettings() {}
+
+	const std::string& type() { return type_; }
 
 private:
 	std::string type_;
@@ -43,36 +39,29 @@ private:
 class ScorchedServerSettingsOptions : public ScorchedServerSettings
 {
 public:
-	ScorchedServerSettingsOptions(const std::string &settingsFile, 
-		bool rewriteOptions, bool writeFullOptions) :
-		ScorchedServerSettings("FILE"),
-		settingsFile_(settingsFile),
-		rewriteOptions_(rewriteOptions),
-		writeFullOptions_(writeFullOptions)
-	{
-	}
-	virtual ~ScorchedServerSettingsOptions()
-	{
-	}
+	ScorchedServerSettingsOptions( const std::string& settingsFile, bool rewriteOptions, bool writeFullOptions )
+		: ScorchedServerSettings( "FILE" )
+		, settingsFile_( settingsFile )
+		, rewriteOptions_( rewriteOptions )
+		, writeFullOptions_( writeFullOptions )
+	{}
+
+	virtual ~ScorchedServerSettingsOptions() {}
 
 	std::string settingsFile_;
-	bool rewriteOptions_;
-	bool writeFullOptions_;
+	bool        rewriteOptions_;
+	bool        writeFullOptions_;
 };
 
 class ScorchedServerSettingsSave : public ScorchedServerSettings
 {
 public:
-	ScorchedServerSettingsSave(const std::string &saveFile) :
-		ScorchedServerSettings("SAVE"),
-		saveFile_(saveFile)
-	{
-	}
-	virtual ~ScorchedServerSettingsSave()
-	{
-	}
+	ScorchedServerSettingsSave( const std::string& saveFile ) : ScorchedServerSettings( "SAVE" ), saveFile_( saveFile )
+	{}
+
+	virtual ~ScorchedServerSettingsSave() {}
 
 	std::string saveFile_;
 };
 
-#endif // __INCLUDE_ScorchedServerSettings_hpp_INCLUDE__
+#endif  // __INCLUDE_ScorchedServerSettings_hpp_INCLUDE__

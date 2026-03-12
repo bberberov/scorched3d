@@ -39,7 +39,7 @@ public:
 	enum ServerStateEnum
 	{
 		ServerStartupState = 1,
-		ServerWaitingForPlayersState ,
+		ServerWaitingForPlayersState,
 		ServerMatchCountDownState,
 		ServerNewLevelState,
 		ServerBuyingState,
@@ -49,26 +49,30 @@ public:
 		ServerScoreState
 	};
 
-	void simulate(fixed frameTime);
+	void simulate( fixed frameTime );
 
-	ServerStateEnum getState() { return serverState_; }	
-	void setState(ServerStateEnum state) { serverState_ = state; }
+	// clang-format off
+	// uncrustify off
+	ServerStateEnum getState()                        { return serverState_; }
+	void            setState( ServerStateEnum state ) { serverState_ = state; }
+	// uncrustify on
+	// clang-format on
 
-	void buyingFinished(ComsPlayedMoveMessage &message);
-	void moveFinished(ComsPlayedMoveMessage &message);
+	void buyingFinished( ComsPlayedMoveMessage& message );
+	void moveFinished( ComsPlayedMoveMessage& message );
 	void scoreFinished();
 
 protected:
 	ServerStateEnum serverState_;
 
 	ServerStateEnoughPlayers enoughPlayers_;
-	ServerStateNewGame newGame_;
+	ServerStateNewGame       newGame_;
 	ServerStateStartingMatch startingMatch_;
-	ServerStateBuying buying_;
-	ServerStatePlaying playing_;
-	ServerStateScore score_;
-	ServerStateFinishWait finishWait_;
-	ServerStateTankNewGame tankNewGame_;
+	ServerStateBuying        buying_;
+	ServerStatePlaying       playing_;
+	ServerStateScore         score_;
+	ServerStateFinishWait    finishWait_;
+	ServerStateTankNewGame   tankNewGame_;
 };
 
-#endif // __INCLUDE_ServerState_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerState_hpp_INCLUDE__

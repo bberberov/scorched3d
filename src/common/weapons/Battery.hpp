@@ -29,10 +29,9 @@ public:
 	Battery();
 	virtual ~Battery();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
-	REGISTER_ACCESSORY_HEADER(Battery, AccessoryPart::AccessoryBattery);
+	REGISTER_ACCESSORY_HEADER( Battery, AccessoryPart::AccessoryBattery );
 };
 
-#endif // __INCLUDE_Battery_hpp_INCLUDE__
+#endif  // __INCLUDE_Battery_hpp_INCLUDE__

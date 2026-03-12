@@ -24,6 +24,7 @@
 #include <console/ConsoleRule.hpp>
 
 class Console;
+
 class ConsoleMethods
 {
 public:
@@ -36,8 +37,8 @@ private:
 	void clear();
 	void exit();
 	void help();
-	void consoleLoad(std::vector<ConsoleRuleValue> &values);
-	void consoleSave(std::vector<ConsoleRuleValue> &values);
+	void consoleLoad( std::vector< ConsoleRuleValue >& values );
+	void consoleSave( std::vector< ConsoleRuleValue >& values );
 };
 
-#endif // __INCLUDE_ConsoleMethods_hpp_INCLUDE__
+#endif  // __INCLUDE_ConsoleMethods_hpp_INCLUDE__

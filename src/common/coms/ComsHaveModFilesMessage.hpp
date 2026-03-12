@@ -33,14 +33,14 @@ public:
 	ComsHaveModFilesMessage();
 	virtual ~ComsHaveModFilesMessage();
 
-	std::list<ModIdentifierEntry> &getFiles() { return files_; }
+	std::list< ModIdentifierEntry >& getFiles() { return files_; }
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::list<ModIdentifierEntry> files_;
+	std::list< ModIdentifierEntry > files_;
 };
 
-#endif // __INCLUDE_ComsHaveModFilesMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsHaveModFilesMessage_hpp_INCLUDE__

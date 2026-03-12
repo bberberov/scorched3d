@@ -31,16 +31,20 @@ public:
 	PlacementObjectTarget();
 	virtual ~PlacementObjectTarget();
 
-	virtual bool readXML(XMLNode *node);
+	virtual bool readXML( XMLNode* node );
+
 	virtual PlacementObject::Type getType() { return PlacementObject::eTarget; }
-	virtual void createObject(ScorchedContext &context,
-		RandomGenerator &generator,
-		unsigned int &playerId,
-		PlacementType::Position &position);
+
+	virtual void createObject(
+		ScorchedContext&         context,
+		RandomGenerator&         generator,
+		unsigned int&            playerId,
+		PlacementType::Position& position
+	);
 
 protected:
-	TargetDefinition targetDef_;
+	TargetDefinition           targetDef_;
 	ObjectGroupEntryDefinition groups_;
 };
 
-#endif // __INCLUDE_PlacementObjectTarget_hpp_INCLUDE__
+#endif  // __INCLUDE_PlacementObjectTarget_hpp_INCLUDE__

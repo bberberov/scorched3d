@@ -28,6 +28,7 @@
 #include <common/Keyboard.hpp>
 
 class Tank;
+
 class TargetCamera
 {
 public:
@@ -52,55 +53,59 @@ public:
 	TargetCamera();
 	virtual ~TargetCamera();
 
-	GLCamera &getCamera() { return mainCam_; }
-	CamType getCameraType() { return cameraPos_; }
-	ParticleEngine &getPrecipitationEngine() { return particleEngine_; }
-	void setCameraType(CamType type) { cameraPos_ = type; }
-	void resetCam();
+	// clang-format off
+	// uncrustify off
+	GLCamera&       getCamera()                   { return mainCam_; }
+	CamType         getCameraType()               { return cameraPos_; }
+	ParticleEngine& getPrecipitationEngine()      { return particleEngine_; }
+	void            setCameraType( CamType type ) { cameraPos_ = type; }
+	void            resetCam();
+	// uncrustify on
+	// clang-format on
 
-	void simulate(float frameTime, bool playing);
+	void simulate( float frameTime, bool playing );
 	void draw();
 	void drawPrecipitation();
-	void mouseWheel(int x, int y, int z, bool &skipRest);
-	void mouseDown(GameState::MouseButton button, int x, int y, bool &skipRest);
-	void mouseUp(GameState::MouseButton button, int x, int y, bool &skipRest);
-	void mouseDrag(GameState::MouseButton button, int mx, int my, int x, int y, bool &skipRest);
+	void mouseWheel( int x, int y, int z, bool& skipRest );
+	void mouseDown( GameState::MouseButton button, int x, int y, bool& skipRest );
+	void mouseUp( GameState::MouseButton button, int x, int y, bool& skipRest );
+	void mouseDrag( GameState::MouseButton button, int mx, int my, int x, int y, bool& skipRest );
 	bool keyboardCheck(
-		float frameTime,
-		char *buffer,
-		unsigned int keyState,
-		KeyboardHistory::HistoryElement *history,
-		int hisCount,
-		bool &skipRest
+		float                            frameTime,
+		char*                            buffer,
+		unsigned int                     keyState,
+		KeyboardHistory::HistoryElement* history,
+		int                              hisCount,
+		bool&                            skipRest
 	);
 
-	static const char **getCameraNames();
-	static ToolTip *getCameraToolTips();
-	static int getNoCameraNames();
-	static float minHeightFunc(int x, int y, void *heightData);
-	static float maxHeightFunc(int x, int y, void *heightData);
+	static const char** getCameraNames();
+	static ToolTip*     getCameraToolTips();
+	static int          getNoCameraNames();
+	static float        minHeightFunc( int x, int y, void* heightData );
+	static float        maxHeightFunc( int x, int y, void* heightData );
 
-	static TargetCamera *getCurrentTargetCamera() { return currentTargetCamera_; }
+	static TargetCamera* getCurrentTargetCamera() { return currentTargetCamera_; }
 
 protected:
-	static TargetCamera *currentTargetCamera_;
-	GLCamera mainCam_;
-	CamType cameraPos_;
-	ParticleEmitter rainEmitter_;
-	ParticleEmitter snowEmitter_;
-	ParticleEngine particleEngine_;
-	float totalTime_;
-	float objectTime_;
-	int viewObject_;
-	int dragXStart_, dragYStart_;
-	bool dragging_;
-	bool lastLandIntersectValid_;
-	Vector lastLandIntersect_;
+	static TargetCamera* currentTargetCamera_;
+	GLCamera             mainCam_;
+	CamType              cameraPos_;
+	ParticleEmitter      rainEmitter_;
+	ParticleEmitter      snowEmitter_;
+	ParticleEngine       particleEngine_;
+	float                totalTime_;
+	float                objectTime_;
+	int                  viewObject_;
+	int                  dragXStart_, dragYStart_;
+	bool                 dragging_;
+	bool                 lastLandIntersectValid_;
+	Vector               lastLandIntersect_;
 
 	void moveCamera();
-	bool getLandIntersect(int x, int y, Vector &intersect);
-	void viewBehindTank(Tank *tank);
+	bool getLandIntersect( int x, int y, Vector& intersect );
+	void viewBehindTank( Tank* tank );
 	void viewSpectator();
 };
 
-#endif // __INCLUDE_TargetCamera_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetCamera_hpp_INCLUDE__

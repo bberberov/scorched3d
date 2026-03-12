@@ -35,90 +35,85 @@ enum PhysicsParticleType
 
 struct PhysicsParticleInfo
 {
-	PhysicsParticleInfo(
-		PhysicsParticleType type,
-		unsigned int playerId,
-		void *data) :
-		type_(type),
-		playerId_(playerId),
-		data_(data)
+	PhysicsParticleInfo( PhysicsParticleType type, unsigned int playerId, void* data )
+		: type_( type )
+		, playerId_( playerId )
+		, data_( data )
 	{}
 
 	PhysicsParticleType type_;
-	unsigned int playerId_;
-	void *data_;
+	unsigned int        playerId_;
+	void*               data_;
 };
 
 class PhysicsParticleObject;
+
 class PhysicsParticleObjectHandler
 {
 public:
-	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId) = 0;
-	virtual void wallCollision(PhysicsParticleObject &position, ScorchedCollisionId collisionId)
-	{}
+	virtual void collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId ) = 0;
+
+	virtual void wallCollision( PhysicsParticleObject& position, ScorchedCollisionId collisionId ) {}
 };
 
 class Target;
 class ScorchedContext;
+
 class PhysicsParticleObject
 {
 public:
 	PhysicsParticleObject();
 	virtual ~PhysicsParticleObject();
 
-	void setPhysics(
-		PhysicsParticleInfo info,
-		ScorchedContext &context,
-		FixedVector &position, FixedVector &velocity
-	);
-	void setForces( fixed windFactor, fixed gravityFactor);
+	void setPhysics( PhysicsParticleInfo info, ScorchedContext& context, FixedVector& position, FixedVector& velocity );
+	void setForces( fixed windFactor, fixed gravityFactor );
 
-	void setOptionUnderGroundCollision(bool underGroundCollision)
-		{ optionUnderGroundCollision_ = underGroundCollision; }
-	void setOptionRotateOnCollision(bool rotateOnCollision)
-		{ optionRotateOnCollision_ = rotateOnCollision; }
-	void setOptionWallCollision(bool wallCollision)
-		{ optionWallCollision_ = wallCollision; }
-	void setOptionStickyShields(bool stickyShields)
-		{ optionStickyShields_ = stickyShields; }
-	void setOptionShieldCollision(bool shieldCollision)
-		{ optionShieldCollision_ = shieldCollision; }
-	void setOptionLandscapeCollision(bool landscapeCollision)
-		{ optionLandscapeCollision_ = landscapeCollision; }
-	void setOptionTankCollision(bool tankCollision)
-		{ optionTankCollision_ = tankCollision; }
-	void setOptionTargetCollision(bool targetCollision)
-		{ optionTargetCollision_ = targetCollision; }
+	// clang-format off
+	// uncrustify off
+	void setOptionUnderGroundCollision( bool underGroundCollision ) { optionUnderGroundCollision_ = underGroundCollision; }
+	void setOptionRotateOnCollision( bool rotateOnCollision )       { optionRotateOnCollision_ = rotateOnCollision; }
+	void setOptionWallCollision( bool wallCollision )               { optionWallCollision_ = wallCollision; }
+	void setOptionStickyShields( bool stickyShields )               { optionStickyShields_ = stickyShields; }
+	void setOptionShieldCollision( bool shieldCollision )           { optionShieldCollision_ = shieldCollision; }
+	void setOptionLandscapeCollision( bool landscapeCollision )     { optionLandscapeCollision_ = landscapeCollision; }
+	void setOptionTankCollision( bool tankCollision )               { optionTankCollision_ = tankCollision; }
+	void setOptionTargetCollision( bool targetCollision )           { optionTargetCollision_ = targetCollision; }
+	// uncrustify on
+	// clang-format on
 
-	void applyForce(FixedVector &force);
-	void applyOffset(FixedVector &offset);
-	void simulate(fixed frameTime);
+	void applyForce( FixedVector& force );
+	void applyOffset( FixedVector& offset );
+	void simulate( fixed frameTime );
 
-	FixedVector &getPosition() { return position_; }
-	FixedVector &getVelocity() { return velocity_; }
-	FixedVector4 &getRotationQuat() { return rotation_; }
+	// clang-format off
+	// uncrustify off
+	FixedVector&  getPosition()     { return position_; }
+	FixedVector&  getVelocity()     { return velocity_; }
+	FixedVector4& getRotationQuat() { return rotation_; }
 
-	void setHandler(PhysicsParticleObjectHandler *handler) { handler_ = handler; }
-	void setPosition(FixedVector &position) { position_ = position; }
+	void setHandler( PhysicsParticleObjectHandler* handler ) { handler_ = handler; }
+	void setPosition( FixedVector& position )                { position_ = position; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	PhysicsParticleInfo info_;
-	ScorchedContext *context_;
-	PhysicsParticleObjectHandler *handler_;
-	bool optionUnderGroundCollision_;
-	bool optionRotateOnCollision_;
-	bool optionWallCollision_;
-	bool optionStickyShields_;
-	bool optionShieldCollision_;
-	bool optionLandscapeCollision_;
-	bool optionTankCollision_;
-	bool optionTargetCollision_;
-	unsigned int iterations_;
-	FixedVector position_;
-	FixedVector velocity_;
-	FixedVector windFactor_;
-	FixedVector4 rotation_;
-	FixedVector4 avelocity_;
+	PhysicsParticleInfo           info_;
+	ScorchedContext*              context_;
+	PhysicsParticleObjectHandler* handler_;
+	bool                          optionUnderGroundCollision_;
+	bool                          optionRotateOnCollision_;
+	bool                          optionWallCollision_;
+	bool                          optionStickyShields_;
+	bool                          optionShieldCollision_;
+	bool                          optionLandscapeCollision_;
+	bool                          optionTankCollision_;
+	bool                          optionTargetCollision_;
+	unsigned int                  iterations_;
+	FixedVector                   position_;
+	FixedVector                   velocity_;
+	FixedVector                   windFactor_;
+	FixedVector4                  rotation_;
+	FixedVector4                  avelocity_;
 
 	enum CollisionAction
 	{
@@ -126,28 +121,29 @@ protected:
 		CollisionActionCollision,
 		CollisionActionBounce
 	};
+
 	struct CollisionInfo
 	{
 		ScorchedCollisionId collisionId;
-		fixed deflectFactor;
-		FixedVector normal;
+		fixed               deflectFactor;
+		FixedVector         normal;
 	};
 
-	virtual void shotWallHit(CollisionInfo &collision);
-	virtual void shotShieldHit(Target *target);
-	virtual void bounceShieldHit(Target *target);
+	virtual void shotWallHit( CollisionInfo& collision );
+	virtual void shotShieldHit( Target* target );
+	virtual void bounceShieldHit( Target* target );
 
-	void checkCollision();
-	CollisionAction checkShotCollision(CollisionInfo &collision, Target *target);
-	CollisionAction checkBounceCollision(CollisionInfo &collision, Target *target);
-	CollisionAction checkFallingCollision(CollisionInfo &collision, Target *target);
+	void            checkCollision();
+	CollisionAction checkShotCollision( CollisionInfo& collision, Target* target );
+	CollisionAction checkBounceCollision( CollisionInfo& collision, Target* target );
+	CollisionAction checkFallingCollision( CollisionInfo& collision, Target* target );
 
-	bool getLandscapeCollision(CollisionInfo &collision);
-	bool getRoofCollision(CollisionInfo &collision);
-	bool getWallCollision(CollisionInfo &collision);
-	bool getShieldCollision(CollisionInfo &collision, Target *target);
-	bool getTargetCollision(CollisionInfo &collision, Target *target);
-	bool getTargetBounceCollision(CollisionInfo &collision, Target *target);
+	bool getLandscapeCollision( CollisionInfo& collision );
+	bool getRoofCollision( CollisionInfo& collision );
+	bool getWallCollision( CollisionInfo& collision );
+	bool getShieldCollision( CollisionInfo& collision, Target* target );
+	bool getTargetCollision( CollisionInfo& collision, Target* target );
+	bool getTargetBounceCollision( CollisionInfo& collision, Target* target );
 };
 
 class PhysicsParticleActionObject : public PhysicsParticleObject
@@ -157,9 +153,9 @@ public:
 	virtual ~PhysicsParticleActionObject();
 
 protected:
-	virtual void shotWallHit(CollisionInfo &collision);
-	virtual void shotShieldHit(Target *target);
-	virtual void bounceShieldHit(Target *target);
+	virtual void shotWallHit( CollisionInfo& collision );
+	virtual void shotShieldHit( Target* target );
+	virtual void bounceShieldHit( Target* target );
 };
 
-#endif // __INCLUDE_PhysicsParticleObject_hpp_INCLUDE__
+#endif  // __INCLUDE_PhysicsParticleObject_hpp_INCLUDE__

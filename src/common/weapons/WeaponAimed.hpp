@@ -29,39 +29,39 @@ public:
 	WeaponAimed();
 	virtual ~WeaponAimed();
 
-	virtual bool parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 protected:
-	int warHeads_;
-	Weapon *aimedWeapon_;
+	int          warHeads_;
+	Weapon*      aimedWeapon_;
 	NumberParser maxAimedDistance_;
 	NumberParser percentageMissChance_;
 	NumberParser maxInacuracy_;
-	bool randomWhenNoTargets_;
-	bool noSelfHoming_;
-	std::string groupName_;
+	bool         randomWhenNoTargets_;
+	bool         noSelfHoming_;
+	std::string  groupName_;
 
 	void fireAimedWeapon(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		bool invert
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		bool               invert
 	);
 	virtual void addWeaponSyncCheck(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext,
-		FixedVector &position,
-		FixedVector &velocity
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
 	);
 	virtual void aimShot(
-		ScorchedContext &context,
-		RandomGenerator &random,
-		FixedVector &position,
-		FixedVector &shootAt,
-		fixed &angleXYDegs,
-		fixed &angleYZDegs,
-		fixed &power
+		ScorchedContext& context,
+		RandomGenerator& random,
+		FixedVector&     position,
+		FixedVector&     shootAt,
+		fixed&           angleXYDegs,
+		fixed&           angleYZDegs,
+		fixed&           power
 	) = 0;
 };
 
-#endif // __INCLUDE_WeaponAimed_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponAimed_hpp_INCLUDE__

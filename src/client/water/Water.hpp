@@ -31,6 +31,7 @@ class Water2Renderer;
 class WaterMapPoints;
 class WaterWaveDistance;
 class WaterWaves;
+
 class Water
 {
 public:
@@ -38,36 +39,40 @@ public:
 	virtual ~Water();
 
 	void draw();
-	void generate(ProgressCounter *counter = 0);
-	void simulate(float frameTime);
-	bool explosion(Vector position, float size);
+	void generate( ProgressCounter* counter = 0 );
+	void simulate( float frameTime );
+	bool explosion( Vector position, float size );
 
-	bool getWaterOn() { return waterOn_; }
-	float getWaterHeight() { return height_; }
-	Image &getWaterBitmap() { return bitmapWater_; }
-	float *getIndexErrors();
-	float getWaveDistance(int x, int y);
-	void setTransparency(float transparency);
-	float getTransparency() { return transparency_; }
+	// clang-format off
+	// uncrustify off
+	bool   getWaterOn()      { return waterOn_; }
+	float  getWaterHeight()  { return height_; }
+	Image& getWaterBitmap()  { return bitmapWater_; }
+	float* getIndexErrors();
+	float  getWaveDistance( int x, int y );
+	void   setTransparency( float transparency );
+	float  getTransparency() { return transparency_; }
+	// uncrustify on
+	// clang-format on
 
 	void bindWaterReflection();
 	void unBindWaterReflection();
 	void drawPoints();
 
-	GLTexture &getReflectionTexture();
+	GLTexture& getReflectionTexture();
 
 protected:
-	float height_;
-	float transparency_;
-	float maxTransparency_;
-	bool waterOn_;
-	Water2 *wMap_;
-	Water2Renderer *wTex_;
-	WaterMapPoints *wMapPoints_;
-	WaterWaveDistance *wWaveDistance_;
-	WaterWaves *waves_;
-	GLTexture landTexWater_;
-	Image bitmapWater_;
+	float              height_;
+	float              transparency_;
+	float              maxTransparency_;
+	bool               waterOn_;
+	Water2*            wMap_;
+	Water2Renderer*    wTex_;
+	WaterMapPoints*    wMapPoints_;
+	WaterWaveDistance* wWaveDistance_;
+	WaterWaves*        waves_;
+	GLTexture          landTexWater_;
+	Image              bitmapWater_;
 };
 
-#endif // __INCLUDE_Water_hpp_INCLUDE__
+#endif  // __INCLUDE_Water_hpp_INCLUDE__

@@ -28,24 +28,24 @@
 class OptionEntrySetter
 {
 public:
-	OptionEntrySetter(wxControl *control, OptionEntry &entry);
+	OptionEntrySetter( wxControl* control, OptionEntry& entry );
 	virtual ~OptionEntrySetter();
 
-	wxControl *getControl();
-	OptionEntry &getEntry();
+	wxControl*   getControl();
+	OptionEntry& getEntry();
 
 protected:
-	wxControl *control_;
-	OptionEntry &entry_;
+	wxControl*   control_;
+	OptionEntry& entry_;
 };
 
 class OptionEntrySetterUtil
 {
 public:
-	static OptionEntrySetter createOtherSetter(wxWindow *parent, wxSizer *topsizer, OptionEntry &entry);
+	static OptionEntrySetter createOtherSetter( wxWindow* parent, wxSizer* topsizer, OptionEntry& entry );
 
-	static void updateControls(std::list<OptionEntrySetter> &controls);
-	static void updateEntries(std::list<OptionEntrySetter> &controls);
+	static void updateControls( std::list<OptionEntrySetter>& controls );
+	static void updateEntries( std::list<OptionEntrySetter>& controls );
 };
 
-#endif // __INCLUDE_OptionEntrySetter_hpp_INCLUDE__
+#endif  // __INCLUDE_OptionEntrySetter_hpp_INCLUDE__

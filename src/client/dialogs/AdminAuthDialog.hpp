@@ -29,25 +29,25 @@
 class AdminAuthDialog : public GLWWindow, public GLWButtonI
 {
 public:
-	static AdminAuthDialog *instance();
+	static AdminAuthDialog* instance();
 
 	// Inherited from GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// Inherited from GLWWindow
 	virtual void display();
 
 protected:
-	static AdminAuthDialog *instance_;
+	static AdminAuthDialog* instance_;
 
 	unsigned int okId_, cancelId_;
 
-	GLWTextBox *username_;
-	GLWTextBox *password_;
+	GLWTextBox* username_;
+	GLWTextBox* password_;
 
 private:
 	AdminAuthDialog();
 	virtual ~AdminAuthDialog();
 };
 
-#endif // __INCLUDE_AdminAuthDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_AdminAuthDialog_hpp_INCLUDE__

@@ -25,70 +25,76 @@
 #include <set>
 
 class Target;
+
 class TargetVisibilityPatch
 {
 public:
 	TargetVisibilityPatch();
 	~TargetVisibilityPatch();
 
-	void setLocation(int x, int y, int w, int h);
-	bool setVisible(float distance);
+	void setLocation( int x, int y, int w, int h );
+	bool setVisible( float distance );
 	void setNotVisible();
 
-	bool hasTrees() { return !trees_.empty(); }
-	bool hasTargets() { return !targets_.empty(); }
+	// clang-format off
+	// uncrustify off
+	bool hasTrees()   { return ! trees_.empty(); }
+	bool hasTargets() { return ! targets_.empty(); }
 
-	float getDistance() { return distance_; }
-	Vector &getPosition() { return position_; }
-	bool getVisible() { return visible_; }
+	float   getDistance() { return distance_; }
+	Vector& getPosition() { return position_; }
+	bool    getVisible()  { return visible_; }
 
-	static std::set<void *> &getLargeTargets() { return largeTargets_; }
-	static void addLargeTarget(Target *target) { largeTargets_.insert(target); }
-	static void removeLargeTarget(Target *target) { largeTargets_.erase(target); }
+	static std::set<void*>& getLargeTargets()       { return largeTargets_; }
+	static void addLargeTarget( Target* target )    { largeTargets_.insert( target ); }
+	static void removeLargeTarget( Target* target ) { largeTargets_.erase( target ); }
 
-	std::set<void *> &getTargets() { return targets_; }
-	void addTarget(Target *target) { targets_.insert(target); }
-	void removeTarget(Target *target) { targets_.erase(target); }
+	std::set<void*>& getTargets()       { return targets_; }
+	void addTarget( Target* target )    { targets_.insert( target ); }
+	void removeTarget( Target* target ) { targets_.erase( target ); }
 
-	std::set<void *> &getTrees() { return trees_; }
-	void addTree(Target *target) { trees_.insert(target); }
-	void removeTree(Target *target) { trees_.erase(target); }	
+	std::set<void*>& getTrees()       { return trees_; }
+	void addTree( Target* target )    { trees_.insert( target ); }
+	void removeTree( Target* target ) { trees_.erase( target ); }
 
-	std::set<void *> &getTooltips() { return tooltips_; }
-	void addTooltip(Target *target) { tooltips_.insert(target); }
-	void removeTooltip(Target *target) { tooltips_.erase(target); }	
+	std::set<void*>& getTooltips()       { return tooltips_; }
+	void addTooltip( Target* target )    { tooltips_.insert( target ); }
+	void removeTooltip( Target* target ) { tooltips_.erase( target ); }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	int x_, y_;
-	bool visible_;
-	float distance_;
-	Vector position_;
-	std::set<void *> trees_, targets_, tooltips_;
-	static std::set<void *> largeTargets_;
+	int                      x_, y_;
+	bool                     visible_;
+	float                    distance_;
+	Vector                   position_;
+	std::set< void* >        trees_, targets_, tooltips_;
+	static std::set< void* > largeTargets_;
 };
 
 class TargetVisibilityIterator
 {
 public:
-	void init(std::set<void *> &set)
+	void init( std::set< void* >& set )
 	{
-		set_ = &set;
+		set_     = &set;
 		lastItor = set_->end();
-		itor = set_->begin();
+		itor     = set_->begin();
 	}
 
-	void *getNext()
+	void* getNext()
 	{
-		if (itor == lastItor) return 0;
-		void *result = *itor;
+		if ( itor == lastItor ) return 0;
+		void* result = *itor;
 		++itor;
+
 		return result;
 	}
 
 private:
-	std::set<void *> *set_;
-	std::set<void *>::iterator lastItor;
-	std::set<void *>::iterator itor;
+	std::set< void* >*          set_;
+	std::set< void* >::iterator lastItor;
+	std::set< void* >::iterator itor;
 };
 
-#endif // __INCLUDE_TargetVisibilityPatch_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetVisibilityPatch_hpp_INCLUDE__

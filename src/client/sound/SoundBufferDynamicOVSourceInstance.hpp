@@ -36,23 +36,22 @@
 class SoundBufferDynamicOVSourceInstance : public SoundBufferSourceInstance
 {
 public:
-	SoundBufferDynamicOVSourceInstance(
-		unsigned int source, const char *fileName);
+	SoundBufferDynamicOVSourceInstance( unsigned int source, const char* fileName );
 	virtual ~SoundBufferDynamicOVSourceInstance();
 
-	virtual void play(bool loop);
+	virtual void play( bool loop );
 	virtual void stop();
-	virtual void simulate(bool loop);
+	virtual void simulate( bool loop );
 
 protected:
-	unsigned int buffers_[2];
-	ALenum format_;
+	unsigned int   buffers_[2];
+	ALenum         format_;
 	OggVorbis_File oggStream_;
-	vorbis_info *vorbisInfo_;
+	vorbis_info*   vorbisInfo_;
 
-	bool addDataToBuffer(unsigned int buffer, bool loop);
+	bool addDataToBuffer( unsigned int buffer, bool loop );
 };
 
-#endif // HAVEOGG
+#endif  // HAVEOGG
 
-#endif // __INCLUDE_SoundBufferDynamicOVSourceInstance_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferDynamicOVSourceInstance_hpp_INCLUDE__

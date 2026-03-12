@@ -27,47 +27,48 @@
 #include <map>
 #include <set>
 
-class ServerSyncCheck : public ComsMessageHandlerI 
+class ServerSyncCheck : public ComsMessageHandlerI
 {
 public:
-	ServerSyncCheck(ComsMessageHandler &comsMessageHandler);
+	ServerSyncCheck( ComsMessageHandler& comsMessageHandler );
 	virtual ~ServerSyncCheck();
 
 	void enterState();
 	void simulate();
 
-	void addServerSyncCheck(ComsSyncCheckMessage *message);
+	void addServerSyncCheck( ComsSyncCheckMessage* message );
 	void sendAutoSyncCheck();
 	void sendSyncCheck();
-	void sentSyncCheck(unsigned int syncId);
+	void sentSyncCheck( unsigned int syncId );
 
 	// Inherited from ComsMessageHandlerI
-	virtual bool processMessage(
-		NetMessage &message,
-		const char *messageType,
-		NetBufferReader &reader);
+	virtual bool processMessage( NetMessage& message, const char* messageType, NetBufferReader& reader );
 
 protected:
-	static ServerSyncCheck *instance_;
-	time_t lastTime_;
+	static ServerSyncCheck* instance_;
+	time_t                  lastTime_;
 
 	struct SyncContext
 	{
 		SyncContext();
 		~SyncContext();
 
-		ComsSyncCheckMessage *serverMessage;
-		std::map<unsigned int, ComsSyncCheckMessage*> clientMessages;
-		std::set<unsigned int> clientDestinations;
+		ComsSyncCheckMessage*                           serverMessage;
+		std::map< unsigned int, ComsSyncCheckMessage* > clientMessages;
+		std::set< unsigned int >                        clientDestinations;
 	};
-	std::map<unsigned int, SyncContext*> contexts_;
 
-	bool checkContext(SyncContext *context);
-	bool compareSyncChecks(ComsSyncCheckMessage *server, 
-		unsigned int destinationId, ComsSyncCheckMessage *client);
-	bool compareHeightMaps(unsigned int destinationId, unsigned int syncId,
-		const char *mapName,
-		NetBuffer &serverBuffer, NetBuffer &clientBuffer);
+	std::map< unsigned int, SyncContext* > contexts_;
+
+	bool checkContext( SyncContext* context );
+	bool compareSyncChecks( ComsSyncCheckMessage* server, unsigned int destinationId, ComsSyncCheckMessage* client );
+	bool compareHeightMaps(
+		unsigned int destinationId,
+		unsigned int syncId,
+		const char*  mapName,
+		NetBuffer&   serverBuffer,
+		NetBuffer&   clientBuffer
+	);
 };
 
-#endif // __INCLUDE_ServerSyncCheck_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerSyncCheck_hpp_INCLUDE__

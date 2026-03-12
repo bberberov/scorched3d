@@ -26,20 +26,20 @@
 class ShowScoreAction : public Action
 {
 public:
-	ShowScoreAction(fixed scoreTime, bool finalScore);
+	ShowScoreAction( fixed scoreTime, bool finalScore );
 	virtual ~ShowScoreAction();
 
 	static bool getFinalScore() { return finalScoreStatic_; }
 
 	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void simulate( fixed frameTime, bool& remove );
+
 	virtual std::string getActionType() { return "ShowScoreAction"; }
 
 protected:
 	static bool finalScoreStatic_;
-	fixed scoreTime_;
-	bool finalScore_;
-
+	fixed       scoreTime_;
+	bool        finalScore_;
 };
 
-#endif // __INCLUDE_ShowScoreAction_hpp_INCLUDE__
+#endif  // __INCLUDE_ShowScoreAction_hpp_INCLUDE__

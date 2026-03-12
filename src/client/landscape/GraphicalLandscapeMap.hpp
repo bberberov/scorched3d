@@ -25,40 +25,45 @@
 #include <common/Vector.hpp>
 
 class GLVertexBufferObject;
-class GraphicalLandscapeMap  : public GraphicalHeightMap
+
+class GraphicalLandscapeMap : public GraphicalHeightMap
 {
 public:
 	struct HeightData
 	{
 		Vector floatPosition;
 		Vector floatNormal;
-		float texCoord1x, texCoord1y;
-		float texCoord2x, texCoord2y;
+		float  texCoord1x, texCoord1y;
+		float  texCoord2x, texCoord2y;
 	};
 
 	GraphicalLandscapeMap();
 	virtual ~GraphicalLandscapeMap();
 
-	void create(int width, int height);
+	void create( int width, int height );
 	void reset();
 
 	void updateWholeBuffer();
 
-	virtual void setHeight(int w, int h, float height);
-	virtual void setNormal(int w, int h, Vector &normal);
+	virtual void setHeight( int w, int h, float height );
+	virtual void setNormal( int w, int h, Vector& normal );
 
-	int getMapWidth() { return width_; }
+	// clang-format off
+	// uncrustify off
+	int getMapWidth()  { return width_; }
 	int getMapHeight() { return height_; }
 
-	HeightData *getHeightData() { return heightData_; }
-	GLVertexBufferObject *getBufferObject() { return bufferObject_; }
+	HeightData*           getHeightData()   { return heightData_; }
+	GLVertexBufferObject* getBufferObject() { return bufferObject_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	HeightData *heightData_;
-	GLVertexBufferObject *bufferObject_;
-	int width_;
-	int height_;
-	unsigned int bufferSizeBytes_;
+	HeightData*           heightData_;
+	GLVertexBufferObject* bufferObject_;
+	int                   width_;
+	int                   height_;
+	unsigned int          bufferSizeBytes_;
 };
 
-#endif // __INCLUDE_GraphicalLandscapeMap_hpp_INCLUDE__
+#endif  // __INCLUDE_GraphicalLandscapeMap_hpp_INCLUDE__

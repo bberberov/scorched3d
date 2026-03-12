@@ -31,24 +31,25 @@ class LandscapeSoundType;
 class LandscapeMusicType;
 class LandscapeOptionsType;
 class LandscapeDefinitions;
+
 class LandscapeInclude
 {
 public:
 	LandscapeInclude();
 	virtual ~LandscapeInclude();
 
-	std::vector<LandscapeEvent *> events;
-	std::vector<LandscapeMovementType *> movements;
-	std::vector<PlacementType *> placements;
-	std::vector<LandscapeSoundType *> sounds;
-	std::vector<LandscapeMusicType *> musics;
-	std::vector<LandscapeOptionsType *> options;
+	std::vector< LandscapeEvent* >        events;
+	std::vector< LandscapeMovementType* > movements;
+	std::vector< PlacementType* >         placements;
+	std::vector< LandscapeSoundType* >    sounds;
+	std::vector< LandscapeMusicType* >    musics;
+	std::vector< LandscapeOptionsType* >  options;
 
-	bool readXML(LandscapeDefinitions *definitions, XMLNode *node);
+	bool readXML( LandscapeDefinitions* definitions, XMLNode* node );
 
 private:
-	LandscapeInclude(const LandscapeInclude &other);
-	LandscapeInclude &operator=(LandscapeInclude &other);
+	LandscapeInclude( const LandscapeInclude& other );
+	LandscapeInclude& operator=( LandscapeInclude& other );
 };
 
-#endif // __INCLUDE_LandscapeInclude_hpp_INCLUDE__
+#endif  // __INCLUDE_LandscapeInclude_hpp_INCLUDE__

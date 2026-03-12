@@ -30,6 +30,7 @@ class TankAIWeaponSets;
 class Weapon;
 class XMLNode;
 class Tanket;
+
 class TankAI
 {
 public:
@@ -37,43 +38,47 @@ public:
 	virtual ~TankAI();
 
 	// Instance init
-	virtual TankAI *createCopy(Tanket *tanket) = 0;
+	virtual TankAI* createCopy( Tanket* tanket ) = 0;
 
 	// Onetime init
-	virtual bool parseConfig(TankAIWeaponSets &sets, XMLNode *node);
+	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node );
 
 	// Other
-	virtual const char *getName() { return name_.c_str(); }
-	virtual const char *getDescription() { return description_.c_str(); }
-	virtual ToolTip *getToolTip();
+	// clang-format off
+	// uncrustify off
+	virtual const char* getName()        { return name_.c_str(); }
+	virtual const char* getDescription() { return description_.c_str(); }
+	virtual ToolTip*    getToolTip();
+	// uncrustify on
+	// clang-format on
 
 	// Notification of actions to perform
-	virtual void newMatch() = 0;
-	virtual void newGame() = 0;
-	virtual void playMove(unsigned int moveId) = 0;
-	virtual void buyAccessories(unsigned int moveId) = 0;
+	virtual void newMatch()                            = 0;
+	virtual void newGame()                             = 0;
+	virtual void playMove( unsigned int moveId )       = 0;
+	virtual void buyAccessories( unsigned int moveId ) = 0;
 
 	// Notification of actions happened
-	virtual void tankHurt(Weapon *weapon, float damage, 
-		unsigned int damaged, unsigned int firer) = 0;
-	virtual void shotLanded(ScorchedCollisionId collision,
-		Weapon *weapon, unsigned int firer, 
-		Vector &position) = 0;
+	virtual void tankHurt( Weapon* weapon, float damage, unsigned int damaged, unsigned int firer )                = 0;
+	virtual void shotLanded( ScorchedCollisionId collision, Weapon* weapon, unsigned int firer, Vector& position ) = 0;
 
 	// Indicates if this computer ai is available for choice by
 	// the random tank ai type
-	virtual bool availableForRandom() { return availableForRandom_; }
+	// clang-format off
+	// uncrustify off
+	virtual bool availableForRandom()  { return availableForRandom_; }
 	virtual bool availableForPlayers() { return availableForPlayers_; }
-	virtual bool removedPlayer() { return false; }
-
-	static bool &getTankAILogging() { return tankAILogging_; }
+	virtual bool removedPlayer()       { return false; }
+	static bool& getTankAILogging()    { return tankAILogging_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
 	static bool tankAILogging_;
 	std::string name_, description_;
-	bool availableForRandom_;
-	bool availableForPlayers_;
-	ToolTip toolTip_;
+	bool        availableForRandom_;
+	bool        availableForPlayers_;
+	ToolTip     toolTip_;
 };
 
-#endif // __INCLUDE_TankAI_hpp_INCLUDE__
+#endif  // __INCLUDE_TankAI_hpp_INCLUDE__

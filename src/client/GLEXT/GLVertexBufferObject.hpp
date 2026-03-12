@@ -27,7 +27,7 @@ class GLVertexBufferObject
 {
 public:
 	///> create buffer. Tell the handler if you wish to store indices or other data.
-	GLVertexBufferObject(bool indexbuffer = false);
+	GLVertexBufferObject( bool indexbuffer = false );
 	~GLVertexBufferObject();
 
 	///> call ONCE after creation, to set data size and optionally data.
@@ -36,26 +36,28 @@ public:
 	///> GL_STREAM_COPY_ARB, GL_STATIC_DRAW_ARB, GL_STATIC_READ_ARB,
 	///> GL_STATIC_COPY_ARB, GL_DYNAMIC_DRAW_ARB, GL_DYNAMIC_READ_ARB,
 	///> GL_DYNAMIC_COPY_ARB
-	void init_data(unsigned size, const void* data, int usage);
+	void  init_data( unsigned int size, const void* data, int usage );
 	///> init/set sub data
-	void init_sub_data(unsigned offset, unsigned subsize, const void* data);
+	void  init_sub_data( unsigned int offset, unsigned int subsize, const void* data );
 	///> bind buffer
-	void bind() const;
+	void  bind() const;
 	///> unbind buffer
-	void unbind() const;
+	void  unbind() const;
 	///> map buffer to address, access is one of GL_READ_ONLY_ARB, GL_WRITE_ONLY_ARB,
 	///> GL_ERAD_WRITE_ARB.
-	void* map(int access);
+	void* map( int access );
+
 	///> get size of mapped space
 	unsigned int get_map_size() const { return size_; }
+
 	///> unmap buffer
 	void unmap();
 
 protected:
-	GLuint id_;
+	GLuint       id_;
 	unsigned int size_;
-	bool mapped_;
-	int target_;
+	bool         mapped_;
+	int          target_;
 };
 
-#endif // __INCLUDE_GLVertexBufferObject_hpp_INCLUDE__
+#endif  // __INCLUDE_GLVertexBufferObject_hpp_INCLUDE__

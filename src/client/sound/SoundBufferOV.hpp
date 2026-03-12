@@ -28,30 +28,30 @@
 #include <vorbis/codec.h>
 #include <vorbis/vorbisfile.h>
 
-#define OGG_BUFFER_SIZE (1024 * 1024)
+#define OGG_BUFFER_SIZE ( 1024 * 1024 )
 
 class SoundBufferOV : public SoundBuffer
 {
 public:
-	SoundBufferOV(const char *wavFileName);
+	SoundBufferOV( const char* wavFileName );
 	virtual ~SoundBufferOV();
 
-	SoundBufferSourceInstance *createSourceInstance(unsigned int source);
+	SoundBufferSourceInstance* createSourceInstance( unsigned int source );
 
-	static bool openStream(const char *fileName, OggVorbis_File &oggStream);
-	static int readData(OggVorbis_File &oggStream, char *data, int dataSize);
-	static bool addDataToBuffer(vorbis_info *vorbisInfo, int buffer, char *dataBuffer, int size);
+	static bool openStream( const char* fileName, OggVorbis_File& oggStream );
+	static int  readData( OggVorbis_File& oggStream, char* data, int dataSize );
+	static bool addDataToBuffer( vorbis_info* vorbisInfo, int buffer, char* dataBuffer, int size );
 
-	static const char *errorString(int code);
-	static size_t read_func(void *ptr, size_t size, size_t nmemb, void *datasource);
-	static int seek_func(void *datasource, ogg_int64_t offset, int whence);
-	static int close_func(void *datasource);
-	static long tell_func(void *datasource);
+	static const char* errorString( int code );
+	static size_t      read_func( void* ptr, size_t size, size_t nmemb, void* datasource );
+	static int         seek_func( void* datasource, ogg_int64_t offset, int whence );
+	static int         close_func( void* datasource );
+	static long        tell_func( void* datasource );
 
 protected:
 	unsigned int buffer_;
 };
 
-#endif // HAVE_OGG
+#endif  // HAVE_OGG
 
-#endif // __INCLUDE_SoundBufferOV_hpp_INCLUDE__
+#endif  // __INCLUDE_SoundBufferOV_hpp_INCLUDE__

@@ -27,52 +27,50 @@
 #include <coms/ComsSimulateMessage.hpp>
 #include <common/RollingAverage.hpp>
 
-class ClientSimulator : 
-	public GameStateI, 
-	public Simulator
+class ClientSimulator : public GameStateI, public Simulator
 {
 public:
 	ClientSimulator();
 	virtual ~ClientSimulator();
 
 	// GameStateI
-	virtual void simulate(const unsigned state, float simTime);
+	virtual void simulate( const unsigned int state, float simTime );
 
 	// ComsMessageHandlerI
-	bool processComsSimulateMessage(
-		NetMessage &message,
-		NetBufferReader &reader);
-	bool processNetStatMessage(
-		NetMessage &message,
-		NetBufferReader &reader);
+	bool processComsSimulateMessage( NetMessage& message, NetBufferReader& reader );
+	bool processNetStatMessage( NetMessage& message, NetBufferReader& reader );
 
 	virtual void newLevel();
-	void setSimulationTime(fixed actualTime);
-	void addComsSimulateMessage(ComsSimulateMessage &message);
+	void         setSimulationTime( fixed actualTime );
+	void         addComsSimulateMessage( ComsSimulateMessage& message );
 
-	fixed getServerStepTime() { return serverStepTime_; }
-	fixed getServerRoundTripTime() { return serverRoundTripTime_; }
+	// clang-format off
+	// uncrustify off
+	fixed getServerStepTime()       { return serverStepTime_; }
+	fixed getServerRoundTripTime()  { return serverRoundTripTime_; }
 	fixed getServerTimeDifference() { return serverTimeDifference_.getAverage(); }
-	fixed getServerChoke() { return serverChoke_.getAverage(); }
+	fixed getServerChoke()          { return serverChoke_.getAverage(); }
+	// uncrustify on
+	// clang-format on
 
-	void setLoadingLevel(bool loadingLevel) { loadingLevel_ = loadingLevel; }
+	void setLoadingLevel( bool loadingLevel ) { loadingLevel_ = loadingLevel; }
 
 	class ActionControllerGameState : public GameStateI
 	{
 	public:
 		ActionControllerGameState();
 
-		virtual void draw(const unsigned state);
+		virtual void draw( const unsigned int state );
 	} actionControllerGameState;
 
 private:
-	fixed waitingEventTime_;
+	fixed          waitingEventTime_;
 	RollingAverage serverTimeDifference_, serverChoke_;
-	fixed serverStepTime_, serverRoundTripTime_;
-	bool loadingLevel_;
+	fixed          serverStepTime_, serverRoundTripTime_;
+	bool           loadingLevel_;
 
 	virtual bool continueToSimulate();
-	virtual void actualSimulate(fixed frameTime);
+	virtual void actualSimulate( fixed frameTime );
 };
 
-#endif // __INCLUDE_ClientSimulator_hpp_INCLUDE__
+#endif  // __INCLUDE_ClientSimulator_hpp_INCLUDE__

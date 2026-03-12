@@ -34,16 +34,20 @@ public:
 		eWhisperChannel  = 2
 	};
 
-	ChannelDefinition(const char *channel = "", unsigned int type = 0);
+	ChannelDefinition( const char* channel = "", unsigned int type = 0 );
 
-	const char *getChannel() { return channel_.c_str(); }
-	void setChannel(const char *c) { channel_ = c; }
+	// clang-format off
+	// uncrustify off
+	const char* getChannel()                { return channel_.c_str(); }
+	void        setChannel( const char* c ) { channel_ = c; }
 
-	unsigned int getType() { return type_; }
-	void setType(unsigned int t) { type_ = t; }
+	unsigned int getType()                 { return type_; }
+	void         setType( unsigned int t ) { type_ = t; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	std::string channel_;
+	std::string  channel_;
 	unsigned int type_;
 };
 
@@ -57,80 +61,78 @@ public:
 	};
 
 	ChannelText();
+	ChannelText( const std::string& channel, const LangString& message );
+	ChannelText( const std::string& channel, const std::string& key, const std::string& value );
 	ChannelText(
-		const std::string &channel,
-		const LangString &message);
-	ChannelText(
-		const std::string &channel,
-		const std::string &key,
-		const std::string &value
+		const std::string&         channel,
+		const std::string&         key,
+		const std::string&         value,
+		const LangStringConverter& param1
 	);
 	ChannelText(
-		const std::string &channel,
-		const std::string &key,
-		const std::string &value,
-		const LangStringConverter &param1
+		const std::string&         channel,
+		const std::string&         key,
+		const std::string&         value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2
 	);
 	ChannelText(
-		const std::string &channel,
-		const std::string &key,
-		const std::string &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2
+		const std::string&         channel,
+		const std::string&         key,
+		const std::string&         value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3
 	);
 	ChannelText(
-		const std::string &channel,
-		const std::string &key,
-		const std::string &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3
-	);
-	ChannelText(
-		const std::string &channel,
-		const std::string &key,
-		const std::string &value,
-		const LangStringConverter &param1,
-		const LangStringConverter &param2,
-		const LangStringConverter &param3,
-		const LangStringConverter &param4
+		const std::string&         channel,
+		const std::string&         key,
+		const std::string&         value,
+		const LangStringConverter& param1,
+		const LangStringConverter& param2,
+		const LangStringConverter& param3,
+		const LangStringConverter& param4
 	);
 
-	void setChannel(const std::string &channel) { channel_ = channel; }
-	void setMessage(const LangString &message) { message_ = message; }
-	void setMessageKey(const std::string &key) { messageKey_ = key; }
-	void setMessageValue(const std::string &value) { messageValue_ = value; }
-	void setSrcPlayerId(unsigned int srcPlayerId) { srcPlayerId_ = srcPlayerId; }
-	void setSrcPlayerName(const LangString &srcPlayerName) { srcPlayerName_ = srcPlayerName; }
-	void setDestPlayerId(unsigned int destPlayerId) { destPlayerId_ = destPlayerId; }
-	void setFlags(unsigned int flags) { flags_ = flags; }
-	void setAdminPlayer(const std::string &admin) { admin_ = admin; }
+	// clang-format off
+	// uncrustify off
+	void setChannel( const std::string& channel )            { channel_ = channel; }
+	void setMessage( const LangString& message )             { message_ = message; }
+	void setMessageKey( const std::string& key )             { messageKey_ = key; }
+	void setMessageValue( const std::string& value )         { messageValue_ = value; }
+	void setSrcPlayerId( unsigned int srcPlayerId )          { srcPlayerId_ = srcPlayerId; }
+	void setSrcPlayerName( const LangString& srcPlayerName ) { srcPlayerName_ = srcPlayerName; }
+	void setDestPlayerId( unsigned int destPlayerId )        { destPlayerId_ = destPlayerId; }
+	void setFlags( unsigned int flags )                      { flags_ = flags; }
+	void setAdminPlayer( const std::string& admin )          { admin_ = admin; }
 
-	const std::string &getChannel() { return channel_; }
-	const LangString &getMessage();
-	const std::string &getAdminPlayer() { return admin_; }
-	const std::string &getMessageKey() { return messageKey_; }
-	const std::string &getMessageValue() { return messageValue_; }
-	const std::vector<LangString> &getMessageParams() { return messageParams_; }
-	const LangString &getSrcPlayerName() { return srcPlayerName_; }
-    unsigned int getSrcPlayerId() { return srcPlayerId_; }
-	unsigned int getDestPlayerId() { return destPlayerId_; }
-	unsigned int getFlags() { return flags_; }
+	const std::string&               getChannel()       { return channel_; }
+	const LangString&                getMessage();
+	const std::string&               getAdminPlayer()   { return admin_; }
+	const std::string&               getMessageKey()    { return messageKey_; }
+	const std::string&               getMessageValue()  { return messageValue_; }
+	const std::vector< LangString >& getMessageParams() { return messageParams_; }
+	const LangString&                getSrcPlayerName() { return srcPlayerName_; }
+	unsigned int                     getSrcPlayerId()   { return srcPlayerId_; }
+	unsigned int                     getDestPlayerId()  { return destPlayerId_; }
+	unsigned int                     getFlags()         { return flags_; }
+	// uncrustify on
+	// clang-format on
 
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	unsigned int srcPlayerId_;
-	unsigned int destPlayerId_;
-	unsigned int flags_;
-	std::string channel_;
-	std::string messageValue_;
-	std::string messageKey_;
-	std::vector<LangString> messageParams_;
-	LangString message_;
-	LangString srcPlayerName_;
-	std::string admin_;
+	unsigned int              srcPlayerId_;
+	unsigned int              destPlayerId_;
+	unsigned int              flags_;
+	std::string               channel_;
+	std::string               messageValue_;
+	std::string               messageKey_;
+	std::vector< LangString > messageParams_;
+	LangString                message_;
+	LangString                srcPlayerName_;
+	std::string               admin_;
 };
 
-#endif // __INCLUDE_ChannelText_hpp_INCLUDE__
+#endif  // __INCLUDE_ChannelText_hpp_INCLUDE__

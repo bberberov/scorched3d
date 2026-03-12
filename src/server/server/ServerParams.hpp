@@ -27,29 +27,32 @@
 class ServerParams : public OptionsParameters
 {
 public:
-	static ServerParams *instance();
+	static ServerParams* instance();
 
-	const char *getServerFile() { return server_.getValue(); }
-	bool getHideWindow() { return hideWindow_.getValue(); }
-	bool getServerCustom() { return startCustom_.getValue(); }
-	bool getExitOnSyncFailure() { return exitOnSyncFailure_.getValue(); }
-	int getExitTime() { return exitTime_.getValue(); }
-	void setExitTime(int exitTime) { exitTime_.setValue(exitTime); }
-
-	void setServerFile(const std::string &file) { server_.setValue(file); }
+	// clang-format off
+	// uncrustify off
+	const char* getServerFile()                          { return server_.getValue(); }
+	bool        getHideWindow()                          { return hideWindow_.getValue(); }
+	bool        getServerCustom()                        { return startCustom_.getValue(); }
+	bool        getExitOnSyncFailure()                   { return exitOnSyncFailure_.getValue(); }
+	int         getExitTime()                            { return exitTime_.getValue(); }
+	void        setExitTime( int exitTime )              { exitTime_.setValue( exitTime ); }
+	void        setServerFile( const std::string& file ) { server_.setValue( file ); }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	static ServerParams *instance_;
+	static ServerParams* instance_;
 
 	OptionEntryString server_;
-	OptionEntryBool hideWindow_;
-	OptionEntryBool startCustom_;
-	OptionEntryBool exitOnSyncFailure_;
-	OptionEntryInt exitTime_;
+	OptionEntryBool   hideWindow_;
+	OptionEntryBool   startCustom_;
+	OptionEntryBool   exitOnSyncFailure_;
+	OptionEntryInt    exitTime_;
 
 private:
 	ServerParams();
 	virtual ~ServerParams();
 };
 
-#endif // __INCLUDE_ServerParams_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerParams_hpp_INCLUDE__

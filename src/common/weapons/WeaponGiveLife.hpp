@@ -23,30 +23,36 @@
 
 #include <actions/CallbackWeapon.hpp>
 
-class WeaponGiveLife  : public WeaponCallback
+class WeaponGiveLife : public WeaponCallback
 {
 public:
 	WeaponGiveLife();
 	virtual ~WeaponGiveLife();
 
-	virtual bool parseXML(AccessoryCreateContext &context,
-		XMLNode *accessoryNode);
+	virtual bool parseXML( AccessoryCreateContext& context, XMLNode* accessoryNode );
 
 	// Inherited from Weapon
-	void fireWeapon(ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity);
+	void fireWeapon(
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity
+	);
 
 	// Inherited from WeaponPowerUp
 	virtual void weaponCallback(
-		ScorchedContext &context,
-		WeaponFireContext &weaponContext, FixedVector &position, FixedVector &velocity,
-		unsigned int userData);
+		ScorchedContext&   context,
+		WeaponFireContext& weaponContext,
+		FixedVector&       position,
+		FixedVector&       velocity,
+		unsigned int       userData
+	);
 
-	REGISTER_ACCESSORY_HEADER(WeaponGiveLife, AccessoryPart::AccessoryWeapon);
+	REGISTER_ACCESSORY_HEADER( WeaponGiveLife, AccessoryPart::AccessoryWeapon );
 
 protected:
 	NumberParser life_;
-	bool exceedMax_;
+	bool         exceedMax_;
 };
 
-#endif // __INCLUDE_WeaponGiveLife_hpp_INCLUDE__
+#endif  // __INCLUDE_WeaponGiveLife_hpp_INCLUDE__

@@ -30,17 +30,17 @@
 class GLWIconListSaveItem : public GLWIconListItem
 {
 public:
-	GLWIconListSaveItem(const char *file, const char *time);
+	GLWIconListSaveItem( const char* file, const char* time );
 	virtual ~GLWIconListSaveItem();
 
-	const char *getFile() { return file_.c_str(); }
+	const char* getFile() { return file_.c_str(); }
 
 	// GLWIconListItem
-	virtual void draw(float x, float y, float w);
+	virtual void draw( float x, float y, float w );
 
 protected:
-	GLWIcon icon_;
-	ToolTip tip_;
+	GLWIcon     icon_;
+	ToolTip     tip_;
 	std::string file_;
 	std::string time_;
 };
@@ -49,28 +49,28 @@ protected:
 class SaveSelectDialog : public GLWWindow, public GLWButtonI, public GLWIconListI
 {
 public:
-	static SaveSelectDialog *instance();
+	static SaveSelectDialog* instance();
 
 	// GLWWindow
 	virtual void display();
 
 	// GLWButtonI
-	virtual void buttonDown(unsigned int id);
+	virtual void buttonDown( unsigned int id );
 
 	// GLWIconListI
-	virtual void selected(unsigned int id, int position);
-	virtual void chosen(unsigned int id, int position);
+	virtual void selected( unsigned int id, int position );
+	virtual void chosen( unsigned int id, int position );
 
 protected:
-	static SaveSelectDialog *instance_;
+	static SaveSelectDialog* instance_;
 
-	GLWButton *ok_;
+	GLWButton*   ok_;
 	unsigned int cancelId_;
-	GLWIconList *iconList_;
+	GLWIconList* iconList_;
 
 private:
 	SaveSelectDialog();
 	virtual ~SaveSelectDialog();
 };
 
-#endif // __INCLUDE_SaveSelectDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_SaveSelectDialog_hpp_INCLUDE__

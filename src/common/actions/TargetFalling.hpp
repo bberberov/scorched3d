@@ -29,33 +29,35 @@
 #include <list>
 
 class Parachute;
+
 class TargetFalling : public PhysicsParticle
 {
 public:
 	TargetFalling(
-		Weapon *weapon,
-		unsigned int fallingPlayerId,
-		WeaponFireContext &weaponContext,
-		Parachute *parachute
+		Weapon*            weapon,
+		unsigned int       fallingPlayerId,
+		WeaponFireContext& weaponContext,
+		Parachute*         parachute
 	);
 	virtual ~TargetFalling();
 
-	virtual void init();
-	virtual void simulate(fixed frameTime, bool &remove);
+	virtual void        init();
+	virtual void        simulate( fixed frameTime, bool& remove );
 	virtual std::string getActionDetails();
+
 	virtual std::string getActionType() { return "TargetFalling"; }
 
-	virtual void collision(PhysicsParticleObject &position, ScorchedCollisionId collisionId);
+	virtual void collision( PhysicsParticleObject& position, ScorchedCollisionId collisionId );
 
-	Parachute *getParachute() { return parachute_; }
+	Parachute* getParachute() { return parachute_; }
 
 protected:
-	Weapon *weapon_;
-	unsigned int fallingPlayerId_;
+	Weapon*           weapon_;
+	unsigned int      fallingPlayerId_;
 	WeaponFireContext weaponContext_;
-	Parachute *parachute_;
-	unsigned int data_;
-	FixedVector tankStartPosition_;
+	Parachute*        parachute_;
+	unsigned int      data_;
+	FixedVector       tankStartPosition_;
 };
 
-#endif // __INCLUDE_TargetFalling_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetFalling_hpp_INCLUDE__

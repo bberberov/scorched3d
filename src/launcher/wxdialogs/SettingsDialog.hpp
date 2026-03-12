@@ -22,6 +22,7 @@
 #define __INCLUDE_SettingsDialog_hpp_INCLUDE__
 
 class OptionsGame;
-bool showSettingsDialog(bool server, OptionsGame &context);
 
-#endif // __INCLUDE_SettingsDialog_hpp_INCLUDE__
+bool showSettingsDialog( bool server, OptionsGame& context );
+
+#endif  // __INCLUDE_SettingsDialog_hpp_INCLUDE__

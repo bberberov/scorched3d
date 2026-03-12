@@ -30,27 +30,29 @@ public:
 	static ComsMessageType ComsBuyAccessoryMessageType;
 
 	ComsBuyAccessoryMessage();
-	ComsBuyAccessoryMessage(ComsBuyAccessoryMessage &other);
-	ComsBuyAccessoryMessage(
-		unsigned int playerId,
-		unsigned int accessoryId,
-		bool buy);
+	ComsBuyAccessoryMessage( ComsBuyAccessoryMessage& other );
+	ComsBuyAccessoryMessage( unsigned int playerId, unsigned int accessoryId, bool buy );
 	virtual ~ComsBuyAccessoryMessage();
 
-	unsigned int getPlayerId() { return playerId_; }
+	// clang-format off
+	// uncrustify off
+	unsigned int getPlayerId()    { return playerId_; }
 	unsigned int getAccessoryId() { return accessoryId_; }
-	bool &getBuy() { return buy_; }
+	bool&        getBuy()         { return buy_; }
+	// uncrustify on
+	// clang-format on
 
 	// Inherited from ComsMessage
-    virtual bool writeMessage(NetBuffer &buffer);
-    virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int playerId_;
 	unsigned int accessoryId_;
-	bool buy_;
+	bool         buy_;
+
 private:
-	const ComsBuyAccessoryMessage & operator=(const ComsBuyAccessoryMessage &);
+	const ComsBuyAccessoryMessage& operator=( const ComsBuyAccessoryMessage& );
 };
 
-#endif // __INCLUDE_ComsBuyAccessoryMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsBuyAccessoryMessage_hpp_INCLUDE__

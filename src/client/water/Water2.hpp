@@ -27,28 +27,31 @@ class LandscapeDefn;
 class Image;
 class LandscapeTexBorderWater;
 class ProgressCounter;
+
 class Water2
 {
 public:
 	Water2();
 	virtual ~Water2();
 
-	void generate(LandscapeTexBorderWater *water, ProgressCounter *counter = 0);
+	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = 0 );
 
-	Water2Patches &getPatch(float time);
-	MipMapPatchIndexs &getIndexs() { return indexs_; }
-	float *getIndexErrors() { return indexErrors_; }
+	// clang-format off
+	// uncrustify off
+	Water2Patches&     getPatch( float time );
+	MipMapPatchIndexs& getIndexs()      { return indexs_; }
+	float*             getIndexErrors() { return indexErrors_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	int generatedPatches_;
-	float indexErrors_[7];
-	Water2Patches patches_[256];
+	int               generatedPatches_;
+	float             indexErrors_[7];
+	Water2Patches     patches_[256];
 	MipMapPatchIndexs indexs_;
 
-	void generateAOF(Water2Points &wd, Image *aofImage, float *rndtab, 
-		Water2Points *displacements, float *aof);
-	void generateTransparency(Water2Points &wd, Image &oafImage, 
-		LandscapeDefn &defn);
+	void generateAOF( Water2Points& wd, Image* aofImage, float* rndtab, Water2Points* displacements, float* aof );
+	void generateTransparency( Water2Points& wd, Image& oafImage, LandscapeDefn& defn );
 };
 
-#endif // __INCLUDE_Water2_hpp_INCLUDE__
+#endif  // __INCLUDE_Water2_hpp_INCLUDE__

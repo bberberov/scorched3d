@@ -23,4 +23,4 @@
 
 void showDisplayDialog();
 
-#endif // __INCLUDE_DisplayDialog_hpp_INCLUDE__
+#endif  // __INCLUDE_DisplayDialog_hpp_INCLUDE__

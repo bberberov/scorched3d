@@ -28,54 +28,60 @@
 #include <placement/PlacementShadowDefinition.hpp>
 
 class Target;
+
 class TargetDefinition
 {
 public:
 	TargetDefinition();
 	virtual ~TargetDefinition();
 
-	virtual bool readXML(XMLNode *node);
-	Target *createTarget(
-		unsigned int playerId,
-		FixedVector &position,
-		FixedVector &velocity,
-		ScorchedContext &context,
-		RandomGenerator &generator
+	virtual bool readXML( XMLNode* node );
+
+	Target* createTarget(
+		unsigned int     playerId,
+		FixedVector&     position,
+		FixedVector&     velocity,
+		ScorchedContext& context,
+		RandomGenerator& generator
 	);
 
-	PlacementShadowDefinition &getShadow() { return shadow_; }
-	ObjectGroupEntryDefinition &getGroups() { return groups_; }
+	// clang-format off
+	// uncrustify off
+	PlacementShadowDefinition&  getShadow() { return shadow_; }
+	ObjectGroupEntryDefinition& getGroups() { return groups_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	fixed life_;
-	bool boundingsphere_;
-	bool driveovertodestroy_, flattendestroy_;
-	bool nocollision_;
-	bool nodamageburn_;
-	bool nofalling_;
-	bool nofallingdamage_;
-	bool displaydamage_;
-	bool displayshadow_;
-	bool displayhardwareshadow_;
-	bool useNormalMoves_;
-	bool billboard_;
-	LangString name_;
-	std::string parachute_;
-	std::string shield_;
-	std::string ainame_;
-	int team_;
-	FixedVector size_;
-	fixed modelscale_, modelscalediff_;
-	fixed modelrotation_, modelbrightness_;
-	fixed modelrotationsnap_;
-	fixed border_;
-	std::string removeaction_;
-	std::string burnaction_;
-	std::string collisionaction_;
-	ModelID modelId_;
-	ModelID modelburntId_;
-	PlacementShadowDefinition shadow_;
+	fixed                      life_;
+	bool                       boundingsphere_;
+	bool                       driveovertodestroy_, flattendestroy_;
+	bool                       nocollision_;
+	bool                       nodamageburn_;
+	bool                       nofalling_;
+	bool                       nofallingdamage_;
+	bool                       displaydamage_;
+	bool                       displayshadow_;
+	bool                       displayhardwareshadow_;
+	bool                       useNormalMoves_;
+	bool                       billboard_;
+	LangString                 name_;
+	std::string                parachute_;
+	std::string                shield_;
+	std::string                ainame_;
+	int                        team_;
+	FixedVector                size_;
+	fixed                      modelscale_, modelscalediff_;
+	fixed                      modelrotation_, modelbrightness_;
+	fixed                      modelrotationsnap_;
+	fixed                      border_;
+	std::string                removeaction_;
+	std::string                burnaction_;
+	std::string                collisionaction_;
+	ModelID                    modelId_;
+	ModelID                    modelburntId_;
+	PlacementShadowDefinition  shadow_;
 	ObjectGroupEntryDefinition groups_;
 };
 
-#endif // __INCLUDE_TargetDefinition_hpp_INCLUDE__
+#endif  // __INCLUDE_TargetDefinition_hpp_INCLUDE__

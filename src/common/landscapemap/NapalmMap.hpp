@@ -29,14 +29,14 @@ public:
 	NapalmMap();
 	virtual ~NapalmMap();
 
-	void create(int width, int height);
-	fixed &getNapalmHeight(int w, int h);
+	void   create( int width, int height );
+	fixed& getNapalmHeight( int w, int h );
 
 protected:
-	fixed *entries_;
-	int width_, height_;
+	fixed* entries_;
+	int    width_, height_;
 
 	void clear();
 };
 
-#endif // __INCLUDE_NapalmMap_hpp_INCLUDE__
+#endif  // __INCLUDE_NapalmMap_hpp_INCLUDE__

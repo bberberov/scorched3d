@@ -26,14 +26,15 @@
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-extern SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src);
+	extern SDL_Surface* EXT_LoadPNG_RW( SDL_RWops* src );
 
 /* Ends C function definitions when using C++ */
 #ifdef __cplusplus
 }
 #endif
 
-#endif // __INCLUDE_LoadPNG_hpp_INCLUDE__
+#endif  // __INCLUDE_LoadPNG_hpp_INCLUDE__

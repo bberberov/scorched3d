@@ -22,13 +22,14 @@
 #define __INCLUDE_ServerStateScore_hpp_INCLUDE__
 
 class ServerStateEnoughPlayers;
-class ServerStateScore 
+
+class ServerStateScore
 {
 public:
 	ServerStateScore();
 	virtual ~ServerStateScore();
 
-	void enterState(ServerStateEnoughPlayers &enoughPlayers);
+	void enterState( ServerStateEnoughPlayers& enoughPlayers );
 	void scoreFinished();
 
 	bool simulate();
@@ -39,4 +40,4 @@ protected:
 	bool overAllWinner_;
 };
 
-#endif // __INCLUDE_ServerStateScore_hpp_INCLUDE__
+#endif  // __INCLUDE_ServerStateScore_hpp_INCLUDE__

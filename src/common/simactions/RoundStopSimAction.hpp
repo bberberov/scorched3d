@@ -29,12 +29,12 @@ public:
 	RoundStopSimAction();
 	virtual ~RoundStopSimAction();
 
-	virtual bool invokeAction(ScorchedContext &context);
+	virtual bool invokeAction( ScorchedContext& context );
 
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
-	REGISTER_CLASS_HEADER(RoundStopSimAction);
+	REGISTER_CLASS_HEADER( RoundStopSimAction );
 };
 
-#endif // __INCLUDE_RoundStopSimAction_hpp_INCLUDE__
+#endif  // __INCLUDE_RoundStopSimAction_hpp_INCLUDE__

@@ -42,37 +42,47 @@ public:
 	ComsConnectAuthMessage();
 	virtual ~ComsConnectAuthMessage();
 
-	void setUserName(const char *username) { setValue("username", username); }
-	void setPassword(const char *password) { setValue("password", password); }
-	void setUniqueId(const char *uid) { setValue("uid", uid); }
-	void setSUI(const char *SUId) { setValue("SUId", SUId); }
-	void setHostDesc(const char *host) { setValue("host", host); }
-	void setCompatabilityVer(unsigned int settingsver);
-	void setNoPlayers(unsigned int players);
+	// clang-format off
+	// uncrustify off
+	void setUserName( const char* username ) { setValue( "username", username ); }
+	void setPassword( const char* password ) { setValue( "password", password ); }
+	void setUniqueId( const char* uid )      { setValue( "uid", uid ); }
+	void setSUI( const char* SUId )          { setValue( "SUId", SUId ); }
+	void setHostDesc( const char* host )     { setValue( "host", host ); }
+	void setCompatabilityVer( unsigned int settingsver );
+	void setNoPlayers( unsigned int players );
 
-	const char *getUserName() { return getValue("username"); }
-	const char *getPassword() { return getValue("password"); }
-	const char *getHostDesc() { return getValue("host"); }
-	const char *getUniqueId() { return getValue("uid"); }
-	const char *getSUI() { return getValue("SUId"); }
-	unsigned int getNoPlayers() { 
-		return (unsigned int) atoi(getValue("numplayers")?getValue("numplayers"):"0"); }
-	unsigned int getCompatabilityVer() { 
-		return (unsigned int) atoi(getValue("compatver")?getValue("compatver"):"0"); }
+	const char* getUserName() { return getValue( "username" ); }
+	const char* getPassword() { return getValue( "password" ); }
+	const char* getHostDesc() { return getValue( "host" ); }
+	const char* getUniqueId() { return getValue( "uid" ); }
+	const char* getSUI()      { return getValue( "SUId" ); }
+	// uncrustify on
+	// clang-format on
+
+	unsigned int getNoPlayers()
+	{
+		return (unsigned int)atoi( getValue( "numplayers" ) ? getValue( "numplayers" ) : "0" );
+	}
+
+	unsigned int getCompatabilityVer()
+	{
+		return (unsigned int)atoi( getValue( "compatver" ) ? getValue( "compatver" ) : "0" );
+	}
 
 	// Inherited from ComsMessage
-	virtual bool writeMessage(NetBuffer &buffer);
-	virtual bool readMessage(NetBufferReader &reader);
+	virtual bool writeMessage( NetBuffer& buffer );
+	virtual bool readMessage( NetBufferReader& reader );
 
 protected:
-	std::map<std::string, std::string> values_;
+	std::map< std::string, std::string > values_;
 
-	void setValue(const char *name, const char *value);
-	const char *getValue(const char *name);
+	void        setValue( const char* name, const char* value );
+	const char* getValue( const char* name );
 
 private:
-	ComsConnectAuthMessage(const ComsConnectAuthMessage &);
-	const ComsConnectAuthMessage & operator=(const ComsConnectAuthMessage &);
+	ComsConnectAuthMessage( const ComsConnectAuthMessage& );
+	const ComsConnectAuthMessage& operator=( const ComsConnectAuthMessage& );
 };
 
-#endif // __INCLUDE_ComsConnectAuthMessage_hpp_INCLUDE__
+#endif  // __INCLUDE_ComsConnectAuthMessage_hpp_INCLUDE__

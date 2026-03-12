@@ -27,43 +27,46 @@
 
 struct lua_State;
 class XMLNode;
+
 class LaserParams
 {
 public:
 	LaserParams();
 	~LaserParams();
 
-	bool parseXML(XMLNode *accessoryNode);
-	void parseLUA(lua_State *L, int position);
+	bool parseXML( XMLNode* accessoryNode );
+	void parseLUA( lua_State* L, int position );
 
-	void setMinimumHurt(fixed value) { minimumHurt_ = value; }
-	void setMaximumHurt(fixed value) { maximumHurt_ = value; }
-	void setMinimumDistance(fixed value) { minimumDistance_ = value; }
-	void setMaximumDistance(fixed value) { maximumDistance_ = value; }
-	void setHurtRadius(fixed value) { hurtRadius_ = value; }
-	void setTotalTime(fixed value) { totalTime_ = value; }
-
-	fixed getMinimumHurt() { return minimumHurt_; }
-	fixed getMaximumHurt() { return maximumHurt_; }
-	fixed getMinimumDistance() { return minimumDistance_; }
-	fixed getMaximumDistance() { return maximumDistance_; }
-	fixed getHurtRadius() { return hurtRadius_; }
-	fixed getTotalTime() { return totalTime_; }
-	bool getHurtFirer() { return hurtFirer_; }
-	Vector &getColor() { return color_; }
-
-	float getRingRadius() { return ringRadius_; }
-	std::string &getRingTexture() { return ringTexture_; }
+	// clang-format off
+	// uncrustify off
+	void         setMinimumHurt( fixed value )     { minimumHurt_ = value; }
+	void         setMaximumHurt( fixed value )     { maximumHurt_ = value; }
+	void         setMinimumDistance( fixed value ) { minimumDistance_ = value; }
+	void         setMaximumDistance( fixed value ) { maximumDistance_ = value; }
+	void         setHurtRadius( fixed value )      { hurtRadius_ = value; }
+	void         setTotalTime( fixed value )       { totalTime_ = value; }
+	fixed        getMinimumHurt()                  { return minimumHurt_; }
+	fixed        getMaximumHurt()                  { return maximumHurt_; }
+	fixed        getMinimumDistance()              { return minimumDistance_; }
+	fixed        getMaximumDistance()              { return maximumDistance_; }
+	fixed        getHurtRadius()                   { return hurtRadius_; }
+	fixed        getTotalTime()                    { return totalTime_; }
+	bool         getHurtFirer()                    { return hurtFirer_; }
+	Vector&      getColor()                        { return color_; }
+	float        getRingRadius()                   { return ringRadius_; }
+	std::string& getRingTexture()                  { return ringTexture_; }
+	// uncrustify on
+	// clang-format on
 
 protected:
-	bool hurtFirer_;
-	Vector color_;
+	bool        hurtFirer_;
+	Vector      color_;
 	std::string ringTexture_;
-	float ringRadius_;
-	fixed minimumDistance_, maximumDistance_;
-	fixed minimumHurt_, maximumHurt_;
-	fixed hurtRadius_;
-	fixed totalTime_;
+	float       ringRadius_;
+	fixed       minimumDistance_, maximumDistance_;
+	fixed       minimumHurt_, maximumHurt_;
+	fixed       hurtRadius_;
+	fixed       totalTime_;
 };
 
-#endif // __INCLUDE_LaserParams_hpp_INCLUDE__
+#endif  // __INCLUDE_LaserParams_hpp_INCLUDE__
