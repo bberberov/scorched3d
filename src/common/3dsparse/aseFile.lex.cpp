@@ -18,6 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+// BUG: -Wunused-macros
+#pragma GCC diagnostic ignored "-Wunused-macros"
 
 #define yy_create_buffer ase_create_buffer
 #define yy_delete_buffer ase_delete_buffer
@@ -617,7 +619,7 @@ char *yytext;
 
 #include <string.h>
 #include <common/FixedVector.hpp>
-#include <3dsparse/aseFile.tab.cpp.hpp>
+#include "aseFile.tab.cpp.hpp"
 
 FixedVector aseVector;
 

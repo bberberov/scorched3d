@@ -37,11 +37,14 @@ private:
 	Sint64 m_nVal;
 
 public:
+	// NOTE: fixed type uses singed m_nVal but can be constructed with unsigned values
 	// clang-format off
 	// uncrustify off
 	fixed()                              { m_nVal = 0; }
 	fixed( const fixed& fixedVal )       { m_nVal = fixedVal.m_nVal; }
 	fixed( bool bInternal, Sint64 nVal ) { m_nVal = nVal; }
+	fixed( unsigned char nVal )          { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
+	fixed( char nVal )                   { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
 	fixed( unsigned int nVal )           { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
 	fixed( int nVal )                    { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
 	fixed( Sint64 nVal )                 { m_nVal = nVal * FIXED_RESOLUTION; }
@@ -170,6 +173,9 @@ public:
 	static fixed XPI;
 	static fixed X2PI;
 	static fixed XPIO2;
+	static fixed XPIO4;
+	static fixed XLN_E;
+	static fixed XLN_10;
 
 	static fixed fromFloat( float flt );
 

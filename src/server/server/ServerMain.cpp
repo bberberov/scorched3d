@@ -18,8 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#endif
+
 #include <stdlib.h>
 #include <weapons/AccessoryStore.hpp>
 #include <weapons/EconomyStore.hpp>

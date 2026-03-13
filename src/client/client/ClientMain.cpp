@@ -85,7 +85,7 @@ static bool initHardware(ProgressCounter *progressCounter)
 	{
 		S3D::dialogMessage("Scorched3D Keyboard", 
 			"SDL failed to acquire keyboard.\n"
-#ifdef WIN32
+#ifdef _WIN32
 			"Is DirectX 5.0 installed?"
 #endif
 		);

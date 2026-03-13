@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef WIN32
+#ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winsock2.h>
@@ -30,7 +30,7 @@
 
 int NetServerTCP3Coms::SDLNet_TCP_Recv_Wrapper(TCPsocket sock, void *data, int maxlen)
 {
-#ifdef WIN32
+#ifdef _WIN32
 	WSASetLastError(0);
 #else
 	errno = 0;
@@ -39,7 +39,7 @@ int NetServerTCP3Coms::SDLNet_TCP_Recv_Wrapper(TCPsocket sock, void *data, int m
 	int result = SDLNet_TCP_Recv(sock, data, maxlen);
 	if (result <= 0)
 	{
-#ifdef WIN32
+#ifdef _WIN32
 		int wsacp = WSAGetLastError();
 		if (wsacp != WSAECONNRESET)
 		{
@@ -61,7 +61,7 @@ int NetServerTCP3Coms::SDLNet_TCP_Recv_Wrapper(TCPsocket sock, void *data, int m
 
 int NetServerTCP3Coms::SDLNet_TCP_Send_Wrapper(TCPsocket sock, void *datap, int len)
 {
-#ifdef WIN32
+#ifdef _WIN32
 	WSASetLastError(0);
 #else
 	errno = 0;
@@ -70,7 +70,7 @@ int NetServerTCP3Coms::SDLNet_TCP_Send_Wrapper(TCPsocket sock, void *datap, int 
 	int result = SDLNet_TCP_Send(sock, datap, len);
 	if (result <= 0)
 	{
-#ifdef WIN32
+#ifdef _WIN32
 		int wsacp = WSAGetLastError();
 		if (wsacp != WSAECONNRESET)
 		{

@@ -51,7 +51,7 @@
 // NOTE: You may need to define things by hand for your system:
 typedef unsigned char  sha_byte;            // Exactly 1 byte
 typedef unsigned int sha_word32;            // Exactly 4 bytes
-#ifdef WIN32
+#ifdef _WIN32
 	#include <windows.h>
 	typedef ULONG64 sha_word64;             // 8-bytes (64-bits)
 #else

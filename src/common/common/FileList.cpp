@@ -31,7 +31,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #else
-#define WIN32_LEAN_AND_MEAN	
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #endif
 #include <common/FileList.hpp>
@@ -74,7 +74,7 @@ bool FileList::addAllFiles(const std::string &baseDir,
 			memset(&buf, 0, sizeof(buf));
 			if (stat(fileName.c_str(), &buf) == 0)
 			{
-#ifdef WIN32
+#ifdef _WIN32
 				if (buf.st_mode & _S_IFDIR)
 #else
 				if (buf.st_mode & S_IFDIR)

@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 			int(ServerParams::instance()->getExitTime() + time(0)));
 	}
 
-#ifdef WIN32
+#ifdef _WIN32
 	if (ServerParams::instance()->getHideWindow())
 	{
 		char titleBuffer[MAX_PATH];

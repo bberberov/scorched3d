@@ -30,7 +30,13 @@
 #include <engine/Simulator.hpp>
 #include <common/Logger.hpp>
 
+// BUG: -Wunused-macros
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-macros"
+
 #define LUA_LIB
+
+#pragma GCC diagnostic pop
 
 static LUAScript *getScript(lua_State *L)
 {

@@ -29,24 +29,26 @@
 #include <common/DefinesString.hpp>
 #include <common/Logger.hpp>
 
-#define _XPI      31415 // 3.1415926535897932384626433832795
-fixed fixed::XPI = fixed(true,_XPI);
-#define _X2PI     62831 // 6.283185307179586476925286766559
-fixed fixed::X2PI =    fixed(true,_X2PI);
-#define _XPIO2    15707 // 1.5707963267948966192313216916398
-fixed fixed::XPIO2 =   fixed(true,_XPIO2);
-#define _XPIO4    7853 // 0.78539816339744830961566084581988
-#define XPIO4    fixed(true, _XPIO4)
-#define _XLN_E    27182 // 2.71828182845904523536
-#define XLN_E    fixed(true,_XLN_E)
-#define _XLN_10   23025 // 2.30258509299404568402
-#define XLN_10   fixed(true,_XLN_10)
+#define _XPI    31415  // 3.1415926535897932384626433832795
+#define _X2PI   62831  // 6.283185307179586476925286766559
+#define _XPIO2  15707  // 1.5707963267948966192313216916398
+#define _XPIO4  7853   // 0.78539816339744830961566084581988
+#define _XLN_E  27182  // 2.71828182845904523536
+#define _XLN_10 23025  // 2.30258509299404568402
 
-Sint64 fixed::FIXED_RESOLUTION(10000);
-float fixed::FIXED_RESOLUTION_FLOAT(10000.0f);
+fixed fixed::XPI    = fixed( true, _XPI );
+fixed fixed::X2PI   = fixed( true, _X2PI );
+fixed fixed::XPIO2  = fixed( true, _XPIO2 );
+fixed fixed::XPIO4  = fixed( true, _XPIO4 );
+fixed fixed::XLN_E  = fixed( true, _XLN_E );
+fixed fixed::XLN_10 = fixed( true, _XLN_10 );
 
-fixed fixed::MAX_FIXED(true, Sint64(LLONG_MAX)); // 64 bit
-fixed fixed::MIN_FIXED(true, Sint64(LLONG_MIN)); // 64 bit
+Sint64 fixed::FIXED_RESOLUTION( 10000 );
+float  fixed::FIXED_RESOLUTION_FLOAT( 10000.0f );
+
+fixed fixed::MAX_FIXED( true, Sint64( LLONG_MAX ) );  // 64 bit
+fixed fixed::MIN_FIXED( true, Sint64( LLONG_MIN ) );  // 64 bit
+
 
 fixed::fixed(const char *nVal)
 {
@@ -231,7 +233,7 @@ static fixed iLog2( fixed p_Base )
 		return 0;
 
 	for( dec=fixed(0) ; absx( p_Base ) >= fixed(2) ; ++dec )
-		p_Base /= XLN_E;
+		p_Base /= fixed::XLN_E;
 
 	p_Base -= fixed(1);
 	z = p_Base;
@@ -275,7 +277,7 @@ static fixed ipow( fixed p_Base, fixed p_Power )
 
 static fixed ilog10( fixed p_Base )
 {
-	return iLog2( p_Base ) / XLN_10;
+	return iLog2( p_Base ) / fixed::XLN_10;
 }
 
 fixed fixed::sqrt()

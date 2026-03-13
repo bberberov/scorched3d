@@ -26,8 +26,12 @@
 #include <wx/msgdlg.h>
 #include <wx/dcbuffer.h>
 #include <wx/splash.h>
+
+#ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#endif
+
 #include <SDL/SDL.h>
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/DisplayDialog.hpp>

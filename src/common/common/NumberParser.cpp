@@ -129,7 +129,7 @@ fixed NumberParser::getValue(ScorchedContext &context) //RandomGenerator &genera
         S3D::dialogExit("NumberParser.cpp",
 	        S3D::formatStringBuffer("Invalid fixed expression: \"%s\"",
                 expression_.c_str()));
-	return false;  // VC++ complains
+		return fixed( 1 );  // BUG: VC++ complains
 }
 
 // Allow for default values to be passed along for optional attributes

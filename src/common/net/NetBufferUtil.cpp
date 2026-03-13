@@ -69,7 +69,7 @@ void NetBufferUtil::setBlockingIO(TCPsocket &so)
 	/* Set the socket to blocking mode for accept() */
 	fcntl(so->channel, F_SETFL, 0);
 #else
-#ifdef WIN32
+#ifdef _WIN32
 	{
 		/* passing a zero value, socket mode set blocking */
 		unsigned long mode = 0;
@@ -77,6 +77,6 @@ void NetBufferUtil::setBlockingIO(TCPsocket &so)
 	}
 #else
 #warning How do we set blocking mode on other operating systems?
-#endif /* WIN32 */
-#endif /* O_NONBLOCK */
+#endif  // _WIN32
+#endif  // O_NONBLOCK
 }

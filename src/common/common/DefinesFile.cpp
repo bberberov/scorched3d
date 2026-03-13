@@ -66,7 +66,7 @@ void S3D::fileDos2Unix(std::string &file)
 
 bool S3D::dirMake(const std::string &file)
 {
-#ifdef WIN32
+#ifdef _WIN32
 	_mkdir(file.c_str());
 #else
 	mkdir(file.c_str(), 0755);
