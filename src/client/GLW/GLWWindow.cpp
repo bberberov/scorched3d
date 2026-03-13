@@ -264,18 +264,16 @@ void GLWWindow::drawMaximizedWindow()
 	{
 		{
 			glPushMatrix();
-				glTranslatef(0.0f, 0.0f, 0.0f);
+				glTranslatef( 0.0f, 0.0f, 0.0f );
 				{
-					GLState currentStateBlend(GLState::BLEND_ON);
-					glColor4f(0.4f, 0.6f, 0.8f, 
-						((windowState_ & eTransparent)?0.8f:0.8f));
-					drawBackSurface(x_, y_, w_, h_);
+					GLState currentStateBlend( GLState::BLEND_ON );
+					glColor4f( 0.4f, 0.6f, 0.8f, ( ( windowState_ & eTransparent ) ? 0.8f : 1.0f ) );
+					drawBackSurface( x_, y_, w_, h_ );
 				}
-				glLineWidth(2.0f);
-				glColor4f(0.0f, 0.0f, 0.0f, 
-					((windowState_ & eTransparent)?1.0f:1.0f));
-				drawSurround(x_, y_, w_, h_);
-				glLineWidth(1.0f);
+				glLineWidth( 2.0f );
+				glColor4f( 0.0f, 0.0f, 0.0f, ( ( windowState_ & eTransparent ) ? 0.8f : 1.0f ) );
+				drawSurround( x_, y_, w_, h_ );
+				glLineWidth( 1.0f );
 			glPopMatrix();
 		}
 
