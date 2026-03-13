@@ -71,7 +71,7 @@ public:
 
 	void addNonParamEntry( char* cmd, ARGParserStringI* destString, const char* help = "" );
 
-	void showArgs( const char* topString = NULL );
+	void showArgs( const char* topString = nullptr );
 
 protected:
 	struct Entry

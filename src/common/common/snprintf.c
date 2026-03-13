@@ -93,21 +93,21 @@
 
 // Modified by gcamp to correctly support LL formats
 
-#define NULL 0
-
-#include <SDL/SDL.h>
-
 #ifdef TEST_SNPRINTF /* need math library headers for testing */
 
 /* In test mode, we pretend that this system doesn't have any snprintf
  * functions, regardless of what config.h says. */
-#  undef HAVE_SNPRINTF
-#  undef HAVE_VSNPRINTF
-#  undef HAVE_C99_VSNPRINTF
-#  undef HAVE_ASPRINTF
-#  undef HAVE_VASPRINTF
-#  include <math.h>
-#endif /* TEST_SNPRINTF */
+#undef HAVE_SNPRINTF
+#undef HAVE_VSNPRINTF
+#undef HAVE_C99_VSNPRINTF
+#undef HAVE_ASPRINTF
+#undef HAVE_VASPRINTF
+#include <math.h>
+#endif  // TEST_SNPRINTF
+
+#if !defined(HAVE_VSNPRINTF) || !defined(HAVE_VASPRINTF) || !defined(HAVE_ASPRINTF) || defined(TEST_SNPRINTF)
+#define NULL 0
+#endif
 
 #include <stddef.h>
 #include <string.h>
@@ -124,21 +124,31 @@
  void dummy_snprintf(void) {} 
 #endif /* HAVE_SNPRINTF, etc */
 
-#ifdef HAVE_LONG_DOUBLE
-#define LDOUBLE long double
-#else
-#define LDOUBLE double
-#endif
-
 #ifndef VA_COPY
+
+#if !defined(HAVE_VSNPRINTF) || !defined(HAVE_VASPRINTF)
+
 #ifdef HAVE_VA_COPY
 #define VA_COPY(dest, src) va_copy(dest, src)
-#else
+#else  // HAVE_VA_COPY
+
 #ifdef HAVE___VA_COPY
 #define VA_COPY(dest, src) __va_copy(dest, src)
 #else
 #define VA_COPY(dest, src) (dest) = (src)
-#endif
+#endif  // HAVE___VA_COPY
+
+#endif  // HAVE_VA_COPY
+
+#endif  // !defined(HAVE_VSNPRINTF) || !defined(HAVE_VASPRINTF)
+
+/* yes this really must be a ||. Don't muck with this (tridge) */
+#ifndef HAVE_VSNPRINTF
+
+#ifdef HAVE_LONG_DOUBLE
+#define LDOUBLE long double
+#else
+#define LDOUBLE double
 #endif
 
 /*
@@ -174,9 +184,6 @@
 #ifndef MAX
 #define MAX(p,q) (((p) >= (q)) ? (p) : (q))
 #endif
-
-/* yes this really must be a ||. Don't muck with this (tridge) */
-#if !defined(HAVE_VSNPRINTF)
 
 static size_t dopr(char *buffer, size_t maxlen, const char *format, 
 		   va_list args_in);
@@ -807,7 +814,7 @@ static void dopr_outch(char *buffer, size_t *currlen, size_t maxlen, char c)
 	return (int) dopr(str, count, fmt, args);
 }
 #define vsnprintf smb_vsnprintf
-#endif
+#endif  // HAVE_VSNPRINTF
 
 /* yes this really must be a ||. Don't muck with this (tridge)
  *
@@ -815,7 +822,7 @@ static void dopr_outch(char *buffer, size_t *currlen, size_t maxlen, char c)
  * OS *either* has no definition of *sprintf, or if it does have one
  * that doesn't work properly according to the autoconf test.
  */
-#if !defined(HAVE_SNPRINTF)
+#ifndef HAVE_SNPRINTF
 int smb_snprintf(char *str,size_t count,const char *fmt,...)
 {
 	size_t ret;
@@ -827,9 +834,7 @@ int smb_snprintf(char *str,size_t count,const char *fmt,...)
 	return (int) ret;
 }
 #define snprintf smb_snprintf
-#endif
-
-#endif 
+#endif  // HAVE_SNPRINTF
 
 #ifndef HAVE_VASPRINTF
  int vasprintf(char **ptr, const char *format, va_list ap)
@@ -851,8 +856,9 @@ int smb_snprintf(char *str,size_t count,const char *fmt,...)
 
 	return ret;
 }
-#endif
+#endif  // HAVE_VASPRINTF
 
+#endif  // VA_COPY
 
 #ifndef HAVE_ASPRINTF
  int asprintf(char **ptr, const char *format, ...)
@@ -867,7 +873,7 @@ int smb_snprintf(char *str,size_t count,const char *fmt,...)
 
 	return ret;
 }
-#endif
+#endif  // HAVE_ASPRINTF
 
 #ifdef TEST_SNPRINTF
 
@@ -1005,4 +1011,4 @@ int smb_snprintf(char *str,size_t count,const char *fmt,...)
 
 	return 0;
 }
-#endif /* TEST_SNPRINTF */
+#endif // TEST_SNPRINTF

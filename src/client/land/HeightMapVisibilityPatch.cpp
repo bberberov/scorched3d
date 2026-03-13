@@ -268,10 +268,10 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 		GLStateExtension::hasDrawRangeElements())
 	{
 		// Map data to draw
-		float *data = 0;
-		if (landscapeMap->getBufferObject())
+		float* data = 0;
+		if ( landscapeMap->getBufferObject() )
 		{
-			data = (float*) NULL + dataOffSet_;
+			data = (float*)nullptr + dataOffSet_;
 		}
 		else
 		{
@@ -302,10 +302,10 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 		}
 
 		// Map indices to draw
-		unsigned short *indices = 0;
-		if (index.getBufferOffSet() != std::numeric_limits<unsigned int>::max())
+		unsigned short* indices = 0;
+		if ( index.getBufferOffSet() != std::numeric_limits< unsigned int >::max() )
 		{
-			indices = (unsigned short *) NULL + (index.getBufferOffSet() / sizeof(unsigned short));
+			indices = (unsigned short*)nullptr + ( index.getBufferOffSet() / sizeof( unsigned short ) );
 		}
 		else
 		{

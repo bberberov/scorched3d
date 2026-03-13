@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
 
 #ifdef _WIN32
 		wxEntry(
-			(WXHINSTANCE) (HINSTANCE) GetModuleHandle(NULL),
-			(WXHINSTANCE) NULL,
+			(WXHINSTANCE) (HINSTANCE) GetModuleHandle(nullptr),
+			(WXHINSTANCE) nullptr,
 			"",
 			SW_SHOWNORMAL
 		);

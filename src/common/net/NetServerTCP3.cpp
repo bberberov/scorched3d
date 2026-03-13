@@ -96,7 +96,7 @@ bool NetServerTCP3::start(int portNo)
 
 	// Get the local ip address
 	IPaddress localip;
-	if(SDLNet_ResolveHost(&localip, NULL, portNo)==-1)
+	if ( SDLNet_ResolveHost( &localip, nullptr, portNo ) == -1 )
 	{
 		return false;
 	}

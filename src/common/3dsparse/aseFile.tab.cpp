@@ -186,7 +186,7 @@ static const char * const yytname[] = {   "$","error","$undefined.","MAX_DIGIT",
 "MaxGeomObject","MaxColor","MaxGeomObjectInit","MaxNodeTm","MaxNodeTmRow0","MaxNodeTmRow1",
 "MaxNodeTmRow2","MaxMesh","MaxVertexList","MaxVertex","MaxFaceList","MaxFace",
 "MaxFaceA","MaxFaceB","MaxFaceC","MaxNormalList","MaxNormal","MaxFaceNormal",
-"MaxVertexNormal0","MaxVertexNormal1","MaxVertexNormal2","MaxString","MaxVector", NULL
+"MaxVertexNormal0","MaxVertexNormal1","MaxVertexNormal2","MaxString","MaxVector", nullptr
 };
 #endif
 

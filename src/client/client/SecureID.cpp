@@ -88,10 +88,10 @@ std::string SecureID::GetPrivateKey(void)
 
 	struct ifreq dev; //container for the hardware data
 	struct if_nameindex *NameList = if_nameindex(); //container for the interfaces list
-	if (NameList == NULL)
+	if ( NameList == nullptr )
 	{
-		close(sock);
-		return ""; //cannot list the interfaces
+		close( sock );
+		return "";  //cannot list the interfaces
 	}
 
 	int pos = 0;

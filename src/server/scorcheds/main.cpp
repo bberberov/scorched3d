@@ -76,8 +76,8 @@ int main(int argc, char *argv[])
 	{
 		char titleBuffer[MAX_PATH];
 		GetConsoleTitle(titleBuffer, MAX_PATH);
-		HWND window = FindWindow(NULL, titleBuffer);
-		if (window != NULL) 
+		HWND window = FindWindow(nullptr, titleBuffer);
+		if (window != nullptr)
 		{
 			ShowWindow(window, SW_HIDE);
 			strcat(titleBuffer, " (HIDDEN)");

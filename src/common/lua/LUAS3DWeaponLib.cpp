@@ -145,7 +145,7 @@ static const luaL_Reg s3dweaponlib[] = {
 	{"napalm", s3d_napalm},
 	{"laser", s3d_laser},
 	{"random", s3d_random},
-	{NULL, NULL}
+	{nullptr, nullptr}
 };
 
 extern "C" {

@@ -589,7 +589,7 @@ void showMainDialog()
 				bitmap,
 				wxSPLASH_CENTRE_ON_SCREEN | wxSPLASH_TIMEOUT,
 				9000,
-				NULL,
+				nullptr,
 				-1,
 				wxDefaultPosition,
 				wxDefaultSize,

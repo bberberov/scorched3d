@@ -263,7 +263,7 @@ bool GLFont2dFreeType::createCharacter(unsigned int ch, GLFont2dStorage::CharEnt
 
 	// Increment The Raster Position As If We Were A Bitmap Font.
 	// (Only Needed If You Want To Calculate Text Length)
-	// ImageBitmap(0,0,0,0,face->glyph->advance.x >> 6,0,NULL);
+	// ImageBitmap( 0, 0, 0, 0, face->glyph->advance.x >> 6, 0, nullptr );
 
 	// Finish The Display List
 	glEndList();

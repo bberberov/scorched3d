@@ -57,12 +57,12 @@ unsigned int Keyboard::getKeyboardState()
 	return SDL_GetModState() & keymask;
 }
 
-char *Keyboard::getkeyboardbuffer(unsigned int &bufCnt)
+char* Keyboard::getkeyboardbuffer( unsigned int& bufCnt )
 {
 	bufCnt = SDLK_LAST;
-	return (char *) SDL_GetKeyState(NULL);
+	return (char*)SDL_GetKeyState( nullptr );
 }
- 
+
 KeyboardHistory::HistoryElement *Keyboard::getkeyboardhistory(unsigned int &histCnt)
 {
 	histCnt = keybHistCnt_;

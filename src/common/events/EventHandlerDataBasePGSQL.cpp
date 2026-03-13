@@ -24,14 +24,9 @@
 #include <events/EventHandlerDataBasePGSQL.hpp>
 #include <common/Logger.hpp>
 
-EventHandlerDataBasePGSQL::EventHandlerDataBasePGSQL() : pgsql_(NULL), lastresult_ (NULL)
-{
+EventHandlerDataBasePGSQL::EventHandlerDataBasePGSQL() : pgsql_( nullptr ), lastresult_( nullptr ) {}
 
-}
-
-EventHandlerDataBasePGSQL::~EventHandlerDataBasePGSQL()
-{
-}
+EventHandlerDataBasePGSQL::~EventHandlerDataBasePGSQL() {}
 
 #define SQL_BUFFER_SIZE 8192
 virtual bool EventHandlerDataBasePGSQL::runQuery(const char *fmt, ...)
@@ -40,7 +35,7 @@ virtual bool EventHandlerDataBasePGSQL::runQuery(const char *fmt, ...)
 
     if(lastresult_) {
         PQclear(lastresult_);
-        lastresult_ = NULL;
+        lastresult_ = nullptr;
     }
 
     static char text[SQL_BUFFER_SIZE];
@@ -67,9 +62,9 @@ bool EventHandlerDataBasePGSQL::connectDatabase(const char *host, const char *us
 {
       pgsql_ = PQsetdbLogin(
                 host,
-                NULL,
-                NULL,
-                NULL,
+                nullptr,
+                nullptr,
+                nullptr,
                 db,
                 user,
                 passwd);
@@ -87,7 +82,7 @@ bool EventHandlerDataBasePGSQL::connectDatabase(const char *host, const char *us
                 passwd, db));
         if(pgsql_) {
             PQfinish(pgsql_);
-            pgsql_ = NULL;
+            pgsql_ = nullptr;
         }
 		return false;
     }

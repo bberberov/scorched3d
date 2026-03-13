@@ -279,49 +279,49 @@ void ARGParser::showArgs(const char *topString)
 	S3D::dialogMessage("Arguments", buffer, false);
 }
 
-void ARGParser::addEntry(char *cmd, char **destStr, const char *help)
+void ARGParser::addEntry( char* cmd, char** destStr, const char* help )
 {
-	Entry newEntry(NULL, NULL, NULL, destStr, NULL, NULL, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( nullptr, nullptr, nullptr, destStr, nullptr, nullptr, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addEntry(char *cmd, int   *destI,   const char *help)
+void ARGParser::addEntry( char* cmd, int* destI, const char* help )
 {
-	Entry newEntry(NULL, NULL, NULL, NULL, destI, NULL, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( nullptr, nullptr, nullptr, nullptr, destI, nullptr, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addEntry(char *cmd, bool  *destB,   const char *help)
+void ARGParser::addEntry( char* cmd, bool* destB, const char* help )
 {
-	Entry newEntry(NULL, NULL, NULL, NULL, NULL, destB, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( nullptr, nullptr, nullptr, nullptr, nullptr, destB, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addEntry(char *cmd, ARGParserBoolI   *destBool,   const char *help)
+void ARGParser::addEntry( char* cmd, ARGParserBoolI* destBool, const char* help )
 {
-	Entry newEntry(destBool, NULL, NULL, NULL, NULL, NULL, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( destBool, nullptr, nullptr, nullptr, nullptr, nullptr, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addEntry(char *cmd, ARGParserIntI    *destInt,    const char *help)
+void ARGParser::addEntry( char* cmd, ARGParserIntI* destInt, const char* help )
 {
-	Entry newEntry(NULL, destInt, NULL, NULL, NULL, NULL, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( nullptr, destInt, nullptr, nullptr, nullptr, nullptr, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addEntry(char *cmd, ARGParserStringI *destString, const char *help)
+void ARGParser::addEntry( char* cmd, ARGParserStringI* destString, const char* help )
 {
-	Entry newEntry(NULL, NULL, destString, NULL, NULL, NULL, help);
-	addNewEntry(cmd, newEntry);
+	Entry newEntry( nullptr, nullptr, destString, nullptr, nullptr, nullptr, help );
+	addNewEntry( cmd, newEntry );
 }
 
-void ARGParser::addNewEntry(const char *cmd, ARGParser::Entry &newEntry)
+void ARGParser::addNewEntry( const char* cmd, ARGParser::Entry& newEntry )
 {
 	argMap_[cmd] = newEntry;
 }
 
-void ARGParser::addNonParamEntry(char *cmd, ARGParserStringI *destString, const char *help)
+void ARGParser::addNonParamEntry( char* cmd, ARGParserStringI* destString, const char* help )
 {
-	Entry newEntry(NULL, NULL, destString, NULL, NULL, NULL, help);
+	Entry newEntry( nullptr, nullptr, destString, nullptr, nullptr, nullptr, help );
 	nonParamMap_[cmd] = newEntry;
 }

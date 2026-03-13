@@ -174,21 +174,31 @@ cpp_defines = [
 ]
 
 # Functions
+
+# snprintf.c only
+if cc.has_function('va_copy')
+	c_defines   += '-DHAVE_VA_COPY'
+endif
+
+# snprintf.c only
+if cc.has_function('vsnprintf')
+	c_defines   += '-DHAVE_VSNPRINTF'
+endif
+
+# snprintf.c and DefinesString.hpp
 if cc.has_function('snprintf')
 	c_defines   += '-DHAVE_SNPRINTF'
 	cpp_defines += '-DHAVE_SNPRINTF'
 endif
 
-if cc.has_function('vsnprintf')
-	c_defines   += '-DHAVE_VSNPRINTF'
-endif
-
-if cc.has_function('asprintf')
-	c_defines   += '-DHAVE_ASPRINTF'
-endif
-
+# snprintf.c only
 if cc.has_function('vasprintf')
 	c_defines   += '-DHAVE_VASPRINTF'
+endif
+
+# snprintf.c only
+if cc.has_function('asprintf')
+	c_defines   += '-DHAVE_ASPRINTF'
 endif
 
 # Headers

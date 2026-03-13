@@ -590,7 +590,7 @@ void DisplayFrame::refreshResolutions()
 
 	std::set<std::string> displaySet;
 	char string[256];
-	SDL_Rect **modes = SDL_ListModes(NULL,SDL_FULLSCREEN|SDL_HWSURFACE);
+	SDL_Rect** modes = SDL_ListModes( nullptr, SDL_FULLSCREEN | SDL_HWSURFACE );
 	if((modes != (SDL_Rect **)0) && (modes != (SDL_Rect **)-1))
 	{
 		for(int i=0;modes[i];++i)

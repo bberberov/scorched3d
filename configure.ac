@@ -78,10 +78,10 @@ fi
 AC_MSG_RESULT($enable_profiling)
 
 # Check for extra functions
-AC_CHECK_FUNCS(vsnprintf snprintf vasprintf asprintf iconv)
+AC_CHECK_FUNCS(va_copy vsnprintf snprintf vasprintf asprintf)
 
 # Check for extra headers
-AC_CHECK_HEADERS(unistd.h iconv.h)
+AC_CHECK_HEADERS(unistd.h)
 
 # FIXME
 dnl Checking for Zlib Png Jpeg

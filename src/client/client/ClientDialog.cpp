@@ -45,9 +45,9 @@ bool createScorchedWindow()
 	SDL_WM_SetCaption(scorched3dAppName, "Scorched3D");
 	std::string iconFile = S3D::getDataFile("data/images/tank2.png");
 
-	SDL_Surface *icon = EXT_LoadPNG_RW(SDL_RWFromFile(iconFile.c_str(), "rb"));
-	SDL_WM_SetIcon(icon, NULL);
-	SDL_FreeSurface(icon);
+	SDL_Surface* icon = EXT_LoadPNG_RW( SDL_RWFromFile( iconFile.c_str(), "rb" ) );
+	SDL_WM_SetIcon( icon, nullptr );
+	SDL_FreeSurface( icon );
 
 	if (!Display::instance()->changeSettings(width,height,fullscreen)) 
 	{

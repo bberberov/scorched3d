@@ -33,25 +33,29 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 
 	if ( !src ) {
 		/* The error message has been set in SDL_RWFromFile */
-		return NULL;
+		return nullptr;
 	}
 	start = SDL_RWtell(src);
 
 	/* Initialize the data we will clean up when we're done */
-	error = NULL;
-	png_ptr = NULL; info_ptr = NULL; row_pointers = NULL; surface = NULL;
+	error        = nullptr;
+	png_ptr      = nullptr;
+	info_ptr     = nullptr;
+	row_pointers = nullptr;
+	surface      = nullptr;
 
 	/* Create the PNG loading context structure */
-	png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING,
-					  NULL,NULL,NULL);
-	if (png_ptr == NULL){
+	png_ptr = png_create_read_struct( PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr );
+	if ( png_ptr == nullptr )
+	{
 		error = "Couldn't allocate memory for PNG file or incompatible PNG dll";
 		goto done;
 	}
 
-	 /* Allocate/initialize the memory for image information.  REQUIRED. */
-	info_ptr = png_create_info_struct(png_ptr);
-	if (info_ptr == NULL) {
+	/* Allocate/initialize the memory for image information.  REQUIRED. */
+	info_ptr = png_create_info_struct( png_ptr );
+	if ( info_ptr == nullptr )
+	{
 		error = "Couldn't create image information for PNG file";
 		goto done;
 	}
@@ -69,9 +73,8 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 	png_set_read_fn(png_ptr, src, png_read_data);
 
 	/* Read PNG header info */
-	png_read_info(png_ptr, info_ptr);
-	png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth,
-			&color_type, &interlace_type, NULL, NULL);
+	png_read_info( png_ptr, info_ptr );
+	png_get_IHDR( png_ptr, info_ptr, &width, &height, &bit_depth, &color_type, &interlace_type, nullptr, nullptr );
 
 	/* tell libpng to strip 16 bit/color files down to 8 bits/color */
 	png_set_strip_16(png_ptr) ;
@@ -119,8 +122,7 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 
 	png_read_update_info(png_ptr, info_ptr);
 
-	png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth,
-			&color_type, &interlace_type, NULL, NULL);
+	png_get_IHDR( png_ptr, info_ptr, &width, &height, &bit_depth, &color_type, &interlace_type, nullptr, nullptr );
 
 	/* Allocate the SDL surface to hold the image */
 	Rmask = Gmask = Bmask = Amask = 0 ; 
@@ -138,9 +140,18 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 			Amask = 0x000000FF >> s;
 		}
 	}
-	surface = SDL_AllocSurface(SDL_SWSURFACE, width, height,
-			bit_depth*png_get_channels(png_ptr, info_ptr), Rmask,Gmask,Bmask,Amask);
-	if ( surface == NULL ) {
+	surface = SDL_AllocSurface(
+		SDL_SWSURFACE,
+		width,
+		height,
+		bit_depth* png_get_channels( png_ptr, info_ptr ),
+		Rmask,
+		Gmask,
+		Bmask,
+		Amask
+	);
+	if ( surface == nullptr )
+	{
 		error = "Out of memory";
 		goto done;
 	}
@@ -156,8 +167,9 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 	}
 
 	/* Create the array of pointers to image data */
-	row_pointers = (png_bytep*) malloc(sizeof(png_bytep)*height);
-	if ( (row_pointers == NULL) ) {
+	row_pointers = (png_bytep*)malloc( sizeof( png_bytep ) * height );
+	if (( row_pointers == nullptr ))
+	{
 		error = "Out of memory";
 		goto done;
 	}
@@ -201,20 +213,22 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 	}
 
 done:	/* Clean up and return */
-	if ( png_ptr ) {
-		png_destroy_read_struct(&png_ptr,
-		                        info_ptr ? &info_ptr : (png_infopp)0,
-								(png_infopp)0);
+	if ( png_ptr )
+	{
+		png_destroy_read_struct( &png_ptr, info_ptr ? &info_ptr : (png_infopp)0, (png_infopp)0 );
 	}
-	if ( row_pointers ) {
-		free(row_pointers);
+	if ( row_pointers )
+	{
+		free( row_pointers );
 	}
-	if ( error ) {
-		SDL_RWseek(src, start, RW_SEEK_SET);
-		if ( surface ) {
-			SDL_FreeSurface(surface);
-			surface = NULL;
+	if ( error )
+	{
+		SDL_RWseek( src, start, RW_SEEK_SET );
+		if ( surface )
+		{
+			SDL_FreeSurface( surface );
+			surface = nullptr;
 		}
 	}
-	return(surface); 
+	return ( surface );
 }

@@ -70,7 +70,7 @@ bool NetServerTCP::start(int port)
 	}
 
 	IPaddress ip;
-	if(SDLNet_ResolveHost(&ip,NULL,port)==-1)
+	if ( SDLNet_ResolveHost( &ip, nullptr, port ) == -1 )
 	{
 		return false;
 	}

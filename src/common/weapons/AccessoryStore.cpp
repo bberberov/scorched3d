@@ -156,7 +156,7 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
 	Accessory *parent, XMLNode *currentNode)
 {
 	XMLNode *typeNode = 0;
-	if (!currentNode->getNamedParameter("type", typeNode)) return NULL;
+	if ( ! currentNode->getNamedParameter( "type", typeNode ) ) return nullptr;
 
 	AccessoryPart *accessoryPart = 
 		AccessoryMetaRegistration::getNewAccessory(typeNode->getContent(), this);
@@ -165,20 +165,20 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
 		S3D::dialogMessage("AccessoryStore", S3D::formatStringBuffer(
 						"Failed to find accessory part type \"%s\"",
 						typeNode->getContent()));
-		return NULL;
+		return nullptr;
 	}
 	// Set the parent accessory
 	accessoryPart->setParent(parent);
 	
 	// Tell this accessory instance to initialize its settings from
 	// the current accessory xml definition node
-	if (!accessoryPart->parseXML(context, currentNode)) return NULL;
+	if ( ! accessoryPart->parseXML( context, currentNode ) ) return nullptr;
 
 	// There should not be any children left
 	// Any that are, are children that have not been
 	// handled by the parse routine
-	if (!currentNode->failChildren()) return NULL;
-	DIALOG_ASSERT(accessoryPart->getParent());
+	if ( ! currentNode->failChildren() ) return nullptr;
+	DIALOG_ASSERT( accessoryPart->getParent() );
 
 	// Add the accessory
 	accessoryParts_.push_back(accessoryPart);
@@ -324,14 +324,14 @@ Accessory *AccessoryStore::findByPrimaryAccessoryName(const char *name)
 			return accessory;
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 Accessory *AccessoryStore::findByAccessoryId(unsigned int id)
 {
 	std::map<unsigned int, Accessory *>::iterator itor = 
 		accessoriesById_.find(id);
-	if (itor == accessoriesById_.end()) return NULL;
+	if ( itor == accessoriesById_.end() ) return nullptr;
 	return itor->second;
 }
 
@@ -349,7 +349,7 @@ AccessoryPart *AccessoryStore::findAccessoryPartByAccessoryId(unsigned int id, c
 			return accessoryPart;
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 bool AccessoryStore::writeAccessory(NamedNetBuffer &buffer, Accessory *accessory)

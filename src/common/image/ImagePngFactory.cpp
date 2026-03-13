@@ -90,36 +90,36 @@ Image ImagePngFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha)
 
 	/* Create and initialize the png_struct with the desired error handler
 	* functions.  If you want to use the default stderr and longjump method,
-	* you can supply NULL for the last three parameters.  We also supply the
+	* you can supply nullptr for the last three parameters.  We also supply the
 	* the compiler header file version, so that we know if the application
 	* was compiled with a compatible version of the library.  REQUIRED
 	*/
-	png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, 0, 0, 0);
-	if (png_ptr == NULL)
+	png_ptr = png_create_read_struct( PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr );
+	if ( png_ptr == nullptr )
 	{
-	   return Image();
+		return Image();
 	}
 
 	/* Allocate/initialize the memory for image information.  REQUIRED. */
-	info_ptr = png_create_info_struct(png_ptr);
-	if (info_ptr == NULL)
+	info_ptr = png_create_info_struct( png_ptr );
+	if ( info_ptr == nullptr )
 	{
-	  png_destroy_read_struct(&png_ptr, (png_infopp) 0, (png_infopp) 0);
-	  return Image();
+		png_destroy_read_struct( &png_ptr, (png_infopp)nullptr, (png_infopp)nullptr );
+		return Image();
 	}
 
 	/* Set error handling if you are using the setjmp/longjmp method (this is
 	* the normal method of doing things with libpng).  REQUIRED unless you
 	* set up your own error handlers in the png_create_read_struct() earlier.
 	*/
-	if (setjmp(png_jmpbuf(png_ptr)))
+	if ( setjmp( png_jmpbuf( png_ptr ) ) )
 	{
-	  /* Free all of the memory associated with the png_ptr and info_ptr */
-	  png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) 0);
-	  /* If we get here, we had a problem reading the file */
-	  return Image();
+		/* Free all of the memory associated with the png_ptr and info_ptr */
+		png_destroy_read_struct( &png_ptr, &info_ptr, (png_infopp)nullptr );
+		/* If we get here, we had a problem reading the file */
+		return Image();
 	}
-	png_set_error_fn(png_ptr, NULL, user_png_error, user_png_warning);
+	png_set_error_fn( png_ptr, nullptr, user_png_error, user_png_warning );
 
 	/* If you are using replacement read functions, instead of calling
 	* png_init_io() here you would call:
@@ -142,7 +142,7 @@ Image ImagePngFactory::loadFromBuffer(NetBuffer &buffer, bool readalpha)
 		PNG_TRANSFORM_EXPAND;
 	if (!readalpha) settings |= PNG_TRANSFORM_STRIP_ALPHA;
 
-	png_read_png(png_ptr, info_ptr, settings, NULL);
+	png_read_png( png_ptr, info_ptr, settings, nullptr );
 
 	/* At this point you have read the entire image */
 
@@ -212,29 +212,27 @@ bool ImagePngFactory::writeToBuffer(Image image, NetBuffer &buffer)
 	int y;
 
 	// Create structs
-	png_ptr = 
-		png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-	if (!png_ptr) return false;
+	png_ptr = png_create_write_struct( PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr );
+	if ( ! png_ptr ) return false;
 
-	info_ptr = 
-		png_create_info_struct(png_ptr);
-	if (!info_ptr) return false;
+	info_ptr = png_create_info_struct( png_ptr );
+	if ( ! info_ptr ) return false;
 
 	// Set Error Handling
-	if (setjmp(png_jmpbuf(png_ptr)))
+	if ( setjmp( png_jmpbuf( png_ptr ) ) )
 	{
-		png_destroy_write_struct(&png_ptr, &info_ptr);
+		png_destroy_write_struct( &png_ptr, &info_ptr );
 		return false;
 	}
-	png_set_error_fn(png_ptr, NULL, user_png_error, user_png_warning);
+	png_set_error_fn( png_ptr, nullptr, user_png_error, user_png_warning );
 
 	// Set output
 	user_read_struct read_struct(buffer);
 	png_set_read_fn(png_ptr, (void *)&read_struct, user_read_fn);
 
 	// png_init_io(png_ptr, fp);
-	user_write_struct write_struct(buffer);
-	png_set_write_fn(png_ptr, (void *)&write_struct, user_write_fn, NULL);
+	user_write_struct write_struct( buffer );
+	png_set_write_fn( png_ptr, (void*)&write_struct, user_write_fn, nullptr );
 
 	// Write Header
 	png_set_IHDR(png_ptr, info_ptr, 
@@ -246,12 +244,15 @@ bool ImagePngFactory::writeToBuffer(Image image, NetBuffer &buffer)
 		PNG_FILTER_TYPE_DEFAULT);
 
 	// Write File
-	png_write_info(png_ptr, info_ptr);
-	for (y=0; y<image.getHeight(); y++) 
+	png_write_info( png_ptr, info_ptr );
+	for ( y = 0; y < image.getHeight(); y++ )
 	{
-		png_write_row(png_ptr, &image.getBits()[(image.getHeight() - y - 1) * image.getWidth() * image.getComponents()]);
+		png_write_row(
+			png_ptr,
+			&image.getBits()[( image.getHeight() - y - 1 ) * image.getWidth() * image.getComponents()]
+		);
 	}
-	png_write_end(png_ptr, NULL);
+	png_write_end( png_ptr, nullptr );
 
 	// Tidy
 	png_destroy_write_struct(&png_ptr, &info_ptr);

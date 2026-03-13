@@ -66,7 +66,7 @@ void S3D::dialogMessage(const std::string &header, const std::string &text, bool
 
 	// Show the dialog (if any)
 #if defined(_WIN32) && !defined(S3D_SERVER)
-	MessageBox(NULL, newtext.c_str(), header.c_str(), MB_OK);
+	MessageBox( nullptr, newtext.c_str(), header.c_str(), MB_OK );
 #else
 	printf("%s : %s\n", header.c_str(), newtext.c_str());
 #endif

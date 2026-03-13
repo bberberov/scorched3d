@@ -54,7 +54,7 @@ bool NetBufferUtil::getLocalIPAddress(TCPsocket &so, std::string &result)
 	char addressName[256];
 	if (getnameinfo(&saddr, saddrlen,
 		addressName, 256,
-		NULL, 0,
+		nullptr, 0,
 		NI_NUMERICHOST | NI_NUMERICSERV) != 0) 
 	{
 		return false;

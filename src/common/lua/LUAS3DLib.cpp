@@ -338,7 +338,7 @@ static const luaL_Reg s3dlib[] = {
 	{"get_arenaheight", s3d_get_arenaheight},
 	{"get_landscapewidth", s3d_get_landscapewidth},
 	{"get_landscapeheight", s3d_get_landscapeheight},
-	{NULL, NULL}
+	{nullptr, nullptr}
 };
 
 extern "C" {
