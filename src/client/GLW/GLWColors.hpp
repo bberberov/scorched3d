@@ -30,8 +30,6 @@ public:
 	static Vector white;
 
 private:
-	GLWColors();
-	~GLWColors();
 };
 
 #endif  // __INCLUDE_GLWColors_hpp_INCLUDE__

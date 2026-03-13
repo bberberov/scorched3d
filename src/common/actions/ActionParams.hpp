@@ -103,8 +103,10 @@ private:
 
 class TestActionParams : public ActionParams
 {
+public:
 	TestActionParams();
 
+private:
 	FIXED_ACTION_PARAM_DECL( testName );
 };
 
