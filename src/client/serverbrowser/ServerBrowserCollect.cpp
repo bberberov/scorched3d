@@ -138,11 +138,7 @@ bool ServerBrowserCollect::fetchLANList()
 			// Get the name attribute
 			ServerBrowserEntry newEntry;
 			char hostName[256];
-			snprintf(hostName,
-					256,
-					"%s:%i",
-					NetInterface::getIpName(addr),
-					(port - 1));
+			snprintf( hostName, 256, "%s:%u", NetInterface::getIpName( addr ), ( port - 1 ) );
 			newEntry.addAttribute("address", hostName);
 			
 			// Add the new and its attributes
