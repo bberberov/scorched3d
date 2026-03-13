@@ -313,16 +313,16 @@ MainFrame::MainFrame()
 	// Load all of the button bitmaps
 	struct ImageDefinition
 	{
-		const char *name;
-		const char *description;
-		int x, y;
+		const char* name;
+		const char* description;
+		int         x, y;
 	} imageDefinitions[] = {
-		"Play",         "- Play a game",                                 30, 150,
-		"Start Server", "- Start a LAN or internet server",              30, 180,
-		"Settings",     "- Change the display, sound or other settings", 30, 210,
-		"Help",         "- View the online help",                        30, 260,
-		"Donate",       "- Show support for Scorched3D",                 30, 290,
-		"Quit",         "- Exit the game",                               30, 340
+		{ "Play",         "- Play a game",                                 30, 150 },
+		{ "Start Server", "- Start a LAN or internet server",              30, 180 },
+		{ "Settings",     "- Change the display, sound or other settings", 30, 210 },
+		{ "Help",         "- View the online help",                        30, 260 },
+		{ "Donate",       "- Show support for Scorched3D",                 30, 290 },
+		{ "Quit",         "- Exit the game",                               30, 340 }
 	};
 
 	TrueTypeFont largeImageFont(S3D::getDataFile("data/fonts/dejavusans.ttf"), 14);
