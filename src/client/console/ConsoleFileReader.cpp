@@ -27,59 +27,60 @@
 #include <XML/XMLParser.hpp>
 #include <stdio.h>
 
-bool ConsoleFileReader::loadFileIntoConsole(const std::string &fileName,
-											  std::string &errorMessage)
+bool ConsoleFileReader::loadFileIntoConsole( const std::string& fileName, std::string& errorMessage )
 {
 	XMLFile file;
-	if (!file.readFile(fileName))
+	if ( ! file.readFile( fileName ) )
 	{
 		errorMessage = file.getParserError();
+
 		return false;
 	}
-	if (!file.getRootNode()) return true;
+	if ( ! file.getRootNode() ) return true;
 
 	// Itterate all of the commands in the file
-	std::list<XMLNode *>::iterator childrenItor;
-	for (childrenItor = file.getRootNode()->getChildren().begin();
-		childrenItor != file.getRootNode()->getChildren().end();
-		++childrenItor)
+	std::list< XMLNode* >::iterator childrenItor;
+	for ( childrenItor = file.getRootNode()->getChildren().begin();
+		  childrenItor != file.getRootNode()->getChildren().end();
+		  ++childrenItor )
 	{
-		XMLNode *currentNode = (*childrenItor);		
-		if (strcmp(currentNode->getName(), "command")==0)
-		{
-			Console::instance()->addLine(true, currentNode->getContent());
-		}
+		XMLNode* currentNode = ( *childrenItor );
+		if ( strcmp( currentNode->getName(), "command" ) == 0 )
+			Console::instance()->addLine( true, currentNode->getContent() );
 	}
+
 	return true;
 }
 
-void ConsoleFileReader::saveConsoleIntoFile(const std::string &filename)
+void ConsoleFileReader::saveConsoleIntoFile( const std::string& filename )
 {
 	FileLines filelines;
-	filelines.addLine("<commands source=\"Scorched3D\">");
+	filelines.addLine( "<commands source=\"Scorched3D\">" );
 
-	std::deque<ConsoleLine *> &lines = 
-		((ConsoleImpl *) Console::instance())->getLines();
-	std::deque<ConsoleLine *>::iterator itor;
-	for (itor = lines.begin();
-		itor != lines.end();
-		++itor)
+	ConsoleImpl* instance = (ConsoleImpl*)Console::instance();
+
+	// NOTE: avoid -Wnull-dereference
+	if ( instance != nullptr )
 	{
-		std::string cleanLine;
-		std::string dirtyLine(LangStringUtil::convertFromLang((*itor)->getLine()));
-		XMLNode::removeSpecialChars(dirtyLine, cleanLine);
-		if ((*itor)->getLineType() != ConsoleLine::eNone)
+		std::deque< ConsoleLine* >&          lines = instance->getLines();
+		std::deque< ConsoleLine* >::iterator itor;
+
+		for ( itor = lines.begin(); itor != lines.end(); ++itor )
 		{
-			filelines.addLine(S3D::formatStringBuffer("  <command>%s</command>",
-				cleanLine.c_str()));
-		}
-		else
-		{
-			filelines.addLine(S3D::formatStringBuffer("  <!-- %s -->",
-				cleanLine.c_str()));
+			std::string cleanLine;
+			std::string dirtyLine( LangStringUtil::convertFromLang( ( *itor )->getLine() ) );
+			XMLNode::removeSpecialChars( dirtyLine, cleanLine );
+			if ( ( *itor )->getLineType() != ConsoleLine::eNone )
+			{
+				filelines.addLine( S3D::formatStringBuffer( "  <command>%s</command>", cleanLine.c_str() ) );
+			}
+			else
+			{
+				filelines.addLine( S3D::formatStringBuffer( "  <!-- %s -->", cleanLine.c_str() ) );
+			}
 		}
 	}
 
-	filelines.addLine("</commands>");
-	filelines.writeFile(filename);
+	filelines.addLine( "</commands>" );
+	filelines.writeFile( filename );
 }

@@ -77,35 +77,41 @@ void TargetMovement::addMovements(ScorchedContext &context,
 	}
 }
 
-void TargetMovement::addMovementType(ScorchedContext &context, 
-	RandomGenerator &random, 
-	std::vector<LandscapeMovementType *> &movementtypes)
+void TargetMovement::addMovementType(
+	ScorchedContext&                       context,
+	RandomGenerator&                       random,
+	std::vector< LandscapeMovementType* >& movementtypes
+)
 {
-	std::vector<LandscapeMovementType *>::iterator itor;
-	for (itor = movementtypes.begin();
-		itor != movementtypes.end();
-		++itor)
+	std::vector< LandscapeMovementType* >::iterator itor;
+	for ( itor = movementtypes.begin(); itor != movementtypes.end(); ++itor )
 	{
-		LandscapeMovementType *movementtype = (*itor);
+		LandscapeMovementType* movementtype = ( *itor );
 
-		TargetMovementEntry *entry = 0;
-		switch(movementtype->getType())
+		TargetMovementEntry* entry = nullptr;
+
+		switch ( movementtype->getType() )
 		{
-		case LandscapeMovementType::eBoids:
-			entry = new TargetMovementEntryBoids();
-			break;
-		case LandscapeMovementType::eShips:
-			entry = new TargetMovementEntryShips();
-			break;
-		case LandscapeMovementType::eSpline:
-			entry = new TargetMovementEntrySpline();
-			break;
-		default:
-			DIALOG_ASSERT(0);
-			break;
+			case LandscapeMovementType::eBoids:
+				entry = new TargetMovementEntryBoids();
+				break;
+			case LandscapeMovementType::eShips:
+				entry = new TargetMovementEntryShips();
+				break;
+			case LandscapeMovementType::eSpline:
+				entry = new TargetMovementEntrySpline();
+				break;
+			default:
+				DIALOG_ASSERT( 0 );
+				break;
 		}
-		entry->generate(context, random, movementtype);
-		movements_.push_back(entry);
+
+		// NOTE: avoid -Wnull-dereference
+		if ( entry != nullptr )
+		{
+			entry->generate( context, random, movementtype );
+			movements_.push_back( entry );
+		}
 	}
 }
 

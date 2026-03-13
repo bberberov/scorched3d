@@ -142,34 +142,40 @@ std::string Napalm::getActionDetails()
 		startX_, startY_, weapon_->getParent()->getName());
 }
 
-void Napalm::simulate(fixed frameTime, bool &remove)
+void Napalm::simulate( fixed frameTime, bool& remove )
 {
 #ifndef S3D_SERVER
-	if (!context_->getServerMode())
+	if ( ! context_->getServerMode() )
 	{
-		if (!napalmPoints_.empty() &&
-			!params_->getNoSmoke() &&
-			counter_.nextDraw(frameTime.asFloat()))
+		if ( ! napalmPoints_.empty() && ! params_->getNoSmoke() && counter_.nextDraw( frameTime.asFloat() ) )
 		{
-			NapalmEntry *entry = 0;
-			int count = rand() % napalmPoints_.size();
-			std::list<NapalmEntry *>::iterator itor;
-			for (itor = napalmPoints_.begin();
-				itor != napalmPoints_.end();
-				itor++, count --)
+			NapalmEntry* entry = nullptr;
+			int          count = rand() % napalmPoints_.size();
+
+			std::list< NapalmEntry* >::iterator itor;
+			for ( itor = napalmPoints_.begin(); itor != napalmPoints_.end(); itor++, count-- )
 			{
 				entry = *itor;
-				if (count <=0) break;
+				if ( count <= 0 ) break;
 			}
 
-			fixed posZ = 
-				ScorchedClient::instance()->getLandscapeMaps().getGroundMaps().getHeight(
-				entry->posX, entry->posY);
-			Landscape::instance()->getSmoke().
-				addSmoke(float(entry->posX), float(entry->posY), posZ.asFloat());
+			// NOTE: avoid -Wnull-dereference
+			if ( entry != nullptr )
+			{
+				fixed posZ = ScorchedClient::instance()->getLandscapeMaps().getGroundMaps().getHeight(
+					entry->posX,
+					entry->posY
+				);
+				Landscape::instance()->getSmoke().addSmoke(
+					float( entry->posX ),
+					float( entry->posY ),
+					posZ.asFloat()
+				);
+			}
 		}
 	}
-#endif // #ifndef S3D_SERVER
+#endif  // #ifndef S3D_SERVER
+
 
 	// Add napalm for the period of the time interval
 	// once the time interval has expired then start taking it away
