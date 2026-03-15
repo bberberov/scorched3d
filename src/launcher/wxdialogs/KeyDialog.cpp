@@ -18,18 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/KeyDialog.hpp>
+#include "KeyDialog.hpp"
 #include <wxdialogs/MainDialog.hpp>
 #include <common/Defines.hpp>
 #include <common/Keyboard.hpp>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
-
-#pragma GCC diagnostic pop
 
 extern char scorched3dAppName[128];
 extern char *displayOptions;

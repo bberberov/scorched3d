@@ -58,18 +58,6 @@ typedef unsigned int sha_word32;            // Exactly 4 bytes
 	typedef unsigned long long sha_word64;  // 8-bytes (64-bits)
 #endif
 
-// Digest lengths for SHA-1/224/256/384/512
-const sha_word32 SHA1_DIGESTC_LENGTH = 20;
-const sha_word32 SHA1_DIGESTC_STRING_LENGTH   = (SHA1_DIGESTC_LENGTH   * 2 + 1);
-const sha_word32 SHA224_DIGESTC_LENGTH = 28;
-const sha_word32 SHA224_DIGESTC_STRING_LENGTH = (SHA224_DIGESTC_LENGTH * 2 + 1);
-const sha_word32 SHA256_DIGESTC_LENGTH = 32;
-const sha_word32 SHA256_DIGESTC_STRING_LENGTH = (SHA256_DIGESTC_LENGTH * 2 + 1);
-const sha_word32 SHA384_DIGESTC_LENGTH = 48;
-const sha_word32 SHA384_DIGESTC_STRING_LENGTH = (SHA384_DIGESTC_LENGTH * 2 + 1);
-const sha_word32 SHA512_DIGESTC_LENGTH = 64;
-const sha_word32 SHA512_DIGESTC_STRING_LENGTH = (SHA512_DIGESTC_LENGTH * 2 + 1);
-
 class sha2{
 public:
 	enum SHA_TYPE{
@@ -134,6 +122,18 @@ public:
 
 
 private:
+	// Digest lengths for SHA-1/224/256/384/512
+	static const sha_word32 SHA1_DIGESTC_LENGTH = 20;
+	static const sha_word32 SHA1_DIGESTC_STRING_LENGTH   = (SHA1_DIGESTC_LENGTH   * 2 + 1);
+	static const sha_word32 SHA224_DIGESTC_LENGTH = 28;
+	static const sha_word32 SHA224_DIGESTC_STRING_LENGTH = (SHA224_DIGESTC_LENGTH * 2 + 1);
+	static const sha_word32 SHA256_DIGESTC_LENGTH = 32;
+	static const sha_word32 SHA256_DIGESTC_STRING_LENGTH = (SHA256_DIGESTC_LENGTH * 2 + 1);
+	static const sha_word32 SHA384_DIGESTC_LENGTH = 48;
+	static const sha_word32 SHA384_DIGESTC_STRING_LENGTH = (SHA384_DIGESTC_LENGTH * 2 + 1);
+	static const sha_word32 SHA512_DIGESTC_LENGTH = 64;
+	static const sha_word32 SHA512_DIGESTC_STRING_LENGTH = (SHA512_DIGESTC_LENGTH * 2 + 1);
+
 	SHA_TYPE m_Type;
 	std::string m_strHash;
 	bool m_boolEnded, m_boolIsBigEndian;

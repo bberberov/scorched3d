@@ -18,25 +18,16 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "ServerSDialog.hpp"
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/SettingsDialog.hpp>
 #include <scorched/ScorchedParams.hpp>
 #include <common/Defines.hpp>
 #include <common/OptionsGame.hpp>
 #include <engine/ModDirs.hpp>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
 #include <wx/utils.h>
-
-#pragma GCC diagnostic pop
-
 #include <wx/dir.h>
 
-#include "ServerSDialog.hpp"
 #include "ServerS.cpp"
 
 extern char scorched3dAppName[128];

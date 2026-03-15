@@ -62,10 +62,10 @@ public:
 	OptionEntryInt&    getBrightnessEntry() { return brightness_; }
 
 	float              getDrawCullingDistance()      { return drawCullingDistance_; }
-	OptionEntryFloat&  getDrawCullingDistanceEntry() { return drawCullingDistance_; };
+	OptionEntryFloat&  getDrawCullingDistanceEntry() { return drawCullingDistance_; }
 
 	float              getDrawFadeStartDistance()      { return drawFadeStartDistance_; }
-	OptionEntryFloat&  getDrawFadeStartDistanceEntry() { return drawFadeStartDistance_; };
+	OptionEntryFloat&  getDrawFadeStartDistanceEntry() { return drawFadeStartDistance_; }
 
 	bool               getSmoothLines()      { return smoothLines_; }
 	OptionEntryBool&   getSmoothLinesEntry() { return smoothLines_; }

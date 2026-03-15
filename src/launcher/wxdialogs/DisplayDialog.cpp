@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <wxdialogs/DisplayDialog.hpp>
+#include "DisplayDialog.hpp"
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/KeyDialog.hpp>
 #include <net/NetInterface.hpp>
@@ -30,15 +30,6 @@
 #include <common/KeyTranslateWx.hpp>
 #include <client/UniqueIdStore.hpp>
 #include <scorched/ScorchedParams.hpp>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
-
-#pragma GCC diagnostic pop
-
 #include <wx/image.h>
 #include <wx/notebook.h>
 #include <wx/grid.h>
@@ -46,6 +37,7 @@
 #include <wx/sizer.h>
 #include <set>
 #include <stdio.h>
+
 #include "Display.cpp"
 
 extern char scorched3dAppName[128];

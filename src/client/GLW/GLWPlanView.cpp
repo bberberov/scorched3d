@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -47,9 +47,6 @@
 #include <math.h>
 
 REGISTER_CLASS_SOURCE(GLWPlanView);
-
-static const float degToRad = 3.14f / 180.0f;
-static const float maxAnimationTime = 2.0f;
 
 GLWPlanView::GLWPlanView(float x, float y, float w, float h) :
 	GLWidget(x, y, w, h),

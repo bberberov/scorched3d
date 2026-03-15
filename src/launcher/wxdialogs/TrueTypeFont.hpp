@@ -21,22 +21,22 @@
 #ifndef __INCLUDE_TrueTypeFont_hpp_INCLUDE__
 #define __INCLUDE_TrueTypeFont_hpp_INCLUDE__
 
-#include <string>
-
-// NOTE: avoid -Wuseless-cast
+// NOTE: avoid -Wmissing-declarations -Wunused-const-variable -Wuseless-cast
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 
-#include <wx/wx.h>
+#include <wx/image.h>
 
 #pragma GCC diagnostic pop
 
-#include <wx/image.h>
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include FT_GLYPH_H
 #include FT_OUTLINE_H
 #include FT_TRIGONOMETRY_H
+#include <string>
 
 class TrueTypeFont
 {

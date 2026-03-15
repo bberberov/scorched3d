@@ -18,15 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/utils.h>
-
-#pragma GCC diagnostic pop
-
-#include <wxdialogs/TrueTypeFont.hpp>
+#include "TrueTypeFont.hpp"
 #include <common/Defines.hpp>
 
 TrueTypeFont::TrueTypeFont(const std::string &typeFace, unsigned int h)

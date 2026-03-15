@@ -29,19 +29,14 @@ static inline float myfmod( float a, float b )
 	return a - floorf( a / b ) * b;
 }
 
-static const float        wave_tidecycle_time = 10.24f;
-static const unsigned int wave_phases         = 256;
-static const unsigned int wave_patch_width    = 64;
-static const unsigned int wave_resolution     = 128;
-
-static const float grid_size      = 512.0f / ( 256.0f / float( wave_patch_width ) );
-static const float half_grid_size = grid_size / 2.0f;
+static const unsigned int wave_resolution = 128;
 
 static const float wavetile_length     = 256.0f;
 static const float wave_waterwidth     = wavetile_length;
 static const float wavetile_length_rcp = 1.0f / wavetile_length;
 
-static const float VIRTUAL_PLANE_HEIGHT = 25.0f;
+// NOTE: avoid -Wunused-const-variable
+// static const float VIRTUAL_PLANE_HEIGHT = 25.0f;
 
 #define REFRAC_COLOR_RES 32
 #define FRESNEL_FCT_RES  256

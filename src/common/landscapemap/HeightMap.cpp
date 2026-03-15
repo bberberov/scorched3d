@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,9 @@
 #include <landscapemap/GraphicalHeightMap.hpp>
 #include <common/Defines.hpp>
 
-static const int minMapShift = 3;
+// NOTE: avoid -Wunused-const-variable
+// static const int minMapShift = 3;
+
 static FixedVector nvec(fixed(0), fixed(0), fixed(1));
 
 HeightMap::HeightMap() :

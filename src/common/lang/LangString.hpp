@@ -68,6 +68,6 @@ namespace LangStringUtil
 	int           strlen( const LangString& str1 );
 	unsigned int* strstr( const unsigned int* str1, const LangString& str2 );
 	unsigned int* stristr( const unsigned int* str1, const LangString& str2 );
-};  // namespace LangStringUtil
+}  // namespace LangStringUtil
 
 #endif  // __INCLUDE_LangString_hpp_INCLUDE__

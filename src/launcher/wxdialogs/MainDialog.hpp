@@ -21,9 +21,10 @@
 #ifndef __INCLUDE_MainDialog_hpp_INCLUDE__
 #define __INCLUDE_MainDialog_hpp_INCLUDE__
 
-// NOTE: avoid -Wmissing-declarations -Wuseless-cast
+// NOTE: avoid -Wmissing-declarations -Wunused-const-variable -Wuseless-cast
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 
 #include <wx/wx.h>

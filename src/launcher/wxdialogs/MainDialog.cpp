@@ -18,16 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <stdlib.h>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
-
-#pragma GCC diagnostic pop
-
+#include "MainDialog.hpp"
+#include <wxdialogs/DisplayDialog.hpp>
+#include <wxdialogs/ServerSDialog.hpp>
+#include <wxdialogs/TrueTypeFont.hpp>
 #include <wx/image.h>
 #include <wx/process.h>
 #include <wx/txtstrm.h>
@@ -41,13 +35,10 @@
 #endif
 
 #include <SDL/SDL.h>
-#include <wxdialogs/MainDialog.hpp>
-#include <wxdialogs/DisplayDialog.hpp>
-#include <wxdialogs/ServerSDialog.hpp>
-#include <wxdialogs/TrueTypeFont.hpp>
 #include <scorched/ScorchedParams.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <common/Defines.hpp>
+#include <stdlib.h>
 
 extern char scorched3dAppName[128];
 static wxFrame *mainDialog = nullptr;

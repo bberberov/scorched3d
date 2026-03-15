@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "SettingsDialog.hpp"
 #include <wxdialogs/DisplayDialog.hpp>
 #include <wxdialogs/MainDialog.hpp>
 #include <wxdialogs/OptionEntrySetter.hpp>
@@ -25,21 +26,10 @@
 #include <tankai/TankAINames.hpp>
 #include <common/OptionsGame.hpp>
 #include <common/Defines.hpp>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
 #include <wx/utils.h>
-
-#pragma GCC diagnostic pop
-
 #include <wx/image.h>
 #include <wx/notebook.h>
 #include <wx/textctrl.h>
-
-#include "SettingsDialog.hpp"
 
 extern char scorched3dAppName[128];
 

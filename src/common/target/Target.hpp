@@ -27,6 +27,10 @@
 
 namespace TargetID
 {
+	// NOTE: avoid -Wunused-const-variable
+	#pragma GCC diagnostic push
+	#pragma GCC diagnostic ignored "-Wunused-const-variable"
+
 	const int MIN_TANK_ID             = 1;
 	const int START_TRANSIENT_TANK_ID = 9000000;
 	const int SPEC_TANK_ID            = START_TRANSIENT_TANK_ID - 1;
@@ -34,6 +38,8 @@ namespace TargetID
 	const int MIN_TARGET_ID           = 20000000;
 	const int MIN_TARGET_TRANSIENT_ID = 39000000;
 	const int MAX_TARGET_ID           = 40000000;
+
+	#pragma GCC diagnostic pop
 };  // namespace TargetID
 
 class NamedNetBuffer;

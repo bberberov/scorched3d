@@ -20,15 +20,6 @@
 
 #include <wxdialogs/MainDialog.hpp>
 #include <common/OptionsGame.hpp>
-
-// NOTE: avoid -Wuseless-cast
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wuseless-cast"
-
-#include <wx/wx.h>
-
-#pragma GCC diagnostic pop
-
 #include <wx/image.h>
 #include <locale.h>
 

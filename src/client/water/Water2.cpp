@@ -38,6 +38,14 @@
 
 #include <water/Water2Constants.hpp>
 
+static const float        wave_tidecycle_time = 10.24f;
+static const unsigned int wave_phases         = 256;
+static const unsigned int wave_patch_width    = 64;
+
+// NOTE: avoid -Wunused-const-variable
+// static const float grid_size      = 512.0f / ( 256.0f / float( wave_patch_width ) );
+// static const float half_grid_size = grid_size / 2.0f;
+
 Water2::Water2()
 {
 }

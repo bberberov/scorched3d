@@ -80,6 +80,9 @@ protected:
 	void drawLine( PlayerDrawnInfo& info );
 	void drawBuoys();
 	bool simulateLine( PlayerDrawnInfo& info );
+
+private:
+	static constexpr float maxAnimationTime = 2.0f;
 };
 
 #endif  // __INCLUDE_GLWPlanView_hpp_INCLUDE__

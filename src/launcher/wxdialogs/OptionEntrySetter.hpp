@@ -24,8 +24,10 @@
 #include <common/OptionEntry.hpp>
 #include <list>
 
-// NOTE: avoid -Wuseless-cast
+// NOTE: avoid -Wmissing-declarations -Wunused-const-variable -Wuseless-cast
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
 #pragma GCC diagnostic ignored "-Wuseless-cast"
 
 #include <wx/wx.h>
