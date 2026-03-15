@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,7 +22,14 @@
 #include <wxdialogs/MainDialog.hpp>
 #include <common/Defines.hpp>
 #include <common/Keyboard.hpp>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
+
+#pragma GCC diagnostic pop
 
 extern char scorched3dAppName[128];
 extern char *displayOptions;

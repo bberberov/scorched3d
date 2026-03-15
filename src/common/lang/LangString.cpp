@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -51,13 +51,13 @@ LangStringConverter::LangStringConverter(const float value, int decimal)
 	switch (decimal)
 	{
 	case 1:
-		appendValue(S3D::formatStringBuffer("%.1f", value));
+		appendValue( S3D::formatStringBuffer( "%.1f", (double)value ) );
 		break;
 	case 2:
-		appendValue(S3D::formatStringBuffer("%.2f", value));
+		appendValue( S3D::formatStringBuffer( "%.2f", (double)value ) );
 		break;
 	default:
-		appendValue(S3D::formatStringBuffer("%.0f", value));
+		appendValue( S3D::formatStringBuffer( "%.0f", (double)value ) );
 		break;
 	}
 }

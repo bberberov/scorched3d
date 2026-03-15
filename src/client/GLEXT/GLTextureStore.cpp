@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -72,7 +72,7 @@ void GLTextureStore::removeTextureReference(GLTextureReferenceData *reference)
 {
 	if (reference->incrementReferenceCount() <= 0)
 	{
-		std::string hash = ((ImageID &)reference->getImageID()).getStringHash() + char(reference->getTexState());
+		std::string hash = reference->getImageID().getStringHash() + (char)( reference->getTexState() );
 		references_.erase(hash);
 		delete reference;
 	}

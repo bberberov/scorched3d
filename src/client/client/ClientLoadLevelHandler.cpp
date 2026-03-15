@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -99,8 +99,7 @@ bool ClientLoadLevelHandler::processMessage(
 	} 
 	else
 	{
-		Logger::log(S3D::formatStringBuffer(
-			"Finished loading landscape %.2f seconds", generateTime));
+		Logger::log( S3D::formatStringBuffer( "Finished loading landscape %.2f seconds", (double)generateTime ) );
 	}
 
 	return result;
@@ -215,7 +214,7 @@ bool ClientLoadLevelHandler::actualProcessMessage(
 	}
 	Sound::instance()->setPlaySounds(true);
 	float deformTime = generateClock.getTimeDifference();
-	Logger::log(S3D::formatStringBuffer("Landscape sync event time %.2f seconds", deformTime));
+	Logger::log( S3D::formatStringBuffer( "Landscape sync event time %.2f seconds", (double)deformTime ) );
 
 	ProgressDialogSync::noevents_instance()->setNewOp(
 		LANG_RESOURCE("PROCESSING_MESSAGES", "Processing Messages"));

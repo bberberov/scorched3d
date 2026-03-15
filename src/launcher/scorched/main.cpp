@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,10 +24,18 @@
 #include <common/ARGParser.hpp>
 #include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
 #include <wx/utils.h>
+
+#pragma GCC diagnostic pop
+
 #include <locale.h>
-#include <math.h>
+#include <cmath>
 #include <signal.h>
 #include <float.h>
 #include <time.h>

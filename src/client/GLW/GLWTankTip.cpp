@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -58,10 +58,17 @@ void TankUndoMenu::showItems(float x, float y)
 	for (int i=0; i<(int) oldShots.size(); i++)
 	{
 		char buffer[128];
-		snprintf(buffer, 128, "%s%i: Pwr:%.1f Ele:%.1f Rot:%.1f",
-			(oldShots[i].current?"* ":"  "),
-			i, oldShots[i].power.asFloat(), oldShots[i].ele.asFloat(),
-			(360.0f - oldShots[i].rot.asFloat()));
+		// NOTE: printf accepts only double, not float
+		snprintf(
+			buffer,
+			128,
+			"%s%i: Pwr:%.1f Ele:%.1f Rot:%.1f",
+			( oldShots[i].current ? "* " : "  " ),
+			i,
+			oldShots[i].power.asDouble(),
+			oldShots[i].ele.asDouble(),
+			( 360.0 - oldShots[i].rot.asDouble() )
+		);
 		entries.push_back(
 			GLWSelectorEntry(LANG_STRING(buffer), &useTip, 0, 0, (void *) 
 				((unsigned int) (oldShots.size() - 1 - i))));
@@ -290,8 +297,12 @@ void TankShieldTip::populate()
 			tank_->getShield().getCurrentShield());
 		shieldsCount.append(LANG_STRING("\n"));
 		shieldsCount.append(
-			LANG_RESOURCE_1("SHIELD_POWER", "Shield Power : {0}", 
-			S3D::formatStringBuffer("%.0f", tank_->getShield().getShieldPower().asFloat())));
+			LANG_RESOURCE_1(
+				"SHIELD_POWER",
+				"Shield Power : {0}",
+				S3D::formatStringBuffer( "%.0f", tank_->getShield().getShieldPower().asDouble() )
+			)
+		);
 	}
 
 	setText(ToolTip::ToolTipHelp, 
@@ -322,15 +333,19 @@ TankHealthTip::~TankHealthTip()
 
 void TankHealthTip::populate()
 {
-	setText(ToolTip::ToolTipHelp,
-		LANG_RESOURCE("LIFE", "Life"),
-		LANG_RESOURCE_2("LIFE_TOOLTIP",
-		"The amount of life this player has.\n"
-		"The tank explodes when life reaches 0.\n"
-		"Less weapon power is available with less life.\n"
-		"Life : {0}/{1}",
-		S3D::formatStringBuffer("%.0f", tank_->getLife().getLife().asFloat()),
-		S3D::formatStringBuffer("%.0f", tank_->getLife().getMaxLife().asFloat())));
+	setText(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "LIFE", "Life" ),
+		LANG_RESOURCE_2(
+			"LIFE_TOOLTIP",
+			"The amount of life this player has.\n"
+			"The tank explodes when life reaches 0.\n"
+			"Less weapon power is available with less life.\n"
+			"Life : {0}/{1}",
+			S3D::formatStringBuffer( "%.0f", tank_->getLife().getLife().asDouble() ),
+			S3D::formatStringBuffer( "%.0f", tank_->getLife().getMaxLife().asDouble() )
+		)
+	);
 }
 
 TankRankTip::TankRankTip(Tank *tank) :
@@ -583,18 +598,28 @@ void TankElevationTip::populate()
 
 static void generateTargetTip(LangString &tip, Target *target)
 {
-	tip.append(LANG_RESOURCE_2("TARGET_LIFE", "Life   : {0}/{1}",
-		S3D::formatStringBuffer("%.0f", target->getLife().getLife().asFloat()),
-		S3D::formatStringBuffer("%.0f", target->getLife().getMaxLife().asFloat())));
+	tip.append(
+		LANG_RESOURCE_2(
+			"TARGET_LIFE",
+			"Life   : {0}/{1}",
+			S3D::formatStringBuffer( "%.0f", target->getLife().getLife().asDouble() ),
+			S3D::formatStringBuffer( "%.0f", target->getLife().getMaxLife().asDouble() )
+		)
+	);
 
 	Accessory *shieldAccessory = target->getShield().getGraphicalCurrentShield();
 	if (shieldAccessory)
 	{
 		Shield *shield = (Shield*) shieldAccessory->getAction();
 
-		tip.append(LANG_RESOURCE_2("TARGET_SHIELD", "\nShield   : {0}/{1}",
-			S3D::formatStringBuffer("%.0f", target->getShield().getGraphicalShieldPower().asFloat()),
-			S3D::formatStringBuffer("%.0f", shield->getPower().asFloat())));
+		tip.append(
+			LANG_RESOURCE_2(
+				"TARGET_SHIELD",
+				"\nShield   : {0}/{1}",
+				S3D::formatStringBuffer( "%.0f", target->getShield().getGraphicalShieldPower().asDouble() ),
+				S3D::formatStringBuffer( "%.0f", shield->getPower().asDouble() )
+			)
+		);
 	}
 	if (target->getType() == Target::TypeTank)
 	{

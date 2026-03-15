@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -129,7 +129,7 @@ bool EconomyFreeMarket::savePrices()
 			file.addLine(S3D::formatStringBuffer("    <!-- %s, original Price %i -->", 
 				cleanName.c_str(), accessory->getOriginalPrice()));
 			file.addLine(S3D::formatStringBuffer("    <name>%s</name>", cleanName.c_str()));
-			file.addLine(S3D::formatStringBuffer("    <buyprice>%.4f</buyprice>", price));
+			file.addLine(S3D::formatStringBuffer("    <buyprice>%.4f</buyprice>", (double)price));
 			file.addLine("  </accessory>");
 		}
 	}

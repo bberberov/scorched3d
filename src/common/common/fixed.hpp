@@ -1,3 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2000-2011, 2024-2026
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////////////////////////////////////////////////////
 //
 //  Fixed Point Math Class
@@ -85,15 +105,14 @@ public:
 	bool operator<=( fixed fixedVal ) { return ( m_nVal <= fixedVal.m_nVal ); }
 	bool operator> ( fixed fixedVal ) { return ( m_nVal >  fixedVal.m_nVal ); }
 	bool operator>=( fixed fixedVal ) { return ( m_nVal >= fixedVal.m_nVal ); }
-	// uncrustify on
-	// clang-format on
 
 	const char* asString();
 	const char* asQuickString();
-
-	float asFloat() { return m_nVal / FIXED_RESOLUTION_FLOAT; }
-
-	int asInt() { return (int)( m_nVal / FIXED_RESOLUTION ); }
+	float       asFloat()  { return ( m_nVal / FIXED_RESOLUTION_FLOAT ); }
+	double      asDouble() { return ( m_nVal / FIXED_RESOLUTION_DOUBLE ); }
+	int         asInt()    { return (int)( m_nVal / FIXED_RESOLUTION ); }
+	// uncrustify on
+	// clang-format on
 
 	Sint64 getInternalData() { return m_nVal; }
 
@@ -181,6 +200,7 @@ public:
 
 	static Sint64 FIXED_RESOLUTION;
 	static float  FIXED_RESOLUTION_FLOAT;
+	static double FIXED_RESOLUTION_DOUBLE;
 };
 
 fixed absx( fixed p_Base );

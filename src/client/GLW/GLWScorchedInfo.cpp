@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -103,8 +103,11 @@ void GLWScorchedInfo::draw()
 				}
 				else
 				{
-					windSpeed.cachedString = LANG_RESOURCE_1("WIND_FORCE", "Force {0}",
-						S3D::formatStringBuffer("%.0f", windSpeed.cachedValue.asFloat()));
+					windSpeed.cachedString = LANG_RESOURCE_1(
+						"WIND_FORCE",
+						"Force {0}",
+						S3D::formatStringBuffer( "%.0f", windSpeed.cachedValue.asDouble() )
+					);
 				}
 				windWidth = GLWFont::instance()->
 					getGameFont()->getWidth(fontSize_, windSpeed.cachedString);
@@ -128,7 +131,7 @@ void GLWScorchedInfo::draw()
 		default:
 		break;
 	}
-	
+
 	// Get the current tank and model
 	Tank *current = 
  		ScorchedClient::instance()->getTargetContainer().getCurrentTank();
@@ -239,8 +242,7 @@ void GLWScorchedInfo::draw()
 				static CachedValueString health;
 				if (health.hasChanged(current->getLife().getLife()))
 				{
-					health.cachedString = LANG_STRING(S3D::formatStringBuffer("%.0f", 
-						health.cachedValue.asFloat()));
+					health.cachedString = LANG_STRING( S3D::formatStringBuffer( "%.0f", health.cachedValue.asDouble() ) );
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,
@@ -263,8 +265,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString shieldPower;
 				if (shieldPower.hasChanged(current->getShield().getShieldPower()))
 				{
-					shieldPower.cachedString = LANG_STRING(S3D::formatStringBuffer("%.0f", 
-						shieldPower.cachedValue.asFloat()));
+					shieldPower.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%.0f", shieldPower.cachedValue.asDouble() )
+					);
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,
@@ -328,8 +331,10 @@ void GLWScorchedInfo::draw()
 			float offSet = 0.0f;
 			if (!noCenter_) 
 			{
-				float weaponWidth = (float) GLWFont::instance()->getGameFont()->
-					getWidth(fontSize_, weapon->getStringName());
+				float weaponWidth = GLWFont::instance()->getGameFont()->getWidth(
+					fontSize_,
+					weapon->getStringName()
+				);
 				offSet = w_ / 2.0f - (weaponWidth / 2.0f);
 			}
 			GLWFont::instance()->getGameFont()->draw(
@@ -384,9 +389,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString rotationValue;
 				if (rotationValue.hasChanged(current->getShotInfo().getRotationGunXY()))
 				{
-					rotationValue.cachedString =
-						LANG_STRING(S3D::formatStringBuffer("%.1f",
-							360.0f - rotationValue.cachedValue.asFloat()));
+					rotationValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%.1f", 360.0 - rotationValue.cachedValue.asDouble() )
+					);
 				}
 			
 				GLWFont::instance()->getGameFont()->draw(
@@ -400,9 +405,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString rotationValue;
 				if (rotationValue.hasChanged(current->getShotHistory().getRotationXYDiff()))
 				{
-					rotationValue.cachedString = 
-						LANG_STRING(S3D::formatStringBuffer("%+.1f",
-							rotationValue.cachedValue.asFloat()));
+					rotationValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%+.1f", rotationValue.cachedValue.asDouble() )
+					);
 				}
 
 				GLWFont::instance()->getGameFont()->draw(
@@ -418,10 +423,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString elevationValue;
 				if (elevationValue.hasChanged(current->getShotInfo().getRotationGunYZ()))
 				{
-					elevationValue.cachedString =
-						LANG_STRING(S3D::formatStringBuffer("%.1f",
-							elevationValue.cachedValue.asFloat()));
-
+					elevationValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%.1f", elevationValue.cachedValue.asDouble() )
+					);
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,
@@ -434,9 +438,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString elevationValue;
 				if (elevationValue.hasChanged(current->getShotHistory().getRotationYZDiff()))
 				{
-					elevationValue.cachedString =
-						LANG_STRING(S3D::formatStringBuffer("%+.1f",
-							elevationValue.cachedValue.asFloat()));
+					elevationValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%+.1f", elevationValue.cachedValue.asDouble() )
+					);
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,
@@ -451,9 +455,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString powerValue;
 				if (powerValue.hasChanged(current->getShotInfo().getPower()))
 				{
-					powerValue.cachedString =
-						LANG_STRING(S3D::formatStringBuffer("%.1f",
-							powerValue.cachedValue.asFloat()));
+					powerValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%.1f", powerValue.cachedValue.asDouble() )
+					);
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,
@@ -466,9 +470,9 @@ void GLWScorchedInfo::draw()
 				static CachedValueString powerValue;
 				if (powerValue.hasChanged(current->getShotHistory().getPowerDiff()))
 				{
-					powerValue.cachedString =
-						LANG_STRING(S3D::formatStringBuffer("%+.1f",
-							powerValue.cachedValue.asFloat()));
+					powerValue.cachedString = LANG_STRING(
+						S3D::formatStringBuffer( "%+.1f", powerValue.cachedValue.asDouble() )
+					);
 				}
 				GLWFont::instance()->getGameFont()->draw(
 					*fontColor, fontSize_,

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,7 +35,7 @@
 	#include <GLEXT/GLState.hpp>
 	#include <sprites/ExplosionTextures.hpp>
 #endif
-#include <math.h>
+#include <cmath>
 #include <set>
 
 Laser::Laser(
@@ -107,8 +107,7 @@ void Laser::simulate(fixed frameTime, bool &remove)
 			while (!end)
 			{
 				std::map<unsigned int, Target *> collisionTargets;
-				context_->getTargetSpace().getCollisionSet(pos, 
-					fixed(params_->getHurtRadius()), collisionTargets);
+				context_->getTargetSpace().getCollisionSet( pos, params_->getHurtRadius(), collisionTargets );
 				std::map<unsigned int, Target *>::iterator itor;
 				for (itor = collisionTargets.begin();
 					itor != collisionTargets.end();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024, 2025
+//    Scorched3D (c) 2000-2011, 2024-2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/utils.h>
+
+#pragma GCC diagnostic pop
+
 #include <wxdialogs/TrueTypeFont.hpp>
 #include <common/Defines.hpp>
 

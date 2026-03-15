@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,7 +35,7 @@
 #include <sprites/ExplosionTextures.hpp>
 #include <XML/XMLNode.hpp>
 
-const int INSET = 8;
+const float INSET = 8.0f;
 
 ProfileDialog *ProfileDialog::instance_ = nullptr;
 
@@ -84,13 +84,13 @@ void ProfileDialog::loadSettings(XMLNode *node, bool resetPositions)
 void ProfileDialog::draw()
 {
 	GLWWindow::draw();
-	
+
 	// Set the new viewport
-	int windowWidth = int(float(w_ - INSET - INSET) / GLViewPort::getWidthMult());
-	int windowHeight = int(float(h_ - INSET - INSET) / GLViewPort::getHeightMult()); 
-	int windowX = int(float(x_ + INSET) / GLViewPort::getWidthMult()); 
-	int windowY = int(float(y_ + INSET) / GLViewPort::getHeightMult());
-	
+	int windowWidth  = (int)( ( w_ - INSET - INSET ) / GLViewPort::getWidthMult() );
+	int windowHeight = (int)( ( h_ - INSET - INSET ) / GLViewPort::getHeightMult() );
+	int windowX      = (int)( ( x_ + INSET ) / GLViewPort::getWidthMult() );
+	int windowY      = (int)( ( y_ + INSET ) / GLViewPort::getHeightMult() );
+
 	ox_ = 0.0f;
 	oy_ = 0.0f;
 	ow_ = w_ / 2.0f;

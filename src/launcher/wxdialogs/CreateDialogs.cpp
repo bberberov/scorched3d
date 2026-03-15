@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,7 +20,15 @@
 
 #include <wxdialogs/MainDialog.hpp>
 #include <common/OptionsGame.hpp>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
+
+#pragma GCC diagnostic pop
+
 #include <wx/image.h>
 #include <locale.h>
 

@@ -23,7 +23,14 @@
 
 #include <common/OptionEntry.hpp>
 #include <list>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
+
+#pragma GCC diagnostic pop
 
 class OptionEntrySetter
 {

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -698,19 +698,25 @@ OptionEntryFloat::OptionEntryFloat(
 OptionEntryFloat::~OptionEntryFloat()
 {}
 
-const char *OptionEntryFloat::getValueAsString()
+const char* OptionEntryFloat::getValueAsString()
 {
 	static char value[256];
-	if (truncate_) snprintf(value, 256, "%.2f", value_);
-	else snprintf(value, 256, "%.8f", value_);
+
+	// NOTE: printf accepts only double, not float
+	if ( truncate_ ) snprintf( value, 256, "%.2f", (double)value_ );
+	else snprintf( value, 256, "%.8f", (double)value_ );
+
 	return value;
 }
 
-const char *OptionEntryFloat::getDefaultValueAsString()
+const char* OptionEntryFloat::getDefaultValueAsString()
 {
 	static char value[256];
-	if (truncate_) snprintf(value, 256, "%.2f", defaultValue_);
-	else snprintf(value, 256, "%.8f", defaultValue_);
+
+	// NOTE: printf accepts only double, not float
+	if ( truncate_ ) snprintf( value, 256, "%.2f", (double)defaultValue_ );
+	else snprintf( value, 256, "%.8f", (double)defaultValue_ );
+
 	return value;
 }
 
@@ -756,31 +762,51 @@ OptionEntryVector::OptionEntryVector(
 OptionEntryVector::~OptionEntryVector()
 {}
 
-const char *OptionEntryVector::getValueAsString()
+const char* OptionEntryVector::getValueAsString()
 {
 	static char value[256];
-	if (truncate_)
+
+	// NOTE: printf accepts only double, not float
+	if ( truncate_ )
 	{
-		snprintf(value, 256, "%.2f %.2f %.2f", value_[0], value_[1], value_[2]);
+		snprintf( value, 256, "%.2f %.2f %.2f", (double)( value_[0] ), (double)( value_[1] ), (double)( value_[2] ) );
 	}
 	else
 	{
-		snprintf(value, 256, "%.8f %.8f %.8f", value_[0], value_[1], value_[2]);
+		snprintf( value, 256, "%.8f %.8f %.8f", (double)( value_[0] ), (double)( value_[1] ), (double)( value_[2] ) );
 	}
+
 	return value;
 }
 
-const char *OptionEntryVector::getDefaultValueAsString()
+const char* OptionEntryVector::getDefaultValueAsString()
 {
 	static char value[256];
-	if (truncate_)
+
+	// NOTE: printf accepts only double, not float
+	if ( truncate_ )
 	{
-		snprintf(value, 256, "%.2f %.2f %.2f", defaultValue_[0], defaultValue_[1], defaultValue_[2]);
+		snprintf(
+			value,
+			256,
+			"%.2f %.2f %.2f",
+			(double)( defaultValue_[0] ),
+			(double)( defaultValue_[1] ),
+			(double)( defaultValue_[2] )
+		);
 	}
 	else
 	{
-		snprintf(value, 256, "%.8f %.8f %.8f", defaultValue_[0], defaultValue_[1], defaultValue_[2]);
+		snprintf(
+			value,
+			256,
+			"%.8f %.8f %.8f",
+			(double)( defaultValue_[0] ),
+			(double)( defaultValue_[1] ),
+			(double)( defaultValue_[2] )
+		);
 	}
+
 	return value;
 }
 

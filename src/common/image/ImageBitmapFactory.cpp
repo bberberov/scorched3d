@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -42,8 +42,9 @@ Image ImageBitmapFactory::loadFromFile(const char * filename, bool alpha)
 	unsigned char *from = (unsigned char *) image->pixels;
 	for (int i=0; i<result.getHeight(); i ++)
 	{
-		unsigned char *destRow = ((unsigned char *) result.getBits()) + 
-			((result.getHeight() - i - 1) * (result.getWidth() * result.getComponents()));
+		unsigned char* destRow = result.getBits() + (
+			( result.getHeight() - i - 1 ) * ( result.getWidth() * result.getComponents() )
+		);
 		for (int j=0; j<result.getWidth(); j++)
 		{
 			unsigned char *dest = destRow + (j * result.getComponents());

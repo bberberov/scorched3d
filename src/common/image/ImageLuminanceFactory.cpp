@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -67,7 +67,7 @@ void ImageLuminanceFactory::imageGetRow(FILE *file, ImageRec &image, unsigned ch
 		for (;;) 
 		{
 			unsigned char pixel = *iPtr++;
-			int count = (int) (pixel & 0x7F);
+			unsigned char count = pixel & 0x7F;
 			if (!count) break;
 
 			if (pixel & 0x80) 

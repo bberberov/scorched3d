@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,11 +25,21 @@
 #include <tankai/TankAINames.hpp>
 #include <common/OptionsGame.hpp>
 #include <common/Defines.hpp>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
-#include <wx/image.h>
 #include <wx/utils.h>
+
+#pragma GCC diagnostic pop
+
+#include <wx/image.h>
 #include <wx/notebook.h>
 #include <wx/textctrl.h>
+
+#include "SettingsDialog.hpp"
 
 extern char scorched3dAppName[128];
 

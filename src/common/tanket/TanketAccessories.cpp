@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -380,7 +380,7 @@ bool TanketAccessories::writeMessage(NamedNetBuffer &buffer, bool writeAccessori
 	// Send the fact we are not sending any accessories
 	if (!writeAccessories)
 	{
-		buffer.addToBufferNamed("noAccessories", (int) -1);
+		buffer.addToBufferNamed("noAccessories", -1);
 		return true;
 	}
 

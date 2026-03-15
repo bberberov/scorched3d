@@ -1,3 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2010, 2012, 2025, 2026
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
 #include <client/LoadPNG.hpp>
 #include <png.h>
 
@@ -25,7 +45,7 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 	Uint32 Amask;
 	SDL_Palette *palette;
 	png_bytep *volatile row_pointers;
-	int row, i;
+	int i;
 	volatile int ckey = -1;
 	png_color_16 *transv;
 	png_colorp  png_palette;
@@ -168,14 +188,14 @@ SDL_Surface *EXT_LoadPNG_RW(SDL_RWops *src)
 
 	/* Create the array of pointers to image data */
 	row_pointers = (png_bytep*)malloc( sizeof( png_bytep ) * height );
-	if (( row_pointers == nullptr ))
+	if ( row_pointers == nullptr )
 	{
 		error = "Out of memory";
 		goto done;
 	}
-	for (row = 0; row < (int)height; row++) {
-		row_pointers[row] = (png_bytep)
-				(Uint8 *)surface->pixels + row*surface->pitch;
+	for ( unsigned int row = 0; row < height; row++ )
+	{
+		row_pointers[row] = (png_bytep)(surface->pixels) + row * surface->pitch;
 	}
 
 	/* Read the entire image in one go */

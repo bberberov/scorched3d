@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -611,9 +611,7 @@ void TargetRendererImplTank::simulate(float frameTime)
 				tankTurretPosition[1].asFloat() + randY, 
 				tankTurretPosition[2].asFloat());
 
-			smokeWaitForTime_ = (
-				(RAND * float(tank_->getLife().getLife().asFloat()) * 10.0f) + 250.0f)
-				/ 3000.0f;;
+			smokeWaitForTime_ = std::fmaf( ( RAND * tank_->getLife().getLife().asFloat() ), 10.0f, 250.0f ) / 3000.0f;
 			smokeTime_ = 0.0f;
 		}
 	}
@@ -816,17 +814,13 @@ void TargetRendererImplTank::render2D(float distance)
 		{
 			glNewList(listNo = glGenLists(1), GL_COMPILE);
 				glBegin(GL_QUADS);
-					for (float a=0; a<6.25f ;a+=0.25f)
+					for ( float a = 0; a < 6.25f; a += 0.25f )
 					{
 						const float skip = 0.2f;
-						glVertex2d(sin(a + skip) * 40.0, 
-							cos(a + skip) * 40.0);
-						glVertex2d(sin(a) * 40.0, 
-							cos(a) * 40.0);
-						glVertex2d(sin(a) * 35.0, 
-							cos(a) * 35.0);			
-						glVertex2d(sin(a + skip) * 35.0, 
-							cos(a + skip) * 35.0);
+						glVertex2d( std::sinf( a + skip ) * 40.0f, std::cosf( a + skip ) * 40.0f );
+						glVertex2d( std::sinf( a ) * 40.0f, std::cosf( a ) * 40.0f );
+						glVertex2d( std::sinf( a ) * 35.0f, std::cosf( a ) * 35.0f );
+						glVertex2d( std::sinf( a + skip ) * 35.0f, std::cosf( a + skip ) * 35.0f );
 					}
 				glEnd();
 			glEndList();

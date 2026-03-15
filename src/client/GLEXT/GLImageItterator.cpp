@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -64,7 +64,7 @@ void ImageItterator::incY()
 	posX_ = 0.0f;
 	posY_ += dy_;
 	if (posY_ >= bitmap_.getHeight()) posY_ = 0.0f;
-	pos_ = (unsigned char *) (bitmap_.getBits() + ((int) posY_  * width_));
+	pos_ = bitmap_.getBits() + (int)posY_  * width_;
 }
 
 unsigned char *ImageItterator::getPos()

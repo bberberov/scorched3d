@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,7 +24,7 @@
 #include <sky/Hemisphere.hpp>
 #include <common/Defines.hpp>
 #include <vector>
-#include <math.h>
+#include <cmath>
 
 void Hemisphere::draw(float radius, float radius2, 
 	int heightSlices, int rotationSlices,
@@ -45,17 +45,17 @@ void Hemisphere::draw(float radius, float radius2,
 			float c = theta3 / TWOPI * maxTexCoord;
 
 			Vector e1, p1;
-			e1[0] = float(cos(theta1) * cos(theta3));
-			e1[2] = float(sin(theta1));
-			e1[1] = float(cos(theta1) * sin(theta3));
+			e1[0] = std::cosf( theta1 ) * std::cosf( theta3 );
+			e1[2] = std::sinf( theta1 );
+			e1[1] = std::cosf( theta1 ) * std::sinf( theta3 );
 			p1[0] = radius * e1[0];
 			p1[2] = radius2 * e1[2];
 			p1[1] = radius * e1[1];
 
 			Vector e2, p2;
-			e2[0] = float(cos(theta2) * cos(theta3));
-			e2[2] = float(sin(theta2));
-			e2[1] = float(cos(theta2) * sin(theta3));
+			e2[0] = std::cosf( theta2 ) * std::cosf( theta3 );
+			e2[2] = std::sinf( theta2 );
+			e2[1] = std::cosf( theta2 ) * std::sinf( theta3 );
 			p2[0] = radius * e2[0];
 			p2[2] = radius2 * e2[2];
 			p2[1] = radius * e2[1];
@@ -122,9 +122,9 @@ void Hemisphere::drawColored(float radius, float radius2,
 			float c = theta3 / TWOPI * maxTexCoord;
 
 			Vector e1, p1, c1;
-			e1[0] = float(cos(theta1) * cos(theta3));
-			e1[2] = float(sin(theta1));
-			e1[1] = float(cos(theta1) * sin(theta3));
+			e1[0] = std::cosf( theta1 ) * std::cosf( theta3 );
+			e1[2] = std::sinf( theta1 );
+			e1[1] = std::cosf( theta1 ) * std::sinf( theta3 );
 			p1[0] = radius * e1[0];
 			p1[2] = radius2 * e1[2];
 			p1[1] = radius * e1[1];
@@ -151,9 +151,9 @@ void Hemisphere::drawColored(float radius, float radius2,
 			}
 
 			Vector e2, p2, c2;
-			e2[0] = float(cos(theta2) * cos(theta3));
-			e2[2] = float(sin(theta2));
-			e2[1] = float(cos(theta2) * sin(theta3));
+			e2[0] = std::cosf( theta2 ) * std::cosf( theta3 );
+			e2[2] = std::sinf( theta2 );
+			e2[1] = std::cosf( theta2 ) * std::sinf( theta3 );
 			p2[0] = radius * e2[0];
 			p2[2] = radius2 * e2[2];
 			p2[1] = radius * e2[1];

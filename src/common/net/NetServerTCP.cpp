@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -140,8 +140,7 @@ int NetServerTCP::threadFunc(void *param)
 		float timeDiff = netClock.getTimeDifference();
 		if (timeDiff > 1.0f)
 		{
-			Logger::log(S3D::formatStringBuffer("Warning: Net loop took %.2f seconds, server", 
-				timeDiff));
+			Logger::log( S3D::formatStringBuffer( "Warning: Net loop took %.2f seconds, server", (double)timeDiff ) );
 		}
 
 		SDL_Delay(100);

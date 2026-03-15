@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -156,13 +156,11 @@ void GLWToolTip::calculateTip(ToolTip *tip)
 	std::list<LangString>::iterator enditor = tipTexts_.end();
 	for (itor = tipTexts_.begin(); itor != enditor; ++itor)
 	{
-		float width = float(GLWFont::instance()->getGameFont()->
-			getWidth(9,(*itor))) + 10.0f;
+		float width = GLWFont::instance()->getGameFont()->getWidth( 9.0f, ( *itor ) ) + 10.0f;
 		if (width > tipTextWidth_) tipTextWidth_ = width;
 	}
 
-	float width = float(GLWFont::instance()->getGameFont()->
-		getWidth(11, tipTitle_)) + 10.0f; 
+	float width = GLWFont::instance()->getGameFont()->getWidth( 11.0f, tipTitle_ ) + 10.0f;
 	if (width > tipTextWidth_) tipTextWidth_ = width;
 }
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -72,7 +72,7 @@ void GLWSelectorPart::calculateDimensions(float drawX, float drawY)
 		float currentwidth = 10.0f;
 		if (!item.getText().empty())
 		{
-			currentwidth = (float) font.getWidth(12, item.getText()) + 20.0f;
+			currentwidth = font.getWidth( 12.0f, item.getText() ) + 20.0f;
 		}
 		if (item.getSelected()) hasSelectedEntry_ = true;
 		if (!item.getPopups().empty()) hasPopupEntry_ = true;

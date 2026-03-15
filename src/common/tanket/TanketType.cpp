@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -122,13 +122,17 @@ void TanketType::formTooltip()
 
 	tooltip_ = new ToolTip(
 		ToolTip::ToolTipNone,
-		LANG_STRING(name_),
-		LANG_STRING(S3D::formatStringBuffer(
-			"%s\n"
-			"Life : %.0f\n"
-			"Power : %.0f%s",
-			description_.c_str(),
-			getLife().asFloat(),
-			getPower().asFloat(),
-			accessoryBuffer.c_str())));
+		LANG_STRING( name_ ),
+		LANG_STRING(
+			S3D::formatStringBuffer(
+				"%s\n"
+				"Life : %.0f\n"
+				"Power : %.0f%s",
+				description_.c_str(),
+				getLife().asDouble(),
+				getPower().asDouble(),
+				accessoryBuffer.c_str()
+			)
+		)
+	);
 }

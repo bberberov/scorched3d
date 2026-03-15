@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -89,8 +89,10 @@ void WaterWaveDistance::generate(
 						for (int a=0; a<distanceWidth_; a++)
 						{
 							Vector posB(
-								float(float(a) / float(distanceWidth_) * float(mapWidth)), 
-								float(float(b) / float(distanceHeight_) * float(mapHeight)), 0.0f);
+								float( a ) / float( distanceWidth_ ) * float( mapWidth ),
+								float( b ) / float( distanceHeight_ ) * float( mapHeight ),
+								0.0f
+							);
 							float distance = (posB - posA).Magnitude();
 							waveDistance_[a + b * distanceWidth_] = MIN(waveDistance_[a + b * distanceWidth_], distance);
 						}

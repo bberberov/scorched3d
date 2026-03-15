@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,7 +22,7 @@
 #include <image/ImageFactory.hpp>
 #include <common/DefinesAssert.hpp>
 #include <SDL/SDL.h>
-#include "string.h"
+#include <string.h>
 
 Image::Image()
 {
@@ -82,7 +82,7 @@ bool Image::writeToFile(const std::string &filename)
 
 	// Convert the returned bits from RGB to BGR
 	// and flip the verticle scan lines
-	unsigned char *from = (unsigned char *) getBits();
+	unsigned char* from = getBits();
 	for (int i=0; i<getHeight(); i ++)
 	{
 		unsigned char *destRow = ((unsigned char *) brgbits) + 

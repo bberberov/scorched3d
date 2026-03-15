@@ -21,10 +21,12 @@
 #ifndef __INCLUDE_main_hpp_INCLUDE__
 #define __INCLUDE_main_hpp_INCLUDE__
 
-#define WIN32_LEAN_AND_MEAN
-
-#include <windows.h>
 #include <cstdlib>
+
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#endif
 
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
@@ -46,6 +48,9 @@ int _matherr( struct _exception* e )
 	return 1;  // Error has been handled.
 }
 #endif
+
+void _no_storage();
+void run_main( int argc, char* argv[], OptionsParameters& params );
 
 void _no_storage()
 {

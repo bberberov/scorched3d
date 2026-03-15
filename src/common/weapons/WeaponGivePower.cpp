@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -71,11 +71,15 @@ void WeaponGivePower::weaponCallback(
 		MAX(tank->getShotInfo().getMaxPower(), power));
 
 	{
-		ChannelText text("combat", 
-			LANG_RESOURCE_2("TANK_GET_POWER",
-			"[p:{0}] received {1} power", 
-			tank->getTargetName(), 
-			S3D::formatStringBuffer("%.0f", power.asFloat())));
+		ChannelText text(
+			"combat",
+			LANG_RESOURCE_2(
+				"TANK_GET_POWER",
+				"[p:{0}] received {1} power",
+				tank->getTargetName(),
+				S3D::formatStringBuffer( "%.0f", power.asDouble() )
+			)
+		);
 		ChannelManager::showText(context, text);
 	}
 }

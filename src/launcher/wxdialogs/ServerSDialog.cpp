@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,9 +24,19 @@
 #include <common/Defines.hpp>
 #include <common/OptionsGame.hpp>
 #include <engine/ModDirs.hpp>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
 #include <wx/utils.h>
+
+#pragma GCC diagnostic pop
+
 #include <wx/dir.h>
+
+#include "ServerSDialog.hpp"
 #include "ServerS.cpp"
 
 extern char scorched3dAppName[128];

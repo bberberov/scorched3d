@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -125,35 +125,47 @@ fixed TankShotHistory::getPowerDiff()
 	return tank_->getShotInfo().getPower() - oldPower_;
 }
 
-const char *TankShotHistory::getRotationString()
+const char* TankShotHistory::getRotationString()
 {
 	static char messageBuffer[255];
-	fixed rotDiff = getRotationXYDiff();
+	fixed       rotDiff = getRotationXYDiff();
 
-	snprintf(messageBuffer, 255, "%+.1f (%+.1f)", 
-		(fixed(360) - tank_->getShotInfo().getRotationGunXY()).asFloat(),
-		rotDiff.asFloat());
+	// NOTE: printf accepts only double, not float
+	snprintf(
+		messageBuffer,
+		255,
+		"%+.1f (%+.1f)",
+		( fixed( 360 ) - tank_->getShotInfo().getRotationGunXY() ).asDouble(),
+		rotDiff.asDouble()
+	);
+
 	return messageBuffer;
 }
 
-const char *TankShotHistory::getElevationString()
+const char* TankShotHistory::getElevationString()
 {
 	static char messageBuffer[255];
-	fixed rotDiff = getRotationYZDiff();
+	fixed       rotDiff = getRotationYZDiff();
 
-	snprintf(messageBuffer, 255, "%+.1f (%+.1f)", 
-		tank_->getShotInfo().getRotationGunYZ().asFloat(),
-		rotDiff.asFloat());
+	// NOTE: printf accepts only double, not float
+	snprintf(
+		messageBuffer,
+		255,
+		"%+.1f (%+.1f)",
+		tank_->getShotInfo().getRotationGunYZ().asDouble(),
+		rotDiff.asDouble()
+	);
+
 	return messageBuffer;
 }
 
-const char *TankShotHistory::getPowerString()
+const char* TankShotHistory::getPowerString()
 {
 	static char messageBuffer[255];
-	fixed powDiff = getPowerDiff();
+	fixed       powDiff = getPowerDiff();
 
-	snprintf(messageBuffer, 255, "%+.1f (%+.1f)", 		
-		tank_->getShotInfo().getPower().asFloat(),
-		powDiff.asFloat());
+	// NOTE: printf accepts only double, not float
+	snprintf( messageBuffer, 255, "%+.1f (%+.1f)", tank_->getShotInfo().getPower().asDouble(), powDiff.asDouble() );
+
 	return messageBuffer;
 }

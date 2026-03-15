@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -172,9 +172,9 @@ void NetServerTCP3::actualSendRecvFunc()
 		timeDiff = netClock.getTimeDifference();
 		if (timeDiff > 1.0f)
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"NetServerTCP3: checkClients took %.2f seconds", 
-				timeDiff));
+			Logger::log(
+				S3D::formatStringBuffer( "NetServerTCP3: checkClients took %.2f seconds", (double)timeDiff )
+			);
 		}
 
 		// Check for new connections
@@ -182,9 +182,9 @@ void NetServerTCP3::actualSendRecvFunc()
 		timeDiff = netClock.getTimeDifference();
 		if (timeDiff > 1.0f)
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"NetServerTCP3: checkNewConnections took %.2f seconds", 
-				timeDiff));
+			Logger::log(
+				S3D::formatStringBuffer( "NetServerTCP3: checkNewConnections took %.2f seconds", (double)timeDiff )
+			);
 		}
 
 		// sleep so we don't go into an infinite loop
@@ -196,9 +196,9 @@ void NetServerTCP3::actualSendRecvFunc()
 		timeDiff = netClock.getTimeDifference();
 		if (timeDiff > 1.0f)
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"NetServerTCP3: processMessages took %.2f seconds", 
-				timeDiff));
+			Logger::log(
+				S3D::formatStringBuffer( "NetServerTCP3: processMessages took %.2f seconds", (double)timeDiff )
+			);
 		}
 	}
 

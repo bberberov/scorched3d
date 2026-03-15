@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -92,7 +92,7 @@ void GLWListView::draw()
 
 		// For each line
 		bool newWords = false;
-		for (int i=pos; i<(int) scroll_.getMax(); i++)
+		for ( int i = pos; i < scroll_.getMax(); i++ )
 		{
 			// Check the line is valid
 			if (i >= 0 && i < (int) lines_.size())

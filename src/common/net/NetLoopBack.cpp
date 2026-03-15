@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -129,7 +129,7 @@ void NetLoopBack::sendMessageDest(
 		|| ( ! server_ && destination == ServerLoopBackID )
 	);
 
-	unsigned int recvTime = (unsigned int) SDL_GetTicks();
+	unsigned int recvTime = SDL_GetTicks();
 	NetMessage *message = NetMessagePool::instance()->getFromPool(
 		NetMessage::BufferMessage,
 		server_ ? ServerLoopBackID:ClientLoopBackID,
@@ -141,4 +141,3 @@ void NetLoopBack::sendMessageDest(
 	message->getBuffer().addDataToBuffer(buffer.getBuffer(), buffer.getBufferUsed());
 	getLoopback()->messageHandler_.addMessage(message);
 }
-

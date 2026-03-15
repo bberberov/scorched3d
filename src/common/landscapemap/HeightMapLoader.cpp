@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -51,8 +51,8 @@ void HeightMapLoader::loadTerrain(HeightMap &hmap,
 
 		int offsety  = ihy  * bw * 3;
 		int offsety2 = ihy2 * bw * 3;
-		unsigned char *posYA = (unsigned char*) (bitmap.getBits() + offsety);
-		unsigned char *posYB = (unsigned char*) (bitmap.getBits() + offsety2);
+		unsigned char* posYA = bitmap.getBits() + offsety;
+		unsigned char* posYB = bitmap.getBits() + offsety2;
 
 		fixed hx = fixed(0);
 		for (int bx=0; bx<=hmap.getMapWidth(); bx++, hx+=dhx)

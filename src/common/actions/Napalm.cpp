@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -381,12 +381,15 @@ void Napalm::simulateAddEdge(int x, int y)
 			{
 				if (RAND < params_->getGroundScorchPer().asFloat())
 				{
-					Vector pos(x, y);
-					DeformTextures::deformLandscape(pos, 
-						(int) (deformSize + 1),
+					Vector pos( x, y );
+					DeformTextures::deformLandscape(
+						pos,
+						deformSize + 1,
 						ExplosionTextures::instance()->getScorchBitmap(
-							params_->getDeformTexture()),
-						deformMap);
+							params_->getDeformTexture()
+						),
+						deformMap
+					);
 				}
 			}
 		}

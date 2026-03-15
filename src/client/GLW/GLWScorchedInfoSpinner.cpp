@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -101,28 +101,28 @@ void GLWScorchedInfoSpinner::draw()
 
 	float posx = 0.0f, posy = 0.0f;
 	float tx = 0.0f, ty = 0.0f;
-	if (percentage < 0.125 || percentage > 0.875)
+	if ( percentage < 0.125f || 0.875f < percentage )
 	{
 		posx = dx * halfWidth_ / dy;
 		posy = halfHeight_;
 		tx = posx / w_ + 0.5f;
 		ty = 1.0;
-	} 
-	else if (percentage < 0.375)
+	}
+	else if ( percentage < 0.375f )
 	{
 		posx = halfWidth_;
 		posy = dy * halfHeight_ / dx;
 		tx = 1.0f;
 		ty = posy / h_ + 0.5f;
 	}
-	else if (percentage < 0.625)
+	else if ( percentage < 0.625f )
 	{
 		posx = -dx * halfWidth_ / dy;
 		posy = -halfHeight_;
 		tx = posx / w_ + 0.5f;
 		ty = 0.0f;
 	}
-	else 
+	else
 	{
 		posx = -halfWidth_;
 		posy = -dy * halfHeight_ / dx;
@@ -137,22 +137,22 @@ void GLWScorchedInfoSpinner::draw()
 		glVertex2f(x, y);
 		glTexCoord2f(tx, ty);
 		glVertex2f(x + posx, y + posy);
-		if (percentage > 0.875)
+		if ( percentage > 0.875f )
 		{
 			glTexCoord2f(0.0f, 1.0f);
 			glVertex2f(x - halfWidth_, y + halfHeight_);
 		}
-		if (percentage > 0.625)
+		if ( percentage > 0.625f )
 		{
 			glTexCoord2f(0.0f, 0.0f);
 			glVertex2f(x - halfWidth_, y - halfHeight_);
 		}
-		if (percentage > 0.375)
+		if ( percentage > 0.375f )
 		{
 			glTexCoord2f(1.0f, 0.0f);
 			glVertex2f(x + halfWidth_, y - halfHeight_);
 		}
-		if (percentage > 0.125)
+		if ( percentage > 0.125f )
 		{
 			glTexCoord2f(1.0f, 1.0f);
 			glVertex2f(x + halfWidth_, y + halfHeight_);
@@ -168,22 +168,22 @@ void GLWScorchedInfoSpinner::draw()
 		glVertex2f(x, y);
 		glTexCoord2f(0.5f, 1.0f);
 		glVertex2f(x, y + halfHeight_);
-		if (percentage < 0.875)
+		if ( percentage < 0.875f )
 		{
 			glTexCoord2f(0.0f, 1.0f);
 			glVertex2f(x - halfWidth_, y + halfHeight_);
 		}
-		if (percentage < 0.625)
+		if ( percentage < 0.625f )
 		{
 			glTexCoord2f(0.0f, 0.0f);
 			glVertex2f(x - halfWidth_, y - halfHeight_);
 		}
-		if (percentage < 0.375)
+		if ( percentage < 0.375f )
 		{
 			glTexCoord2f(1.0f, 0.0f);
 			glVertex2f(x + halfWidth_, y - halfHeight_);
 		}
-		if (percentage < 0.125)
+		if ( percentage < 0.125f )
 		{
 			glTexCoord2f(1.0f, 1.0f);
 			glVertex2f(x + halfWidth_, y + halfHeight_);

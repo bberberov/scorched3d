@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,7 +33,7 @@
 #include <common/Defines.hpp>
 #include <common/ProgressCounter.hpp>
 #include <lang/LangResource.hpp>
-#include <math.h>
+#include <cmath>
 #ifndef S3D_SERVER
 	#include <landscape/Landscape.hpp>
 	#include <landscape/DeformTextures.hpp>
@@ -174,8 +174,8 @@ bool DeformLandscape::deformLandscapeInternal(
 	HeightMap &deformhmap = context.getLandscapeMaps().getGroundMaps().getDeformMap();
 
 	bool hits = false;
-	int iradius = (int) radius.asInt() + 1;
-	if (iradius > 49) iradius = 49;
+	int iradius = radius.asInt() + 1;
+	if ( 49 < iradius ) iradius = 49;
 
 	fixed lowestLandscapeHeight = fixed(context.getOptionsGame().getMinimumLandHeight());
 	LandscapeDefnType::DefnType deformType = context.getLandscapeMaps().getDefinitions().getDefn()->deform->getType();
@@ -281,8 +281,8 @@ bool DeformLandscape::deformRoofInternal(ScorchedContext &context,
 	HeightMap &deformhmap = context.getLandscapeMaps().getRoofMaps().getDeformRoofMap();
 
 	bool hits = false;
-	int iradius = (int) radius.asInt() + 1;
-	if (iradius > 49) iradius = 49;
+	int iradius = radius.asInt() + 1;
+	if ( 49 < iradius ) iradius = 49;
 
 	DeformLandscapeCache::DeformLandscapeCacheItem &deformItem = deformCache.getItem(iradius);
 	fixed *explosionDepth = deformItem.explosionDepth_;

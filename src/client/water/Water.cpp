@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -105,7 +105,7 @@ void Water::generate(ProgressCounter *counter)
 	Clock timer;
 	wMap_->generate(water, counter);
 	float timeDifference = timer.getTimeDifference();
-	Logger::log(S3D::formatStringBuffer("Water time %.3f", timeDifference));
+	Logger::log( S3D::formatStringBuffer( "Water time %.3f", (double)timeDifference ) );
 
 	wTex_->generate(water, counter);
 	wMapPoints_->generate();

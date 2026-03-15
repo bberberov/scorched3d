@@ -22,7 +22,15 @@
 #define __INCLUDE_TrueTypeFont_hpp_INCLUDE__
 
 #include <string>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
+
+#pragma GCC diagnostic pop
+
 #include <wx/image.h>
 #include <ft2build.h>
 #include FT_FREETYPE_H

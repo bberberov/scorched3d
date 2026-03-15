@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2003, 2014, 2024
+//    Scorched3D (c) 2000-2003, 2014, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,19 +28,19 @@ static void createControls(wxWindow *parent, wxSizer *sizer)
 	wxFlexGridSizer *servernameSizer2 = new wxFlexGridSizer(4, 2, 5, 5);
 
 	servernameSizer2->Add(new wxStaticText(parent, -1, wxT("Server Name :")), 0, wxALIGN_CENTER_VERTICAL);
-	IDC_SERVER_NAME_CTRL = new wxTextCtrl(parent, IDC_SERVER_NAME, wxT(""), wxDefaultPosition, wxSize((int) 226.5, -1));
+	IDC_SERVER_NAME_CTRL = new wxTextCtrl( parent, IDC_SERVER_NAME, wxT( "" ), wxDefaultPosition, wxSize( 226, -1 ) );
 	servernameSizer2->Add(IDC_SERVER_NAME_CTRL);
 	servernameSizer2->Add(new wxStaticText(parent, -1, wxT("Port Number :")), 0, wxALIGN_CENTER_VERTICAL);
-	IDC_SERVER_PORT_CTRL = new wxTextCtrl(parent, -1, wxT(""), wxDefaultPosition, wxSize((int) 72, -1));
+	IDC_SERVER_PORT_CTRL = new wxTextCtrl( parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 72, -1 ) );
 	servernameSizer2->Add(IDC_SERVER_PORT_CTRL);
 	servernameSizer2->Add(new wxStaticText(parent, -1, wxT("Management Port Number :")),0, wxALIGN_CENTER_VERTICAL);
-	IDC_SERVERMANAGEMENT_PORT_CTRL = new wxTextCtrl(parent, -1, wxT(""), wxDefaultPosition, wxSize((int) 72, -1));
+	IDC_SERVERMANAGEMENT_PORT_CTRL = new wxTextCtrl( parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 72, -1 ) );
 	servernameSizer2->Add(IDC_SERVERMANAGEMENT_PORT_CTRL);
 	IDC_PUBLISHIP_CTRL_TEXT = new wxStaticText(parent, -1, wxT("Published IP :"));
 	servernameSizer2->Add(IDC_PUBLISHIP_CTRL_TEXT, 0, wxALIGN_CENTER_VERTICAL);
 
 	wxSizer *hori = new wxBoxSizer(wxHORIZONTAL);
-	IDC_PUBLISHIP_CTRL = new wxTextCtrl(parent, IDC_PUBLISHIP, wxT(""), wxDefaultPosition, wxSize((int) 150, -1));
+	IDC_PUBLISHIP_CTRL = new wxTextCtrl( parent, IDC_PUBLISHIP, wxT( "" ), wxDefaultPosition, wxSize( 150, -1 ) );
 	IDOK_PUBLISHAUTO_CTRL =new wxButton(parent, IDC_PUBLISHAUTO, wxT("AutoDetect"));
 	hori->Add(IDC_PUBLISHIP_CTRL);
 	hori->Add(IDOK_PUBLISHAUTO_CTRL);

@@ -36,6 +36,8 @@
 #include <common/main.hpp>
 #include <SDL/SDL.h>
 
+void checkLaunchFile(char *progPath);
+
 void checkLaunchFile(char *progPath)
 {
 	if (!ClientParams::instance()->getNonParam()[0]) return;

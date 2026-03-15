@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -29,7 +29,7 @@
 #include <sprites/ExplosionNukeRenderer.hpp>
 #include <sprites/WallActionRenderer.hpp>
 #include <landscape/Landscape.hpp>
-#include <math.h>
+#include <cmath>
 #include <stdlib.h>
 
 static void randomVector(Vector &result, Vector &start, Vector &end)
@@ -250,7 +250,7 @@ void ParticleEmitter::emitExplosionRing(int number,
 		float speed = width * 4.0f;
 		Vector axis = inAxis.Normalize();
 		Vector otheraxis(0.0f, 1.0f, 0.0f);
-		if (fabs(axis[1]) > 0.7f)
+		if ( 0.7f < std::fabsf( axis[1] ) )
 		{
 			otheraxis = Vector(1.0f, 0.0f, 0.0f);
 		}
@@ -437,14 +437,14 @@ void ParticleEmitter::emitExplosion(
 
 		float randRotXY = (RAND * TWOPI);
 		float randRotXZ = (RAND * TWOPI);
-		float cosRandRotXZ = (float) cos(randRotXZ);
+		float cosRandRotXZ = std::cosf( randRotXZ );
 		Vector velocity;
-		velocity[0] = float(sin(randRotXY) * cosRandRotXZ);
-		velocity[1] = float(cos(randRotXY) * cosRandRotXZ);
-		velocity[2] = float(sin(randRotXZ));
-		velocity *= (width * 2.5f);
+		velocity[0] = std::sinf( randRotXY ) * cosRandRotXZ;
+		velocity[1] = std::cosf( randRotXY ) * cosRandRotXZ;
+		velocity[2] = std::sinf( randRotXZ );
+		velocity   *= ( width * 2.5f );
 
-		float size = RAND * width * 2.0f + 2.0f;
+		float size = RAND * std::fmaf( width, 2.0f, 2.0f );
 
 		setEndSize(size, size, size, size);
 

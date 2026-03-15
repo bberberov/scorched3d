@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <cmath>
 #include <common/Triangle.hpp>
 #include <common/Defines.hpp>
 
@@ -127,29 +127,44 @@ bool Triangle::pointInTriangle(const Vector &pt)
 	}
 
 	float alpha, beta;
-	if (u[1] == 0.0) 
+	if ( 0.0f == u[1] )
 	{
-		if (u[2] != 0.0) beta = u[0] / u[2];
-		else return false;
-		if (beta>=0.0 && beta<=1.0) 
+		if ( u[2] != 0.0f )
 		{
-			alpha = (v[0] - beta * v[2]) / v[1];
-			if (alpha<0.0 || alpha>1.0) return false;
+			beta = u[0] / u[2];
 		}
-		else return false;
+		else
+		{
+			return false;
+		}
+
+		if ( 0.0f <= beta && beta <= 1.0f )
+		{
+			alpha = ( v[0] - beta * v[2] ) / v[1];
+			if ( alpha < 0.0f || 1.0f < alpha ) return false;
+		}
+		else
+		{
+			return false;
+		}
 	}
-	else 
+	else
 	{
-		beta=(v[0] * u[1] - u[0] * v[1]) / (v[2] * u[1] - u[2] * v[1]);
-		if (beta>=0.0 && beta<=1.0) 
+		beta = ( v[0] * u[1] - u[0] * v[1] ) / ( v[2] * u[1] - u[2] * v[1] );
+
+		if ( 0.0f <= beta && beta <= 1.0f )
 		{
-			alpha = (u[0] - beta * u[2]) / u[1];
-			if (alpha<0.0 || alpha>1.0) return false;
+			alpha = ( u[0] - beta * u[2] ) / u[1];
+			if ( alpha < 0.0f || 1.0f < alpha ) return false;
 		}
-		else return false;
+		else
+		{
+			return false;
+		}
 	}
 
-	if (alpha+beta > 1.0) return false;
+	if ( 1.0f < alpha + beta ) return false;
+
 	return true;
 }
 
@@ -164,7 +179,7 @@ bool Triangle::rayIntersect(const Line &ray,
 
 	// Only do intersections for triangles facing the ray
 	float sd = faceN_.dotP((Vector &) Ray.getDirection());
-	if (sd == 0.0f) return false;
+	if ( 0.0f == sd ) return false;
 
 	// Get the intersection point of the ray and the triangles
 	// plane
@@ -181,14 +196,13 @@ bool Triangle::rayIntersect(const Line &ray,
 	intersectN = faceN_;
 
 	// Check the intersection point is in the ray
-	if (checkPtOnLine)
-	{
-		if (si > 0.0f || si < -1.0) return false;
-	}
+	if ( checkPtOnLine )
+		if ( si < -1.0f || 0.0f < si ) return false;
 
 	// Check the intersection point is in the triangle
 	if (!pointInBoundingBox(intersectPt)) return false;
 	if (!pointInTriangle(intersectPt)) return false;
+
 	return true;
 }
 

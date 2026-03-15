@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014, 2025
+//    Scorched3D (c) 2000-2011, 2014, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -92,7 +92,7 @@ bool NetServerTCP3Recv::actualRecvFunc()
 	}
 
 	// allocate the buffer memory
-	unsigned int recvTime = (unsigned int) SDL_GetTicks();
+	unsigned int recvTime = SDL_GetTicks();
 	NetMessage *buffer = NetMessagePool::instance()->
 		getFromPool(NetMessage::BufferMessage, 
 		destinationId_, ipAddress_, 0, recvTime);

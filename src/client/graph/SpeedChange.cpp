@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -62,7 +62,7 @@ void SpeedChange::draw(const unsigned state)
 	{
 		GLState state(GLState::BLEND_ON | GLState::TEXTURE_OFF); 
 		static char buffer[10];
-		snprintf(buffer, 10, "%.1fX", speed);
+		snprintf(buffer, 10, "%.1fX", (double)speed);
 
 		static Vector fontColor(0.7f, 0.7f, 0.2f);
 		GLWFont::instance()->getGameFont()->draw(fontColor, 20, 10.0f, 10.0f, 0.0f, buffer);

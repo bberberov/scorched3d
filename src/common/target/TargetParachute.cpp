@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -44,8 +44,7 @@ bool TargetParachute::writeMessage(NamedNetBuffer &buffer)
 {
 	NamedNetBufferSection section(buffer, "TargetParachute");
 
-	buffer.addToBufferNamed("id",
-		(unsigned int)(currentParachute_?currentParachute_->getAccessoryId():0));
+	buffer.addToBufferNamed( "id", currentParachute_ ? currentParachute_->getAccessoryId() : 0u );
 	return true;
 }
 

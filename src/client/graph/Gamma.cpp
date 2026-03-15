@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,7 +22,7 @@
 #include <common/Defines.hpp>
 #include <graph/Gamma.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <math.h>
+#include <cmath>
 #include <SDL/SDL.h>
 
 Gamma *Gamma::instance_ = nullptr;
@@ -54,8 +54,8 @@ bool Gamma::set()
 		float i = (float)n / 256.0f;
 		float c = powf(i,1.0f/gamma);
 
-		int value =  (int)(c*65535.0 + 0.5);
-		if ( value > 65535 ) { value = 65535; }
+		int value =  (int)std::fmaf( c, 65535.0f, 0.5f );
+		if ( 65535 < value ) { value = 65535; }
 
 		tmpSettings_.Red  [n] = (Uint16)value;
 		tmpSettings_.Green[n] = (Uint16)value;

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -199,9 +199,11 @@ void GameState::mouseDown(MouseButton button, int x, int y)
 {
 	mouseUpDown(button, true, x, y);
 
-	if (doubleClickClock_.getTimeDifference() < 0.25 &&
-		abs(mouseDoubleX_ - x) <= 4 &&
-		abs(mouseDoubleY_ - y) <= 4)
+	if (
+		doubleClickClock_.getTimeDifference() < 0.25f
+		&& std::abs( mouseDoubleX_ - x ) <= 4
+		&& std::abs( mouseDoubleY_ - y ) <= 4
+	)
 	{
 		switch (button)
 		{
@@ -683,21 +685,34 @@ void GameState::clearTimers(bool printTimers)
 		unsigned int simulateTotalPer = (100 * simulateTotal) / sinceLastTime;
 		unsigned int timeLeftPer =  (100 * timeLeft) / sinceLastTime;
 
-		Logger::log(
-			"----------------------------------------");
+		Logger::log( "----------------------------------------" );
 
-		Logger::log(S3D::formatStringBuffer("FPS %.2f  Time Total %.2f = Draw %.2f + Clear %.2f",
-			float(frameCount_) / mainLoop_->getTotalTime(),
-			mainLoop_->getTotalTime(), mainLoop_->getDrawTime(), mainLoop_->getClearTime()));
+		Logger::log(
+			S3D::formatStringBuffer(
+				"FPS %.2f  Time Total %.2f = Draw %.2f + Clear %.2f",
+				(double)( (float)frameCount_ / mainLoop_->getTotalTime() ),
+				(double)( mainLoop_->getTotalTime() ),
+				(double)( mainLoop_->getDrawTime() ),
+				(double)( mainLoop_->getClearTime() )
+			)
+		);
 		mainLoop_->getTotalTime() = 0.0f;
-		mainLoop_->getDrawTime() = 0.0f;
+		mainLoop_->getDrawTime()  = 0.0f;
 		mainLoop_->getClearTime() = 0.0f;
 
-		Logger::log(S3D::formatStringBuffer("%10s Other : %4i (%3u%%) Draw : %4u (%3u%%), Simulate : %4u (%3u%%)\n\n", 
-			"",
-			timeLeft, timeLeftPer,
-			drawTotal, drawTotalPer,
-			simulateTotal, simulateTotalPer));
+		Logger::log(
+			S3D::formatStringBuffer(
+				"%10s Other : %4i (%3u%%) Draw : %4u (%3u%%), Simulate : %4u (%3u%%)\n\n",
+				"",
+				timeLeft,
+				timeLeftPer,
+				drawTotal,
+				drawTotalPer,
+				simulateTotal,
+				simulateTotalPer
+			)
+		);
+
 		for (int i=0; i<50; i++)
 		{
 			if (timers_[i].gameStateI)

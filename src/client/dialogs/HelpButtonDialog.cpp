@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -191,7 +191,7 @@ LangStringStorage *HelpButtonDialog::PerformanceMenu::getMenuToolTip(const char*
 		"  %.2f Server Simulation Step\n"
 		"  %.2f%% Server Choke\n",
 
-		FrameTimer::instance()->getFPS(),
+		(double)(FrameTimer::instance()->getFPS()),
 		FrameTimer::instance()->getLastTris(),
 		pOnScreen,
 		VisibilityPatchGrid::instance()->getVisibleLandPatchesCount(),
@@ -204,10 +204,10 @@ LangStringStorage *HelpButtonDialog::PerformanceMenu::getMenuToolTip(const char*
 		Landscape::instance()->getShadowMap().getShadowCount(),
 		FrameTimer::instance()->getLastStateCount(),
 		FrameTimer::instance()->getLastTextureSets(),
-		ScorchedClient::instance()->getClientSimulator().getServerTimeDifference().asFloat(),
-		ScorchedClient::instance()->getClientSimulator().getServerRoundTripTime().asFloat(),
-		ScorchedClient::instance()->getClientSimulator().getServerStepTime().asFloat(),
-		ScorchedClient::instance()->getClientSimulator().getServerChoke().asFloat()
+		ScorchedClient::instance()->getClientSimulator().getServerTimeDifference().asDouble(),
+		ScorchedClient::instance()->getClientSimulator().getServerRoundTripTime().asDouble(),
+		ScorchedClient::instance()->getClientSimulator().getServerStepTime().asDouble(),
+		ScorchedClient::instance()->getClientSimulator().getServerChoke().asDouble()
 		)
 	);
 

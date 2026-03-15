@@ -22,7 +22,7 @@
 #define __INCLUDE_Vector_hpp_INCLUDE__
 
 #include <common/Defines.hpp>
-#include <math.h>
+#include <cmath>
 
 class Vector
 {
@@ -45,8 +45,8 @@ public:
 
 	Vector( const float ang, const double length )
 	{
-		V[0] = (float)sin( ang / 180.0f * 3.14f ) * float( length );
-		V[1] = (float)cos( ang / 180.0f * 3.14f ) * float( length );
+		V[0] = std::sinf( ang / 180.0f * 3.14f ) * (float)length;
+		V[1] = std::cosf( ang / 180.0f * 3.14f ) * (float)length;
 		V[2] = 0.0f;
 	}
 
@@ -89,9 +89,9 @@ public:
 		return v;
 	}
 
-	float Magnitude() { return float( sqrt( MagnitudeSquared() ) ); }
+	float Magnitude() { return std::sqrtf( MagnitudeSquared() ); }
 
-	float Magnitude2d() { return float( sqrt( Magnitude2dSquared() ) ); }
+	float Magnitude2d() { return std::sqrtf( Magnitude2dSquared() ); }
 
 	float Magnitude2dSquared() { return V[0] * V[0] + V[1] * V[1]; }
 

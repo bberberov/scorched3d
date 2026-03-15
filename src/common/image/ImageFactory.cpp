@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -138,8 +138,14 @@ Image ImageFactory::combineImage(Image bitmap, Image alpha, bool invert)
 				}
 
 				unsigned char avg = 0;
-				if (alpha.getComponents() == 3) avg = (unsigned char)(int(abits[0] + abits[1] + abits[2]) / 3);
-				else if (alpha.getComponents() == 1) avg = abits[0];
+				if ( 3 == alpha.getComponents() )
+				{
+					avg = (unsigned char)( ( (int)( abits[0] ) + (int)( abits[1] ) + (int)( abits[2] ) ) / 3 );
+				}
+				else if ( 1 == alpha.getComponents() )
+				{
+					avg = abits[0];
+				}
 				if (invert)
 				{
 					bits[3] = (unsigned char)(255 - avg);

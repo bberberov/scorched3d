@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,7 +26,7 @@
 #include <common/OptionsScorched.hpp>
 #include <common/Logger.hpp>
 #include <common/RandomGenerator.hpp>
-#include <math.h>
+#include <cmath>
 
 TankAIAimGuesser::TankAIAimGuesser(ScorchedContext &context) :
 	context_(context)
@@ -60,8 +60,14 @@ bool TankAIAimGuesser::guess(Tanket *tanket, Vector &target,
 		// Its landed
 		actualPosition = currentGuess_.getPosition().asVector();
 		Vector direction = currentGuess_.getPosition().asVector() - target;
-		float actualDistance = 
-			float(sqrt(direction[0]*direction[0] + direction[1]*direction[1]));
+
+		// float actualDistance = std::sqrtf( direction[0] * direction[0] + direction[1] * direction[1] );
+#if 201703L <= __cplusplus
+		float actualDistance = std::hypotf( direction[0],  direction[1] );
+#else
+		float actualDistance = std::sqrtf( std::fmaf( direction[0], direction[0], ( direction[1] * direction[1] ) ) );
+#endif
+
 		if (actualDistance < distance)
 		{
 			// Its close
@@ -130,8 +136,8 @@ void TankAIAimGuesser::refineShot(Tanket *tanket,
 	// And the new best power
 	float dist = (currentPos - tanket->getLife().getTargetPosition().asVector()).Magnitude2d();
 	float wanteddist = (wantedPos - tanket->getLife().getTargetPosition().asVector()).Magnitude2d();
-	float currentPower = (float) (log(dist) / log(2.0));
-	float wantedPower = (float) (log(wanteddist) / log(2.0));
+	float currentPower = std::log2f(dist);
+	float wantedPower = std::log2f(wanteddist);
 
 	fixed power = tanket->getShotInfo().getPower() * fixed::fromFloat(wantedPower) / 
 		fixed::fromFloat(currentPower);

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -108,15 +108,16 @@ XMLNode::XMLNode(const char *name, const LangString &langStringContent, NodeType
 	addContent( content.c_str(), (int) content.size() );
 }
 
-XMLNode::XMLNode(const char *name, float content, NodeType type) :
-	name_(name),
-	parent_(0),
-	type_(type),
-	useContentNodes_(false)
+XMLNode::XMLNode( const char* name, float content, NodeType type )
+	: name_( name )
+	, parent_( 0 )
+	, type_( type )
+	, useContentNodes_( false )
 {
 	char buffer[20];
-	snprintf(buffer, 20, "%.2f", content);
-	addContent(buffer, (int) strlen(buffer));
+	// NOTE: printf accepts only double, not float
+	snprintf( buffer, 20, "%.2f", (double)content );
+	addContent( buffer, (int)strlen( buffer ) );
 }
 
 XMLNode::XMLNode(const char *name, int content, NodeType type) :
@@ -212,28 +213,32 @@ XMLNode::XMLNode(const char *name, FixedVector4 &content, NodeType type) :
 	nodeD->addContent(buffer, (int) strlen(buffer));
 }
 
-XMLNode::XMLNode(const char *name, Vector &content, NodeType type) :
-	name_(name),
-	parent_(0),
-	type_(type),
-	useContentNodes_(false)
+XMLNode::XMLNode( const char* name, Vector& content, NodeType type )
+	: name_( name )
+	, parent_( 0 )
+	, type_( type )
+	, useContentNodes_( false )
 {
-	XMLNode *nodeA = new XMLNode("a");
-	addChild(nodeA);
-	XMLNode *nodeB = new XMLNode("b");
-	addChild(nodeB);
-	XMLNode *nodeC = new XMLNode("c");
-	addChild(nodeC);
+	XMLNode* nodeA = new XMLNode( "a" );
+	addChild( nodeA );
+	XMLNode* nodeB = new XMLNode( "b" );
+	addChild( nodeB );
+	XMLNode* nodeC = new XMLNode( "c" );
+	addChild( nodeC );
 
 	char buffer[20];
-	snprintf(buffer, 20, "%.2f", content[0]);
-	nodeA->addContent(buffer, (int) strlen(buffer));
 
-	snprintf(buffer, 20, "%.2f", content[1]);
-	nodeB->addContent(buffer, (int) strlen(buffer));
+	// NOTE: printf accepts only double, not float
+	snprintf( buffer, 20, "%.2f", (double)( content[0] ) );
+	nodeA->addContent( buffer, (int)strlen( buffer ) );
 
-	snprintf(buffer, 20, "%.2f", content[2]);
-	nodeC->addContent(buffer, (int) strlen(buffer));
+	// NOTE: printf accepts only double, not float
+	snprintf( buffer, 20, "%.2f", (double)( content[1] ) );
+	nodeB->addContent( buffer, (int)strlen( buffer ) );
+
+	// NOTE: printf accepts only double, not float
+	snprintf( buffer, 20, "%.2f", (double)( content[2] ) );
+	nodeC->addContent( buffer, (int)strlen( buffer ) );
 }
 
 XMLNode::~XMLNode()

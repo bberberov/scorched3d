@@ -1,3 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2000-2011, 2024-2026
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
 //////////////////////////////////////////////////////////////////////////
 //
 //  Fixed Point Math Class
@@ -21,7 +41,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 #include "fixed.hpp"
-#include <math.h>
+#include <cmath>
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
@@ -45,10 +65,10 @@ fixed fixed::XLN_10 = fixed( true, _XLN_10 );
 
 Sint64 fixed::FIXED_RESOLUTION( 10000 );
 float  fixed::FIXED_RESOLUTION_FLOAT( 10000.0f );
+double fixed::FIXED_RESOLUTION_DOUBLE( 10000.0 );
 
 fixed fixed::MAX_FIXED( true, Sint64( LLONG_MAX ) );  // 64 bit
 fixed fixed::MIN_FIXED( true, Sint64( LLONG_MIN ) );  // 64 bit
-
 
 fixed::fixed(const char *nVal)
 {

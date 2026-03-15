@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <cmath>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
 #include <image/ImageLuminanceFactory.hpp>
@@ -226,7 +226,7 @@ void GLLenseFlare::draw(Vector &flarePos, Vector &flareDir, int colorNo)
 	Vector flare_dir = flareDir;// .Normalize(); // Should already be normalized
 	Vector view_dir = (flarePos - cameraPos).Normalize();
 
-	float dotP = (float) flare_dir.dotP(view_dir);
+	float dotP = flare_dir.dotP( view_dir );
 	if (dotP <= 0.2f) return;
 
 	Vector centre = cameraPos + view_dir * 20.0f;

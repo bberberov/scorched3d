@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -99,8 +99,8 @@ void PlacementTypeTree::getPositions(
 				getGroundMaps().getNormal(
 					x * treeMapMultWidth, y * treeMapMultHeight);
 
-		int mx = int(map.getWidth() * (fixed(x) / 64).asInt());
-		int my = int(map.getHeight() * (fixed(y) / 64).asInt());
+		int mx = map.getWidth() * x / 64;
+		int my = map.getHeight() * y / 64;
 		unsigned char *bits = map.getBits() +
 			mx * 3 + my * map.getWidth() * 3;
 		if (bits[0] > 127 &&

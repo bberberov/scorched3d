@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -79,11 +79,15 @@ void WeaponGiveLife::weaponCallback(
 			tank->getLife().getLife() + life);
 
 		{
-			ChannelText text("combat", 
-				LANG_RESOURCE_2("TANK_GET_LIFE",
-				"[p:{0}] received {1} life", 
-				tank->getTargetName(), 
-				S3D::formatStringBuffer("%.0f", life.asFloat())));
+			ChannelText text(
+				"combat",
+				LANG_RESOURCE_2(
+					"TANK_GET_LIFE",
+					"[p:{0}] received {1} life",
+					tank->getTargetName(),
+					S3D::formatStringBuffer( "%.0f", life.asDouble() )
+				)
+			);
 			ChannelManager::showText(context, text);
 		}
 	}
@@ -101,11 +105,15 @@ void WeaponGiveLife::weaponCallback(
 		}
 
 		{
-			ChannelText text("combat", 
-				LANG_RESOURCE_2("TANK_LOST_LIFE",
-				"[p:{0}] lost {1} life", 
-				tank->getTargetName(), 
-				S3D::formatStringBuffer("%.0f", -life.asFloat())));
+			ChannelText text(
+				"combat",
+				LANG_RESOURCE_2(
+					"TANK_LOST_LIFE",
+					"[p:{0}] lost {1} life",
+					tank->getTargetName(),
+					S3D::formatStringBuffer( "%.0f", -life.asDouble() )
+				)
+			);
 			ChannelManager::showText(context, text);
 		}
 	}

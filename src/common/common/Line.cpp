@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -81,23 +81,23 @@ Vector Line::get2DPerp()
 	return dir_.get2DPerp();
 }
 
-bool Line::intersect(const Line &line, Vector &interPt, const bool checkPtOnLine)
+bool Line::intersect( const Line& line, Vector& interPt, const bool checkPtOnLine )
 {
-	if (dotP(line) == 0.0f) return false;
+	if ( 0.0f == dotP( line ) ) return false;
 
-	Vector &dir1 = (Vector &) dir_;
-	Vector &dir2 = (Vector &) ((Line &)line).getDirection();
+	Vector& dir1 = dir_;
+	Vector& dir2 = (Vector&)( (Line&)line ).getDirection();
 
-	Vector pDir1 = Vector(dir1[1], -dir1[0], 0.0f);
-	Vector pDir2 = Vector(dir2[1], -dir2[0], 0.0f);
+	Vector pDir1 = Vector( dir1[1], -dir1[0], 0.0f );
+	Vector pDir2 = Vector( dir2[1], -dir2[0], 0.0f );
 
-	float u1 = pDir2.dotP((Vector &)((Line &)line).getStart() - start_) / pDir2.dotP(dir1);
-	float u2 = pDir1.dotP(start_ - ((Line &)line).getStart()) / pDir1.dotP(dir2);
+	float u1 = pDir2.dotP( (Vector&)( (Line&)line ).getStart() - start_ ) / pDir2.dotP( dir1 );
+	float u2 = pDir1.dotP( start_ - ( (Line&)line ).getStart() ) / pDir1.dotP( dir2 );
 
-	if (checkPtOnLine)
+	if ( checkPtOnLine )
 	{
-		if (u1 < 0.0f || u1 > 1.0f) return false;
-		if (u2 < 0.0f || u2 > 1.0f) return false;
+		if ( u1 < 0.0f || 1.0f < u1 ) return false;
+		if ( u2 < 0.0f || 1.0f < u2 ) return false;
 	}
 
 	interPt = start_ + dir1 * u1;

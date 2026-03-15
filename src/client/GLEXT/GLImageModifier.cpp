@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <GLEXT/GLImageItterator.hpp>
 #include <GLEXT/GLImageModifier.hpp>
 #include <image/Image.hpp>
@@ -518,10 +518,10 @@ void ImageModifier::removeWaterFromBitmap(HeightMap &hMap,
 			{
 				float height = hMap.getInterpHeight(
 					fixed::fromFloat(hx), fixed::fromFloat(hy)).asFloat();
-				if (height > waterHeight - 0.3)
+				if ( waterHeight - 0.3f < height )
 				{
 					alpha = 128;
-					if (height > waterHeight)
+					if ( waterHeight < height )
 					{
 						alpha = 255;
 					}
@@ -576,7 +576,7 @@ void ImageModifier::addWaterToBitmap(HeightMap &hMap,
 
 			if (height <= waterHeight)
 			{
-				if (height <= waterHeight - 0.3)
+				if ( height <= waterHeight - 0.3f )
 				{
 					GLubyte *sourceBits = bitmapItor.getPos();
 

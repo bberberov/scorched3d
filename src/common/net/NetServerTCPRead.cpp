@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -213,10 +213,14 @@ void NetServerTCPRead::actualSendRecvThreadFunc(bool send)
 		float timeDiff = netClock.getTimeDifference();
 		if (timeDiff > 15.0f)
 		{
-			Logger::log(S3D::formatStringBuffer(
-				"Warning: %s net loop took %.2f seconds, client %u", 
-				(send?"Send":"Recv"),
-				timeDiff, id_));
+			Logger::log(
+				S3D::formatStringBuffer(
+					"Warning: %s net loop took %.2f seconds, client %u",
+					( send ? "Send" : "Recv" ),
+					(double)timeDiff,
+					id_
+				)
+			);
 		}
 	}
 

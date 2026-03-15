@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025,  2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <cmath>
 #include <GLEXT/GLState.hpp>
 #include <GLW/GLWFlag.hpp>
 
@@ -48,8 +48,8 @@ void GLWFlag::draw()
 	glBegin(GL_QUADS);
 		for (float a=0.0f; a<=w_-diff; a+=diff)
 		{
-			float mult = float (sin((a * rad) + offset_));
-			float cmult = (mult * 0.25f) + 0.75f;
+			float mult  = std::sinf( std::fmaf( a, rad,  offset_ ) );
+			float cmult = std::fmaf( mult, 0.25f, 0.75f );
 			float hmult = mult * 2.0f;
 
 			glColor3f(color_[0] * cmult, color_[1] * cmult, color_[2] * cmult);

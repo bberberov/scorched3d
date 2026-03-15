@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -972,9 +972,7 @@ std::string EventHandlerDataBase::allocateId()
 void EventHandlerDataBase::addInfo(Tank *tank)
 {
 	char playerName[1024];
-	escapeString(playerName, 
-		tank->getCStrName().c_str(),
-		(unsigned long) tank->getCStrName().size());
+	escapeString( playerName, tank->getCStrName().c_str(), tank->getCStrName().size() );
 
 	// Add the players name (may fail if duplicates)
 	runQuery("INSERT INTO scorched3d_names (playerid, name, count) VALUES "

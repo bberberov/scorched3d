@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -95,9 +95,7 @@ bool ClientFileHandler::processMessage(
 			unsigned int doneBytes = totalBytes_ - bytesLeft;
 			unsigned int percentage = 0;
 
-			if (doneBytes > 0) {
-				percentage = (unsigned int)(((doneBytes / 1024) * 100) / (totalBytes_ / 1024));
-			}
+			if ( 0 < doneBytes ) percentage = ( ( doneBytes / 1024u ) * 100u ) / ( totalBytes_ / 1024u );
 			ProgressDialog::instance()->progressChange(
 				LANG_RESOURCE_3("DOWNLOADING_FILE", "Downloading mod, {0}% {1}/{2} KB", 
 				percentage, (doneBytes / 1024), (totalBytes_ / 1024)), float(percentage));

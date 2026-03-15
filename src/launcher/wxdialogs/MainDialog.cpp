@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024, 2025
+//    Scorched3D (c) 2000-2011, 2024-2026
 //
 //    This file is part of Scorched3D.
 //
@@ -19,7 +19,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdlib.h>
+
+// NOTE: avoid -Wuseless-cast
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/wx.h>
+
+#pragma GCC diagnostic pop
+
 #include <wx/image.h>
 #include <wx/process.h>
 #include <wx/txtstrm.h>

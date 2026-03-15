@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,7 +21,8 @@
 #include <common/DefinesMath.hpp>
 #include <common/Defines.hpp>
 
-#include <math.h>
+#include <cmath>
+
 static float fastSin[628];
 static float fastCos[628];
 static bool calculatedFast = false;
@@ -31,9 +32,9 @@ static void calculateFast()
 	calculatedFast = true;
 	for (int i=0; i<628; i++)
 	{
-		float a = float(i) / 100.0f;
-		fastSin[i] = (float) sin(a);
-		fastCos[i] = (float) cos(a);
+		float a = (float)i / 100.0f;
+		fastSin[i] = std::sinf( a );
+		fastCos[i] = std::cosf( a );
 	}
 }
 

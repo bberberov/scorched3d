@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -73,13 +73,17 @@ void FrameTimer::simulate(const unsigned state, float frameTime)
 
 		if (OptionsDisplay::instance()->getFrameTimer())
 		{
-			ChannelText chText("info", 
+			ChannelText chText(
+				"info",
 				LANG_RESOURCE_1(
-					"X_FRAMES_PER_SECOND", 
-					"{0} frames per second.", 
-					S3D::formatStringBuffer("%.2f", fps_)));
+					"X_FRAMES_PER_SECOND",
+					"{0} frames per second.",
+					S3D::formatStringBuffer( "%.2f", (double)fps_ )
+				)
+			);
 			chText.setFlags(ChannelText::eNoLog | ChannelText::eNoSound);
 			ClientChannelManager::instance()->showText(chText);
 		}
 	}
 }
+

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -148,15 +148,13 @@ bool TankChangeSimAction::invokeAction(ScorchedContext &context)
 	unsigned int oldTeam = tank->getTeam();
 	if (context.getOptionsGame().getTeams() > 1)
 	{
-		if (message_.getPlayerTeam() > 0 && message_.getPlayerTeam() <=
-			(unsigned int) context.getOptionsGame().getTeams())
+		if ( 0 < message_.getPlayerTeam() && message_.getPlayerTeam() <= context.getOptionsGame().getTeams() )
 		{
-			tank->setTeam(message_.getPlayerTeam());
+			tank->setTeam( message_.getPlayerTeam() );
 		}
 		else
 		{
-			tank->setTeam(context.getOptionsTransient().getLeastUsedTeam(
-				context.getTargetContainer()));
+			tank->setTeam( context.getOptionsTransient().getLeastUsedTeam( context.getTargetContainer() ) );
 		}
 	}
 

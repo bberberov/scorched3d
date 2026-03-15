@@ -1,5 +1,28 @@
+////////////////////////////////////////////////////////////////////////////////
+//    Scorched3D (c) 2008, 2009, 2024-2026
+//
+//    This file is part of Scorched3D.
+//
+//    Scorched3D is free software; you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation; either version 2 of the License, or
+//    (at your option) any later version.
+//
+//    Scorched3D is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License along
+//    with this program; if not, write to the Free Software Foundation, Inc.,
+//    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+////////////////////////////////////////////////////////////////////////////////
+
 // clang-format off
 // uncrustify off
+
+// FIXME: -Wdouble-promotion fix with template specializations
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
 
 /*
 Danger from the Deep - Open source submarine simulation
@@ -90,7 +113,7 @@ public:
 		int gridsize,
 		Vector& winddir,
 		T windspeed = T(20.0),
-		T waveheight = T(0.0001),	// fixme: compute that automatically from Lm, etc.?
+		T waveheight = T(0.0001),	// FIXME: compute that automatically from Lm, etc.?
 		T tilesize = T(100.0),
 		T cycletime = T(10.0)
 	);

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -121,13 +121,20 @@ void TankState::setState(State s)
 	}
 }
 
-const char *TankState::getStateString()
+const char* TankState::getStateString()
 {
 	static char string[1024];
-	snprintf(string, 1024, "%s %s (%i hp)",
+
+	// NOTE: printf accepts only double, not float
+	snprintf(
+		string,
+		1024,
+		"%s %s (%i hp)",
 		getSmallStateString(),
-		(muted_?"muted ":""),
-		(int) tank_->getLife().getLife().asInt());
+		( muted_ ? "muted " : "" ),
+		tank_->getLife().getLife().asInt()
+	);
+
 	return string;
 }
 

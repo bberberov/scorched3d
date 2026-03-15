@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -275,7 +275,7 @@ void ScoreDialog::draw()
 	LANG_RESOURCE_VAR(SCORE_MONEY_TOOLTIP_TITLE, "MONEY", "Money");
 	LANG_RESOURCE_VAR_1(SCORE_MONEY_TOOLTIP, "MONEY_TOOLTIP", 
 		"The amount of money this player has.\n%{0} score awarded per dollar.",
-		S3D::formatStringBuffer("%.1f", float(ScorchedClient::instance()->getOptionsGame().getScorePerMoney()) / 1000.0f));
+		S3D::formatStringBuffer("%.1f", (double)(ScorchedClient::instance()->getOptionsGame().getScorePerMoney()) / 1000.0));
 	LANG_RESOURCE_VAR(SCORE_SCORE_TOOLTIP_TITLE, "SCORE", "Score");
 	LANG_RESOURCE_VAR(SCORE_SCORE_TOOLTIP, "SCORE_TOOLTIP", 
 		"The current score for this player.\nCalculated from the number of kills, wins, money and bonus score awards.");

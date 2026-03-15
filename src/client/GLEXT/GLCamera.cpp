@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <cmath>
 #include <stdlib.h>
 #include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
@@ -109,9 +109,9 @@ void GLCamera::setWindowOffset(GLsizei windowLeft, GLsizei windowTop)
 
 void GLCamera::calculateWantedOffset()
 {
-	wantedOffset_[0] =  zoom_ * float(sin(rotationXY_) * sin(rotationYZ_));
-	wantedOffset_[1] =  zoom_ * float(cos(rotationXY_) * sin(rotationYZ_));
-	wantedOffset_[2] =  zoom_ * float(cos(rotationYZ_));
+	wantedOffset_[0] =  zoom_ * std::sinf( rotationXY_ ) * std::sinf( rotationYZ_ );
+	wantedOffset_[1] =  zoom_ * std::cosf( rotationXY_ ) * std::sinf( rotationYZ_ );
+	wantedOffset_[2] =  zoom_ * std::cosf( rotationYZ_ );
 }
 
 void GLCamera::moveViewport(Vector &lookFrom, Vector &lookAt)
@@ -209,18 +209,19 @@ void GLCamera::movePosition(float XY, float YZ, float Z)
 	calculateWantedOffset();
 }
 
-void GLCamera::movePositionDelta(float XY, float YZ, float Z)
+void GLCamera::movePositionDelta( float XY, float YZ, float Z )
 {
 	XY += rotationXY_;
 	YZ += rotationYZ_;
-	Z += zoom_;
+	Z  += zoom_;
 
-	if (YZ < 0.17f) YZ = 0.17f;
-	if (YZ > 1.91f) YZ = 1.91f;
-	if (Z < 5.0) Z = 5.0f;
-	if (Z > 250.0f) Z = 250.0f;
+	if ( YZ < 0.17f ) YZ = 0.17f;
+	else if ( 1.91f < YZ ) YZ = 1.91f;
 
-	movePosition(XY, YZ, Z);
+	if ( Z < 5.0f ) Z = 5.0f;
+	else if ( 250.0f < Z ) Z = 250.0f;
+
+	movePosition( XY, YZ, Z );
 }
 
 bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
@@ -271,7 +272,7 @@ bool GLCamera::getDirectionFromPt(GLfloat winX, GLfloat winY, Line &direction)
 	{
 		dist = 0.000001f;
 	}
-	float number = (float) fabs(pos2[2] / dist);
+	float number = std::fabsf( pos2[2] / dist );
 
 	Vector groundPos = pos2 - dir * number;
 	direction.setStart(groundPos);

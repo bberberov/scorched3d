@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <cmath>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
 #include <graph/OptionsDisplay.hpp>
@@ -48,9 +48,12 @@ GLCameraFrustum::~GLCameraFrustum()
 
 void GLCameraFrustum::normalize(float vector[4])
 {
-	float fT = (float) sqrt(
-		vector[0] * vector[0] + vector[1] * vector[1] + vector[2] * vector[2]
-	);
+	// float fT = std::sqrtf( vector[0] * vector[0] + vector[1] * vector[1] + vector[2] * vector[2] );
+#if 201703L <= __cplusplus
+	float fT = std::hypot( vector[0], vector[1], vector[2] );
+#else
+	float fT = std::sqrtf( std::fmaf( vector[0], vector[0], std::fmaf( vector[1], vector[1], ( vector[2] * vector[2] ) ) ) );
+#endif
 
 	vector[0] /= fT;
 	vector[1] /= fT;

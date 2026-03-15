@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -106,8 +106,12 @@ void ClientReloadAdaptor::showLandscapeAimInfo()
 		return;
 	}
 
-	Logger::log(S3D::formatStringBuffer("Aim Position : %.4f,%.4f,%.4f\n", 
-		TargetRendererImplTankAIM::aimPosition_[0],
-		TargetRendererImplTankAIM::aimPosition_[1],
-		TargetRendererImplTankAIM::aimPosition_[2]));
+	Logger::log(
+		S3D::formatStringBuffer(
+			"Aim Position : %.4f,%.4f,%.4f\n",
+			(double)( TargetRendererImplTankAIM::aimPosition_[0] ),
+			(double)( TargetRendererImplTankAIM::aimPosition_[1] ),
+			(double)( TargetRendererImplTankAIM::aimPosition_[2] )
+		)
+	);
 }

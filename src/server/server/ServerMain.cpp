@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -152,8 +152,9 @@ void serverLoop(fixed timeDifference)
 
 		if (timeDifference > 5)
 		{
-			Logger::log(S3D::formatStringBuffer("Warning: Server loop took %.2f seconds", 
-				timeDifference.asFloat()));
+			Logger::log(
+				S3D::formatStringBuffer( "Warning: Server loop took %.2f seconds", timeDifference.asDouble() )
+			);
 		}
 }
 

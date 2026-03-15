@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025,  2026
 //
 //    This file is part of Scorched3D.
 //
@@ -103,7 +103,8 @@ const char *ConsoleRuleFn::getValue()
 		break;
 	case ConsoleRuleTypeNumber:
 		static char buffer[10];
-		snprintf(buffer, 10, "%.2f", user_->getNumberParam(name_.c_str()));
+		// NOTE: printf accepts only double, not float
+		snprintf( buffer, 10, "%.2f", (double)( user_->getNumberParam( name_.c_str() ) ) );
 		value = buffer;
 		break;
 	case ConsoleRuleTypeString:
