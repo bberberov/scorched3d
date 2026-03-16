@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018
+//    Scorched3D (c) 2000-2011, 2018, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -129,7 +129,7 @@ static bool initComs(ProgressCounter *progressCounter)
 	{
 		ScorchedClient::instance()->getContext().getNetInterface().stop();
 		delete &ScorchedClient::instance()->getContext().getNetInterface();
-		ScorchedClient::instance()->getContext().setNetInterface(0);
+		ScorchedClient::instance()->getContext().setNetInterface( nullptr );
 	}
 
 	// Create the new net handlers
@@ -205,7 +205,7 @@ static bool initClient()
 	// Start the server (if required)
 	if (!ClientParams::instance()->getConnectedToServer())
 	{
-		ScorchedServerSettings *settings = 0;
+		ScorchedServerSettings* settings = nullptr;
 
 		if (ClientParams::instance()->getSaveFile()[0])
 		{

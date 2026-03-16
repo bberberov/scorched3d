@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004
+//    Scorched3D (c) 2000-2004, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -370,8 +370,8 @@ bool ServerWebHandler::LogFileHandler::processRequest(
 		// We've requested to see the list of current log files
 
 		// Check to see if we want to search these files
-		const char *search = 0;
-		const char *action = ServerWebServerUtil::getField(request.getFields(), "action");
+		const char* search = nullptr;
+		const char* action = ServerWebServerUtil::getField( request.getFields(), "action" );
 		if (action && 0 == strcmp(action, "Search"))
 		{
 			search = ServerWebServerUtil::getField(request.getFields(), "search");
@@ -395,14 +395,14 @@ bool ServerWebHandler::LogFileHandler::processRequest(
 				const std::string &fullFilename = S3D::getLogFile(fileName);
 
 				// Only show files from this server (this port)
-				if (0 == strstr(fileName.c_str(), portNumber.c_str())) continue;
+				if ( nullptr == strstr( fileName.c_str(), portNumber.c_str() ) ) continue;
 
 				// If searching is enabled check to see if this file contains 
 				// the specified string
 				if (search)
 				{
 					std::string file = ServerWebServerUtil::getFile(fullFilename);
-					if (0 == strstr(file.c_str(), search)) continue;
+					if ( nullptr == strstr( file.c_str(), search ) ) continue;
 				}
 
 				// Add this file to the list of files to view

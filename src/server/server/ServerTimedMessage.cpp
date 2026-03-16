@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -46,7 +46,7 @@ void ServerTimedMessage::simulate()
 	//if (ScorchedServer::instance()->getGameState().getState() ==
 	//	ServerState::ServerStateTooFewPlayers) return;
 
-	time_t currentTime = time(0);
+	time_t currentTime = time( nullptr );
 	if (currentTime > lastCheckTime_ + 5)
 	{
 		lastCheckTime_ = currentTime;

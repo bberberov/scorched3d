@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,19 +20,14 @@
 
 #include <XML/XMLStringBuffer.hpp>
 
-XMLStringBuffer::XMLStringBuffer()
-{
-}
+XMLStringBuffer::XMLStringBuffer() {}
 
-XMLStringBuffer::~XMLStringBuffer()
-{
-}
+XMLStringBuffer::~XMLStringBuffer() {}
 
-bool XMLStringBuffer::create(const char *xmlString,
-							 unsigned int size)
+bool XMLStringBuffer::create( const char* xmlString, unsigned int size )
 {
-	if (!parser_.parse(xmlString, size, 0)) return false;
-	if (!parser_.parse(0, 0, 1)) return false;
+	if ( ! parser_.parse( xmlString, size, 0 ) ) return false;
+	if ( ! parser_.parse( nullptr, 0, 1 ) ) return false;
 
 	return true;
 }

@@ -48,7 +48,7 @@ public:
 
 	T* getItem( LandscapeDefinitions* defns, const char* fileName, bool load )
 	{
-		T*                                             item = 0;
+		T*                                             item = nullptr;
 		typename std::map< std::string, T* >::iterator itor;
 		itor = items_.find( fileName );
 		if ( itor != items_.end() )
@@ -70,7 +70,7 @@ public:
 					)
 				);
 
-				return 0;
+				return nullptr;
 			}
 
 			XMLFile file;
@@ -86,7 +86,7 @@ public:
 					)
 				);
 
-				return 0;
+				return nullptr;
 			}
 
 			item             = new T;
@@ -98,7 +98,7 @@ public:
 					S3D::formatStringBuffer( "Failed to parse \"%s\"", dataFile.c_str() )
 				);
 
-				return 0;
+				return nullptr;
 			}
 		}
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,10 @@
 #include <engine/ScorchedContext.hpp>
 #include <common/DefinesString.hpp>
 
-TankModelContainer::TankModelContainer(ScorchedContext &context) :
-	context_(context),
-	tank_(0),
-	tankModel_(0)
+TankModelContainer::TankModelContainer( ScorchedContext& context )
+	: context_( context )
+	, tank_( nullptr )
+	, tankModel_( nullptr )
 {}
 
 TankModelContainer::~TankModelContainer()
@@ -55,7 +55,7 @@ TankModel *TankModelContainer::getTankModel()
 void TankModelContainer::setTankModelName(const char *modelName)
 {
 	modelName_ = modelName;
-	tankModel_ = 0;
+	tankModel_ = nullptr;
 
 #ifndef S3D_SERVER
 	if (tank_->getRenderer())

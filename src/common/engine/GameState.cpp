@@ -241,7 +241,7 @@ void GameState::mouseUpDown(MouseButton button, bool down, int x, int y)
 		unsigned thisState = currentState_;
 		unsigned thisStateCount = stateCount_;
 
-		StateIList *currentList = 0;
+		StateIList* currentList = nullptr;
 		if (down)
 		{
 			if (button <= MouseButtonLeftDoubleClick)
@@ -465,7 +465,7 @@ void GameState::setState(const unsigned state)
 
 	stateCount_++;
 	currentState_ = state;
-	currentEntry_ = 0;
+	currentEntry_ = nullptr;
 	std::map<unsigned, GameStateEntry>::iterator itor = stateList_.find(state);
 	if (itor != stateList_.end())
 	{
@@ -525,7 +525,7 @@ void GameState::stimulate(const unsigned stimulus)
 
 GameState::GameStateEntry* GameState::getEntry(const unsigned state)
 {
-	GameStateEntry *foundEntry = 0;
+	GameStateEntry* foundEntry = nullptr;
 	std::map<unsigned, GameStateEntry>::iterator itor = stateList_.find(state);
 	if (itor == stateList_.end())
 	{
@@ -551,7 +551,7 @@ GameState::GameStateSubEntry* GameState::getSubEntry(const unsigned state, GameS
 {
 	GameStateEntry *foundEntry = getEntry(state);
 
-	GameStateSubEntry *foundSubEntry = 0;
+	GameStateSubEntry* foundSubEntry = nullptr;
 	std::list<GameStateSubEntry>::iterator subItor;
 	for (subItor = foundEntry->loopList.begin();
 		subItor != foundEntry->loopList.end();

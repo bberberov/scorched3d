@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,10 +24,8 @@
 #include <engine/ScorchedContext.hpp>
 #include <limits.h>
 
-LandscapeDefinitionCache::LandscapeDefinitionCache() : 
-	cachedTex_(0), cachedDefn_(0)
-{
-}
+LandscapeDefinitionCache::LandscapeDefinitionCache() : cachedTex_( nullptr ), cachedDefn_( nullptr ) {}
+
 
 LandscapeDefinitionCache::~LandscapeDefinitionCache()
 {

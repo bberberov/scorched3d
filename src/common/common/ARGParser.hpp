@@ -77,12 +77,12 @@ protected:
 	struct Entry
 	{
 		Entry(
-			ARGParserBoolI*   destBoolArg   = 0,
-			ARGParserIntI*    destIntArg    = 0,
-			ARGParserStringI* destStringArg = 0,
-			char**            destCArg      = 0,
-			int*              destIArg      = 0,
-			bool*             destBArg      = 0,
+			ARGParserBoolI*   destBoolArg   = nullptr,
+			ARGParserIntI*    destIntArg    = nullptr,
+			ARGParserStringI* destStringArg = nullptr,
+			char**            destCArg      = nullptr,
+			int*              destIArg      = nullptr,
+			bool*             destBArg      = nullptr,
 			const char*       helpArg       = ""
 		);
 

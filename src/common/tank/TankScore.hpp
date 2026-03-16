@@ -73,7 +73,7 @@ public:
 
 	std::set< unsigned int >& getHurtBy() { return hurtBy_; }
 
-	time_t getTimePlayed() { return time( 0 ) - startTime_; }
+	time_t getTimePlayed() { return time( nullptr ) - startTime_; }
 	time_t getStartTime()  { return startTime_; }
 
 	// Stuff for stats

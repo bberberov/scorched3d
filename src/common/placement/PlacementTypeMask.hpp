@@ -36,7 +36,7 @@ public:
 		ScorchedContext&       context,
 		RandomGenerator&       generator,
 		std::list< Position >& returnPositions,
-		ProgressCounter*       counter = 0
+		ProgressCounter*       counter = nullptr
 	);
 
 protected:

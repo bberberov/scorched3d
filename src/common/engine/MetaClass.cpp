@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,7 +35,7 @@ MetaClassFactory::MetaClassFactory()
 MetaClassFactory::~MetaClassFactory()
 {}
 
-std::map<std::string, MetaClassFactory *> *MetaClassRegistration::classMap = 0;
+std::map< std::string, MetaClassFactory* >* MetaClassRegistration::classMap = nullptr;
 
 void MetaClassRegistration::addMap(const char *name, MetaClassFactory *mclass)
 {
@@ -51,14 +51,14 @@ void MetaClassRegistration::addMap(const char *name, MetaClassFactory *mclass)
 MetaClass *MetaClassRegistration::getNewClass(const char *name)
 {
 	MetaClassFactory *mclassFactory = getFactory(name);
-	if (!mclassFactory) return 0;
-	return mclassFactory->getClassCopy();
+	if ( ! mclassFactory ) return nullptr;
+	else return mclassFactory->getClassCopy();
 }
 
 MetaClassFactory *MetaClassRegistration::getFactory(const char *name)
 {
 	std::map<std::string, MetaClassFactory *>::iterator itor = 
 		classMap->find(name);
-	if (itor == classMap->end()) return 0;
-	return (*itor).second;
+	if ( itor == classMap->end() ) return nullptr;
+	else return ( *itor ).second;
 }

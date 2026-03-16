@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,11 +31,7 @@
 
 static const fixed StepSize = fixed(true, fixed::FIXED_RESOLUTION / Sint64(50));
 
-Simulator::Simulator() :
-	speed_(1),
-	currentTime_(0),
-	actualTime_(0),
-	context_(0)
+Simulator::Simulator() : speed_( 1 ), currentTime_( 0 ), actualTime_( 0 ), context_( nullptr )
 {
 	lastTickTime_ = SDL_GetTicks();
 }

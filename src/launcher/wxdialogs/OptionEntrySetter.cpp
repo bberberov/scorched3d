@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004, 2025
+//    Scorched3D (c) 2000-2004, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -68,7 +68,7 @@ OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxS
 	case OptionEntry::OptionEntryBoundedIntType:
 		{
 			sizer->Add(
-				control = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxSize(160, -1), 0, 0, 0),
+				control = new wxComboBox( parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, 0 ),
 				0,
 				wxALIGN_LEFT
 			);
@@ -91,7 +91,9 @@ OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxS
 	case OptionEntry::OptionEntryEnumType:
 		{
 			sizer->Add(
-				control = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxSize(160, -1), 0, 0, wxCB_READONLY),
+				control = new wxComboBox(
+					parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, wxCB_READONLY
+				),
 				0,
 				wxALIGN_LEFT
 			);
@@ -111,7 +113,9 @@ OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxS
 	case OptionEntry::OptionEntryStringEnumType:
 		{
 			sizer->Add(
-				control = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxSize(160, -1), 0, 0, wxCB_READONLY),
+				control = new wxComboBox(
+					parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, wxCB_READONLY
+				),
 				0,
 				wxALIGN_LEFT
 			);

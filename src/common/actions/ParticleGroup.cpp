@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,8 +33,8 @@ ParticleGroup::ParticleGroup(ScorchedContext &context,
 
 ParticleGroup::~ParticleGroup()
 {
-	physicsParticle_ = 0;
-	weaponFireContext_ = 0;
+	physicsParticle_   = nullptr;
+	weaponFireContext_ = nullptr;
 }
 
 void *ParticleGroup::getObject()

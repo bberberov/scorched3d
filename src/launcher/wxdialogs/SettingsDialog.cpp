@@ -313,7 +313,7 @@ void SettingsFrame::createPlayersPanel()
 	);
 	buttonSizer->Add(
 		IDC_SERVER_MIN_PLAYERS_CTRL = new wxComboBox(
-			playersPanel_, -1, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, 0, wxCB_READONLY
+			playersPanel_, -1, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, nullptr, wxCB_READONLY
 		),
 		0,
 		wxALIGN_CENTER
@@ -323,7 +323,7 @@ void SettingsFrame::createPlayersPanel()
 	);
 	buttonSizer->Add(
 		IDC_SERVER_MAX_PLAYERS_CTRL =  new wxComboBox(
-			playersPanel_, IDC_SERVER_MAX_PLAYERS, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, 0, wxCB_READONLY
+			playersPanel_, IDC_SERVER_MAX_PLAYERS, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, nullptr, wxCB_READONLY
 		),
 		0,
 		wxALIGN_CENTER
@@ -335,7 +335,7 @@ void SettingsFrame::createPlayersPanel()
 	);
 	buttonSizer2->Add(
 		IDC_SERVER_REMOVEBOT_PLAYERS_CTRL = new wxComboBox(
-			playersPanel_, -1, wxT(""), wxDefaultPosition, wxDefaultSize, 0, 0, wxCB_READONLY
+			playersPanel_, -1, wxT(""), wxDefaultPosition, wxDefaultSize, 0, nullptr, wxCB_READONLY
 		),
 		0,
 		wxALIGN_CENTER
@@ -356,7 +356,7 @@ void SettingsFrame::createPlayersPanel()
 		playerSizer->Add(new wxStaticText(playersPanel_, -1, wxString(buffer, wxConvUTF8)));
 		playerSizer->Add(
 			IDC_COMBO_PTYPE_CTRL[i] = new wxComboBox(
-				playersPanel_, -1, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, 0, wxCB_READONLY
+				playersPanel_, -1, wxT(""), wxDefaultPosition, wxSize(70, -1), 0, nullptr, wxCB_READONLY
 			)
 		);
 		sizer->Add(playerSizer, 0, wxALIGN_RIGHT | wxALL, 2);
@@ -384,7 +384,7 @@ SettingsFrame::SettingsFrame(bool server, OptionsGame &context)
 	:
 	wxDialog(getMainDialog(), -1, wxString(scorched3dAppName,wxConvUTF8), wxDefaultPosition, wxDefaultSize),
 	context_(context),
-	playersPanel_(0)
+	playersPanel_( nullptr )
 {
 #ifdef _WIN32
 	// Set the frame's icon

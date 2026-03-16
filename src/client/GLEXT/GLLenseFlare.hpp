@@ -35,7 +35,7 @@ class GLLenseFlare
 public:
 	static GLLenseFlare* instance();
 
-	void init( ProgressCounter* counter = 0 );
+	void init( ProgressCounter* counter = nullptr );
 
 	void draw( Vector& flarePos, bool fullFlare, int color = 0, float size = 1.0f, float alpha = 1.0f );
 	void draw( Vector& flarePos, Vector& flareDirection, int color = 0 );

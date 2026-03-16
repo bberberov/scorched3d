@@ -34,7 +34,7 @@ class GLWWindowManager : public GameStateI, public GLMenuI
 public:
 	static GLWWindowManager* instance();
 
-	void         addWindow( const unsigned int state, GLWWindow* window, KeyboardKey* key = 0, bool visible = false );
+	void         addWindow( const unsigned int state, GLWWindow* window, KeyboardKey* key = nullptr, bool visible = false );
 	void         removeState( unsigned int state );
 	void         removeWindow( GLWWindow* window );
 	bool         showWindow( unsigned int id );

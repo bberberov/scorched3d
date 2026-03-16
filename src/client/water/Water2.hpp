@@ -34,7 +34,7 @@ public:
 	Water2();
 	virtual ~Water2();
 
-	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = 0 );
+	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = nullptr );
 
 	// clang-format off
 	// uncrustify off

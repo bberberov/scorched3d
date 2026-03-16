@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2004, 2018
+//    Scorched3D (c) 2000-2004, 2018, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -41,11 +41,14 @@ static const char *getField(std::map<std::string, std::string> &fields, const ch
 {
 	std::map<std::string, std::string>::iterator itor = 
 		fields.find(field);
-	if (itor != fields.end())
+	if ( itor != fields.end() )
 	{
-		return (*itor).second.c_str();
+		return ( *itor ).second.c_str();
 	}
-	return 0;
+	else
+	{
+		return nullptr;
+	}
 }
 
 static void setValues(ServerAdminSessions::Credential &credential,

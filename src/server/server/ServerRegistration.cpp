@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -121,7 +121,7 @@ void ServerRegistrationEntry::actualThreadFunc()
 		);
 		if (registerGame())
 		{
-			time_t lastTime = time(0);
+			time_t lastTime = time( nullptr );
 			for (;;)
 			{
 				// Check for any replies or timeout every 1 seconds
@@ -133,8 +133,8 @@ void ServerRegistrationEntry::actualThreadFunc()
 
 				// Check for timeout
 				int timeOut = OptionsMasterListServer::instance()->getMasterListServerTimeout();
-				time_t currentTime = time(0);
-				if (currentTime - lastTime > timeOut)
+				time_t currentTime = time( nullptr );
+				if ( timeOut < currentTime - lastTime )
 				{
 					break;
 				}
@@ -182,7 +182,7 @@ void ServerRegistrationEntry::processMessage(NetMessage &message)
 	if (message.getMessageType() == NetMessage::BufferMessage)
 	{
 		message.getBuffer().addToBuffer("");
-		success_ = (strstr(message.getBuffer().getBuffer(), "success") != 0);
+		success_ = ( nullptr !=  strstr( message.getBuffer().getBuffer(), "success" ) );
 	}
 	else if (message.getMessageType() == NetMessage::DisconnectMessage)
 	{

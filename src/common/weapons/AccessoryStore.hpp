@@ -47,11 +47,11 @@ public:
 	AccessoryStore();
 	virtual ~AccessoryStore();
 
-	bool parseFile( ScorchedContext& context, ProgressCounter* counter = 0 );
+	bool parseFile( ScorchedContext& context, ProgressCounter* counter = nullptr );
 	void clearAccessories();
 
 	Accessory*     findByAccessoryId( unsigned int id );
-	Accessory*     findByPrimaryAccessoryName( const char* name );  // **careful there**
+	Accessory*     findByPrimaryAccessoryName( const char* name );  // WARNING: **careful there**
 	AccessoryPart* findAccessoryPartByAccessoryId( unsigned int id, const char* type );
 	AccessoryPart* createAccessoryPart( AccessoryCreateContext& context, Accessory* parent, XMLNode* currentNode );
 

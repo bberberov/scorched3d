@@ -35,7 +35,7 @@ public:
 	bool importModFiles( std::string& mod, const std::string& fileName );
 	bool importModFiles( std::string& mod, NetBuffer& buffer );
 
-	bool loadModFiles( const std::string& mod, bool createDir, ProgressCounter* counter = 0 );
+	bool loadModFiles( const std::string& mod, bool createDir, ProgressCounter* counter = nullptr );
 	void clearAll();
 
 	std::map< std::string, ModFileEntry* >& getFiles() { return files_; }
@@ -51,7 +51,7 @@ protected:
 		NetBuffer&         tmpFileContents,
 		const std::string& moddir,
 		const std::string& mod,
-		ProgressCounter*   counter = 0
+		ProgressCounter*   counter = nullptr
 	);
 	bool loadModFile(
 		NetBuffer&         tmpFileContents,

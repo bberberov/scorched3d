@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,25 +21,23 @@
 #include <target/TargetState.hpp>
 #include <net/NetBuffer.hpp>
 
-TargetStateMovement::TargetStateMovement()
-{}
+TargetStateMovement::TargetStateMovement() {}
 
-TargetStateMovement::~TargetStateMovement()
-{}
+TargetStateMovement::~TargetStateMovement() {}
 
-TargetState::TargetState() :
-	falling_(0),
-	moving_(0),
-	movement_(nullptr),
-	displayDamage_(true),
-	displayShadow_(true),
-	displayHardwareShadow_(true),
-	noDamageBurn_(false),
-	noCollision_(false),
-	noFalling_(false),
-	noFallingDamage_(false),
-	driveOverToDestroy_(false),
-	flattenDestroy_(false)
+TargetState::TargetState()
+	: falling_( nullptr )
+	, moving_( nullptr )
+	, movement_( nullptr )
+	, displayDamage_( true )
+	, displayShadow_( true )
+	, displayHardwareShadow_( true )
+	, noDamageBurn_( false )
+	, noCollision_( false )
+	, noFalling_( false )
+	, noFallingDamage_( false )
+	, driveOverToDestroy_( false )
+	, flattenDestroy_( false )
 {}
 
 TargetState::~TargetState()

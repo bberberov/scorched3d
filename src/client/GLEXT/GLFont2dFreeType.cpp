@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -119,7 +119,7 @@ bool GLFont2dFreeType::createCharacter(unsigned int ch, GLFont2dStorage::CharEnt
 	}
 
 	// Convert The Glyph To A Bitmap.
-	FT_Glyph_To_Bitmap( &glyph, ft_render_mode_normal, 0, 1 );
+	FT_Glyph_To_Bitmap( &glyph, ft_render_mode_normal, nullptr, 1 );
 	FT_BitmapGlyph bitmap_glyph = (FT_BitmapGlyph)glyph;
 
 	// This Reference Will Make Accessing The Bitmap Easier.

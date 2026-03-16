@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -1013,7 +1013,7 @@ void Landscape::restoreLandscapeTexture()
 void Landscape::savePlan()
 {
 	static unsigned counter = 0;
-	time_t currentTime = time(0);
+	time_t currentTime = time( nullptr );
 	bitmapPlan_.writeToFile(
 		S3D::getHomeFile(
 			S3D::formatStringBuffer("PlanShot-%i-%i.bmp", currentTime, counter++)));

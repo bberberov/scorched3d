@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2003
+//    Scorched3D (c) 2000-2003, 2008, 2010, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,18 +28,18 @@ enum
 	IDC_PUBLISHAUTO
 };
 
-static wxComboBox *IDC_SERVER_MOD_CTRL = 0;
-static wxTextCtrl *IDC_SERVER_NAME_CTRL = 0;
-static wxTextCtrl *IDC_SERVER_PORT_CTRL = 0;
-static wxTextCtrl *IDC_SERVERMANAGEMENT_PORT_CTRL = 0;
-static wxCheckBox *IDC_PUBLISH_CTRL = 0;
-static wxCheckBox *IDC_USEUPNP_CTRL = 0;
-static wxCheckBox *IDC_ALLOWSAME_CTRL = 0;
-static wxCheckBox *IDC_ALLOWSAMEID_CTRL = 0;
-static wxCheckBox *IDC_LOGTOFILE_CTRL = 0;
-static wxTextCtrl *IDC_PUBLISHIP_CTRL = 0;
-static wxButton *IDOK_PUBLISHAUTO_CTRL = 0;
-static wxButton *IDOK_CTRL = 0;
-static wxButton *IDC_BUTTON_SETTINGS_CTRL = 0;
-static wxButton *IDCANCEL_CTRL = 0;
-static wxStaticText *IDC_PUBLISHIP_CTRL_TEXT = 0;
+static wxComboBox*   IDC_SERVER_MOD_CTRL            = nullptr;
+static wxTextCtrl*   IDC_SERVER_NAME_CTRL           = nullptr;
+static wxTextCtrl*   IDC_SERVER_PORT_CTRL           = nullptr;
+static wxTextCtrl*   IDC_SERVERMANAGEMENT_PORT_CTRL = nullptr;
+static wxCheckBox*   IDC_PUBLISH_CTRL               = nullptr;
+static wxCheckBox*   IDC_USEUPNP_CTRL               = nullptr;
+static wxCheckBox*   IDC_ALLOWSAME_CTRL             = nullptr;
+static wxCheckBox*   IDC_ALLOWSAMEID_CTRL           = nullptr;
+static wxCheckBox*   IDC_LOGTOFILE_CTRL             = nullptr;
+static wxTextCtrl*   IDC_PUBLISHIP_CTRL             = nullptr;
+static wxButton*     IDOK_PUBLISHAUTO_CTRL          = nullptr;
+static wxButton*     IDOK_CTRL                      = nullptr;
+static wxButton*     IDC_BUTTON_SETTINGS_CTRL       = nullptr;
+static wxButton*     IDCANCEL_CTRL                  = nullptr;
+static wxStaticText* IDC_PUBLISHIP_CTRL_TEXT        = nullptr;

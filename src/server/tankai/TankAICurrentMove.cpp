@@ -76,19 +76,19 @@ TankAICurrentMove::~TankAICurrentMove()
 bool TankAICurrentMove::parseConfig(XMLNode *node)
 {
 	{
-		XMLNode *targets = 0;
+		XMLNode* targets = nullptr;
 		if (!node->getNamedChild("targets", targets)) return false;
 		if (!targets_.parseConfig(targets)) return false;
 	}
 	{
-		XMLNode *resign = 0;
+		XMLNode* resign = nullptr;
 		if (!node->getNamedChild("resign", resign)) return false;
 		if (!resign->getNamedChild("useresign", useResign_)) return false;
 		if (!resign->getNamedChild("resignlife", resignLife_)) return false;
 		if (!resign->failChildren()) return false;
 	}
 	{
-		XMLNode *movement = 0;
+		XMLNode* movement = nullptr;
 		if (!node->getNamedChild("movement", movement)) return false;
 		if (!movement->getNamedChild("usefuel", useFuel_)) return false;
 		if (!movement->getNamedChild("movementdamage", movementDamage_)) return false;
@@ -99,7 +99,7 @@ bool TankAICurrentMove::parseConfig(XMLNode *node)
 		if (!movement->failChildren()) return false;
 	}
 	{
-		XMLNode *groupshot = 0;
+		XMLNode* groupshot = nullptr;
 		if (!node->getNamedChild("groupshot", groupshot)) return false;
 		if (!groupshot->getNamedChild("groupshotsize", groupShotSize_)) return false;
 		if (!groupshot->getNamedChild("groupshotchance", groupShotChance_)) return false;
@@ -107,7 +107,7 @@ bool TankAICurrentMove::parseConfig(XMLNode *node)
 		if (!groupshot->failChildren()) return false;
 	}
 	{
-		XMLNode *sniper = 0;
+		XMLNode* sniper = nullptr;
 		if (!node->getNamedChild("sniper", sniper)) return false;
 		if (!sniper->getNamedChild("snipermovementfactor", sniperMovementFactor_)) return false;
 		if (!sniper->getNamedChild("sniperusedistance", sniperUseDistance_)) return false;
@@ -118,7 +118,7 @@ bool TankAICurrentMove::parseConfig(XMLNode *node)
 		if (!sniper->failChildren()) return false;
 	}
 	{
-		XMLNode *projectile = 0;
+		XMLNode* projectile = nullptr;
 		if (!node->getNamedChild("projectile", projectile)) return false;
 		if (!projectile->getNamedChild("projectilemindistance", projectileMinDistance_)) return false;
 		if (!projectile->getNamedChild("projectilemovementfactor", projectileMovementFactor_)) return false;
@@ -915,7 +915,7 @@ bool TankAICurrentMove::makeGroupShot(
 	// Find the best entry
 	if (!foundEntries.empty())
 	{
-		GroupingEntry *current = 0;
+		GroupingEntry* current = nullptr;
 		std::list<GroupingEntry>::iterator itor;
 		for (itor = foundEntries.begin();
 			itor != foundEntries.end();

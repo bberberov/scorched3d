@@ -45,7 +45,7 @@ public:
 		eOther
 	};
 
-	void generate( ProgressCounter* counter = 0 );
+	void generate( ProgressCounter* counter = nullptr );
 	void recalculateLandscape();
 	void recalculateRoof();
 	void restoreLandscapeTexture();

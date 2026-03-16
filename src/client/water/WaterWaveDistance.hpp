@@ -29,7 +29,7 @@ public:
 	WaterWaveDistance();
 	virtual ~WaterWaveDistance();
 
-	void  generate( int mapWidth, int mapHeight, float waterHeight, ProgressCounter* counter = 0 );
+	void  generate( int mapWidth, int mapHeight, float waterHeight, ProgressCounter* counter = nullptr );
 	float getWaveDistance( int x, int y );
 
 protected:

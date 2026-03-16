@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,27 +25,25 @@
 #include <common/Defines.hpp>
 #include <weapons/Accessory.hpp>
 
-TanketWeapon::TanketWeapon(ScorchedContext &context) : 
-	currentWeapon_(0), context_(context),
-	tanket_(0), weaponSwitcher_(0)
-{
-}
+TanketWeapon::TanketWeapon( ScorchedContext& context )
+	: currentWeapon_( nullptr )
+	, context_( context )
+	, tanket_( nullptr )
+	, weaponSwitcher_( nullptr )
+{}
 
-TanketWeapon::~TanketWeapon()
-{
-}
+TanketWeapon::~TanketWeapon() {}
 
 void TanketWeapon::newMatch()
 {
-	setCurrentWeapon(0);
+	setCurrentWeapon( nullptr );
 }
 
 void TanketWeapon::changed()
 {
-	if (!tanket_->getAccessories().canUse(currentWeapon_) ||
-		currentWeapon_ == 0)
+	if ( ! tanket_->getAccessories().canUse( currentWeapon_ ) || nullptr == currentWeapon_  )
 	{
-		setCurrentWeapon(0);
+		setCurrentWeapon( nullptr );
 		std::list<Accessory *> &result =
 			tanket_->getAccessories().getAllAccessoriesByGroup("weapon");
 		std::list<Accessory *>::iterator itor;

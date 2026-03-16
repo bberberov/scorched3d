@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -57,14 +57,14 @@ GLSLShader::GLSLShader(const char *filename, Type stype,
 		S3D::formatStringBuffer("ERROR: Cannot find shader file \"%s\"", filename));
 
 	char buffer[256];
-	while (fgets(buffer, 256, in) != 0)
+	while ( nullptr != fgets( buffer, 256, in ) )
 	{
 		prg += buffer;
 	}
 	fclose(in);
 
 	const char* prg_cstr = prg.c_str();
-	glShaderSourceARB(id_, 1, &prg_cstr, 0);
+	glShaderSourceARB( id_, 1, &prg_cstr, nullptr );
 
 	glCompileShaderARB(id_);
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -197,7 +197,7 @@ ServerChannelManager::ServerChannelManager(ComsMessageHandler &comsMessageHandle
 	channelEntries_.push_back(
 		new ChannelEntry(
 			ChannelDefinition("admin"),
-			0,
+			nullptr,
 			new ServerChannelAuthAdmin()
 		)
 	);
@@ -255,7 +255,7 @@ void ServerChannelManager::simulate(fixed frameTime)
 			DestinationEntry *entry = itor->second;
 			if (entry->getMessageCount() > MuteThreshold)
 			{
-				time_t t = time(0);
+				time_t t = time( nullptr );
 				entry->setMuteTime(t);
 
 				ChannelText text("info", 
@@ -266,7 +266,7 @@ void ServerChannelManager::simulate(fixed frameTime)
 			}
 			else if (entry->getMuteTime())
 			{
-				time_t t = time(0);
+				time_t t = time( nullptr );
 				if (t - entry->getMuteTime() > MuteTime)
 				{
 					entry->setMuteTime(0);
@@ -301,7 +301,7 @@ ServerChannelManager::ChannelEntry *ServerChannelManager::getChannelEntryByName(
 		ChannelEntry *entry = *itor;
 		if (name == entry->getName()) return entry;
 	}
-	return 0;
+	return nullptr;
 }
 
 ServerChannelManager::DestinationEntry *ServerChannelManager::getDestinationEntryById(
@@ -309,9 +309,9 @@ ServerChannelManager::DestinationEntry *ServerChannelManager::getDestinationEntr
 {
 	std::map<unsigned int, DestinationEntry *>::iterator findItor = 
 		destinationEntries_.find(destinationId);
-	if (findItor == destinationEntries_.end()) return 0;
 
-	return (*findItor).second;
+	if ( findItor == destinationEntries_.end() ) return nullptr;
+	else return ( *findItor ).second;
 }
 
 std::list<std::string> ServerChannelManager::getAllChannels()

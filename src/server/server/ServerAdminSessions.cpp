@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -55,14 +55,14 @@ ServerAdminSessions::~ServerAdminSessions()
 
 ServerAdminSessions::SessionParams *ServerAdminSessions::getFirstSession()
 {
-	if (sessions_.empty()) return 0;
-	return &(sessions_.begin()->second);
+	if ( sessions_.empty() ) return nullptr;
+	else return &( sessions_.begin()->second );
 }
 
 ServerAdminSessions::SessionParams *ServerAdminSessions::getSession(unsigned int sid)
 {
 	const unsigned int SessionTimeOut = 60 * 15;
-	unsigned int currentTime = (unsigned int) time(0);
+	unsigned int currentTime = (unsigned int)time( nullptr );
 
 	// Tidy expired sessions
 	std::map <unsigned int, SessionParams>::iterator sitor;
@@ -95,7 +95,7 @@ ServerAdminSessions::SessionParams *ServerAdminSessions::getSession(unsigned int
 		}
 	}
 
-	return 0;
+	return nullptr;
 }
 
 unsigned int ServerAdminSessions::login(const char *name, const char *password, const char *ipAddress)
@@ -164,7 +164,7 @@ unsigned int ServerAdminSessions::login(const char *name, const char *password, 
 	}
 
 	// Update the session params
-	unsigned int currentTime = (unsigned int) time(0);
+	unsigned int currentTime = (unsigned int)time( nullptr );
 	SessionParams params;
 	params.sessionTime = currentTime;
 	params.credentials = userCreds;

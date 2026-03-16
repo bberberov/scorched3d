@@ -37,10 +37,10 @@ class GLMenuItem
 public:
 	GLMenuItem(
 		const LangString& text,
-		ToolTip*          tooltip  = 0,
+		ToolTip*          tooltip  = nullptr,
 		bool              selected = false,
-		GLTextureBase*    texture  = 0,
-		void*             userData = 0
+		GLTextureBase*    texture  = nullptr,
+		void*             userData = nullptr
 	);
 
 	// clang-format off

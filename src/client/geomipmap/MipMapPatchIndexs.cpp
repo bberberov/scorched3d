@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -38,10 +38,7 @@ MipMapPatchIndexs::IndexLevel::~IndexLevel()
 	}
 }
 
-MipMapPatchIndexs::MipMapPatchIndexs() : 
-	bufferObject_(0)
-{
-}
+MipMapPatchIndexs::MipMapPatchIndexs() : bufferObject_( nullptr ) {}
 
 MipMapPatchIndexs::~MipMapPatchIndexs()
 {
@@ -52,7 +49,7 @@ MipMapPatchIndexs::~MipMapPatchIndexs()
 		delete level;
 	}
 	delete bufferObject_;
-	bufferObject_ = 0;
+	bufferObject_ = nullptr;
 }
 
 void MipMapPatchIndexs::generate(int size, int totalsize, unsigned int totallods)
@@ -94,7 +91,7 @@ void MipMapPatchIndexs::generate(int size, int totalsize, unsigned int totallods
 		{
 			delete bufferObject_;
 			bufferObject_ = new GLVertexBufferObject(true);
-			bufferObject_->init_data(totalBufferSizeBytes, 0, GL_STATIC_DRAW);
+			bufferObject_->init_data( totalBufferSizeBytes, nullptr, GL_STATIC_DRAW );
 		}
 
 		unsigned int offsetBytes = 0;

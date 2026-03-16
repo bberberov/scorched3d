@@ -116,7 +116,7 @@ static char *checkString(char *x)
 
 bool Sound::init(int channels)
 {
-	ALCdevice *soundDevice = alcOpenDevice(0);
+	ALCdevice* soundDevice = alcOpenDevice( nullptr );
 	if (!soundDevice)
 	{
 		S3D::dialogMessage("Scorched3D", "Failed to open sound device");
@@ -130,7 +130,7 @@ bool Sound::init(int channels)
 		ALC_FREQUENCY, 11025,
 		ALC_INVALID
 	};*/
-	ALCcontext *soundContext = alcCreateContext(soundDevice, 0);
+	ALCcontext* soundContext = alcCreateContext( soundDevice, nullptr );
 	if (!soundContext)
 	{
 		S3D::dialogMessage("Scorched3D", "Failed to create sound context");
@@ -356,7 +356,7 @@ void Sound::updateSources()
 				// Stop it
 				source->getActualSource()->stop();
 				availableSources_.push_back(source->getActualSource());
-				source->setActualSource(0);
+				source->setActualSource( nullptr );
 			}
 
 			// If we are not looped so stop for good
@@ -378,7 +378,7 @@ void Sound::updateSources()
 		{
 			if (source->getVirtualSource())
 			{
-				source->getVirtualSource()->setPlayingSource(0);
+				source->getVirtualSource()->setPlayingSource( nullptr );
 			}
 
 			DIALOG_ASSERT(!(source->getActualSource()));
@@ -417,9 +417,9 @@ void Sound::removePlaying(VirtualSoundSource *virt)
 	if (virt->getPlayingSource())
 	{
 		virt->getPlayingSource()->setStopped(true);
-		virt->getPlayingSource()->setVirtualSource(0);
+		virt->getPlayingSource()->setVirtualSource( nullptr );
 	}
-	virt->setPlayingSource(0);
+	virt->setPlayingSource( nullptr );
 
 	updateSources();
 }
@@ -454,7 +454,7 @@ SoundBuffer *Sound::createBuffer(char *fileName)
 		S3D::dialogExit("Failed to load sound", S3D::formatStringBuffer("\"%s\"", fileName));
 
 		delete buffer;
-		return 0;
+		return nullptr;
 	}
 	return buffer;
 }

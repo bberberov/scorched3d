@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponReference);
 
-WeaponReference::WeaponReference() :
-	refWeapon_(0)
-{
-
-}
+WeaponReference::WeaponReference() : refWeapon_( nullptr ) {}
 
 WeaponReference::~WeaponReference()
 {
 	delete refWeapon_;
-	refWeapon_ = 0;
+	refWeapon_ = nullptr;
 }
 
 bool WeaponReference::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -59,7 +55,7 @@ bool WeaponReference::parseXML(AccessoryCreateContext &context, XMLNode *accesso
 	weaponNode->resurrectRemovedChildren();
 
 	// Action
-	XMLNode *actionNode = 0;
+	XMLNode* actionNode = nullptr;
 	if (!weaponNode->getNamedChild("accessoryaction", actionNode)) return false;
 	
 	// Create the new weapon
@@ -82,4 +78,3 @@ void WeaponReference::fireWeapon(ScorchedContext &context,
 {
 	refWeapon_->fire(context, weaponContext, position, velocity);
 }
-

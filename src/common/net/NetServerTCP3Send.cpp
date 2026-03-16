@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -41,7 +41,7 @@ NetServerTCP3Send::NetServerTCP3Send(
 	sendMessageHandler_.setMessageHandler(this);
 	sendThread_ = SDL_CreateThread(
 		NetServerTCP3Send::sendThreadFunc, (void *) this);
-	if (sendThread_ == 0)
+	if ( nullptr ==  sendThread_ )
 	{
 		Logger::log(
 			"NetServerTCP3Send: Failed to create send thread");

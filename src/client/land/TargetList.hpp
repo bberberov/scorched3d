@@ -115,7 +115,7 @@ public:
 
 	void* getNext()
 	{
-		if ( i_ == list_->getObjectCount() ) return 0;
+		if ( i_ == list_->getObjectCount() ) return nullptr;
 		void* result = *current_;
 		i_++;
 		current_++;

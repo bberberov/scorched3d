@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,14 +22,12 @@
 #include <common/DefinesAssert.hpp>
 #include <memory.h>
 
-NapalmMap::NapalmMap() : entries_(0)
-{
-}
+NapalmMap::NapalmMap() : entries_( nullptr ) {}
 
 NapalmMap::~NapalmMap()
 {
-	delete [] entries_;
-	entries_ = 0;
+	delete[] entries_;
+	entries_ = nullptr;
 }
 
 fixed &NapalmMap::getNapalmHeight(int w, int h) 

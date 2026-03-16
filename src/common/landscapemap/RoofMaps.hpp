@@ -32,7 +32,7 @@ public:
 	RoofMaps( LandscapeDefinitionCache& defnCache );
 	virtual ~RoofMaps();
 
-	void generateMaps( ScorchedContext& context, ProgressCounter* counter = 0 );
+	void generateMaps( ScorchedContext& context, ProgressCounter* counter = nullptr );
 
 	fixed getRoofHeight( int x, int y );
 	fixed getInterpRoofHeight( fixed x, fixed y );
@@ -55,7 +55,7 @@ protected:
 	HeightMap deformRMap_;
 	fixed     roofBaseHeight_;
 
-	void generateRMap( ScorchedContext& context, ProgressCounter* counter = 0 );
+	void generateRMap( ScorchedContext& context, ProgressCounter* counter = nullptr );
 };
 
 #endif  // __INCLUDE_RoofMaps_hpp_INCLUDE__

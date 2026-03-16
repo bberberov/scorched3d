@@ -84,7 +84,7 @@ public:
 
 	void* getNext()
 	{
-		if ( itor == lastItor ) return 0;
+		if ( itor == lastItor ) return nullptr;
 		void* result = *itor;
 		++itor;
 

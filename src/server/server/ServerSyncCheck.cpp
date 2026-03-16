@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -38,7 +38,7 @@
 #include <engine/ObjectGroup.hpp>
 #include <XML/XMLDiff.hpp>
 
-static FileLogger *syncCheckFileLogger = 0;
+static FileLogger* syncCheckFileLogger = nullptr;
 
 static void syncCheckLog(const std::string &message)
 {
@@ -52,10 +52,7 @@ static void syncCheckLog(const std::string &message)
 	syncCheckFileLogger->logMessage(info);
 }
 
-ServerSyncCheck::SyncContext::SyncContext() :
-	serverMessage(0)
-{
-}
+ServerSyncCheck::SyncContext::SyncContext() : serverMessage( nullptr ) {}
 
 ServerSyncCheck::SyncContext::~SyncContext()
 {
@@ -115,7 +112,7 @@ void ServerSyncCheck::simulate()
 	if (ScorchedServer::instance()->getServerState().getState() == 
 		ServerState::ServerPlayingState) 
 	{
-		time_t currentTime = time(0);
+		time_t currentTime = time( nullptr );
 		if (currentTime - lastTime_ >= 20)
 		{
 			// Auto send sync checks
@@ -126,7 +123,7 @@ void ServerSyncCheck::simulate()
 
 void ServerSyncCheck::sendAutoSyncCheck()
 {
-	time_t currentTime = time(0);
+	time_t currentTime = time( nullptr );
 	lastTime_ = currentTime;
 	if (!ScorchedServer::instance()->getOptionsGame().getAutoSendSyncCheck()) return;
 	sendSyncCheck();
@@ -207,7 +204,7 @@ bool ServerSyncCheck::processMessage(
 bool ServerSyncCheck::checkContext(SyncContext *context)
 {
 	// Check we have server message to compare
-	if (context->serverMessage == 0) return false;
+	if ( nullptr == context->serverMessage ) return false;
 
 	// Check we have all client messages to compare
 	// Only care about clients that are still conected
@@ -217,8 +214,7 @@ bool ServerSyncCheck::checkContext(SyncContext *context)
 		++clientDestItor)
 	{
 		unsigned int clientDestinationId = *clientDestItor;
-		if (ScorchedServer::instance()->getServerDestinations().
-			getDestination(clientDestinationId) != 0)
+		if ( nullptr != ScorchedServer::instance()->getServerDestinations().getDestination( clientDestinationId ) )
 		{
 			if (context->clientMessages.find(clientDestinationId) == 
 				context->clientMessages.end())

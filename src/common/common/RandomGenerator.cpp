@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -34,12 +34,10 @@ RandomGenerator::~RandomGenerator()
 // Yes you guessed it, a really sucky way to create cross platform
 // random numbers.  Store them in a file and read them in each system!
 
-unsigned int FileRandomGenerator::bufferSize_ = 0;
-unsigned int *FileRandomGenerator::buffer_ = 0;
+unsigned int  FileRandomGenerator::bufferSize_ = 0;
+unsigned int* FileRandomGenerator::buffer_     = nullptr;
 
-FileRandomGenerator::FileRandomGenerator() :
-	context_(0),
-	position_(0)
+FileRandomGenerator::FileRandomGenerator() : context_( nullptr ), position_( 0 )
 {
 	// Cache the buffer so we only read it once
 	// We can create many random generators easily now

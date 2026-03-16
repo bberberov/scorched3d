@@ -51,7 +51,7 @@ public:
 	{
 		DIALOG_ASSERT( 0 );
 
-		return 0;
+		return nullptr;
 	}
 
 	virtual void setStringParam( const char* name, const char* value ) { DIALOG_ASSERT( 0 ); }

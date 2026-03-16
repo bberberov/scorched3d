@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -57,10 +57,10 @@ const char *ExplosionParams::getMushroomTexture()
 	return mushroomTexture_.c_str();
 }
 
-const char *ExplosionParams::getExplosionSound()
+const char* ExplosionParams::getExplosionSound()
 {
-	if (!explosionSound_.c_str()[0]) return 0;
-	return explosionSound_.c_str();
+	if ( ! explosionSound_.c_str()[0] ) return nullptr;
+	else return explosionSound_.c_str();
 }
 
 FixedVector &ExplosionParams::getExplosionColor()
@@ -91,7 +91,7 @@ FixedVector &ExplosionParams::getExplosionColor()
 bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 {
     // Get the accessory colored
-	XMLNode *colorNode = 0;
+	XMLNode* colorNode = nullptr;
 	accessoryNode->getNamedChild("multicolor", colorNode, false);
 	if (colorNode) multiColored_ = true;
 
@@ -103,30 +103,30 @@ bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 	accessoryNode->getNamedChild("nocameratrack", noCameraTrack_, false);	
 
 	// Get the no debris node
-	XMLNode *noCreateDebrisNode = 0;
+	XMLNode* noCreateDebrisNode = nullptr;
 	accessoryNode->getNamedChild("nocreatedebris", noCreateDebrisNode, false);
 	if (noCreateDebrisNode) createDebris_ = false;
 
 	// Get the no splash node
-	XMLNode *noCreateSplashNode = 0;
+	XMLNode* noCreateSplashNode = nullptr;
 	accessoryNode->getNamedChild("nocreatesplash", noCreateSplashNode, false);
 	if (noCreateSplashNode) createSplash_ = false;
 
 	// Get the no windaffecting
-	XMLNode *noWindAffectedNode = 0;
+	XMLNode* noWindAffectedNode = nullptr;
 	accessoryNode->getNamedChild("nowindaffected", noWindAffectedNode, false);
 	if (noWindAffectedNode) windAffected_ = false;
 
 	// Get the no luminance node
-	XMLNode *noLuminanceNode = 0;
+	XMLNode* noLuminanceNode = nullptr;
 	accessoryNode->getNamedChild("noluminance", noLuminanceNode, false);
 	if (noLuminanceNode) luminance_ = false;
 
 	// Get the animate node
-	XMLNode *animateNode = 0;
+	XMLNode* animateNode = nullptr;
 	accessoryNode->getNamedChild("animate", animateNode, false);
 	if (animateNode) animate_ = true;
-	XMLNode *noAnimateNode = 0;
+	XMLNode* noAnimateNode = nullptr;
 	accessoryNode->getNamedChild("noanimate", noAnimateNode, false);
 	if (noAnimateNode) animate_ = false;
 
@@ -147,7 +147,7 @@ bool ExplosionParams::parseXML(XMLNode *accessoryNode)
 	}
 
 	// Get the deform
-	XMLNode *deformNode = 0;
+	XMLNode* deformNode = nullptr;
 	if (!accessoryNode->getNamedChild("deform", deformNode)) return false;
     if (0 == strcmp(deformNode->getContent(), "down")) deform_ = DeformDown;
 	else if (0 == strcmp(deformNode->getContent(), "up")) deform_ = DeformUp;

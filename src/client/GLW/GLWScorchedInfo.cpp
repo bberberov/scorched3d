@@ -564,7 +564,7 @@ bool GLWScorchedInfo::initFromXML(XMLNode *node)
 	if (!GLWidget::initFromXML(node)) return false;
 
 	// Type node
-	XMLNode *typeNode = 0;
+	XMLNode* typeNode = nullptr;
 	if ( ! node->getNamedChild("type", typeNode) ) return false;
 	if      (0 == strcmp(typeNode->getContent(), "wind")             ) infoType_ = eWind;
 	else if (0 == strcmp(typeNode->getContent(), "playername")       ) infoType_ = ePlayerName;

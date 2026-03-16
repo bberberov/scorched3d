@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -100,7 +100,7 @@ NetMessage *NetServerTCPScorchedProtocol::readBuffer(TCPsocket socket, unsigned 
 	if (!realSDLNet_TCP_Recv(socket, lenbuf, 4))
 	{
 		Logger::log( "Socket closed.");
-		return 0;
+		return nullptr;
 	}
 
 	// swap byte order to our local order
@@ -110,7 +110,7 @@ NetMessage *NetServerTCPScorchedProtocol::readBuffer(TCPsocket socket, unsigned 
 	if(len == 0)
 	{
 		Logger::log( "Zero length buffer received.");
-		return 0;
+		return nullptr;
 	}
 
 	// Cannot recieve a message large than .5 MB
@@ -118,7 +118,7 @@ NetMessage *NetServerTCPScorchedProtocol::readBuffer(TCPsocket socket, unsigned 
 	{
 		Logger::log(S3D::formatStringBuffer("Buffer was too large to receive.  Size %i.",
 			len));
-		return 0;
+		return nullptr;
 	}
 
 	// allocate the buffer memory
@@ -136,7 +136,7 @@ NetMessage *NetServerTCPScorchedProtocol::readBuffer(TCPsocket socket, unsigned 
 	{
 		Logger::log( "Read failed for buffer");
 		NetMessagePool::instance()->addToPool(buffer);
-		return 0;
+		return nullptr;
 	}
 	NetInterface::getBytesIn() += len;
 
@@ -194,7 +194,7 @@ NetMessage *NetServerHTTPProtocolSend::readBuffer(TCPsocket socket, unsigned int
 			{
 				// If the len is zero then we have been disconnected
 				NetMessagePool::instance()->addToPool(netBuffer);
-				return 0;
+				return nullptr;
 			}
 			else break;
 		}
@@ -258,7 +258,7 @@ NetMessage *NetServerHTTPProtocolRecv::readBuffer(TCPsocket socket, unsigned int
 			{
 				// If the len is zero then we have been disconnected
 				NetMessagePool::instance()->addToPool(netBuffer);
-				return 0;
+				return nullptr;
 			}
 			else break;
 		}

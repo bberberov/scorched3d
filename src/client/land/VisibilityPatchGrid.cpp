@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -106,20 +106,36 @@ void VisibilityPatchGrid::generate()
 			for (int x=0; x<landWidth_; x++, currentPatch++)
 			{
 				{
-					LandVisibilityPatch *leftPatch = (x==0?0:&(currentPatch-1)->getLandVisibilityPatch());
-					LandVisibilityPatch *rightPatch = (x==landWidth_-1?0:&(currentPatch+1)->getLandVisibilityPatch());
-					LandVisibilityPatch *topPatch = (y==0?0:&(currentPatch-landWidth_)->getLandVisibilityPatch());
-					LandVisibilityPatch *bottomPatch = (y==landHeight_-1?0:&(currentPatch+landWidth_)->getLandVisibilityPatch());
+					LandVisibilityPatch* leftPatch   = (
+						x == 0 ? nullptr : &( currentPatch - 1 )->getLandVisibilityPatch()
+					);
+					LandVisibilityPatch* rightPatch  = (
+						x == landWidth_ - 1 ? nullptr : &( currentPatch + 1 )->getLandVisibilityPatch()
+					);
+					LandVisibilityPatch* topPatch    = (
+						y == 0 ? nullptr : &( currentPatch - landWidth_ )->getLandVisibilityPatch()
+					);
+					LandVisibilityPatch* bottomPatch = (
+						y == landHeight_ - 1 ? nullptr : &( currentPatch + landWidth_ )->getLandVisibilityPatch()
+					);
 
 					currentPatch->getLandVisibilityPatch().setLocation(x * 32, y * 32,
 						leftPatch, rightPatch, topPatch, bottomPatch);
 				}
 				if (ScorchedClient::instance()->getLandscapeMaps().getRoofMaps().getRoofOn())
 				{
-					RoofVisibilityPatch *leftPatch = (x==0?0:&(currentPatch-1)->getRoofVisibilityPatch());
-					RoofVisibilityPatch *rightPatch = (x==landWidth_-1?0:&(currentPatch+1)->getRoofVisibilityPatch());
-					RoofVisibilityPatch *topPatch = (y==0?0:&(currentPatch-landWidth_)->getRoofVisibilityPatch());
-					RoofVisibilityPatch *bottomPatch = (y==landHeight_-1?0:&(currentPatch+landWidth_)->getRoofVisibilityPatch());
+					RoofVisibilityPatch* leftPatch   = (
+						x == 0 ? nullptr : &( currentPatch - 1 )->getRoofVisibilityPatch()
+					);
+					RoofVisibilityPatch* rightPatch  = (
+						x == landWidth_ - 1 ? nullptr : &( currentPatch + 1 )->getRoofVisibilityPatch()
+					);
+					RoofVisibilityPatch* topPatch    = (
+						y == 0 ? nullptr : &( currentPatch - landWidth_ )->getRoofVisibilityPatch()
+					);
+					RoofVisibilityPatch* bottomPatch = (
+						y == landHeight_ - 1 ? nullptr : &( currentPatch + landWidth_ )->getRoofVisibilityPatch()
+					);
 
 					currentPatch->getRoofVisibilityPatch().setLocation(x * 32, y * 32,
 						leftPatch, rightPatch, topPatch, bottomPatch);
@@ -146,10 +162,18 @@ void VisibilityPatchGrid::generate()
 		{
 			for (int x=0, px=0; x<waterWidth_; x++, currentPatch++, px++)
 			{
-				WaterVisibilityPatch *leftPatch = (x==0?0:&(currentPatch-1)->getWaterVisibilityPatch());
-				WaterVisibilityPatch *rightPatch = (x==waterWidth_-1?0:&(currentPatch+1)->getWaterVisibilityPatch());
-				WaterVisibilityPatch *topPatch = (y==0?0:&(currentPatch-waterWidth_)->getWaterVisibilityPatch());
-				WaterVisibilityPatch *bottomPatch = (y==waterHeight_-1?0:&(currentPatch+waterWidth_)->getWaterVisibilityPatch());
+				WaterVisibilityPatch* leftPatch   = (
+					x == 0 ? nullptr : &( currentPatch - 1 )->getWaterVisibilityPatch()
+				);
+				WaterVisibilityPatch* rightPatch  = (
+					x == waterWidth_ - 1 ? nullptr : &( currentPatch + 1 )->getWaterVisibilityPatch()
+				);
+				WaterVisibilityPatch* topPatch    = (
+					y == 0 ? nullptr : &( currentPatch - waterWidth_ )->getWaterVisibilityPatch()
+				);
+				WaterVisibilityPatch* bottomPatch = (
+					y == waterHeight_ - 1 ? nullptr : &( currentPatch + waterWidth_ )->getWaterVisibilityPatch()
+				);
 
 				currentPatch->getWaterVisibilityPatch().setLocation(x * 128 + midX_, y * 128 + midY_,
 					px % 2, py % 2,
@@ -248,7 +272,7 @@ LandVisibilityPatch *VisibilityPatchGrid::getLandVisibilityPatch(int x, int y)
 	if (realX < 0 || realY < 0 ||
 		realX >= landWidth_ || realY >= landHeight_) 
 	{
-		return 0;
+		return nullptr;
 	}
 
 	return &landPatches_[realX + realY * landWidth_].getLandVisibilityPatch();
@@ -264,7 +288,7 @@ RoofVisibilityPatch *VisibilityPatchGrid::getRoofVisibilityPatch(int x, int y)
 	if (realX < 0 || realY < 0 ||
 		realX >= landWidth_ || realY >= landHeight_) 
 	{
-		return 0;
+		return nullptr;
 	}
 
 	return &landPatches_[realX + realY * landWidth_].getRoofVisibilityPatch();
@@ -286,7 +310,7 @@ TargetVisibilityPatch *VisibilityPatchGrid::getTargetVisibilityPatch(int x, int 
 		if (realX < 0 || realY < 0 ||
 			realX >= waterWidth_ || realY >= waterHeight_) 
 		{
-			return 0;
+			return nullptr;
 		}
 
 		return &waterPatches_[realX + realY * waterWidth_].getTargetVisibilityPatch();
@@ -305,7 +329,7 @@ WaterVisibilityPatch *VisibilityPatchGrid::getWaterVisibilityPatch(int x, int y)
 	if (realX < 0 || realY < 0 ||
 		realX >= waterWidth_ || realY >= waterHeight_) 
 	{
-		return 0;
+		return nullptr;
 	}
 
 	return &waterPatches_[realX + realY * waterWidth_].getWaterVisibilityPatch();
@@ -409,7 +433,7 @@ void VisibilityPatchGrid::drawHeightMap(
 		{
 			for (int x=0; x<landWidth_; x++, landAndTargetCurrentPatch++)
 			{
-				HeightMapVisibilityPatch *currentPatch = 0;
+				HeightMapVisibilityPatch* currentPatch = nullptr;
 				if (roof) currentPatch = &landAndTargetCurrentPatch->getRoofVisibilityPatch();
 				else currentPatch = &landAndTargetCurrentPatch->getLandVisibilityPatch();
 

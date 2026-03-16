@@ -81,8 +81,8 @@ void TankState::newGame()
 	maxLives_ = context_.getOptionsGame().getPlayerLives();
 
 	lives_ = maxLives_;
-	tank_->getTargetState().setFalling(0);
-	tank_->getTargetState().setMoving(0);
+	tank_->getTargetState().setFalling( nullptr );
+	tank_->getTargetState().setMoving( nullptr );
 }
 
 void TankState::clientNewGame()
@@ -112,7 +112,7 @@ void TankState::setState(State s)
 		// Make sure the target and shield physics
 		// are disabled
 		tank_->getLife().setLife(0);
-		tank_->getShield().setCurrentShield(0);
+		tank_->getShield().setCurrentShield( nullptr );
 	}
 	else
 	{

@@ -174,7 +174,7 @@ void TankAIAimGuesser::getCurrentGuess(Tanket *tanket)
 		tanket->getShotInfo().getRotationGunXY(), tanket->getShotInfo().getRotationGunYZ());
 
 	PhysicsParticleObject particleObject;
-	PhysicsParticleInfo info(ParticleTypeShot, tanket->getPlayerId(), 0);
+	PhysicsParticleInfo info( ParticleTypeShot, tanket->getPlayerId(), nullptr );
 	particleObject.setPhysics(info, context_,
 		shotPosition, shotVelocity);
 	particleObject.setHandler(this);

@@ -76,14 +76,14 @@ bool TankChangeSimAction::invokeAction(ScorchedContext &context)
 		}
 		else
 		{
-			tank->setTankAI(0);
+			tank->setTankAI( nullptr );
 		}
 		tank->setDestinationId(0);
 	}
 	else
 	{
 		tank->setDestinationId(message_.getDestinationId());
-		tank->setTankAI(0);
+		tank->setTankAI( nullptr );
 	}
 
 	// Make sure no-one has the same name

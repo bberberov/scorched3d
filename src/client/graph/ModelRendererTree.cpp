@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -670,9 +670,9 @@ void ModelRendererTree::drawInternalPre(bool setState)
 void ModelRendererTree::drawInternal(float distance, float fade, bool setState)
 {
 	// Figure out which display list to call
-	GLTexture *texture = 0;
-	GLuint treeList = 0;
-	GLuint smallTreeList = 0;
+	GLTexture* texture       = nullptr;
+	GLuint     treeList      = 0;
+	GLuint     smallTreeList = 0;
 	switch(treeType_)
 	{
 	case TreeModelFactory::ePineNormal:

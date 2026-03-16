@@ -26,25 +26,25 @@
 #include <common/Logger.hpp>
 #include <common/Clock.hpp>
 
-NetServerTCP::NetServerTCP(NetServerTCPProtocol *protocol) :
-	sockSet_(0),
-	server_(0),
-	protocol_(protocol),
-	firstDestination_(0),
-	lastId_(0),
-	checkDeleted_(false)
+NetServerTCP::NetServerTCP( NetServerTCPProtocol* protocol )
+	: sockSet_( nullptr )
+	, server_( nullptr )
+	, protocol_( protocol )
+	, firstDestination_( 0 )
+	, lastId_( 0 )
+	, checkDeleted_( false )
 {
-	sockSet_ = SDLNet_AllocSocketSet(1);
+	sockSet_  = SDLNet_AllocSocketSet( 1 );
 	setMutex_ = SDL_CreateMutex();
-	SDL_CreateThread(NetServerTCP::threadFunc, (void *) this);
+	SDL_CreateThread( NetServerTCP::threadFunc, (void*)this );
 }
 
 NetServerTCP::~NetServerTCP()
 {
-	SDL_DestroyMutex(setMutex_);
-	setMutex_ = 0;
-	SDLNet_FreeSocketSet(sockSet_);
-	sockSet_ = 0;
+	SDL_DestroyMutex( setMutex_ );
+	SDLNet_FreeSocketSet( sockSet_ );
+	setMutex_ = nullptr;
+	sockSet_  = nullptr;
 }
 
 void NetServerTCP::setMessageHandler(NetMessageHandlerI *handler)
@@ -59,7 +59,7 @@ int NetServerTCP::processMessages()
 
 bool NetServerTCP::started()
 {
-	return (server_ != 0 || firstDestination_ != 0);
+	return ( nullptr != server_ || 0 != firstDestination_ );
 }
 
 bool NetServerTCP::start(int port)

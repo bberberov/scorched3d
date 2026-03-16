@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -30,11 +30,11 @@ ComsMessageHandlerI::~ComsMessageHandlerI()
 {
 }
 
-ComsMessageHandler::ComsMessageHandler(const char *instanceName) : 
-	instanceName_(instanceName),
-	connectionHandler_(0), comsMessageLogging_(false)
-{
-}
+ComsMessageHandler::ComsMessageHandler( const char* instanceName )
+	: instanceName_( instanceName )
+	, connectionHandler_( nullptr )
+	, comsMessageLogging_( false )
+{}
 
 ComsMessageHandler::~ComsMessageHandler()
 {

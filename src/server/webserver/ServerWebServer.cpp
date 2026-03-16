@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -51,7 +51,7 @@ ServerWebServer::ServerWebServer() :
 	netServer_(new NetServerHTTPProtocolRecv),
 	logger_(nullptr)
 {
-	sendThread_ = SDL_CreateThread(ServerWebServer::sendThreadFunc, 0);
+	sendThread_ = SDL_CreateThread( ServerWebServer::sendThreadFunc, nullptr );
 	if (nullptr == sendThread_)
 	{
 		Logger::log(S3D::formatStringBuffer("ServerWebServer: Failed to create thread"));
@@ -132,7 +132,7 @@ void ServerWebServer::processMessages()
 	// Check if any delayed messages should be sent
 	while (!delayedMessages_.empty())
 	{
-		unsigned int theTime = (unsigned int) time(0);
+		unsigned int theTime = (unsigned int)time( nullptr );
 		std::pair<unsigned int, NetMessage *> &delayedMessage =
 			delayedMessages_.front();
 		if (delayedMessage.first <= theTime)
@@ -152,7 +152,7 @@ void ServerWebServer::processMessages()
 	netServer_.processMessages();
 
 	// Check if anything needs to be done for the async processing
-	unsigned int theTime = (unsigned int) time(0);
+	unsigned int theTime = (unsigned int)time( nullptr );
 	if (theTime != asyncTimer_)
 	{
 		asyncTimer_ = theTime;
@@ -248,7 +248,7 @@ void ServerWebServer::processMessage(NetMessage &message)
 					// Log info
 					if (logger_)
 					{
-						time_t t = time(0);
+						time_t t = time( nullptr );
 						std::string f;
 						std::map<std::string, std::string>::iterator itor;
 						for (itor = fields.begin();
@@ -353,8 +353,7 @@ bool ServerWebServer::processRequest(
 		{
 			// No, or credentials are not correct
 			// Show the login page after a delay
-			if (!ServerWebServerUtil::getHtmlTemplate(
-				0, "login.html", fields, text)) return false;
+			if ( ! ServerWebServerUtil::getHtmlTemplate( nullptr, "login.html", fields, text ) ) return false;
 		}
 	}
 	else
@@ -422,7 +421,7 @@ bool ServerWebServer::processRequest(
 	if (delayed)
 	{
 		// Generate an outgoing message, that will be sent after a time delay
-		unsigned int delayedTime = (unsigned int) time(0) + 5;
+		unsigned int delayedTime = (unsigned int)time( nullptr ) + 5;
 		std::pair<unsigned int, NetMessage *> delayedMessage(delayedTime, message);
 		delayedMessages_.push_back(delayedMessage);
 	}
@@ -513,8 +512,8 @@ bool ServerWebServer::processQueue(ServerWebServerQueue &queue, bool keepEntries
 	std::list<ServerWebServerQueueEntry *> keptEntries;
 
 	// Process queue
-	ServerWebServerQueueEntry *entry = 0;
-	while ((entry = queue.getEntry()) != 0)
+	ServerWebServerQueueEntry *entry = nullptr;
+	while ( nullptr != ( entry = queue.getEntry() ) )
 	{
 		bool keepEntry = keepEntries;
 

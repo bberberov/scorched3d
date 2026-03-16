@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -47,7 +47,7 @@ TankDeadContainer::~TankDeadContainer()
 void TankDeadContainer::addDeadTank(Tank *tank, const std::string &storedName)
 {
 	// Find/create buffer
-	NetBuffer *buffer = 0;
+	NetBuffer* buffer = nullptr;
 	std::map<std::string, NetBuffer *>::iterator finditor =
 		deadTanks_.find(storedName);
 	if (finditor != deadTanks_.end())

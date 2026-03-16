@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -298,7 +298,7 @@ bool GLTexture::createBufferTexture(GLint width, GLint height, bool depthTex)
 		if(depth_bits == 16)  depth_format = GL_DEPTH_COMPONENT16_ARB;
 		else                  depth_format = GL_DEPTH_COMPONENT24_ARB;
 
-		glTexImage2D(GL_TEXTURE_2D, 0, depth_format, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);
+		glTexImage2D( GL_TEXTURE_2D, 0, depth_format, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, nullptr );
 	}
 
 	return true;

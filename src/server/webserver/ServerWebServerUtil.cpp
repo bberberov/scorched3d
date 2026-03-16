@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,11 +31,14 @@ const char *ServerWebServerUtil::getField(
 {
 	std::map<std::string, std::string>::iterator itor = 
 		fields.find(field);
-	if (itor != fields.end())
+	if ( itor != fields.end() )
 	{
-		return (*itor).second.c_str();
+		return ( *itor ).second.c_str();
 	}
-	return 0;
+	else
+	{
+		return nullptr;
+	}
 }
 
 std::string ServerWebServerUtil::getFile(const std::string &filename)
@@ -108,7 +111,7 @@ const char *ServerWebServerUtil::strstrlen(const char *start, const char *find, 
 		}
 		if (found) return current;
 	}
-	return 0;
+	return nullptr;
 }
 
 void ServerWebServerUtil::extractMultiPartPost(const char *start, 
@@ -176,7 +179,7 @@ void ServerWebServerUtil::extractQueryFields(std::map<std::string, std::string> 
 					buf[1] = *(valueStr + 2);
 					if (!buf[1]) break;
 
-					c = (char) strtol(buf, 0, 16);
+					c = (char)strtol( buf, nullptr, 16 );
 
 					valueStr += 2;
 				}
@@ -189,8 +192,8 @@ void ServerWebServerUtil::extractQueryFields(std::map<std::string, std::string> 
 				fields[token] = value;
 			}
 			*eq = '=';
-		}				
-		token = strtok(0, "&");
+		}
+		token = strtok( nullptr, "&" );
 	}
 }
 

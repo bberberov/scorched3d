@@ -526,7 +526,7 @@ void GLWPlanView::mouseUp(int button, float x, float y, bool &skipRest)
 void GLWPlanView::addRecievePoints(unsigned int playerId,
 	std::list<Vector> &recievepoints)
 {
-	PlayerDrawnInfo *foundInfo = 0;
+	PlayerDrawnInfo* foundInfo = nullptr;
 	std::list<PlayerDrawnInfo>::iterator dragItor;
 	for (dragItor = dragPoints_.begin();
 		dragItor != dragPoints_.end();

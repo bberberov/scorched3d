@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -71,13 +71,20 @@ Tank::Tank(ScorchedContext &context,
 
 Tank::~Tank()
 {
-	delete score_; score_ = 0;
-	delete state_; state_ = 0;
-	delete shotHistory_; shotHistory_ = 0;
-	delete modelContainer_; modelContainer_ = 0;
-	delete avatar_; avatar_ = 0;
-	delete camera_; camera_ = 0;
-	delete viewPoints_; viewPoints_ = 0;
+	delete score_;
+	delete state_;
+	delete shotHistory_;
+	delete modelContainer_;
+	delete avatar_;
+	delete camera_;
+	delete viewPoints_;
+	score_          = nullptr;
+	state_          = nullptr;
+	shotHistory_    = nullptr;
+	modelContainer_ = nullptr;
+	avatar_         = nullptr;
+	camera_         = nullptr;
+	viewPoints_     = nullptr;
 }
 
 void Tank::newMatch()

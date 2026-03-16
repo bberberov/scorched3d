@@ -76,7 +76,9 @@ static void createControls(wxWindow *parent, wxSizer *sizer)
 	wxStaticBoxSizer *modSizer = new wxStaticBoxSizer(modBox, wxHORIZONTAL);
 
 	modSizer->Add(new wxStaticText(parent, -1,wxT("Use Mod :")), 0, wxALL, 5);
-	IDC_SERVER_MOD_CTRL = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxDefaultSize, 0, 0, wxCB_READONLY);
+	IDC_SERVER_MOD_CTRL = new wxComboBox(
+		parent, -1, wxT( "" ), wxDefaultPosition, wxDefaultSize, 0, nullptr, wxCB_READONLY
+	);
 	modSizer->Add(IDC_SERVER_MOD_CTRL, 0, wxALL, 5);
 	sizer->Add(modSizer, 0, wxGROW | wxALL, 5);
 

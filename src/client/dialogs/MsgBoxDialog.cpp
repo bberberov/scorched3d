@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -37,19 +37,27 @@ MsgBoxDialog::MsgBoxDialog() :
 {
 	GLWPanel *topPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
 
-	icon_ = new GLWIcon(0.0f, 0.0f, 32.0f, 32.0f);
-	topPanel->addWidget(icon_, 0, SpaceLeft | SpaceTop | AlignTop, 10.0f);
-
-	message_ = new GLWLabel(0.0f, 0.0f, LANG_STRING(""), 8.0f, GLWLabel::eMultiLine);
-	topPanel->addWidget(message_, 0, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f);
+	icon_    = new GLWIcon( 0.0f, 0.0f, 32.0f, 32.0f );
+	message_ = new GLWLabel( 0.0f, 0.0f, LANG_STRING( "" ), 8.0f, GLWLabel::eMultiLine );
+	topPanel->addWidget( icon_,    nullptr, SpaceLeft | SpaceTop | AlignTop, 10.0f );
+	topPanel->addWidget( message_, nullptr, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f );
 
 	topPanel->setLayout(GLWPanel::LayoutHorizontal);
 	addWidget(topPanel);
 
-	okButton_ = (GLWTextButton *) 
-		addWidget(new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagOk | 
-		GLWButton::ButtonFlagCenterX), 0, SpaceAll | AlignRight, 10.0f);
+	okButton_ = (GLWTextButton*)addWidget(
+		new GLWTextButton(
+			LANG_RESOURCE( "CANCEL", "Cancel" ),
+			95,
+			10,
+			105,
+			this,
+			GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+		),
+		nullptr,
+		SpaceAll | AlignRight,
+		10.0f
+	);
 	okButton_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
 		LANG_RESOURCE("CANCEL", "Cancel"),
 		LANG_RESOURCE("CANCEL_TOOLTIP", "Return to the game.")));

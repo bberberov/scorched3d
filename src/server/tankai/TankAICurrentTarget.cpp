@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -214,17 +214,17 @@ void TankAICurrentTarget::getTargets(Tanket *thisTanket, std::list<Tanket *> &re
 	{
 		Tanket *currentTank = *itor;
 
-		float healthScore = ((currentTank->getLife().getLife() * 2) 
-			/ currentTank->getLife().getMaxLife()).asFloat() - 1.0f;
-		float randomScore = RAND * 2.0f - 1.0f;
-		float playerScore = ((currentTank->getTankAI() != 0)?-1.0f:1.0f);
-		float shieldScore = ((currentTank->getShield().getShieldPower() * 2).asFloat() 
-			/ 100.0f) - 1.0f;
-		float scoreScore = rankPlayer(scoreSorted, currentTank);
-		float repeatScore = rankPlayer(shotAtSorted, currentTank);
-		float damagetakenScore = rankPlayer(damageTakenSorted, currentTank);
-		float damagedoneScore = rankPlayer(damageGivenSorted, currentTank);
-		float distanceScore = rankPlayer(distanceSorted, currentTank);
+		float healthScore      = (
+			( currentTank->getLife().getLife() * 2 ) / currentTank->getLife().getMaxLife()
+		).asFloat() - 1.0f;
+		float randomScore      = RAND * 2.0f - 1.0f;
+		float playerScore      = ( ( nullptr != currentTank->getTankAI() ) ? -1.0f : 1.0f );
+		float shieldScore      = ( ( currentTank->getShield().getShieldPower() * 2 ).asFloat() / 100.0f ) - 1.0f;
+		float scoreScore       = rankPlayer( scoreSorted, currentTank );
+		float repeatScore      = rankPlayer( shotAtSorted, currentTank );
+		float damagetakenScore = rankPlayer( damageTakenSorted, currentTank );
+		float damagedoneScore  = rankPlayer( damageGivenSorted, currentTank );
+		float distanceScore    = rankPlayer( distanceSorted, currentTank );
 
 		float weight = 
 			healthScore * health_ +

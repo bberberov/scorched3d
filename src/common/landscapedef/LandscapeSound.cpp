@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -130,7 +130,7 @@ LandscapeSoundItem *LandscapeSoundPositionSet::getInitData(int count)
 	}
 #endif
 
-	return 0;
+	return nullptr;
 }
 
 // LandscapeSoundPositionGroup
@@ -312,11 +312,7 @@ float LandscapeSoundSoundFile::getGain()
 }
 
 // LandscapeSoundType
-LandscapeSoundType::LandscapeSoundType() :
-	position(0),
-	timing(0),
-	sound(0)
-{}
+LandscapeSoundType::LandscapeSoundType() : position( nullptr ), timing( nullptr ), sound( nullptr ) {}
 
 LandscapeSoundType::~LandscapeSoundType()
 {

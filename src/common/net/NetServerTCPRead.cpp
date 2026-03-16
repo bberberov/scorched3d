@@ -26,28 +26,28 @@
 #include <common/Defines.hpp>
 
 NetServerTCPRead::NetServerTCPRead(
-	unsigned int id,
-	TCPsocket socket,
-	NetServerTCPProtocol *protocol,
-	NetMessageHandler *messageHandler,
-	bool *checkDeleted
-) :
-	id_(id),
-	socket_(socket),
-	sockSet_(0),
-	protocol_(protocol),
-	outgoingMessagesMutex_(0),
-	messageHandler_(messageHandler),
-	checkDeleted_(checkDeleted),
-	disconnect_(false),
-	sentDisconnect_(false),
-	startCount_(0),
-	ctrlThread_(0),
-	recvThread_(0),
-	sendThread_(0)
+	unsigned int          id,
+	TCPsocket             socket,
+	NetServerTCPProtocol* protocol,
+	NetMessageHandler*    messageHandler,
+	bool*                 checkDeleted
+)
+	: id_( id )
+	, socket_( socket )
+	, sockSet_( nullptr )
+	, protocol_( protocol )
+	, outgoingMessagesMutex_( nullptr )
+	, messageHandler_( messageHandler )
+	, checkDeleted_( checkDeleted )
+	, disconnect_( false )
+	, sentDisconnect_( false )
+	, startCount_( 0 )
+	, ctrlThread_( nullptr )
+	, recvThread_( nullptr )
+	, sendThread_( nullptr )
 {
-	sockSet_ = SDLNet_AllocSocketSet(1);
-	SDLNet_TCP_AddSocket(sockSet_, socket);
+	sockSet_ = SDLNet_AllocSocketSet( 1 );
+	SDLNet_TCP_AddSocket( sockSet_, socket );
 	outgoingMessagesMutex_ = SDL_CreateMutex();
 }
 
@@ -63,9 +63,9 @@ NetServerTCPRead::~NetServerTCPRead()
 	SDL_UnlockMutex(outgoingMessagesMutex_);
 
 	SDL_DestroyMutex(outgoingMessagesMutex_);
-	outgoingMessagesMutex_ = 0;
 	SDLNet_FreeSocketSet(sockSet_);
-	sockSet_ = 0;
+	outgoingMessagesMutex_ = nullptr;
+	sockSet_               = nullptr;
 }
 
 unsigned int NetServerTCPRead::getIpAddressFromSocket(TCPsocket socket)
@@ -107,10 +107,9 @@ void NetServerTCPRead::start()
 
 void NetServerTCPRead::addMessage(NetMessage *message)
 {
-	if (message->getMessageType() != NetMessage::DisconnectMessage && 
-		message->getBuffer().getBuffer() == 0) 
-	{ 
-		DIALOG_ASSERT(0); 
+	if ( NetMessage::DisconnectMessage != message->getMessageType() && nullptr == message->getBuffer().getBuffer() )
+	{
+		DIALOG_ASSERT( 0 );
 	}
 
 	SDL_LockMutex(outgoingMessagesMutex_);
@@ -274,7 +273,7 @@ bool NetServerTCPRead::pollIncoming()
 
 bool NetServerTCPRead::pollOutgoing()
 {
-	NetMessage *message = 0;
+	NetMessage* message = nullptr;
 	SDL_LockMutex(outgoingMessagesMutex_);
 	if (!newMessages_.empty())
 	{

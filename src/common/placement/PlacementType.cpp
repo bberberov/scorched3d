@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -43,17 +43,15 @@ PlacementType *PlacementType::create(const char *type)
 	if (0 == strcmp(type, "bounds")) return new PlacementTypeBounds;
 	if (0 == strcmp(type, "tankstart")) return new PlacementTypeTankStart;
 	S3D::dialogMessage("PlacementType", S3D::formatStringBuffer("Unknown placement type %s", type));
-	return 0;
+	return nullptr;
 }
 
-PlacementType::PlacementType() : placementobject(0)
-{
-}
+PlacementType::PlacementType() : placementobject( nullptr ) {}
 
 PlacementType::~PlacementType()
 {
 	delete placementobject;
-	placementobject = 0;
+	placementobject = nullptr;
 }
 
 bool PlacementType::readXML(XMLNode *node)

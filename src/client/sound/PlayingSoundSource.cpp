@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,12 +20,12 @@
 
 #include <sound/PlayingSoundSource.hpp>
 
-PlayingSoundSource::PlayingSoundSource(VirtualSoundSource *virt) :
-	virtualSource_(virt),
-	actualSource_(0),
-	stopped_(false)
-{
-}
+PlayingSoundSource::PlayingSoundSource( VirtualSoundSource* virt )
+	: virtualSource_( virt )
+	, actualSource_( nullptr )
+	, stopped_( false )
+{}
+
 
 PlayingSoundSource::~PlayingSoundSource()
 {

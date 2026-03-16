@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -54,43 +54,61 @@ void AuthDialog::display()
 	clear();
 
 	addWidget(
-		new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("AUTH_LINE", "This server requires authentication.")), 
-		0, SpaceAll, 10.0f);
+		new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( "AUTH_LINE", "This server requires authentication." ) ),
+		nullptr,
+		SpaceAll,
+		10.0f
+	);
 
 	GLWPanel *inputPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
 
 	username_ = nullptr;
-	if (auth_ & eNameRequired)
+	if ( auth_ & eNameRequired )
 	{
-		username_ = new GLWTextBox(0.0f, 0.0f, 200.0f,
-			LANG_STRING(ClientParams::instance()->getUserName()));
-		inputPanel->addWidget(new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("USER_NAME_LABEL", "User Name :")));
-		inputPanel->addWidget(username_, 0, SpaceLeft | SpaceTop, 10.0f);
+		username_ = new GLWTextBox( 0.0f, 0.0f, 200.0f, LANG_STRING( ClientParams::instance()->getUserName() ) );
+		inputPanel->addWidget( new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( "USER_NAME_LABEL", "User Name :" ) ) );
+		inputPanel->addWidget( username_, nullptr, SpaceLeft | SpaceTop, 10.0f );
 	}
 	password_ = nullptr;
-	if (auth_ & ePasswordRequired)
+	if ( auth_ & ePasswordRequired )
 	{
-		password_ = new GLWTextBox(0.0f, 0.0f, 200.0f, 
-			LANG_STRING(ClientParams::instance()->getPassword()), GLWTextBox::eFlagPassword);
-		inputPanel->addWidget(new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("PASSWORD_LABEL", "Password :")));
-		inputPanel->addWidget(password_, 0, SpaceLeft | SpaceTop, 10.0f);
+		password_ = new GLWTextBox(
+			0.0f,
+			0.0f,
+			200.0f,
+			LANG_STRING( ClientParams::instance()->getPassword() ),
+			GLWTextBox::eFlagPassword
+		);
+		inputPanel->addWidget( new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( "PASSWORD_LABEL", "Password :" ) ) );
+		inputPanel->addWidget( password_, nullptr, SpaceLeft | SpaceTop, 10.0f );
 	}
 	inputPanel->setGridWidth(2);
 	inputPanel->setLayout(GLWPanel::LayoutGrid);
-	addWidget(inputPanel, 0, SpaceAll, 10.0f);
+	addWidget(inputPanel, nullptr, SpaceAll, 10.0f);
 
-	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+	GLWPanel* buttonPanel   = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		95,
+		10,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "OK", "Ok" ),
+		235,
+		10,
+		55,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 235, 10, 55, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, SpaceAll, 10.0f);
-
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, SpaceAll, 10.0f );
 
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();

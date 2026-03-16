@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,42 +28,41 @@
 #include <engine/ActionController.hpp>
 #include <common/OptionsScorched.hpp>
 
-TargetShield::TargetShield(ScorchedContext &context, unsigned int playerId) :
-	context_(context),
-	currentShield_(nullptr),
-	target_(nullptr),
-	power_(0),
-	boundingSize_(0),
-	graphicalCurrentShield_(0),
-	graphicalShieldPower_(0)
+TargetShield::TargetShield( ScorchedContext& context, unsigned int playerId )
+	: context_( context )
+	, currentShield_( nullptr )
+	, target_( nullptr )
+	, power_( 0 )
+	, boundingSize_( 0 )
+	, graphicalCurrentShield_( nullptr )
+	, graphicalShieldPower_( 0 )
 {}
 
-TargetShield::~TargetShield()
-{}
+TargetShield::~TargetShield() {}
 
 void TargetShield::loaded()
 {
-	setCurrentShield(0);
+	setCurrentShield( nullptr );
 }
 
-void TargetShield::setCurrentShield(Accessory *sh)
+void TargetShield::setCurrentShield( Accessory* sh )
 {
-	if (sh)
+	if ( sh )
 	{
-		Shield *shield = (Shield *) sh->getAction();
-		power_ = shield->getPower();
-		currentShield_ = sh;	
-		boundingSize_ = shield->getBoundingSize();
+		Shield* shield = (Shield*)sh->getAction();
+		power_         = shield->getPower();
+		currentShield_ = sh;
+		boundingSize_  = shield->getBoundingSize();
 	}
 	else
 	{
-		power_ = 0;
-		currentShield_ = 0;
-		boundingSize_ = 0;
+		power_         = 0;
+		currentShield_ = nullptr;
+		boundingSize_  = 0;
 	}
 
 	// Update the target space with this new shield information
-	context_.getTargetSpace().updateTarget(target_);
+	context_.getTargetSpace().updateTarget( target_ );
 }
 
 void TargetShield::setShieldPower(fixed power)
@@ -72,7 +71,7 @@ void TargetShield::setShieldPower(fixed power)
 	if (power_ <= 0)
 	{
 		power_ = 0;
-		setCurrentShield(0);
+		setCurrentShield( nullptr );
 	}
 }
 
@@ -124,12 +123,22 @@ bool TargetShield::writeMessage(NamedNetBuffer &buffer)
 	return true;
 }
 
-bool TargetShield::readMessage(NetBufferReader &reader)
+bool TargetShield::readMessage( NetBufferReader& reader )
 {
 	unsigned int shieldId;
-	if (!reader.getFromBuffer(shieldId)) return false;
-	if (shieldId == 0) setCurrentShield(0);
-	else setCurrentShield(context_.getAccessoryStore().findByAccessoryId(shieldId));
-	if (shieldId != 0) if (!reader.getFromBuffer(power_)) return false;
+
+	if ( ! reader.getFromBuffer( shieldId ) ) return false;
+
+	if ( 0 == shieldId )
+	{
+		setCurrentShield( nullptr );
+	}
+	else
+	{
+		setCurrentShield( context_.getAccessoryStore().findByAccessoryId( shieldId ) );
+
+		if ( ! reader.getFromBuffer( power_ ) ) return false;
+	}
+
 	return true;
 }

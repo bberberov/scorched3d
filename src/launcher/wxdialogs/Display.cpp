@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2003, 2018, 2024
+//    Scorched3D (c) 2000-2003, 2018, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,7 +31,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 
 	// Row 1
 	wxStaticText *resText = new wxStaticText(parent, -1, wxT("&Resolution :"));
-	IDC_DISPLAY_CTRL      = new wxComboBox(  parent, -1, wxT(""), wxDefaultPosition, wxSize(315, -1), 0, 0, wxCB_READONLY);
+	IDC_DISPLAY_CTRL      = new wxComboBox(  parent, -1, wxT(""), wxDefaultPosition, wxSize(315, -1), 0, nullptr, wxCB_READONLY);
 	IDC_FULLSCREEN_CTRL   = new wxCheckBox(  parent, -1, wxT("Full Screen"));
 	displaySizer2->Add(resText,             0, wxALIGN_CENTER_VERTICAL);
 	displaySizer2->Add(IDC_DISPLAY_CTRL,    0);
@@ -47,7 +47,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 
 	// Row 3
 	wxStaticText *aliasText = new wxStaticText(parent, -1, wxT("Anti Aliasing :"));
-	IDC_ANTIALIAS_CTRL      = new wxComboBox(  parent, -1, wxT(""), wxDefaultPosition, wxSize(60, -1), 0, 0, wxCB_READONLY);
+	IDC_ANTIALIAS_CTRL      = new wxComboBox(  parent, -1, wxT(""), wxDefaultPosition, wxSize(60, -1), 0, nullptr, wxCB_READONLY);
 	IDC_FOCUSPAUSE_CTRL     = new wxCheckBox(  parent, -1, wxT("Pause graphics when not focused"));
 	displaySizer2->Add(aliasText,           0);
 	displaySizer2->Add(IDC_ANTIALIAS_CTRL,  0);
@@ -85,7 +85,7 @@ static void createMainControls(wxWindow *parent, wxSizer *sizer)
 	// Row 1
 	wxStaticText *volumeText        = new wxStaticText(parent, -1, wxT("Sound Volume :"));
 	IDC_VOLUME_CTRL                 = new wxSlider(parent, -1, 0, 0, 0, wxDefaultPosition, wxSize(315, -1), wxSL_HORIZONTAL | wxSL_AUTOTICKS);
-	IDC_SOUNDCHANNELS_CTRL          = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxSize(55, -1), 0, 0, wxCB_READONLY);
+	IDC_SOUNDCHANNELS_CTRL          = new wxComboBox(parent, -1, wxT(""), wxDefaultPosition, wxSize(55, -1), 0, nullptr, wxCB_READONLY);
 	soundSizer1->Add(volumeText,                                    0, wxRIGHT, 10);
 	soundSizer1->Add(IDC_VOLUME_CTRL,                               0, wxRIGHT, 10);
 	soundSizer1->Add(IDC_SOUNDCHANNELS_CTRL,                        0, wxRIGHT, 5);
@@ -507,7 +507,7 @@ static void createKeysControls(wxWindow *parent, wxSizer *topsizer)
 	topsizer->Add(IDC_LOADKEYDEFAULTS_CTRL, 0, wxCENTER | wxALL, 2);
 }
 
-static wxListBox *modbox = 0;
+static wxListBox* modbox = nullptr;
 static void updateModList()
 {
 	modbox->Clear();
@@ -528,7 +528,7 @@ static void createModsControls(wxWindow *parent, wxSizer *topsizer)
 	wxStaticBox      *modsBox   = new wxStaticBox(parent, -1, wxT("Mods"));
 	wxStaticBoxSizer *modsSizer = new wxStaticBoxSizer(modsBox, wxVERTICAL);
 
-	modbox = new wxListBox(parent, -1, wxDefaultPosition, wxSize(150, 200), 0, 0, wxLB_SINGLE);
+	modbox = new wxListBox( parent, -1, wxDefaultPosition, wxSize( 150, 200 ), 0, nullptr, wxLB_SINGLE );
 	updateModList();
 	modsSizer->Add(modbox, 0, wxALIGN_CENTER | wxALL, 5);
 

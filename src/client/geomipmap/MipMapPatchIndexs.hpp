@@ -80,7 +80,7 @@ public:
 
 		IndexLevel*       level = levels_[lod];
 		MipMapPatchIndex* index = level->borderIndexs_[border];
-		if ( ! index->getIndices() ) return 0;
+		if ( ! index->getIndices() ) return nullptr;
 
 		return index;
 	}

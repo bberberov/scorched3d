@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -53,7 +53,7 @@ bool GLWChannelViewTextRenderer::drawCharacter(
 		{
 		case ePlayerEntry:
 			{
-				TargetRendererImplTank *renderer = 0;
+				TargetRendererImplTank* renderer = nullptr;
 				Tank *tank = ScorchedClient::instance()->getTargetContainer().
 					getTankById(textEntry->data);
 				if (tank) renderer = (TargetRendererImplTank *) tank->getRenderer();

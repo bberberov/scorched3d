@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -154,14 +154,14 @@ void GLWTankViewer::refreshAvailableModels()
 
 			ModelEntry entry;
 			entry.model = tankModel;
-			entry.mesh = 0;
+			entry.mesh = nullptr;
 			newmodels.push_back(entry);
 		}
 	}
 
 	// Save current model
 	int scrollCurrent = scrollBar_.getCurrent();
-	TankModel *model = 0;
+	TankModel* model = nullptr;
 	if (selected_ >= 0 &&
 		selected_ < (int) models_.size())
 	{

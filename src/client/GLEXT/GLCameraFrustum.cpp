@@ -182,7 +182,7 @@ bool GLCameraFrustum::sphereInFrustum(Vector &point,
 {
 	if (OptionsDisplay::instance()->getDrawBoundingSpheres())
 	{
-		static GLUquadric *obj = 0;
+		static GLUquadric* obj = nullptr;
 		if (!obj)
 		{
 			obj = gluNewQuadric();

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -59,7 +59,7 @@ ModelRenderer *ModelRendererStore::loadModel(ModelID &modelId)
 ModelRenderer *ModelRendererStore::getModel(ModelID &id)
 {
 	Model *model = ModelStore::instance()->loadModel(id);
-	ModelRenderer *modelRenderer = 0;
+	ModelRenderer* modelRenderer = nullptr;
 	if (0 == strcmp("Tree", id.getType()))
 	{
 		modelRenderer = new ModelRendererTree(model, id);

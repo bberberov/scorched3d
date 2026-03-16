@@ -193,7 +193,7 @@ void GLWSelectorPart::draw()
 					{
 						// This child is incorrect, remove it
 						GLWSelector::instance()->rmPart(child_);
-						child_ = 0;
+						child_ = nullptr;
 					}
 					if (!child_)
 					{
@@ -216,7 +216,7 @@ void GLWSelectorPart::draw()
 					if (child_)
 					{
 						GLWSelector::instance()->rmPart(child_);
-						child_ = 0;
+						child_ = nullptr;
 					}
 				}
 			}
@@ -254,7 +254,7 @@ void GLWSelectorPart::draw()
 			static Vector color(0.9f, 0.9f, 1.0f);
 			static Vector itemcolor(0.1f, 0.1f, 0.4f);
 			static Vector selectedColor(0.3f, 0.3f, 0.7f);
-			Vector *c = 0;
+			Vector* c = nullptr;
 			if (transparent_) c = (selected?&color:&itemcolor);
 			else c = (selected?&selectedColor:&GLWFont::widgetFontColor);
 

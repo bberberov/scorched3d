@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -79,9 +79,9 @@ void GLWWeaponModel::draw()
 
 	// Cache some stuff we should only fetch when tank
 	// or tank's weapon changes
-	static Accessory *storedWeapon = 0;
-	static Tank *storedTank = 0;
-	static MissileMesh *storedMesh = 0;
+	static Accessory*   storedWeapon = nullptr;
+	static Tank*        storedTank   = nullptr;
+	static MissileMesh* storedMesh   = nullptr;
 	if (weapon != storedWeapon || current != storedTank)
 	{
 		storedWeapon = weapon;

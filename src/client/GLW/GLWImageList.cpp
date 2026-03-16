@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,10 +27,9 @@
 
 REGISTER_CLASS_SOURCE(GLWImageList);
 
-GLWImageList::GLWImageList(float x, float y) :
-	GLWidget(x, y, 32.0f, 32.0f), current_(0), enabled_(true)
-{
-}
+GLWImageList::GLWImageList( float x, float y ) : GLWidget( x, y, 32.0f, 32.0f ), current_( nullptr ), enabled_( true )
+{}
+
 
 GLWImageList::~GLWImageList()
 {
@@ -168,8 +167,13 @@ void GLWImageList::mouseDown(int button, float x, float y,
 			{
 				GLWImageListEntry *entry = (*itor);
 				entries.push_back(
-					GLWSelectorEntry(LANG_STRING(entry->shortFileName.c_str()),
-					0, 0, &entry->texture, 0, entry->shortFileName));
+					GLWSelectorEntry( LANG_STRING( entry->shortFileName.c_str() ),
+						nullptr,
+						false,
+						&entry->texture,
+						nullptr,
+						entry->shortFileName )
+				);
 			}
 
 			GLWSelector::instance()->showSelector(

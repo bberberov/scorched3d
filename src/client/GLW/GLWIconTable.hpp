@@ -52,7 +52,7 @@ public:
 		float                y         = 0.0f,
 		float                w         = 0.0f,
 		float                h         = 0.0f,
-		std::list< Column >* columns   = 0,
+		std::list< Column >* columns   = nullptr,
 		float                rowHeight = 20.0f
 	);
 	virtual ~GLWIconTable();

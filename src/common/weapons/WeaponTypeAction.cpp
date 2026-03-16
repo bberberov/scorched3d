@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -53,9 +53,8 @@ bool WeaponTypeAction::parseXML(AccessoryCreateContext &context, XMLNode *access
 		itor != children.end();
 		++itor)
 	{
-		XMLNode *node = (*itor);
-
-		XMLNode *tmpNode = 0;
+		XMLNode* node    = ( *itor );
+		XMLNode* tmpNode = nullptr;
 		accessoryNode->getNamedChild(node->getName(), tmpNode); // Just to remove child
 
 		// Check next weapon is correct type

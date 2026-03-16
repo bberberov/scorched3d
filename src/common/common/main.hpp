@@ -74,7 +74,7 @@ void run_main( int argc, char* argv[], OptionsParameters& params )
 		S3D::ScorchedProtocolVersion.c_str()
 	);
 
-	srand( (unsigned int)time( 0 ) );
+	srand( (unsigned int)time( nullptr ) );
 
 	// Parse command line
 	// Read options from command line
@@ -154,7 +154,7 @@ void run_main( int argc, char* argv[], OptionsParameters& params )
 	signal( SIGFPE, SIG_IGN );
 #endif
 
-	if ( setlocale( LC_ALL, "C" ) == 0 )
+	if ( nullptr == setlocale( LC_ALL, "C" ) )
 		S3D::dialogMessage( scorched3dAppName, "Warning: Failed to set client locale" );
 }
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,16 +24,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponTranslate);
 
-WeaponTranslate::WeaponTranslate() :
-	translateDist_("WeaponTranslate::translateDist", 0), nextAction_(0)
-{
-
-}
+WeaponTranslate::WeaponTranslate() : translateDist_( "WeaponTranslate::translateDist", 0 ), nextAction_( nullptr ) {}
 
 WeaponTranslate::~WeaponTranslate()
 {
 	delete nextAction_;
-	nextAction_ = 0;
+	nextAction_ = nullptr;
 }
 
 bool WeaponTranslate::parseXML(AccessoryCreateContext &context,XMLNode *accessoryNode)
@@ -42,7 +38,7 @@ bool WeaponTranslate::parseXML(AccessoryCreateContext &context,XMLNode *accessor
 
 	if (!accessoryNode->getNamedChild("translatedist", translateDist_)) return false;
 
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("nextaction", subNode)) return false;
 	
 	// Check next weapon is correct type
@@ -67,4 +63,3 @@ void WeaponTranslate::fireWeapon(ScorchedContext &context,
 	nextAction_->fire(context, weaponContext, newPosition, velocity);
 	
 }
-

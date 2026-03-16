@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -56,7 +56,8 @@ void ModelRendererTank::setupModelRendererTank()
 	if (size > maxSize) scale_ = 2.2f / size;
 
 	// Find the turrets and guns
-	Mesh *turretPivot = 0, *gunPivot = 0;
+	Mesh* turretPivot = nullptr;
+	Mesh* gunPivot    = nullptr;
 	int turretCount = 0;
 
 	std::vector<Mesh *>::iterator itor;
@@ -174,7 +175,7 @@ void ModelRendererTank::draw(
 	bool setState
 )
 {
-	Mesh *lastMesh = 0;
+	Mesh* lastMesh = nullptr;
 	lastMesh = normalRenderer_.drawModel(currentFrame, distance, fade, setState, normalMeshes_, lastMesh);
 
 	glRotatef(rotXY_, 0.0f, 0.0f, 1.0f);

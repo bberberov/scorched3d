@@ -152,7 +152,7 @@ void GLLenseFlare::draw(
 		GLState currentState(GLState::BLEND_ON);
 		glBlendFunc(GL_ONE, GL_ONE);
 
-		GLState *afterThreeState = 0;
+		GLState* afterThreeState = nullptr;
 		int endTexture = 12;
 		if (!fullFlare) endTexture = 3;
 		for (int i=0; i<endTexture; i++)

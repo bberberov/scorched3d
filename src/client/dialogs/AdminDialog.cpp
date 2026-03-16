@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -59,30 +59,37 @@ AdminDialog::AdminDialog() :
 		adminTable_->setItemCount(0);
 
 		// Player Actions
-		GLWPanel *buttonPanel = new GLWPanel(10.0f, 10.0f, 650.0f, 50.0f, false, false);
-		kickButton_ = new GLWTextButton(LANG_RESOURCE("KICK", "Kick"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(kickButton_, 0, SpaceRight, 10.0f);
-		banButton_ = new GLWTextButton(LANG_RESOURCE("BAN", "Ban"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(banButton_, 0, SpaceRight, 10.0f);
-		slapButton_ = new GLWTextButton(LANG_RESOURCE("SLAP", "Slap"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(slapButton_, 0, SpaceRight, 10.0f);
-		poorButton_ = new GLWTextButton(LANG_RESOURCE("POOR", "Poor"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(poorButton_, 0, SpaceRight, 10.0f);
-		muteButton_ = new GLWTextButton(LANG_RESOURCE("MUTE", "Mute"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(muteButton_, 0, SpaceRight, 10.0f);
-		unmuteButton_ = new GLWTextButton(LANG_RESOURCE("UNMUTE", "UnMute"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(unmuteButton_, 0, SpaceRight, 10.0f);
-		changeNameButton_ = new GLWTextButton(LANG_RESOURCE("CHANGE_NAME", "Name"), 0, 0, 80, this, 
-			GLWButton::ButtonFlagCenterX);
-		buttonPanel->addWidget(changeNameButton_, 0, SpaceRight, 10.0f);
-		buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-		playerTab_->addWidget(buttonPanel, 0, SpaceAll, 10.0f);
+		GLWPanel* buttonPanel = new GLWPanel( 10.0f, 10.0f, 650.0f, 50.0f, false, false );
+		kickButton_   = new GLWTextButton(
+			LANG_RESOURCE( "KICK", "Kick" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		banButton_    = new GLWTextButton(
+			LANG_RESOURCE( "BAN", "Ban" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		slapButton_   = new GLWTextButton(
+			LANG_RESOURCE( "SLAP", "Slap" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		poorButton_   = new GLWTextButton(
+			LANG_RESOURCE( "POOR", "Poor" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		muteButton_   = new GLWTextButton(
+			LANG_RESOURCE( "MUTE", "Mute" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		unmuteButton_ = new GLWTextButton(
+			LANG_RESOURCE( "UNMUTE", "UnMute" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		changeNameButton_ = new GLWTextButton(
+			LANG_RESOURCE( "CHANGE_NAME", "Name" ), 0, 0, 80, this, GLWButton::ButtonFlagCenterX
+		);
+		buttonPanel->addWidget( kickButton_,       nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( banButton_,        nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( slapButton_,       nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( poorButton_,       nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( muteButton_,       nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( unmuteButton_,     nullptr, SpaceRight, 10.0f );
+		buttonPanel->addWidget( changeNameButton_, nullptr, SpaceRight, 10.0f );
+		buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+		playerTab_->addWidget( buttonPanel, nullptr, SpaceAll, 10.0f );
 		buttonPanel->layout();
 	}
 	{
@@ -99,8 +106,16 @@ AdminDialog::AdminDialog() :
 		{
 			if (*itor != "Human")
 			{
-				aiSelector_->addEntry(GLWSelectorEntry(
-					LANG_STRING(*itor), 0, false, 0, 0, *itor));
+				aiSelector_->addEntry(
+					GLWSelectorEntry(
+						LANG_STRING( *itor ),
+						nullptr,
+						false,
+						nullptr,
+						nullptr,
+						*itor
+					)
+				);
 			}
 		}
 		addButton_ = (GLWTextButton *)

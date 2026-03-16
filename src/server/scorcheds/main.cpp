@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -67,8 +67,7 @@ int main(int argc, char *argv[])
 	// Set the exittime
 	if (ServerParams::instance()->getExitTime() > 0)
 	{
-		ServerParams::instance()->setExitTime(
-			int(ServerParams::instance()->getExitTime() + time(0)));
+		ServerParams::instance()->setExitTime( (int)(ServerParams::instance()->getExitTime() + time( nullptr ) ) );
 	}
 
 #ifdef _WIN32

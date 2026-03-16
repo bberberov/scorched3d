@@ -172,7 +172,7 @@ void GLWToolTip::clearToolTip(float x, float y, float w, float h)
 	if (x < mouseX && mouseX < x + w &&
 		y < mouseY && mouseY < y + h)
 	{
-		currentTip_ = 0;
+		currentTip_ = nullptr;
 	}
 }
 
@@ -185,7 +185,7 @@ void GLWToolTip::draw(const unsigned state)
 {
 	if (currentTip_ != lastTip_) refreshTime_ = 100.0f;
 	lastTip_ = currentTip_;
-	currentTip_ = 0;
+	currentTip_ = nullptr;
 
 	if (lastTip_) timeSeen_ += timeDrawn_;
 	else timeSeen_ -= timeDrawn_;

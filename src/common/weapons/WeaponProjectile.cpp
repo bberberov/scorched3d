@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -74,7 +74,7 @@ WeaponProjectile::WeaponProjectile() :
 WeaponProjectile::~WeaponProjectile()
 {
 	delete collisionAction_;
-	collisionAction_ = 0;
+	collisionAction_ = nullptr;
 }
 
 bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -82,7 +82,7 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the accessory under
-	XMLNode *underNode = 0;
+	XMLNode* underNode = nullptr;
 	accessoryNode->getNamedChild("under", underNode, false);
 	if (underNode) under_ = true;
 
@@ -98,7 +98,7 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 	accessoryNode->getNamedChild("projectilescale", scale_, false);
 
 	// Get the optional weapon model
-	XMLNode *modelNode = 0;
+	XMLNode* modelNode = nullptr;
 	if (accessoryNode->getNamedChild("projectilemodel", modelNode, false))
 	{
 		if (!modelId_.initFromNode(modelNode)) return false;
@@ -121,7 +121,8 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 
 
 	// Get the no smoke node
-	XMLNode *animateFlameTexture = 0, *animateSmokeTexture = 0;
+	XMLNode* animateFlameTexture = nullptr;
+	XMLNode* animateSmokeTexture = nullptr;
 	accessoryNode->getNamedChild("animateflametexture", animateFlameTexture, false);
 	accessoryNode->getNamedChild("animatesmoketexture", animateSmokeTexture, false);
 	if (animateFlameTexture) animateFlameTexture_ = true;
@@ -137,36 +138,37 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 	accessoryNode->getNamedChild("thrustamount", thrustAmount_, false);
 
 	// Get the smoke trails
-	XMLNode *smokeNode = 0;
+	XMLNode* smokeNode = nullptr;
 	accessoryNode->getNamedChild("showshotpath", smokeNode, false);
 	if (smokeNode) showShotPath_ = true;
 
 	// Get the end point
-	XMLNode *endPointNode = 0;
+	XMLNode* endPointNode = nullptr;
 	accessoryNode->getNamedChild("showendpoint", endPointNode, false);
 	if (endPointNode) showEndPoint_ = true;
 	
 	// Get the apex point
-	XMLNode *apexNode = 0, *apexNoDudNode = 0;
+	XMLNode* apexNode      = nullptr;
+	XMLNode* apexNoDudNode = nullptr;
 	accessoryNode->getNamedChild("apexcollision", apexNode, false);
 	accessoryNode->getNamedChild("apexnodud", apexNoDudNode, false);
 	if (apexNode) apexCollision_ = true;
 	if (apexNoDudNode) apexNoDud_ = true;
 
 	// Water collision
-	XMLNode *waterNode = 0;
+	XMLNode* waterNode = nullptr;
 	accessoryNode->getNamedChild("watercollision", waterNode, false);
 	if (waterNode) waterCollision_ = true;	
 
 	// Wall collision
-	XMLNode *wallCollNode = 0;
+	XMLNode* wallCollNode = nullptr;
 	accessoryNode->getNamedChild("nowallcollision", wallCollNode, false);
 	if (wallCollNode) wallCollision_ = false;	
 
 	// Get the timed collision point
 	accessoryNode->getNamedChild("timeout", timeout_, false);
 	accessoryNode->getNamedChild("timedcollision", timedCollision_, false);
-	XMLNode *timedDudNode = 0;
+	XMLNode* timedDudNode = nullptr;
 	accessoryNode->getNamedChild("timeddud", timedDudNode, false);
 	if (timedDudNode) timedDud_ = true;
 
@@ -179,14 +181,14 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 	accessoryNode->getNamedChild("targetcollision", targetCollision_, false);
 
 	// Get the no smoke node
-	XMLNode *noCreateSmokeNode = 0;
+	XMLNode* noCreateSmokeNode = nullptr;
 	accessoryNode->getNamedChild("nocreatesmoke", noCreateSmokeNode, false);
 	if (noCreateSmokeNode) createSmoke_ = false;
 
 	accessoryNode->getNamedChild("nocameratrack", noCameraTrack_, false);
 
 	// Get the no smoke node
-	XMLNode *noCreateFlameNode = 0;
+	XMLNode* noCreateFlameNode = nullptr;
 	accessoryNode->getNamedChild("nocreateflame", noCreateFlameNode, false);
 	if (noCreateFlameNode) createFlame_ = false;
 
@@ -208,7 +210,7 @@ bool WeaponProjectile::parseXML(AccessoryCreateContext &context, XMLNode *access
 	if (!globalGroups_.readXML(accessoryNode, "globalgroupname")) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("collisionaction", subNode)) return false;
 
 	// Check next weapon is correct type

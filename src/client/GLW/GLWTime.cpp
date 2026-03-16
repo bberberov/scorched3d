@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -37,7 +37,7 @@ GLWTime::~GLWTime()
 
 void GLWTime::calcWidth()
 {
-	time_t t = time(0);
+	time_t t = time( nullptr );
 	const char *timeStr = ctime(&t);
 	if (w_ == 0.0f) w_ = GLWFont::instance()->getGameFont()->getWidth(
 		size_, (char *) timeStr);
@@ -55,7 +55,7 @@ void GLWTime::draw()
 {
 	GLWidget::draw();
 
-	time_t t = time(0);
+	time_t t = time( nullptr );
 	char *timeStr = ctime(&t);
 
 	glColor3f(1.0f, 0.0f, 0.0f);

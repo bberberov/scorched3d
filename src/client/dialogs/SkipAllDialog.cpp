@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -61,7 +61,7 @@ void SkipAllDialog::simulate(float frameTime)
 {
 	if (skipAll_)
 	{
-		unsigned int currentTime = (unsigned int) time(0);
+		unsigned int currentTime = (unsigned int)time( nullptr );
 		unsigned int passedTime = currentTime - startTime_;
 
 		if (passedTime >= 5)
@@ -85,7 +85,7 @@ void SkipAllDialog::simulate(float frameTime)
 
 void SkipAllDialog::display()
 {
-	startTime_ = (unsigned int) time(0);
+	startTime_ = (unsigned int)time( nullptr );
 }
 
 void SkipAllDialog::windowInit(const unsigned state)

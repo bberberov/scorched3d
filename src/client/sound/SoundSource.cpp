@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,15 +26,12 @@
 #include <al.h>
 #endif
 
-SoundSource::SoundSource() : 
-	source_(0), buffer_(0)
-{
-}
+SoundSource::SoundSource() : source_( 0 ), buffer_( nullptr ) {}
 
 SoundSource::~SoundSource()
 {
 	delete buffer_;
-	buffer_ = 0;
+	buffer_ = nullptr;
 	destroy();
 }
 
@@ -109,7 +106,7 @@ void SoundSource::stop()
 	}
 
 	delete buffer_;
-	buffer_ = 0;
+	buffer_ = nullptr;
 }
 
 void SoundSource::destroy()

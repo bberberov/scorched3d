@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -79,7 +79,7 @@ bool ServerBrowserCollect::fetchServerList(
 		OptionsMasterListServer::instance()->getMasterListServerTimeout();
 	// Wait WaitTime seconds for the result
 	time_t startTime, currentTime;
-	startTime = currentTime = time(0);
+	startTime = currentTime = time( nullptr );
 	while ((currentTime - startTime < WaitTime) && !cancel_)
 	{
 		// Process any waiting messages
@@ -92,7 +92,7 @@ bool ServerBrowserCollect::fetchServerList(
 		}
 
 		SDL_Delay(100);
-		currentTime = time(0);
+		currentTime = time( nullptr );
 	}
 
 	// Ensure that we only have one open connection to the server
@@ -126,7 +126,7 @@ bool ServerBrowserCollect::fetchLANList()
 		OptionsMasterListServer::instance()->getMasterListServerTimeout();
 
 	// Accept the results
-	time_t startTime = time(0);
+	time_t startTime = time( nullptr );
 	for (;;)
 	{
 		SDL_Delay(100);
@@ -145,7 +145,7 @@ bool ServerBrowserCollect::fetchLANList()
 			list_.addEntry(newEntry);
 		}
 		
-		time_t theTime = time(0);
+		time_t theTime = time( nullptr );
 		if ((theTime - startTime > WaitTime) || cancel_) break;
 	}
 	

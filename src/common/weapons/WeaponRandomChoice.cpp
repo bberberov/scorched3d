@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -49,7 +49,7 @@ bool WeaponRandomChoice::parseXML(AccessoryCreateContext &context, XMLNode *acce
 		// Get the next weaponchoice
 		char buffer[128];
 		snprintf(buffer, 128, "weaponchoice%i", i);
-		XMLNode *subNode = 0;
+		XMLNode* subNode = nullptr;
 		accessoryNode->getNamedChild(buffer, subNode, false);
 		if (!subNode) break;
 
@@ -58,7 +58,7 @@ bool WeaponRandomChoice::parseXML(AccessoryCreateContext &context, XMLNode *acce
 		if (!subNode->getNamedChild("weight", weight)) return false;
 
 		// Get the weapon
-		XMLNode *weaponNode = 0;
+		XMLNode* weaponNode = nullptr;
 		if (!subNode->getNamedChild("weapon", weaponNode)) return false;
 		AccessoryPart *accessory = context.getAccessoryStore().
 			createAccessoryPart(context, parent_, weaponNode);

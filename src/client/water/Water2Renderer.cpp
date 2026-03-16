@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -268,7 +268,7 @@ void Water2Renderer::drawWaterNoShaders(Water2 &water2, float transparency)
 	{
 		GLState currentState(GLState::LIGHTING_OFF | GLState::TEXTURE_OFF);
 		glColor3f(0.0f, 0.3f, 1.0f);
-		drawWater(water2, 0);
+		drawWater( water2, nullptr );
 	}
 	else if (GLStateExtension::hasCubeMap())
 	{
@@ -282,7 +282,7 @@ void Water2Renderer::drawWaterNoShaders(Water2 &water2, float transparency)
 		glTexGenf(GL_T, GL_TEXTURE_GEN_MODE, GL_REFLECTION_MAP_EXT);
 		glTexGenf(GL_R, GL_TEXTURE_GEN_MODE, GL_REFLECTION_MAP_EXT);
 
-		drawWater(water2, 0);
+		drawWater( water2, nullptr );
 	}
 	else if (GLStateExtension::hasSphereMap())
 	{
@@ -297,7 +297,7 @@ void Water2Renderer::drawWaterNoShaders(Water2 &water2, float transparency)
 		glTexGenf(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP);
 		glTexGenf(GL_R, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP);
 
-		drawWater(water2, 0);
+		drawWater( water2, nullptr );
 	}
 	else
 	{
@@ -312,7 +312,7 @@ void Water2Renderer::drawWaterNoShaders(Water2 &water2, float transparency)
 		glTexGenfv(GL_S, GL_OBJECT_PLANE, PlaneS);
 		glTexGenfv(GL_T, GL_OBJECT_PLANE, PlaneT);
 
-		drawWater(water2, 0);
+		drawWater( water2, nullptr );
 	}
 
 	if (GLStateExtension::hasMultiTex())
@@ -342,7 +342,7 @@ void Water2Renderer::drawWater(Water2 &water2, GLSLShaderSetup *waterShader)
 
 void Water2Renderer::generate(LandscapeTexBorderWater *water, ProgressCounter *counter)
 {
-	currentPatch_ = 0;
+	currentPatch_ = nullptr;
 	if (GLStateExtension::hasShaders())
 	{
 		// Load shaders

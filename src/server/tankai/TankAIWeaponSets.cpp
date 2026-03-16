@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -76,7 +76,7 @@ bool TankAIWeaponSets::parseConfig()
 		return false;		
 	}
 
-	XMLNode *weaponsetNode = 0;
+	XMLNode* weaponsetNode = nullptr;
 	while (file.getRootNode()->getNamedChild("weaponset", weaponsetNode, false))
 	{
 		WeaponSet weaponSet;
@@ -91,15 +91,15 @@ TankAIWeaponSets::WeaponSet *TankAIWeaponSets::getWeaponSet(const char *name)
 {
 	std::map<std::string, WeaponSet>::iterator findItor =
 		weaponSets_.find(name);
-	if (findItor == weaponSets_.end()) return 0;
-
-	return &findItor->second;
+	if ( findItor == weaponSets_.end() ) return nullptr;
+	else return &findItor->second;
 }
 
 bool TankAIWeaponSets::WeaponSet::parseConfig(XMLNode *node)
 {
 	if (!node->getNamedChild("name", name)) return false;
-	XMLNode *setNode = 0, *weaponNode = 0;
+	XMLNode* setNode    = nullptr;
+	XMLNode* weaponNode = nullptr;
 	if (!node->getNamedChild("set", setNode)) return false;
 	while (setNode->getNamedChild("weapon", weaponNode, false))
 	{
@@ -164,7 +164,7 @@ Accessory *TankAIWeaponSets::WeaponSet::getTankAccessoryByType(
 {
 	DIALOG_ASSERT(WeaponSetEntry::checkType(getType));
 
-	WeaponSetEntry *result = 0;
+	WeaponSetEntry* result = nullptr;
 
 	std::vector<WeaponSetEntry>::iterator itor;
 	for (itor = weapons.begin();
@@ -190,7 +190,7 @@ Accessory *TankAIWeaponSets::WeaponSet::getTankAccessoryByType(
 		}
 	}
 
-	return (result?result->accessory:0);
+	return ( result ? result->accessory : nullptr );
 }
 
 bool TankAIWeaponSets::WeaponSetEntry::parseConfig(XMLNode *node)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -55,11 +55,13 @@ bool NapalmParams::parseXML(XMLNode *accessoryNode)
 	accessoryNode->getNamedChild("numberparticles", numberParticles_, false);
 
 	// Get the optional luminance node
-	XMLNode *noLuminanceNode = 0; luminance_ = true;
+	XMLNode* noLuminanceNode = nullptr;
+	luminance_               = true;
 	accessoryNode->getNamedChild("noluminance", noLuminanceNode, false);
 	if (noLuminanceNode) luminance_ = false;
 
-	XMLNode *noSingleFlowNode = 0; singleFlow_ = true;
+	XMLNode* noSingleFlowNode = nullptr;
+	singleFlow_               = true;
 	accessoryNode->getNamedChild("nosingleflow", noSingleFlowNode, false);
 	if (noSingleFlowNode) singleFlow_ = false;
 
@@ -70,7 +72,8 @@ bool NapalmParams::parseXML(XMLNode *accessoryNode)
 	}
 
 	// Optional Attributes
-	XMLNode *noSmokeNode = 0, *noObjectDamageNode = 0;
+	XMLNode* noSmokeNode        = nullptr;
+	XMLNode* noObjectDamageNode = nullptr;
 	accessoryNode->getNamedChild("groundscorchper", groundScorchPer_, false);
 	accessoryNode->getNamedChild("nosmoke", noSmokeNode, false);
 	accessoryNode->getNamedChild("noobjectdamage", noObjectDamageNode, false);

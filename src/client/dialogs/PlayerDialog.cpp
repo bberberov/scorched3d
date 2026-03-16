@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -276,7 +276,7 @@ void PlayerDialog::initialize()
 		for (unsigned int i = 1; i <= ScorchedClient::instance()->getOptionsGame().getTeams(); i++)
 		{
 			const char *name = TankColorGenerator::getTeamName(i);
-			GLWSelectorEntry entry(LANG_RESOURCE(name, name), 0, false, &colorTexture_, 0);
+			GLWSelectorEntry entry( LANG_RESOURCE( name, name ), nullptr, false, &colorTexture_, nullptr );
 			entry.getColor() = TankColorGenerator::getTeamColor(i);
 			teamDropDown_->addEntry(entry);
 		}	
@@ -292,8 +292,9 @@ void PlayerDialog::initialize()
 	tankAIStore.clearAIs();
 	tankAIStore.loadAIs(true);
 	aiTypeDropDown_->clear();
-	aiTypeDropDown_->addEntry(GLWSelectorEntry(LANG_RESOURCE("HUMAN", "Human"), 
-		&humanToolTip_, false, 0, 0, "Human"));
+	aiTypeDropDown_->addEntry(
+		GLWSelectorEntry( LANG_RESOURCE( "HUMAN", "Human" ), &humanToolTip_, false, nullptr, nullptr, "Human" )
+	);
 	if (!ClientParams::instance()->getConnectedToServer() &&
 		!ScorchedClient::instance()->getOptionsGame().getTutorial()[0])
 	{
@@ -306,8 +307,15 @@ void PlayerDialog::initialize()
 			if (ai->availableForPlayers())
 			{
 				aiTypeDropDown_->addEntry(
-					GLWSelectorEntry(LANG_RESOURCE(ai->getName(), ai->getName()),
-						(*aiitor)->getToolTip(), false, 0, 0, ai->getName()));
+					GLWSelectorEntry(
+						LANG_RESOURCE( ai->getName(), ai->getName() ),
+						( *aiitor )->getToolTip(),
+						false,
+						nullptr,
+						nullptr,
+						ai->getName()
+					)
+				);
 			}
 		}
 	}
@@ -329,8 +337,8 @@ void PlayerDialog::initialize()
 				LANG_RESOURCE( type->getName(), type->getName() ),
 				type->getTooltip(),
 				false,
-				0,
-				0,
+				nullptr,
+				nullptr,
 				type->getName()
 			)
 		);

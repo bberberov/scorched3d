@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,9 +23,7 @@
 #include <common/Defines.hpp>
 #include <stdio.h>
 
-ObjectGroups::ObjectGroups() : groups_(0)
-{
-}
+ObjectGroups::ObjectGroups() : groups_( nullptr ) {}
 
 ObjectGroups::~ObjectGroups()
 {
@@ -45,7 +43,7 @@ void ObjectGroups::clearGroups()
 		delete entry;
 	}
 	delete groups_;
-	groups_ = 0;
+	groups_ = nullptr;
 }
 
 ObjectGroup *ObjectGroups::getGroup(const char *name, bool create)
@@ -65,5 +63,5 @@ ObjectGroup *ObjectGroups::getGroup(const char *name, bool create)
 		(*groups_)[name] = entry;
 		return entry;
 	}
-	return 0;
+	return nullptr;
 }

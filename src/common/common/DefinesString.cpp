@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -42,7 +42,7 @@ char *S3D::stristr(const char *x, const char *y)
 	_strlwr((char *) newY.c_str());
 
 	char *result = (char *) strstr(newX.c_str(), newY.c_str());
-	if (!result) return 0;
+	if ( ! result ) return nullptr;
 
 	return (char *)(x + (result - newX.c_str()));
 }

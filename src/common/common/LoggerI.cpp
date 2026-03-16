@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -37,7 +37,7 @@ void LoggerInfo::setMessage(const char *message)
 
 void LoggerInfo::setTime()
 {
-	time_t theTime = time(0);
+	time_t theTime = time( nullptr );
 	char *time = ctime(&theTime); 
 	char *nl = strchr(time, '\n'); 
 	if (nl) *nl = '\0';

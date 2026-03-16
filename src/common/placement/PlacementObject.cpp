@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -38,7 +38,7 @@ PlacementObject *PlacementObject::create(const char *type)
 	if (0 == strcmp(type, "height")) return new PlacementObjectHeight;
 	if (0 == strcmp(type, "none")) return new PlacementObjectNone;
 	S3D::dialogMessage("PlacementObject", S3D::formatStringBuffer("Unknown object type %s", type));
-	return 0;
+	return nullptr;
 }
 
 PlacementObject::PlacementObject()

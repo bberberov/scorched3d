@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -44,7 +44,7 @@ ServerStateBuying::ServerStateBuying() :
 ServerStateBuying::~ServerStateBuying()
 {
 	delete buyingStarted_;
-	buyingStarted_ = 0;
+	buyingStarted_ = nullptr;
 	std::map<unsigned int, BuyingPlayer*>::iterator itor;
 	for (itor = buyingPlayers_.begin();
 		itor != buyingPlayers_.end();
@@ -248,7 +248,7 @@ void ServerStateBuying::playerBuying(unsigned int playerId)
 
 	TankStartMoveSimAction *tankSimAction = 
 		new TankStartMoveSimAction(playerId, nextMoveId_, buyingTime, true, ping);
-	SimulatorI *callback = 0;
+	SimulatorI* callback = nullptr;
 	if (buyingTime > 0)
 	{
 		BuyingPlayer *buyingPlayer = new BuyingPlayer(nextMoveId_, buyingTime);

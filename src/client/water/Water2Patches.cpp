@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -75,7 +75,7 @@ void Water2Patches::generate(
 		{
 			delete bufferObject_;
 			bufferObject_ = new GLVertexBufferObject();
-			bufferObject_->init_data(allBuffersSizeBytes, 0, GL_STATIC_DRAW);
+			bufferObject_->init_data( allBuffersSizeBytes, nullptr, GL_STATIC_DRAW );
 		}
 
 		i=0;

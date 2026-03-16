@@ -105,7 +105,12 @@ public:
 	virtual void         setGridWidth( unsigned int grid );
 	virtual unsigned int getGridWidth();
 
-	GLWidget* addWidget( GLWidget* widget, GLWCondition* condition = 0, unsigned int flags = 0, float width = 0.0f );
+	GLWidget* addWidget(
+		GLWidget*     widget,
+		GLWCondition* condition = nullptr,
+		unsigned int  flags     = 0,
+		float         width     = 0.0f
+	);
 
 	std::list< GLWPanelEntry >& getWidgets() { return widgets_; }
 

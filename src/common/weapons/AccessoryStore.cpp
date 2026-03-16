@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,10 +27,7 @@
 #include <math.h>
 #include <stdio.h>
 
-AccessoryStore::AccessoryStore() : muzzleFlash_(0)
-{
-
-}
+AccessoryStore::AccessoryStore() : muzzleFlash_( nullptr ) {}
 
 AccessoryStore::~AccessoryStore()
 {
@@ -41,8 +38,8 @@ void AccessoryStore::clearAccessories()
 {
 	AccessoryPart::resetAccessoryPartIds();
 	Accessory::resetAccessoryIds();
-	muzzleFlash_ = 0;
-	deathAnimation_ = 0;
+	muzzleFlash_    = nullptr;
+	deathAnimation_ = nullptr;
 	while (!accessories_.empty())
 	{
 		Accessory *accessory = accessories_.front();
@@ -82,9 +79,9 @@ bool AccessoryStore::parseFile(
 	}
 
 	// Itterate all of the accessories in the file
-	int noChildren = (int) file.getRootNode()->getChildren().size();
-	int childCount = 0;
-	XMLNode *currentNode = 0;
+	int      noChildren  = (int)file.getRootNode()->getChildren().size();
+	int      childCount  = 0;
+	XMLNode* currentNode = nullptr;
 	while (file.getRootNode()->getNamedChild("accessory", currentNode, false))
 	{
 		if (counter) counter->setNewPercentage(
@@ -155,7 +152,7 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
 	AccessoryCreateContext &context, 
 	Accessory *parent, XMLNode *currentNode)
 {
-	XMLNode *typeNode = 0;
+	XMLNode* typeNode = nullptr;
 	if ( ! currentNode->getNamedParameter( "type", typeNode ) ) return nullptr;
 
 	AccessoryPart *accessoryPart = 
@@ -361,7 +358,7 @@ bool AccessoryStore::writeAccessory(NamedNetBuffer &buffer, Accessory *accessory
 
 bool AccessoryStore::readAccessory(NetBufferReader &reader, Accessory *&accessory)
 {
-	accessory = 0;
+	accessory = nullptr;
 
 	unsigned int accessoryId;
 	if (!reader.getFromBuffer(accessoryId)) return false;

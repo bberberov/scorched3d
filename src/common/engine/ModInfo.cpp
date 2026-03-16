@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -54,7 +54,7 @@ bool ModInfo::parse(const std::string &fileName)
 
 	// Parse the main mod info
 	std::string tmpicon, tmpgamefile;
-	XMLNode *mainNode = 0;
+	XMLNode* mainNode = nullptr;
 	if (!file.getRootNode()->getNamedChild("main", mainNode)) return false;
 	if (!mainNode->getNamedChild("description", description_)) return false;
 	if (!mainNode->getNamedChild("icon", tmpicon)) return false;
@@ -76,7 +76,7 @@ bool ModInfo::parse(const std::string &fileName)
 	}
 
 	// Parse the mod game info
-	XMLNode *gameNode = 0;
+	XMLNode* gameNode = nullptr;
 	while (file.getRootNode()->getNamedChild("game", gameNode, false))
 	{
 		MenuEntry entry;

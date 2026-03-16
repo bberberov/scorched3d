@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024, 2025
+//    Scorched3D (c) 2000-2011, 2024, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -92,7 +92,7 @@ std::string S3D::getStartTime()
 	static std::string startTime;
 	if (startTime.empty())
 	{
-		time_t theTime = time(0);
+		time_t theTime = time( nullptr );
 		startTime = ctime(&theTime);
 	}
 	return startTime;
@@ -191,7 +191,7 @@ extern bool S3D::checkDataFile(const std::string &filename)
 	std::string dataFileName = S3D::getModFile(filename);
 	if (!S3D::fileExists(dataFileName))
 	{
-		if (0 == strstr(filename.c_str(), "none"))
+		if ( nullptr == strstr( filename.c_str(), "none" ) )
 		{
 			S3D::dialogMessage(
 				"Scorched3D",

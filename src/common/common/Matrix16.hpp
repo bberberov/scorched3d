@@ -27,7 +27,7 @@
 class Matrix16
 {
 public:
-	Matrix16( float* init = 0 );
+	Matrix16( float* init = nullptr );
 	~Matrix16();
 
 	void multiply( float* b );

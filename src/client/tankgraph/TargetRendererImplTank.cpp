@@ -62,7 +62,7 @@ float TargetRendererImplTankAIM::timeLeft_ = -1.0f;
 
 ModelRendererSimulator *TargetRendererImplTankAIM::getAutoAimModel()
 {
-	static ModelRendererSimulator *modelRenderer = 0;
+	static ModelRendererSimulator* modelRenderer = nullptr;
 	if (!modelRenderer)
 	{
 		ModelID id;

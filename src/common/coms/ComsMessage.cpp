@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,8 +22,8 @@
 #include <map>
 #include <vector>
 
-static std::map<std::string, ComsMessageType *> *coms_message_map = 0;
-static std::vector<ComsMessageType *> *coms_message_array = 0;
+static std::map< std::string, ComsMessageType* >* coms_message_map   = nullptr;
+static std::vector< ComsMessageType* >*           coms_message_array = nullptr;
 
 ComsMessageType::ComsMessageType(const std::string &name) :
 	name_(name), id_(0)
@@ -62,9 +62,10 @@ ComsMessageType *ComsMessageType::getTypeForId(unsigned int id)
 			itor->second->id_ = id;
 		}
 		delete coms_message_map;
-		coms_message_map = 0;
+		coms_message_map = nullptr;
 	}
-	if (id >= coms_message_array->size()) return 0;
+	if ( coms_message_array->size() <= id ) return nullptr;
+
 	return (*coms_message_array)[id];
 }
 

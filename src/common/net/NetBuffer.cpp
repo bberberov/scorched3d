@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -385,13 +385,13 @@ unsigned NetBuffer::getCrc()
 {
 	if (getBufferUsed() == 0) return 0;
 
-	unsigned int crc =  crc32(0L, Z_NULL, 0);
+	unsigned int crc = crc32( 0L, nullptr, 0 );
 	crc = crc32(crc, (unsigned char *) getBuffer(), getBufferUsed());
 	return crc;
 }
 
 NetBufferReader::NetBufferReader() :
-	buffer_(0),
+	buffer_( nullptr ),
 	bufferSize_(0),
 	readSize_(0)
 {

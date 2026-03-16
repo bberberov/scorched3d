@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -70,7 +70,7 @@ TutorialDialog::TutorialDialog() :
 	listView_ = new GLWListView(0.0f, 0.0f, wid, 105.0f, -1, 12.0f, 32.0f);
 	listView_->setColor(listColor);
 	listView_->setHandler(this);
-	addWidget(listView_, 0, SpaceAll, 10.0f);
+	addWidget( listView_, nullptr, SpaceAll, 10.0f );
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();
 
@@ -119,10 +119,10 @@ void TutorialDialog::draw()
 
 static const char *getValue(const char *name, std::map<std::string, std::string> &event)
 {
-	std::map<std::string, std::string>::iterator itor =
-		event.find(name);
-	if (itor == event.end()) return 0;
-	return (*itor).second.c_str();
+	std::map< std::string, std::string >::iterator itor = event.find( name );
+	if ( itor == event.end() ) return nullptr;
+
+	return ( *itor ).second.c_str();
 }
 
 void TutorialDialog::processEvents(bool log)

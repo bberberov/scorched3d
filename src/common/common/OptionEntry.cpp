@@ -227,7 +227,7 @@ bool OptionEntryHelper::readFromXML(
 	}
 
 	// Itterate all of the options in the file
-	XMLNode *currentNode = 0;
+	XMLNode* currentNode = nullptr;
 	while (rootnode->getNamedChild("option", currentNode, false))
 	{
 		XMLNode *nameNode, *valueNode; 
@@ -313,7 +313,7 @@ OptionEntry *OptionEntryHelper::getEntry(
 		OptionEntry *entry = (*itor);
 		if (0 == strcmp(entry->getName(), name)) return entry;
 	}
-	return 0;
+	return nullptr;
 }
 
 OptionEntryInt::OptionEntryInt(
@@ -926,10 +926,10 @@ bool OptionEntryFixedVector::setValueFromString(const std::string &string)
 
 	int i=0;
 	char *token = strtok((char *) string.c_str(), " ");
-	while(token != 0)
+	while ( nullptr != token )
 	{
-		value[i++] = fixed(token);
-		token = strtok(0, " ");
+		value[i++] = fixed( token );
+		token      = strtok( nullptr, " " );
 	}
 
 	return setValue(value);

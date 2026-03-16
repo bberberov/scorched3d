@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -576,7 +576,7 @@ bool GLWWindow::initFromXML(XMLNode *node)
 		LANG_RESOURCE(name_, name_), LANG_RESOURCE(name_ + "_window", description_));
 
 	// Disabled
-	XMLNode *disabled = 0;
+	XMLNode* disabled = nullptr;
 	if (node->getNamedChild("disabled", disabled, false))
 	{
 		disabled_ = true;

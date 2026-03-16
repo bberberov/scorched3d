@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -122,7 +122,7 @@ bool TankDefenseSimAction::invokeAction(ScorchedContext &context)
 			Accessory *shield = tanket->getShield().getCurrentShield();
 			if (shield)
 			{
-				tanket->getShield().setCurrentShield(0);
+				tanket->getShield().setCurrentShield( nullptr );
 			}
 		}	
 		break;
@@ -158,7 +158,7 @@ bool TankDefenseSimAction::invokeAction(ScorchedContext &context)
 	case ComsDefenseMessage::eParachutesDown:
 		if (tanket->getParachute().getCurrentParachute())
 		{
-			tanket->getParachute().setCurrentParachute(0);
+			tanket->getParachute().setCurrentParachute( nullptr );
 		}
 		break;
 	case ComsDefenseMessage::eNoChange:

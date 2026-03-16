@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,7 +31,7 @@ LandscapeMovementType *LandscapeMovementType::create(const char *type)
 	if (0 == strcmp(type, "ships")) return new LandscapeMovementTypeShips;
 	if (0 == strcmp(type, "spline")) return new LandscapeMovementTypeSpline;
 	S3D::dialogMessage("LandscapeMovementType", S3D::formatStringBuffer("Unknown movement type %s", type));
-	return 0;
+	return nullptr;
 }
 
 bool LandscapeMovementType::readXML(XMLNode *node)

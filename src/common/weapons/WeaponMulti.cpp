@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -47,7 +47,7 @@ bool WeaponMulti::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNo
 		// Get the next weapon
 		char buffer[128];
 		snprintf(buffer, 128, "subweapon%i", i);
-		XMLNode *subNode = 0;
+		XMLNode* subNode = nullptr;
 		accessoryNode->getNamedChild(buffer, subNode, false);
 		if (!subNode) break;
 		

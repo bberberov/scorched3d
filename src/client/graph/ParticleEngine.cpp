@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -218,7 +218,7 @@ void ParticleEngine::normalizedSimulate(float time)
 
 Particle *ParticleEngine::getNextAliveParticle(unsigned int type)
 {
-	Particle *particle = 0;
+	Particle* particle = nullptr;
 	if (particlesOnScreen_ < maxParticles_)
 	{
 		particle = freeParticles_[particlesOnScreen_];

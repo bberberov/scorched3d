@@ -118,7 +118,7 @@ protected:
 	class ChannelEntry
 	{
 	public:
-		ChannelEntry( ChannelDefinition def, ServerChannelFilter* filter = 0, ServerChannelAuth* auth = 0 );
+		ChannelEntry( ChannelDefinition def, ServerChannelFilter* filter = nullptr, ServerChannelAuth* auth = nullptr );
 		virtual ~ChannelEntry();
 
 		// clang-format off

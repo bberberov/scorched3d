@@ -35,8 +35,8 @@ public:
 
 	Vector& getNextColor( std::map< unsigned int, Tank* >& tanks );
 
-	bool colorAvailable( Vector& color, std::map< unsigned int, Tank* >& tanks, Tank* currentTank = 0 );
-	std::vector< Vector* > getAvailableColors( std::map< unsigned int, Tank* >& tanks, Tank* currentTank = 0 );
+	bool colorAvailable( Vector& color, std::map< unsigned int, Tank* >& tanks, Tank* currentTank = nullptr );
+	std::vector< Vector* > getAvailableColors( std::map< unsigned int, Tank* >& tanks, Tank* currentTank = nullptr );
 
 	std::vector< Vector* >& getAllColors() { return availableColors_; }
 

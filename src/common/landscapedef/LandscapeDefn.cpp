@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -37,7 +37,7 @@ static LandscapeDefnType *fetchHeightMapDefnType(const char *type)
 		"LandscapeDefnType",
 		S3D::formatStringBuffer("Unknown heightmap type %s", type)
 	);
-	return 0;
+	return nullptr;
 }
 
 static LandscapeDefnType *fetchRoofMapDefnType(const char *type)
@@ -48,7 +48,7 @@ static LandscapeDefnType *fetchRoofMapDefnType(const char *type)
 		"LandscapeDefnType",
 		S3D::formatStringBuffer("Unknown roof type %s", type)
 	);
-	return 0;
+	return nullptr;
 }
 
 static LandscapeDefnType *fetchDeformType(const char *type)
@@ -60,12 +60,12 @@ static LandscapeDefnType *fetchDeformType(const char *type)
 		"LandscapeDefnType",
 		S3D::formatStringBuffer("Unknown deform type %s", type)
 	);
-	return 0;
+	return nullptr;
 }
 
 static bool parseMinMax( XMLNode *parent, const char *name, fixed &min, fixed &max )
 {
-	XMLNode *node = 0;
+	XMLNode* node = nullptr;
 	if ( ! parent->getNamedChild(name, node) ) return false;
 	if ( ! node->getNamedChild("max", max)   ) return false;
 	if ( ! node->getNamedChild("min", min)   ) return false;
@@ -74,7 +74,7 @@ static bool parseMinMax( XMLNode *parent, const char *name, fixed &min, fixed &m
 
 static bool parseMinMaxInt( XMLNode *parent, const char *name, int &min, int &max)
 {
-	XMLNode *node = 0;
+	XMLNode* node = nullptr;
 	if ( ! parent->getNamedChild(name, node) ) return false;
 	if ( ! node->getNamedChild("max", max)   ) return false;
 	if ( ! node->getNamedChild("min", min)   ) return false;
@@ -86,10 +86,7 @@ bool LandscapeDefnTypeNone::readXML(XMLNode *node)
 	return node->failChildren();
 }
 
-LandscapeDefnRoofCavern::LandscapeDefnRoofCavern() :
-	heightmap(0),
-	deform(0)
-{}
+LandscapeDefnRoofCavern::LandscapeDefnRoofCavern() : heightmap( nullptr ), deform( nullptr ) {}
 
 LandscapeDefnRoofCavern::~LandscapeDefnRoofCavern()
 {
@@ -194,12 +191,7 @@ bool LandscapeDefnHeightMapGenerate::readXML(XMLNode *node)
 	return node->failChildren();
 }
 
-LandscapeDefn::LandscapeDefn() :
-	roof(0),
-	heightmap(0),
-	deform(0),
-	tankstart(0)
-{}
+LandscapeDefn::LandscapeDefn() : roof( nullptr ), heightmap( nullptr ), deform( nullptr ), tankstart( nullptr ) {}
 
 LandscapeDefn::~LandscapeDefn()
 {

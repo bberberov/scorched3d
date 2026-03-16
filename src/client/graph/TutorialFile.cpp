@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -37,7 +37,7 @@ TutorialFileEntry *TutorialConditionWindowWait::checkCondition()
 	{
 		return next_;
 	}
-	return 0;
+	return nullptr;
 }
 
 bool TutorialConditionWindowWait::parseXML(TutorialFile *file, XMLNode *node)
@@ -65,7 +65,7 @@ TutorialFileEntry *TutorialConditionWindowVisible::checkCondition()
 	{
 		return next_;
 	}
-	return 0;
+	return nullptr;
 }
 
 bool TutorialConditionWindowVisible::parseXML(TutorialFile *file, XMLNode *node)
@@ -89,7 +89,7 @@ TutorialFileEntry *TutorialConditionFirstMove::checkCondition()
 	{
 		return next_;
 	}
-	return 0;
+	return nullptr;
 }
 
 bool TutorialConditionFirstMove::parseXML(TutorialFile *file, XMLNode *node)
@@ -115,7 +115,7 @@ TutorialFileEntry *TutorialConditionTankDead::checkCondition()
 		ScorchedServer::instance()->getServerSimulator().addSimulatorAction(simAction);
 		return next_;
 	}
-	return 0;
+	return nullptr;
 }
 
 bool TutorialConditionTankDead::parseXML(TutorialFile *file, XMLNode *node)
@@ -138,7 +138,7 @@ TutorialCondition *TutorialCondition::create(const char *type)
 	else if (0 == strcmp(type, "WindowWait")) return new TutorialConditionWindowWait;
 	else if (0 == strcmp(type, "FirstMove")) return new TutorialConditionFirstMove;
 	else if (0 == strcmp(type, "TankDead")) return new TutorialConditionTankDead;
-	return 0;
+	return nullptr;
 }
 
 TutorialFileEntry *TutorialFileEntry::checkConditions()
@@ -153,7 +153,7 @@ TutorialFileEntry *TutorialFileEntry::checkConditions()
 		TutorialFileEntry *entry = condition->checkCondition();
 		if (entry) return entry;
 	}
-	return 0;
+	return nullptr;
 }
 
 TutorialFile::TutorialFile() : file_(true)
@@ -176,7 +176,7 @@ bool TutorialFile::parseFile(const std::string &file)
 		return false;
 	}
 
-	XMLNode *steps = 0;
+	XMLNode* steps = nullptr;
 	if (!file_.getRootNode()->getNamedChild("steps", steps)) return false;
 
 	// Parse all the steps
@@ -263,7 +263,7 @@ TutorialFileEntry *TutorialFile::getEntry(const char *name)
 		= entries_.find(name);
 	if (findItor == entries_.end())
 	{
-		return 0;
+		return nullptr;
 	}
 	return (*findItor).second;
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -64,5 +64,5 @@ ServerAuthHandler *ServerAuthHandlerStore::getAuthHandler()
 		S3D::dialogExit("ServerAuthHandler", 
 			S3D::formatStringBuffer("Unknown auth handler \"%s\"", handler));
 	}
-	return 0;
+	return nullptr;
 }

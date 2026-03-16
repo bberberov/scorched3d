@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -60,7 +60,7 @@ void GLWDropDownColor::addColor(Vector &newColor)
 		}
 	}
 
-	GLWSelectorEntry entry(LANG_STRING(""), 0, false, &colorTexture_, 0);
+	GLWSelectorEntry entry( LANG_STRING( "" ), nullptr, false, &colorTexture_, nullptr );
 	entry.getColor() = newColor;
 	entry.getTextureWidth() = 32;
 

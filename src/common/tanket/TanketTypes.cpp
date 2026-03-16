@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -22,9 +22,7 @@
 #include <common/Defines.hpp>
 #include <XML/XMLFile.hpp>
 
-TanketTypes::TanketTypes() : defaultType_(0)
-{
-}
+TanketTypes::TanketTypes() : defaultType_( nullptr ) {}
 
 TanketTypes::~TanketTypes()
 {
@@ -53,7 +51,7 @@ bool TanketTypes::loadTanketTypes(ScorchedContext &context)
 	}
 
 	// Itterate all of the TanketType in the file
-	XMLNode *currentNode = 0;
+	XMLNode* currentNode = nullptr;
 	while (file.getRootNode()->getNamedChild("tanktype", currentNode, false))
     {
 		// Create the TanketType
@@ -86,12 +84,13 @@ TanketType *TanketTypes::getType(const char *name)
 		TanketType *type = (*itor);
 		if (0 == strcmp(name, type->getName())) return type;
 	}
-	return 0;
+
+	return nullptr;
 }
 
 void TanketTypes::clear()
 {
-	defaultType_ = 0;
+	defaultType_ = nullptr;
 	while (!types_.empty())
 	{
 		delete types_.back();

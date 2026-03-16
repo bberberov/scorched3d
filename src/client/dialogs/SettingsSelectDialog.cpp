@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -38,49 +38,62 @@ SettingsSelectDialog *SettingsSelectDialog::instance()
 	return instance_;
 }
 
-SettingsSelectDialog::SettingsSelectDialog() : 
-	GLWWindow("SettingsSelect", 700.0f, 540.0f, eHideName, "")
+SettingsSelectDialog::SettingsSelectDialog() : GLWWindow( "SettingsSelect", 700.0f, 540.0f, eHideName, "" )
 {
-	GLWPanel *controlPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
+	GLWPanel* controlPanel = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
 
 	// Add Options
-	GLWOptionEntry::createEntry(
-		controls_, controlPanel, options_.getNoMaxPlayersEntry());
-	GLWOptionEntry::createEntry(
-		controls_, controlPanel, options_.getTeamsEntry());
-	GLWOptionEntry::createEntry(
-		controls_, controlPanel, options_.getTurnTypeEntry());
-	GLWOptionEntry::createEntry(
-		controls_, controlPanel, options_.getModEntry());
+	GLWOptionEntry::createEntry( controls_, controlPanel, options_.getNoMaxPlayersEntry() );
+	GLWOptionEntry::createEntry( controls_, controlPanel, options_.getTeamsEntry() );
+	GLWOptionEntry::createEntry( controls_, controlPanel, options_.getTurnTypeEntry() );
+	GLWOptionEntry::createEntry( controls_, controlPanel, options_.getModEntry() );
 	// End Add Options
 
 	// Gotta love layout...oooo
-	controlPanel->setGridWidth(2);
-	controlPanel->setLayout(GLWPanel::LayoutGrid);
+	controlPanel->setGridWidth( 2 );
+	controlPanel->setLayout( GLWPanel::LayoutGrid );
 
-	GLWPanel *topPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, true, true);
-	topPanel->addWidget(controlPanel);
-	GLWButton *advancedButton = new GLWTextButton(LANG_RESOURCE("ADVANCED_OPTIONS", "Advanced Options"), 
-		0.0f, 0.0f, 200.0f, this,
-		GLWButton::ButtonFlagCenterX);
+	GLWPanel* topPanel = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, true, true );
+	topPanel->addWidget( controlPanel );
+
+	GLWButton* advancedButton = new GLWTextButton(
+		LANG_RESOURCE( "ADVANCED_OPTIONS", "Advanced Options" ),
+		0.0f,
+		0.0f,
+		200.0f,
+		this,
+		GLWButton::ButtonFlagCenterX
+	);
 	advancedId_ = advancedButton->getId();
-	topPanel->addWidget(advancedButton, 0, AlignRight | SpaceAll, 10.0f);
-	topPanel->setLayout(GLWPanel::LayoutVerticle);
-	addWidget(topPanel, 0, SpaceAll, 10.0f);
+	topPanel->addWidget( advancedButton, nullptr, AlignRight | SpaceAll, 10.0f );
+	topPanel->setLayout( GLWPanel::LayoutVerticle );
+	addWidget( topPanel, nullptr, SpaceAll, 10.0f );
 
-	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 0.0f, 0.0f, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+	GLWPanel*  buttonPanel  = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		0.0f,
+		0.0f,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "OK", "Ok" ),
+		0.0f,
+		0.0f,
+		55,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 0.0f, 0.0f, 55, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, AlignRight | SpaceLeft | SpaceRight | SpaceBottom, 10.0f);
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, AlignRight | SpaceLeft | SpaceRight | SpaceBottom, 10.0f );
 
-	setLayout(GLWPanel::LayoutVerticle);
+	setLayout( GLWPanel::LayoutVerticle );
 	layout();
 }
 

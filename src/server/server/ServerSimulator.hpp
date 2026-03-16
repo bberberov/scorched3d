@@ -34,7 +34,7 @@ public:
 	virtual void clear();
 	void         processRemaining();
 
-	void addSimulatorAction( SimAction* action, SimulatorI* callback = 0 );
+	void addSimulatorAction( SimAction* action, SimulatorI* callback = nullptr );
 
 	bool getSendActionsEmpty() { return sendActions_.empty() && simActions_.empty(); }
 

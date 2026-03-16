@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,26 +21,26 @@
 #include <image/ImageData.hpp>
 #include <string.h>
 
-ImageData::ImageData() :
-	referenceCount_(0),
-	bits_(nullptr),
-	width_(0),
-	height_(0),
-	alignment_(0),
-	components_(0),
-	lossless_(true)
+ImageData::ImageData()
+	: referenceCount_( 0 )
+	, bits_( nullptr )
+	, width_( 0 )
+	, height_( 0 )
+	, alignment_( 0 )
+	, components_( 0 )
+	, lossless_( true )
 {}
 
-ImageData::ImageData(int width, int height, int components, unsigned char fill) :
-	referenceCount_(0),
-	bits_(0),
-	width_(0),
-	height_(0),
-	alignment_(0),
-	components_(0),
-	lossless_(true)
+ImageData::ImageData( int width, int height, int components, unsigned char fill )
+	: referenceCount_( 0 )
+	, bits_( nullptr )
+	, width_( 0 )
+	, height_( 0 )
+	, alignment_( 0 )
+	, components_( 0 )
+	, lossless_( true )
 {
-	createBlankInternal(width, height, components, fill);
+	createBlankInternal( width, height, components, fill );
 }
 
 ImageData::~ImageData()

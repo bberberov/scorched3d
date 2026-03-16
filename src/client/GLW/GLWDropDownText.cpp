@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,7 +35,7 @@ GLWDropDownText::~GLWDropDownText()
 
 void GLWDropDownText::addText(const LangString &text, const std::string &datatext)
 {
-	GLWSelectorEntry entry(text, 0, false, 0, 0, datatext);
+	GLWSelectorEntry entry( text, nullptr, false, nullptr, nullptr, datatext );
 	addEntry(entry);
 }
 

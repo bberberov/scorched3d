@@ -39,7 +39,7 @@ public:
 	virtual ~Water();
 
 	void draw();
-	void generate( ProgressCounter* counter = 0 );
+	void generate( ProgressCounter* counter = nullptr );
 	void simulate( float frameTime );
 	bool explosion( Vector position, float size );
 

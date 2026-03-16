@@ -39,7 +39,7 @@ namespace ImageModifier
 		Vector&          sunPos,
 		Vector&          ambience,
 		Vector&          diffuse,
-		ProgressCounter* counter = 0
+		ProgressCounter* counter = nullptr
 	);
 
 	void addHeightToBitmap(
@@ -50,7 +50,7 @@ namespace ImageModifier
 		Image**          heightBitmaps,
 		int              numberSources,
 		int              destBitmapScaleSize,
-		ProgressCounter* counter = 0
+		ProgressCounter* counter = nullptr
 	);
 
 	void redBitmap( Image& destBitmap );

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,8 +27,8 @@ extern FILE *asein;
 extern int aseparse(void);
 extern int aselineno;
 
-static ASEModelFactory *factory_ = 0;
-static Model *model_ = 0;
+static ASEModelFactory* factory_ = nullptr;
+static Model*           model_   = nullptr;
 
 ASEModelFactory::ASEModelFactory()
 {
@@ -58,7 +58,7 @@ Model *ASEModelFactory::createModel(const char *fileName,
 	else
 	{
 		delete model_;
-		model_ = 0;
+		model_ = nullptr;
 	}
 
 	return model_;

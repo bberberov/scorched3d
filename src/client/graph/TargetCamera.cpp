@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014, 2025
+//    Scorched3D (c) 2000-2011, 2014, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -52,7 +52,7 @@
 #include <lang/LangResource.hpp>
 #include <math.h>
 
-TargetCamera *TargetCamera::currentTargetCamera_ = 0;
+TargetCamera* TargetCamera::currentTargetCamera_ = nullptr;
 
 static const char *cameraNames[] = {
 	"Top",
@@ -72,7 +72,7 @@ static const char *cameraNames[] = {
 };
 static const int noCameraNames = sizeof(cameraNames) / sizeof(char *);
 
-static ToolTip *cameraToolTips = 0;
+static ToolTip* cameraToolTips = nullptr;
 static const char *cameraDescriptions[] = {
 	"Look directly down on the current tank.\n"
 	"Tracks the current tanks rotation.",
@@ -171,7 +171,7 @@ const char **TargetCamera::getCameraNames()
 
 ToolTip *TargetCamera::getCameraToolTips()
 {
-	if (cameraToolTips == 0)
+	if ( nullptr == cameraToolTips )
 	{
 		cameraToolTips = new ToolTip[noCameraDescriptions];
 		for (int i=0; i<noCameraDescriptions; i++)
@@ -283,7 +283,7 @@ void TargetCamera::moveCamera()
 	Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 	if (!currentTank || !currentTank->getState().getTankAliveOrBuying()) 
 	{
-		currentTank = 0;
+		currentTank = nullptr;
 		unsigned int currentDestinationId = ScorchedClient::instance()->
 			getTargetContainer().getCurrentDestinationId();
 		std::map<unsigned int, Tank *> &tanks = ScorchedClient::instance()->
@@ -300,7 +300,7 @@ void TargetCamera::moveCamera()
 				if (!currentTank) currentTank = tank;
 				else
 				{
-					currentTank = 0;
+					currentTank = nullptr;
 					break;
 				}
 			}
@@ -650,8 +650,8 @@ void TargetCamera::mouseUp(GameState::MouseButton button, int x, int y, bool &sk
 	// Does the click on the landscape mean we move there
 	// or do we just want to look there
 	// This depends on the mode the current weapon is
-	Accessory *currentWeapon = 0;
-	Tank *currentTank = 0;
+	Accessory* currentWeapon = nullptr;
+	Tank*      currentTank   = nullptr;
 	Accessory::PositionSelectType selectType = Accessory::ePositionSelectNone;
 	if (ScorchedClient::instance()->getGameState().getState() == 
 		ClientState::StatePlaying)

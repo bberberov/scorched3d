@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,28 +31,29 @@
 #include <common/Defines.hpp>
 #include <common/Logger.hpp>
 
-Tanket::Tanket(ScorchedContext &context, 
-		unsigned int playerId, 
-		unsigned int destinationId,
-		const LangString &name) :
-	Target(playerId, name, context), 
-	context_(context),
-	tankAI_(0), team_(0),
-	destinationId_(destinationId)
+Tanket::Tanket( ScorchedContext& context, unsigned int playerId, unsigned int destinationId, const LangString& name )
+	: Target( playerId, name, context )
+	, context_( context )
+	, tankAI_( nullptr )
+	, team_( 0 )
+	, destinationId_( destinationId )
 {
 	tanketType_ = context.getTanketTypes().getDefaultType();
 
-	accessories_ = new TanketAccessories(context);
-	accessories_->setTanket(this);
-	shotInfo_ = new TanketShotInfo(context);
-	shotInfo_->setTanket(this);
+	accessories_ = new TanketAccessories( context );
+	shotInfo_    = new TanketShotInfo( context );
+	accessories_->setTanket( this );
+	shotInfo_->setTanket( this );
 }
 
 Tanket::~Tanket()
 {
-	delete accessories_; accessories_ = 0;
-	delete shotInfo_; shotInfo_ = 0;
-	delete tankAI_; tankAI_ = 0;
+	delete accessories_;
+	delete shotInfo_;
+	delete tankAI_;
+	accessories_ = nullptr;
+	shotInfo_    = nullptr;
+	tankAI_      = nullptr;
 }
 
 void Tanket::setTankAI(TankAI *ai)

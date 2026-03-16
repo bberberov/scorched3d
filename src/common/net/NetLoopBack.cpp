@@ -26,8 +26,8 @@
 static unsigned int ClientLoopBackID = 100001;
 static unsigned int ServerLoopBackID = 200002;
 
-NetLoopBack *NetLoopBack::serverLoopback_(0);
-NetLoopBack *NetLoopBack::clientLoopback_(0);
+NetLoopBack* NetLoopBack::serverLoopback_( nullptr );
+NetLoopBack* NetLoopBack::clientLoopback_( nullptr );
 
 NetLoopBack::NetLoopBack(bool server) :
 	server_(server),
@@ -39,8 +39,8 @@ NetLoopBack::NetLoopBack(bool server) :
 
 NetLoopBack::~NetLoopBack()
 {
-	if (server_) serverLoopback_ = 0;
-	else clientLoopback_ = 0;
+	if ( server_ ) serverLoopback_ = nullptr;
+	else clientLoopback_ = nullptr;
 }
 
 bool NetLoopBack::connect(const char *hostName, int portNo)

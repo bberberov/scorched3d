@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,16 +28,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponScatterDirection);
 
-WeaponScatterDirection::WeaponScatterDirection() :
-	aimedWeapon_(0)
-{
-
-}
+WeaponScatterDirection::WeaponScatterDirection() : aimedWeapon_( nullptr ) {}
 
 WeaponScatterDirection::~WeaponScatterDirection()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponScatterDirection::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -45,7 +41,7 @@ bool WeaponScatterDirection::parseXML(AccessoryCreateContext &context, XMLNode *
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
@@ -76,5 +72,4 @@ void WeaponScatterDirection::fireWeapon(ScorchedContext &context,
 		directionOffset_[2] * 2 * random.getRandFixed("WeaponScatterDirection");
 
 	aimedWeapon_->fire(context, weaponContext, position, vel);
-
 }

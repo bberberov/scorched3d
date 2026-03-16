@@ -37,8 +37,8 @@ public:
 	virtual ~GroundMaps();
 
 	// Generates the next level
-	void generateMaps( ScorchedContext& context, ProgressCounter* counter = 0 );
-	void generateObjects( ScorchedContext& context, ProgressCounter* counter = 0 );
+	void generateMaps( ScorchedContext& context, ProgressCounter* counter = nullptr );
+	void generateObjects( ScorchedContext& context, ProgressCounter* counter = nullptr );
 
 	// Height map functions
 	fixed        getHeight( int w, int h );
@@ -77,13 +77,13 @@ protected:
 	std::list< PlacementShadowDefinition::Entry > shadows_;
 
 	// Generate levels
-	void generateHMap( ScorchedContext& context, ProgressCounter* counter = 0 );
+	void generateHMap( ScorchedContext& context, ProgressCounter* counter = nullptr );
 	void generateObject(
 		RandomGenerator&  generator,
 		LandscapeInclude& place,
 		ScorchedContext&  context,
 		unsigned int&     playerId,
-		ProgressCounter*  counter = 0
+		ProgressCounter*  counter = nullptr
 	);
 };
 

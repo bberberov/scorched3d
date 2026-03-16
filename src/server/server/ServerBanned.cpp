@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -66,8 +66,10 @@ bool ServerBanned::load(bool force)
 		 childrenItor != children.end();
 		++childrenItor)
 	{
-		XMLNode *currentNode = (*childrenItor);
-		XMLNode *maskNode = 0, *timeNode = 0, *typeNode = 0;
+		XMLNode* currentNode = ( *childrenItor );
+		XMLNode* maskNode    = nullptr;
+		XMLNode* timeNode    = nullptr;
+		XMLNode* typeNode    = nullptr;
 
 		// Read the mask
 		unsigned int m = UINT_MAX;
@@ -197,7 +199,7 @@ void ServerBanned::addBanned(unsigned int ip, const LangString &name,
 	const char *uniqueId, const char *SUI, BannedType type, 
 	const char *adminname, const char *reason)
 {
-	unsigned int t = (unsigned int) time(0);
+	unsigned int t = (unsigned int)time( nullptr );
 	addBannedEntry(ip, UINT_MAX, name, uniqueId, SUI, t, type, adminname, reason);
 	save();
 }
@@ -216,7 +218,7 @@ void ServerBanned::addBannedEntry(unsigned int ip, unsigned int mask,
 	newEntry.adminname = adminname;
 	newEntry.reason = reason;
 
-	BannedRange *found = 0;
+	BannedRange* found = nullptr;
 	std::list<BannedRange>::iterator itor;
 	for (itor = bannedIps_.begin();
 		itor != bannedIps_.end();

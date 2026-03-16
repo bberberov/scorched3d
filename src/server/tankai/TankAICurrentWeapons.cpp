@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,14 +23,9 @@
 #include <XML/XMLNode.hpp>
 #include <stdlib.h>
 
-TankAICurrentWeapons::TankAICurrentWeapons() : 
-	currentWeaponSet_(0)
-{
-}
+TankAICurrentWeapons::TankAICurrentWeapons() : currentWeaponSet_( nullptr ) {}
 
-TankAICurrentWeapons::~TankAICurrentWeapons()
-{
-}
+TankAICurrentWeapons::~TankAICurrentWeapons() {}
 
 TankAIWeaponSets::WeaponSet *TankAICurrentWeapons::getCurrentWeaponSet()
 {

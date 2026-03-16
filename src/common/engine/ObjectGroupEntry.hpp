@@ -80,12 +80,12 @@ public:
 	virtual ~ObjectGroupEntryReference()
 	{
 		if ( entry_ ) entry_->references_.erase( this );
-		entry_ = 0;
+		entry_ = nullptr;
 	}
 
 	ObjectGroupEntry* getEntry() { return entry_; }
 
-	void clearEntry() { entry_ = 0; }
+	void clearEntry() { entry_ = nullptr; }
 
 protected:
 	ObjectGroupEntry* entry_;

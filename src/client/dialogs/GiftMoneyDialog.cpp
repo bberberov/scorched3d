@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -48,32 +48,39 @@ GiftMoneyDialog::GiftMoneyDialog() :
 {
 	needCentered_ = true;
 
-	GLWPanel *mainPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	mainPanel->addWidget(
-		new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("GIFT", "Gift")), 
-		0, SpaceRight, 10.0f);
-	money_ = (GLWDropDownText *) mainPanel->addWidget(
-		new GLWDropDownText(0.0f, 0.0f, 150.0f), 
-		0, SpaceRight, 10.0f);
-	mainPanel->addWidget(
-		new GLWLabel(0.0f, 0.0f, LANG_RESOURCE("TO", "to")), 
-		0, SpaceRight, 10.0f);
-	players_ = (GLWDropDownText *) mainPanel->addWidget(
-		new GLWDropDownText(0.0f, 0.0f, 150.0f));
-	mainPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(mainPanel, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	GLWPanel* mainPanel = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	mainPanel->addWidget( new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( "GIFT", "Gift" ) ), nullptr, SpaceRight, 10.0f );
+	money_ = (GLWDropDownText*)mainPanel->addWidget(
+		new GLWDropDownText( 0.0f, 0.0f, 150.0f ), nullptr, SpaceRight, 10.0f
+	);
+	mainPanel->addWidget( new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( "TO", "to" ) ), nullptr, SpaceRight, 10.0f );
+	players_ = (GLWDropDownText*)mainPanel->addWidget( new GLWDropDownText( 0.0f, 0.0f, 150.0f ) );
+	mainPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( mainPanel, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
 
-	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+	GLWPanel* buttonPanel   = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		95,
+		10,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "OK", "Ok" ),
+		235,
+		10,
+		55,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 235, 10, 55, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, SpaceAll, 10.0f);
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, SpaceAll, 10.0f );
 
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();
@@ -108,10 +115,16 @@ void GiftMoneyDialog::display()
 		{
 			money_->addEntry(
 				GLWSelectorEntry(
-				LANG_RESOURCE(
-					S3D::formatStringBuffer("%i_DOLLARS", amount), 
-					S3D::formatMoney(amount)), 
-					0, false, 0, (void *) amount));
+					LANG_RESOURCE(
+						S3D::formatStringBuffer( "%i_DOLLARS", amount ),
+						S3D::formatMoney( amount )
+					),
+					nullptr,
+					false,
+					nullptr,
+					(void*)amount
+				)
+			);
 		}
 	}
 
@@ -128,8 +141,15 @@ void GiftMoneyDialog::display()
 			tank != currentTank &&
 			tank->getState().getTankPlaying())
 		{
-			players_->addEntry(GLWSelectorEntry(
-				tank->getTargetName(), 0, false, 0, (void *) tank->getPlayerId()));
+			players_->addEntry(
+				GLWSelectorEntry(
+					tank->getTargetName(),
+					nullptr,
+					false,
+					nullptr,
+					(void*)tank->getPlayerId()
+				)
+			);
 		}
 	}
 }

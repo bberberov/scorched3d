@@ -24,27 +24,27 @@
 #include <common/Clock.hpp>
 #include <limits.h>
 
-NetServerTCP3::NetServerTCP3() :
-	serverDestinationId_(UINT_MAX),
-	nextDestinationId_(1),
-	sendRecvThread_(0),
-	serverSockSet_(0),
-	serverSock_(0),
-	stopped_(false)
+NetServerTCP3::NetServerTCP3()
+	: serverDestinationId_( UINT_MAX )
+	, nextDestinationId_( 1 )
+	, sendRecvThread_( nullptr )
+	, serverSockSet_( nullptr )
+	, serverSock_( nullptr )
+	, stopped_( false )
 {
-	serverSockSet_ = SDLNet_AllocSocketSet(1);
+	serverSockSet_ = SDLNet_AllocSocketSet( 1 );
 }
 
 NetServerTCP3::~NetServerTCP3()
 {
-	SDLNet_FreeSocketSet(serverSockSet_);
-	serverSockSet_ = 0;
+	SDLNet_FreeSocketSet( serverSockSet_ );
+	serverSockSet_ = nullptr;
 }
 
 bool NetServerTCP3::started()
 {
 	// Do we have a valid send/recieve thread
-	return (sendRecvThread_ != 0);
+	return ( nullptr != sendRecvThread_ );
 }
 
 bool NetServerTCP3::connect(const char *hostName, int portNo)
@@ -140,7 +140,7 @@ bool NetServerTCP3::startProcessing()
 	// Create the processing thread
 	sendRecvThread_ = SDL_CreateThread(
 		NetServerTCP3::sendRecvThreadFunc, (void *) this);
-	if (sendRecvThread_ == 0)
+	if ( nullptr == sendRecvThread_ )
 	{
 		Logger::log(S3D::formatStringBuffer("NetServerTCP3: Failed to create NetServerTCP3 thread"));
 		return false;
@@ -155,7 +155,7 @@ int NetServerTCP3::sendRecvThreadFunc(void *c)
 	NetServerTCP3 *th = (NetServerTCP3*) c;
 	th->actualSendRecvFunc();
 
-	th->sendRecvThread_ = 0;
+	th->sendRecvThread_ = nullptr;
 	Logger::log(S3D::formatStringBuffer("NetServerTCP3: shutdown"));
 	return 0;
 }
@@ -215,7 +215,7 @@ void NetServerTCP3::actualSendRecvFunc()
 	}
 
 	if (serverSock_) SDLNet_TCP_Close(serverSock_);
-	serverSock_ = 0;
+	serverSock_ = nullptr;
 }
 
 void NetServerTCP3::checkNewConnections()

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,11 +23,7 @@
 #include <tanket/Tanket.hpp>
 #include <tanket/TanketAccessories.hpp>
 
-TanketAutoDefense::TanketAutoDefense(ScorchedContext &context) :
-	context_(context),
-	tanket_(0)
-{
-}
+TanketAutoDefense::TanketAutoDefense( ScorchedContext& context ) : context_( context ), tanket_( nullptr ) {}
 
 TanketAutoDefense::~TanketAutoDefense()
 {

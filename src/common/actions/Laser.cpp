@@ -185,7 +185,7 @@ void Laser::draw()
 #ifndef S3D_SERVER
 	if (!context_->getServerMode() && (drawLength_ > 0))
 	{
-		static GLUquadric *obj = 0;
+		static GLUquadric* obj = nullptr;
 		if (!obj)
 		{
 			obj = gluNewQuadric();

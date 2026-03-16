@@ -41,16 +41,16 @@ public:
 		int          min     = 0,
 		int          max     = 0,
 		int          see     = 1,
-		GLWScrollWI* handler = 0
+		GLWScrollWI* handler = nullptr
 	);
 	virtual ~GLWScrollW();
 
 	// clang-format off
 	// uncrustify off
-	virtual void setHandler( GLWScrollWI* handler = 0 ) { handler_ = handler; }
-	void         setMin( int min )                      { min_ = min; }
-	void         setMax( int max )                      { max_ = max; }
-	void         setSee( int see )                      { see_ = see; }
+	virtual void setHandler( GLWScrollWI* handler = nullptr ) { handler_ = handler; }
+	void         setMin( int min )                            { min_ = min; }
+	void         setMax( int max )                            { max_ = max; }
+	void         setSee( int see )                            { see_ = see; }
 	virtual void setCurrent( int c );
 	// uncrustify on
 	// clang-format on

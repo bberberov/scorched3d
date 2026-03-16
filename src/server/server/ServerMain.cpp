@@ -176,7 +176,7 @@ void consoleServer()
 
 		if (ServerParams::instance()->getExitTime() > 0)
 		{
-			if (time(0) > ServerParams::instance()->getExitTime())
+			if ( ServerParams::instance()->getExitTime() < time( nullptr ) )
 			{
 				Logger::log("Exiting server due to exit time");
 				Logger::processLogEntries();

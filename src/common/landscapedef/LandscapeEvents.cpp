@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,10 +35,7 @@ LandscapeCondition::~LandscapeCondition()
 {}
 
 // LandscapeEvent
-LandscapeEvent::LandscapeEvent() :
-	condition(0), action(0)
-{
-}
+LandscapeEvent::LandscapeEvent() : condition( nullptr ), action( nullptr ) {}
 
 LandscapeEvent::~LandscapeEvent()
 {
@@ -74,7 +71,7 @@ LandscapeCondition *LandscapeCondition::create(const char *type)
 	if (0 == strcmp(type, "random")) return new LandscapeConditionRandom;
 	if (0 == strcmp(type, "groupsize")) return new LandscapeConditionGroupSize;
 	S3D::dialogMessage("LandscapeCondition", S3D::formatStringBuffer("Unknown condition type %s", type));
-	return 0;
+	return nullptr;
 }
 
 // LandscapeConditionGroupSize
@@ -171,7 +168,7 @@ LandscapeAction *LandscapeAction::create(const char *type)
 	if (0 == strcmp(type, "fireweapon")) return new LandscapeActionFireWeapon;
 	if (0 == strcmp(type, "fireweaponfromgroup")) return new LandscapeActionFireWeaponFromGroup;
 	S3D::dialogMessage("LandscapeAction", S3D::formatStringBuffer("Unknown action type %s", type));
-	return 0;
+	return nullptr;
 }
 
 // LandscapeActionFireWeapon

@@ -28,12 +28,12 @@
 #include <common/Defines.hpp>
 #include <common/OptionsScorched.hpp>
 
-TankShotHistory::TankShotHistory(ScorchedContext &context) :
-	context_(context),
-	tank_(0),
-	oldTurretRotXY_(0),
-	oldTurretRotYZ_(0),
-	oldPower_(1000)
+TankShotHistory::TankShotHistory( ScorchedContext& context )
+	: context_( context )
+	, tank_( nullptr )
+	, oldTurretRotXY_( 0 )
+	, oldTurretRotYZ_( 0 )
+	, oldPower_( 1000 )
 {}
 
 TankShotHistory::~TankShotHistory()

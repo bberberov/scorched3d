@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -34,11 +34,9 @@
 static fixed maxStepSize(true, 1 * fixed::FIXED_RESOLUTION);
 static fixed minStepSize(true, fixed::FIXED_RESOLUTION / Sint64(10));
 
-ServerSimulator::ServerSimulator() :
-	sendStepSize_(true, 1 * fixed::FIXED_RESOLUTION),
-	levelMessage_(0)
+ServerSimulator::ServerSimulator() : sendStepSize_( true, 1 * fixed::FIXED_RESOLUTION ), levelMessage_( nullptr )
 {
-	nextSendTime_ = 0;
+	nextSendTime_  = 0;
 	nextEventTime_ = nextSendTime_ + sendStepSize_;
 }
 
@@ -51,7 +49,7 @@ void ServerSimulator::clear()
 {
 	Simulator::clear();
 	delete levelMessage_;
-	levelMessage_ = 0;
+	levelMessage_ = nullptr;
 	while (!sendActions_.empty())
 	{
 		SendAction action = sendActions_.back();

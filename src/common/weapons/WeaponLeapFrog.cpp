@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -41,7 +41,7 @@ bool WeaponLeapFrog::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("collisionaction", subNode)) return false;
 
 	// Check next weapon is correct type

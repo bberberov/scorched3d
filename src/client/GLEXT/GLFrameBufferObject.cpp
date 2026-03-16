@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,7 +24,7 @@
 
 GLFrameBufferObject::GLFrameBufferObject() : 
 	frameBufferObject_(0), depthBufferObject_(0),
-	texture_(0), bound_(false)
+	texture_( nullptr ), bound_( false )
 {
 }
 

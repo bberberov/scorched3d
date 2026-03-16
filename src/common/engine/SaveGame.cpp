@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -38,7 +38,7 @@ bool SaveGame::saveFile(const std::string &fileName)
 
 	// Save the message
 	FILE *out = fopen(fileName.c_str(), "wb");
-	if (out == 0) return false;
+	if ( nullptr == out ) return false;
 	if (fwrite(saveBuffer.getBuffer(), 1, saveBuffer.getBufferUsed(), out) != 
 		saveBuffer.getBufferUsed())
 	{

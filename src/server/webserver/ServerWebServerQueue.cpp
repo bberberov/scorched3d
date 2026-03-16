@@ -56,7 +56,7 @@ void ServerWebServerQueue::addEntry(ServerWebServerQueueEntry *entry)
 
 ServerWebServerQueueEntry *ServerWebServerQueue::getEntry()
 {
-	ServerWebServerQueueEntry *result = 0;
+	ServerWebServerQueueEntry* result = nullptr;
 	SDL_LockMutex(queueMutex_);
 	if (!entries_.empty())
 	{

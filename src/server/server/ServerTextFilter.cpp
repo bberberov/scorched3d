@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -43,8 +43,8 @@ void ServerTextFilter::filterString(LangString &inputText)
 
 	// Split the string into parts (words) each seperated by the 
 	// seperating characters
-    LangString current;
-	const unsigned int *pos = 0;
+	LangString current;
+	const unsigned int* pos = nullptr;
 	for (const unsigned int *c = inputText.c_str(); *c; c++)
 	{
 		if (IS_SPACE(*c))
@@ -57,7 +57,7 @@ void ServerTextFilter::filterString(LangString &inputText)
 				parts.push_back(part);
 			}
 			current.clear();
-			pos = 0;
+			pos = nullptr;
 		}
 		else
 		{

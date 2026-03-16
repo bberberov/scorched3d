@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -165,7 +165,7 @@ void GLStateExtension::setup()
 			}
 		}
 	}
-	if (strstr((const char *) glGetString(GL_RENDERER), "GDI Generic") != 0)
+	if ( nullptr != strstr( (const char*)glGetString( GL_RENDERER ), "GDI Generic" ) )
 	{
 		isSoftwareOpenGL_ = true;
 	}

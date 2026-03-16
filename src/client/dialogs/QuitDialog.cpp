@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -62,51 +62,84 @@ void QuitDialog::display()
 		state == ClientState::StateWaitNoLandscape);
 	if (!disable)
 	{
-		killButton_ = new GLWTextButton(LANG_RESOURCE("MASS_TANK_KILL", "Mass Tank Kill"), 0, 0, 225, this, 
-			GLWButton::ButtonFlagCenterX);
-		addWidget(killButton_, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
-		killButton_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-			LANG_RESOURCE("MASS_TANK_KILL", "Mass tank kill"),
-			LANG_RESOURCE("MADD_TANK_KILL_TOOLTIP", "Kills all the tanks and starts the next\n"
-			"round.  Only available in single player\n"
-			"games.")));
+		killButton_ = new GLWTextButton(
+			LANG_RESOURCE( "MASS_TANK_KILL", "Mass Tank Kill" ),
+			0,
+			0,
+			225,
+			this,
+			GLWButton::ButtonFlagCenterX
+		);
+		killButton_->setToolTip( new ToolTip(
+			ToolTip::ToolTipHelp,
+			LANG_RESOURCE( "MASS_TANK_KILL", "Mass tank kill" ),
+			LANG_RESOURCE(
+				"MADD_TANK_KILL_TOOLTIP",
+				"Kills all the tanks and starts the next\n"
+				"round.  Only available in single player\n"
+				"games."
+			)
+		) );
+		addWidget( killButton_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
 	}
 	else
 	{
-		killButton_ = 0;
+		killButton_ = nullptr;
 	}
 
 	disable = (state == ClientState::StateOptions || 
 		state == ClientState::StateConnect);
 	if (!disable)
 	{
-		disconnectButton_  = new GLWTextButton(LANG_RESOURCE("QUIT_GAME_TO_MENU", "Quit to Main Menu"), 0, 0, 225, this, 
-			GLWButton::ButtonFlagCenterX);
-		addWidget(disconnectButton_, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
-		disconnectButton_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-			LANG_RESOURCE("QUIT_GAME_TO_MENU", "Quit to Main Menu"),
-			LANG_RESOURCE("QUIT_GAME_TO_MENU_TOOLTIP", "Quit current game back to game main menu")));
+		disconnectButton_ = new GLWTextButton(
+			LANG_RESOURCE( "QUIT_GAME_TO_MENU", "Quit to Main Menu" ),
+			0,
+			0,
+			225,
+			this,
+			GLWButton::ButtonFlagCenterX
+		);
+		disconnectButton_->setToolTip( new ToolTip(
+			ToolTip::ToolTipHelp,
+			LANG_RESOURCE( "QUIT_GAME_TO_MENU", "Quit to Main Menu" ),
+			LANG_RESOURCE( "QUIT_GAME_TO_MENU_TOOLTIP", "Quit current game back to game main menu" )
+		) );
+		addWidget( disconnectButton_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
 	}
 	else
 	{
-		disconnectButton_ = 0;
+		disconnectButton_ = nullptr;
 	}
 
-	quitButton_ = new GLWTextButton(LANG_RESOURCE("QUIT_GAME", "Quit Game"), 0, 0, 225, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	addWidget(quitButton_, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
-	quitButton_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("QUIT_GAME", "Quit Game"),
-		LANG_RESOURCE("QUIT_GAME_TOOLTIP", "Quits Scorched3D back to the OS")));
-
-	okButton_ = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 0, 0, 225, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
-	addWidget(okButton_, 0, SpaceLeft | SpaceRight | SpaceTop | SpaceBottom, 10.0f);
-	okButton_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("CANCEL", "Cancel"),
-		LANG_RESOURCE("CANCEL_TOOLTIP", "Return to the game.")));
-
-	setLayout(GLWPanel::LayoutVerticle);
+	quitButton_ = new GLWTextButton(
+		LANG_RESOURCE( "QUIT_GAME", "Quit Game" ),
+		0,
+		0,
+		225,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
+	quitButton_->setToolTip( new ToolTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "QUIT_GAME", "Quit Game" ),
+		LANG_RESOURCE( "QUIT_GAME_TOOLTIP", "Quits Scorched3D back to the OS" )
+	) );
+	okButton_ = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		0,
+		0,
+		225,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	okButton_->setToolTip( new ToolTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		LANG_RESOURCE( "CANCEL_TOOLTIP", "Return to the game." )
+	) );
+	addWidget( quitButton_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
+	addWidget( okButton_, nullptr, SpaceLeft | SpaceRight | SpaceTop | SpaceBottom, 10.0f );
+	setLayout( GLWPanel::LayoutVerticle );
 	layout();
 }
 

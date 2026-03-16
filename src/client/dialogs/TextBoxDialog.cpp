@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,45 +21,62 @@
 #include <dialogs/TextBoxDialog.hpp>
 #include <GLW/GLWWindowManager.hpp>
 
-TextBoxDialog *TextBoxDialog::instance_ = nullptr;
+TextBoxDialog* TextBoxDialog::instance_ = nullptr;
 
-TextBoxDialog *TextBoxDialog::instance()
+TextBoxDialog* TextBoxDialog::instance()
 {
-	if (nullptr == instance_)
+	if ( nullptr == instance_ )
 	{
 		instance_ = new TextBoxDialog();
 	}
 	return instance_;
 }
 
-TextBoxDialog::TextBoxDialog() : 
-	GLWWindow("TextBox", 210.0f, 150.0f, eHideName, ""),
-	user_(0)
+TextBoxDialog::TextBoxDialog() : GLWWindow( "TextBox", 210.0f, 150.0f, eHideName, "" ), user_( nullptr )
 {
-	GLWPanel *topPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
+	GLWPanel* topPanel = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
 
-	message_ = new GLWLabel(0.0f, 0.0f, LANG_STRING(""), 8.0f, GLWLabel::eMultiLine);
-	topPanel->addWidget(message_, 0, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f);
-	result_ = new GLWTextBox(0.0f, 0.0f, 300.0f, LANG_STRING(""));
-	topPanel->addWidget(result_, 0, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f);
-	topPanel->setLayout(GLWPanel::LayoutVerticle);
-	addWidget(topPanel);
+	message_ = new GLWLabel( 0.0f, 0.0f, LANG_STRING( "" ), 8.0f, GLWLabel::eMultiLine );
+	result_  = new GLWTextBox( 0.0f, 0.0f, 300.0f, LANG_STRING( "" ) );
+	topPanel->addWidget( message_, nullptr, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f );
+	topPanel->addWidget( result_, nullptr, SpaceTop | SpaceLeft | SpaceRight | AlignCenterLeftRight, 10.0f );
+	topPanel->setLayout( GLWPanel::LayoutVerticle );
+	addWidget( topPanel );
 
-	GLWPanel *botPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	cancelButton_ = (GLWTextButton *) 
-		botPanel->addWidget(new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | 
-		GLWButton::ButtonFlagCenterX), 0, SpaceAll | AlignRight, 10.0f);
-	okButton_ = (GLWTextButton *) 
-		botPanel->addWidget(new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagOk | 
-		GLWButton::ButtonFlagCenterX), 0, SpaceAll | AlignRight, 10.0f);
-	botPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(botPanel);
+	GLWPanel* botPanel = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+
+	cancelButton_ = (GLWTextButton*)botPanel->addWidget(
+		new GLWTextButton(
+			LANG_RESOURCE( "CANCEL", "Cancel" ),
+			95,
+			10,
+			105,
+			this,
+			GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+		),
+		nullptr,
+		SpaceAll | AlignRight,
+		10.0f
+	);
+	okButton_ = (GLWTextButton*)botPanel->addWidget(
+		new GLWTextButton(
+			LANG_RESOURCE( "OK", "Ok" ),
+			95,
+			10,
+			105,
+			this,
+			GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+		),
+		nullptr,
+		SpaceAll | AlignRight,
+		10.0f
+	);
+	botPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( botPanel );
 
 	windowLevel_ = 1000;
 
-	setLayout(GLWPanel::LayoutVerticle);
+	setLayout( GLWPanel::LayoutVerticle );
 	layout();
 }
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -55,6 +55,6 @@ ServerDestination *ServerDestinations::getDestination(unsigned int destinationId
 {
 	std::map<unsigned int, ServerDestination*>::iterator itor =
 		serverDestinations_.find(destinationId);
-	if (itor == serverDestinations_.end()) return 0;
-	return itor->second;
+	if ( itor == serverDestinations_.end() ) return nullptr;
+	else return itor->second;
 }

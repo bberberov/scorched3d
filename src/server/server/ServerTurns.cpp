@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -356,7 +356,7 @@ void ServerTurns::playMove(Tanket *tanket, unsigned int moveId, fixed maximumSho
 		tanket->getPlayerId(), tanket->getShotInfo().getMoveId(), maximumShotTime, false, ping);
 
 	// If shotTime > 0 then add to the list of playing players so they can be timed out
-	SimulatorI *callback = 0;
+	SimulatorI* callback = nullptr;
 	if (maximumShotTime > 0)
 	{
 		fixed simulationTime(ScorchedServer::instance()->getServerSimulator().getSendStepSize());
@@ -399,7 +399,7 @@ void ServerTurns::playShots(std::list<ComsPlayedMoveMessage *> messages, unsigne
 		movesAction->addMove(*itor);
 	}
 	
-	SimulatorI *callback = 0;
+	SimulatorI* callback = nullptr;
 	if (waitForShots_)
 	{
 		callback = shotsStarted_;

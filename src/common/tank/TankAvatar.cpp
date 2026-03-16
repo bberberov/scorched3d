@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,8 +27,8 @@
 #ifndef S3D_SERVER
 #include <GLEXT/GLTexture.hpp>
 
-GLTexture *TankAvatar::defaultTexture_ = 0;
-std::list<TankAvatar::AvatarStore> TankAvatar::storeEntries_;
+GLTexture*                           TankAvatar::defaultTexture_ = nullptr;
+std::list< TankAvatar::AvatarStore > TankAvatar::storeEntries_;
 #endif
 
 static NetBuffer tmpBuffer;
@@ -36,7 +36,7 @@ static NetBuffer tmpBuffer;
 TankAvatar::TankAvatar()
 {
 #ifndef S3D_SERVER
-	texture_ = 0;
+	texture_ = nullptr;
 #endif
 	file_ = new NetBuffer();
 }
@@ -58,7 +58,7 @@ bool TankAvatar::writeMessage(NamedNetBuffer &buffer)
 void TankAvatar::clear()
 {
 #ifndef S3D_SERVER
-	texture_ = 0;
+	texture_ = nullptr;
 #endif
 	name_ = "";
 	file_->reset();
@@ -93,9 +93,8 @@ bool TankAvatar::loadFromFile(const std::string &fileName)
 
 unsigned int TankAvatar::getCrc()
 {
-	unsigned int crc =  crc32(0L, Z_NULL, 0);
-	crc = crc32(crc, (unsigned char *) 
-		file_->getBuffer(), file_->getBufferUsed());	
+	unsigned int crc =  crc32( 0L, nullptr, 0 );
+	crc = crc32( crc, (unsigned char*)file_->getBuffer(), file_->getBufferUsed() );
 	return crc;
 }
 
@@ -115,7 +114,7 @@ bool TankAvatar::setFromBuffer(const std::string &fileName, NetBuffer &buffer)
 
 #ifndef S3D_SERVER
 	{
-		texture_ = 0;
+		texture_ = nullptr;
 		unsigned int crc = getCrc();
 		std::list<AvatarStore>::iterator itor;
 		for (itor = storeEntries_.begin();

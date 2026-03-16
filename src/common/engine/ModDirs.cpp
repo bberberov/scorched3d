@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -149,7 +149,8 @@ bool ModDirs::loadModFile(const std::string &inputFileName, bool global)
 		// removed incase it masks the newer one that comes with the game.
 		std::string src = S3D::getSettingsModFile(newFileName);
 		std::string dest = S3D::getSettingsFile(
-			S3D::formatStringBuffer("/oldmods/%s-%u", newFileName.c_str(), time(0)));
+			S3D::formatStringBuffer( "/oldmods/%s-%u", newFileName.c_str(), time( nullptr ) )
+		);
 		if (S3D::dirExists(src.c_str()))
 		{
 			if (0 == rename(src.c_str(), dest.c_str()))

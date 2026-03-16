@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -86,7 +86,7 @@ void ConnectDialog::start()
 
 void ConnectDialog::simulate(float frameTime)
 {
-	time_t currentTime = time(0);
+	time_t currentTime = time( nullptr );
 	if (connectionState_ == eWaiting)
 	{
 		if (currentTime - lastTime_ > 3)
@@ -149,7 +149,7 @@ void ConnectDialog::tryConnection()
 	if (ClientParams::instance()->getConnectedToServer())
 	{
 		// Do in a thread so connect can block if it wants!
-		remoteConnectionThread_ = SDL_CreateThread(ConnectDialog::tryRemoteConnection, 0);
+		remoteConnectionThread_ = SDL_CreateThread( ConnectDialog::tryRemoteConnection, nullptr );
 	}
 	else
 	{
@@ -218,7 +218,7 @@ void ConnectDialog::finished()
 	{
 		int status = 0;
 		SDL_WaitThread(remoteConnectionThread_, &status);
-		remoteConnectionThread_ = 0;
+		remoteConnectionThread_ = nullptr;
 	}
 	connectionState_ = eFinished;
 }

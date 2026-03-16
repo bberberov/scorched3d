@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,7 +40,7 @@ TankScore::TankScore(ScorchedContext &context) :
 	totalMoneyEarned_(0),
 	totalScoreEarned_(0)
 {
-	startTime_ = lastStatTime_ = time(0);
+	startTime_ = lastStatTime_ = time( nullptr );
 	newMatch();
 }
 
@@ -95,9 +95,9 @@ void TankScore::setScore(int score)
 const char *TankScore::getTimePlayedString()
 {
 	static char timestr[256];
-	time_t seconds = time(0) - startTime_;
-	div_t playedTimeHr = div((int) seconds, 3600);
-	div_t playedTime = div(playedTimeHr.rem, 60);
+	time_t seconds      = time( nullptr ) - startTime_;
+	div_t  playedTimeHr = div( (int)seconds, 3600 );
+	div_t  playedTime   = div( playedTimeHr.rem, 60 );
 
 	snprintf(timestr, 256, "%i:%02i:%02i secs",
 		playedTimeHr.quot,
@@ -204,9 +204,9 @@ bool TankScore::readMessage(NetBufferReader &reader)
 
 time_t TankScore::getTimePlayedStat()
 {
-	time_t val = lastStatTime_;
-	lastStatTime_ = time(0);
-	time_t res = lastStatTime_ - val;
+	time_t val    = lastStatTime_;
+	lastStatTime_ = time( nullptr );
+	time_t res    = lastStatTime_ - val;
 	return res;
 }
 

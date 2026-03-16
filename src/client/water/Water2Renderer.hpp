@@ -41,7 +41,7 @@ public:
 
 	void draw( Water2& water2, WaterMapPoints& points, WaterWaves& waves, float transparency );
 	void simulate( float frameTime );
-	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = 0 );
+	void generate( LandscapeTexBorderWater* water, ProgressCounter* counter = nullptr );
 
 	// clang-format off
 	// uncrustify off

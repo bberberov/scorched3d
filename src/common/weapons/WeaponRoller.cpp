@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -105,7 +105,7 @@ bool WeaponRoller::parseXML(AccessoryCreateContext &context, XMLNode *accessoryN
 	if (!localGroups_.readXML(accessoryNode, "localgroupname")) return false;
 	if (!globalGroups_.readXML(accessoryNode, "globalgroupname")) return false;
 
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("collisionaction", subNode)) return false;
 
 	AccessoryPart *accessory = context.getAccessoryStore().createAccessoryPart(context, parent_, subNode);
@@ -116,7 +116,7 @@ bool WeaponRoller::parseXML(AccessoryCreateContext &context, XMLNode *accessoryN
 	collisionAction_ = (Weapon*) accessory;
 
 	// Get the weapon model
-	XMLNode *modelNode = 0;
+	XMLNode* modelNode = nullptr;
 	if (!accessoryNode->getNamedChild("rollermodel", modelNode)) return false;
 	if (!rollerModelId_.initFromNode(modelNode)) return false;
 

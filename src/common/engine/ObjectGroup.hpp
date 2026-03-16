@@ -43,7 +43,7 @@ public:
 		{
 			this->previous = previous;
 			this->current  = current;
-			this->next     = 0;
+			this->next     = nullptr;
 			if ( previous ) previous->next = this;
 		}
 
@@ -66,11 +66,11 @@ public:
 			group_->iterator_ = this;
 		}
 
-		~ObjectGroupEntryHolderIterator() { group_->iterator_ = 0; }
+		~ObjectGroupEntryHolderIterator() { group_->iterator_ = nullptr; }
 
 		ObjectGroupEntry* getNext()
 		{
-			if ( ! current_ ) return 0;
+			if ( ! current_ ) return nullptr;
 			ObjectGroupEntryHolder* tmp = current_;
 			current_                    = current_->next;
 

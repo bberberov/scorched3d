@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -52,7 +52,7 @@ Model *MSModelFactory::createModel(const char *fileName)
 bool MSModelFactory::getNextLine(char *line, FILE *in)
 {
 	char * wincr;
-	while (fgets(line, 256, in) != 0)
+	while ( nullptr != fgets( line, 256, in ) )
 	{
 		lineNo_++;
 		if ( ( wincr = std::strchr(line,'\r') ) != nullptr )

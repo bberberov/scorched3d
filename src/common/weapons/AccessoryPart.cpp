@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,18 +23,11 @@
 
 unsigned int AccessoryPart::nextAccessoryPartId_ = 100000;
 
-AccessoryPart::AccessoryPart() :
-	accessoryPartId_(++nextAccessoryPartId_),
-	parent_(0)
-{
-}
+AccessoryPart::AccessoryPart() : accessoryPartId_( ++nextAccessoryPartId_ ), parent_( nullptr ) {}
 
-AccessoryPart::~AccessoryPart()
-{
+AccessoryPart::~AccessoryPart() {}
 
-}
-
-std::map<std::string, AccessoryPart *> *AccessoryMetaRegistration::accessoryMap = 0;
+std::map< std::string, AccessoryPart* >* AccessoryMetaRegistration::accessoryMap = nullptr;
 
 void AccessoryMetaRegistration::addMap(const char *name, AccessoryPart *accessory)
 {
@@ -51,7 +44,7 @@ AccessoryPart *AccessoryMetaRegistration::getNewAccessory(const char *name, Acce
 {
 	std::map<std::string, AccessoryPart *>::iterator itor = 
 		accessoryMap->find(name);
-	if (itor == accessoryMap->end()) return 0;
+	if ( itor == accessoryMap->end() ) return nullptr;
 
 	AccessoryPart *newAccessory = (*itor).second->getAccessoryCopy();
 	return newAccessory;

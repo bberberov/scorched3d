@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,12 +25,12 @@
 
 XMLParser::XMLParser(bool useContentNodes) :
 	useContentNodes_(useContentNodes),
-	root_(0),
-	current_(0),
+	root_( nullptr ),
+	current_( nullptr ),
 	source_("Not Specified")
 {
 	// Init the XML parser
-	p_ = XML_ParserCreate(0);
+	p_ = XML_ParserCreate( nullptr );
 	XML_SetStartElementHandler(p_, startElementStaticHandler);
 	XML_SetEndElementHandler(p_, endElementStaticHandler);
 	XML_SetCharacterDataHandler(p_, characterDataStaticHandler);

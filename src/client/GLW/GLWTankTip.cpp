@@ -70,8 +70,15 @@ void TankUndoMenu::showItems(float x, float y)
 			( 360.0 - oldShots[i].rot.asDouble() )
 		);
 		entries.push_back(
-			GLWSelectorEntry(LANG_STRING(buffer), &useTip, 0, 0, (void *) 
-				((unsigned int) (oldShots.size() - 1 - i))));
+			GLWSelectorEntry(
+				LANG_STRING( buffer ),
+				&useTip,
+				0,
+				nullptr,
+				(void*)
+				( (unsigned int)( oldShots.size() - 1 - i ) )
+			)
+		);
 	}
 
 	GLWSelector::instance()->showSelector(
@@ -138,7 +145,7 @@ void TankFuelTip::showItems(float x, float y)
 				&current->getTexture(), current));
 		}
 	}
-	entries.push_back(GLWSelectorEntry(LANG_RESOURCE("OFF", "Off"), &offTip, 0, 0, 0));
+	entries.push_back( GLWSelectorEntry( LANG_RESOURCE( "OFF", "Off" ), &offTip, 0, nullptr, nullptr ) );
 	GLWSelector::instance()->showSelector(this, x, y, entries,
 		ClientState::StatePlaying);
 }
@@ -160,7 +167,7 @@ void TankFuelTip::itemSelected(GLWSelectorEntry *entry, int position)
 		}
 		else
 		{
-			tank_->getAccessories().getWeapons().setWeapon(0);
+			tank_->getAccessories().getWeapons().setWeapon( nullptr );
 		}
 	}
 }
@@ -208,12 +215,18 @@ void TankBatteryTip::showItems(float x, float y)
 	{
 		for (int i=1; i<=MIN(count,10); i++)
 		{
-			entries.push_back(GLWSelectorEntry(
-				LANG_RESOURCE_1("USE_I", "Use {0}", S3D::formatStringBuffer("%i", i)), 
-				&useTip, 0, 0, (void *) i));
+			entries.push_back(
+				GLWSelectorEntry(
+					LANG_RESOURCE_1( "USE_I", "Use {0}", S3D::formatStringBuffer( "%i", i ) ),
+					&useTip,
+					0,
+					nullptr,
+					(void*)i
+				)
+			);
 		}
 	}
-	entries.push_back(GLWSelectorEntry(LANG_RESOURCE("CANCEL", "Cancel"), &offTip, 0, 0, (void *) 0));
+	entries.push_back( GLWSelectorEntry( LANG_RESOURCE( "CANCEL", "Cancel" ), &offTip, 0, nullptr, (void*)0 ) );
 	GLWSelector::instance()->showSelector(this, x, y, entries,
 		ClientState::StatePlaying);		
 }
@@ -276,7 +289,7 @@ void TankShieldTip::showItems(float x, float y)
 				(currentShield == current), &current->getTexture(), current));
 		}
 	}
-	entries.push_back(GLWSelectorEntry(LANG_RESOURCE("OFF", "Off"), &offTip, 0, 0, 0));
+	entries.push_back( GLWSelectorEntry( LANG_RESOURCE( "OFF", "Off" ), &offTip, 0, nullptr, nullptr ) );
 	GLWSelector::instance()->showSelector(this, x, y, entries,
 		ClientState::StatePlaying);
 }
@@ -317,7 +330,7 @@ void TankShieldTip::populate()
 
 void TankShieldTip::itemSelected(GLWSelectorEntry *entry, int position)
 {
-	if (entry->getUserData() == 0) 
+	if ( nullptr == entry->getUserData() )
 		TankKeyboardControlUtil::shieldsUpDown(tank_->getPlayerId(), 0);
 	else 
 		TankKeyboardControlUtil::shieldsUpDown(tank_->getPlayerId(),
@@ -422,14 +435,14 @@ void TankParachutesTip::showItems(float x, float y)
 				(currentParachute == current), &current->getTexture(), current));
 		}
 	}
-	entries.push_back(GLWSelectorEntry(LANG_RESOURCE("OFF", "Off"), &offTip, 0, 0, 0));
+	entries.push_back( GLWSelectorEntry( LANG_RESOURCE( "OFF", "Off" ), &offTip, 0, nullptr, nullptr ) );
 	GLWSelector::instance()->showSelector(this, x, y, entries,
 		ClientState::StatePlaying);
 }
 
 void TankParachutesTip::itemSelected(GLWSelectorEntry *entry, int position)
 {
-	if (entry->getUserData() == 0) 
+	if ( nullptr == entry->getUserData() )
 		TankKeyboardControlUtil::parachutesUpDown(tank_->getPlayerId(), 0);
 	else 
 		TankKeyboardControlUtil::parachutesUpDown(tank_->getPlayerId(),
@@ -474,8 +487,7 @@ void TankAutoDefenseTip::showItems(float x, float y)
 	if (tank_->getAccessories().getAutoDefense().haveDefense()) 
 		entries.push_back(GLWSelectorEntry(LANG_RESOURCE("ON", "On"), &useTip));
 	else entries.push_back(GLWSelectorEntry(LANG_RESOURCE("OFF", "Off"), &offTip));
-	GLWSelector::instance()->showSelector(0, x, y, entries,
-		ClientState::StatePlaying);
+	GLWSelector::instance()->showSelector( nullptr, x, y, entries, ClientState::StatePlaying );
 }
 
 TankWeaponTip::TankWeaponTip(Tank *tank) :

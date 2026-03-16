@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,15 +26,9 @@ std::set<Weapon *> WeaponInvokeWeapon::weaponStack_;
 
 REGISTER_ACCESSORY_SOURCE(WeaponInvokeWeapon);
 
-WeaponInvokeWeapon::WeaponInvokeWeapon() :
-	invokeWeapon_(0)
-{
+WeaponInvokeWeapon::WeaponInvokeWeapon() : invokeWeapon_( nullptr ) {}
 
-}
-
-WeaponInvokeWeapon::~WeaponInvokeWeapon()
-{
-}
+WeaponInvokeWeapon::~WeaponInvokeWeapon() {}
 
 bool WeaponInvokeWeapon::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 {

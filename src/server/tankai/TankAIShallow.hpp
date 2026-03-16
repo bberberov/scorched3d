@@ -29,7 +29,7 @@ public:
 	TankAIShallow();
 	virtual ~TankAIShallow();
 
-	virtual TankAI* createCopy( Tanket* tanket ) { return 0; }
+	virtual TankAI* createCopy( Tanket* tanket ) { return nullptr; }
 
 	// clang-format off
 	// uncrustify off

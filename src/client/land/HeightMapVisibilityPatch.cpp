@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -268,7 +268,7 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 		GLStateExtension::hasDrawRangeElements())
 	{
 		// Map data to draw
-		float* data = 0;
+		float* data = nullptr;
 		if ( landscapeMap->getBufferObject() )
 		{
 			data = (float*)nullptr + dataOffSet_;
@@ -302,7 +302,7 @@ void HeightMapVisibilityPatch::draw(MipMapPatchIndex &index, bool simple)
 		}
 
 		// Map indices to draw
-		unsigned short* indices = 0;
+		unsigned short* indices = nullptr;
 		if ( index.getBufferOffSet() != std::numeric_limits< unsigned int >::max() )
 		{
 			indices = (unsigned short*)nullptr + ( index.getBufferOffSet() / sizeof( unsigned short ) );

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -35,10 +35,10 @@ ChannelTextParser::~ChannelTextParser()
 
 ChannelTextParser::ChannelTextEntry *ChannelTextParser::getEntry(int position)
 {
-	if (position >= (int) entryIndex_.size()) return 0;
+	if ( (int)entryIndex_.size() <= position ) return nullptr;
 
 	unsigned int index = entryIndex_[position];
-	if (index == 0) return 0;
+	if ( 0 == index ) return nullptr;
 
 	ChannelTextEntry &textEntry = entries_[index - 1];
 	return &textEntry;
@@ -72,8 +72,8 @@ void ChannelTextParser::parseText(ScorchedContext &context, const LangString &te
 	entries_.clear();
 
 	// Parse out all of the urls
-	const unsigned int *pos = text.c_str();
-	const unsigned int *start = 0;
+	const unsigned int* pos   = text.c_str();
+	const unsigned int* start = nullptr;
 
 	// Find the next [
 	while ((start = LangStringUtil::strstr(pos, LANG_STRING("["))))

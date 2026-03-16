@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -29,7 +29,7 @@
 #include <common/Defines.hpp>
 #include <sound/Sound.hpp>
 
-LandscapeSoundManager *LandscapeSoundManager::instance_(0);
+LandscapeSoundManager* LandscapeSoundManager::instance_( nullptr );
 
 LandscapeSoundManager *LandscapeSoundManager::instance()
 {
@@ -59,7 +59,8 @@ void LandscapeSoundManager::cleanUp()
 		LandscapeSoundManagerEntry &entry = (*itor);
 		delete entry.soundSource;
 		delete entry.initData;
-		entry.soundSource = 0;
+		entry.soundSource = nullptr;
+		entry.initData    = nullptr;
 	}
 	entries_.clear();
 }

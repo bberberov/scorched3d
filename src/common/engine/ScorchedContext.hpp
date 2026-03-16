@@ -57,7 +57,7 @@ public:
 	// uncrustify off
 	void          setNetInterface( NetInterface* i ) { netInterface_ = i; }
 	NetInterface& getNetInterface()                  { return *netInterface_; }
-	bool          getNetInterfaceValid()             { return netInterface_ != 0; }
+	bool          getNetInterfaceValid()             { return netInterface_ != nullptr; }
 	// uncrustify on
 	// clang-format on
 

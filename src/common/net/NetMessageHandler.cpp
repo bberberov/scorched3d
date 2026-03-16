@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,8 +26,7 @@ NetMessageHandlerI::~NetMessageHandlerI()
 {
 }
 
-NetMessageHandler::NetMessageHandler() : 
-	handler_(0), messagesMutex_(0), messagesWaiting_(false)
+NetMessageHandler::NetMessageHandler() : handler_( nullptr ), messagesMutex_( nullptr ), messagesWaiting_( false )
 {
 	messagesMutex_ = SDL_CreateMutex();
 }
@@ -70,7 +69,7 @@ bool NetMessageHandler::processSingleMessage()
 
 	// Get the list of messages that should be processed
 	// Process one at a time, incase this method is called re-entrantly
-	NetMessage *message = 0;
+	NetMessage* message = nullptr;
 	SDL_LockMutex(messagesMutex_);
 	if (!messages_.empty())
 	{
@@ -88,7 +87,8 @@ bool NetMessageHandler::processSingleMessage()
 		// Delete message
 		NetMessagePool::instance()->addToPool(message);
 	}
-	return (message != 0);
+
+	return ( nullptr != message );
 }
 
 void NetMessageHandler::setMessageHandler(NetMessageHandlerI *handler)

@@ -42,7 +42,7 @@ NetServerTCP3Recv::NetServerTCP3Recv(
 	SDLNet_TCP_AddSocket(socketSet_, socket_);
 	recvThread_ = SDL_CreateThread(
 		NetServerTCP3Recv::recvThreadFunc, (void *) this);
-	if (recvThread_ == 0)
+	if ( nullptr ==  recvThread_ )
 	{
 		Logger::log(
 			"NetServerTCP3Recv: Failed to create recv thread");
@@ -52,7 +52,7 @@ NetServerTCP3Recv::NetServerTCP3Recv(
 NetServerTCP3Recv::~NetServerTCP3Recv()
 {
 	SDLNet_FreeSocketSet(socketSet_);
-	socketSet_ = 0;
+	socketSet_ = nullptr;
 }
 
 int NetServerTCP3Recv::recvThreadFunc(void *c)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,17 +24,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponDelay);
 
-WeaponDelay::WeaponDelay() :
-	delay_("WeaponDelay::delay"),
-	delayedWeapon_(0)
-{
-
-}
+WeaponDelay::WeaponDelay() : delay_( "WeaponDelay::delay" ), delayedWeapon_( nullptr ) {}
 
 WeaponDelay::~WeaponDelay()
 {
 	delete delayedWeapon_;
-	delayedWeapon_ = 0;
+	delayedWeapon_ = nullptr;
 }
 
 bool WeaponDelay::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -42,7 +37,7 @@ bool WeaponDelay::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNo
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("delayedweapon", subNode)) return false;
 
 	// Check next weapon is correct type

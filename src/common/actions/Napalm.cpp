@@ -407,8 +407,8 @@ void Napalm::simulateAddEdge(int x, int y)
 
 	if (params_->getSingleFlow()) 
 	{
-		fixed *heightLR = 0;
-		int LR = 0;
+		fixed* heightLR = nullptr;
+		int    LR       = 0;
 		if (heightL < heightR)
 		{
 			heightLR = &heightL;
@@ -433,8 +433,8 @@ void Napalm::simulateAddEdge(int x, int y)
 			LR = +1;
 		}
 
-		fixed *heightUD = 0;
-		int UD = 0;
+		fixed* heightUD = nullptr;
+		int    UD       = 0;
 		if (heightU < heightD)
 		{
 			heightUD = &heightU;	

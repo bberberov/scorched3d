@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -54,36 +54,58 @@ AutoDefenseDialog::AutoDefenseDialog() :
 {
 	needCentered_ = true;
 
-	topPanel_ = (GLWPanel *)
-		addWidget(new GLWPanel(10, 245, 420, 50),
-		0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	topPanel_ = (GLWPanel*)addWidget(
+		new GLWPanel( 10, 245, 420, 50 ),
+		nullptr,
+		SpaceLeft | SpaceRight | SpaceTop,
+		10.0f
+	);
 
-	ddpara_ = (GLWDropDownText *) addWidget(new GLWDropDownText(120, 170, 420),
-		0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	ddpara_ = (GLWDropDownText*)addWidget(
+		new GLWDropDownText( 120, 170, 420 ),
+		nullptr,
+		SpaceLeft | SpaceRight | SpaceTop,
+		10.0f
+	);
 	ddpara_->setHandler(this);
 	ddpara_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
 		LANG_RESOURCE("ENABLE_PARACHUTES", "Enable Parachutes"),
 		LANG_RESOURCE("ENABLE_PARACHUTES_TOOLTIP", "Choose to enable parachutes before the\n"
 		"beginning of the next round.")));
-	ddshields_ = (GLWDropDownText *) addWidget(new GLWDropDownText(120, 200, 420),
-		0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	ddshields_ = (GLWDropDownText*)addWidget(
+		new GLWDropDownText( 120, 200, 420 ),
+		nullptr,
+		SpaceLeft | SpaceRight | SpaceTop,
+		10.0f
+	);
 	ddshields_->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
 		LANG_RESOURCE("CHOOSE_SHIELDS", "Choose Shields"),
 		LANG_RESOURCE("CHOOSE_SHIELDS_TOOLTIP", "Choose the shield to use at the beginning\n"
 		"of the next round.")));
 	ddshields_->setHandler(this);
 
-	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+	GLWPanel* buttonPanel   = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		95,
+		10,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX );
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "OK", "Ok" ),
+		235,
+		10,
+		55,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 235, 10, 55, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, SpaceAll | AlignRight, 10.0f);
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, SpaceAll | AlignRight, 10.0f );
 
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();

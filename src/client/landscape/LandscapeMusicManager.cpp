@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -87,7 +87,7 @@ void LandscapeMusicManager::readGlobalMusicFile()
 	// just return for an empty file
 	if (!file.getRootNode()) return;
 
-	XMLNode *musicNode = 0;
+	XMLNode* musicNode = nullptr;
 	while (file.getRootNode()->getNamedChild("music", musicNode, false))
 	{
 		LandscapeMusicType musicType;
@@ -185,7 +185,7 @@ void LandscapeMusicManager::simulate(const unsigned state, float simTime)
 	}
 
 	// Find which music entry we should be playing in this state
-	MusicStateEntry *wantedEntry = 0;
+	MusicStateEntry* wantedEntry = nullptr;
 	if (!OptionsDisplay::instance()->getNoMusic() &&
 		OptionsDisplay::instance()->getMusicVolume() > 0)
 	{

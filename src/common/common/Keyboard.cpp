@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -306,7 +306,7 @@ bool Keyboard::loadKeyFile(const std::string &fileName, bool masterFile)
 		}
 
 		// Get the name of the key
-		const char *keyName = 0;
+		const char* keyName = nullptr;
 		bool command = false;
 		XMLNode *nameNode;
 		XMLNode *commandNode;
@@ -377,7 +377,7 @@ bool Keyboard::loadKeyFile(const std::string &fileName, bool masterFile)
 		const char *keyTitle = titleNode->getContent();
 
 		// Add all the key names
-		XMLNode *currentKey = 0;
+		XMLNode* currentKey = nullptr;
 		std::list<std::string> keyNames, keyStateNames;
 		while (currentNode->getNamedChild("key", currentKey, false))
 		{

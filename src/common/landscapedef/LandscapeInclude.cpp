@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -118,7 +118,7 @@ bool LandscapeInclude::readXML(LandscapeDefinitions *definitions, XMLNode *node)
 		while (node->getNamedChild("placement", placementNode, false))
 		{
 			std::string placementtype;
-			PlacementType *placement = 0;
+			PlacementType* placement = nullptr;
 			if (!placementNode->getNamedParameter("type", placementtype)) return false;
 			if (!(placement = PlacementType::create(placementtype.c_str()))) return false;
 			if (!placement->readXML(placementNode)) return false;

@@ -45,7 +45,7 @@ public:
 	// clang-format off
 	// uncrustify off
 	GLTextureReferenceData* getData()     { return data_; }
-	bool                    isValid()     { return data_ != 0; }
+	bool                    isValid()     { return data_ != nullptr; }
 	ImageID&                getImageID()  { return data_->getImageID(); }
 	unsigned int            getTexState() { return data_->getTexState(); }
 	GLTexture*              getTexture()  { return data_->getTexture(); }

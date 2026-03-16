@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2024
+//    Scorched3D (c) 2000-2011, 2024, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -91,7 +91,7 @@ bool SoundBufferOV::openStream(const char *fileName, OggVorbis_File &oggStream)
 	}
 
 	// Open stream
-	int result = ov_open_callbacks((void *) oggFile, &oggStream, 0, 0, callbacks);
+	int result = ov_open_callbacks( (void*)oggFile, &oggStream, nullptr, 0, callbacks );
 	if(result < 0)
 	{
 		fclose(oggFile);

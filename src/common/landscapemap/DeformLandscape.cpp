@@ -87,10 +87,12 @@ public:
 		fixed *explosionDistance_;
 	};
 
-	DeformLandscapeCache() 
-	{ 
-		for (int i=0;i<100;i++) landscapeCacheItems[i] = 0; 
+	DeformLandscapeCache()
+	{
+		for ( int i = 0; i < 100; i++ )
+			landscapeCacheItems[i] = nullptr;
 	}
+
 	~DeformLandscapeCache() {}
 
 	DeformLandscapeCacheItem &getItem(int size)

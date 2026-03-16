@@ -48,7 +48,7 @@ wxButton* addButtonToWindow(
 	const char*      bitmapName,
 	wxWindow*        parent,
 	wxSizer*         sizer,
-	wxObjectRefData* data = 0
+	wxObjectRefData* data = nullptr
 );
 
 #endif  // __INCLUDE_MainDialog_hpp_INCLUDE__

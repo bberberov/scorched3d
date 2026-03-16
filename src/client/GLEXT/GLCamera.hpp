@@ -48,8 +48,8 @@ public:
 	height at a specified position.  This can be used for example
 	to prevent the camera from entering the landscape.
 	*/
-	void setMinHeightFunc( MinHeightFunc func, void* heightData = 0 );
-	void setMaxHeightFunc( MaxHeightFunc func, void* heightData = 0 );
+	void setMinHeightFunc( MinHeightFunc func, void* heightData = nullptr );
+	void setMaxHeightFunc( MaxHeightFunc func, void* heightData = nullptr );
 	/**
 	Turns the user of the height function on or off.
 	See setHeightFunc.

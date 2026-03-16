@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -648,8 +648,14 @@ void GLWChannelText::buttonDown(unsigned int id)
 	GLWSelectorEntry selectChannel(LANG_RESOURCE("SELECT_CHANNEL", "Select Channel"), &selectTooltip);
 	GLWSelectorEntry colorChannel(LANG_RESOURCE("CHANNEL_COLOR", "Channel Color"), &colorTooltip);
 	GLWSelectorEntry resend(LANG_RESOURCE("RESEND", "Resend"), &resendTooltip);
-	GLWSelectorEntry reply(LANG_RESOURCE("REPLY", "Reply").append(LANG_STRING(" (/r)")), &replyTooltip, false, 0, (void *) eReplySelectorStart);
-	GLWSelectorEntry chat(LANG_RESOURCE("CHAT", "Chat"), &chatTooltip, false, 0, (void *) eChatSelectorStart);
+	GLWSelectorEntry reply(
+		LANG_RESOURCE( "REPLY", "Reply" ).append( LANG_STRING( " (/r)" ) ),
+		&replyTooltip,
+		false,
+		nullptr,
+		(void*)eReplySelectorStart
+	);
+	GLWSelectorEntry chat( LANG_RESOURCE( "CHAT", "Chat" ), &chatTooltip, false, nullptr, (void*)eChatSelectorStart );
 
 	// For each resend
 	std::list<ChannelText>::iterator resendItor;
@@ -659,7 +665,7 @@ void GLWChannelText::buttonDown(unsigned int id)
 	{
 		ChannelText &channelText = *resendItor;
 		resend.getPopups().push_back(
-			GLWSelectorEntry(channelText.getMessage(), 0, false, 0, (void *) eResendSelectorStart)
+			GLWSelectorEntry(channelText.getMessage(), nullptr, false, nullptr, (void *) eResendSelectorStart)
 		);
 	}
 
@@ -677,10 +683,12 @@ void GLWChannelText::buttonDown(unsigned int id)
 
 		// Add tanks to the mute and whisper lines
 		mute.getPopups().push_back(
-			GLWSelectorEntry(tank->getTargetName(), 0, tank->getState().getMuted(), 0, (void *) eMuteSelectorStart)
+			GLWSelectorEntry(
+				tank->getTargetName(), nullptr, tank->getState().getMuted(), nullptr, (void*)eMuteSelectorStart
+			)
 		);
 		whisper.getPopups().push_back(
-			GLWSelectorEntry(tank->getTargetName(), 0, false, 0, (void *) eWhisperSelectorStart)
+			GLWSelectorEntry(tank->getTargetName(), nullptr, false, nullptr, (void *) eWhisperSelectorStart)
 		);
 	}
 
@@ -698,18 +706,34 @@ void GLWChannelText::buttonDown(unsigned int id)
 			S3D::formatStringBuffer("%u. %s%s", 
 				channel.id, channel.channel.c_str(),
 				(channel.type & ChannelDefinition::eReadOnlyChannel?" (RO)":""));
-		leaveChannel.getPopups().push_back(GLWSelectorEntry(
-			LANG_STRING(text), 0, false, 0, 
-			(void *) eLeaveSelectorStart, channel.channel.c_str()));
+		leaveChannel.getPopups().push_back(
+			GLWSelectorEntry(
+				LANG_STRING( text ),
+				nullptr,
+				false,
+				nullptr,
+				(void*)eLeaveSelectorStart,
+				channel.channel.c_str()
+			)
+		);
 
 		if (channelValid(channel.channel.c_str()))
 		{
 			// Add an entry saying which channels we can write on
-			selectChannel.getPopups().push_back(GLWSelectorEntry(
-				LANG_RESOURCE_3("WHISPER_CHANNEL", "{0}. {1} {2}", channel.id, channel.channel,
-				(channel.type & ChannelDefinition::eWhisperChannel?whisperDestStr_:LangString())),
-				0, (channelEntry_.channel == channel.channel), 0, 
-				(void *) eSelectSelectorStart, channel.channel.c_str()));
+			selectChannel.getPopups().push_back( GLWSelectorEntry(
+				LANG_RESOURCE_3(
+					"WHISPER_CHANNEL",
+					"{0}. {1} {2}",
+					channel.id,
+					channel.channel,
+					( channel.type & ChannelDefinition::eWhisperChannel ? whisperDestStr_ : LangString() )
+				),
+				nullptr,
+				( channelEntry_.channel == channel.channel ),
+				nullptr,
+				(void*)eSelectSelectorStart,
+				channel.channel.c_str()
+			) );
 		}
 	}
 
@@ -727,9 +751,14 @@ void GLWChannelText::buttonDown(unsigned int id)
 			S3D::formatStringBuffer("%s%s",
 				availableItor->channel.c_str(),
 				(channel.type & ChannelDefinition::eReadOnlyChannel?" (RO)":""));
-		joinChannel.getPopups().push_back(GLWSelectorEntry(LANG_STRING(text),
-			0, false, 0, (void *) eJoinSelectorStart, 
-			availableItor->channel.c_str()));
+		joinChannel.getPopups().push_back( GLWSelectorEntry(
+			LANG_STRING( text ),
+			nullptr,
+			false,
+			nullptr,
+			(void*)eJoinSelectorStart,
+			availableItor->channel.c_str()
+		) );
 	}
 
 	// For each color
@@ -742,7 +771,9 @@ void GLWChannelText::buttonDown(unsigned int id)
 		Vector *color = *colorItor;
 
 		// Add an entry allowing the user to change channel color
-		GLWSelectorEntry entry(LANG_STRING(""), 0, false, colorTexture_.getTexture(), (void *) eColorSelectorStart);
+		GLWSelectorEntry entry(
+			LANG_STRING( "" ), nullptr, false, colorTexture_.getTexture(), (void*)eColorSelectorStart
+		);
 		entry.getColor() = *color;
 		entry.getTextureWidth() = 32;
 		colorChannel.getPopups().push_back(entry);

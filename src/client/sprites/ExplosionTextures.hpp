@@ -33,7 +33,7 @@ class ExplosionTextures
 public:
 	static ExplosionTextures* instance();
 
-	bool createTextures( ProgressCounter* counter = 0 );
+	bool createTextures( ProgressCounter* counter = nullptr );
 
 	GLTexture smokeTexture;
 	GLTexture smokeTexture2;

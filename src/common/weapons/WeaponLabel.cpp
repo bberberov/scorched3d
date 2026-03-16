@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,16 +23,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponLabel);
 
-WeaponLabel::WeaponLabel() :
-	nextWeapon_(0)
-{
-
-}
+WeaponLabel::WeaponLabel() : nextWeapon_( nullptr ) {}
 
 WeaponLabel::~WeaponLabel()
 {
 	delete nextWeapon_;
-	nextWeapon_ = 0;
+	nextWeapon_ = nullptr;
 }
 
 bool WeaponLabel::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -46,7 +42,7 @@ bool WeaponLabel::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNo
 	context.addLabel(label.c_str(), this);
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("nextweapon", subNode)) return false;
 
 	// Check next weapon is correct type

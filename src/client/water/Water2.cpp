@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -234,7 +234,7 @@ void Water2::generate(LandscapeTexBorderWater *water, ProgressCounter *counter)
 		{
 			if (counter) counter->setNewPercentage(float(k * 50) / float(wave_phases));
 			Water2Points &wd = displacements[k % wave_phases];
-			generateAOF(wd, 0, rndtab, displacements, aof);
+			generateAOF( wd, nullptr, rndtab, displacements, aof );
 			if (generatedPatches_ == 1) break;
 		}
 	}

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -50,7 +50,7 @@ bool GLShadowFrameBuffer::create(int width, int height)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC_ARB, GL_LEQUAL);
 	glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE_ARB, GL_INTENSITY);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, 0);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, width, height, 0, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT, nullptr);
 
 	// Create framebuffer
 	glGenFramebuffersEXT(1, &frameBufferObject_);
@@ -86,7 +86,7 @@ bool GLShadowFrameBuffer::create(int width, int height)
 void GLShadowFrameBuffer::bindDepthTexture()
 {
 	glBindTexture(GL_TEXTURE_2D, depthTextureObject_);
-	GLTexture::setLastBind(0);
+	GLTexture::setLastBind( nullptr );
 }
 
 void GLShadowFrameBuffer::destroy()

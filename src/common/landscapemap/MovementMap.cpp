@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -78,7 +78,7 @@ MovementMap::MovementMap(
 MovementMap::~MovementMap()
 {
 	delete [] entries_;
-	entries_ = 0;
+	entries_ = nullptr;
 }
 
 unsigned int MovementMap::POINT_TO_UINT(unsigned int x, unsigned int y)

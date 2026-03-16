@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -42,7 +42,7 @@ GLWWindowManager *GLWWindowManager::instance()
 
 GLWWindowManager::GLWWindowManager() : 
 	GameStateI("GLWWindowManager"),
-	currentStateEntry_(0),
+	currentStateEntry_( nullptr ),
 	changeEpoc_(0)
 {
 	setCurrentEntry(UINT_MAX);
@@ -72,7 +72,7 @@ GLWWindowManager::~GLWWindowManager()
 
 void GLWWindowManager::clear()
 {
-	currentStateEntry_ = 0;
+	currentStateEntry_ = nullptr;
 	setCurrentEntry(UINT_MAX);
 	stateEntrys_.clear();
 	idToWindow_.clear();
@@ -236,7 +236,7 @@ bool GLWWindowManager::showWindow(unsigned id)
 
 bool GLWWindowManager::moveToFront(unsigned id)
 {
-	GLWWindow *found = 0;
+	GLWWindow* found = nullptr;
 	std::deque<GLWWindow *> tmpList;
 
 	while (!currentStateEntry_->windows_.empty())
@@ -255,7 +255,7 @@ bool GLWWindowManager::moveToFront(unsigned id)
 		sortWindowLevels();
 	}
 
-	return (found != 0);
+	return ( nullptr != found );
 }
 
 void GLWWindowManager::sortWindowLevels()
@@ -361,7 +361,7 @@ void GLWWindowManager::draw(const unsigned state)
 
 GLWWindow *GLWWindowManager::getWindowByName(const char *name)
 {
-	if (!currentStateEntry_) return 0;
+	if ( ! currentStateEntry_ ) return nullptr;
 
 	std::deque<GLWWindow *>::iterator itor;
 	for (itor = currentStateEntry_->windows_.begin();
@@ -371,7 +371,7 @@ GLWWindow *GLWWindowManager::getWindowByName(const char *name)
 		GLWWindow *window = (*itor);
 		if (0 == strcmp(window->getName(), name)) return window;
 	}
-	return 0;
+	return nullptr;
 }
 
 unsigned int GLWWindowManager::getFocus(int x, int y)
@@ -625,7 +625,8 @@ void GLWWindowManager::loadSettings()
 	if (!file.getRootNode()) return;
 
 	// Get root nodes
-	XMLNode *display = 0, *settings = 0;
+	XMLNode* display  = nullptr;
+	XMLNode* settings = nullptr;
 	if (!file.getRootNode()->getNamedChild("display", display)) return;
 	if (!file.getRootNode()->getNamedChild("settings", settings)) return;
 

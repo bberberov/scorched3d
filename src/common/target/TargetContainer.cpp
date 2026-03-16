@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -24,13 +24,7 @@
 #include <tank/TankState.hpp>
 #include <tanket/Tanket.hpp>
 
-TargetContainer::TargetContainer() :
-	playerId_(0), 
-	destinationId_(0),
-	roundId_(0),
-	currentPlayer_(0)
-{
-}
+TargetContainer::TargetContainer() : playerId_( 0 ), destinationId_( 0 ), roundId_( 0 ), currentPlayer_( nullptr ) {}
 
 TargetContainer::~TargetContainer()
 {
@@ -74,7 +68,7 @@ Target *TargetContainer::removeTarget(unsigned int playerId)
 {
     std::map<unsigned int, Target *>::iterator itor =
 		targets_.find(playerId);
-	if (itor == targets_.end()) return 0;
+	if ( itor == targets_.end() ) return nullptr;
 
 	Target *target = (*itor).second;
 	targets_.erase(itor);
@@ -85,7 +79,7 @@ Target *TargetContainer::removeTarget(unsigned int playerId)
 		tanks_.erase(playerId);
 		if (currentPlayer_ == target)
 		{
-			currentPlayer_ = 0;
+			currentPlayer_ = nullptr;
 		}
 		// Note: No break
 	case Target::TypeTanket:
@@ -108,7 +102,7 @@ Target *TargetContainer::getTargetById(unsigned int id)
 
 		return target;
 	}
-	return 0;
+	return nullptr;
 }
 
 Tanket *TargetContainer::getTanketById(unsigned int id)
@@ -122,7 +116,7 @@ Tanket *TargetContainer::getTanketById(unsigned int id)
 
 		return tanket;
 	}
-	return 0;
+	return nullptr;
 }
 
 Tank *TargetContainer::getTankById(unsigned int id)
@@ -136,7 +130,7 @@ Tank *TargetContainer::getTankById(unsigned int id)
 
 		return tank;
 	}
-	return 0;
+	return nullptr;
 }
 
 Tank *TargetContainer::getTankByName(const LangString &name)
@@ -149,19 +143,19 @@ Tank *TargetContainer::getTankByName(const LangString &name)
 		Tank *tank = (*mainitor).second;
 		if (tank->getTargetName() == name) return tank;
 	}
-	return 0;
+	return nullptr;
 }
 
-void TargetContainer::setCurrentPlayerId(unsigned int pid) 
-{ 
-	playerId_ = pid; 
-	if (playerId_)
+void TargetContainer::setCurrentPlayerId( unsigned int pid )
+{
+	playerId_ = pid;
+	if ( playerId_ )
 	{
-		currentPlayer_ = getTankById(playerId_);
+		currentPlayer_ = getTankById( playerId_ );
 	}
-	else 
+	else
 	{
-		currentPlayer_ = 0;
+		currentPlayer_ = nullptr;
 	}
 }
 

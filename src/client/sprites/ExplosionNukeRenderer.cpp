@@ -60,7 +60,7 @@ void ExplosionNukeRendererEntry::simulate(Particle *particle, float time)
 	particle->position_[2] = startPosition_[2] + z;
 }
 
-Vector *ExplosionNukeRenderer::positions_ = 0;
+Vector* ExplosionNukeRenderer::positions_ = nullptr;
 
 ExplosionNukeRenderer::ExplosionNukeRenderer(Vector &position, float size, GLTextureSet *set, bool animate) :
 	position_(position),

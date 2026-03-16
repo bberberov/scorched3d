@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -58,8 +58,9 @@ void ServerStatePlaying::enterState()
 	roundState_ = eNone;
 	roundTime_ = ScorchedServer::instance()->getOptionsGame().getRoundTime();
 	RoundStartSimAction *roundStart = new RoundStartSimAction( ++nextRoundId_, roundTime_);
+	// FIXME: roundTime_ > 0 fixed type conversions
 	ScorchedServer::instance()->getServerSimulator().addSimulatorAction(
-		roundStart, roundTime_ > 0 ? roundStarted_ : 0
+		roundStart, roundTime_ > 0 ? roundStarted_ : nullptr
 	);
 
 	// Inform the stats logger

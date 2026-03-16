@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -93,12 +93,16 @@ void GLWSelector::showSelector(
 		partEntries.push_back(*itor);
 		if ((int) partEntries.size() * 20 >= GLViewPort::getHeight() - 40)
 		{
-			GLWSelectorPart *part = new GLWSelectorPart(
-				user, basePosition, 
-				left, y, 
+			GLWSelectorPart* part = new GLWSelectorPart(
+				user,
+				basePosition,
+				left,
+				y,
 				partEntries,
 				transparent,
-				0, 0); // Parent
+				nullptr,  // Parent
+				0
+			);
 			left += part->getSelectedWidth() + 10.0f;
 			addPart(part);
 			basePosition += (int) partEntries.size();
@@ -107,12 +111,16 @@ void GLWSelector::showSelector(
 	}
 	if (!partEntries.empty())
 	{
-		GLWSelectorPart *part = new GLWSelectorPart(
-			user, basePosition,
-			left, y, 
+		GLWSelectorPart* part = new GLWSelectorPart(
+			user,
+			basePosition,
+			left,
+			y,
 			partEntries,
 			transparent,
-			0, 0); // Parent
+			nullptr,  // Parent
+			0
+		);
 		addPart(part);
 	}
 }
@@ -120,9 +128,9 @@ void GLWSelector::showSelector(
 void GLWSelector::hideSelector()
 {
 	visible_ = false;
-	w_ = 0;
-	h_ = 0; 
-	user_ = 0;
+	w_       = 0;
+	h_       = 0;
+	user_    = nullptr;
 	
 	while (!parts_.empty())
 	{

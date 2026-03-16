@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -87,7 +87,7 @@ void ServerFileServer::simulate()
 	if (downloadCount == 0) return;
 
 	// Check if this is the next second
-	unsigned int theTime = (unsigned int) time(0);
+	unsigned int theTime = (unsigned int)time( nullptr );
 	if (theTime > lastTime_)
 	{
 		// If so reset the amount that can be sent by this server

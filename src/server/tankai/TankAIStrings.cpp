@@ -64,11 +64,10 @@ const char *TankAIStrings::getAIPlayerName(ScorchedContext &context)
 
 const char *TankAIStrings::getDeathLine(ScorchedContext &context)
 {
-	RandomGenerator &generator = context.getSimulator().getRandomGenerator();
-	const char *deathLine = 0;
-	fixed percentage = 
-		fixed(context.getOptionsGame().getComputersDeathTalk());
-	fixed talkPer = generator.getRandFixed("TankAIStrings::getDeathLine1") * 100;
+	RandomGenerator& generator  = context.getSimulator().getRandomGenerator();
+	const char*      deathLine  = nullptr;
+	fixed            percentage = fixed( context.getOptionsGame().getComputersDeathTalk() );
+	fixed            talkPer    = generator.getRandFixed( "TankAIStrings::getDeathLine1" ) * 100;
 	if (talkPer < percentage)
 	{
 		deathLine = deathLines_.getLines()
@@ -80,11 +79,10 @@ const char *TankAIStrings::getDeathLine(ScorchedContext &context)
 
 const char *TankAIStrings::getAttackLine(ScorchedContext &context)
 {
-	RandomGenerator &generator = context.getSimulator().getRandomGenerator();
-	const char *attackLine = 0;
-	fixed percentage = 
-		fixed(context.getOptionsGame().getComputersAttackTalk());
-	fixed talkPer = generator.getRandFixed("TankAIStrings::getAttackLine1") * 100;
+	RandomGenerator& generator  = context.getSimulator().getRandomGenerator();
+	const char*      attackLine = nullptr;
+	fixed            percentage = fixed( context.getOptionsGame().getComputersAttackTalk() );
+	fixed            talkPer    = generator.getRandFixed( "TankAIStrings::getAttackLine1" ) * 100;
 	if (talkPer < percentage)
 	{
 		attackLine = attackLines_.getLines()

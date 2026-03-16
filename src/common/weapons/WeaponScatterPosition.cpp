@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,9 +28,9 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponScatterPosition);
 
-WeaponScatterPosition::WeaponScatterPosition() :
-	scatterpercentage_("WeaponScatterPosition::scatterpercentage"),
-	aimedWeapon_(0)
+WeaponScatterPosition::WeaponScatterPosition()
+	: scatterpercentage_( "WeaponScatterPosition::scatterpercentage" )
+	, aimedWeapon_( nullptr )
 {}
 
 WeaponScatterPosition::~WeaponScatterPosition()
@@ -44,7 +44,7 @@ bool WeaponScatterPosition::parseXML(AccessoryCreateContext &context, XMLNode *a
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
@@ -116,4 +116,3 @@ void WeaponScatterPosition::fireWeapon(
 
 	aimedWeapon_->fire(context, weaponContext, pos, velocity);
 }
-

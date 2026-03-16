@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -57,7 +57,7 @@ bool XMLFile::readFile(const std::string &fileName)
 		// Hack to get it to count lines correctly :)
 		if (!parser_.parse("\n", 1, 0)) return false;
 	}
-	if (!parser_.parse(0, 0, 1)) return false;
+	if ( ! parser_.parse( nullptr, 0, 1 ) ) return false;
 
 	return true;
 }

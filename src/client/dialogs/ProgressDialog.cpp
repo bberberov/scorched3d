@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -189,7 +189,7 @@ void ProgressDialog::drawRules(ScorchedContext &context)
 
 void ProgressDialog::draw()
 {
-	ScorchedContext *rulesContext = 0;
+	ScorchedContext* rulesContext = nullptr;
 	unsigned int state = ScorchedClient::instance()->getGameState().getState();
 	if (state >= ClientState::StateLoadFiles)
 	{

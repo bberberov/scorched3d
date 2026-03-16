@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -177,7 +177,7 @@ void Explosion::init()
 		}
 
 		{
-			GLTextureSet *texture = 0;
+			GLTextureSet* texture = nullptr;
 			if (0 != strcmp(params_->getExplosionTexture(), "none"))
 			{
 				texture = ExplosionTextures::instance()->getTextureSetByName(

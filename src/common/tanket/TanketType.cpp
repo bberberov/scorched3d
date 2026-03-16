@@ -41,7 +41,7 @@ bool TanketType::initFromXML(ScorchedContext &context, XMLNode *node)
 	if (!node->getNamedChild("power", power_)) return false;
 	if (!node->getNamedChild("description", description_)) return false;
 
-	XMLNode *accessoryNode = 0;
+	XMLNode* accessoryNode = nullptr;
 	while (node->getNamedChild("accessory", accessoryNode, false))
 	{
 		std::string name;

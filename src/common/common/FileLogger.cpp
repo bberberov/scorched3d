@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -49,7 +49,7 @@ void FileLogger::openFile(const char *fileName)
 	size_ = 0;
 	if (logFile_) fclose(logFile_);
 
-	time_t theTime = time(0);
+	time_t theTime = time( nullptr );
 	struct tm *newtime = localtime(&theTime); 
 
 	std::string logFileName = 

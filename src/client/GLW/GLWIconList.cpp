@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -70,7 +70,8 @@ void GLWIconList::clear()
 
 GLWIconListItem *GLWIconList::getSelected()
 {
-	if (selected_ < 0 || selected_ >= (int) items_.size()) return 0;
+	if ( selected_ < 0 || (int)items_.size() <= selected_ ) return nullptr;
+
 	return items_[selected_];
 }
 

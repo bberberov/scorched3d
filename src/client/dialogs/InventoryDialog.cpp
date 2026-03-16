@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -97,7 +97,7 @@ void InventoryDialog::select(unsigned int id, const int pos, GLWSelectorEntry va
 
 void InventoryDialog::display()
 {
-	sortDropDown_->setHandler(0);
+	sortDropDown_->setHandler( nullptr );
 
 	switch (OptionsDisplay::instance()->getAccessorySortKey())
 	{
@@ -213,7 +213,7 @@ Tank *InventoryDialog::getCurrentTank()
 	Tank *currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
 	if (!currentTank) 
 	{
-		currentTank = 0;
+		currentTank = nullptr;
 		unsigned int currentDestinationId = ScorchedClient::instance()->
 			getTargetContainer().getCurrentDestinationId();
 		std::map<unsigned int, Tank *> &tanks = ScorchedClient::instance()->
@@ -230,7 +230,7 @@ Tank *InventoryDialog::getCurrentTank()
 				if (!currentTank) currentTank = tank;
 				else
 				{
-					currentTank = 0;
+					currentTank = nullptr;
 					break;
 				}
 			}

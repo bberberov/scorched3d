@@ -189,7 +189,7 @@ unsigned int *LangStringUtil::strstr(const unsigned int *str1, const LangString 
 {
 	LangString newString(str1);
 	size_t pos = newString.find(str2);
-	if (pos == LangString::npos) return 0;
+	if ( pos == LangString::npos ) return nullptr;
 	return (unsigned int*)(str1 + pos);
 }
 
@@ -200,7 +200,7 @@ unsigned int *LangStringUtil::stristr(const unsigned int *str1, const LangString
 	lowercase(str1l);
 	lowercase(str2l);
 	size_t pos = str1l.find(str2l);
-	if (pos == LangString::npos) return 0;
+	if ( pos == LangString::npos ) return nullptr;
 	return (unsigned int*)(str1 + pos);
 }
 

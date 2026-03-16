@@ -83,7 +83,7 @@ EventHandlerDataBase *EventHandlerDataBase::createInstance()
 	{
 		Logger::log( "Created null stats logger.");
 	}
-	return 0;
+	return nullptr;
 }
 
 enum EventType
@@ -103,7 +103,7 @@ const char *EventHandlerDataBase::RowResult::getValue(const char *name)
 {
 	std::map<std::string, unsigned int>::iterator findItor =
 		names.find(name);
-	if (findItor == names.end()) return 0;
+	if ( findItor == names.end() ) return nullptr;
 	unsigned int pos = findItor->second;
 	return columns[pos].c_str();
 }
@@ -487,10 +487,10 @@ std::string EventHandlerDataBase::getTopRanks()
 	std::string cols(columns);
 	char *token = strtok((char *) cols.c_str(), " ");
 	stringResult.append("<tr>");
-	while(token != 0)
+	while ( nullptr != token )
 	{
 		stringResult.append("<td><b>").append(token).append("</b></td>");
-		token = strtok(0, " ");
+		token = strtok( nullptr, " " );
 	}
 	stringResult.append("</tr>");
 
@@ -810,7 +810,7 @@ void EventHandlerDataBase::periodicUpdate(Tank *tank)
 
 void EventHandlerDataBase::periodicUpdate()
 {
-	time_t currentTime = time(0);
+	time_t currentTime = time( nullptr );
 	if (currentTime - updateTime_ > 60 * 60 * 12) // 12 hrs
 	{
 		updateTime_ = currentTime;

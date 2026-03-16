@@ -31,7 +31,7 @@ class ScorchedApp: public wxApp
 
 bool ScorchedApp::OnInit()
 {
-	if (setlocale(LC_ALL, "C") == 0)
+	if ( nullptr == setlocale( LC_ALL, "C" ) )
 	{
 		S3D::dialogMessage( "ScorchedApp", "Warning: Failed to set wx locale");
 	}
@@ -46,6 +46,9 @@ bool ScorchedApp::OnInit()
 	wxWindowInit = true;
 	return TRUE;
 }
+
+// NOTE: declaration for IMPLEMENT_APP_NO_MAIN
+ScorchedApp& wxGetApp();
 
 IMPLEMENT_APP_NO_MAIN(ScorchedApp);
 IMPLEMENT_WX_THEME_SUPPORT

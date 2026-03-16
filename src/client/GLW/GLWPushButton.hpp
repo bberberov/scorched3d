@@ -34,7 +34,7 @@ public:
 class GLWPushButton : public GLWButton
 {
 public:
-	GLWPushButton( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f, GLWPushButtonI* handler = 0 );
+	GLWPushButton( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f, GLWPushButtonI* handler = nullptr );
 	virtual ~GLWPushButton();
 
 	virtual void mouseDown( int button, float x, float y, bool& skipRest );

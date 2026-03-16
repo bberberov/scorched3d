@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -105,7 +105,8 @@ GLWidget *GLWPanel::getWidgetByName(const char *name)
 			}
 		}
 	}
-	return 0;
+
+	return nullptr;
 }
 
 void GLWPanel::clear()
@@ -398,8 +399,8 @@ bool GLWPanel::initFromXML(XMLNode *node)
 		if (!widgetNode->failChildren()) return false;
 
 		// The condition (if any)
-		GLWCondition *condition = 0;
-		XMLNode *conditionNode = 0;
+		GLWCondition* condition     = nullptr;
+		XMLNode*      conditionNode = nullptr;
 		if (currentNode->getNamedChild("condition", conditionNode, false))
 		{
 			// Get the type of this condition
@@ -469,9 +470,9 @@ void GLWPanel::layout()
 {
 	if (layout_ == LayoutNone) return;
 	
-	float w = 0.0f;
-	float h = 0.0f;
-	float *gridW = 0;
+	float  w     = 0.0f;
+	float  h     = 0.0f;
+	float* gridW = nullptr;
 	if (gridWidth_ > 0) gridW = new float[gridWidth_];
 	for (unsigned int i=0; i<gridWidth_; i++) gridW[i] = 0.0f;
 	

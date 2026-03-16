@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,12 +25,13 @@ GLWScrollButtonI::~GLWScrollButtonI()
 
 }
 
-GLWScrollButton::GLWScrollButton(float x, float y, float w, float h) 
-	: GLWButton(x, y, w, h), scrollHandler_(0),
-	startX_(0.0f), startY_(0.0f)
-{
+GLWScrollButton::GLWScrollButton( float x, float y, float w, float h )
+	: GLWButton( x, y, w, h )
+	, scrollHandler_( nullptr )
+	, startX_( 0.0f )
+	, startY_( 0.0f )
+{}
 
-}
 
 GLWScrollButton::~GLWScrollButton()
 {

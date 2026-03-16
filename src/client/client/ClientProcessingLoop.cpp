@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -77,20 +77,20 @@ void ClientProcessingLoop::process(float frameTime, bool processClientMessages)
 		ScorchedClient::instance()->getNetInterface().processMessages();
 	}
 
-	if (ClientParams::instance()->getExitTime() > 0)
+	if ( 0 < ClientParams::instance()->getExitTime() )
 	{
-		if (startTime == 0) startTime = time(0);
-		if (time(0) - startTime > ClientParams::instance()->getExitTime())
+		if ( 0 == startTime ) startTime = time( nullptr );
+		if ( ClientParams::instance()->getExitTime() < time( nullptr ) - startTime )
 		{
-			exit(0);
+			exit( 0 );
 		}
 	}
-	if (ClientParams::instance()->getDisconnectTime() > 0)
+	if ( 0 < ClientParams::instance()->getDisconnectTime() )
 	{
-		if (startTime == 0) startTime = time(0);
-		if (time(0) - startTime > ClientParams::instance()->getDisconnectTime())
+		if ( 0 == startTime ) startTime = time( nullptr );
+		if ( ClientParams::instance()->getDisconnectTime() < time( nullptr ) - startTime )
 		{
-			startTime = time(0);
+			startTime = time( nullptr );
 			if (ScorchedClient::instance()->getTargetContainer().getCurrentDestinationId())
 			{
 				ScorchedClient::instance()->getNetInterface().disconnectAllClients();

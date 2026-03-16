@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -228,7 +228,7 @@ bool LUAScriptHook::loadHook(const std::string &directoryName, const std::string
 			return false;
 		}
 
-		XMLNode *hook = 0;
+		XMLNode* hook = nullptr;
 		while (currentNode->getNamedChild("hook", hook, false))
 		{
 			std::string hookName, entryPoint;

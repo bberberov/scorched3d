@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,14 +25,12 @@
 #include <common/Logger.hpp>
 #include <stdlib.h>
 
-EconomyStore::EconomyStore() : economy_(0)
-{
-}
+EconomyStore::EconomyStore() : economy_( nullptr ) {}
 
 EconomyStore::~EconomyStore()
 {
 	delete economy_;
-	economy_ = 0;
+	economy_ = nullptr;
 }
 
 void EconomyStore::loadEconomy()
@@ -53,15 +51,16 @@ void EconomyStore::loadEconomy()
 	economy_->loadPrices();
 }
 
-Economy *EconomyStore::getEconomy()
-{ 
-	if (economy_ == 0 ||
-		0 != strcmp(ScorchedServer::instance()->getOptionsGame().getEconomy(),
-		economy_->getClassName()))
+Economy* EconomyStore::getEconomy()
+{
+	if (
+		nullptr == economy_
+		|| 0 != strcmp( ScorchedServer::instance()->getOptionsGame().getEconomy(), economy_->getClassName() )
+	)
 	{
-		Logger::log( "Loading new economy");
+		Logger::log( "Loading new economy" );
 		loadEconomy();
 	}
 
-	return economy_; 
+	return economy_;
 }

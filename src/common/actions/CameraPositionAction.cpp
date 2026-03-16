@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -114,7 +114,7 @@ void CameraPositionAction::simulate(fixed frameTime, bool &remove)
 }
 
 std::set<CameraPositionAction *> CameraPositionActionRegistry::actions_;
-CameraPositionAction *CameraPositionActionRegistry::currentAction_ = 0;
+CameraPositionAction* CameraPositionActionRegistry::currentAction_ = nullptr;
 
 void CameraPositionActionRegistry::addCameraPositionAction(CameraPositionAction *action)
 {
@@ -123,7 +123,7 @@ void CameraPositionActionRegistry::addCameraPositionAction(CameraPositionAction 
 
 void CameraPositionActionRegistry::rmCameraPositionAction(CameraPositionAction *action)
 {
-	if (currentAction_ == action) currentAction_ = 0;
+	if ( currentAction_ == action ) currentAction_ = nullptr;
 	actions_.erase(action);
 }
 
@@ -153,7 +153,7 @@ CameraPositionAction *CameraPositionActionRegistry::getCurrentAction()
 
 CameraPositionAction *CameraPositionActionRegistry::getCurrentBest()
 {
-	CameraPositionAction *currentBest = 0;
+	CameraPositionAction* currentBest = nullptr;
 	if (!actions_.empty())
 	{
 		std::set<CameraPositionAction *>::iterator itor;

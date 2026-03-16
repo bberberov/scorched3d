@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,7 +23,7 @@
 #include <common/Logger.hpp>
 #include <common/Defines.hpp>
 
-const GLSLProgram* GLSLProgram::used_program_(0);
+const GLSLProgram* GLSLProgram::used_program_( nullptr );
 
 GLSLProgram::GLSLProgram() : 
 	id_(0), linked_(false)
@@ -166,5 +166,5 @@ unsigned GLSLProgram::get_vertex_attrib_index(const char *name) const
 void GLSLProgram::use_fixed()
 {
 	glUseProgramObjectARB(0);
-	used_program_ = 0;
+	used_program_ = nullptr;
 }

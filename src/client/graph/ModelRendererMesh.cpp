@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -91,7 +91,7 @@ void ModelRendererMesh::drawBottomAligned(float currentFrame,
 void ModelRendererMesh::draw(float currentFrame, 
 	float distance, float fade, bool setState)
 {
-	drawModel(currentFrame, distance, fade, setState, model_->getMeshes(), 0);
+	drawModel( currentFrame, distance, fade, setState, model_->getMeshes(), nullptr );
 }
 
 Mesh *ModelRendererMesh::drawModel(float currentFrame, 
@@ -190,7 +190,7 @@ Mesh *ModelRendererMesh::drawModel(float currentFrame,
 	glCallList(displayList);
 	GLInfo::addNoTriangles(model_->getNumberTriangles());
 
-	GLTexture::setLastBind(0);
+	GLTexture::setLastBind( nullptr );
 
 	return lastMesh;
 }

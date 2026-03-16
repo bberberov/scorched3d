@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -36,7 +36,7 @@ TankAICurrentMoveWeapons::TankAICurrentMoveWeapons(Tanket *tanket,
 	TankAIWeaponSets::WeaponSet *weapons)
 {
 	// Check if this target has shields
-	shield = 0;
+	shield = nullptr;
 	if (targetTanket->getShield().getCurrentShield())
 	{
 		shield = (Shield *) targetTanket->getShield().
@@ -59,14 +59,14 @@ TankAICurrentMoveWeapons::TankAICurrentMoveWeapons(Tanket *tanket,
 
 		waterHeight = water->height;
 	}
-	napalm = 0;
+	napalm = nullptr;
 	if (targetTanket->getLife().getTargetPosition()[2] > waterHeight)
 	{
 		napalm = weapons->getTankAccessoryByType(tanket, "napalm");
 	}
 
 	// Check for laser proof shields
-	laser = 0;
+	laser = nullptr;
 	if (!shield ||
 		shield->getLaserProof() == Shield::ShieldLaserProofNone)
 	{
@@ -75,7 +75,7 @@ TankAICurrentMoveWeapons::TankAICurrentMoveWeapons(Tanket *tanket,
 
 	// Check for having parachutes
 	// Cheating!!, need a better way for this
-	digger = 0;
+	digger = nullptr;
 	if (!targetTanket->getParachute().getCurrentParachute())
 	{
 		digger = weapons->getTankAccessoryByType(tanket, "digger");
@@ -85,4 +85,3 @@ TankAICurrentMoveWeapons::TankAICurrentMoveWeapons(Tanket *tanket,
 TankAICurrentMoveWeapons::~TankAICurrentMoveWeapons()
 {
 }
-

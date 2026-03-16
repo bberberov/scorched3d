@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -43,7 +43,7 @@ LandscapeDefnTypeTankStart::~LandscapeDefnTypeTankStart()
 static bool parseMinMax(XMLNode *parent, const char *name, 
 	fixed &min, fixed &max)
 {
-	XMLNode *node = 0;
+	XMLNode* node = nullptr;
 	if (!parent->getNamedChild(name, node)) return false;
 	if (!node->getNamedChild("max", max)) return false;
 	if (!node->getNamedChild("min", min)) return false;
@@ -55,7 +55,7 @@ LandscapeDefnTypeTankStart *LandscapeDefnTypeTankStart::createType(const char *t
 	if (0 == strcmp(type, "height")) return new LandscapeDefnTankStartHeight;
 	if (0 == strcmp(type, "positional")) return new LandscapeDefnTankStartPositional;
 	S3D::dialogMessage("LandscapeDefnTankStartType", S3D::formatStringBuffer("Unknown tankstart type %s", type));
-	return 0;
+	return nullptr;
 }
 
 bool LandscapeDefnTankStartHeight::readXML(XMLNode *node)
@@ -304,7 +304,7 @@ bool LandscapeDefnTankStartPositional::readXML(XMLNode *node)
 		flatness = 0;
 	}
 
-	XMLNode *positionNode = 0;
+	XMLNode* positionNode = nullptr;
 	while (node->getNamedChild("position", positionNode, false, true)) 
 	{
 		fixed x, y;

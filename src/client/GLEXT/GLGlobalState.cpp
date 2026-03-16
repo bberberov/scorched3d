@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,7 +21,7 @@
 #include <GLEXT/GLGlobalState.hpp>
 #include <common/DefinesAssert.hpp>
 
-GLState *GLGlobalState::state_(0);
+GLState* GLGlobalState::state_( nullptr );
 unsigned int GLGlobalState::stateStack_(0);
 
 GLGlobalState::GLGlobalState(unsigned wantedState)
@@ -44,7 +44,7 @@ GLGlobalState::~GLGlobalState()
 	if (stateStack_ == 0)
 	{
 		delete state_;
-		state_ = 0;
+		state_ = nullptr;
 	}
 }
 

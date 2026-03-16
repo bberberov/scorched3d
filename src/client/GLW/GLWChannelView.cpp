@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -65,7 +65,7 @@ GLWChannelView::CurrentChannelEntry *GLWChannelView::getChannel(const std::strin
 		if ( itor->channel == channelName                 ) return &(*itor);
 		if ( itor->id == std::atol( channelName.c_str() ) ) return &(*itor);
 	}
-	return 0;
+	return nullptr;
 }
 
 void GLWChannelView::registeredForChannels(

@@ -59,7 +59,7 @@ public:
 		ScorchedContext& context,
 		RandomGenerator& generator,
 		unsigned int&    playerId,
-		ProgressCounter* counter = 0
+		ProgressCounter* counter = nullptr
 	);
 
 	virtual Type getType() = 0;
@@ -68,7 +68,7 @@ public:
 		ScorchedContext&       context,
 		RandomGenerator&       generator,
 		std::list< Position >& returnPositions,
-		ProgressCounter*       counter = 0
+		ProgressCounter*       counter = nullptr
 	) = 0;
 
 protected:

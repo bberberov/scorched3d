@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,10 +40,10 @@
 #include <graph/MainCamera.hpp>
 #include <sound/Sound.hpp>
 
-VirtualSoundSource *TankKeyboardControlUtil::elevateSound_(0);
-VirtualSoundSource *TankKeyboardControlUtil::rotateSound_(0);
-VirtualSoundSource *TankKeyboardControlUtil::startSound_(0);
-VirtualSoundSource *TankKeyboardControlUtil::powerSound_(0);
+VirtualSoundSource* TankKeyboardControlUtil::elevateSound_( nullptr );
+VirtualSoundSource* TankKeyboardControlUtil::rotateSound_( nullptr );
+VirtualSoundSource* TankKeyboardControlUtil::startSound_( nullptr );
+VirtualSoundSource* TankKeyboardControlUtil::powerSound_( nullptr );
 
 TankKeyboardControlUtil::TankKeyboardControlUtil()
 {

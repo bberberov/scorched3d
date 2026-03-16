@@ -46,7 +46,7 @@ public:
 		float             width,
 		unsigned int      state,
 		GLMenuI*          callback,
-		Image*            icon  = 0,
+		Image*            icon  = nullptr,
 		unsigned int      flags = 0
 	);
 	bool         addMenuItem( const char* menuName, const GLMenuItem item );

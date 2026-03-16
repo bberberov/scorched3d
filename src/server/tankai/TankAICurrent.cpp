@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,13 +28,9 @@
 #include <coms/ComsPlayedMoveMessage.hpp>
 #include <XML/XMLNode.hpp>
 
-TankAICurrent::TankAICurrent() : tanket_(0)
-{
-}
+TankAICurrent::TankAICurrent() : tanket_( nullptr ) {}
 
-TankAICurrent::~TankAICurrent()
-{
-}
+TankAICurrent::~TankAICurrent() {}
 
 TankAI *TankAICurrent::createCopy(Tanket *tanket)
 {
@@ -53,17 +49,17 @@ bool TankAICurrent::parseConfig(TankAIWeaponSets &sets, XMLNode *node)
 	if (!TankAI::parseConfig(sets, node)) return false;
 
 	{
-		XMLNode *weapons = 0;
+		XMLNode* weapons = nullptr;
 		if (!node->getNamedChild("weapons", weapons)) return false;
 		if (!wantedWeapons_.parseConfig(sets, weapons)) return false;
 	}
 	{
-		XMLNode *defense = 0;
+		XMLNode* defense = nullptr;
 		if (!node->getNamedChild("defense", defense)) return false;
 		if (!defenses_.parseConfig(defense)) return false;
 	}
 	{
-		XMLNode *attack = 0;
+		XMLNode* attack = nullptr;
 		if (!node->getNamedChild("attack", attack)) return false;
 		if (!move_.parseConfig(attack)) return false;
 	}

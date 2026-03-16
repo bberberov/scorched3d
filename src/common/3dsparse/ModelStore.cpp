@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -59,7 +59,7 @@ Model *ModelStore::loadModel(ModelID &modelId)
 
 Model *ModelStore::getModel(ModelID &id)
 {
-	Model *model = 0;
+	Model* model = nullptr;
 	if (0 == strcmp(id.getType(), "ase"))
 	{
 		// Load the ASEFile containing the tank definitions

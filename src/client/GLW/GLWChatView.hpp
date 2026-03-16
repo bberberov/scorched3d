@@ -36,8 +36,8 @@ public:
 	GLWChatView( float x = 0.0f, float y = 0.0f, float w = 0.0f, float h = 0.0f );
 	virtual ~GLWChatView();
 
-	void addLargeChat( const Vector& color, const LangString& text, GLFont2dI* render = 0 );
-	void addChat( const Vector& color, const LangString& text, GLFont2dI* render = 0 );
+	void addLargeChat( const Vector& color, const LangString& text, GLFont2dI* render = nullptr );
+	void addChat( const Vector& color, const LangString& text, GLFont2dI* render = nullptr );
 	void clearChat();
 
 	virtual bool initFromXMLInternal( XMLNode* node );

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -105,7 +105,7 @@ ResourceBundleEntry *LangImpl::getEntry(
 {
 	SDL_LockMutex(langMutex);
 
-	ResourceBundleEntry *entry = 0;
+	ResourceBundleEntry* entry = nullptr;
 	std::vector<ResourceBundle *>::iterator itor;
 	for (itor = bundles_.begin();
 		itor != bundles_.end();

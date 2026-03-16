@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -47,7 +47,7 @@ void GLWDropDown::setHandler(GLWDropDownI *handler)
 
 void GLWDropDown::clear()
 {
-	current_ = 0;
+	current_ = nullptr;
 	texts_.clear();
 }
 

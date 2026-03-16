@@ -105,7 +105,7 @@ public:
 
 	// clang-format off
 	// uncrustify off
-	void               resetModel() { mesh_ = 0; }
+	void               resetModel() { mesh_ = nullptr; }
 	ModelRendererTank* getMesh();
 	GLWTankTips*       getTips()    { return &tankTips_; }
 	// uncrustify on

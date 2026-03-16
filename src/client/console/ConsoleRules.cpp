@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -193,7 +193,7 @@ ConsoleRule *ConsoleRules::matchRule(
 				(int) rule->getParams().size(), rule));
 	}
 
-	if (matchedRules.empty()) return 0;
+	if ( matchedRules.empty() ) return nullptr;
 
 	std::vector<ConsoleRule *>::iterator ruleItor;
 	std::vector<ConsoleRule *> sameNumberArgs;
@@ -214,7 +214,7 @@ ConsoleRule *ConsoleRules::matchRule(
 		}
 	}
 
-	return 0;
+	return nullptr;
 }
 
 void ConsoleRules::getMatchedRules(

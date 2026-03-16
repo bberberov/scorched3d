@@ -22,17 +22,13 @@
 #include <engine/ScorchedContext.hpp>
 #include <weapons/AccessoryStore.hpp>
 
-TargetParachute::TargetParachute(ScorchedContext &context) :
-	context_(context),
-	currentParachute_(0)
-{}
+TargetParachute::TargetParachute( ScorchedContext& context ) : context_( context ), currentParachute_( nullptr ) {}
 
-TargetParachute::~TargetParachute()
-{}
+TargetParachute::~TargetParachute() {}
 
 void TargetParachute::loaded()
 {
-	setCurrentParachute(0);
+	setCurrentParachute( nullptr );
 }
 
 void TargetParachute::setCurrentParachute(Accessory *para)
@@ -52,7 +48,7 @@ bool TargetParachute::readMessage(NetBufferReader &reader)
 {
 	unsigned int paraId;
 	if (!reader.getFromBuffer(paraId)) return false;
-	if (paraId == 0) setCurrentParachute(0);
+	if ( 0 == paraId ) setCurrentParachute( nullptr );
 	else setCurrentParachute(context_.getAccessoryStore().findByAccessoryId(paraId));
 	return true;
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,18 +27,18 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponRedirect);
 
-WeaponRedirect::WeaponRedirect() :
-	hredirect_("WeaponRedirect::hredirect", 0), vredirect_("WeaponRedirect::vredirect", 0),
-	habs_(false), vabs_(false),
-	nextAction_(0)
-{
-
-}
+WeaponRedirect::WeaponRedirect()
+	: hredirect_( "WeaponRedirect::hredirect", 0 )
+	, vredirect_( "WeaponRedirect::vredirect", 0 )
+	, habs_( false )
+	, vabs_( false )
+	, nextAction_( nullptr )
+{}
 
 WeaponRedirect::~WeaponRedirect()
 {
 	delete nextAction_;
-	nextAction_ = 0;
+	nextAction_ = nullptr;
 }
 
 bool WeaponRedirect::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -50,7 +50,7 @@ bool WeaponRedirect::parseXML(AccessoryCreateContext &context, XMLNode *accessor
 	if (!accessoryNode->getNamedChild("vredirect", vredirect_)) return false;
 	if (!accessoryNode->getNamedChild("vabs", vabs_)) return false;
 
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("nextaction", subNode)) return false;
 	
 	// Check next weapon is correct type
@@ -81,8 +81,6 @@ void WeaponRedirect::fireWeapon(ScorchedContext &context,
 	FixedVector newVelocity = TankLib::getVelocityVector(currenth, fixed(90) - currentv);
 	newVelocity.StoreNormalize();
 	newVelocity *= currentMag;
-	
+
 	nextAction_->fire(context, weaponContext, position, newVelocity);
-
 }
-

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -60,7 +60,7 @@ void BuyAccessoryDialogTankInfo::set()
 	} 
 	else
 	{
-		tankAccessories.setTanket(0);
+		tankAccessories.setTanket( nullptr );
 		tankAccessories.clearAccessories();
 		tankColor = Vector::getNullVector();
 		tankName = LangString();

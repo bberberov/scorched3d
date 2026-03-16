@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -49,7 +49,7 @@ bool Shield::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 	if (!S3D::checkDataFile(S3D::formatStringBuffer("data/wav/%s", getCollisionSound()))) return false;
 
 	// Get the accessory color
-	XMLNode *colorNode = 0;
+	XMLNode* colorNode = nullptr;
 	if (!accessoryNode->getNamedChild("color", colorNode)) return false;
 	if (!colorNode->getNamedChild("r", color_[0])) return false;
 	if (!colorNode->getNamedChild("g", color_[1])) return false;
@@ -90,8 +90,8 @@ bool Shield::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
 	return true;
 }
 
-const char *Shield::getCollisionSound()
+const char* Shield::getCollisionSound()
 {
-	if (!collisionSound_.c_str()[0]) return 0;
-	return collisionSound_.c_str();
+	if ( ! collisionSound_.c_str()[0] ) return nullptr;
+	else return collisionSound_.c_str();
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -63,8 +63,8 @@ TanketMovement::TanketMovement(
 	weaponContext_(weaponContext),
 	weapon_(weapon),
 	timePassed_(0),
-	vPoint_(0),
-	moveSoundSource_(0),
+	vPoint_( nullptr ),
+	moveSoundSource_( nullptr ),
 	smokeCounter_(0.1f, 0.1f),
 	positionX_(positionX), positionY_(positionY),
 	stepCount_(0),
@@ -78,7 +78,7 @@ TanketMovement::~TanketMovement()
 	if (!context_->getServerMode())
 	{
 		delete moveSoundSource_;
-		moveSoundSource_ = 0;
+		moveSoundSource_ = nullptr;
 	}
 #endif
 	if (vPoint_) vPoint_->decrementReference();
@@ -292,7 +292,7 @@ void TanketMovement::simulationMove(fixed frameTime)
 		{
 			if (tanket->getTargetState().getMoving() == this)
 			{
-				tanket->getTargetState().setMoving(0);
+				tanket->getTargetState().setMoving( nullptr );
 			}
 			tanket->getLife().setRotation(0);
 			if (tanket->getAlive())

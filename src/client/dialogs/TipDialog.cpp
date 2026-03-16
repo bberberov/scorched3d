@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,22 +40,34 @@ TipDialog::TipDialog() :
 {
 	needCentered_ = true;
 
-	helpBox_ = new GLWCheckBoxText(0.0f, 0.0f, LANG_RESOURCE("SHOW_HELP_TOOLTIPS", "Show Help Tooltips"));
-	addWidget(helpBox_, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
-	infoBox_ = new GLWCheckBoxText(0.0f, 0.0f, LANG_RESOURCE("SHOW_INFO_TOOLTIPS", "Show Info Tooltips"));
-	addWidget(infoBox_, 0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	helpBox_ = new GLWCheckBoxText( 0.0f, 0.0f, LANG_RESOURCE( "SHOW_HELP_TOOLTIPS", "Show Help Tooltips" ) );
+	infoBox_ = new GLWCheckBoxText( 0.0f, 0.0f, LANG_RESOURCE( "SHOW_INFO_TOOLTIPS", "Show Info Tooltips" ) );
+	addWidget( helpBox_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
+	addWidget( infoBox_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
 
-	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+	GLWPanel*  buttonPanel  = new GLWPanel( 0.0f, 0.0f, 0.0f, 0.0f, false, false );
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		95,
+		10,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "OK", "Ok" ),
+		235,
+		10,
+		55,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("OK", "Ok"), 235, 10, 55, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, SpaceAll, 10.0f);
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, SpaceAll, 10.0f );
 
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();

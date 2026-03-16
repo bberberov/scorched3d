@@ -199,7 +199,7 @@ wxButton *addButtonToWindow(
 	wxObjectRefData *data
 )
 {
-	wxButton *button = 0;
+	wxButton* button = nullptr;
 	wxBitmap bitmap;
 	if (
 		bitmap.LoadFile(wxString(bitmapName, wxConvUTF8), wxBITMAP_TYPE_BMP)

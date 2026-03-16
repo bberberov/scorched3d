@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -36,7 +36,7 @@ ResourceBundleEntry *ResourceBundle::getEntry(const std::string &key)
 {
 	ResourceBundleEntryImpl searchEntry(key);
 	ResourceBundleSet::iterator findItor = entries_.find(&searchEntry);
-	if (findItor == entries_.end()) return 0;
+	if ( findItor == entries_.end() ) return nullptr;
 	return *findItor;
 }
 
@@ -57,7 +57,7 @@ bool ResourceBundle::loadFromFile(const std::string &file)
 	if (!in) return false;
 
 	char buffer[2048];
-	while (fgets(buffer, 2048, in) != 0)
+	while ( nullptr != fgets( buffer, 2048, in ) )
 	{
 		std::string key, value;
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -181,7 +181,7 @@ void GLWChatView::addLargeChat(const Vector &color, const LangString &text, GLFo
 		LangString subset(text, currentLen, (nl?partLen-1:partLen));
 
 		// Create the new text and add it
-		addChat(color, subset, currentLen==0?renderer:0);
+		addChat( color, subset, 0 == currentLen ? renderer : nullptr );
 
 		// Increment the current position
 		currentLen += partLen;

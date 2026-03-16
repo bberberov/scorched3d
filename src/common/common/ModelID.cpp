@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -61,7 +61,7 @@ bool ModelID::initFromString(
 
 bool ModelID::initFromNode(XMLNode *modelNode)
 {
-	XMLNode *typeNode = 0;
+	XMLNode* typeNode = nullptr;
 	if (!modelNode->getNamedParameter("type", typeNode)) return false;
 
 	// Store the model type

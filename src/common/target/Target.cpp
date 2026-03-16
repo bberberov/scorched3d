@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -34,40 +34,47 @@
 #include <common/Logger.hpp>
 #include <common/OptionsScorched.hpp>
 
-Target::Target(unsigned int playerId, const LangString &name, ScorchedContext &context) :
-	playerId_(playerId),
-	context_(context),
-	border_(0),
-	renderer_(nullptr),
-	deathAction_(nullptr),
-	burnAction_(nullptr),
-	collisionAction_(nullptr)
+Target::Target( unsigned int playerId, const LangString& name, ScorchedContext& context )
+	: playerId_( playerId )
+	, context_( context )
+	, border_( 0 )
+	, renderer_( nullptr )
+	, deathAction_( nullptr )
+	, burnAction_( nullptr )
+	, collisionAction_( nullptr )
 {
-	setName(name);
+	setName( name );
 
-	life_ = new TargetLife(context.getServerMode(), context.getTargetSpace(), playerId);
-	shield_ = new TargetShield(context, playerId);
-	parachute_ = new TargetParachute(context);
-	group_ = new TargetGroup(context);
+	life_        = new TargetLife( context.getServerMode(), context.getTargetSpace(), playerId );
+	shield_      = new TargetShield( context, playerId );
+	parachute_   = new TargetParachute( context );
+	group_       = new TargetGroup( context );
 	targetState_ = new TargetState();
 
-	life_->setTarget(this);
-	life_->setBoundingSphere(true);
-	shield_->setTarget(this);
-	shield_->setCurrentShield(0);
-	group_->setTarget(this);
+	life_->setTarget( this );
+	life_->setBoundingSphere( true );
+	shield_->setTarget( this );
+	shield_->setCurrentShield( nullptr );
+	group_->setTarget( this );
 }
 
 Target::~Target()
 {
-	life_->setLife(0);
+	life_->setLife( 0 );
 
-	delete renderer_; renderer_ = nullptr;
-	delete life_; life_ = nullptr;
-	delete shield_; shield_ = nullptr;
-	delete group_; group_ = nullptr;
-	delete parachute_; parachute_ = nullptr;
-	delete targetState_; targetState_ = nullptr;
+	delete renderer_;
+	delete life_;
+	delete shield_;
+	delete group_;
+	delete parachute_;
+	delete targetState_;
+	renderer_    = nullptr;
+	life_        = nullptr;
+	shield_      = nullptr;
+	group_       = nullptr;
+	parachute_   = nullptr;
+	targetState_ = nullptr;
+
 	playerId_ = 0;
 }
 

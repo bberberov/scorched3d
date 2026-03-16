@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,16 +28,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponTankVelocity);
 
-WeaponTankVelocity::WeaponTankVelocity() :
-	aimedWeapon_(0)
-{
-
-}
+WeaponTankVelocity::WeaponTankVelocity() : aimedWeapon_( nullptr ) {}
 
 WeaponTankVelocity::~WeaponTankVelocity()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponTankVelocity::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -45,7 +41,7 @@ bool WeaponTankVelocity::parseXML(AccessoryCreateContext &context, XMLNode *acce
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
@@ -70,4 +66,3 @@ void WeaponTankVelocity::fireWeapon(ScorchedContext &context,
 		aimedWeapon_->fire(context, weaponContext, position, newVelocity);
 	}
 }
-

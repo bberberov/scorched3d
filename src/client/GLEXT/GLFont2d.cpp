@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -264,7 +264,7 @@ bool GLFont2d::drawStringHandler(unsigned length,
 	float x, float y, float z, 
 	const unsigned int *string)
 {
-	GLTextureBase::setLastBind(0); // Clear so no texture is cached
+	GLTextureBase::setLastBind( nullptr );  // Clear so no texture is cached
 
 	GLState currentState(GLState::BLEND_ON | GLState::TEXTURE_ON);
 	Vector4 acolor;
@@ -301,7 +301,7 @@ bool GLFont2d::drawString(unsigned length, Vector &color, float alpha, float siz
 	const unsigned int *string,
 	bool bilboard)
 {
-	GLTextureBase::setLastBind(0); // Clear so no texture is cached
+	GLTextureBase::setLastBind( nullptr );  // Clear so no texture is cached
 
 	GLState currentState(GLState::BLEND_ON | GLState::TEXTURE_ON);
 	glColor4f(color[0], color[1], color[2], alpha);

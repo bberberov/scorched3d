@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -58,7 +58,7 @@ TargetFalling::~TargetFalling()
 		{
 			if (target->getTargetState().getFalling() == this)
 			{
-				target->getTargetState().setFalling(0);
+				target->getTargetState().setFalling( nullptr );
 			}
 		}
 	}
@@ -160,7 +160,7 @@ void TargetFalling::collision(
 					);
 					if (!currentTanket->getAccessories().canUse(parachute_->getParent()))
 					{
-						currentTanket->getParachute().setCurrentParachute(0);
+						currentTanket->getParachute().setCurrentParachute( nullptr );
 					}
 				}
 			}

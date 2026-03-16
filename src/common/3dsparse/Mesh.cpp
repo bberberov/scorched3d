@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -85,8 +85,8 @@ void Mesh::setTextureName(const char *t)
 { 
 	if (0 != strcmp(t, "none"))
 	{
-		sphereMap_ = (strstr(t, "/sphere_") != 0);
-		textureName_ = t; 
+		sphereMap_   = ( nullptr != strstr( t, "/sphere_" ) );
+		textureName_ = t;
 
 #ifndef S3D_SERVER
 		textureSet_ = true;

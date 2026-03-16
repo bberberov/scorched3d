@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -177,7 +177,7 @@ Target *TargetSpace::getCollision(FixedVector &position)
 
 	Square *square = &squares_[num];
 
-	Target *result = 0;
+	Target* result = nullptr;
 	std::map<unsigned int, Target *> &potentialTargets = square->targets;
 	std::map<unsigned int, Target *>::iterator itor;
 	for (itor = potentialTargets.begin();

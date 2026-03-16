@@ -66,7 +66,7 @@ protected:
 	class SimActionContainer
 	{
 	public:
-		SimActionContainer( SimAction* action, fixed fireTime, SimulatorI* callback = 0 )
+		SimActionContainer( SimAction* action, fixed fireTime, SimulatorI* callback = nullptr )
 			: action_( action )
 			, fireTime_( fireTime )
 			, callback_( callback )

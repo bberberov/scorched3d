@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -299,7 +299,7 @@ bool igd::parseServiceRequest(Location &location)
 	}
 
 	// Get the root node
-	XMLNode *deviceNode = 0;
+	XMLNode* deviceNode = nullptr;
 	if (!xmlDocument.getRootNode()->getNamedChild("device", deviceNode, false))
 	{
 		Logger::log(S3D::formatStringBuffer("igd::Failed to get service device from host and port, %s:%i, %s", 
@@ -334,10 +334,10 @@ bool igd::parseServiceRequest(Location &location)
 bool igd::findServiceType(XMLNode *deviceNode, std::set<std::string> &wantedServiceTypes, 
 	std::string &serviceType, std::string &controlUrl)
 {
-	XMLNode *serviceListNode = 0;
+	XMLNode* serviceListNode = nullptr;
 	if (deviceNode->getNamedChild("serviceList", serviceListNode, false)) 
 	{
-		XMLNode *serviceNode = 0;
+		XMLNode* serviceNode = nullptr;
 		while (serviceListNode->getNamedChild("service", serviceNode, false))
 		{
 			if (serviceNode->getNamedChild("serviceType", serviceType, false) &&
@@ -350,10 +350,10 @@ bool igd::findServiceType(XMLNode *deviceNode, std::set<std::string> &wantedServ
 			}
 		}
 	}
-	XMLNode *deviceListNode = 0;
+	XMLNode* deviceListNode = nullptr;
 	if (deviceNode->getNamedChild("deviceList", deviceListNode, false)) 
 	{
-		XMLNode *newDeviceNode = 0;
+		XMLNode* newDeviceNode = nullptr;
 		while (deviceListNode->getNamedChild("device", newDeviceNode, false))
 		{
 			if (findServiceType(newDeviceNode, wantedServiceTypes, serviceType, controlUrl))
@@ -470,4 +470,3 @@ bool igd::sendRequest(Location &location, const std::string &action, std::string
 	}
 	return false;
 }
-

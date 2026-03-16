@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -183,7 +183,7 @@ TankModel *TankModelStore::getModelByName(const char *name)
 {
 	DIALOG_ASSERT(models_.size());
 
-	if (strcmp(name, "Random") == 0) return 0;
+	if ( 0 == strcmp( name, "Random" ) ) return nullptr;
 
 	std::vector<TankModel *>::iterator itor;
 	for (itor = models_.begin();
@@ -197,7 +197,7 @@ TankModel *TankModelStore::getModelByName(const char *name)
 		}
 	}
 
-	return 0;
+	return nullptr;
 }
 
 void TankModelStore::clear() 

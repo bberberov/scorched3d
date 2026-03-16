@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,19 +25,17 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponMirv);
 
-WeaponMirv::WeaponMirv() :
-	noWarheads_(0), 
-	hspreadDist_("WeaponMirv::hspreadDist", 0), 
-	vspreadDist_("WeaponMirv::vspreadDist", 0),
-	aimedWeapon_(0)
-{
-
-}
+WeaponMirv::WeaponMirv()
+	: noWarheads_( 0 )
+	, hspreadDist_( "WeaponMirv::hspreadDist", 0 )
+	, vspreadDist_( "WeaponMirv::vspreadDist", 0 )
+	, aimedWeapon_( nullptr )
+{}
 
 WeaponMirv::~WeaponMirv()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponMirv::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -51,7 +49,7 @@ bool WeaponMirv::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNod
 		return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
@@ -99,4 +97,3 @@ void WeaponMirv::fireWeapon(ScorchedContext &context,
 		aimedWeapon_->fire(context, weaponContext, position, newDiff);
 	}
 }
-

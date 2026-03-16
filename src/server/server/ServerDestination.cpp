@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,7 +33,7 @@ ServerDestinationMod::ServerDestinationMod() :
 ServerDestinationMod::~ServerDestinationMod()
 {
 	delete files_;
-	files_ = 0;
+	files_ = nullptr;
 }
 
 void ServerDestinationMod::addFile(ModIdentifierEntry &entry)
@@ -62,7 +62,7 @@ void ServerDestinationMod::rmFile(const char *file)
 
 ModIdentifierEntry *ServerDestinationMod::getNextFile()
 {
-	if (files_->empty()) return 0;
+	if ( files_->empty() ) return nullptr;
 	ModIdentifierEntry &entry = files_->front();
 
 	if (lastFile_ != entry.fileName ||

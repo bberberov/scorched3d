@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -25,20 +25,20 @@
 #include <common/OptionsScorched.hpp>
 
 WeaponFireContextInternal::WeaponFireContextInternal(
-	unsigned int selectPositionX,
-	unsigned int selectPositionY,
-	const FixedVector &velocityVector,
-	bool referenced,
-	bool updateStats
-) :
-	selectPositionX_(selectPositionX),
-	selectPositionY_(selectPositionY),
-	velocityVector_(velocityVector),
-	referenced_(referenced),
-	updateStats_(updateStats),
-	killCount_(0),
-	referenceCount_(0),
-	labelCount_(0)
+	unsigned int       selectPositionX,
+	unsigned int       selectPositionY,
+	const FixedVector& velocityVector,
+	bool               referenced,
+	bool               updateStats
+)
+	: selectPositionX_( selectPositionX )
+	, selectPositionY_( selectPositionY )
+	, velocityVector_( velocityVector )
+	, referenced_( referenced )
+	, updateStats_( updateStats )
+	, killCount_( 0 )
+	, referenceCount_( 0 )
+	, labelCount_( nullptr )
 {}
 
 WeaponFireContextInternal::~WeaponFireContextInternal()

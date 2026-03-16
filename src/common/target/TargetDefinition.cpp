@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -128,16 +128,16 @@ Target *TargetDefinition::createTarget(
 	ScorchedContext &context,
 	RandomGenerator &generator)
 {
-	Target *target = 0;
-	Tanket *tanket = 0;
+	Target* target = nullptr;
+	Tanket* tanket = nullptr;
 	if (ainame_.empty())
 	{
 		target = new Target(playerId, name_, context);
 	} 
 	else
 	{
-		tanket = new Tanket(context, playerId, 0, name_);
-		TankAI *ai = 0;
+		tanket     = new Tanket( context, playerId, 0, name_ );
+		TankAI* ai = nullptr;
 		if (context.getServerMode() &&
 			ainame_ != "Human")
 		{

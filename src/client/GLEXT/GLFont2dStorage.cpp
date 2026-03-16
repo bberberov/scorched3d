@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -50,7 +50,8 @@ GLFont2dStorage::StorageBlock::~StorageBlock()
 GLFont2dStorage::GLFont2dStorage()
 {
 	blocks_ = new StorageBlock*[40];
-	for (int i=0; i<40; i++) blocks_[i] = 0;
+	for ( int i = 0; i < 40; i++ )
+		blocks_[i] = nullptr;
 }
 
 GLFont2dStorage::~GLFont2dStorage()

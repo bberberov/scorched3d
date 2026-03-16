@@ -27,14 +27,14 @@
 
 namespace HeightMapLoader
 {
-	void loadTerrain( HeightMap& hmap, Image& image, bool levelSurround, ProgressCounter* counter = 0 );
+	void loadTerrain( HeightMap& hmap, Image& image, bool levelSurround, ProgressCounter* counter = nullptr );
 
 	bool generateTerrain(
 		unsigned int       seed,
 		LandscapeDefnType* defn,
 		HeightMap&         hmap,
 		bool&              levelSurround,
-		ProgressCounter*   counter = 0
+		ProgressCounter*   counter = nullptr
 	);
 };
 

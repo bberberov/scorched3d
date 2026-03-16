@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,16 +26,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponScript);
 
-WeaponScript::WeaponScript() :
-	script_(0)
-{
-
-}
+WeaponScript::WeaponScript() : script_( nullptr ) {}
 
 WeaponScript::~WeaponScript()
 {
 	delete script_;
-	script_ = 0;
+	script_ = nullptr;
 }
 
 bool WeaponScript::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -50,24 +50,32 @@ SaveDialog::SaveDialog() :
 		"Allows the player to save the game.")
 {
 	textBox_ = new GLWTextBox(0.0f, 0.0f, 250.0f);
-	addWidget(textBox_,
-		0, SpaceLeft | SpaceRight | SpaceTop, 10.0f);
+	addWidget( textBox_, nullptr, SpaceLeft | SpaceRight | SpaceTop, 10.0f );
 
 	GLWPanel *buttonPanel = new GLWPanel(0.0f, 0.0f, 0.0f, 0.0f, false, false);
-	
-	GLWButton *cancelButton = new GLWTextButton(LANG_RESOURCE("CANCEL", "Cancel"), 95, 10, 105, this, 
-		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX);
+
+	GLWButton* cancelButton = new GLWTextButton(
+		LANG_RESOURCE( "CANCEL", "Cancel" ),
+		95,
+		10,
+		105,
+		this,
+		GLWButton::ButtonFlagCancel | GLWButton::ButtonFlagCenterX
+	);
+	GLWButton* okButton = new GLWTextButton(
+		LANG_RESOURCE( "SAVE", "Save" ),
+		10,
+		45,
+		105,
+		this,
+		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX
+	);
 	cancelId_ = cancelButton->getId();
-	buttonPanel->addWidget(cancelButton, 0, SpaceRight, 10.0f);
-	
-	GLWButton *okButton = new GLWTextButton(LANG_RESOURCE("SAVE", "Save"), 10, 45, 105, this, 
-		GLWButton::ButtonFlagOk | GLWButton::ButtonFlagCenterX);
-	okId_ = okButton->getId();
-	buttonPanel->addWidget(okButton);
-	
-	
-	buttonPanel->setLayout(GLWPanel::LayoutHorizontal);
-	addWidget(buttonPanel, 0, SpaceAll | AlignRight, 10.0f);
+	okId_     = okButton->getId();
+	buttonPanel->addWidget( cancelButton, nullptr, SpaceRight, 10.0f );
+	buttonPanel->addWidget( okButton );
+	buttonPanel->setLayout( GLWPanel::LayoutHorizontal );
+	addWidget( buttonPanel, nullptr, SpaceAll | AlignRight, 10.0f );
 
 	setLayout(GLWPanel::LayoutVerticle);
 	layout();
@@ -91,9 +99,9 @@ void SaveDialog::display()
 	}
 	else
 	{
-		std::string text = S3D::formatStringBuffer("saved-%i", time(0));
+		std::string text = S3D::formatStringBuffer( "saved-%i", time( nullptr ) );
 		textBox_->setText(LANG_STRING(text));
-	}		
+	}
 }
 
 void SaveDialog::buttonDown(unsigned int id)

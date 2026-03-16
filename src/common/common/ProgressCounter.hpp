@@ -35,7 +35,7 @@ public:
 class ProgressCounter
 {
 public:
-	ProgressCounter( ProgressCounterI* user = 0 );
+	ProgressCounter( ProgressCounterI* user = nullptr );
 	virtual ~ProgressCounter();
 
 	void setUser( ProgressCounterI* user ) { user_ = user; }

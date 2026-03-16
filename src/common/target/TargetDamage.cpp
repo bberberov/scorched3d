@@ -358,9 +358,8 @@ void TargetDamage::damageTarget(ScorchedContext &context,
 			// Check this tank is not already falling
 			if (!damagedTarget->getTargetState().getFalling())
 			{
-				Parachute *parachute = 0;
-				Accessory *paraAccessory = 
-					damagedTarget->getParachute().getCurrentParachute();
+				Parachute* parachute     = nullptr;
+				Accessory* paraAccessory = damagedTarget->getParachute().getCurrentParachute();
 				if (paraAccessory)
 				{
 					parachute = (Parachute *) paraAccessory->getAction();
@@ -467,7 +466,7 @@ void TargetDamage::logDeath(ScorchedContext &context, WeaponFireContext &weaponC
 		}
 	}
 
-	Tank *firedTank = 0;
+	Tank* firedTank = nullptr;
 	if (firedPlayerId != 0) firedTank = context.getTargetContainer().getTankById(firedPlayerId);
 	else
 	{

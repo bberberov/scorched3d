@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,16 +26,14 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponTeamAction);
 
-WeaponTeamAction::WeaponTeamAction()
-{
-}
+WeaponTeamAction::WeaponTeamAction() {}
 
 WeaponTeamAction::~WeaponTeamAction()
 {
-	for (int i=0; i<5; i++)
+	for ( int i = 0; i < 5; i++ )
 	{
 		delete action_[i];
-		action_[i] = 0;
+		action_[i] = nullptr;
 	}
 }
 
@@ -44,11 +42,11 @@ bool WeaponTeamAction::parseXML(AccessoryCreateContext &context, XMLNode *access
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	bool actions = false;
-	for (int i=0; i<5; i++)
+	for ( int i = 0; i < 5; i++ )
 	{
-		action_[i] = 0;
+		action_[i] = nullptr;
 
-		XMLNode *subNode = 0;
+		XMLNode* subNode = nullptr;
 		std::string nodeName = S3D::formatStringBuffer("team%i", i);
 		if (accessoryNode->getNamedChild(nodeName.c_str(), subNode, false))
 		{
@@ -94,4 +92,3 @@ void WeaponTeamAction::weaponCallback(
 		action->fire(context, weaponContext, position, velocity);
 	}
 }
-

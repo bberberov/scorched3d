@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -36,8 +36,8 @@ void SphereActionRenderer::draw(Action *action)
 	GLState state(GLState::TEXTURE_OFF);
 	glColor3f(1.0f, 0.0f, 0.0f);
 
-	static GLUquadric *obj = 0;
-	if (obj == 0)
+	static GLUquadric* obj = nullptr;
+	if ( nullptr == obj )
 	{
 		obj = gluNewQuadric();
 		gluQuadricTexture(obj, GL_TRUE);

@@ -34,26 +34,26 @@ namespace HeightMapModifier
 		HeightMap&                      hmap,
 		LandscapeDefnHeightMapGenerate& defn,
 		RandomGenerator&                generator,
-		ProgressCounter*                counter = 0
+		ProgressCounter*                counter = nullptr
 	);
 	void edgeEnhance(
 		HeightMap&                      hmap,
 		LandscapeDefnHeightMapGenerate& defn,
 		RandomGenerator&                generator,
-		ProgressCounter*                counter = 0
+		ProgressCounter*                counter = nullptr
 	);
 	void waterErrosion(
 		HeightMap&                      hmap,
 		LandscapeDefnHeightMapGenerate& defn,
 		RandomGenerator&                generator,
-		ProgressCounter*                counter = 0
+		ProgressCounter*                counter = nullptr
 	);
-	void smooth( HeightMap& hmap, LandscapeDefnHeightMapGenerate& defn, ProgressCounter* counter = 0 );
+	void smooth( HeightMap& hmap, LandscapeDefnHeightMapGenerate& defn, ProgressCounter* counter = nullptr );
 	void scale(
 		HeightMap&                      hmap,
 		LandscapeDefnHeightMapGenerate& defn,
 		RandomGenerator&                generator,
-		ProgressCounter*                counter = 0
+		ProgressCounter*                counter = nullptr
 	);
 
 	void generateTerrain(
@@ -61,7 +61,7 @@ namespace HeightMapModifier
 		LandscapeDefnHeightMapGenerate& defn,
 		RandomGenerator&                generator,
 		RandomGenerator&                offsetGenerator,
-		ProgressCounter*                counter = 0
+		ProgressCounter*                counter = nullptr
 	);
 	void addCirclePeak(
 		HeightMap&       hmap,

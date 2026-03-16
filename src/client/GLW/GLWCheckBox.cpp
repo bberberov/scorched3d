@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -28,10 +28,11 @@ GLWCheckBoxI::~GLWCheckBoxI()
 
 REGISTER_CLASS_SOURCE(GLWCheckBox);
 
-GLWCheckBox::GLWCheckBox(float x, float y, bool startState) :
-	GLWidget(x, y, 20.0f, 20.0f), state_(startState), handler_(0)
-{
-}
+GLWCheckBox::GLWCheckBox( float x, float y, bool startState )
+	: GLWidget( x, y, 20.0f, 20.0f )
+	, state_( startState )
+	, handler_( nullptr )
+{}
 
 GLWCheckBox::~GLWCheckBox()
 {

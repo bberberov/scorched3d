@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -26,17 +26,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponCenterPosition);
 
-WeaponCenterPosition::WeaponCenterPosition() :
-	height_("WeaponCenterPosition::height"),
-	nextAction_(0)
-{
-
-}
+WeaponCenterPosition::WeaponCenterPosition() : height_( "WeaponCenterPosition::height" ), nextAction_( nullptr ) {}
 
 WeaponCenterPosition::~WeaponCenterPosition()
 {
 	delete nextAction_;
-	nextAction_ = 0;
+	nextAction_ = nullptr;
 }
 
 bool WeaponCenterPosition::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -45,7 +40,7 @@ bool WeaponCenterPosition::parseXML(AccessoryCreateContext &context, XMLNode *ac
 
 	if (!accessoryNode->getNamedChild("height", height_)) return false;
 
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("nextaction", subNode)) return false;
 	
 	// Check next weapon is correct type
@@ -74,5 +69,4 @@ void WeaponCenterPosition::fireWeapon(ScorchedContext &context,
 	newPositon[2] = height_.getValue(context);
 	
 	nextAction_->fire(context, weaponContext, newPositon, velocity);
-
 }

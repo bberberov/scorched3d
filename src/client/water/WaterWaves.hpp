@@ -34,7 +34,7 @@ public:
 	WaterWaves();
 	virtual ~WaterWaves();
 
-	void generateWaves( float waterHeight, ProgressCounter* counter = 0 );
+	void generateWaves( float waterHeight, ProgressCounter* counter = nullptr );
 	void draw( Water2Patches& currentPatch );
 	void simulate( float frameTime );
 

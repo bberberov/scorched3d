@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -27,16 +27,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponSelectPosition);
 
-WeaponSelectPosition::WeaponSelectPosition() :
-	aimedWeapon_(0)
-{
-
-}
+WeaponSelectPosition::WeaponSelectPosition() : aimedWeapon_( nullptr ) {}
 
 WeaponSelectPosition::~WeaponSelectPosition()
 {
 	delete aimedWeapon_;
-	aimedWeapon_ = 0;
+	aimedWeapon_ = nullptr;
 }
 
 bool WeaponSelectPosition::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode)
@@ -44,7 +40,7 @@ bool WeaponSelectPosition::parseXML(AccessoryCreateContext &context, XMLNode *ac
 	if (!Weapon::parseXML(context, accessoryNode)) return false;
 
 	// Get the next weapon
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("aimedweapon", subNode)) return false;
 
 	// Check next weapon is correct type
@@ -75,4 +71,3 @@ void WeaponSelectPosition::fireWeapon(ScorchedContext &context,
 		aimedWeapon_->fire(context, weaponContext, newPosition, velocity);
 	}
 }
-

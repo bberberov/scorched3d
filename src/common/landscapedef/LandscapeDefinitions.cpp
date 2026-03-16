@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,13 +33,12 @@
 
 unsigned int LandscapeDefinitions::lastDefinitionNumber_(0);
 
-LandscapeDefinitions::LandscapeDefinitions() :
-	lastDefinition_(0),
-	texs_("Tex"),
-	defns_("Defns"),
-	include_("Include")
-{
-}
+LandscapeDefinitions::LandscapeDefinitions()
+	: lastDefinition_( nullptr )
+	, texs_( "Tex" )
+	, defns_( "Defns" )
+	, include_( "Include" )
+{}
 
 LandscapeDefinitions::~LandscapeDefinitions()
 {
@@ -281,7 +280,7 @@ LandscapeDefinitionsEntry *LandscapeDefinitions::getRandomLandscapeDefnEntry(
 	std::list<LandscapeDefinitionsEntry *> passedLandscapes)
 {
 	// Map cycle mode
-	LandscapeDefinitionsEntry *result = 0;
+	LandscapeDefinitionsEntry* result = nullptr;
 	if (context.getCycleMaps())
 	{
 		// Just cycle through the maps

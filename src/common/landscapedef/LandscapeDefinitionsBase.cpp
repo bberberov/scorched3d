@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -96,10 +96,10 @@ bool LandscapeDefinitionsBase::landscapeEnabled(OptionsGame &context,
 	if (landscapes.empty()) return true; // Default un-initialized state
 
 	char *token = strtok((char *) landscapes.c_str(), ":");
-	while(token != 0)
+	while ( nullptr != token )
 	{
-		if (0 == strcmp(token, name)) return true;
-		token = strtok(0, ":");
+		if ( 0 == strcmp( token, name ) ) return true;
+		token = strtok( nullptr, ":" );
 	}
 	return false;
 }
@@ -118,5 +118,5 @@ LandscapeDefinitionsEntry *LandscapeDefinitionsBase::getLandscapeByName(
 			return &result;
 		}
 	}
-	return 0;
+	return nullptr;
 }

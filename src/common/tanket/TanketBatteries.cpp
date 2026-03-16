@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,11 +23,7 @@
 #include <tanket/TanketAccessories.hpp>
 #include <weapons/Accessory.hpp>
 
-TanketBatteries::TanketBatteries(ScorchedContext &context) :
-	context_(context),
-	tanket_(0)
-{
-}
+TanketBatteries::TanketBatteries( ScorchedContext& context ) : context_( context ), tanket_( nullptr ) {}
 
 TanketBatteries::~TanketBatteries()
 {
@@ -46,15 +42,15 @@ Accessory *TanketBatteries::getBatteryAccessory()
 	std::list<Accessory *> &result =
 		tanket_->getAccessories().getAllAccessoriesByType(
 			AccessoryPart::AccessoryBattery);
-	if (result.empty()) return 0;
-	return result.front();
+	if ( result.empty() ) return nullptr;
+	else return result.front();
 }
 
 int TanketBatteries::getNoBatteries()
 {
 	Accessory *battery = getBatteryAccessory();
 	if (!battery) return 0;
-	return tanket_->getAccessories().getAccessoryCount(battery);
+	else return tanket_->getAccessories().getAccessoryCount(battery);
 }
 
 bool TanketBatteries::canUse()

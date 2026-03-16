@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -21,13 +21,15 @@
 #include <webserver/ServerWebServerI.hpp>
 #include <net/NetMessagePool.hpp>
 
-ServerWebServerIRequest::ServerWebServerIRequest(const char *url,
-		std::map<std::string, std::string> &fields,
-		std::map<std::string, NetMessage *> &parts) :
-	url_(url),
-	fields_(fields),
-	parts_(parts),
-	session_(0)
+ServerWebServerIRequest::ServerWebServerIRequest(
+	const char*                           url,
+	std::map< std::string, std::string >& fields,
+	std::map< std::string, NetMessage* >& parts
+)
+	: url_( url )
+	, fields_( fields )
+	, parts_( parts )
+	, session_( nullptr )
 {
 	parts.clear();
 }

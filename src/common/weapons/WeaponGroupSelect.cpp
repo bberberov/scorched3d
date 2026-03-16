@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -31,16 +31,12 @@
 
 REGISTER_ACCESSORY_SOURCE(WeaponGroupSelect);
 
-WeaponGroupSelect::WeaponGroupSelect() :
-	nextAction_(0)
-{
-
-}
+WeaponGroupSelect::WeaponGroupSelect() : nextAction_( nullptr ) {}
 
 WeaponGroupSelect::~WeaponGroupSelect()
 {
 	delete nextAction_;
-	nextAction_ = 0;
+	nextAction_ = nullptr;
 }
 
 bool WeaponGroupSelect::parseXML(AccessoryCreateContext &context,XMLNode *accessoryNode)
@@ -49,7 +45,7 @@ bool WeaponGroupSelect::parseXML(AccessoryCreateContext &context,XMLNode *access
 
 	if (!accessoryNode->getNamedChild("groupname", groupName_)) return false;
 
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("nextaction", subNode)) return false;
 	
 	// Check next weapon is correct type

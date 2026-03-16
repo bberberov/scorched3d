@@ -32,7 +32,7 @@ public:
 		float             x          = 0.0f,
 		float             y          = 0.0f,
 		float             w          = 0.0f,
-		GLWButtonI*       handler    = 0,
+		GLWButtonI*       handler    = nullptr,
 		unsigned int      flags      = 0,
 		float             size       = 14.0f
 	);

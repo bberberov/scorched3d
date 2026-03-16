@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -68,7 +68,7 @@ void ServerBrowserRefresh::refreshList()
 
 	while ((!refreshEntries_.empty() || !entryMap_.empty()) && !cancel_)
 	{
-		time_t theTime = time(0);
+		time_t theTime = time( nullptr );
 
 		// Add a number of new entries
 		for (int i=(int) entryMap_.size(); i<20 && !refreshEntries_.empty(); i++)

@@ -78,7 +78,7 @@ bool TrueTypeFont::createCharacter(FT_Face face, unsigned char ch)
 	}
 
 	// Convert The Glyph To A Bitmap.
-	FT_Glyph_To_Bitmap( &glyphs[ch], ft_render_mode_normal, 0, 1 );
+	FT_Glyph_To_Bitmap( &glyphs[ch], ft_render_mode_normal, nullptr, 1 );
 	FT_BitmapGlyph bitmap_glyph = (FT_BitmapGlyph) glyphs[ch];
 
 	// This Reference Will Make Accessing The Bitmap Easier.

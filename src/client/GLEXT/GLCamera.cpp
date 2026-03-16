@@ -25,7 +25,7 @@
 #include <GLEXT/GLCamera.hpp>
 #include <GLEXT/GLViewPort.hpp>
 
-GLCamera *GLCamera::currentCamera_ = 0;
+GLCamera* GLCamera::currentCamera_ = nullptr;
 
 GLCamera::GLCamera(GLsizei windowWidth, GLsizei windowHeight) :
 	rotationXY_(0.0f), rotationYZ_(PI / 4),
@@ -33,8 +33,8 @@ GLCamera::GLCamera(GLsizei windowWidth, GLsizei windowHeight) :
 	shake_(0.0f),
 	totalTime_(0.0f),
 	useHeightFunc_(false),
-	minHeightFunc_(0), maxHeightFunc_(0),
-	minHeightData_(0), maxHeightData_(0)
+	minHeightFunc_( nullptr ), maxHeightFunc_( nullptr ),
+	minHeightData_( nullptr ), maxHeightData_( nullptr )
 {
 	currentCamera_ = this;
 	setWindowOffset(0, 0);

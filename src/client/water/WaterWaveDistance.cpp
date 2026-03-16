@@ -24,9 +24,7 @@
 #include <lang/LangResource.hpp>
 #include <common/ProgressCounter.hpp>
 
-WaterWaveDistance::WaterWaveDistance() : waveDistance_(0)
-{
-}
+WaterWaveDistance::WaterWaveDistance() : waveDistance_( nullptr ) {}
 
 WaterWaveDistance::~WaterWaveDistance()
 {

@@ -81,7 +81,7 @@ const char *XMLNode::getSpacer(int space)
 
 XMLNode::XMLNode(const char *name, const char *content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -90,7 +90,7 @@ XMLNode::XMLNode(const char *name, const char *content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, const std::string &content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -99,7 +99,7 @@ XMLNode::XMLNode(const char *name, const std::string &content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, const LangString &langStringContent, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -110,7 +110,7 @@ XMLNode::XMLNode(const char *name, const LangString &langStringContent, NodeType
 
 XMLNode::XMLNode( const char* name, float content, NodeType type )
 	: name_( name )
-	, parent_( 0 )
+	, parent_( nullptr )
 	, type_( type )
 	, useContentNodes_( false )
 {
@@ -122,7 +122,7 @@ XMLNode::XMLNode( const char* name, float content, NodeType type )
 
 XMLNode::XMLNode(const char *name, int content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -133,7 +133,7 @@ XMLNode::XMLNode(const char *name, int content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, unsigned int content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -144,7 +144,7 @@ XMLNode::XMLNode(const char *name, unsigned int content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, bool content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -154,7 +154,7 @@ XMLNode::XMLNode(const char *name, bool content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, fixed content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -164,7 +164,7 @@ XMLNode::XMLNode(const char *name, fixed content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, FixedVector &content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -187,7 +187,7 @@ XMLNode::XMLNode(const char *name, FixedVector &content, NodeType type) :
 
 XMLNode::XMLNode(const char *name, FixedVector4 &content, NodeType type) :
 	name_(name),
-	parent_(0),
+	parent_( nullptr ),
 	type_(type),
 	useContentNodes_(false)
 {
@@ -215,7 +215,7 @@ XMLNode::XMLNode(const char *name, FixedVector4 &content, NodeType type) :
 
 XMLNode::XMLNode( const char* name, Vector& content, NodeType type )
 	: name_( name )
-	, parent_( 0 )
+	, parent_( nullptr )
 	, type_( type )
 	, useContentNodes_( false )
 {

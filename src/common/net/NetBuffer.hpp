@@ -73,7 +73,7 @@ class NetBuffer : public NamedNetBuffer
 {
 public:
 	NetBuffer();
-	NetBuffer( unsigned int startSize, void* startBuffer = 0 );
+	NetBuffer( unsigned int startSize, void* startBuffer = nullptr );
 	NetBuffer( const NetBuffer& other );
 	virtual ~NetBuffer();
 

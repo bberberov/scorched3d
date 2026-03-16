@@ -150,7 +150,7 @@ Image ImageLuminanceFactory::loadFromFile(const std::string &fileName)
 				unsigned char *lptr = base;
 				for (int y = 0; y < image.ysize; y++) 
 				{
-					imageGetRow(file, image, lptr, y, 0, 0, 0);
+					imageGetRow( file, image, lptr, y, 0, nullptr, nullptr );
 					lptr += image.xsize;
 				}
 			}

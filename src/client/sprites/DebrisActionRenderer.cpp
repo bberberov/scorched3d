@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -55,7 +55,7 @@ DebrisActionRenderer::DebrisActionRenderer() :
 DebrisActionRenderer::~DebrisActionRenderer()
 {
 	delete debris_;
-	debris_ = 0;
+	debris_ = nullptr;
 }
 
 void DebrisActionRenderer::simulate(float timepassed)

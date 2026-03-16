@@ -37,10 +37,10 @@ class GLWSelectorEntry
 public:
 	GLWSelectorEntry(
 		const LangString&  text     = LangString(),
-		ToolTip*           tooltip  = 0,
+		ToolTip*           tooltip  = nullptr,
 		bool               selected = false,
-		GLTextureBase*     icon     = 0,
-		void*              userData = 0,
+		GLTextureBase*     icon     = nullptr,
+		void*              userData = nullptr,
 		const std::string& dataText = ""
 	);
 

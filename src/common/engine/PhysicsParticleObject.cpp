@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,19 +40,19 @@
 #include <common/Defines.hpp>
 #include <common/Logger.hpp>
 
-PhysicsParticleObject::PhysicsParticleObject() :
-	info_(ParticleTypeNone, 0, 0),
-	context_(nullptr),
-	handler_(nullptr),
-	optionUnderGroundCollision_(false),
-	optionRotateOnCollision_(false),
-	optionWallCollision_(true),
-	optionStickyShields_(false),
-	optionShieldCollision_(true),
-	optionLandscapeCollision_(true),
-	optionTankCollision_(true),
-	optionTargetCollision_(true),
-	iterations_(0)
+PhysicsParticleObject::PhysicsParticleObject()
+	: info_( ParticleTypeNone, 0, nullptr )
+	, context_( nullptr )
+	, handler_( nullptr )
+	, optionUnderGroundCollision_( false )
+	, optionRotateOnCollision_( false )
+	, optionWallCollision_( true )
+	, optionStickyShields_( false )
+	, optionShieldCollision_( true )
+	, optionLandscapeCollision_( true )
+	, optionTankCollision_( true )
+	, optionTargetCollision_( true )
+	, iterations_( 0 )
 {}
 
 PhysicsParticleObject::~PhysicsParticleObject()

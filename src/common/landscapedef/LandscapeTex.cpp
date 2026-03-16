@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,7 +33,7 @@ static LandscapeTexType *fetchBorderTexType(const char *type)
 	if (0 == strcmp(type, "water")) return new LandscapeTexBorderWater;
 	if (0 == strcmp(type, "none")) return new LandscapeTexTypeNone;
 	S3D::dialogMessage("LandscapeTexType", S3D::formatStringBuffer("Unknown border type %s", type));
-	return 0;
+	return nullptr;
 }
 
 static LandscapeTexType *fetchTextureTexType(const char *type)
@@ -41,7 +41,7 @@ static LandscapeTexType *fetchTextureTexType(const char *type)
 	if (0 == strcmp(type, "generate")) return new LandscapeTexTextureGenerate;
 	if (0 == strcmp(type, "file")) return new LandscapeTexTextureFile;
 	S3D::dialogMessage("LandscapeTexType", S3D::formatStringBuffer("Unknown texture type %s", type));
-	return 0;
+	return nullptr;
 }
 
 static LandscapeTexType *fetchPrecipitationTexType(const char *type)
@@ -50,7 +50,7 @@ static LandscapeTexType *fetchPrecipitationTexType(const char *type)
 	if (0 == strcmp(type, "rain")) return new LandscapeTexPrecipitationRain;
 	if (0 == strcmp(type, "snow")) return new LandscapeTexPrecipitationSnow;
 	S3D::dialogMessage("LandscapeTexType", S3D::formatStringBuffer("Unknown precipitation type %s", type));
-	return 0;
+	return nullptr;
 }
 
 // LandscapeTexType
@@ -126,9 +126,7 @@ bool LandscapeTexTextureFile::readXML(XMLNode *node)
 }
 
 // LandscapeTex
-LandscapeTex::LandscapeTex() :
-	border(0), texture(0), precipitation(0)
-{}
+LandscapeTex::LandscapeTex() : border( nullptr ), texture( nullptr ), precipitation( nullptr ) {}
 
 LandscapeTex::~LandscapeTex()
 {

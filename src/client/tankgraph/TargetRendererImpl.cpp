@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -56,14 +56,14 @@ TargetRendererImpl::TargetRendererImpl(Target *target) :
 
 TargetRendererImpl::~TargetRendererImpl()
 {
-	setMovedPatch(0);
+	setMovedPatch( nullptr );
 }
 
 void TargetRendererImpl::moved()
 {
 	if (VisibilityPatchGrid::instance()->getEpocNumber() == 0) return;
 
-	TargetVisibilityPatch *newPatch = 0;
+	TargetVisibilityPatch* newPatch = nullptr;
 	if (target_->getVisible())
 	{
 		FixedVector &position = target_->getLife().getTargetPosition();
@@ -87,7 +87,7 @@ void TargetRendererImpl::setMovedPatch(TargetVisibilityPatch *newPatch)
 
 	if (patchEpoc_ != VisibilityPatchGrid::instance()->getEpocNumber())
 	{
-		currentVisibilityPatch_ = 0;
+		currentVisibilityPatch_ = nullptr;
 		patchEpoc_ = VisibilityPatchGrid::instance()->getEpocNumber();
 	}
 	if (newPatch != currentVisibilityPatch_)
@@ -157,7 +157,7 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 		"data/textures/shield2.bmp", 
 		false)
 	);
-	static GLUquadric *obj = 0;
+	static GLUquadric* obj = nullptr;
 	if (!obj)
 	{
 		obj = gluNewQuadric();

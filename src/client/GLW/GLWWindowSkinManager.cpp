@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,8 +23,8 @@
 #include <XML/XMLFile.hpp>
 #include <common/Defines.hpp>
 
-GLWWindowSkinManager *GLWWindowSkinManager::defaultinstance_ = 0;
-GLWWindowSkinManager *GLWWindowSkinManager::modinstance_ = 0;
+GLWWindowSkinManager* GLWWindowSkinManager::defaultinstance_ = nullptr;
+GLWWindowSkinManager* GLWWindowSkinManager::modinstance_     = nullptr;
 
 GLWWindowSkinManager *GLWWindowSkinManager::defaultinstance()
 {

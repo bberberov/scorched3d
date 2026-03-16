@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -39,7 +39,7 @@ bool PlacementShadowDefinition::readXML(XMLNode *node)
 	node->getNamedChild("drawshadow", drawShadow_, false);
 	node->getNamedChild("flattenarea", flattenArea_, false);
 
-	XMLNode *groundMap = 0;
+	XMLNode* groundMap = nullptr;
 	if (node->getNamedChild("groundmap", groundMap, false))
 	{
 		if (!groundMap_.initFromNode(groundMap)) return false;

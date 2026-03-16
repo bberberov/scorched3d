@@ -58,7 +58,7 @@ public:
 	// uncrustify off
 	const char*          getName()             { return name_.c_str(); }
 	virtual const char*  getDescription()      { return description_.c_str(); }
-	virtual const char*  getRangeDescription() { return 0; }
+	virtual const char*  getRangeDescription() { return nullptr; }
 	virtual unsigned int getData()             { return data_; }
 	// uncrustify on
 	// clang-format on

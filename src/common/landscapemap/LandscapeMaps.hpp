@@ -33,7 +33,7 @@ public:
 	LandscapeMaps();
 	virtual ~LandscapeMaps();
 
-	void generateMaps( ScorchedContext& context, LandscapeDefinition& defn, ProgressCounter* counter = 0 );
+	void generateMaps( ScorchedContext& context, LandscapeDefinition& defn, ProgressCounter* counter = nullptr );
 
 	// clang-format off
 	// uncrustify off

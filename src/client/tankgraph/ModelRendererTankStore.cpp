@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -45,11 +45,11 @@ ModelRendererTank *ModelRendererTankStore::getMesh(ModelID modelId)
 	std::map<std::string, ModelRendererTank*>::iterator findItor = 
 		meshes_.find(modelId.getStringHash());
 
-	ModelRendererTank *mesh = nullptr;
+	ModelRendererTank* mesh = nullptr;
 	if (findItor == meshes_.end())
 	{
 		Model *newFile = ModelStore::instance()->loadModel(modelId);
-		if (!newFile) return 0;
+		if ( ! newFile ) return nullptr;
 
 		// Create tank mesh
 		mesh = new ModelRendererTank(newFile);

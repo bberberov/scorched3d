@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2014
+//    Scorched3D (c) 2000-2011, 2014, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -80,7 +80,7 @@ ServerAuthHandlerPrefered::UserEntry *ServerAuthHandlerPrefered::getUserByName(c
 			return &entry;
 		}
 	}
-	return 0;
+	return nullptr;
 }
 
 ServerAuthHandlerPrefered::UserEntry *ServerAuthHandlerPrefered::getUserById(const char *uniqueId)
@@ -98,7 +98,7 @@ ServerAuthHandlerPrefered::UserEntry *ServerAuthHandlerPrefered::getUserById(con
 			return &entry;
 		}
 	}
-	return 0;
+	return nullptr;
 }
 
 bool ServerAuthHandlerPrefered::load()

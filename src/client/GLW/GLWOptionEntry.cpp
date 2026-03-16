@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -50,10 +50,9 @@ void GLWOptionEntry::createEntry(
 	staticText->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
 		LANG_RESOURCE(entry.getName(), entry.getName()), 
 		LANG_RESOURCE(descriptionName, entry.getDescription())));
-	parent->addWidget(staticText, 0, GLWPanel::AlignRight | 
-		GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f);
+	parent->addWidget( staticText, nullptr, GLWPanel::AlignRight | GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f );
 
-	GLWidget *control = 0;
+	GLWidget* control = nullptr;
 	if (0 == strcmp(entry.getName(), "Mod"))
 	{
 		control = new GLWDropDownText(0.0f, 0.0f, 170.0f);
@@ -98,9 +97,14 @@ void GLWOptionEntry::createEntry(
 			OptionEntryEnum::EnumEntry *enums = optionEntryEnum.getEnums();
 			for (OptionEntryEnum::EnumEntry *current = enums; current->description[0]; current++)
 			{
-				((GLWDropDownText *) control)->addEntry(
-					GLWSelectorEntry(LANG_RESOURCE(current->description, current->description), 
-						0, false, 0, (void *) current->value, current->description));
+				( (GLWDropDownText*)control )->addEntry( GLWSelectorEntry(
+					LANG_RESOURCE( current->description, current->description ),
+					nullptr,
+					false,
+					nullptr,
+					(void*)current->value,
+					current->description
+				) );
 			}
 		}
 		break;
@@ -136,8 +140,7 @@ void GLWOptionEntry::createEntry(
 	control->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
 		LANG_RESOURCE(entry.getName(), entry.getName()), 
 		LANG_RESOURCE(descriptionName, entry.getDescription())));
-	parent->addWidget(control, 0, 
-		GLWPanel::SpaceRight | GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f);
+	parent->addWidget( control, nullptr, GLWPanel::SpaceRight | GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f );
 
 	controls.push_back(GLWOptionEntry(control, &entry));
 }

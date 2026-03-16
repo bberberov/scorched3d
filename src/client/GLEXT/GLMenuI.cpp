@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,7 +40,7 @@ GLMenuI::~GLMenuI()
 
 LangString *GLMenuI::getMenuText(const char* menuName)
 {
-	return 0;
+	return nullptr;
 }
 
 bool GLMenuI::getMenuItems(const char* menuName, std::list<GLMenuItem> &result)
@@ -63,5 +63,5 @@ bool GLMenuI::menuOpened(const char* menuName)
 
 LangStringStorage *GLMenuI::getMenuToolTip(const char* menuName)
 {
-	return 0;
+	return nullptr;
 }

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -59,7 +59,8 @@ Bone::~Bone()
 FixedVector &Bone::getPositionAtTime(fixed currentTime)
 {
 	static FixedVector tmp;
-	BonePositionKey *lastPositionKey = 0, *thisPositionKey = 0;
+	BonePositionKey* lastPositionKey = nullptr;
+	BonePositionKey* thisPositionKey = nullptr;
 	std::vector<BonePositionKey *>::iterator itor;
 	for (itor = positionKeys_.begin();
 		itor != positionKeys_.end();
@@ -95,7 +96,8 @@ FixedVector &Bone::getPositionAtTime(fixed currentTime)
 
 void Bone::getRotationAtTime(fixed currentTime, BoneMatrixType &m)
 {
-	BoneRotationKey *lastRotationKey = 0, *thisRotationKey = 0;
+	BoneRotationKey* lastRotationKey = nullptr;
+	BoneRotationKey* thisRotationKey = nullptr;
 	std::vector<BoneRotationKey *>::iterator itor;
 	for (itor = rotationKeys_.begin();
 		itor != rotationKeys_.end();

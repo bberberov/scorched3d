@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -66,14 +66,14 @@ bool TankTeamBallanceSimAction::invokeAction(ScorchedContext &context)
 		if (current->getState().getTankPlaying())
 		{
 			if (context.getOptionsGame().getTeams() > 1 &&
-				current->getTeam() == 0) 
+				current->getTeam() == 0)
 			{
 				current->setTeam(1); 
 			}
 			if (context.getOptionsGame().getTeams() == 1 &&
-				current->getTeam() > 0) 
+				current->getTeam() > 0)
 			{
-				current->setTeam(0); 
+				current->setTeam(0);
 			}
 		}
 	}
@@ -171,7 +171,9 @@ void TankTeamBallanceSimAction::minMaxTeams(ScorchedContext &context,
 void TankTeamBallanceSimAction::checkTeamsAuto(ScorchedContext &context)
 {
 	// Find the teams with the min and max players in them
-	std::vector<Tank *> teamPlayers[4], *minPlayers = 0, *maxPlayers = 0;
+	std::vector< Tank* >  teamPlayers[4];
+	std::vector< Tank* >* minPlayers = nullptr;
+	std::vector< Tank* >* maxPlayers = nullptr;
 
 	// Is the difference between the min and max teams >= 2 players
 	for (minMaxTeams(context, teamPlayers, minPlayers, maxPlayers);

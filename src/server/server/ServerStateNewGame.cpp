@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -133,7 +133,7 @@ void ServerStateNewGame::newGameState()
 	ScorchedServer::instance()->getContext().getOptionsTransient().newGame();
 
 	// Generate the new level
-	ProgressCounter *progressCounter = 0;
+	ProgressCounter* progressCounter = nullptr;
 #ifdef S3D_SERVER
 	progressCounter = ServerConsoleProgressCounter::instance()->getProgressCounter();
 #endif

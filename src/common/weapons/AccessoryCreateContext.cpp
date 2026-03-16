@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -33,8 +33,8 @@ WeaponLabel *AccessoryCreateContext::getLabel(const char *label)
 {
 	std::map<std::string, WeaponLabel*>::iterator findItor = 
 		labels_.find(label);
-	if (findItor == labels_.end()) return 0;
-	return findItor->second;
+	if ( findItor == labels_.end() ) return nullptr;
+	else return findItor->second;
 }
 
 void AccessoryCreateContext::addLabel(const char *label, WeaponLabel *weapon)

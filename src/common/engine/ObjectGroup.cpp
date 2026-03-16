@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,10 +23,8 @@
 #include <target/Target.hpp>
 #include <common/Defines.hpp>
 
-ObjectGroup::ObjectGroup(const char *name) :
-	name_(name), front_(0), back_(0), iterator_(0)
-{
-}
+ObjectGroup::ObjectGroup( const char* name ) : name_( name ), front_( nullptr ), back_( nullptr ), iterator_( nullptr )
+{}
 
 ObjectGroup::~ObjectGroup()
 {
@@ -38,8 +36,8 @@ ObjectGroup::~ObjectGroup()
 		delete itor->second;
 	}
 	objects_.clear();
-	front_ = 0;
-	back_ = 0;
+	front_ = nullptr;
+	back_  = nullptr;
 }
 
 void ObjectGroup::addObject(ObjectGroupEntry *object)
@@ -65,18 +63,18 @@ bool ObjectGroup::removeObject(ObjectGroupEntry *object)
 	} 
 	else if (!holder->previous && !holder->next)
 	{
-		front_ = 0;
-		back_ = 0;
+		front_ = nullptr;
+		back_  = nullptr;
 	}
 	else if (holder->previous && !holder->next)
 	{
-		holder->previous->next = 0;
-		back_ = holder->previous;
+		holder->previous->next = nullptr;
+		back_                  = holder->previous;
 	}
 	else if (!holder->previous && holder->next)
 	{
-		holder->next->previous = 0;
-		front_ = holder->next;
+		holder->next->previous = nullptr;
+		front_                 = holder->next;
 	}
 
 	if (iterator_ &&
@@ -97,11 +95,11 @@ ObjectGroupEntry *ObjectGroup::getObjectByPos(int position)
 	int pos = position % int(objects_.size());
 	ObjectGroupEntryHolderIterator iterator(this);
 	ObjectGroupEntry *entry;
-	while ( ( entry = iterator.getNext() ) != nullptr )
+	while ( nullptr != ( entry = iterator.getNext() ) )
 	{
 		if (pos-- <= 0) return entry;
 	}
-	return 0;
+	return nullptr;
 }
 
 bool ObjectGroup::hasObject(ObjectGroupEntry *object)

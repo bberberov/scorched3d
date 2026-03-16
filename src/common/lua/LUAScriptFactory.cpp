@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -20,16 +20,11 @@
 
 #include "LUAScriptFactory.hpp"
 
-LUAScriptFactory::LUAScriptFactory() :
-	context_(0)
-{
-}
+LUAScriptFactory::LUAScriptFactory() : context_( nullptr ) {}
 
-LUAScriptFactory::~LUAScriptFactory()
-{
-}
+LUAScriptFactory::~LUAScriptFactory() {}
 
-LUAScript *LUAScriptFactory::createScript()
+LUAScript* LUAScriptFactory::createScript()
 {
-	return new LUAScript(context_);
+	return new LUAScript( context_ );
 }

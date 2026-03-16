@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -23,10 +23,9 @@
 #include <image/ImageFactory.hpp>
 #include <GLEXT/GLTexture.hpp>
 
-GLTextureReference::GLTextureReference() :
-	data_(0)
-{
-}
+GLTextureReference::GLTextureReference()
+	: data_( nullptr )
+{}
 
 GLTextureReference::GLTextureReference(const ImageID &imageId, unsigned texState)
 {
@@ -42,7 +41,7 @@ GLTextureReference::GLTextureReference(const GLTextureReference &other)
 GLTextureReference::~GLTextureReference()
 {
 	if (data_) GLTextureStore::instance()->removeTextureReference(data_);
-	data_ = 0;
+	data_ = nullptr;
 }
 
 GLTextureReference &GLTextureReference::operator=(const GLTextureReference &other)

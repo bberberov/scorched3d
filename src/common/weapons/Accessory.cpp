@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -76,7 +76,7 @@ bool Accessory::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode
 	accessoryNode->getNamedChild("armslevel", armsLevel_, false);
 
 	// Get the optional muzzleflash
-	XMLNode *muzzleFlashNode = 0;
+	XMLNode* muzzleFlashNode = nullptr;
 	accessoryNode->getNamedChild("nomuzzleflash", muzzleFlashNode, false);
 	if (muzzleFlashNode) muzzleFlash_ = false;
 
@@ -145,14 +145,14 @@ bool Accessory::parseXML(AccessoryCreateContext &context, XMLNode *accessoryNode
 	accessoryNode->getNamedChild("modelscale", modelScale_, false);
 
 	// Get the weapon model
-	XMLNode *modelNode = 0;
+	XMLNode* modelNode = nullptr;
 	if (accessoryNode->getNamedChild("model", modelNode, false))
 	{
 		if (!modelId_.initFromNode(modelNode)) return false;
 	}
 
 	// Get action
-	XMLNode *subNode = 0;
+	XMLNode* subNode = nullptr;
 	if (!accessoryNode->getNamedChild("accessoryaction", subNode)) return false;
 	accessoryAction_ = context.getAccessoryStore().createAccessoryPart(context, this, subNode);
 	if (!accessoryAction_)
@@ -261,10 +261,10 @@ LangString &Accessory::getStringName()
 	return stringName_;
 }
 
-const char *Accessory::getActivationSound()
+const char* Accessory::getActivationSound()
 {
-	if (!activationSound_.c_str()[0]) return 0;
-	return activationSound_.c_str();
+	if ( ! activationSound_.c_str()[0] ) return nullptr;
+	else return activationSound_.c_str();
 }
 
 #ifndef S3D_SERVER
@@ -308,8 +308,8 @@ MissileMesh *Accessory::getWeaponMesh(ModelID &id, Tank *currentPlayer)
 	}
 
 	// Load or find the correct missile mesh
-	MissileMesh *mesh = 0;
-	const char *name = usedModelId->getStringHash();
+	MissileMesh* mesh = nullptr;
+	const char*  name = usedModelId->getStringHash();
 	std::map<std::string, MissileMesh *>::iterator itor =
 		loadedMeshes_.find(name);
 	if (itor == loadedMeshes_.end())

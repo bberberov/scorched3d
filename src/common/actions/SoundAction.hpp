@@ -29,7 +29,7 @@ class WeaponSound;
 class SoundAction : public Action
 {
 public:
-	SoundAction( FixedVector& position = FixedVector::getNullVector(), WeaponSound* weapon = 0 );
+	SoundAction( FixedVector& position = FixedVector::getNullVector(), WeaponSound* weapon = nullptr );
 	virtual ~SoundAction();
 
 	virtual void        init();

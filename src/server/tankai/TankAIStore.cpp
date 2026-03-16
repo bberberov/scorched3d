@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -89,7 +89,7 @@ bool TankAIStore::loadAIs(bool shallow)
 			return false;
 		}
 
-		TankAI *computer = 0;
+		TankAI* computer = nullptr;
 		if (shallow) computer = new TankAIShallow;
 		else computer = new TankAICurrent;
 		if (!computer->parseConfig(tankAiWeaponSets_, currentNode))
@@ -140,7 +140,7 @@ TankAI *TankAIStore::getAIByName(const char *name)
 		if (!strcmp((*itor)->getName(), name)) return (*itor);
 	}
 
-	return 0;
+	return nullptr;
 }
 
 void TankAIStore::addAI(TankAI *ai)
