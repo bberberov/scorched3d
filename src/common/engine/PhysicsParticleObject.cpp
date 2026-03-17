@@ -339,64 +339,70 @@ PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkShotCollision
 }
 
 PhysicsParticleObject::CollisionAction PhysicsParticleObject::checkBounceCollision(
-	CollisionInfo &collision, Target *target)
+	CollisionInfo& collision,
+	Target*        target
+)
 {
-	int arenaX = context_->getLandscapeMaps().getGroundMaps().getArenaX();
-	int arenaY = context_->getLandscapeMaps().getGroundMaps().getArenaY();
-	int arenaWidth = context_->getLandscapeMaps().getGroundMaps().getArenaWidth();
+	int arenaX      = context_->getLandscapeMaps().getGroundMaps().getArenaX();
+	int arenaY      = context_->getLandscapeMaps().getGroundMaps().getArenaY();
+	int arenaWidth  = context_->getLandscapeMaps().getGroundMaps().getArenaWidth();
 	int arenaHeight = context_->getLandscapeMaps().getGroundMaps().getArenaHeight();
 
-	switch(collision.collisionId)
+	OptionsTransient::WallType wallType;
+
+	switch ( collision.collisionId )
 	{
-	case CollisionIdRoof:
-		return CollisionActionNone;
-	case CollisionIdLandscape:
-		return CollisionActionBounce;
-	case CollisionIdWallLeft:
-	case CollisionIdWallRight:
-	case CollisionIdWallTop:
-	case CollisionIdWallBottom:
-
-		if (context_->getOptionsTransient().getWallType() == OptionsTransient::wallBouncy ||
-			context_->getOptionsTransient().getWallType() == OptionsTransient::wallConcrete)
-		{
-			switch(collision.collisionId)
-			{
-			case CollisionIdWallLeft:
-				position_[0] = arenaX + 1;
-				break;
-			case CollisionIdWallRight:
-				position_[0] = arenaX + arenaWidth - 1;
-				break;
-			case CollisionIdWallTop:
-				position_[1] = arenaY + 1;
-				break;
-			case CollisionIdWallBottom:
-				position_[1] = arenaY + arenaHeight - 1;
-				break;
-			default:
-				break;
-			}
-		}
-
-		switch (context_->getOptionsTransient().getWallType())
-		{
-		case OptionsTransient::wallBouncy:
+		case CollisionIdRoof:
+			return CollisionActionNone;
+		case CollisionIdLandscape:
 			return CollisionActionBounce;
-		case OptionsTransient::wallWrapAround:
-			return CollisionActionNone;
-		case OptionsTransient::wallConcrete:
+		case CollisionIdWallLeft:
+		case CollisionIdWallRight:
+		case CollisionIdWallTop:
+		case CollisionIdWallBottom:
+			wallType = context_->getOptionsTransient().getWallType();
+
+			if ( wallType == OptionsTransient::wallBouncy || wallType == OptionsTransient::wallConcrete )
+			{
+				switch ( collision.collisionId )
+				{
+					case CollisionIdWallLeft:
+						position_[0] = arenaX + 1;
+						break;
+					case CollisionIdWallRight:
+						position_[0] = arenaX + arenaWidth - 1;
+						break;
+					case CollisionIdWallTop:
+						position_[1] = arenaY + 1;
+						break;
+					case CollisionIdWallBottom:
+						position_[1] = arenaY + arenaHeight - 1;
+						break;
+					default:
+						break;
+				}
+			}
+
+			switch ( wallType )
+			{
+				case OptionsTransient::wallBouncy:
+					return CollisionActionBounce;
+				case OptionsTransient::wallWrapAround:
+					return CollisionActionNone;
+				case OptionsTransient::wallConcrete:
+					return CollisionActionCollision;
+				case OptionsTransient::wallNone:
+					return CollisionActionNone;
+				default:
+					return CollisionActionNone;
+			}
+		case CollisionIdShield:
+			bounceShieldHit( target );
+			return CollisionActionBounce;
+		case CollisionIdTarget:
 			return CollisionActionCollision;
-		case OptionsTransient::wallNone:
+		case CollisionIdNone:
 			return CollisionActionNone;
-		}
-	case CollisionIdShield:
-		bounceShieldHit(target);
-		return CollisionActionBounce;
-	case CollisionIdTarget:
-		return CollisionActionCollision;
-	case CollisionIdNone:
-		return CollisionActionNone;
 	}
 
 	return CollisionActionNone;

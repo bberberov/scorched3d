@@ -38,55 +38,59 @@ TargetContainer::~TargetContainer()
 	targets_.clear();
 }
 
-void TargetContainer::addTarget(Target *target)
+void TargetContainer::addTarget( Target* target )
 {
-	std::map<unsigned int, Target *>::iterator findItor = 
-		targets_.find(target->getPlayerId());
-	if (findItor != targets_.end())
+	std::map< unsigned int, Target* >::iterator findItor = targets_.find( target->getPlayerId() );
+	if ( findItor != targets_.end() )
 	{
-		Target *original = (*findItor).second;
-		S3D::dialogExit("Scorched3D",
-			S3D::formatStringBuffer("Duplicate target %u being added to container.\n"
-			"Original :%s, this %s",
-			target->getPlayerId(),
-			original->getCStrName().c_str(),
-			target->getCStrName().c_str()));
+		Target* original = ( *findItor ).second;
+		S3D::dialogExit(
+			"Scorched3D",
+			S3D::formatStringBuffer(
+				"Duplicate target %u being added to container.\n"
+				"Original :%s, this %s",
+				target->getPlayerId(),
+				original->getCStrName().c_str(),
+				target->getCStrName().c_str()
+			)
+		);
 	}
 
-	switch (target->getType())
+	switch ( target->getType() )
 	{
-	case Target::TypeTank:
-		tanks_[target->getPlayerId()] = (Tank *) target;
-	case Target::TypeTanket:
-		tankets_[target->getPlayerId()] = (Tanket *) target;
-	case Target::TypeTarget:
-		targets_[target->getPlayerId()] = target;
+		case Target::TypeTank:
+			tanks_[target->getPlayerId()] = (Tank*)target;
+			__attribute__(( fallthrough ));  // WARNING
+		case Target::TypeTanket:
+			tankets_[target->getPlayerId()] = (Tanket*)target;
+			__attribute__(( fallthrough ));  // WARNING
+		case Target::TypeTarget:
+			targets_[target->getPlayerId()] = target;
 	}
 }
 
-Target *TargetContainer::removeTarget(unsigned int playerId)
+Target* TargetContainer::removeTarget( unsigned int playerId )
 {
-    std::map<unsigned int, Target *>::iterator itor =
-		targets_.find(playerId);
+	std::map< unsigned int, Target* >::iterator itor = targets_.find( playerId );
 	if ( itor == targets_.end() ) return nullptr;
 
-	Target *target = (*itor).second;
-	targets_.erase(itor);
+	Target* target = ( *itor ).second;
+	targets_.erase( itor );
 
-	switch (target->getType())
+	switch ( target->getType() )
 	{
-	case Target::TypeTank:
-		tanks_.erase(playerId);
-		if (currentPlayer_ == target)
-		{
-			currentPlayer_ = nullptr;
-		}
-		// Note: No break
-	case Target::TypeTanket:
-		tankets_.erase(playerId);
-		// Note: No break
-	case Target::TypeTarget:
-		break;
+		case Target::TypeTank:
+			tanks_.erase( playerId );
+			if ( currentPlayer_ == target )
+			{
+				currentPlayer_ = nullptr;
+			}
+			__attribute__(( fallthrough ));  // WARNING
+		case Target::TypeTanket:
+			tankets_.erase( playerId );
+			__attribute__(( fallthrough ));  // WARNING
+		case Target::TypeTarget:
+			break;
 	}
 	return target;
 }
