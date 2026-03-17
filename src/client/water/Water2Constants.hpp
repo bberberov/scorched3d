@@ -46,7 +46,7 @@ class Water2Points
 public:
 	Vector& getPoint( unsigned int x, unsigned int y )
 	{
-		DIALOG_ASSERT( 0 <= x && 0 <= y && x < wave_resolution && y < wave_resolution );
+		DIALOG_ASSERT( x < wave_resolution && y < wave_resolution );
 
 		return points[x][y];
 	};
