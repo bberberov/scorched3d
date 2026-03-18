@@ -38,6 +38,8 @@
 #include <graph/OptionsDisplay.hpp>
 #include <lang/LangResource.hpp>
 
+// BEGIN TankUndoMenu
+
 TankUndoMenu::TankUndoMenu(Tank *tank) :
 	tank_(tank)
 {}
@@ -45,51 +47,55 @@ TankUndoMenu::TankUndoMenu(Tank *tank) :
 TankUndoMenu::~TankUndoMenu()
 {}
 
-void TankUndoMenu::showItems(float x, float y)
+void TankUndoMenu::showItems( float x, float y )
 {
-	static ToolTip useTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("UNDO", "Undo"), 
-		LANG_RESOURCE("UNDO_TOOLTIP", "Reverts back to the selected rotation,\n"
-		"elevtaion and power."));
+	static ToolTip useTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "UNDO", "Undo" ),
+		LANG_RESOURCE(
+			"UNDO_TOOLTIP",
+			"Reverts back to the selected rotation,\n"
+			"elevtaion and power."
+		)
+	);
 
-	std::list<GLWSelectorEntry> entries;
-	std::vector<TankShotHistory::ShotEntry> &oldShots =
-		tank_->getShotHistory().getOldShots();
-	for (int i=0; i<(int) oldShots.size(); i++)
+	std::list< GLWSelectorEntry >              entries;
+	std::vector< TankShotHistory::ShotEntry >& oldShots = tank_->getShotHistory().getOldShots();
+	for ( size_t i = 0; i < oldShots.size(); i++ )
 	{
 		char buffer[128];
 		// NOTE: printf accepts only double, not float
 		snprintf(
 			buffer,
 			128,
-			"%s%i: Pwr:%.1f Ele:%.1f Rot:%.1f",
+			"%s%lu: Pwr:%.1f Ele:%.1f Rot:%.1f",
 			( oldShots[i].current ? "* " : "  " ),
 			i,
 			oldShots[i].power.asDouble(),
 			oldShots[i].ele.asDouble(),
 			( 360.0 - oldShots[i].rot.asDouble() )
 		);
-		entries.push_back(
-			GLWSelectorEntry(
-				LANG_STRING( buffer ),
-				&useTip,
-				0,
-				nullptr,
-				(void*)
-				( (unsigned int)( oldShots.size() - 1 - i ) )
-			)
-		);
+		entries.push_back( GLWSelectorEntry(
+			LANG_STRING( buffer ),
+			&useTip,
+			0,
+			nullptr,
+			(void*)( oldShots.size() - 1u - i )  // NOTE: pass value directly as void*
+		) );
 	}
 
-	GLWSelector::instance()->showSelector(
-		this, x, y, entries,
-		ClientState::StatePlaying);
+	GLWSelector::instance()->showSelector( this, x, y, entries, ClientState::StatePlaying );
 }
 
-void TankUndoMenu::itemSelected(GLWSelectorEntry *entry, int position)
+void TankUndoMenu::itemSelected( GLWSelectorEntry* entry, int position )
 {
-	tank_->getShotHistory().revertSettings((unsigned long) entry->getUserData());
+	// NOTE: read value from void* directly
+	tank_->getShotHistory().revertSettings( (unsigned int)(size_t)( entry->getUserData() ) );
 }
+
+// END   TankUndoMenu
+
+// BEGIN TankFuelTip
 
 TankFuelTip::TankFuelTip(Tank *tank) :
 	tank_(tank)
@@ -139,9 +145,9 @@ void TankFuelTip::showItems(float x, float y)
 		if (tank_->getAccessories().canUse(current))
 		{
 			entries.push_back(GLWSelectorEntry(
-				tank_->getAccessories().getAccessoryAndCountString(current), 
-				&current->getToolTip(), 
-				(tank_->getAccessories().getWeapons().getCurrent() == current), 
+				tank_->getAccessories().getAccessoryAndCountString(current),
+				&current->getToolTip(),
+				(tank_->getAccessories().getWeapons().getCurrent() == current),
 				&current->getTexture(), current));
 		}
 	}
@@ -172,6 +178,10 @@ void TankFuelTip::itemSelected(GLWSelectorEntry *entry, int position)
 	}
 }
 
+// END   TankFuelTip
+
+// BEGIN TankBatteryTip
+
 TankBatteryTip::TankBatteryTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -198,58 +208,63 @@ void TankBatteryTip::populate()
 		"Batteries : ") + batteryCount);
 }
 
-void TankBatteryTip::showItems(float x, float y)
+void TankBatteryTip::showItems( float x, float y )
 {
-	static ToolTip useTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("BATTERY", "Battery"), 
-		LANG_RESOURCE("BATTERY_TOOLTIP", "Use some batteries"));
-	static ToolTip offTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE("BATTERY_CANCEL", "Battery Cancel"), 
-		LANG_RESOURCE("BATTERY_CANCEL_TOOLTIP", "Don't use any batteries"));
-	
-	int count = tank_->getAccessories().getBatteries().getNoBatteries();
-	if (count == -1) count = 10;
+	static ToolTip useTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "BATTERY", "Battery" ),
+		LANG_RESOURCE( "BATTERY_TOOLTIP", "Use some batteries" )
+	);
+	static ToolTip offTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( "BATTERY_CANCEL", "Battery Cancel" ),
+		LANG_RESOURCE( "BATTERY_CANCEL_TOOLTIP", "Don't use any batteries" )
+	);
 
-	std::list<GLWSelectorEntry> entries;
-	if (tank_->getAccessories().getBatteries().canUse())
+	int count = tank_->getAccessories().getBatteries().getNoBatteries();
+	if ( -1 == count )
 	{
-		for (int i=1; i<=MIN(count,10); i++)
+		count = 10;
+	}
+
+	std::list< GLWSelectorEntry > entries;
+	if ( tank_->getAccessories().getBatteries().canUse() )
+	{
+		for ( size_t i = 1; i <= MIN( (size_t)count, 10u ); i++ )
 		{
-			entries.push_back(
-				GLWSelectorEntry(
-					LANG_RESOURCE_1( "USE_I", "Use {0}", S3D::formatStringBuffer( "%i", i ) ),
-					&useTip,
-					0,
-					nullptr,
-					(void*)i
-				)
-			);
+			entries.push_back( GLWSelectorEntry(
+				LANG_RESOURCE_1( "USE_I", "Use {0}", S3D::formatStringBuffer( "%i", i ) ),
+				&useTip,
+				0,
+				nullptr,
+				(void*)i
+			) );
 		}
 	}
 	entries.push_back( GLWSelectorEntry( LANG_RESOURCE( "CANCEL", "Cancel" ), &offTip, 0, nullptr, (void*)0 ) );
-	GLWSelector::instance()->showSelector(this, x, y, entries,
-		ClientState::StatePlaying);		
+	GLWSelector::instance()->showSelector( this, x, y, entries, ClientState::StatePlaying );
 }
 
-void TankBatteryTip::itemSelected(GLWSelectorEntry *entry, int position)
+void TankBatteryTip::itemSelected( GLWSelectorEntry* entry, int position )
 {
-	for (int i=1; i<=(long) entry->getUserData(); i++)
+	for ( size_t i = 1; i <= (size_t)( entry->getUserData() ); i++ )
 	{
-		if (tank_->getLife().getLife() < 
-			tank_->getLife().getMaxLife())
+		if ( tank_->getLife().getLife() < tank_->getLife().getMaxLife() )
 		{
-			std::list<Accessory *> &entries =
-				tank_->getAccessories().getAllAccessoriesByType(
-					AccessoryPart::AccessoryBattery);
-			if (!entries.empty())
+			std::list< Accessory* >& entries = tank_->getAccessories().getAllAccessoriesByType(
+				AccessoryPart::AccessoryBattery
+			);
+			if ( ! entries.empty() )
 			{
-
-				TankKeyboardControlUtil::useBattery(tank_->getPlayerId(),
-					entries.front()->getAccessoryId());
+				TankKeyboardControlUtil::useBattery( tank_->getPlayerId(), entries.front()->getAccessoryId() );
 			}
 		}
 	}
 }
+
+// END   TankBatteryTip
+
+// BEGIN TankShieldTip
 
 TankShieldTip::TankShieldTip(Tank *tank) :
 	tank_(tank)
@@ -337,6 +352,10 @@ void TankShieldTip::itemSelected(GLWSelectorEntry *entry, int position)
 			((Accessory *)entry->getUserData())->getAccessoryId());
 }
 
+// END   TankShieldTip
+
+// BEGIN TankHealthTip
+
 TankHealthTip::TankHealthTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -361,6 +380,10 @@ void TankHealthTip::populate()
 	);
 }
 
+// END   TankHealthTip
+
+// BEGIN TankRankTip
+
 TankRankTip::TankRankTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -375,6 +398,10 @@ void TankRankTip::populate()
 		LANG_RESOURCE("RANK_TOOLTIP",
 		"The current online ranking of this player"));
 }
+
+// END   TankRankTip
+
+// BEGIN TankParachutesTip
 
 TankParachutesTip::TankParachutesTip(Tank *tank) :
 	tank_(tank)
@@ -449,6 +476,10 @@ void TankParachutesTip::itemSelected(GLWSelectorEntry *entry, int position)
 		((Accessory *)entry->getUserData())->getAccessoryId());
 }
 
+// END   TankParachutesTip
+
+// BEGIN TankAutoDefenseTip
+
 TankAutoDefenseTip::TankAutoDefenseTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -489,6 +520,10 @@ void TankAutoDefenseTip::showItems(float x, float y)
 	else entries.push_back(GLWSelectorEntry(LANG_RESOURCE("OFF", "Off"), &offTip));
 	GLWSelector::instance()->showSelector( nullptr, x, y, entries, ClientState::StatePlaying );
 }
+
+// END   TankAutoDefenseTip
+
+// BEGIN TankWeaponTip
 
 TankWeaponTip::TankWeaponTip(Tank *tank) :
 	tank_(tank)
@@ -552,6 +587,10 @@ void TankWeaponTip::itemSelected(GLWSelectorEntry *entry, int position)
 	tank_->getAccessories().getWeapons().setWeapon((Accessory *) entry->getUserData());
 }
 
+// END   TankWeaponTip
+
+// BEGIN TankPowerTip
+
 TankPowerTip::TankPowerTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -572,6 +611,10 @@ void TankPowerTip::populate()
 	}
 }
 
+// END   TankPowerTip
+
+// BEGIN TankRotationTip
+
 TankRotationTip::TankRotationTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -590,6 +633,10 @@ void TankRotationTip::populate()
 		tank_->getShotHistory().getRotationString()));
 }
 
+// END   TankRotationTip
+
+// BEGIN TankElevationTip
+
 TankElevationTip::TankElevationTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -607,6 +654,8 @@ void TankElevationTip::populate()
 		"Elevation : {0}",
 		tank_->getShotHistory().getElevationString()));
 }
+
+// END   TankElevationTip
 
 static void generateTargetTip(LangString &tip, Target *target)
 {
@@ -653,6 +702,8 @@ static void generateTargetTip(LangString &tip, Target *target)
 	}
 }
 
+// BEGIN TankTip
+
 TankTip::TankTip(Tank *tank) :
 	tank_(tank)
 {}
@@ -681,6 +732,10 @@ void TankTip::populate()
 	setText(ToolTip::ToolTipInfo, tank_->getTargetName(), tip.c_str());
 }
 
+// END   TankTip
+
+// BEGIN TargetTip
+
 TargetTip::TargetTip(Target *target) :
 	target_(target)
 {}
@@ -694,6 +749,10 @@ void TargetTip::populate()
 	generateTargetTip(tip, target_);
 	setText(ToolTip::ToolTipInfo, target_->getTargetName(), tip);
 }
+
+// END   TargetTip
+
+// BEGIN GLWTargetTips
 
 GLWTargetTips::GLWTargetTips(Target *target) :
 	targetTip(target)
@@ -729,3 +788,5 @@ GLWTankTips::GLWTankTips(Tank *tank) :
 
 GLWTankTips::~GLWTankTips()
 {}
+
+// END   GLWTargetTips

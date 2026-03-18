@@ -98,78 +98,62 @@ void GiftMoneyDialog::display()
 	money_->clear();
 
 	// Get the current playing tank
-	Tank *currentTank = 
-		ScorchedClient::instance()->getTargetContainer().getCurrentTank();
-	if (!currentTank)
+	Tank* currentTank = ScorchedClient::instance()->getTargetContainer().getCurrentTank();
+	if ( ! currentTank )
 	{
-		GLWWindowManager::instance()->hideWindow(getId());
+		GLWWindowManager::instance()->hideWindow( getId() );
 		return;
 	}
 
 	// Add available amounts of money
-	int amounts [] = { 1000, 2500, 500, 10000, 15000, 20000, 25000, 50000, 100000 };
-	for (size_t i = 0; i < sizeof(amounts) / sizeof(int); i++)
+	const int amounts[] = { 1000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000 };
+	for ( unsigned int i = 0; i < sizeof( amounts ) / sizeof( int ); ++i )
 	{
 		int amount = amounts[i];
-		if (tankInfo_.tankMoney >= amount)
+		if ( amount <= tankInfo_.tankMoney )
 		{
-			money_->addEntry(
-				GLWSelectorEntry(
-					LANG_RESOURCE(
-						S3D::formatStringBuffer( "%i_DOLLARS", amount ),
-						S3D::formatMoney( amount )
-					),
-					nullptr,
-					false,
-					nullptr,
-					(void*)amount
-				)
-			);
+			money_->addEntry( GLWSelectorEntry(
+				LANG_RESOURCE( S3D::formatStringBuffer( "%i_DOLLARS", amount ), S3D::formatMoney( amount ) ),
+				nullptr,
+				false,
+				nullptr,
+				(void*)(long)amount  // NOTE: pass value directly as void*
+			) );
 		}
 	}
 
 	// Add all tanks in the same team as the current
-	std::map<unsigned int, Tank *> &tanks = 
-		ScorchedClient::instance()->getTargetContainer().getTanks();
-	std::map<unsigned int, Tank *>::iterator itor;
-	for (itor = tanks.begin();
-		itor != tanks.end();
-		++itor)
+	std::map< unsigned int, Tank* >&          tanks = ScorchedClient::instance()->getTargetContainer().getTanks();
+	std::map< unsigned int, Tank* >::iterator itor;
+	for ( itor = tanks.begin(); itor != tanks.end(); ++itor )
 	{
-		Tank *tank = itor->second;
-		if (tank->getTeam() == currentTank->getTeam() &&
-			tank != currentTank &&
-			tank->getState().getTankPlaying())
+		Tank* tank = itor->second;
+		if ( tank->getTeam() == currentTank->getTeam() && tank != currentTank && tank->getState().getTankPlaying() )
 		{
-			players_->addEntry(
-				GLWSelectorEntry(
-					tank->getTargetName(),
-					nullptr,
-					false,
-					nullptr,
-					(void*)tank->getPlayerId()
-				)
-			);
+			players_->addEntry( GLWSelectorEntry(
+				tank->getTargetName(),
+				nullptr,
+				false,
+				nullptr,
+				(void*)(unsigned long)( tank->getPlayerId() )  // NOTE: pass value directly as void*
+			) );
 		}
 	}
 }
 
-void GiftMoneyDialog::buttonDown(unsigned int id)
+void GiftMoneyDialog::buttonDown( unsigned int id )
 {
-	if (id == okId_)
+	if ( id == okId_ )
 	{
-		if (money_->getCurrentEntry() &&
-			players_->getCurrentEntry())
+		if ( money_->getCurrentEntry() && players_->getCurrentEntry() )
 		{
-			int money = (int) 
-				long(money_->getCurrentEntry()->getUserData());
-			unsigned int playerId = (unsigned int)
-				long(players_->getCurrentEntry()->getUserData());
+			// NOTE: read values from void* directly
+			int          money    = (int)(long)( money_->getCurrentEntry()->getUserData() );
+			unsigned int playerId = (unsigned int)(unsigned long)( players_->getCurrentEntry()->getUserData() );
 
-			ComsGiftMoneyMessage message(
-				tankInfo_.tankId, playerId, money);
-			ComsMessageSender::sendToServer(message);
+			ComsGiftMoneyMessage message( tankInfo_.tankId, playerId, money );
+			ComsMessageSender::sendToServer( message );
 		}
 	}
-	GLWWindowManager::instance()->hideWindow(getId());
+	GLWWindowManager::instance()->hideWindow( getId() );
 }

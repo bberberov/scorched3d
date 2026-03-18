@@ -28,229 +28,222 @@
 #include <common/Defines.hpp>
 #include <common/ToolTip.hpp>
 
-GLWOptionEntry::GLWOptionEntry(GLWidget *control, OptionEntry *entry) :
-	control_(control),
-	entry_(entry)
-{}
+GLWOptionEntry::GLWOptionEntry( GLWidget* control, OptionEntry* entry ) : control_( control ), entry_( entry ) {}
 
-GLWOptionEntry::~GLWOptionEntry()
-{}
+GLWOptionEntry::~GLWOptionEntry() {}
 
-void GLWOptionEntry::createEntry(
-	std::list<GLWOptionEntry> &controls,
-	GLWPanel *parent,
-	OptionEntry &entry
-)
+void GLWOptionEntry::createEntry( std::list< GLWOptionEntry >& controls, GLWPanel* parent, OptionEntry& entry )
 {
 	std::string descriptionName;
-	descriptionName.append(entry.getName()).append("_description");
+	descriptionName.append( entry.getName() ).append( "_description" );
 
-	GLWLabel *staticText = new GLWLabel(0.0f, 0.0f, 
-		LANG_RESOURCE(entry.getName(), entry.getName()));
-	staticText->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE(entry.getName(), entry.getName()), 
-		LANG_RESOURCE(descriptionName, entry.getDescription())));
+	GLWLabel* staticText = new GLWLabel( 0.0f, 0.0f, LANG_RESOURCE( entry.getName(), entry.getName() ) );
+	staticText->setToolTip( new ToolTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( entry.getName(), entry.getName() ),
+		LANG_RESOURCE( descriptionName, entry.getDescription() )
+	) );
 	parent->addWidget( staticText, nullptr, GLWPanel::AlignRight | GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f );
 
 	GLWidget* control = nullptr;
-	if (0 == strcmp(entry.getName(), "Mod"))
+	if ( 0 == strcmp( entry.getName(), "Mod" ) )
 	{
-		control = new GLWDropDownText(0.0f, 0.0f, 170.0f);
+		control = new GLWDropDownText( 0.0f, 0.0f, 170.0f );
 		ModDirs modDirs;
 		modDirs.loadModDirs();
-		std::list<ModInfo>::iterator itor;
-		for (itor = modDirs.getDirs().begin();
-			itor != modDirs.getDirs().end();
-			++itor)
+		std::list< ModInfo >::iterator itor;
+		for ( itor = modDirs.getDirs().begin(); itor != modDirs.getDirs().end(); ++itor )
 		{
-			ModInfo &info = (*itor);
-			((GLWDropDownText *) control)->addText(
-				LANG_RESOURCE(info.getName(), info.getName()), info.getName());
+			ModInfo& info = ( *itor );
+			( (GLWDropDownText*)control )->addText( LANG_RESOURCE( info.getName(), info.getName() ), info.getName() );
 		}
 	}
 	else
-	switch (entry.getEntryType())
 	{
-	case OptionEntry::OptionEntryStringType:
+		switch ( entry.getEntryType() )
 		{
-			control = new GLWTextBox(0.0f, 0.0f, 170.0f);
-		}
-		break;
-	case OptionEntry::OptionEntryBoundedIntType:
-		{
-			control = new GLWDropDownText(0.0f, 0.0f, 170.0f);
-			OptionEntryBoundedInt &boundedInt = (OptionEntryBoundedInt &) entry;
-			for (int i=boundedInt.getMinValue(); 
-				i<=boundedInt.getMaxValue(); 
-				i+=boundedInt.getStepValue())
+			case OptionEntry::OptionEntryStringType:
 			{
-				std::string value = S3D::formatStringBuffer("%i", i);
-				((GLWDropDownText *) control)->addText(LANG_STRING(value), value);
+				control = new GLWTextBox( 0.0f, 0.0f, 170.0f );
 			}
-		}
-		break;
-	case OptionEntry::OptionEntryEnumType:
-		{
-			control = new GLWDropDownText(0.0f, 0.0f, 170.0f);
+			break;
+			case OptionEntry::OptionEntryBoundedIntType:
+			{
+				control                           = new GLWDropDownText( 0.0f, 0.0f, 170.0f );
 
-			OptionEntryEnum &optionEntryEnum = (OptionEntryEnum &) entry;
-			OptionEntryEnum::EnumEntry *enums = optionEntryEnum.getEnums();
-			for (OptionEntryEnum::EnumEntry *current = enums; current->description[0]; current++)
-			{
-				( (GLWDropDownText*)control )->addEntry( GLWSelectorEntry(
-					LANG_RESOURCE( current->description, current->description ),
-					nullptr,
-					false,
-					nullptr,
-					(void*)current->value,
-					current->description
-				) );
+				OptionEntryBoundedInt& boundedInt = (OptionEntryBoundedInt&)entry;
+				for ( int i = boundedInt.getMinValue(); i <= boundedInt.getMaxValue(); i += boundedInt.getStepValue() )
+				{
+					std::string value = S3D::formatStringBuffer( "%i", i );
+					( (GLWDropDownText*)control )->addText( LANG_STRING( value ), value );
+				}
 			}
-		}
-		break;
-	case OptionEntry::OptionEntryStringEnumType:
-		{
-			control = new GLWDropDownText(0.0f, 0.0f, 170.0f);
+			break;
+			case OptionEntry::OptionEntryEnumType:
+			{
+				control = new GLWDropDownText( 0.0f, 0.0f, 170.0f );
 
-			OptionEntryStringEnum &optionEntryStringEnum = (OptionEntryStringEnum &) entry;
-			OptionEntryStringEnum::EnumEntry *enums = optionEntryStringEnum.getEnums();
-			for (OptionEntryStringEnum::EnumEntry *current = enums; current->value[0]; current++)
-			{
-				((GLWDropDownText *) control)->addText(LANG_RESOURCE(current->value, current->value), 
-					current->value);
+				OptionEntryEnum&            optionEntryEnum = (OptionEntryEnum&)entry;
+				OptionEntryEnum::EnumEntry* enums           = optionEntryEnum.getEnums();
+				for ( OptionEntryEnum::EnumEntry* current = enums; current->description[0]; current++ )
+				{
+					( (GLWDropDownText*)control )->addEntry( GLWSelectorEntry(
+						LANG_RESOURCE( current->description, current->description ),
+						nullptr,
+						false,
+						nullptr,
+						(void*)(long)( current->value ),  // NOTE: pass value directly as void*
+						current->description
+					) );
+				}
 			}
+			break;
+			case OptionEntry::OptionEntryStringEnumType:
+			{
+				control = new GLWDropDownText( 0.0f, 0.0f, 170.0f );
+
+				OptionEntryStringEnum&            optionEntryStringEnum = (OptionEntryStringEnum&)entry;
+				OptionEntryStringEnum::EnumEntry* enums                 = optionEntryStringEnum.getEnums();
+				for ( OptionEntryStringEnum::EnumEntry* current = enums; current->value[0]; current++ )
+				{
+					( (GLWDropDownText*)control )->addText(
+						LANG_RESOURCE( current->value, current->value ),
+						current->value
+					);
+				}
+			}
+			break;
+			case OptionEntry::OptionEntryBoolType:
+			{
+				control = new GLWCheckBox();
+			}
+			break;
+			default:
+				S3D::dialogExit(
+					"GLWOptionEntry::createEntry",
+					S3D::formatStringBuffer( "Unhandled OptionEntry type %s:%i", entry.getName(), entry.getEntryType() )
+				);
 		}
-		break;
-	case OptionEntry::OptionEntryBoolType:
-		{
-			control = new GLWCheckBox();
-		}
-		break;
-	default:
-		S3D::dialogExit(
-			"GLWOptionEntry::createEntry",
-			S3D::formatStringBuffer(
-				"Unhandled OptionEntry type %s:%i",
-				entry.getName(),
-				entry.getEntryType()
-			)
-		);
 	}
 
-	control->setToolTip(new ToolTip(ToolTip::ToolTipHelp, 
-		LANG_RESOURCE(entry.getName(), entry.getName()), 
-		LANG_RESOURCE(descriptionName, entry.getDescription())));
+	control->setToolTip( new ToolTip(
+		ToolTip::ToolTipHelp,
+		LANG_RESOURCE( entry.getName(), entry.getName() ),
+		LANG_RESOURCE( descriptionName, entry.getDescription() )
+	) );
 	parent->addWidget( control, nullptr, GLWPanel::SpaceRight | GLWPanel::SpaceLeft | GLWPanel::SpaceTop, 10.0f );
 
-	controls.push_back(GLWOptionEntry(control, &entry));
+	controls.push_back( GLWOptionEntry( control, &entry ) );
 }
 
-void GLWOptionEntry::updateControls(
-	std::list<GLWOptionEntry> &controls)
+void GLWOptionEntry::updateControls( std::list< GLWOptionEntry >& controls )
 {
-	std::list<GLWOptionEntry>::iterator itor;
-	for (itor = controls.begin();
-		itor != controls.end();
-		++itor)
+	std::list< GLWOptionEntry >::iterator itor;
+	for ( itor = controls.begin(); itor != controls.end(); ++itor )
 	{
-		GLWOptionEntry &entrySetter = *itor;
+		GLWOptionEntry& entrySetter = *itor;
 
-		if (0 == strcmp(entrySetter.getEntry()->getName(), "Mod"))
+		if ( 0 == strcmp( entrySetter.getEntry()->getName(), "Mod" ) )
 		{
-			GLWDropDownText *control = (GLWDropDownText *) entrySetter.getControl();
-			control->setCurrentText(LANG_RESOURCE(entrySetter.getEntry()->getValueAsString(),
-				entrySetter.getEntry()->getValueAsString()));			
+			GLWDropDownText* control = (GLWDropDownText*)( entrySetter.getControl() );
+			control->setCurrentText(
+				LANG_RESOURCE( entrySetter.getEntry()->getValueAsString(), entrySetter.getEntry()->getValueAsString() )
+			);
 		}
 		else
-		switch (entrySetter.getEntry()->getEntryType())
 		{
-		case OptionEntry::OptionEntryStringType:
+			switch ( entrySetter.getEntry()->getEntryType() )
 			{
-				GLWTextBox *control = (GLWTextBox *) entrySetter.getControl();
-				control->setText(LANG_STRING(entrySetter.getEntry()->getValueAsString()));
+				case OptionEntry::OptionEntryStringType:
+				{
+					GLWTextBox* control = (GLWTextBox*)( entrySetter.getControl() );
+					control->setText( LANG_STRING( entrySetter.getEntry()->getValueAsString() ) );
+				}
+				break;
+				case OptionEntry::OptionEntryBoundedIntType:
+				{
+					GLWDropDownText* control = (GLWDropDownText*)( entrySetter.getControl() );
+					control->setCurrentText( LANG_STRING( entrySetter.getEntry()->getValueAsString() ) );
+				}
+				break;
+				case OptionEntry::OptionEntryEnumType:
+				case OptionEntry::OptionEntryStringEnumType:
+				{
+					GLWDropDownText* control = (GLWDropDownText*)( entrySetter.getControl() );
+					control->setCurrentText( LANG_RESOURCE(
+						entrySetter.getEntry()->getValueAsString(),
+						entrySetter.getEntry()->getValueAsString()
+					) );
+				}
+				break;
+				case OptionEntry::OptionEntryBoolType:
+				{
+					OptionEntryBool* boolEntry = (OptionEntryBool*)( entrySetter.getEntry() );
+					GLWCheckBox*     control   = (GLWCheckBox*)( entrySetter.getControl() );
+					control->setState( boolEntry->getValue() );
+				}
+				break;
+				default:
+					S3D::dialogExit(
+						"GLWOptionEntry::updateControls",
+						S3D::formatStringBuffer(
+							"Unhandled OptionEntry type %s:%i",
+							entrySetter.getEntry()->getName(),
+							entrySetter.getEntry()->getEntryType()
+						)
+					);
 			}
-			break;
-		case OptionEntry::OptionEntryBoundedIntType:
-			{
-				GLWDropDownText *control = (GLWDropDownText *) entrySetter.getControl();
-				control->setCurrentText(LANG_STRING(entrySetter.getEntry()->getValueAsString()));
-			}
-			break;
-		case OptionEntry::OptionEntryEnumType:
-		case OptionEntry::OptionEntryStringEnumType:
-			{
-				GLWDropDownText *control = (GLWDropDownText *) entrySetter.getControl();
-				control->setCurrentText(LANG_RESOURCE(entrySetter.getEntry()->getValueAsString(),
-					entrySetter.getEntry()->getValueAsString()));
-			}
-			break;
-		case OptionEntry::OptionEntryBoolType:
-			{
-				OptionEntryBool *boolEntry = (OptionEntryBool *) entrySetter.getEntry();
-				GLWCheckBox *control = (GLWCheckBox *) entrySetter.getControl();
-				control->setState(boolEntry->getValue());
-			}
-			break;
-		default:
-			S3D::dialogExit(
-				"GLWOptionEntry::updateControls",
-				S3D::formatStringBuffer(
-					"Unhandled OptionEntry type %s:%i",
-					entrySetter.getEntry()->getName(),
-					entrySetter.getEntry()->getEntryType()
-				)
-			);
 		}
 	}
 }
 
-void GLWOptionEntry::updateEntries( std::list<GLWOptionEntry> &controls)
+void GLWOptionEntry::updateEntries( std::list< GLWOptionEntry >& controls )
 {
-	std::list<GLWOptionEntry>::iterator itor;
-	for (itor = controls.begin();
-		itor != controls.end();
-		++itor)
+	std::list< GLWOptionEntry >::iterator itor;
+	for ( itor = controls.begin(); itor != controls.end(); ++itor )
 	{
-		GLWOptionEntry &entrySetter = *itor;
+		GLWOptionEntry& entrySetter = *itor;
 
-		if (0 == strcmp(entrySetter.getEntry()->getName(), "Mod"))
+		if ( 0 == strcmp( entrySetter.getEntry()->getName(), "Mod" ) )
 		{
-			GLWDropDownText *control = (GLWDropDownText *) entrySetter.getControl();
-			entrySetter.getEntry()->setValueFromString(control->getCurrentDataText());		
+			GLWDropDownText* control = (GLWDropDownText*)entrySetter.getControl();
+			entrySetter.getEntry()->setValueFromString( control->getCurrentDataText() );
 		}
 		else
-		switch (entrySetter.getEntry()->getEntryType())
 		{
-		case OptionEntry::OptionEntryStringType:
+			switch ( entrySetter.getEntry()->getEntryType() )
 			{
-				GLWTextBox *control = (GLWTextBox *) entrySetter.getControl();
-				entrySetter.getEntry()->setValueFromString(control->getText().c_str());	
+				case OptionEntry::OptionEntryStringType:
+				{
+					GLWTextBox* control = (GLWTextBox*)entrySetter.getControl();
+					entrySetter.getEntry()->setValueFromString( control->getText().c_str() );
+				}
+				break;
+				case OptionEntry::OptionEntryBoundedIntType:
+				case OptionEntry::OptionEntryEnumType:
+				case OptionEntry::OptionEntryStringEnumType:
+				{
+					GLWDropDownText* control = (GLWDropDownText*)entrySetter.getControl();
+					entrySetter.getEntry()->setValueFromString( control->getCurrentDataText() );
+				}
+				break;
+				case OptionEntry::OptionEntryBoolType:
+				{
+					OptionEntryBool* boolEntry = (OptionEntryBool*)entrySetter.getEntry();
+					GLWCheckBox*     control   = (GLWCheckBox*)entrySetter.getControl();
+					boolEntry->setValue( control->getState() );
+				}
+				break;
+				default:
+					S3D::dialogExit(
+						"GLWOptionEntry::updateEntries",
+						S3D::formatStringBuffer(
+							"Unhandled OptionEntry type %s:%i",
+							entrySetter.getEntry()->getName(),
+							entrySetter.getEntry()->getEntryType()
+						)
+					);
 			}
-			break;
-		case OptionEntry::OptionEntryBoundedIntType:
-		case OptionEntry::OptionEntryEnumType:
-		case OptionEntry::OptionEntryStringEnumType:
-			{
-				GLWDropDownText *control = (GLWDropDownText *) entrySetter.getControl();
-				entrySetter.getEntry()->setValueFromString(control->getCurrentDataText());
-			}
-			break;
-		case OptionEntry::OptionEntryBoolType:
-			{
-				OptionEntryBool *boolEntry = (OptionEntryBool *) entrySetter.getEntry();
-				GLWCheckBox *control = (GLWCheckBox *) entrySetter.getControl();
-				boolEntry->setValue(control->getState());
-			}
-			break;
-		default:
-			S3D::dialogExit(
-				"GLWOptionEntry::updateEntries",
-				S3D::formatStringBuffer(
-					"Unhandled OptionEntry type %s:%i",
-					entrySetter.getEntry()->getName(),
-					entrySetter.getEntry()->getEntryType()
-				)
-			);
 		}
 	}
 }

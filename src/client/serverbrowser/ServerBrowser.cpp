@@ -76,12 +76,12 @@ void ServerBrowser::refreshList(RefreshType t)
 	SDL_UnlockMutex(refreshingMutex_);
 	if (alreadyRefreshing) return;
 
-	SDL_CreateThread(ServerBrowser::threadFunc, (void *) int(t));
+	SDL_CreateThread( ServerBrowser::threadFunc, (void*)(long)t );  // NOTE: pass value directly as void*
 }
 
 int ServerBrowser::threadFunc(void *var)
 {
-	RefreshType typ = (RefreshType) long(var);
+	RefreshType typ = (RefreshType)(long)var;  // NOTE: read value from void* directly
 
 	bool result = false;
 	switch (typ)

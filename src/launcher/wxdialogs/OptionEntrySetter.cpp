@@ -22,14 +22,9 @@
 #include <wxdialogs/MainDialog.hpp>
 #include <common/Defines.hpp>
 
-OptionEntrySetter::OptionEntrySetter(wxControl *control, OptionEntry &entry)
-	:
-	control_(control),
-	entry_(entry)
-{}
+OptionEntrySetter::OptionEntrySetter( wxControl* control, OptionEntry& entry ) : control_( control ), entry_( entry ) {}
 
-OptionEntrySetter::~OptionEntrySetter()
-{}
+OptionEntrySetter::~OptionEntrySetter() {}
 
 wxControl* OptionEntrySetter::getControl()
 {
@@ -41,198 +36,184 @@ OptionEntry& OptionEntrySetter::getEntry()
 	return entry_;
 }
 
-OptionEntrySetter OptionEntrySetterUtil::createOtherSetter(wxWindow *parent, wxSizer *sizer, OptionEntry &entry)
+OptionEntrySetter OptionEntrySetterUtil::createOtherSetter( wxWindow* parent, wxSizer* sizer, OptionEntry& entry )
 {
-	wxStaticText *staticText = nullptr;
-	sizer->Add(
-		staticText = new wxStaticText(parent, -1, wxString(entry.getName(), wxConvUTF8)),
-		0,
-		wxALIGN_RIGHT | wxRIGHT,
-		10
-	);
-	staticText->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
+	wxStaticText* staticText = new wxStaticText( parent, -1, wxString( entry.getName(), wxConvUTF8 ) );
+	staticText->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+	sizer->Add( staticText, 0, wxALIGN_RIGHT | wxRIGHT, 10 );
 
-	wxControl *control = nullptr;
-	switch (entry.getEntryType())
+	wxControl* control = nullptr;
+	switch ( entry.getEntryType() )
 	{
-	case OptionEntry::OptionEntryStringType:
+		case OptionEntry::OptionEntryStringType:
 		{
-			sizer->Add(
-				control = new wxTextCtrl(parent, -1, wxT(""), wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD),
-				0,
-				wxALIGN_LEFT
-			);
-			control->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
+			control = new wxTextCtrl( parent, -1, wxT( "" ), wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD );
+			control->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+			sizer->Add( control, 0, wxALIGN_LEFT );
 		}
 		break;
-	case OptionEntry::OptionEntryBoundedIntType:
+		case OptionEntry::OptionEntryBoundedIntType:
 		{
-			sizer->Add(
-				control = new wxComboBox( parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, 0 ),
-				0,
-				wxALIGN_LEFT
-			);
-			control->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
+			control = new wxComboBox( parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, 0 );
+			control->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+			sizer->Add( control, 0, wxALIGN_LEFT );
 
-			OptionEntryBoundedInt &boundedInt = (OptionEntryBoundedInt &) entry;
-			for (
-				int i = boundedInt.getMinValue();
-				i <= boundedInt.getMaxValue();
-				i += boundedInt.getStepValue()
-			)
+			OptionEntryBoundedInt& boundedInt = (OptionEntryBoundedInt&)entry;
+			for ( int i = boundedInt.getMinValue(); i <= boundedInt.getMaxValue(); i += boundedInt.getStepValue() )
 			{
-				((wxComboBox *) control)->Append(
-					convertString(S3D::formatStringBuffer("%i", i)),
-					(void *) i
+				( (wxComboBox*)control )->Append(
+					convertString( S3D::formatStringBuffer( "%i", i ) ),
+					(void*)(long)i  // NOTE: pass value directly as void*
 				);
 			}
 		}
 		break;
-	case OptionEntry::OptionEntryEnumType:
+		case OptionEntry::OptionEntryEnumType:
 		{
-			sizer->Add(
-				control = new wxComboBox(
-					parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, wxCB_READONLY
-				),
+			control = new wxComboBox(
+				parent,
+				-1,
+				wxT( "" ),
+				wxDefaultPosition,
+				wxSize( 160, -1 ),
 				0,
-				wxALIGN_LEFT
+				nullptr,
+				wxCB_READONLY
 			);
-			control->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
+			control->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+			sizer->Add( control, 0, wxALIGN_LEFT );
 
-			OptionEntryEnum &optionEntryEnum = (OptionEntryEnum &) entry;
-			OptionEntryEnum::EnumEntry *enums = optionEntryEnum.getEnums();
-			for (OptionEntryEnum::EnumEntry *current = enums; current->description[0]; current++)
+			OptionEntryEnum&            optionEntryEnum = (OptionEntryEnum&)entry;
+			OptionEntryEnum::EnumEntry* enums           = optionEntryEnum.getEnums();
+			for ( OptionEntryEnum::EnumEntry* current = enums; current->description[0]; current++ )
 			{
-				((wxComboBox *) control)->Append(
-					wxString(current->description, wxConvUTF8),
-					(void *) current->value
+				( (wxComboBox*)control )->Append(
+					wxString( current->description, wxConvUTF8 ),
+					(void*)(long)( current->value )  // NOTE: pass value directly as void*
 				);
 			}
 		}
 		break;
-	case OptionEntry::OptionEntryStringEnumType:
-		{
-			sizer->Add(
-				control = new wxComboBox(
-					parent, -1, wxT( "" ), wxDefaultPosition, wxSize( 160, -1 ), 0, nullptr, wxCB_READONLY
-				),
-				0,
-				wxALIGN_LEFT
-			);
-			control->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
-
-			OptionEntryStringEnum &optionEntryStringEnum = (OptionEntryStringEnum &) entry;
-			OptionEntryStringEnum::EnumEntry *enums = optionEntryStringEnum.getEnums();
-			for (OptionEntryStringEnum::EnumEntry *current = enums; current->value[0]; current++)
-			{
-				((wxComboBox *) control)->Append(wxString(current->value, wxConvUTF8));
-			}
-		}
-		break;
-	case OptionEntry::OptionEntryBoolType:
-		{
-			sizer->Add(
-				control = new wxCheckBox(parent, -1, wxT(""), wxDefaultPosition, wxDefaultSize),
-				0,
-				wxALIGN_LEFT
-			);
-			control->SetToolTip(wxString(entry.getDescription(), wxConvUTF8));
-		}
-		break;
-	default:
-		S3D::dialogExit(
-			"createOtherSetter",
-			S3D::formatStringBuffer(
-				"Unhandled OptionEntry type %s:%i",
-				entry.getName(),
-				entry.getEntryType()
-			)
-		);
-	}
-
-	return OptionEntrySetter(control, entry);
-}
-
-void OptionEntrySetterUtil::updateControls( std::list<OptionEntrySetter> &controls )
-{
-	std::list<OptionEntrySetter>::iterator itor;
-	for (itor = controls.begin(); itor != controls.end(); ++itor)
-	{
-		OptionEntrySetter &entrySetter = *itor;
-		switch (entrySetter.getEntry().getEntryType())
-		{
-		case OptionEntry::OptionEntryStringType:
-			{
-				wxTextCtrl *control = (wxTextCtrl *) entrySetter.getControl();
-				control->SetValue(wxString(entrySetter.getEntry().getValueAsString(), wxConvUTF8));
-			}
-			break;
-		case OptionEntry::OptionEntryBoundedIntType:
-		case OptionEntry::OptionEntryEnumType:
 		case OptionEntry::OptionEntryStringEnumType:
+		{
+			control = new wxComboBox(
+				parent,
+				-1,
+				wxT( "" ),
+				wxDefaultPosition,
+				wxSize( 160, -1 ),
+				0,
+				nullptr,
+				wxCB_READONLY
+			);
+			control->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+			sizer->Add( control, 0, wxALIGN_LEFT );
+
+			OptionEntryStringEnum&            optionEntryStringEnum = (OptionEntryStringEnum&)entry;
+			OptionEntryStringEnum::EnumEntry* enums                 = optionEntryStringEnum.getEnums();
+			for ( OptionEntryStringEnum::EnumEntry* current = enums; current->value[0]; current++ )
 			{
-				wxComboBox *control = (wxComboBox *) entrySetter.getControl();
-				control->SetValue(wxString(entrySetter.getEntry().getValueAsString(), wxConvUTF8));
+				( (wxComboBox*)control )->Append( wxString( current->value, wxConvUTF8 ) );
 			}
-			break;
+		}
+		break;
 		case OptionEntry::OptionEntryBoolType:
-			{
-				OptionEntryBool &boolEntry = (OptionEntryBool &) entrySetter.getEntry();
-				wxCheckBox *control = (wxCheckBox *) entrySetter.getControl();
-				control->SetValue(boolEntry.getValue());
-			}
-			break;
+		{
+			control = new wxCheckBox( parent, -1, wxT( "" ), wxDefaultPosition, wxDefaultSize );
+			control->SetToolTip( wxString( entry.getDescription(), wxConvUTF8 ) );
+			sizer->Add( control, 0, wxALIGN_LEFT );
+		}
+		break;
 		default:
 			S3D::dialogExit(
-				"updateControls",
-				S3D::formatStringBuffer(
-					"Unhandled OptionEntry type %s:%i",
-					entrySetter.getEntry().getName(),
-					entrySetter.getEntry().getEntryType()
-				)
+				"createOtherSetter",
+				S3D::formatStringBuffer( "Unhandled OptionEntry type %s:%i", entry.getName(), entry.getEntryType() )
 			);
+	}
+
+	return OptionEntrySetter( control, entry );
+}
+
+void OptionEntrySetterUtil::updateControls( std::list< OptionEntrySetter >& controls )
+{
+	std::list< OptionEntrySetter >::iterator itor;
+	for ( itor = controls.begin(); itor != controls.end(); ++itor )
+	{
+		OptionEntrySetter& entrySetter = *itor;
+		switch ( entrySetter.getEntry().getEntryType() )
+		{
+			case OptionEntry::OptionEntryStringType:
+			{
+				wxTextCtrl* control = (wxTextCtrl*)entrySetter.getControl();
+				control->SetValue( wxString( entrySetter.getEntry().getValueAsString(), wxConvUTF8 ) );
+			}
+			break;
+			case OptionEntry::OptionEntryBoundedIntType:
+			case OptionEntry::OptionEntryEnumType:
+			case OptionEntry::OptionEntryStringEnumType:
+			{
+				wxComboBox* control = (wxComboBox*)entrySetter.getControl();
+				control->SetValue( wxString( entrySetter.getEntry().getValueAsString(), wxConvUTF8 ) );
+			}
+			break;
+			case OptionEntry::OptionEntryBoolType:
+			{
+				OptionEntryBool& boolEntry = (OptionEntryBool&)entrySetter.getEntry();
+				wxCheckBox*      control   = (wxCheckBox*)entrySetter.getControl();
+				control->SetValue( boolEntry.getValue() );
+			}
+			break;
+			default:
+				S3D::dialogExit(
+					"updateControls",
+					S3D::formatStringBuffer(
+						"Unhandled OptionEntry type %s:%i",
+						entrySetter.getEntry().getName(),
+						entrySetter.getEntry().getEntryType()
+					)
+				);
 		}
 	}
 }
 
-void OptionEntrySetterUtil::updateEntries( std::list<OptionEntrySetter> &controls )
+void OptionEntrySetterUtil::updateEntries( std::list< OptionEntrySetter >& controls )
 {
-	std::list<OptionEntrySetter>::iterator itor;
-	for (itor = controls.begin(); itor != controls.end(); ++itor)
+	std::list< OptionEntrySetter >::iterator itor;
+	for ( itor = controls.begin(); itor != controls.end(); ++itor )
 	{
-		OptionEntrySetter &entrySetter = *itor;
-		switch (entrySetter.getEntry().getEntryType())
+		OptionEntrySetter& entrySetter = *itor;
+		switch ( entrySetter.getEntry().getEntryType() )
 		{
-		case OptionEntry::OptionEntryStringType:
+			case OptionEntry::OptionEntryStringType:
 			{
-				wxTextCtrl *control = (wxTextCtrl *) entrySetter.getControl();
-				entrySetter.getEntry().setValueFromString(std::string(control->GetValue().mb_str(wxConvUTF8)));
+				wxTextCtrl* control = (wxTextCtrl*)entrySetter.getControl();
+				entrySetter.getEntry().setValueFromString( std::string( control->GetValue().mb_str( wxConvUTF8 ) ) );
 			}
 			break;
-		case OptionEntry::OptionEntryBoundedIntType:
-		case OptionEntry::OptionEntryEnumType:
-		case OptionEntry::OptionEntryStringEnumType:
+			case OptionEntry::OptionEntryBoundedIntType:
+			case OptionEntry::OptionEntryEnumType:
+			case OptionEntry::OptionEntryStringEnumType:
 			{
-				wxComboBox *control = (wxComboBox *) entrySetter.getControl();
-				entrySetter.getEntry().setValueFromString(std::string(control->GetValue().mb_str(wxConvUTF8)));
+				wxComboBox* control = (wxComboBox*)entrySetter.getControl();
+				entrySetter.getEntry().setValueFromString( std::string( control->GetValue().mb_str( wxConvUTF8 ) ) );
 			}
 			break;
-		case OptionEntry::OptionEntryBoolType:
+			case OptionEntry::OptionEntryBoolType:
 			{
-				OptionEntryBool &boolEntry = (OptionEntryBool &) entrySetter.getEntry();
-				wxCheckBox *control = (wxCheckBox *) entrySetter.getControl();
-				boolEntry.setValue(control->GetValue());
+				OptionEntryBool& boolEntry = (OptionEntryBool&)entrySetter.getEntry();
+				wxCheckBox*      control   = (wxCheckBox*)entrySetter.getControl();
+				boolEntry.setValue( control->GetValue() );
 			}
 			break;
-		default:
-			S3D::dialogExit(
-				"updateEntries",
-				S3D::formatStringBuffer(
-					"Unhandled OptionEntry type %s:%i",
-					entrySetter.getEntry().getName(),
-					entrySetter.getEntry().getEntryType()
-				)
-			);
+			default:
+				S3D::dialogExit(
+					"updateEntries",
+					S3D::formatStringBuffer(
+						"Unhandled OptionEntry type %s:%i",
+						entrySetter.getEntry().getName(),
+						entrySetter.getEntry().getEntryType()
+					)
+				);
 		}
 	}
 }
