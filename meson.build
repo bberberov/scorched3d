@@ -221,7 +221,6 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 			'-Wno-class-memaccess',
 			'-Wno-deprecated-declarations',
 			'-Wno-format-truncation',
-			'-Wno-unused-but-set-variable',
 			'-Wno-unused-function',
 			'-Wno-unused-variable',
 		]

@@ -138,7 +138,7 @@ void GLLenseFlare::draw(
 		Vector &cameraAt = GLCamera::getCurrentCamera()->getLookAt();
 
 		Vector view_dir = flarePos - cameraPos;
-		Vector centre = cameraPos + view_dir.Normalize() * 20.0f;
+		// Vector centre = cameraPos + view_dir.Normalize() * 20.0f;  // NOTE: -Wunused-but-set-variable
 		Vector axis = (cameraAt - flarePos).Normalize();
 
 		Vector dx = axis.Normalize();
@@ -229,7 +229,7 @@ void GLLenseFlare::draw(Vector &flarePos, Vector &flareDir, int colorNo)
 	float dotP = flare_dir.dotP( view_dir );
 	if (dotP <= 0.2f) return;
 
-	Vector centre = cameraPos + view_dir * 20.0f;
+	// Vector centre = cameraPos + view_dir * 20.0f;  // NOTE: -Wunused-but-set-variable
 	Vector axis = (cameraAt - flarePos).Normalize();
 
 	Vector dx = axis.Normalize();
