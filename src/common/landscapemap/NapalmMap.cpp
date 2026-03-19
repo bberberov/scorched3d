@@ -34,10 +34,7 @@ fixed &NapalmMap::getNapalmHeight(int w, int h)
 {
 	DIALOG_ASSERT(entries_);
 
-	if (w >= 0 && h >= 0 && w<=width_ && h<=height_)
-	{
-        return entries_[(width_+1) * h + w]; 
-	}
+	if ( 0 <= w && 0 <= h && w <= width_ && h <= height_ ) { return entries_[w + h * ( width_ + 1 )]; }
 
 	static fixed tmp(1000);
 	tmp = fixed(1000);
@@ -58,6 +55,6 @@ void NapalmMap::clear()
 {
 	if (entries_)
 	{
-		memset(entries_, 0, sizeof(float) * (width_ + 1) * (height_ + 1));
+		memset(entries_, 0, sizeof(fixed) * (width_ + 1) * (height_ + 1));
 	}
 }
