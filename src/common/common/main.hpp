@@ -95,7 +95,7 @@ void run_main( int argc, char* argv[], OptionsParameters& params )
 	// Check we are in the correct directory
 	std::string fileName  = S3D::getDataFile( "data/autoexec.xml" );
 	FILE*       checkfile = fopen( fileName.c_str(), "r" );
-	if ( ! checkfile )
+	if ( nullptr == checkfile )
 	{
 		// Perhaps we can get the directory from the executables path name
 		std::string path = argv[0];
@@ -114,7 +114,7 @@ void run_main( int argc, char* argv[], OptionsParameters& params )
 		// Now try again for the correct directory
 		std::string execFile = S3D::getDataFile( "data/autoexec.xml" );
 		checkfile            = fopen( execFile.c_str(), "r" );
-		if ( ! checkfile )
+		if ( nullptr == checkfile )
 		{
 			static char currentDir[1024];
 #ifdef _WIN32
