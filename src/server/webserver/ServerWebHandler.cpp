@@ -59,6 +59,8 @@ static inline bool lt_logfile(const LogFile &o1, const LogFile &o2)
 	return o1.fileTime < o2.fileTime;
 }
 
+// Not used
+/*
 static const char *getAdminUserName(std::map<std::string, std::string> &fields)
 {
 	unsigned int sid = atoi(ServerWebServerUtil::getField(fields, "sid"));
@@ -67,6 +69,7 @@ static const char *getAdminUserName(std::map<std::string, std::string> &fields)
 	if (session) return session->credentials.username.c_str();
 	return "Unknown";
 }
+*/
 
 bool ServerWebHandler::PlayerHandler::processRequest(
 	ServerWebServerIRequest &request,

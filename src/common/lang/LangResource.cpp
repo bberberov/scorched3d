@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "lang/LangString.hpp"
 #include <lang/LangResource.hpp>
 
 LangString LangResource::getKey(const std::string &key, const std::string &value)
@@ -69,6 +70,8 @@ LangString LangResource::getKey(const std::string &key, const std::string &value
 	return result;
 }
 
+// Not used
+/*
 static void testMacro()
 {
 	LANG_RESOURCE("hmm", "hmm value");
@@ -103,3 +106,4 @@ static void testMacro()
 	LANG_RESOURCE_CONST_VAR_4(bob_c_4, "test {0} {1} {2} {3}", "test value", "1", "2", "3", "4");
 	bob_c_4.c_str();
 }
+*/

@@ -220,7 +220,6 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 		cpp_options = [
 			'-Wno-class-memaccess',
 			'-Wno-deprecated-declarations',
-			'-Wno-unused-function',
 			'-Wno-unused-variable',
 		]
 	endif
@@ -237,21 +236,23 @@ launcher_c_args   = c_defines
 launcher_cpp_args = [
 	cpp_defines,
 	cpp_options,
-	'-DS3D_BROWSER="' + get_option('browser')  + '"'
+	'-DS3D_BROWSER="' + get_option('browser')  + '"',
 ]
 
 client_c_args     = c_defines
 client_cpp_args   = [
 	cpp_defines,
 	cpp_options,
-	'-DS3D_BROWSER="' + get_option('browser')  + '"'
+	'-DS3D_BROWSER="' + get_option('browser')  + '"',
+	'-DYY_NO_UNPUT',
 ]
 
 server_c_args     = c_defines
 server_cpp_args   = [
 	cpp_defines,
 	cpp_options,
-	'-DS3D_SERVER=1'
+	'-DS3D_SERVER=1',
+	'-DYY_NO_UNPUT',
 ]
 # END   Defines and compile options
 
