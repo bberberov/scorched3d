@@ -305,24 +305,30 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 
 		// color map
 		char textureName[256];
-		char fullTextureName[256];
-		if (!getNextLine(buffer, in)) 
+		char fullTextureName[512];
+
+		if (!getNextLine(buffer, in))
 			returnError(fileName, "No material texture");
 		if (sscanf(buffer, "%s", textureName) != 1)
 			returnError(fileName, "No material texture format");
+
+		// NOTE: textureName is quoted, e.g. "name"
 		textureName[strlen(textureName)-1] = '\0';
-		snprintf(fullTextureName, 256, "%s/%s", filePath, &textureName[1]);
+		snprintf(fullTextureName, 512, "%s/%s", filePath, &textureName[1]);
 		while ( ( sep = std::strchr(fullTextureName, '\\') ) != nullptr ) *sep = '/';
 
 		// alphamap
 		char textureNameAlpha[256];
-		char fullTextureAlphaName[256];
-		if (!getNextLine(buffer, in)) 
+		char fullTextureAlphaName[512];
+
+		if (!getNextLine(buffer, in))
 			returnError(fileName, "No material alpha texture");
 		if (sscanf(buffer, "%s", textureNameAlpha) != 1)
 			returnError(fileName, "No material alpha texture format");
+
+		// NOTE: textureNameAlpha is quoted, e.g. "name"
 		textureNameAlpha[strlen(textureNameAlpha)-1] = '\0';
-		snprintf(fullTextureAlphaName, 256, "%s/%s", filePath, &textureNameAlpha[1]);
+		snprintf(fullTextureAlphaName, 512, "%s/%s", filePath, &textureNameAlpha[1]);
 		while ( ( sep = std::strchr(fullTextureAlphaName, '\\') ) != nullptr ) *sep = '/';
 
 		// Assign this material to the appropriate meshes
@@ -335,7 +341,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 			if (meshMaterials[modelIndex] == m)
 			{
 				Mesh *mesh = *mitor;
-				if (textureName[1]) // as the string starts with a "
+				if (textureName[1])  // NOTE: as the string starts with a "
 				{
 					mesh->setTextureName(fullTextureName);
 					if (!S3D::fileExists(fullTextureName))
@@ -345,7 +351,7 @@ void MSModelFactory::loadFile(FILE *in, const char *fileName, Model *model)
 								fullTextureName));
 					}
 				}
-				if (textureNameAlpha[1])
+				if (textureNameAlpha[1])  // NOTE: as the string starts with a "
 				{
 					mesh->setATextureName(fullTextureAlphaName);
 					if (!S3D::fileExists(fullTextureAlphaName))

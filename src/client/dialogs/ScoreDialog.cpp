@@ -430,8 +430,8 @@ void ScoreDialog::draw()
 	else
 	{
 		// No Team
-		int rank = 1;
-		char strrank[10];
+		int  rank = 1;
+		char strrank[12];
 		std::list<unsigned int>::iterator itor;
 		for (itor = sortedTanks_.begin();
 			itor != sortedTanks_.end();
@@ -439,16 +439,16 @@ void ScoreDialog::draw()
 		{
 			unsigned int playerId = (*itor);
 			Tank *current = ScorchedClient::instance()->getTargetContainer().getTankById(playerId);
-			if (current && current->getState().getTankPlaying()) 
+			if ( nullptr != current && current->getState().getTankPlaying() )
 			{
-				snprintf(strrank, 10, "%i", rank);
+				snprintf( strrank, 12, "%i", rank );
 
 				addLine(currentTank, current, y, strrank, finished, buying);
 				tmpLastScoreValue += current->getScore().getScore();
 				tmpLastMoneyValue += current->getScore().getMoney();
 				y+= lineSpacer;
 			}
-		}	
+		}
 	}
 	y+= lineSpacer / 1.5f;
 	// Spectators

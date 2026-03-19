@@ -110,14 +110,14 @@ const char *fixed::asString()
 	int r = 0;
 
 	char buffer[20];
-	if (m_nVal < 0) 
+	if ( m_nVal < 0 )
 	{
-		snprintf( buffer, 15, "%lli", (long long int)(-m_nVal) );
+		snprintf( buffer, 20, "%lli", (long long int)( -m_nVal ) );
 		result[r++] = '-';
 	}
-	else 
+	else
 	{
-		snprintf( buffer, 15, "%lli", (long long int)(m_nVal) );
+		snprintf( buffer, 20, "%lli", (long long int)( m_nVal ) );
 	}
 	int len = (int) strlen(buffer);
 
