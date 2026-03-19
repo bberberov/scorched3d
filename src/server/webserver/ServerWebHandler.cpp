@@ -341,9 +341,6 @@ bool ServerWebHandler::LogFileHandler::processRequest(
 	if (!request.getSession()->credentials.hasPermission(
 		ServerAdminSessions::PERMISSION_VIEWLOGS)) return true;
 
-	std::deque<ServerLog::ServerLogEntry> &entries = 
-		ServerLog::instance()->getEntries();
-
 	const char *logFilename = ServerWebServerUtil::getField(request.getFields(), "filename");
 	if (logFilename &&
 		// Disallow directory backtracking

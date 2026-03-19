@@ -220,7 +220,6 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 		cpp_options = [
 			'-Wno-class-memaccess',
 			'-Wno-deprecated-declarations',
-			'-Wno-unused-variable',
 		]
 	endif
 else

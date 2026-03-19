@@ -191,7 +191,7 @@ void ServerConnectAuthHandler::processMessageInternal(
 	std::string SUid = message.getSUI(); //request for SUI
 
 	// Get compat ver
-	unsigned int compatVer = message.getCompatabilityVer();
+	// unsigned int compatVer = message.getCompatabilityVer();
 	// TODO send back proper version message
 
 	// Check if this unique id has been banned

@@ -99,7 +99,6 @@ void Hemisphere::drawColored(float radius, float radius2,
 	GLubyte *bits = colors.getBits();
 
 	glBegin(GL_QUAD_STRIP);
-	const float maxTexCoord = 1.0f;
 	for (int j=startHeightSlice; j<endHeightSlice; j++) 
 	{
 		float theta1 = j * HALFPI / float(heightSlices);
@@ -119,9 +118,9 @@ void Hemisphere::drawColored(float radius, float radius2,
 		for (int i=startRotationSlice;i<=endRotationSlice;i++) 
 		{
 			float theta3 = i * TWOPI / float(rotationSlices);
-			float c = theta3 / TWOPI * maxTexCoord;
+			Vector c1, c2;
 
-			Vector e1, p1, c1;
+			Vector e1, p1;
 			e1[0] = std::cosf( theta1 ) * std::cosf( theta3 );
 			e1[2] = std::sinf( theta1 );
 			e1[1] = std::cosf( theta1 ) * std::sinf( theta3 );
@@ -150,7 +149,7 @@ void Hemisphere::drawColored(float radius, float radius2,
 				}
 			}
 
-			Vector e2, p2, c2;
+			Vector e2, p2;
 			e2[0] = std::cosf( theta2 ) * std::cosf( theta3 );
 			e2[2] = std::sinf( theta2 );
 			e2[1] = std::cosf( theta2 ) * std::sinf( theta3 );

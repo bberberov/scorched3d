@@ -147,7 +147,7 @@ bool ServerWebSettingsHandler::SettingsPlayersHandler::processRequest(
 		ServerAdminSessions::PERMISSION_ALTERSETTINGS)) return true;
 
 	const char *action = getField(request.getFields(), "action");
-	if (action && 0 == strcmp(action, "Load"))
+	if ( nullptr != action && 0 == strcmp( action, "Load" ) )
 	{
 		loadSettings(request.getSession()->credentials);
 	}
@@ -194,7 +194,7 @@ bool ServerWebSettingsHandler::SettingsPlayersHandler::processRequest(
 		request.getFields()["PLAYERS"] = players;
 	}	
 
-	if (action && 0 == strcmp(action, "Save"))
+	if ( nullptr != action && 0 == strcmp( action, "Save" ) )
 	{
 		saveSettings(request.getSession()->credentials);
 	}
@@ -210,7 +210,7 @@ bool ServerWebSettingsHandler::SettingsLandscapeHandler::processRequest(
 		ServerAdminSessions::PERMISSION_ALTERSETTINGS)) return true;
 
 	const char *action = getField(request.getFields(), "action");
-	if (action && 0 == strcmp(action, "Load"))
+	if ( nullptr != action && 0 == strcmp( action, "Load"))
 	{
 		loadSettings(request.getSession()->credentials);
 	}
@@ -288,7 +288,7 @@ bool ServerWebSettingsHandler::SettingsLandscapeHandler::processRequest(
 	}
 	request.getFields()["LANDSCAPES"] = landscapes;
 
-	if (action && 0 == strcmp(action, "Save"))
+	if ( nullptr != action && 0 == strcmp( action, "Save"))
 	{
 		saveSettings(request.getSession()->credentials);
 	}
@@ -309,7 +309,7 @@ bool ServerWebSettingsHandler::SettingsAllHandler::processRequest(
 			getChangedOptions().getOptions();
 
 	const char *action = getField(request.getFields(), "action");
-	if (action && 0 == strcmp(action, "Load"))
+	if ( nullptr != action && 0 == strcmp( action, "Load" ) )
 	{
 		loadSettings(request.getSession()->credentials);
 	}
@@ -350,7 +350,7 @@ bool ServerWebSettingsHandler::SettingsAllHandler::processRequest(
 
 	request.getFields()["SETTINGS"] = settings;
 
-	if (action && 0 == strcmp(action, "Save"))
+	if ( nullptr != action && 0 == strcmp( action, "Save" ) )
 	{
 		saveSettings(request.getSession()->credentials);
 	}
@@ -366,12 +366,9 @@ bool ServerWebSettingsHandler::SettingsMainHandler::processRequest(
 		ServerAdminSessions::PERMISSION_ALTERSETTINGS)) return true;
 
 	std::list<OptionEntry *>::iterator itor;
-	std::list<OptionEntry *> &options = 
-		ScorchedServer::instance()->getOptionsGame().
-			getChangedOptions().getOptions();
 
 	const char *action = getField(request.getFields(), "action");
-	if (action && 0 == strcmp(action, "Load"))
+	if ( nullptr != action && 0 == strcmp( action, "Load" ) )
 	{
 		loadSettings(request.getSession()->credentials);
 	}
@@ -381,7 +378,7 @@ bool ServerWebSettingsHandler::SettingsMainHandler::processRequest(
 		setValues(request.getSession()->credentials, request.getFields());
 	}
 
-	if (action && 0 == strcmp(action, "Save"))
+	if ( nullptr != action && 0 == strcmp( action, "Save" ) )
 	{
 		saveSettings(request.getSession()->credentials);
 	}
@@ -397,12 +394,9 @@ bool ServerWebSettingsHandler::SettingsModHandler::processRequest(
 		ServerAdminSessions::PERMISSION_ALTERSETTINGS)) return true;
 
 	std::list<OptionEntry *>::iterator itor;
-	std::list<OptionEntry *> &options = 
-		ScorchedServer::instance()->getOptionsGame().
-			getChangedOptions().getOptions();
 
 	const char *action = getField(request.getFields(), "action");
-	if (action && 0 == strcmp(action, "Load"))
+	if ( nullptr != action && 0 == strcmp( action, "Load" ) )
 	{
 		loadSettings(request.getSession()->credentials);
 	}
@@ -468,7 +462,7 @@ bool ServerWebSettingsHandler::SettingsModHandler::processRequest(
 		request.getFields()["MODS"] = mods;
 	}
 
-	if (action && 0 == strcmp(action, "Save"))
+	if ( nullptr != action && 0 == strcmp( action, "Save" ) )
 	{
 		saveSettings(request.getSession()->credentials);
 	}

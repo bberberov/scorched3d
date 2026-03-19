@@ -122,9 +122,6 @@ void TargetRendererImplTank::render(float distance)
 	float fade = getTargetFade(distance, 
 		size * 2.5f * float(OptionsDisplay::instance()->getTankModelSize()) / 100.0f);
 
-	bool currentTank = 
-		(tank_ == ScorchedClient::instance()->getTargetContainer().getCurrentTank() &&
-		ScorchedClient::instance()->getGameState().getState() == ClientState::StatePlaying);
 	if (fade > 0.0f)
 	{
 		// Add the tank shadow
