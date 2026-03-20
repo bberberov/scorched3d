@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025,  2026
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <cmath>
 #include <GLEXT/GLState.hpp>
 #include <GLW/GLWFlag.hpp>
+#include <cmath>
 
 REGISTER_CLASS_SOURCE(GLWFlag);
 
@@ -43,7 +43,7 @@ void GLWFlag::draw()
 	GLState currentState(GLState::TEXTURE_OFF);
 
 	const float diff = 1.0f;
-	const float rad = (3.14f * 4.0f) / w_;
+	const float rad = ( M_PIf * 4.0f ) / w_;
 
 	glBegin(GL_QUADS);
 		for (float a=0.0f; a<=w_-diff; a+=diff)

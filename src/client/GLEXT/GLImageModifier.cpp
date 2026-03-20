@@ -18,8 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <vector>
-#include <cmath>
+#include <common/Defines.hpp>
+#include <common/OptionsTransient.hpp>
 #include <GLEXT/GLImageItterator.hpp>
 #include <GLEXT/GLImageModifier.hpp>
 #include <image/Image.hpp>
@@ -29,8 +29,8 @@
 #include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
 #include <lang/LangResource.hpp>
-#include <common/OptionsTransient.hpp>
-#include <common/Defines.hpp>
+#include <cmath>
+#include <vector>
 
 bool ImageModifier::findIntersection(HeightMap &hMap,
 										Vector start,
@@ -786,17 +786,17 @@ void ImageModifier::addCircle(Image &destBitmap,
 	int yStart = int(minY);
 	int xWidth = int(maxX - minX);
 	int yWidth = int(maxY - minY);
-	int yInc = (destBitmap.getWidth() - xWidth) * 3;
+	int yInc   = ( destBitmap.getWidth() - xWidth ) * 3;
 
-	if (xWidth <= 0 || yWidth <= 0) return;
-	double degMult = (1 / double(yWidth)) * 3.14;
+	if ( xWidth <= 0 || yWidth <= 0 ) return;
+	float degMult = M_PIf / float(yWidth);
 
 	GLubyte *start = &destBitmap.getBits()[(yStart * destBitmap.getWidth() * 3) + xStart * 3];
-	for (int y=0; y<yWidth; y++, start += yInc)
+	for ( int y = 0; y < yWidth; y++, start += yInc )
 	{
-		double deg = double(y) * degMult;
-		int realXSize = int(sin(deg) * double(xWidth));
-		int halfSize = (xWidth - realXSize) / 2;
+		float deg     = float(y) * degMult;
+		int realXSize = int(sinf( deg ) * float(xWidth) );
+		int halfSize  = ( xWidth - realXSize ) / 2;
 
 		start+=halfSize * 3;
 		int x;
@@ -842,10 +842,10 @@ void ImageModifier::addBitmap(Image &destBitmap,
 	int srcScaleWidth = int(float(srcBitmap.getWidth()) * scalex);
 	int srcScaleHeight = int(float(srcBitmap.getHeight()) * scaley);
 
-	float minX = sx - srcScaleWidth / 2;
-	float minY = sy - srcScaleHeight / 2;
-	float maxX = sx + srcScaleWidth / 2;
-	float maxY = sy + srcScaleHeight / 2;
+	float minX = sx - srcScaleWidth / 2.0f;
+	float minY = sy - srcScaleHeight / 2.0f;
+	float maxX = sx + srcScaleWidth / 2.0f;
+	float maxY = sy + srcScaleHeight / 2.0f;
 
 	minX = MAX(minX, 0.0f);
 	minY = MAX(minY, 0.0f);

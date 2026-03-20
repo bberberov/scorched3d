@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <GLW/GLWidget.hpp>
 #include <GLW/GLWPanel.hpp>
 #include <GLW/GLWToolTip.hpp>
 #include <GLW/GLWTranslate.hpp>
 #include <GLEXT/GLState.hpp>
 #include <XML/XMLParser.hpp>
-#include <common/Defines.hpp>
-#include <math.h>
+#include <cmath>
 
 unsigned int GLWidget::nextId_ = 0;
 static GLuint listNo = 0;
@@ -45,14 +45,13 @@ GLWidget::~GLWidget()
 
 void GLWidget::draw()
 {
-	if (listNo == 0)
+	if ( listNo == 0 )
 	{
-		listNo = glGenLists(1);
-		glNewList(listNo, GL_COMPILE);
-			for (float a=360.0f; a>0.0f; a-=360.0f / 36.0f)
+		listNo = glGenLists( 1 );
+		glNewList( listNo, GL_COMPILE );
+			for ( float a = 360.0f; a > 0.0f; a -= 360.0f / 36.0f )
 			{
-				glVertex2f(sinf(a/180.0f * PI), 
-					cosf(a/180.0f * PI));
+				glVertex2f( sinf( a * M_PI_180f ), cosf( a * M_PI_180f ) );
 			}
 		glEndList();
 	}
@@ -149,15 +148,15 @@ void GLWidget::drawCircle(int startA, int endA, float posX, float posY, float si
 {
 	static Vector positions[16];
 	static bool init = false;
-	if (!init)
+	if ( ! init )
 	{
 		init = true;
-		for (int i=0; i<16; i++)
+		for ( int i = 0; i < 16; i++ )
 		{
 			const float angDeg = 22.5f;
-			float ang = i * angDeg;
-			positions[i][0] = sinf(ang / 180.0f * PI);
-			positions[i][1] = cosf(ang / 180.0f * PI);
+			float       ang    = i * angDeg;
+			positions[i][0] = sinf( ang * M_PI_180f );
+			positions[i][1] = cosf( ang * M_PI_180f );
 		}
 	}
 

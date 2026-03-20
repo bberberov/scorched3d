@@ -18,6 +18,11 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
+#include <common/ChannelManager.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Logger.hpp>
+#include <common/LoggerI.hpp>
 #include <graph/TargetCamera.hpp>
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
@@ -44,13 +49,8 @@
 #include <tanket/TanketShotInfo.hpp>
 #include <tanket/TanketAccessories.hpp>
 #include <target/TargetLife.hpp>
-#include <common/ChannelManager.hpp>
-#include <common/Keyboard.hpp>
-#include <common/Logger.hpp>
-#include <common/LoggerI.hpp>
-#include <common/Defines.hpp>
 #include <lang/LangResource.hpp>
-#include <math.h>
+#include <cmath>
 
 TargetCamera* TargetCamera::currentTargetCamera_ = nullptr;
 
@@ -444,7 +444,7 @@ void TargetCamera::moveCamera()
 			Vector newPos2 = position - newPos;
 
 			mainCam_.setLookAt(newPos2);
-			mainCam_.movePosition(currentRotation + HALFPI, 1.0f, 100.f);
+			mainCam_.movePosition( currentRotation + M_PI_2f, 1.0f, 100.f );
 		}
 		break;
 	case CamRightFar:
@@ -456,7 +456,7 @@ void TargetCamera::moveCamera()
 			Vector newPos2 = position - newPos;
 
 			mainCam_.setLookAt(newPos2);
-			mainCam_.movePosition(currentRotation - HALFPI, 1.4f, 100.f);
+			mainCam_.movePosition( currentRotation - M_PI_2f, 1.4f, 100.f );
 		}
 		break;
 	case CamLeft: 
@@ -468,7 +468,7 @@ void TargetCamera::moveCamera()
 			Vector newPos2 = position - newPos;
 
 			mainCam_.setLookAt(newPos2);
-			mainCam_.movePosition(currentRotation + HALFPI, 1.4f, 20.f);
+			mainCam_.movePosition( currentRotation + M_PI_2f, 1.4f, 20.f );
 		}
 		break;
 	case CamRight:
@@ -480,7 +480,7 @@ void TargetCamera::moveCamera()
 			Vector newPos2 = position - newPos;
 
 			mainCam_.setLookAt(newPos2);
-			mainCam_.movePosition(currentRotation - HALFPI, 0.8f, 20.f);
+			mainCam_.movePosition( currentRotation - M_PI_2f, 0.8f, 20.f );
 		}
 		break;
 	case CamSpectator:
@@ -544,7 +544,7 @@ void TargetCamera::viewSpectator()
 
 	Vector at(arenaX + arenaWidth / 2.0f, arenaY + arenaHeight / 2.0f, 0.0f);
 	mainCam_.setLookAt(at);
-	mainCam_.movePosition(HALFPI, 1.1f, 200.f);
+	mainCam_.movePosition( M_PI_2f, 1.1f, 200.f );
 }
 
 bool TargetCamera::getLandIntersect(int x, int y, Vector &intersect)
@@ -573,11 +573,11 @@ void TargetCamera::mouseDrag(GameState::MouseButton button, int mx, int my, int 
 			y = -y;
 		}
 
-		const float QPI = 3.14f / 180.0f;
 		mainCam_.movePositionDelta(
-			(GLfloat) (x) * QPI,
-			(GLfloat) (-y) * QPI,
-			0.0f);
+			(GLfloat)( x ) * M_PI_180f,
+			(GLfloat)( -y ) * M_PI_180f,
+			0.0f
+		);
 	}
 	else if (button == GameState::MouseButtonLeft)
 	{
@@ -775,7 +775,7 @@ bool TargetCamera::keyboardCheck(
 	else if (explosionViewKey->keyDown(buffer, keyState)) cameraPos_ = CamExplosion;
 	else if (aimViewKey->keyDown(buffer, keyState)) cameraPos_ = CamAim;
 
-	const float QPI = 3.14f / 4.0f;
+	const float QPI = M_PI_4f;
 	KEYBOARDKEY("CAMERA_ROTATE_LEFT", leftKey);
 	KEYBOARDKEY("CAMERA_ROTATE_LEFT_SLOW", leftKeySlow);
 	KEYBOARDKEY("CAMERA_ROTATE_LEFT_VSLOW", leftKeyVSlow);

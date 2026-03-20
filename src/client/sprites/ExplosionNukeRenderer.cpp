@@ -18,14 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <sprites/ExplosionNukeRenderer.hpp>
 #include <sprites/ExplosionTextures.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.hpp>
-#include <math.h>
+#include <cmath>
 
 ExplosionNukeRendererEntry::ExplosionNukeRendererEntry( Vector &position, float size) :
 	startPosition_(position),
@@ -33,8 +33,8 @@ ExplosionNukeRendererEntry::ExplosionNukeRendererEntry( Vector &position, float 
 	totalTime_(0.0f),
 	cloudRotation_(0.0f)
 {
-	float rot = RAND * 3.14f * 2.0f;
-	float width = RAND * 0.5f + 1.0f;
+	float rot   = RAND * M_2xPIf;
+	float width = fmaf( RAND, 0.5f, 1.0f );
 
 	cloudRotation_ = RAND * 360.0f;
 	rotation_[0] = getFastSin(rot) * width;

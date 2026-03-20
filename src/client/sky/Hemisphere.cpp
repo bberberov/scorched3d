@@ -18,13 +18,13 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
+#include <common/Vector.hpp>
 #include <image/Image.hpp>
 #include <GLEXT/GLState.hpp>
-#include <common/Vector.hpp>
 #include <sky/Hemisphere.hpp>
-#include <common/Defines.hpp>
-#include <vector>
 #include <cmath>
+#include <vector>
 
 void Hemisphere::draw(float radius, float radius2, 
 	int heightSlices, int rotationSlices,
@@ -36,13 +36,13 @@ void Hemisphere::draw(float radius, float radius2,
 	const float maxTexCoord = 1.0f;
 	for (int j=startHeightSlice; j<endHeightSlice; j++) 
 	{
-		float theta1 = j * HALFPI / float(heightSlices);
-		float theta2 = (j + 1) * HALFPI / float(heightSlices);
+		float theta1 = j * M_PI_2f / float(heightSlices);
+		float theta2 = (j + 1) * M_PI_2f / float(heightSlices);
 
 		for (int i=startRotationSlice;i<=endRotationSlice;i++) 
 		{
-			float theta3 = i * TWOPI / float(rotationSlices);
-			float c = theta3 / TWOPI * maxTexCoord;
+			float theta3 = i * M_2xPIf / float(rotationSlices);
+			float c      = theta3 / M_2xPIf * maxTexCoord;
 
 			Vector e1, p1;
 			e1[0] = std::cosf( theta1 ) * std::cosf( theta3 );
@@ -101,9 +101,9 @@ void Hemisphere::drawColored(float radius, float radius2,
 	glBegin(GL_QUAD_STRIP);
 	for (int j=startHeightSlice; j<endHeightSlice; j++) 
 	{
-		float theta1 = j * HALFPI / float(heightSlices);
+		float theta1 = j * M_PI_2f / float(heightSlices);
 		if (j<0) theta1 *= 0.75f;
-		float theta2 = (j + 1) * HALFPI / float(heightSlices);
+		float theta2 = ( j + 1 ) * M_PI_2f / float(heightSlices);
 
 		int colorJ = MAX(j - 1, 0);
 		int colorIndexA = int(float(colorJ) / float(heightSlices) * 15.0f);
@@ -117,7 +117,7 @@ void Hemisphere::drawColored(float radius, float radius2,
 
 		for (int i=startRotationSlice;i<=endRotationSlice;i++) 
 		{
-			float theta3 = i * TWOPI / float(rotationSlices);
+			float theta3 = i * M_2xPIf / float(rotationSlices);
 			Vector c1, c2;
 
 			Vector e1, p1;

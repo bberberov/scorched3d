@@ -103,253 +103,301 @@ GLuint ModelRendererTree::treeOak4List = 0;
 GLuint ModelRendererTree::treeOak4SmallList = 0;
 
 
-static void drawPineLevel(float texX, float texY,
-		float width, float height, float lowheight, 
-		float texWidth = 0.125f, float count = 5.0f, bool doubleSide = false,
-		float angOffset = 0.0f)
+static void drawPineLevel(
+	float texX,
+	float texY,
+	float width,
+	float height,
+	float lowheight,
+	float texWidth   = 0.125f,
+	float count      = 5.0f,
+	bool  doubleSide = false,
+	float angOffset  = 0.0f
+)
 {
-	glBegin(GL_TRIANGLE_FAN);
-		glTexCoord2f(texX, texY);
-		glNormal3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(0.0f, 0.0f, height);
-		for (float i=360.0f; i>=0.0f; i-=360.0f / count)
+	glBegin( GL_TRIANGLE_FAN );
+		glTexCoord2f( texX, texY );
+		glNormal3f( 0.0f, 0.0f, 1.0f );
+		glVertex3f( 0.0f, 0.0f, height );
+		for ( float i = 360.0f; 0.0f <= i; i -= 360.0f / count )
 		{
 			float diff = RAND * 40.0f - 20.0f;
 			glTexCoord2f(
-				texX + (sinf((i + angOffset)/180.0f * PI) * texWidth), 
-				texY + (cosf((i + angOffset)/180.0f * PI) * texWidth));
+				texX + ( sinf( ( i + angOffset ) * M_PI_180f ) * texWidth ),
+				texY + ( cosf( ( i + angOffset ) * M_PI_180f ) * texWidth )
+			);
 			glNormal3f(
-				sinf((i+diff)/180.0f * PI) * (height - lowheight),
-				cosf((i+diff)/180.0f * PI) * (height - lowheight),
-				width);
+				sinf( ( i + diff ) * M_PI_180f ) * ( height - lowheight ),
+				cosf( ( i + diff ) * M_PI_180f ) * ( height - lowheight ),
+				width
+			);
 			glVertex3f(
-				sinf(i/180.0f * PI) * width, 
-				cosf(i/180.0f * PI) * width, 
-				lowheight);
+				sinf( i * M_PI_180f ) * width,
+				cosf( i * M_PI_180f ) * width,
+				lowheight
+			);
 		}
 	glEnd();
 
-	if (doubleSide)
+	if ( doubleSide )
 	{
-	glBegin(GL_TRIANGLE_FAN);
-		glTexCoord2f(texX, texY);
-		glNormal3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(0.0f, 0.0f, height);
-		for (float i=0.0f; i<=360.0f; i+=360.0f / count)
+	glBegin( GL_TRIANGLE_FAN );
+		glTexCoord2f( texX, texY );
+		glNormal3f( 0.0f, 0.0f, 1.0f );
+		glVertex3f( 0.0f, 0.0f, height );
+		for ( float i = 0.0f; i <= 360.0f; i += 360.0f / count )
 		{
 			float diff = RAND * 40.0f - 20.0f;
 			glTexCoord2f(
-				texX + (sinf((i + angOffset)/180.0f * PI) * texWidth), 
-				texY + (cosf((i + angOffset)/180.0f * PI) * texWidth));
+				texX + ( sinf( ( i + angOffset ) * M_PI_180f ) * texWidth ),
+				texY + ( cosf( ( i + angOffset ) * M_PI_180f ) * texWidth )
+			);
 			glNormal3f(
-				-sinf((i+diff)/180.0f * PI) * (height - lowheight),
-				-cosf((i+diff)/180.0f * PI) * (height - lowheight),
-				-width);
+				-sinf( ( i + diff ) * M_PI_180f ) * ( height - lowheight ),
+				-cosf( ( i + diff ) * M_PI_180f ) * ( height - lowheight ),
+				-width
+			);
 			glVertex3f(
-				sinf(i/180.0f * PI) * width, 
-				cosf(i/180.0f * PI) * width, 
-				lowheight);
+				sinf( i * M_PI_180f ) * width,
+				cosf( i * M_PI_180f ) * width,
+				lowheight
+			);
 		}
 	glEnd();
 	}
 }
 
-static void drawPineTrunc(float width, float height, float lowheight,
-	float x = 0.875f, float y = 0.0f, float w = 0.125f, float h = 0.1f,
-	float steps = 3.0f)
+static void drawPineTrunc(
+	float width,
+	float height,
+	float lowheight,
+	float x     = 0.875f,
+	float y     = 0.0f,
+	float w     = 0.125f,
+	float h     = 0.1f,
+	float steps = 3.0f
+)
 {
-	glBegin(GL_TRIANGLE_FAN);
-		glTexCoord2f(x , y);
-		glNormal3f(0.0, 0.0f, 1.0f);
-		glVertex3f(0.0f, 0.0f, height);
-		for (float i=360.0f; i>=0.0f; i-=360.0f / steps)
+	glBegin( GL_TRIANGLE_FAN );
+		glTexCoord2f( x, y );
+		glNormal3f( 0.0, 0.0f, 1.0f );
+		glVertex3f( 0.0f, 0.0f, height );
+		for ( float i = 360.0f; 0.0f <= i; i -= 360.0f / steps )
 		{
-			glTexCoord2f(x + w*(float(int(i*5.0f)%360)/360.0f), y + h);
+			glTexCoord2f( x + w * ( float(int(i * 5.0f) % 360) / 360.0f ), y + h );
 			glNormal3f(
-				sinf(i/180.0f * PI),
-				cosf(i/180.0f * PI),
-				0.0f);
+				sinf( i * M_PI_180f ),
+				cosf( i * M_PI_180f ),
+				0.0f
+			);
 			glVertex3f(
-				sinf(i/180.0f * PI) * width, 
-				cosf(i/180.0f * PI) * width, 
-				lowheight);
+				sinf( i * M_PI_180f ) * width,
+				cosf( i * M_PI_180f ) * width,
+				lowheight
+			);
 		}
 	glEnd();
 }
 
-static void drawPalmTrunc(float width, float height, float count,
-	float x = 0.0f, float y = 0.0f,
-	float w = 1.0f, float h = 0.125f)
+static void drawPalmTrunc(
+	float width,
+	float height,
+	float count,
+	float x = 0.0f,
+	float y = 0.0f,
+	float w = 1.0f,
+	float h = 0.125f
+)
 {
 	bool tex = false;
-	glBegin(GL_QUAD_STRIP);
-		for (float i=360.0f; i>=0.0f; i-=360.0f / count)
+	glBegin( GL_QUAD_STRIP );
+		for ( float i = 360.0f; 0.0f <= i; i -= 360.0f / count )
 		{
 			glNormal3f(
-				sinf(i/180.0f * PI), 
-				cosf(i/180.0f * PI), 
-				0.0f);
-			if (tex) glTexCoord2f(x, y);
-			else glTexCoord2f(x, y + h);
+				sinf( i * M_PI_180f ),
+				cosf( i * M_PI_180f ),
+				0.0f
+			);
+			if ( tex ) glTexCoord2f( x, y );
+			else glTexCoord2f( x, y + h );
 			glVertex3f(
-				sinf(i/180.0f * PI) * (width - 0.1f), 
-				cosf(i/180.0f * PI) * (width - 0.1f), 
-				height);
-			if (tex) glTexCoord2f(x + w, y);
-			else glTexCoord2f(x + w, y + h);
+				sinf( i * M_PI_180f ) * ( width - 0.1f ),
+				cosf( i * M_PI_180f ) * ( width - 0.1f ),
+				height
+			);
+			if ( tex ) glTexCoord2f( x + w, y );
+			else glTexCoord2f( x + w, y + h );
 			glVertex3f(
-				sinf(i/180.0f * PI) * width, 
-				cosf(i/180.0f * PI) * width, 
-				0.0f);
+				sinf( i * M_PI_180f ) * width,
+				cosf( i * M_PI_180f ) * width,
+				0.0f
+			);
 			tex = !tex;
 		}
 	glEnd();
-	glBegin(GL_TRIANGLE_FAN);
-		glTexCoord2f(x + w, y);
-		glNormal3f(0.0, 0.0f, 1.0f);
-		glVertex3f(0.0f, 0.0f, height + 0.05f);
-		for (float i=360.0f; i>=0.0f; i-=360.0f / count)
+	glBegin( GL_TRIANGLE_FAN );
+		glTexCoord2f( x + w, y );
+		glNormal3f( 0.0, 0.0f, 1.0f );
+		glVertex3f( 0.0f, 0.0f, height + 0.05f );
+		for ( float i = 360.0f; 0.0f <= i; i -= 360.0f / count )
 		{
-			if (tex) glTexCoord2f(x + w, y);
-			else glTexCoord2f(x + w, y + h);
+			if ( tex ) glTexCoord2f( x + w, y );
+			else glTexCoord2f( x + w, y + h );
 			glNormal3f(
-				sinf(i/180.0f * PI), 
-				cosf(i/180.0f * PI), 
-				0.0f);
+				sinf( i * M_PI_180f ),
+				cosf( i * M_PI_180f ),
+				0.0f
+			);
 			glVertex3f(
-				sinf(i/180.0f * PI) * 0.03f, 
-				cosf(i/180.0f * PI) * 0.03f, 
-				height - 0.01f);
-			tex = !tex;
+				sinf( i * M_PI_180f ) * 0.03f,
+				cosf( i * M_PI_180f ) * 0.03f,
+				height - 0.01f
+			);
+			tex = ! tex;
 		}
 	glEnd();
 }
 
-static void drawPalmLevel(
-		float width1, float w2, float height, float height2,
-		float count, float texX, float texY)
+static void drawPalmLevel( float width1, float w2, float height, float height2, float count, float texX, float texY )
 {
-	glBegin(GL_QUADS);
-		for (float i=360.0f; i>=0.0f;)
+	glBegin( GL_QUADS );
+		for ( float i = 360.0f; 0.0f <= i; )
 		{
-			float diff = 0.5f * RAND - 0.25f;
-			float width2 = (w2 * RAND * 0.3f) + (0.7f * w2);
+			float diff   = 0.5f * RAND - 0.25f;
+			float width2 = ( w2 * RAND * 0.3f ) + ( 0.7f * w2 );
 			
 			Vector A1(
-				sinf((i-15.0f)/180.0f * PI) * width1, 
-				cosf((i-15.0f)/180.0f * PI) * width1, 
-				height);
+				sinf( ( i - 15.0f ) * M_PI_180f ) * width1,
+				cosf( ( i - 15.0f ) * M_PI_180f ) * width1,
+				height
+			);
 			Vector A2(
-				sinf(i/180.0f * PI) * width1, 
-				cosf(i/180.0f * PI) * width1, 
-				height2);
+				sinf( i * M_PI_180f ) * width1,
+				cosf( i * M_PI_180f ) * width1,
+				height2
+			);
 			Vector A3(
-				sinf(i/180.0f * PI) * width2, 
-				cosf(i/180.0f * PI) * width2, 
-				height2 + diff);
+				sinf( i * M_PI_180f ) * width2,
+				cosf( i * M_PI_180f ) * width2,
+				height2 + diff
+			);
 			Vector A4(
-				sinf((i-15.0f)/180.0f * PI) * width2, 
-				cosf((i-15.0f)/180.0f * PI) * width2, 
-				height + diff);
+				sinf( ( i - 15.0f ) * M_PI_180f ) * width2,
+				cosf( ( i - 15.0f ) * M_PI_180f ) * width2,
+				height + diff
+			);
 
-			Vector AN = ((A3 - A4) * (A3 - A2));
-			glNormal3fv(AN);
-			glTexCoord2f(texX, texY);
-			glVertex3fv(A1);
-			glTexCoord2f(texX, texY + 0.123f);
-			glVertex3fv(A2);
-			glTexCoord2f(texX + 0.37f, texY + 0.123f);
-			glVertex3fv(A3);
-			glTexCoord2f(texX + 0.37f, texY);
-			glVertex3fv(A4);
+			Vector AN = ( ( A3 - A4 ) * ( A3 - A2 ) );
+			glNormal3fv( AN );
+			glTexCoord2f( texX, texY );
+			glVertex3fv( A1 );
+			glTexCoord2f( texX, texY + 0.123f );
+			glVertex3fv( A2 );
+			glTexCoord2f( texX + 0.37f, texY + 0.123f );
+			glVertex3fv( A3 );
+			glTexCoord2f( texX + 0.37f, texY );
+			glVertex3fv( A4 );
 
 			Vector B1(
-				sinf((i-15.0f)/180.0f * PI) * width2, 
-				cosf((i-15.0f)/180.0f * PI) * width2, 
-				height + diff);
+				sinf( ( i - 15.0f ) * M_PI_180f ) * width2,
+				cosf( ( i - 15.0f ) * M_PI_180f ) * width2,
+				height + diff
+			);
 			Vector B2(
-				sinf(i/180.0f * PI) * width2, 
-				cosf(i/180.0f * PI) * width2, 
-				height2 + diff);
+				sinf( i * M_PI_180f ) * width2,
+				cosf( i * M_PI_180f ) * width2,
+				height2 + diff
+			);
 			Vector B3(
-				sinf(i/180.0f * PI) * width1, 
-				cosf(i/180.0f * PI) * width1, 
-				height2);
+				sinf( i * M_PI_180f ) * width1,
+				cosf( i * M_PI_180f ) * width1,
+				height2
+			);
 			Vector B4(
-				sinf((i-15.0f)/180.0f * PI) * width1, 
-				cosf((i-15.0f)/180.0f * PI) * width1, 
-				height);
-			Vector BN = ((B1 - B3) * (B2 - B1));
-			glNormal3fv(BN);
-			glTexCoord2f(texX + 0.37f, texY);
-			glVertex3fv(B1);
-			glTexCoord2f(texX + 0.37f, texY + 0.123f);
-			glVertex3fv(B2);
-			glTexCoord2f(texX, texY + 0.123f);
-			glVertex3fv(B3);
-			glTexCoord2f(texX, texY);
-			glVertex3fv(B4);
+				sinf( ( i - 15.0f ) * M_PI_180f ) * width1,
+				cosf( ( i - 15.0f ) * M_PI_180f ) * width1,
+				height
+			);
+
+			Vector BN = ( ( B1 - B3 ) * ( B2 - B1 ) );
+			glNormal3fv( BN );
+			glTexCoord2f( texX + 0.37f, texY );
+			glVertex3fv( B1 );
+			glTexCoord2f( texX + 0.37f, texY + 0.123f );
+			glVertex3fv( B2 );
+			glTexCoord2f( texX, texY + 0.123f );
+			glVertex3fv( B3 );
+			glTexCoord2f( texX, texY );
+			glVertex3fv( B4 );
 
 			Vector C1(
-				sinf((i+15.0f)/180.0f * PI) * width2, 
-				cosf((i+15.0f)/180.0f * PI) * width2, 
-				height + diff);
+				sinf( ( i + 15.0f ) * M_PI_180f ) * width2,
+				cosf( ( i + 15.0f ) * M_PI_180f ) * width2,
+				height + diff
+			);
 			Vector C2(
-				sinf(i/180.0f * PI) * width2, 
-				cosf(i/180.0f * PI) * width2, 
-				height2 + diff);
+				sinf( i * M_PI_180f ) * width2,
+				cosf( i * M_PI_180f ) * width2,
+				height2 + diff
+			);
 			Vector C3(
-				sinf(i/180.0f * PI) * width1, 
-				cosf(i/180.0f * PI) * width1, 
-				height2);
+				sinf( i * M_PI_180f ) * width1,
+				cosf( i * M_PI_180f ) * width1,
+				height2
+			);
 			Vector C4(
-				sinf((i+15.0f)/180.0f * PI) * width1, 
-				cosf((i+15.0f)/180.0f * PI) * width1, 
-				height);
+				sinf( ( i + 15.0f ) * M_PI_180f ) * width1,
+				cosf( ( i + 15.0f ) * M_PI_180f ) * width1,
+				height
+			);
 
-			Vector CN = ((C2 - C1) * (C3 - C2));
-			glNormal3fv(CN);
-			glTexCoord2f(texX + 0.37f, texY);
-			glVertex3fv(C1);
-			glTexCoord2f(texX + 0.37f, texY + 0.123f);
-			glVertex3fv(C2);
-			glTexCoord2f(texX, texY + 0.123f);
-			glVertex3fv(C3);
-			glTexCoord2f(texX, texY);
-			glVertex3fv(C4);
+			Vector CN = ( ( C2 - C1 ) * ( C3 - C2 ) );
+			glNormal3fv( CN );
+			glTexCoord2f( texX + 0.37f, texY );
+			glVertex3fv( C1 );
+			glTexCoord2f( texX + 0.37f, texY + 0.123f );
+			glVertex3fv( C2 );
+			glTexCoord2f( texX, texY + 0.123f );
+			glVertex3fv( C3 );
+			glTexCoord2f( texX, texY );
+			glVertex3fv( C4 );
 
 			Vector D1(
-				sinf((i+15.0f)/180.0f * PI) * width1, 
-				cosf((i+15.0f)/180.0f * PI) * width1, 
-				height);
+				sinf( ( i + 15.0f ) * M_PI_180f ) * width1,
+				cosf( ( i + 15.0f ) * M_PI_180f ) * width1,
+				height
+			);
 			Vector D2(
-				sinf(i/180.0f * PI) * width1, 
-				cosf(i/180.0f * PI) * width1, 
-				height2);
+				sinf( i * M_PI_180f ) * width1,
+				cosf( i * M_PI_180f ) * width1,
+				height2
+			);
 			Vector D3(
-				sinf(i/180.0f * PI) * width2, 
-				cosf(i/180.0f * PI) * width2, 
-				height2 + diff);
+				sinf( i * M_PI_180f ) * width2,
+				cosf( i * M_PI_180f ) * width2,
+				height2 + diff
+			);
 			Vector D4(
-				sinf((i+15.0f)/180.0f * PI) * width2, 
-				cosf((i+15.0f)/180.0f * PI) * width2, 
-				height + diff);
+				sinf( ( i + 15.0f ) * M_PI_180f ) * width2,
+				cosf( ( i + 15.0f ) * M_PI_180f ) * width2,
+				height + diff
+			);
 
-			Vector DN = ((D4 - D3) * (D2 - D4));
-			glNormal3fv(DN);
-			glTexCoord2f(texX, texY);
-			glVertex3fv(D1);
-			glTexCoord2f(texX, texY + 0.123f);
-			glVertex3fv(D2);
-			glTexCoord2f(texX + 0.37f, texY + 0.123f);
-			glVertex3fv(D3);
-			glTexCoord2f(texX + 0.37f, texY);
-			glVertex3fv(D4);
+			Vector DN = ( ( D4 - D3 ) * ( D2 - D4 ) );
+			glNormal3fv( DN );
+			glTexCoord2f( texX, texY );
+			glVertex3fv( D1 );
+			glTexCoord2f( texX, texY + 0.123f );
+			glVertex3fv( D2 );
+			glTexCoord2f( texX + 0.37f, texY + 0.123f );
+			glVertex3fv( D3 );
+			glTexCoord2f( texX + 0.37f, texY );
+			glVertex3fv( D4 );
 
-			i-= (360.0f / (count + (count-1) * RAND));
+			// i -= ( 360.0f / ( count + ( count - 1 ) * RAND ) );
+			i -= ( 360.0f / fmaf( RAND, ( count - 1.0f ), count ) );
 		}
 	glEnd();
-
 }
 
 ModelRendererTree::ModelRendererTree(Model *model, ModelID &id) : 
@@ -829,4 +877,3 @@ void ModelRendererTree::drawInternal(float distance, float fade, bool setState)
 		GLInfo::addNoTriangles(10);
 	}
 }
-

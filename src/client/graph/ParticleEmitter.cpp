@@ -246,7 +246,7 @@ void ParticleEmitter::emitExplosionRing(int number,
 
 		createDefaultParticle(*particle);
 
-		float ang = RAND * 2.0f * 3.14f;
+		float ang = RAND * M_2xPIf;
 		float speed = width * 4.0f;
 		Vector axis = inAxis.Normalize();
 		Vector otheraxis(0.0f, 1.0f, 0.0f);
@@ -284,7 +284,7 @@ void ParticleEmitter::emitDebris(int number,
 
 		createDefaultParticle(*particle);
 
-		float direction = RAND * 3.14f * 2.0f;
+		float direction = RAND * M_2xPIf;
 		float speed = RAND * 25.0f + 5.0f;
 		float height = RAND * 25.0f + 15.0f;
 		Vector velocity(getFastSin(direction) * speed, 
@@ -357,7 +357,7 @@ void ParticleEmitter::emitSpray(
 
 		createDefaultParticle(*particle);
 
-		float rotation = RAND * 2.0f * 3.14f;
+		float rotation = RAND * M_2xPIf;
 		float x = sinf(rotation);
 		float y = cosf(rotation);
 		Vector pos = position;
@@ -435,8 +435,8 @@ void ParticleEmitter::emitExplosion(
 		Particle *particle = engine.getNextAliveParticle(ParticleExplosion);
 		if (!particle) return;
 
-		float randRotXY = (RAND * TWOPI);
-		float randRotXZ = (RAND * TWOPI);
+		float randRotXY = RAND * M_2xPIf;
+		float randRotXZ = RAND * M_2xPIf;
 		float cosRandRotXZ = std::cosf( randRotXZ );
 		Vector velocity;
 		velocity[0] = std::sinf( randRotXY ) * cosRandRotXZ;

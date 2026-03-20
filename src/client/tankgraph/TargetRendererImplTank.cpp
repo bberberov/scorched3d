@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <sprites/ExplosionTextures.hpp>
 #include <tank/TankLib.hpp>
@@ -43,7 +44,6 @@
 #include <graph/ModelRendererStore.hpp>
 #include <graph/ModelRendererSimulator.hpp>
 #include <graph/MainCamera.hpp>
-#include <common/Defines.hpp>
 #include <weapons/Shield.hpp>
 #include <weapons/Accessory.hpp>
 #include <dialogs/TutorialDialog.hpp>
@@ -502,20 +502,18 @@ void TargetRendererImplTank::drawOldSight()
 		glNewList(sightList_ = glGenLists(1), GL_COMPILE);
 			glBegin(GL_QUAD_STRIP);
 				float x;
-				for (x=126.0f; x>=90.0f; x-=9.0f)
+				for ( x = 126.0f; 90.0f <= x; x -= 9.0f )
 				{
-					const float deg = 3.14f / 180.0f;
-					float dx = x * deg;
+					float dx = x * M_PI_180f;
 					float color = 1.0f - fabsf(90.0f - x) / 45.0f;
 
 					glColor3f(1.0f * color, 0.5f * color, 0.5f * color);
 					glVertex3f(+0.03f * color, 2.0f * sinf(dx), 2.0f * cosf(dx));
 					glVertex3f(+0.03f * color, 10.0f * sinf(dx), 10.0f * cosf(dx));
 				}
-				for (x=90.0f; x<135.0f; x+=9.0f)
+				for ( x = 90.0f; x < 135.0f; x += 9.0f )
 				{
-					const float deg = 3.14f / 180.0f;
-					float dx = x * deg;
+					float dx = x * M_PI_180f;
 					float color = 1.0f - fabsf(90.0f - x) / 45.0f;
 
 					glColor3f(1.0f * color, 0.5f * color, 0.5f * color);

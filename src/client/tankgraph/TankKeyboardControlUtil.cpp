@@ -18,6 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/DefinesMath.hpp>
+#include <common/Keyboard.hpp>
+#include <common/Line.hpp>
 #include <tankgraph/TankKeyboardControlUtil.hpp>
 #include <target/TargetContainer.hpp>
 #include <tank/TankState.hpp>
@@ -33,8 +36,6 @@
 #include <client/ScorchedClient.hpp>
 #include <client/ClientState.hpp>
 #include <weapons/AccessoryStore.hpp>
-#include <common/Keyboard.hpp>
-#include <common/Line.hpp>
 #include <landscapemap/LandscapeMaps.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/MainCamera.hpp>
@@ -245,7 +246,7 @@ void TankKeyboardControlUtil::autoAim(Tank *tank)
 			// Calculate direction
 			Vector direction = intersect - position;
 			float angleXYRads = atan2f(direction[1], direction[0]);
-			float angleXYDegs = (angleXYRads / 3.14f) * 180.0f - 90.0f;
+			float angleXYDegs = fmaf( angleXYRads, M_180_PIf, -90.0f );
 			
 			tank->getShotInfo().rotateGunXY(fixed::fromFloat(angleXYDegs), false);
 			leftRightHUD(tank);

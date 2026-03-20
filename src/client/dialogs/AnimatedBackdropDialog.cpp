@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <dialogs/AnimatedBackdropDialog.hpp>
 #include <dialogs/BackdropDialog.hpp>
 #include <dialogs/ProgressDialog.hpp>
@@ -33,7 +34,6 @@
 #include <landscapedef/LandscapeDefinitions.hpp>
 #include <landscapemap/LandscapeMaps.hpp>
 #include <movement/TargetMovement.hpp>
-#include <common/Defines.hpp>
 #include <limits.h>
 
 AnimatedBackdropDialog *AnimatedBackdropDialog::instance_ = nullptr;
@@ -47,11 +47,10 @@ AnimatedBackdropDialog *AnimatedBackdropDialog::instance()
 	return instance_;
 }
 
-AnimatedBackdropDialog::AnimatedBackdropDialog() : 
-	GLWWindow("Animated Backdrop", 0.0f, 0.0f, 0.0f, 0.0f, eHideName,
-		"The backdrop dialog"),
-	rotation_(HALFPI),
-	init_(false)
+AnimatedBackdropDialog::AnimatedBackdropDialog()
+	: GLWWindow( "Animated Backdrop", 0.0f, 0.0f, 0.0f, 0.0f, eHideName, "The backdrop dialog" )
+	, rotation_( M_PI_2f )
+	, init_( false )
 {
 	windowLevel_ = 5000000;
 }

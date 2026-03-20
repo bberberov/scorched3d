@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,10 +18,10 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <sky/SkyLine.hpp>
-#include <common/Defines.hpp>
-#include <math.h>
+#include <cmath>
 
 SkyLine::SkyLine() :
 	listNo_(0)
@@ -59,8 +59,8 @@ void SkyLine::actualDraw(float radius, float radius2, float height)
 	glBegin(GL_QUAD_STRIP);
 	for (float a=0.0f; a<=360.0f; a+=360.0f / 12)
 	{
-		float x = sinf(a / 180.0f * PI) * radius;
-		float y = cosf(a / 180.0f * PI) * radius2;
+		float x = sinf( a * M_PI_180f ) * radius;
+		float y = cosf( a * M_PI_180f ) * radius2;
 
 		glTexCoord2f(a / 360.0f, 1.0f);
 		glVertex3f(x, y, height);

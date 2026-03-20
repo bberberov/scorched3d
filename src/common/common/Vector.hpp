@@ -38,8 +38,8 @@ public:
 
 	Vector( const float ang, const double length )
 	{
-		V[0] = std::sinf( ang / 180.0f * 3.14f ) * (float)length;
-		V[1] = std::cosf( ang / 180.0f * 3.14f ) * (float)length;
+		V[0] = std::sinf( ang * M_PI_180f ) * (float)length;
+		V[1] = std::cosf( ang * M_PI_180f ) * (float)length;
 		V[2] = 0.0f;
 	}
 

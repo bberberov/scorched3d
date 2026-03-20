@@ -18,6 +18,8 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
+#include <common/Logger.hpp>
 #include <actions/Laser.hpp>
 #include <engine/ScorchedContext.hpp>
 #include <engine/ActionController.hpp>
@@ -29,8 +31,6 @@
 #include <target/TargetShield.hpp>
 #include <target/TargetLife.hpp>
 #include <target/TargetSpace.hpp>
-#include <common/Defines.hpp>
-#include <common/Logger.hpp>
 #ifndef S3D_SERVER
 	#include <GLEXT/GLState.hpp>
 	#include <sprites/ExplosionTextures.hpp>
@@ -72,8 +72,8 @@ void Laser::init()
 
 	FixedVector dir = direction_.Normalize();
 
-	angXY_ = 180.0f - atan2f(dir[0].asFloat(), dir[1].asFloat()) / 3.14f * 180.0f;
-	angYZ_ = acosf(dir[2].asFloat()) / 3.14f * 180.0f;
+	angXY_ = 180.0f - atan2f( dir[0].asFloat(), dir[1].asFloat() ) * M_PI_180f;
+	angYZ_ = acosf( dir[2].asFloat() ) * M_PI_180f;
 
 	// preset some values from the numberparser expressions
 	laserTime_ = params_->getTotalTime();

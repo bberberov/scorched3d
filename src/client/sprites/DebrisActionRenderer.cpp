@@ -18,9 +18,9 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <sprites/DebrisActionRenderer.hpp>
 #include <3dsparse/ModelStore.hpp>
-#include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <graph/ModelRendererStore.hpp>
 #include <stdlib.h>
@@ -31,9 +31,9 @@ DebrisActionRenderer::DebrisActionRenderer() :
 	rotationX_ = RAND;
 	rotationY_ = RAND;
 	rotationZ_ = RAND;
-	rotationSpeed_ = 90.0f + 180.0f * RAND;
+	rotationSpeed_ = fmaf( 180.0f, RAND, 90.0f );
 
-	if (RAND > 0.5f)
+	if ( 0.5f < RAND )
 	{
 		ModelID id;
 		id.initFromString("ase", "data/meshes/rock1.ase", 

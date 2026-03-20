@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,22 +18,22 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
+#include <common/Vector4.hpp>
+#include <common/OptionsScorched.hpp>
 #include <sky/Sun.hpp>
 #include <landscapedef/LandscapeTex.hpp>
 #include <landscapedef/LandscapeDefn.hpp>
 #include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/OptionsScorched.hpp>
 #include <graph/OptionsDisplay.hpp>
 #include <graph/MainCamera.hpp>
-#include <common/Defines.hpp>
-#include <common/Vector4.hpp>
 #include <image/ImageFactory.hpp>
 #include <GLEXT/GLLenseFlare.hpp>
 #include <GLEXT/GLCameraFrustum.hpp>
 #include <GLEXT/GLViewPort.hpp>
+#include <cmath>
 #include <stdlib.h>
-#include <math.h>
 
 Sun::Sun()
 {
@@ -48,8 +48,8 @@ void Sun::setPosition(float sunRotXY, float sunRotYZ)
 	LandscapeDefn &defn = *ScorchedClient::instance()->
 		getLandscapeMaps().getDefinitions().getDefn();
 
-	sunRotXY = sunRotXY / 180.0f * 3.14f;
-	sunRotYZ = sunRotYZ / 180.0f * 3.14f;
+	sunRotXY = sunRotXY * M_PI_180f;
+	sunRotYZ = sunRotYZ * M_PI_180f;
 	position_ = Vector(
 		(sinf(sunRotXY) * 900.0f * cosf(sunRotYZ)) + defn.getLandscapeWidth() / 2.0f, 
 		(cosf(sunRotXY) * 900.0f * cosf(sunRotYZ)) + defn.getLandscapeHeight() / 2.0f, 

@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Defines.hpp>
 #include <tankgraph/TargetRendererImpl.hpp>
 #include <tankgraph/TargetParticleRenderer.hpp>
 #include <target/TargetShield.hpp>
@@ -27,7 +28,6 @@
 #include <graph/ParticleEngine.hpp>
 #include <graph/ParticleTypes.hpp>
 #include <graph/OptionsDisplay.hpp>
-#include <common/Defines.hpp>
 #include <sky/Hemisphere.hpp>
 #include <weapons/ShieldRound.hpp>
 #include <weapons/ShieldSquare.hpp>
@@ -213,12 +213,13 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 			Hemisphere::draw(1.0f, 1.0f, 10, 10, 6, 0, 10, 10, false);
 		glEndList();
 		glNewList(spiralListNo = glGenLists(1), GL_COMPILE);
+			const float totalA = 5.0f * M_PIf;
+			const float aInc   = M_PIf / 6.0f;
+
 			float height = 0.0f;
-			float width = 0.0f;
-			float totalA = 5.0f * PI;
-			float aInc = PI / 6.0f;
+			float width  = 0.0f;
 			glBegin(GL_QUAD_STRIP);
-			for (float a=0.0f; a<totalA; a+=aInc)
+			for ( float a = 0.0f; a < totalA; a += aInc )
 			{
 				height += 0.05f;
 				width += 0.05f;
@@ -235,7 +236,7 @@ void TargetRendererImpl::drawShield(float shieldHit, float totalTime)
 			height = 0.0f;
 			width = 0.0f;
 			glBegin(GL_QUAD_STRIP);
-			for (float a=0.0f; a<5.0f * PI; a+=PI/6.0f)
+			for ( float a = 0.0f; a < totalA; a += aInc )
 			{
 				height += 0.05f;
 				width += 0.05f;
@@ -354,7 +355,7 @@ void TargetRendererImpl::drawParachute()
 		glNewList(listNo = glGenLists(1), GL_COMPILE);
 			glColor3f(1.0f, 1.0f, 1.0f);
 			glBegin(GL_LINES);
-				for (a=0.0f; a< 3.14f*2.0f; a+=3.14f / 4.0f)
+				for ( a = 0.0f; a < M_2xPIf; a += M_PI_4f )
 				{
 					glVertex3f(0.0f, 0.0f, 0.0f);
 					glVertex3f(sinf(a) * 2.0f, cosf(a) * 2.0f, 2.0f);
@@ -364,7 +365,7 @@ void TargetRendererImpl::drawParachute()
 				glVertex3f(0.0f, 0.0f, 3.0f);
 
 				glColor3f(0.5f, 0.5f, 0.5f);
-				for (a=3.14f*2.0f; a> 0.0f; a-=3.14f / 4.0f)
+				for ( a = M_2xPIf; 0.0f < a; a -= M_PI_4f )
 				{
 					glVertex3f(sinf(a) * 2.0f, cosf(a) * 2.0f, 2.0f);
 				}

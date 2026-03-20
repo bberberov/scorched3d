@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,12 +18,12 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "common/OptionsTransient.hpp"
+#include <common/Defines.hpp>
+#include <common/OptionsTransient.hpp>
 #include <GLW/GLWWindView.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/MainCamera.hpp>
 #include <GLEXT/GLViewPort.hpp>
-#include <common/Defines.hpp>
 #include <engine/Simulator.hpp>
 #include <3dsparse/ModelStore.hpp>
 #include <graph/ModelRenderer.hpp>
@@ -33,7 +33,7 @@
 #include <landscapemap/LandscapeMaps.hpp>
 #include <lang/LangResource.hpp>
 #include <sky/Sky.hpp>
-#include <math.h>
+#include <cmath>
 
 REGISTER_CLASS_SOURCE(GLWWindView);
 
@@ -132,8 +132,8 @@ void GLWWindView::drawDisplay()
 	Vector dir = (lookAt - lookFrom).Normalize();
 
 	float scale2 = MIN(w_, h_) / 90.0f;
-	float angXY = atan2f(dir[0], dir[1]) / 3.14f * 180.0f;
-	float angYZ = acosf(dir[2]) / 3.14f * 180.0f + 180.0f;
+	float angXY = atan2f( dir[0], dir[1] ) * M_180_PIf;
+	float angYZ = fmaf( acosf( dir[2] ), M_180_PIf, 180.0f );
 	if (angYZ < 280.0f) angYZ = 280.0f;
 
 	GLState currentState(GLState::DEPTH_ON | GLState::TEXTURE_ON);

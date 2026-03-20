@@ -340,7 +340,7 @@ void VisibilityPatchGrid::calculateVisibility()
 	// Calculate C for de Boers
 	const float maxError = (float) OptionsDisplay::instance()->getLandDetailError();
 	const float vRes = (float) OptionsDisplay::instance()->getScreenHeight();
-	const float FOV = 60.0f * PI / 180.0f;
+	const float FOV = 60.0f * M_PI_180f;
 	float T = (2.0f * maxError) / vRes;
 	float A = 1.0f / (float) tan(FOV / 2.0f);
 	float C = A / T;

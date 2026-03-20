@@ -18,27 +18,30 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <cmath>
-#include <stdlib.h>
 #include <common/Defines.hpp>
 #include <GLEXT/GLState.hpp>
 #include <GLEXT/GLCamera.hpp>
 #include <GLEXT/GLViewPort.hpp>
+#include <cmath>
+#include <stdlib.h>
 
 GLCamera* GLCamera::currentCamera_ = nullptr;
 
-GLCamera::GLCamera(GLsizei windowWidth, GLsizei windowHeight) :
-	rotationXY_(0.0f), rotationYZ_(PI / 4),
-	zoom_(150.0f),
-	shake_(0.0f),
-	totalTime_(0.0f),
-	useHeightFunc_(false),
-	minHeightFunc_( nullptr ), maxHeightFunc_( nullptr ),
-	minHeightData_( nullptr ), maxHeightData_( nullptr )
+GLCamera::GLCamera( GLsizei windowWidth, GLsizei windowHeight )
+	: rotationXY_( 0.0f )
+	, rotationYZ_( M_PI_4f )
+	, zoom_( 150.0f )
+	, shake_( 0.0f )
+	, totalTime_( 0.0f )
+	, useHeightFunc_( false )
+	, minHeightFunc_( nullptr )
+	, maxHeightFunc_( nullptr )
+	, minHeightData_( nullptr )
+	, maxHeightData_( nullptr )
 {
 	currentCamera_ = this;
-	setWindowOffset(0, 0);
-	setWindowSize(windowWidth, windowHeight);
+	setWindowOffset( 0, 0 );
+	setWindowSize( windowWidth, windowHeight );
 	calculateWantedOffset();
 	currentPosition_ = wantedOffset_ + lookAt_;
 }

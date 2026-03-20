@@ -18,13 +18,14 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/DefinesMath.hpp>
+#include <common/Logger.hpp>
+#include <common/OptionsScorched.hpp>
 #include <tankai/TankAICurrentMove.hpp>
 #include <tankai/TankAIAimGuesser.hpp>
 #include <tankai/TankAISniperGuesser.hpp>
 #include <coms/ComsPlayedMoveMessage.hpp>
 #include <coms/ComsDefenseMessage.hpp>
-#include <common/Logger.hpp>
-#include <common/OptionsScorched.hpp>
 #include <server/ScorchedServer.hpp>
 #include <server/ServerSimulator.hpp>
 #include <server/ServerState.hpp>
@@ -365,7 +366,7 @@ bool TankAICurrentMove::makeProjectileShot(
 
 	// Find a place where we will hit
 	Vector aimPosition = directTarget;
-	float a = RAND * 3.14f * 2.0f;
+	float a = RAND * M_2xPIf;
 	aimPosition[0] += sinf(a) * tankAimDistance;
 	aimPosition[1] += cosf(a) * tankAimDistance;
 	float aimDistance = MIN(tankAimDistance + 5.0f, 15.0f);
@@ -691,8 +692,8 @@ bool TankAICurrentMove::inHole(Vector &position)
 		Vector lowest = pos;
 		for (float a=0.0f; a<360.0f; a+=45.0f)
 		{
-			float offSetX = sinf(a / 180.0f * PI) * 1.25f;
-			float offSetY = cosf(a / 180.0f * PI) * 1.25f;
+			float offSetX = sinf( a * M_PI_180f ) * 1.25f;
+			float offSetY = cosf( a * M_PI_180f ) * 1.25f;
 
 			Vector newPos(
 				pos[0] + offSetX,
@@ -725,8 +726,8 @@ bool TankAICurrentMove::inHole(Vector &position)
 		bool ok = false;
 		for (float radius=2.0f; radius<10.0f; radius+=1.0f)
 		{
-			float offSetX = sinf(a / 180.0f * PI) * radius;
-			float offSetY = cosf(a / 180.0f * PI) * radius;
+			float offSetX = sinf( a * M_PI_180f ) * radius;
+			float offSetY = cosf( a * M_PI_180f ) * radius;
 			
 			Vector newPos(
 				pos[0] + offSetX,
@@ -994,8 +995,8 @@ Vector TankAICurrentMove::lowestHighest(
 				fixed::fromFloat(bestPos[0]), fixed::fromFloat(bestPos[1])).asFloat();
 	for (float a=0.0f; a<360.0f; a+=22.5f)
 	{
-		float offSetX = sinf(a / 180.0f * PI) * radius;
-		float offSetY = cosf(a / 180.0f * PI) * radius;
+		float offSetX = sinf( a * M_PI_180f ) * radius;
+		float offSetY = cosf( a * M_PI_180f ) * radius;
 		
 		Vector newPos(
 			directTarget[0] + offSetX,

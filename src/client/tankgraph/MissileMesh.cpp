@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,7 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <math.h>
+#include <common/Defines.hpp> // For porting
 #include <tankgraph/MissileMesh.hpp>
 #include <graph/ModelRenderer.hpp>
 #include <graph/ModelRendererStore.hpp>
@@ -27,7 +27,7 @@
 #include <landscape/Landscape.hpp>
 #include <landscapemap/LandscapeMaps.hpp>
 #include <client/ScorchedClient.hpp>
-#include <common/Defines.hpp> // For porting
+#include <cmath>
 
 MissileMesh::MissileMesh(ModelID &missile) : 
 	innerScale_(1.0f),
@@ -73,11 +73,10 @@ void MissileMesh::draw(Vector &position, Vector &direction, int flareType, float
 	// Figure out the opengl roation matrix from the direction
 	// of the fired missile
 	Vector dir = direction.Normalize();
-	const float radToDeg = 180.0f / 3.14f;
-	float angXYRad = 3.14f - atan2f(dir[0], dir[1]);
-	float angYZRad = acosf(dir[2]);
-	float angXYDeg = angXYRad * radToDeg;
-	float angYZDeg = angYZRad * radToDeg;
+	float angXYRad = M_PIf - atan2f( dir[0], dir[1] );
+	float angYZRad = acosf( dir[2] );
+	float angXYDeg = angXYRad * M_180_PIf;
+	float angYZDeg = angYZRad * M_180_PIf;
 
 	// Apply the matrix and render the missile
 	float scale = innerScale_ * scale_;

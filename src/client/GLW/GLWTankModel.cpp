@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011
+//    Scorched3D (c) 2000-2011, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -18,6 +18,7 @@
 //    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <common/Vector4.hpp>
 #include <GLW/GLWTankModel.hpp>
 #include <client/ScorchedClient.hpp>
 #include <graph/MainCamera.hpp>
@@ -25,7 +26,6 @@
 #include <tankgraph/TargetRendererImplTank.hpp>
 #include <target/TargetContainer.hpp>
 #include <tanket/TanketShotInfo.hpp>
-#include <common/Vector4.hpp>
 #include <landscape/Landscape.hpp>
 #include <sky/Sky.hpp>
 #include <GLW/GLWTranslate.hpp>
@@ -68,8 +68,8 @@ void GLWTankModel::draw()
 	Vector &lookFrom = MainCamera::instance()->getCamera().getCurrentPos();
 	Vector &lookAt = MainCamera::instance()->getCamera().getLookAt();
 	Vector dir = (lookAt - lookFrom).Normalize();
-	float angXY = atan2f(dir[0], dir[1]) / 3.14f * 180.0f;
-	float angYZ = acosf(dir[2]) / 3.14f * 180.0f + 180.0f;
+	float angXY = atan2f( dir[0], dir[1] ) * M_180_PIf;
+	float angYZ = fmaf( acosf( dir[2] ), M_180_PIf, 180.0f );
 	if (angYZ < 280.0f) angYZ = 280.0f;
 
 	// Draw the tank
