@@ -168,7 +168,6 @@ zlib_dep        = dependency(
 # BEGIN Defines and compile options
 c_defines = []
 cpp_defines = [
-	'-DS3D_BINDIR="'  + get_option('prefix') / get_option('bindir')  + '"',
 	'-DS3D_DATADIR="' + get_option('prefix') / get_option('datadir') + '"',
 	'-DS3D_DOCDIR="'  + get_option('prefix') / get_option('docdir')  + '"',
 ]

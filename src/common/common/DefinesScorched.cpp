@@ -52,10 +52,6 @@
 #define S3D_DOCDIR "./documentation"
 #endif
 
-#ifndef S3D_BINDIR
-#define S3D_BINDIR "."
-#endif
-
 // ### Variables ###
 
 static std::string exeName;

@@ -109,7 +109,6 @@ AC_ARG_WITH(
 )
 AC_SUBST(docdir)
 
-AC_DEFINE_UNQUOTED([S3D_BINDIR], ["${bindir}"])
 AC_DEFINE_UNQUOTED([S3D_DATADIR],["${datadir}"])
 AC_DEFINE_UNQUOTED([S3D_DOCDIR], ["${docdir}"])
 
