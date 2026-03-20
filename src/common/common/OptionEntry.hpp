@@ -52,7 +52,6 @@ public:
 	};
 
 	OptionEntry( std::list< OptionEntry* >& group, const char* name, const char* description, unsigned int data );
-	virtual ~OptionEntry();
 
 	// clang-format off
 	// uncrustify off
@@ -116,7 +115,6 @@ public:
 		unsigned int               data,
 		int                        defaultValue
 	);
-	virtual ~OptionEntryInt();
 
 	virtual EntryType getEntryType() { return OptionEntryIntType; }
 
@@ -152,7 +150,6 @@ public:
 		int                        maxValue,
 		int                        stepValue
 	);
-	virtual ~OptionEntryBoundedInt();
 
 	virtual const char* getRangeDescription();
 
@@ -191,7 +188,6 @@ public:
 		int                        defaultValue,
 		OptionEntryEnum::EnumEntry enums[]
 	);
-	virtual ~OptionEntryEnum();
 
 	virtual EntryType getEntryType() { return OptionEntryEnumType; }
 
@@ -222,7 +218,6 @@ public:
 		unsigned int               data,
 		bool                       defaultValue
 	);
-	virtual ~OptionEntryBool();
 
 	virtual EntryType getEntryType() { return OptionEntryBoolType; }
 
@@ -256,7 +251,6 @@ public:
 		const char*                defaultValue,
 		bool                       multiline = false
 	);
-	virtual ~OptionEntryString();
 
 	virtual EntryType getEntryType() { return ( multiline_ ? OptionEntryTextType : OptionEntryStringType ); }
 
@@ -296,7 +290,6 @@ public:
 		const char*                      defaultValue,
 		OptionEntryStringEnum::EnumEntry enums[]
 	);
-	virtual ~OptionEntryStringEnum();
 
 	virtual EntryType getEntryType() { return OptionEntryStringEnumType; }
 
@@ -322,7 +315,6 @@ public:
 		float                      defaultValue,
 		bool                       truncate = false
 	);
-	virtual ~OptionEntryFloat();
 
 	virtual EntryType getEntryType() { return OptionEntryFloatType; }
 
@@ -356,7 +348,6 @@ public:
 		Vector                     defaultValue,
 		bool                       truncate = false
 	);
-	virtual ~OptionEntryVector();
 
 	virtual EntryType getEntryType() { return OptionEntryVectorType; }
 
@@ -389,7 +380,6 @@ public:
 		unsigned int               data,
 		fixed                      defaultValue
 	);
-	virtual ~OptionEntryFixed();
 
 	virtual EntryType getEntryType() { return OptionEntryFixedType; }
 
@@ -421,7 +411,6 @@ public:
 		unsigned int               data,
 		FixedVector                defaultValue
 	);
-	virtual ~OptionEntryFixedVector();
 
 	virtual EntryType getEntryType() { return OptionEntryFixedVectorType; }
 

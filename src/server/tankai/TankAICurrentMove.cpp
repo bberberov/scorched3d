@@ -71,9 +71,6 @@ TankAICurrentMove::TankAICurrentMove() :
 	projectileMinDistance_(10.0f)
 {}
 
-TankAICurrentMove::~TankAICurrentMove()
-{}
-
 bool TankAICurrentMove::parseConfig(XMLNode *node)
 {
 	{

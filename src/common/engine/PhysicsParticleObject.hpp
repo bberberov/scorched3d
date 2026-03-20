@@ -63,7 +63,6 @@ class PhysicsParticleObject
 {
 public:
 	PhysicsParticleObject();
-	virtual ~PhysicsParticleObject();
 
 	void setPhysics( PhysicsParticleInfo info, ScorchedContext& context, FixedVector& position, FixedVector& velocity );
 	void setForces( fixed windFactor, fixed gravityFactor );

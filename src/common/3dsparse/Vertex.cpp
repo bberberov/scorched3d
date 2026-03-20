@@ -23,7 +23,3 @@
 Vertex::Vertex() : boneIndex(-1)
 {
 }
-
-Vertex::~Vertex()
-{
-}

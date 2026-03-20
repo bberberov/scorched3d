@@ -28,10 +28,6 @@ ModInfo::ModInfo(const std::string &name) :
 
 }
 
-ModInfo::~ModInfo()
-{
-}
-
 bool ModInfo::parse(const std::string &fileName)
 {
 	entries_.clear();

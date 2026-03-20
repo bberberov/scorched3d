@@ -39,9 +39,6 @@ OptionEntry::OptionEntry(
 	group.push_back(this);
 }
 
-OptionEntry::~OptionEntry()
-{}
-
 bool OptionEntryHelper::addToArgParser(
 	std::list<OptionEntry *> &options,
 	ARGParser &parser
@@ -328,9 +325,6 @@ OptionEntryInt::OptionEntryInt(
 	value_(defaultValue)
 {}
 
-OptionEntryInt::~OptionEntryInt()
-{}
-
 const char *OptionEntryInt::getValueAsString()
 {
 	static char value[256];
@@ -401,9 +395,6 @@ OptionEntryBoundedInt::OptionEntryBoundedInt(
 	stepValue_(stepValue)
 {}
 
-OptionEntryBoundedInt::~OptionEntryBoundedInt()
-{}
-
 const char *OptionEntryBoundedInt::getRangeDescription()
 {
 	static std::string result;
@@ -427,9 +418,6 @@ OptionEntryEnum::OptionEntryEnum(
 ) :
 	OptionEntryInt(group, name, description, data, defaultValue),
 	enums_(enums)
-{}
-
-OptionEntryEnum::~OptionEntryEnum()
 {}
 
 const char *OptionEntryEnum::getRangeDescription()
@@ -511,9 +499,6 @@ OptionEntryBool::OptionEntryBool(
 	value_(defaultValue)
 {}
 
-OptionEntryBool::~OptionEntryBool()
-{}
-
 const char *OptionEntryBool::getDefaultValueAsString()
 {
 	return (defaultValue_ ? "on" : "off");
@@ -586,9 +571,6 @@ OptionEntryString::OptionEntryString(
 	multiline_(multiline)
 {}
 
-OptionEntryString::~OptionEntryString()
-{}
-
 const char *OptionEntryString::getValueAsString()
 {
 	return value_.c_str();
@@ -649,9 +631,6 @@ OptionEntryStringEnum::OptionEntryStringEnum(
 	enums_(enums)
 {}
 
-OptionEntryStringEnum::~OptionEntryStringEnum()
-{}
-
 const char *OptionEntryStringEnum::getRangeDescription()
 {
 	static std::string result;
@@ -693,9 +672,6 @@ OptionEntryFloat::OptionEntryFloat(
 	defaultValue_(defaultValue),
 	value_(defaultValue),
 	truncate_(truncate)
-{}
-
-OptionEntryFloat::~OptionEntryFloat()
 {}
 
 const char* OptionEntryFloat::getValueAsString()
@@ -757,9 +733,6 @@ OptionEntryVector::OptionEntryVector(
 	defaultValue_(defaultValue),
 	value_(defaultValue),
 	truncate_(truncate)
-{}
-
-OptionEntryVector::~OptionEntryVector()
 {}
 
 const char* OptionEntryVector::getValueAsString()
@@ -847,9 +820,6 @@ OptionEntryFixed::OptionEntryFixed(
 	value_(defaultValue)
 {}
 
-OptionEntryFixed::~OptionEntryFixed()
-{}
-
 const char *OptionEntryFixed::getValueAsString()
 {
 	return value_.asString();
@@ -893,9 +863,6 @@ OptionEntryFixedVector::OptionEntryFixedVector(
 	OptionEntry(group, name, description, data),
 	defaultValue_(defaultValue),
 	value_(defaultValue)
-{}
-
-OptionEntryFixedVector::~OptionEntryFixedVector()
 {}
 
 const char *OptionEntryFixedVector::getValueAsString()

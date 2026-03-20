@@ -33,9 +33,6 @@ LaserParams::LaserParams() :
 	totalTime_(1)
 {}
 
-LaserParams::~LaserParams()
-{}
-
 bool LaserParams::parseXML(XMLNode *accessoryNode)
 {
 	if (!accessoryNode->getNamedChild("color", color_)) return false;

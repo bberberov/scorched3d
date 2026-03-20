@@ -36,7 +36,6 @@ public:
 	};
 
 	ModInfo( const std::string& name );
-	virtual ~ModInfo();
 
 	bool parse( const std::string& fileName );
 

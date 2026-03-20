@@ -38,10 +38,6 @@ ImageID::ImageID(S3D::FileLocation imageLocation,
 {
 }
 
-ImageID::~ImageID()
-{
-}
-
 bool ImageID::initFromString(
 	S3D::FileLocation imageLocation,
 	const std::string &imageName,

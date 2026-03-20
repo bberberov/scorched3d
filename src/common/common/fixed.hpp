@@ -71,8 +71,6 @@ public:
 	// uncrustify on
 	// clang-format on
 
-	~fixed() {}
-
 	fixed operator++()
 	{
 		m_nVal += FIXED_RESOLUTION;

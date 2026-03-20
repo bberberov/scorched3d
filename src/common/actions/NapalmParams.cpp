@@ -42,9 +42,6 @@ NapalmParams::NapalmParams() :
 	deformTexture_("")
 {}
 
-NapalmParams::~NapalmParams()
-{}
-
 bool NapalmParams::parseXML(XMLNode *accessoryNode)
 {
 	// Mandatory Attributes

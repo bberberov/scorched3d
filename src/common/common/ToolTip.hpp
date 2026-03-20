@@ -51,7 +51,6 @@ public:
 		const LangString& title = LangString(),
 		const LangString& text  = LangString()
 	);
-	virtual ~ToolTip();
 
 	// Used to set the title and text of the tooltip
 	void setText( unsigned int type, const LangString& title, const LangString& text );

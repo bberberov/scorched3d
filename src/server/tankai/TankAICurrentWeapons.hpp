@@ -27,7 +27,6 @@ class TankAICurrentWeapons
 {
 public:
 	TankAICurrentWeapons();
-	virtual ~TankAICurrentWeapons();
 
 	virtual bool parseConfig( TankAIWeaponSets& sets, XMLNode* node );
 

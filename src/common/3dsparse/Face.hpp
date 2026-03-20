@@ -27,7 +27,6 @@ class Face
 {
 public:
 	Face();
-	virtual ~Face();
 
 	int         v[3];
 	FixedVector normal[3];

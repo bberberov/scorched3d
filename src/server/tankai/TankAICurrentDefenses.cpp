@@ -36,11 +36,6 @@ TankAICurrentDefenses::TankAICurrentDefenses()
 {
 }
 
-
-TankAICurrentDefenses::~TankAICurrentDefenses()
-{
-}
-
 bool TankAICurrentDefenses::parseConfig(XMLNode *node)
 {
 	if (!node->getNamedChild("useparachutes", useParachutes_)) return false;

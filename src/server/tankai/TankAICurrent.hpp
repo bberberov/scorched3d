@@ -30,7 +30,6 @@ class TankAICurrent : public TankAI
 {
 public:
 	TankAICurrent();
-	virtual ~TankAICurrent();
 
 	virtual TankAI* createCopy( Tanket* tanket );
 

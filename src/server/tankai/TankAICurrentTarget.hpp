@@ -32,7 +32,6 @@ class TankAICurrentTarget
 {
 public:
 	TankAICurrentTarget();
-	virtual ~TankAICurrentTarget();
 
 	virtual bool parseConfig( XMLNode* node );
 

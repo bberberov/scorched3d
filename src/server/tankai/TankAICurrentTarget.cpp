@@ -35,10 +35,6 @@ TankAICurrentTarget::TankAICurrentTarget()
 {
 }
 
-TankAICurrentTarget::~TankAICurrentTarget()
-{
-}
-
 bool TankAICurrentTarget::parseConfig(XMLNode *node)
 {
 	if (!node->getNamedChild("health", health_)) return false;

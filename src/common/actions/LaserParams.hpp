@@ -32,7 +32,6 @@ class LaserParams
 {
 public:
 	LaserParams();
-	~LaserParams();
 
 	bool parseXML( XMLNode* accessoryNode );
 	void parseLUA( lua_State* L, int position );

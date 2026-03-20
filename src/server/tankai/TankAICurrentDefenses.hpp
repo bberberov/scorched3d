@@ -27,7 +27,6 @@ class TankAICurrentDefenses
 {
 public:
 	TankAICurrentDefenses();
-	virtual ~TankAICurrentDefenses();
 
 	virtual bool parseConfig( XMLNode* node );
 

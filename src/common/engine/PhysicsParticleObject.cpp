@@ -55,9 +55,6 @@ PhysicsParticleObject::PhysicsParticleObject()
 	, iterations_( 0 )
 {}
 
-PhysicsParticleObject::~PhysicsParticleObject()
-{}
-
 void PhysicsParticleObject::applyForce(FixedVector &force)
 {
 	velocity_ += force;

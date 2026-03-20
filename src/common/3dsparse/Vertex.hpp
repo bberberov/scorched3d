@@ -29,7 +29,6 @@ class Vertex
 {
 public:
 	Vertex();
-	virtual ~Vertex();
 
 	FixedVector position;
 	FixedVector lightintense;

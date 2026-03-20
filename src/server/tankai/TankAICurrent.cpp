@@ -30,8 +30,6 @@
 
 TankAICurrent::TankAICurrent() : tanket_( nullptr ) {}
 
-TankAICurrent::~TankAICurrent() {}
-
 TankAI *TankAICurrent::createCopy(Tanket *tanket)
 {
 	TankAICurrent *result = new TankAICurrent(*this);

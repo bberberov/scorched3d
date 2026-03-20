@@ -23,7 +23,3 @@
 Face::Face()
 {
 }
-
-Face::~Face()
-{
-}

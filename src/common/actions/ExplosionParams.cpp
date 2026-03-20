@@ -44,9 +44,6 @@ ExplosionParams::ExplosionParams() :
 	explosionType_(ExplosionNormal)
 {}
 
-ExplosionParams::~ExplosionParams()
-{}
-
 const char *ExplosionParams::getExplosionTexture()
 {
 	return explosionTexture_.c_str();

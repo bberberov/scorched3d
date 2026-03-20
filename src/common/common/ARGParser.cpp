@@ -46,10 +46,6 @@ ARGParser::ARGParser()
 {
 }
 
-ARGParser::~ARGParser()
-{
-}
-
 bool ARGParser::parse(int argc,char *argv[])
 {
 	int i;

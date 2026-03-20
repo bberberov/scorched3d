@@ -31,7 +31,6 @@ class NapalmParams
 {
 public:
 	NapalmParams();
-	~NapalmParams();
 
 	bool parseXML( XMLNode* accessoryNode );
 	void parseLUA( lua_State* L, int position );

@@ -25,8 +25,6 @@
 
 TankAICurrentWeapons::TankAICurrentWeapons() : currentWeaponSet_( nullptr ) {}
 
-TankAICurrentWeapons::~TankAICurrentWeapons() {}
-
 TankAIWeaponSets::WeaponSet *TankAICurrentWeapons::getCurrentWeaponSet()
 {
 	if (!currentWeaponSet_)

@@ -30,10 +30,6 @@ TankAI::TankAI() :
 {
 }
 
-TankAI::~TankAI()
-{
-}
-
 bool TankAI::parseConfig(TankAIWeaponSets &sets, XMLNode *node)
 {
 	if (!node->getNamedChild("name", name_)) return false;

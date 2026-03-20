@@ -36,7 +36,6 @@ public:
 		const std::string& alphaName = "",
 		bool               invert    = false
 	);
-	virtual ~ImageID();
 
 	bool initFromNode( XMLNode* imageNode );
 

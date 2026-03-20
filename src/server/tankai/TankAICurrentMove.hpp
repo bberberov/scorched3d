@@ -29,7 +29,6 @@ class TankAICurrentMove
 {
 public:
 	TankAICurrentMove();
-	virtual ~TankAICurrentMove();
 
 	virtual bool parseConfig( XMLNode* node );
 

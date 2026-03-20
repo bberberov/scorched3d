@@ -32,9 +32,6 @@ ToolTip::ToolTip(unsigned int type, const LangString &tit, const LangString &tex
 	setText(type, tit, tex);
 }
 
-ToolTip::~ToolTip()
-{}
-
 void ToolTip::populate()
 {
 	if (handler_) handler_->populateCalled(id_);
