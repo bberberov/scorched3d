@@ -128,7 +128,6 @@ void TargetMovementEntrySpline::simulate(ScorchedContext &context, fixed frameTi
 	FixedVector position;
 	FixedVector direction;
 	path_.getPathAttrs(position, direction);
-	FixedVector directionPerp = direction.get2DPerp();
 
 	// Move the position to the ground if set
 	if (groundOnly_)

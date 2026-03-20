@@ -124,7 +124,6 @@ void TargetDamage::damageTarget(ScorchedContext &context,
 	// Remove any damage from shield first
 	if (damage > 0)
 	{
-		fixed shieldDamage = 0;
 		Accessory *sh = damagedTarget->getShield().getCurrentShield();
 		if (sh && useShieldDamage)
 		{

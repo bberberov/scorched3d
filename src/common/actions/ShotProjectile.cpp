@@ -67,8 +67,9 @@ ShotProjectile::ShotProjectile(
 
 void ShotProjectile::init()
 {
+#ifndef S3D_SERVER  // FIXME: whole function is client-only, use higher-level conditional compile
 	fixed weaponScale = weapon_->getScale(*context_);
-#ifndef S3D_SERVER
+
 	if (!context_->getServerMode())
 	{
 		setActionRender(

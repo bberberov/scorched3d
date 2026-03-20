@@ -70,14 +70,12 @@ Explosion::~Explosion()
 
 void Explosion::init()
 {
-	fixed multiplier = fixed(
-		((int) context_->getOptionsGame().getWeapScale()) - OptionsGame::ScaleMedium
-	);
-	multiplier *= fixed(true, 5000);
-	multiplier += 1;
-	fixed explosionSize = params_->getSize() * multiplier;
+#ifndef S3D_SERVER  // FIXME: whole function is client-only, use higher-level conditional compile
+	fixed multiplier     = fixed( ( (int)context_->getOptionsGame().getWeapScale() ) - OptionsGame::ScaleMedium );
+	multiplier          *= fixed( true, 5000 );
+	multiplier          += 1;
+	fixed explosionSize  = params_->getSize() * multiplier;
 
-#ifndef S3D_SERVER
 	if (!context_->getServerMode())
 	{
 		float height = context_->getLandscapeMaps().getGroundMaps().getInterpHeight(

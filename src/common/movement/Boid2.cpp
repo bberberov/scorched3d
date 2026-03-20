@@ -94,7 +94,6 @@ void Boid2::update(fixed frameTime, std::vector<Boid2*> &boidSet, bool complexUp
 		// Wander
 		{
 			fixed cruiseDiff = world_->getCruiseVelocity() - directionMag_;
-			fixed cruiseChange = cruiseDiff / 10;
 			newVelocity += direction_ * cruiseDiff;
 		}
 

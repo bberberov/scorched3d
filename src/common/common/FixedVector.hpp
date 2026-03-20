@@ -171,7 +171,6 @@ public:
 
 	FixedVector operator-()
 	{
-		fixed       a = -V[0];
 		FixedVector v( -V[0], -V[1], -V[2] );
 
 		return v;
