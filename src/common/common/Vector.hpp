@@ -27,7 +27,7 @@
 class Vector
 {
 public:
-	Vector() { V[0] = V[1] = V[2] = 0.0f; }
+	Vector() { zero(); }
 
 	Vector( const float Pt[3] )
 	{

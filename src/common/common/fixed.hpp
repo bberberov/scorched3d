@@ -60,7 +60,7 @@ public:
 	// NOTE: fixed type uses singed m_nVal but can be constructed with unsigned values
 	// clang-format off
 	// uncrustify off
-	fixed()                              { m_nVal = 0; }
+	fixed()                              { m_nVal = 0ll; }  // NOTE: default constructor's value is zero
 	fixed( bool bInternal, Sint64 nVal ) { m_nVal = nVal; }
 	fixed( unsigned char nVal )          { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
 	fixed( char nVal )                   { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
@@ -87,7 +87,7 @@ public:
 		return *this;
 	}
 
-	fixed operator-() { return fixed( 0 ) - *this; }
+	fixed operator-() { return fixed() - *this; }
 
 	// clang-format off
 	// uncrustify off
@@ -144,7 +144,7 @@ public:
 
 	fixed abs()
 	{
-		if ( m_nVal > Sint64( 0 ) )
+		if ( 0ll < m_nVal )
 		{
 			return fixed( *this );
 		}

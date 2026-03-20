@@ -27,7 +27,7 @@
 class FixedVector4
 {
 public:
-	FixedVector4() { V[0] = V[1] = V[2] = V[3] = 0; }
+	FixedVector4() { zero(); }
 
 	FixedVector4( const FixedVector& v, fixed a = 1 )
 	{
@@ -64,7 +64,7 @@ public:
 		V[3] = ptD;
 	}
 
-	void zero() { V[0] = V[1] = V[2] = V[3] = 0; }
+	void zero() { V[0] = V[1] = V[2] = V[3] = fixed(); }
 
 	bool operator==( const FixedVector4& Vin )
 	{

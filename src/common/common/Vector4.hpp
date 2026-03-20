@@ -26,7 +26,7 @@
 class Vector4
 {
 public:
-	Vector4() { V[0] = V[1] = V[2] = V[3] = 0.0f; }
+	Vector4() { zero(); }
 
 	Vector4( const Vector& v, float a = 1.0f )
 	{

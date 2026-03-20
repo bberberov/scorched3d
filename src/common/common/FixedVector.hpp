@@ -28,7 +28,7 @@
 class FixedVector
 {
 public:
-	FixedVector() { V[0] = V[1] = V[2] = fixed( 0 ); }
+	FixedVector() { zero(); }
 
 	FixedVector( fixed a, fixed b, fixed c )
 	{
@@ -44,7 +44,7 @@ public:
 		V[2] = Pt[2];
 	}
 
-	void zero() { V[0] = V[1] = V[2] = fixed( 0 ); }
+	void zero() { V[0] = V[1] = V[2] = fixed(); }
 
 	FixedVector Normalize()
 	{
