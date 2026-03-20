@@ -23,6 +23,26 @@
 
 namespace S3D
 {
+	// ### Constants ###
+	const unsigned int ScorchedPort = 27270;
+
+	// NOTE: "BETA" is a known suffix, see setSettingsDir()
+	const std::string ScorchedVersion = "44.2"
+	#ifdef _DEBUG
+		" **DEBUG**"
+	#endif
+	;
+
+	const std::string ScorchedProtocolVersion = "ew";
+
+	#ifdef __DATE__
+	const std::string ScorchedBuildTime = __DATE__;
+	#else
+	const std::string ScorchedBuildTime = "Unknown";
+	#endif
+
+	// ### Functions ###
+
 	void        setExeName( const std::string& name );
 	void        setSettingsDir( const std::string& dir );
 	void        setDataFileMod( const std::string& mod );
@@ -41,11 +61,6 @@ namespace S3D
 	std::string getSaveFile( const std::string& filename );
 	std::string getSettingsModFile( const std::string& filename );
 	std::string getGlobalModFile( const std::string& filename );
-
-	extern unsigned int ScorchedPort;
-	extern std::string  ScorchedVersion;
-	extern std::string  ScorchedProtocolVersion;
-	extern std::string  ScorchedBuildTime;
 }  // namespace S3D
 
 #endif  // __INCLUDE_DefinesScorched_hpp_INCLUDE__

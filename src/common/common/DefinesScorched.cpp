@@ -42,39 +42,43 @@
 #include <unistd.h>
 #endif
 
-unsigned int S3D::ScorchedPort = 27270;
-std::string S3D::ScorchedVersion = "44.2"
-#ifdef _DEBUG
-	" **DEBUG**"
+// ### Macros ###
+
+#ifndef S3D_DATADIR
+#define S3D_DATADIR "."
 #endif
-;
-std::string S3D::ScorchedProtocolVersion = "ew";
-#ifdef __DATE__
-std::string S3D::ScorchedBuildTime = __DATE__;
-#else
-std::string S3D::ScorchedBuildTime = "Unknown";
+
+#ifndef S3D_DOCDIR
+#define S3D_DOCDIR "./documentation"
 #endif
+
+#ifndef S3D_BINDIR
+#define S3D_BINDIR "."
+#endif
+
+// ### Variables ###
+
 static std::string exeName;
 static std::string currentMod = "none";
 static std::string settingsDir = "";
 
-void S3D::showURL(const std::string &url)
+// ### Functions ###
+
+void S3D::showURL( const std::string& url )
 {
-#ifdef _WIN32
-	std::string buffer = S3D::formatStringBuffer("explorer %s", url.c_str());
-	WinExec(buffer.c_str() ,SW_SHOWDEFAULT);
+#if defined( _WIN32 )
+	std::string buffer = S3D::formatStringBuffer( "explorer %s", url.c_str() );
+	WinExec( buffer.c_str(), SW_SHOWDEFAULT );
+#elif defined( __DARWIN__ )
+	std::string buffer = S3D::formatStringBuffer( "open %s", url.c_str() );
+	system( buffer.c_str() );
 #else
-#ifdef __DARWIN__
-	std::string buffer = S3D::formatStringBuffer("open %s", url.c_str());
-	system(buffer.c_str());
-#else
-#ifdef S3D_BROWSER
-	std::string buffer = S3D::formatStringBuffer( S3D_BROWSER " %s", url.c_str());
-	system(buffer.c_str());
-#endif // S3D_BROWSER
-#endif // __DARWIN__
-#endif // _WIN32
-	Logger::log(url);
+	#ifdef S3D_BROWSER
+	std::string buffer = S3D::formatStringBuffer( S3D_BROWSER " %s", url.c_str() );
+	system( buffer.c_str() );
+	#endif  // S3D_BROWSER
+#endif
+	Logger::log( url );
 }
 
 void S3D::setExeName(const std::string &name)
@@ -118,16 +122,7 @@ std::string S3D::getDataFileMod()
 	return currentMod;
 }
 
-#ifndef S3D_DATADIR
-#define S3D_DATADIR "."
-#endif
-#ifndef S3D_DOCDIR
-#define S3D_DOCDIR "./documentation"
-#endif
-#ifndef S3D_BINDIR
-#define S3D_BINDIR "."
-#endif
-
+// Completes relative paths
 static const char *GET_DIR(const char *dir)
 {
 	if (dir[0] == '.')
