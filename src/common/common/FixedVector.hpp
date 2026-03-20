@@ -44,13 +44,6 @@ public:
 		V[2] = Pt[2];
 	}
 
-	FixedVector( const FixedVector& v )
-	{
-		V[0] = ( (FixedVector&)v )[0];
-		V[1] = ( (FixedVector&)v )[1];
-		V[2] = ( (FixedVector&)v )[2];
-	}
-
 	void zero() { V[0] = V[1] = V[2] = fixed( 0 ); }
 
 	FixedVector Normalize()

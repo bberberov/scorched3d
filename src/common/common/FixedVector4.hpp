@@ -48,14 +48,6 @@ public:
 		V[3] = ( c1[3] * ( fixed( 1 ) - scal ) + c2[3] * scal );
 	}
 
-	FixedVector4( const FixedVector4& v )
-	{
-		V[0] = ( (FixedVector4&)v )[0];
-		V[1] = ( (FixedVector4&)v )[1];
-		V[2] = ( (FixedVector4&)v )[2];
-		V[3] = ( (FixedVector4&)v )[3];
-	}
-
 	FixedVector4( const fixed Pt[4] )
 	{
 		V[0] = Pt[0];

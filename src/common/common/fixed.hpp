@@ -61,7 +61,6 @@ public:
 	// clang-format off
 	// uncrustify off
 	fixed()                              { m_nVal = 0; }
-	fixed( const fixed& fixedVal )       { m_nVal = fixedVal.m_nVal; }
 	fixed( bool bInternal, Sint64 nVal ) { m_nVal = nVal; }
 	fixed( unsigned char nVal )          { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
 	fixed( char nVal )                   { m_nVal = Sint64( nVal ) * FIXED_RESOLUTION; }
@@ -89,13 +88,6 @@ public:
 	}
 
 	fixed operator-() { return fixed( 0 ) - *this; }
-
-	fixed& operator=( fixed fixedVal )
-	{
-		m_nVal = fixedVal.m_nVal;
-
-		return *this;
-	}
 
 	// clang-format off
 	// uncrustify off

@@ -29,13 +29,6 @@ class Vector
 public:
 	Vector() { V[0] = V[1] = V[2] = 0.0f; }
 
-	Vector( const Vector& v )
-	{
-		V[0] = ( (Vector&)v )[0];
-		V[1] = ( (Vector&)v )[1];
-		V[2] = ( (Vector&)v )[2];
-	}
-
 	Vector( const float Pt[3] )
 	{
 		V[0] = Pt[0];
