@@ -62,18 +62,20 @@ Target::~Target()
 {
 	life_->setLife( 0 );
 
+	// BEGIN WARNING: Do not reorder these statements, runtime crash
 	delete renderer_;
+	renderer_ = nullptr;
 	delete life_;
+	life_ = nullptr;
 	delete shield_;
+	shield_ = nullptr;
 	delete group_;
+	group_ = nullptr;
 	delete parachute_;
+	parachute_ = nullptr;
 	delete targetState_;
-	renderer_    = nullptr;
-	life_        = nullptr;
-	shield_      = nullptr;
-	group_       = nullptr;
-	parachute_   = nullptr;
 	targetState_ = nullptr;
+	// END   WARNING: Do not reorder these statements, runtime crash
 
 	playerId_ = 0;
 }
