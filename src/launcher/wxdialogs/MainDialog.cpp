@@ -22,12 +22,27 @@
 #include <wxdialogs/DisplayDialog.hpp>
 #include <wxdialogs/ServerSDialog.hpp>
 #include <wxdialogs/TrueTypeFont.hpp>
+
+// NOTE: avoid WX warnings
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wabi-tag"
+#pragma GCC diagnostic ignored "-Winline"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Wredundant-tags"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#pragma GCC diagnostic ignored "-Wswitch-default"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/image.h>
 #include <wx/process.h>
 #include <wx/txtstrm.h>
 #include <wx/msgdlg.h>
 #include <wx/dcbuffer.h>
 #include <wx/splash.h>
+
+#pragma GCC diagnostic pop
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN

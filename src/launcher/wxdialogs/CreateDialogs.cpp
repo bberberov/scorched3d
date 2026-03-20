@@ -20,7 +20,23 @@
 
 #include <wxdialogs/MainDialog.hpp>
 #include <common/OptionsGame.hpp>
+
+// NOTE: avoid WX warnings
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wabi-tag"
+#pragma GCC diagnostic ignored "-Winline"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Wredundant-tags"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#pragma GCC diagnostic ignored "-Wswitch-default"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/image.h>
+
+#pragma GCC diagnostic pop
+
 #include <locale.h>
 
 bool wxWindowInit = false;

@@ -30,11 +30,27 @@
 #include <common/KeyTranslateWx.hpp>
 #include <client/UniqueIdStore.hpp>
 #include <scorched/ScorchedParams.hpp>
+
+// NOTE: avoid WX warnings
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wabi-tag"
+#pragma GCC diagnostic ignored "-Winline"
+#pragma GCC diagnostic ignored "-Wmissing-declarations"
+#pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Wredundant-tags"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#pragma GCC diagnostic ignored "-Wswitch-default"
+#pragma GCC diagnostic ignored "-Wunused-const-variable"
+#pragma GCC diagnostic ignored "-Wuseless-cast"
+
 #include <wx/image.h>
 #include <wx/notebook.h>
 #include <wx/grid.h>
 #include <wx/listbox.h>
 #include <wx/sizer.h>
+
+#pragma GCC diagnostic pop
+
 #include <set>
 #include <stdio.h>
 

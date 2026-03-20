@@ -7,7 +7,8 @@ project(
 	version: '44.2',
 	default_options : [
 		'c_std=c11',
-		'cpp_std=c++11'
+		'cpp_std=c++11',
+		'warning_level=2',
 	],
 	meson_version: '>=0.60.0',
 )
@@ -217,8 +218,13 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 	else
 		# Known Warnings
 		cpp_options = [
-			'-Wno-class-memaccess',
-			'-Wno-deprecated-declarations',
+			# Level 1
+			'-Wno-class-memaccess', # WARNING: memset(): NapalmMap.cpp, MovementMap.cpp
+			'-Wno-deprecated-declarations', # TODO: alutLoadWAVFile(), alutUnloadWAV()
+			'-Wno-unused-result', # FIXME:
+
+			# Level 2
+			'-Wno-unused-parameter',
 		]
 	endif
 else
