@@ -36,6 +36,8 @@ class TankAI
 public:
 	TankAI();
 
+	virtual ~TankAI() {};
+
 	// Instance init
 	virtual TankAI* createCopy( Tanket* tanket ) = 0;
 

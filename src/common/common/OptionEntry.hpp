@@ -53,6 +53,8 @@ public:
 
 	OptionEntry( std::list< OptionEntry* >& group, const char* name, const char* description, unsigned int data );
 
+	virtual ~OptionEntry() {};
+
 	// clang-format off
 	// uncrustify off
 	const char*          getName()             { return name_.c_str(); }

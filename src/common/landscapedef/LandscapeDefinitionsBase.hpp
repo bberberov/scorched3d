@@ -38,7 +38,7 @@ public:
 	std::string                description;  // Description of this landscape definition type
 	std::string                picture;      // Visible view of this landscape definition type
 
-	virtual bool readXML( XMLNode* node );
+	bool readXML( XMLNode* node );
 };
 
 class LandscapeDefinitionsBase

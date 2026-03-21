@@ -27,7 +27,7 @@ class OptionsGame
 {
 public:
 	OptionsGame();
-	virtual ~OptionsGame();
+	~OptionsGame();
 
 	enum ScoreType
 	{

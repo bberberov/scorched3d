@@ -119,8 +119,8 @@ public:
 	// uncrustify on
 	// clang-format on
 
-	virtual bool writeMessage( NetBuffer& buffer );
-	virtual bool readMessage( NetBufferReader& reader );
+	bool writeMessage( NetBuffer& buffer );
+	bool readMessage( NetBufferReader& reader );
 
 protected:
 	unsigned int              srcPlayerId_;
