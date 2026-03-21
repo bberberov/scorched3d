@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 	// **This NEEDS to be after the arg parser**
 	if (!OptionsDisplay::instance()->readOptionsFromFile())
 	{
-		return false;
+		return 1;
 	}
 
 	// Get this host's description and username
