@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2025
+//    Scorched3D (c) 2000-2011, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -49,20 +49,64 @@ StartDialog *StartDialog::instance()
 	return instance_;
 }
 
-StartDialog::StartDialog() : 
-	GLWWindow("Start", 10.0f, 10.0f, 640.0f, 480.0f, eNoTitle | eHideName),
-	selected_(-1)
+StartDialog::StartDialog() : GLWWindow( "Start", 10.0f, 10.0f, 640.0f, 480.0f, eNoTitle | eHideName ), selected_( -1 )
 {
-	OptionDefinition defs[] = 
-	{
-		LANG_RESOURCE("TUTORIAL", "Tutorial"), "- Start the tutorial to learn how to play.", 50.0f, 60.0f, 0.0f,
-		LANG_RESOURCE("PLAY_GAME", "Play Game"), "- Play a game against the computer or other local players.", 50.0f, 100.0f, 0.0f,
-		LANG_RESOURCE("PLAY_ONLINE", "Play Online"), "- Play online game against other players, gain stats and win awards.", 50.0f, 140.0f, 0.0f,
-		LANG_RESOURCE("LOAD SAVE", "Load Save"), "- Continue playing a saved game.", 50.0f, 180.0f, 0.0f,
-		LANG_RESOURCE("HELP", "Help"), "- View the online help.", 50.0f, 250.0f, 0.0f,
-		LANG_RESOURCE("DONATE", "Donate"), "- Show support for Scorched3D.", 50.0f, 290.0f, 0.0f,
-		LANG_RESOURCE("QUIT", "Quit"), "- Exit the game.", 50.0f, 360.0f, 0.0f
+	OptionDefinition defs[] = {
+		// clang-format off
+		// uncrustify off
+		{
+			LANG_RESOURCE( "TUTORIAL", "Tutorial" ),
+			"- Start the tutorial to learn how to play.",
+			50.0f,
+			60.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "PLAY_GAME", "Play Game" ),
+			"- Play a game against the computer or other local players.",
+			50.0f,
+			100.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "PLAY_ONLINE", "Play Online" ),
+			"- Play online game against other players, gain stats and win awards.",
+			50.0f,
+			140.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "LOAD SAVE", "Load Save" ),
+			"- Continue playing a saved game.",
+			50.0f,
+			180.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "HELP", "Help" ),
+			"- View the online help.",
+			50.0f,
+			250.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "DONATE", "Donate" ),
+			"- Show support for Scorched3D.",
+			50.0f,
+			290.0f,
+			0.0f
+		},
+		{
+			LANG_RESOURCE( "QUIT", "Quit" ),
+			"- Exit the game.",
+			50.0f,
+			360.0f,
+			0.0f
+		},
+		// uncrustify on
+		// clang-format on
 	};
+
 	for (size_t i = 0; i < sizeof(defs) / sizeof(OptionDefinition); i++)
 	{
 		definitions_.push_back(defs[i]);

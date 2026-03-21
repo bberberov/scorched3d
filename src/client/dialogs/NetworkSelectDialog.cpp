@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//    Scorched3D (c) 2000-2011, 2018, 2025
+//    Scorched3D (c) 2000-2011, 2018, 2025, 2026
 //
 //    This file is part of Scorched3D.
 //
@@ -40,29 +40,39 @@ struct ColumnInfo
 	const char *dataName;
 };
 
-static ColumnInfo *getGamesCols()
+static ColumnInfo* getGamesCols()
 {
 	static ColumnInfo gamescols[] = {
-		GLWIconTable::Column(LANG_STRING(""), 60), "",
-		GLWIconTable::Column(LANG_RESOURCE("SERVER_NAME", "Server Name"), 255), "servername",
-		GLWIconTable::Column(LANG_RESOURCE("PLYRS", "Plyrs"), 60), "noplayers",
-		GLWIconTable::Column(LANG_RESOURCE("ROUND", "Round"), 55), "round",
-		GLWIconTable::Column(LANG_RESOURCE("MOD", "Mod"), 95), "mod",
-		GLWIconTable::Column(LANG_RESOURCE("GAME_TYPE", "Game Type"), 200), "gametype",
-		GLWIconTable::Column(LANG_STRING(""), -1), ""
+		// clang-format off
+		// uncrustify off
+		{ GLWIconTable::Column( LANG_STRING( "" ), 60 ),                              ""           },
+		{ GLWIconTable::Column( LANG_RESOURCE( "SERVER_NAME", "Server Name" ), 255 ), "servername" },
+		{ GLWIconTable::Column( LANG_RESOURCE( "PLYRS",       "Plyrs" ),        60 ), "noplayers"  },
+		{ GLWIconTable::Column( LANG_RESOURCE( "ROUND",       "Round" ),        55 ), "round"      },
+		{ GLWIconTable::Column( LANG_RESOURCE( "MOD",         "Mod" ),          95 ), "mod"        },
+		{ GLWIconTable::Column( LANG_RESOURCE( "GAME_TYPE",   "Game Type" ),   200 ), "gametype"   },
+		{ GLWIconTable::Column( LANG_STRING( "" ), -1 ),                              ""           },
+		// uncrustify on
+		// clang-format on
 	};
+
 	return gamescols;
 }
 
-static ColumnInfo *getPlayerCols()
+static ColumnInfo* getPlayerCols()
 {
 	static ColumnInfo playerscols[] = {
-		GLWIconTable::Column(LANG_RESOURCE("PLAYER", "Player"), 270), "pn",
-		GLWIconTable::Column(LANG_RESOURCE("SCORE", "Score"), 260), "ps",
-		GLWIconTable::Column(LANG_RESOURCE("TIME", "Time"), 140), "pt",
-		GLWIconTable::Column(LANG_RESOURCE("REAL", "Real"), 60), "pa",
-		GLWIconTable::Column(LANG_STRING(""), -1), ""
+		// clang-format off
+		// uncrustify off
+		{ GLWIconTable::Column( LANG_RESOURCE( "PLAYER", "Player" ), 270 ), "pn" },
+		{ GLWIconTable::Column( LANG_RESOURCE( "SCORE",  "Score" ),  260 ), "ps" },
+		{ GLWIconTable::Column( LANG_RESOURCE( "TIME",   "Time" ),   140 ), "pt" },
+		{ GLWIconTable::Column( LANG_RESOURCE( "REAL",   "Real" ),    60 ), "pa" },
+		{ GLWIconTable::Column( LANG_STRING( "" ), -1 ),                    ""   },
+		// uncrustify on
+		// clang-format on
 	};
+
 	return playerscols;
 }
 

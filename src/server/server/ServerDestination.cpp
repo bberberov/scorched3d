@@ -78,12 +78,15 @@ ModIdentifierEntry *ServerDestinationMod::getNextFile()
 static struct AllowedStateTransitions
 {
 	ServerDestination::State from, to;
-}
-allowedStateTransitions[] = {
-	ServerDestination::sDownloadingMod,  ServerDestination::sInitializingMod,
-	ServerDestination::sInitializingMod, ServerDestination::sLoadingLevel,
-	ServerDestination::sLoadingLevel,    ServerDestination::sFinished,
-	ServerDestination::sFinished,        ServerDestination::sLoadingLevel
+} allowedStateTransitions[] = {
+	// clang-format off
+	// uncrustify off
+	{ ServerDestination::sDownloadingMod,  ServerDestination::sInitializingMod },
+	{ ServerDestination::sInitializingMod, ServerDestination::sLoadingLevel    },
+	{ ServerDestination::sLoadingLevel,    ServerDestination::sFinished        },
+	{ ServerDestination::sFinished,        ServerDestination::sLoadingLevel    },
+	// uncrustify on
+	// clang-format on
 };
 
 ServerDestination::ServerDestination(
