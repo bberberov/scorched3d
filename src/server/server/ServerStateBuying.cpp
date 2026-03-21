@@ -93,10 +93,13 @@ bool ServerStateBuying::simulate(fixed frameTime)
 	{
 		buying = false;
 	}
+
+	bool timeExpired = false;
+
+#ifdef S3D_SERVER
 	fixed buyingTime(ScorchedServer::instance()->getOptionsGame().getBuyingTime());
 	fixed simulationTime(ScorchedServer::instance()->getServerSimulator().getSendStepSize());
-	bool timeExpired = false;
-#ifdef S3D_SERVER
+
 	if (buyingTime != 0)
 	{
 		totalTime_ += frameTime;
