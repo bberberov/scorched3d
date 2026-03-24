@@ -12,7 +12,7 @@ brew install \
 	glew \
 	mesa-glu \
 	jpeg-turbo \
-	\
+	lua \
 	libogg \
 	\
 	libpng \
@@ -20,6 +20,4 @@ brew install \
 	sdl2_net \
 	libvorbis \
 	wxwidgets \
-	\
-
-meson wrap install lua
+	zlib

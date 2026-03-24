@@ -1,19 +1,20 @@
+# Install necessary packages
 python -m pip install meson
 
-meson wrap install expat
-rem  fftw3
-rem  freealut
-meson wrap install freetype2
-rem  OpenGL
-meson wrap install glew
-rem  glu
-meson wrap install libjpeg-turbo
-meson wrap install lua
-meson wrap install ogg
-meson wrap install openal-soft
-meson wrap install libpng
-rem  SDL
-rem  SDL_net
-meson wrap install vorbis
-rem  wx
-meson wrap install zlib
+vcpkg install expat
+vcpkg install fftw3
+vcpkg install freealut
+vcpkg install freetype
+vcpkg install opengl
+vcpkg install glew
+
+vcpkg install libjpeg-turbo
+vcpkg install lua
+vcpkg install libogg
+vcpkg install openal-soft
+vcpkg install libpng
+vcpkg install sdl1
+vcpkg install sdl1-net
+vcpkg install libvorbis
+vcpkg install wxwidgets
+vcpkg install zlib
