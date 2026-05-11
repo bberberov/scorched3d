@@ -91,6 +91,8 @@ Release: [![build result](https://build.opensuse.org/projects/home:bberberov:rel
 
 ### Compiling
 
+Since version 44.3, Scorched3D requires a C++11 supporting compiler and libraries!
+
 #### Linux
 
 Scorched3D uses an [Autoconf](https://www.gnu.org/software/autoconf/autoconf.html) build process, derived from the Visual Studio project files

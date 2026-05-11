@@ -4,7 +4,7 @@
 project(
 	'Scorched3D',
 	'cpp', 'c',
-	version: '44.2',
+	version: '44.3',
 	default_options : [
 		'c_std=c11',
 		'cpp_std=c++11',

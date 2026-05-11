@@ -27,7 +27,7 @@ namespace S3D
 	const unsigned int ScorchedPort = 27270;
 
 	// NOTE: "BETA" is a known suffix, see setSettingsDir()
-	const std::string ScorchedVersion = "44.2"
+	const std::string ScorchedVersion = "44.3"
 	#ifdef _DEBUG
 		" **DEBUG**"
 	#endif
