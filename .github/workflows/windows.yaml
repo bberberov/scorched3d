@@ -12,7 +12,7 @@ jobs:
     - name: Prepare
       run: .ci/prepare-windows.bat
     - name: Meson Setup
-      run: meson setup --backend vs2022 --buildtype debugoptimized builddir
+      run: vcpkg env --tools "meson setup --backend vs2022 --buildtype debugoptimized builddir"
     - name: MSBuild Setup for Meson
       uses: microsoft/setup-msbuild@v2
     - name: Meson Compile
