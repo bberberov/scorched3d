@@ -80,11 +80,19 @@ include_dirs = []
 # 	required : host_machine.system() != 'darwin',
 # )
 
+if   host_machine.system() == 'windows'
 lua_dep         = dependency(
-	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5', 'Lua',
+	'Lua',
+	version : [ '>= 5.1' ],
+	method : 'cmake',
+)
+else
+lua_dep         = dependency(
+	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5'
 	version : [ '>= 5.1' ],
 	fallback : 'lua',
 )
+endif
 
 # ogg_dep         = dependency(
 # 	'ogg',
