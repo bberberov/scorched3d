@@ -1,18 +1,9 @@
 REM Install necessary packages
 REM python -m pip install meson
 vcpkg install vcpkg-tool-meson
-vcpkg owns meson
-vcpkg owns meson.py
-
-vcpkg env --tools "vcpkg-tool-meson"
-
 vcpkg install pkgconf
-vcpkg owns pkgconf
-vcpkg owns pkg-config
-vcpkg owns pkgconf.exe
-vcpkg owns pkg-config.exe
 
-vcpkg env --tools "pkgconf"
+vcpkg env --tools "meson setup --backend vs2022 --buildtype debugoptimized builddir"
 
 rem  vcpkg install expat
 rem  vcpkg install fftw3
