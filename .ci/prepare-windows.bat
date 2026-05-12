@@ -22,12 +22,12 @@ vcpkg install ^
 	expat ^
 	fftw3 ^
 	freealut ^
-	freetype ^
+	freetype[png,zlib] ^
 	opengl ^
 	glew ^
 	^
 	libjpeg-turbo ^
-	lua ^
+	lua[cpp] ^
 	libogg ^
 	openal-soft ^
 	libpng ^
