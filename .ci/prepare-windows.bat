@@ -1,5 +1,6 @@
 # Install necessary packages
-python -m pip install meson
+# python -m pip install meson
+vcpkg install vcpkg-tool-meson
 vcpkg install pkgconf
 
 vcpkg install expat
