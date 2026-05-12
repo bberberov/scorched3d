@@ -12,7 +12,8 @@ dir C:\vcpkg\installed\x64-windows\include
 dir C:\vcpkg\installed\x64-windows\lib
 dir C:\vcpkg\installed\x64-windows\lib\pkgconfig
 dir C:\vcpkg\installed\x64-windows\share
-dir C:\vcpkg\installed\x64-windows\share\pkgconf
+dir C:\vcpkg\installed\x64-windows\share\lua
+dir C:\vcpkg\installed\x64-windows\share\unofficial-lua
 rem  dir C:\vcpkg\installed\x64-windows\tools\pkgconf
 rem  dir C:\vcpkg\packages
 rem  dir C:\vcpkg\packages\vcpkg-tool-meson_x64-windows\share\vcpkg-tool-meson
@@ -40,4 +41,5 @@ rem  	libvorbis ^
 rem  	wxwidgets ^
 rem  	zlib
 
-vcpkg owns expat.pc
+vcpkg owns .cmake
+vcpkg owns .pc
