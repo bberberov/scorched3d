@@ -20,8 +20,12 @@ rem  dir C:\vcpkg\packages\vcpkg-tool-meson_x64-windows\share\vcpkg-tool-meson
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\lib\pkgconfig
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\share\pkgconf
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\tools\pkgconf
-rem  type C:\vcpkg\scripts\buildsystems\meson\meson.template.in
+dir C:\vcpkg\scripts\buildsystems
+dir C:\vcpkg\scripts\buildsystems\cmake
+dir C:\vcpkg\scripts\buildsystems\meson
+type C:\vcpkg\scripts\buildsystems\meson\meson.template.in
 type C:\vcpkg\bootstrap-vcpkg.bat
+type C:\vcpkg\scripts\scripts\bootstrap.ps1
 
 rem  vcpkg install ^
 rem  	expat ^
