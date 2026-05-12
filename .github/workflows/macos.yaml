@@ -8,7 +8,7 @@ jobs:
     runs-on: macos-15-intel
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Prepare
       run: .ci/prepare-macos.bash
     - name: Meson Setup

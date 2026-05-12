@@ -12,7 +12,7 @@ brew install \
 	glew \
 	mesa-glu \
 	jpeg-turbo \
-	lua \
+	lua@5.4 \
 	libogg \
 	\
 	libpng \

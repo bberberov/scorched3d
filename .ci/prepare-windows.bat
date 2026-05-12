@@ -1,5 +1,6 @@
 # Install necessary packages
 python -m pip install meson
+vcpkg install pkgconf
 
 vcpkg install expat
 vcpkg install fftw3

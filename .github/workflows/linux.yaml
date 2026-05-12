@@ -6,9 +6,12 @@ on:
 jobs:
   linux-build-autotools:
     runs-on: ubuntu-24.04
+    env:
+      CC: gcc-14
+      CXX: g++-14
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Prepare
       run: .ci/prepare-ubuntu.bash
     - name: Create Makefile.ams
@@ -39,9 +42,12 @@ jobs:
       run: make -j4 V=1 VERBOSE=1
   linux-build-meson:
     runs-on: ubuntu-24.04
+    env:
+      CC: gcc-14
+      CXX: g++-14
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Prepare
       run: .ci/prepare-ubuntu.bash
     - name: Meson Setup
