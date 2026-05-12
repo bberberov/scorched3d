@@ -12,7 +12,9 @@ jobs:
     - name: Prepare
       run: .ci/prepare-windows.bat
     - name: Meson Setup
-      run: env:PKG_CONFIG="C:\vcpkg\x64-windows\tools\pkgconf\pkgconf.exe" meson setup --backend vs2022 --buildtype debugoptimized builddir
+      env:
+        PKG_CONFIG: C:\vcpkg\x64-windows\tools\pkgconf\pkgconf.exe
+      run: meson setup --backend vs2022 --buildtype debugoptimized builddir
     - name: MSBuild Setup for Meson
       uses: microsoft/setup-msbuild@v3
     - name: Meson Compile

@@ -5,13 +5,12 @@ vcpkg owns pkgconf
 vcpkg owns pkgconf.exe
 
 dir C:\vcpkg
-dir C:\vcpkg\downloads
 dir C:\vcpkg\installed
+dir C:\vcpkg\installed\x64-windows
 dir C:\vcpkg\packages
-dir C:\vcpkg\ports
-dir C:\vcpkg\scripts
-dir C:\vcpkg\toolsrc
-dir C:\vcpkg\versions
+dir C:\vcpkg\packages\vcpkg-tool-meson_x64-windows
+dir C:\vcpkg\packages\pkgconf_x64-windows
+dir C:\vcpkg\scripts\buildsystems
 
 rem  vcpkg install expat
 rem  vcpkg install fftw3
