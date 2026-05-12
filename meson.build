@@ -23,147 +23,147 @@ srcdir =  meson.global_source_root()
 # BEGIN Dependencies
 include_dirs = []
 
-expat_dep       = dependency(
-	'expat',
-	fallback : 'expat',
-)
-
-if   host_machine.system() == 'darwin'
-fftw_dep        = dependency('fftw3')
-elif host_machine.system() == 'windows'
-fftw_dep        = cc.find_library(
-	'fftw3',
-	dirs : [srcdir / 'deps/windows/lib/fftw3'],
-)
-include_dirs += include_directories('deps/windows/include/fftw3')
-else
-fftw_dep        = dependency('fftw3f')
-endif
-
-if   host_machine.system() == 'windows'
-freealut_dep    = cc.find_library(
-	'Alut',
-	dirs : [srcdir / 'deps/windows/lib/al'],
-)
-include_dirs += include_directories('deps/windows/include/al')
-else
-freealut_dep    = dependency(
-	'freealut',
-	required : host_machine.system() != 'darwin',
-)
-endif
-
-ft2_dep         = dependency(
-	'freetype2',
-	fallback : 'freetype2',
-	version : ['>= 2.5.1'],
-)
-
-gl_dep          = dependency(
-	'gl',
-	required : host_machine.system() != 'darwin',
-)
-
-glew_dep        = dependency(
-	'glew',
-	fallback : 'glew',
-)
-
-glu_dep         = dependency(
-	'glu',
-	required : host_machine.system() == 'linux',
-)
-
-jpeg_dep        = dependency(
-	'libjpeg', 'libjpeg-turbo',
-	fallback : 'libjpeg-turbo',
-	required : host_machine.system() != 'darwin',
-)
+# expat_dep       = dependency(
+# 	'expat',
+# 	fallback : 'expat',
+# )
+#
+# if   host_machine.system() == 'darwin'
+# fftw_dep        = dependency('fftw3')
+# elif host_machine.system() == 'windows'
+# fftw_dep        = cc.find_library(
+# 	'fftw3',
+# 	dirs : [srcdir / 'deps/windows/lib/fftw3'],
+# )
+# include_dirs += include_directories('deps/windows/include/fftw3')
+# else
+# fftw_dep        = dependency('fftw3f')
+# endif
+#
+# if   host_machine.system() == 'windows'
+# freealut_dep    = cc.find_library(
+# 	'Alut',
+# 	dirs : [srcdir / 'deps/windows/lib/al'],
+# )
+# include_dirs += include_directories('deps/windows/include/al')
+# else
+# freealut_dep    = dependency(
+# 	'freealut',
+# 	required : host_machine.system() != 'darwin',
+# )
+# endif
+#
+# ft2_dep         = dependency(
+# 	'freetype2',
+# 	fallback : 'freetype2',
+# 	version : ['>= 2.5.1'],
+# )
+#
+# gl_dep          = dependency(
+# 	'gl',
+# 	required : host_machine.system() != 'darwin',
+# )
+#
+# glew_dep        = dependency(
+# 	'glew',
+# 	fallback : 'glew',
+# )
+#
+# glu_dep         = dependency(
+# 	'glu',
+# 	required : host_machine.system() == 'linux',
+# )
+#
+# jpeg_dep        = dependency(
+# 	'libjpeg', 'libjpeg-turbo',
+# 	fallback : 'libjpeg-turbo',
+# 	required : host_machine.system() != 'darwin',
+# )
 
 lua_dep         = dependency(
-	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5',
+	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5', 'Lua'
 	version : [ '>= 5.1' ],
 	fallback : 'lua',
 )
 
-ogg_dep         = dependency(
-	'ogg',
-	fallback : 'ogg',
-)
-
-if   host_machine.system() == 'windows'
-openal_dep    = cc.find_library(
-	'OpenAl32',
-	dirs : [srcdir / 'deps/windows/lib/al'],
-)
-include_dirs += include_directories('deps/windows/include/al')
-else
-openal_dep      = dependency(
-	'openal',
-	version : ['>= 1.17.2'],
-	required : host_machine.system() != 'darwin',
-)
-endif
-
-png_dep         = dependency(
-	'libpng',
-	fallback : 'libpng',
-	required : host_machine.system() != 'darwin',
-)
-
-if   host_machine.system() == 'windows'
-sdl_dep         = cc.find_library(
-	'SDL',
-	dirs : [srcdir / 'deps/windows/lib/SDL'],
-)
-sdl_net_dep     = cc.find_library(
-	'SDL_net',
-	dirs : [srcdir / 'deps/windows/lib/SDL'],
-)
-include_dirs += include_directories('deps/windows/include/SDL')
-else
-sdl_dep         = dependency('sdl')
-sdl_net_dep     = dependency('SDL_net')
-endif
-
-if   host_machine.system() == 'windows'
-vorbis_dep    = cc.find_library(
-	'vorbis',
-	dirs : [srcdir / 'deps/windows/lib/ogg'],
-)
-vorbisfile_dep    = cc.find_library(
-	'vorbisfile',
-	dirs : [srcdir / 'deps/windows/lib/ogg'],
-)
-include_dirs += include_directories('deps/windows/include/ogg')
-else
-vorbis_dep      = dependency(
-	'vorbis',
-	fallback : 'vorbis',
-)
-vorbisfile_dep  = dependency(
-	'vorbisfile',
-	fallback : 'vorbisfile',
-)
-endif
-
-if   host_machine.system() == 'windows'
-wxwidgets_dep   = cc.find_library(
-	'wxmsw',
-	dirs : [srcdir / 'deps/windows/lib/wx'],
-)
-include_dirs += include_directories('deps/windows/include/wx')
-else
-wxwidgets_dep   = dependency(
-	'wxwidgets',
-	version : ['>= 2.4.0'],
-)
-endif
-
-zlib_dep        = dependency(
-	'zlib',
-	fallback : 'zlib',
-)
+# ogg_dep         = dependency(
+# 	'ogg',
+# 	fallback : 'ogg',
+# )
+#
+# if   host_machine.system() == 'windows'
+# openal_dep    = cc.find_library(
+# 	'OpenAl32',
+# 	dirs : [srcdir / 'deps/windows/lib/al'],
+# )
+# include_dirs += include_directories('deps/windows/include/al')
+# else
+# openal_dep      = dependency(
+# 	'openal',
+# 	version : ['>= 1.17.2'],
+# 	required : host_machine.system() != 'darwin',
+# )
+# endif
+#
+# png_dep         = dependency(
+# 	'libpng',
+# 	fallback : 'libpng',
+# 	required : host_machine.system() != 'darwin',
+# )
+#
+# if   host_machine.system() == 'windows'
+# sdl_dep         = cc.find_library(
+# 	'SDL',
+# 	dirs : [srcdir / 'deps/windows/lib/SDL'],
+# )
+# sdl_net_dep     = cc.find_library(
+# 	'SDL_net',
+# 	dirs : [srcdir / 'deps/windows/lib/SDL'],
+# )
+# include_dirs += include_directories('deps/windows/include/SDL')
+# else
+# sdl_dep         = dependency('sdl')
+# sdl_net_dep     = dependency('SDL_net')
+# endif
+#
+# if   host_machine.system() == 'windows'
+# vorbis_dep    = cc.find_library(
+# 	'vorbis',
+# 	dirs : [srcdir / 'deps/windows/lib/ogg'],
+# )
+# vorbisfile_dep    = cc.find_library(
+# 	'vorbisfile',
+# 	dirs : [srcdir / 'deps/windows/lib/ogg'],
+# )
+# include_dirs += include_directories('deps/windows/include/ogg')
+# else
+# vorbis_dep      = dependency(
+# 	'vorbis',
+# 	fallback : 'vorbis',
+# )
+# vorbisfile_dep  = dependency(
+# 	'vorbisfile',
+# 	fallback : 'vorbisfile',
+# )
+# endif
+#
+# if   host_machine.system() == 'windows'
+# wxwidgets_dep   = cc.find_library(
+# 	'wxmsw',
+# 	dirs : [srcdir / 'deps/windows/lib/wx'],
+# )
+# include_dirs += include_directories('deps/windows/include/wx')
+# else
+# wxwidgets_dep   = dependency(
+# 	'wxwidgets',
+# 	version : ['>= 2.4.0'],
+# )
+# endif
+#
+# zlib_dep        = dependency(
+# 	'zlib',
+# 	fallback : 'zlib',
+# )
 # END   Dependencies
 
 # BEGIN Defines and compile options
