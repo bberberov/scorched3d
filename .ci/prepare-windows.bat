@@ -4,6 +4,11 @@ vcpkg install pkgconf
 vcpkg owns pkgconf
 vcpkg owns pkgconf.exe
 
+dir C:\vcpkg
+dir C:\vcpkg\*
+dir C:\vcpkg\x64-windows
+dir C:\vcpkg\x64-windows\*
+
 vcpkg install expat
 rem  vcpkg install fftw3
 rem  vcpkg install freealut
