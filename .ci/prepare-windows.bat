@@ -5,11 +5,15 @@ vcpkg owns pkgconf
 vcpkg owns pkgconf.exe
 
 dir C:\vcpkg
-dir C:\vcpkg\*
-dir C:\vcpkg\x64-windows
-dir C:\vcpkg\x64-windows\*
+dir C:\vcpkg\downloads
+dir C:\vcpkg\installed
+dir C:\vcpkg\packages
+dir C:\vcpkg\ports
+dir C:\vcpkg\scripts
+dir C:\vcpkg\toolsrc
+dir C:\vcpkg\versions
 
-vcpkg install expat
+rem  vcpkg install expat
 rem  vcpkg install fftw3
 rem  vcpkg install freealut
 rem  vcpkg install freetype
