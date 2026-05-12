@@ -6,7 +6,7 @@ vcpkg owns pkgconf.exe
 vcpkg install ^
 	lua[cpp]
 
-rem  dir C:\vcpkg\installed
+dir C:\vcpkg
 dir C:\vcpkg\installed\x64-windows
 dir C:\vcpkg\installed\x64-windows\include
 dir C:\vcpkg\installed\x64-windows\lib
@@ -21,6 +21,7 @@ rem  dir C:\vcpkg\packages\pkgconf_x64-windows\lib\pkgconfig
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\share\pkgconf
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\tools\pkgconf
 rem  type C:\vcpkg\scripts\buildsystems\meson\meson.template.in
+type C:\vcpkg\bootstrap-vcpkg.bat
 
 rem  vcpkg install ^
 rem  	expat ^
