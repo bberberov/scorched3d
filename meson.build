@@ -81,7 +81,7 @@ include_dirs = []
 # )
 
 lua_dep         = dependency(
-	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5', 'Lua'
+	'lua-5.1', 'lua5.1', 'lua-5.4', 'lua5.4', 'lua-5.5', 'lua5.5', 'Lua',
 	version : [ '>= 5.1' ],
 	fallback : 'lua',
 )
