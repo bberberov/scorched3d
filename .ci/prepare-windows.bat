@@ -5,9 +5,9 @@ vcpkg owns pkgconf.exe
 
 rem  dir C:\vcpkg
 rem  dir C:\vcpkg\installed
-dir C:\vcpkg\installed\x64-windows
-dir C:\vcpkg\installed\x64-windows\include\pkgconf\libpkgconf
-dir C:\vcpkg\installed\x64-windows\lib\pkgconfig
+rem  dir C:\vcpkg\installed\x64-windows
+rem  dir C:\vcpkg\installed\x64-windows\include\pkgconf\libpkgconf
+rem  dir C:\vcpkg\installed\x64-windows\lib\pkgconfig
 rem  dir C:\vcpkg\installed\x64-windows\share\pkgconf
 rem  dir C:\vcpkg\installed\x64-windows\share\vcpkg-tool-meson
 rem  dir C:\vcpkg\installed\x64-windows\tools\pkgconf
@@ -18,21 +18,23 @@ rem  dir C:\vcpkg\packages\pkgconf_x64-windows\share\pkgconf
 rem  dir C:\vcpkg\packages\pkgconf_x64-windows\tools\pkgconf
 rem  type C:\vcpkg\scripts\buildsystems\meson\meson.template.in
 
-vcpkg install expat
-vcpkg owns expat.pc
-rem  vcpkg install fftw3
-rem  vcpkg install freealut
-rem  vcpkg install freetype
-rem  vcpkg install opengl
-rem  vcpkg install glew
+vcpkg install ^
+	expat ^
+	fftw3 ^
+	freealut ^
+	freetype ^
+	opengl ^
+	glew ^
+	^
+	libjpeg-turbo ^
+	lua ^
+	libogg ^
+	openal-soft ^
+	libpng ^
+	sdl1 ^
+	sdl1-net ^
+	libvorbis ^
+	wxwidgets ^
+	zlib
 
-rem  vcpkg install libjpeg-turbo
-rem  vcpkg install lua
-rem  vcpkg install libogg
-rem  vcpkg install openal-soft
-rem  vcpkg install libpng
-rem  vcpkg install sdl1
-rem  vcpkg install sdl1-net
-rem  vcpkg install libvorbis
-rem  vcpkg install wxwidgets
-rem  vcpkg install zlib
+vcpkg owns expat.pc
