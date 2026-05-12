@@ -1,21 +1,23 @@
 rem  Install necessary packages
 python -m pip install meson
 vcpkg install pkgconf
+vcpkg owns pkgconf
+vcpkg owns pkgconf.exe
 
 vcpkg install expat
-vcpkg install fftw3
-vcpkg install freealut
-vcpkg install freetype
-vcpkg install opengl
-vcpkg install glew
+rem  vcpkg install fftw3
+rem  vcpkg install freealut
+rem  vcpkg install freetype
+rem  vcpkg install opengl
+rem  vcpkg install glew
 
-vcpkg install libjpeg-turbo
-vcpkg install lua
-vcpkg install libogg
-vcpkg install openal-soft
-vcpkg install libpng
-vcpkg install sdl1
-vcpkg install sdl1-net
-vcpkg install libvorbis
-vcpkg install wxwidgets
-vcpkg install zlib
+rem  vcpkg install libjpeg-turbo
+rem  vcpkg install lua
+rem  vcpkg install libogg
+rem  vcpkg install openal-soft
+rem  vcpkg install libpng
+rem  vcpkg install sdl1
+rem  vcpkg install sdl1-net
+rem  vcpkg install libvorbis
+rem  vcpkg install wxwidgets
+rem  vcpkg install zlib
