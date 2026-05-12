@@ -82,7 +82,7 @@ include_dirs = []
 
 if   host_machine.system() == 'windows'
 lua_dep         = dependency(
-	'Lua',
+	'Lua', 'unofficial-lua',
 	version : [ '>= 5.1' ],
 	method : 'cmake',
 )
