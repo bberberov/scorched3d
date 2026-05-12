@@ -14,6 +14,7 @@ jobs:
     - name: Meson Setup
       env:
         PKG_CONFIG: C:\vcpkg\installed\x64-windows\tools\pkgconf\pkgconf.exe
+        PKG_CONFIG_PATH: C:\vcpkg\installed\x64-windows\lib\pkgconfig
       run: meson setup --backend vs2022 --buildtype debugoptimized builddir
     - name: MSBuild Setup for Meson
       uses: microsoft/setup-msbuild@v3
