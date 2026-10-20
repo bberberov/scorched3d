@@ -174,3 +174,8 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+# Meson subprojects downloaded from wrap files
+/subprojects/*/
+!/subprojects/packagefiles/
+/subprojects/.wraplock

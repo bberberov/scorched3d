@@ -84,6 +84,13 @@ int main(int argc, char *argv[])
 	// Write the new options back the the file
 	OptionsDisplay::instance()->writeOptionsToFile(ClientParams::instance()->getWriteFullOptions());
 
+#ifndef _WIN32
+	// sdl12-compat renders OpenGL into its own framebuffer object, which is
+	// lost when GLFrameBufferObject/GLShadowFrameBuffer bind framebuffer 0,
+	// leaving a black screen.  Ignored by a real SDL 1.2.
+	setenv("SDL12COMPAT_OPENGL_SCALING", "0", 0);
+#endif
+
 	// Init SDL
 	unsigned int initFlags = SDL_INIT_VIDEO;
 	if (ClientParams::instance()->getAllowExceptions()) initFlags |= SDL_INIT_NOPARACHUTE;

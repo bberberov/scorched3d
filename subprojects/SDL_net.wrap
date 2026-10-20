@@ -1,0 +1,9 @@
+[wrap-file]
+directory = SDL_net-1.2.8
+source_url = https://www.libsdl.org/projects/SDL_net/release/SDL_net-1.2.8.tar.gz
+source_filename = SDL_net-1.2.8.tar.gz
+source_hash = 5f4a7a8bb884f793c278ac3f3713be41980c5eedccecff0260411347714facb4
+patch_directory = SDL_net
+
+[provide]
+SDL_net = sdl_net_dep

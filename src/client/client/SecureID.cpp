@@ -47,7 +47,7 @@ std::string SecureID::GetPrivateKey(void)
     return Key;
 }
 
-#elif defined(__DARWIN__)
+#elif defined(__DARWIN__) || defined(__APPLE__)
 
 #include <stdio.h>
 #include <sys/types.h>

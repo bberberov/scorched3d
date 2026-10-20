@@ -50,7 +50,7 @@ SoundBufferWav::SoundBufferWav(const char *fileName) :
 	ALsizei freq;
 	ALboolean loop;
 
-#ifdef __DARWIN__
+#if defined(__DARWIN__) || defined(__APPLE__)
 	alutLoadWAVFile((ALbyte*) fileName,&format,&data,&size,&freq);
 #else
 	alutLoadWAVFile((ALbyte*) fileName,&format,&data,&size,&freq,&loop);

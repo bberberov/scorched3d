@@ -28,9 +28,7 @@ expat_dep       = dependency(
 	fallback : 'expat',
 )
 
-if   host_machine.system() == 'darwin'
-fftw_dep        = dependency('fftw3')
-elif host_machine.system() == 'windows'
+if   host_machine.system() == 'windows'
 fftw_dep        = cc.find_library(
 	'fftw3',
 	dirs : [srcdir / 'deps/windows/lib/fftw3'],
@@ -47,10 +45,14 @@ freealut_dep    = cc.find_library(
 )
 include_dirs += include_directories('deps/windows/include/al')
 else
-freealut_dep    = dependency(
-	'freealut',
-	required : host_machine.system() != 'darwin',
+freealut_dep    = dependency('freealut')
+# Sources include <alut.h>, which Homebrew installs under include/AL
+if host_machine.system() == 'darwin'
+include_dirs += include_directories(
+	freealut_dep.get_variable(pkgconfig : 'includedir') / 'AL',
+	is_system : true,
 )
+endif
 endif
 
 ft2_dep         = dependency(
@@ -59,20 +61,30 @@ ft2_dep         = dependency(
 	version : ['>= 2.5.1'],
 )
 
+if   host_machine.system() == 'darwin'
+# Use Apple's OpenGL framework (which also provides GLU), not Homebrew's Mesa,
+# as SDL creates its OpenGL context through it
 gl_dep          = dependency(
-	'gl',
-	required : host_machine.system() != 'darwin',
+	'appleframeworks',
+	modules : ['OpenGL'],
 )
+else
+gl_dep          = dependency('gl')
+endif
 
 glew_dep        = dependency(
 	'glew',
 	fallback : 'glew',
 )
 
+if   host_machine.system() == 'darwin'
+glu_dep         = dependency('', required : false)
+else
 glu_dep         = dependency(
 	'glu',
 	required : host_machine.system() == 'linux',
 )
+endif
 
 jpeg_dep        = dependency(
 	'libjpeg', 'libjpeg-turbo',
@@ -101,7 +113,6 @@ else
 openal_dep      = dependency(
 	'openal',
 	version : ['>= 1.17.2'],
-	required : host_machine.system() != 'darwin',
 )
 endif
 
@@ -123,7 +134,18 @@ sdl_net_dep     = cc.find_library(
 include_dirs += include_directories('deps/windows/include/SDL')
 else
 sdl_dep         = dependency('sdl')
-sdl_net_dep     = dependency('SDL_net')
+# Sources include <SDL/SDL.h>, so the parent of SDL's include directory is
+# needed when it is not a default search path (e.g. Homebrew on macOS)
+if host_machine.system() == 'darwin'
+include_dirs += include_directories(
+	sdl_dep.get_variable(pkgconfig : 'includedir'),
+	is_system : true,
+)
+endif
+sdl_net_dep     = dependency(
+	'SDL_net',
+	fallback : 'SDL_net',
+)
 endif
 
 if   host_machine.system() == 'windows'
@@ -217,7 +239,7 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 		cpp_options = []
 	else
 		# Known Warnings
-		cpp_options = [
+		cpp_options = cpp.get_supported_arguments(
 			# Level 1
 			'-Wno-class-memaccess', # WARNING: memset(): NapalmMap.cpp, MovementMap.cpp
 			'-Wno-deprecated-declarations', # TODO: alutLoadWAVFile(), alutUnloadWAV()
@@ -225,7 +247,7 @@ if   get_option('buildtype') == 'release' or get_option('buildtype') == 'debugop
 
 			# Level 2
 			'-Wno-unused-parameter',
-		]
+		)
 	endif
 else
 	if   cpp.get_id() == 'msvc'

@@ -12,6 +12,6 @@ jobs:
     - name: Prepare
       run: .ci/prepare-macos.bash
     - name: Meson Setup
-      run: meson setup --buildtype debugoptimized builddir
+      run: meson setup --buildtype debugoptimized --pkg-config-path="$(brew --prefix lua@5.4)/lib/pkgconfig,$(brew --prefix openal-soft)/lib/pkgconfig" builddir
     - name: Meson Compile
       run: meson compile -C builddir
